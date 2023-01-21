@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ControlPropertiesPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart openXmlElement)
+  private static String? GetContentType(DXPack.ControlPropertiesPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ControlPropertiesPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ControlPropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart? openXmlElement)
+  public static DMPack.ControlPropertiesPart? CreateModelElement(DXPack.ControlPropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ControlPropertiesPart();
+      var value = new DMPack.ControlPropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class ControlPropertiesPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ControlPropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ControlPropertiesPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ControlPropertiesPart? value)
+    where OpenXmlElementType: DXPack.ControlPropertiesPart, new()
   {
     if (value != null)
     {

@@ -8,100 +8,100 @@ public static class Pie3DChartConverter
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
     return itemElement != null;
   }
   
-  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDrawCharts.Pie3DChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      var itemElement = new DXDrawCharts.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries> GetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSerieses(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>())
+    var collection = new Collection<DMDrawsCharts.PieChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>? value)
+  private static void SetPieChartSerieses(DXDrawCharts.Pie3DChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.PieChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>(item);
+        var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.PieChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement)
+  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  private static void SetDataLabels(DXDrawCharts.Pie3DChart openXmlElement, DMDrawsCharts.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.Pie3DChartExtensionList? GetPie3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement)
+  private static DMDrawsCharts.Pie3DChartExtensionList? GetPie3DChartExtensionList(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Pie3DChartExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.Pie3DChartExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.Pie3DChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPie3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart openXmlElement, DocumentModel.Drawings.Charts.Pie3DChartExtensionList? value)
+  private static void SetPie3DChartExtensionList(DXDrawCharts.Pie3DChart openXmlElement, DMDrawsCharts.Pie3DChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Pie3DChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.Pie3DChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtensionList>(value);
+      itemElement = DMXDrawsCharts.Pie3DChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.Pie3DChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Pie3DChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart? openXmlElement)
+  public static DMDrawsCharts.Pie3DChart? CreateModelElement(DXDrawCharts.Pie3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Pie3DChart();
+      var value = new DMDrawsCharts.Pie3DChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSerieses = GetPieChartSerieses(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
@@ -111,8 +111,8 @@ public static class Pie3DChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Pie3DChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Pie3DChart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChart? value)
+    where OpenXmlElementType: DXDrawCharts.Pie3DChart, new()
   {
     if (value != null)
     {

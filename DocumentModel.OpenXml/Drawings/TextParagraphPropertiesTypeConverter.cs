@@ -8,12 +8,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Left Margin
   /// </summary>
-  private static Int32? GetLeftMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Int32? GetLeftMargin(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement.LeftMargin?.Value;
   }
   
-  private static void SetLeftMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Int32? value)
+  private static void SetLeftMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.LeftMargin = value;
   }
@@ -21,12 +21,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Right Margin
   /// </summary>
-  private static Int32? GetRightMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Int32? GetRightMargin(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement.RightMargin?.Value;
   }
   
-  private static void SetRightMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Int32? value)
+  private static void SetRightMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.RightMargin = value;
   }
@@ -34,12 +34,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Level
   /// </summary>
-  private static Int32? GetLevel(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Int32? GetLevel(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement.Level?.Value;
   }
   
-  private static void SetLevel(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Int32? value)
+  private static void SetLevel(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Level = value;
   }
@@ -47,12 +47,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Indent
   /// </summary>
-  private static Int32? GetIndent(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Int32? GetIndent(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement.Indent?.Value;
   }
   
-  private static void SetIndent(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Int32? value)
+  private static void SetIndent(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Indent = value;
   }
@@ -60,25 +60,25 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Alignment
   /// </summary>
-  private static DocumentModel.Drawings.TextAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static DMDraws.TextAlignmentKind? GetAlignment(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DocumentModel.Drawings.TextAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMDraws.TextAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, DocumentModel.Drawings.TextAlignmentKind? value)
+  private static void SetAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DocumentModel.Drawings.TextAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMDraws.TextAlignmentKind>(value);
   }
   
   /// <summary>
   /// Default Tab Size
   /// </summary>
-  private static Int32? GetDefaultTabSize(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Int32? GetDefaultTabSize(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement.DefaultTabSize?.Value;
   }
   
-  private static void SetDefaultTabSize(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Int32? value)
+  private static void SetDefaultTabSize(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.DefaultTabSize = value;
   }
@@ -86,12 +86,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Right To Left
   /// </summary>
-  private static Boolean? GetRightToLeft(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Boolean? GetRightToLeft(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement?.RightToLeft?.Value;
   }
   
-  private static void SetRightToLeft(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  private static void SetRightToLeft(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.RightToLeft = new BooleanValue { Value = (Boolean)value };
@@ -102,12 +102,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// East Asian Line Break
   /// </summary>
-  private static Boolean? GetEastAsianLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Boolean? GetEastAsianLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement?.EastAsianLineBreak?.Value;
   }
   
-  private static void SetEastAsianLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  private static void SetEastAsianLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.EastAsianLineBreak = new BooleanValue { Value = (Boolean)value };
@@ -118,25 +118,25 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Font Alignment
   /// </summary>
-  private static DocumentModel.Drawings.TextFontAlignmentKind? GetFontAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static DMDraws.TextFontAlignmentKind? GetFontAlignment(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DocumentModel.Drawings.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMDraws.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value);
   }
   
-  private static void SetFontAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, DocumentModel.Drawings.TextFontAlignmentKind? value)
+  private static void SetFontAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextFontAlignmentKind? value)
   {
-    openXmlElement.FontAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DocumentModel.Drawings.TextFontAlignmentKind>(value);
+    openXmlElement.FontAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMDraws.TextFontAlignmentKind>(value);
   }
   
   /// <summary>
   /// Latin Line Break
   /// </summary>
-  private static Boolean? GetLatinLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Boolean? GetLatinLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement?.LatinLineBreak?.Value;
   }
   
-  private static void SetLatinLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  private static void SetLatinLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LatinLineBreak = new BooleanValue { Value = (Boolean)value };
@@ -147,12 +147,12 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Hanging Punctuation
   /// </summary>
-  private static Boolean? GetHeight(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static Boolean? GetHeight(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
   
-  private static void SetHeight(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, Boolean? value)
+  private static void SetHeight(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Height = new BooleanValue { Value = (Boolean)value };
@@ -163,22 +163,22 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Line Spacing.
   /// </summary>
-  private static DocumentModel.Drawings.LineSpacing? GetLineSpacing(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LineSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateModelElement(itemElement);
+      return DMXDraws.LineSpacingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineSpacing(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, DocumentModel.Drawings.LineSpacing? value)
+  private static void SetLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineSpacing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineSpacing>(value);
+      itemElement = DMXDraws.LineSpacingConverter.CreateOpenXmlElement<DXDraw.LineSpacing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -187,22 +187,22 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Space Before.
   /// </summary>
-  private static DocumentModel.Drawings.SpaceBefore? GetSpaceBefore(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static DMDraws.SpaceBefore? GetSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceBefore>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateModelElement(itemElement);
+      return DMXDraws.SpaceBeforeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSpaceBefore(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, DocumentModel.Drawings.SpaceBefore? value)
+  private static void SetSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceBefore>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceBefore>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceBefore>(value);
+      itemElement = DMXDraws.SpaceBeforeConverter.CreateOpenXmlElement<DXDraw.SpaceBefore>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -211,32 +211,32 @@ public static class TextParagraphPropertiesTypeConverter
   /// <summary>
   /// Space After.
   /// </summary>
-  private static DocumentModel.Drawings.SpaceAfter? GetSpaceAfter(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement)
+  private static DMDraws.SpaceAfter? GetSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceAfter>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateModelElement(itemElement);
+      return DMXDraws.SpaceAfterConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSpaceAfter(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType openXmlElement, DocumentModel.Drawings.SpaceAfter? value)
+  private static void SetSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceAfter>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceAfter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceAfter>(value);
+      itemElement = DMXDraws.SpaceAfterConverter.CreateOpenXmlElement<DXDraw.SpaceAfter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.TextParagraphPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static DMDraws.TextParagraphPropertiesType? CreateModelElement(DXDraw.TextParagraphPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextParagraphPropertiesType();
+      var value = new DMDraws.TextParagraphPropertiesType();
       value.LeftMargin = GetLeftMargin(openXmlElement);
       value.RightMargin = GetRightMargin(openXmlElement);
       value.Level = GetLevel(openXmlElement);
@@ -256,8 +256,8 @@ public static class TextParagraphPropertiesTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextParagraphPropertiesType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextParagraphPropertiesType? value)
+    where OpenXmlElementType: DXDraw.TextParagraphPropertiesType, new()
   {
     if (value != null)
     {

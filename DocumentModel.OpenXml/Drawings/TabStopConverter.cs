@@ -8,12 +8,12 @@ public static class TabStopConverter
   /// <summary>
   /// Tab Position
   /// </summary>
-  private static Int32? GetPosition(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement)
+  private static Int32? GetPosition(DXDraw.TabStop openXmlElement)
   {
     return openXmlElement.Position?.Value;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement, Int32? value)
+  private static void SetPosition(DXDraw.TabStop openXmlElement, Int32? value)
   {
     openXmlElement.Position = value;
   }
@@ -21,21 +21,21 @@ public static class TabStopConverter
   /// <summary>
   /// Tab Alignment
   /// </summary>
-  private static DocumentModel.Drawings.TextTabAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement)
+  private static DMDraws.TextTabAlignmentKind? GetAlignment(DXDraw.TabStop openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DocumentModel.Drawings.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement, DocumentModel.Drawings.TextTabAlignmentKind? value)
+  private static void SetAlignment(DXDraw.TabStop openXmlElement, DMDraws.TextTabAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DocumentModel.Drawings.TextTabAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(value);
   }
   
-  public static DocumentModel.Drawings.TabStop? CreateModelElement(DocumentFormat.OpenXml.Drawing.TabStop? openXmlElement)
+  public static DMDraws.TabStop? CreateModelElement(DXDraw.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TabStop();
+      var value = new DMDraws.TabStop();
       value.Position = GetPosition(openXmlElement);
       value.Alignment = GetAlignment(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class TabStopConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TabStop? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TabStop, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStop? value)
+    where OpenXmlElementType: DXDraw.TabStop, new()
   {
     if (value != null)
     {

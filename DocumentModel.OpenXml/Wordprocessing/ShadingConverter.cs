@@ -8,25 +8,25 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Pattern
   /// </summary>
-  private static DocumentModel.Wordprocessing.ShadingPatternKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static DMW.ShadingPatternKind? GetVal(DXW.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DocumentModel.Wordprocessing.ShadingPatternKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DMW.ShadingPatternKind>(openXmlElement?.Val?.Value);
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ShadingPatternKind? value)
+  private static void SetVal(DXW.Shading openXmlElement, DMW.ShadingPatternKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DocumentModel.Wordprocessing.ShadingPatternKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DMW.ShadingPatternKind>(value);
   }
   
   /// <summary>
   /// Shading Pattern Color
   /// </summary>
-  private static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetColor(DXW.Shading openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
   
-  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetColor(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color = new StringValue { Value = value };
@@ -37,25 +37,25 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Pattern Theme Color
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeColor(DXW.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeColor(DXW.Shading openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// Shading Pattern Theme Color Tint
   /// </summary>
-  private static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetThemeTint(DXW.Shading openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
   
-  private static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetThemeTint(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeTint = new StringValue { Value = value };
@@ -66,12 +66,12 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Pattern Theme Color Shade
   /// </summary>
-  private static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetThemeShade(DXW.Shading openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
   
-  private static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetThemeShade(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeShade = new StringValue { Value = value };
@@ -82,12 +82,12 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Background Color
   /// </summary>
-  private static String? GetFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetFill(DXW.Shading openXmlElement)
   {
     return openXmlElement?.Fill?.Value;
   }
   
-  private static void SetFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetFill(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Fill = new StringValue { Value = value };
@@ -98,25 +98,25 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Background Theme Color
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeFill(DXW.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeFill?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeFill?.Value);
   }
   
-  private static void SetThemeFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeFill(DXW.Shading openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeFill = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeFill = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// Shading Background Theme Color Tint
   /// </summary>
-  private static String? GetThemeFillTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetThemeFillTint(DXW.Shading openXmlElement)
   {
     return openXmlElement?.ThemeFillTint?.Value;
   }
   
-  private static void SetThemeFillTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetThemeFillTint(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeFillTint = new StringValue { Value = value };
@@ -127,12 +127,12 @@ public static class ShadingConverter
   /// <summary>
   /// Shading Background Theme Color Shade
   /// </summary>
-  private static String? GetThemeFillShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
+  private static String? GetThemeFillShade(DXW.Shading openXmlElement)
   {
     return openXmlElement?.ThemeFillShade?.Value;
   }
   
-  private static void SetThemeFillShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
+  private static void SetThemeFillShade(DXW.Shading openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeFillShade = new StringValue { Value = value };
@@ -140,11 +140,11 @@ public static class ShadingConverter
       openXmlElement.ThemeFillShade = null;
   }
   
-  public static DocumentModel.Wordprocessing.Shading? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Shading? openXmlElement)
+  public static DMW.Shading? CreateModelElement(DXW.Shading? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Shading();
+      var value = new DMW.Shading();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
@@ -159,8 +159,8 @@ public static class ShadingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Shading? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Shading, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Shading? value)
+    where OpenXmlElementType: DXW.Shading, new()
   {
     if (value != null)
     {

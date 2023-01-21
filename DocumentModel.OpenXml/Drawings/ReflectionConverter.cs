@@ -8,12 +8,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Blur Radius
   /// </summary>
-  private static Int64? GetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int64? GetBlurRadius(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.BlurRadius?.Value;
   }
   
-  private static void SetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int64? value)
+  private static void SetBlurRadius(DXDraw.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.BlurRadius = value;
   }
@@ -21,12 +21,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Start Opacity
   /// </summary>
-  private static Int32? GetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetStartOpacity(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.StartOpacity?.Value;
   }
   
-  private static void SetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetStartOpacity(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartOpacity = value;
   }
@@ -34,12 +34,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Start Position
   /// </summary>
-  private static Int32? GetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetStartPosition(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.StartPosition?.Value;
   }
   
-  private static void SetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetStartPosition(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartPosition = value;
   }
@@ -47,12 +47,12 @@ public static class ReflectionConverter
   /// <summary>
   /// End Alpha
   /// </summary>
-  private static Int32? GetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetEndAlpha(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.EndAlpha?.Value;
   }
   
-  private static void SetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetEndAlpha(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndAlpha = value;
   }
@@ -60,12 +60,12 @@ public static class ReflectionConverter
   /// <summary>
   /// End Position
   /// </summary>
-  private static Int32? GetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetEndPosition(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.EndPosition?.Value;
   }
   
-  private static void SetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetEndPosition(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndPosition = value;
   }
@@ -73,12 +73,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Distance
   /// </summary>
-  private static Int64? GetDistance(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int64? GetDistance(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.Distance?.Value;
   }
   
-  private static void SetDistance(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int64? value)
+  private static void SetDistance(DXDraw.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.Distance = value;
   }
@@ -86,12 +86,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Direction
   /// </summary>
-  private static Int32? GetDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetDirection(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.Direction?.Value;
   }
   
-  private static void SetDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetDirection(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.Direction = value;
   }
@@ -99,12 +99,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Fade Direction
   /// </summary>
-  private static Int32? GetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetFadeDirection(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.FadeDirection?.Value;
   }
   
-  private static void SetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetFadeDirection(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.FadeDirection = value;
   }
@@ -112,12 +112,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Horizontal Ratio
   /// </summary>
-  private static Int32? GetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetHorizontalRatio(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.HorizontalRatio?.Value;
   }
   
-  private static void SetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetHorizontalRatio(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalRatio = value;
   }
@@ -125,12 +125,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Vertical Ratio
   /// </summary>
-  private static Int32? GetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetVerticalRatio(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.VerticalRatio?.Value;
   }
   
-  private static void SetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetVerticalRatio(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.VerticalRatio = value;
   }
@@ -138,12 +138,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Horizontal Skew
   /// </summary>
-  private static Int32? GetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetHorizontalSkew(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.HorizontalSkew?.Value;
   }
   
-  private static void SetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetHorizontalSkew(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkew = value;
   }
@@ -151,12 +151,12 @@ public static class ReflectionConverter
   /// <summary>
   /// Vertical Skew
   /// </summary>
-  private static Int32? GetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Int32? GetVerticalSkew(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.VerticalSkew?.Value;
   }
   
-  private static void SetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
+  private static void SetVerticalSkew(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.VerticalSkew = value;
   }
@@ -164,25 +164,25 @@ public static class ReflectionConverter
   /// <summary>
   /// Shadow Alignment
   /// </summary>
-  private static DocumentModel.Drawings.RectangleAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static DMDraws.RectangleAlignmentKind? GetAlignment(DXDraw.Reflection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, DocumentModel.Drawings.RectangleAlignmentKind? value)
+  private static void SetAlignment(DXDraw.Reflection openXmlElement, DMDraws.RectangleAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(value);
   }
   
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  private static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
+  private static Boolean? GetRotateWithShape(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
   }
   
-  private static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Boolean? value)
+  private static void SetRotateWithShape(DXDraw.Reflection openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
@@ -190,11 +190,11 @@ public static class ReflectionConverter
       openXmlElement.RotateWithShape = null;
   }
   
-  public static DocumentModel.Drawings.Reflection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
+  public static DMDraws.Reflection? CreateModelElement(DXDraw.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Reflection();
+      var value = new DMDraws.Reflection();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.StartOpacity = GetStartOpacity(openXmlElement);
       value.StartPosition = GetStartPosition(openXmlElement);
@@ -214,8 +214,8 @@ public static class ReflectionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Reflection? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Reflection, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Reflection? value)
+    where OpenXmlElementType: DXDraw.Reflection, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetId(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetId(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetIdQ(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetTitle(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class MenuSeparatorConverter
   /// <summary>
   /// getTitle
   /// </summary>
-  private static String? GetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement)
+  private static String? GetGetTitle(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.GetTitle?.Value;
   }
   
-  private static void SetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator openXmlElement, String? value)
+  private static void SetGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetTitle = new StringValue { Value = value };
@@ -133,11 +133,11 @@ public static class MenuSeparatorConverter
       openXmlElement.GetTitle = null;
   }
   
-  public static DocumentModel.UI.MenuSeparator? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator? openXmlElement)
+  public static DMUI.MenuSeparator? CreateModelElement(DXOCustUI.MenuSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.MenuSeparator();
+      var value = new DMUI.MenuSeparator();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.InsertAfterMso = GetInsertAfterMso(openXmlElement);
@@ -151,8 +151,8 @@ public static class MenuSeparatorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.MenuSeparator? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.MenuSeparator? value)
+    where OpenXmlElementType: DXOCustUI.MenuSeparator, new()
   {
     if (value != null)
     {

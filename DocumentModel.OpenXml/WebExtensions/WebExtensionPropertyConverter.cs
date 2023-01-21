@@ -8,12 +8,12 @@ public static class WebExtensionPropertyConverter
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement)
+  private static String? GetName(DXO2013WebExt.WebExtensionProperty openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement, String? value)
+  private static void SetName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class WebExtensionPropertyConverter
   /// <summary>
   /// value, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetValue(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement)
+  private static String? GetValue(DXO2013WebExt.WebExtensionProperty openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
   
-  private static void SetValue(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement, String? value)
+  private static void SetValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Value = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class WebExtensionPropertyConverter
       openXmlElement.Value = null;
   }
   
-  public static DocumentModel.WebExtensions.WebExtensionProperty? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty? openXmlElement)
+  public static DMWebExt.WebExtensionProperty? CreateModelElement(DXO2013WebExt.WebExtensionProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.WebExtensions.WebExtensionProperty();
+      var value = new DMWebExt.WebExtensionProperty();
       value.Name = GetName(openXmlElement);
       value.Value = GetValue(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class WebExtensionPropertyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionProperty? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionProperty? value)
+    where OpenXmlElementType: DXO2013WebExt.WebExtensionProperty, new()
   {
     if (value != null)
     {

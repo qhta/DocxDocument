@@ -8,12 +8,12 @@ public static class OfficeStyleSheetExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension openXmlElement)
+  private static String? GetUri(DXDraw.OfficeStyleSheetExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.OfficeStyleSheetExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class OfficeStyleSheetExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.ThemeFamily? GetThemeFamily(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension openXmlElement)
+  private static DM.ThemeFamily? GetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013Theme.ThemeFamily>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ThemeFamilyConverter.CreateModelElement(itemElement);
+      return DMX.ThemeFamilyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetThemeFamily(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension openXmlElement, DocumentModel.ThemeFamily? value)
+  private static void SetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013Theme.ThemeFamily>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ThemeFamilyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily>(value);
+      itemElement = DMX.ThemeFamilyConverter.CreateOpenXmlElement<DXO2013Theme.ThemeFamily>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.OfficeStyleSheetExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension? openXmlElement)
+  public static DMDraws.OfficeStyleSheetExtension? CreateModelElement(DXDraw.OfficeStyleSheetExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeStyleSheetExtension();
+      var value = new DMDraws.OfficeStyleSheetExtension();
       value.Uri = GetUri(openXmlElement);
       value.ThemeFamily = GetThemeFamily(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class OfficeStyleSheetExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OfficeStyleSheetExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtension? value)
+    where OpenXmlElementType: DXDraw.OfficeStyleSheetExtension, new()
   {
     if (value != null)
     {

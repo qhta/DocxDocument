@@ -8,81 +8,81 @@ public static class AlgorithmConverter
   /// <summary>
   /// Algorithm Type
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.AlgorithmKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement)
+  private static DMDrawsDgms.AlgorithmKind? GetType(DXDrawDgms.Algorithm openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DocumentModel.Drawings.Diagrams.AlgorithmKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement, DocumentModel.Drawings.Diagrams.AlgorithmKind? value)
+  private static void SetType(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.AlgorithmKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DocumentModel.Drawings.Diagrams.AlgorithmKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(value);
   }
   
   /// <summary>
   /// Revision Number
   /// </summary>
-  private static UInt32? GetRevision(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement)
+  private static UInt32? GetRevision(DXDrawDgms.Algorithm openXmlElement)
   {
     return openXmlElement.Revision?.Value;
   }
   
-  private static void SetRevision(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement, UInt32? value)
+  private static void SetRevision(DXDrawDgms.Algorithm openXmlElement, UInt32? value)
   {
     openXmlElement.Revision = value;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Parameter> GetParameters(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement)
+  private static Collection<DMDrawsDgms.Parameter> GetParameters(DXDrawDgms.Algorithm openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Parameter>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Parameter>())
+    var collection = new Collection<DMDrawsDgms.Parameter>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.Parameter>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ParameterConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.ParameterConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetParameters(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Parameter>? value)
+  private static void SetParameters(DXDrawDgms.Algorithm openXmlElement, Collection<DMDrawsDgms.Parameter>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Parameter>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.Parameter>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ParameterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Parameter>(item);
+        var newItem = DMXDrawsDgms.ParameterConverter.CreateOpenXmlElement<DXDrawDgms.Parameter>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement)
+  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Algorithm openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  private static void SetExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Algorithm? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm? openXmlElement)
+  public static DMDrawsDgms.Algorithm? CreateModelElement(DXDrawDgms.Algorithm? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Algorithm();
+      var value = new DMDrawsDgms.Algorithm();
       value.Type = GetType(openXmlElement);
       value.Revision = GetRevision(openXmlElement);
       value.Parameters = GetParameters(openXmlElement);
@@ -92,8 +92,8 @@ public static class AlgorithmConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Algorithm? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Algorithm? value)
+    where OpenXmlElementType: DXDrawDgms.Algorithm, new()
   {
     if (value != null)
     {

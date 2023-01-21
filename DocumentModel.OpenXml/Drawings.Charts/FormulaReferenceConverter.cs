@@ -8,39 +8,39 @@ public static class FormulaReferenceConverter
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  private static String? GetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference openXmlElement)
+  private static String? GetSequenceOfReferences(DXO2013DrawChart.FormulaReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference openXmlElement, String? value)
+  private static void SetSequenceOfReferences(DXO2013DrawChart.FormulaReference openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences { Text = value };
+      itemElement = new DXO2013DrawChart.SequenceOfReferences { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FormulaReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference? openXmlElement)
+  public static DMDrawsCharts.FormulaReference? CreateModelElement(DXO2013DrawChart.FormulaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FormulaReference();
+      var value = new DMDrawsCharts.FormulaReference();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FormulaReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FormulaReference? value)
+    where OpenXmlElementType: DXO2013DrawChart.FormulaReference, new()
   {
     if (value != null)
     {

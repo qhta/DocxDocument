@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DigitalSignatureOriginPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart openXmlElement)
+  private static String? GetContentType(DXPack.DigitalSignatureOriginPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DigitalSignatureOriginPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,23 +18,23 @@ public static class DigitalSignatureOriginPartConverter
   /// <summary>
   /// Gets the XmlSignatureParts of the DigitalSignatureOriginPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.XmlSignaturePart> GetXmlSignatureParts(DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart openXmlElement)
+  private static Collection<DMPack.XmlSignaturePart> GetXmlSignatureParts(DXPack.DigitalSignatureOriginPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.XmlSignaturePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.XmlSignaturePart>())
+    var collection = new Collection<DMPack.XmlSignaturePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.XmlSignaturePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.XmlSignaturePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.XmlSignaturePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  public static DocumentModel.Packaging.DigitalSignatureOriginPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart? openXmlElement)
+  public static DMPack.DigitalSignatureOriginPart? CreateModelElement(DXPack.DigitalSignatureOriginPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DigitalSignatureOriginPart();
+      var value = new DMPack.DigitalSignatureOriginPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.XmlSignatureParts = GetXmlSignatureParts(openXmlElement);
@@ -43,8 +43,8 @@ public static class DigitalSignatureOriginPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DigitalSignatureOriginPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DigitalSignatureOriginPart? value)
+    where OpenXmlElementType: DXPack.DigitalSignatureOriginPart, new()
   {
     if (value != null)
     {

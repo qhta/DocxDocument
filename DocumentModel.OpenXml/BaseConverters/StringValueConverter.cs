@@ -1,30 +1,28 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class StringValueConverter
 {
-  public static string GetValue(StringValue element)
+  public static string GetValue(DX.StringValue element)
   {
     return element.Value ?? string.Empty;
   }
 
-  public static string GetValue(StringType element)
+  public static string GetValue(DXW.StringType element)
   {
     return element.Val?.Value ?? string.Empty;
   }
 
-  public static string GetValue(String255Type element)
+  public static string GetValue(DXW.String255Type element)
   {
     return element.Val?.Value ?? string.Empty;
   }
 
-  public static string GetValue(TypedOpenXmlLeafTextElement element)
+  public static string GetValue(DX.TypedOpenXmlLeafTextElement element)
   {
     return element.Text;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(string value) where OpenXmlElementType : OpenXmlElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(string value) where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val") ??

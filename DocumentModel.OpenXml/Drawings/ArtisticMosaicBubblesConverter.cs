@@ -8,12 +8,12 @@ public static class ArtisticMosaicBubblesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticMosaicBubbles openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticMosaicBubblesConverter
   /// <summary>
   /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles openXmlElement)
+  private static Int32? GetPressure(DXO2010Draw.ArtisticMosaicBubbles openXmlElement)
   {
     return openXmlElement.Pressure?.Value;
   }
   
-  private static void SetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles openXmlElement, Int32? value)
+  private static void SetPressure(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value)
   {
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticMosaicBubbles? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles? openXmlElement)
+  public static DMDraws.ArtisticMosaicBubbles? CreateModelElement(DXO2010Draw.ArtisticMosaicBubbles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticMosaicBubbles();
+      var value = new DMDraws.ArtisticMosaicBubbles();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticMosaicBubblesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticMosaicBubbles? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMosaicBubbles? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticMosaicBubbles, new()
   {
     if (value != null)
     {

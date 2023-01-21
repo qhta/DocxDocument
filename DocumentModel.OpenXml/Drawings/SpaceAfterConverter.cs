@@ -5,51 +5,51 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class SpaceAfterConverter
 {
-  private static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceAfter openXmlElement)
+  private static Int32? GetSpacingPercent(DXDraw.SpaceAfter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceAfter openXmlElement, Int32? value)
+  private static void SetSpacingPercent(DXDraw.SpaceAfter openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpacingPercent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+      itemElement = new DXDraw.SpacingPercent{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceAfter openXmlElement)
+  private static Int32? GetSpacingPoints(DXDraw.SpaceAfter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceAfter openXmlElement, Int32? value)
+  private static void SetSpacingPoints(DXDraw.SpaceAfter openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpacingPoints>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+      itemElement = new DXDraw.SpacingPoints{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.SpaceAfter? CreateModelElement(DocumentFormat.OpenXml.Drawing.SpaceAfter? openXmlElement)
+  public static DMDraws.SpaceAfter? CreateModelElement(DXDraw.SpaceAfter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SpaceAfter();
+      var value = new DMDraws.SpaceAfter();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class SpaceAfterConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SpaceAfter? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SpaceAfter, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SpaceAfter? value)
+    where OpenXmlElementType: DXDraw.SpaceAfter, new()
   {
     if (value != null)
     {

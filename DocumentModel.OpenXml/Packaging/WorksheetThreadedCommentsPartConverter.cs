@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WorksheetThreadedCommentsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart openXmlElement)
+  private static String? GetContentType(DXPack.WorksheetThreadedCommentsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WorksheetThreadedCommentsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WorksheetThreadedCommentsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart? openXmlElement)
+  public static DMPack.WorksheetThreadedCommentsPart? CreateModelElement(DXPack.WorksheetThreadedCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WorksheetThreadedCommentsPart();
+      var value = new DMPack.WorksheetThreadedCommentsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class WorksheetThreadedCommentsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetThreadedCommentsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WorksheetThreadedCommentsPart? value)
+    where OpenXmlElementType: DXPack.WorksheetThreadedCommentsPart, new()
   {
     if (value != null)
     {

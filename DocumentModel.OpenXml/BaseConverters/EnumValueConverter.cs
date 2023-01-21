@@ -2,7 +2,7 @@
 
 public static class EnumValueConverter
 {
-  public static ModelEnumType? GetValue<OpenXmlEnumType, ModelEnumType>(EnumValue<OpenXmlEnumType>? element)
+  public static ModelEnumType? GetValue<OpenXmlEnumType, ModelEnumType>(DX.EnumValue<OpenXmlEnumType>? element)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {
@@ -15,7 +15,7 @@ public static class EnumValueConverter
     return null;
   }
 
-  public static bool CmpValue<OpenXmlEnumType, ModelEnumType>(EnumValue<OpenXmlEnumType>? element, ModelEnumType? value)
+  public static bool CmpValue<OpenXmlEnumType, ModelEnumType>(DX.EnumValue<OpenXmlEnumType>? element, ModelEnumType? value)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {
@@ -28,13 +28,13 @@ public static class EnumValueConverter
     return value == null;
   }
 
-  public static EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
+  public static DX.EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {
     if (value != null)
     {
-      var element = new EnumValue<OpenXmlEnumType>();
+      var element = new DX.EnumValue<OpenXmlEnumType>();
       var n = (int)Convert.ChangeType(value, typeof(int));
       var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
       element.Value = val;
@@ -44,7 +44,7 @@ public static class EnumValueConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
-    where OpenXmlElementType : OpenXmlLeafElement, new()
+    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {

@@ -8,12 +8,12 @@ public static class ArtisticTexturizerConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticTexturizer openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticTexturizer openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticTexturizerConverter
   /// <summary>
   /// scaling, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer openXmlElement)
+  private static Int32? GetScaling(DXO2010Draw.ArtisticTexturizer openXmlElement)
   {
     return openXmlElement.Scaling?.Value;
   }
   
-  private static void SetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer openXmlElement, Int32? value)
+  private static void SetScaling(DXO2010Draw.ArtisticTexturizer openXmlElement, Int32? value)
   {
     openXmlElement.Scaling = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticTexturizer? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
+  public static DMDraws.ArtisticTexturizer? CreateModelElement(DXO2010Draw.ArtisticTexturizer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticTexturizer();
+      var value = new DMDraws.ArtisticTexturizer();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticTexturizerConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticTexturizer? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticTexturizer? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticTexturizer, new()
   {
     if (value != null)
     {

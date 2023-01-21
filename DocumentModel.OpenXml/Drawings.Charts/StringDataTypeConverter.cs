@@ -8,39 +8,39 @@ public static class StringDataTypeConverter
   /// <summary>
   /// PointCount.
   /// </summary>
-  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringDataType openXmlElement)
+  private static UInt32? GetPointCount(DXDrawCharts.StringDataType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringDataType openXmlElement, UInt32? value)
+  private static void SetPointCount(DXDrawCharts.StringDataType openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      itemElement = new DXDrawCharts.PointCount{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.StringDataType? openXmlElement)
+  public static DMDrawsCharts.StringDataType? CreateModelElement(DXDrawCharts.StringDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StringDataType();
+      var value = new DMDrawsCharts.StringDataType();
       value.PointCount = GetPointCount(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringDataType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StringDataType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringDataType? value)
+    where OpenXmlElementType: DXDrawCharts.StringDataType, new()
   {
     if (value != null)
     {

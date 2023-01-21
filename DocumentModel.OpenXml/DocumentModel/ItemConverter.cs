@@ -8,12 +8,12 @@ public static class ItemConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetId(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ItemConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ItemConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetImage(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetImage(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ItemConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetImageMso(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetImageMso(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class ItemConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetScreentip(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetScreentip(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ItemConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement)
+  private static String? GetSupertip(DXO2010CustUI.Item openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Item openXmlElement, String? value)
+  private static void SetSupertip(DXO2010CustUI.Item openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -101,11 +101,11 @@ public static class ItemConverter
       openXmlElement.Supertip = null;
   }
   
-  public static DocumentModel.Item? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Item? openXmlElement)
+  public static DM.Item? CreateModelElement(DXO2010CustUI.Item? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Item();
+      var value = new DM.Item();
       value.Id = GetId(openXmlElement);
       value.Label = GetLabel(openXmlElement);
       value.Image = GetImage(openXmlElement);
@@ -117,8 +117,8 @@ public static class ItemConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Item? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Item, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Item? value)
+    where OpenXmlElementType: DXO2010CustUI.Item, new()
   {
     if (value != null)
     {

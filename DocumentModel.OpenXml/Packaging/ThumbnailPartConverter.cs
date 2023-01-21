@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ThumbnailPartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThumbnailPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ThumbnailPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ThumbnailPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThumbnailPart? openXmlElement)
+  public static DMPack.ThumbnailPart? CreateModelElement(DXPack.ThumbnailPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ThumbnailPart();
+      var value = new DMPack.ThumbnailPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThumbnailPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThumbnailPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThumbnailPart? value)
+    where OpenXmlElementType: DXPack.ThumbnailPart, new()
   {
     if (value != null)
     {

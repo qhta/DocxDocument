@@ -8,12 +8,12 @@ public static class DataModelExtensionBlockConverter
   /// <summary>
   /// relId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetRelId(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement)
+  private static String? GetRelId(DXODraw.DataModelExtensionBlock openXmlElement)
   {
     return openXmlElement?.RelId?.Value;
   }
   
-  private static void SetRelId(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement, String? value)
+  private static void SetRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RelId = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class DataModelExtensionBlockConverter
   /// <summary>
   /// minVer, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetMinVer(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement)
+  private static String? GetMinVer(DXODraw.DataModelExtensionBlock openXmlElement)
   {
     return openXmlElement?.MinVer?.Value;
   }
   
-  private static void SetMinVer(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement, String? value)
+  private static void SetMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MinVer = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class DataModelExtensionBlockConverter
       openXmlElement.MinVer = null;
   }
   
-  public static DocumentModel.Drawings.Office.DataModelExtensionBlock? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock? openXmlElement)
+  public static DMDrawsO.DataModelExtensionBlock? CreateModelElement(DXODraw.DataModelExtensionBlock? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.DataModelExtensionBlock();
+      var value = new DMDrawsO.DataModelExtensionBlock();
       value.RelId = GetRelId(openXmlElement);
       value.MinVer = GetMinVer(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class DataModelExtensionBlockConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.DataModelExtensionBlock? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.DataModelExtensionBlock? value)
+    where OpenXmlElementType: DXODraw.DataModelExtensionBlock, new()
   {
     if (value != null)
     {

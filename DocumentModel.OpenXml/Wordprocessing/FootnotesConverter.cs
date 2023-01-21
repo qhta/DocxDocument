@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class FootnotesConverter
 {
-  private static DocumentModel.Wordprocessing.Footnote? GetFootnote(DocumentFormat.OpenXml.Wordprocessing.Footnotes openXmlElement)
+  private static DMW.Footnote? GetFootnote(DXW.Footnotes openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Footnote>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Footnote>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FootnoteConverter.CreateModelElement(itemElement);
+      return DMXW.FootnoteConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFootnote(DocumentFormat.OpenXml.Wordprocessing.Footnotes openXmlElement, DocumentModel.Wordprocessing.Footnote? value)
+  private static void SetFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Footnote>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Footnote>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FootnoteConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Footnote>(value);
+      itemElement = DMXW.FootnoteConverter.CreateOpenXmlElement<DXW.Footnote>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Footnotes? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Footnotes? openXmlElement)
+  public static DMW.Footnotes? CreateModelElement(DXW.Footnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Footnotes();
+      var value = new DMW.Footnotes();
       value.Footnote = GetFootnote(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Footnotes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Footnotes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes? value)
+    where OpenXmlElementType: DXW.Footnotes, new()
   {
     if (value != null)
     {

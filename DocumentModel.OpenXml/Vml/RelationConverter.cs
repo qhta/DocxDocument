@@ -8,25 +8,25 @@ public static class RelationConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Relation openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.Relation openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Diagram Relationship Source Shape
   /// </summary>
-  private static String? GetSourceId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement)
+  private static String? GetSourceId(DXVmlO.Relation openXmlElement)
   {
     return openXmlElement?.SourceId?.Value;
   }
   
-  private static void SetSourceId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement, String? value)
+  private static void SetSourceId(DXVmlO.Relation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SourceId = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class RelationConverter
   /// <summary>
   /// Diagram Relationship Destination Shape
   /// </summary>
-  private static String? GetDestinationId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement)
+  private static String? GetDestinationId(DXVmlO.Relation openXmlElement)
   {
     return openXmlElement?.DestinationId?.Value;
   }
   
-  private static void SetDestinationId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement, String? value)
+  private static void SetDestinationId(DXVmlO.Relation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.DestinationId = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class RelationConverter
   /// <summary>
   /// Diagram Relationship Center Shape
   /// </summary>
-  private static String? GetCenterShapeId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement)
+  private static String? GetCenterShapeId(DXVmlO.Relation openXmlElement)
   {
     return openXmlElement?.CenterShapeId?.Value;
   }
   
-  private static void SetCenterShapeId(DocumentFormat.OpenXml.Vml.Office.Relation openXmlElement, String? value)
+  private static void SetCenterShapeId(DXVmlO.Relation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CenterShapeId = new StringValue { Value = value };
@@ -66,11 +66,11 @@ public static class RelationConverter
       openXmlElement.CenterShapeId = null;
   }
   
-  public static DocumentModel.Vml.Relation? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Relation? openXmlElement)
+  public static DMVml.Relation? CreateModelElement(DXVmlO.Relation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Relation();
+      var value = new DMVml.Relation();
       value.Extension = GetExtension(openXmlElement);
       value.SourceId = GetSourceId(openXmlElement);
       value.DestinationId = GetDestinationId(openXmlElement);
@@ -80,8 +80,8 @@ public static class RelationConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Relation? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Relation, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Relation? value)
+    where OpenXmlElementType: DXVmlO.Relation, new()
   {
     if (value != null)
     {

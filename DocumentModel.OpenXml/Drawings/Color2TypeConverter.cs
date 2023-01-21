@@ -8,22 +8,22 @@ public static class Color2TypeConverter
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  private static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement)
+  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Color2Type openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class Color2TypeConverter
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  private static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement)
+  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.Color2Type openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class Color2TypeConverter
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  private static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement)
+  private static DMDraws.HslColor? GetHslColor(DXDraw.Color2Type openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHslColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement, DocumentModel.Drawings.HslColor? value)
+  private static void SetHslColor(DXDraw.Color2Type openXmlElement, DMDraws.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class Color2TypeConverter
   /// <summary>
   /// System Color.
   /// </summary>
-  private static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement)
+  private static DMDraws.SystemColor? GetSystemColor(DXDraw.Color2Type openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSystemColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement, DocumentModel.Drawings.SystemColor? value)
+  private static void SetSystemColor(DXDraw.Color2Type openXmlElement, DMDraws.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,32 +104,32 @@ public static class Color2TypeConverter
   /// <summary>
   /// Preset Color.
   /// </summary>
-  private static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement)
+  private static DMDraws.PresetColor? GetPresetColor(DXDraw.Color2Type openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetColor(DocumentFormat.OpenXml.Drawing.Color2Type openXmlElement, DocumentModel.Drawings.PresetColor? value)
+  private static void SetPresetColor(DXDraw.Color2Type openXmlElement, DMDraws.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Color2Type? CreateModelElement(DocumentFormat.OpenXml.Drawing.Color2Type? openXmlElement)
+  public static DMDraws.Color2Type? CreateModelElement(DXDraw.Color2Type? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Color2Type();
+      var value = new DMDraws.Color2Type();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);
@@ -140,8 +140,8 @@ public static class Color2TypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Color2Type? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Color2Type, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Color2Type? value)
+    where OpenXmlElementType: DXDraw.Color2Type, new()
   {
     if (value != null)
     {

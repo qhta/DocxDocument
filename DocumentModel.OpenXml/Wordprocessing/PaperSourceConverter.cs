@@ -8,12 +8,12 @@ public static class PaperSourceConverter
   /// <summary>
   /// First Page Printer Tray Code
   /// </summary>
-  private static UInt16? GetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource openXmlElement)
+  private static UInt16? GetFirst(DXW.PaperSource openXmlElement)
   {
     return openXmlElement.First?.Value;
   }
   
-  private static void SetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource openXmlElement, UInt16? value)
+  private static void SetFirst(DXW.PaperSource openXmlElement, UInt16? value)
   {
     openXmlElement.First = value;
   }
@@ -21,21 +21,21 @@ public static class PaperSourceConverter
   /// <summary>
   /// Non-First Page Printer Tray Code
   /// </summary>
-  private static UInt16? GetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource openXmlElement)
+  private static UInt16? GetOther(DXW.PaperSource openXmlElement)
   {
     return openXmlElement.Other?.Value;
   }
   
-  private static void SetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource openXmlElement, UInt16? value)
+  private static void SetOther(DXW.PaperSource openXmlElement, UInt16? value)
   {
     openXmlElement.Other = value;
   }
   
-  public static DocumentModel.Wordprocessing.PaperSource? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
+  public static DMW.PaperSource? CreateModelElement(DXW.PaperSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PaperSource();
+      var value = new DMW.PaperSource();
       value.First = GetFirst(openXmlElement);
       value.Other = GetOther(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class PaperSourceConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PaperSource? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PaperSource, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PaperSource? value)
+    where OpenXmlElementType: DXW.PaperSource, new()
   {
     if (value != null)
     {

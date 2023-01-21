@@ -8,12 +8,12 @@ public static class TextPathConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static String? GetId(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
+  private static void SetId(DXVml.TextPath openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TextPathConverter
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  private static String? GetStyle(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static String? GetStyle(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
+  private static void SetStyle(DXVml.TextPath openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Style = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class TextPathConverter
   /// <summary>
   /// Text Path Toggle
   /// </summary>
-  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static Boolean? GetOn(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
   
-  private static void SetOn(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
+  private static void SetOn(DXVml.TextPath openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.On = value;
@@ -56,12 +56,12 @@ public static class TextPathConverter
   /// <summary>
   /// Shape Fit Toggle
   /// </summary>
-  private static Boolean? GetFitShape(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static Boolean? GetFitShape(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.FitShape?.Value;
   }
   
-  private static void SetFitShape(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
+  private static void SetFitShape(DXVml.TextPath openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FitShape = value;
@@ -72,12 +72,12 @@ public static class TextPathConverter
   /// <summary>
   /// Path Fit Toggle
   /// </summary>
-  private static Boolean? GetFitPath(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static Boolean? GetFitPath(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.FitPath?.Value;
   }
   
-  private static void SetFitPath(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
+  private static void SetFitPath(DXVml.TextPath openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FitPath = value;
@@ -88,12 +88,12 @@ public static class TextPathConverter
   /// <summary>
   /// Text Path Trim Toggle
   /// </summary>
-  private static Boolean? GetTrim(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static Boolean? GetTrim(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.Trim?.Value;
   }
   
-  private static void SetTrim(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
+  private static void SetTrim(DXVml.TextPath openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Trim = value;
@@ -104,12 +104,12 @@ public static class TextPathConverter
   /// <summary>
   /// Text X-Scaling
   /// </summary>
-  private static Boolean? GetXScale(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static Boolean? GetXScale(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.XScale?.Value;
   }
   
-  private static void SetXScale(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
+  private static void SetXScale(DXVml.TextPath openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.XScale = value;
@@ -120,12 +120,12 @@ public static class TextPathConverter
   /// <summary>
   /// Text Path Text
   /// </summary>
-  private static String? GetString(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
+  private static String? GetString(DXVml.TextPath openXmlElement)
   {
     return openXmlElement?.String?.Value;
   }
   
-  private static void SetString(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
+  private static void SetString(DXVml.TextPath openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.String = new StringValue { Value = value };
@@ -133,11 +133,11 @@ public static class TextPathConverter
       openXmlElement.String = null;
   }
   
-  public static DocumentModel.Vml.TextPath? CreateModelElement(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
+  public static DMVml.TextPath? CreateModelElement(DXVml.TextPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.TextPath();
+      var value = new DMVml.TextPath();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.On = GetOn(openXmlElement);
@@ -151,8 +151,8 @@ public static class TextPathConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextPath? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextPath, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextPath? value)
+    where OpenXmlElementType: DXVml.TextPath, new()
   {
     if (value != null)
     {

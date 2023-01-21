@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DataLabelFieldTableConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataLabelFieldTableEntry> GetDataLabelFieldTableEntries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable openXmlElement)
+  private static Collection<DMDrawsCharts.DataLabelFieldTableEntry> GetDataLabelFieldTableEntries(DXO2013DrawChart.DataLabelFieldTable openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataLabelFieldTableEntry>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>())
+    var collection = new Collection<DMDrawsCharts.DataLabelFieldTableEntry>();
+    foreach (var item in openXmlElement.Elements<DXO2013DrawChart.DataLabelFieldTableEntry>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableEntryConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.DataLabelFieldTableEntryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetDataLabelFieldTableEntries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataLabelFieldTableEntry>? value)
+  private static void SetDataLabelFieldTableEntries(DXO2013DrawChart.DataLabelFieldTable openXmlElement, Collection<DMDrawsCharts.DataLabelFieldTableEntry>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>();
+    openXmlElement.RemoveAllChildren<DXO2013DrawChart.DataLabelFieldTableEntry>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableEntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry>(item);
+        var newItem = DMXDrawsCharts.DataLabelFieldTableEntryConverter.CreateOpenXmlElement<DXO2013DrawChart.DataLabelFieldTableEntry>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTable? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable? openXmlElement)
+  public static DMDrawsCharts.DataLabelFieldTable? CreateModelElement(DXO2013DrawChart.DataLabelFieldTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTable();
+      var value = new DMDrawsCharts.DataLabelFieldTable();
       value.DataLabelFieldTableEntries = GetDataLabelFieldTableEntries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTable? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelFieldTable? value)
+    where OpenXmlElementType: DXO2013DrawChart.DataLabelFieldTable, new()
   {
     if (value != null)
     {

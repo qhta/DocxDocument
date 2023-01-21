@@ -8,58 +8,58 @@ public static class EquationArrayConverter
   /// <summary>
   /// Equation Array Properties.
   /// </summary>
-  private static DocumentModel.Math.EquationArrayProperties? GetEquationArrayProperties(DocumentFormat.OpenXml.Math.EquationArray openXmlElement)
+  private static DMMath.EquationArrayProperties? GetEquationArrayProperties(DXMath.EquationArray openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArrayProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.EquationArrayPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEquationArrayProperties(DocumentFormat.OpenXml.Math.EquationArray openXmlElement, DocumentModel.Math.EquationArrayProperties? value)
+  private static void SetEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArrayProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.EquationArrayProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.EquationArrayPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArrayProperties>(value);
+      itemElement = DMXMath.EquationArrayPropertiesConverter.CreateOpenXmlElement<DXMath.EquationArrayProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Math.Base> GetBases(DocumentFormat.OpenXml.Math.EquationArray openXmlElement)
+  private static Collection<DMMath.Base> GetBases(DXMath.EquationArray openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
+    var collection = new Collection<DMMath.Base>();
+    foreach (var item in openXmlElement.Elements<DXMath.Base>())
     {
-      var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(item);
+      var newItem = DMXMath.BaseConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetBases(DocumentFormat.OpenXml.Math.EquationArray openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? value)
+  private static void SetBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
+    openXmlElement.RemoveAllChildren<DXMath.Base>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
+        var newItem = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Math.EquationArray? CreateModelElement(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement)
+  public static DMMath.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.EquationArray();
+      var value = new DMMath.EquationArray();
       value.EquationArrayProperties = GetEquationArrayProperties(openXmlElement);
       value.Bases = GetBases(openXmlElement);
       return value;
@@ -67,8 +67,8 @@ public static class EquationArrayConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.EquationArray? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.EquationArray, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.EquationArray? value)
+    where OpenXmlElementType: DXMath.EquationArray, new()
   {
     if (value != null)
     {

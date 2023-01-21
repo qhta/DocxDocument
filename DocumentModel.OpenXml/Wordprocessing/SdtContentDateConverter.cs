@@ -8,12 +8,12 @@ public static class SdtContentDateConverter
   /// <summary>
   /// Last Known Date in XML Schema DateTime Format
   /// </summary>
-  private static DateTime? GetFullDate(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement)
+  private static DateTime? GetFullDate(DXW.SdtContentDate openXmlElement)
   {
     return openXmlElement.FullDate?.Value;
   }
   
-  private static void SetFullDate(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement, DateTime? value)
+  private static void SetFullDate(DXW.SdtContentDate openXmlElement, DateTime? value)
   {
     openXmlElement.FullDate = value;
   }
@@ -21,22 +21,22 @@ public static class SdtContentDateConverter
   /// <summary>
   /// Date Display Mask.
   /// </summary>
-  private static String? GetDateFormat(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement)
+  private static String? GetDateFormat(DXW.SdtContentDate openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DateFormat>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDateFormat(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement, String? value)
+  private static void SetDateFormat(DXW.SdtContentDate openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DateFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DateFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DateFormat { Val = value };
+      itemElement = new DXW.DateFormat { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -44,22 +44,22 @@ public static class SdtContentDateConverter
   /// <summary>
   /// Date Picker Language ID.
   /// </summary>
-  private static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement)
+  private static String? GetLanguageId(DXW.SdtContentDate openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement, String? value)
+  private static void SetLanguageId(DXW.SdtContentDate openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId { Val = value };
+      itemElement = new DXW.LanguageId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -67,22 +67,22 @@ public static class SdtContentDateConverter
   /// <summary>
   /// Custom XML Data Date Storage Format.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DateFormatKind? GetSdtDateMappingType(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement)
+  private static DMW.DateFormatKind? GetSdtDateMappingType(DXW.SdtContentDate openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtDateMappingType>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DocumentModel.Wordprocessing.DateFormatKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetSdtDateMappingType(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement, DocumentModel.Wordprocessing.DateFormatKind? value)
+  private static void SetSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtDateMappingType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtDateMappingType, DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DocumentModel.Wordprocessing.DateFormatKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.SdtDateMappingType, DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -91,32 +91,32 @@ public static class SdtContentDateConverter
   /// <summary>
   /// Date Picker Calendar Type.
   /// </summary>
-  private static DocumentModel.Wordprocessing.CalendarKind? GetCalendar(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement)
+  private static DMW.CalendarKind? GetCalendar(DXW.SdtContentDate openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Calendar>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Calendar>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DocumentModel.Wordprocessing.CalendarKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetCalendar(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate openXmlElement, DocumentModel.Wordprocessing.CalendarKind? value)
+  private static void SetCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Calendar>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Calendar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Calendar, DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DocumentModel.Wordprocessing.CalendarKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Calendar, DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentDate? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentDate? openXmlElement)
+  public static DMW.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentDate();
+      var value = new DMW.SdtContentDate();
       value.FullDate = GetFullDate(openXmlElement);
       value.DateFormat = GetDateFormat(openXmlElement);
       value.LanguageId = GetLanguageId(openXmlElement);
@@ -127,8 +127,8 @@ public static class SdtContentDateConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDate? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDate, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDate? value)
+    where OpenXmlElementType: DXW.SdtContentDate, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Layout Target.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LayoutTargetKind? GetLayoutTarget(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.LayoutTargetKind? GetLayoutTarget(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LayoutTarget>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LayoutTarget>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DocumentModel.Drawings.Charts.LayoutTargetKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetLayoutTarget(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.LayoutTargetKind? value)
+  private static void SetLayoutTarget(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutTargetKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LayoutTarget>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LayoutTarget>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DocumentModel.Drawings.Charts.LayoutTargetKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Left Mode.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LayoutMode? GetLeftMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.LayoutMode? GetLeftMode(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LeftMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LeftMode>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetLeftMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.LayoutMode? value)
+  private static void SetLeftMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LeftMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LeftMode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Top Mode.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LayoutMode? GetTopMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.LayoutMode? GetTopMode(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TopMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TopMode>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTopMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.LayoutMode? value)
+  private static void SetTopMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TopMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TopMode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Width Mode.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LayoutMode? GetWidthMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.LayoutMode? GetWidthMode(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.WidthMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.WidthMode>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetWidthMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.LayoutMode? value)
+  private static void SetWidthMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.WidthMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.WidthMode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Height Mode.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LayoutMode? GetHeightMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.LayoutMode? GetHeightMode(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HeightMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HeightMode>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHeightMode(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.LayoutMode? value)
+  private static void SetHeightMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HeightMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HeightMode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DocumentModel.Drawings.Charts.LayoutMode>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Left.
   /// </summary>
-  private static Double? GetLeft(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static Double? GetLeft(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Left>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Left>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, Double? value)
+  private static void SetLeft(DXDrawCharts.ManualLayout openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Left>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Left>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Left{ Val = value };
+      itemElement = new DXDrawCharts.Left{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -151,22 +151,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Top.
   /// </summary>
-  private static Double? GetTop(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static Double? GetTop(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Top>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Top>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, Double? value)
+  private static void SetTop(DXDrawCharts.ManualLayout openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Top>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Top>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Top{ Val = value };
+      itemElement = new DXDrawCharts.Top{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -174,22 +174,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Width.
   /// </summary>
-  private static Double? GetWidth(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static Double? GetWidth(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Width>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Width>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, Double? value)
+  private static void SetWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Width>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Width>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Width{ Val = value };
+      itemElement = new DXDrawCharts.Width{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -197,22 +197,22 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Height.
   /// </summary>
-  private static Double? GetHeight(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static Double? GetHeight(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Height>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Height>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHeight(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, Double? value)
+  private static void SetHeight(DXDrawCharts.ManualLayout openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Height>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Height>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Height{ Val = value };
+      itemElement = new DXDrawCharts.Height{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -220,32 +220,32 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.ManualLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ManualLayout? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ManualLayout? openXmlElement)
+  public static DMDrawsCharts.ManualLayout? CreateModelElement(DXDrawCharts.ManualLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ManualLayout();
+      var value = new DMDrawsCharts.ManualLayout();
       value.LayoutTarget = GetLayoutTarget(openXmlElement);
       value.LeftMode = GetLeftMode(openXmlElement);
       value.TopMode = GetTopMode(openXmlElement);
@@ -261,8 +261,8 @@ public static class ManualLayoutConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ManualLayout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ManualLayout, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ManualLayout? value)
+    where OpenXmlElementType: DXDrawCharts.ManualLayout, new()
   {
     if (value != null)
     {

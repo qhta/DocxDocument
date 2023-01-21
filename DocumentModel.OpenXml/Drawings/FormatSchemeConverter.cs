@@ -8,12 +8,12 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement)
+  private static String? GetName(DXDraw.FormatScheme openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement, String? value)
+  private static void SetName(DXDraw.FormatScheme openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,22 +24,22 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Fill Style List.
   /// </summary>
-  private static DocumentModel.Drawings.FillStyleList? GetFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement)
+  private static DMDraws.FillStyleList? GetFillStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillStyleList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FillStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillStyleListConverter.CreateModelElement(itemElement);
+      return DMXDraws.FillStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement, DocumentModel.Drawings.FillStyleList? value)
+  private static void SetFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FillStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillStyleList>(value);
+      itemElement = DMXDraws.FillStyleListConverter.CreateOpenXmlElement<DXDraw.FillStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -48,22 +48,22 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Line Style List.
   /// </summary>
-  private static DocumentModel.Drawings.LineStyleList? GetLineStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement)
+  private static DMDraws.LineStyleList? GetLineStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineStyleList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LineStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineStyleListConverter.CreateModelElement(itemElement);
+      return DMXDraws.LineStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement, DocumentModel.Drawings.LineStyleList? value)
+  private static void SetLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LineStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineStyleList>(value);
+      itemElement = DMXDraws.LineStyleListConverter.CreateOpenXmlElement<DXDraw.LineStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -72,22 +72,22 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Effect Style List.
   /// </summary>
-  private static DocumentModel.Drawings.EffectStyleList? GetEffectStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement)
+  private static DMDraws.EffectStyleList? GetEffectStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectStyleList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectStyleListConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement, DocumentModel.Drawings.EffectStyleList? value)
+  private static void SetEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectStyleList>(value);
+      itemElement = DMXDraws.EffectStyleListConverter.CreateOpenXmlElement<DXDraw.EffectStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -96,32 +96,32 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Background Fill Style List.
   /// </summary>
-  private static DocumentModel.Drawings.BackgroundFillStyleList? GetBackgroundFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement)
+  private static DMDraws.BackgroundFillStyleList? GetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BackgroundFillStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackgroundFillStyleListConverter.CreateModelElement(itemElement);
+      return DMXDraws.BackgroundFillStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackgroundFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme openXmlElement, DocumentModel.Drawings.BackgroundFillStyleList? value)
+  private static void SetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BackgroundFillStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BackgroundFillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>(value);
+      itemElement = DMXDraws.BackgroundFillStyleListConverter.CreateOpenXmlElement<DXDraw.BackgroundFillStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static DMDraws.FormatScheme? CreateModelElement(DXDraw.FormatScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FormatScheme();
+      var value = new DMDraws.FormatScheme();
       value.Name = GetName(openXmlElement);
       value.FillStyleList = GetFillStyleList(openXmlElement);
       value.LineStyleList = GetLineStyleList(openXmlElement);
@@ -132,8 +132,8 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FormatScheme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FormatScheme, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FormatScheme? value)
+    where OpenXmlElementType: DXDraw.FormatScheme, new()
   {
     if (value != null)
     {

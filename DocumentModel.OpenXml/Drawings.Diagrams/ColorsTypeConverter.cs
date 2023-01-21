@@ -8,34 +8,34 @@ public static class ColorsTypeConverter
   /// <summary>
   /// Color Application Method Type
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind? GetMethod(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType openXmlElement)
+  private static DMDrawsDgms.ColorApplicationMethodKind? GetMethod(DXDrawDgms.ColorsType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind>(openXmlElement?.Method?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(openXmlElement?.Method?.Value);
   }
   
-  private static void SetMethod(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType openXmlElement, DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind? value)
+  private static void SetMethod(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorApplicationMethodKind? value)
   {
-    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind>(value);
+    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(value);
   }
   
   /// <summary>
   /// Hue Direction
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.HueDirectionKind? GetHueDirection(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType openXmlElement)
+  private static DMDrawsDgms.HueDirectionKind? GetHueDirection(DXDrawDgms.ColorsType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DocumentModel.Drawings.Diagrams.HueDirectionKind>(openXmlElement?.HueDirection?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(openXmlElement?.HueDirection?.Value);
   }
   
-  private static void SetHueDirection(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType openXmlElement, DocumentModel.Drawings.Diagrams.HueDirectionKind? value)
+  private static void SetHueDirection(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.HueDirectionKind? value)
   {
-    openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DocumentModel.Drawings.Diagrams.HueDirectionKind>(value);
+    openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorsType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType? openXmlElement)
+  public static DMDrawsDgms.ColorsType? CreateModelElement(DXDrawDgms.ColorsType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorsType();
+      var value = new DMDrawsDgms.ColorsType();
       value.Method = GetMethod(openXmlElement);
       value.HueDirection = GetHueDirection(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ColorsTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorsType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorsType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorsType? value)
+    where OpenXmlElementType: DXDrawDgms.ColorsType, new()
   {
     if (value != null)
     {

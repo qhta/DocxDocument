@@ -8,29 +8,29 @@ public static class AlphaReplaceConverter
   /// <summary>
   /// Alpha
   /// </summary>
-  private static Int32? GetAlpha(DocumentFormat.OpenXml.Drawing.AlphaReplace openXmlElement)
+  private static Int32? GetAlpha(DXDraw.AlphaReplace openXmlElement)
   {
     return openXmlElement.Alpha?.Value;
   }
   
-  private static void SetAlpha(DocumentFormat.OpenXml.Drawing.AlphaReplace openXmlElement, Int32? value)
+  private static void SetAlpha(DXDraw.AlphaReplace openXmlElement, Int32? value)
   {
     openXmlElement.Alpha = value;
   }
   
-  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaReplace? openXmlElement)
+  public static DMDraws.AlphaReplace? CreateModelElement(DXDraw.AlphaReplace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaReplace();
+      var value = new DMDraws.AlphaReplace();
       value.Alpha = GetAlpha(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaReplace? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaReplace, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaReplace? value)
+    where OpenXmlElementType: DXDraw.AlphaReplace, new()
   {
     if (value != null)
     {

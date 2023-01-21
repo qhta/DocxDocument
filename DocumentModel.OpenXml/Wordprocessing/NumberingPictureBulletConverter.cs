@@ -8,12 +8,12 @@ public static class NumberingPictureBulletConverter
   /// <summary>
   /// numPicBulletId
   /// </summary>
-  private static Int32? GetNumberingPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement)
+  private static Int32? GetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement)
   {
     return openXmlElement.NumberingPictureBulletId?.Value;
   }
   
-  private static void SetNumberingPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement, Int32? value)
+  private static void SetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement, Int32? value)
   {
     openXmlElement.NumberingPictureBulletId = value;
   }
@@ -21,22 +21,22 @@ public static class NumberingPictureBulletConverter
   /// <summary>
   /// PictureBulletBase.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PictureBulletBase? GetPictureBulletBase(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement)
+  private static DMW.PictureBulletBase? GetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PictureBulletBase>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PictureBulletBaseConverter.CreateModelElement(itemElement);
+      return DMXW.PictureBulletBaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureBulletBase(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement, DocumentModel.Wordprocessing.PictureBulletBase? value)
+  private static void SetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement, DMW.PictureBulletBase? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PictureBulletBase>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PictureBulletBaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase>(value);
+      itemElement = DMXW.PictureBulletBaseConverter.CreateOpenXmlElement<DXW.PictureBulletBase>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -45,32 +45,32 @@ public static class NumberingPictureBulletConverter
   /// <summary>
   /// Drawing.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Drawing? GetDrawing(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement)
+  private static DMW.Drawing? GetDrawing(DXW.NumberingPictureBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Drawing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Drawing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DrawingConverter.CreateModelElement(itemElement);
+      return DMXW.DrawingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDrawing(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet openXmlElement, DocumentModel.Wordprocessing.Drawing? value)
+  private static void SetDrawing(DXW.NumberingPictureBullet openXmlElement, DMW.Drawing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Drawing>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Drawing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DrawingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Drawing>(value);
+      itemElement = DMXW.DrawingConverter.CreateOpenXmlElement<DXW.Drawing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingPictureBullet? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet? openXmlElement)
+  public static DMW.NumberingPictureBullet? CreateModelElement(DXW.NumberingPictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingPictureBullet();
+      var value = new DMW.NumberingPictureBullet();
       value.NumberingPictureBulletId = GetNumberingPictureBulletId(openXmlElement);
       value.PictureBulletBase = GetPictureBulletBase(openXmlElement);
       value.Drawing = GetDrawing(openXmlElement);
@@ -79,8 +79,8 @@ public static class NumberingPictureBulletConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingPictureBullet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingPictureBullet? value)
+    where OpenXmlElementType: DXW.NumberingPictureBullet, new()
   {
     if (value != null)
     {

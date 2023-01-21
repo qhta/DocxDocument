@@ -8,22 +8,22 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetTopBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.TopBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Left Paragraph Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetLeftBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.LeftBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetBottomBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.BottomBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Right Paragraph Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetRightBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.RightBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetBetweenBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetBetweenBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BetweenBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBetweenBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BetweenBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.BetweenBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,32 +128,32 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Facing Pages.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetBarBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
+  private static DMW.BorderType? GetBarBorder(DXW.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BarBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BarBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBarBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BarBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BarBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BarBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.BarBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.ParagraphBorders? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders? openXmlElement)
+  public static DMW.ParagraphBorders? CreateModelElement(DXW.ParagraphBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ParagraphBorders();
+      var value = new DMW.ParagraphBorders();
       value.TopBorder = GetTopBorder(openXmlElement);
       value.LeftBorder = GetLeftBorder(openXmlElement);
       value.BottomBorder = GetBottomBorder(openXmlElement);
@@ -165,8 +165,8 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphBorders? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphBorders? value)
+    where OpenXmlElementType: DXW.ParagraphBorders, new()
   {
     if (value != null)
     {

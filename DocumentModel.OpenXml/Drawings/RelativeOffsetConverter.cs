@@ -8,12 +8,12 @@ public static class RelativeOffsetConverter
   /// <summary>
   /// Offset X
   /// </summary>
-  private static Int32? GetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement)
+  private static Int32? GetOffsetX(DXDraw.RelativeOffset openXmlElement)
   {
     return openXmlElement.OffsetX?.Value;
   }
   
-  private static void SetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement, Int32? value)
+  private static void SetOffsetX(DXDraw.RelativeOffset openXmlElement, Int32? value)
   {
     openXmlElement.OffsetX = value;
   }
@@ -21,21 +21,21 @@ public static class RelativeOffsetConverter
   /// <summary>
   /// Offset Y
   /// </summary>
-  private static Int32? GetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement)
+  private static Int32? GetOffsetY(DXDraw.RelativeOffset openXmlElement)
   {
     return openXmlElement.OffsetY?.Value;
   }
   
-  private static void SetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement, Int32? value)
+  private static void SetOffsetY(DXDraw.RelativeOffset openXmlElement, Int32? value)
   {
     openXmlElement.OffsetY = value;
   }
   
-  public static DocumentModel.Drawings.RelativeOffset? CreateModelElement(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement)
+  public static DMDraws.RelativeOffset? CreateModelElement(DXDraw.RelativeOffset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.RelativeOffset();
+      var value = new DMDraws.RelativeOffset();
       value.OffsetX = GetOffsetX(openXmlElement);
       value.OffsetY = GetOffsetY(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class RelativeOffsetConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeOffset? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeOffset, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeOffset? value)
+    where OpenXmlElementType: DXDraw.RelativeOffset, new()
   {
     if (value != null)
     {

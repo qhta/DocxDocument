@@ -8,29 +8,29 @@ public static class ComplexConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Complex openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Complex openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Complex openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.Complex openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
-  public static DocumentModel.Vml.Complex? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Complex? openXmlElement)
+  public static DMVml.Complex? CreateModelElement(DXVmlO.Complex? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Complex();
+      var value = new DMVml.Complex();
       value.Extension = GetExtension(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Complex? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Complex, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Complex? value)
+    where OpenXmlElementType: DXVmlO.Complex, new()
   {
     if (value != null)
     {

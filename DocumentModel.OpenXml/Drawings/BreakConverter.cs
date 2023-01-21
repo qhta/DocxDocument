@@ -8,40 +8,40 @@ public static class BreakConverter
   /// <summary>
   /// Text Run Properties.
   /// </summary>
-  private static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Break openXmlElement)
+  private static DMDraws.RunProperties? GetRunProperties(DXDraw.Break openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Break openXmlElement, DocumentModel.Drawings.RunProperties? value)
+  private static void SetRunProperties(DXDraw.Break openXmlElement, DMDraws.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
+      itemElement = DMXDraws.RunPropertiesConverter.CreateOpenXmlElement<DXDraw.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Break? CreateModelElement(DocumentFormat.OpenXml.Drawing.Break? openXmlElement)
+  public static DMDraws.Break? CreateModelElement(DXDraw.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Break();
+      var value = new DMDraws.Break();
       value.RunProperties = GetRunProperties(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Break? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Break, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Break? value)
+    where OpenXmlElementType: DXDraw.Break, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PivotFormatsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PivotFormat> GetItems(DocumentFormat.OpenXml.Drawing.Charts.PivotFormats openXmlElement)
+  private static Collection<DMDrawsCharts.PivotFormat> GetItems(DXDrawCharts.PivotFormats openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PivotFormat>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.PivotFormat>())
+    var collection = new Collection<DMDrawsCharts.PivotFormat>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.PivotFormat>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.PivotFormatConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.PivotFormatConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Drawing.Charts.PivotFormats openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PivotFormat>? value)
+  private static void SetItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PivotFormat>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.PivotFormat>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.PivotFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PivotFormat>(item);
+        var newItem = DMXDrawsCharts.PivotFormatConverter.CreateOpenXmlElement<DXDrawCharts.PivotFormat>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotFormats? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PivotFormats? openXmlElement)
+  public static DMDrawsCharts.PivotFormats? CreateModelElement(DXDrawCharts.PivotFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PivotFormats();
+      var value = new DMDrawsCharts.PivotFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PivotFormats? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PivotFormats, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotFormats? value)
+    where OpenXmlElementType: DXDrawCharts.PivotFormats, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Primary Style Name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static String? GetName(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, String? value)
+  private static void SetName(DXW.LatentStyleExceptionInfo openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Latent Style Locking Setting
   /// </summary>
-  private static Boolean? GetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static Boolean? GetLocked(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
   
-  private static void SetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
+  private static void SetLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Locked = new OnOffValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Override default sorting order
   /// </summary>
-  private static Int32? GetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static Int32? GetUiPriority(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement.UiPriority?.Value;
   }
   
-  private static void SetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Int32? value)
+  private static void SetUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value)
   {
     openXmlElement.UiPriority = value;
   }
@@ -53,12 +53,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Semi hidden text override
   /// </summary>
-  private static Boolean? GetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static Boolean? GetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.SemiHidden?.Value;
   }
   
-  private static void SetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
+  private static void SetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SemiHidden = new OnOffValue { Value = (Boolean)value };
@@ -69,12 +69,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Unhide when used
   /// </summary>
-  private static Boolean? GetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static Boolean? GetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.UnhideWhenUsed?.Value;
   }
   
-  private static void SetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
+  private static void SetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
@@ -85,12 +85,12 @@ public static class LatentStyleExceptionInfoConverter
   /// <summary>
   /// Latent Style Primary Style Setting
   /// </summary>
-  private static Boolean? GetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
+  private static Boolean? GetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.PrimaryStyle?.Value;
   }
   
-  private static void SetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
+  private static void SetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PrimaryStyle = new OnOffValue { Value = (Boolean)value };
@@ -98,11 +98,11 @@ public static class LatentStyleExceptionInfoConverter
       openXmlElement.PrimaryStyle = null;
   }
   
-  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static DMW.LatentStyleExceptionInfo? CreateModelElement(DXW.LatentStyleExceptionInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LatentStyleExceptionInfo();
+      var value = new DMW.LatentStyleExceptionInfo();
       value.Name = GetName(openXmlElement);
       value.Locked = GetLocked(openXmlElement);
       value.UiPriority = GetUiPriority(openXmlElement);
@@ -114,8 +114,8 @@ public static class LatentStyleExceptionInfoConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyleExceptionInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LatentStyleExceptionInfo? value)
+    where OpenXmlElementType: DXW.LatentStyleExceptionInfo, new()
   {
     if (value != null)
     {

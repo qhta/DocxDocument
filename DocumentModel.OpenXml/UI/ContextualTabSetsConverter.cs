@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class ContextualTabSetsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.ContextualTabSet> GetItems(DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSets openXmlElement)
+  private static Collection<DMUI.ContextualTabSet> GetItems(DXOCustUI.ContextualTabSets openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.ContextualTabSet>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSet>())
+    var collection = new Collection<DMUI.ContextualTabSet>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.ContextualTabSet>())
     {
-      var newItem = DocumentModel.OpenXml.UI.ContextualTabSetConverter.CreateModelElement(item);
+      var newItem = DMXUI.ContextualTabSetConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSets openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.ContextualTabSet>? value)
+  private static void SetItems(DXOCustUI.ContextualTabSets openXmlElement, Collection<DMUI.ContextualTabSet>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSet>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.ContextualTabSet>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.ContextualTabSetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSet>(item);
+        var newItem = DMXUI.ContextualTabSetConverter.CreateOpenXmlElement<DXOCustUI.ContextualTabSet>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.ContextualTabSets? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSets? openXmlElement)
+  public static DMUI.ContextualTabSets? CreateModelElement(DXOCustUI.ContextualTabSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.ContextualTabSets();
+      var value = new DMUI.ContextualTabSets();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.ContextualTabSets? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.ContextualTabSets, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.ContextualTabSets? value)
+    where OpenXmlElementType: DXOCustUI.ContextualTabSets, new()
   {
     if (value != null)
     {

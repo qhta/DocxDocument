@@ -8,12 +8,12 @@ public static class Surface3DChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.Surface3DChartExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.Surface3DChartExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class Surface3DChartExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? GetFilteredSurfaceSeries(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension openXmlElement)
+  private static DMDrawsCharts.FilteredSurfaceSeries? GetFilteredSurfaceSeries(DXDrawCharts.Surface3DChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredSurfaceSeriesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FilteredSurfaceSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFilteredSurfaceSeries(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension openXmlElement, DocumentModel.Drawings.Charts.FilteredSurfaceSeries? value)
+  private static void SetFilteredSurfaceSeries(DXDrawCharts.Surface3DChartExtension openXmlElement, DMDrawsCharts.FilteredSurfaceSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredSurfaceSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries>(value);
+      itemElement = DMXDrawsCharts.FilteredSurfaceSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredSurfaceSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Surface3DChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension? openXmlElement)
+  public static DMDrawsCharts.Surface3DChartExtension? CreateModelElement(DXDrawCharts.Surface3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Surface3DChartExtension();
+      var value = new DMDrawsCharts.Surface3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSurfaceSeries = GetFilteredSurfaceSeries(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class Surface3DChartExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Surface3DChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Surface3DChartExtension? value)
+    where OpenXmlElementType: DXDrawCharts.Surface3DChartExtension, new()
   {
     if (value != null)
     {

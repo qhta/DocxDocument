@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class SampleDataConverter
 {
-  private static DocumentModel.Drawings.Diagrams.DataModel? GetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleData openXmlElement)
+  private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.SampleData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.DataModelConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleData openXmlElement, DocumentModel.Drawings.Diagrams.DataModel? value)
+  private static void SetDataModel(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.DataModel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.DataModel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>(value);
+      itemElement = DMXDrawsDgms.DataModelConverter.CreateOpenXmlElement<DXDrawDgms.DataModel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.SampleData? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.SampleData? openXmlElement)
+  public static DMDrawsDgms.SampleData? CreateModelElement(DXDrawDgms.SampleData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.SampleData();
+      var value = new DMDrawsDgms.SampleData();
       value.DataModel = GetDataModel(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.SampleData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.SampleData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.SampleData? value)
+    where OpenXmlElementType: DXDrawDgms.SampleData, new()
   {
     if (value != null)
     {

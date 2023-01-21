@@ -8,47 +8,47 @@ public static class RelationTableConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.RelationTable openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.RelationTable openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation> GetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement)
+  private static Collection<DMVml.Relation> GetRelations(DXVmlO.RelationTable openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Relation>())
+    var collection = new Collection<DMVml.Relation>();
+    foreach (var item in openXmlElement.Elements<DXVmlO.Relation>())
     {
-      var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateModelElement(item);
+      var newItem = DMXVml.RelationConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>? value)
+  private static void SetRelations(DXVmlO.RelationTable openXmlElement, Collection<DMVml.Relation>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
+    openXmlElement.RemoveAllChildren<DXVmlO.Relation>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Relation>(item);
+        var newItem = DMXVml.RelationConverter.CreateOpenXmlElement<DXVmlO.Relation>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.RelationTable? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.RelationTable? openXmlElement)
+  public static DMVml.RelationTable? CreateModelElement(DXVmlO.RelationTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.RelationTable();
+      var value = new DMVml.RelationTable();
       value.Extension = GetExtension(openXmlElement);
       value.Relations = GetRelations(openXmlElement);
       return value;
@@ -56,8 +56,8 @@ public static class RelationTableConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RelationTable? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RelationTable, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.RelationTable? value)
+    where OpenXmlElementType: DXVmlO.RelationTable, new()
   {
     if (value != null)
     {

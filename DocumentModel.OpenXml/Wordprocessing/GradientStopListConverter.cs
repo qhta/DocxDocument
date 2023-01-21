@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class GradientStopListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop> GetGradientStops(DocumentFormat.OpenXml.Office2010.Word.GradientStopList openXmlElement)
+  private static Collection<DMW.GradientStop> GetGradientStops(DXO2010W.GradientStopList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Word.GradientStop>())
+    var collection = new Collection<DMW.GradientStop>();
+    foreach (var item in openXmlElement.Elements<DXO2010W.GradientStop>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.GradientStopConverter.CreateModelElement(item);
+      var newItem = DMXW.GradientStopConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetGradientStops(DocumentFormat.OpenXml.Office2010.Word.GradientStopList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop>? value)
+  private static void SetGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.GradientStop>();
+    openXmlElement.RemoveAllChildren<DXO2010W.GradientStop>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.GradientStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStop>(item);
+        var newItem = DMXW.GradientStopConverter.CreateOpenXmlElement<DXO2010W.GradientStop>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.GradientStopList? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.GradientStopList? openXmlElement)
+  public static DMW.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GradientStopList();
+      var value = new DMW.GradientStopList();
       value.GradientStops = GetGradientStops(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientStopList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientStopList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientStopList? value)
+    where OpenXmlElementType: DXO2010W.GradientStopList, new()
   {
     if (value != null)
     {

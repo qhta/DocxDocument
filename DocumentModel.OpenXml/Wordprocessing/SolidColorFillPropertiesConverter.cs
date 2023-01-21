@@ -8,22 +8,22 @@ public static class SolidColorFillPropertiesConverter
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.SolidColorFillProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO2010W.SolidColorFillProperties openXmlElement, DMW.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO2010W.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class SolidColorFillPropertiesConverter
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties openXmlElement)
+  private static DMW.SchemeColor? GetSchemeColor(DXO2010W.SolidColorFillProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+  private static void SetSchemeColor(DXO2010W.SolidColorFillProperties openXmlElement, DMW.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO2010W.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SolidColorFillProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties? openXmlElement)
+  public static DMW.SolidColorFillProperties? CreateModelElement(DXO2010W.SolidColorFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SolidColorFillProperties();
+      var value = new DMW.SolidColorFillProperties();
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class SolidColorFillPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SolidColorFillProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SolidColorFillProperties? value)
+    where OpenXmlElementType: DXO2010W.SolidColorFillProperties, new()
   {
     if (value != null)
     {

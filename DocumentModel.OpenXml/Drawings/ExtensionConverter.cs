@@ -8,12 +8,12 @@ public static class ExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Extension openXmlElement)
+  private static String? GetUri(DXDraw.Extension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Extension openXmlElement, String? value)
+  private static void SetUri(DXDraw.Extension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class ExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  public static DocumentModel.Drawings.Extension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Extension? openXmlElement)
+  public static DMDraws.Extension? CreateModelElement(DXDraw.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Extension();
+      var value = new DMDraws.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Extension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Extension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Extension? value)
+    where OpenXmlElementType: DXDraw.Extension, new()
   {
     if (value != null)
     {

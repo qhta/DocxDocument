@@ -8,12 +8,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Writing Style Language
   /// </summary>
-  private static String? GetLanguage(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static String? GetLanguage(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
   
-  private static void SetLanguage(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, String? value)
+  private static void SetLanguage(DXW.ActiveWritingStyle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Language = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Grammatical Engine ID
   /// </summary>
-  private static UInt16? GetVendorID(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static UInt16? GetVendorID(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement.VendorID?.Value;
   }
   
-  private static void SetVendorID(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, UInt16? value)
+  private static void SetVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value)
   {
     openXmlElement.VendorID = value;
   }
@@ -37,12 +37,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Grammatical Check Engine Version
   /// </summary>
-  private static Int32? GetDllVersion(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static Int32? GetDllVersion(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement.DllVersion?.Value;
   }
   
-  private static void SetDllVersion(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, Int32? value)
+  private static void SetDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value)
   {
     openXmlElement.DllVersion = value;
   }
@@ -50,12 +50,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Natural Language Grammar Check
   /// </summary>
-  private static Boolean? GetNaturalLanguageGrammarCheck(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static Boolean? GetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.NaturalLanguageGrammarCheck?.Value;
   }
   
-  private static void SetNaturalLanguageGrammarCheck(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, Boolean? value)
+  private static void SetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NaturalLanguageGrammarCheck = new OnOffValue { Value = (Boolean)value };
@@ -66,12 +66,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Check Stylistic Rules With Grammar
   /// </summary>
-  private static Boolean? GetCheckStyle(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static Boolean? GetCheckStyle(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.CheckStyle?.Value;
   }
   
-  private static void SetCheckStyle(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, Boolean? value)
+  private static void SetCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.CheckStyle = new OnOffValue { Value = (Boolean)value };
@@ -82,12 +82,12 @@ public static class ActiveWritingStyleConverter
   /// <summary>
   /// Application Name
   /// </summary>
-  private static String? GetApplicationName(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement)
+  private static String? GetApplicationName(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.ApplicationName?.Value;
   }
   
-  private static void SetApplicationName(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle openXmlElement, String? value)
+  private static void SetApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ApplicationName = new StringValue { Value = value };
@@ -95,11 +95,11 @@ public static class ActiveWritingStyleConverter
       openXmlElement.ApplicationName = null;
   }
   
-  public static DocumentModel.Wordprocessing.ActiveWritingStyle? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle? openXmlElement)
+  public static DMW.ActiveWritingStyle? CreateModelElement(DXW.ActiveWritingStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ActiveWritingStyle();
+      var value = new DMW.ActiveWritingStyle();
       value.Language = GetLanguage(openXmlElement);
       value.VendorID = GetVendorID(openXmlElement);
       value.DllVersion = GetDllVersion(openXmlElement);
@@ -111,8 +111,8 @@ public static class ActiveWritingStyleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ActiveWritingStyle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ActiveWritingStyle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ActiveWritingStyle? value)
+    where OpenXmlElementType: DXW.ActiveWritingStyle, new()
   {
     if (value != null)
     {

@@ -5,1166 +5,1166 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SdtContentRunRubyConverter
 {
-  private static DocumentModel.Wordprocessing.CustomXmlRuby? GetCustomXmlRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CustomXmlRubyConverter.CreateModelElement(itemElement);
+      return DMXW.CustomXmlRubyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.CustomXmlRuby? value)
+  private static void SetCustomXmlRuby(DXW.SdtContentRunRuby openXmlElement, DMW.CustomXmlRuby? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlRuby>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>(value);
+      itemElement = DMXW.CustomXmlRubyConverter.CreateOpenXmlElement<DXW.CustomXmlRuby>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.SimpleFieldRuby? GetSimpleFieldRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.SimpleFieldRuby? GetSimpleFieldRuby(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SimpleFieldRubyConverter.CreateModelElement(itemElement);
+      return DMXW.SimpleFieldRubyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSimpleFieldRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.SimpleFieldRuby? value)
+  private static void SetSimpleFieldRuby(DXW.SdtContentRunRuby openXmlElement, DMW.SimpleFieldRuby? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SimpleFieldRuby>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SimpleFieldRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>(value);
+      itemElement = DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement<DXW.SimpleFieldRuby>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.HyperlinkRuby? GetHyperlinkRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.HyperlinkRuby? GetHyperlinkRuby(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.HyperlinkRubyConverter.CreateModelElement(itemElement);
+      return DMXW.HyperlinkRubyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlinkRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.HyperlinkRuby? value)
+  private static void SetHyperlinkRuby(DXW.SdtContentRunRuby openXmlElement, DMW.HyperlinkRuby? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.HyperlinkRuby>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.HyperlinkRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>(value);
+      itemElement = DMXW.HyperlinkRubyConverter.CreateOpenXmlElement<DXW.HyperlinkRuby>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Run? GetRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.Run? GetRun(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Run>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Run>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConverter.CreateModelElement(itemElement);
+      return DMXW.RunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.Run? value)
+  private static void SetRun(DXW.SdtContentRunRuby openXmlElement, DMW.Run? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Run>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Run>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Run>(value);
+      itemElement = DMXW.RunConverter.CreateOpenXmlElement<DXW.Run>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.SdtRunRuby? GetSdtRunRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.SdtRunRuby? GetSdtRunRuby(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtRunRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtRunRubyConverter.CreateModelElement(itemElement);
+      return DMXW.SdtRunRubyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSdtRunRuby(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.SdtRunRuby? value)
+  private static void SetSdtRunRuby(DXW.SdtContentRunRuby openXmlElement, DMW.SdtRunRuby? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtRunRuby>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtRunRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>(value);
+      itemElement = DMXW.SdtRunRubyConverter.CreateOpenXmlElement<DXW.SdtRunRuby>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.ProofError? GetProofError(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.ProofError? GetProofError(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ProofError>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateModelElement(itemElement);
+      return DMXW.ProofErrorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetProofError(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.ProofError? value)
+  private static void SetProofError(DXW.SdtContentRunRuby openXmlElement, DMW.ProofError? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ProofError>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
+      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement<DXW.ProofError>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.PermStart? GetPermStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.PermStart? GetPermStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PermStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateModelElement(itemElement);
+      return DMXW.PermStartConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPermStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.PermStart? value)
+  private static void SetPermStart(DXW.SdtContentRunRuby openXmlElement, DMW.PermStart? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PermStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
+      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement<DXW.PermStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.PermEnd? GetPermEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.PermEnd? GetPermEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PermEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateModelElement(itemElement);
+      return DMXW.PermEndConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPermEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.PermEnd? value)
+  private static void SetPermEnd(DXW.SdtContentRunRuby openXmlElement, DMW.PermEnd? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PermEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
+      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement<DXW.PermEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.BookmarkStart? GetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.BookmarkStart? GetBookmarkStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateModelElement(itemElement);
+      return DMXW.BookmarkStartConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.BookmarkStart? value)
+  private static void SetBookmarkStart(DXW.SdtContentRunRuby openXmlElement, DMW.BookmarkStart? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BookmarkStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
+      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement<DXW.BookmarkStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetBookmarkEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BookmarkEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.BookmarkEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetCommentRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetCommentRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+  private static void SetMoveFromRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.MoveBookmarkType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveFromRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>(value);
+      itemElement = DMXW.MoveBookmarkTypeConverter.CreateOpenXmlElement<DXW.MoveFromRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetMoveFromRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.MoveFromRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+  private static void SetMoveToRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.MoveBookmarkType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveToRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>(value);
+      itemElement = DMXW.MoveBookmarkTypeConverter.CreateOpenXmlElement<DXW.MoveToRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetMoveToRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.MoveToRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCustomXmlInsRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CustomXmlInsRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+  private static void SetCustomXmlInsRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>(value);
+      itemElement = DMXW.MarkupTypeConverter.CreateOpenXmlElement<DXW.CustomXmlInsRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCustomXmlDelRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CustomXmlDelRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+  private static void SetCustomXmlDelRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>(value);
+      itemElement = DMXW.MarkupTypeConverter.CreateOpenXmlElement<DXW.CustomXmlDelRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCustomXmlMoveFromRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CustomXmlMoveFromRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+  private static void SetCustomXmlMoveFromRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>(value);
+      itemElement = DMXW.MarkupTypeConverter.CreateOpenXmlElement<DXW.CustomXmlMoveFromRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCustomXmlMoveToRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CustomXmlMoveToRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+  private static void SetCustomXmlMoveToRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>(value);
+      itemElement = DMXW.MarkupTypeConverter.CreateOpenXmlElement<DXW.CustomXmlMoveToRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+  private static void SetCustomXmlConflictInsertionRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return DMXW.MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+  private static void SetCustomXmlConflictInsertionRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>(value);
+      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+  private static void SetCustomXmlConflictDeletionRangeStart(DXW.SdtContentRunRuby openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return DMXW.MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+  private static void SetCustomXmlConflictDeletionRangeEnd(DXW.SdtContentRunRuby openXmlElement, DMW.MarkupType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>(value);
+      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.InsertedRun? GetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.InsertedRun? GetInsertedRun(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateModelElement(itemElement);
+      return DMXW.InsertedRunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.InsertedRun? value)
+  private static void SetInsertedRun(DXW.SdtContentRunRuby openXmlElement, DMW.InsertedRun? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.InsertedRun>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>(value);
+      itemElement = DMXW.InsertedRunConverter.CreateOpenXmlElement<DXW.InsertedRun>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.DeletedRun? GetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.DeletedRun? GetDeletedRun(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateModelElement(itemElement);
+      return DMXW.DeletedRunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.DeletedRun? value)
+  private static void SetDeletedRun(DXW.SdtContentRunRuby openXmlElement, DMW.DeletedRun? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DeletedRun>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>(value);
+      itemElement = DMXW.DeletedRunConverter.CreateOpenXmlElement<DXW.DeletedRun>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveFromRun? GetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MoveFromRun? GetMoveFromRun(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateModelElement(itemElement);
+      return DMXW.MoveFromRunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MoveFromRun? value)
+  private static void SetMoveFromRun(DXW.SdtContentRunRuby openXmlElement, DMW.MoveFromRun? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveFromRun>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>(value);
+      itemElement = DMXW.MoveFromRunConverter.CreateOpenXmlElement<DXW.MoveFromRun>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveToRun? GetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.MoveToRun? GetMoveToRun(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateModelElement(itemElement);
+      return DMXW.MoveToRunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.MoveToRun? value)
+  private static void SetMoveToRun(DXW.SdtContentRunRuby openXmlElement, DMW.MoveToRun? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveToRun>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>(value);
+      itemElement = DMXW.MoveToRunConverter.CreateOpenXmlElement<DXW.MoveToRun>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.RunConflictInsertion? GetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateModelElement(itemElement);
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.RunConflictInsertion? value)
+  private static void SetRunConflictInsertion(DXW.SdtContentRunRuby openXmlElement, DMW.RunConflictInsertion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RunConflictInsertion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>(value);
+      itemElement = DMXW.RunConflictInsertionConverter.CreateOpenXmlElement<DXO2010W.RunConflictInsertion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.RunConflictDeletion? GetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateModelElement(itemElement);
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Wordprocessing.RunConflictDeletion? value)
+  private static void SetRunConflictDeletion(DXW.SdtContentRunRuby openXmlElement, DMW.RunConflictDeletion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RunConflictDeletion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>(value);
+      itemElement = DMXW.RunConflictDeletionConverter.CreateOpenXmlElement<DXO2010W.RunConflictDeletion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Paragraph? GetParagraph(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Paragraph? GetParagraph(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Paragraph>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ParagraphConverter.CreateModelElement(itemElement);
+      return DMXMath.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraph(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Paragraph? value)
+  private static void SetParagraph(DXW.SdtContentRunRuby openXmlElement, DMMath.Paragraph? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Paragraph>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Paragraph>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Paragraph>(value);
+      itemElement = DMXMath.ParagraphConverter.CreateOpenXmlElement<DXMath.Paragraph>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.OfficeMath? GetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.OfficeMath? GetOfficeMath(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.OfficeMath>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.OfficeMathConverter.CreateModelElement(itemElement);
+      return DMXMath.OfficeMathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.OfficeMath? value)
+  private static void SetOfficeMath(DXW.SdtContentRunRuby openXmlElement, DMMath.OfficeMath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.OfficeMath>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.OfficeMath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.OfficeMathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.OfficeMath>(value);
+      itemElement = DMXMath.OfficeMathConverter.CreateOpenXmlElement<DXMath.OfficeMath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Accent? GetAccent(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Accent? GetAccent(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Accent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Accent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.AccentConverter.CreateModelElement(itemElement);
+      return DMXMath.AccentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAccent(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Accent? value)
+  private static void SetAccent(DXW.SdtContentRunRuby openXmlElement, DMMath.Accent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Accent>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Accent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.AccentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Accent>(value);
+      itemElement = DMXMath.AccentConverter.CreateOpenXmlElement<DXMath.Accent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Bar? GetBar(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Bar? GetBar(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Bar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Bar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BarConverter.CreateModelElement(itemElement);
+      return DMXMath.BarConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBar(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Bar? value)
+  private static void SetBar(DXW.SdtContentRunRuby openXmlElement, DMMath.Bar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Bar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Bar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Bar>(value);
+      itemElement = DMXMath.BarConverter.CreateOpenXmlElement<DXMath.Bar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Box? GetBox(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Box? GetBox(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Box>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Box>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BoxConverter.CreateModelElement(itemElement);
+      return DMXMath.BoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBox(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Box? value)
+  private static void SetBox(DXW.SdtContentRunRuby openXmlElement, DMMath.Box? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Box>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Box>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Box>(value);
+      itemElement = DMXMath.BoxConverter.CreateOpenXmlElement<DXMath.Box>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.BorderBox? GetBorderBox(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.BorderBox? GetBorderBox(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BorderBoxConverter.CreateModelElement(itemElement);
+      return DMXMath.BorderBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBorderBox(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.BorderBox? value)
+  private static void SetBorderBox(DXW.SdtContentRunRuby openXmlElement, DMMath.BorderBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.BorderBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BorderBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBox>(value);
+      itemElement = DMXMath.BorderBoxConverter.CreateOpenXmlElement<DXMath.BorderBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Delimiter? GetDelimiter(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Delimiter? GetDelimiter(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Delimiter>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.DelimiterConverter.CreateModelElement(itemElement);
+      return DMXMath.DelimiterConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDelimiter(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Delimiter? value)
+  private static void SetDelimiter(DXW.SdtContentRunRuby openXmlElement, DMMath.Delimiter? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Delimiter>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Delimiter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.DelimiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Delimiter>(value);
+      itemElement = DMXMath.DelimiterConverter.CreateOpenXmlElement<DXMath.Delimiter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.EquationArray? GetEquationArray(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.EquationArray? GetEquationArray(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArray>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.EquationArrayConverter.CreateModelElement(itemElement);
+      return DMXMath.EquationArrayConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEquationArray(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.EquationArray? value)
+  private static void SetEquationArray(DXW.SdtContentRunRuby openXmlElement, DMMath.EquationArray? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArray>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.EquationArray>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.EquationArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArray>(value);
+      itemElement = DMXMath.EquationArrayConverter.CreateOpenXmlElement<DXMath.EquationArray>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Fraction? GetFraction(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Fraction? GetFraction(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Fraction>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Fraction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FractionConverter.CreateModelElement(itemElement);
+      return DMXMath.FractionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFraction(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Fraction? value)
+  private static void SetFraction(DXW.SdtContentRunRuby openXmlElement, DMMath.Fraction? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Fraction>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Fraction>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.FractionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Fraction>(value);
+      itemElement = DMXMath.FractionConverter.CreateOpenXmlElement<DXMath.Fraction>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.MathFunction? GetMathFunction(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.MathFunction? GetMathFunction(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MathFunction>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MathFunctionConverter.CreateModelElement(itemElement);
+      return DMXMath.MathFunctionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMathFunction(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.MathFunction? value)
+  private static void SetMathFunction(DXW.SdtContentRunRuby openXmlElement, DMMath.MathFunction? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MathFunction>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.MathFunction>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.MathFunctionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MathFunction>(value);
+      itemElement = DMXMath.MathFunctionConverter.CreateOpenXmlElement<DXMath.MathFunction>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.GroupChar? GetGroupChar(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.GroupChar? GetGroupChar(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.GroupChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.GroupCharConverter.CreateModelElement(itemElement);
+      return DMXMath.GroupCharConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroupChar(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.GroupChar? value)
+  private static void SetGroupChar(DXW.SdtContentRunRuby openXmlElement, DMMath.GroupChar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GroupChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.GroupChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.GroupCharConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupChar>(value);
+      itemElement = DMXMath.GroupCharConverter.CreateOpenXmlElement<DXMath.GroupChar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.LimitLower? GetLimitLower(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.LimitLower? GetLimitLower(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLower>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitLowerConverter.CreateModelElement(itemElement);
+      return DMXMath.LimitLowerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLimitLower(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.LimitLower? value)
+  private static void SetLimitLower(DXW.SdtContentRunRuby openXmlElement, DMMath.LimitLower? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLower>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.LimitLower>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.LimitLowerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLower>(value);
+      itemElement = DMXMath.LimitLowerConverter.CreateOpenXmlElement<DXMath.LimitLower>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.LimitUpper? GetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.LimitUpper? GetLimitUpper(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpper>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitUpperConverter.CreateModelElement(itemElement);
+      return DMXMath.LimitUpperConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.LimitUpper? value)
+  private static void SetLimitUpper(DXW.SdtContentRunRuby openXmlElement, DMMath.LimitUpper? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpper>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.LimitUpper>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.LimitUpperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpper>(value);
+      itemElement = DMXMath.LimitUpperConverter.CreateOpenXmlElement<DXMath.LimitUpper>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Matrix? GetMatrix(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Matrix? GetMatrix(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Matrix>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Matrix>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MatrixConverter.CreateModelElement(itemElement);
+      return DMXMath.MatrixConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMatrix(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Matrix? value)
+  private static void SetMatrix(DXW.SdtContentRunRuby openXmlElement, DMMath.Matrix? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Matrix>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Matrix>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.MatrixConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Matrix>(value);
+      itemElement = DMXMath.MatrixConverter.CreateOpenXmlElement<DXMath.Matrix>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Nary? GetNary(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Nary? GetNary(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Nary>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Nary>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.NaryConverter.CreateModelElement(itemElement);
+      return DMXMath.NaryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNary(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Nary? value)
+  private static void SetNary(DXW.SdtContentRunRuby openXmlElement, DMMath.Nary? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Nary>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Nary>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.NaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Nary>(value);
+      itemElement = DMXMath.NaryConverter.CreateOpenXmlElement<DXMath.Nary>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Phantom? GetPhantom(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Phantom? GetPhantom(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Phantom>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Phantom>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PhantomConverter.CreateModelElement(itemElement);
+      return DMXMath.PhantomConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPhantom(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Phantom? value)
+  private static void SetPhantom(DXW.SdtContentRunRuby openXmlElement, DMMath.Phantom? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Phantom>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Phantom>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.PhantomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Phantom>(value);
+      itemElement = DMXMath.PhantomConverter.CreateOpenXmlElement<DXMath.Phantom>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Radical? GetRadical(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Radical? GetRadical(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Radical>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Radical>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.RadicalConverter.CreateModelElement(itemElement);
+      return DMXMath.RadicalConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRadical(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Radical? value)
+  private static void SetRadical(DXW.SdtContentRunRuby openXmlElement, DMMath.Radical? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Radical>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Radical>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.RadicalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Radical>(value);
+      itemElement = DMXMath.RadicalConverter.CreateOpenXmlElement<DXMath.Radical>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.PreSubSuper? GetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.PreSubSuper? GetPreSubSuper(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PreSubSuper>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateModelElement(itemElement);
+      return DMXMath.PreSubSuperConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.PreSubSuper? value)
+  private static void SetPreSubSuper(DXW.SdtContentRunRuby openXmlElement, DMMath.PreSubSuper? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PreSubSuper>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.PreSubSuper>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PreSubSuper>(value);
+      itemElement = DMXMath.PreSubSuperConverter.CreateOpenXmlElement<DXMath.PreSubSuper>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Subscript? GetSubscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Subscript? GetSubscript(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Subscript>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Subscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubscriptConverter.CreateModelElement(itemElement);
+      return DMXMath.SubscriptConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSubscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Subscript? value)
+  private static void SetSubscript(DXW.SdtContentRunRuby openXmlElement, DMMath.Subscript? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Subscript>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Subscript>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.SubscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Subscript>(value);
+      itemElement = DMXMath.SubscriptConverter.CreateOpenXmlElement<DXMath.Subscript>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.SubSuperscript? GetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.SubSuperscript? GetSubSuperscript(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscript>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateModelElement(itemElement);
+      return DMXMath.SubSuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.SubSuperscript? value)
+  private static void SetSubSuperscript(DXW.SdtContentRunRuby openXmlElement, DMMath.SubSuperscript? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscript>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.SubSuperscript>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscript>(value);
+      itemElement = DMXMath.SubSuperscriptConverter.CreateOpenXmlElement<DXMath.SubSuperscript>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Superscript? GetSuperscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement)
+  private static DMMath.Superscript? GetSuperscript(DXW.SdtContentRunRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Superscript>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Superscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SuperscriptConverter.CreateModelElement(itemElement);
+      return DMXMath.SuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSuperscript(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby openXmlElement, DocumentModel.Math.Superscript? value)
+  private static void SetSuperscript(DXW.SdtContentRunRuby openXmlElement, DMMath.Superscript? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Superscript>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Superscript>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.SuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Superscript>(value);
+      itemElement = DMXMath.SuperscriptConverter.CreateOpenXmlElement<DXMath.Superscript>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentRunRuby? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby? openXmlElement)
+  public static DMW.SdtContentRunRuby? CreateModelElement(DXW.SdtContentRunRuby? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentRunRuby();
+      var value = new DMW.SdtContentRunRuby();
       value.CustomXmlRuby = GetCustomXmlRuby(openXmlElement);
       value.SimpleFieldRuby = GetSimpleFieldRuby(openXmlElement);
       value.HyperlinkRuby = GetHyperlinkRuby(openXmlElement);
@@ -1225,8 +1225,8 @@ public static class SdtContentRunRubyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentRunRuby? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentRunRuby, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentRunRuby? value)
+    where OpenXmlElementType: DXW.SdtContentRunRuby, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class MarkupType2Converter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.Word.MarkupType openXmlElement)
+  private static String? GetId(DXO2010W.MarkupType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.Word.MarkupType openXmlElement, String? value)
+  private static void SetId(DXO2010W.MarkupType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class MarkupType2Converter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.MarkupType2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.MarkupType? openXmlElement)
+  public static DMW.MarkupType2? CreateModelElement(DXO2010W.MarkupType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MarkupType2();
+      var value = new DMW.MarkupType2();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MarkupType2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.MarkupType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MarkupType2? value)
+    where OpenXmlElementType: DXO2010W.MarkupType, new()
   {
     if (value != null)
     {

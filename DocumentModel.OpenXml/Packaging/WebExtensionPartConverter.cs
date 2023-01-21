@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WebExtensionPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement)
+  private static String? GetContentType(DXPack.WebExtensionPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,19 +13,19 @@ public static class WebExtensionPartConverter
   /// <summary>
   /// Gets the ImageParts of the WebExtensionPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.WebExtensionPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WebExtensionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -33,28 +33,28 @@ public static class WebExtensionPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.WebExtensions.WebExtension? GetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement)
+  private static DMWebExt.WebExtension? GetWebExtension(DXPack.WebExtensionPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension rootElement)
-      return DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2013WebExt.WebExtension rootElement)
+      return DMXWebExt.WebExtensionConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlElement, DocumentModel.WebExtensions.WebExtension? value)
+  private static void SetWebExtension(DXPack.WebExtensionPart openXmlElement, DMWebExt.WebExtension? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension>(value);
+       var rootElement = DMXWebExt.WebExtensionConverter.CreateOpenXmlElement<DXO2013WebExt.WebExtension>(value);
        if (rootElement != null)
          openXmlElement.WebExtension = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.WebExtensionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+  public static DMPack.WebExtensionPart? CreateModelElement(DXPack.WebExtensionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WebExtensionPart();
+      var value = new DMPack.WebExtensionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -64,8 +64,8 @@ public static class WebExtensionPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebExtensionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebExtensionPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExtensionPart? value)
+    where OpenXmlElementType: DXPack.WebExtensionPart, new()
   {
     if (value != null)
     {

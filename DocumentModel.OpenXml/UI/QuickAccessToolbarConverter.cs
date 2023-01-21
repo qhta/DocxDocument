@@ -8,22 +8,22 @@ public static class QuickAccessToolbarConverter
   /// <summary>
   /// SharedQatControls.
   /// </summary>
-  private static DocumentModel.UI.SharedQatControls? GetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar openXmlElement)
+  private static DMUI.SharedQatControls? GetSharedQatControls(DXOCustUI.QuickAccessToolbar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.SharedQatControls>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.SharedQatControlsConverter.CreateModelElement(itemElement);
+      return DMXUI.SharedQatControlsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar openXmlElement, DocumentModel.UI.SharedQatControls? value)
+  private static void SetSharedQatControls(DXOCustUI.QuickAccessToolbar openXmlElement, DMUI.SharedQatControls? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.SharedQatControls>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.SharedQatControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>(value);
+      itemElement = DMXUI.SharedQatControlsConverter.CreateOpenXmlElement<DXOCustUI.SharedQatControls>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class QuickAccessToolbarConverter
   /// <summary>
   /// DocumentSpecificQuickAccessToolbarControls.
   /// </summary>
-  private static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? GetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar openXmlElement)
+  private static DMUI.DocumentSpecificQuickAccessToolbarControls? GetDocumentSpecificQuickAccessToolbarControls(DXOCustUI.QuickAccessToolbar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.DocumentSpecificQuickAccessToolbarControls>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(itemElement);
+      return DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar openXmlElement, DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? value)
+  private static void SetDocumentSpecificQuickAccessToolbarControls(DXOCustUI.QuickAccessToolbar openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.DocumentSpecificQuickAccessToolbarControls>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>(value);
+      itemElement = DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DXOCustUI.DocumentSpecificQuickAccessToolbarControls>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.QuickAccessToolbar? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
+  public static DMUI.QuickAccessToolbar? CreateModelElement(DXOCustUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.QuickAccessToolbar();
+      var value = new DMUI.QuickAccessToolbar();
       value.SharedQatControls = GetSharedQatControls(openXmlElement);
       value.DocumentSpecificQuickAccessToolbarControls = GetDocumentSpecificQuickAccessToolbarControls(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.QuickAccessToolbar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.QuickAccessToolbar? value)
+    where OpenXmlElementType: DXOCustUI.QuickAccessToolbar, new()
   {
     if (value != null)
     {

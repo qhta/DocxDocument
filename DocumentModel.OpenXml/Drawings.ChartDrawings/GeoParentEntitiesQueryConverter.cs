@@ -8,12 +8,12 @@ public static class GeoParentEntitiesQueryConverter
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery openXmlElement)
+  private static String? GetEntityId(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
   
-  private static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery openXmlElement, String? value)
+  private static void SetEntityId(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.EntityId = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class GeoParentEntitiesQueryConverter
       openXmlElement.EntityId = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery? openXmlElement)
+  public static DMDrawsChartDraws.GeoParentEntitiesQuery? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntitiesQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery();
+      var value = new DMDrawsChartDraws.GeoParentEntitiesQuery();
       value.EntityId = GetEntityId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQuery? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoParentEntitiesQuery, new()
   {
     if (value != null)
     {

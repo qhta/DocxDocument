@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class AlternativeFormatImportPartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.AlternativeFormatImportPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.AlternativeFormatImportPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? openXmlElement)
+  public static DMPack.AlternativeFormatImportPart? CreateModelElement(DXPack.AlternativeFormatImportPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.AlternativeFormatImportPart();
+      var value = new DMPack.AlternativeFormatImportPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.AlternativeFormatImportPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.AlternativeFormatImportPart? value)
+    where OpenXmlElementType: DXPack.AlternativeFormatImportPart, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class EffectConverter
   /// <summary>
   /// Reference
   /// </summary>
-  private static String? GetReference(DocumentFormat.OpenXml.Drawing.Effect openXmlElement)
+  private static String? GetReference(DXDraw.Effect openXmlElement)
   {
     return openXmlElement?.Reference?.Value;
   }
   
-  private static void SetReference(DocumentFormat.OpenXml.Drawing.Effect openXmlElement, String? value)
+  private static void SetReference(DXDraw.Effect openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Reference = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class EffectConverter
       openXmlElement.Reference = null;
   }
   
-  public static DocumentModel.Drawings.Effect? CreateModelElement(DocumentFormat.OpenXml.Drawing.Effect? openXmlElement)
+  public static DMDraws.Effect? CreateModelElement(DXDraw.Effect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Effect();
+      var value = new DMDraws.Effect();
       value.Reference = GetReference(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Effect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Effect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Effect? value)
+    where OpenXmlElementType: DXDraw.Effect, new()
   {
     if (value != null)
     {

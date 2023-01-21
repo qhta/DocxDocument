@@ -2,7 +2,7 @@
 
 public static class ByteArrayConverter
 {
-  public static byte[]? GetValue(TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
   {
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null)
@@ -10,11 +10,11 @@ public static class ByteArrayConverter
       var value = (string?)valProperty.GetValue(element);
       if (value != null)
       {
-        if (valProperty.PropertyType == typeof(HexBinaryValue))
+        if (valProperty.PropertyType == typeof(DX.HexBinaryValue))
           return Convert.FromHexString(value);
-        if (valProperty.PropertyType == typeof(Base64BinaryValue))
+        if (valProperty.PropertyType == typeof(DX.Base64BinaryValue))
           return Convert.FromBase64String(value);
-        throw new InvalidOperationException($"ByteArrayConverter can get value only from HexBinaryValue or Base64BinaryValue but \"{valProperty.PropertyType}\" type occured");
+        throw new InvalidOperationException($"ByteArrayConverter can get value only from DX.HexBinaryValue or DX.Base64BinaryValue but \"{valProperty.PropertyType}\" type occured");
       }
     }
     return null;
@@ -28,7 +28,7 @@ public static class ByteArrayConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[]? value)
-    where OpenXmlElementType : OpenXmlElement, new()
+    where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     if (value != null)
     {
@@ -36,13 +36,13 @@ public static class ByteArrayConverter
       var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
       if (valProperty != null)
       {
-        if (valProperty.PropertyType == typeof(HexBinaryValue))
+        if (valProperty.PropertyType == typeof(DX.HexBinaryValue))
           valProperty.SetValue(element, Convert.ToHexString(value));
-        else if (valProperty.PropertyType == typeof(Base64BinaryValue))
+        else if (valProperty.PropertyType == typeof(DX.Base64BinaryValue))
           valProperty.SetValue(element, Convert.ToBase64String(value));
         else
           throw new InvalidOperationException(
-            $"ByteArrayConverter can set value only to HexBinaryValue or Base64BinaryValue but \"{valProperty.PropertyType}\" type occured");
+            $"ByteArrayConverter can set value only to DX.HexBinaryValue or DX.Base64BinaryValue but \"{valProperty.PropertyType}\" type occured");
       }
       return element;
     }

@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class SlideSyncDataPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart openXmlElement)
+  private static String? GetContentType(DXPack.SlideSyncDataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.SlideSyncDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.SlideSyncDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SlideSyncDataPart? openXmlElement)
+  public static DMPack.SlideSyncDataPart? CreateModelElement(DXPack.SlideSyncDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.SlideSyncDataPart();
+      var value = new DMPack.SlideSyncDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class SlideSyncDataPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SlideSyncDataPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SlideSyncDataPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.SlideSyncDataPart? value)
+    where OpenXmlElementType: DXPack.SlideSyncDataPart, new()
   {
     if (value != null)
     {

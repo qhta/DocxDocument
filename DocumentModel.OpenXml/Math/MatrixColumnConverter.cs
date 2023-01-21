@@ -8,40 +8,40 @@ public static class MatrixColumnConverter
   /// <summary>
   /// Matrix Column Properties.
   /// </summary>
-  private static DocumentModel.Math.MatrixColumnProperties? GetMatrixColumnProperties(DocumentFormat.OpenXml.Math.MatrixColumn openXmlElement)
+  private static DMMath.MatrixColumnProperties? GetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MatrixColumnPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.MatrixColumnPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMatrixColumnProperties(DocumentFormat.OpenXml.Math.MatrixColumn openXmlElement, DocumentModel.Math.MatrixColumnProperties? value)
+  private static void SetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixColumnProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.MatrixColumnProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.MatrixColumnPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixColumnProperties>(value);
+      itemElement = DMXMath.MatrixColumnPropertiesConverter.CreateOpenXmlElement<DXMath.MatrixColumnProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.MatrixColumn? CreateModelElement(DocumentFormat.OpenXml.Math.MatrixColumn? openXmlElement)
+  public static DMMath.MatrixColumn? CreateModelElement(DXMath.MatrixColumn? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixColumn();
+      var value = new DMMath.MatrixColumn();
       value.MatrixColumnProperties = GetMatrixColumnProperties(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumn? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumn, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumn? value)
+    where OpenXmlElementType: DXMath.MatrixColumn, new()
   {
     if (value != null)
     {

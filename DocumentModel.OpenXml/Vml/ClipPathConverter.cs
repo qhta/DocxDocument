@@ -8,12 +8,12 @@ public static class ClipPathConverter
   /// <summary>
   /// Path Definition
   /// </summary>
-  private static String? GetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath openXmlElement)
+  private static String? GetValue(DXVmlO.ClipPath openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
   
-  private static void SetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath openXmlElement, String? value)
+  private static void SetValue(DXVmlO.ClipPath openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Value = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class ClipPathConverter
       openXmlElement.Value = null;
   }
   
-  public static DocumentModel.Vml.ClipPath? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement)
+  public static DMVml.ClipPath? CreateModelElement(DXVmlO.ClipPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ClipPath();
+      var value = new DMVml.ClipPath();
       value.Value = GetValue(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ClipPath? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ClipPath, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ClipPath? value)
+    where OpenXmlElementType: DXVmlO.ClipPath, new()
   {
     if (value != null)
     {

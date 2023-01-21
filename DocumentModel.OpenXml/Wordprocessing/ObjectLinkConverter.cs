@@ -8,25 +8,25 @@ public static class ObjectLinkConverter
   /// <summary>
   /// updateMode
   /// </summary>
-  private static DocumentModel.Wordprocessing.ObjectUpdateMode? GetUpdateMode(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static DMW.ObjectUpdateMode? GetUpdateMode(DXW.ObjectLink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DocumentModel.Wordprocessing.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value);
   }
   
-  private static void SetUpdateMode(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, DocumentModel.Wordprocessing.ObjectUpdateMode? value)
+  private static void SetUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value)
   {
-    openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DocumentModel.Wordprocessing.ObjectUpdateMode>(value);
+    openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(value);
   }
   
   /// <summary>
   /// lockedField
   /// </summary>
-  private static Boolean? GetLockedField(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static Boolean? GetLockedField(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.LockedField?.Value;
   }
   
-  private static void SetLockedField(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, Boolean? value)
+  private static void SetLockedField(DXW.ObjectLink openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LockedField = new OnOffValue { Value = (Boolean)value };
@@ -37,25 +37,25 @@ public static class ObjectLinkConverter
   /// <summary>
   /// drawAspect
   /// </summary>
-  private static DocumentModel.Wordprocessing.ObjectDrawAspect? GetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static DMW.ObjectDrawAspect? GetdrawAspect(DXW.ObjectLink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
   
-  private static void SetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, DocumentModel.Wordprocessing.ObjectDrawAspect? value)
+  private static void SetdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value)
   {
-    openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(value);
+    openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(value);
   }
   
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static String? GetId(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, String? value)
+  private static void SetId(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -66,12 +66,12 @@ public static class ObjectLinkConverter
   /// <summary>
   /// progId
   /// </summary>
-  private static String? GetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static String? GetProgId(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.ProgId?.Value;
   }
   
-  private static void SetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, String? value)
+  private static void SetProgId(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ProgId = new StringValue { Value = value };
@@ -82,12 +82,12 @@ public static class ObjectLinkConverter
   /// <summary>
   /// shapeId
   /// </summary>
-  private static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static String? GetShapeId(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
   
-  private static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, String? value)
+  private static void SetShapeId(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ShapeId = new StringValue { Value = value };
@@ -98,12 +98,12 @@ public static class ObjectLinkConverter
   /// <summary>
   /// fieldCodes
   /// </summary>
-  private static String? GetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement)
+  private static String? GetFieldCodes(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.FieldCodes?.Value;
   }
   
-  private static void SetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectLink openXmlElement, String? value)
+  private static void SetFieldCodes(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FieldCodes = new StringValue { Value = value };
@@ -111,11 +111,11 @@ public static class ObjectLinkConverter
       openXmlElement.FieldCodes = null;
   }
   
-  public static DocumentModel.Wordprocessing.ObjectLink? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ObjectLink? openXmlElement)
+  public static DMW.ObjectLink? CreateModelElement(DXW.ObjectLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ObjectLink();
+      var value = new DMW.ObjectLink();
       value.UpdateMode = GetUpdateMode(openXmlElement);
       value.LockedField = GetLockedField(openXmlElement);
       value.drawAspect = GetdrawAspect(openXmlElement);
@@ -128,8 +128,8 @@ public static class ObjectLinkConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectLink? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectLink, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ObjectLink? value)
+    where OpenXmlElementType: DXW.ObjectLink, new()
   {
     if (value != null)
     {

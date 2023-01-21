@@ -8,22 +8,22 @@ public static class ExtraColorSchemeConverter
   /// <summary>
   /// ColorScheme.
   /// </summary>
-  private static DocumentModel.Drawings.ColorScheme? GetColorScheme(DocumentFormat.OpenXml.Drawing.ExtraColorScheme openXmlElement)
+  private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ExtraColorScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorScheme(DocumentFormat.OpenXml.Drawing.ExtraColorScheme openXmlElement, DocumentModel.Drawings.ColorScheme? value)
+  private static void SetColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorScheme>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
+      itemElement = DMXDraws.ColorSchemeConverter.CreateOpenXmlElement<DXDraw.ColorScheme>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class ExtraColorSchemeConverter
   /// <summary>
   /// ColorMap.
   /// </summary>
-  private static DocumentModel.Drawings.ColorMap? GetColorMap(DocumentFormat.OpenXml.Drawing.ExtraColorScheme openXmlElement)
+  private static DMDraws.ColorMap? GetColorMap(DXDraw.ExtraColorScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorMap>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorMap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorMapConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorMapConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorMap(DocumentFormat.OpenXml.Drawing.ExtraColorScheme openXmlElement, DocumentModel.Drawings.ColorMap? value)
+  private static void SetColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorMap>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorMap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorMap>(value);
+      itemElement = DMXDraws.ColorMapConverter.CreateOpenXmlElement<DXDraw.ColorMap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement)
+  public static DMDraws.ExtraColorScheme? CreateModelElement(DXDraw.ExtraColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ExtraColorScheme();
+      var value = new DMDraws.ExtraColorScheme();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.ColorMap = GetColorMap(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class ExtraColorSchemeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ExtraColorScheme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ExtraColorScheme, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtraColorScheme? value)
+    where OpenXmlElementType: DXDraw.ExtraColorScheme, new()
   {
     if (value != null)
     {

@@ -5,74 +5,74 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class SharedQatControlsConverter
 {
-  private static DocumentModel.UI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement)
+  private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.QuickAccessToolbarControlCloneConverter.CreateModelElement(itemElement);
+      return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetQuickAccessToolbarControlClone(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement, DocumentModel.UI.QuickAccessToolbarControlClone? value)
+  private static void SetQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>(value);
+      itemElement = DMXUI.QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DXOCustUI.QuickAccessToolbarControlClone>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement)
+  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.SharedQatControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement, DocumentModel.UI.UnsizedButton? value)
+  private static void SetUnsizedButton(DXOCustUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.UI.VerticalSeparator? GetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement)
+  private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateModelElement(itemElement);
+      return DMXUI.VerticalSeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls openXmlElement, DocumentModel.UI.VerticalSeparator? value)
+  private static void SetVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.VerticalSeparator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>(value);
+      itemElement = DMXUI.VerticalSeparatorConverter.CreateOpenXmlElement<DXOCustUI.VerticalSeparator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.SharedQatControls? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls? openXmlElement)
+  public static DMUI.SharedQatControls? CreateModelElement(DXOCustUI.SharedQatControls? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.SharedQatControls();
+      var value = new DMUI.SharedQatControls();
       value.QuickAccessToolbarControlClone = GetQuickAccessToolbarControlClone(openXmlElement);
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       value.VerticalSeparator = GetVerticalSeparator(openXmlElement);
@@ -81,8 +81,8 @@ public static class SharedQatControlsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.SharedQatControls? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.SharedQatControls? value)
+    where OpenXmlElementType: DXOCustUI.SharedQatControls, new()
   {
     if (value != null)
     {

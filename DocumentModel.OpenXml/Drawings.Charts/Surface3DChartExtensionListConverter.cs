@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Surface3DChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Surface3DChartExtension> GetSurface3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Surface3DChartExtension> GetSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Surface3DChartExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension>())
+    var collection = new Collection<DMDrawsCharts.Surface3DChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.Surface3DChartExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.Surface3DChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.Surface3DChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetSurface3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Surface3DChartExtension>? value)
+  private static void SetSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Surface3DChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.Surface3DChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.Surface3DChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtension>(item);
+        var newItem = DMXDrawsCharts.Surface3DChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.Surface3DChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Surface3DChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.Surface3DChartExtensionList? CreateModelElement(DXDrawCharts.Surface3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Surface3DChartExtensionList();
+      var value = new DMDrawsCharts.Surface3DChartExtensionList();
       value.Surface3DChartExtensions = GetSurface3DChartExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Surface3DChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Surface3DChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Surface3DChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.Surface3DChartExtensionList, new()
   {
     if (value != null)
     {

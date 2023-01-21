@@ -8,140 +8,140 @@ public static class DoughnutChartConverter
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
     return itemElement != null;
   }
   
-  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDrawCharts.DoughnutChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      var itemElement = new DXDrawCharts.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries> GetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSerieses(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>())
+    var collection = new Collection<DMDrawsCharts.PieChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>? value)
+  private static void SetPieChartSerieses(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.PieChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>(item);
+        var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.PieChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  private static void SetDataLabels(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt16? GetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static UInt16? GetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetFirstSliceAngle(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, UInt16? value)
+  private static void SetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstSliceAngle{ Val = value };
+      itemElement = new DXDrawCharts.FirstSliceAngle{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Byte? GetHoleSize(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static Byte? GetHoleSize(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHoleSize(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, Byte? value)
+  private static void SetHoleSize(DXDrawCharts.DoughnutChart openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HoleSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HoleSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.HoleSize{ Val = value };
+      itemElement = new DXDrawCharts.HoleSize{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DoughnutChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart? openXmlElement)
+  public static DMDrawsCharts.DoughnutChart? CreateModelElement(DXDrawCharts.DoughnutChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DoughnutChart();
+      var value = new DMDrawsCharts.DoughnutChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSerieses = GetPieChartSerieses(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
@@ -153,8 +153,8 @@ public static class DoughnutChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DoughnutChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DoughnutChart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DoughnutChart? value)
+    where OpenXmlElementType: DXDrawCharts.DoughnutChart, new()
   {
     if (value != null)
     {

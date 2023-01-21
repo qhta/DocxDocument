@@ -8,12 +8,12 @@ public static class StyleSetConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetId(DocumentFormat.OpenXml.Office2010.Word.StyleSet openXmlElement)
+  private static UInt32? GetId(DXO2010W.StyleSet openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.Word.StyleSet openXmlElement, UInt32? value)
+  private static void SetId(DXO2010W.StyleSet openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -21,21 +21,21 @@ public static class StyleSetConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffKind? GetVal(DocumentFormat.OpenXml.Office2010.Word.StyleSet openXmlElement)
+  private static DMW.OnOffKind? GetVal(DXO2010W.StyleSet openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value);
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Office2010.Word.StyleSet openXmlElement, DocumentModel.Wordprocessing.OnOffKind? value)
+  private static void SetVal(DXO2010W.StyleSet openXmlElement, DMW.OnOffKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.StyleSet? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.StyleSet? openXmlElement)
+  public static DMW.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleSet();
+      var value = new DMW.StyleSet();
       value.Id = GetId(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class StyleSetConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleSet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.StyleSet, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleSet? value)
+    where OpenXmlElementType: DXO2010W.StyleSet, new()
   {
     if (value != null)
     {

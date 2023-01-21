@@ -8,22 +8,22 @@ public static class TitleConverter
   /// <summary>
   /// Chart Text.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartText? GetChartText(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartText(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, DocumentModel.Drawings.Charts.ChartText? value)
+  private static void SetChartText(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartText>(value);
+      itemElement = DMXDrawsCharts.ChartTextConverter.CreateOpenXmlElement<DXDrawCharts.ChartText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class TitleConverter
   /// <summary>
   /// Layout.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Layout? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, DocumentModel.Drawings.Charts.Layout? value)
+  private static void SetLayout(DXDrawCharts.Title openXmlElement, DMDrawsCharts.Layout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Layout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
+      itemElement = DMXDrawsCharts.LayoutConverter.CreateOpenXmlElement<DXDrawCharts.Layout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,23 +56,23 @@ public static class TitleConverter
   /// <summary>
   /// Overlay.
   /// </summary>
-  private static Boolean? GetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static Boolean? GetOverlay(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlay>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Overlay>();
     return itemElement != null;
   }
   
-  private static void SetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, Boolean? value)
+  private static void SetOverlay(DXDrawCharts.Title openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlay>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Overlay>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Overlay();
+      var itemElement = new DXDrawCharts.Overlay();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -80,22 +80,22 @@ public static class TitleConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class TitleConverter
   /// <summary>
   /// TextProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+  private static void SetTextProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
+      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,32 +128,32 @@ public static class TitleConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Title openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Title? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Title? openXmlElement)
+  public static DMDrawsCharts.Title? CreateModelElement(DXDrawCharts.Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Title();
+      var value = new DMDrawsCharts.Title();
       value.ChartText = GetChartText(openXmlElement);
       value.Layout = GetLayout(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);
@@ -165,8 +165,8 @@ public static class TitleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Title? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Title, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Title? value)
+    where OpenXmlElementType: DXDrawCharts.Title, new()
   {
     if (value != null)
     {

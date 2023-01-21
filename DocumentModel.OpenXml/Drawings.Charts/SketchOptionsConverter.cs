@@ -8,23 +8,23 @@ public static class SketchOptionsConverter
   /// <summary>
   /// InSketchMode.
   /// </summary>
-  private static Boolean? GetInSketchMode(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions openXmlElement)
+  private static Boolean? GetInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>();
     return itemElement != null;
   }
   
-  private static void SetInSketchMode(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions openXmlElement, Boolean? value)
+  private static void SetInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode();
+      var itemElement = new DXO2010DrawCharts.InSketchMode();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -32,32 +32,32 @@ public static class SketchOptionsConverter
   /// <summary>
   /// ShowSketchButton.
   /// </summary>
-  private static Boolean? GetShowSketchButton(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions openXmlElement)
+  private static Boolean? GetShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>();
     return itemElement != null;
   }
   
-  private static void SetShowSketchButton(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions openXmlElement, Boolean? value)
+  private static void SetShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton();
+      var itemElement = new DXO2010DrawCharts.ShowSketchButton();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SketchOptions? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement)
+  public static DMDrawsCharts.SketchOptions? CreateModelElement(DXO2010DrawCharts.SketchOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SketchOptions();
+      var value = new DMDrawsCharts.SketchOptions();
       value.InSketchMode = GetInSketchMode(openXmlElement);
       value.ShowSketchButton = GetShowSketchButton(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class SketchOptionsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SketchOptions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SketchOptions? value)
+    where OpenXmlElementType: DXO2010DrawCharts.SketchOptions, new()
   {
     if (value != null)
     {

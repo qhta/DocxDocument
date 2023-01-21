@@ -8,22 +8,22 @@ public static class DocPartConverter
   /// <summary>
   /// Glossary Document Entry Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocPartProperties? GetDocPartProperties(DocumentFormat.OpenXml.Wordprocessing.DocPart openXmlElement)
+  private static DMW.DocPartProperties? GetDocPartProperties(DXW.DocPart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.DocPartPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocPartProperties(DocumentFormat.OpenXml.Wordprocessing.DocPart openXmlElement, DocumentModel.Wordprocessing.DocPartProperties? value)
+  private static void SetDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>(value);
+      itemElement = DMXW.DocPartPropertiesConverter.CreateOpenXmlElement<DXW.DocPartProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class DocPartConverter
   /// <summary>
   /// Contents of Glossary Document Entry.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocPartBody? GetDocPartBody(DocumentFormat.OpenXml.Wordprocessing.DocPart openXmlElement)
+  private static DMW.DocPartBody? GetDocPartBody(DXW.DocPart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartBodyConverter.CreateModelElement(itemElement);
+      return DMXW.DocPartBodyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocPartBody(DocumentFormat.OpenXml.Wordprocessing.DocPart openXmlElement, DocumentModel.Wordprocessing.DocPartBody? value)
+  private static void SetDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartBody>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>(value);
+      itemElement = DMXW.DocPartBodyConverter.CreateOpenXmlElement<DXW.DocPartBody>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.DocPart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement)
+  public static DMW.DocPart? CreateModelElement(DXW.DocPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocPart();
+      var value = new DMW.DocPart();
       value.DocPartProperties = GetDocPartProperties(openXmlElement);
       value.DocPartBody = GetDocPartBody(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class DocPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPart? value)
+    where OpenXmlElementType: DXW.DocPart, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Extension> GetExtensions(DocumentFormat.OpenXml.Drawing.Charts.ExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Extension> GetExtensions(DXDrawCharts.ExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Extension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Extension>())
+    var collection = new Collection<DMDrawsCharts.Extension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.Extension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.ExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetExtensions(DocumentFormat.OpenXml.Drawing.Charts.ExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Extension>? value)
+  private static void SetExtensions(DXDrawCharts.ExtensionList openXmlElement, Collection<DMDrawsCharts.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Extension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Extension>(item);
+        var newItem = DMXDrawsCharts.ExtensionConverter.CreateOpenXmlElement<DXDrawCharts.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ExtensionList? openXmlElement)
+  public static DMDrawsCharts.ExtensionList? CreateModelElement(DXDrawCharts.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ExtensionList();
+      var value = new DMDrawsCharts.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.ExtensionList, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Math;
 /// </summary>
 public static class MatrixRowConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Math.Base> GetBases(DocumentFormat.OpenXml.Math.MatrixRow openXmlElement)
+  private static Collection<DMMath.Base> GetBases(DXMath.MatrixRow openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
+    var collection = new Collection<DMMath.Base>();
+    foreach (var item in openXmlElement.Elements<DXMath.Base>())
     {
-      var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(item);
+      var newItem = DMXMath.BaseConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetBases(DocumentFormat.OpenXml.Math.MatrixRow openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? value)
+  private static void SetBases(DXMath.MatrixRow openXmlElement, Collection<DMMath.Base>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
+    openXmlElement.RemoveAllChildren<DXMath.Base>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
+        var newItem = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Math.MatrixRow? CreateModelElement(DocumentFormat.OpenXml.Math.MatrixRow? openXmlElement)
+  public static DMMath.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixRow();
+      var value = new DMMath.MatrixRow();
       value.Bases = GetBases(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixRow? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixRow, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixRow? value)
+    where OpenXmlElementType: DXMath.MatrixRow, new()
   {
     if (value != null)
     {

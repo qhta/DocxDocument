@@ -8,40 +8,40 @@ public static class RunPropertiesDefaultConverter
   /// <summary>
   /// Run Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault openXmlElement)
+  private static DMW.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
+      return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault openXmlElement, DocumentModel.Wordprocessing.RunPropertiesBaseStyle? value)
+  private static void SetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>(value);
+      itemElement = DMXW.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.RunPropertiesBaseStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.RunPropertiesDefault? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault? openXmlElement)
+  public static DMW.RunPropertiesDefault? CreateModelElement(DXW.RunPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RunPropertiesDefault();
+      var value = new DMW.RunPropertiesDefault();
       value.RunPropertiesBaseStyle = GetRunPropertiesBaseStyle(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesDefault? value)
+    where OpenXmlElementType: DXW.RunPropertiesDefault, new()
   {
     if (value != null)
     {

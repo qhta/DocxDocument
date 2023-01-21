@@ -8,12 +8,12 @@ public static class ArtisticGlassConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticGlass openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticGlassConverter
   /// <summary>
   /// scaling, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass openXmlElement)
+  private static Int32? GetScaling(DXO2010Draw.ArtisticGlass openXmlElement)
   {
     return openXmlElement.Scaling?.Value;
   }
   
-  private static void SetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass openXmlElement, Int32? value)
+  private static void SetScaling(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value)
   {
     openXmlElement.Scaling = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticGlass? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass? openXmlElement)
+  public static DMDraws.ArtisticGlass? CreateModelElement(DXO2010Draw.ArtisticGlass? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticGlass();
+      var value = new DMDraws.ArtisticGlass();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticGlassConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticGlass? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlass? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticGlass, new()
   {
     if (value != null)
     {

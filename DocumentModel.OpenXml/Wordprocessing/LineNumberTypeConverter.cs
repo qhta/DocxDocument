@@ -8,12 +8,12 @@ public static class LineNumberTypeConverter
   /// <summary>
   /// Line Number Increments to Display
   /// </summary>
-  private static Int16? GetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
+  private static Int16? GetCountBy(DXW.LineNumberType openXmlElement)
   {
     return openXmlElement.CountBy?.Value;
   }
   
-  private static void SetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, Int16? value)
+  private static void SetCountBy(DXW.LineNumberType openXmlElement, Int16? value)
   {
     openXmlElement.CountBy = value;
   }
@@ -21,12 +21,12 @@ public static class LineNumberTypeConverter
   /// <summary>
   /// Line Numbering Starting Value
   /// </summary>
-  private static Int16? GetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
+  private static Int16? GetStart(DXW.LineNumberType openXmlElement)
   {
     return openXmlElement.Start?.Value;
   }
   
-  private static void SetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, Int16? value)
+  private static void SetStart(DXW.LineNumberType openXmlElement, Int16? value)
   {
     openXmlElement.Start = value;
   }
@@ -34,12 +34,12 @@ public static class LineNumberTypeConverter
   /// <summary>
   /// Distance Between Text and Line Numbering
   /// </summary>
-  private static String? GetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
+  private static String? GetDistance(DXW.LineNumberType openXmlElement)
   {
     return openXmlElement?.Distance?.Value;
   }
   
-  private static void SetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, String? value)
+  private static void SetDistance(DXW.LineNumberType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Distance = new StringValue { Value = value };
@@ -50,21 +50,21 @@ public static class LineNumberTypeConverter
   /// <summary>
   /// Line Numbering Restart Setting
   /// </summary>
-  private static DocumentModel.Wordprocessing.LineNumberRestartKind? GetRestart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
+  private static DMW.LineNumberRestartKind? GetRestart(DXW.LineNumberType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DocumentModel.Wordprocessing.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
   }
   
-  private static void SetRestart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, DocumentModel.Wordprocessing.LineNumberRestartKind? value)
+  private static void SetRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value)
   {
-    openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DocumentModel.Wordprocessing.LineNumberRestartKind>(value);
+    openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
+  public static DMW.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LineNumberType();
+      var value = new DMW.LineNumberType();
       value.CountBy = GetCountBy(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.Distance = GetDistance(openXmlElement);
@@ -74,8 +74,8 @@ public static class LineNumberTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineNumberType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LineNumberType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LineNumberType? value)
+    where OpenXmlElementType: DXW.LineNumberType, new()
   {
     if (value != null)
     {

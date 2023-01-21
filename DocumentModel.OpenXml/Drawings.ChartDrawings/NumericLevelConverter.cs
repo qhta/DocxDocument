@@ -8,12 +8,12 @@ public static class NumericLevelConverter
   /// <summary>
   /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
+  private static UInt32? GetPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     return openXmlElement.PtCount?.Value;
   }
   
-  private static void SetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, UInt32? value)
+  private static void SetPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement, UInt32? value)
   {
     openXmlElement.PtCount = value;
   }
@@ -21,12 +21,12 @@ public static class NumericLevelConverter
   /// <summary>
   /// formatCode, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetFormatCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
+  private static String? GetFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
   }
   
-  private static void SetFormatCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, String? value)
+  private static void SetFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FormatCode = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class NumericLevelConverter
   /// <summary>
   /// name, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
+  private static String? GetName(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, String? value)
+  private static void SetName(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -50,37 +50,37 @@ public static class NumericLevelConverter
       openXmlElement.Name = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue> GetNumericValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
+  private static Collection<DMDrawsChartDraws.NumericValue> GetNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>())
+    var collection = new Collection<DMDrawsChartDraws.NumericValue>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.NumericValue>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.NumericValueConverter.CreateModelElement(item);
+      var newItem = DMXDrawsChartDraws.NumericValueConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumericValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue>? value)
+  private static void SetNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement, Collection<DMDrawsChartDraws.NumericValue>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.NumericValue>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.NumericValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>(item);
+        var newItem = DMXDrawsChartDraws.NumericValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.NumericValue>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NumericLevel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel? openXmlElement)
+  public static DMDrawsChartDraws.NumericLevel? CreateModelElement(DXO2016DrawChartDraw.NumericLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NumericLevel();
+      var value = new DMDrawsChartDraws.NumericLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.FormatCode = GetFormatCode(openXmlElement);
       value.Name = GetName(openXmlElement);
@@ -90,8 +90,8 @@ public static class NumericLevelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NumericLevel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumericLevel? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.NumericLevel, new()
   {
     if (value != null)
     {

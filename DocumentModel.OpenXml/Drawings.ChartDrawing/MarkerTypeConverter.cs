@@ -8,22 +8,22 @@ public static class MarkerTypeConverter
   /// <summary>
   /// Relative X Coordinate.
   /// </summary>
-  private static String? GetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType openXmlElement)
+  private static String? GetXPosition(DXDrawChartDraw.MarkerType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType openXmlElement, String? value)
+  private static void SetXPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.XPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition { Text = value };
+      itemElement = new DXDrawChartDraw.XPosition { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,31 +31,31 @@ public static class MarkerTypeConverter
   /// <summary>
   /// Relative Y Coordinate.
   /// </summary>
-  private static String? GetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType openXmlElement)
+  private static String? GetYPosition(DXDrawChartDraw.MarkerType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType openXmlElement, String? value)
+  private static void SetYPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.YPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition { Text = value };
+      itemElement = new DXDrawChartDraw.YPosition { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.MarkerType? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType? openXmlElement)
+  public static DMDrawsChartDraw.MarkerType? CreateModelElement(DXDrawChartDraw.MarkerType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.MarkerType();
+      var value = new DMDrawsChartDraw.MarkerType();
       value.XPosition = GetXPosition(openXmlElement);
       value.YPosition = GetYPosition(openXmlElement);
       return value;
@@ -63,8 +63,8 @@ public static class MarkerTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.MarkerType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.MarkerType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.MarkerType? value)
+    where OpenXmlElementType: DXDrawChartDraw.MarkerType, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class BubbleChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.BubbleChartExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.BubbleChartExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class BubbleChartExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.FilteredBubbleSeries? GetFilteredBubbleSeries(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension openXmlElement)
+  private static DMDrawsCharts.FilteredBubbleSeries? GetFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredBubbleSeriesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FilteredBubbleSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFilteredBubbleSeries(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension openXmlElement, DocumentModel.Drawings.Charts.FilteredBubbleSeries? value)
+  private static void SetFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement, DMDrawsCharts.FilteredBubbleSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredBubbleSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBubbleSeries>(value);
+      itemElement = DMXDrawsCharts.FilteredBubbleSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredBubbleSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension? openXmlElement)
+  public static DMDrawsCharts.BubbleChartExtension? CreateModelElement(DXDrawCharts.BubbleChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BubbleChartExtension();
+      var value = new DMDrawsCharts.BubbleChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredBubbleSeries = GetFilteredBubbleSeries(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class BubbleChartExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BubbleChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartExtension? value)
+    where OpenXmlElementType: DXDrawCharts.BubbleChartExtension, new()
   {
     if (value != null)
     {

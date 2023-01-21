@@ -8,12 +8,12 @@ public static class GlowConverter
   /// <summary>
   /// rad, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetGlowRadius(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement)
+  private static Int64? GetGlowRadius(DXO2010W.Glow openXmlElement)
   {
     return openXmlElement.GlowRadius?.Value;
   }
   
-  private static void SetGlowRadius(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement, Int64? value)
+  private static void SetGlowRadius(DXO2010W.Glow openXmlElement, Int64? value)
   {
     openXmlElement.GlowRadius = value;
   }
@@ -21,22 +21,22 @@ public static class GlowConverter
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.Glow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO2010W.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -45,32 +45,32 @@ public static class GlowConverter
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement)
+  private static DMW.SchemeColor? GetSchemeColor(DXO2010W.Glow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.Glow openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+  private static void SetSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO2010W.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Glow? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Glow? openXmlElement)
+  public static DMW.Glow? CreateModelElement(DXO2010W.Glow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Glow();
+      var value = new DMW.Glow();
       value.GlowRadius = GetGlowRadius(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
@@ -79,8 +79,8 @@ public static class GlowConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Glow? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Glow, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Glow? value)
+    where OpenXmlElementType: DXO2010W.Glow, new()
   {
     if (value != null)
     {

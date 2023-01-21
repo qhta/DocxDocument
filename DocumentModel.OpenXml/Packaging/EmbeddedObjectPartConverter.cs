@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class EmbeddedObjectPartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.EmbeddedObjectPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.EmbeddedObjectPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart? openXmlElement)
+  public static DMPack.EmbeddedObjectPart? CreateModelElement(DXPack.EmbeddedObjectPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.EmbeddedObjectPart();
+      var value = new DMPack.EmbeddedObjectPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EmbeddedObjectPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.EmbeddedObjectPart? value)
+    where OpenXmlElementType: DXPack.EmbeddedObjectPart, new()
   {
     if (value != null)
     {

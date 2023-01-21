@@ -8,22 +8,22 @@ public static class MathFunctionConverter
   /// <summary>
   /// Function Properties.
   /// </summary>
-  private static DocumentModel.Math.FunctionProperties? GetFunctionProperties(DocumentFormat.OpenXml.Math.MathFunction openXmlElement)
+  private static DMMath.FunctionProperties? GetFunctionProperties(DXMath.MathFunction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.FunctionProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.FunctionProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FunctionPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.FunctionPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFunctionProperties(DocumentFormat.OpenXml.Math.MathFunction openXmlElement, DocumentModel.Math.FunctionProperties? value)
+  private static void SetFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FunctionProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.FunctionProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.FunctionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.FunctionProperties>(value);
+      itemElement = DMXMath.FunctionPropertiesConverter.CreateOpenXmlElement<DXMath.FunctionProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class MathFunctionConverter
   /// <summary>
   /// Function Name.
   /// </summary>
-  private static DocumentModel.Math.FunctionName? GetFunctionName(DocumentFormat.OpenXml.Math.MathFunction openXmlElement)
+  private static DMMath.FunctionName? GetFunctionName(DXMath.MathFunction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.FunctionName>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.FunctionName>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FunctionNameConverter.CreateModelElement(itemElement);
+      return DMXMath.FunctionNameConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFunctionName(DocumentFormat.OpenXml.Math.MathFunction openXmlElement, DocumentModel.Math.FunctionName? value)
+  private static void SetFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FunctionName>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.FunctionName>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.FunctionNameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.FunctionName>(value);
+      itemElement = DMXMath.FunctionNameConverter.CreateOpenXmlElement<DXMath.FunctionName>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class MathFunctionConverter
   /// <summary>
   /// Base (Argument).
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.MathFunction openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.MathFunction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.MathFunction openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.MathFunction openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.MathFunction? CreateModelElement(DocumentFormat.OpenXml.Math.MathFunction? openXmlElement)
+  public static DMMath.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MathFunction();
+      var value = new DMMath.MathFunction();
       value.FunctionProperties = GetFunctionProperties(openXmlElement);
       value.FunctionName = GetFunctionName(openXmlElement);
       value.Base = GetBase(openXmlElement);
@@ -90,8 +90,8 @@ public static class MathFunctionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MathFunction? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MathFunction, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathFunction? value)
+    where OpenXmlElementType: DXMath.MathFunction, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomColorListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor> GetCustomColors(DocumentFormat.OpenXml.Drawing.CustomColorList openXmlElement)
+  private static Collection<DMDraws.CustomColor> GetCustomColors(DXDraw.CustomColorList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.CustomColor>())
+    var collection = new Collection<DMDraws.CustomColor>();
+    foreach (var item in openXmlElement.Elements<DXDraw.CustomColor>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.CustomColorConverter.CreateModelElement(item);
+      var newItem = DMXDraws.CustomColorConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetCustomColors(DocumentFormat.OpenXml.Drawing.CustomColorList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor>? value)
+  private static void SetCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.CustomColor>();
+    openXmlElement.RemoveAllChildren<DXDraw.CustomColor>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.CustomColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColor>(item);
+        var newItem = DMXDraws.CustomColorConverter.CreateOpenXmlElement<DXDraw.CustomColor>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomColorList? openXmlElement)
+  public static DMDraws.CustomColorList? CreateModelElement(DXDraw.CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomColorList();
+      var value = new DMDraws.CustomColorList();
       value.CustomColors = GetCustomColors(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomColorList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomColorList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomColorList? value)
+    where OpenXmlElementType: DXDraw.CustomColorList, new()
   {
     if (value != null)
     {

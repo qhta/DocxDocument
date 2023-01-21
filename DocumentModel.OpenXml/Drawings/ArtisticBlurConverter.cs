@@ -8,29 +8,29 @@ public static class ArtisticBlurConverter
   /// <summary>
   /// radius, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetRadius(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur openXmlElement)
+  private static Int32? GetRadius(DXO2010Draw.ArtisticBlur openXmlElement)
   {
     return openXmlElement.Radius?.Value;
   }
   
-  private static void SetRadius(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur openXmlElement, Int32? value)
+  private static void SetRadius(DXO2010Draw.ArtisticBlur openXmlElement, Int32? value)
   {
     openXmlElement.Radius = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticBlur? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur? openXmlElement)
+  public static DMDraws.ArtisticBlur? CreateModelElement(DXO2010Draw.ArtisticBlur? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticBlur();
+      var value = new DMDraws.ArtisticBlur();
       value.Radius = GetRadius(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticBlur? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticBlur? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticBlur, new()
   {
     if (value != null)
     {

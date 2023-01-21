@@ -8,22 +8,22 @@ public static class StyleTableCellPropertiesConverter
   /// <summary>
   /// Shading.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement)
+  private static DMW.Shading? GetShading(DXW.StyleTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return DMXW.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+  private static void SetShading(DXW.StyleTableCellProperties openXmlElement, DMW.Shading? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+      itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class StyleTableCellPropertiesConverter
   /// <summary>
   /// NoWrap.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetNoWrap(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement)
+  private static DMW.OnOffOnlyKind? GetNoWrap(DXW.StyleTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetNoWrap(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+  private static void SetNoWrap(DXW.StyleTableCellProperties openXmlElement, DMW.OnOffOnlyKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NoWrap, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.NoWrap, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class StyleTableCellPropertiesConverter
   /// <summary>
   /// TableCellMargin.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement)
+  private static DMW.TableCellMargin? GetTableCellMargin(DXW.StyleTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateModelElement(itemElement);
+      return DMXW.TableCellMarginConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
+  private static void SetTableCellMargin(DXW.StyleTableCellProperties openXmlElement, DMW.TableCellMargin? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMargin>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
+      itemElement = DMXW.TableCellMarginConverter.CreateOpenXmlElement<DXW.TableCellMargin>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,32 +80,32 @@ public static class StyleTableCellPropertiesConverter
   /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement)
+  private static DMW.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DXW.StyleTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableVerticalAlignmentKind? value)
+  private static void SetTableCellVerticalAlignment(DXW.StyleTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.StyleTableCellProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties? openXmlElement)
+  public static DMW.StyleTableCellProperties? CreateModelElement(DXW.StyleTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleTableCellProperties();
+      var value = new DMW.StyleTableCellProperties();
       value.Shading = GetShading(openXmlElement);
       value.NoWrap = GetNoWrap(openXmlElement);
       value.TableCellMargin = GetTableCellMargin(openXmlElement);
@@ -115,8 +115,8 @@ public static class StyleTableCellPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleTableCellProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleTableCellProperties? value)
+    where OpenXmlElementType: DXW.StyleTableCellProperties, new()
   {
     if (value != null)
     {

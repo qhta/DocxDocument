@@ -8,12 +8,12 @@ public static class ForegroundMarkConverter
   /// <summary>
   /// x1, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
+  private static Int32? GetFirstXCoordinate(DXO2010Draw.ForegroundMark openXmlElement)
   {
     return openXmlElement.FirstXCoordinate?.Value;
   }
   
-  private static void SetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
+  private static void SetFirstXCoordinate(DXO2010Draw.ForegroundMark openXmlElement, Int32? value)
   {
     openXmlElement.FirstXCoordinate = value;
   }
@@ -21,12 +21,12 @@ public static class ForegroundMarkConverter
   /// <summary>
   /// y1, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
+  private static Int32? GetFirstYCoordinate(DXO2010Draw.ForegroundMark openXmlElement)
   {
     return openXmlElement.FirstYCoordinate?.Value;
   }
   
-  private static void SetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
+  private static void SetFirstYCoordinate(DXO2010Draw.ForegroundMark openXmlElement, Int32? value)
   {
     openXmlElement.FirstYCoordinate = value;
   }
@@ -34,12 +34,12 @@ public static class ForegroundMarkConverter
   /// <summary>
   /// x2, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
+  private static Int32? GetSecondXCoordinate(DXO2010Draw.ForegroundMark openXmlElement)
   {
     return openXmlElement.SecondXCoordinate?.Value;
   }
   
-  private static void SetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
+  private static void SetSecondXCoordinate(DXO2010Draw.ForegroundMark openXmlElement, Int32? value)
   {
     openXmlElement.SecondXCoordinate = value;
   }
@@ -47,21 +47,21 @@ public static class ForegroundMarkConverter
   /// <summary>
   /// y2, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
+  private static Int32? GetSecondYCoordinate(DXO2010Draw.ForegroundMark openXmlElement)
   {
     return openXmlElement.SecondYCoordinate?.Value;
   }
   
-  private static void SetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
+  private static void SetSecondYCoordinate(DXO2010Draw.ForegroundMark openXmlElement, Int32? value)
   {
     openXmlElement.SecondYCoordinate = value;
   }
   
-  public static DocumentModel.Drawings.ForegroundMark? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark? openXmlElement)
+  public static DMDraws.ForegroundMark? CreateModelElement(DXO2010Draw.ForegroundMark? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ForegroundMark();
+      var value = new DMDraws.ForegroundMark();
       value.FirstXCoordinate = GetFirstXCoordinate(openXmlElement);
       value.FirstYCoordinate = GetFirstYCoordinate(openXmlElement);
       value.SecondXCoordinate = GetSecondXCoordinate(openXmlElement);
@@ -71,8 +71,8 @@ public static class ForegroundMarkConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ForegroundMark? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ForegroundMark? value)
+    where OpenXmlElementType: DXO2010Draw.ForegroundMark, new()
   {
     if (value != null)
     {

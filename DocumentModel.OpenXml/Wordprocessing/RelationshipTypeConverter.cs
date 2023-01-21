@@ -8,12 +8,12 @@ public static class RelationshipTypeConverter
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.RelationshipType openXmlElement)
+  private static String? GetId(DXW.RelationshipType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.RelationshipType openXmlElement, String? value)
+  private static void SetId(DXW.RelationshipType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class RelationshipTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.RelationshipType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RelationshipType? openXmlElement)
+  public static DMW.RelationshipType? CreateModelElement(DXW.RelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RelationshipType();
+      var value = new DMW.RelationshipType();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RelationshipType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RelationshipType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RelationshipType? value)
+    where OpenXmlElementType: DXW.RelationshipType, new()
   {
     if (value != null)
     {

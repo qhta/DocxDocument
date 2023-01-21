@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class TaskHistoryConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.TaskHistoryEvent> GetTaskHistoryEvents(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory openXmlElement)
+  private static Collection<DM.TaskHistoryEvent> GetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.TaskHistoryEvent>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent>())
+    var collection = new Collection<DM.TaskHistoryEvent>();
+    foreach (var item in openXmlElement.Elements<DXO2021DocTasks.TaskHistoryEvent>())
     {
-      var newItem = DocumentModel.OpenXml.TaskHistoryEventConverter.CreateModelElement(item);
+      var newItem = DMX.TaskHistoryEventConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetTaskHistoryEvents(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.TaskHistoryEvent>? value)
+  private static void SetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent>();
+    openXmlElement.RemoveAllChildren<DXO2021DocTasks.TaskHistoryEvent>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.TaskHistoryEventConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistoryEvent>(item);
+        var newItem = DMX.TaskHistoryEventConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskHistoryEvent>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.TaskHistory? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory? openXmlElement)
+  public static DM.TaskHistory? CreateModelElement(DXO2021DocTasks.TaskHistory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.TaskHistory();
+      var value = new DM.TaskHistory();
       value.TaskHistoryEvents = GetTaskHistoryEvents(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskHistory? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskHistory? value)
+    where OpenXmlElementType: DXO2021DocTasks.TaskHistory, new()
   {
     if (value != null)
     {

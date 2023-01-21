@@ -8,12 +8,12 @@ public static class SdtContentComboBoxConverter
   /// <summary>
   /// Combo Box Last Saved Value
   /// </summary>
-  private static String? GetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement)
+  private static String? GetLastValue(DXW.SdtContentComboBox openXmlElement)
   {
     return openXmlElement?.LastValue?.Value;
   }
   
-  private static void SetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement, String? value)
+  private static void SetLastValue(DXW.SdtContentComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.LastValue = new StringValue { Value = value };
@@ -21,37 +21,37 @@ public static class SdtContentComboBoxConverter
       openXmlElement.LastValue = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem> GetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement)
+  private static Collection<DMW.ListItem> GetListItems(DXW.SdtContentComboBox openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListItem>())
+    var collection = new Collection<DMW.ListItem>();
+    foreach (var item in openXmlElement.Elements<DXW.ListItem>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateModelElement(item);
+      var newItem = DMXW.ListItemConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>? value)
+  private static void SetListItems(DXW.SdtContentComboBox openXmlElement, Collection<DMW.ListItem>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
+    openXmlElement.RemoveAllChildren<DXW.ListItem>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ListItem>(item);
+        var newItem = DMXW.ListItemConverter.CreateOpenXmlElement<DXW.ListItem>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentComboBox? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox? openXmlElement)
+  public static DMW.SdtContentComboBox? CreateModelElement(DXW.SdtContentComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentComboBox();
+      var value = new DMW.SdtContentComboBox();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class SdtContentComboBoxConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentComboBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentComboBox? value)
+    where OpenXmlElementType: DXW.SdtContentComboBox, new()
   {
     if (value != null)
     {

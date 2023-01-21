@@ -8,14 +8,14 @@ public static class InkConverter
   /// <summary>
   /// Ink Data
   /// </summary>
-  private static Byte[]? GetInkData(DocumentFormat.OpenXml.Vml.Office.Ink openXmlElement)
+  private static Byte[]? GetInkData(DXVmlO.Ink openXmlElement)
   {
     if (openXmlElement.InkData?.Value != null)
       return Convert.FromBase64String(openXmlElement.InkData.Value);
     return null;
   }
   
-  private static void SetInkData(DocumentFormat.OpenXml.Vml.Office.Ink openXmlElement, Byte[]? value)
+  private static void SetInkData(DXVmlO.Ink openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.InkData = Convert.ToBase64String(value);
@@ -26,12 +26,12 @@ public static class InkConverter
   /// <summary>
   /// Annotation Flag
   /// </summary>
-  private static Boolean? GetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink openXmlElement)
+  private static Boolean? GetAnnotationFlag(DXVmlO.Ink openXmlElement)
   {
     return openXmlElement?.AnnotationFlag?.Value;
   }
   
-  private static void SetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink openXmlElement, Boolean? value)
+  private static void SetAnnotationFlag(DXVmlO.Ink openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AnnotationFlag = value;
@@ -39,11 +39,11 @@ public static class InkConverter
       openXmlElement.AnnotationFlag = null;
   }
   
-  public static DocumentModel.Vml.Ink? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
+  public static DMVml.Ink? CreateModelElement(DXVmlO.Ink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Ink();
+      var value = new DMVml.Ink();
       value.InkData = GetInkData(openXmlElement);
       value.AnnotationFlag = GetAnnotationFlag(openXmlElement);
       return value;
@@ -51,8 +51,8 @@ public static class InkConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Ink? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Ink, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Ink? value)
+    where OpenXmlElementType: DXVmlO.Ink, new()
   {
     if (value != null)
     {

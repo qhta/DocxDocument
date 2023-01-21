@@ -8,12 +8,12 @@ public static class AnchorConverter
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>
-  private static UInt32? GetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetDistanceFromTop(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement.DistanceFromTop?.Value;
   }
   
-  private static void SetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetDistanceFromTop(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromTop = value;
   }
@@ -21,12 +21,12 @@ public static class AnchorConverter
   /// <summary>
   /// Distance From Text on Bottom Edge
   /// </summary>
-  private static UInt32? GetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetDistanceFromBottom(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement.DistanceFromBottom?.Value;
   }
   
-  private static void SetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetDistanceFromBottom(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromBottom = value;
   }
@@ -34,12 +34,12 @@ public static class AnchorConverter
   /// <summary>
   /// Distance From Text on Left Edge
   /// </summary>
-  private static UInt32? GetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetDistanceFromLeft(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement.DistanceFromLeft?.Value;
   }
   
-  private static void SetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetDistanceFromLeft(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromLeft = value;
   }
@@ -47,12 +47,12 @@ public static class AnchorConverter
   /// <summary>
   /// Distance From Text on Right Edge
   /// </summary>
-  private static UInt32? GetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetDistanceFromRight(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement.DistanceFromRight?.Value;
   }
   
-  private static void SetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetDistanceFromRight(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromRight = value;
   }
@@ -60,12 +60,12 @@ public static class AnchorConverter
   /// <summary>
   /// Page Positioning
   /// </summary>
-  private static Boolean? GetSimplePos(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetSimplePos(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.SimplePos?.Value;
   }
   
-  private static void SetSimplePos(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetSimplePos(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SimplePos = new BooleanValue { Value = (Boolean)value };
@@ -76,12 +76,12 @@ public static class AnchorConverter
   /// <summary>
   /// Relative Z-Ordering Position
   /// </summary>
-  private static UInt32? GetRelativeHeight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetRelativeHeight(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement.RelativeHeight?.Value;
   }
   
-  private static void SetRelativeHeight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetRelativeHeight(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
     openXmlElement.RelativeHeight = value;
   }
@@ -89,12 +89,12 @@ public static class AnchorConverter
   /// <summary>
   /// Display Behind Document Text
   /// </summary>
-  private static Boolean? GetBehindDoc(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetBehindDoc(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.BehindDoc?.Value;
   }
   
-  private static void SetBehindDoc(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetBehindDoc(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BehindDoc = new BooleanValue { Value = (Boolean)value };
@@ -105,12 +105,12 @@ public static class AnchorConverter
   /// <summary>
   /// Lock Anchor
   /// </summary>
-  private static Boolean? GetLocked(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetLocked(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
   
-  private static void SetLocked(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetLocked(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Locked = new BooleanValue { Value = (Boolean)value };
@@ -121,12 +121,12 @@ public static class AnchorConverter
   /// <summary>
   /// Layout In Table Cell
   /// </summary>
-  private static Boolean? GetLayoutInCell(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetLayoutInCell(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.LayoutInCell?.Value;
   }
   
-  private static void SetLayoutInCell(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetLayoutInCell(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LayoutInCell = new BooleanValue { Value = (Boolean)value };
@@ -137,12 +137,12 @@ public static class AnchorConverter
   /// <summary>
   /// Hidden
   /// </summary>
-  private static Boolean? GetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetHidden(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
   }
   
-  private static void SetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetHidden(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
@@ -153,12 +153,12 @@ public static class AnchorConverter
   /// <summary>
   /// Allow Objects to Overlap
   /// </summary>
-  private static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetAllowOverlap(DXDrawW.Anchor openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
   
-  private static void SetAllowOverlap(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetAllowOverlap(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowOverlap = new BooleanValue { Value = (Boolean)value };
@@ -169,14 +169,14 @@ public static class AnchorConverter
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetEditId(DXDrawW.Anchor openXmlElement)
   {
     if (openXmlElement.EditId?.Value != null)
       return UInt32.Parse(openXmlElement.EditId.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetEditId(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.EditId = ((UInt32)value).ToString("X8");
@@ -187,14 +187,14 @@ public static class AnchorConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static UInt32? GetAnchorId(DXDrawW.Anchor openXmlElement)
   {
     if (openXmlElement.AnchorId?.Value != null)
       return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, UInt32? value)
+  private static void SetAnchorId(DXDrawW.Anchor openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
@@ -205,22 +205,22 @@ public static class AnchorConverter
   /// <summary>
   /// Simple Positioning Coordinates.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Point2DType? GetSimplePosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.Point2DType? GetSimplePosition(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.SimplePosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.SimplePosition>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSimplePosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
+  private static void SetSimplePosition(DXDrawW.Anchor openXmlElement, DMDrawsW.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.SimplePosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.SimplePosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.SimplePosition>(value);
+      itemElement = DMXDrawsW.Point2DTypeConverter.CreateOpenXmlElement<DXDrawW.SimplePosition>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -229,22 +229,22 @@ public static class AnchorConverter
   /// <summary>
   /// Horizontal Positioning.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.HorizontalPosition? GetHorizontalPosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.HorizontalPosition? GetHorizontalPosition(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.HorizontalPosition>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.HorizontalPositionConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.HorizontalPositionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHorizontalPosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.HorizontalPosition? value)
+  private static void SetHorizontalPosition(DXDrawW.Anchor openXmlElement, DMDrawsW.HorizontalPosition? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.HorizontalPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.HorizontalPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition>(value);
+      itemElement = DMXDrawsW.HorizontalPositionConverter.CreateOpenXmlElement<DXDrawW.HorizontalPosition>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -253,22 +253,22 @@ public static class AnchorConverter
   /// <summary>
   /// Vertical Positioning.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.VerticalPosition? GetVerticalPosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.VerticalPosition? GetVerticalPosition(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.VerticalPosition>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.VerticalPositionConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.VerticalPositionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetVerticalPosition(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.VerticalPosition? value)
+  private static void SetVerticalPosition(DXDrawW.Anchor openXmlElement, DMDrawsW.VerticalPosition? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.VerticalPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.VerticalPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition>(value);
+      itemElement = DMXDrawsW.VerticalPositionConverter.CreateOpenXmlElement<DXDrawW.VerticalPosition>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -277,22 +277,22 @@ public static class AnchorConverter
   /// <summary>
   /// Inline Drawing Object Extents.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Extent? GetExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.Extent? GetExtent(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.Extent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.ExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.ExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.Extent? value)
+  private static void SetExtent(DXDrawW.Anchor openXmlElement, DMDrawsW.Extent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.Extent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.ExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>(value);
+      itemElement = DMXDrawsW.ExtentConverter.CreateOpenXmlElement<DXDrawW.Extent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -301,221 +301,221 @@ public static class AnchorConverter
   /// <summary>
   /// EffectExtent.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.EffectExtent? GetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+  private static void SetEffectExtent(DXDrawW.Anchor openXmlElement, DMDrawsW.EffectExtent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
+      itemElement = DMXDrawsW.EffectExtentConverter.CreateOpenXmlElement<DXDrawW.EffectExtent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetWrapNone(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static Boolean? GetWrapNone(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapNone>();
     return itemElement != null;
   }
   
-  private static void SetWrapNone(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, Boolean? value)
+  private static void SetWrapNone(DXDrawW.Anchor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapNone>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone();
+      var itemElement = new DXDrawW.WrapNone();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.WrapSquare? GetWrapSquare(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.WrapSquare? GetWrapSquare(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.WrapSquare>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapSquareConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.WrapSquareConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetWrapSquare(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapSquare? value)
+  private static void SetWrapSquare(DXDrawW.Anchor openXmlElement, DMDrawsW.WrapSquare? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapSquare>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapSquareConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare>(value);
+      itemElement = DMXDrawsW.WrapSquareConverter.CreateOpenXmlElement<DXDrawW.WrapSquare>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.WrapTight? GetWrapTight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.WrapTight? GetWrapTight(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.WrapTight>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapTightConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.WrapTightConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetWrapTight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapTight? value)
+  private static void SetWrapTight(DXDrawW.Anchor openXmlElement, DMDrawsW.WrapTight? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapTight>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapTightConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight>(value);
+      itemElement = DMXDrawsW.WrapTightConverter.CreateOpenXmlElement<DXDrawW.WrapTight>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.WrapThrough? GetWrapThrough(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.WrapThrough? GetWrapThrough(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.WrapThrough>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapThroughConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.WrapThroughConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetWrapThrough(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapThrough? value)
+  private static void SetWrapThrough(DXDrawW.Anchor openXmlElement, DMDrawsW.WrapThrough? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapThrough>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapThroughConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough>(value);
+      itemElement = DMXDrawsW.WrapThroughConverter.CreateOpenXmlElement<DXDrawW.WrapThrough>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.WrapTopBottom? GetWrapTopBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.WrapTopBottom? GetWrapTopBottom(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.WrapTopBottom>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapTopBottomConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.WrapTopBottomConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetWrapTopBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapTopBottom? value)
+  private static void SetWrapTopBottom(DXDrawW.Anchor openXmlElement, DMDrawsW.WrapTopBottom? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapTopBottom>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapTopBottomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom>(value);
+      itemElement = DMXDrawsW.WrapTopBottomConverter.CreateOpenXmlElement<DXDrawW.WrapTopBottom>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.DocProperties? GetDocProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.DocProperties? GetDocProperties(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.DocProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.DocPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.DocPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.DocProperties? value)
+  private static void SetDocProperties(DXDrawW.Anchor openXmlElement, DMDrawsW.DocProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.DocProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.DocPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>(value);
+      itemElement = DMXDrawsW.DocPropertiesConverter.CreateOpenXmlElement<DXDrawW.DocProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDrawsW.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualGraphicFrameDrawingProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? value)
+  private static void SetNonVisualGraphicFrameDrawingProperties(DXDrawW.Anchor openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>(value);
+      itemElement = DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDrawW.NonVisualGraphicFrameDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Graphic? GetGraphic(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMDraws.Graphic? GetGraphic(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicConverter.CreateModelElement(itemElement);
+      return DMXDraws.GraphicConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphic(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Drawings.Graphic? value)
+  private static void SetGraphic(DXDrawW.Anchor openXmlElement, DMDraws.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GraphicConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Graphic>(value);
+      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Drawings.RelativeWidth? GetRelativeWidth(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement)
+  private static DMWDraws.RelativeWidth? GetRelativeWidth(DXDrawW.Anchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.RelativeWidth>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Drawings.RelativeWidthConverter.CreateModelElement(itemElement);
+      return DMXWDraws.RelativeWidthConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRelativeWidth(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor openXmlElement, DocumentModel.Wordprocessing.Drawings.RelativeWidth? value)
+  private static void SetRelativeWidth(DXDrawW.Anchor openXmlElement, DMWDraws.RelativeWidth? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010WDraw.RelativeWidth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Drawings.RelativeWidthConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth>(value);
+      itemElement = DMXWDraws.RelativeWidthConverter.CreateOpenXmlElement<DXO2010WDraw.RelativeWidth>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Anchor? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor? openXmlElement)
+  public static DMDrawsW.Anchor? CreateModelElement(DXDrawW.Anchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Anchor();
+      var value = new DMDrawsW.Anchor();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
@@ -548,8 +548,8 @@ public static class AnchorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Anchor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Anchor? value)
+    where OpenXmlElementType: DXDrawW.Anchor, new()
   {
     if (value != null)
     {

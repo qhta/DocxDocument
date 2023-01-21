@@ -8,12 +8,12 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// <summary>
   /// Embedded Audio File Relationship ID
   /// </summary>
-  private static String? GetEmbed(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement)
+  private static String? GetEmbed(DXDraw.EmbeddedWavAudioFileType openXmlElement)
   {
     return openXmlElement?.Embed?.Value;
   }
   
-  private static void SetEmbed(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement, String? value)
+  private static void SetEmbed(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Embed = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// <summary>
   /// Sound Name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement)
+  private static String? GetName(DXDraw.EmbeddedWavAudioFileType openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement, String? value)
+  private static void SetName(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class EmbeddedWavAudioFileTypeConverter
   /// <summary>
   /// Recognized Built-In Sound
   /// </summary>
-  private static Boolean? GetBuiltIn(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement)
+  private static Boolean? GetBuiltIn(DXDraw.EmbeddedWavAudioFileType openXmlElement)
   {
     return openXmlElement?.BuiltIn?.Value;
   }
   
-  private static void SetBuiltIn(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType openXmlElement, Boolean? value)
+  private static void SetBuiltIn(DXDraw.EmbeddedWavAudioFileType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BuiltIn = new BooleanValue { Value = (Boolean)value };
@@ -53,11 +53,11 @@ public static class EmbeddedWavAudioFileTypeConverter
       openXmlElement.BuiltIn = null;
   }
   
-  public static DocumentModel.Drawings.EmbeddedWavAudioFileType? CreateModelElement(DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType? openXmlElement)
+  public static DMDraws.EmbeddedWavAudioFileType? CreateModelElement(DXDraw.EmbeddedWavAudioFileType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EmbeddedWavAudioFileType();
+      var value = new DMDraws.EmbeddedWavAudioFileType();
       value.Embed = GetEmbed(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.BuiltIn = GetBuiltIn(openXmlElement);
@@ -66,8 +66,8 @@ public static class EmbeddedWavAudioFileTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EmbeddedWavAudioFileType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EmbeddedWavAudioFileType? value)
+    where OpenXmlElementType: DXDraw.EmbeddedWavAudioFileType, new()
   {
     if (value != null)
     {

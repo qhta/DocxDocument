@@ -8,12 +8,12 @@ public static class Color3Converter
   /// <summary>
   /// Run Content Color
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement)
+  private static String? GetVal(DXO2013W.Color openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement, String? value)
+  private static void SetVal(DXO2013W.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class Color3Converter
   /// <summary>
   /// Run Content Theme Color
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeColor(DXO2013W.Color openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static void SetThemeColor(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeColor(DXO2013W.Color openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// Run Content Theme Color Tint
   /// </summary>
-  private static String? GetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement)
+  private static String? GetThemeTint(DXO2013W.Color openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
   
-  private static void SetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement, String? value)
+  private static void SetThemeTint(DXO2013W.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeTint = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class Color3Converter
   /// <summary>
   /// Run Content Theme Color Shade
   /// </summary>
-  private static String? GetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement)
+  private static String? GetThemeShade(DXO2013W.Color openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
   
-  private static void SetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color openXmlElement, String? value)
+  private static void SetThemeShade(DXO2013W.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeShade = new StringValue { Value = value };
@@ -66,11 +66,11 @@ public static class Color3Converter
       openXmlElement.ThemeShade = null;
   }
   
-  public static DocumentModel.Wordprocessing.Color3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  public static DMW.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Color3();
+      var value = new DMW.Color3();
       value.Val = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
@@ -80,8 +80,8 @@ public static class Color3Converter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Color, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Color3? value)
+    where OpenXmlElementType: DXO2013W.Color, new()
   {
     if (value != null)
     {

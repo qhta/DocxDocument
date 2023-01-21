@@ -8,22 +8,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetTopBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetTopBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.TopBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Left Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetLeftBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetLeftBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.LeftBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetStartBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetStartBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.StartBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStartBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetStartBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.StartBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StartBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.StartBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Bottom Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetBottomBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetBottomBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.BottomBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Right Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetRightBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetRightBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.RightBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetEndBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetEndBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.EndBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEndBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetEndBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.EndBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.EndBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -152,22 +152,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Inside Horizontal Edges Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetInsideHorizontalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.InsideHorizontalBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInsideHorizontalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.InsideHorizontalBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.InsideHorizontalBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,22 +176,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Inside Vertical Edges Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetInsideVerticalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetInsideVerticalBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.InsideVerticalBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInsideVerticalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.InsideVerticalBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.InsideVerticalBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -200,22 +200,22 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Left to Bottom Right Diagonal Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetTopLeftToBottomRightCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopLeftToBottomRightCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.TopLeftToBottomRightCellBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -224,32 +224,32 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Right to Bottom Left Diagonal Border.
   /// </summary>
-  private static DocumentModel.Wordprocessing.BorderType? GetTopRightToBottomLeftCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
+  private static DMW.BorderType? GetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopRightToBottomLeftCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  private static void SetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>(value);
+      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.TopRightToBottomLeftCellBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableCellBorders? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders? openXmlElement)
+  public static DMW.TableCellBorders? CreateModelElement(DXW.TableCellBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableCellBorders();
+      var value = new DMW.TableCellBorders();
       value.TopBorder = GetTopBorder(openXmlElement);
       value.LeftBorder = GetLeftBorder(openXmlElement);
       value.StartBorder = GetStartBorder(openXmlElement);
@@ -265,8 +265,8 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellBorders? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellBorders, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellBorders? value)
+    where OpenXmlElementType: DXW.TableCellBorders, new()
   {
     if (value != null)
     {

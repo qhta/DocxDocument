@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ShapeGuideListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide> GetShapeGuides(DocumentFormat.OpenXml.Drawing.ShapeGuideList openXmlElement)
+  private static Collection<DMDraws.ShapeGuide> GetShapeGuides(DXDraw.ShapeGuideList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.ShapeGuide>())
+    var collection = new Collection<DMDraws.ShapeGuide>();
+    foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ShapeGuideConverter.CreateModelElement(item);
+      var newItem = DMXDraws.ShapeGuideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetShapeGuides(DocumentFormat.OpenXml.Drawing.ShapeGuideList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide>? value)
+  private static void SetShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapeGuide>();
+    openXmlElement.RemoveAllChildren<DXDraw.ShapeGuide>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ShapeGuideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuide>(item);
+        var newItem = DMXDraws.ShapeGuideConverter.CreateOpenXmlElement<DXDraw.ShapeGuide>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ShapeGuideList? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapeGuideList? openXmlElement)
+  public static DMDraws.ShapeGuideList? CreateModelElement(DXDraw.ShapeGuideList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapeGuideList();
+      var value = new DMDraws.ShapeGuideList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapeGuideList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapeGuideList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuideList? value)
+    where OpenXmlElementType: DXDraw.ShapeGuideList, new()
   {
     if (value != null)
     {

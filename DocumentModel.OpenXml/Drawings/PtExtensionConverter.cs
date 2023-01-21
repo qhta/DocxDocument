@@ -8,12 +8,12 @@ public static class PtExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.PtExtension openXmlElement)
+  private static String? GetUri(DXDraw.PtExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.PtExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.PtExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class PtExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DocumentFormat.OpenXml.Drawing.PtExtension openXmlElement)
+  private static DMDrawsDgms.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualDrawingProperties(DocumentFormat.OpenXml.Drawing.PtExtension openXmlElement, DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? value)
+  private static void SetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Diagram.NonVisualDrawingProperties>(value);
+      itemElement = DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO2010DrawDgm.NonVisualDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PtExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.PtExtension? openXmlElement)
+  public static DMDraws.PtExtension? CreateModelElement(DXDraw.PtExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PtExtension();
+      var value = new DMDraws.PtExtension();
       value.Uri = GetUri(openXmlElement);
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class PtExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PtExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PtExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PtExtension? value)
+    where OpenXmlElementType: DXDraw.PtExtension, new()
   {
     if (value != null)
     {

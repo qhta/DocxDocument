@@ -8,24 +8,24 @@ public static class HyperlinkRelationshipConverter
   /// <summary>
   /// Gets the relationship type.
   /// </summary>
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship openXmlElement)
+  private static String? GetRelationshipType(DXPack.HyperlinkRelationship openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.HyperlinkRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? openXmlElement)
+  public static DMPack.HyperlinkRelationship? CreateModelElement(DXPack.HyperlinkRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.HyperlinkRelationship();
+      var value = new DMPack.HyperlinkRelationship();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.HyperlinkRelationship? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.HyperlinkRelationship, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.HyperlinkRelationship? value)
+    where OpenXmlElementType: DXPack.HyperlinkRelationship, new()
   {
     if (value != null)
     {

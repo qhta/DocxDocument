@@ -8,12 +8,12 @@ public static class NonVisualPictureDrawingPropertiesConverter
   /// <summary>
   /// preferRelativeResize
   /// </summary>
-  private static Boolean? GetPreferRelativeResize(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement)
+  private static Boolean? GetPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement)
   {
     return openXmlElement?.PreferRelativeResize?.Value;
   }
   
-  private static void SetPreferRelativeResize(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement, Boolean? value)
+  private static void SetPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PreferRelativeResize = new BooleanValue { Value = (Boolean)value };
@@ -24,22 +24,22 @@ public static class NonVisualPictureDrawingPropertiesConverter
   /// <summary>
   /// PictureLocks.
   /// </summary>
-  private static DocumentModel.Drawings.PictureLocks? GetPictureLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement)
+  private static DMDraws.PictureLocks? GetPictureLocks(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureLocks>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PictureLocks>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PictureLocksConverter.CreateModelElement(itemElement);
+      return DMXDraws.PictureLocksConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement, DocumentModel.Drawings.PictureLocks? value)
+  private static void SetPictureLocks(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.PictureLocks? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureLocks>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PictureLocks>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PictureLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PictureLocks>(value);
+      itemElement = DMXDraws.PictureLocksConverter.CreateOpenXmlElement<DXDraw.PictureLocks>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -48,32 +48,32 @@ public static class NonVisualPictureDrawingPropertiesConverter
   /// <summary>
   /// NonVisualPicturePropertiesExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? GetNonVisualPicturePropertiesExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement)
+  private static DMDraws.NonVisualPicturePropertiesExtensionList? GetNonVisualPicturePropertiesExtensionList(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NonVisualPicturePropertiesExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.NonVisualPicturePropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualPicturePropertiesExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties openXmlElement, DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? value)
+  private static void SetNonVisualPicturePropertiesExtensionList(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.NonVisualPicturePropertiesExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NonVisualPicturePropertiesExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList>(value);
+      itemElement = DMXDraws.NonVisualPicturePropertiesExtensionListConverter.CreateOpenXmlElement<DXDraw.NonVisualPicturePropertiesExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties? openXmlElement)
+  public static DMDrawsChartDraw.NonVisualPictureDrawingProperties? CreateModelElement(DXDrawChartDraw.NonVisualPictureDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties();
+      var value = new DMDrawsChartDraw.NonVisualPictureDrawingProperties();
       value.PreferRelativeResize = GetPreferRelativeResize(openXmlElement);
       value.PictureLocks = GetPictureLocks(openXmlElement);
       value.NonVisualPicturePropertiesExtensionList = GetNonVisualPicturePropertiesExtensionList(openXmlElement);
@@ -82,8 +82,8 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureDrawingProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualPictureDrawingProperties? value)
+    where OpenXmlElementType: DXDrawChartDraw.NonVisualPictureDrawingProperties, new()
   {
     if (value != null)
     {

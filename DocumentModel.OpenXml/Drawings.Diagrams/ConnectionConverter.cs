@@ -8,12 +8,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Model Identifier
   /// </summary>
-  private static String? GetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetModelId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.ModelId?.Value;
   }
   
-  private static void SetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetModelId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ModelId = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class ConnectionConverter
   /// <summary>
   /// Point Type
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ConnectionKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static DMDrawsDgms.ConnectionKind? GetType(DXDrawDgms.Connection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DocumentModel.Drawings.Diagrams.ConnectionKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, DocumentModel.Drawings.Diagrams.ConnectionKind? value)
+  private static void SetType(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ConnectionKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DocumentModel.Drawings.Diagrams.ConnectionKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(value);
   }
   
   /// <summary>
   /// Source Identifier
   /// </summary>
-  private static String? GetSourceId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetSourceId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.SourceId?.Value;
   }
   
-  private static void SetSourceId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetSourceId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SourceId = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Destination Identifier
   /// </summary>
-  private static String? GetDestinationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetDestinationId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.DestinationId?.Value;
   }
   
-  private static void SetDestinationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetDestinationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.DestinationId = new StringValue { Value = value };
@@ -69,12 +69,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Source Position
   /// </summary>
-  private static UInt32? GetSourcePosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static UInt32? GetSourcePosition(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement.SourcePosition?.Value;
   }
   
-  private static void SetSourcePosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, UInt32? value)
+  private static void SetSourcePosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
   {
     openXmlElement.SourcePosition = value;
   }
@@ -82,12 +82,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Destination Position
   /// </summary>
-  private static UInt32? GetDestinationPosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static UInt32? GetDestinationPosition(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement.DestinationPosition?.Value;
   }
   
-  private static void SetDestinationPosition(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, UInt32? value)
+  private static void SetDestinationPosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
   {
     openXmlElement.DestinationPosition = value;
   }
@@ -95,12 +95,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Parent Transition Identifier
   /// </summary>
-  private static String? GetParentTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetParentTransitionId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.ParentTransitionId?.Value;
   }
   
-  private static void SetParentTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ParentTransitionId = new StringValue { Value = value };
@@ -111,12 +111,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Sibling Transition Identifier
   /// </summary>
-  private static String? GetSiblingTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetSiblingTransitionId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.SiblingTransitionId?.Value;
   }
   
-  private static void SetSiblingTransitionId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SiblingTransitionId = new StringValue { Value = value };
@@ -127,12 +127,12 @@ public static class ConnectionConverter
   /// <summary>
   /// Presentation Identifier
   /// </summary>
-  private static String? GetPresentationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static String? GetPresentationId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.PresentationId?.Value;
   }
   
-  private static void SetPresentationId(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, String? value)
+  private static void SetPresentationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PresentationId = new StringValue { Value = value };
@@ -143,32 +143,32 @@ public static class ConnectionConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement)
+  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Connection openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Connection openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  private static void SetExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Connection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Connection? openXmlElement)
+  public static DMDrawsDgms.Connection? CreateModelElement(DXDrawDgms.Connection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Connection();
+      var value = new DMDrawsDgms.Connection();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.SourceId = GetSourceId(openXmlElement);
@@ -184,8 +184,8 @@ public static class ConnectionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Connection? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Connection, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Connection? value)
+    where OpenXmlElementType: DXDrawDgms.Connection, new()
   {
     if (value != null)
     {

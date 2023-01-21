@@ -5,72 +5,72 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class MaxValueColorEndPositionConverter
 {
-  private static Boolean? GetExtremeValueColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement)
+  private static Boolean? GetExtremeValueColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>();
     return itemElement != null;
   }
   
-  private static void SetExtremeValueColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement, Boolean? value)
+  private static void SetExtremeValueColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition();
+      var itemElement = new DXO2016DrawChartDraw.ExtremeValueColorPosition();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Double? GetNumberColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement)
+  private static Double? GetNumberColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetNumberColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement, Double? value)
+  private static void SetNumberColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition{ Val = value };
+      itemElement = new DXO2016DrawChartDraw.NumberColorPosition{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Double? GetPercentageColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement)
+  private static Double? GetPercentageColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPercentageColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition openXmlElement, Double? value)
+  private static void SetPercentageColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition{ Val = value };
+      itemElement = new DXO2016DrawChartDraw.PercentageColorPosition{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement)
+  public static DMDrawsChartDraws.MaxValueColorEndPosition? CreateModelElement(DXO2016DrawChartDraw.MaxValueColorEndPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition();
+      var value = new DMDrawsChartDraws.MaxValueColorEndPosition();
       value.ExtremeValueColorPosition = GetExtremeValueColorPosition(openXmlElement);
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);
@@ -79,8 +79,8 @@ public static class MaxValueColorEndPositionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MaxValueColorEndPosition? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.MaxValueColorEndPosition, new()
   {
     if (value != null)
     {

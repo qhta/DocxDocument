@@ -8,38 +8,38 @@ public static class ChartStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.ChartsStyle.ChartStyle? GetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
+  private static DMDrawsChartsStyle.ChartStyle? GetChartStyle(DXPack.ChartStylePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle rootElement)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2013DrawChartStyle.ChartStyle rootElement)
+      return DMXDrawsChartsStyle.ChartStyleConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement, DocumentModel.Drawings.ChartsStyle.ChartStyle? value)
+  private static void SetChartStyle(DXPack.ChartStylePart openXmlElement, DMDrawsChartsStyle.ChartStyle? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle>(value);
+       var rootElement = DMXDrawsChartsStyle.ChartStyleConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ChartStyle>(value);
        if (rootElement != null)
          openXmlElement.ChartStyle = rootElement;
     }
   }
   
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
+  private static String? GetContentType(DXPack.ChartStylePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ChartStylePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ChartStylePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartStylePart? openXmlElement)
+  public static DMPack.ChartStylePart? CreateModelElement(DXPack.ChartStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ChartStylePart();
+      var value = new DMPack.ChartStylePart();
       value.ChartStyle = GetChartStyle(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class ChartStylePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartStylePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartStylePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartStylePart? value)
+    where OpenXmlElementType: DXPack.ChartStylePart, new()
   {
     if (value != null)
     {

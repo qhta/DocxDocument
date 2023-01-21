@@ -8,25 +8,25 @@ public static class DiagramConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Diagram openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.Diagram openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Diagram Style Options
   /// </summary>
-  private static Int64? GetStyle(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Int64? GetStyle(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.Style?.Value;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
+  private static void SetStyle(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.Style = value;
   }
@@ -34,12 +34,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Automatic Format
   /// </summary>
-  private static Boolean? GetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Boolean? GetAutoFormat(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.AutoFormat?.Value;
   }
   
-  private static void SetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
+  private static void SetAutoFormat(DXVmlO.Diagram openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AutoFormat = value;
@@ -50,12 +50,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Reverse Direction
   /// </summary>
-  private static Boolean? GetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Boolean? GetReverse(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.Reverse?.Value;
   }
   
-  private static void SetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
+  private static void SetReverse(DXVmlO.Diagram openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Reverse = value;
@@ -66,12 +66,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Automatic Layout
   /// </summary>
-  private static Boolean? GetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Boolean? GetAutoLayout(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.AutoLayout?.Value;
   }
   
-  private static void SetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
+  private static void SetAutoLayout(DXVmlO.Diagram openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AutoLayout = value;
@@ -82,12 +82,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Layout X Scale
   /// </summary>
-  private static Int64? GetScaleX(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Int64? GetScaleX(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.ScaleX?.Value;
   }
   
-  private static void SetScaleX(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
+  private static void SetScaleX(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.ScaleX = value;
   }
@@ -95,12 +95,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Layout Y Scale
   /// </summary>
-  private static Int64? GetScaleY(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Int64? GetScaleY(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.ScaleY?.Value;
   }
   
-  private static void SetScaleY(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
+  private static void SetScaleY(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.ScaleY = value;
   }
@@ -108,12 +108,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Font Size
   /// </summary>
-  private static Int64? GetFontSize(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Int64? GetFontSize(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.FontSize?.Value;
   }
   
-  private static void SetFontSize(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
+  private static void SetFontSize(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.FontSize = value;
   }
@@ -121,12 +121,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Layout Extents
   /// </summary>
-  private static String? GetConstrainBounds(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static String? GetConstrainBounds(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.ConstrainBounds?.Value;
   }
   
-  private static void SetConstrainBounds(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, String? value)
+  private static void SetConstrainBounds(DXVmlO.Diagram openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ConstrainBounds = new StringValue { Value = value };
@@ -137,12 +137,12 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Base Font Size
   /// </summary>
-  private static Int64? GetBaseTextScale(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static Int64? GetBaseTextScale(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.BaseTextScale?.Value;
   }
   
-  private static void SetBaseTextScale(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
+  private static void SetBaseTextScale(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.BaseTextScale = value;
   }
@@ -150,32 +150,32 @@ public static class DiagramConverter
   /// <summary>
   /// Diagram Relationship Table.
   /// </summary>
-  private static DocumentModel.Vml.RelationTable? GetRelationTable(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
+  private static DMVml.RelationTable? GetRelationTable(DXVmlO.Diagram openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.RelationTable>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RelationTableConverter.CreateModelElement(itemElement);
+      return DMXVml.RelationTableConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRelationTable(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, DocumentModel.Vml.RelationTable? value)
+  private static void SetRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.RelationTable>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.RelationTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RelationTable>(value);
+      itemElement = DMXVml.RelationTableConverter.CreateOpenXmlElement<DXVmlO.RelationTable>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.Diagram? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement)
+  public static DMVml.Diagram? CreateModelElement(DXVmlO.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Diagram();
+      var value = new DMVml.Diagram();
       value.Extension = GetExtension(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.AutoFormat = GetAutoFormat(openXmlElement);
@@ -192,8 +192,8 @@ public static class DiagramConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Diagram? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Diagram, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Diagram? value)
+    where OpenXmlElementType: DXVmlO.Diagram, new()
   {
     if (value != null)
     {

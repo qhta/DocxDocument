@@ -8,25 +8,25 @@ public static class ButtonConverter
   /// <summary>
   /// size
   /// </summary>
-  private static DocumentModel.UI.SizeKind? GetSize(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static DMUI.SizeKind? GetSize(DXOCustUI.Button openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(openXmlElement?.Size?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, DocumentModel.UI.SizeKind? value)
+  private static void SetSize(DXOCustUI.Button openXmlElement, DMUI.SizeKind? value)
   {
-    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(value);
+    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
   }
   
   /// <summary>
   /// getSize
   /// </summary>
-  private static String? GetGetSize(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetSize(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
   }
   
-  private static void SetGetSize(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetSize(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSize = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class ButtonConverter
   /// <summary>
   /// onAction
   /// </summary>
-  private static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetOnAction(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
   
-  private static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetOnAction(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnAction = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class ButtonConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static Boolean? GetEnabled(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -69,12 +69,12 @@ public static class ButtonConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetEnabled(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -85,12 +85,12 @@ public static class ButtonConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetDescription(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetDescription(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Description = new StringValue { Value = value };
@@ -101,12 +101,12 @@ public static class ButtonConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetDescription(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
   
-  private static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetDescription(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetDescription = new StringValue { Value = value };
@@ -117,12 +117,12 @@ public static class ButtonConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetImage(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class ButtonConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetImageMso(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetImageMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class ButtonConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetImage(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class ButtonConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetId(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetId(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -181,12 +181,12 @@ public static class ButtonConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetIdQ(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -197,12 +197,12 @@ public static class ButtonConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetIdMso(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -213,12 +213,12 @@ public static class ButtonConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetTag(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetTag(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -229,12 +229,12 @@ public static class ButtonConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetScreentip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetScreentip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -245,12 +245,12 @@ public static class ButtonConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetScreentip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -261,12 +261,12 @@ public static class ButtonConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetSupertip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetSupertip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -277,12 +277,12 @@ public static class ButtonConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetSupertip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -293,12 +293,12 @@ public static class ButtonConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -309,12 +309,12 @@ public static class ButtonConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -325,12 +325,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -341,12 +341,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -357,12 +357,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -373,12 +373,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -389,12 +389,12 @@ public static class ButtonConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -405,12 +405,12 @@ public static class ButtonConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -421,12 +421,12 @@ public static class ButtonConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetKeytip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetKeytip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -437,12 +437,12 @@ public static class ButtonConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetKeytip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -453,12 +453,12 @@ public static class ButtonConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static Boolean? GetShowLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -469,12 +469,12 @@ public static class ButtonConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetShowLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -485,12 +485,12 @@ public static class ButtonConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static Boolean? GetShowImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -501,12 +501,12 @@ public static class ButtonConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement)
+  private static String? GetGetShowImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
   
-  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowImage = new StringValue { Value = value };
@@ -514,11 +514,11 @@ public static class ButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DocumentModel.UI.Button? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.Button? openXmlElement)
+  public static DMUI.Button? CreateModelElement(DXOCustUI.Button? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.Button();
+      var value = new DMUI.Button();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
@@ -556,8 +556,8 @@ public static class ButtonConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.Button? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.Button, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Button? value)
+    where OpenXmlElementType: DXOCustUI.Button, new()
   {
     if (value != null)
     {

@@ -8,38 +8,38 @@ public static class CellMergeConverter
   /// <summary>
   /// vMerge
   /// </summary>
-  private static DocumentModel.Wordprocessing.VerticalMergeRevisionKind? GetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement)
+  private static DMW.VerticalMergeRevisionKind? GetVerticalMerge(DXW.CellMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DocumentModel.Wordprocessing.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value);
   }
   
-  private static void SetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement, DocumentModel.Wordprocessing.VerticalMergeRevisionKind? value)
+  private static void SetVerticalMerge(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
   {
-    openXmlElement.VerticalMerge = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DocumentModel.Wordprocessing.VerticalMergeRevisionKind>(value);
+    openXmlElement.VerticalMerge = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
   }
   
   /// <summary>
   /// vMergeOrig
   /// </summary>
-  private static DocumentModel.Wordprocessing.VerticalMergeRevisionKind? GetVerticalMergeOriginal(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement)
+  private static DMW.VerticalMergeRevisionKind? GetVerticalMergeOriginal(DXW.CellMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DocumentModel.Wordprocessing.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value);
   }
   
-  private static void SetVerticalMergeOriginal(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement, DocumentModel.Wordprocessing.VerticalMergeRevisionKind? value)
+  private static void SetVerticalMergeOriginal(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
   {
-    openXmlElement.VerticalMergeOriginal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DocumentModel.Wordprocessing.VerticalMergeRevisionKind>(value);
+    openXmlElement.VerticalMergeOriginal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
   }
   
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement)
+  private static String? GetAuthor(DXW.CellMerge openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement, String? value)
+  private static void SetAuthor(DXW.CellMerge openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -50,12 +50,12 @@ public static class CellMergeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement)
+  private static DateTime? GetDate(DXW.CellMerge openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement, DateTime? value)
+  private static void SetDate(DXW.CellMerge openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -63,12 +63,12 @@ public static class CellMergeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement)
+  private static String? GetId(DXW.CellMerge openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.CellMerge openXmlElement, String? value)
+  private static void SetId(DXW.CellMerge openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -76,11 +76,11 @@ public static class CellMergeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.CellMerge? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CellMerge? openXmlElement)
+  public static DMW.CellMerge? CreateModelElement(DXW.CellMerge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CellMerge();
+      var value = new DMW.CellMerge();
       value.VerticalMerge = GetVerticalMerge(openXmlElement);
       value.VerticalMergeOriginal = GetVerticalMergeOriginal(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
@@ -91,8 +91,8 @@ public static class CellMergeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CellMerge? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CellMerge, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CellMerge? value)
+    where OpenXmlElementType: DXW.CellMerge, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class ArtisticPaintStrokesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticPaintStrokes openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticPaintStrokesConverter
   /// <summary>
   /// intensity, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetIntensity(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes openXmlElement)
+  private static Int32? GetIntensity(DXO2010Draw.ArtisticPaintStrokes openXmlElement)
   {
     return openXmlElement.Intensity?.Value;
   }
   
-  private static void SetIntensity(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes openXmlElement, Int32? value)
+  private static void SetIntensity(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value)
   {
     openXmlElement.Intensity = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPaintStrokes? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes? openXmlElement)
+  public static DMDraws.ArtisticPaintStrokes? CreateModelElement(DXO2010Draw.ArtisticPaintStrokes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticPaintStrokes();
+      var value = new DMDraws.ArtisticPaintStrokes();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Intensity = GetIntensity(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticPaintStrokesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPaintStrokes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintStrokes? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticPaintStrokes, new()
   {
     if (value != null)
     {

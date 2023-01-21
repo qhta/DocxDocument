@@ -8,12 +8,12 @@ public static class AdjustConverter
   /// <summary>
   /// Adjust Handle Index
   /// </summary>
-  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement)
+  private static UInt32? GetIndex(DXDrawDgms.Adjust openXmlElement)
   {
     return openXmlElement.Index?.Value;
   }
   
-  private static void SetIndex(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement, UInt32? value)
+  private static void SetIndex(DXDrawDgms.Adjust openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
   }
@@ -21,21 +21,21 @@ public static class AdjustConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement)
+  private static Double? GetVal(DXDrawDgms.Adjust openXmlElement)
   {
     return openXmlElement.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement, Double? value)
+  private static void SetVal(DXDrawDgms.Adjust openXmlElement, Double? value)
   {
     openXmlElement.Val = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.Adjust? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust? openXmlElement)
+  public static DMDrawsDgms.Adjust? CreateModelElement(DXDrawDgms.Adjust? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Adjust();
+      var value = new DMDrawsDgms.Adjust();
       value.Index = GetIndex(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class AdjustConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Adjust? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Adjust, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Adjust? value)
+    where OpenXmlElementType: DXDrawDgms.Adjust, new()
   {
     if (value != null)
     {

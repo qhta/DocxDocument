@@ -8,12 +8,12 @@ public static class ParagraphPropertiesChangeConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement)
+  private static String? GetAuthor(DXW.ParagraphPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement, String? value)
+  private static void SetAuthor(DXW.ParagraphPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ParagraphPropertiesChangeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement)
+  private static DateTime? GetDate(DXW.ParagraphPropertiesChange openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement, DateTime? value)
+  private static void SetDate(DXW.ParagraphPropertiesChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -37,12 +37,12 @@ public static class ParagraphPropertiesChangeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement)
+  private static String? GetId(DXW.ParagraphPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement, String? value)
+  private static void SetId(DXW.ParagraphPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -53,32 +53,32 @@ public static class ParagraphPropertiesChangeConverter
   /// <summary>
   /// Previous Paragraph Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.ParagraphPropertiesExtended? GetParagraphPropertiesExtended(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement)
+  private static DMW.ParagraphPropertiesExtended? GetParagraphPropertiesExtended(DXW.ParagraphPropertiesChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesExtended>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesExtendedConverter.CreateModelElement(itemElement);
+      return DMXW.ParagraphPropertiesExtendedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraphPropertiesExtended(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesExtended? value)
+  private static void SetParagraphPropertiesExtended(DXW.ParagraphPropertiesChange openXmlElement, DMW.ParagraphPropertiesExtended? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ParagraphPropertiesExtended>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesExtendedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>(value);
+      itemElement = DMXW.ParagraphPropertiesExtendedConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesExtended>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+  public static DMW.ParagraphPropertiesChange? CreateModelElement(DXW.ParagraphPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesChange();
+      var value = new DMW.ParagraphPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -88,8 +88,8 @@ public static class ParagraphPropertiesChangeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphPropertiesChange? value)
+    where OpenXmlElementType: DXW.ParagraphPropertiesChange, new()
   {
     if (value != null)
     {

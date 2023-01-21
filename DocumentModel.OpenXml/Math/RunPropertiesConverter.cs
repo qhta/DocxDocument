@@ -8,137 +8,137 @@ public static class RunPropertiesConverter
   /// <summary>
   /// Literal.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetLiteral(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.BooleanKind? GetLiteral(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Literal>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Literal>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetLiteral(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetLiteral(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Literal>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Literal>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Literal, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Literal, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.BooleanKind? GetNormalText(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.BooleanKind? GetNormalText(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.NormalText>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetNormalText(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetNormalText(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.NormalText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.NormalText, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.NormalText, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.ScriptKind? GetScript(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.ScriptKind? GetScript(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Script>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DocumentModel.Math.ScriptKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetScript(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.ScriptKind? value)
+  private static void SetScript(DXMath.RunProperties openXmlElement, DMMath.ScriptKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Script>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Script, DocumentFormat.OpenXml.Math.ScriptValues, DocumentModel.Math.ScriptKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.StyleKind? GetStyle(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.StyleKind? GetStyle(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Style>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DocumentModel.Math.StyleKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.StyleKind? value)
+  private static void SetStyle(DXMath.RunProperties openXmlElement, DMMath.StyleKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Style>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Style, DocumentFormat.OpenXml.Math.StyleValues, DocumentModel.Math.StyleKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Style, DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.Break? GetBreak(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.Break? GetBreak(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Break>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BreakConverter.CreateModelElement(itemElement);
+      return DMXMath.BreakConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBreak(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.Break? value)
+  private static void SetBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Break>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Break>(value);
+      itemElement = DMXMath.BreakConverter.CreateOpenXmlElement<DXMath.Break>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Math.BooleanKind? GetAlignment(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
+  private static DMMath.BooleanKind? GetAlignment(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Alignment>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetAlignment(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Alignment>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.RunProperties? CreateModelElement(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement)
+  public static DMMath.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.RunProperties();
+      var value = new DMMath.RunProperties();
       value.Literal = GetLiteral(openXmlElement);
       value.NormalText = GetNormalText(openXmlElement);
       value.Script = GetScript(openXmlElement);
@@ -150,8 +150,8 @@ public static class RunPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.RunProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.RunProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.RunProperties? value)
+    where OpenXmlElementType: DXMath.RunProperties, new()
   {
     if (value != null)
     {

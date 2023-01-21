@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ThemeOverridePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
+  private static String? GetContentType(DXPack.ThemeOverridePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,19 +13,19 @@ public static class ThemeOverridePartConverter
   /// <summary>
   /// Gets the ImageParts of the ThemeOverridePart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ThemeOverridePart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ThemeOverridePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -33,28 +33,28 @@ public static class ThemeOverridePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.ThemeOverride? GetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
+  private static DMDraws.ThemeOverride? GetThemeOverride(DXPack.ThemeOverridePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.ThemeOverride rootElement)
-      return DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDraw.ThemeOverride rootElement)
+      return DMXDraws.ThemeOverrideConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement, DocumentModel.Drawings.ThemeOverride? value)
+  private static void SetThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMDraws.ThemeOverride? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeOverride>(value);
+       var rootElement = DMXDraws.ThemeOverrideConverter.CreateOpenXmlElement<DXDraw.ThemeOverride>(value);
        if (rootElement != null)
          openXmlElement.ThemeOverride = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.ThemeOverridePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
+  public static DMPack.ThemeOverridePart? CreateModelElement(DXPack.ThemeOverridePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ThemeOverridePart();
+      var value = new DMPack.ThemeOverridePart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -64,8 +64,8 @@ public static class ThemeOverridePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemeOverridePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemeOverridePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThemeOverridePart? value)
+    where OpenXmlElementType: DXPack.ThemeOverridePart, new()
   {
     if (value != null)
     {

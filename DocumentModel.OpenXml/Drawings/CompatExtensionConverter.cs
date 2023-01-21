@@ -8,12 +8,12 @@ public static class CompatExtensionConverter
   /// <summary>
   /// spid, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension openXmlElement)
+  private static String? GetShapeId(DXO2010Draw.CompatExtension openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
   
-  private static void SetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension openXmlElement, String? value)
+  private static void SetShapeId(DXO2010Draw.CompatExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ShapeId = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class CompatExtensionConverter
       openXmlElement.ShapeId = null;
   }
   
-  public static DocumentModel.Drawings.CompatExtension? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? openXmlElement)
+  public static DMDraws.CompatExtension? CreateModelElement(DXO2010Draw.CompatExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CompatExtension();
+      var value = new DMDraws.CompatExtension();
       value.ShapeId = GetShapeId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CompatExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CompatExtension? value)
+    where OpenXmlElementType: DXO2010Draw.CompatExtension, new()
   {
     if (value != null)
     {

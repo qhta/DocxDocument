@@ -8,12 +8,12 @@ public static class PageSizeConverter
   /// <summary>
   /// Page Width
   /// </summary>
-  private static UInt32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement)
+  private static UInt32? GetWidth(DXW.PageSize openXmlElement)
   {
     return openXmlElement.Width?.Value;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement, UInt32? value)
+  private static void SetWidth(DXW.PageSize openXmlElement, UInt32? value)
   {
     openXmlElement.Width = value;
   }
@@ -21,12 +21,12 @@ public static class PageSizeConverter
   /// <summary>
   /// Page Height
   /// </summary>
-  private static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement)
+  private static UInt32? GetHeight(DXW.PageSize openXmlElement)
   {
     return openXmlElement.Height?.Value;
   }
   
-  private static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement, UInt32? value)
+  private static void SetHeight(DXW.PageSize openXmlElement, UInt32? value)
   {
     openXmlElement.Height = value;
   }
@@ -34,34 +34,34 @@ public static class PageSizeConverter
   /// <summary>
   /// Page Orientation
   /// </summary>
-  private static DocumentModel.Wordprocessing.PageOrientationKind? GetOrient(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement)
+  private static DMW.PageOrientationKind? GetOrient(DXW.PageSize openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DocumentModel.Wordprocessing.PageOrientationKind>(openXmlElement?.Orient?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value);
   }
   
-  private static void SetOrient(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement, DocumentModel.Wordprocessing.PageOrientationKind? value)
+  private static void SetOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value)
   {
-    openXmlElement.Orient = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DocumentModel.Wordprocessing.PageOrientationKind>(value);
+    openXmlElement.Orient = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(value);
   }
   
   /// <summary>
   /// Printer Paper Code
   /// </summary>
-  private static UInt16? GetCode(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement)
+  private static UInt16? GetCode(DXW.PageSize openXmlElement)
   {
     return openXmlElement.Code?.Value;
   }
   
-  private static void SetCode(DocumentFormat.OpenXml.Wordprocessing.PageSize openXmlElement, UInt16? value)
+  private static void SetCode(DXW.PageSize openXmlElement, UInt16? value)
   {
     openXmlElement.Code = value;
   }
   
-  public static DocumentModel.Wordprocessing.PageSize? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PageSize? openXmlElement)
+  public static DMW.PageSize? CreateModelElement(DXW.PageSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PageSize();
+      var value = new DMW.PageSize();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Orient = GetOrient(openXmlElement);
@@ -71,8 +71,8 @@ public static class PageSizeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageSize? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageSize, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageSize? value)
+    where OpenXmlElementType: DXW.PageSize, new()
   {
     if (value != null)
     {

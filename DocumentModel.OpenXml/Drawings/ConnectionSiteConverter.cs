@@ -8,12 +8,12 @@ public static class ConnectionSiteConverter
   /// <summary>
   /// Connection Site Angle
   /// </summary>
-  private static String? GetAngle(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement)
+  private static String? GetAngle(DXDraw.ConnectionSite openXmlElement)
   {
     return openXmlElement?.Angle?.Value;
   }
   
-  private static void SetAngle(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement, String? value)
+  private static void SetAngle(DXDraw.ConnectionSite openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Angle = new StringValue { Value = value };
@@ -24,32 +24,32 @@ public static class ConnectionSiteConverter
   /// <summary>
   /// Position.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement)
+  private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.ConnectionSite openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Position>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
+  private static void SetPosition(DXDraw.ConnectionSite openXmlElement, DMDraws.AdjustPoint2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Position>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
+      itemElement = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Position>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionSite? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionSite? openXmlElement)
+  public static DMDraws.ConnectionSite? CreateModelElement(DXDraw.ConnectionSite? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionSite();
+      var value = new DMDraws.ConnectionSite();
       value.Angle = GetAngle(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class ConnectionSiteConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionSite? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionSite, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSite? value)
+    where OpenXmlElementType: DXDraw.ConnectionSite, new()
   {
     if (value != null)
     {

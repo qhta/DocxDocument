@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DiagramStylePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramStylePart openXmlElement)
+  private static String? GetContentType(DXPack.DiagramStylePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramStylePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DiagramStylePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,28 +18,28 @@ public static class DiagramStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.StyleDefinition? GetStyleDefinition(DocumentFormat.OpenXml.Packaging.DiagramStylePart openXmlElement)
+  private static DMDrawsDgms.StyleDefinition? GetStyleDefinition(DXPack.DiagramStylePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawDgms.StyleDefinition rootElement)
+      return DMXDrawsDgms.StyleDefinitionConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetStyleDefinition(DocumentFormat.OpenXml.Packaging.DiagramStylePart openXmlElement, DocumentModel.Drawings.Diagrams.StyleDefinition? value)
+  private static void SetStyleDefinition(DXPack.DiagramStylePart openXmlElement, DMDrawsDgms.StyleDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition>(value);
+       var rootElement = DMXDrawsDgms.StyleDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.StyleDefinition>(value);
        if (rootElement != null)
          openXmlElement.StyleDefinition = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.DiagramStylePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramStylePart? openXmlElement)
+  public static DMPack.DiagramStylePart? CreateModelElement(DXPack.DiagramStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DiagramStylePart();
+      var value = new DMPack.DiagramStylePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.StyleDefinition = GetStyleDefinition(openXmlElement);
@@ -48,8 +48,8 @@ public static class DiagramStylePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramStylePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramStylePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramStylePart? value)
+    where OpenXmlElementType: DXPack.DiagramStylePart, new()
   {
     if (value != null)
     {

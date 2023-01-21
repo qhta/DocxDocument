@@ -8,12 +8,12 @@ public static class GeoLocationQueryConverter
   /// <summary>
   /// countryRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement)
+  private static String? GetCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return openXmlElement?.CountryRegion?.Value;
   }
   
-  private static void SetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement, String? value)
+  private static void SetCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CountryRegion = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class GeoLocationQueryConverter
   /// <summary>
   /// adminDistrict1, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement)
+  private static String? GetAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return openXmlElement?.AdminDistrict1?.Value;
   }
   
-  private static void SetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement, String? value)
+  private static void SetAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AdminDistrict1 = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class GeoLocationQueryConverter
   /// <summary>
   /// adminDistrict2, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement)
+  private static String? GetAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return openXmlElement?.AdminDistrict2?.Value;
   }
   
-  private static void SetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement, String? value)
+  private static void SetAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AdminDistrict2 = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class GeoLocationQueryConverter
   /// <summary>
   /// postalCode, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement)
+  private static String? GetPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return openXmlElement?.PostalCode?.Value;
   }
   
-  private static void SetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement, String? value)
+  private static void SetPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PostalCode = new StringValue { Value = value };
@@ -72,21 +72,21 @@ public static class GeoLocationQueryConverter
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement)
+  private static DMDrawsChartDraws.EntityTypeEnum? GetEntityType(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
+  private static void SetEntityType(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
-    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery? openXmlElement)
+  public static DMDrawsChartDraws.GeoLocationQuery? CreateModelElement(DXO2016DrawChartDraw.GeoLocationQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQuery();
+      var value = new DMDrawsChartDraws.GeoLocationQuery();
       value.CountryRegion = GetCountryRegion(openXmlElement);
       value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);
       value.AdminDistrict2 = GetAdminDistrict2(openXmlElement);
@@ -97,8 +97,8 @@ public static class GeoLocationQueryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocationQuery? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoLocationQuery, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class LevelTextConverter
   /// <summary>
   /// Level Text
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement)
+  private static String? GetVal(DXW.LevelText openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement, String? value)
+  private static void SetVal(DXW.LevelText openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class LevelTextConverter
   /// <summary>
   /// Level Text Is Null Character
   /// </summary>
-  private static Boolean? GetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement)
+  private static Boolean? GetNull(DXW.LevelText openXmlElement)
   {
     return openXmlElement?.Null?.Value;
   }
   
-  private static void SetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement, Boolean? value)
+  private static void SetNull(DXW.LevelText openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Null = new OnOffValue { Value = (Boolean)value };
@@ -37,11 +37,11 @@ public static class LevelTextConverter
       openXmlElement.Null = null;
   }
   
-  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement)
+  public static DMW.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LevelText();
+      var value = new DMW.LevelText();
       value.Val = GetVal(openXmlElement);
       value.Null = GetNull(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class LevelTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelText? value)
+    where OpenXmlElementType: DXW.LevelText, new()
   {
     if (value != null)
     {

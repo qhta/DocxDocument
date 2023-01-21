@@ -8,12 +8,12 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart> GetChartColorStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static Collection<DMPack.ChartColorStylePart> GetChartColorStyleParts(DXPack.ChartPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>())
+    var collection = new Collection<DMPack.ChartColorStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartColorStylePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ChartColorStylePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ChartColorStylePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -23,18 +23,18 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartSpace? GetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static DMDrawsCharts.ChartSpace? GetChartSpace(DXPack.ChartPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.ChartSpace rootElement)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawCharts.ChartSpace rootElement)
+      return DMXDrawsCharts.ChartSpaceConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement, DocumentModel.Drawings.Charts.ChartSpace? value)
+  private static void SetChartSpace(DXPack.ChartPart openXmlElement, DMDrawsCharts.ChartSpace? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpace>(value);
+       var rootElement = DMXDrawsCharts.ChartSpaceConverter.CreateOpenXmlElement<DXDrawCharts.ChartSpace>(value);
        if (rootElement != null)
          openXmlElement.ChartSpace = rootElement;
     }
@@ -43,19 +43,19 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart> GetChartStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static Collection<DMPack.ChartStylePart> GetChartStyleParts(DXPack.ChartPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>())
+    var collection = new Collection<DMPack.ChartStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartStylePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ChartStylePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ChartStylePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static String? GetContentType(DXPack.ChartPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -63,28 +63,28 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ChartPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ChartPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ChartPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
+  public static DMPack.ChartPart? CreateModelElement(DXPack.ChartPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ChartPart();
+      var value = new DMPack.ChartPart();
       value.ChartColorStyleParts = GetChartColorStyleParts(openXmlElement);
       value.ChartSpace = GetChartSpace(openXmlElement);
       value.ChartStyleParts = GetChartStyleParts(openXmlElement);
@@ -96,8 +96,8 @@ public static class ChartPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartPart? value)
+    where OpenXmlElementType: DXPack.ChartPart, new()
   {
     if (value != null)
     {

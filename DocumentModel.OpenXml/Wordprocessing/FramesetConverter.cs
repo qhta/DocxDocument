@@ -8,22 +8,22 @@ public static class FramesetConverter
   /// <summary>
   /// Nested Frameset Size.
   /// </summary>
-  private static String? GetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement)
+  private static String? GetFrameSize(DXW.Frameset openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement, String? value)
+  private static void SetFrameSize(DXW.Frameset openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
+      itemElement = new DXW.FrameSize { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class FramesetConverter
   /// <summary>
   /// Frameset Splitter Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.FramesetSplitbar? GetFramesetSplitbar(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement)
+  private static DMW.FramesetSplitbar? GetFramesetSplitbar(DXW.Frameset openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.FramesetSplitbar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FramesetSplitbarConverter.CreateModelElement(itemElement);
+      return DMXW.FramesetSplitbarConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFramesetSplitbar(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement, DocumentModel.Wordprocessing.FramesetSplitbar? value)
+  private static void SetFramesetSplitbar(DXW.Frameset openXmlElement, DMW.FramesetSplitbar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FramesetSplitbar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FramesetSplitbarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>(value);
+      itemElement = DMXW.FramesetSplitbarConverter.CreateOpenXmlElement<DXW.FramesetSplitbar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,74 +55,74 @@ public static class FramesetConverter
   /// <summary>
   /// Frameset Layout.
   /// </summary>
-  private static DocumentModel.Wordprocessing.FrameLayoutKind? GetFrameLayout(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement)
+  private static DMW.FrameLayoutKind? GetFrameLayout(DXW.Frameset openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameLayout>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DocumentModel.Wordprocessing.FrameLayoutKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetFrameLayout(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement, DocumentModel.Wordprocessing.FrameLayoutKind? value)
+  private static void SetFrameLayout(DXW.Frameset openXmlElement, DMW.FrameLayoutKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DocumentModel.Wordprocessing.FrameLayoutKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Frameset? GetChildFrameset(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement)
+  private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frameset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Frameset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateModelElement(itemElement);
+      return DMXW.FramesetConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChildFrameset(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement, DocumentModel.Wordprocessing.Frameset? value)
+  private static void SetChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frameset>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Frameset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frameset>(value);
+      itemElement = DMXW.FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Frame? GetFrame(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement)
+  private static DMW.Frame? GetFrame(DXW.Frameset openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frame>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Frame>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FrameConverter.CreateModelElement(itemElement);
+      return DMXW.FrameConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFrame(DocumentFormat.OpenXml.Wordprocessing.Frameset openXmlElement, DocumentModel.Wordprocessing.Frame? value)
+  private static void SetFrame(DXW.Frameset openXmlElement, DMW.Frame? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frame>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Frame>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frame>(value);
+      itemElement = DMXW.FrameConverter.CreateOpenXmlElement<DXW.Frame>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Frameset? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+  public static DMW.Frameset? CreateModelElement(DXW.Frameset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Frameset();
+      var value = new DMW.Frameset();
       value.FrameSize = GetFrameSize(openXmlElement);
       value.FramesetSplitbar = GetFramesetSplitbar(openXmlElement);
       value.FrameLayout = GetFrameLayout(openXmlElement);
@@ -133,8 +133,8 @@ public static class FramesetConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Frameset? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Frameset, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Frameset? value)
+    where OpenXmlElementType: DXW.Frameset, new()
   {
     if (value != null)
     {

@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class SingleCellTablePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.SingleCellTablePart openXmlElement)
+  private static String? GetContentType(DXPack.SingleCellTablePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SingleCellTablePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.SingleCellTablePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.SingleCellTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SingleCellTablePart? openXmlElement)
+  public static DMPack.SingleCellTablePart? CreateModelElement(DXPack.SingleCellTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.SingleCellTablePart();
+      var value = new DMPack.SingleCellTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class SingleCellTablePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SingleCellTablePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SingleCellTablePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.SingleCellTablePart? value)
+    where OpenXmlElementType: DXPack.SingleCellTablePart, new()
   {
     if (value != null)
     {

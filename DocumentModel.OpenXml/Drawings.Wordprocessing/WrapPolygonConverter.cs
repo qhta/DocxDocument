@@ -8,12 +8,12 @@ public static class WrapPolygonConverter
   /// <summary>
   /// Wrapping Points Modified
   /// </summary>
-  private static Boolean? GetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
+  private static Boolean? GetEdited(DXDrawW.WrapPolygon openXmlElement)
   {
     return openXmlElement?.Edited?.Value;
   }
   
-  private static void SetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, Boolean? value)
+  private static void SetEdited(DXDrawW.WrapPolygon openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Edited = new BooleanValue { Value = (Boolean)value };
@@ -24,53 +24,53 @@ public static class WrapPolygonConverter
   /// <summary>
   /// Wrapping Polygon Start.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Point2DType? GetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
+  private static DMDrawsW.Point2DType? GetStartPoint(DXDrawW.WrapPolygon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.StartPoint>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
+  private static void SetStartPoint(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.StartPoint>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>(value);
+      itemElement = DMXDrawsW.Point2DTypeConverter.CreateOpenXmlElement<DXDrawW.StartPoint>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.Point2DType? GetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
+  private static DMDrawsW.Point2DType? GetLineTo(DXDrawW.WrapPolygon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.LineTo>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
+  private static void SetLineTo(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.LineTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>(value);
+      itemElement = DMXDrawsW.Point2DTypeConverter.CreateOpenXmlElement<DXDrawW.LineTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
+  public static DMDrawsW.WrapPolygon? CreateModelElement(DXDrawW.WrapPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapPolygon();
+      var value = new DMDrawsW.WrapPolygon();
       value.Edited = GetEdited(openXmlElement);
       value.StartPoint = GetStartPoint(openXmlElement);
       value.LineTo = GetLineTo(openXmlElement);
@@ -79,8 +79,8 @@ public static class WrapPolygonConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapPolygon? value)
+    where OpenXmlElementType: DXDrawW.WrapPolygon, new()
   {
     if (value != null)
     {

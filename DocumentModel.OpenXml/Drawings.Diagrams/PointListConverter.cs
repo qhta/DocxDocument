@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class PointListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point> GetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList openXmlElement)
+  private static Collection<DMDrawsDgms.Point> GetPoints(DXDrawDgms.PointList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Point>())
+    var collection = new Collection<DMDrawsDgms.Point>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.Point>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.PointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>? value)
+  private static void SetPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Point>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.Point>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Point>(item);
+        var newItem = DMXDrawsDgms.PointConverter.CreateOpenXmlElement<DXDrawDgms.Point>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PointList? openXmlElement)
+  public static DMDrawsDgms.PointList? CreateModelElement(DXDrawDgms.PointList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PointList();
+      var value = new DMDrawsDgms.PointList();
       value.Points = GetPoints(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PointList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PointList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PointList? value)
+    where OpenXmlElementType: DXDrawDgms.PointList, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class SchemaConverter
   /// <summary>
   /// Custom XML Schema Namespace
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
+  private static String? GetUri(DXCustXmlSchRefs.Schema openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
+  private static void SetUri(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SchemaConverter
   /// <summary>
   /// Resource File Location
   /// </summary>
-  private static String? GetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
+  private static String? GetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement)
   {
     return openXmlElement?.ManifestLocation?.Value;
   }
   
-  private static void SetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
+  private static void SetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ManifestLocation = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class SchemaConverter
   /// <summary>
   /// Custom XML Schema Location
   /// </summary>
-  private static String? GetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
+  private static String? GetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement)
   {
     return openXmlElement?.SchemaLocation?.Value;
   }
   
-  private static void SetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
+  private static void SetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SchemaLocation = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class SchemaConverter
       openXmlElement.SchemaLocation = null;
   }
   
-  public static DocumentModel.CustomXml.Schema? CreateModelElement(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
+  public static DMCustXml.Schema? CreateModelElement(DXCustXmlSchRefs.Schema? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomXml.Schema();
+      var value = new DMCustXml.Schema();
       value.Uri = GetUri(openXmlElement);
       value.ManifestLocation = GetManifestLocation(openXmlElement);
       value.SchemaLocation = GetSchemaLocation(openXmlElement);
@@ -66,8 +66,8 @@ public static class SchemaConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.Schema? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.Schema? value)
+    where OpenXmlElementType: DXCustXmlSchRefs.Schema, new()
   {
     if (value != null)
     {

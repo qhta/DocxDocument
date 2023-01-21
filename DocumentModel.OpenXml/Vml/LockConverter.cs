@@ -8,25 +8,25 @@ public static class LockConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Lock openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.Lock openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Position Lock
   /// </summary>
-  private static Boolean? GetPosition(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetPosition(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetPosition(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Position = value;
@@ -37,12 +37,12 @@ public static class LockConverter
   /// <summary>
   /// Selection Lock
   /// </summary>
-  private static Boolean? GetSelection(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetSelection(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Selection?.Value;
   }
   
-  private static void SetSelection(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetSelection(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Selection = value;
@@ -53,12 +53,12 @@ public static class LockConverter
   /// <summary>
   /// Grouping Lock
   /// </summary>
-  private static Boolean? GetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetGrouping(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Grouping?.Value;
   }
   
-  private static void SetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetGrouping(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Grouping = value;
@@ -69,12 +69,12 @@ public static class LockConverter
   /// <summary>
   /// Ungrouping Lock
   /// </summary>
-  private static Boolean? GetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetUngrouping(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Ungrouping?.Value;
   }
   
-  private static void SetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetUngrouping(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Ungrouping = value;
@@ -85,12 +85,12 @@ public static class LockConverter
   /// <summary>
   /// Rotation Lock
   /// </summary>
-  private static Boolean? GetRotation(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetRotation(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Rotation?.Value;
   }
   
-  private static void SetRotation(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetRotation(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Rotation = value;
@@ -101,12 +101,12 @@ public static class LockConverter
   /// <summary>
   /// Cropping Lock
   /// </summary>
-  private static Boolean? GetCropping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetCropping(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Cropping?.Value;
   }
   
-  private static void SetCropping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetCropping(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Cropping = value;
@@ -117,12 +117,12 @@ public static class LockConverter
   /// <summary>
   /// Vertices Lock
   /// </summary>
-  private static Boolean? GetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetVerticies(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.Verticies?.Value;
   }
   
-  private static void SetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetVerticies(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Verticies = value;
@@ -133,12 +133,12 @@ public static class LockConverter
   /// <summary>
   /// Handles Lock
   /// </summary>
-  private static Boolean? GetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetAdjustHandles(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.AdjustHandles?.Value;
   }
   
-  private static void SetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetAdjustHandles(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AdjustHandles = value;
@@ -149,12 +149,12 @@ public static class LockConverter
   /// <summary>
   /// Text Lock
   /// </summary>
-  private static Boolean? GetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetTextLock(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.TextLock?.Value;
   }
   
-  private static void SetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetTextLock(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.TextLock = value;
@@ -165,12 +165,12 @@ public static class LockConverter
   /// <summary>
   /// Aspect Ratio Lock
   /// </summary>
-  private static Boolean? GetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetAspectRatio(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.AspectRatio?.Value;
   }
   
-  private static void SetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetAspectRatio(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AspectRatio = value;
@@ -181,12 +181,12 @@ public static class LockConverter
   /// <summary>
   /// AutoShape Type Lock
   /// </summary>
-  private static Boolean? GetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
+  private static Boolean? GetShapeType(DXVmlO.Lock openXmlElement)
   {
     return openXmlElement?.ShapeType?.Value;
   }
   
-  private static void SetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
+  private static void SetShapeType(DXVmlO.Lock openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShapeType = value;
@@ -194,11 +194,11 @@ public static class LockConverter
       openXmlElement.ShapeType = null;
   }
   
-  public static DocumentModel.Vml.Lock? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
+  public static DMVml.Lock? CreateModelElement(DXVmlO.Lock? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Lock();
+      var value = new DMVml.Lock();
       value.Extension = GetExtension(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.Selection = GetSelection(openXmlElement);
@@ -216,8 +216,8 @@ public static class LockConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Lock? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Lock, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Lock? value)
+    where OpenXmlElementType: DXVmlO.Lock, new()
   {
     if (value != null)
     {

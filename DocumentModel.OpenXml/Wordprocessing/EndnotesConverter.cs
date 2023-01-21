@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class EndnotesConverter
 {
-  private static DocumentModel.Wordprocessing.Endnote? GetEndnote(DocumentFormat.OpenXml.Wordprocessing.Endnotes openXmlElement)
+  private static DMW.Endnote? GetEndnote(DXW.Endnotes openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Endnote>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Endnote>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.EndnoteConverter.CreateModelElement(itemElement);
+      return DMXW.EndnoteConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEndnote(DocumentFormat.OpenXml.Wordprocessing.Endnotes openXmlElement, DocumentModel.Wordprocessing.Endnote? value)
+  private static void SetEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Endnote>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Endnote>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.EndnoteConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Endnote>(value);
+      itemElement = DMXW.EndnoteConverter.CreateOpenXmlElement<DXW.Endnote>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Endnotes? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Endnotes? openXmlElement)
+  public static DMW.Endnotes? CreateModelElement(DXW.Endnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Endnotes();
+      var value = new DMW.Endnotes();
       value.Endnote = GetEndnote(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Endnotes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Endnotes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnotes? value)
+    where OpenXmlElementType: DXW.Endnotes, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class RotationConverter
   /// <summary>
   /// Latitude
   /// </summary>
-  private static Int32? GetLatitude(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement)
+  private static Int32? GetLatitude(DXDraw.Rotation openXmlElement)
   {
     return openXmlElement.Latitude?.Value;
   }
   
-  private static void SetLatitude(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement, Int32? value)
+  private static void SetLatitude(DXDraw.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Latitude = value;
   }
@@ -21,12 +21,12 @@ public static class RotationConverter
   /// <summary>
   /// Longitude
   /// </summary>
-  private static Int32? GetLongitude(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement)
+  private static Int32? GetLongitude(DXDraw.Rotation openXmlElement)
   {
     return openXmlElement.Longitude?.Value;
   }
   
-  private static void SetLongitude(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement, Int32? value)
+  private static void SetLongitude(DXDraw.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Longitude = value;
   }
@@ -34,21 +34,21 @@ public static class RotationConverter
   /// <summary>
   /// Revolution
   /// </summary>
-  private static Int32? GetRevolution(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement)
+  private static Int32? GetRevolution(DXDraw.Rotation openXmlElement)
   {
     return openXmlElement.Revolution?.Value;
   }
   
-  private static void SetRevolution(DocumentFormat.OpenXml.Drawing.Rotation openXmlElement, Int32? value)
+  private static void SetRevolution(DXDraw.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Revolution = value;
   }
   
-  public static DocumentModel.Drawings.Rotation? CreateModelElement(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement)
+  public static DMDraws.Rotation? CreateModelElement(DXDraw.Rotation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Rotation();
+      var value = new DMDraws.Rotation();
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
       value.Revolution = GetRevolution(openXmlElement);
@@ -57,8 +57,8 @@ public static class RotationConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rotation? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rotation, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rotation? value)
+    where OpenXmlElementType: DXDraw.Rotation, new()
   {
     if (value != null)
     {

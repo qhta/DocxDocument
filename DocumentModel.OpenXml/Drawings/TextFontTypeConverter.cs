@@ -8,12 +8,12 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Text Typeface
   /// </summary>
-  private static String? GetTypeface(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement)
+  private static String? GetTypeface(DXDraw.TextFontType openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
   }
   
-  private static void SetTypeface(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement, String? value)
+  private static void SetTypeface(DXDraw.TextFontType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Typeface = new StringValue { Value = value };
@@ -24,14 +24,14 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Panose Setting
   /// </summary>
-  private static Byte[]? GetPanose(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement)
+  private static Byte[]? GetPanose(DXDraw.TextFontType openXmlElement)
   {
     if (openXmlElement.Panose?.Value != null)
       return Convert.FromHexString(openXmlElement.Panose.Value);
     return null;
   }
   
-  private static void SetPanose(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement, Byte[]? value)
+  private static void SetPanose(DXDraw.TextFontType openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Panose = Convert.ToHexString(value);
@@ -42,12 +42,12 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Similar Font Family
   /// </summary>
-  private static SByte? GetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement)
+  private static SByte? GetPitchFamily(DXDraw.TextFontType openXmlElement)
   {
     return openXmlElement.PitchFamily?.Value;
   }
   
-  private static void SetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement, SByte? value)
+  private static void SetPitchFamily(DXDraw.TextFontType openXmlElement, SByte? value)
   {
     openXmlElement.PitchFamily = value;
   }
@@ -55,21 +55,21 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Similar Character Set
   /// </summary>
-  private static SByte? GetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement)
+  private static SByte? GetCharacterSet(DXDraw.TextFontType openXmlElement)
   {
     return openXmlElement.CharacterSet?.Value;
   }
   
-  private static void SetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType openXmlElement, SByte? value)
+  private static void SetCharacterSet(DXDraw.TextFontType openXmlElement, SByte? value)
   {
     openXmlElement.CharacterSet = value;
   }
   
-  public static DocumentModel.Drawings.TextFontType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static DMDraws.TextFontType? CreateModelElement(DXDraw.TextFontType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextFontType();
+      var value = new DMDraws.TextFontType();
       value.Typeface = GetTypeface(openXmlElement);
       value.Panose = GetPanose(openXmlElement);
       value.PitchFamily = GetPitchFamily(openXmlElement);
@@ -79,8 +79,8 @@ public static class TextFontTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextFontType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextFontType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextFontType? value)
+    where OpenXmlElementType: DXDraw.TextFontType, new()
   {
     if (value != null)
     {

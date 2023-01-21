@@ -8,29 +8,29 @@ public static class TaskPriorityEventInfoConverter
   /// <summary>
   /// value, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Int32? GetValue(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo openXmlElement)
+  private static Int32? GetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement)
   {
     return openXmlElement.Value?.Value;
   }
   
-  private static void SetValue(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo openXmlElement, Int32? value)
+  private static void SetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value)
   {
     openXmlElement.Value = value;
   }
   
-  public static DocumentModel.TaskPriorityEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo? openXmlElement)
+  public static DM.TaskPriorityEventInfo? CreateModelElement(DXO2021DocTasks.TaskPriorityEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.TaskPriorityEventInfo();
+      var value = new DM.TaskPriorityEventInfo();
       value.Value = GetValue(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskPriorityEventInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskPriorityEventInfo, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskPriorityEventInfo? value)
+    where OpenXmlElementType: DXO2021DocTasks.TaskPriorityEventInfo, new()
   {
     if (value != null)
     {

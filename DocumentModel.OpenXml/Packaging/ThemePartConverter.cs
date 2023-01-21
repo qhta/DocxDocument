@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ThemePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
+  private static String? GetContentType(DXPack.ThemePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,19 +13,19 @@ public static class ThemePartConverter
   /// <summary>
   /// Gets the ImageParts of the ThemePart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ThemePart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ThemePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -33,28 +33,28 @@ public static class ThemePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Theme? GetTheme(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
+  private static DMDraws.Theme? GetTheme(DXPack.ThemePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Theme rootElement)
-      return DocumentModel.OpenXml.Drawings.ThemeConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDraw.Theme rootElement)
+      return DMXDraws.ThemeConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetTheme(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement, DocumentModel.Drawings.Theme? value)
+  private static void SetTheme(DXPack.ThemePart openXmlElement, DMDraws.Theme? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.ThemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Theme>(value);
+       var rootElement = DMXDraws.ThemeConverter.CreateOpenXmlElement<DXDraw.Theme>(value);
        if (rootElement != null)
          openXmlElement.Theme = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.ThemePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemePart? openXmlElement)
+  public static DMPack.ThemePart? CreateModelElement(DXPack.ThemePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ThemePart();
+      var value = new DMPack.ThemePart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -64,8 +64,8 @@ public static class ThemePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThemePart? value)
+    where OpenXmlElementType: DXPack.ThemePart, new()
   {
     if (value != null)
     {

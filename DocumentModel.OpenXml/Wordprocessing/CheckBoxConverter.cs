@@ -5,100 +5,100 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CheckBoxConverter
 {
-  private static String? GetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
+  private static String? GetFormFieldSize(DXW.CheckBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.FormFieldSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, String? value)
+  private static void SetFormFieldSize(DXW.CheckBox openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FormFieldSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormFieldSize { Val = value };
+      itemElement = new DXW.FormFieldSize { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
+  private static Boolean? GetAutomaticallySizeFormField(DXW.CheckBox openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
+  private static void SetAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField();
+      var itemElement = new DXW.AutomaticallySizeFormField();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
+  private static Boolean? GetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
+  private static void SetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState();
+      var itemElement = new DXW.DefaultCheckBoxFormFieldState();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
+  private static Boolean? GetChecked(DXW.CheckBox openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Checked>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
+  private static void SetChecked(DXW.CheckBox openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.Checked>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Checked();
+      var itemElement = new DXW.Checked();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
+  public static DMW.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CheckBox();
+      var value = new DMW.CheckBox();
       value.FormFieldSize = GetFormFieldSize(openXmlElement);
       value.AutomaticallySizeFormField = GetAutomaticallySizeFormField(openXmlElement);
       value.DefaultCheckBoxFormFieldState = GetDefaultCheckBoxFormFieldState(openXmlElement);
@@ -108,8 +108,8 @@ public static class CheckBoxConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CheckBox, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBox? value)
+    where OpenXmlElementType: DXW.CheckBox, new()
   {
     if (value != null)
     {

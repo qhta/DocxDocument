@@ -8,339 +8,339 @@ public static class ShapePropertiesConverter
   /// <summary>
   /// Black and White Mode
   /// </summary>
-  private static DocumentModel.Drawings.BlackWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.BlackWhiteMode? GetBlackWhiteMode(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static void SetBlackWhiteMode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
+  private static void SetBlackWhiteMode(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.BlackWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(value);
   }
   
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  private static DocumentModel.Drawings.Transform2D? GetTransform2D(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.Transform2D? GetTransform2D(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Transform2D>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Transform2D>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Transform2DConverter.CreateModelElement(itemElement);
+      return DMXDraws.Transform2DConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTransform2D(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.Transform2D? value)
+  private static void SetTransform2D(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.Transform2D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Transform2D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Transform2D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Transform2DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Transform2D>(value);
+      itemElement = DMXDraws.Transform2DConverter.CreateOpenXmlElement<DXDraw.Transform2D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.CustomGeometry? GetCustomGeometry(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.CustomGeometry? GetCustomGeometry(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomGeometry>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateModelElement(itemElement);
+      return DMXDraws.CustomGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomGeometry(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.CustomGeometry? value)
+  private static void SetCustomGeometry(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.CustomGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.CustomGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomGeometry>(value);
+      itemElement = DMXDraws.CustomGeometryConverter.CreateOpenXmlElement<DXDraw.CustomGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PresetGeometry? GetPresetGeometry(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.PresetGeometry? GetPresetGeometry(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetGeometry>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetGeometry(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.PresetGeometry? value)
+  private static void SetPresetGeometry(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.PresetGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetGeometry>(value);
+      itemElement = DMXDraws.PresetGeometryConverter.CreateOpenXmlElement<DXDraw.PresetGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static Boolean? GetNoFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
     return itemElement != null;
   }
   
-  private static void SetNoFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, Boolean? value)
+  private static void SetNoFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+      var itemElement = new DXDraw.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.SolidFill? GetSolidFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSolidFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.SolidFill? value)
+  private static void SetSolidFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.GradientFill? GetGradientFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.GradientFill? value)
+  private static void SetGradientFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.BlipFill? GetBlipFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlipFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.BlipFill? value)
+  private static void SetBlipFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.PatternFill? GetPatternFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPatternFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.PatternFill? value)
+  private static void SetPatternFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGroupFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static Boolean? GetGroupFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
     return itemElement != null;
   }
   
-  private static void SetGroupFill(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXO2016DrawChartDraw.ShapeProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+      var itemElement = new DXDraw.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.Outline? GetOutline(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+      return DMXDraws.OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOutline(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.Outline? value)
+  private static void SetOutline(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.EffectList? GetEffectList(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.EffectList? value)
+  private static void SetEffectList(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
+      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.EffectDag? GetEffectDag(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectDagConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectDag(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.EffectDag? value)
+  private static void SetEffectDag(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
+      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Scene3DType? GetScene3DType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.Scene3DType? GetScene3DType(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Scene3DType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScene3DType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.Scene3DType? value)
+  private static void SetScene3DType(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.Scene3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Scene3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Scene3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Scene3DType>(value);
+      itemElement = DMXDraws.Scene3DTypeConverter.CreateOpenXmlElement<DXDraw.Scene3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Shape3DType? GetShape3DType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.Shape3DType? GetShape3DType(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape3DType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.Shape3DType? value)
+  private static void SetShape3DType(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.Shape3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Shape3DType>(value);
+      itemElement = DMXDraws.Shape3DTypeConverter.CreateOpenXmlElement<DXDraw.Shape3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ShapePropertiesExtensionList? GetShapePropertiesExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement)
+  private static DMDraws.ShapePropertiesExtensionList? GetShapePropertiesExtensionList(DXO2016DrawChartDraw.ShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ShapePropertiesExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ShapePropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapePropertiesExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties openXmlElement, DocumentModel.Drawings.ShapePropertiesExtensionList? value)
+  private static void SetShapePropertiesExtensionList(DXO2016DrawChartDraw.ShapeProperties openXmlElement, DMDraws.ShapePropertiesExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapePropertiesExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList>(value);
+      itemElement = DMXDraws.ShapePropertiesExtensionListConverter.CreateOpenXmlElement<DXDraw.ShapePropertiesExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ShapeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties? openXmlElement)
+  public static DMDrawsChartDraws.ShapeProperties? CreateModelElement(DXO2016DrawChartDraw.ShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ShapeProperties();
+      var value = new DMDrawsChartDraws.ShapeProperties();
       value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
       value.Transform2D = GetTransform2D(openXmlElement);
       value.CustomGeometry = GetCustomGeometry(openXmlElement);
@@ -362,8 +362,8 @@ public static class ShapePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ShapeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ShapeProperties? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.ShapeProperties, new()
   {
     if (value != null)
     {

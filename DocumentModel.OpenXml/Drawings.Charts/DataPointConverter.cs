@@ -8,22 +8,22 @@ public static class DataPointConverter
   /// <summary>
   /// Index.
   /// </summary>
-  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static UInt32? GetIndex(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, UInt32? value)
+  private static void SetIndex(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+      itemElement = new DXDrawCharts.Index{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,23 +31,23 @@ public static class DataPointConverter
   /// <summary>
   /// Invert if Negative.
   /// </summary>
-  private static Boolean? GetInvertIfNegative(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static Boolean? GetInvertIfNegative(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>();
     return itemElement != null;
   }
   
-  private static void SetInvertIfNegative(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, Boolean? value)
+  private static void SetInvertIfNegative(DXDrawCharts.DataPoint openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative();
+      var itemElement = new DXDrawCharts.InvertIfNegative();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -55,22 +55,22 @@ public static class DataPointConverter
   /// <summary>
   /// Marker.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Marker? GetMarker(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static DMDrawsCharts.Marker? GetMarker(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Marker>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Marker>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MarkerConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.MarkerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMarker(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, DocumentModel.Drawings.Charts.Marker? value)
+  private static void SetMarker(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.Marker? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Marker>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Marker>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.MarkerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Marker>(value);
+      itemElement = DMXDrawsCharts.MarkerConverter.CreateOpenXmlElement<DXDrawCharts.Marker>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -79,23 +79,23 @@ public static class DataPointConverter
   /// <summary>
   /// 3D Bubble.
   /// </summary>
-  private static Boolean? GetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static Boolean? GetBubble3D(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>();
     return itemElement != null;
   }
   
-  private static void SetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, Boolean? value)
+  private static void SetBubble3D(DXDrawCharts.DataPoint openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Bubble3D();
+      var itemElement = new DXDrawCharts.Bubble3D();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -103,22 +103,22 @@ public static class DataPointConverter
   /// <summary>
   /// Explosion.
   /// </summary>
-  private static UInt32? GetExplosion(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static UInt32? GetExplosion(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Explosion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetExplosion(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, UInt32? value)
+  private static void SetExplosion(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Explosion>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Explosion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Explosion{ Val = value };
+      itemElement = new DXDrawCharts.Explosion{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -126,22 +126,22 @@ public static class DataPointConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -150,22 +150,22 @@ public static class DataPointConverter
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.PictureOptions? GetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, DocumentModel.Drawings.Charts.PictureOptions? value)
+  private static void SetPictureOptions(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.PictureOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>(value);
+      itemElement = DMXDrawsCharts.PictureOptionsConverter.CreateOpenXmlElement<DXDrawCharts.PictureOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -174,32 +174,32 @@ public static class DataPointConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DataPoint openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataPoint? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DataPoint? openXmlElement)
+  public static DMDrawsCharts.DataPoint? CreateModelElement(DXDrawCharts.DataPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataPoint();
+      var value = new DMDrawsCharts.DataPoint();
       value.Index = GetIndex(openXmlElement);
       value.InvertIfNegative = GetInvertIfNegative(openXmlElement);
       value.Marker = GetMarker(openXmlElement);
@@ -213,8 +213,8 @@ public static class DataPointConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataPoint? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DataPoint, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataPoint? value)
+    where OpenXmlElementType: DXDrawCharts.DataPoint, new()
   {
     if (value != null)
     {

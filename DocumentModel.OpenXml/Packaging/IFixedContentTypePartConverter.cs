@@ -5,18 +5,18 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class IFixedContentTypePartConverter
 {
-  public static DocumentModel.Packaging.IFixedContentTypePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.IFixedContentTypePart? openXmlElement)
+  public static DMPack.IFixedContentTypePart? CreateModelElement(DXPack.IFixedContentTypePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.IFixedContentTypePart();
+      var value = new DMPack.IFixedContentTypePart();
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IFixedContentTypePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.IFixedContentTypePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.IFixedContentTypePart? value)
+    where OpenXmlElementType: DXPack.IFixedContentTypePart, new()
   {
     if (value != null)
     {

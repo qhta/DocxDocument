@@ -8,22 +8,22 @@ public static class SubscriptConverter
   /// <summary>
   /// Subscript Properties.
   /// </summary>
-  private static DocumentModel.Math.SubscriptProperties? GetSubscriptProperties(DocumentFormat.OpenXml.Math.Subscript openXmlElement)
+  private static DMMath.SubscriptProperties? GetSubscriptProperties(DXMath.Subscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubscriptProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.SubscriptProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubscriptPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.SubscriptPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSubscriptProperties(DocumentFormat.OpenXml.Math.Subscript openXmlElement, DocumentModel.Math.SubscriptProperties? value)
+  private static void SetSubscriptProperties(DXMath.Subscript openXmlElement, DMMath.SubscriptProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubscriptProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.SubscriptProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.SubscriptPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubscriptProperties>(value);
+      itemElement = DMXMath.SubscriptPropertiesConverter.CreateOpenXmlElement<DXMath.SubscriptProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class SubscriptConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Subscript openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.Subscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.Subscript openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.Subscript openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class SubscriptConverter
   /// <summary>
   /// Subscript (Subscript function).
   /// </summary>
-  private static DocumentModel.Math.SubArgument? GetSubArgument(DocumentFormat.OpenXml.Math.Subscript openXmlElement)
+  private static DMMath.SubArgument? GetSubArgument(DXMath.Subscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubArgument>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.SubArgument>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubArgumentConverter.CreateModelElement(itemElement);
+      return DMXMath.SubArgumentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSubArgument(DocumentFormat.OpenXml.Math.Subscript openXmlElement, DocumentModel.Math.SubArgument? value)
+  private static void SetSubArgument(DXMath.Subscript openXmlElement, DMMath.SubArgument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubArgument>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.SubArgument>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.SubArgumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubArgument>(value);
+      itemElement = DMXMath.SubArgumentConverter.CreateOpenXmlElement<DXMath.SubArgument>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.Subscript? CreateModelElement(DocumentFormat.OpenXml.Math.Subscript? openXmlElement)
+  public static DMMath.Subscript? CreateModelElement(DXMath.Subscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Subscript();
+      var value = new DMMath.Subscript();
       value.SubscriptProperties = GetSubscriptProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);
@@ -90,8 +90,8 @@ public static class SubscriptConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Subscript? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Subscript, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Subscript? value)
+    where OpenXmlElementType: DXMath.Subscript, new()
   {
     if (value != null)
     {

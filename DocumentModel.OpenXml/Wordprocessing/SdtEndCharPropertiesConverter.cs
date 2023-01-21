@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SdtEndCharPropertiesConverter
 {
-  private static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties openXmlElement)
+  private static DMW.RunProperties? GetRunProperties(DXW.SdtEndCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+  private static void SetRunProperties(DXW.SdtEndCharProperties openXmlElement, DMW.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? openXmlElement)
+  public static DMW.SdtEndCharProperties? CreateModelElement(DXW.SdtEndCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtEndCharProperties();
+      var value = new DMW.SdtEndCharProperties();
       value.RunProperties = GetRunProperties(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtEndCharProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtEndCharProperties? value)
+    where OpenXmlElementType: DXW.SdtEndCharProperties, new()
   {
     if (value != null)
     {

@@ -1,10 +1,4 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Xml.Linq;
-
-using Qhta.Collections;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public static class TypeManager
 {
@@ -14,16 +8,47 @@ public static class TypeManager
 
   public static int TotalTypesCount => KnownTypes.Count;
 
-  public static IEnumerable<TypeInfo> AllTypes => TypeManager.KnownTypes.Values.Select(item => item);
+  public static IEnumerable<TypeInfo> AllTypes 
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownTypes.Values.Select(item => item);
+    }
+  }
 
-  public static IEnumerable<TypeInfo> AcceptedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
-  public static IEnumerable<TypeInfo> ConvertedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsConverted == true);
-  public static IEnumerable<TypeInfo> UsedTypes => TypeManager.KnownTypes.Values.Where(item => item.IsUsed == true);
+  public static IEnumerable<TypeInfo> AcceptedTypes
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownTypes.Values.Where(item => item.IsAccepted == true);
+    }
+  }
+
+  public static IEnumerable<TypeInfo> ConvertedTypes
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownTypes.Values.Where(item => item.IsConverted == true);
+    }
+  }
+
+  public static IEnumerable<TypeInfo> UsedTypes
+  {
+    get
+    {
+      lock (NamespacesLock)
+        return TypeManager.KnownTypes.Values.Where(item => item.IsUsed == true);
+    }
+  }
 
   public static void RegisterNamespace(string nspace)
   {
-    if (!KnownNamespaces.ContainsKey(nspace))
-      KnownNamespaces.Add(nspace, new());
+    lock (NamespacesLock)
+      if (!KnownNamespaces.ContainsKey(nspace))
+        KnownNamespaces.Add(nspace, new());
   }
 
 
@@ -51,17 +76,20 @@ public static class TypeManager
 
   public static IEnumerable<string> GetNamespaces(OTS filter)
   {
-    var knownNamespace = KnownNamespaces.ToArray();
-    if (filter == OTS.Any)
-      return KnownNamespaces.Select(item => item.Key);
-    var result = new List<string>();
-    if (filter.HasFlag(OTS.Target))
-      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
-    if (filter.HasFlag(OTS.Origin))
-      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
-    if (filter.HasFlag(OTS.System))
-      result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
-    return result;
+    lock (NamespacesLock)
+    {
+      var knownNamespace = KnownNamespaces.ToArray();
+      if (filter == OTS.Any)
+        return KnownNamespaces.Select(item => item.Key);
+      var result = new List<string>();
+      if (filter.HasFlag(OTS.Target))
+        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentModel")).Select(item => item.Key));
+      if (filter.HasFlag(OTS.Origin))
+        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("DocumentFormat")).Select(item => item.Key));
+      if (filter.HasFlag(OTS.System))
+        result.AddRange(knownNamespace.Where(item => item.Key.StartsWith("System")).Select(item => item.Key));
+      return result;
+    }
   }
 
   private static object KnownTypesLock = new object();

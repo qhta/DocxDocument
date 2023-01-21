@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class BehaviorsConverter
 {
-  private static DocumentModel.Wordprocessing.DocPartBehaviorKind? GetBehavior(DocumentFormat.OpenXml.Wordprocessing.Behaviors openXmlElement)
+  private static DMW.DocPartBehaviorKind? GetBehavior(DXW.Behaviors openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Behavior>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DocumentModel.Wordprocessing.DocPartBehaviorKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetBehavior(DocumentFormat.OpenXml.Wordprocessing.Behaviors openXmlElement, DocumentModel.Wordprocessing.DocPartBehaviorKind? value)
+  private static void SetBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Behavior>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DocumentModel.Wordprocessing.DocPartBehaviorKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Behaviors? openXmlElement)
+  public static DMW.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Behaviors();
+      var value = new DMW.Behaviors();
       value.Behavior = GetBehavior(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Behaviors? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Behaviors, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Behaviors? value)
+    where OpenXmlElementType: DXW.Behaviors, new()
   {
     if (value != null)
     {

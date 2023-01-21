@@ -8,29 +8,29 @@ public static class TableLayoutConverter
   /// <summary>
   /// Table Layout Setting
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableLayoutKind? GetType(DocumentFormat.OpenXml.Wordprocessing.TableLayout openXmlElement)
+  private static DMW.TableLayoutKind? GetType(DXW.TableLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DocumentModel.Wordprocessing.TableLayoutKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.TableLayout openXmlElement, DocumentModel.Wordprocessing.TableLayoutKind? value)
+  private static void SetType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DocumentModel.Wordprocessing.TableLayoutKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableLayout? openXmlElement)
+  public static DMW.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableLayout();
+      var value = new DMW.TableLayout();
       value.Type = GetType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLayout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLayout, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLayout? value)
+    where OpenXmlElementType: DXW.TableLayout, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class PtExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension> GetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList openXmlElement)
+  private static Collection<DMDraws.PtExtension> GetPtExtensions(DXDrawDgms.PtExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.PtExtension>())
+    var collection = new Collection<DMDraws.PtExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.PtExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.PtExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>? value)
+  private static void SetPtExtensions(DXDrawDgms.PtExtensionList openXmlElement, Collection<DMDraws.PtExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.PtExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PtExtension>(item);
+        var newItem = DMXDraws.PtExtensionConverter.CreateOpenXmlElement<DXDraw.PtExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? openXmlElement)
+  public static DMDrawsDgms.PtExtensionList? CreateModelElement(DXDrawDgms.PtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.PtExtensionList();
+      var value = new DMDrawsDgms.PtExtensionList();
       value.PtExtensions = GetPtExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PtExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PtExtensionList? value)
+    where OpenXmlElementType: DXDrawDgms.PtExtensionList, new()
   {
     if (value != null)
     {

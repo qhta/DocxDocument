@@ -8,12 +8,12 @@ public static class ContentPartConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ContentPart openXmlElement)
+  private static String? GetId(DXW.ContentPart openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ContentPart openXmlElement, String? value)
+  private static void SetId(DXW.ContentPart openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class ContentPartConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.ContentPart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ContentPart? openXmlElement)
+  public static DMW.ContentPart? CreateModelElement(DXW.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ContentPart();
+      var value = new DMW.ContentPart();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ContentPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ContentPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ContentPart? value)
+    where OpenXmlElementType: DXW.ContentPart, new()
   {
     if (value != null)
     {

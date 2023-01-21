@@ -8,12 +8,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetId(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetTag(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,38 +56,38 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static DM.ExpandKind? GetAlignLabel(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.AlignLabel?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
   
-  private static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetAlignLabel(DXO2010CustUI.BackstageComboBox openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// expand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static DM.ExpandKind? GetExpand(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
-  private static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetExpand(DXO2010CustUI.BackstageComboBox openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.BackstageComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -98,12 +98,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -114,12 +114,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -130,12 +130,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -146,12 +146,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.BackstageComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -162,12 +162,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -178,12 +178,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetKeytip(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetKeytip(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -194,12 +194,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetKeytip(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetKeytip(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -210,12 +210,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getText, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetText(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetText(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetText?.Value;
   }
   
-  private static void SetGetText(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetText(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetText = new StringValue { Value = value };
@@ -226,12 +226,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// onChange, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnChange(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetOnChange(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.OnChange?.Value;
   }
   
-  private static void SetOnChange(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetOnChange(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnChange = new StringValue { Value = value };
@@ -242,12 +242,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// sizeString, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetSizeString(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
   
-  private static void SetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetSizeString(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SizeString = new StringValue { Value = value };
@@ -258,12 +258,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getItemCount, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetItemCount(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
   
-  private static void SetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetItemCount(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemCount = new StringValue { Value = value };
@@ -274,12 +274,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetItemLabel(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
   
-  private static void SetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetItemLabel(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemLabel = new StringValue { Value = value };
@@ -290,12 +290,12 @@ public static class BackstageComboBoxConverter
   /// <summary>
   /// getItemID, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static String? GetGetItemID(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
   
-  private static void SetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, String? value)
+  private static void SetGetItemID(DXO2010CustUI.BackstageComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemID = new StringValue { Value = value };
@@ -303,37 +303,37 @@ public static class BackstageComboBoxConverter
       openXmlElement.GetItemID = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType> GetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement)
+  private static Collection<DM.BackstageItemType> GetItemBackstageItems(DXO2010CustUI.BackstageComboBox openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>())
+    var collection = new Collection<DM.BackstageItemType>();
+    foreach (var item in openXmlElement.Elements<DXO2010CustUI.ItemBackstageItem>())
     {
-      var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateModelElement(item);
+      var newItem = DMX.BackstageItemTypeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>? value)
+  private static void SetItemBackstageItems(DXO2010CustUI.BackstageComboBox openXmlElement, Collection<DM.BackstageItemType>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>();
+    openXmlElement.RemoveAllChildren<DXO2010CustUI.ItemBackstageItem>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>(item);
+        var newItem = DMX.BackstageItemTypeConverter.CreateOpenXmlElement<DXO2010CustUI.ItemBackstageItem>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.BackstageComboBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox? openXmlElement)
+  public static DM.BackstageComboBox? CreateModelElement(DXO2010CustUI.BackstageComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageComboBox();
+      var value = new DM.BackstageComboBox();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -359,8 +359,8 @@ public static class BackstageComboBoxConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageComboBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageComboBox? value)
+    where OpenXmlElementType: DXO2010CustUI.BackstageComboBox, new()
   {
     if (value != null)
     {
