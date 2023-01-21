@@ -1,26 +1,23 @@
-﻿using System.Globalization;
-using DocumentFormat.OpenXml.Drawing.Charts;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class UInt32ValueConverter
 {
-  public static UInt32? GetValue(UnsignedIntegerType element)
+  public static UInt32? GetValue(DXDrawCharts.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static UInt32? GetValue(DocumentFormat.OpenXml.Office2016.Drawing.Charts.UnsignedIntegerType element)
+  public static UInt32? GetValue(DXO2016DrawCharts.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static UInt32? GetValue(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType element)
+  public static UInt32? GetValue(DXO2016DrawChartDraw.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static UInt32? GetValue(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType element)
+  public static UInt32? GetValue(DXW.LongHexNumberType element)
   {
     if (element.Val?.Value != null)
       return UInt32.Parse(element.Val.Value, NumberStyles.HexNumber);

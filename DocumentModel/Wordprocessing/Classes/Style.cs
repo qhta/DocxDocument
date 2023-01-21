@@ -43,12 +43,12 @@ public partial class Style
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  public OnOffOnlyKind? AutoRedefine { get; set; }
+  public Boolean? AutoRedefine { get; set; }
 
   /// <summary>
   ///   Hide Style From User Interface.
   /// </summary>
-  public OnOffOnlyKind? StyleHidden { get; set; }
+  public Boolean? StyleHidden { get; set; }
 
   /// <summary>
   ///   Optional User Interface Sorting Order.
@@ -58,37 +58,37 @@ public partial class Style
   /// <summary>
   ///   Hide Style From Main User Interface.
   /// </summary>
-  public OnOffOnlyKind? SemiHidden { get; set; }
+  public Boolean? SemiHidden { get; set; }
 
   /// <summary>
   ///   Remove Semi-Hidden Property When Style Is Used.
   /// </summary>
-  public OnOffOnlyKind? UnhideWhenUsed { get; set; }
+  public Boolean? UnhideWhenUsed { get; set; }
 
   /// <summary>
   ///   Primary Style.
   /// </summary>
-  public OnOffOnlyKind? PrimaryStyle { get; set; }
+  public Boolean? PrimaryStyle { get; set; }
 
   /// <summary>
   ///   Style Cannot Be Applied.
   /// </summary>
-  public OnOffOnlyKind? Locked { get; set; }
+  public Boolean? Locked { get; set; }
 
   /// <summary>
   ///   E-Mail Message Text Style.
   /// </summary>
-  public OnOffOnlyKind? Personal { get; set; }
+  public Boolean? Personal { get; set; }
 
   /// <summary>
   ///   E-Mail Message Composition Style.
   /// </summary>
-  public OnOffOnlyKind? PersonalCompose { get; set; }
+  public Boolean? PersonalCompose { get; set; }
 
   /// <summary>
   ///   E-Mail Message Reply Style.
   /// </summary>
-  public OnOffOnlyKind? PersonalReply { get; set; }
+  public Boolean? PersonalReply { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Style Definition.

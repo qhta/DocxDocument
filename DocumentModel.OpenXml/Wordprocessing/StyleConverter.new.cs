@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -31,6 +33,11 @@ public static class StyleConverter
     return openXmlElement?.StyleId?.Value;
   }
 
+  private static bool CmpStyleId(DXW.Style openXmlElement, String? value)
+  {
+    return openXmlElement?.StyleId?.Value == value;
+  }
+
   private static void SetStyleId(DXW.Style openXmlElement, String? value)
   {
     if (value != null)
@@ -45,6 +52,11 @@ public static class StyleConverter
   private static Boolean? GetDefault(DXW.Style openXmlElement)
   {
     return openXmlElement?.Default?.Value;
+  }
+
+  private static bool CmpDefault(DXW.Style openXmlElement, Boolean? value)
+  {
+    return openXmlElement?.Default?.Value == value;
   }
 
   private static void SetDefault(DXW.Style openXmlElement, Boolean? value)
@@ -63,6 +75,11 @@ public static class StyleConverter
     return openXmlElement?.CustomStyle?.Value;
   }
 
+  private static bool CmpCustomStyle(DXW.Style openXmlElement, Boolean? value)
+  {
+    return openXmlElement?.CustomStyle?.Value == value;
+  }
+
   private static void SetCustomStyle(DXW.Style openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -76,10 +93,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetStyleName(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.StyleName>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value;
+  }
+
+  private static bool CmpStyleName(DXW.Style openXmlElement, String? value)
+  {
+    return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value == value;
   }
 
   private static void SetStyleName(DXW.Style openXmlElement, String? value)
@@ -99,14 +118,16 @@ public static class StyleConverter
   /// </summary>
   private static String? GetAliases(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Aliases>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value;
   }
 
-  private static void SetAliases(DXW.Style openXmlElement, String? value)
+  private static bool CmpAliases(DXW.Style openXmlElement, String? value)
   {
+    return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value == value;
+  }
+
+    private static void SetAliases(DXW.Style openXmlElement, String? value)
+    {
     var itemElement = openXmlElement.GetFirstChild<DXW.Aliases>();
     if (itemElement != null)
       itemElement.Remove();
@@ -122,10 +143,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetBasedOn(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.BasedOn>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value;
+  }
+
+  private static bool CmpBasedOn(DXW.Style openXmlElement, String? value)
+  {
+    return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value == value;
   }
 
   private static void SetBasedOn(DXW.Style openXmlElement, String? value)
@@ -145,10 +168,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetNextParagraphStyle(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value;
+  }
+
+  private static bool CmpNextParagraphStyle(DXW.Style openXmlElement, String? value)
+  {
+    return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value == value;
   }
 
   private static void SetNextParagraphStyle(DXW.Style openXmlElement, String? value)
@@ -168,10 +193,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetLinkedStyle(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.LinkedStyle>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.LinkedStyle>()?.Val?.Value;
+  }
+
+  private static bool CmpLinkedStyle(DXW.Style openXmlElement, String? value)
+  {
+    return openXmlElement?.GetFirstChild<DXW.LinkedStyle>()?.Val?.Value == value;
   }
 
   private static void SetLinkedStyle(DXW.Style openXmlElement, String? value)
@@ -189,22 +216,24 @@ public static class StyleConverter
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetAutoRedefine(DXW.Style openXmlElement)
+  private static Boolean? GetAutoRedefine(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.AutoRedefine>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>());
   }
 
-  private static void SetAutoRedefine(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpAutoRedefine(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>(), value);
+  }
+
+  private static void SetAutoRedefine(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.AutoRedefine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.AutoRedefine, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.AutoRedefine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -213,22 +242,24 @@ public static class StyleConverter
   /// <summary>
   ///   Hide Style From User Interface.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetStyleHidden(DXW.Style openXmlElement)
+  private static Boolean? GetStyleHidden(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.StyleHidden>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.StyleHidden>());
   }
 
-  private static void SetStyleHidden(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpStyleHidden(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.StyleHidden>(), value);
+  }
+
+  private static void SetStyleHidden(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.StyleHidden>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.StyleHidden, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.StyleHidden>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -239,10 +270,12 @@ public static class StyleConverter
   /// </summary>
   private static Int32? GetUIPriority(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.UIPriority>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.UIPriority>()?.Val?.Value;
+  }
+
+  private static bool CmpUIPriority(DXW.Style openXmlElement, Int32? value)
+  {
+    return openXmlElement?.GetFirstChild<DXW.UIPriority>()?.Val?.Value == value;
   }
 
   private static void SetUIPriority(DXW.Style openXmlElement, Int32? value)
@@ -260,22 +293,24 @@ public static class StyleConverter
   /// <summary>
   ///   Hide Style From Main User Interface.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetSemiHidden(DXW.Style openXmlElement)
+  private static Boolean? GetSemiHidden(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SemiHidden>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.SemiHidden>());
   }
 
-  private static void SetSemiHidden(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpSemiHidden(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SemiHidden>(), value);
+  }
+
+  private static void SetSemiHidden(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.SemiHidden>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.SemiHidden, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.SemiHidden>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -284,22 +319,24 @@ public static class StyleConverter
   /// <summary>
   ///   Remove Semi-Hidden Property When Style Is Used.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetUnhideWhenUsed(DXW.Style openXmlElement)
+  private static Boolean? GetUnhideWhenUsed(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>());
   }
 
-  private static void SetUnhideWhenUsed(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpUnhideWhenUsed(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>(), value);
+  }
+
+  private static void SetUnhideWhenUsed(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.UnhideWhenUsed, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.UnhideWhenUsed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -308,22 +345,24 @@ public static class StyleConverter
   /// <summary>
   ///   Primary Style.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetPrimaryStyle(DXW.Style openXmlElement)
+  private static Boolean? GetPrimaryStyle(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.PrimaryStyle>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>());
   }
 
-  private static void SetPrimaryStyle(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpPrimaryStyle(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>(), value);
+  }
+
+  private static void SetPrimaryStyle(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PrimaryStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.PrimaryStyle, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.PrimaryStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -332,22 +371,24 @@ public static class StyleConverter
   /// <summary>
   ///   Style Cannot Be Applied.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetLocked(DXW.Style openXmlElement)
+  private static Boolean? GetLocked(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Locked>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Locked>());
   }
 
-  private static void SetLocked(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpLocked(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Locked>(), value);
+  }
+
+  private static void SetLocked(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Locked>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Locked, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.Locked>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -356,22 +397,24 @@ public static class StyleConverter
   /// <summary>
   ///   E-Mail Message Text Style.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetPersonal(DXW.Style openXmlElement)
+  private static Boolean? GetPersonal(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Personal>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Personal>());
   }
 
-  private static void SetPersonal(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpPersonal(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Personal>(), value);
+  }
+
+  private static void SetPersonal(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Personal>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Personal, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.Personal>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -380,22 +423,24 @@ public static class StyleConverter
   /// <summary>
   ///   E-Mail Message Composition Style.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetPersonalCompose(DXW.Style openXmlElement)
+  private static Boolean? GetPersonalCompose(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.PersonalCompose>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>());
   }
 
-  private static void SetPersonalCompose(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpPersonalCompose(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>(), value);
+  }
+
+  private static void SetPersonalCompose(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PersonalCompose>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.PersonalCompose, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.PersonalCompose>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -404,22 +449,24 @@ public static class StyleConverter
   /// <summary>
   ///   E-Mail Message Reply Style.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetPersonalReply(DXW.Style openXmlElement)
+  private static Boolean? GetPersonalReply(DXW.Style openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.PersonalReply>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.PersonalReply>());
   }
 
-  private static void SetPersonalReply(DXW.Style openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpPersonalReply(DXW.Style openXmlElement, Boolean? value)
+  {
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalReply>(), value);
+  }
+
+  private static void SetPersonalReply(DXW.Style openXmlElement, Boolean? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PersonalReply>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.PersonalReply, DXW.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      itemElement = BooleanValueConverter.CreateOpenXmlElement<DXW.PersonalReply>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -433,6 +480,13 @@ public static class StyleConverter
     if (openXmlElement.Rsid?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber);
     return null;
+  }
+
+  private static bool CmpRsid(DXW.Style openXmlElement, UInt32? value)
+  {
+    if (openXmlElement.Rsid?.Val?.Value != null)
+      return UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber) == value;
+    return value == null;
   }
 
   private static void SetRsid(DXW.Style openXmlElement, UInt32? value)
@@ -621,6 +675,41 @@ public static class StyleConverter
       return value;
     }
     return null;
+  }
+
+  public static bool CmpModelElement(DXW.Style? openXmlElement, DMW.Style? value)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      if (!CmpType(openXmlElement, value?.Type)) return false;
+      if (!CmpStyleId(openXmlElement, value?.StyleId)) return false;
+      if (!CmpDefault(openXmlElement, value?.Default)) return false;
+      if (!CmpCustomStyle(openXmlElement, value?.CustomStyle)) return false;
+      if (!CmpStyleName(openXmlElement, value?.Name)) return false;
+      if (!CmpAliases(openXmlElement, value?.Aliases)) return false;
+      if (!CmpBasedOn(openXmlElement, value?.BasedOn)) return false;
+      if (!CmpNextParagraphStyle(openXmlElement, value?.NextParagraphStyle)) return false;
+      if (!CmpLinkedStyle(openXmlElement, value?.LinkedStyle)) return false;
+      if (!CmpAutoRedefine(openXmlElement, value?.AutoRedefine)) return false;
+      if (!CmpStyleHidden(openXmlElement, value?.StyleHidden)) return false;
+      if (!CmpUIPriority(openXmlElement, value?.UIPriority)) return false;
+      if (!CmpSemiHidden(openXmlElement, value?.SemiHidden)) return false;
+      if (!CmpUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed)) return false;
+      if (!CmpPrimaryStyle(openXmlElement, value?.PrimaryStyle)) return false;
+      if (!CmpLocked(openXmlElement, value?.Locked)) return false;
+      if (!CmpPersonal(openXmlElement, value?.Personal)) return false;
+      if (!CmpPersonalCompose(openXmlElement, value?.PersonalCompose)) return false;
+      if (!CmpPersonalReply(openXmlElement, value?.PersonalReply)) return false;
+      if (!CmpRsid(openXmlElement, value?.Rsid)) return false;
+      //if (!CmpStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties)) return false;
+      //if (!CmpStyleRunProperties(openXmlElement, value?.StyleRunProperties)) return false;
+      //if (!CmpStyleTableProperties(openXmlElement, value?.StyleTableProperties)) return false;
+      //if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties)) return false;
+      //if (!CmpStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties)) return false;
+      //if (!CmpTableStyleProperties(openXmlElement, value?.TableStyleProperties)) return false;
+      return true;
+    }
+    return openXmlElement == null && value == null;
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Style? value)

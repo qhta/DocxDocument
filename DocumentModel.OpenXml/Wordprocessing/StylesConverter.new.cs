@@ -16,6 +16,14 @@ public static class StylesConverter
     return null;
   }
 
+  //private static bool CmpDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value)
+  //{
+  //  var itemElement = openXmlElement?.GetFirstChild<DXW.DocDefaults>();
+  //  if (itemElement != null)
+  //    return DocDefaultsConverter.CmpModelElement(itemElement, value);
+  //  return value == null;
+  //}
+
   private static void SetDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DocDefaults>();
@@ -88,6 +96,18 @@ public static class StylesConverter
       return value;
     }
     return null;
+  }
+
+  public static bool? CmpModelElement(DXW.Styles? openXmlElement, DMW.Styles? value)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      //if (!CmpDocDefaults(openXmlElement, value.DocDefaults)) return false;
+      //if (!CmpLatentStyles(openXmlElement, value.LatentStyles)) return false;
+      //if (!CmpItems(openXmlElement, value.AllStyles)) return false;
+      return true;
+    }
+    return (openXmlElement == null && value == null);
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Styles? value)
