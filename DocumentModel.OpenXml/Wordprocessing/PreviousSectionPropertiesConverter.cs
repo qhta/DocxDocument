@@ -323,7 +323,9 @@ public static class PreviousSectionPropertiesConverter
   private static Boolean? GetFormProtection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetFormProtection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -371,7 +373,9 @@ public static class PreviousSectionPropertiesConverter
   private static Boolean? GetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -395,7 +399,9 @@ public static class PreviousSectionPropertiesConverter
   private static Boolean? GetTitlePage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetTitlePage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -443,7 +449,9 @@ public static class PreviousSectionPropertiesConverter
   private static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -467,7 +475,9 @@ public static class PreviousSectionPropertiesConverter
   private static Boolean? GetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)

@@ -165,6 +165,8 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
             var id = newStyle.StyleId;
             if (id != null)
               _StyleIdsAdd(id, newStyle);
+            //else if (newStyle.Name != null)
+            //  _StyleIdsAdd(Style.CreateStyleId(newStyle.Name), newStyle);
             newStyle.PropertyChanging += Item_PropertyChanging;
             newStyle.PropertyChanged += Item_PropertyChanged;
           }
@@ -185,6 +187,8 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
             var id = newStyle.StyleId;
             if (id != null)
               _StyleIdsAdd(id, newStyle);
+            //else if (newStyle.Name != null)
+            //  _StyleIdsAdd(Style.CreateStyleId(newStyle.Name), newStyle);
             newStyle.PropertyChanging += Item_PropertyChanging;
             newStyle.PropertyChanged += Item_PropertyChanged;
           }

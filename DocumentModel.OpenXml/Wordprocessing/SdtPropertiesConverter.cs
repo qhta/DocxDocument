@@ -91,7 +91,9 @@ public static class SdtPropertiesConverter
   private static Boolean? GetShowingPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowingPlaceholder>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShowingPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
@@ -133,7 +135,9 @@ public static class SdtPropertiesConverter
   private static Boolean? GetTemporarySdt(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TemporarySdt>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetTemporarySdt(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)

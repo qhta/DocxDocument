@@ -49,7 +49,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetBold(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBold(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -70,7 +72,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -91,7 +95,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetItalic(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetItalic(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -112,7 +118,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -133,7 +141,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -154,7 +164,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -175,7 +187,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -196,7 +210,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -217,7 +233,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetOutline(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetOutline(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -238,7 +256,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetShadow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShadow(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -259,7 +279,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetEmboss(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetEmboss(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -280,7 +302,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetImprint(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetImprint(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -301,7 +325,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetNoProof(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoProof(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -322,7 +348,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -343,7 +371,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -364,7 +394,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetWebHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWebHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -673,7 +705,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -694,7 +728,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)
@@ -778,7 +814,9 @@ public static class PreviousRunPropertiesConverter
   private static Boolean? GetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties openXmlElement, Boolean? value)

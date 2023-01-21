@@ -151,7 +151,9 @@ public static class LevelConverter
   private static Boolean? GetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Boolean? value)

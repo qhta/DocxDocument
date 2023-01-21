@@ -122,7 +122,9 @@ public static class FontConverter
   private static Boolean? GetNotTrueType(DocumentFormat.OpenXml.Wordprocessing.Font openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NotTrueType>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNotTrueType(DocumentFormat.OpenXml.Wordprocessing.Font openXmlElement, Boolean? value)

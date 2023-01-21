@@ -35,7 +35,9 @@ public static class MailMergeConverter
   private static Boolean? GetLinkToQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkToQuery>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetLinkToQuery(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement, Boolean? value)
@@ -177,7 +179,9 @@ public static class MailMergeConverter
   private static Boolean? GetDoNotSuppressBlankLines(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotSuppressBlankLines(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement, Boolean? value)
@@ -271,7 +275,9 @@ public static class MailMergeConverter
   private static Boolean? GetMailAsAttachment(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetMailAsAttachment(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement, Boolean? value)
@@ -295,7 +301,9 @@ public static class MailMergeConverter
   private static Boolean? GetViewMergedData(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ViewMergedData>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetViewMergedData(DocumentFormat.OpenXml.Wordprocessing.MailMerge openXmlElement, Boolean? value)

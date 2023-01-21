@@ -128,7 +128,9 @@ public static class DataSourceObjectConverter
   private static Boolean? GetFirstRowHeader(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetFirstRowHeader(DocumentFormat.OpenXml.Wordprocessing.DataSourceObject openXmlElement, Boolean? value)

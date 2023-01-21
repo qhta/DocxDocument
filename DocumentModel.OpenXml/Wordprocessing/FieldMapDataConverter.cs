@@ -127,7 +127,9 @@ public static class FieldMapDataConverter
   private static Boolean? GetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, Boolean? value)

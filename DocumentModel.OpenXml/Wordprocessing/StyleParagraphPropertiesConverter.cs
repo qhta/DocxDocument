@@ -11,7 +11,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetKeepNext(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepNext>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetKeepNext(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -35,7 +37,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetKeepLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepLines>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetKeepLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -59,7 +63,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetPageBreakBefore(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPageBreakBefore(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -107,7 +113,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetWidowControl(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WidowControl>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWidowControl(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -155,7 +163,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetSuppressLineNumbers(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressLineNumbers(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -251,7 +261,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetSuppressAutoHyphens(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressAutoHyphens(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -275,7 +287,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetKinsoku(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kinsoku>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetKinsoku(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -299,7 +313,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetWordWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordWrap>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWordWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -323,7 +339,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetOverflowPunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetOverflowPunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -347,7 +365,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetTopLinePunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetTopLinePunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -371,7 +391,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetAutoSpaceDE(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutoSpaceDE(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -395,7 +417,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetAutoSpaceDN(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutoSpaceDN(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -419,7 +443,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -443,7 +469,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetAdjustRightIndent(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAdjustRightIndent(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -467,7 +495,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -539,7 +569,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetContextualSpacing(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetContextualSpacing(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -563,7 +595,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetMirrorIndents(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MirrorIndents>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetMirrorIndents(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
@@ -587,7 +621,9 @@ public static class StyleParagraphPropertiesConverter
   private static Boolean? GetSuppressOverlap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressOverlap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
