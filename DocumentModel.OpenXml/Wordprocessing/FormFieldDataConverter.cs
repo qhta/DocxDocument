@@ -28,7 +28,9 @@ public static class FormFieldDataConverter
   private static Boolean? GetEnabled(DocumentFormat.OpenXml.Wordprocessing.FormFieldData openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Enabled>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetEnabled(DocumentFormat.OpenXml.Wordprocessing.FormFieldData openXmlElement, Boolean? value)
@@ -49,7 +51,9 @@ public static class FormFieldDataConverter
   private static Boolean? GetCalculateOnExit(DocumentFormat.OpenXml.Wordprocessing.FormFieldData openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetCalculateOnExit(DocumentFormat.OpenXml.Wordprocessing.FormFieldData openXmlElement, Boolean? value)

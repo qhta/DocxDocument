@@ -44,6 +44,15 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     }
   }
 
+  public static string CreateStyleId(string name)
+  {
+    var chars = new List<char>();
+    foreach (var ch in name)
+      if (ch>='a' && ch<='z' || ch>='A' && ch<='Z' || ch>='0' && ch<='9')
+        chars.Add(ch);
+    return new string(chars.ToArray());
+  }
+
   IEnumerable<string>? IAliasedObject.Aliases => Aliases;
 
   public bool IsDefined =>

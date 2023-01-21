@@ -27,7 +27,9 @@ public static class DivConverter
   private static Boolean? GetBlockQuote(DocumentFormat.OpenXml.Wordprocessing.Div openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBlockQuote(DocumentFormat.OpenXml.Wordprocessing.Div openXmlElement, Boolean? value)
@@ -51,7 +53,9 @@ public static class DivConverter
   private static Boolean? GetBodyDiv(DocumentFormat.OpenXml.Wordprocessing.Div openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBodyDiv(DocumentFormat.OpenXml.Wordprocessing.Div openXmlElement, Boolean? value)

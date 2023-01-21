@@ -28,7 +28,9 @@ public static class CheckBoxConverter
   private static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
@@ -49,7 +51,9 @@ public static class CheckBoxConverter
   private static Boolean? GetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
@@ -70,7 +74,9 @@ public static class CheckBoxConverter
   private static Boolean? GetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
