@@ -10,13 +10,13 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 {
-  private readonly NamedObjectList<Style> _StyleList = null!;
+  private readonly NCollection<Style> _StyleList = null!;
   private readonly SortedDictionary<string, Style> _StyleIds = null!;
 
   public Styles()
   {
     _StyleIds = new SortedDictionary<string, Style>();
-    _StyleList = new NamedObjectList<Style>(StringComparer.InvariantCultureIgnoreCase);
+    _StyleList = new NCollection<Style>(StringComparer.InvariantCultureIgnoreCase);
     _StyleList.CollectionChanged += Styles_CollectionChanged;
     foreach (var item in BuiltInStyleStubs)
       _StyleList.Add(new Style { Name = item.name, Type = item.kind, Aliases = item.alias });

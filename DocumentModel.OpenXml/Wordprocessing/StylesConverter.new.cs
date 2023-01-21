@@ -1,5 +1,5 @@
-using DocumentModel.Wordprocessing;
-using Styles = DocumentFormat.OpenXml.Wordprocessing.Styles;
+using DMW = DocumentModel.Wordprocessing;
+using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml.Wordprocessing;
 
@@ -11,22 +11,22 @@ public static class StylesConverter
   /// <summary>
   ///   Document Default Paragraph and Run Properties.
   /// </summary>
-  private static DocDefaults? GetDocDefaults(Styles openXmlElement)
+  private static DMW.DocDefaults? GetDocDefaults(DXW.Styles openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocDefaults>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocDefaults>();
     if (itemElement != null)
       return DocDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
 
-  private static void SetDocDefaults(Styles openXmlElement, DocDefaults? value)
+  private static void SetDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocDefaults>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocDefaults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocDefaults>(value);
+      itemElement = DocDefaultsConverter.CreateOpenXmlElement<DXW.DocDefaults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -35,31 +35,31 @@ public static class StylesConverter
   /// <summary>
   ///   Latent Style Information.
   /// </summary>
-  private static LatentStyles? GetLatentStyles(Styles openXmlElement)
+  private static DMW.LatentStyles? GetLatentStyles(DXW.Styles openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LatentStyles>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LatentStyles>();
     if (itemElement != null)
       return LatentStylesConverter.CreateModelElement(itemElement);
     return null;
   }
 
-  private static void SetLatentStyles(Styles openXmlElement, LatentStyles? value)
+  private static void SetLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LatentStyles>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LatentStyles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = LatentStylesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LatentStyles>(value);
+      itemElement = LatentStylesConverter.CreateOpenXmlElement<DXW.LatentStyles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
 
-  private static Collection<Style> GetItems(Styles openXmlElement)
+  private static Collection<DMW.Style> GetItems(DXW.Styles openXmlElement)
   {
-    var collection = new Collection<Style>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Style>())
+    var collection = new Collection<DMW.Style>();
+    foreach (var item in openXmlElement.Elements<DXW.Style>())
     {
       var newItem = StyleConverter.CreateModelElement(item);
       if (newItem != null)
@@ -68,23 +68,23 @@ public static class StylesConverter
     return collection;
   }
 
-  private static void SetItems(Styles openXmlElement, ICollection<Style> value)
+  private static void SetItems(DXW.Styles openXmlElement, ICollection<DMW.Style> value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Style>();
+    openXmlElement.RemoveAllChildren<DXW.Style>();
     if (value != null)
       foreach (var item in value)
       {
-        var newItem = StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Style>(item);
+        var newItem = StyleConverter.CreateOpenXmlElement<DXW.Style>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
   }
 
-  public static DocumentModel.Wordprocessing.Styles? CreateModelElement(Styles? openXmlElement)
+  public static DMW.Styles? CreateModelElement(DXW.Styles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Styles();
+      var value = new DMW.Styles();
       value.DocDefaults = GetDocDefaults(openXmlElement);
       value.LatentStyles = GetLatentStyles(openXmlElement);
       value.AllStyles = GetItems(openXmlElement);
@@ -93,8 +93,8 @@ public static class StylesConverter
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Styles? value)
-    where OpenXmlElementType : Styles, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Styles? value)
+    where OpenXmlElementType : DXW.Styles, new()
   {
     if (value != null)
     {

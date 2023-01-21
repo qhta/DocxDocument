@@ -15,6 +15,19 @@ public static class EnumValueConverter
     return null;
   }
 
+  public static bool CmpValue<OpenXmlEnumType, ModelEnumType>(EnumValue<OpenXmlEnumType>? element, ModelEnumType? value)
+    where OpenXmlEnumType : struct, IConvertible
+    where ModelEnumType : struct, IConvertible
+  {
+    if (element?.Value != null && value != null)
+    {
+      var n = (int)Convert.ChangeType(element.Value, typeof(int));
+      var m = (int)Convert.ChangeType(value, typeof(int));
+      return n == m;
+    }
+    return value == null;
+  }
+
   public static EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
