@@ -17,9 +17,16 @@ public class Diff
 
   public override string ToString()
   {
-    var hasValueStr = HasValue?.ToString() ?? "<null>";
-    var expValueStr = ExpValue?.ToString() ?? "<null>";
-    return $"{ObjectName}.{PropertyName} is {hasValueStr} but should be {expValueStr}";
+    var result = $"{StringUtils.Concat2(ObjectName, ".", PropertyName)}";
+    if (HasValue != null && ExpValue == null)
+      result += $" is {HasValue} but should be null";
+    else if (HasValue == null && ExpValue != null)
+      result += $" is null but should be {ExpValue}";
+    else if (HasValue == null && ExpValue == null)
+      result += $" is null and should be null";
+    else
+      result += $" is {HasValue} but should be {ExpValue}";
+    return result;
   }
 
 }

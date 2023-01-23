@@ -36,12 +36,12 @@ public static class FieldMapDataConverter
   /// </summary>
   private static String? GetName(DXW.FieldMapData openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
   }
   
   private static bool CmpName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value == value;
   }
   
   private static void SetName(DXW.FieldMapData openXmlElement, String? value)
@@ -61,12 +61,12 @@ public static class FieldMapDataConverter
   /// </summary>
   private static String? GetMappedName(DXW.FieldMapData openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value;
   }
   
   private static bool CmpMappedName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value == value;
   }
   
   private static void SetMappedName(DXW.FieldMapData openXmlElement, String? value)
@@ -194,7 +194,9 @@ public static class FieldMapDataConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldMapData? value)

@@ -10,12 +10,12 @@ public static class SdtDocPartTypeConverter
   /// </summary>
   private static String? GetDocPartGallery(DXW.SdtDocPartType openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.DocPartGallery>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.DocPartGallery>()?.Val?.Value;
   }
   
   private static bool CmpDocPartGallery(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.DocPartGallery>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.DocPartGallery>()?.Val?.Value == value;
   }
   
   private static void SetDocPartGallery(DXW.SdtDocPartType openXmlElement, String? value)
@@ -35,12 +35,12 @@ public static class SdtDocPartTypeConverter
   /// </summary>
   private static String? GetDocPartCategory(DXW.SdtDocPartType openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.DocPartCategory>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.DocPartCategory>()?.Val?.Value;
   }
   
   private static bool CmpDocPartCategory(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.DocPartCategory>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.DocPartCategory>()?.Val?.Value == value;
   }
   
   private static void SetDocPartCategory(DXW.SdtDocPartType openXmlElement, String? value)
@@ -109,7 +109,9 @@ public static class SdtDocPartTypeConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtDocPartType? value)

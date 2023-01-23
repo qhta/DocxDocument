@@ -31,12 +31,12 @@ public static class FontConverter
   /// </summary>
   private static String? GetAltName(DXW.Font openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.AltName>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.AltName>()?.Val?.Value;
   }
   
   private static bool CmpAltName(DXW.Font openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.AltName>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.AltName>()?.Val?.Value == value;
   }
   
   private static void SetAltName(DXW.Font openXmlElement, String? value)
@@ -366,7 +366,9 @@ public static class FontConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Font? value)

@@ -18,16 +18,19 @@ public static class CommentExConverter
   private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.ParaId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.ParaId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetParaId(DXO2013W.CommentEx openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.ParaId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.ParaId = null;
+    if (value != null)
+      openXmlElement.ParaId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.ParaId = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class CommentExConverter
   private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.ParaIdParent?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.ParaIdParent?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaIdParent", openXmlElement?.ParaIdParent?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.ParaIdParent = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.ParaIdParent = null;
+    if (value != null)
+      openXmlElement.ParaIdParent = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.ParaIdParent = null;
   }
   
   /// <summary>
@@ -102,7 +108,9 @@ public static class CommentExConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentEx? value)

@@ -627,8 +627,11 @@ public static class GroupConverter
   private static bool CmpGfxdata(DXVml.Group openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Gfxdata?.Value != null)
-      return Convert.FromBase64String(openXmlElement.Gfxdata.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.Gfxdata.Value) == value)
+        return true;
+    if (openXmlElement.Gfxdata?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Gfxdata", openXmlElement?.Gfxdata?.Value, value);
+    return false;
   }
   
   private static void SetGfxdata(DXVml.Group openXmlElement, Byte[]? value)
@@ -1236,7 +1239,9 @@ public static class GroupConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Group? value)

@@ -18,16 +18,19 @@ public static class RsidsConverter
   private static bool CmpRsidRoot(DXW.Rsids openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRoot?.Val?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRoot?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRoot", openXmlElement?.RsidRoot?.Val?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRoot(DXW.Rsids openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRoot = new DXW.RsidRoot { Val = ((UInt32)value).ToString("X8") };
-      else
-        openXmlElement.RsidRoot = null;
+    if (value != null)
+      openXmlElement.RsidRoot = new DXW.RsidRoot { Val = ((UInt32)value).ToString("X8") };
+    else
+      openXmlElement.RsidRoot = null;
   }
   
   private static Collection<UInt32> GetItems(DXW.Rsids openXmlElement)
@@ -44,7 +47,30 @@ public static class RsidsConverter
   
   private static bool CmpItems(DXW.Rsids openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.Rsid>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetItems(DXW.Rsids openXmlElement, Collection<UInt32>? value)
@@ -84,7 +110,9 @@ public static class RsidsConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Rsids? value)

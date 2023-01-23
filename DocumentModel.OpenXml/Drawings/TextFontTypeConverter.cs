@@ -39,8 +39,11 @@ public static class TextFontTypeConverter
   private static bool CmpPanose(DXDraw.TextFontType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Panose?.Value != null)
-      return Convert.FromHexString(openXmlElement.Panose.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromHexString(openXmlElement.Panose.Value) == value)
+        return true;
+    if (openXmlElement.Panose?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Panose", openXmlElement?.Panose?.Value, value);
+    return false;
   }
   
   private static void SetPanose(DXDraw.TextFontType openXmlElement, Byte[]? value)
@@ -116,7 +119,9 @@ public static class TextFontTypeConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextFontType? value)

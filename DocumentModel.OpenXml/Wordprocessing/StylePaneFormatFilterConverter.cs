@@ -18,16 +18,19 @@ public static class StylePaneFormatFilterConverter
   private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Val?.Value != null)
-      return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetVal(DXW.StylePaneFormatFilter openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.Val = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.Val = null;
   }
   
   /// <summary>
@@ -410,7 +413,9 @@ public static class StylePaneFormatFilterConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StylePaneFormatFilter? value)

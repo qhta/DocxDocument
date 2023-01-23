@@ -18,16 +18,19 @@ public static class KeyMapEntryConverter
   private static bool CmpCharacterMapPrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CharacterMapPrimary?.Value != null)
-      return UInt16.Parse(openXmlElement.CharacterMapPrimary.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.CharacterMapPrimary.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CharacterMapPrimary?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CharacterMapPrimary", openXmlElement?.CharacterMapPrimary?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetCharacterMapPrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.CharacterMapPrimary = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.CharacterMapPrimary = null;
+    if (value != null)
+      openXmlElement.CharacterMapPrimary = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.CharacterMapPrimary = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class KeyMapEntryConverter
   private static bool CmpCharacterMapSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CharacterMapSecondary?.Value != null)
-      return UInt16.Parse(openXmlElement.CharacterMapSecondary.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.CharacterMapSecondary.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CharacterMapSecondary?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CharacterMapSecondary", openXmlElement?.CharacterMapSecondary?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetCharacterMapSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.CharacterMapSecondary = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.CharacterMapSecondary = null;
+    if (value != null)
+      openXmlElement.CharacterMapSecondary = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.CharacterMapSecondary = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class KeyMapEntryConverter
   private static bool CmpKeyCodePrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.KeyCodePrimary?.Value != null)
-      return UInt16.Parse(openXmlElement.KeyCodePrimary.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.KeyCodePrimary.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.KeyCodePrimary?.Value == null && value == null) return true;
+    diffs?.Add(objName, "KeyCodePrimary", openXmlElement?.KeyCodePrimary?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetKeyCodePrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.KeyCodePrimary = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.KeyCodePrimary = null;
+    if (value != null)
+      openXmlElement.KeyCodePrimary = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.KeyCodePrimary = null;
   }
   
   /// <summary>
@@ -93,16 +102,19 @@ public static class KeyMapEntryConverter
   private static bool CmpKeyCodeSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.KeyCodeSecondary?.Value != null)
-      return UInt16.Parse(openXmlElement.KeyCodeSecondary.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.KeyCodeSecondary.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.KeyCodeSecondary?.Value == null && value == null) return true;
+    diffs?.Add(objName, "KeyCodeSecondary", openXmlElement?.KeyCodeSecondary?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetKeyCodeSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.KeyCodeSecondary = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.KeyCodeSecondary = null;
+    if (value != null)
+      openXmlElement.KeyCodeSecondary = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.KeyCodeSecondary = null;
   }
   
   /// <summary>
@@ -303,7 +315,9 @@ public static class KeyMapEntryConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.KeyMapEntry? value)

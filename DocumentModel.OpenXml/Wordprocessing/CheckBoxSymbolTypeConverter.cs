@@ -39,8 +39,11 @@ public static class CheckBoxSymbolTypeConverter
   private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Val?.Value != null)
-      return Convert.FromHexString(openXmlElement.Val.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromHexString(openXmlElement.Val.Value) == value)
+        return true;
+    if (openXmlElement.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value)
@@ -74,7 +77,9 @@ public static class CheckBoxSymbolTypeConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBoxSymbolType? value)

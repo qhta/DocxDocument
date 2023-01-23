@@ -18,16 +18,19 @@ public static class FontSignatureConverter
   private static bool CmpUnicodeSignature0(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.UnicodeSignature0?.Value != null)
-      return UInt32.Parse(openXmlElement.UnicodeSignature0.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.UnicodeSignature0.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.UnicodeSignature0?.Value == null && value == null) return true;
+    diffs?.Add(objName, "UnicodeSignature0", openXmlElement?.UnicodeSignature0?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetUnicodeSignature0(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.UnicodeSignature0 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.UnicodeSignature0 = null;
+    if (value != null)
+      openXmlElement.UnicodeSignature0 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.UnicodeSignature0 = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class FontSignatureConverter
   private static bool CmpUnicodeSignature1(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.UnicodeSignature1?.Value != null)
-      return UInt32.Parse(openXmlElement.UnicodeSignature1.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.UnicodeSignature1.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.UnicodeSignature1?.Value == null && value == null) return true;
+    diffs?.Add(objName, "UnicodeSignature1", openXmlElement?.UnicodeSignature1?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetUnicodeSignature1(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.UnicodeSignature1 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.UnicodeSignature1 = null;
+    if (value != null)
+      openXmlElement.UnicodeSignature1 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.UnicodeSignature1 = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class FontSignatureConverter
   private static bool CmpUnicodeSignature2(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.UnicodeSignature2?.Value != null)
-      return UInt32.Parse(openXmlElement.UnicodeSignature2.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.UnicodeSignature2.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.UnicodeSignature2?.Value == null && value == null) return true;
+    diffs?.Add(objName, "UnicodeSignature2", openXmlElement?.UnicodeSignature2?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetUnicodeSignature2(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.UnicodeSignature2 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.UnicodeSignature2 = null;
+    if (value != null)
+      openXmlElement.UnicodeSignature2 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.UnicodeSignature2 = null;
   }
   
   /// <summary>
@@ -93,16 +102,19 @@ public static class FontSignatureConverter
   private static bool CmpUnicodeSignature3(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.UnicodeSignature3?.Value != null)
-      return UInt32.Parse(openXmlElement.UnicodeSignature3.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.UnicodeSignature3.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.UnicodeSignature3?.Value == null && value == null) return true;
+    diffs?.Add(objName, "UnicodeSignature3", openXmlElement?.UnicodeSignature3?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetUnicodeSignature3(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.UnicodeSignature3 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.UnicodeSignature3 = null;
+    if (value != null)
+      openXmlElement.UnicodeSignature3 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.UnicodeSignature3 = null;
   }
   
   /// <summary>
@@ -118,16 +130,19 @@ public static class FontSignatureConverter
   private static bool CmpCodePageSignature0(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CodePageSignature0?.Value != null)
-      return UInt32.Parse(openXmlElement.CodePageSignature0.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.CodePageSignature0.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CodePageSignature0?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CodePageSignature0", openXmlElement?.CodePageSignature0?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetCodePageSignature0(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.CodePageSignature0 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.CodePageSignature0 = null;
+    if (value != null)
+      openXmlElement.CodePageSignature0 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.CodePageSignature0 = null;
   }
   
   /// <summary>
@@ -143,16 +158,19 @@ public static class FontSignatureConverter
   private static bool CmpCodePageSignature1(DXW.FontSignature openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CodePageSignature1?.Value != null)
-      return UInt32.Parse(openXmlElement.CodePageSignature1.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.CodePageSignature1.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CodePageSignature1?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CodePageSignature1", openXmlElement?.CodePageSignature1?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetCodePageSignature1(DXW.FontSignature openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.CodePageSignature1 = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.CodePageSignature1 = null;
+    if (value != null)
+      openXmlElement.CodePageSignature1 = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.CodePageSignature1 = null;
   }
   
   public static DMW.FontSignature? CreateModelElement(DXW.FontSignature? openXmlElement)
@@ -190,7 +208,9 @@ public static class FontSignatureConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FontSignature? value)

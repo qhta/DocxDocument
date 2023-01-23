@@ -39,16 +39,19 @@ public static class SymbolCharConverter
   private static bool CmpChar(DXW.SymbolChar openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Char?.Value != null)
-      return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Char?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetChar(DXW.SymbolChar openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.Char = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.Char = null;
+    if (value != null)
+      openXmlElement.Char = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.Char = null;
   }
   
   public static DMW.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
@@ -74,7 +77,9 @@ public static class SymbolCharConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar? value)

@@ -18,16 +18,19 @@ public static class PreviousSectionPropertiesConverter
   private static bool CmpRsidRPr(DXW.PreviousSectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRPr?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRPr?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRPr", openXmlElement?.RsidRPr?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRPr(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidRPr = null;
+    if (value != null)
+      openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidRPr = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class PreviousSectionPropertiesConverter
   private static bool CmpRsidDel(DXW.PreviousSectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidDel?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidDel?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidDel", openXmlElement?.RsidDel?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidDel(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidDel = null;
+    if (value != null)
+      openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidDel = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class PreviousSectionPropertiesConverter
   private static bool CmpRsidR(DXW.PreviousSectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidR?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidR?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidR", openXmlElement?.RsidR?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidR(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidR = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidR = null;
+    if (value != null)
+      openXmlElement.RsidR = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidR = null;
   }
   
   /// <summary>
@@ -93,16 +102,19 @@ public static class PreviousSectionPropertiesConverter
   private static bool CmpRsidSect(DXW.PreviousSectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidSect?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidSect?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidSect", openXmlElement?.RsidSect?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidSect(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidSect = null;
+    if (value != null)
+      openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidSect = null;
   }
   
   /// <summary>
@@ -723,7 +735,9 @@ public static class PreviousSectionPropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousSectionProperties? value)

@@ -18,16 +18,19 @@ public static class RunConverter
   private static bool CmpRsidRunProperties(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRunProperties?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunProperties.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRunProperties.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRunProperties?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunProperties", openXmlElement?.RsidRunProperties?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRunProperties(DXW.Run openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRunProperties = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidRunProperties = null;
+    if (value != null)
+      openXmlElement.RsidRunProperties = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidRunProperties = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class RunConverter
   private static bool CmpRsidRunDeletion(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRunDeletion?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunDeletion.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRunDeletion.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRunDeletion?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunDeletion", openXmlElement?.RsidRunDeletion?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRunDeletion(DXW.Run openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRunDeletion = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidRunDeletion = null;
+    if (value != null)
+      openXmlElement.RsidRunDeletion = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidRunDeletion = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class RunConverter
   private static bool CmpRsidRunAddition(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRunAddition?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunAddition.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRunAddition.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRunAddition?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunAddition", openXmlElement?.RsidRunAddition?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRunAddition(DXW.Run openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRunAddition = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidRunAddition = null;
+    if (value != null)
+      openXmlElement.RsidRunAddition = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidRunAddition = null;
   }
   
   /// <summary>
@@ -1001,7 +1010,9 @@ public static class RunConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Run? value)

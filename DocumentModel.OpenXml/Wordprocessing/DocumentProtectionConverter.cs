@@ -189,16 +189,19 @@ public static class DocumentProtectionConverter
   private static bool CmpAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.AlgorithmIdExtensibility?.Value != null)
-      return UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.AlgorithmIdExtensibility?.Value == null && value == null) return true;
+    diffs?.Add(objName, "AlgorithmIdExtensibility", openXmlElement?.AlgorithmIdExtensibility?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.AlgorithmIdExtensibility = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.AlgorithmIdExtensibility = null;
+    if (value != null)
+      openXmlElement.AlgorithmIdExtensibility = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.AlgorithmIdExtensibility = null;
   }
   
   /// <summary>
@@ -235,16 +238,19 @@ public static class DocumentProtectionConverter
   private static bool CmpCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CryptographicProviderTypeExtensibility?.Value != null)
-      return UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CryptographicProviderTypeExtensibility", openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.CryptographicProviderTypeExtensibility = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.CryptographicProviderTypeExtensibility = null;
+    if (value != null)
+      openXmlElement.CryptographicProviderTypeExtensibility = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.CryptographicProviderTypeExtensibility = null;
   }
   
   /// <summary>
@@ -281,8 +287,11 @@ public static class DocumentProtectionConverter
   private static bool CmpHash(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Hash?.Value != null)
-      return Convert.FromBase64String(openXmlElement.Hash.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.Hash.Value) == value)
+        return true;
+    if (openXmlElement.Hash?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Hash", openXmlElement?.Hash?.Value, value);
+    return false;
   }
   
   private static void SetHash(DXW.DocumentProtection openXmlElement, Byte[]? value)
@@ -306,8 +315,11 @@ public static class DocumentProtectionConverter
   private static bool CmpSalt(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Salt?.Value != null)
-      return Convert.FromBase64String(openXmlElement.Salt.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.Salt.Value) == value)
+        return true;
+    if (openXmlElement.Salt?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Salt", openXmlElement?.Salt?.Value, value);
+    return false;
   }
   
   private static void SetSalt(DXW.DocumentProtection openXmlElement, Byte[]? value)
@@ -352,8 +364,11 @@ public static class DocumentProtectionConverter
   private static bool CmpHashValue(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.HashValue?.Value != null)
-      return Convert.FromBase64String(openXmlElement.HashValue.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.HashValue.Value) == value)
+        return true;
+    if (openXmlElement.HashValue?.Value == null && value == null) return true;
+    diffs?.Add(objName, "HashValue", openXmlElement?.HashValue?.Value, value);
+    return false;
   }
   
   private static void SetHashValue(DXW.DocumentProtection openXmlElement, Byte[]? value)
@@ -377,8 +392,11 @@ public static class DocumentProtectionConverter
   private static bool CmpSaltValue(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.SaltValue?.Value != null)
-      return Convert.FromBase64String(openXmlElement.SaltValue.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.SaltValue.Value) == value)
+        return true;
+    if (openXmlElement.SaltValue?.Value == null && value == null) return true;
+    diffs?.Add(objName, "SaltValue", openXmlElement?.SaltValue?.Value, value);
+    return false;
   }
   
   private static void SetSaltValue(DXW.DocumentProtection openXmlElement, Byte[]? value)
@@ -481,7 +499,9 @@ public static class DocumentProtectionConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentProtection? value)

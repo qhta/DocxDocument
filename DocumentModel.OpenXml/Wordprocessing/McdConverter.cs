@@ -81,16 +81,19 @@ public static class McdConverter
   private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.BEncrypt?.Value != null)
-      return Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.BEncrypt?.Value == null && value == null) return true;
+    diffs?.Add(objName, "BEncrypt", openXmlElement?.BEncrypt?.Value, value?.ToString("x2"));
+    return false;
   }
   
   private static void SetBEncrypt(DXOW.Mcd openXmlElement, Byte? value)
   {
-      if (value != null)
-        openXmlElement.BEncrypt = ((UInt16)value).ToString("X2");
-      else
-        openXmlElement.BEncrypt = null;
+    if (value != null)
+      openXmlElement.BEncrypt = ((UInt16)value).ToString("X2");
+    else
+      openXmlElement.BEncrypt = null;
   }
   
   /// <summary>
@@ -106,16 +109,19 @@ public static class McdConverter
   private static bool CmpCmg(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Cmg?.Value != null)
-      return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Cmg?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Cmg", openXmlElement?.Cmg?.Value, value?.ToString("x2"));
+    return false;
   }
   
   private static void SetCmg(DXOW.Mcd openXmlElement, Byte? value)
   {
-      if (value != null)
-        openXmlElement.Cmg = ((UInt16)value).ToString("X2");
-      else
-        openXmlElement.Cmg = null;
+    if (value != null)
+      openXmlElement.Cmg = ((UInt16)value).ToString("X2");
+    else
+      openXmlElement.Cmg = null;
   }
   
   public static DMW.Mcd? CreateModelElement(DXOW.Mcd? openXmlElement)
@@ -150,7 +156,9 @@ public static class McdConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcd? value)

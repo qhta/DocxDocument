@@ -60,16 +60,19 @@ public static class EmbeddedObjectConverter
   private static bool CmpAnchorId(DXW.EmbeddedObject openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.AnchorId?.Value != null)
-      return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.AnchorId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "AnchorId", openXmlElement?.AnchorId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetAnchorId(DXW.EmbeddedObject openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.AnchorId = null;
+    if (value != null)
+      openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.AnchorId = null;
   }
   
   private static DMVml.Group? GetGroup(DXW.EmbeddedObject openXmlElement)
@@ -514,7 +517,9 @@ public static class EmbeddedObjectConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedObject? value)

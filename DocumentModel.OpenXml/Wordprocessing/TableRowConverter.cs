@@ -18,16 +18,19 @@ public static class TableRowConverter
   private static bool CmpRsidTableRowMarkRevision(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidTableRowMarkRevision?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidTableRowMarkRevision.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidTableRowMarkRevision.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidTableRowMarkRevision?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidTableRowMarkRevision", openXmlElement?.RsidTableRowMarkRevision?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidTableRowMarkRevision(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidTableRowMarkRevision = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidTableRowMarkRevision = null;
+    if (value != null)
+      openXmlElement.RsidTableRowMarkRevision = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidTableRowMarkRevision = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class TableRowConverter
   private static bool CmpRsidTableRowAddition(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidTableRowAddition?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidTableRowAddition.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidTableRowAddition.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidTableRowAddition?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidTableRowAddition", openXmlElement?.RsidTableRowAddition?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidTableRowAddition(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidTableRowAddition = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidTableRowAddition = null;
+    if (value != null)
+      openXmlElement.RsidTableRowAddition = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidTableRowAddition = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class TableRowConverter
   private static bool CmpRsidTableRowDeletion(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidTableRowDeletion?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidTableRowDeletion.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidTableRowDeletion.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidTableRowDeletion?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidTableRowDeletion", openXmlElement?.RsidTableRowDeletion?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidTableRowDeletion(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidTableRowDeletion = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidTableRowDeletion = null;
+    if (value != null)
+      openXmlElement.RsidTableRowDeletion = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidTableRowDeletion = null;
   }
   
   /// <summary>
@@ -93,16 +102,19 @@ public static class TableRowConverter
   private static bool CmpRsidTableRowProperties(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidTableRowProperties?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidTableRowProperties.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidTableRowProperties.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidTableRowProperties?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidTableRowProperties", openXmlElement?.RsidTableRowProperties?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidTableRowProperties(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidTableRowProperties = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidTableRowProperties = null;
+    if (value != null)
+      openXmlElement.RsidTableRowProperties = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidTableRowProperties = null;
   }
   
   /// <summary>
@@ -118,16 +130,19 @@ public static class TableRowConverter
   private static bool CmpParagraphId(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.ParagraphId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParagraphId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.ParagraphId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.ParagraphId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParagraphId", openXmlElement?.ParagraphId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetParagraphId(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.ParagraphId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.ParagraphId = null;
+    if (value != null)
+      openXmlElement.ParagraphId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.ParagraphId = null;
   }
   
   /// <summary>
@@ -143,16 +158,19 @@ public static class TableRowConverter
   private static bool CmpTextId(DXW.TableRow openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.TextId?.Value != null)
-      return UInt32.Parse(openXmlElement.TextId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.TextId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.TextId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "TextId", openXmlElement?.TextId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetTextId(DXW.TableRow openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.TextId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.TextId = null;
+    if (value != null)
+      openXmlElement.TextId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.TextId = null;
   }
   
   /// <summary>
@@ -221,7 +239,30 @@ public static class TableRowConverter
   
   private static bool CmpTableCells(DXW.TableRow openXmlElement, Collection<DMW.TableCell>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.TableCell>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXW.TableCellConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetTableCells(DXW.TableRow openXmlElement, Collection<DMW.TableCell>? value)
@@ -1088,7 +1129,9 @@ public static class TableRowConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRow? value)

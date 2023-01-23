@@ -18,16 +18,19 @@ public static class SectionPropertiesConverter
   private static bool CmpRsidRPr(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidRPr?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidRPr?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRPr", openXmlElement?.RsidRPr?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidRPr(DXW.SectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidRPr = null;
+    if (value != null)
+      openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidRPr = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class SectionPropertiesConverter
   private static bool CmpRsidDel(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidDel?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidDel?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidDel", openXmlElement?.RsidDel?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidDel(DXW.SectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidDel = null;
+    if (value != null)
+      openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidDel = null;
   }
   
   /// <summary>
@@ -68,16 +74,19 @@ public static class SectionPropertiesConverter
   private static bool CmpRsidR(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidR?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidR?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidR", openXmlElement?.RsidR?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidR(DXW.SectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidR = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidR = null;
+    if (value != null)
+      openXmlElement.RsidR = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidR = null;
   }
   
   /// <summary>
@@ -93,16 +102,19 @@ public static class SectionPropertiesConverter
   private static bool CmpRsidSect(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.RsidSect?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.RsidSect?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidSect", openXmlElement?.RsidSect?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsidSect(DXW.SectionProperties openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.RsidSect = null;
+    if (value != null)
+      openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.RsidSect = null;
   }
   
   private static DMW.HeaderFooterReferenceType? GetHeaderReference(DXW.SectionProperties openXmlElement)
@@ -741,7 +753,9 @@ public static class SectionPropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SectionProperties? value)
