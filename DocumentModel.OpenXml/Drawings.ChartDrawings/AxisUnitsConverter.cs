@@ -13,6 +13,11 @@ public static class AxisUnitsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDrawsChartDraws.AxisUnit>(openXmlElement?.Unit?.Value);
   }
   
+  private static bool CmpUnit(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnit? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDrawsChartDraws.AxisUnit>(openXmlElement?.Unit?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetUnit(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnit? value)
   {
     openXmlElement.Unit = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit, DMDrawsChartDraws.AxisUnit>(value);
@@ -23,10 +28,12 @@ public static class AxisUnitsConverter
   /// </summary>
   private static DMDrawsChartDraws.AxisUnitsLabel? GetAxisUnitsLabel(DXO2016DrawChartDraw.AxisUnits openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.AxisUnitsLabel>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.AxisUnitsLabelConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.AxisUnitsLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.AxisUnitsLabel>());
+  }
+  
+  private static bool CmpAxisUnitsLabel(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnitsLabel? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.AxisUnitsLabelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.AxisUnitsLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAxisUnitsLabel(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnitsLabel? value)
@@ -47,10 +54,12 @@ public static class AxisUnitsConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.AxisUnits openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -77,6 +86,22 @@ public static class AxisUnitsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.AxisUnits? openXmlElement, DMDrawsChartDraws.AxisUnits? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUnit(openXmlElement, value.Unit, diffs, objName))
+        ok = false;
+      if (!CmpAxisUnitsLabel(openXmlElement, value.AxisUnitsLabel, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.AxisUnits? value)

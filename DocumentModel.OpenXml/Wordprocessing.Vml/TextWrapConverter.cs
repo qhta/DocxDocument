@@ -13,6 +13,11 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWVml.WrapKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXVmlW.TextWrap openXmlElement, DMWVml.WrapKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWVml.WrapKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXVmlW.TextWrap openXmlElement, DMWVml.WrapKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWVml.WrapKind>(value);
@@ -24,6 +29,11 @@ public static class TextWrapConverter
   private static DMWVml.WrapSideKind? GetSide(DXVmlW.TextWrap openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWVml.WrapSideKind>(openXmlElement?.Side?.Value);
+  }
+  
+  private static bool CmpSide(DXVmlW.TextWrap openXmlElement, DMWVml.WrapSideKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWVml.WrapSideKind>(openXmlElement?.Side?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSide(DXVmlW.TextWrap openXmlElement, DMWVml.WrapSideKind? value)
@@ -39,6 +49,11 @@ public static class TextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWVml.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value);
   }
   
+  private static bool CmpAnchorX(DXVmlW.TextWrap openXmlElement, DMWVml.HorizontalAnchorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWVml.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAnchorX(DXVmlW.TextWrap openXmlElement, DMWVml.HorizontalAnchorKind? value)
   {
     openXmlElement.AnchorX = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWVml.HorizontalAnchorKind>(value);
@@ -50,6 +65,11 @@ public static class TextWrapConverter
   private static DMWVml.VerticalAnchorKind? GetAnchorY(DXVmlW.TextWrap openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWVml.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value);
+  }
+  
+  private static bool CmpAnchorY(DXVmlW.TextWrap openXmlElement, DMWVml.VerticalAnchorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWVml.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAnchorY(DXVmlW.TextWrap openXmlElement, DMWVml.VerticalAnchorKind? value)
@@ -69,6 +89,24 @@ public static class TextWrapConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlW.TextWrap? openXmlElement, DMWVml.TextWrap? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpSide(openXmlElement, value.Side, diffs, objName))
+        ok = false;
+      if (!CmpAnchorX(openXmlElement, value.AnchorX, diffs, objName))
+        ok = false;
+      if (!CmpAnchorY(openXmlElement, value.AnchorY, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWVml.TextWrap? value)

@@ -10,10 +10,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static Int32? GetNumberingLevelReference(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val?.Value;
+  }
+  
+  private static bool CmpNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val?.Value == value;
   }
   
   private static void SetNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value)
@@ -33,10 +35,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static Int32? GetNumberingId(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val?.Value;
+  }
+  
+  private static bool CmpNumberingId(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val?.Value == value;
   }
   
   private static void SetNumberingId(DXW.NumberingProperties openXmlElement, Int32? value)
@@ -56,10 +60,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static DMW.NumberingChange? GetNumberingChange(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
-    if (itemElement != null)
-      return DMXW.NumberingChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.NumberingChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>());
+  }
+  
+  private static bool CmpNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value)
@@ -80,10 +86,12 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static DMW.TrackChangeType? GetInserted(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Inserted>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>());
+  }
+  
+  private static bool CmpInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value)
@@ -111,6 +119,24 @@ public static class NumberingPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.NumberingProperties? openXmlElement, DMW.NumberingProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNumberingLevelReference(openXmlElement, value.NumberingLevelReference, diffs, objName))
+        ok = false;
+      if (!CmpNumberingId(openXmlElement, value.NumberingId, diffs, objName))
+        ok = false;
+      if (!CmpNumberingChange(openXmlElement, value.NumberingChange, diffs, objName))
+        ok = false;
+      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties? value)

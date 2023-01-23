@@ -13,6 +13,11 @@ public static class DataStoreItemConverter
     return openXmlElement?.ItemId?.Value;
   }
   
+  private static bool CmpItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ItemId?.Value == value;
+  }
+  
   private static void SetItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class DataStoreItemConverter
   /// </summary>
   private static DMCustXml.SchemaReferences? GetSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>();
-    if (itemElement != null)
-      return DMXCustXml.SchemaReferencesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXCustXml.SchemaReferencesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>());
+  }
+  
+  private static bool CmpSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.SchemaReferences? value, DiffList? diffs, string? objName)
+  {
+    return DMXCustXml.SchemaReferencesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.SchemaReferences? value)
@@ -55,6 +62,20 @@ public static class DataStoreItemConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXCustXmlDataProps.DataStoreItem? openXmlElement, DMCustXml.DataStoreItem? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItemId(openXmlElement, value.ItemId, diffs, objName))
+        ok = false;
+      if (!CmpSchemaReferences(openXmlElement, value.SchemaReferences, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.DataStoreItem? value)

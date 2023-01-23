@@ -13,6 +13,11 @@ public static class ReflectionConverter
     return openXmlElement.BlurRadius?.Value;
   }
   
+  private static bool CmpBlurRadius(DXDraw.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BlurRadius?.Value == value;
+  }
+  
   private static void SetBlurRadius(DXDraw.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.BlurRadius = value;
@@ -24,6 +29,11 @@ public static class ReflectionConverter
   private static Int32? GetStartOpacity(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.StartOpacity?.Value;
+  }
+  
+  private static bool CmpStartOpacity(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.StartOpacity?.Value == value;
   }
   
   private static void SetStartOpacity(DXDraw.Reflection openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class ReflectionConverter
     return openXmlElement.StartPosition?.Value;
   }
   
+  private static bool CmpStartPosition(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.StartPosition?.Value == value;
+  }
+  
   private static void SetStartPosition(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartPosition = value;
@@ -50,6 +65,11 @@ public static class ReflectionConverter
   private static Int32? GetEndAlpha(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.EndAlpha?.Value;
+  }
+  
+  private static bool CmpEndAlpha(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.EndAlpha?.Value == value;
   }
   
   private static void SetEndAlpha(DXDraw.Reflection openXmlElement, Int32? value)
@@ -65,6 +85,11 @@ public static class ReflectionConverter
     return openXmlElement.EndPosition?.Value;
   }
   
+  private static bool CmpEndPosition(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.EndPosition?.Value == value;
+  }
+  
   private static void SetEndPosition(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndPosition = value;
@@ -76,6 +101,11 @@ public static class ReflectionConverter
   private static Int64? GetDistance(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.Distance?.Value;
+  }
+  
+  private static bool CmpDistance(DXDraw.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Distance?.Value == value;
   }
   
   private static void SetDistance(DXDraw.Reflection openXmlElement, Int64? value)
@@ -91,6 +121,11 @@ public static class ReflectionConverter
     return openXmlElement.Direction?.Value;
   }
   
+  private static bool CmpDirection(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Direction?.Value == value;
+  }
+  
   private static void SetDirection(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.Direction = value;
@@ -102,6 +137,11 @@ public static class ReflectionConverter
   private static Int32? GetFadeDirection(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.FadeDirection?.Value;
+  }
+  
+  private static bool CmpFadeDirection(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FadeDirection?.Value == value;
   }
   
   private static void SetFadeDirection(DXDraw.Reflection openXmlElement, Int32? value)
@@ -117,6 +157,11 @@ public static class ReflectionConverter
     return openXmlElement.HorizontalRatio?.Value;
   }
   
+  private static bool CmpHorizontalRatio(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.HorizontalRatio?.Value == value;
+  }
+  
   private static void SetHorizontalRatio(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalRatio = value;
@@ -128,6 +173,11 @@ public static class ReflectionConverter
   private static Int32? GetVerticalRatio(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.VerticalRatio?.Value;
+  }
+  
+  private static bool CmpVerticalRatio(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VerticalRatio?.Value == value;
   }
   
   private static void SetVerticalRatio(DXDraw.Reflection openXmlElement, Int32? value)
@@ -143,6 +193,11 @@ public static class ReflectionConverter
     return openXmlElement.HorizontalSkew?.Value;
   }
   
+  private static bool CmpHorizontalSkew(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.HorizontalSkew?.Value == value;
+  }
+  
   private static void SetHorizontalSkew(DXDraw.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkew = value;
@@ -154,6 +209,11 @@ public static class ReflectionConverter
   private static Int32? GetVerticalSkew(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement.VerticalSkew?.Value;
+  }
+  
+  private static bool CmpVerticalSkew(DXDraw.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VerticalSkew?.Value == value;
   }
   
   private static void SetVerticalSkew(DXDraw.Reflection openXmlElement, Int32? value)
@@ -169,6 +229,11 @@ public static class ReflectionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
+  private static bool CmpAlignment(DXDraw.Reflection openXmlElement, DMDraws.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAlignment(DXDraw.Reflection openXmlElement, DMDraws.RectangleAlignmentKind? value)
   {
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(value);
@@ -180,6 +245,11 @@ public static class ReflectionConverter
   private static Boolean? GetRotateWithShape(DXDraw.Reflection openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
+  }
+  
+  private static bool CmpRotateWithShape(DXDraw.Reflection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RotateWithShape?.Value == value;
   }
   
   private static void SetRotateWithShape(DXDraw.Reflection openXmlElement, Boolean? value)
@@ -212,6 +282,44 @@ public static class ReflectionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Reflection? openXmlElement, DMDraws.Reflection? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+        ok = false;
+      if (!CmpStartOpacity(openXmlElement, value.StartOpacity, diffs, objName))
+        ok = false;
+      if (!CmpStartPosition(openXmlElement, value.StartPosition, diffs, objName))
+        ok = false;
+      if (!CmpEndAlpha(openXmlElement, value.EndAlpha, diffs, objName))
+        ok = false;
+      if (!CmpEndPosition(openXmlElement, value.EndPosition, diffs, objName))
+        ok = false;
+      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName))
+        ok = false;
+      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName))
+        ok = false;
+      if (!CmpFadeDirection(openXmlElement, value.FadeDirection, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName))
+        ok = false;
+      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalSkew(openXmlElement, value.HorizontalSkew, diffs, objName))
+        ok = false;
+      if (!CmpVerticalSkew(openXmlElement, value.VerticalSkew, diffs, objName))
+        ok = false;
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+        ok = false;
+      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Reflection? value)

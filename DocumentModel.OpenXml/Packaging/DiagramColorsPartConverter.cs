@@ -10,9 +10,12 @@ public static class DiagramColorsPartConverter
   /// </summary>
   private static DMDrawsDgms.ColorsDefinition? GetColorsDefinition(DXPack.DiagramColorsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXDrawDgms.ColorsDefinition rootElement)
-      return DMXDrawsDgms.ColorsDefinitionConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsDgms.ColorsDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.ColorsDefinition);
+  }
+  
+  private static bool CmpColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDrawsDgms.ColorsDefinition? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDrawsDgms.ColorsDefinition? value)
@@ -30,9 +33,19 @@ public static class DiagramColorsPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DiagramColorsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.DiagramColorsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DiagramColorsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.DiagramColorsPart? CreateModelElement(DXPack.DiagramColorsPart? openXmlElement)
@@ -46,6 +59,22 @@ public static class DiagramColorsPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DiagramColorsPart? openXmlElement, DMPack.DiagramColorsPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpColorsDefinition(openXmlElement, value.ColorsDefinition, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramColorsPart? value)

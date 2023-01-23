@@ -17,6 +17,11 @@ public static class ShapePropertiesExtensionListConverter
     return collection;
   }
   
+  private static bool CmpShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement, Collection<DMDraws.ShapePropertiesExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement, Collection<DMDraws.ShapePropertiesExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.ShapePropertiesExtension>();
@@ -40,6 +45,18 @@ public static class ShapePropertiesExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ShapePropertiesExtensionList? openXmlElement, DMDraws.ShapePropertiesExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpShapePropertiesExtensions(openXmlElement, value.ShapePropertiesExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapePropertiesExtensionList? value)

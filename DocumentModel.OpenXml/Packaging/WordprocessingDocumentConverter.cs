@@ -15,6 +15,13 @@ public static class WordprocessingDocumentConverter
     return null;
   }
   
+  private static bool CmpDocumentType(DXPack.WordprocessingDocument openXmlElement, DM.WordprocessingDocumentType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement?.DocumentType != null)
+      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement.DocumentType, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return openXmlElement == null && value == null;
+  }
+  
   public static DMPack.WordprocessingDocument? CreateModelElement(DXPack.WordprocessingDocument? openXmlElement)
   {
     if (openXmlElement != null)
@@ -24,6 +31,18 @@ public static class WordprocessingDocumentConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.WordprocessingDocument? openXmlElement, DMPack.WordprocessingDocument? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocumentType(openXmlElement, value.DocumentType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingDocument? value)

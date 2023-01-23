@@ -10,10 +10,12 @@ public static class ArgumentPropertiesConverter
   /// </summary>
   private static Int64? GetArgumentSize(DXMath.ArgumentProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ArgumentSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val?.Value == value;
   }
   
   private static void SetArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value)
@@ -37,6 +39,18 @@ public static class ArgumentPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.ArgumentProperties? openXmlElement, DMMath.ArgumentProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpArgumentSize(openXmlElement, value.ArgumentSize, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ArgumentProperties? value)

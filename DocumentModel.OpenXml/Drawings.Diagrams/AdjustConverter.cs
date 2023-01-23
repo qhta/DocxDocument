@@ -13,6 +13,11 @@ public static class AdjustConverter
     return openXmlElement.Index?.Value;
   }
   
+  private static bool CmpIndex(DXDrawDgms.Adjust openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Index?.Value == value;
+  }
+  
   private static void SetIndex(DXDrawDgms.Adjust openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
@@ -24,6 +29,11 @@ public static class AdjustConverter
   private static Double? GetVal(DXDrawDgms.Adjust openXmlElement)
   {
     return openXmlElement.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXDrawDgms.Adjust openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Val?.Value == value;
   }
   
   private static void SetVal(DXDrawDgms.Adjust openXmlElement, Double? value)
@@ -41,6 +51,20 @@ public static class AdjustConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Adjust? openXmlElement, DMDrawsDgms.Adjust? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Adjust? value)

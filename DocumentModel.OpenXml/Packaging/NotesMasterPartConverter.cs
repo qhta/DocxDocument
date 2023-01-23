@@ -20,9 +20,19 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpChartParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetContentType(DXPack.NotesMasterPart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.NotesMasterPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   /// <summary>
@@ -40,6 +50,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpCustomXmlParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.CustomXmlPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramColorsParts of the NotesMasterPart
   /// </summary>
@@ -53,6 +68,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramColorsParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -70,6 +90,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramDataParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
   /// </summary>
@@ -83,6 +108,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -100,6 +130,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramPersistLayoutParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramStyleParts of the NotesMasterPart
   /// </summary>
@@ -113,6 +148,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramStyleParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -130,6 +170,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedControlPersistenceBinaryDataParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedObjectParts of the NotesMasterPart
   /// </summary>
@@ -143,6 +188,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedObjectParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -160,6 +210,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedPackageParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ExtendedChartParts of the NotesMasterPart
   /// </summary>
@@ -173,6 +228,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpExtendedChartParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -190,6 +250,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
   /// </summary>
@@ -205,9 +270,19 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.NotesMasterPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.NotesMasterPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -225,6 +300,11 @@ public static class NotesMasterPartConverter
     return collection;
   }
   
+  private static bool CmpUserDefinedTagsParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.UserDefinedTagsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the VmlDrawingParts of the NotesMasterPart
   /// </summary>
@@ -238,6 +318,11 @@ public static class NotesMasterPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpVmlDrawingParts(DXPack.NotesMasterPart openXmlElement, Collection<DMPack.VmlDrawingPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   public static DMPack.NotesMasterPart? CreateModelElement(DXPack.NotesMasterPart? openXmlElement)
@@ -265,6 +350,50 @@ public static class NotesMasterPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.NotesMasterPart? openXmlElement, DMPack.NotesMasterPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlParts(openXmlElement, value.CustomXmlParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value.EmbeddedControlPersistenceBinaryDataParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+        ok = false;
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpUserDefinedTagsParts(openXmlElement, value.UserDefinedTagsParts, diffs, objName))
+        ok = false;
+      if (!CmpVmlDrawingParts(openXmlElement, value.VmlDrawingParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.NotesMasterPart? value)

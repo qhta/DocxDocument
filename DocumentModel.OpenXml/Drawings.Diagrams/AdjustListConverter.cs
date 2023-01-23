@@ -17,6 +17,11 @@ public static class AdjustListConverter
     return collection;
   }
   
+  private static bool CmpAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Adjust>();
@@ -40,6 +45,18 @@ public static class AdjustListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.AdjustList? openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAdjusts(openXmlElement, value.Adjusts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.AdjustList? value)

@@ -13,6 +13,11 @@ public static class GlowConverter
     return openXmlElement.GlowRadius?.Value;
   }
   
+  private static bool CmpGlowRadius(DXO2010W.Glow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GlowRadius?.Value == value;
+  }
+  
   private static void SetGlowRadius(DXO2010W.Glow openXmlElement, Int64? value)
   {
     openXmlElement.GlowRadius = value;
@@ -23,10 +28,12 @@ public static class GlowConverter
   /// </summary>
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.Glow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
-    if (itemElement != null)
-      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>());
+  }
+  
+  private static bool CmpRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value)
@@ -47,10 +54,12 @@ public static class GlowConverter
   /// </summary>
   private static DMW.SchemeColor? GetSchemeColor(DXO2010W.Glow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
-    if (itemElement != null)
-      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>());
+  }
+  
+  private static bool CmpSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value)
@@ -77,6 +86,22 @@ public static class GlowConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.Glow? openXmlElement, DMW.Glow? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGlowRadius(openXmlElement, value.GlowRadius, diffs, objName))
+        ok = false;
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+        ok = false;
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Glow? value)

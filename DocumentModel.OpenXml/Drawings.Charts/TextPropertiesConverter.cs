@@ -7,10 +7,12 @@ public static class TextPropertiesConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.TextProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
-    if (itemElement != null)
-      return DMXDraws.BodyPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+  }
+  
+  private static bool CmpBodyProperties(DXDrawCharts.TextProperties openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBodyProperties(DXDrawCharts.TextProperties openXmlElement, DMDraws.BodyProperties? value)
@@ -28,10 +30,12 @@ public static class TextPropertiesConverter
   
   private static DMDraws.ListStyle? GetListStyle(DXDrawCharts.TextProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
-    if (itemElement != null)
-      return DMXDraws.ListStyleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+  }
+  
+  private static bool CmpListStyle(DXDrawCharts.TextProperties openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetListStyle(DXDrawCharts.TextProperties openXmlElement, DMDraws.ListStyle? value)
@@ -49,10 +53,12 @@ public static class TextPropertiesConverter
   
   private static DMDraws.Paragraph? GetParagraph(DXDrawCharts.TextProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
-    if (itemElement != null)
-      return DMXDraws.ParagraphConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>());
+  }
+  
+  private static bool CmpParagraph(DXDrawCharts.TextProperties openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraph(DXDrawCharts.TextProperties openXmlElement, DMDraws.Paragraph? value)
@@ -79,6 +85,22 @@ public static class TextPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.TextProperties? openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName))
+        ok = false;
+      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName))
+        ok = false;
+      if (!CmpParagraph(openXmlElement, value.Paragraph, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TextProperties? value)

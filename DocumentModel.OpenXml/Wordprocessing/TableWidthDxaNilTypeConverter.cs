@@ -13,6 +13,11 @@ public static class TableWidthDxaNilTypeConverter
     return openXmlElement.Width?.Value;
   }
   
+  private static bool CmpWidth(DXW.TableWidthDxaNilType openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Width?.Value == value;
+  }
+  
   private static void SetWidth(DXW.TableWidthDxaNilType openXmlElement, Int16? value)
   {
     openXmlElement.Width = value;
@@ -24,6 +29,11 @@ public static class TableWidthDxaNilTypeConverter
   private static DMW.TableWidthKind? GetType(DXW.TableWidthDxaNilType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value);
+  }
+  
+  private static bool CmpType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthKind? value)
@@ -41,6 +51,20 @@ public static class TableWidthDxaNilTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableWidthDxaNilType? openXmlElement, DMW.TableWidthDxaNilType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidthDxaNilType? value)

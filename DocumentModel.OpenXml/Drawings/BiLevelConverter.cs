@@ -13,6 +13,11 @@ public static class BiLevelConverter
     return openXmlElement.Threshold?.Value;
   }
   
+  private static bool CmpThreshold(DXDraw.BiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Threshold?.Value == value;
+  }
+  
   private static void SetThreshold(DXDraw.BiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
@@ -27,6 +32,18 @@ public static class BiLevelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BiLevel? openXmlElement, DMDraws.BiLevel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpThreshold(openXmlElement, value.Threshold, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BiLevel? value)

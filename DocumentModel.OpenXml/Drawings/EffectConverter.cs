@@ -13,6 +13,11 @@ public static class EffectConverter
     return openXmlElement?.Reference?.Value;
   }
   
+  private static bool CmpReference(DXDraw.Effect openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Reference?.Value == value;
+  }
+  
   private static void SetReference(DXDraw.Effect openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class EffectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Effect? openXmlElement, DMDraws.Effect? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpReference(openXmlElement, value.Reference, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Effect? value)

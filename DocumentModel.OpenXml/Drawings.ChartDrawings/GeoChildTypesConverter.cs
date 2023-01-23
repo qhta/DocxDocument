@@ -17,6 +17,11 @@ public static class GeoChildTypesConverter
     return collection;
   }
   
+  private static bool CmpEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, Collection<String>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.EntityType>();
@@ -40,6 +45,18 @@ public static class GeoChildTypesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoChildTypes? openXmlElement, DMDrawsChartDraws.GeoChildTypes? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityTypes(openXmlElement, value.EntityTypes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildTypes? value)

@@ -13,6 +13,11 @@ public static class ConnectionConverter
     return openXmlElement?.ModelId?.Value;
   }
   
+  private static bool CmpModelId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ModelId?.Value == value;
+  }
+  
   private static void SetModelId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class ConnectionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ConnectionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ConnectionKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(value);
@@ -40,6 +50,11 @@ public static class ConnectionConverter
   private static String? GetSourceId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.SourceId?.Value;
+  }
+  
+  private static bool CmpSourceId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SourceId?.Value == value;
   }
   
   private static void SetSourceId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -58,6 +73,11 @@ public static class ConnectionConverter
     return openXmlElement?.DestinationId?.Value;
   }
   
+  private static bool CmpDestinationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DestinationId?.Value == value;
+  }
+  
   private static void SetDestinationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
@@ -74,6 +94,11 @@ public static class ConnectionConverter
     return openXmlElement.SourcePosition?.Value;
   }
   
+  private static bool CmpSourcePosition(DXDrawDgms.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.SourcePosition?.Value == value;
+  }
+  
   private static void SetSourcePosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
   {
     openXmlElement.SourcePosition = value;
@@ -87,6 +112,11 @@ public static class ConnectionConverter
     return openXmlElement.DestinationPosition?.Value;
   }
   
+  private static bool CmpDestinationPosition(DXDrawDgms.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DestinationPosition?.Value == value;
+  }
+  
   private static void SetDestinationPosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
   {
     openXmlElement.DestinationPosition = value;
@@ -98,6 +128,11 @@ public static class ConnectionConverter
   private static String? GetParentTransitionId(DXDrawDgms.Connection openXmlElement)
   {
     return openXmlElement?.ParentTransitionId?.Value;
+  }
+  
+  private static bool CmpParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ParentTransitionId?.Value == value;
   }
   
   private static void SetParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -116,6 +151,11 @@ public static class ConnectionConverter
     return openXmlElement?.SiblingTransitionId?.Value;
   }
   
+  private static bool CmpSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SiblingTransitionId?.Value == value;
+  }
+  
   private static void SetSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
@@ -132,6 +172,11 @@ public static class ConnectionConverter
     return openXmlElement?.PresentationId?.Value;
   }
   
+  private static bool CmpPresentationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PresentationId?.Value == value;
+  }
+  
   private static void SetPresentationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
     if (value != null)
@@ -145,10 +190,12 @@ public static class ConnectionConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Connection openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -182,6 +229,36 @@ public static class ConnectionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Connection? openXmlElement, DMDrawsDgms.Connection? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName))
+        ok = false;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName))
+        ok = false;
+      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName))
+        ok = false;
+      if (!CmpSourcePosition(openXmlElement, value.SourcePosition, diffs, objName))
+        ok = false;
+      if (!CmpDestinationPosition(openXmlElement, value.DestinationPosition, diffs, objName))
+        ok = false;
+      if (!CmpParentTransitionId(openXmlElement, value.ParentTransitionId, diffs, objName))
+        ok = false;
+      if (!CmpSiblingTransitionId(openXmlElement, value.SiblingTransitionId, diffs, objName))
+        ok = false;
+      if (!CmpPresentationId(openXmlElement, value.PresentationId, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Connection? value)

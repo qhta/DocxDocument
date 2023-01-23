@@ -10,10 +10,12 @@ public static class DelimiterConverter
   /// </summary>
   private static DMMath.DelimiterProperties? GetDelimiterProperties(DXMath.Delimiter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>();
-    if (itemElement != null)
-      return DMXMath.DelimiterPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.DelimiterPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>());
+  }
+  
+  private static bool CmpDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value)
@@ -41,6 +43,11 @@ public static class DelimiterConverter
     return collection;
   }
   
+  private static bool CmpBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value)
   {
     openXmlElement.RemoveAllChildren<DXMath.Base>();
@@ -65,6 +72,20 @@ public static class DelimiterConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Delimiter? openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDelimiterProperties(openXmlElement, value.DelimiterProperties, diffs, objName))
+        ok = false;
+      if (!CmpBases(openXmlElement, value.Bases, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Delimiter? value)

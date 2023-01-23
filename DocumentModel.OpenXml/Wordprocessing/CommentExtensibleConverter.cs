@@ -15,6 +15,13 @@ public static class CommentExtensibleConverter
     return null;
   }
   
+  private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.DurableId?.Value != null)
+      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value)
   {
       if (value != null)
@@ -31,6 +38,11 @@ public static class CommentExtensibleConverter
     return openXmlElement.DateUtc?.Value;
   }
   
+  private static bool CmpDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DateUtc?.Value == value;
+  }
+  
   private static void SetDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement, DateTime? value)
   {
     openXmlElement.DateUtc = value;
@@ -42,6 +54,11 @@ public static class CommentExtensibleConverter
   private static Boolean? GetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     return openXmlElement?.IntelligentPlaceholder?.Value;
+  }
+  
+  private static bool CmpIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IntelligentPlaceholder?.Value == value;
   }
   
   private static void SetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value)
@@ -57,10 +74,12 @@ public static class CommentExtensibleConverter
   /// </summary>
   private static DMW.ExtensionList? GetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>();
-    if (itemElement != null)
-      return DMXW.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value)
@@ -88,6 +107,24 @@ public static class CommentExtensibleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021WComtExt.CommentExtensible? openXmlElement, DMW.CommentExtensible? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+        ok = false;
+      if (!CmpDateUtc(openXmlElement, value.DateUtc, diffs, objName))
+        ok = false;
+      if (!CmpIntelligentPlaceholder(openXmlElement, value.IntelligentPlaceholder, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentExtensible? value)

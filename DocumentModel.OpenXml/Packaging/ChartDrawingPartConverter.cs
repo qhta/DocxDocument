@@ -10,6 +10,11 @@ public static class ChartDrawingPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.ChartDrawingPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the ChartDrawingPart
   /// </summary>
@@ -25,9 +30,19 @@ public static class ChartDrawingPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.ChartDrawingPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.ChartDrawingPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.ChartDrawingPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -35,9 +50,12 @@ public static class ChartDrawingPartConverter
   /// </summary>
   private static DMDrawsCharts.UserShapes? GetUserShapes(DXPack.ChartDrawingPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXDrawCharts.UserShapes rootElement)
-      return DMXDrawsCharts.UserShapesConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsCharts.UserShapesConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawCharts.UserShapes);
+  }
+  
+  private static bool CmpUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDrawsCharts.UserShapes? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDrawsCharts.UserShapes? value)
@@ -62,6 +80,24 @@ public static class ChartDrawingPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ChartDrawingPart? openXmlElement, DMPack.ChartDrawingPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpUserShapes(openXmlElement, value.UserShapes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartDrawingPart? value)

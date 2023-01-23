@@ -10,7 +10,7 @@ public class SurfaceChart
   /// </summary>
   public Boolean? Wireframe { get; set; }
 
-  public Collection<SurfaceChartSeries>? SurfaceChartSerieses { get; set; }
+  public Collection<SurfaceChartSeries>? SurfaceChartSeries { get; set; }
 
   public BandFormats? BandFormats { get; set; }
 

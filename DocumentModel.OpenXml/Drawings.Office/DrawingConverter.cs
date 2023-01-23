@@ -10,10 +10,12 @@ public static class DrawingConverter
   /// </summary>
   private static DMDrawsO.ShapeTree? GetShapeTree(DXODraw.Drawing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXODraw.ShapeTree>();
-    if (itemElement != null)
-      return DMXDrawsO.ShapeTreeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsO.ShapeTreeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeTree>());
+  }
+  
+  private static bool CmpShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsO.ShapeTreeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeTree>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value)
@@ -38,6 +40,18 @@ public static class DrawingConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXODraw.Drawing? openXmlElement, DMDrawsO.Drawing? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpShapeTree(openXmlElement, value.ShapeTree, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Drawing? value)

@@ -13,6 +13,11 @@ public static class SharpenSoftenConverter
     return openXmlElement.Amount?.Value;
   }
   
+  private static bool CmpAmount(DXO2010Draw.SharpenSoften openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Amount?.Value == value;
+  }
+  
   private static void SetAmount(DXO2010Draw.SharpenSoften openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
@@ -27,6 +32,18 @@ public static class SharpenSoftenConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.SharpenSoften? openXmlElement, DMDraws.SharpenSoften? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAmount(openXmlElement, value.Amount, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SharpenSoften? value)

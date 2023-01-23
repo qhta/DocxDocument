@@ -13,6 +13,11 @@ public static class GeoHierarchyEntityConverter
     return openXmlElement?.EntityName?.Value;
   }
   
+  private static bool CmpEntityName(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityName?.Value == value;
+  }
+  
   private static void SetEntityName(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class GeoHierarchyEntityConverter
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
+  }
+  
+  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityId?.Value == value;
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class GeoHierarchyEntityConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
+  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetEntityType(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
@@ -61,6 +76,22 @@ public static class GeoHierarchyEntityConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoHierarchyEntity? openXmlElement, DMDrawsChartDraws.GeoHierarchyEntity? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityName(openXmlElement, value.EntityName, diffs, objName))
+        ok = false;
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+        ok = false;
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoHierarchyEntity? value)

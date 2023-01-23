@@ -10,10 +10,12 @@ public static class BarChartConverter
   /// </summary>
   private static DMDrawsCharts.BarDirectionKind? GetBarDirection(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value);
+  }
+  
+  private static bool CmpBarDirection(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarDirectionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBarDirection(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarDirectionKind? value)
@@ -34,10 +36,12 @@ public static class BarChartConverter
   /// </summary>
   private static DMDrawsCharts.BarGroupingKind? GetBarGrouping(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value);
+  }
+  
+  private static bool CmpBarGrouping(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarGroupingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBarGrouping(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarGroupingKind? value)
@@ -58,8 +62,12 @@ public static class BarChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.BarChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.BarChart openXmlElement, Boolean? value)
@@ -77,7 +85,7 @@ public static class BarChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.BarChartSeries> GetBarChartSerieses(DXDrawCharts.BarChart openXmlElement)
+  private static Collection<DMDrawsCharts.BarChartSeries> GetBarChartSeries(DXDrawCharts.BarChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.BarChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.BarChartSeries>())
@@ -89,7 +97,12 @@ public static class BarChartConverter
     return collection;
   }
   
-  private static void SetBarChartSerieses(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value)
+  private static bool CmpBarChartSeries(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetBarChartSeries(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.BarChartSeries>();
     if (value != null)
@@ -105,10 +118,12 @@ public static class BarChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -126,10 +141,12 @@ public static class BarChartConverter
   
   private static UInt16? GetGapWidth(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value;
+  }
+  
+  private static bool CmpGapWidth(DXDrawCharts.BarChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value == value;
   }
   
   private static void SetGapWidth(DXDrawCharts.BarChart openXmlElement, UInt16? value)
@@ -146,10 +163,12 @@ public static class BarChartConverter
   
   private static SByte? GetOverlap(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Overlap>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Overlap>()?.Val?.Value;
+  }
+  
+  private static bool CmpOverlap(DXDrawCharts.BarChart openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Overlap>()?.Val?.Value == value;
   }
   
   private static void SetOverlap(DXDrawCharts.BarChart openXmlElement, SByte? value)
@@ -164,7 +183,7 @@ public static class BarChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.SeriesLines> GetSeriesLineses(DXDrawCharts.BarChart openXmlElement)
+  private static Collection<DMDrawsCharts.SeriesLines> GetSeriesLines(DXDrawCharts.BarChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SeriesLines>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SeriesLines>())
@@ -176,7 +195,12 @@ public static class BarChartConverter
     return collection;
   }
   
-  private static void SetSeriesLineses(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value)
+  private static bool CmpSeriesLines(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetSeriesLines(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.SeriesLines>();
     if (value != null)
@@ -202,6 +226,11 @@ public static class BarChartConverter
     return collection;
   }
   
+  private static bool CmpAxisIds(DXDrawCharts.BarChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAxisIds(DXDrawCharts.BarChart openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
@@ -218,10 +247,12 @@ public static class BarChartConverter
   
   private static DMDrawsCharts.BarChartExtensionList? GetBarChartExtensionList(DXDrawCharts.BarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.BarChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.BarChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.BarChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BarChartExtensionList>());
+  }
+  
+  private static bool CmpBarChartExtensionList(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.BarChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BarChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBarChartExtensionList(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarChartExtensionList? value)
@@ -245,16 +276,46 @@ public static class BarChartConverter
       value.BarDirection = GetBarDirection(openXmlElement);
       value.BarGrouping = GetBarGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.BarChartSerieses = GetBarChartSerieses(openXmlElement);
+      value.BarChartSeries = GetBarChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.GapWidth = GetGapWidth(openXmlElement);
       value.Overlap = GetOverlap(openXmlElement);
-      value.SeriesLineses = GetSeriesLineses(openXmlElement);
+      value.SeriesLines = GetSeriesLines(openXmlElement);
       value.AxisIds = GetAxisIds(openXmlElement);
       value.BarChartExtensionList = GetBarChartExtensionList(openXmlElement);
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.BarChart? openXmlElement, DMDrawsCharts.BarChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBarDirection(openXmlElement, value.BarDirection, diffs, objName))
+        ok = false;
+      if (!CmpBarGrouping(openXmlElement, value.BarGrouping, diffs, objName))
+        ok = false;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpBarChartSeries(openXmlElement, value.BarChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName))
+        ok = false;
+      if (!CmpOverlap(openXmlElement, value.Overlap, diffs, objName))
+        ok = false;
+      if (!CmpSeriesLines(openXmlElement, value.SeriesLines, diffs, objName))
+        ok = false;
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+        ok = false;
+      if (!CmpBarChartExtensionList(openXmlElement, value.BarChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarChart? value)
@@ -266,11 +327,11 @@ public static class BarChartConverter
       SetBarDirection(openXmlElement, value?.BarDirection);
       SetBarGrouping(openXmlElement, value?.BarGrouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetBarChartSerieses(openXmlElement, value?.BarChartSerieses);
+      SetBarChartSeries(openXmlElement, value?.BarChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetGapWidth(openXmlElement, value?.GapWidth);
       SetOverlap(openXmlElement, value?.Overlap);
-      SetSeriesLineses(openXmlElement, value?.SeriesLineses);
+      SetSeriesLines(openXmlElement, value?.SeriesLines);
       SetAxisIds(openXmlElement, value?.AxisIds);
       SetBarChartExtensionList(openXmlElement, value?.BarChartExtensionList);
       return openXmlElement;

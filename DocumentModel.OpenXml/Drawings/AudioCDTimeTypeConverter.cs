@@ -13,6 +13,11 @@ public static class AudioCDTimeTypeConverter
     return openXmlElement.Track?.Value;
   }
   
+  private static bool CmpTrack(DXDraw.AudioCDTimeType openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Track?.Value == value;
+  }
+  
   private static void SetTrack(DXDraw.AudioCDTimeType openXmlElement, Byte? value)
   {
     openXmlElement.Track = value;
@@ -24,6 +29,11 @@ public static class AudioCDTimeTypeConverter
   private static UInt32? GetTime(DXDraw.AudioCDTimeType openXmlElement)
   {
     return openXmlElement.Time?.Value;
+  }
+  
+  private static bool CmpTime(DXDraw.AudioCDTimeType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Time?.Value == value;
   }
   
   private static void SetTime(DXDraw.AudioCDTimeType openXmlElement, UInt32? value)
@@ -41,6 +51,20 @@ public static class AudioCDTimeTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AudioCDTimeType? openXmlElement, DMDraws.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTrack(openXmlElement, value.Track, diffs, objName))
+        ok = false;
+      if (!CmpTime(openXmlElement, value.Time, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioCDTimeType? value)

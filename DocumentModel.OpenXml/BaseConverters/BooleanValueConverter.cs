@@ -4,25 +4,26 @@ namespace DocumentModel.OpenXml;
 
 public static class BooleanValueConverter
 {
-  public static Boolean? GetValue(OnOffOnlyValues? element)
-  {
-    if (element != null)
-      return element == OnOffOnlyValues.On;
-    return null;
-  }
+  //public static Boolean? GetValue(OnOffOnlyValues? element)
+  //{
+  //  if (element != null)
+  //    return element == OnOffOnlyValues.On;
+  //  return null;
+  //}
 
-  public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value)
-  {
-    if (element != null)
-    {
-      if (value == true)
-        return element == OnOffOnlyValues.On;
-      if (value == false)
-        return element == OnOffOnlyValues.Off;
-      return false;
-    }
-    return value == null;
-  }
+  //public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
+  //{
+  //  if (element != null)
+  //  {
+  //    if (element == OnOffOnlyValues.On && value == true)
+  //      return true;
+  //    if (element == OnOffOnlyValues.Off && value == false)
+  //      return true;
+  //    diffs?.Add(callerName, "Value
+  //    return false;
+  //  }
+  //  return value == null;
+  //}
 
   public static Boolean? GetValue(OnOffOnlyType? element)
   {
@@ -31,17 +32,21 @@ public static class BooleanValueConverter
     return null;
   }
 
-  public static Boolean CmpValue(OnOffOnlyType? element, Boolean? value)
+  public static Boolean CmpValue(OnOffOnlyType? element, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
-    if (element?.Val?.Value != null)
+    if (element?.Val?.Value != null && value != null)
     {
-      if (value == true)
-        return element?.Val?.Value == OnOffOnlyValues.On;
-      if (value == false)
-        return element?.Val?.Value == OnOffOnlyValues.Off;
+      if (element.Val.Value == OnOffOnlyValues.On && value == true)
+        return true;
+      if (element.Val.Value == OnOffOnlyValues.Off && value == false)
+        return true;
+      diffs?.Add(callerName, element.GetType().Name, element.Val.Value == OnOffOnlyValues.On, value);
       return false;
     }
-    return value == null;
+    if (element?.Val?.Value == null && value == null)
+      return true;
+    diffs?.Add(callerName, element?.GetType().Name, element?.Val?.Value == OnOffOnlyValues.On, value);
+    return false;
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Boolean? value)

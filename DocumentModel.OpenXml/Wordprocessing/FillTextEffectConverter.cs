@@ -10,8 +10,12 @@ public static class FillTextEffectConverter
   /// </summary>
   private static Boolean? GetNoFillEmpty(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null;
+  }
+  
+  private static bool CmpNoFillEmpty(DXO2010W.FillTextEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null == value;
   }
   
   private static void SetNoFillEmpty(DXO2010W.FillTextEffect openXmlElement, Boolean? value)
@@ -34,10 +38,12 @@ public static class FillTextEffectConverter
   /// </summary>
   private static DMW.SolidColorFillProperties? GetSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>();
-    if (itemElement != null)
-      return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>());
+  }
+  
+  private static bool CmpSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.SolidColorFillProperties? value)
@@ -58,10 +64,12 @@ public static class FillTextEffectConverter
   /// </summary>
   private static DMW.GradientFillProperties? GetGradientFillProperties(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>();
-    if (itemElement != null)
-      return DMXW.GradientFillPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.GradientFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>());
+  }
+  
+  private static bool CmpGradientFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.GradientFillProperties? value)
@@ -88,6 +96,22 @@ public static class FillTextEffectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.FillTextEffect? openXmlElement, DMW.FillTextEffect? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNoFillEmpty(openXmlElement, value.NoFillEmpty, diffs, objName))
+        ok = false;
+      if (!CmpSolidColorFillProperties(openXmlElement, value.SolidColorFillProperties, diffs, objName))
+        ok = false;
+      if (!CmpGradientFillProperties(openXmlElement, value.GradientFillProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillTextEffect? value)

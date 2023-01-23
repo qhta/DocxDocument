@@ -13,6 +13,11 @@ public static class DocPartTypesConverter
     return openXmlElement?.All?.Value;
   }
   
+  private static bool CmpAll(DXW.DocPartTypes openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.All?.Value == value;
+  }
+  
   private static void SetAll(DXW.DocPartTypes openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class DocPartTypesConverter
   
   private static DMW.DocPartKind? GetDocPartType(DXW.DocPartTypes openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartType>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value);
+  }
+  
+  private static bool CmpDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value)
@@ -52,6 +59,20 @@ public static class DocPartTypesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocPartTypes? openXmlElement, DMW.DocPartTypes? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAll(openXmlElement, value.All, diffs, objName))
+        ok = false;
+      if (!CmpDocPartType(openXmlElement, value.DocPartType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartTypes? value)

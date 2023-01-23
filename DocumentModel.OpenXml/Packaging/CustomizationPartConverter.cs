@@ -10,9 +10,19 @@ public static class CustomizationPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.CustomizationPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.CustomizationPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.CustomizationPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -20,9 +30,12 @@ public static class CustomizationPartConverter
   /// </summary>
   private static DMW.TemplateCommandGroup? GetTemplateCommandGroup(DXPack.CustomizationPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXOW.TemplateCommandGroup rootElement)
-      return DMXW.TemplateCommandGroupConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.TemplateCommandGroupConverter.CreateModelElement(openXmlElement?.RootElement as DXOW.TemplateCommandGroup);
+  }
+  
+  private static bool CmpTemplateCommandGroup(DXPack.CustomizationPart openXmlElement, DMW.TemplateCommandGroup? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetTemplateCommandGroup(DXPack.CustomizationPart openXmlElement, DMW.TemplateCommandGroup? value)
@@ -46,6 +59,22 @@ public static class CustomizationPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.CustomizationPart? openXmlElement, DMPack.CustomizationPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpTemplateCommandGroup(openXmlElement, value.TemplateCommandGroup, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomizationPart? value)

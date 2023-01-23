@@ -13,6 +13,11 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value);
   }
   
+  private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(value);
@@ -26,6 +31,11 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value);
   }
   
+  private static bool CmpLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value)
   {
     openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(value);
@@ -37,6 +47,11 @@ public static class TabStopConverter
   private static Int32? GetPosition(DXW.TabStop openXmlElement)
   {
     return openXmlElement.Position?.Value;
+  }
+  
+  private static bool CmpPosition(DXW.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Position?.Value == value;
   }
   
   private static void SetPosition(DXW.TabStop openXmlElement, Int32? value)
@@ -55,6 +70,22 @@ public static class TabStopConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TabStop? openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpLeader(openXmlElement, value.Leader, diffs, objName))
+        ok = false;
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TabStop? value)

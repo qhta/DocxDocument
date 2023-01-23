@@ -17,6 +17,11 @@ public static class WebExtensionPropertyBagConverter
     return collection;
   }
   
+  private static bool CmpWebExtensionProperties(DXO2013WebExt.WebExtensionPropertyBag openXmlElement, Collection<DMWebExt.WebExtensionProperty>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetWebExtensionProperties(DXO2013WebExt.WebExtensionPropertyBag openXmlElement, Collection<DMWebExt.WebExtensionProperty>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013WebExt.WebExtensionProperty>();
@@ -40,6 +45,18 @@ public static class WebExtensionPropertyBagConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExt.WebExtensionPropertyBag? openXmlElement, DMWebExt.WebExtensionPropertyBag? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWebExtensionProperties(openXmlElement, value.WebExtensionProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionPropertyBag? value)

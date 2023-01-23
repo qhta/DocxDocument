@@ -17,6 +17,11 @@ public static class TabStopListConverter
     return collection;
   }
   
+  private static bool CmpTabStops(DXDraw.TabStopList openXmlElement, Collection<DMDraws.TabStop>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetTabStops(DXDraw.TabStopList openXmlElement, Collection<DMDraws.TabStop>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.TabStop>();
@@ -40,6 +45,18 @@ public static class TabStopListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.TabStopList? openXmlElement, DMDraws.TabStopList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTabStops(openXmlElement, value.TabStops, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStopList? value)

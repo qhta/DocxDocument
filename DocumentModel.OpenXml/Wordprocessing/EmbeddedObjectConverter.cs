@@ -13,6 +13,11 @@ public static class EmbeddedObjectConverter
     return openXmlElement?.DxaOriginal?.Value;
   }
   
+  private static bool CmpDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DxaOriginal?.Value == value;
+  }
+  
   private static void SetDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class EmbeddedObjectConverter
   private static String? GetDyaOriginal(DXW.EmbeddedObject openXmlElement)
   {
     return openXmlElement?.DyaOriginal?.Value;
+  }
+  
+  private static bool CmpDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DyaOriginal?.Value == value;
   }
   
   private static void SetDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
@@ -47,6 +57,13 @@ public static class EmbeddedObjectConverter
     return null;
   }
   
+  private static bool CmpAnchorId(DXW.EmbeddedObject openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.AnchorId?.Value != null)
+      return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetAnchorId(DXW.EmbeddedObject openXmlElement, UInt32? value)
   {
       if (value != null)
@@ -57,10 +74,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Group? GetGroup(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Group>();
-    if (itemElement != null)
-      return DMXVml.GroupConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.GroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Group>());
+  }
+  
+  private static bool CmpGroup(DXW.EmbeddedObject openXmlElement, DMVml.Group? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.GroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Group>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroup(DXW.EmbeddedObject openXmlElement, DMVml.Group? value)
@@ -78,10 +97,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.ImageFile? GetImageFile(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.ImageFile>();
-    if (itemElement != null)
-      return DMXVml.ImageFileConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ImageFileConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.ImageFile>());
+  }
+  
+  private static bool CmpImageFile(DXW.EmbeddedObject openXmlElement, DMVml.ImageFile? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ImageFileConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.ImageFile>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageFile(DXW.EmbeddedObject openXmlElement, DMVml.ImageFile? value)
@@ -99,10 +120,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Line? GetLine(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Line>();
-    if (itemElement != null)
-      return DMXVml.LineConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.LineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Line>());
+  }
+  
+  private static bool CmpLine(DXW.EmbeddedObject openXmlElement, DMVml.Line? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.LineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Line>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLine(DXW.EmbeddedObject openXmlElement, DMVml.Line? value)
@@ -120,10 +143,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Oval? GetOval(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Oval>();
-    if (itemElement != null)
-      return DMXVml.OvalConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.OvalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Oval>());
+  }
+  
+  private static bool CmpOval(DXW.EmbeddedObject openXmlElement, DMVml.Oval? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.OvalConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Oval>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOval(DXW.EmbeddedObject openXmlElement, DMVml.Oval? value)
@@ -141,10 +166,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.PolyLine? GetPolyLine(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.PolyLine>();
-    if (itemElement != null)
-      return DMXVml.PolyLineConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.PolyLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.PolyLine>());
+  }
+  
+  private static bool CmpPolyLine(DXW.EmbeddedObject openXmlElement, DMVml.PolyLine? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.PolyLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.PolyLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPolyLine(DXW.EmbeddedObject openXmlElement, DMVml.PolyLine? value)
@@ -162,10 +189,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Rectangle? GetRectangle(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Rectangle>();
-    if (itemElement != null)
-      return DMXVml.RectangleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.RectangleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Rectangle>());
+  }
+  
+  private static bool CmpRectangle(DXW.EmbeddedObject openXmlElement, DMVml.Rectangle? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.RectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Rectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRectangle(DXW.EmbeddedObject openXmlElement, DMVml.Rectangle? value)
@@ -183,10 +212,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.RoundRectangle? GetRoundRectangle(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.RoundRectangle>();
-    if (itemElement != null)
-      return DMXVml.RoundRectangleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.RoundRectangleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.RoundRectangle>());
+  }
+  
+  private static bool CmpRoundRectangle(DXW.EmbeddedObject openXmlElement, DMVml.RoundRectangle? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.RoundRectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.RoundRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRoundRectangle(DXW.EmbeddedObject openXmlElement, DMVml.RoundRectangle? value)
@@ -204,10 +235,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Shape? GetShape(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shape>();
-    if (itemElement != null)
-      return DMXVml.ShapeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shape>());
+  }
+  
+  private static bool CmpShape(DXW.EmbeddedObject openXmlElement, DMVml.Shape? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ShapeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Shape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShape(DXW.EmbeddedObject openXmlElement, DMVml.Shape? value)
@@ -225,10 +258,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Shapetype? GetShapetype(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shapetype>();
-    if (itemElement != null)
-      return DMXVml.ShapetypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ShapetypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shapetype>());
+  }
+  
+  private static bool CmpShapetype(DXW.EmbeddedObject openXmlElement, DMVml.Shapetype? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ShapetypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Shapetype>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapetype(DXW.EmbeddedObject openXmlElement, DMVml.Shapetype? value)
@@ -246,10 +281,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Arc? GetArc(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Arc>();
-    if (itemElement != null)
-      return DMXVml.ArcConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ArcConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Arc>());
+  }
+  
+  private static bool CmpArc(DXW.EmbeddedObject openXmlElement, DMVml.Arc? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ArcConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Arc>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArc(DXW.EmbeddedObject openXmlElement, DMVml.Arc? value)
@@ -267,10 +304,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.Curve? GetCurve(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Curve>();
-    if (itemElement != null)
-      return DMXVml.CurveConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.CurveConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Curve>());
+  }
+  
+  private static bool CmpCurve(DXW.EmbeddedObject openXmlElement, DMVml.Curve? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.CurveConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Curve>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCurve(DXW.EmbeddedObject openXmlElement, DMVml.Curve? value)
@@ -288,10 +327,12 @@ public static class EmbeddedObjectConverter
   
   private static DMVml.OleObject? GetOleObject(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.OleObject>();
-    if (itemElement != null)
-      return DMXVml.OleObjectConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.OleObjectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.OleObject>());
+  }
+  
+  private static bool CmpOleObject(DXW.EmbeddedObject openXmlElement, DMVml.OleObject? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.OleObjectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.OleObject>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOleObject(DXW.EmbeddedObject openXmlElement, DMVml.OleObject? value)
@@ -309,10 +350,12 @@ public static class EmbeddedObjectConverter
   
   private static DMW.Drawing? GetDrawing(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Drawing>();
-    if (itemElement != null)
-      return DMXW.DrawingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DrawingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Drawing>());
+  }
+  
+  private static bool CmpDrawing(DXW.EmbeddedObject openXmlElement, DMW.Drawing? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DrawingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Drawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDrawing(DXW.EmbeddedObject openXmlElement, DMW.Drawing? value)
@@ -330,10 +373,12 @@ public static class EmbeddedObjectConverter
   
   private static DMW.Control? GetControl(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Control>();
-    if (itemElement != null)
-      return DMXW.ControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Control>());
+  }
+  
+  private static bool CmpControl(DXW.EmbeddedObject openXmlElement, DMW.Control? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Control>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControl(DXW.EmbeddedObject openXmlElement, DMW.Control? value)
@@ -351,10 +396,12 @@ public static class EmbeddedObjectConverter
   
   private static DMW.ObjectEmbed? GetObjectEmbed(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ObjectEmbed>();
-    if (itemElement != null)
-      return DMXW.ObjectEmbedConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ObjectEmbedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ObjectEmbed>());
+  }
+  
+  private static bool CmpObjectEmbed(DXW.EmbeddedObject openXmlElement, DMW.ObjectEmbed? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ObjectEmbedConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ObjectEmbed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetObjectEmbed(DXW.EmbeddedObject openXmlElement, DMW.ObjectEmbed? value)
@@ -372,10 +419,12 @@ public static class EmbeddedObjectConverter
   
   private static DMW.ObjectLink? GetObjectLink(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ObjectLink>();
-    if (itemElement != null)
-      return DMXW.ObjectLinkConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ObjectLinkConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ObjectLink>());
+  }
+  
+  private static bool CmpObjectLink(DXW.EmbeddedObject openXmlElement, DMW.ObjectLink? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ObjectLinkConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ObjectLink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetObjectLink(DXW.EmbeddedObject openXmlElement, DMW.ObjectLink? value)
@@ -418,6 +467,54 @@ public static class EmbeddedObjectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.EmbeddedObject? openXmlElement, DMW.EmbeddedObject? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDxaOriginal(openXmlElement, value.DxaOriginal, diffs, objName))
+        ok = false;
+      if (!CmpDyaOriginal(openXmlElement, value.DyaOriginal, diffs, objName))
+        ok = false;
+      if (!CmpAnchorId(openXmlElement, value.AnchorId, diffs, objName))
+        ok = false;
+      if (!CmpGroup(openXmlElement, value.Group, diffs, objName))
+        ok = false;
+      if (!CmpImageFile(openXmlElement, value.ImageFile, diffs, objName))
+        ok = false;
+      if (!CmpLine(openXmlElement, value.Line, diffs, objName))
+        ok = false;
+      if (!CmpOval(openXmlElement, value.Oval, diffs, objName))
+        ok = false;
+      if (!CmpPolyLine(openXmlElement, value.PolyLine, diffs, objName))
+        ok = false;
+      if (!CmpRectangle(openXmlElement, value.Rectangle, diffs, objName))
+        ok = false;
+      if (!CmpRoundRectangle(openXmlElement, value.RoundRectangle, diffs, objName))
+        ok = false;
+      if (!CmpShape(openXmlElement, value.Shape, diffs, objName))
+        ok = false;
+      if (!CmpShapetype(openXmlElement, value.Shapetype, diffs, objName))
+        ok = false;
+      if (!CmpArc(openXmlElement, value.Arc, diffs, objName))
+        ok = false;
+      if (!CmpCurve(openXmlElement, value.Curve, diffs, objName))
+        ok = false;
+      if (!CmpOleObject(openXmlElement, value.OleObject, diffs, objName))
+        ok = false;
+      if (!CmpDrawing(openXmlElement, value.Drawing, diffs, objName))
+        ok = false;
+      if (!CmpControl(openXmlElement, value.Control, diffs, objName))
+        ok = false;
+      if (!CmpObjectEmbed(openXmlElement, value.ObjectEmbed, diffs, objName))
+        ok = false;
+      if (!CmpObjectLink(openXmlElement, value.ObjectLink, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedObject? value)

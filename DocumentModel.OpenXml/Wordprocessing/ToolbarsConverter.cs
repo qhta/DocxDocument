@@ -17,6 +17,11 @@ public static class ToolbarsConverter
     return collection;
   }
   
+  private static bool CmpAllocatedCommandManifests(DXOW.Toolbars openXmlElement, Collection<DMW.AllocatedCommandManifest>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAllocatedCommandManifests(DXOW.Toolbars openXmlElement, Collection<DMW.AllocatedCommandManifest>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.AllocatedCommandManifest>();
@@ -43,6 +48,11 @@ public static class ToolbarsConverter
     return collection;
   }
   
+  private static bool CmpToolbarDatas(DXOW.Toolbars openXmlElement, Collection<DMW.ToolbarData>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetToolbarDatas(DXOW.Toolbars openXmlElement, Collection<DMW.ToolbarData>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.ToolbarData>();
@@ -67,6 +77,20 @@ public static class ToolbarsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.Toolbars? openXmlElement, DMW.Toolbars? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAllocatedCommandManifests(openXmlElement, value.AllocatedCommandManifests, diffs, objName))
+        ok = false;
+      if (!CmpToolbarDatas(openXmlElement, value.ToolbarDatas, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Toolbars? value)

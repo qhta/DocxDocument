@@ -41,7 +41,7 @@ public class BubbleChartSeries
 
   public Collection<Trendline>? Trendlines { get; set; }
 
-  public Collection<ErrorBars>? ErrorBarses { get; set; }
+  public Collection<ErrorBars>? ErrorBars { get; set; }
 
   public XValues? XValues { get; set; }
 

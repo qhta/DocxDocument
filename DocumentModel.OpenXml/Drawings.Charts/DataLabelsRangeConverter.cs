@@ -10,10 +10,12 @@ public static class DataLabelsRangeConverter
   /// </summary>
   private static String? GetFormula(DXO2013DrawChart.DataLabelsRange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.Formula>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2013DrawChart.Formula>()?.Text;
+  }
+  
+  private static bool CmpFormula(DXO2013DrawChart.DataLabelsRange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2013DrawChart.Formula>()?.Text == value;
   }
   
   private static void SetFormula(DXO2013DrawChart.DataLabelsRange openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class DataLabelsRangeConverter
   /// </summary>
   private static DMDrawsCharts.DataLabelsRangeChache? GetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>());
+  }
+  
+  private static bool CmpDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value)
@@ -62,6 +66,20 @@ public static class DataLabelsRangeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.DataLabelsRange? openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+        ok = false;
+      if (!CmpDataLabelsRangeChache(openXmlElement, value.DataLabelsRangeChache, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelsRange? value)

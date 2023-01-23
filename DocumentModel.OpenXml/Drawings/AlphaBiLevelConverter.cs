@@ -13,6 +13,11 @@ public static class AlphaBiLevelConverter
     return openXmlElement.Threshold?.Value;
   }
   
+  private static bool CmpThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Threshold?.Value == value;
+  }
+  
   private static void SetThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
@@ -27,6 +32,18 @@ public static class AlphaBiLevelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AlphaBiLevel? openXmlElement, DMDraws.AlphaBiLevel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpThreshold(openXmlElement, value.Threshold, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaBiLevel? value)

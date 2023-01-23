@@ -13,6 +13,11 @@ public static class DocPropertiesConverter
     return openXmlElement.Id?.Value;
   }
   
+  private static bool CmpId(DXDrawW.DocProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Id?.Value == value;
+  }
+  
   private static void SetId(DXDrawW.DocProperties openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
@@ -24,6 +29,11 @@ public static class DocPropertiesConverter
   private static String? GetName(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Name?.Value;
+  }
+  
+  private static bool CmpName(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
   }
   
   private static void SetName(DXDrawW.DocProperties openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class DocPropertiesConverter
     return openXmlElement?.Description?.Value;
   }
   
+  private static bool CmpDescription(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Description?.Value == value;
+  }
+  
   private static void SetDescription(DXDrawW.DocProperties openXmlElement, String? value)
   {
     if (value != null)
@@ -56,6 +71,11 @@ public static class DocPropertiesConverter
   private static Boolean? GetHidden(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
+  }
+  
+  private static bool CmpHidden(DXDrawW.DocProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Hidden?.Value == value;
   }
   
   private static void SetHidden(DXDrawW.DocProperties openXmlElement, Boolean? value)
@@ -74,6 +94,11 @@ public static class DocPropertiesConverter
     return openXmlElement?.Title?.Value;
   }
   
+  private static bool CmpTitle(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Title?.Value == value;
+  }
+  
   private static void SetTitle(DXDrawW.DocProperties openXmlElement, String? value)
   {
     if (value != null)
@@ -87,10 +112,12 @@ public static class DocPropertiesConverter
   /// </summary>
   private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
-    if (itemElement != null)
-      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>());
+  }
+  
+  private static bool CmpHyperlinkOnClick(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkOnClick(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
@@ -111,10 +138,12 @@ public static class DocPropertiesConverter
   /// </summary>
   private static DMDraws.HyperlinkOnHover? GetHyperlinkOnHover(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>();
-    if (itemElement != null)
-      return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>());
+  }
+  
+  private static bool CmpHyperlinkOnHover(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnHover? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.HyperlinkOnHoverConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkOnHover(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnHover? value)
@@ -135,10 +164,12 @@ public static class DocPropertiesConverter
   /// </summary>
   private static DMDraws.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>());
+  }
+  
+  private static bool CmpNonVisualDrawingPropertiesExtensionList(DXDrawW.DocProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingPropertiesExtensionList(DXDrawW.DocProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value)
@@ -170,6 +201,32 @@ public static class DocPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.DocProperties? openXmlElement, DMDrawsW.DocProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+        ok = false;
+      if (!CmpHidden(openXmlElement, value.Hidden, diffs, objName))
+        ok = false;
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+        ok = false;
+      if (!CmpHyperlinkOnClick(openXmlElement, value.HyperlinkOnClick, diffs, objName))
+        ok = false;
+      if (!CmpHyperlinkOnHover(openXmlElement, value.HyperlinkOnHover, diffs, objName))
+        ok = false;
+      if (!CmpNonVisualDrawingPropertiesExtensionList(openXmlElement, value.NonVisualDrawingPropertiesExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.DocProperties? value)

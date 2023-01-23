@@ -13,6 +13,11 @@ public static class HorizontalPositionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DMDrawsW.HorizontalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
+  private static bool CmpRelativeFrom(DXDrawW.HorizontalPosition openXmlElement, DMDrawsW.HorizontalRelativePositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DMDrawsW.HorizontalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetRelativeFrom(DXDrawW.HorizontalPosition openXmlElement, DMDrawsW.HorizontalRelativePositionKind? value)
   {
     openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DMDrawsW.HorizontalRelativePositionKind>(value);
@@ -23,10 +28,12 @@ public static class HorizontalPositionConverter
   /// </summary>
   private static String? GetHorizontalAlignment(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.HorizontalAlignment>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawW.HorizontalAlignment>()?.Text;
+  }
+  
+  private static bool CmpHorizontalAlignment(DXDrawW.HorizontalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawW.HorizontalAlignment>()?.Text == value;
   }
   
   private static void SetHorizontalAlignment(DXDrawW.HorizontalPosition openXmlElement, String? value)
@@ -46,10 +53,12 @@ public static class HorizontalPositionConverter
   /// </summary>
   private static String? GetPositionOffset(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>()?.Text;
+  }
+  
+  private static bool CmpPositionOffset(DXDrawW.HorizontalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>()?.Text == value;
   }
   
   private static void SetPositionOffset(DXDrawW.HorizontalPosition openXmlElement, String? value)
@@ -69,10 +78,12 @@ public static class HorizontalPositionConverter
   /// </summary>
   private static String? GetPercentagePositionHeightOffset(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionHeightOffset>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionHeightOffset>()?.Text;
+  }
+  
+  private static bool CmpPercentagePositionHeightOffset(DXDrawW.HorizontalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionHeightOffset>()?.Text == value;
   }
   
   private static void SetPercentagePositionHeightOffset(DXDrawW.HorizontalPosition openXmlElement, String? value)
@@ -99,6 +110,24 @@ public static class HorizontalPositionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.HorizontalPosition? openXmlElement, DMDrawsW.HorizontalPosition? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelativeFrom(openXmlElement, value.RelativeFrom, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalAlignment(openXmlElement, value.HorizontalAlignment, diffs, objName))
+        ok = false;
+      if (!CmpPositionOffset(openXmlElement, value.PositionOffset, diffs, objName))
+        ok = false;
+      if (!CmpPercentagePositionHeightOffset(openXmlElement, value.PercentagePositionHeightOffset, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.HorizontalPosition? value)

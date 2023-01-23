@@ -13,6 +13,11 @@ public static class ReadModeInkLockDownConverter
     return openXmlElement?.UseActualPages?.Value;
   }
   
+  private static bool CmpUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UseActualPages?.Value == value;
+  }
+  
   private static void SetUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class ReadModeInkLockDownConverter
     return openXmlElement.Width?.Value;
   }
   
+  private static bool CmpWidth(DXW.ReadModeInkLockDown openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Width?.Value == value;
+  }
+  
   private static void SetWidth(DXW.ReadModeInkLockDown openXmlElement, UInt32? value)
   {
     openXmlElement.Width = value;
@@ -42,6 +52,11 @@ public static class ReadModeInkLockDownConverter
     return openXmlElement.Height?.Value;
   }
   
+  private static bool CmpHeight(DXW.ReadModeInkLockDown openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Height?.Value == value;
+  }
+  
   private static void SetHeight(DXW.ReadModeInkLockDown openXmlElement, UInt32? value)
   {
     openXmlElement.Height = value;
@@ -53,6 +68,11 @@ public static class ReadModeInkLockDownConverter
   private static String? GetFontSize(DXW.ReadModeInkLockDown openXmlElement)
   {
     return openXmlElement?.FontSize?.Value;
+  }
+  
+  private static bool CmpFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FontSize?.Value == value;
   }
   
   private static void SetFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value)
@@ -75,6 +95,24 @@ public static class ReadModeInkLockDownConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ReadModeInkLockDown? openXmlElement, DMW.ReadModeInkLockDown? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUseActualPages(openXmlElement, value.UseActualPages, diffs, objName))
+        ok = false;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+        ok = false;
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ReadModeInkLockDown? value)

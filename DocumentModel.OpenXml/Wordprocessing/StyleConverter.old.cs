@@ -15,9 +15,9 @@ public static class StyleConverter
     return EnumValueConverter.GetValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value);
   }
 
-  private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value)
+  private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value);
+    return EnumValueConverter.CmpValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type, value, diffs, callerName);
   }
 
   private static void SetType(DXW.Style openXmlElement, DMW.StyleKind? value)
@@ -33,9 +33,12 @@ public static class StyleConverter
     return openXmlElement?.StyleId?.Value;
   }
 
-  private static bool CmpStyleId(DXW.Style openXmlElement, String? value)
+  private static bool CmpStyleId(DXW.Style openXmlElement, String? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
-    return openXmlElement?.StyleId?.Value == value;
+    if (openXmlElement?.StyleId?.Value == value)
+      return true;
+    diffs?.Add(callerName, "StyleId", openXmlElement?.StyleId?.Value, value);
+    return false;
   }
 
   private static void SetStyleId(DXW.Style openXmlElement, String? value)
@@ -54,7 +57,7 @@ public static class StyleConverter
     return openXmlElement?.Default?.Value;
   }
 
-  private static bool CmpDefault(DXW.Style openXmlElement, Boolean? value)
+  private static bool CmpDefault(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
     return openXmlElement?.Default?.Value == value;
   }
@@ -75,7 +78,7 @@ public static class StyleConverter
     return openXmlElement?.CustomStyle?.Value;
   }
 
-  private static bool CmpCustomStyle(DXW.Style openXmlElement, Boolean? value)
+  private static bool CmpCustomStyle(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
     return openXmlElement?.CustomStyle?.Value == value;
   }
@@ -96,7 +99,7 @@ public static class StyleConverter
     return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value;
   }
 
-  private static bool CmpStyleName(DXW.Style openXmlElement, String? value)
+  private static bool CmpStyleName(DXW.Style openXmlElement, String? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
   {
     return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value == value;
   }
@@ -677,11 +680,12 @@ public static class StyleConverter
     return null;
   }
 
-  public static bool CmpModelElement(DXW.Style? openXmlElement, DMW.Style? value)
+  public static bool CompareModelElement(DXW.Style? openXmlElement, DMW.Style? value, DiffList diffs)
   {
     if (openXmlElement != null && value != null)
     {
-      if (!CmpType(openXmlElement, value?.Type)) return false;
+      bool ok = true;
+      if (!CmpType(openXmlElement, value?.Type, diffs)) ok = false;
       if (!CmpStyleId(openXmlElement, value?.StyleId)) return false;
       if (!CmpDefault(openXmlElement, value?.Default)) return false;
       if (!CmpCustomStyle(openXmlElement, value?.CustomStyle)) return false;
@@ -701,13 +705,13 @@ public static class StyleConverter
       if (!CmpPersonalCompose(openXmlElement, value?.PersonalCompose)) return false;
       if (!CmpPersonalReply(openXmlElement, value?.PersonalReply)) return false;
       if (!CmpRsid(openXmlElement, value?.Rsid)) return false;
-      //if (!CmpStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties)) return false;
-      //if (!CmpStyleRunProperties(openXmlElement, value?.StyleRunProperties)) return false;
-      //if (!CmpStyleTableProperties(openXmlElement, value?.StyleTableProperties)) return false;
-      //if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties)) return false;
-      //if (!CmpStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties)) return false;
-      //if (!CmpTableStyleProperties(openXmlElement, value?.TableStyleProperties)) return false;
-      return true;
+      if (!CmpStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties)) return false;
+      if (!CmpStyleRunProperties(openXmlElement, value?.StyleRunProperties)) return false;
+      if (!CmpStyleTableProperties(openXmlElement, value?.StyleTableProperties)) return false;
+      if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties)) return false;
+      if (!CmpStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties)) return false;
+      if (!CmpTableStyleProperties(openXmlElement, value?.TableStyleProperties)) return false;
+      return ok;
     }
     return openXmlElement == null && value == null;
   }

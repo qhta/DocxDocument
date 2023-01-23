@@ -10,10 +10,12 @@ public static class BarConverter
   /// </summary>
   private static DMMath.BarProperties? GetBarProperties(DXMath.Bar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.BarProperties>();
-    if (itemElement != null)
-      return DMXMath.BarPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BarPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BarProperties>());
+  }
+  
+  private static bool CmpBarProperties(DXMath.Bar openXmlElement, DMMath.BarProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BarPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.BarProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBarProperties(DXMath.Bar openXmlElement, DMMath.BarProperties? value)
@@ -34,10 +36,12 @@ public static class BarConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Bar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.Bar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Bar openXmlElement, DMMath.Base? value)
@@ -63,6 +67,20 @@ public static class BarConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Bar? openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBarProperties(openXmlElement, value.BarProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Bar? value)

@@ -13,6 +13,11 @@ public static class HyperlinkRelationshipConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.HyperlinkRelationship openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.HyperlinkRelationship? CreateModelElement(DXPack.HyperlinkRelationship? openXmlElement)
   {
     if (openXmlElement != null)
@@ -22,6 +27,18 @@ public static class HyperlinkRelationshipConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.HyperlinkRelationship? openXmlElement, DMPack.HyperlinkRelationship? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.HyperlinkRelationship? value)

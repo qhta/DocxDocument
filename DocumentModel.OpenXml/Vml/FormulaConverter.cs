@@ -13,6 +13,11 @@ public static class FormulaConverter
     return openXmlElement?.Equation?.Value;
   }
   
+  private static bool CmpEquation(DXVml.Formula openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Equation?.Value == value;
+  }
+  
   private static void SetEquation(DXVml.Formula openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class FormulaConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.Formula? openXmlElement, DMVml.Formula? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEquation(openXmlElement, value.Equation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formula? value)

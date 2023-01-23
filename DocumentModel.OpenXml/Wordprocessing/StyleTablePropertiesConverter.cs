@@ -10,10 +10,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static Int32? GetTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val?.Value == value;
   }
   
   private static void SetTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value)
@@ -33,10 +35,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static Int32? GetTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val?.Value == value;
   }
   
   private static void SetTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value)
@@ -56,10 +60,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpTableJustification(DXW.StyleTableProperties openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableJustification(DXW.StyleTableProperties openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -80,10 +86,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+  }
+  
+  private static bool CmpTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value)
@@ -104,10 +112,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableIndentation? GetTableIndentation(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
-    if (itemElement != null)
-      return DMXW.TableIndentationConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableIndentationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>());
+  }
+  
+  private static bool CmpTableIndentation(DXW.StyleTableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableIndentation(DXW.StyleTableProperties openXmlElement, DMW.TableIndentation? value)
@@ -128,10 +138,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableBorders? GetTableBorders(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableBorders>();
-    if (itemElement != null)
-      return DMXW.TableBordersConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>());
+  }
+  
+  private static bool CmpTableBorders(DXW.StyleTableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableBorders(DXW.StyleTableProperties openXmlElement, DMW.TableBorders? value)
@@ -152,10 +164,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
-    if (itemElement != null)
-      return DMXW.ShadingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+  }
+  
+  private static bool CmpShading(DXW.StyleTableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.StyleTableProperties openXmlElement, DMW.Shading? value)
@@ -176,10 +190,12 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
-    if (itemElement != null)
-      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableCellMarginDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>());
+  }
+  
+  private static bool CmpTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
@@ -211,6 +227,32 @@ public static class StyleTablePropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.StyleTableProperties? openXmlElement, DMW.StyleTableProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTableStyleRowBandSize(openXmlElement, value.TableStyleRowBandSize, diffs, objName))
+        ok = false;
+      if (!CmpTableStyleColumnBandSize(openXmlElement, value.TableStyleColumnBandSize, diffs, objName))
+        ok = false;
+      if (!CmpTableJustification(openXmlElement, value.TableJustification, diffs, objName))
+        ok = false;
+      if (!CmpTableCellSpacing(openXmlElement, value.TableCellSpacing, diffs, objName))
+        ok = false;
+      if (!CmpTableIndentation(openXmlElement, value.TableIndentation, diffs, objName))
+        ok = false;
+      if (!CmpTableBorders(openXmlElement, value.TableBorders, diffs, objName))
+        ok = false;
+      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+        ok = false;
+      if (!CmpTableCellMarginDefault(openXmlElement, value.TableCellMarginDefault, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleTableProperties? value)

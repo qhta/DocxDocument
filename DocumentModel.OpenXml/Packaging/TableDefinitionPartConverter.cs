@@ -10,6 +10,11 @@ public static class TableDefinitionPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.TableDefinitionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
@@ -25,9 +30,19 @@ public static class TableDefinitionPartConverter
     return collection;
   }
   
+  private static bool CmpQueryTableParts(DXPack.TableDefinitionPart openXmlElement, Collection<DMPack.QueryTablePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.TableDefinitionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.TableDefinitionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.TableDefinitionPart? CreateModelElement(DXPack.TableDefinitionPart? openXmlElement)
@@ -41,6 +56,22 @@ public static class TableDefinitionPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.TableDefinitionPart? openXmlElement, DMPack.TableDefinitionPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpQueryTableParts(openXmlElement, value.QueryTableParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.TableDefinitionPart? value)

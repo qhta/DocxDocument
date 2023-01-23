@@ -17,6 +17,11 @@ public static class TableGridConverter
     return collection;
   }
   
+  private static bool CmpGridColumns(DXW.TableGrid openXmlElement, Collection<DMW.GridColumn>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetGridColumns(DXW.TableGrid openXmlElement, Collection<DMW.GridColumn>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.GridColumn>();
@@ -33,10 +38,12 @@ public static class TableGridConverter
   
   private static DMW.TableGridChange? GetTableGridChange(DXW.TableGrid openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableGridChange>();
-    if (itemElement != null)
-      return DMXW.TableGridChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableGridChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableGridChange>());
+  }
+  
+  private static bool CmpTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableGridChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableGridChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value)
@@ -62,6 +69,20 @@ public static class TableGridConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableGrid? openXmlElement, DMW.TableGrid? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGridColumns(openXmlElement, value.GridColumns, diffs, objName))
+        ok = false;
+      if (!CmpTableGridChange(openXmlElement, value.TableGridChange, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableGrid? value)

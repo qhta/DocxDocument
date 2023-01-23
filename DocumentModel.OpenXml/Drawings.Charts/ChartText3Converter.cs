@@ -10,10 +10,12 @@ public static class ChartText3Converter
   /// </summary>
   private static DMDrawsCharts.StringReference? GetStringReference(DXO2013DrawChart.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+  }
+  
+  private static bool CmpStringReference(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringReference(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringReference? value)
@@ -34,10 +36,12 @@ public static class ChartText3Converter
   /// </summary>
   private static DMDrawsCharts.RichText? GetRichText(DXO2013DrawChart.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RichText>();
-    if (itemElement != null)
-      return DMXDrawsCharts.RichTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.RichTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RichText>());
+  }
+  
+  private static bool CmpRichText(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.RichText? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.RichTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RichText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRichText(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.RichText? value)
@@ -58,10 +62,12 @@ public static class ChartText3Converter
   /// </summary>
   private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXO2013DrawChart.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>());
+  }
+  
+  private static bool CmpStringLiteral(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringLiteralConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringLiteral(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringLiteral? value)
@@ -88,6 +94,22 @@ public static class ChartText3Converter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.ChartText? openXmlElement, DMDrawsCharts.ChartText3? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName))
+        ok = false;
+      if (!CmpRichText(openXmlElement, value.RichText, diffs, objName))
+        ok = false;
+      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartText3? value)

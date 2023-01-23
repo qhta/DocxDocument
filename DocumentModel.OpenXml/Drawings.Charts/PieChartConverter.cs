@@ -10,8 +10,12 @@ public static class PieChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.PieChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.PieChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.PieChart openXmlElement, Boolean? value)
@@ -29,7 +33,7 @@ public static class PieChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSerieses(DXDrawCharts.PieChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.PieChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -41,7 +45,12 @@ public static class PieChartConverter
     return collection;
   }
   
-  private static void SetPieChartSerieses(DXDrawCharts.PieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
+  private static bool CmpPieChartSeries(DXDrawCharts.PieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetPieChartSeries(DXDrawCharts.PieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.PieChartSeries>();
     if (value != null)
@@ -57,10 +66,12 @@ public static class PieChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.PieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -78,10 +89,12 @@ public static class PieChartConverter
   
   private static UInt16? GetFirstSliceAngle(DXDrawCharts.PieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value;
+  }
+  
+  private static bool CmpFirstSliceAngle(DXDrawCharts.PieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value == value;
   }
   
   private static void SetFirstSliceAngle(DXDrawCharts.PieChart openXmlElement, UInt16? value)
@@ -98,10 +111,12 @@ public static class PieChartConverter
   
   private static DMDrawsCharts.PieChartExtensionList? GetPieChartExtensionList(DXDrawCharts.PieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PieChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.PieChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.PieChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PieChartExtensionList>());
+  }
+  
+  private static bool CmpPieChartExtensionList(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.PieChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PieChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPieChartExtensionList(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChartExtensionList? value)
@@ -123,13 +138,33 @@ public static class PieChartConverter
     {
       var value = new DMDrawsCharts.PieChart();
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.PieChartSerieses = GetPieChartSerieses(openXmlElement);
+      value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.FirstSliceAngle = GetFirstSliceAngle(openXmlElement);
       value.PieChartExtensionList = GetPieChartExtensionList(openXmlElement);
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.PieChart? openXmlElement, DMDrawsCharts.PieChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpPieChartSeries(openXmlElement, value.PieChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpFirstSliceAngle(openXmlElement, value.FirstSliceAngle, diffs, objName))
+        ok = false;
+      if (!CmpPieChartExtensionList(openXmlElement, value.PieChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieChart? value)
@@ -139,7 +174,7 @@ public static class PieChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
       SetPieChartExtensionList(openXmlElement, value?.PieChartExtensionList);

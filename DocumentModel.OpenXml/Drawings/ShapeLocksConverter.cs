@@ -13,6 +13,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoGrouping?.Value;
   }
   
+  private static bool CmpNoGrouping(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoGrouping?.Value == value;
+  }
+  
   private static void SetNoGrouping(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ShapeLocksConverter
   private static Boolean? GetNoSelection(DXDraw.ShapeLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
+  }
+  
+  private static bool CmpNoSelection(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoSelection?.Value == value;
   }
   
   private static void SetNoSelection(DXDraw.ShapeLocks openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoRotation?.Value;
   }
   
+  private static bool CmpNoRotation(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoRotation?.Value == value;
+  }
+  
   private static void SetNoRotation(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class ShapeLocksConverter
   private static Boolean? GetNoChangeAspect(DXDraw.ShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
+  }
+  
+  private static bool CmpNoChangeAspect(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoChangeAspect?.Value == value;
   }
   
   private static void SetNoChangeAspect(DXDraw.ShapeLocks openXmlElement, Boolean? value)
@@ -77,6 +97,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoMove?.Value;
   }
   
+  private static bool CmpNoMove(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoMove?.Value == value;
+  }
+  
   private static void SetNoMove(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class ShapeLocksConverter
   private static Boolean? GetNoResize(DXDraw.ShapeLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
+  }
+  
+  private static bool CmpNoResize(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoResize?.Value == value;
   }
   
   private static void SetNoResize(DXDraw.ShapeLocks openXmlElement, Boolean? value)
@@ -109,6 +139,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoEditPoints?.Value;
   }
   
+  private static bool CmpNoEditPoints(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoEditPoints?.Value == value;
+  }
+  
   private static void SetNoEditPoints(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class ShapeLocksConverter
   private static Boolean? GetNoAdjustHandles(DXDraw.ShapeLocks openXmlElement)
   {
     return openXmlElement?.NoAdjustHandles?.Value;
+  }
+  
+  private static bool CmpNoAdjustHandles(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoAdjustHandles?.Value == value;
   }
   
   private static void SetNoAdjustHandles(DXDraw.ShapeLocks openXmlElement, Boolean? value)
@@ -141,6 +181,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
   
+  private static bool CmpNoChangeArrowheads(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoChangeArrowheads?.Value == value;
+  }
+  
   private static void SetNoChangeArrowheads(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class ShapeLocksConverter
   private static Boolean? GetNoChangeShapeType(DXDraw.ShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeShapeType?.Value;
+  }
+  
+  private static bool CmpNoChangeShapeType(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoChangeShapeType?.Value == value;
   }
   
   private static void SetNoChangeShapeType(DXDraw.ShapeLocks openXmlElement, Boolean? value)
@@ -173,6 +223,11 @@ public static class ShapeLocksConverter
     return openXmlElement?.NoTextEdit?.Value;
   }
   
+  private static bool CmpNoTextEdit(DXDraw.ShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoTextEdit?.Value == value;
+  }
+  
   private static void SetNoTextEdit(DXDraw.ShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -186,10 +241,12 @@ public static class ShapeLocksConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ShapeLocks openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDraw.ShapeLocks openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.ShapeLocks openXmlElement, DMDraws.ExtensionList? value)
@@ -225,6 +282,40 @@ public static class ShapeLocksConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ShapeLocks? openXmlElement, DMDraws.ShapeLocks? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName))
+        ok = false;
+      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName))
+        ok = false;
+      if (!CmpNoRotation(openXmlElement, value.NoRotation, diffs, objName))
+        ok = false;
+      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName))
+        ok = false;
+      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName))
+        ok = false;
+      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName))
+        ok = false;
+      if (!CmpNoEditPoints(openXmlElement, value.NoEditPoints, diffs, objName))
+        ok = false;
+      if (!CmpNoAdjustHandles(openXmlElement, value.NoAdjustHandles, diffs, objName))
+        ok = false;
+      if (!CmpNoChangeArrowheads(openXmlElement, value.NoChangeArrowheads, diffs, objName))
+        ok = false;
+      if (!CmpNoChangeShapeType(openXmlElement, value.NoChangeShapeType, diffs, objName))
+        ok = false;
+      if (!CmpNoTextEdit(openXmlElement, value.NoTextEdit, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeLocks? value)

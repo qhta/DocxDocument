@@ -10,6 +10,11 @@ public static class DiagramLayoutDefinitionPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DiagramLayoutDefinitionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
@@ -25,14 +30,22 @@ public static class DiagramLayoutDefinitionPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.DiagramLayoutDefinitionPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMDrawsDgms.LayoutDefinition? GetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXDrawDgms.LayoutDefinition rootElement)
-      return DMXDrawsDgms.LayoutDefinitionConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsDgms.LayoutDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.LayoutDefinition);
+  }
+  
+  private static bool CmpLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDrawsDgms.LayoutDefinition? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDrawsDgms.LayoutDefinition? value)
@@ -50,6 +63,11 @@ public static class DiagramLayoutDefinitionPartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.DiagramLayoutDefinitionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.DiagramLayoutDefinitionPart? CreateModelElement(DXPack.DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -62,6 +80,24 @@ public static class DiagramLayoutDefinitionPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DiagramLayoutDefinitionPart? openXmlElement, DMPack.DiagramLayoutDefinitionPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpLayoutDefinition(openXmlElement, value.LayoutDefinition, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramLayoutDefinitionPart? value)

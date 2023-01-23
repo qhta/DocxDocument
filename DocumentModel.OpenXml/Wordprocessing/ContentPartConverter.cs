@@ -13,6 +13,11 @@ public static class ContentPartConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXW.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.ContentPart openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class ContentPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ContentPart? openXmlElement, DMW.ContentPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ContentPart? value)

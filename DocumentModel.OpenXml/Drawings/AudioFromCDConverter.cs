@@ -10,10 +10,12 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.AudioCDTimeType? GetStartTime(DXDraw.AudioFromCD openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.StartTime>();
-    if (itemElement != null)
-      return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.StartTime>());
+  }
+  
+  private static bool CmpStartTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.StartTime>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStartTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value)
@@ -34,10 +36,12 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.AudioCDTimeType? GetEndTime(DXDraw.AudioFromCD openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EndTime>();
-    if (itemElement != null)
-      return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EndTime>());
+  }
+  
+  private static bool CmpEndTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EndTime>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEndTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value)
@@ -58,10 +62,12 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.AudioFromCD openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDraw.AudioFromCD openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.AudioFromCD openXmlElement, DMDraws.ExtensionList? value)
@@ -88,6 +94,22 @@ public static class AudioFromCDConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AudioFromCD? openXmlElement, DMDraws.AudioFromCD? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStartTime(openXmlElement, value.StartTime, diffs, objName))
+        ok = false;
+      if (!CmpEndTime(openXmlElement, value.EndTime, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromCD? value)

@@ -13,6 +13,11 @@ public static class FieldCharConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
   }
   
+  private static bool CmpFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value)
   {
     openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(value);
@@ -24,6 +29,11 @@ public static class FieldCharConverter
   private static Boolean? GetFieldLock(DXW.FieldChar openXmlElement)
   {
     return openXmlElement?.FieldLock?.Value;
+  }
+  
+  private static bool CmpFieldLock(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FieldLock?.Value == value;
   }
   
   private static void SetFieldLock(DXW.FieldChar openXmlElement, Boolean? value)
@@ -42,6 +52,11 @@ public static class FieldCharConverter
     return openXmlElement?.Dirty?.Value;
   }
   
+  private static bool CmpDirty(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Dirty?.Value == value;
+  }
+  
   private static void SetDirty(DXW.FieldChar openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -55,10 +70,12 @@ public static class FieldCharConverter
   /// </summary>
   private static String? GetFieldData(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FieldData>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text;
+  }
+  
+  private static bool CmpFieldData(DXW.FieldChar openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text == value;
   }
   
   private static void SetFieldData(DXW.FieldChar openXmlElement, String? value)
@@ -78,10 +95,12 @@ public static class FieldCharConverter
   /// </summary>
   private static DMW.FormFieldData? GetFormFieldData(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FormFieldData>();
-    if (itemElement != null)
-      return DMXW.FormFieldDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.FormFieldDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FormFieldData>());
+  }
+  
+  private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value)
@@ -102,10 +121,12 @@ public static class FieldCharConverter
   /// </summary>
   private static DMW.NumberingChange? GetNumberingChange(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
-    if (itemElement != null)
-      return DMXW.NumberingChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.NumberingChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>());
+  }
+  
+  private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value)
@@ -135,6 +156,28 @@ public static class FieldCharConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.FieldChar? openXmlElement, DMW.FieldChar? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFieldCharType(openXmlElement, value.FieldCharType, diffs, objName))
+        ok = false;
+      if (!CmpFieldLock(openXmlElement, value.FieldLock, diffs, objName))
+        ok = false;
+      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName))
+        ok = false;
+      if (!CmpFieldData(openXmlElement, value.FieldData, diffs, objName))
+        ok = false;
+      if (!CmpFormFieldData(openXmlElement, value.FormFieldData, diffs, objName))
+        ok = false;
+      if (!CmpNumberingChange(openXmlElement, value.NumberingChange, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldChar? value)

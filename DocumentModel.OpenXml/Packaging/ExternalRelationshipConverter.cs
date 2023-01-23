@@ -15,6 +15,16 @@ public static class ExternalRelationshipConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXPack.ExternalRelationship? openXmlElement, DMPack.ExternalRelationship? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExternalRelationship? value)
     where OpenXmlElementType: DXPack.ExternalRelationship, new()
   {

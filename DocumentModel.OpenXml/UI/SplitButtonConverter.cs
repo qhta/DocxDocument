@@ -13,6 +13,11 @@ public static class SplitButtonConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
+  private static bool CmpSize(DXOCustUI.SplitButton openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetSize(DXOCustUI.SplitButton openXmlElement, DMUI.SizeKind? value)
   {
     openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
@@ -24,6 +29,11 @@ public static class SplitButtonConverter
   private static String? GetGetSize(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
+  }
+  
+  private static bool CmpGetSize(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSize?.Value == value;
   }
   
   private static void SetGetSize(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class SplitButtonConverter
     return openXmlElement?.Enabled?.Value;
   }
   
+  private static bool CmpEnabled(DXOCustUI.SplitButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
+  }
+  
   private static void SetEnabled(DXOCustUI.SplitButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -56,6 +71,11 @@ public static class SplitButtonConverter
   private static String? GetGetEnabled(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
+  }
+  
+  private static bool CmpGetEnabled(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
   }
   
   private static void SetGetEnabled(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -74,6 +94,11 @@ public static class SplitButtonConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -88,6 +113,11 @@ public static class SplitButtonConverter
   private static String? GetIdQ(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
+  }
+  
+  private static bool CmpIdQ(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdQ?.Value == value;
   }
   
   private static void SetIdQ(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -106,6 +136,11 @@ public static class SplitButtonConverter
     return openXmlElement?.IdMso?.Value;
   }
   
+  private static bool CmpIdMso(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
+  }
+  
   private static void SetIdMso(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -120,6 +155,11 @@ public static class SplitButtonConverter
   private static String? GetTag(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
+  }
+  
+  private static bool CmpTag(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
   }
   
   private static void SetTag(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -138,6 +178,11 @@ public static class SplitButtonConverter
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
+  private static bool CmpInsertAfterMso(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
+  }
+  
   private static void SetInsertAfterMso(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -152,6 +197,11 @@ public static class SplitButtonConverter
   private static String? GetInsertBeforeMso(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
+  }
+  
+  private static bool CmpInsertBeforeMso(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -170,6 +220,11 @@ public static class SplitButtonConverter
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
+  private static bool CmpInsertAfterQ(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQ?.Value == value;
+  }
+  
   private static void SetInsertAfterQ(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -184,6 +239,11 @@ public static class SplitButtonConverter
   private static String? GetInsertBeforeQ(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQ(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQ?.Value == value;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -202,6 +262,11 @@ public static class SplitButtonConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXOCustUI.SplitButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXOCustUI.SplitButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -216,6 +281,11 @@ public static class SplitButtonConverter
   private static String? GetGetVisible(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -234,6 +304,11 @@ public static class SplitButtonConverter
     return openXmlElement?.Keytip?.Value;
   }
   
+  private static bool CmpKeytip(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Keytip?.Value == value;
+  }
+  
   private static void SetKeytip(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -248,6 +323,11 @@ public static class SplitButtonConverter
   private static String? GetGetKeytip(DXOCustUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
+  }
+  
+  private static bool CmpGetKeytip(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetKeytip?.Value == value;
   }
   
   private static void SetGetKeytip(DXOCustUI.SplitButton openXmlElement, String? value)
@@ -266,6 +346,11 @@ public static class SplitButtonConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
+  private static bool CmpShowLabel(DXOCustUI.SplitButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
+  }
+  
   private static void SetShowLabel(DXOCustUI.SplitButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -282,6 +367,11 @@ public static class SplitButtonConverter
     return openXmlElement?.GetShowLabel?.Value;
   }
   
+  private static bool CmpGetShowLabel(DXOCustUI.SplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
+  }
+  
   private static void SetGetShowLabel(DXOCustUI.SplitButton openXmlElement, String? value)
   {
     if (value != null)
@@ -292,10 +382,12 @@ public static class SplitButtonConverter
   
   private static DMUI.VisibleButton? GetVisibleButton(DXOCustUI.SplitButton openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>();
-    if (itemElement != null)
-      return DMXUI.VisibleButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXUI.VisibleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>());
+  }
+  
+  private static bool CmpVisibleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
+  {
+    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleButton? value)
@@ -313,10 +405,12 @@ public static class SplitButtonConverter
   
   private static DMUI.VisibleToggleButton? GetVisibleToggleButton(DXOCustUI.SplitButton openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>();
-    if (itemElement != null)
-      return DMXUI.VisibleToggleButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXUI.VisibleToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>());
+  }
+  
+  private static bool CmpVisibleToggleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
+  {
+    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleToggleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleToggleButton? value)
@@ -334,10 +428,12 @@ public static class SplitButtonConverter
   
   private static DMUI.UnsizedMenu? GetUnsizedMenu(DXOCustUI.SplitButton openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>();
-    if (itemElement != null)
-      return DMXUI.UnsizedMenuConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXUI.UnsizedMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>());
+  }
+  
+  private static bool CmpUnsizedMenu(DXOCustUI.SplitButton openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
+  {
+    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnsizedMenu(DXOCustUI.SplitButton openXmlElement, DMUI.UnsizedMenu? value)
@@ -382,6 +478,58 @@ public static class SplitButtonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOCustUI.SplitButton? openXmlElement, DMUI.SplitButton? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+        ok = false;
+      if (!CmpGetSize(openXmlElement, value.GetSize, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpIdQ(openXmlElement, value.IdQ, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQ(openXmlElement, value.InsertAfterQ, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQ(openXmlElement, value.InsertBeforeQ, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+        ok = false;
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpVisibleButton(openXmlElement, value.VisibleButton, diffs, objName))
+        ok = false;
+      if (!CmpVisibleToggleButton(openXmlElement, value.VisibleToggleButton, diffs, objName))
+        ok = false;
+      if (!CmpUnsizedMenu(openXmlElement, value.UnsizedMenu, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.SplitButton? value)

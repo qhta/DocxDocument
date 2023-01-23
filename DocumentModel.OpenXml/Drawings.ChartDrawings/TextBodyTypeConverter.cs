@@ -10,10 +10,12 @@ public static class TextBodyTypeConverter
   /// </summary>
   private static DMDraws.BodyProperties? GetBodyProperties(DXO2016DrawChartDraw.TextBodyType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
-    if (itemElement != null)
-      return DMXDraws.BodyPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+  }
+  
+  private static bool CmpBodyProperties(DXO2016DrawChartDraw.TextBodyType openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBodyProperties(DXO2016DrawChartDraw.TextBodyType openXmlElement, DMDraws.BodyProperties? value)
@@ -34,10 +36,12 @@ public static class TextBodyTypeConverter
   /// </summary>
   private static DMDraws.ListStyle? GetListStyle(DXO2016DrawChartDraw.TextBodyType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
-    if (itemElement != null)
-      return DMXDraws.ListStyleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+  }
+  
+  private static bool CmpListStyle(DXO2016DrawChartDraw.TextBodyType openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetListStyle(DXO2016DrawChartDraw.TextBodyType openXmlElement, DMDraws.ListStyle? value)
@@ -63,6 +67,20 @@ public static class TextBodyTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.TextBodyType? openXmlElement, DMDrawsChartDraws.TextBodyType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName))
+        ok = false;
+      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextBodyType? value)

@@ -10,14 +10,22 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DM.CustomUI? GetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2010CustUI.CustomUI rootElement)
-      return DMX.CustomUIConverter.CreateModelElement(rootElement);
-    return null;
+      return DMX.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXO2010CustUI.CustomUI);
+  }
+  
+  private static bool CmpCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DM.CustomUI? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DM.CustomUI? value)
@@ -45,9 +53,19 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.RibbonAndBackstageCustomizationsPart? CreateModelElement(DXPack.RibbonAndBackstageCustomizationsPart? openXmlElement)
@@ -62,6 +80,24 @@ public static class RibbonAndBackstageCustomizationsPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.RibbonAndBackstageCustomizationsPart? openXmlElement, DMPack.RibbonAndBackstageCustomizationsPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpCustomUI(openXmlElement, value.CustomUI, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.RibbonAndBackstageCustomizationsPart? value)

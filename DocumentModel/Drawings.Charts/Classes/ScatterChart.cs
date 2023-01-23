@@ -15,7 +15,7 @@ public class ScatterChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<ScatterChartSeries>? ScatterChartSerieses { get; set; }
+  public Collection<ScatterChartSeries>? ScatterChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

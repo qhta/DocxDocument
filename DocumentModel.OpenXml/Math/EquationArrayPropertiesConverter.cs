@@ -10,10 +10,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static DMMath.VerticalAlignmentKind? GetBaseJustification(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BaseJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpBaseJustification(DXMath.EquationArrayProperties openXmlElement, DMMath.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBaseJustification(DXMath.EquationArrayProperties openXmlElement, DMMath.VerticalAlignmentKind? value)
@@ -34,10 +36,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static DMMath.BooleanKind? GetMaxDistribution(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.MaxDistribution>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.MaxDistribution>()?.Val?.Value);
+  }
+  
+  private static bool CmpMaxDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.MaxDistribution>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMaxDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value)
@@ -58,10 +62,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static DMMath.BooleanKind? GetObjectDistribution(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ObjectDistribution>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ObjectDistribution>()?.Val?.Value);
+  }
+  
+  private static bool CmpObjectDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ObjectDistribution>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetObjectDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value)
@@ -82,10 +88,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static Int64? GetRowSpacingRule(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>()?.Val?.Value;
+  }
+  
+  private static bool CmpRowSpacingRule(DXMath.EquationArrayProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>()?.Val?.Value == value;
   }
   
   private static void SetRowSpacingRule(DXMath.EquationArrayProperties openXmlElement, Int64? value)
@@ -105,10 +113,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static UInt16? GetRowSpacing(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacing>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacing>()?.Val?.Value;
+  }
+  
+  private static bool CmpRowSpacing(DXMath.EquationArrayProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacing>()?.Val?.Value == value;
   }
   
   private static void SetRowSpacing(DXMath.EquationArrayProperties openXmlElement, UInt16? value)
@@ -128,10 +138,12 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
-    if (itemElement != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+  }
+  
+  private static bool CmpControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value)
@@ -161,6 +173,28 @@ public static class EquationArrayPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.EquationArrayProperties? openXmlElement, DMMath.EquationArrayProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBaseJustification(openXmlElement, value.BaseJustification, diffs, objName))
+        ok = false;
+      if (!CmpMaxDistribution(openXmlElement, value.MaxDistribution, diffs, objName))
+        ok = false;
+      if (!CmpObjectDistribution(openXmlElement, value.ObjectDistribution, diffs, objName))
+        ok = false;
+      if (!CmpRowSpacingRule(openXmlElement, value.RowSpacingRule, diffs, objName))
+        ok = false;
+      if (!CmpRowSpacing(openXmlElement, value.RowSpacing, diffs, objName))
+        ok = false;
+      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.EquationArrayProperties? value)

@@ -17,6 +17,11 @@ public static class LinePropertiesExtensionListConverter
     return collection;
   }
   
+  private static bool CmpLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.LinePropertiesExtension>();
@@ -40,6 +45,18 @@ public static class LinePropertiesExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement, DMDraws.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLinePropertiesExtensions(openXmlElement, value.LinePropertiesExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesExtensionList? value)

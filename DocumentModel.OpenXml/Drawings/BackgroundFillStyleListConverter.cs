@@ -7,8 +7,12 @@ public static class BackgroundFillStyleListConverter
 {
   private static Boolean? GetNoFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+  }
+  
+  private static bool CmpNoFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
   }
   
   private static void SetNoFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value)
@@ -28,10 +32,12 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
-    if (itemElement != null)
-      return DMXDraws.SolidFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+  }
+  
+  private static bool CmpSolidFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.SolidFill? value)
@@ -49,10 +55,12 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
-    if (itemElement != null)
-      return DMXDraws.GradientFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+  }
+  
+  private static bool CmpGradientFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.GradientFill? value)
@@ -70,10 +78,12 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
-    if (itemElement != null)
-      return DMXDraws.BlipFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+  }
+  
+  private static bool CmpBlipFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlipFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.BlipFill? value)
@@ -91,10 +101,12 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
-    if (itemElement != null)
-      return DMXDraws.PatternFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+  }
+  
+  private static bool CmpPatternFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPatternFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.PatternFill? value)
@@ -112,8 +124,12 @@ public static class BackgroundFillStyleListConverter
   
   private static Boolean? GetGroupFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+  }
+  
+  private static bool CmpGroupFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
   }
   
   private static void SetGroupFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value)
@@ -145,6 +161,28 @@ public static class BackgroundFillStyleListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BackgroundFillStyleList? openXmlElement, DMDraws.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName))
+        ok = false;
+      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName))
+        ok = false;
+      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName))
+        ok = false;
+      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName))
+        ok = false;
+      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName))
+        ok = false;
+      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundFillStyleList? value)

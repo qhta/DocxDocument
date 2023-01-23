@@ -15,6 +15,13 @@ public static class CommentIdConverter
     return null;
   }
   
+  private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.ParaId?.Value != null)
+      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
   {
       if (value != null)
@@ -31,6 +38,13 @@ public static class CommentIdConverter
     if (openXmlElement.DurableId?.Value != null)
       return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
     return null;
+  }
+  
+  private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.DurableId?.Value != null)
+      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
   }
   
   private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
@@ -51,6 +65,20 @@ public static class CommentIdConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2019WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName))
+        ok = false;
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId? value)

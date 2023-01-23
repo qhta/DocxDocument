@@ -15,7 +15,7 @@ public class RadarChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<RadarChartSeries>? RadarChartSerieses { get; set; }
+  public Collection<RadarChartSeries>? RadarChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

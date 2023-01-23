@@ -10,10 +10,12 @@ public static class ThemeOverrideConverter
   /// </summary>
   private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ThemeOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
-    if (itemElement != null)
-      return DMXDraws.ColorSchemeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ColorSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>());
+  }
+  
+  private static bool CmpColorScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.ColorScheme? value)
@@ -34,10 +36,12 @@ public static class ThemeOverrideConverter
   /// </summary>
   private static DMDraws.FontScheme? GetFontScheme(DXDraw.ThemeOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FontScheme>();
-    if (itemElement != null)
-      return DMXDraws.FontSchemeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.FontSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FontScheme>());
+  }
+  
+  private static bool CmpFontScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FontScheme? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.FontSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FontScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFontScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FontScheme? value)
@@ -58,10 +62,12 @@ public static class ThemeOverrideConverter
   /// </summary>
   private static DMDraws.FormatScheme? GetFormatScheme(DXDraw.ThemeOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FormatScheme>();
-    if (itemElement != null)
-      return DMXDraws.FormatSchemeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.FormatSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FormatScheme>());
+  }
+  
+  private static bool CmpFormatScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FormatScheme? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.FormatSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FormatScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFormatScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FormatScheme? value)
@@ -88,6 +94,22 @@ public static class ThemeOverrideConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ThemeOverride? openXmlElement, DMDraws.ThemeOverride? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName))
+        ok = false;
+      if (!CmpFontScheme(openXmlElement, value.FontScheme, diffs, objName))
+        ok = false;
+      if (!CmpFormatScheme(openXmlElement, value.FormatScheme, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeOverride? value)

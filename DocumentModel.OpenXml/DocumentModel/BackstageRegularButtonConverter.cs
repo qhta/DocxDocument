@@ -13,6 +13,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.Screentip?.Value;
   }
   
+  private static bool CmpScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Screentip?.Value == value;
+  }
+  
   private static void SetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
+  }
+  
+  private static bool CmpGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetScreentip?.Value == value;
   }
   
   private static void SetGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.Supertip?.Value;
   }
   
+  private static bool CmpSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Supertip?.Value == value;
+  }
+  
   private static void SetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
+  }
+  
+  private static bool CmpGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSupertip?.Value == value;
   }
   
   private static void SetGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
+  }
+  
+  private static bool CmpOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnAction?.Value == value;
   }
   
   private static void SetOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -141,6 +181,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.IsDefinitive?.Value;
   }
   
+  private static bool CmpIsDefinitive(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IsDefinitive?.Value == value;
+  }
+  
   private static void SetIsDefinitive(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class BackstageRegularButtonConverter
   private static Boolean? GetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
+  }
+  
+  private static bool CmpEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
   }
   
   private static void SetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
@@ -173,6 +223,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.GetEnabled?.Value;
   }
   
+  private static bool CmpGetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
+  }
+  
   private static void SetGetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -187,6 +242,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Label?.Value;
+  }
+  
+  private static bool CmpLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -205,6 +265,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.GetLabel?.Value;
   }
   
+  private static bool CmpGetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
+  }
+  
   private static void SetGetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -219,6 +284,11 @@ public static class BackstageRegularButtonConverter
   private static Boolean? GetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
+  }
+  
+  private static bool CmpVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
   }
   
   private static void SetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
@@ -237,6 +307,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.GetVisible?.Value;
   }
   
+  private static bool CmpGetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
+  }
+  
   private static void SetGetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -251,6 +326,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
+  }
+  
+  private static bool CmpKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Keytip?.Value == value;
   }
   
   private static void SetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -269,6 +349,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.GetKeytip?.Value;
   }
   
+  private static bool CmpGetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetKeytip?.Value == value;
+  }
+  
   private static void SetGetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -283,6 +368,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetImage(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Image?.Value;
+  }
+  
+  private static bool CmpImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Image?.Value == value;
   }
   
   private static void SetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -301,6 +391,11 @@ public static class BackstageRegularButtonConverter
     return openXmlElement?.ImageMso?.Value;
   }
   
+  private static bool CmpImageMso(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ImageMso?.Value == value;
+  }
+  
   private static void SetImageMso(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
   {
     if (value != null)
@@ -315,6 +410,11 @@ public static class BackstageRegularButtonConverter
   private static String? GetGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
+  }
+  
+  private static bool CmpGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetImage?.Value == value;
   }
   
   private static void SetGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
@@ -353,6 +453,56 @@ public static class BackstageRegularButtonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.BackstageRegularButton? openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+        ok = false;
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+        ok = false;
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+        ok = false;
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+        ok = false;
+      if (!CmpIsDefinitive(openXmlElement, value.IsDefinitive, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+        ok = false;
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+        ok = false;
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+        ok = false;
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+        ok = false;
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageRegularButton? value)

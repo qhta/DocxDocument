@@ -13,6 +13,11 @@ public static class GeoChildEntitiesQueryConverter
     return openXmlElement?.EntityId?.Value;
   }
   
+  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityId?.Value == value;
+  }
+  
   private static void SetEntityId(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class GeoChildEntitiesQueryConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoChildTypes? GetGeoChildTypes(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildTypes>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.GeoChildTypesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.GeoChildTypesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildTypes>());
+  }
+  
+  private static bool CmpGeoChildTypes(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoChildTypes? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.GeoChildTypesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildTypes>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoChildTypes(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoChildTypes? value)
@@ -55,6 +62,20 @@ public static class GeoChildEntitiesQueryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoChildEntitiesQuery? openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQuery? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+        ok = false;
+      if (!CmpGeoChildTypes(openXmlElement, value.GeoChildTypes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildEntitiesQuery? value)

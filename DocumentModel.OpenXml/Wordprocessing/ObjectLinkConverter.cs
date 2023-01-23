@@ -13,6 +13,11 @@ public static class ObjectLinkConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value);
   }
   
+  private static bool CmpUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value)
   {
     openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(value);
@@ -24,6 +29,11 @@ public static class ObjectLinkConverter
   private static Boolean? GetLockedField(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.LockedField?.Value;
+  }
+  
+  private static bool CmpLockedField(DXW.ObjectLink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LockedField?.Value == value;
   }
   
   private static void SetLockedField(DXW.ObjectLink openXmlElement, Boolean? value)
@@ -42,6 +52,11 @@ public static class ObjectLinkConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
   
+  private static bool CmpdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value)
   {
     openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(value);
@@ -53,6 +68,11 @@ public static class ObjectLinkConverter
   private static String? GetId(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.ObjectLink openXmlElement, String? value)
@@ -71,6 +91,11 @@ public static class ObjectLinkConverter
     return openXmlElement?.ProgId?.Value;
   }
   
+  private static bool CmpProgId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ProgId?.Value == value;
+  }
+  
   private static void SetProgId(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
@@ -87,6 +112,11 @@ public static class ObjectLinkConverter
     return openXmlElement?.ShapeId?.Value;
   }
   
+  private static bool CmpShapeId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShapeId?.Value == value;
+  }
+  
   private static void SetShapeId(DXW.ObjectLink openXmlElement, String? value)
   {
     if (value != null)
@@ -101,6 +131,11 @@ public static class ObjectLinkConverter
   private static String? GetFieldCodes(DXW.ObjectLink openXmlElement)
   {
     return openXmlElement?.FieldCodes?.Value;
+  }
+  
+  private static bool CmpFieldCodes(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FieldCodes?.Value == value;
   }
   
   private static void SetFieldCodes(DXW.ObjectLink openXmlElement, String? value)
@@ -126,6 +161,30 @@ public static class ObjectLinkConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ObjectLink? openXmlElement, DMW.ObjectLink? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUpdateMode(openXmlElement, value.UpdateMode, diffs, objName))
+        ok = false;
+      if (!CmpLockedField(openXmlElement, value.LockedField, diffs, objName))
+        ok = false;
+      if (!CmpdrawAspect(openXmlElement, value.drawAspect, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpProgId(openXmlElement, value.ProgId, diffs, objName))
+        ok = false;
+      if (!CmpShapeId(openXmlElement, value.ShapeId, diffs, objName))
+        ok = false;
+      if (!CmpFieldCodes(openXmlElement, value.FieldCodes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ObjectLink? value)

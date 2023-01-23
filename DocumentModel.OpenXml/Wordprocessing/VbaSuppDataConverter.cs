@@ -10,10 +10,12 @@ public static class VbaSuppDataConverter
   /// </summary>
   private static DMW.DocEvents? GetDocEvents(DXOW.VbaSuppData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOW.DocEvents>();
-    if (itemElement != null)
-      return DMXW.DocEventsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocEventsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOW.DocEvents>());
+  }
+  
+  private static bool CmpDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocEventsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.DocEvents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value)
@@ -34,10 +36,12 @@ public static class VbaSuppDataConverter
   /// </summary>
   private static DMW.Mcds? GetMcds(DXOW.VbaSuppData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOW.Mcds>();
-    if (itemElement != null)
-      return DMXW.McdsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.McdsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOW.Mcds>());
+  }
+  
+  private static bool CmpMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.McdsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.Mcds>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value)
@@ -63,6 +67,20 @@ public static class VbaSuppDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.VbaSuppData? openXmlElement, DMW.VbaSuppData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocEvents(openXmlElement, value.DocEvents, diffs, objName))
+        ok = false;
+      if (!CmpMcds(openXmlElement, value.Mcds, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.VbaSuppData? value)

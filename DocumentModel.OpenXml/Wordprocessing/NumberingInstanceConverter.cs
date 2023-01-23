@@ -13,6 +13,11 @@ public static class NumberingInstanceConverter
     return openXmlElement.NumberID?.Value;
   }
   
+  private static bool CmpNumberID(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.NumberID?.Value == value;
+  }
+  
   private static void SetNumberID(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     openXmlElement.NumberID = value;
@@ -26,6 +31,11 @@ public static class NumberingInstanceConverter
     return openXmlElement.DurableId?.Value;
   }
   
+  private static bool CmpDurableId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DurableId?.Value == value;
+  }
+  
   private static void SetDurableId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     openXmlElement.DurableId = value;
@@ -36,10 +46,12 @@ public static class NumberingInstanceConverter
   /// </summary>
   private static Int32? GetAbstractNumId(DXW.NumberingInstance openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.AbstractNumId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val?.Value;
+  }
+  
+  private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val?.Value == value;
   }
   
   private static void SetAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value)
@@ -64,6 +76,11 @@ public static class NumberingInstanceConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value)
@@ -92,6 +109,24 @@ public static class NumberingInstanceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.NumberingInstance? openXmlElement, DMW.NumberingInstance? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNumberID(openXmlElement, value.NumberID, diffs, objName))
+        ok = false;
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+        ok = false;
+      if (!CmpAbstractNumId(openXmlElement, value.AbstractNumId, diffs, objName))
+        ok = false;
+      if (!CmpLevelOverrides(openXmlElement, value.LevelOverrides, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingInstance? value)

@@ -13,7 +13,7 @@ public class StyleTableCellProperties
   /// <summary>
   ///   NoWrap.
   /// </summary>
-  public OnOffOnlyKind? NoWrap { get; set; }
+  public Boolean? NoWrap { get; set; }
 
   /// <summary>
   ///   TableCellMargin.

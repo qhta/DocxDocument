@@ -10,10 +10,12 @@ public static class MatrixConverter
   /// </summary>
   private static DMMath.MatrixProperties? GetMatrixProperties(DXMath.Matrix openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixProperties>();
-    if (itemElement != null)
-      return DMXMath.MatrixPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.MatrixPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixProperties>());
+  }
+  
+  private static bool CmpMatrixProperties(DXMath.Matrix openXmlElement, DMMath.MatrixProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.MatrixPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMatrixProperties(DXMath.Matrix openXmlElement, DMMath.MatrixProperties? value)
@@ -41,6 +43,11 @@ public static class MatrixConverter
     return collection;
   }
   
+  private static bool CmpMatrixRows(DXMath.Matrix openXmlElement, Collection<DMMath.MatrixRow>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetMatrixRows(DXMath.Matrix openXmlElement, Collection<DMMath.MatrixRow>? value)
   {
     openXmlElement.RemoveAllChildren<DXMath.MatrixRow>();
@@ -65,6 +72,20 @@ public static class MatrixConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Matrix? openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMatrixProperties(openXmlElement, value.MatrixProperties, diffs, objName))
+        ok = false;
+      if (!CmpMatrixRows(openXmlElement, value.MatrixRows, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Matrix? value)

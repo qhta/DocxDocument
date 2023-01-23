@@ -13,12 +13,22 @@ public static class DataPartConverter
     return openXmlElement?.Uri;
   }
   
+  private static bool CmpUri(DXPack.DataPart openXmlElement, Uri? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri == value;
+  }
+  
   /// <summary>
   /// Gets the content type (MIME type) of the data in the part.
   /// </summary>
   private static String? GetContentType(DXPack.DataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.DataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   public static DMPack.DataPart? CreateModelElement(DXPack.DataPart? openXmlElement)
@@ -31,6 +41,20 @@ public static class DataPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DataPart? openXmlElement, DMPack.DataPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPart? value)

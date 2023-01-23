@@ -15,7 +15,7 @@ public class OfPieChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<PieChartSeries>? PieChartSerieses { get; set; }
+  public Collection<PieChartSeries>? PieChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 
@@ -29,7 +29,7 @@ public class OfPieChart
 
   public UInt16? SecondPieSize { get; set; }
 
-  public Collection<SeriesLines>? SeriesLineses { get; set; }
+  public Collection<SeriesLines>? SeriesLines { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

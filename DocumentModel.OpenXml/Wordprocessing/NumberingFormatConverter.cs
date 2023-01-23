@@ -13,6 +13,11 @@ public static class NumberingFormatConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value);
   }
   
+  private static bool CmpVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
@@ -24,6 +29,11 @@ public static class NumberingFormatConverter
   private static String? GetFormat(DXW.NumberingFormat openXmlElement)
   {
     return openXmlElement?.Format?.Value;
+  }
+  
+  private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Format?.Value == value;
   }
   
   private static void SetFormat(DXW.NumberingFormat openXmlElement, String? value)
@@ -44,6 +54,20 @@ public static class NumberingFormatConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.NumberingFormat? openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingFormat? value)

@@ -13,6 +13,11 @@ public static class HeaderFooterConverter
     return openXmlElement?.AlignWithMargins?.Value;
   }
   
+  private static bool CmpAlignWithMargins(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AlignWithMargins?.Value == value;
+  }
+  
   private static void SetAlignWithMargins(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class HeaderFooterConverter
   private static Boolean? GetDifferentOddEven(DXDrawCharts.HeaderFooter openXmlElement)
   {
     return openXmlElement?.DifferentOddEven?.Value;
+  }
+  
+  private static bool CmpDifferentOddEven(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DifferentOddEven?.Value == value;
   }
   
   private static void SetDifferentOddEven(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class HeaderFooterConverter
     return openXmlElement?.DifferentFirst?.Value;
   }
   
+  private static bool CmpDifferentFirst(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DifferentFirst?.Value == value;
+  }
+  
   private static void SetDifferentFirst(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -58,10 +73,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetOddHeader(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.OddHeader>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.OddHeader>()?.Text;
+  }
+  
+  private static bool CmpOddHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.OddHeader>()?.Text == value;
   }
   
   private static void SetOddHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -81,10 +98,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetOddFooter(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.OddFooter>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.OddFooter>()?.Text;
+  }
+  
+  private static bool CmpOddFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.OddFooter>()?.Text == value;
   }
   
   private static void SetOddFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -104,10 +123,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetEvenHeader(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.EvenHeader>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.EvenHeader>()?.Text;
+  }
+  
+  private static bool CmpEvenHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.EvenHeader>()?.Text == value;
   }
   
   private static void SetEvenHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -127,10 +148,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetEvenFooter(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.EvenFooter>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.EvenFooter>()?.Text;
+  }
+  
+  private static bool CmpEvenFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.EvenFooter>()?.Text == value;
   }
   
   private static void SetEvenFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -150,10 +173,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetFirstHeader(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstHeader>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FirstHeader>()?.Text;
+  }
+  
+  private static bool CmpFirstHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FirstHeader>()?.Text == value;
   }
   
   private static void SetFirstHeader(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -173,10 +198,12 @@ public static class HeaderFooterConverter
   /// </summary>
   private static String? GetFirstFooter(DXDrawCharts.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstFooter>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FirstFooter>()?.Text;
+  }
+  
+  private static bool CmpFirstFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FirstFooter>()?.Text == value;
   }
   
   private static void SetFirstFooter(DXDrawCharts.HeaderFooter openXmlElement, String? value)
@@ -208,6 +235,34 @@ public static class HeaderFooterConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.HeaderFooter? openXmlElement, DMDrawsCharts.HeaderFooter? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAlignWithMargins(openXmlElement, value.AlignWithMargins, diffs, objName))
+        ok = false;
+      if (!CmpDifferentOddEven(openXmlElement, value.DifferentOddEven, diffs, objName))
+        ok = false;
+      if (!CmpDifferentFirst(openXmlElement, value.DifferentFirst, diffs, objName))
+        ok = false;
+      if (!CmpOddHeader(openXmlElement, value.OddHeader, diffs, objName))
+        ok = false;
+      if (!CmpOddFooter(openXmlElement, value.OddFooter, diffs, objName))
+        ok = false;
+      if (!CmpEvenHeader(openXmlElement, value.EvenHeader, diffs, objName))
+        ok = false;
+      if (!CmpEvenFooter(openXmlElement, value.EvenFooter, diffs, objName))
+        ok = false;
+      if (!CmpFirstHeader(openXmlElement, value.FirstHeader, diffs, objName))
+        ok = false;
+      if (!CmpFirstFooter(openXmlElement, value.FirstFooter, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.HeaderFooter? value)

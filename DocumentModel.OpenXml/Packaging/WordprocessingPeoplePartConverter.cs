@@ -10,14 +10,22 @@ public static class WordprocessingPeoplePartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.WordprocessingPeoplePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMW.People? GetPeople(DXPack.WordprocessingPeoplePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2013W.People rootElement)
-      return DMXW.PeopleConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.PeopleConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013W.People);
+  }
+  
+  private static bool CmpPeople(DXPack.WordprocessingPeoplePart openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetPeople(DXPack.WordprocessingPeoplePart openXmlElement, DMW.People? value)
@@ -35,6 +43,11 @@ public static class WordprocessingPeoplePartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.WordprocessingPeoplePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.WordprocessingPeoplePart? CreateModelElement(DXPack.WordprocessingPeoplePart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -46,6 +59,22 @@ public static class WordprocessingPeoplePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.WordprocessingPeoplePart? openXmlElement, DMPack.WordprocessingPeoplePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpPeople(openXmlElement, value.People, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingPeoplePart? value)

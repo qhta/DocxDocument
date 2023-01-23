@@ -13,6 +13,11 @@ public static class TaskProgressEventInfoConverter
     return openXmlElement.PercentComplete?.Value;
   }
   
+  private static bool CmpPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.PercentComplete?.Value == value;
+  }
+  
   private static void SetPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value)
   {
     openXmlElement.PercentComplete = value;
@@ -27,6 +32,18 @@ public static class TaskProgressEventInfoConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.TaskProgressEventInfo? openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPercentComplete(openXmlElement, value.PercentComplete, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskProgressEventInfo? value)

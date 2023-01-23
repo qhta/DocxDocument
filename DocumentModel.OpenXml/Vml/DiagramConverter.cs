@@ -13,6 +13,11 @@ public static class DiagramConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
+  private static bool CmpExtension(DXVmlO.Diagram openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExtension(DXVmlO.Diagram openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
@@ -26,6 +31,11 @@ public static class DiagramConverter
     return openXmlElement.Style?.Value;
   }
   
+  private static bool CmpStyle(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Style?.Value == value;
+  }
+  
   private static void SetStyle(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.Style = value;
@@ -37,6 +47,11 @@ public static class DiagramConverter
   private static Boolean? GetAutoFormat(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.AutoFormat?.Value;
+  }
+  
+  private static bool CmpAutoFormat(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AutoFormat?.Value == value;
   }
   
   private static void SetAutoFormat(DXVmlO.Diagram openXmlElement, Boolean? value)
@@ -55,6 +70,11 @@ public static class DiagramConverter
     return openXmlElement?.Reverse?.Value;
   }
   
+  private static bool CmpReverse(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Reverse?.Value == value;
+  }
+  
   private static void SetReverse(DXVmlO.Diagram openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -69,6 +89,11 @@ public static class DiagramConverter
   private static Boolean? GetAutoLayout(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.AutoLayout?.Value;
+  }
+  
+  private static bool CmpAutoLayout(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AutoLayout?.Value == value;
   }
   
   private static void SetAutoLayout(DXVmlO.Diagram openXmlElement, Boolean? value)
@@ -87,6 +112,11 @@ public static class DiagramConverter
     return openXmlElement.ScaleX?.Value;
   }
   
+  private static bool CmpScaleX(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ScaleX?.Value == value;
+  }
+  
   private static void SetScaleX(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.ScaleX = value;
@@ -98,6 +128,11 @@ public static class DiagramConverter
   private static Int64? GetScaleY(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement.ScaleY?.Value;
+  }
+  
+  private static bool CmpScaleY(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ScaleY?.Value == value;
   }
   
   private static void SetScaleY(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -113,6 +148,11 @@ public static class DiagramConverter
     return openXmlElement.FontSize?.Value;
   }
   
+  private static bool CmpFontSize(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FontSize?.Value == value;
+  }
+  
   private static void SetFontSize(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.FontSize = value;
@@ -124,6 +164,11 @@ public static class DiagramConverter
   private static String? GetConstrainBounds(DXVmlO.Diagram openXmlElement)
   {
     return openXmlElement?.ConstrainBounds?.Value;
+  }
+  
+  private static bool CmpConstrainBounds(DXVmlO.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ConstrainBounds?.Value == value;
   }
   
   private static void SetConstrainBounds(DXVmlO.Diagram openXmlElement, String? value)
@@ -142,6 +187,11 @@ public static class DiagramConverter
     return openXmlElement.BaseTextScale?.Value;
   }
   
+  private static bool CmpBaseTextScale(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BaseTextScale?.Value == value;
+  }
+  
   private static void SetBaseTextScale(DXVmlO.Diagram openXmlElement, Int64? value)
   {
     openXmlElement.BaseTextScale = value;
@@ -152,10 +202,12 @@ public static class DiagramConverter
   /// </summary>
   private static DMVml.RelationTable? GetRelationTable(DXVmlO.Diagram openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.RelationTable>();
-    if (itemElement != null)
-      return DMXVml.RelationTableConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.RelationTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.RelationTable>());
+  }
+  
+  private static bool CmpRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.RelationTableConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.RelationTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value)
@@ -190,6 +242,38 @@ public static class DiagramConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.Diagram? openXmlElement, DMVml.Diagram? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+        ok = false;
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+        ok = false;
+      if (!CmpAutoFormat(openXmlElement, value.AutoFormat, diffs, objName))
+        ok = false;
+      if (!CmpReverse(openXmlElement, value.Reverse, diffs, objName))
+        ok = false;
+      if (!CmpAutoLayout(openXmlElement, value.AutoLayout, diffs, objName))
+        ok = false;
+      if (!CmpScaleX(openXmlElement, value.ScaleX, diffs, objName))
+        ok = false;
+      if (!CmpScaleY(openXmlElement, value.ScaleY, diffs, objName))
+        ok = false;
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+        ok = false;
+      if (!CmpConstrainBounds(openXmlElement, value.ConstrainBounds, diffs, objName))
+        ok = false;
+      if (!CmpBaseTextScale(openXmlElement, value.BaseTextScale, diffs, objName))
+        ok = false;
+      if (!CmpRelationTable(openXmlElement, value.RelationTable, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Diagram? value)

@@ -13,6 +13,11 @@ public static class CompatibilitySettingConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value);
   }
   
+  private static bool CmpName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value)
   {
     openXmlElement.Name = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(value);
@@ -24,6 +29,11 @@ public static class CompatibilitySettingConverter
   private static String? GetUri(DXW.CompatibilitySetting openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
+  }
+  
+  private static bool CmpUri(DXW.CompatibilitySetting openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
   }
   
   private static void SetUri(DXW.CompatibilitySetting openXmlElement, String? value)
@@ -40,6 +50,11 @@ public static class CompatibilitySettingConverter
   private static String? GetVal(DXW.CompatibilitySetting openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXW.CompatibilitySetting openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXW.CompatibilitySetting openXmlElement, String? value)
@@ -61,6 +76,22 @@ public static class CompatibilitySettingConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.CompatibilitySetting? openXmlElement, DMW.CompatibilitySetting? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CompatibilitySetting? value)

@@ -10,10 +10,12 @@ public static class SeriesTextConverter
   /// </summary>
   private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.SeriesText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+  }
+  
+  private static bool CmpStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value)
@@ -34,10 +36,12 @@ public static class SeriesTextConverter
   /// </summary>
   private static String? GetNumericValue(DXDrawCharts.SeriesText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>()?.Text;
+  }
+  
+  private static bool CmpNumericValue(DXDrawCharts.SeriesText openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>()?.Text == value;
   }
   
   private static void SetNumericValue(DXDrawCharts.SeriesText openXmlElement, String? value)
@@ -62,6 +66,20 @@ public static class SeriesTextConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.SeriesText? openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName))
+        ok = false;
+      if (!CmpNumericValue(openXmlElement, value.NumericValue, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SeriesText? value)

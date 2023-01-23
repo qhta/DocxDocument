@@ -13,6 +13,11 @@ public static class TablePropertyExceptionsChangeConverter
     return openXmlElement?.Author?.Value;
   }
   
+  private static bool CmpAuthor(DXW.TablePropertyExceptionsChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
+  }
+  
   private static void SetAuthor(DXW.TablePropertyExceptionsChange openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class TablePropertyExceptionsChangeConverter
     return openXmlElement.Date?.Value;
   }
   
+  private static bool CmpDate(DXW.TablePropertyExceptionsChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Date?.Value == value;
+  }
+  
   private static void SetDate(DXW.TablePropertyExceptionsChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
@@ -40,6 +50,11 @@ public static class TablePropertyExceptionsChangeConverter
   private static String? GetId(DXW.TablePropertyExceptionsChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.TablePropertyExceptionsChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.TablePropertyExceptionsChange openXmlElement, String? value)
@@ -55,10 +70,12 @@ public static class TablePropertyExceptionsChangeConverter
   /// </summary>
   private static DMW.PreviousTablePropertyExceptions? GetPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousTablePropertyExceptions>();
-    if (itemElement != null)
-      return DMXW.PreviousTablePropertyExceptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PreviousTablePropertyExceptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousTablePropertyExceptions>());
+  }
+  
+  private static bool CmpPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement, DMW.PreviousTablePropertyExceptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PreviousTablePropertyExceptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousTablePropertyExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement, DMW.PreviousTablePropertyExceptions? value)
@@ -86,6 +103,24 @@ public static class TablePropertyExceptionsChangeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TablePropertyExceptionsChange? openXmlElement, DMW.TablePropertyExceptionsChange? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpPreviousTablePropertyExceptions(openXmlElement, value.PreviousTablePropertyExceptions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TablePropertyExceptionsChange? value)

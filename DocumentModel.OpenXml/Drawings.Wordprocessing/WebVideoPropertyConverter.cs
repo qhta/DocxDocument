@@ -13,6 +13,11 @@ public static class WebVideoPropertyConverter
     return openXmlElement?.EmbeddedHtml?.Value;
   }
   
+  private static bool CmpEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EmbeddedHtml?.Value == value;
+  }
+  
   private static void SetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class WebVideoPropertyConverter
     return openXmlElement.Height?.Value;
   }
   
+  private static bool CmpHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Height?.Value == value;
+  }
+  
   private static void SetHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
   {
     openXmlElement.Height = value;
@@ -40,6 +50,11 @@ public static class WebVideoPropertyConverter
   private static UInt32? GetWidth(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
     return openXmlElement.Width?.Value;
+  }
+  
+  private static bool CmpWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Width?.Value == value;
   }
   
   private static void SetWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
@@ -58,6 +73,22 @@ public static class WebVideoPropertyConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement, DMDrawsW.WebVideoProperty? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEmbeddedHtml(openXmlElement, value.EmbeddedHtml, diffs, objName))
+        ok = false;
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+        ok = false;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WebVideoProperty? value)

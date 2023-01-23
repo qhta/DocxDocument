@@ -13,6 +13,11 @@ public static class DivConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXW.Div openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.Div openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class DivConverter
   /// </summary>
   private static Boolean? GetBlockQuote(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.BlockQuote>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.BlockQuote>()?.Val?.Value;
+  }
+  
+  private static bool CmpBlockQuote(DXW.Div openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.BlockQuote>()?.Val?.Value == value;
   }
   
   private static void SetBlockQuote(DXW.Div openXmlElement, Boolean? value)
@@ -52,10 +59,12 @@ public static class DivConverter
   /// </summary>
   private static Boolean? GetBodyDiv(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.BodyDiv>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.BodyDiv>()?.Val?.Value;
+  }
+  
+  private static bool CmpBodyDiv(DXW.Div openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.BodyDiv>()?.Val?.Value == value;
   }
   
   private static void SetBodyDiv(DXW.Div openXmlElement, Boolean? value)
@@ -78,10 +87,12 @@ public static class DivConverter
   /// </summary>
   private static String? GetLeftMarginDiv(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.LeftMarginDiv>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.LeftMarginDiv>()?.Val?.Value;
+  }
+  
+  private static bool CmpLeftMarginDiv(DXW.Div openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.LeftMarginDiv>()?.Val?.Value == value;
   }
   
   private static void SetLeftMarginDiv(DXW.Div openXmlElement, String? value)
@@ -101,10 +112,12 @@ public static class DivConverter
   /// </summary>
   private static String? GetRightMarginDiv(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RightMarginDiv>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.RightMarginDiv>()?.Val?.Value;
+  }
+  
+  private static bool CmpRightMarginDiv(DXW.Div openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.RightMarginDiv>()?.Val?.Value == value;
   }
   
   private static void SetRightMarginDiv(DXW.Div openXmlElement, String? value)
@@ -124,10 +137,12 @@ public static class DivConverter
   /// </summary>
   private static String? GetTopMarginDiv(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TopMarginDiv>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.TopMarginDiv>()?.Val?.Value;
+  }
+  
+  private static bool CmpTopMarginDiv(DXW.Div openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.TopMarginDiv>()?.Val?.Value == value;
   }
   
   private static void SetTopMarginDiv(DXW.Div openXmlElement, String? value)
@@ -147,10 +162,12 @@ public static class DivConverter
   /// </summary>
   private static String? GetBottomMarginDiv(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.BottomMarginDiv>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.BottomMarginDiv>()?.Val?.Value;
+  }
+  
+  private static bool CmpBottomMarginDiv(DXW.Div openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.BottomMarginDiv>()?.Val?.Value == value;
   }
   
   private static void SetBottomMarginDiv(DXW.Div openXmlElement, String? value)
@@ -170,10 +187,12 @@ public static class DivConverter
   /// </summary>
   private static DMW.DivBorder? GetDivBorder(DXW.Div openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DivBorder>();
-    if (itemElement != null)
-      return DMXW.DivBorderConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DivBorderConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DivBorder>());
+  }
+  
+  private static bool CmpDivBorder(DXW.Div openXmlElement, DMW.DivBorder? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DivBorderConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DivBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDivBorder(DXW.Div openXmlElement, DMW.DivBorder? value)
@@ -199,6 +218,11 @@ public static class DivConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDivsChilds(DXW.Div openXmlElement, Collection<DMW.DivsChild>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetDivsChilds(DXW.Div openXmlElement, Collection<DMW.DivsChild>? value)
@@ -232,6 +256,34 @@ public static class DivConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Div? openXmlElement, DMW.Div? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpBlockQuote(openXmlElement, value.BlockQuote, diffs, objName))
+        ok = false;
+      if (!CmpBodyDiv(openXmlElement, value.BodyDiv, diffs, objName))
+        ok = false;
+      if (!CmpLeftMarginDiv(openXmlElement, value.LeftMarginDiv, diffs, objName))
+        ok = false;
+      if (!CmpRightMarginDiv(openXmlElement, value.RightMarginDiv, diffs, objName))
+        ok = false;
+      if (!CmpTopMarginDiv(openXmlElement, value.TopMarginDiv, diffs, objName))
+        ok = false;
+      if (!CmpBottomMarginDiv(openXmlElement, value.BottomMarginDiv, diffs, objName))
+        ok = false;
+      if (!CmpDivBorder(openXmlElement, value.DivBorder, diffs, objName))
+        ok = false;
+      if (!CmpDivsChilds(openXmlElement, value.DivsChilds, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Div? value)

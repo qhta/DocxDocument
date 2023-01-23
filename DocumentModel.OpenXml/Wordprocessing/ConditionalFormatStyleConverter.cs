@@ -13,6 +13,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.Val?.Value;
   }
   
+  private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
+  }
+  
   private static void SetVal(DXW.ConditionalFormatStyle openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetFirstRow(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstRow?.Value;
+  }
+  
+  private static bool CmpFirstRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FirstRow?.Value == value;
   }
   
   private static void SetFirstRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.LastRow?.Value;
   }
   
+  private static bool CmpLastRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastRow?.Value == value;
+  }
+  
   private static void SetLastRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetFirstColumn(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstColumn?.Value;
+  }
+  
+  private static bool CmpFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FirstColumn?.Value == value;
   }
   
   private static void SetFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -77,6 +97,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.LastColumn?.Value;
   }
   
+  private static bool CmpLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastColumn?.Value == value;
+  }
+  
   private static void SetLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetOddVerticalBand(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.OddVerticalBand?.Value;
+  }
+  
+  private static bool CmpOddVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OddVerticalBand?.Value == value;
   }
   
   private static void SetOddVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -109,6 +139,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.EvenVerticalBand?.Value;
   }
   
+  private static bool CmpEvenVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EvenVerticalBand?.Value == value;
+  }
+  
   private static void SetEvenVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetOddHorizontalBand(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.OddHorizontalBand?.Value;
+  }
+  
+  private static bool CmpOddHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OddHorizontalBand?.Value == value;
   }
   
   private static void SetOddHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -141,6 +181,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.EvenHorizontalBand?.Value;
   }
   
+  private static bool CmpEvenHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EvenHorizontalBand?.Value == value;
+  }
+  
   private static void SetEvenHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetFirstRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstRowFirstColumn?.Value;
+  }
+  
+  private static bool CmpFirstRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FirstRowFirstColumn?.Value == value;
   }
   
   private static void SetFirstRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -173,6 +223,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.FirstRowLastColumn?.Value;
   }
   
+  private static bool CmpFirstRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FirstRowLastColumn?.Value == value;
+  }
+  
   private static void SetFirstRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -189,6 +244,11 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement?.LastRowFirstColumn?.Value;
   }
   
+  private static bool CmpLastRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastRowFirstColumn?.Value == value;
+  }
+  
   private static void SetLastRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -203,6 +263,11 @@ public static class ConditionalFormatStyleConverter
   private static Boolean? GetLastRowLastColumn(DXW.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.LastRowLastColumn?.Value;
+  }
+  
+  private static bool CmpLastRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastRowLastColumn?.Value == value;
   }
   
   private static void SetLastRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value)
@@ -234,6 +299,42 @@ public static class ConditionalFormatStyleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ConditionalFormatStyle? openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
+        ok = false;
+      if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
+        ok = false;
+      if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
+        ok = false;
+      if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
+        ok = false;
+      if (!CmpOddVerticalBand(openXmlElement, value.OddVerticalBand, diffs, objName))
+        ok = false;
+      if (!CmpEvenVerticalBand(openXmlElement, value.EvenVerticalBand, diffs, objName))
+        ok = false;
+      if (!CmpOddHorizontalBand(openXmlElement, value.OddHorizontalBand, diffs, objName))
+        ok = false;
+      if (!CmpEvenHorizontalBand(openXmlElement, value.EvenHorizontalBand, diffs, objName))
+        ok = false;
+      if (!CmpFirstRowFirstColumn(openXmlElement, value.FirstRowFirstColumn, diffs, objName))
+        ok = false;
+      if (!CmpFirstRowLastColumn(openXmlElement, value.FirstRowLastColumn, diffs, objName))
+        ok = false;
+      if (!CmpLastRowFirstColumn(openXmlElement, value.LastRowFirstColumn, diffs, objName))
+        ok = false;
+      if (!CmpLastRowLastColumn(openXmlElement, value.LastRowLastColumn, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ConditionalFormatStyle? value)

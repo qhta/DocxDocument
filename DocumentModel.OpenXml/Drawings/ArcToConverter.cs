@@ -13,6 +13,11 @@ public static class ArcToConverter
     return openXmlElement?.WidthRadius?.Value;
   }
   
+  private static bool CmpWidthRadius(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.WidthRadius?.Value == value;
+  }
+  
   private static void SetWidthRadius(DXDraw.ArcTo openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ArcToConverter
   private static String? GetHeightRadius(DXDraw.ArcTo openXmlElement)
   {
     return openXmlElement?.HeightRadius?.Value;
+  }
+  
+  private static bool CmpHeightRadius(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.HeightRadius?.Value == value;
   }
   
   private static void SetHeightRadius(DXDraw.ArcTo openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class ArcToConverter
     return openXmlElement?.StartAngle?.Value;
   }
   
+  private static bool CmpStartAngle(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.StartAngle?.Value == value;
+  }
+  
   private static void SetStartAngle(DXDraw.ArcTo openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class ArcToConverter
   private static String? GetSwingAngle(DXDraw.ArcTo openXmlElement)
   {
     return openXmlElement?.SwingAngle?.Value;
+  }
+  
+  private static bool CmpSwingAngle(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SwingAngle?.Value == value;
   }
   
   private static void SetSwingAngle(DXDraw.ArcTo openXmlElement, String? value)
@@ -81,6 +101,24 @@ public static class ArcToConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ArcTo? openXmlElement, DMDraws.ArcTo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWidthRadius(openXmlElement, value.WidthRadius, diffs, objName))
+        ok = false;
+      if (!CmpHeightRadius(openXmlElement, value.HeightRadius, diffs, objName))
+        ok = false;
+      if (!CmpStartAngle(openXmlElement, value.StartAngle, diffs, objName))
+        ok = false;
+      if (!CmpSwingAngle(openXmlElement, value.SwingAngle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArcTo? value)

@@ -10,10 +10,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static DMW.RubyAlignKind? GetRubyAlign(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.RubyAlign>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value);
+  }
+  
+  private static bool CmpRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value)
@@ -34,10 +36,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static String? GetPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>()?.Val?.Value == value;
   }
   
   private static void SetPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement, String? value)
@@ -57,10 +61,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static Int16? GetPhoneticGuideRaise(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val?.Value;
+  }
+  
+  private static bool CmpPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val?.Value == value;
   }
   
   private static void SetPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value)
@@ -80,10 +86,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static String? GetPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>()?.Val?.Value == value;
   }
   
   private static void SetPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement, String? value)
@@ -103,10 +111,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static String? GetLanguageId(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.LanguageId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val?.Value;
+  }
+  
+  private static bool CmpLanguageId(DXW.RubyProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val?.Value == value;
   }
   
   private static void SetLanguageId(DXW.RubyProperties openXmlElement, String? value)
@@ -126,10 +136,12 @@ public static class RubyPropertiesConverter
   /// </summary>
   private static Boolean? GetDirty(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Dirty>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Dirty>()?.Val?.Value;
+  }
+  
+  private static bool CmpDirty(DXW.RubyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Dirty>()?.Val?.Value == value;
   }
   
   private static void SetDirty(DXW.RubyProperties openXmlElement, Boolean? value)
@@ -161,6 +173,28 @@ public static class RubyPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.RubyProperties? openXmlElement, DMW.RubyProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRubyAlign(openXmlElement, value.RubyAlign, diffs, objName))
+        ok = false;
+      if (!CmpPhoneticGuideTextFontSize(openXmlElement, value.PhoneticGuideTextFontSize, diffs, objName))
+        ok = false;
+      if (!CmpPhoneticGuideRaise(openXmlElement, value.PhoneticGuideRaise, diffs, objName))
+        ok = false;
+      if (!CmpPhoneticGuideBaseTextSize(openXmlElement, value.PhoneticGuideBaseTextSize, diffs, objName))
+        ok = false;
+      if (!CmpLanguageId(openXmlElement, value.LanguageId, diffs, objName))
+        ok = false;
+      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RubyProperties? value)

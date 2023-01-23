@@ -17,6 +17,11 @@ public static class CustomDashConverter
     return collection;
   }
   
+  private static bool CmpDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.DashStop>();
@@ -40,6 +45,18 @@ public static class CustomDashConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.CustomDash? openXmlElement, DMDraws.CustomDash? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDashStops(openXmlElement, value.DashStops, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomDash? value)

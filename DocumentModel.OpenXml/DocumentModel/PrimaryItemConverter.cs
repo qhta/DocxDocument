@@ -10,10 +10,12 @@ public static class PrimaryItemConverter
   /// </summary>
   private static DM.BackstageRegularButton? GetBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageRegularButton>();
-    if (itemElement != null)
-      return DMX.BackstageRegularButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageRegularButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageRegularButton>());
+  }
+  
+  private static bool CmpBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageRegularButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageRegularButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value)
@@ -34,10 +36,12 @@ public static class PrimaryItemConverter
   /// </summary>
   private static DM.BackstagePrimaryMenu? GetBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>();
-    if (itemElement != null)
-      return DMX.BackstagePrimaryMenuConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstagePrimaryMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>());
+  }
+  
+  private static bool CmpBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstagePrimaryMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value)
@@ -63,6 +67,20 @@ public static class PrimaryItemConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.PrimaryItem? openXmlElement, DM.PrimaryItem? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBackstageRegularButton(openXmlElement, value.BackstageRegularButton, diffs, objName))
+        ok = false;
+      if (!CmpBackstagePrimaryMenu(openXmlElement, value.BackstagePrimaryMenu, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.PrimaryItem? value)

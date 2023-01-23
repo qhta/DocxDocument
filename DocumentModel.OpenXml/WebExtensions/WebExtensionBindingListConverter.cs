@@ -17,6 +17,11 @@ public static class WebExtensionBindingListConverter
     return collection;
   }
   
+  private static bool CmpWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013WebExt.WebExtensionBinding>();
@@ -40,6 +45,18 @@ public static class WebExtensionBindingListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement, DMWebExt.WebExtensionBindingList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWebExtensionBindings(openXmlElement, value.WebExtensionBindings, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBindingList? value)

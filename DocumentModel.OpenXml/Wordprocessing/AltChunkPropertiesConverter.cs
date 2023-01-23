@@ -10,10 +10,12 @@ public static class AltChunkPropertiesConverter
   /// </summary>
   private static Boolean? GetMatchSource(DXW.AltChunkProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.MatchSource>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.MatchSource>()?.Val?.Value;
+  }
+  
+  private static bool CmpMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.MatchSource>()?.Val?.Value == value;
   }
   
   private static void SetMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value)
@@ -40,6 +42,18 @@ public static class AltChunkPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.AltChunkProperties? openXmlElement, DMW.AltChunkProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMatchSource(openXmlElement, value.MatchSource, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AltChunkProperties? value)

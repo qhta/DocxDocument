@@ -13,6 +13,11 @@ public static class DLblsExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.DLblsExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.DLblsExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class DLblsExtensionConverter
   
   private static DMDrawsCharts.ChartText3? GetChartText(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartText3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartText3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>());
+  }
+  
+  private static bool CmpChartText(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ChartText3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartText3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartText(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ChartText3? value)
@@ -44,10 +51,12 @@ public static class DLblsExtensionConverter
   
   private static DMDrawsCharts.DataLabelFieldTable? GetDataLabelFieldTable(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelFieldTableConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelFieldTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>());
+  }
+  
+  private static bool CmpDataLabelFieldTable(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.DataLabelFieldTable? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelFieldTableConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelFieldTable(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.DataLabelFieldTable? value)
@@ -65,8 +74,12 @@ public static class DLblsExtensionConverter
   
   private static Boolean? GetShowDataLabelsRange(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>() != null;
+  }
+  
+  private static bool CmpShowDataLabelsRange(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>() != null == value;
   }
   
   private static void SetShowDataLabelsRange(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value)
@@ -86,10 +99,12 @@ public static class DLblsExtensionConverter
   
   private static DMDrawsCharts.ShapeProperties3? GetShapeProperties(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>());
+  }
+  
+  private static bool CmpShapeProperties(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ShapeProperties3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ShapeProperties3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ShapeProperties3? value)
@@ -107,10 +122,12 @@ public static class DLblsExtensionConverter
   
   private static DMDrawsCharts.Layout3? GetLayout(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>();
-    if (itemElement != null)
-      return DMXDrawsCharts.Layout3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.Layout3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>());
+  }
+  
+  private static bool CmpLayout(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.Layout3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.Layout3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLayout(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.Layout3? value)
@@ -128,8 +145,12 @@ public static class DLblsExtensionConverter
   
   private static Boolean? GetShowLeaderLines(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowLeaderLines>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.ShowLeaderLines>() != null;
+  }
+  
+  private static bool CmpShowLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.ShowLeaderLines>() != null == value;
   }
   
   private static void SetShowLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value)
@@ -149,10 +170,12 @@ public static class DLblsExtensionConverter
   
   private static DMDrawsCharts.LeaderLines3? GetLeaderLines(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.LeaderLines>();
-    if (itemElement != null)
-      return DMXDrawsCharts.LeaderLines3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.LeaderLines3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.LeaderLines>());
+  }
+  
+  private static bool CmpLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.LeaderLines3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.LeaderLines3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.LeaderLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.LeaderLines3? value)
@@ -184,6 +207,32 @@ public static class DLblsExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.DLblsExtension? openXmlElement, DMDrawsCharts.DLblsExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+        ok = false;
+      if (!CmpDataLabelFieldTable(openXmlElement, value.DataLabelFieldTable, diffs, objName))
+        ok = false;
+      if (!CmpShowDataLabelsRange(openXmlElement, value.ShowDataLabelsRange, diffs, objName))
+        ok = false;
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+        ok = false;
+      if (!CmpShowLeaderLines(openXmlElement, value.ShowLeaderLines, diffs, objName))
+        ok = false;
+      if (!CmpLeaderLines(openXmlElement, value.LeaderLines, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblsExtension? value)

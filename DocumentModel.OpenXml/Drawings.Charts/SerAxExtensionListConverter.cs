@@ -17,6 +17,11 @@ public static class SerAxExtensionListConverter
     return collection;
   }
   
+  private static bool CmpSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.SerAxExtension>();
@@ -40,6 +45,18 @@ public static class SerAxExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.SerAxExtensionList? openXmlElement, DMDrawsCharts.SerAxExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSerAxExtensions(openXmlElement, value.SerAxExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SerAxExtensionList? value)

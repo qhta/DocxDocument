@@ -16,6 +16,11 @@ public partial class Style
   public String? StyleId { get; set; }
 
   /// <summary>
+  ///   Style Name
+  /// </summary>
+  public String? StyleName { get; set; }
+
+  /// <summary>
   ///   Default Style
   /// </summary>
   public Boolean? Default { get; set; }

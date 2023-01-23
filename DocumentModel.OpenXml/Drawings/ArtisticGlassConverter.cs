@@ -13,6 +13,11 @@ public static class ArtisticGlassConverter
     return openXmlElement.Transparancy?.Value;
   }
   
+  private static bool CmpTransparancy(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Transparancy?.Value == value;
+  }
+  
   private static void SetTransparancy(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
@@ -24,6 +29,11 @@ public static class ArtisticGlassConverter
   private static Int32? GetScaling(DXO2010Draw.ArtisticGlass openXmlElement)
   {
     return openXmlElement.Scaling?.Value;
+  }
+  
+  private static bool CmpScaling(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Scaling?.Value == value;
   }
   
   private static void SetScaling(DXO2010Draw.ArtisticGlass openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class ArtisticGlassConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ArtisticGlass? openXmlElement, DMDraws.ArtisticGlass? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+        ok = false;
+      if (!CmpScaling(openXmlElement, value.Scaling, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlass? value)

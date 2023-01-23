@@ -13,6 +13,11 @@ public static class LightRigConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(openXmlElement?.LightRigType?.Value);
   }
   
+  private static bool CmpLightRigType(DXO2010W.LightRig openXmlElement, DMW.LightRigKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(openXmlElement?.LightRigType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetLightRigType(DXO2010W.LightRig openXmlElement, DMW.LightRigKind? value)
   {
     openXmlElement.LightRigType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(value);
@@ -26,6 +31,11 @@ public static class LightRigConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value);
   }
   
+  private static bool CmpLightDirectionType(DXO2010W.LightRig openXmlElement, DMW.LightRigDirectionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetLightDirectionType(DXO2010W.LightRig openXmlElement, DMW.LightRigDirectionKind? value)
   {
     openXmlElement.LightDirectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(value);
@@ -36,10 +46,12 @@ public static class LightRigConverter
   /// </summary>
   private static DMW.SphereCoordinates? GetSphereCoordinates(DXO2010W.LightRig openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>();
-    if (itemElement != null)
-      return DMXW.SphereCoordinatesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SphereCoordinatesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>());
+  }
+  
+  private static bool CmpSphereCoordinates(DXO2010W.LightRig openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SphereCoordinatesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSphereCoordinates(DXO2010W.LightRig openXmlElement, DMW.SphereCoordinates? value)
@@ -66,6 +78,22 @@ public static class LightRigConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.LightRig? openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLightRigType(openXmlElement, value.LightRigType, diffs, objName))
+        ok = false;
+      if (!CmpLightDirectionType(openXmlElement, value.LightDirectionType, diffs, objName))
+        ok = false;
+      if (!CmpSphereCoordinates(openXmlElement, value.SphereCoordinates, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LightRig? value)

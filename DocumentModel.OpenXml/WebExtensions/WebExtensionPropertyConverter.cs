@@ -13,6 +13,11 @@ public static class WebExtensionPropertyConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class WebExtensionPropertyConverter
   private static String? GetValue(DXO2013WebExt.WebExtensionProperty openXmlElement)
   {
     return openXmlElement?.Value?.Value;
+  }
+  
+  private static bool CmpValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Value?.Value == value;
   }
   
   private static void SetValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class WebExtensionPropertyConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExt.WebExtensionProperty? openXmlElement, DMWebExt.WebExtensionProperty? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionProperty? value)

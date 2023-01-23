@@ -10,10 +10,12 @@ public static class Scene3DConverter
   /// </summary>
   private static DMW.Camera? GetCamera(DXO2010W.Scene3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Camera>();
-    if (itemElement != null)
-      return DMXW.CameraConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.CameraConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Camera>());
+  }
+  
+  private static bool CmpCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.CameraConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value)
@@ -34,10 +36,12 @@ public static class Scene3DConverter
   /// </summary>
   private static DMW.LightRig? GetLightRig(DXO2010W.Scene3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LightRig>();
-    if (itemElement != null)
-      return DMXW.LightRigConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.LightRigConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.LightRig>());
+  }
+  
+  private static bool CmpLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.LightRigConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value)
@@ -63,6 +67,20 @@ public static class Scene3DConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.Scene3D? openXmlElement, DMW.Scene3D? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName))
+        ok = false;
+      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Scene3D? value)

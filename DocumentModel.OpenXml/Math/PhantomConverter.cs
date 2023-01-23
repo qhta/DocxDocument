@@ -10,10 +10,12 @@ public static class PhantomConverter
   /// </summary>
   private static DMMath.PhantomProperties? GetPhantomProperties(DXMath.Phantom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.PhantomProperties>();
-    if (itemElement != null)
-      return DMXMath.PhantomPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.PhantomPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PhantomProperties>());
+  }
+  
+  private static bool CmpPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.PhantomPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.PhantomProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value)
@@ -34,10 +36,12 @@ public static class PhantomConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Phantom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.Phantom openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Phantom openXmlElement, DMMath.Base? value)
@@ -63,6 +67,20 @@ public static class PhantomConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Phantom? openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPhantomProperties(openXmlElement, value.PhantomProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Phantom? value)

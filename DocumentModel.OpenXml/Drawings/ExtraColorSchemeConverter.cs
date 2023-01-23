@@ -10,10 +10,12 @@ public static class ExtraColorSchemeConverter
   /// </summary>
   private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ExtraColorScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
-    if (itemElement != null)
-      return DMXDraws.ColorSchemeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ColorSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>());
+  }
+  
+  private static bool CmpColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value)
@@ -34,10 +36,12 @@ public static class ExtraColorSchemeConverter
   /// </summary>
   private static DMDraws.ColorMap? GetColorMap(DXDraw.ExtraColorScheme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorMap>();
-    if (itemElement != null)
-      return DMXDraws.ColorMapConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ColorMapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorMap>());
+  }
+  
+  private static bool CmpColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ColorMapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorMap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value)
@@ -63,6 +67,20 @@ public static class ExtraColorSchemeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ExtraColorScheme? openXmlElement, DMDraws.ExtraColorScheme? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName))
+        ok = false;
+      if (!CmpColorMap(openXmlElement, value.ColorMap, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtraColorScheme? value)

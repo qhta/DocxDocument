@@ -17,6 +17,11 @@ public static class LevelConverter
     return collection;
   }
   
+  private static bool CmpStringPoints(DXDrawCharts.Level openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetStringPoints(DXDrawCharts.Level openXmlElement, Collection<DMDrawsCharts.StringPoint>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.StringPoint>();
@@ -40,6 +45,18 @@ public static class LevelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Level? openXmlElement, DMDrawsCharts.Level? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStringPoints(openXmlElement, value.StringPoints, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Level? value)

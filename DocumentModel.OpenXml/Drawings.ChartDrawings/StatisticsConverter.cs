@@ -13,6 +13,11 @@ public static class StatisticsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value);
   }
   
+  private static bool CmpQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value)
   {
     openXmlElement.QuartileMethod = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(value);
@@ -27,6 +32,18 @@ public static class StatisticsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.Statistics? openXmlElement, DMDrawsChartDraws.Statistics? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpQuartileMethod(openXmlElement, value.QuartileMethod, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Statistics? value)

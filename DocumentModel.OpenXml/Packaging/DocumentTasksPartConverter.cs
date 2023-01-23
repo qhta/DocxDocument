@@ -10,9 +10,19 @@ public static class DocumentTasksPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DocumentTasksPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.DocumentTasksPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DocumentTasksPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -20,9 +30,12 @@ public static class DocumentTasksPartConverter
   /// </summary>
   private static DM.Tasks? GetTasks(DXPack.DocumentTasksPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2021DocTasks.Tasks rootElement)
-      return DMX.TasksConverter.CreateModelElement(rootElement);
-    return null;
+      return DMX.TasksConverter.CreateModelElement(openXmlElement?.RootElement as DXO2021DocTasks.Tasks);
+  }
+  
+  private static bool CmpTasks(DXPack.DocumentTasksPart openXmlElement, DM.Tasks? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetTasks(DXPack.DocumentTasksPart openXmlElement, DM.Tasks? value)
@@ -46,6 +59,22 @@ public static class DocumentTasksPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DocumentTasksPart? openXmlElement, DMPack.DocumentTasksPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpTasks(openXmlElement, value.Tasks, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentTasksPart? value)

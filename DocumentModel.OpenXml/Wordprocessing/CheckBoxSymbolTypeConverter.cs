@@ -13,6 +13,11 @@ public static class CheckBoxSymbolTypeConverter
     return openXmlElement?.Font?.Value;
   }
   
+  private static bool CmpFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Font?.Value == value;
+  }
+  
   private static void SetFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,13 @@ public static class CheckBoxSymbolTypeConverter
     if (openXmlElement.Val?.Value != null)
       return Convert.FromHexString(openXmlElement.Val.Value);
     return null;
+  }
+  
+  private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Val?.Value != null)
+      return Convert.FromHexString(openXmlElement.Val.Value) == value;
+    return openXmlElement == null && value == null;
   }
   
   private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value)
@@ -49,6 +61,20 @@ public static class CheckBoxSymbolTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFont(openXmlElement, value.Font, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBoxSymbolType? value)

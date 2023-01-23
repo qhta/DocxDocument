@@ -13,6 +13,11 @@ public static class HyperlinkRubyConverter
     return openXmlElement?.TargetFrame?.Value;
   }
   
+  private static bool CmpTargetFrame(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.TargetFrame?.Value == value;
+  }
+  
   private static void SetTargetFrame(DXW.HyperlinkRuby openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class HyperlinkRubyConverter
   private static String? GetTooltip(DXW.HyperlinkRuby openXmlElement)
   {
     return openXmlElement?.Tooltip?.Value;
+  }
+  
+  private static bool CmpTooltip(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tooltip?.Value == value;
   }
   
   private static void SetTooltip(DXW.HyperlinkRuby openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class HyperlinkRubyConverter
     return openXmlElement?.DocLocation?.Value;
   }
   
+  private static bool CmpDocLocation(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DocLocation?.Value == value;
+  }
+  
   private static void SetDocLocation(DXW.HyperlinkRuby openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class HyperlinkRubyConverter
   private static Boolean? GetHistory(DXW.HyperlinkRuby openXmlElement)
   {
     return openXmlElement?.History?.Value;
+  }
+  
+  private static bool CmpHistory(DXW.HyperlinkRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.History?.Value == value;
   }
   
   private static void SetHistory(DXW.HyperlinkRuby openXmlElement, Boolean? value)
@@ -77,6 +97,11 @@ public static class HyperlinkRubyConverter
     return openXmlElement?.Anchor?.Value;
   }
   
+  private static bool CmpAnchor(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Anchor?.Value == value;
+  }
+  
   private static void SetAnchor(DXW.HyperlinkRuby openXmlElement, String? value)
   {
     if (value != null)
@@ -93,6 +118,11 @@ public static class HyperlinkRubyConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.HyperlinkRuby openXmlElement, String? value)
   {
     if (value != null)
@@ -103,10 +133,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>();
-    if (itemElement != null)
-      return DMXW.CustomXmlRubyConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.CustomXmlRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>());
+  }
+  
+  private static bool CmpCustomXmlRuby(DXW.HyperlinkRuby openXmlElement, DMW.CustomXmlRuby? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.CustomXmlRubyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlRuby(DXW.HyperlinkRuby openXmlElement, DMW.CustomXmlRuby? value)
@@ -124,10 +156,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.SimpleFieldRuby? GetSimpleFieldRuby(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>();
-    if (itemElement != null)
-      return DMXW.SimpleFieldRubyConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SimpleFieldRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>());
+  }
+  
+  private static bool CmpSimpleFieldRuby(DXW.HyperlinkRuby openXmlElement, DMW.SimpleFieldRuby? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SimpleFieldRubyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSimpleFieldRuby(DXW.HyperlinkRuby openXmlElement, DMW.SimpleFieldRuby? value)
@@ -145,10 +179,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.HyperlinkRuby? GetChildHyperlinkRuby(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>();
-    if (itemElement != null)
-      return DMXW.HyperlinkRubyConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.HyperlinkRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>());
+  }
+  
+  private static bool CmpChildHyperlinkRuby(DXW.HyperlinkRuby openXmlElement, DMW.HyperlinkRuby? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.HyperlinkRubyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChildHyperlinkRuby(DXW.HyperlinkRuby openXmlElement, DMW.HyperlinkRuby? value)
@@ -166,10 +202,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.Run? GetRun(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Run>();
-    if (itemElement != null)
-      return DMXW.RunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Run>());
+  }
+  
+  private static bool CmpRun(DXW.HyperlinkRuby openXmlElement, DMW.Run? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRun(DXW.HyperlinkRuby openXmlElement, DMW.Run? value)
@@ -187,10 +225,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.SdtRunRuby? GetSdtRunRuby(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtRunRuby>();
-    if (itemElement != null)
-      return DMXW.SdtRunRubyConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtRunRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtRunRuby>());
+  }
+  
+  private static bool CmpSdtRunRuby(DXW.HyperlinkRuby openXmlElement, DMW.SdtRunRuby? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtRunRubyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtRunRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtRunRuby(DXW.HyperlinkRuby openXmlElement, DMW.SdtRunRuby? value)
@@ -208,10 +248,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.ProofError? GetProofError(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ProofError>();
-    if (itemElement != null)
-      return DMXW.ProofErrorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+  }
+  
+  private static bool CmpProofError(DXW.HyperlinkRuby openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetProofError(DXW.HyperlinkRuby openXmlElement, DMW.ProofError? value)
@@ -229,10 +271,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.PermStart? GetPermStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PermStart>();
-    if (itemElement != null)
-      return DMXW.PermStartConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+  }
+  
+  private static bool CmpPermStart(DXW.HyperlinkRuby openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PermStartConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPermStart(DXW.HyperlinkRuby openXmlElement, DMW.PermStart? value)
@@ -250,10 +294,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.PermEnd? GetPermEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PermEnd>();
-    if (itemElement != null)
-      return DMXW.PermEndConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+  }
+  
+  private static bool CmpPermEnd(DXW.HyperlinkRuby openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PermEndConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPermEnd(DXW.HyperlinkRuby openXmlElement, DMW.PermEnd? value)
@@ -271,10 +317,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
-    if (itemElement != null)
-      return DMXW.BookmarkStartConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+  }
+  
+  private static bool CmpBookmarkStart(DXW.HyperlinkRuby openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBookmarkStart(DXW.HyperlinkRuby openXmlElement, DMW.BookmarkStart? value)
@@ -292,10 +340,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+  }
+  
+  private static bool CmpBookmarkEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBookmarkEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -313,10 +363,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
-    if (itemElement != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+  }
+  
+  private static bool CmpCommentRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -334,10 +386,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+  }
+  
+  private static bool CmpCommentRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -355,10 +409,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
-    if (itemElement != null)
-      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+  }
+  
+  private static bool CmpMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MoveBookmarkType? value)
@@ -376,10 +432,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+  }
+  
+  private static bool CmpMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -397,10 +455,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
-    if (itemElement != null)
-      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+  }
+  
+  private static bool CmpMoveToRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.MoveBookmarkType? value)
@@ -418,10 +478,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+  }
+  
+  private static bool CmpMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -439,10 +501,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlInsRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlInsRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value)
@@ -460,10 +524,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlInsRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlInsRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value)
@@ -481,10 +547,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlDelRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlDelRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value)
@@ -502,10 +570,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlDelRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlDelRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value)
@@ -523,10 +593,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveFromRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value)
@@ -544,10 +616,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveFromRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value)
@@ -565,10 +639,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlMoveToRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveToRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType? value)
@@ -586,10 +662,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveToRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType? value)
@@ -607,10 +685,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictInsertionRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType2? value)
@@ -628,10 +708,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictInsertionRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType2? value)
@@ -649,10 +731,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+  }
+  
+  private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictDeletionRangeStart(DXW.HyperlinkRuby openXmlElement, DMW.TrackChangeType2? value)
@@ -670,10 +754,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
-    if (itemElement != null)
-      return DMXW.MarkupType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+  }
+  
+  private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictDeletionRangeEnd(DXW.HyperlinkRuby openXmlElement, DMW.MarkupType2? value)
@@ -691,10 +777,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
-    if (itemElement != null)
-      return DMXW.InsertedRunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+  }
+  
+  private static bool CmpInsertedRun(DXW.HyperlinkRuby openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.InsertedRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInsertedRun(DXW.HyperlinkRuby openXmlElement, DMW.InsertedRun? value)
@@ -712,10 +800,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
-    if (itemElement != null)
-      return DMXW.DeletedRunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+  }
+  
+  private static bool CmpDeletedRun(DXW.HyperlinkRuby openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DeletedRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeletedRun(DXW.HyperlinkRuby openXmlElement, DMW.DeletedRun? value)
@@ -733,10 +823,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MoveFromRun? GetMoveFromRun(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
-    if (itemElement != null)
-      return DMXW.MoveFromRunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+  }
+  
+  private static bool CmpMoveFromRun(DXW.HyperlinkRuby openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveFromRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRun(DXW.HyperlinkRuby openXmlElement, DMW.MoveFromRun? value)
@@ -754,10 +846,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
-    if (itemElement != null)
-      return DMXW.MoveToRunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+  }
+  
+  private static bool CmpMoveToRun(DXW.HyperlinkRuby openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveToRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRun(DXW.HyperlinkRuby openXmlElement, DMW.MoveToRun? value)
@@ -775,10 +869,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
-    if (itemElement != null)
-      return DMXW.RunConflictInsertionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+  }
+  
+  private static bool CmpRunConflictInsertion(DXW.HyperlinkRuby openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunConflictInsertionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunConflictInsertion(DXW.HyperlinkRuby openXmlElement, DMW.RunConflictInsertion? value)
@@ -796,10 +892,12 @@ public static class HyperlinkRubyConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
-    if (itemElement != null)
-      return DMXW.RunConflictDeletionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+  }
+  
+  private static bool CmpRunConflictDeletion(DXW.HyperlinkRuby openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunConflictDeletionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunConflictDeletion(DXW.HyperlinkRuby openXmlElement, DMW.RunConflictDeletion? value)
@@ -817,10 +915,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Paragraph? GetParagraph(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
-    if (itemElement != null)
-      return DMXMath.ParagraphConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>());
+  }
+  
+  private static bool CmpParagraph(DXW.HyperlinkRuby openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.ParagraphConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraph(DXW.HyperlinkRuby openXmlElement, DMMath.Paragraph? value)
@@ -838,10 +938,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
-    if (itemElement != null)
-      return DMXMath.OfficeMathConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+  }
+  
+  private static bool CmpOfficeMath(DXW.HyperlinkRuby openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.OfficeMathConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeMath(DXW.HyperlinkRuby openXmlElement, DMMath.OfficeMath? value)
@@ -859,10 +961,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Accent? GetAccent(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Accent>();
-    if (itemElement != null)
-      return DMXMath.AccentConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.AccentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>());
+  }
+  
+  private static bool CmpAccent(DXW.HyperlinkRuby openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.AccentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAccent(DXW.HyperlinkRuby openXmlElement, DMMath.Accent? value)
@@ -880,10 +984,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Bar? GetBar(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Bar>();
-    if (itemElement != null)
-      return DMXMath.BarConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>());
+  }
+  
+  private static bool CmpBar(DXW.HyperlinkRuby openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBar(DXW.HyperlinkRuby openXmlElement, DMMath.Bar? value)
@@ -901,10 +1007,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Box? GetBox(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Box>();
-    if (itemElement != null)
-      return DMXMath.BoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Box>());
+  }
+  
+  private static bool CmpBox(DXW.HyperlinkRuby openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Box>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBox(DXW.HyperlinkRuby openXmlElement, DMMath.Box? value)
@@ -922,10 +1030,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.BorderBox? GetBorderBox(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
-    if (itemElement != null)
-      return DMXMath.BorderBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BorderBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>());
+  }
+  
+  private static bool CmpBorderBox(DXW.HyperlinkRuby openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BorderBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorderBox(DXW.HyperlinkRuby openXmlElement, DMMath.BorderBox? value)
@@ -943,10 +1053,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Delimiter? GetDelimiter(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
-    if (itemElement != null)
-      return DMXMath.DelimiterConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.DelimiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>());
+  }
+  
+  private static bool CmpDelimiter(DXW.HyperlinkRuby openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.DelimiterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDelimiter(DXW.HyperlinkRuby openXmlElement, DMMath.Delimiter? value)
@@ -964,10 +1076,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.EquationArray? GetEquationArray(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
-    if (itemElement != null)
-      return DMXMath.EquationArrayConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.EquationArrayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>());
+  }
+  
+  private static bool CmpEquationArray(DXW.HyperlinkRuby openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.EquationArrayConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEquationArray(DXW.HyperlinkRuby openXmlElement, DMMath.EquationArray? value)
@@ -985,10 +1099,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Fraction? GetFraction(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Fraction>();
-    if (itemElement != null)
-      return DMXMath.FractionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.FractionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>());
+  }
+  
+  private static bool CmpFraction(DXW.HyperlinkRuby openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.FractionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFraction(DXW.HyperlinkRuby openXmlElement, DMMath.Fraction? value)
@@ -1006,10 +1122,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.MathFunction? GetMathFunction(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
-    if (itemElement != null)
-      return DMXMath.MathFunctionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.MathFunctionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>());
+  }
+  
+  private static bool CmpMathFunction(DXW.HyperlinkRuby openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.MathFunctionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMathFunction(DXW.HyperlinkRuby openXmlElement, DMMath.MathFunction? value)
@@ -1027,10 +1145,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.GroupChar? GetGroupChar(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
-    if (itemElement != null)
-      return DMXMath.GroupCharConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.GroupCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>());
+  }
+  
+  private static bool CmpGroupChar(DXW.HyperlinkRuby openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.GroupCharConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroupChar(DXW.HyperlinkRuby openXmlElement, DMMath.GroupChar? value)
@@ -1048,10 +1168,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.LimitLower? GetLimitLower(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
-    if (itemElement != null)
-      return DMXMath.LimitLowerConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.LimitLowerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>());
+  }
+  
+  private static bool CmpLimitLower(DXW.HyperlinkRuby openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.LimitLowerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimitLower(DXW.HyperlinkRuby openXmlElement, DMMath.LimitLower? value)
@@ -1069,10 +1191,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.LimitUpper? GetLimitUpper(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
-    if (itemElement != null)
-      return DMXMath.LimitUpperConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.LimitUpperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>());
+  }
+  
+  private static bool CmpLimitUpper(DXW.HyperlinkRuby openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.LimitUpperConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimitUpper(DXW.HyperlinkRuby openXmlElement, DMMath.LimitUpper? value)
@@ -1090,10 +1214,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Matrix? GetMatrix(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Matrix>();
-    if (itemElement != null)
-      return DMXMath.MatrixConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.MatrixConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>());
+  }
+  
+  private static bool CmpMatrix(DXW.HyperlinkRuby openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.MatrixConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMatrix(DXW.HyperlinkRuby openXmlElement, DMMath.Matrix? value)
@@ -1111,10 +1237,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Nary? GetNary(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Nary>();
-    if (itemElement != null)
-      return DMXMath.NaryConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.NaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>());
+  }
+  
+  private static bool CmpNary(DXW.HyperlinkRuby openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.NaryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNary(DXW.HyperlinkRuby openXmlElement, DMMath.Nary? value)
@@ -1132,10 +1260,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Phantom? GetPhantom(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Phantom>();
-    if (itemElement != null)
-      return DMXMath.PhantomConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.PhantomConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>());
+  }
+  
+  private static bool CmpPhantom(DXW.HyperlinkRuby openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.PhantomConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPhantom(DXW.HyperlinkRuby openXmlElement, DMMath.Phantom? value)
@@ -1153,10 +1283,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Radical? GetRadical(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Radical>();
-    if (itemElement != null)
-      return DMXMath.RadicalConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.RadicalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>());
+  }
+  
+  private static bool CmpRadical(DXW.HyperlinkRuby openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.RadicalConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadical(DXW.HyperlinkRuby openXmlElement, DMMath.Radical? value)
@@ -1174,10 +1306,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.PreSubSuper? GetPreSubSuper(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
-    if (itemElement != null)
-      return DMXMath.PreSubSuperConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.PreSubSuperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>());
+  }
+  
+  private static bool CmpPreSubSuper(DXW.HyperlinkRuby openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.PreSubSuperConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreSubSuper(DXW.HyperlinkRuby openXmlElement, DMMath.PreSubSuper? value)
@@ -1195,10 +1329,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Subscript? GetSubscript(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Subscript>();
-    if (itemElement != null)
-      return DMXMath.SubscriptConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.SubscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>());
+  }
+  
+  private static bool CmpSubscript(DXW.HyperlinkRuby openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.SubscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubscript(DXW.HyperlinkRuby openXmlElement, DMMath.Subscript? value)
@@ -1216,10 +1352,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.SubSuperscript? GetSubSuperscript(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
-    if (itemElement != null)
-      return DMXMath.SubSuperscriptConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.SubSuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>());
+  }
+  
+  private static bool CmpSubSuperscript(DXW.HyperlinkRuby openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.SubSuperscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubSuperscript(DXW.HyperlinkRuby openXmlElement, DMMath.SubSuperscript? value)
@@ -1237,10 +1375,12 @@ public static class HyperlinkRubyConverter
   
   private static DMMath.Superscript? GetSuperscript(DXW.HyperlinkRuby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Superscript>();
-    if (itemElement != null)
-      return DMXMath.SuperscriptConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.SuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>());
+  }
+  
+  private static bool CmpSuperscript(DXW.HyperlinkRuby openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.SuperscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperscript(DXW.HyperlinkRuby openXmlElement, DMMath.Superscript? value)
@@ -1325,6 +1465,138 @@ public static class HyperlinkRubyConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.HyperlinkRuby? openXmlElement, DMW.HyperlinkRuby? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTargetFrame(openXmlElement, value.TargetFrame, diffs, objName))
+        ok = false;
+      if (!CmpTooltip(openXmlElement, value.Tooltip, diffs, objName))
+        ok = false;
+      if (!CmpDocLocation(openXmlElement, value.DocLocation, diffs, objName))
+        ok = false;
+      if (!CmpHistory(openXmlElement, value.History, diffs, objName))
+        ok = false;
+      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlRuby(openXmlElement, value.CustomXmlRuby, diffs, objName))
+        ok = false;
+      if (!CmpSimpleFieldRuby(openXmlElement, value.SimpleFieldRuby, diffs, objName))
+        ok = false;
+      if (!CmpChildHyperlinkRuby(openXmlElement, value.ChildHyperlinkRuby, diffs, objName))
+        ok = false;
+      if (!CmpRun(openXmlElement, value.Run, diffs, objName))
+        ok = false;
+      if (!CmpSdtRunRuby(openXmlElement, value.SdtRunRuby, diffs, objName))
+        ok = false;
+      if (!CmpProofError(openXmlElement, value.ProofError, diffs, objName))
+        ok = false;
+      if (!CmpPermStart(openXmlElement, value.PermStart, diffs, objName))
+        ok = false;
+      if (!CmpPermEnd(openXmlElement, value.PermEnd, diffs, objName))
+        ok = false;
+      if (!CmpBookmarkStart(openXmlElement, value.BookmarkStart, diffs, objName))
+        ok = false;
+      if (!CmpBookmarkEnd(openXmlElement, value.BookmarkEnd, diffs, objName))
+        ok = false;
+      if (!CmpCommentRangeStart(openXmlElement, value.CommentRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCommentRangeEnd(openXmlElement, value.CommentRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpMoveFromRangeStart(openXmlElement, value.MoveFromRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpMoveFromRangeEnd(openXmlElement, value.MoveFromRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpMoveToRangeStart(openXmlElement, value.MoveToRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpMoveToRangeEnd(openXmlElement, value.MoveToRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlInsRangeStart(openXmlElement, value.CustomXmlInsRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlInsRangeEnd(openXmlElement, value.CustomXmlInsRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlDelRangeStart(openXmlElement, value.CustomXmlDelRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlDelRangeEnd(openXmlElement, value.CustomXmlDelRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlMoveFromRangeStart(openXmlElement, value.CustomXmlMoveFromRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlMoveFromRangeEnd(openXmlElement, value.CustomXmlMoveFromRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlMoveToRangeStart(openXmlElement, value.CustomXmlMoveToRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlMoveToRangeEnd(openXmlElement, value.CustomXmlMoveToRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlConflictInsertionRangeStart(openXmlElement, value.CustomXmlConflictInsertionRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlConflictInsertionRangeEnd(openXmlElement, value.CustomXmlConflictInsertionRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlConflictDeletionRangeStart(openXmlElement, value.CustomXmlConflictDeletionRangeStart, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlConflictDeletionRangeEnd(openXmlElement, value.CustomXmlConflictDeletionRangeEnd, diffs, objName))
+        ok = false;
+      if (!CmpInsertedRun(openXmlElement, value.InsertedRun, diffs, objName))
+        ok = false;
+      if (!CmpDeletedRun(openXmlElement, value.DeletedRun, diffs, objName))
+        ok = false;
+      if (!CmpMoveFromRun(openXmlElement, value.MoveFromRun, diffs, objName))
+        ok = false;
+      if (!CmpMoveToRun(openXmlElement, value.MoveToRun, diffs, objName))
+        ok = false;
+      if (!CmpRunConflictInsertion(openXmlElement, value.RunConflictInsertion, diffs, objName))
+        ok = false;
+      if (!CmpRunConflictDeletion(openXmlElement, value.RunConflictDeletion, diffs, objName))
+        ok = false;
+      if (!CmpParagraph(openXmlElement, value.Paragraph, diffs, objName))
+        ok = false;
+      if (!CmpOfficeMath(openXmlElement, value.OfficeMath, diffs, objName))
+        ok = false;
+      if (!CmpAccent(openXmlElement, value.Accent, diffs, objName))
+        ok = false;
+      if (!CmpBar(openXmlElement, value.Bar, diffs, objName))
+        ok = false;
+      if (!CmpBox(openXmlElement, value.Box, diffs, objName))
+        ok = false;
+      if (!CmpBorderBox(openXmlElement, value.BorderBox, diffs, objName))
+        ok = false;
+      if (!CmpDelimiter(openXmlElement, value.Delimiter, diffs, objName))
+        ok = false;
+      if (!CmpEquationArray(openXmlElement, value.EquationArray, diffs, objName))
+        ok = false;
+      if (!CmpFraction(openXmlElement, value.Fraction, diffs, objName))
+        ok = false;
+      if (!CmpMathFunction(openXmlElement, value.MathFunction, diffs, objName))
+        ok = false;
+      if (!CmpGroupChar(openXmlElement, value.GroupChar, diffs, objName))
+        ok = false;
+      if (!CmpLimitLower(openXmlElement, value.LimitLower, diffs, objName))
+        ok = false;
+      if (!CmpLimitUpper(openXmlElement, value.LimitUpper, diffs, objName))
+        ok = false;
+      if (!CmpMatrix(openXmlElement, value.Matrix, diffs, objName))
+        ok = false;
+      if (!CmpNary(openXmlElement, value.Nary, diffs, objName))
+        ok = false;
+      if (!CmpPhantom(openXmlElement, value.Phantom, diffs, objName))
+        ok = false;
+      if (!CmpRadical(openXmlElement, value.Radical, diffs, objName))
+        ok = false;
+      if (!CmpPreSubSuper(openXmlElement, value.PreSubSuper, diffs, objName))
+        ok = false;
+      if (!CmpSubscript(openXmlElement, value.Subscript, diffs, objName))
+        ok = false;
+      if (!CmpSubSuperscript(openXmlElement, value.SubSuperscript, diffs, objName))
+        ok = false;
+      if (!CmpSuperscript(openXmlElement, value.Superscript, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.HyperlinkRuby? value)

@@ -13,6 +13,11 @@ public static class SupplementalFontConverter
     return openXmlElement?.Script?.Value;
   }
   
+  private static bool CmpScript(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Script?.Value == value;
+  }
+  
   private static void SetScript(DXDraw.SupplementalFont openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class SupplementalFontConverter
   private static String? GetTypeface(DXDraw.SupplementalFont openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
+  }
+  
+  private static bool CmpTypeface(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Typeface?.Value == value;
   }
   
   private static void SetTypeface(DXDraw.SupplementalFont openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class SupplementalFontConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.SupplementalFont? openXmlElement, DMDraws.SupplementalFont? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpScript(openXmlElement, value.Script, diffs, objName))
+        ok = false;
+      if (!CmpTypeface(openXmlElement, value.Typeface, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SupplementalFont? value)

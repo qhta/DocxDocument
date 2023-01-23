@@ -13,6 +13,11 @@ public static class AltChunkConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXW.AltChunk openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.AltChunk openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class AltChunkConverter
   /// </summary>
   private static DMW.AltChunkProperties? GetAltChunkProperties(DXW.AltChunk openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.AltChunkProperties>();
-    if (itemElement != null)
-      return DMXW.AltChunkPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.AltChunkPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.AltChunkProperties>());
+  }
+  
+  private static bool CmpAltChunkProperties(DXW.AltChunk openXmlElement, DMW.AltChunkProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.AltChunkPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.AltChunkProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAltChunkProperties(DXW.AltChunk openXmlElement, DMW.AltChunkProperties? value)
@@ -55,6 +62,20 @@ public static class AltChunkConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.AltChunk? openXmlElement, DMW.AltChunk? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpAltChunkProperties(openXmlElement, value.AltChunkProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AltChunk? value)

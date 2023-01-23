@@ -13,6 +13,11 @@ public static class ChartSpaceExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.ChartSpaceExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.ChartSpaceExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.PivotOptions? GetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>();
-    if (itemElement != null)
-      return DMXDrawsCharts.PivotOptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.PivotOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>());
+  }
+  
+  private static bool CmpPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.PivotOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value)
@@ -44,10 +51,12 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.SketchOptions? GetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>();
-    if (itemElement != null)
-      return DMXDrawsCharts.SketchOptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.SketchOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>());
+  }
+  
+  private static bool CmpSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.SketchOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value)
@@ -65,10 +74,12 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.PivotSource3? GetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>();
-    if (itemElement != null)
-      return DMXDrawsCharts.PivotSource3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.PivotSource3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>());
+  }
+  
+  private static bool CmpPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.PivotSource3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value)
@@ -96,6 +107,24 @@ public static class ChartSpaceExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.ChartSpaceExtension? openXmlElement, DMDrawsCharts.ChartSpaceExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpPivotOptions(openXmlElement, value.PivotOptions, diffs, objName))
+        ok = false;
+      if (!CmpSketchOptions(openXmlElement, value.SketchOptions, diffs, objName))
+        ok = false;
+      if (!CmpPivotSource(openXmlElement, value.PivotSource, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtension? value)

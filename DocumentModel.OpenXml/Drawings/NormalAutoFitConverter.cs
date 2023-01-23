@@ -13,6 +13,11 @@ public static class NormalAutoFitConverter
     return openXmlElement.FontScale?.Value;
   }
   
+  private static bool CmpFontScale(DXDraw.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FontScale?.Value == value;
+  }
+  
   private static void SetFontScale(DXDraw.NormalAutoFit openXmlElement, Int32? value)
   {
     openXmlElement.FontScale = value;
@@ -24,6 +29,11 @@ public static class NormalAutoFitConverter
   private static Int32? GetLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement)
   {
     return openXmlElement.LineSpaceReduction?.Value;
+  }
+  
+  private static bool CmpLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LineSpaceReduction?.Value == value;
   }
   
   private static void SetLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class NormalAutoFitConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.NormalAutoFit? openXmlElement, DMDraws.NormalAutoFit? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFontScale(openXmlElement, value.FontScale, diffs, objName))
+        ok = false;
+      if (!CmpLineSpaceReduction(openXmlElement, value.LineSpaceReduction, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NormalAutoFit? value)

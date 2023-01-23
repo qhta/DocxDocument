@@ -13,6 +13,11 @@ public static class SoftEdgeConverter
     return openXmlElement.Radius?.Value;
   }
   
+  private static bool CmpRadius(DXDraw.SoftEdge openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Radius?.Value == value;
+  }
+  
   private static void SetRadius(DXDraw.SoftEdge openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
@@ -27,6 +32,18 @@ public static class SoftEdgeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.SoftEdge? openXmlElement, DMDraws.SoftEdge? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadius(openXmlElement, value.Radius, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SoftEdge? value)

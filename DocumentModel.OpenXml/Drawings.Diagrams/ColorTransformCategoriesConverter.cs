@@ -17,6 +17,11 @@ public static class ColorTransformCategoriesConverter
     return collection;
   }
   
+  private static bool CmpItems(DXDrawDgms.ColorTransformCategories openXmlElement, Collection<DMDrawsDgms.ColorTransformCategory>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXDrawDgms.ColorTransformCategories openXmlElement, Collection<DMDrawsDgms.ColorTransformCategory>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.ColorTransformCategory>();
@@ -40,6 +45,18 @@ public static class ColorTransformCategoriesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.ColorTransformCategories? openXmlElement, DMDrawsDgms.ColorTransformCategories? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformCategories? value)

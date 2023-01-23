@@ -17,6 +17,11 @@ public static class ExtraColorSchemeListConverter
     return collection;
   }
   
+  private static bool CmpExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement, Collection<DMDraws.ExtraColorScheme>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement, Collection<DMDraws.ExtraColorScheme>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.ExtraColorScheme>();
@@ -40,6 +45,18 @@ public static class ExtraColorSchemeListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ExtraColorSchemeList? openXmlElement, DMDraws.ExtraColorSchemeList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtraColorSchemes(openXmlElement, value.ExtraColorSchemes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtraColorSchemeList? value)

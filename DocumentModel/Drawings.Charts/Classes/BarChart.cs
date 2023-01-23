@@ -20,7 +20,7 @@ public class BarChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<BarChartSeries>? BarChartSerieses { get; set; }
+  public Collection<BarChartSeries>? BarChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 
@@ -28,7 +28,7 @@ public class BarChart
 
   public SByte? Overlap { get; set; }
 
-  public Collection<SeriesLines>? SeriesLineses { get; set; }
+  public Collection<SeriesLines>? SeriesLines { get; set; }
 
   public Collection<UInt32>? AxisIds { get; set; }
 

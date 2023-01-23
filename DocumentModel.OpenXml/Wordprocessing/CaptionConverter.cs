@@ -13,6 +13,11 @@ public static class CaptionConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.Caption openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.Caption openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class CaptionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value);
   }
   
+  private static bool CmpPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value)
   {
     openXmlElement.Position = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(value);
@@ -40,6 +50,11 @@ public static class CaptionConverter
   private static Boolean? GetChapterNumber(DXW.Caption openXmlElement)
   {
     return openXmlElement?.ChapterNumber?.Value;
+  }
+  
+  private static bool CmpChapterNumber(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ChapterNumber?.Value == value;
   }
   
   private static void SetChapterNumber(DXW.Caption openXmlElement, Boolean? value)
@@ -58,6 +73,11 @@ public static class CaptionConverter
     return openXmlElement.Heading?.Value;
   }
   
+  private static bool CmpHeading(DXW.Caption openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Heading?.Value == value;
+  }
+  
   private static void SetHeading(DXW.Caption openXmlElement, Int32? value)
   {
     openXmlElement.Heading = value;
@@ -69,6 +89,11 @@ public static class CaptionConverter
   private static Boolean? GetNoLabel(DXW.Caption openXmlElement)
   {
     return openXmlElement?.NoLabel?.Value;
+  }
+  
+  private static bool CmpNoLabel(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NoLabel?.Value == value;
   }
   
   private static void SetNoLabel(DXW.Caption openXmlElement, Boolean? value)
@@ -87,6 +112,11 @@ public static class CaptionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
   }
   
+  private static bool CmpNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value)
   {
     openXmlElement.NumberFormat = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
@@ -98,6 +128,11 @@ public static class CaptionConverter
   private static DMW.ChapterSeparatorKind? GetSeparator(DXW.Caption openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
+  }
+  
+  private static bool CmpSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -120,6 +155,30 @@ public static class CaptionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Caption? openXmlElement, DMW.Caption? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+        ok = false;
+      if (!CmpChapterNumber(openXmlElement, value.ChapterNumber, diffs, objName))
+        ok = false;
+      if (!CmpHeading(openXmlElement, value.Heading, diffs, objName))
+        ok = false;
+      if (!CmpNoLabel(openXmlElement, value.NoLabel, diffs, objName))
+        ok = false;
+      if (!CmpNumberFormat(openXmlElement, value.NumberFormat, diffs, objName))
+        ok = false;
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Caption? value)

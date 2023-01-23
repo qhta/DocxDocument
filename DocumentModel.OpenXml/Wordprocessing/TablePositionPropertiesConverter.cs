@@ -13,6 +13,11 @@ public static class TablePositionPropertiesConverter
     return openXmlElement.LeftFromText?.Value;
   }
   
+  private static bool CmpLeftFromText(DXW.TablePositionProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LeftFromText?.Value == value;
+  }
+  
   private static void SetLeftFromText(DXW.TablePositionProperties openXmlElement, Int16? value)
   {
     openXmlElement.LeftFromText = value;
@@ -24,6 +29,11 @@ public static class TablePositionPropertiesConverter
   private static Int16? GetRightFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement.RightFromText?.Value;
+  }
+  
+  private static bool CmpRightFromText(DXW.TablePositionProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.RightFromText?.Value == value;
   }
   
   private static void SetRightFromText(DXW.TablePositionProperties openXmlElement, Int16? value)
@@ -39,6 +49,11 @@ public static class TablePositionPropertiesConverter
     return openXmlElement.TopFromText?.Value;
   }
   
+  private static bool CmpTopFromText(DXW.TablePositionProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.TopFromText?.Value == value;
+  }
+  
   private static void SetTopFromText(DXW.TablePositionProperties openXmlElement, Int16? value)
   {
     openXmlElement.TopFromText = value;
@@ -50,6 +65,11 @@ public static class TablePositionPropertiesConverter
   private static Int16? GetBottomFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement.BottomFromText?.Value;
+  }
+  
+  private static bool CmpBottomFromText(DXW.TablePositionProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BottomFromText?.Value == value;
   }
   
   private static void SetBottomFromText(DXW.TablePositionProperties openXmlElement, Int16? value)
@@ -65,6 +85,11 @@ public static class TablePositionPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
   }
   
+  private static bool CmpVerticalAnchor(DXW.TablePositionProperties openXmlElement, DMW.VerticalAnchorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVerticalAnchor(DXW.TablePositionProperties openXmlElement, DMW.VerticalAnchorKind? value)
   {
     openXmlElement.VerticalAnchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(value);
@@ -76,6 +101,11 @@ public static class TablePositionPropertiesConverter
   private static DMW.HorizontalAnchorKind? GetHorizontalAnchor(DXW.TablePositionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
+  }
+  
+  private static bool CmpHorizontalAnchor(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAnchorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHorizontalAnchor(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAnchorKind? value)
@@ -91,6 +121,11 @@ public static class TablePositionPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
   }
   
+  private static bool CmpTablePositionXAlignment(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetTablePositionXAlignment(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAlignmentKind? value)
   {
     openXmlElement.TablePositionXAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(value);
@@ -102,6 +137,11 @@ public static class TablePositionPropertiesConverter
   private static Int32? GetTablePositionX(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement.TablePositionX?.Value;
+  }
+  
+  private static bool CmpTablePositionX(DXW.TablePositionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.TablePositionX?.Value == value;
   }
   
   private static void SetTablePositionX(DXW.TablePositionProperties openXmlElement, Int32? value)
@@ -117,6 +157,11 @@ public static class TablePositionPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
   }
   
+  private static bool CmpTablePositionYAlignment(DXW.TablePositionProperties openXmlElement, DMW.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetTablePositionYAlignment(DXW.TablePositionProperties openXmlElement, DMW.VerticalAlignmentKind? value)
   {
     openXmlElement.TablePositionYAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(value);
@@ -128,6 +173,11 @@ public static class TablePositionPropertiesConverter
   private static Int32? GetTablePositionY(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement.TablePositionY?.Value;
+  }
+  
+  private static bool CmpTablePositionY(DXW.TablePositionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.TablePositionY?.Value == value;
   }
   
   private static void SetTablePositionY(DXW.TablePositionProperties openXmlElement, Int32? value)
@@ -153,6 +203,36 @@ public static class TablePositionPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TablePositionProperties? openXmlElement, DMW.TablePositionProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLeftFromText(openXmlElement, value.LeftFromText, diffs, objName))
+        ok = false;
+      if (!CmpRightFromText(openXmlElement, value.RightFromText, diffs, objName))
+        ok = false;
+      if (!CmpTopFromText(openXmlElement, value.TopFromText, diffs, objName))
+        ok = false;
+      if (!CmpBottomFromText(openXmlElement, value.BottomFromText, diffs, objName))
+        ok = false;
+      if (!CmpVerticalAnchor(openXmlElement, value.VerticalAnchor, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalAnchor(openXmlElement, value.HorizontalAnchor, diffs, objName))
+        ok = false;
+      if (!CmpTablePositionXAlignment(openXmlElement, value.TablePositionXAlignment, diffs, objName))
+        ok = false;
+      if (!CmpTablePositionX(openXmlElement, value.TablePositionX, diffs, objName))
+        ok = false;
+      if (!CmpTablePositionYAlignment(openXmlElement, value.TablePositionYAlignment, diffs, objName))
+        ok = false;
+      if (!CmpTablePositionY(openXmlElement, value.TablePositionY, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TablePositionProperties? value)

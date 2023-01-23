@@ -10,10 +10,12 @@ public static class GraphicConverter
   /// </summary>
   private static DMDraws.GraphicData? GetGraphicData(DXDraw.Graphic openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GraphicData>();
-    if (itemElement != null)
-      return DMXDraws.GraphicDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.GraphicDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicData>());
+  }
+  
+  private static bool CmpGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.GraphicDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value)
@@ -38,6 +40,18 @@ public static class GraphicConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Graphic? openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGraphicData(openXmlElement, value.GraphicData, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Graphic? value)

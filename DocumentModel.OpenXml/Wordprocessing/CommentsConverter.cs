@@ -17,6 +17,11 @@ public static class CommentsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Comment>();
@@ -40,6 +45,18 @@ public static class CommentsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Comments? openXmlElement, DMW.Comments? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Comments? value)

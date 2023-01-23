@@ -20,14 +20,22 @@ public static class ExtendedChartPartConverter
     return collection;
   }
   
+  private static bool CmpChartColorStyleParts(DXPack.ExtendedChartPart openXmlElement, Collection<DMPack.ChartColorStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMDrawsChartDraws.ChartSpace? GetChartSpace(DXPack.ExtendedChartPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2016DrawChartDraw.ChartSpace rootElement)
-      return DMXDrawsChartDraws.ChartSpaceConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsChartDraws.ChartSpaceConverter.CreateModelElement(openXmlElement?.RootElement as DXO2016DrawChartDraw.ChartSpace);
+  }
+  
+  private static bool CmpChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDrawsChartDraws.ChartSpace? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDrawsChartDraws.ChartSpace? value)
@@ -55,9 +63,19 @@ public static class ExtendedChartPartConverter
     return collection;
   }
   
+  private static bool CmpChartStyleParts(DXPack.ExtendedChartPart openXmlElement, Collection<DMPack.ChartStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetContentType(DXPack.ExtendedChartPart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.ExtendedChartPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   /// <summary>
@@ -75,9 +93,19 @@ public static class ExtendedChartPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.ExtendedChartPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.ExtendedChartPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.ExtendedChartPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.ExtendedChartPart? CreateModelElement(DXPack.ExtendedChartPart? openXmlElement)
@@ -94,6 +122,28 @@ public static class ExtendedChartPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ExtendedChartPart? openXmlElement, DMPack.ExtendedChartPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartColorStyleParts(openXmlElement, value.ChartColorStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpChartSpace(openXmlElement, value.ChartSpace, diffs, objName))
+        ok = false;
+      if (!CmpChartStyleParts(openXmlElement, value.ChartStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedChartPart? value)

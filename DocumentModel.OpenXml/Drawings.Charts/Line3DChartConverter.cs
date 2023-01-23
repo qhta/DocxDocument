@@ -10,10 +10,12 @@ public static class Line3DChartConverter
   /// </summary>
   private static DMDrawsCharts.GroupingKind? GetGrouping(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Grouping>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value);
+  }
+  
+  private static bool CmpGrouping(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.GroupingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGrouping(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.GroupingKind? value)
@@ -34,8 +36,12 @@ public static class Line3DChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.Line3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.Line3DChart openXmlElement, Boolean? value)
@@ -53,7 +59,7 @@ public static class Line3DChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.LineChartSeries> GetLineChartSerieses(DXDrawCharts.Line3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.LineChartSeries> GetLineChartSeries(DXDrawCharts.Line3DChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.LineChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartSeries>())
@@ -65,7 +71,12 @@ public static class Line3DChartConverter
     return collection;
   }
   
-  private static void SetLineChartSerieses(DXDrawCharts.Line3DChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value)
+  private static bool CmpLineChartSeries(DXDrawCharts.Line3DChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetLineChartSeries(DXDrawCharts.Line3DChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.LineChartSeries>();
     if (value != null)
@@ -81,10 +92,12 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -102,10 +115,12 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DropLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>());
+  }
+  
+  private static bool CmpDropLines(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDropLines(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DropLines? value)
@@ -123,10 +138,12 @@ public static class Line3DChartConverter
   
   private static UInt16? GetGapDepth(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value;
+  }
+  
+  private static bool CmpGapDepth(DXDrawCharts.Line3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value == value;
   }
   
   private static void SetGapDepth(DXDrawCharts.Line3DChart openXmlElement, UInt16? value)
@@ -153,6 +170,11 @@ public static class Line3DChartConverter
     return collection;
   }
   
+  private static bool CmpAxisIds(DXDrawCharts.Line3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAxisIds(DXDrawCharts.Line3DChart openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
@@ -169,10 +191,12 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.Line3DChartExtensionList? GetLine3DChartExtensionList(DXDrawCharts.Line3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Line3DChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.Line3DChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.Line3DChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Line3DChartExtensionList>());
+  }
+  
+  private static bool CmpLine3DChartExtensionList(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.Line3DChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.Line3DChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Line3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLine3DChartExtensionList(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.Line3DChartExtensionList? value)
@@ -195,7 +219,7 @@ public static class Line3DChartConverter
       var value = new DMDrawsCharts.Line3DChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.LineChartSerieses = GetLineChartSerieses(openXmlElement);
+      value.LineChartSeries = GetLineChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.DropLines = GetDropLines(openXmlElement);
       value.GapDepth = GetGapDepth(openXmlElement);
@@ -206,6 +230,32 @@ public static class Line3DChartConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXDrawCharts.Line3DChart? openXmlElement, DMDrawsCharts.Line3DChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName))
+        ok = false;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpLineChartSeries(openXmlElement, value.LineChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpDropLines(openXmlElement, value.DropLines, diffs, objName))
+        ok = false;
+      if (!CmpGapDepth(openXmlElement, value.GapDepth, diffs, objName))
+        ok = false;
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+        ok = false;
+      if (!CmpLine3DChartExtensionList(openXmlElement, value.Line3DChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Line3DChart? value)
     where OpenXmlElementType: DXDrawCharts.Line3DChart, new()
   {
@@ -214,7 +264,7 @@ public static class Line3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetLineChartSerieses(openXmlElement, value?.LineChartSerieses);
+      SetLineChartSeries(openXmlElement, value?.LineChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetDropLines(openXmlElement, value?.DropLines);
       SetGapDepth(openXmlElement, value?.GapDepth);

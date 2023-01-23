@@ -13,6 +13,11 @@ public static class BuildChartConverter
     return openXmlElement?.Build?.Value;
   }
   
+  private static bool CmpBuild(DXDraw.BuildChart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Build?.Value == value;
+  }
+  
   private static void SetBuild(DXDraw.BuildChart openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BuildChartConverter
   private static Boolean? GetAnimateBackground(DXDraw.BuildChart openXmlElement)
   {
     return openXmlElement?.AnimateBackground?.Value;
+  }
+  
+  private static bool CmpAnimateBackground(DXDraw.BuildChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AnimateBackground?.Value == value;
   }
   
   private static void SetAnimateBackground(DXDraw.BuildChart openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class BuildChartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BuildChart? openXmlElement, DMDraws.BuildChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBuild(openXmlElement, value.Build, diffs, objName))
+        ok = false;
+      if (!CmpAnimateBackground(openXmlElement, value.AnimateBackground, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BuildChart? value)

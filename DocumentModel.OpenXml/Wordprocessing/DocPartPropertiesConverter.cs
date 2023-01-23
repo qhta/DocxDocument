@@ -10,10 +10,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static DMW.DocPartName? GetDocPartName(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartName>();
-    if (itemElement != null)
-      return DMXW.DocPartNameConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocPartNameConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartName>());
+  }
+  
+  private static bool CmpDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocPartNameConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartName>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value)
@@ -34,10 +36,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static String? GetStyleId(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.StyleId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value;
+  }
+  
+  private static bool CmpStyleId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value == value;
   }
   
   private static void SetStyleId(DXW.DocPartProperties openXmlElement, String? value)
@@ -57,10 +61,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static DMW.Category? GetCategory(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Category>();
-    if (itemElement != null)
-      return DMXW.CategoryConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.CategoryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Category>());
+  }
+  
+  private static bool CmpCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.CategoryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Category>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value)
@@ -81,10 +87,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static DMW.DocPartTypes? GetDocPartTypes(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartTypes>();
-    if (itemElement != null)
-      return DMXW.DocPartTypesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocPartTypesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartTypes>());
+  }
+  
+  private static bool CmpDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocPartTypesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartTypes>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value)
@@ -105,10 +113,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static DMW.Behaviors? GetBehaviors(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Behaviors>();
-    if (itemElement != null)
-      return DMXW.BehaviorsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.BehaviorsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Behaviors>());
+  }
+  
+  private static bool CmpBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.BehaviorsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Behaviors>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value)
@@ -129,10 +139,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static String? GetDescription(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Description>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value;
+  }
+  
+  private static bool CmpDescription(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value == value;
   }
   
   private static void SetDescription(DXW.DocPartProperties openXmlElement, String? value)
@@ -152,10 +164,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static String? GetDocPartId(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.DocPartId>()?.Val?.Value;
+  }
+  
+  private static bool CmpDocPartId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.DocPartId>()?.Val?.Value == value;
   }
   
   private static void SetDocPartId(DXW.DocPartProperties openXmlElement, String? value)
@@ -185,6 +199,30 @@ public static class DocPartPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocPartProperties? openXmlElement, DMW.DocPartProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocPartName(openXmlElement, value.DocPartName, diffs, objName))
+        ok = false;
+      if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName))
+        ok = false;
+      if (!CmpCategory(openXmlElement, value.Category, diffs, objName))
+        ok = false;
+      if (!CmpDocPartTypes(openXmlElement, value.DocPartTypes, diffs, objName))
+        ok = false;
+      if (!CmpBehaviors(openXmlElement, value.Behaviors, diffs, objName))
+        ok = false;
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+        ok = false;
+      if (!CmpDocPartId(openXmlElement, value.DocPartId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartProperties? value)

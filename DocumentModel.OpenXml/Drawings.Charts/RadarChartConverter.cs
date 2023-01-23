@@ -10,10 +10,12 @@ public static class RadarChartConverter
   /// </summary>
   private static DMDrawsCharts.RadarStyleKind? GetRadarStyle(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>()?.Val?.Value);
+  }
+  
+  private static bool CmpRadarStyle(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarStyleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadarStyle(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarStyleKind? value)
@@ -34,8 +36,12 @@ public static class RadarChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.RadarChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.RadarChart openXmlElement, Boolean? value)
@@ -53,7 +59,7 @@ public static class RadarChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.RadarChartSeries> GetRadarChartSerieses(DXDrawCharts.RadarChart openXmlElement)
+  private static Collection<DMDrawsCharts.RadarChartSeries> GetRadarChartSeries(DXDrawCharts.RadarChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.RadarChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.RadarChartSeries>())
@@ -65,7 +71,12 @@ public static class RadarChartConverter
     return collection;
   }
   
-  private static void SetRadarChartSerieses(DXDrawCharts.RadarChart openXmlElement, Collection<DMDrawsCharts.RadarChartSeries>? value)
+  private static bool CmpRadarChartSeries(DXDrawCharts.RadarChart openXmlElement, Collection<DMDrawsCharts.RadarChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetRadarChartSeries(DXDrawCharts.RadarChart openXmlElement, Collection<DMDrawsCharts.RadarChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.RadarChartSeries>();
     if (value != null)
@@ -81,10 +92,12 @@ public static class RadarChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -112,6 +125,11 @@ public static class RadarChartConverter
     return collection;
   }
   
+  private static bool CmpAxisIds(DXDrawCharts.RadarChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAxisIds(DXDrawCharts.RadarChart openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
@@ -128,10 +146,12 @@ public static class RadarChartConverter
   
   private static DMDrawsCharts.RadarChartExtensionList? GetRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RadarChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.RadarChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.RadarChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RadarChartExtensionList>());
+  }
+  
+  private static bool CmpRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.RadarChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RadarChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarChartExtensionList? value)
@@ -154,13 +174,35 @@ public static class RadarChartConverter
       var value = new DMDrawsCharts.RadarChart();
       value.RadarStyle = GetRadarStyle(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.RadarChartSerieses = GetRadarChartSerieses(openXmlElement);
+      value.RadarChartSeries = GetRadarChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.AxisIds = GetAxisIds(openXmlElement);
       value.RadarChartExtensionList = GetRadarChartExtensionList(openXmlElement);
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.RadarChart? openXmlElement, DMDrawsCharts.RadarChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadarStyle(openXmlElement, value.RadarStyle, diffs, objName))
+        ok = false;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpRadarChartSeries(openXmlElement, value.RadarChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+        ok = false;
+      if (!CmpRadarChartExtensionList(openXmlElement, value.RadarChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarChart? value)
@@ -171,7 +213,7 @@ public static class RadarChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetRadarStyle(openXmlElement, value?.RadarStyle);
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetRadarChartSerieses(openXmlElement, value?.RadarChartSerieses);
+      SetRadarChartSeries(openXmlElement, value?.RadarChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetAxisIds(openXmlElement, value?.AxisIds);
       SetRadarChartExtensionList(openXmlElement, value?.RadarChartExtensionList);

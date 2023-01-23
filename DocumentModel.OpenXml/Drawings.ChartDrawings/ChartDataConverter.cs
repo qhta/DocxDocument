@@ -10,10 +10,12 @@ public static class ChartDataConverter
   /// </summary>
   private static DMDrawsChartDraws.ExternalData? GetExternalData(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExternalData>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ExternalDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ExternalDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExternalData>());
+  }
+  
+  private static bool CmpExternalData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExternalData? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ExternalDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExternalData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExternalData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExternalData? value)
@@ -31,10 +33,12 @@ public static class ChartDataConverter
   
   private static DMDrawsChartDraws.Data? GetData(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Data>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.DataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.DataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Data>());
+  }
+  
+  private static bool CmpData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.Data? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.DataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Data>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.Data? value)
@@ -52,10 +56,12 @@ public static class ChartDataConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -82,6 +88,22 @@ public static class ChartDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.ChartData? openXmlElement, DMDrawsChartDraws.ChartData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExternalData(openXmlElement, value.ExternalData, diffs, objName))
+        ok = false;
+      if (!CmpData(openXmlElement, value.Data, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartData? value)

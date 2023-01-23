@@ -10,6 +10,11 @@ public static class DocumentSettingsPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
@@ -25,9 +30,19 @@ public static class DocumentSettingsPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.DocumentSettingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.DocumentSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -35,9 +50,12 @@ public static class DocumentSettingsPartConverter
   /// </summary>
   private static DMW.Settings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Settings rootElement)
-      return DMXW.SettingsConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.SettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
+  }
+  
+  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value)
@@ -62,6 +80,24 @@ public static class DocumentSettingsPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DocumentSettingsPart? openXmlElement, DMPack.DocumentSettingsPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpSettings(openXmlElement, value.Settings, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentSettingsPart? value)

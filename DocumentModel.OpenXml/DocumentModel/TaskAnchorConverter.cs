@@ -10,10 +10,12 @@ public static class TaskAnchorConverter
   /// </summary>
   private static DM.CommentAnchor? GetCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>();
-    if (itemElement != null)
-      return DMX.CommentAnchorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.CommentAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>());
+  }
+  
+  private static bool CmpCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement, DM.CommentAnchor? value, DiffList? diffs, string? objName)
+  {
+    return DMX.CommentAnchorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement, DM.CommentAnchor? value)
@@ -34,10 +36,12 @@ public static class TaskAnchorConverter
   /// </summary>
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
-    if (itemElement != null)
-      return DMX.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement, DM.ExtensionList? value)
@@ -63,6 +67,20 @@ public static class TaskAnchorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.TaskAnchor? openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCommentAnchor(openXmlElement, value.CommentAnchor, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskAnchor? value)

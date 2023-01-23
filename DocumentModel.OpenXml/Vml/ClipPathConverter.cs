@@ -13,6 +13,11 @@ public static class ClipPathConverter
     return openXmlElement?.Value?.Value;
   }
   
+  private static bool CmpValue(DXVmlO.ClipPath openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Value?.Value == value;
+  }
+  
   private static void SetValue(DXVmlO.ClipPath openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class ClipPathConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.ClipPath? openXmlElement, DMVml.ClipPath? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ClipPath? value)
