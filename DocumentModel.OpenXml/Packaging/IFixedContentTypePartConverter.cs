@@ -15,6 +15,16 @@ public static class IFixedContentTypePartConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXPack.IFixedContentTypePart? openXmlElement, DMPack.IFixedContentTypePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.IFixedContentTypePart? value)
     where OpenXmlElementType: DXPack.IFixedContentTypePart, new()
   {

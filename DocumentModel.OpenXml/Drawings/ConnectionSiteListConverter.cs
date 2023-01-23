@@ -17,6 +17,11 @@ public static class ConnectionSiteListConverter
     return collection;
   }
   
+  private static bool CmpConnectionSites(DXDraw.ConnectionSiteList openXmlElement, Collection<DMDraws.ConnectionSite>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetConnectionSites(DXDraw.ConnectionSiteList openXmlElement, Collection<DMDraws.ConnectionSite>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.ConnectionSite>();
@@ -40,6 +45,18 @@ public static class ConnectionSiteListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ConnectionSiteList? openXmlElement, DMDraws.ConnectionSiteList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpConnectionSites(openXmlElement, value.ConnectionSites, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSiteList? value)

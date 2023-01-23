@@ -10,10 +10,12 @@ public static class TextSpacingTypeConverter
   /// </summary>
   private static Int32? GetSpacingPercent(DXDraw.TextSpacingType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpacingPercent(DXDraw.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val?.Value == value;
   }
   
   private static void SetSpacingPercent(DXDraw.TextSpacingType openXmlElement, Int32? value)
@@ -33,10 +35,12 @@ public static class TextSpacingTypeConverter
   /// </summary>
   private static Int32? GetSpacingPoints(DXDraw.TextSpacingType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpacingPoints(DXDraw.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val?.Value == value;
   }
   
   private static void SetSpacingPoints(DXDraw.TextSpacingType openXmlElement, Int32? value)
@@ -61,6 +65,20 @@ public static class TextSpacingTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.TextSpacingType? openXmlElement, DMDraws.TextSpacingType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSpacingPercent(openXmlElement, value.SpacingPercent, diffs, objName))
+        ok = false;
+      if (!CmpSpacingPoints(openXmlElement, value.SpacingPoints, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextSpacingType? value)

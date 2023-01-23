@@ -13,6 +13,11 @@ public static class MenuSeparatorConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class MenuSeparatorConverter
   private static String? GetIdQ(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
+  }
+  
+  private static bool CmpIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdQ?.Value == value;
   }
   
   private static void SetIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class MenuSeparatorConverter
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
+  private static bool CmpInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
+  }
+  
   private static void SetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class MenuSeparatorConverter
   private static String? GetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
+  }
+  
+  private static bool CmpInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class MenuSeparatorConverter
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
+  private static bool CmpInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQ?.Value == value;
+  }
+  
   private static void SetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class MenuSeparatorConverter
   private static String? GetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQ?.Value == value;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class MenuSeparatorConverter
     return openXmlElement?.Title?.Value;
   }
   
+  private static bool CmpTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Title?.Value == value;
+  }
+  
   private static void SetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class MenuSeparatorConverter
   private static String? GetGetTitle(DXOCustUI.MenuSeparator openXmlElement)
   {
     return openXmlElement?.GetTitle?.Value;
+  }
+  
+  private static bool CmpGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetTitle?.Value == value;
   }
   
   private static void SetGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -149,6 +189,32 @@ public static class MenuSeparatorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOCustUI.MenuSeparator? openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpIdQ(openXmlElement, value.IdQ, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQ(openXmlElement, value.InsertAfterQ, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQ(openXmlElement, value.InsertBeforeQ, diffs, objName))
+        ok = false;
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+        ok = false;
+      if (!CmpGetTitle(openXmlElement, value.GetTitle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.MenuSeparator? value)

@@ -13,6 +13,11 @@ public static class ValueAxisScalingConverter
     return openXmlElement?.Max?.Value;
   }
   
+  private static bool CmpMax(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Max?.Value == value;
+  }
+  
   private static void SetMax(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ValueAxisScalingConverter
   private static String? GetMin(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.Min?.Value;
+  }
+  
+  private static bool CmpMin(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Min?.Value == value;
   }
   
   private static void SetMin(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class ValueAxisScalingConverter
     return openXmlElement?.MajorUnit?.Value;
   }
   
+  private static bool CmpMajorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MajorUnit?.Value == value;
+  }
+  
   private static void SetMajorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class ValueAxisScalingConverter
   private static String? GetMinorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.MinorUnit?.Value;
+  }
+  
+  private static bool CmpMinorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MinorUnit?.Value == value;
   }
   
   private static void SetMinorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
@@ -81,6 +101,24 @@ public static class ValueAxisScalingConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.ValueAxisScaling? openXmlElement, DMDrawsChartDraws.ValueAxisScaling? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMax(openXmlElement, value.Max, diffs, objName))
+        ok = false;
+      if (!CmpMin(openXmlElement, value.Min, diffs, objName))
+        ok = false;
+      if (!CmpMajorUnit(openXmlElement, value.MajorUnit, diffs, objName))
+        ok = false;
+      if (!CmpMinorUnit(openXmlElement, value.MinorUnit, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueAxisScaling? value)

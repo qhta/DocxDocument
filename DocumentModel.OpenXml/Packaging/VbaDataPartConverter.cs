@@ -10,9 +10,19 @@ public static class VbaDataPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.VbaDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.VbaDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -20,9 +30,12 @@ public static class VbaDataPartConverter
   /// </summary>
   private static DMW.VbaSuppData? GetVbaSuppData(DXPack.VbaDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXOW.VbaSuppData rootElement)
-      return DMXW.VbaSuppDataConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.VbaSuppDataConverter.CreateModelElement(openXmlElement?.RootElement as DXOW.VbaSuppData);
+  }
+  
+  private static bool CmpVbaSuppData(DXPack.VbaDataPart openXmlElement, DMW.VbaSuppData? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetVbaSuppData(DXPack.VbaDataPart openXmlElement, DMW.VbaSuppData? value)
@@ -46,6 +59,22 @@ public static class VbaDataPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.VbaDataPart? openXmlElement, DMPack.VbaDataPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpVbaSuppData(openXmlElement, value.VbaSuppData, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.VbaDataPart? value)

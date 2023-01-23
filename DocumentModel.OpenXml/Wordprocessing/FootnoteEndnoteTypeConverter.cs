@@ -13,6 +13,11 @@ public static class FootnoteEndnoteTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(value);
@@ -24,6 +29,11 @@ public static class FootnoteEndnoteTypeConverter
   private static Int64? GetId(DXW.FootnoteEndnoteType openXmlElement)
   {
     return openXmlElement.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.FootnoteEndnoteType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Id?.Value == value;
   }
   
   private static void SetId(DXW.FootnoteEndnoteType openXmlElement, Int64? value)
@@ -41,6 +51,20 @@ public static class FootnoteEndnoteTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.FootnoteEndnoteType? openXmlElement, DMW.FootnoteEndnoteType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteType? value)

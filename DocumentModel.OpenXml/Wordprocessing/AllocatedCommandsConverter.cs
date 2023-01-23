@@ -17,6 +17,11 @@ public static class AllocatedCommandsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXOW.AllocatedCommands openXmlElement, Collection<DMW.AllocatedCommand>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXOW.AllocatedCommands openXmlElement, Collection<DMW.AllocatedCommand>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.AllocatedCommand>();
@@ -40,6 +45,18 @@ public static class AllocatedCommandsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.AllocatedCommands? openXmlElement, DMW.AllocatedCommands? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommands? value)

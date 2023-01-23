@@ -13,6 +13,11 @@ public static class ColorTransformStyleLabelConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXDrawDgms.ColorTransformStyleLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXDrawDgms.ColorTransformStyleLabel openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.FillColorList? GetFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.FillColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.FillColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.FillColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.FillColorList>());
+  }
+  
+  private static bool CmpFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.FillColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.FillColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.FillColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.FillColorList? value)
@@ -50,10 +57,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.LineColorList? GetLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.LineColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.LineColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.LineColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LineColorList>());
+  }
+  
+  private static bool CmpLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.LineColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.LineColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LineColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.LineColorList? value)
@@ -74,10 +83,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.EffectColorList? GetEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.EffectColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.EffectColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.EffectColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.EffectColorList>());
+  }
+  
+  private static bool CmpEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.EffectColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.EffectColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.EffectColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.EffectColorList? value)
@@ -98,10 +109,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.TextLineColorList? GetTextLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.TextLineColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.TextLineColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.TextLineColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextLineColorList>());
+  }
+  
+  private static bool CmpTextLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextLineColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.TextLineColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextLineColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextLineColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextLineColorList? value)
@@ -122,10 +135,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.TextFillColorList? GetTextFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.TextFillColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.TextFillColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.TextFillColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextFillColorList>());
+  }
+  
+  private static bool CmpTextFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextFillColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.TextFillColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextFillColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextFillColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextFillColorList? value)
@@ -146,10 +161,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.TextEffectColorList? GetTextEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.TextEffectColorList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.TextEffectColorListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.TextEffectColorListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextEffectColorList>());
+  }
+  
+  private static bool CmpTextEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextEffectColorList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.TextEffectColorListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextEffectColorList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextEffectColorList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.TextEffectColorList? value)
@@ -170,10 +187,12 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -205,6 +224,32 @@ public static class ColorTransformStyleLabelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.ColorTransformStyleLabel? openXmlElement, DMDrawsDgms.ColorTransformStyleLabel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpFillColorList(openXmlElement, value.FillColorList, diffs, objName))
+        ok = false;
+      if (!CmpLineColorList(openXmlElement, value.LineColorList, diffs, objName))
+        ok = false;
+      if (!CmpEffectColorList(openXmlElement, value.EffectColorList, diffs, objName))
+        ok = false;
+      if (!CmpTextLineColorList(openXmlElement, value.TextLineColorList, diffs, objName))
+        ok = false;
+      if (!CmpTextFillColorList(openXmlElement, value.TextFillColorList, diffs, objName))
+        ok = false;
+      if (!CmpTextEffectColorList(openXmlElement, value.TextEffectColorList, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformStyleLabel? value)

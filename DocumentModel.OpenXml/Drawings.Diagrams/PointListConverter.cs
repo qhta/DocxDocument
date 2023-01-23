@@ -17,6 +17,11 @@ public static class PointListConverter
     return collection;
   }
   
+  private static bool CmpPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Point>();
@@ -40,6 +45,18 @@ public static class PointListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.PointList? openXmlElement, DMDrawsDgms.PointList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPoints(openXmlElement, value.Points, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PointList? value)

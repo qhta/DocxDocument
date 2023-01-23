@@ -13,6 +13,11 @@ public static class CommandConverter
     return openXmlElement?.OnAction?.Value;
   }
   
+  private static bool CmpOnAction(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnAction?.Value == value;
+  }
+  
   private static void SetOnAction(DXO2010CustUI.Command openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class CommandConverter
   private static Boolean? GetEnabled(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
+  }
+  
+  private static bool CmpEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
   }
   
   private static void SetEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class CommandConverter
     return openXmlElement?.GetEnabled?.Value;
   }
   
+  private static bool CmpGetEnabled(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
+  }
+  
   private static void SetGetEnabled(DXO2010CustUI.Command openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class CommandConverter
   private static String? GetIdMso(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
+  }
+  
+  private static bool CmpIdMso(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
   }
   
   private static void SetIdMso(DXO2010CustUI.Command openXmlElement, String? value)
@@ -81,6 +101,24 @@ public static class CommandConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.Command? openXmlElement, DM.Command? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Command? value)

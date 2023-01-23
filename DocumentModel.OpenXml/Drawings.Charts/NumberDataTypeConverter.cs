@@ -10,10 +10,12 @@ public static class NumberDataTypeConverter
   /// </summary>
   private static String? GetFormatCode(DXDrawCharts.NumberDataType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text;
+  }
+  
+  private static bool CmpFormatCode(DXDrawCharts.NumberDataType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text == value;
   }
   
   private static void SetFormatCode(DXDrawCharts.NumberDataType openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class NumberDataTypeConverter
   /// </summary>
   private static UInt32? GetPointCount(DXDrawCharts.NumberDataType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+  }
+  
+  private static bool CmpPointCount(DXDrawCharts.NumberDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value == value;
   }
   
   private static void SetPointCount(DXDrawCharts.NumberDataType openXmlElement, UInt32? value)
@@ -61,6 +65,20 @@ public static class NumberDataTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.NumberDataType? openXmlElement, DMDrawsCharts.NumberDataType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+        ok = false;
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberDataType? value)

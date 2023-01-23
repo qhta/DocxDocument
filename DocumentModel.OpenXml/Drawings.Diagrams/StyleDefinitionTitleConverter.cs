@@ -13,6 +13,11 @@ public static class StyleDefinitionTitleConverter
     return openXmlElement?.Language?.Value;
   }
   
+  private static bool CmpLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Language?.Value == value;
+  }
+  
   private static void SetLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class StyleDefinitionTitleConverter
   private static String? GetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class StyleDefinitionTitleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.StyleDefinitionTitle? openXmlElement, DMDrawsDgms.StyleDefinitionTitle? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDefinitionTitle? value)

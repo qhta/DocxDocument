@@ -15,7 +15,7 @@ public class AreaChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<AreaChartSeries>? AreaChartSerieses { get; set; }
+  public Collection<AreaChartSeries>? AreaChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

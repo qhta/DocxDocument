@@ -13,6 +13,11 @@ public static class PresetTextWrapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value);
   }
   
+  private static bool CmpPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value)
   {
     openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(value);
@@ -23,10 +28,12 @@ public static class PresetTextWrapConverter
   /// </summary>
   private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetTextWrap openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
-    if (itemElement != null)
-      return DMXDraws.AdjustValueListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AdjustValueListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>());
+  }
+  
+  private static bool CmpAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value)
@@ -52,6 +59,20 @@ public static class PresetTextWrapConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.PresetTextWrap? openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName))
+        ok = false;
+      if (!CmpAdjustValueList(openXmlElement, value.AdjustValueList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PresetTextWrap? value)

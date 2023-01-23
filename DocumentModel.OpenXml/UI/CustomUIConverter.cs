@@ -13,6 +13,11 @@ public static class CustomUIConverter
     return openXmlElement?.OnLoad?.Value;
   }
   
+  private static bool CmpOnLoad(DXOCustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnLoad?.Value == value;
+  }
+  
   private static void SetOnLoad(DXOCustUI.CustomUI openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class CustomUIConverter
     return openXmlElement?.LoadImage?.Value;
   }
   
+  private static bool CmpLoadImage(DXOCustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LoadImage?.Value == value;
+  }
+  
   private static void SetLoadImage(DXOCustUI.CustomUI openXmlElement, String? value)
   {
     if (value != null)
@@ -42,10 +52,12 @@ public static class CustomUIConverter
   /// </summary>
   private static DMUI.RepurposedCommands? GetRepurposedCommands(DXOCustUI.CustomUI openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>();
-    if (itemElement != null)
-      return DMXUI.RepurposedCommandsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXUI.RepurposedCommandsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>());
+  }
+  
+  private static bool CmpRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value, DiffList? diffs, string? objName)
+  {
+    return DMXUI.RepurposedCommandsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value)
@@ -66,10 +78,12 @@ public static class CustomUIConverter
   /// </summary>
   private static DMUI.Ribbon? GetRibbon(DXOCustUI.CustomUI openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>();
-    if (itemElement != null)
-      return DMXUI.RibbonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXUI.RibbonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>());
+  }
+  
+  private static bool CmpRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value, DiffList? diffs, string? objName)
+  {
+    return DMXUI.RibbonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value)
@@ -97,6 +111,24 @@ public static class CustomUIConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOCustUI.CustomUI? openXmlElement, DMUI.CustomUI? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOnLoad(openXmlElement, value.OnLoad, diffs, objName))
+        ok = false;
+      if (!CmpLoadImage(openXmlElement, value.LoadImage, diffs, objName))
+        ok = false;
+      if (!CmpRepurposedCommands(openXmlElement, value.RepurposedCommands, diffs, objName))
+        ok = false;
+      if (!CmpRibbon(openXmlElement, value.Ribbon, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.CustomUI? value)

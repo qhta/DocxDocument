@@ -7,10 +7,12 @@ public static class ShapeDefaultsConverter
 {
   private static DMVml.ShapeDefaults? GetChildShapeDefaults(DXW.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>();
-    if (itemElement != null)
-      return DMXVml.ShapeDefaultsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ShapeDefaultsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>());
+  }
+  
+  private static bool CmpChildShapeDefaults(DXW.ShapeDefaults openXmlElement, DMVml.ShapeDefaults? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ShapeDefaultsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChildShapeDefaults(DXW.ShapeDefaults openXmlElement, DMVml.ShapeDefaults? value)
@@ -28,10 +30,12 @@ public static class ShapeDefaultsConverter
   
   private static DMVml.ShapeLayout? GetShapeLayout(DXW.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>();
-    if (itemElement != null)
-      return DMXVml.ShapeLayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ShapeLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>());
+  }
+  
+  private static bool CmpShapeLayout(DXW.ShapeDefaults openXmlElement, DMVml.ShapeLayout? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ShapeLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeLayout(DXW.ShapeDefaults openXmlElement, DMVml.ShapeLayout? value)
@@ -57,6 +61,20 @@ public static class ShapeDefaultsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ShapeDefaults? openXmlElement, DMW.ShapeDefaults? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChildShapeDefaults(openXmlElement, value.ChildShapeDefaults, diffs, objName))
+        ok = false;
+      if (!CmpShapeLayout(openXmlElement, value.ShapeLayout, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ShapeDefaults? value)

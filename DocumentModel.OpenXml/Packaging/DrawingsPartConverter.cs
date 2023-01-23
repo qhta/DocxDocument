@@ -20,9 +20,19 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetContentType(DXPack.DrawingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   /// <summary>
@@ -40,6 +50,11 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpCustomXmlParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.CustomXmlPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramColorsParts of the DrawingsPart
   /// </summary>
@@ -53,6 +68,11 @@ public static class DrawingsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramColorsParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -70,6 +90,11 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramDataParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the DrawingsPart
   /// </summary>
@@ -83,6 +108,11 @@ public static class DrawingsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -100,6 +130,11 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramPersistLayoutParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramStyleParts of the DrawingsPart
   /// </summary>
@@ -113,6 +148,11 @@ public static class DrawingsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramStyleParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -130,6 +170,11 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpExtendedChartParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the DrawingsPart
   /// </summary>
@@ -145,9 +190,19 @@ public static class DrawingsPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.DrawingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DrawingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -163,6 +218,11 @@ public static class DrawingsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpWebExtensionParts(DXPack.DrawingsPart openXmlElement, Collection<DMPack.WebExtensionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   public static DMPack.DrawingsPart? CreateModelElement(DXPack.DrawingsPart? openXmlElement)
@@ -185,6 +245,40 @@ public static class DrawingsPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DrawingsPart? openXmlElement, DMPack.DrawingsPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlParts(openXmlElement, value.CustomXmlParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpWebExtensionParts(openXmlElement, value.WebExtensionParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DrawingsPart? value)

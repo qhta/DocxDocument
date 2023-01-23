@@ -17,6 +17,11 @@ public static class CommandsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXO2010CustUI.Commands openXmlElement, Collection<DM.Command>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXO2010CustUI.Commands openXmlElement, Collection<DM.Command>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2010CustUI.Command>();
@@ -40,6 +45,18 @@ public static class CommandsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.Commands? openXmlElement, DM.Commands? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Commands? value)

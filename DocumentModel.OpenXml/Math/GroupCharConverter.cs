@@ -10,10 +10,12 @@ public static class GroupCharConverter
   /// </summary>
   private static DMMath.GroupCharProperties? GetGroupCharProperties(DXMath.GroupChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>();
-    if (itemElement != null)
-      return DMXMath.GroupCharPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.GroupCharPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>());
+  }
+  
+  private static bool CmpGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.GroupCharPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value)
@@ -34,10 +36,12 @@ public static class GroupCharConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.GroupChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.GroupChar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.GroupChar openXmlElement, DMMath.Base? value)
@@ -63,6 +67,20 @@ public static class GroupCharConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.GroupChar? openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGroupCharProperties(openXmlElement, value.GroupCharProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupChar? value)

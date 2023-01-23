@@ -17,6 +17,11 @@ public static class CategoryListConverter
     return collection;
   }
   
+  private static bool CmpCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Category>();
@@ -40,6 +45,18 @@ public static class CategoryListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.CategoryList? openXmlElement, DMDrawsDgms.CategoryList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCategories(openXmlElement, value.Categories, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.CategoryList? value)

@@ -10,10 +10,12 @@ public static class TextInputConverter
   /// </summary>
   private static DMW.TextBoxFormFieldKind? GetTextBoxFormFieldType(DXW.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value);
+  }
+  
+  private static bool CmpTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value)
@@ -34,10 +36,12 @@ public static class TextInputConverter
   /// </summary>
   private static String? GetDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val?.Value;
+  }
+  
+  private static bool CmpDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val?.Value == value;
   }
   
   private static void SetDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value)
@@ -57,10 +61,12 @@ public static class TextInputConverter
   /// </summary>
   private static Int16? GetMaxLength(DXW.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MaxLength>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val?.Value;
+  }
+  
+  private static bool CmpMaxLength(DXW.TextInput openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val?.Value == value;
   }
   
   private static void SetMaxLength(DXW.TextInput openXmlElement, Int16? value)
@@ -80,10 +86,12 @@ public static class TextInputConverter
   /// </summary>
   private static String? GetFormat(DXW.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Format>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.Format>()?.Val?.Value;
+  }
+  
+  private static bool CmpFormat(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.Format>()?.Val?.Value == value;
   }
   
   private static void SetFormat(DXW.TextInput openXmlElement, String? value)
@@ -110,6 +118,24 @@ public static class TextInputConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TextInput? openXmlElement, DMW.TextInput? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTextBoxFormFieldType(openXmlElement, value.TextBoxFormFieldType, diffs, objName))
+        ok = false;
+      if (!CmpDefaultTextBoxFormFieldString(openXmlElement, value.DefaultTextBoxFormFieldString, diffs, objName))
+        ok = false;
+      if (!CmpMaxLength(openXmlElement, value.MaxLength, diffs, objName))
+        ok = false;
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextInput? value)

@@ -17,6 +17,11 @@ public static class AllocatedCommandManifestConverter
     return collection;
   }
   
+  private static bool CmpAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement, Collection<DMW.AcceleratorKeymapType>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement, Collection<DMW.AcceleratorKeymapType>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.AllocatedCommandManifestEntry>();
@@ -40,6 +45,18 @@ public static class AllocatedCommandManifestConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.AllocatedCommandManifest? openXmlElement, DMW.AllocatedCommandManifest? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAllocatedCommandManifestEntries(openXmlElement, value.AllocatedCommandManifestEntries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommandManifest? value)

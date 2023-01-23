@@ -13,6 +13,11 @@ public static class ObjectPropertiesConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2013Draw.ObjectProperties openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class ObjectPropertiesConverter
     return openXmlElement?.IsActiveX?.Value;
   }
   
+  private static bool CmpIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IsActiveX?.Value == value;
+  }
+  
   private static void SetIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class ObjectPropertiesConverter
   private static String? GetLinkType(DXO2013Draw.ObjectProperties openXmlElement)
   {
     return openXmlElement?.LinkType?.Value;
+  }
+  
+  private static bool CmpLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LinkType?.Value == value;
   }
   
   private static void SetLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class ObjectPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013Draw.ObjectProperties? openXmlElement, DMDraws.ObjectProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpIsActiveX(openXmlElement, value.IsActiveX, diffs, objName))
+        ok = false;
+      if (!CmpLinkType(openXmlElement, value.LinkType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ObjectProperties? value)

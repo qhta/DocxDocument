@@ -10,10 +10,12 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.SuperscriptProperties? GetSuperscriptProperties(DXMath.Superscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>();
-    if (itemElement != null)
-      return DMXMath.SuperscriptPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.SuperscriptPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>());
+  }
+  
+  private static bool CmpSuperscriptProperties(DXMath.Superscript openXmlElement, DMMath.SuperscriptProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.SuperscriptPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperscriptProperties(DXMath.Superscript openXmlElement, DMMath.SuperscriptProperties? value)
@@ -34,10 +36,12 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Superscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.Superscript openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Superscript openXmlElement, DMMath.Base? value)
@@ -58,10 +62,12 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.SuperArgument? GetSuperArgument(DXMath.Superscript openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.SuperArgument>();
-    if (itemElement != null)
-      return DMXMath.SuperArgumentConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.SuperArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>());
+  }
+  
+  private static bool CmpSuperArgument(DXMath.Superscript openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperArgument(DXMath.Superscript openXmlElement, DMMath.SuperArgument? value)
@@ -88,6 +94,22 @@ public static class SuperscriptConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Superscript? openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSuperscriptProperties(openXmlElement, value.SuperscriptProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      if (!CmpSuperArgument(openXmlElement, value.SuperArgument, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Superscript? value)

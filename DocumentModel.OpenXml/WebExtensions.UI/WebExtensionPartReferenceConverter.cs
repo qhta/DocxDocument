@@ -13,6 +13,11 @@ public static class WebExtensionPartReferenceConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class WebExtensionPartReferenceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExtPane.WebExtensionPartReference? openXmlElement, DMWebExtUI.WebExtensionPartReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionPartReference? value)

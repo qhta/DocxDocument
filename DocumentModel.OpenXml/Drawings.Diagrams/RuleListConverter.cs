@@ -17,6 +17,11 @@ public static class RuleListConverter
     return collection;
   }
   
+  private static bool CmpRules(DXDrawDgms.RuleList openXmlElement, Collection<DMDrawsDgms.Rule>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetRules(DXDrawDgms.RuleList openXmlElement, Collection<DMDrawsDgms.Rule>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Rule>();
@@ -40,6 +45,18 @@ public static class RuleListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.RuleList? openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRules(openXmlElement, value.Rules, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.RuleList? value)

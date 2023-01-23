@@ -17,6 +17,11 @@ public static class ClassificationLabelListConverter
     return collection;
   }
   
+  private static bool CmpClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021MipLabelMeta.ClassificationLabel>();
@@ -33,10 +38,12 @@ public static class ClassificationLabelListConverter
   
   private static DM.ClassificationExtensionList? GetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
-    if (itemElement != null)
-      return DMX.ClassificationExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ClassificationExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>());
+  }
+  
+  private static bool CmpClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)
@@ -62,6 +69,20 @@ public static class ClassificationLabelListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpClassificationLabels(openXmlElement, value.ClassificationLabels, diffs, objName))
+        ok = false;
+      if (!CmpClassificationExtensionList(openXmlElement, value.ClassificationExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabelList? value)

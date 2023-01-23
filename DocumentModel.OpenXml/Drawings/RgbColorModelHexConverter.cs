@@ -15,6 +15,13 @@ public static class RgbColorModelHexConverter
     return null;
   }
   
+  private static bool CmpVal(DXDraw.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Val?.Value != null)
+      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetVal(DXDraw.RgbColorModelHex openXmlElement, DM.RGB? value)
   {
       if (value != null)
@@ -31,6 +38,11 @@ public static class RgbColorModelHexConverter
     return openXmlElement.LegacySpreadsheetColorIndex?.Value;
   }
   
+  private static bool CmpLegacySpreadsheetColorIndex(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LegacySpreadsheetColorIndex?.Value == value;
+  }
+  
   private static void SetLegacySpreadsheetColorIndex(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
     openXmlElement.LegacySpreadsheetColorIndex = value;
@@ -38,10 +50,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetTint(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tint>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val?.Value;
+  }
+  
+  private static bool CmpTint(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val?.Value == value;
   }
   
   private static void SetTint(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -58,10 +72,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetShade(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shade>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val?.Value;
+  }
+  
+  private static bool CmpShade(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val?.Value == value;
   }
   
   private static void SetShade(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -78,8 +94,12 @@ public static class RgbColorModelHexConverter
   
   private static Boolean? GetComplement(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Complement>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+  }
+  
+  private static bool CmpComplement(DXDraw.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null == value;
   }
   
   private static void SetComplement(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
@@ -99,8 +119,12 @@ public static class RgbColorModelHexConverter
   
   private static Boolean? GetInverse(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Inverse>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+  }
+  
+  private static bool CmpInverse(DXDraw.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null == value;
   }
   
   private static void SetInverse(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
@@ -120,8 +144,12 @@ public static class RgbColorModelHexConverter
   
   private static Boolean? GetGray(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Gray>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+  }
+  
+  private static bool CmpGray(DXDraw.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null == value;
   }
   
   private static void SetGray(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
@@ -141,10 +169,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetAlpha(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Alpha>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val?.Value;
+  }
+  
+  private static bool CmpAlpha(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val?.Value == value;
   }
   
   private static void SetAlpha(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -161,10 +191,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetAlphaOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpAlphaOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val?.Value == value;
   }
   
   private static void SetAlphaOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -181,10 +213,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetAlphaModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpAlphaModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val?.Value == value;
   }
   
   private static void SetAlphaModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -201,10 +235,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetHue(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Hue>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val?.Value;
+  }
+  
+  private static bool CmpHue(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val?.Value == value;
   }
   
   private static void SetHue(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -221,10 +257,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetHueOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpHueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val?.Value == value;
   }
   
   private static void SetHueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -241,10 +279,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetHueModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpHueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val?.Value == value;
   }
   
   private static void SetHueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -261,10 +301,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Saturation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val?.Value == value;
   }
   
   private static void SetSaturation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -281,10 +323,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturationOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturationOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val?.Value == value;
   }
   
   private static void SetSaturationOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -301,10 +345,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturationModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturationModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val?.Value == value;
   }
   
   private static void SetSaturationModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -321,10 +367,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminance(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Luminance>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminance(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val?.Value == value;
   }
   
   private static void SetLuminance(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -341,10 +389,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminanceOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminanceOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val?.Value == value;
   }
   
   private static void SetLuminanceOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -361,10 +411,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminanceModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminanceModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val?.Value == value;
   }
   
   private static void SetLuminanceModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -381,10 +433,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetRed(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Red>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val?.Value;
+  }
+  
+  private static bool CmpRed(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val?.Value == value;
   }
   
   private static void SetRed(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -401,10 +455,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetRedOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpRedOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val?.Value == value;
   }
   
   private static void SetRedOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -421,10 +477,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetRedModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpRedModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val?.Value == value;
   }
   
   private static void SetRedModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -441,10 +499,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetGreen(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Green>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val?.Value;
+  }
+  
+  private static bool CmpGreen(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val?.Value == value;
   }
   
   private static void SetGreen(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -461,10 +521,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetGreenOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpGreenOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val?.Value == value;
   }
   
   private static void SetGreenOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -481,10 +543,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetGreenModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpGreenModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val?.Value == value;
   }
   
   private static void SetGreenModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -501,10 +565,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetBlue(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blue>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val?.Value;
+  }
+  
+  private static bool CmpBlue(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val?.Value == value;
   }
   
   private static void SetBlue(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -521,10 +587,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetBlueOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpBlueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val?.Value == value;
   }
   
   private static void SetBlueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -541,10 +609,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetBlueModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpBlueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val?.Value == value;
   }
   
   private static void SetBlueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
@@ -561,8 +631,12 @@ public static class RgbColorModelHexConverter
   
   private static Boolean? GetGamma(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Gamma>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+  }
+  
+  private static bool CmpGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null == value;
   }
   
   private static void SetGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
@@ -582,8 +656,12 @@ public static class RgbColorModelHexConverter
   
   private static Boolean? GetInverseGamma(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.InverseGamma>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+  }
+  
+  private static bool CmpInverseGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null == value;
   }
   
   private static void SetInverseGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
@@ -639,6 +717,76 @@ public static class RgbColorModelHexConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.RgbColorModelHex? openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpLegacySpreadsheetColorIndex(openXmlElement, value.LegacySpreadsheetColorIndex, diffs, objName))
+        ok = false;
+      if (!CmpTint(openXmlElement, value.Tint, diffs, objName))
+        ok = false;
+      if (!CmpShade(openXmlElement, value.Shade, diffs, objName))
+        ok = false;
+      if (!CmpComplement(openXmlElement, value.Complement, diffs, objName))
+        ok = false;
+      if (!CmpInverse(openXmlElement, value.Inverse, diffs, objName))
+        ok = false;
+      if (!CmpGray(openXmlElement, value.Gray, diffs, objName))
+        ok = false;
+      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName))
+        ok = false;
+      if (!CmpAlphaOffset(openXmlElement, value.AlphaOffset, diffs, objName))
+        ok = false;
+      if (!CmpAlphaModulation(openXmlElement, value.AlphaModulation, diffs, objName))
+        ok = false;
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+        ok = false;
+      if (!CmpHueOffset(openXmlElement, value.HueOffset, diffs, objName))
+        ok = false;
+      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName))
+        ok = false;
+      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName))
+        ok = false;
+      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName))
+        ok = false;
+      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName))
+        ok = false;
+      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName))
+        ok = false;
+      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName))
+        ok = false;
+      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName))
+        ok = false;
+      if (!CmpRed(openXmlElement, value.Red, diffs, objName))
+        ok = false;
+      if (!CmpRedOffset(openXmlElement, value.RedOffset, diffs, objName))
+        ok = false;
+      if (!CmpRedModulation(openXmlElement, value.RedModulation, diffs, objName))
+        ok = false;
+      if (!CmpGreen(openXmlElement, value.Green, diffs, objName))
+        ok = false;
+      if (!CmpGreenOffset(openXmlElement, value.GreenOffset, diffs, objName))
+        ok = false;
+      if (!CmpGreenModulation(openXmlElement, value.GreenModulation, diffs, objName))
+        ok = false;
+      if (!CmpBlue(openXmlElement, value.Blue, diffs, objName))
+        ok = false;
+      if (!CmpBlueOffset(openXmlElement, value.BlueOffset, diffs, objName))
+        ok = false;
+      if (!CmpBlueModulation(openXmlElement, value.BlueModulation, diffs, objName))
+        ok = false;
+      if (!CmpGamma(openXmlElement, value.Gamma, diffs, objName))
+        ok = false;
+      if (!CmpInverseGamma(openXmlElement, value.InverseGamma, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RgbColorModelHex? value)

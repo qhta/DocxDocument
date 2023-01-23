@@ -10,6 +10,11 @@ public static class WebExtensionPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.WebExtensionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the WebExtensionPart
   /// </summary>
@@ -25,9 +30,19 @@ public static class WebExtensionPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.WebExtensionPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.WebExtensionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.WebExtensionPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -35,9 +50,12 @@ public static class WebExtensionPartConverter
   /// </summary>
   private static DMWebExt.WebExtension? GetWebExtension(DXPack.WebExtensionPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2013WebExt.WebExtension rootElement)
-      return DMXWebExt.WebExtensionConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXWebExt.WebExtensionConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013WebExt.WebExtension);
+  }
+  
+  private static bool CmpWebExtension(DXPack.WebExtensionPart openXmlElement, DMWebExt.WebExtension? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetWebExtension(DXPack.WebExtensionPart openXmlElement, DMWebExt.WebExtension? value)
@@ -62,6 +80,24 @@ public static class WebExtensionPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.WebExtensionPart? openXmlElement, DMPack.WebExtensionPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpWebExtension(openXmlElement, value.WebExtension, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExtensionPart? value)

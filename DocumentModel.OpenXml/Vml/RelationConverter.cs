@@ -13,6 +13,11 @@ public static class RelationConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
+  private static bool CmpExtension(DXVmlO.Relation openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExtension(DXVmlO.Relation openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
@@ -24,6 +29,11 @@ public static class RelationConverter
   private static String? GetSourceId(DXVmlO.Relation openXmlElement)
   {
     return openXmlElement?.SourceId?.Value;
+  }
+  
+  private static bool CmpSourceId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SourceId?.Value == value;
   }
   
   private static void SetSourceId(DXVmlO.Relation openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class RelationConverter
     return openXmlElement?.DestinationId?.Value;
   }
   
+  private static bool CmpDestinationId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DestinationId?.Value == value;
+  }
+  
   private static void SetDestinationId(DXVmlO.Relation openXmlElement, String? value)
   {
     if (value != null)
@@ -56,6 +71,11 @@ public static class RelationConverter
   private static String? GetCenterShapeId(DXVmlO.Relation openXmlElement)
   {
     return openXmlElement?.CenterShapeId?.Value;
+  }
+  
+  private static bool CmpCenterShapeId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CenterShapeId?.Value == value;
   }
   
   private static void SetCenterShapeId(DXVmlO.Relation openXmlElement, String? value)
@@ -78,6 +98,24 @@ public static class RelationConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.Relation? openXmlElement, DMVml.Relation? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+        ok = false;
+      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName))
+        ok = false;
+      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName))
+        ok = false;
+      if (!CmpCenterShapeId(openXmlElement, value.CenterShapeId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Relation? value)

@@ -10,9 +10,19 @@ public static class QueryTablePartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.QueryTablePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.QueryTablePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.QueryTablePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.QueryTablePart? CreateModelElement(DXPack.QueryTablePart? openXmlElement)
@@ -25,6 +35,20 @@ public static class QueryTablePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.QueryTablePart? openXmlElement, DMPack.QueryTablePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.QueryTablePart? value)

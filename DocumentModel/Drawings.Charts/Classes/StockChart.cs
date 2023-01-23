@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public class StockChart
 {
-  public Collection<LineChartSeries>? LineChartSerieses { get; set; }
+  public Collection<LineChartSeries>? LineChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

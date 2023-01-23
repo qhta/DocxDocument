@@ -13,6 +13,11 @@ public static class ScriptLinkConverter
     return openXmlElement?.Val?.Value;
   }
   
+  private static bool CmpVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
+  }
+  
   private static void SetVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class ScriptLinkConverter
   /// </summary>
   private static DMDrawsOScptLnk.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>());
+  }
+  
+  private static bool CmpOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value)
@@ -55,6 +62,20 @@ public static class ScriptLinkConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXODrawY2021ScptLnk.ScriptLink? openXmlElement, DMDrawsOScptLnk.ScriptLink? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOScptLnk.ScriptLink? value)

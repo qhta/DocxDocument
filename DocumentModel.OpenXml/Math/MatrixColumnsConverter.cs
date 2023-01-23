@@ -17,6 +17,11 @@ public static class MatrixColumnsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXMath.MatrixColumns openXmlElement, Collection<DMMath.MatrixColumn>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXMath.MatrixColumns openXmlElement, Collection<DMMath.MatrixColumn>? value)
   {
     openXmlElement.RemoveAllChildren<DXMath.MatrixColumn>();
@@ -40,6 +45,18 @@ public static class MatrixColumnsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.MatrixColumns? openXmlElement, DMMath.MatrixColumns? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumns? value)

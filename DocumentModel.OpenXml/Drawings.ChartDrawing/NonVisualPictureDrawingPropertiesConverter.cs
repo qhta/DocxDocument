@@ -13,6 +13,11 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return openXmlElement?.PreferRelativeResize?.Value;
   }
   
+  private static bool CmpPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PreferRelativeResize?.Value == value;
+  }
+  
   private static void SetPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class NonVisualPictureDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.PictureLocks? GetPictureLocks(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PictureLocks>();
-    if (itemElement != null)
-      return DMXDraws.PictureLocksConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PictureLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PictureLocks>());
+  }
+  
+  private static bool CmpPictureLocks(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.PictureLocks? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PictureLocksConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PictureLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureLocks(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.PictureLocks? value)
@@ -50,10 +57,12 @@ public static class NonVisualPictureDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.NonVisualPicturePropertiesExtensionList? GetNonVisualPicturePropertiesExtensionList(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NonVisualPicturePropertiesExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.NonVisualPicturePropertiesExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.NonVisualPicturePropertiesExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualPicturePropertiesExtensionList>());
+  }
+  
+  private static bool CmpNonVisualPicturePropertiesExtensionList(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.NonVisualPicturePropertiesExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.NonVisualPicturePropertiesExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualPicturePropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualPicturePropertiesExtensionList(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDraws.NonVisualPicturePropertiesExtensionList? value)
@@ -80,6 +89,22 @@ public static class NonVisualPictureDrawingPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.NonVisualPictureDrawingProperties? openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPreferRelativeResize(openXmlElement, value.PreferRelativeResize, diffs, objName))
+        ok = false;
+      if (!CmpPictureLocks(openXmlElement, value.PictureLocks, diffs, objName))
+        ok = false;
+      if (!CmpNonVisualPicturePropertiesExtensionList(openXmlElement, value.NonVisualPicturePropertiesExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualPictureDrawingProperties? value)

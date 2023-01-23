@@ -13,6 +13,11 @@ public static class HeaderFooterReferenceTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(value);
@@ -24,6 +29,11 @@ public static class HeaderFooterReferenceTypeConverter
   private static String? GetId(DXW.HeaderFooterReferenceType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.HeaderFooterReferenceType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.HeaderFooterReferenceType openXmlElement, String? value)
@@ -44,6 +54,20 @@ public static class HeaderFooterReferenceTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.HeaderFooterReferenceType? openXmlElement, DMW.HeaderFooterReferenceType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.HeaderFooterReferenceType? value)

@@ -10,10 +10,12 @@ public static class ParagraphPropertiesConverter
   /// </summary>
   private static DMMath.JustificationKind? GetJustification(DXMath.ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Justification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value);
+  }
+  
+  private static bool CmpJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value)
@@ -38,6 +40,18 @@ public static class ParagraphPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.ParagraphProperties? openXmlElement, DMMath.ParagraphProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpJustification(openXmlElement, value.Justification, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ParagraphProperties? value)

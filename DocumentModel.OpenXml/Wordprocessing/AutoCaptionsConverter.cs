@@ -7,10 +7,12 @@ public static class AutoCaptionsConverter
 {
   private static DMW.AutoCaption? GetAutoCaption(DXW.AutoCaptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.AutoCaption>();
-    if (itemElement != null)
-      return DMXW.AutoCaptionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.AutoCaptionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaption>());
+  }
+  
+  private static bool CmpAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value)
@@ -35,6 +37,18 @@ public static class AutoCaptionsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.AutoCaptions? openXmlElement, DMW.AutoCaptions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAutoCaption(openXmlElement, value.AutoCaption, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaptions? value)

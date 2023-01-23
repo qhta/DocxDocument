@@ -10,10 +10,12 @@ public static class Scene3DTypeConverter
   /// </summary>
   private static DMDraws.Camera? GetCamera(DXDraw.Scene3DType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Camera>();
-    if (itemElement != null)
-      return DMXDraws.CameraConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.CameraConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Camera>());
+  }
+  
+  private static bool CmpCamera(DXDraw.Scene3DType openXmlElement, DMDraws.Camera? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.CameraConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCamera(DXDraw.Scene3DType openXmlElement, DMDraws.Camera? value)
@@ -34,10 +36,12 @@ public static class Scene3DTypeConverter
   /// </summary>
   private static DMDraws.LightRig? GetLightRig(DXDraw.Scene3DType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LightRig>();
-    if (itemElement != null)
-      return DMXDraws.LightRigConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.LightRigConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LightRig>());
+  }
+  
+  private static bool CmpLightRig(DXDraw.Scene3DType openXmlElement, DMDraws.LightRig? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.LightRigConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLightRig(DXDraw.Scene3DType openXmlElement, DMDraws.LightRig? value)
@@ -58,10 +62,12 @@ public static class Scene3DTypeConverter
   /// </summary>
   private static DMDraws.Backdrop? GetBackdrop(DXDraw.Scene3DType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Backdrop>();
-    if (itemElement != null)
-      return DMXDraws.BackdropConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BackdropConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Backdrop>());
+  }
+  
+  private static bool CmpBackdrop(DXDraw.Scene3DType openXmlElement, DMDraws.Backdrop? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BackdropConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Backdrop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackdrop(DXDraw.Scene3DType openXmlElement, DMDraws.Backdrop? value)
@@ -82,10 +88,12 @@ public static class Scene3DTypeConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Scene3DType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDraw.Scene3DType openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.Scene3DType openXmlElement, DMDraws.ExtensionList? value)
@@ -113,6 +121,24 @@ public static class Scene3DTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Scene3DType? openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName))
+        ok = false;
+      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName))
+        ok = false;
+      if (!CmpBackdrop(openXmlElement, value.Backdrop, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Scene3DType? value)

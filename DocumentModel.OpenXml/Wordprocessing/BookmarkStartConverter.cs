@@ -13,6 +13,11 @@ public static class BookmarkStartConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.BookmarkStart openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class BookmarkStartConverter
     return openXmlElement.ColumnFirst?.Value;
   }
   
+  private static bool CmpColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnFirst?.Value == value;
+  }
+  
   private static void SetColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnFirst = value;
@@ -40,6 +50,11 @@ public static class BookmarkStartConverter
   private static Int32? GetColumnLast(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement.ColumnLast?.Value;
+  }
+  
+  private static bool CmpColumnLast(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnLast?.Value == value;
   }
   
   private static void SetColumnLast(DXW.BookmarkStart openXmlElement, Int32? value)
@@ -55,6 +70,11 @@ public static class BookmarkStartConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
   
+  private static bool CmpDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
   {
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
@@ -66,6 +86,11 @@ public static class BookmarkStartConverter
   private static String? GetId(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.BookmarkStart openXmlElement, String? value)
@@ -89,6 +114,26 @@ public static class BookmarkStartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.BookmarkStart? openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpColumnFirst(openXmlElement, value.ColumnFirst, diffs, objName))
+        ok = false;
+      if (!CmpColumnLast(openXmlElement, value.ColumnLast, diffs, objName))
+        ok = false;
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BookmarkStart? value)

@@ -10,9 +10,12 @@ public static class ChartColorStylePartConverter
   /// </summary>
   private static DMDrawsChartsStyle.ColorStyle? GetColorStyle(DXPack.ChartColorStylePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2013DrawChartStyle.ColorStyle rootElement)
-      return DMXDrawsChartsStyle.ColorStyleConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsChartsStyle.ColorStyleConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013DrawChartStyle.ColorStyle);
+  }
+  
+  private static bool CmpColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDrawsChartsStyle.ColorStyle? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDrawsChartsStyle.ColorStyle? value)
@@ -30,9 +33,19 @@ public static class ChartColorStylePartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.ChartColorStylePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.ChartColorStylePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.ChartColorStylePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.ChartColorStylePart? CreateModelElement(DXPack.ChartColorStylePart? openXmlElement)
@@ -46,6 +59,22 @@ public static class ChartColorStylePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ChartColorStylePart? openXmlElement, DMPack.ChartColorStylePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpColorStyle(openXmlElement, value.ColorStyle, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartColorStylePart? value)

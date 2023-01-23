@@ -13,6 +13,11 @@ public static class DiagramConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXDraw.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXDraw.Diagram openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class DiagramConverter
   private static DMDraws.DiagramBuildStepKind? GetBuildStep(DXDraw.Diagram openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value);
+  }
+  
+  private static bool CmpBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value)
@@ -44,6 +54,20 @@ public static class DiagramConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Diagram? openXmlElement, DMDraws.Diagram? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpBuildStep(openXmlElement, value.BuildStep, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Diagram? value)

@@ -13,6 +13,11 @@ public static class StrDataExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.StrDataExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.StrDataExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,8 +28,12 @@ public static class StrDataExtensionConverter
   
   private static Boolean? GetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null;
+  }
+  
+  private static bool CmpAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null == value;
   }
   
   private static void SetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value)
@@ -52,6 +61,20 @@ public static class StrDataExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.StrDataExtension? openXmlElement, DMDrawsCharts.StrDataExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpAutoGeneneratedCategories(openXmlElement, value.AutoGeneneratedCategories, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrDataExtension? value)

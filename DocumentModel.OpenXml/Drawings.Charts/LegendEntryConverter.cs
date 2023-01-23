@@ -10,10 +10,12 @@ public static class LegendEntryConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.LegendEntry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+  }
+  
+  private static bool CmpIndex(DXDrawCharts.LegendEntry openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
   }
   
   private static void SetIndex(DXDrawCharts.LegendEntry openXmlElement, UInt32? value)
@@ -30,8 +32,12 @@ public static class LegendEntryConverter
   
   private static Boolean? GetDelete(DXDrawCharts.LegendEntry openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Delete>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+  }
+  
+  private static bool CmpDelete(DXDrawCharts.LegendEntry openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
   }
   
   private static void SetDelete(DXDrawCharts.LegendEntry openXmlElement, Boolean? value)
@@ -51,10 +57,12 @@ public static class LegendEntryConverter
   
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.LegendEntry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+  }
+  
+  private static bool CmpTextProperties(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -72,10 +80,12 @@ public static class LegendEntryConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.LegendEntry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -103,6 +113,24 @@ public static class LegendEntryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.LegendEntry? openXmlElement, DMDrawsCharts.LegendEntry? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+        ok = false;
+      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName))
+        ok = false;
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LegendEntry? value)

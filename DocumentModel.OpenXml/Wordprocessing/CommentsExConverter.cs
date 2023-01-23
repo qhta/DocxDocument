@@ -17,6 +17,11 @@ public static class CommentsExConverter
     return collection;
   }
   
+  private static bool CmpCommentExs(DXO2013W.CommentsEx openXmlElement, Collection<DMW.CommentEx>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCommentExs(DXO2013W.CommentsEx openXmlElement, Collection<DMW.CommentEx>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013W.CommentEx>();
@@ -40,6 +45,18 @@ public static class CommentsExConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.CommentsEx? openXmlElement, DMW.CommentsEx? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCommentExs(openXmlElement, value.CommentExs, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsEx? value)

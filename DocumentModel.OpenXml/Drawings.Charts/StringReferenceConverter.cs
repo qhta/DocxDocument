@@ -10,10 +10,12 @@ public static class StringReferenceConverter
   /// </summary>
   private static String? GetFormula(DXDrawCharts.StringReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Formula>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.Formula>()?.Text;
+  }
+  
+  private static bool CmpFormula(DXDrawCharts.StringReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.Formula>()?.Text == value;
   }
   
   private static void SetFormula(DXDrawCharts.StringReference openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class StringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.StringCache? GetStringCache(DXDrawCharts.StringReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringCache>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringCacheConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringCache>());
+  }
+  
+  private static bool CmpStringCache(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StringCache? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringCacheConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringCache(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StringCache? value)
@@ -57,10 +61,12 @@ public static class StringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.StrRefExtensionList? GetStrRefExtensionList(DXDrawCharts.StringReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StrRefExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StrRefExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StrRefExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrRefExtensionList>());
+  }
+  
+  private static bool CmpStrRefExtensionList(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StrRefExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StrRefExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrRefExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStrRefExtensionList(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StrRefExtensionList? value)
@@ -87,6 +93,22 @@ public static class StringReferenceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.StringReference? openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+        ok = false;
+      if (!CmpStringCache(openXmlElement, value.StringCache, diffs, objName))
+        ok = false;
+      if (!CmpStrRefExtensionList(openXmlElement, value.StrRefExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringReference? value)

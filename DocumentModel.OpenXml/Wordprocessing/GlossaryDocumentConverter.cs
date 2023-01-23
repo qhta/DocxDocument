@@ -10,10 +10,12 @@ public static class GlossaryDocumentConverter
   /// </summary>
   private static DMW.DocumentBackground? GetDocumentBackground(DXW.GlossaryDocument openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocumentBackground>();
-    if (itemElement != null)
-      return DMXW.DocumentBackgroundConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocumentBackgroundConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocumentBackground>());
+  }
+  
+  private static bool CmpDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value)
@@ -34,10 +36,12 @@ public static class GlossaryDocumentConverter
   /// </summary>
   private static DMW.DocParts? GetDocParts(DXW.GlossaryDocument openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocParts>();
-    if (itemElement != null)
-      return DMXW.DocPartsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocPartsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocParts>());
+  }
+  
+  private static bool CmpDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocPartsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocParts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value)
@@ -63,6 +67,20 @@ public static class GlossaryDocumentConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.GlossaryDocument? openXmlElement, DMW.GlossaryDocument? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocumentBackground(openXmlElement, value.DocumentBackground, diffs, objName))
+        ok = false;
+      if (!CmpDocParts(openXmlElement, value.DocParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GlossaryDocument? value)

@@ -10,8 +10,12 @@ public static class SketchOptionsConverter
   /// </summary>
   private static Boolean? GetInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>() != null;
+  }
+  
+  private static bool CmpInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>() != null == value;
   }
   
   private static void SetInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)
@@ -34,8 +38,12 @@ public static class SketchOptionsConverter
   /// </summary>
   private static Boolean? GetShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>() != null;
+  }
+  
+  private static bool CmpShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>() != null == value;
   }
   
   private static void SetShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)
@@ -63,6 +71,20 @@ public static class SketchOptionsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010DrawCharts.SketchOptions? openXmlElement, DMDrawsCharts.SketchOptions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpInSketchMode(openXmlElement, value.InSketchMode, diffs, objName))
+        ok = false;
+      if (!CmpShowSketchButton(openXmlElement, value.ShowSketchButton, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SketchOptions? value)

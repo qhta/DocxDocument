@@ -13,6 +13,11 @@ public static class StyleDisplayCategoryConverter
     return openXmlElement?.Type?.Value;
   }
   
+  private static bool CmpType(DXDrawDgms.StyleDisplayCategory openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Type?.Value == value;
+  }
+  
   private static void SetType(DXDrawDgms.StyleDisplayCategory openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class StyleDisplayCategoryConverter
   private static UInt32? GetPriority(DXDrawDgms.StyleDisplayCategory openXmlElement)
   {
     return openXmlElement.Priority?.Value;
+  }
+  
+  private static bool CmpPriority(DXDrawDgms.StyleDisplayCategory openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Priority?.Value == value;
   }
   
   private static void SetPriority(DXDrawDgms.StyleDisplayCategory openXmlElement, UInt32? value)
@@ -44,6 +54,20 @@ public static class StyleDisplayCategoryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.StyleDisplayCategory? openXmlElement, DMDrawsDgms.StyleDisplayCategory? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpPriority(openXmlElement, value.Priority, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDisplayCategory? value)

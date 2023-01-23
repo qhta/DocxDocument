@@ -17,6 +17,11 @@ public static class GradientStopListConverter
     return collection;
   }
   
+  private static bool CmpGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2010W.GradientStop>();
@@ -40,6 +45,18 @@ public static class GradientStopListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.GradientStopList? openXmlElement, DMW.GradientStopList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGradientStops(openXmlElement, value.GradientStops, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientStopList? value)

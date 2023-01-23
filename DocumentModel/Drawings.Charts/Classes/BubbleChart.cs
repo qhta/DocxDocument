@@ -10,7 +10,7 @@ public class BubbleChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<BubbleChartSeries>? BubbleChartSerieses { get; set; }
+  public Collection<BubbleChartSeries>? BubbleChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

@@ -17,6 +17,11 @@ public static class HyperlinkExtensionListConverter
     return collection;
   }
   
+  private static bool CmpHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.HyperlinkExtension>();
@@ -40,6 +45,18 @@ public static class HyperlinkExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.HyperlinkExtensionList? openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpHyperlinkExtensions(openXmlElement, value.HyperlinkExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkExtensionList? value)

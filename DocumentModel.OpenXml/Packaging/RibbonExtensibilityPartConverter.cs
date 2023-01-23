@@ -10,6 +10,11 @@ public static class RibbonExtensibilityPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.RibbonExtensibilityPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
@@ -25,9 +30,19 @@ public static class RibbonExtensibilityPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.RibbonExtensibilityPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.RibbonExtensibilityPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.RibbonExtensibilityPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.RibbonExtensibilityPart? CreateModelElement(DXPack.RibbonExtensibilityPart? openXmlElement)
@@ -41,6 +56,22 @@ public static class RibbonExtensibilityPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.RibbonExtensibilityPart? openXmlElement, DMPack.RibbonExtensibilityPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.RibbonExtensibilityPart? value)

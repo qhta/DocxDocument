@@ -13,6 +13,11 @@ public static class ListItemConverter
     return openXmlElement?.DisplayText?.Value;
   }
   
+  private static bool CmpDisplayText(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DisplayText?.Value == value;
+  }
+  
   private static void SetDisplayText(DXW.ListItem openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ListItemConverter
   private static String? GetValue(DXW.ListItem openXmlElement)
   {
     return openXmlElement?.Value?.Value;
+  }
+  
+  private static bool CmpValue(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Value?.Value == value;
   }
   
   private static void SetValue(DXW.ListItem openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class ListItemConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ListItem? openXmlElement, DMW.ListItem? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDisplayText(openXmlElement, value.DisplayText, diffs, objName))
+        ok = false;
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ListItem? value)

@@ -17,6 +17,11 @@ public static class TaskHistoryConverter
     return collection;
   }
   
+  private static bool CmpTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021DocTasks.TaskHistoryEvent>();
@@ -40,6 +45,18 @@ public static class TaskHistoryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.TaskHistory? openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTaskHistoryEvents(openXmlElement, value.TaskHistoryEvents, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskHistory? value)

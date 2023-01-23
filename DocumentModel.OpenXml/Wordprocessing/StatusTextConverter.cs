@@ -13,6 +13,11 @@ public static class StatusTextConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXW.StatusText openXmlElement, DMW.InfoTextKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXW.StatusText openXmlElement, DMW.InfoTextKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(value);
@@ -24,6 +29,11 @@ public static class StatusTextConverter
   private static String? GetVal(DXW.StatusText openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXW.StatusText openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXW.StatusText openXmlElement, String? value)
@@ -44,6 +54,20 @@ public static class StatusTextConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.StatusText? openXmlElement, DMW.StatusText? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StatusText? value)

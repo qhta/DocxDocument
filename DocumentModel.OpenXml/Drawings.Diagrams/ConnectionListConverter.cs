@@ -17,6 +17,11 @@ public static class ConnectionListConverter
     return collection;
   }
   
+  private static bool CmpConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Connection>();
@@ -40,6 +45,18 @@ public static class ConnectionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.ConnectionList? openXmlElement, DMDrawsDgms.ConnectionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpConnections(openXmlElement, value.Connections, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ConnectionList? value)

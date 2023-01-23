@@ -17,6 +17,11 @@ public static class FormulasConverter
     return collection;
   }
   
+  private static bool CmpItems(DXVml.Formulas openXmlElement, Collection<DMVml.Formula>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXVml.Formulas openXmlElement, Collection<DMVml.Formula>? value)
   {
     openXmlElement.RemoveAllChildren<DXVml.Formula>();
@@ -40,6 +45,18 @@ public static class FormulasConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.Formulas? openXmlElement, DMVml.Formulas? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formulas? value)

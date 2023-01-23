@@ -13,6 +13,11 @@ public static class MarkupType2Converter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010W.MarkupType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010W.MarkupType openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class MarkupType2Converter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.MarkupType? openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MarkupType2? value)

@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDictionary<string, LatentStyleExceptionInfo>
 {
-  private readonly Collection<LatentStyleExceptionInfo> _Items = null!;
+  private readonly ObservableCollection<LatentStyleExceptionInfo> _Items = null!;
   public Dictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
 
   public LatentStyles()
   {
     StyleIndex = new();
     _Items = new ObservableCollection<LatentStyleExceptionInfo>();
-    ((ObservableCollection<LatentStyleExceptionInfo>)Items).CollectionChanged += Styles_CollectionChanged;
+    _Items.CollectionChanged += Styles_CollectionChanged;
   }
 
-  public Collection<LatentStyleExceptionInfo> Items
+  public Collection<LatentStyleExceptionInfo> LatentStyleExceptionInfos
   {
     get => _Items;
     set
@@ -35,36 +35,36 @@ public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDict
 
   public void Add(LatentStyleExceptionInfo item)
   {
-    (Items).Add(item);
+    _Items.Add(item);
   }
 
   public void Clear()
   {
-    (Items).Clear();
+    _Items.Clear();
   }
 
   public bool Contains(LatentStyleExceptionInfo item)
   {
-    return (Items).Contains(item);
+    return _Items.Contains(item);
   }
 
   public void CopyTo(LatentStyleExceptionInfo[] array, int arrayIndex)
   {
-    (Items).CopyTo(array, arrayIndex);
+    _Items.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(LatentStyleExceptionInfo item)
   {
-    return (Items).Remove(item);
+    return _Items.Remove(item);
   }
 
-  public int Count => (Items).Count;
+  public int Count => _Items.Count;
 
   public bool IsReadOnly => false;
 
   public IEnumerator<LatentStyleExceptionInfo> GetEnumerator()
   {
-    return (Items).GetEnumerator();
+    return _Items.GetEnumerator();
   }
 
   IEnumerator IEnumerable.GetEnumerator()

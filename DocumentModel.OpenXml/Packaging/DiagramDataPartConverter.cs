@@ -10,14 +10,22 @@ public static class DiagramDataPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMDrawsDgms.DataModelRoot? GetDataModelRoot(DXPack.DiagramDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXDrawDgms.DataModelRoot rootElement)
-      return DMXDrawsDgms.DataModelRootConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsDgms.DataModelRootConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.DataModelRoot);
+  }
+  
+  private static bool CmpDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDrawsDgms.DataModelRoot? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDrawsDgms.DataModelRoot? value)
@@ -45,9 +53,19 @@ public static class DiagramDataPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.DiagramDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DiagramDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -65,6 +83,11 @@ public static class DiagramDataPartConverter
     return collection;
   }
   
+  private static bool CmpSlideParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.SlidePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
@@ -78,6 +101,11 @@ public static class DiagramDataPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpWorksheetParts(DXPack.DiagramDataPart openXmlElement, Collection<DMPack.WorksheetPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   public static DMPack.DiagramDataPart? CreateModelElement(DXPack.DiagramDataPart? openXmlElement)
@@ -94,6 +122,28 @@ public static class DiagramDataPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DiagramDataPart? openXmlElement, DMPack.DiagramDataPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpDataModelRoot(openXmlElement, value.DataModelRoot, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpSlideParts(openXmlElement, value.SlideParts, diffs, objName))
+        ok = false;
+      if (!CmpWorksheetParts(openXmlElement, value.WorksheetParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramDataPart? value)

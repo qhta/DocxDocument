@@ -13,6 +13,11 @@ public static class DocPartNameConverter
     return openXmlElement?.Val?.Value;
   }
   
+  private static bool CmpVal(DXW.DocPartName openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
+  }
+  
   private static void SetVal(DXW.DocPartName openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class DocPartNameConverter
   private static Boolean? GetDecorated(DXW.DocPartName openXmlElement)
   {
     return openXmlElement?.Decorated?.Value;
+  }
+  
+  private static bool CmpDecorated(DXW.DocPartName openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Decorated?.Value == value;
   }
   
   private static void SetDecorated(DXW.DocPartName openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class DocPartNameConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocPartName? openXmlElement, DMW.DocPartName? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpDecorated(openXmlElement, value.Decorated, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartName? value)

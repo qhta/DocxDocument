@@ -13,6 +13,11 @@ public static class ImageLayerConverter
     return openXmlElement?.Embed?.Value;
   }
   
+  private static bool CmpEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Embed?.Value == value;
+  }
+  
   private static void SetEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value)
   {
     if (value != null)
@@ -31,6 +36,11 @@ public static class ImageLayerConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpImageEffects(DXO2010Draw.ImageLayer openXmlElement, Collection<DMDraws.ImageEffect>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetImageEffects(DXO2010Draw.ImageLayer openXmlElement, Collection<DMDraws.ImageEffect>? value)
@@ -57,6 +67,20 @@ public static class ImageLayerConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ImageLayer? openXmlElement, DMDraws.ImageLayer? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName))
+        ok = false;
+      if (!CmpImageEffects(openXmlElement, value.ImageEffects, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageLayer? value)

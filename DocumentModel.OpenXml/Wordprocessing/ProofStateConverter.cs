@@ -13,6 +13,11 @@ public static class ProofStateConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value);
   }
   
+  private static bool CmpSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
   {
     openXmlElement.Spelling = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(value);
@@ -24,6 +29,11 @@ public static class ProofStateConverter
   private static DMW.ProofingStateKind? GetGrammar(DXW.ProofState openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value);
+  }
+  
+  private static bool CmpGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
@@ -41,6 +51,20 @@ public static class ProofStateConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ProofState? openXmlElement, DMW.ProofState? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSpelling(openXmlElement, value.Spelling, diffs, objName))
+        ok = false;
+      if (!CmpGrammar(openXmlElement, value.Grammar, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ProofState? value)

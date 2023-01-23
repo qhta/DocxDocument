@@ -10,10 +10,12 @@ public static class DocDefaultsConverter
   /// </summary>
   private static DMW.RunPropertiesDefault? GetRunPropertiesDefault(DXW.DocDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunPropertiesDefault>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesDefaultConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesDefault>());
+  }
+  
+  private static bool CmpRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.RunPropertiesDefault? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesDefaultConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.RunPropertiesDefault? value)
@@ -34,10 +36,12 @@ public static class DocDefaultsConverter
   /// </summary>
   private static DMW.ParagraphPropertiesDefault? GetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesDefault>();
-    if (itemElement != null)
-      return DMXW.ParagraphPropertiesDefaultConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ParagraphPropertiesDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesDefault>());
+  }
+  
+  private static bool CmpParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.ParagraphPropertiesDefault? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ParagraphPropertiesDefaultConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.ParagraphPropertiesDefault? value)
@@ -63,6 +67,20 @@ public static class DocDefaultsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocDefaults? openXmlElement, DMW.DocDefaults? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunPropertiesDefault(openXmlElement, value.RunPropertiesDefault, diffs, objName))
+        ok = false;
+      if (!CmpParagraphPropertiesDefault(openXmlElement, value.ParagraphPropertiesDefault, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocDefaults? value)

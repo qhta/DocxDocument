@@ -13,6 +13,11 @@ public static class CustomXmlAttributeConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXW.CustomXmlAttribute openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXW.CustomXmlAttribute openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class CustomXmlAttributeConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.CustomXmlAttribute openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.CustomXmlAttribute openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class CustomXmlAttributeConverter
   private static String? GetVal(DXW.CustomXmlAttribute openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXW.CustomXmlAttribute openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXW.CustomXmlAttribute openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class CustomXmlAttributeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.CustomXmlAttribute? openXmlElement, DMW.CustomXmlAttribute? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlAttribute? value)

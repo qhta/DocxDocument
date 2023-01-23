@@ -13,6 +13,11 @@ public static class DataModelExtensionBlockConverter
     return openXmlElement?.RelId?.Value;
   }
   
+  private static bool CmpRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelId?.Value == value;
+  }
+  
   private static void SetRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class DataModelExtensionBlockConverter
   private static String? GetMinVer(DXODraw.DataModelExtensionBlock openXmlElement)
   {
     return openXmlElement?.MinVer?.Value;
+  }
+  
+  private static bool CmpMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MinVer?.Value == value;
   }
   
   private static void SetMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class DataModelExtensionBlockConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXODraw.DataModelExtensionBlock? openXmlElement, DMDrawsO.DataModelExtensionBlock? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelId(openXmlElement, value.RelId, diffs, objName))
+        ok = false;
+      if (!CmpMinVer(openXmlElement, value.MinVer, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.DataModelExtensionBlock? value)

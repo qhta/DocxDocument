@@ -10,10 +10,12 @@ public static class OfficeMathArgumentTypeConverter
   /// </summary>
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ArgumentProperties>();
-    if (itemElement != null)
-      return DMXMath.ArgumentPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.ArgumentPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ArgumentProperties>());
+  }
+  
+  private static bool CmpArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement, DMMath.ArgumentProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.ArgumentPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ArgumentProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement, DMMath.ArgumentProperties? value)
@@ -38,6 +40,18 @@ public static class OfficeMathArgumentTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.OfficeMathArgumentType? openXmlElement, DMMath.OfficeMathArgumentType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpArgumentProperties(openXmlElement, value.ArgumentProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.OfficeMathArgumentType? value)

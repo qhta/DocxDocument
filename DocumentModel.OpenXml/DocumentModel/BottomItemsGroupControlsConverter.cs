@@ -7,10 +7,12 @@ public static class BottomItemsGroupControlsConverter
 {
   private static DM.BackstageGroupButton? GetBackstageGroupButton(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroupButton>();
-    if (itemElement != null)
-      return DMX.BackstageGroupButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageGroupButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroupButton>());
+  }
+  
+  private static bool CmpBackstageGroupButton(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageGroupButton? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageGroupButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroupButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageGroupButton(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageGroupButton? value)
@@ -28,10 +30,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.BackstageCheckBox? GetBackstageCheckBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageCheckBox>();
-    if (itemElement != null)
-      return DMX.BackstageCheckBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageCheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageCheckBox>());
+  }
+  
+  private static bool CmpBackstageCheckBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageCheckBox? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageCheckBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageCheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageCheckBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageCheckBox? value)
@@ -49,10 +53,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.BackstageEditBox? GetBackstageEditBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageEditBox>();
-    if (itemElement != null)
-      return DMX.BackstageEditBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageEditBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageEditBox>());
+  }
+  
+  private static bool CmpBackstageEditBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageEditBox? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageEditBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageEditBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageEditBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageEditBox? value)
@@ -70,10 +76,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.BackstageDropDown? GetBackstageDropDown(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageDropDown>();
-    if (itemElement != null)
-      return DMX.BackstageDropDownConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageDropDownConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageDropDown>());
+  }
+  
+  private static bool CmpBackstageDropDown(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageDropDown? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageDropDownConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageDropDown>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageDropDown(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageDropDown? value)
@@ -91,10 +99,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.RadioGroup? GetRadioGroup(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.RadioGroup>();
-    if (itemElement != null)
-      return DMX.RadioGroupConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.RadioGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.RadioGroup>());
+  }
+  
+  private static bool CmpRadioGroup(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.RadioGroup? value, DiffList? diffs, string? objName)
+  {
+    return DMX.RadioGroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.RadioGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadioGroup(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.RadioGroup? value)
@@ -112,10 +122,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.BackstageComboBox? GetBackstageComboBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageComboBox>();
-    if (itemElement != null)
-      return DMX.BackstageComboBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageComboBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageComboBox>());
+  }
+  
+  private static bool CmpBackstageComboBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageComboBox? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageComboBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageComboBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageComboBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageComboBox? value)
@@ -133,10 +145,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.Hyperlink? GetHyperlink(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.Hyperlink>();
-    if (itemElement != null)
-      return DMX.HyperlinkConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.HyperlinkConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Hyperlink>());
+  }
+  
+  private static bool CmpHyperlink(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.Hyperlink? value, DiffList? diffs, string? objName)
+  {
+    return DMX.HyperlinkConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlink(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.Hyperlink? value)
@@ -154,10 +168,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.BackstageLabelControl? GetBackstageLabelControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageLabelControl>();
-    if (itemElement != null)
-      return DMX.BackstageLabelControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageLabelControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageLabelControl>());
+  }
+  
+  private static bool CmpBackstageLabelControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageLabelControl? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageLabelControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageLabelControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageLabelControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.BackstageLabelControl? value)
@@ -175,10 +191,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.GroupBox? GetGroupBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.GroupBox>();
-    if (itemElement != null)
-      return DMX.GroupBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.GroupBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.GroupBox>());
+  }
+  
+  private static bool CmpGroupBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.GroupBox? value, DiffList? diffs, string? objName)
+  {
+    return DMX.GroupBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.GroupBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroupBox(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.GroupBox? value)
@@ -196,10 +214,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.LayoutContainer? GetLayoutContainer(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.LayoutContainer>();
-    if (itemElement != null)
-      return DMX.LayoutContainerConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.LayoutContainerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.LayoutContainer>());
+  }
+  
+  private static bool CmpLayoutContainer(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.LayoutContainer? value, DiffList? diffs, string? objName)
+  {
+    return DMX.LayoutContainerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.LayoutContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLayoutContainer(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.LayoutContainer? value)
@@ -217,10 +237,12 @@ public static class BottomItemsGroupControlsConverter
   
   private static DM.ImageControl? GetImageControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ImageControl>();
-    if (itemElement != null)
-      return DMX.ImageControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ImageControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ImageControl>());
+  }
+  
+  private static bool CmpImageControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.ImageControl? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ImageControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ImageControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageControl(DXO2010CustUI.BottomItemsGroupControls openXmlElement, DM.ImageControl? value)
@@ -255,6 +277,38 @@ public static class BottomItemsGroupControlsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.BottomItemsGroupControls? openXmlElement, DM.BottomItemsGroupControls? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBackstageGroupButton(openXmlElement, value.BackstageGroupButton, diffs, objName))
+        ok = false;
+      if (!CmpBackstageCheckBox(openXmlElement, value.BackstageCheckBox, diffs, objName))
+        ok = false;
+      if (!CmpBackstageEditBox(openXmlElement, value.BackstageEditBox, diffs, objName))
+        ok = false;
+      if (!CmpBackstageDropDown(openXmlElement, value.BackstageDropDown, diffs, objName))
+        ok = false;
+      if (!CmpRadioGroup(openXmlElement, value.RadioGroup, diffs, objName))
+        ok = false;
+      if (!CmpBackstageComboBox(openXmlElement, value.BackstageComboBox, diffs, objName))
+        ok = false;
+      if (!CmpHyperlink(openXmlElement, value.Hyperlink, diffs, objName))
+        ok = false;
+      if (!CmpBackstageLabelControl(openXmlElement, value.BackstageLabelControl, diffs, objName))
+        ok = false;
+      if (!CmpGroupBox(openXmlElement, value.GroupBox, diffs, objName))
+        ok = false;
+      if (!CmpLayoutContainer(openXmlElement, value.LayoutContainer, diffs, objName))
+        ok = false;
+      if (!CmpImageControl(openXmlElement, value.ImageControl, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BottomItemsGroupControls? value)

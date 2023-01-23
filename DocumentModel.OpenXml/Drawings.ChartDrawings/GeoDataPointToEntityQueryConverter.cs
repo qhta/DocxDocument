@@ -13,6 +13,11 @@ public static class GeoDataPointToEntityQueryConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
+  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetEntityType(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
@@ -24,6 +29,11 @@ public static class GeoDataPointToEntityQueryConverter
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
+  }
+  
+  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityId?.Value == value;
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value)
@@ -44,6 +54,20 @@ public static class GeoDataPointToEntityQueryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoDataPointToEntityQuery? openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQuery? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+        ok = false;
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQuery? value)

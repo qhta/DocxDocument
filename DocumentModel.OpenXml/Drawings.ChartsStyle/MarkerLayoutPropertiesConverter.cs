@@ -13,6 +13,11 @@ public static class MarkerLayoutPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value);
   }
   
+  private static bool CmpSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value)
   {
     openXmlElement.Symbol = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(value);
@@ -24,6 +29,11 @@ public static class MarkerLayoutPropertiesConverter
   private static Byte? GetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement)
   {
     return openXmlElement.Size?.Value;
+  }
+  
+  private static bool CmpSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Size?.Value == value;
   }
   
   private static void SetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value)
@@ -41,6 +51,20 @@ public static class MarkerLayoutPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChartStyle.MarkerLayoutProperties? openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSymbol(openXmlElement, value.Symbol, diffs, objName))
+        ok = false;
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.MarkerLayoutProperties? value)

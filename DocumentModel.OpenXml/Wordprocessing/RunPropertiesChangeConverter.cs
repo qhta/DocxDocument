@@ -13,6 +13,11 @@ public static class RunPropertiesChangeConverter
     return openXmlElement?.Author?.Value;
   }
   
+  private static bool CmpAuthor(DXW.RunPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
+  }
+  
   private static void SetAuthor(DXW.RunPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class RunPropertiesChangeConverter
     return openXmlElement.Date?.Value;
   }
   
+  private static bool CmpDate(DXW.RunPropertiesChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Date?.Value == value;
+  }
+  
   private static void SetDate(DXW.RunPropertiesChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
@@ -40,6 +50,11 @@ public static class RunPropertiesChangeConverter
   private static String? GetId(DXW.RunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.RunPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.RunPropertiesChange openXmlElement, String? value)
@@ -55,10 +70,12 @@ public static class RunPropertiesChangeConverter
   /// </summary>
   private static DMW.PreviousRunProperties? GetPreviousRunProperties(DXW.RunPropertiesChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>();
-    if (itemElement != null)
-      return DMXW.PreviousRunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PreviousRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>());
+  }
+  
+  private static bool CmpPreviousRunProperties(DXW.RunPropertiesChange openXmlElement, DMW.PreviousRunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PreviousRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousRunProperties(DXW.RunPropertiesChange openXmlElement, DMW.PreviousRunProperties? value)
@@ -86,6 +103,24 @@ public static class RunPropertiesChangeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.RunPropertiesChange? openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpPreviousRunProperties(openXmlElement, value.PreviousRunProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesChange? value)

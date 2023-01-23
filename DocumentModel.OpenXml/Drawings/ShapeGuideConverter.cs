@@ -13,6 +13,11 @@ public static class ShapeGuideConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXDraw.ShapeGuide openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ShapeGuideConverter
   private static String? GetFormula(DXDraw.ShapeGuide openXmlElement)
   {
     return openXmlElement?.Formula?.Value;
+  }
+  
+  private static bool CmpFormula(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Formula?.Value == value;
   }
   
   private static void SetFormula(DXDraw.ShapeGuide openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class ShapeGuideConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ShapeGuide? openXmlElement, DMDraws.ShapeGuide? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuide? value)

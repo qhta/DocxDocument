@@ -13,6 +13,11 @@ public static class TintEffectConverter
     return openXmlElement.Hue?.Value;
   }
   
+  private static bool CmpHue(DXDraw.TintEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Hue?.Value == value;
+  }
+  
   private static void SetHue(DXDraw.TintEffect openXmlElement, Int32? value)
   {
     openXmlElement.Hue = value;
@@ -24,6 +29,11 @@ public static class TintEffectConverter
   private static Int32? GetAmount(DXDraw.TintEffect openXmlElement)
   {
     return openXmlElement.Amount?.Value;
+  }
+  
+  private static bool CmpAmount(DXDraw.TintEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Amount?.Value == value;
   }
   
   private static void SetAmount(DXDraw.TintEffect openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class TintEffectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.TintEffect? openXmlElement, DMDraws.TintEffect? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+        ok = false;
+      if (!CmpAmount(openXmlElement, value.Amount, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TintEffect? value)

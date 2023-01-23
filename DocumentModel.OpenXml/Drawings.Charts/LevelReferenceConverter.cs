@@ -10,10 +10,12 @@ public static class LevelReferenceConverter
   /// </summary>
   private static String? GetSequenceOfReferences(DXO2013DrawChart.LevelReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text;
+  }
+  
+  private static bool CmpSequenceOfReferences(DXO2013DrawChart.LevelReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text == value;
   }
   
   private static void SetSequenceOfReferences(DXO2013DrawChart.LevelReference openXmlElement, String? value)
@@ -37,6 +39,18 @@ public static class LevelReferenceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.LevelReference? openXmlElement, DMDrawsCharts.LevelReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSequenceOfReferences(openXmlElement, value.SequenceOfReferences, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LevelReference? value)

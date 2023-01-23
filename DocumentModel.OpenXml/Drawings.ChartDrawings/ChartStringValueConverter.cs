@@ -13,6 +13,11 @@ public static class ChartStringValueConverter
     return openXmlElement.Index?.Value;
   }
   
+  private static bool CmpIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Index?.Value == value;
+  }
+  
   private static void SetIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
@@ -27,6 +32,18 @@ public static class ChartStringValueConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.ChartStringValue? openXmlElement, DMDrawsChartDraws.ChartStringValue? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartStringValue? value)

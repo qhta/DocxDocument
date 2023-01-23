@@ -10,6 +10,11 @@ public static class FontPartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.FontPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.FontPart? CreateModelElement(DXPack.FontPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -19,6 +24,18 @@ public static class FontPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.FontPart? openXmlElement, DMPack.FontPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.FontPart? value)

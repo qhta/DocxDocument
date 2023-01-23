@@ -13,6 +13,11 @@ public static class PaperSourceConverter
     return openXmlElement.First?.Value;
   }
   
+  private static bool CmpFirst(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.First?.Value == value;
+  }
+  
   private static void SetFirst(DXW.PaperSource openXmlElement, UInt16? value)
   {
     openXmlElement.First = value;
@@ -24,6 +29,11 @@ public static class PaperSourceConverter
   private static UInt16? GetOther(DXW.PaperSource openXmlElement)
   {
     return openXmlElement.Other?.Value;
+  }
+  
+  private static bool CmpOther(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Other?.Value == value;
   }
   
   private static void SetOther(DXW.PaperSource openXmlElement, UInt16? value)
@@ -41,6 +51,20 @@ public static class PaperSourceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PaperSource? openXmlElement, DMW.PaperSource? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFirst(openXmlElement, value.First, diffs, objName))
+        ok = false;
+      if (!CmpOther(openXmlElement, value.Other, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PaperSource? value)

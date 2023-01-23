@@ -13,6 +13,11 @@ public static class PageSetupConverter
     return openXmlElement.PaperSize?.Value;
   }
   
+  private static bool CmpPaperSize(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.PaperSize?.Value == value;
+  }
+  
   private static void SetPaperSize(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value)
   {
     openXmlElement.PaperSize = value;
@@ -24,6 +29,11 @@ public static class PageSetupConverter
   private static UInt32? GetFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement)
   {
     return openXmlElement.FirstPageNumber?.Value;
+  }
+  
+  private static bool CmpFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FirstPageNumber?.Value == value;
   }
   
   private static void SetFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value)
@@ -39,6 +49,11 @@ public static class PageSetupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDrawsChartDraws.PageOrientation>(openXmlElement?.Orientation?.Value);
   }
   
+  private static bool CmpOrientation(DXO2016DrawChartDraw.PageSetup openXmlElement, DMDrawsChartDraws.PageOrientation? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDrawsChartDraws.PageOrientation>(openXmlElement?.Orientation?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetOrientation(DXO2016DrawChartDraw.PageSetup openXmlElement, DMDrawsChartDraws.PageOrientation? value)
   {
     openXmlElement.Orientation = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDrawsChartDraws.PageOrientation>(value);
@@ -50,6 +65,11 @@ public static class PageSetupConverter
   private static Boolean? GetBlackAndWhite(DXO2016DrawChartDraw.PageSetup openXmlElement)
   {
     return openXmlElement?.BlackAndWhite?.Value;
+  }
+  
+  private static bool CmpBlackAndWhite(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.BlackAndWhite?.Value == value;
   }
   
   private static void SetBlackAndWhite(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)
@@ -68,6 +88,11 @@ public static class PageSetupConverter
     return openXmlElement?.Draft?.Value;
   }
   
+  private static bool CmpDraft(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Draft?.Value == value;
+  }
+  
   private static void SetDraft(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -82,6 +107,11 @@ public static class PageSetupConverter
   private static Boolean? GetUseFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement)
   {
     return openXmlElement?.UseFirstPageNumber?.Value;
+  }
+  
+  private static bool CmpUseFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UseFirstPageNumber?.Value == value;
   }
   
   private static void SetUseFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)
@@ -100,6 +130,11 @@ public static class PageSetupConverter
     return openXmlElement.HorizontalDpi?.Value;
   }
   
+  private static bool CmpHorizontalDpi(DXO2016DrawChartDraw.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.HorizontalDpi?.Value == value;
+  }
+  
   private static void SetHorizontalDpi(DXO2016DrawChartDraw.PageSetup openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalDpi = value;
@@ -113,6 +148,11 @@ public static class PageSetupConverter
     return openXmlElement.VerticalDpi?.Value;
   }
   
+  private static bool CmpVerticalDpi(DXO2016DrawChartDraw.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VerticalDpi?.Value == value;
+  }
+  
   private static void SetVerticalDpi(DXO2016DrawChartDraw.PageSetup openXmlElement, Int32? value)
   {
     openXmlElement.VerticalDpi = value;
@@ -124,6 +164,11 @@ public static class PageSetupConverter
   private static UInt32? GetCopies(DXO2016DrawChartDraw.PageSetup openXmlElement)
   {
     return openXmlElement.Copies?.Value;
+  }
+  
+  private static bool CmpCopies(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Copies?.Value == value;
   }
   
   private static void SetCopies(DXO2016DrawChartDraw.PageSetup openXmlElement, UInt32? value)
@@ -148,6 +193,34 @@ public static class PageSetupConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.PageSetup? openXmlElement, DMDrawsChartDraws.PageSetup? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPaperSize(openXmlElement, value.PaperSize, diffs, objName))
+        ok = false;
+      if (!CmpFirstPageNumber(openXmlElement, value.FirstPageNumber, diffs, objName))
+        ok = false;
+      if (!CmpOrientation(openXmlElement, value.Orientation, diffs, objName))
+        ok = false;
+      if (!CmpBlackAndWhite(openXmlElement, value.BlackAndWhite, diffs, objName))
+        ok = false;
+      if (!CmpDraft(openXmlElement, value.Draft, diffs, objName))
+        ok = false;
+      if (!CmpUseFirstPageNumber(openXmlElement, value.UseFirstPageNumber, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalDpi(openXmlElement, value.HorizontalDpi, diffs, objName))
+        ok = false;
+      if (!CmpVerticalDpi(openXmlElement, value.VerticalDpi, diffs, objName))
+        ok = false;
+      if (!CmpCopies(openXmlElement, value.Copies, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PageSetup? value)

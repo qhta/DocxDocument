@@ -7,10 +7,12 @@ public static class ExtrusionColorConverter
 {
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
-    if (itemElement != null)
-      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>());
+  }
+  
+  private static bool CmpRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement, DMW.RgbColorModelHex? value)
@@ -28,10 +30,12 @@ public static class ExtrusionColorConverter
   
   private static DMW.SchemeColor? GetSchemeColor(DXO2010W.ExtrusionColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
-    if (itemElement != null)
-      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>());
+  }
+  
+  private static bool CmpSchemeColor(DXO2010W.ExtrusionColor openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXO2010W.ExtrusionColor openXmlElement, DMW.SchemeColor? value)
@@ -57,6 +61,20 @@ public static class ExtrusionColorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.ExtrusionColor? openXmlElement, DMW.ExtrusionColor? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+        ok = false;
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtrusionColor? value)

@@ -13,6 +13,11 @@ public static class FitTextConverter
     return openXmlElement.Val?.Value;
   }
   
+  private static bool CmpVal(DXW.FitText openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Val?.Value == value;
+  }
+  
   private static void SetVal(DXW.FitText openXmlElement, UInt32? value)
   {
     openXmlElement.Val = value;
@@ -24,6 +29,11 @@ public static class FitTextConverter
   private static Int32? GetId(DXW.FitText openXmlElement)
   {
     return openXmlElement.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.FitText openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Id?.Value == value;
   }
   
   private static void SetId(DXW.FitText openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class FitTextConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.FitText? openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FitText? value)

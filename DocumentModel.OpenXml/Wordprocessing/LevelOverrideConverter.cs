@@ -13,6 +13,11 @@ public static class LevelOverrideConverter
     return openXmlElement.LevelIndex?.Value;
   }
   
+  private static bool CmpLevelIndex(DXW.LevelOverride openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LevelIndex?.Value == value;
+  }
+  
   private static void SetLevelIndex(DXW.LevelOverride openXmlElement, Int32? value)
   {
     openXmlElement.LevelIndex = value;
@@ -23,10 +28,12 @@ public static class LevelOverrideConverter
   /// </summary>
   private static Int32? GetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val?.Value;
+  }
+  
+  private static bool CmpStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val?.Value == value;
   }
   
   private static void SetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value)
@@ -46,10 +53,12 @@ public static class LevelOverrideConverter
   /// </summary>
   private static DMW.Level? GetLevel(DXW.LevelOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Level>();
-    if (itemElement != null)
-      return DMXW.LevelConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.LevelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Level>());
+  }
+  
+  private static bool CmpLevel(DXW.LevelOverride openXmlElement, DMW.Level? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.LevelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Level>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLevel(DXW.LevelOverride openXmlElement, DMW.Level? value)
@@ -76,6 +85,22 @@ public static class LevelOverrideConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.LevelOverride? openXmlElement, DMW.LevelOverride? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLevelIndex(openXmlElement, value.LevelIndex, diffs, objName))
+        ok = false;
+      if (!CmpStartOverrideNumberingValue(openXmlElement, value.StartOverrideNumberingValue, diffs, objName))
+        ok = false;
+      if (!CmpLevel(openXmlElement, value.Level, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelOverride? value)

@@ -13,6 +13,11 @@ public static class DateAxExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.DateAxExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.DateAxExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class DateAxExtensionConverter
   
   private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>());
+  }
+  
+  private static bool CmpNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberingFormat3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value)
@@ -52,6 +59,20 @@ public static class DateAxExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.DateAxExtension? openXmlElement, DMDrawsCharts.DateAxExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxExtension? value)

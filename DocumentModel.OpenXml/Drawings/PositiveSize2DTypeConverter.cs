@@ -13,6 +13,11 @@ public static class PositiveSize2DTypeConverter
     return openXmlElement.Cx?.Value;
   }
   
+  private static bool CmpCx(DXDraw.PositiveSize2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Cx?.Value == value;
+  }
+  
   private static void SetCx(DXDraw.PositiveSize2DType openXmlElement, Int64? value)
   {
     openXmlElement.Cx = value;
@@ -24,6 +29,11 @@ public static class PositiveSize2DTypeConverter
   private static Int64? GetCy(DXDraw.PositiveSize2DType openXmlElement)
   {
     return openXmlElement.Cy?.Value;
+  }
+  
+  private static bool CmpCy(DXDraw.PositiveSize2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Cy?.Value == value;
   }
   
   private static void SetCy(DXDraw.PositiveSize2DType openXmlElement, Int64? value)
@@ -41,6 +51,20 @@ public static class PositiveSize2DTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.PositiveSize2DType? openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCx(openXmlElement, value.Cx, diffs, objName))
+        ok = false;
+      if (!CmpCy(openXmlElement, value.Cy, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PositiveSize2DType? value)

@@ -10,6 +10,11 @@ public static class FontTablePartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.FontTablePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the FontParts of the FontTablePart
   /// </summary>
@@ -25,14 +30,22 @@ public static class FontTablePartConverter
     return collection;
   }
   
+  private static bool CmpFontParts(DXPack.FontTablePart openXmlElement, Collection<DMPack.FontPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMW.Fonts? GetFonts(DXPack.FontTablePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Fonts rootElement)
-      return DMXW.FontsConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.FontsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Fonts);
+  }
+  
+  private static bool CmpFonts(DXPack.FontTablePart openXmlElement, DMW.Fonts? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetFonts(DXPack.FontTablePart openXmlElement, DMW.Fonts? value)
@@ -50,6 +63,11 @@ public static class FontTablePartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.FontTablePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.FontTablePart? CreateModelElement(DXPack.FontTablePart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -62,6 +80,24 @@ public static class FontTablePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.FontTablePart? openXmlElement, DMPack.FontTablePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpFontParts(openXmlElement, value.FontParts, diffs, objName))
+        ok = false;
+      if (!CmpFonts(openXmlElement, value.Fonts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.FontTablePart? value)

@@ -17,6 +17,11 @@ public static class GeoChildEntitiesConverter
     return collection;
   }
   
+  private static bool CmpGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, Collection<DMDrawsChartDraws.GeoHierarchyEntity>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, Collection<DMDrawsChartDraws.GeoHierarchyEntity>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.GeoHierarchyEntity>();
@@ -40,6 +45,18 @@ public static class GeoChildEntitiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoChildEntities? openXmlElement, DMDrawsChartDraws.GeoChildEntities? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGeoHierarchyEntities(openXmlElement, value.GeoHierarchyEntities, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildEntities? value)

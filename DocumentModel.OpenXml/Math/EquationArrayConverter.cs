@@ -10,10 +10,12 @@ public static class EquationArrayConverter
   /// </summary>
   private static DMMath.EquationArrayProperties? GetEquationArrayProperties(DXMath.EquationArray openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>();
-    if (itemElement != null)
-      return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>());
+  }
+  
+  private static bool CmpEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value)
@@ -41,6 +43,11 @@ public static class EquationArrayConverter
     return collection;
   }
   
+  private static bool CmpBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value)
   {
     openXmlElement.RemoveAllChildren<DXMath.Base>();
@@ -65,6 +72,20 @@ public static class EquationArrayConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.EquationArray? openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEquationArrayProperties(openXmlElement, value.EquationArrayProperties, diffs, objName))
+        ok = false;
+      if (!CmpBases(openXmlElement, value.Bases, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.EquationArray? value)

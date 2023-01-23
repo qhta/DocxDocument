@@ -13,6 +13,11 @@ public static class SchemaReferenceConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class SchemaReferenceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement, DMCustXml.SchemaReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReference? value)

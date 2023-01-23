@@ -17,6 +17,11 @@ public static class ChartSpaceExtensionListConverter
     return collection;
   }
   
+  private static bool CmpChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement, Collection<DMDrawsCharts.ChartSpaceExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement, Collection<DMDrawsCharts.ChartSpaceExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.ChartSpaceExtension>();
@@ -40,6 +45,18 @@ public static class ChartSpaceExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.ChartSpaceExtensionList? openXmlElement, DMDrawsCharts.ChartSpaceExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartSpaceExtensions(openXmlElement, value.ChartSpaceExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtensionList? value)

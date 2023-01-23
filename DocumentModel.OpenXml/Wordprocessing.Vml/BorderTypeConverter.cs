@@ -13,6 +13,11 @@ public static class BorderTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXVmlW.BorderType openXmlElement, DMWVml.BorderKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXVmlW.BorderType openXmlElement, DMWVml.BorderKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(value);
@@ -26,6 +31,11 @@ public static class BorderTypeConverter
     return openXmlElement.Width?.Value;
   }
   
+  private static bool CmpWidth(DXVmlW.BorderType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Width?.Value == value;
+  }
+  
   private static void SetWidth(DXVmlW.BorderType openXmlElement, Int64? value)
   {
     openXmlElement.Width = value;
@@ -37,6 +47,11 @@ public static class BorderTypeConverter
   private static Boolean? GetShadow(DXVmlW.BorderType openXmlElement)
   {
     return openXmlElement?.Shadow?.Value;
+  }
+  
+  private static bool CmpShadow(DXVmlW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Shadow?.Value == value;
   }
   
   private static void SetShadow(DXVmlW.BorderType openXmlElement, Boolean? value)
@@ -58,6 +73,22 @@ public static class BorderTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlW.BorderType? openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWVml.BorderType? value)

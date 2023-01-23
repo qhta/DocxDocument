@@ -7,10 +7,12 @@ public static class ToAnchorConverter
 {
   private static String? GetXPosition(DXDrawChartDraw.ToAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text;
+  }
+  
+  private static bool CmpXPosition(DXDrawChartDraw.ToAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text == value;
   }
   
   private static void SetXPosition(DXDrawChartDraw.ToAnchor openXmlElement, String? value)
@@ -27,10 +29,12 @@ public static class ToAnchorConverter
   
   private static String? GetYPosition(DXDrawChartDraw.ToAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text;
+  }
+  
+  private static bool CmpYPosition(DXDrawChartDraw.ToAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text == value;
   }
   
   private static void SetYPosition(DXDrawChartDraw.ToAnchor openXmlElement, String? value)
@@ -55,6 +59,20 @@ public static class ToAnchorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.ToAnchor? openXmlElement, DMDrawsChartDraw.ToAnchor? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpXPosition(openXmlElement, value.XPosition, diffs, objName))
+        ok = false;
+      if (!CmpYPosition(openXmlElement, value.YPosition, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.ToAnchor? value)

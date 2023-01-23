@@ -10,10 +10,12 @@ public static class RecipientDataConverter
   /// </summary>
   private static Boolean? GetActive(DXW.RecipientData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Active>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Active>()?.Val?.Value;
+  }
+  
+  private static bool CmpActive(DXW.RecipientData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Active>()?.Val?.Value == value;
   }
   
   private static void SetActive(DXW.RecipientData openXmlElement, Boolean? value)
@@ -36,10 +38,12 @@ public static class RecipientDataConverter
   /// </summary>
   private static UInt32? GetColumnIndex(DXW.RecipientData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnIndex>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val?.Value;
+  }
+  
+  private static bool CmpColumnIndex(DXW.RecipientData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val?.Value == value;
   }
   
   private static void SetColumnIndex(DXW.RecipientData openXmlElement, UInt32? value)
@@ -59,10 +63,12 @@ public static class RecipientDataConverter
   /// </summary>
   private static Byte[]? GetUniqueTag(DXW.RecipientData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.UniqueTag>();
-    if (itemElement != null)
-      return DMX.HexBinaryConverter.GetValue(itemElement);
-    return null;
+    return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXW.UniqueTag>());
+  }
+  
+  private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  {
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value)
@@ -89,6 +95,22 @@ public static class RecipientDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.RecipientData? openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpActive(openXmlElement, value.Active, diffs, objName))
+        ok = false;
+      if (!CmpColumnIndex(openXmlElement, value.ColumnIndex, diffs, objName))
+        ok = false;
+      if (!CmpUniqueTag(openXmlElement, value.UniqueTag, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RecipientData? value)

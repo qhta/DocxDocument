@@ -10,10 +10,12 @@ public static class DocPartConverter
   /// </summary>
   private static DMW.DocPartProperties? GetDocPartProperties(DXW.DocPart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartProperties>();
-    if (itemElement != null)
-      return DMXW.DocPartPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocPartPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartProperties>());
+  }
+  
+  private static bool CmpDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocPartPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value)
@@ -34,10 +36,12 @@ public static class DocPartConverter
   /// </summary>
   private static DMW.DocPartBody? GetDocPartBody(DXW.DocPart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartBody>();
-    if (itemElement != null)
-      return DMXW.DocPartBodyConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DocPartBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartBody>());
+  }
+  
+  private static bool CmpDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DocPartBodyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value)
@@ -63,6 +67,20 @@ public static class DocPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocPart? openXmlElement, DMW.DocPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocPartProperties(openXmlElement, value.DocPartProperties, diffs, objName))
+        ok = false;
+      if (!CmpDocPartBody(openXmlElement, value.DocPartBody, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPart? value)

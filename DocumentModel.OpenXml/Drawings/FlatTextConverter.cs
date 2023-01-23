@@ -13,6 +13,11 @@ public static class FlatTextConverter
     return openXmlElement.Z?.Value;
   }
   
+  private static bool CmpZ(DXDraw.FlatText openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Z?.Value == value;
+  }
+  
   private static void SetZ(DXDraw.FlatText openXmlElement, Int64? value)
   {
     openXmlElement.Z = value;
@@ -27,6 +32,18 @@ public static class FlatTextConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.FlatText? openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpZ(openXmlElement, value.Z, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FlatText? value)

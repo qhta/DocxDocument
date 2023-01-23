@@ -20,6 +20,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpAlternativeFormatImportParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.AlternativeFormatImportPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the WordprocessingCommentsPart
   /// </summary>
@@ -35,14 +40,22 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMW.Comments? GetComments(DXPack.WordprocessingCommentsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Comments rootElement)
-      return DMXW.CommentsConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.CommentsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Comments);
+  }
+  
+  private static bool CmpComments(DXPack.WordprocessingCommentsPart openXmlElement, DMW.Comments? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetComments(DXPack.WordprocessingCommentsPart openXmlElement, DMW.Comments? value)
@@ -60,6 +73,11 @@ public static class WordprocessingCommentsPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the DiagramColorsParts of the WordprocessingCommentsPart
   /// </summary>
@@ -73,6 +91,11 @@ public static class WordprocessingCommentsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramColorsParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -90,6 +113,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramDataParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the WordprocessingCommentsPart
   /// </summary>
@@ -103,6 +131,11 @@ public static class WordprocessingCommentsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -120,6 +153,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramPersistLayoutParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramStyleParts of the WordprocessingCommentsPart
   /// </summary>
@@ -133,6 +171,11 @@ public static class WordprocessingCommentsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramStyleParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -150,6 +193,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedControlPersistenceParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsPart
   /// </summary>
@@ -163,6 +211,11 @@ public static class WordprocessingCommentsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedObjectParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -180,6 +233,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedPackageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ExtendedChartParts of the WordprocessingCommentsPart
   /// </summary>
@@ -193,6 +251,11 @@ public static class WordprocessingCommentsPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpExtendedChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -210,6 +273,11 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsPart
   /// </summary>
@@ -225,9 +293,19 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.WordprocessingCommentsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.WordprocessingCommentsPart? CreateModelElement(DXPack.WordprocessingCommentsPart? openXmlElement)
@@ -254,6 +332,48 @@ public static class WordprocessingCommentsPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.WordprocessingCommentsPart? openXmlElement, DMPack.WordprocessingCommentsPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAlternativeFormatImportParts(openXmlElement, value.AlternativeFormatImportParts, diffs, objName))
+        ok = false;
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+        ok = false;
+      if (!CmpComments(openXmlElement, value.Comments, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+        ok = false;
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingCommentsPart? value)

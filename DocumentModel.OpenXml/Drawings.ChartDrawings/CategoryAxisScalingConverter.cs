@@ -13,6 +13,11 @@ public static class CategoryAxisScalingConverter
     return openXmlElement?.GapWidth?.Value;
   }
   
+  private static bool CmpGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GapWidth?.Value == value;
+  }
+  
   private static void SetGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class CategoryAxisScalingConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.CategoryAxisScaling? openXmlElement, DMDrawsChartDraws.CategoryAxisScaling? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.CategoryAxisScaling? value)

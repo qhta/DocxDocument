@@ -13,6 +13,11 @@ public static class LatentStyleExceptionInfoConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.LatentStyleExceptionInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.LatentStyleExceptionInfo openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class LatentStyleExceptionInfoConverter
   private static Boolean? GetLocked(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
+  }
+  
+  private static bool CmpLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Locked?.Value == value;
   }
   
   private static void SetLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class LatentStyleExceptionInfoConverter
     return openXmlElement.UiPriority?.Value;
   }
   
+  private static bool CmpUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.UiPriority?.Value == value;
+  }
+  
   private static void SetUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value)
   {
     openXmlElement.UiPriority = value;
@@ -56,6 +71,11 @@ public static class LatentStyleExceptionInfoConverter
   private static Boolean? GetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.SemiHidden?.Value;
+  }
+  
+  private static bool CmpSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SemiHidden?.Value == value;
   }
   
   private static void SetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -74,6 +94,11 @@ public static class LatentStyleExceptionInfoConverter
     return openXmlElement?.UnhideWhenUsed?.Value;
   }
   
+  private static bool CmpUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UnhideWhenUsed?.Value == value;
+  }
+  
   private static void SetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -88,6 +113,11 @@ public static class LatentStyleExceptionInfoConverter
   private static Boolean? GetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.PrimaryStyle?.Value;
+  }
+  
+  private static bool CmpPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PrimaryStyle?.Value == value;
   }
   
   private static void SetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -112,6 +142,28 @@ public static class LatentStyleExceptionInfoConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.LatentStyleExceptionInfo? openXmlElement, DMW.LatentStyleExceptionInfo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpLocked(openXmlElement, value.Locked, diffs, objName))
+        ok = false;
+      if (!CmpUiPriority(openXmlElement, value.UiPriority, diffs, objName))
+        ok = false;
+      if (!CmpSemiHidden(openXmlElement, value.SemiHidden, diffs, objName))
+        ok = false;
+      if (!CmpUnhideWhenUsed(openXmlElement, value.UnhideWhenUsed, diffs, objName))
+        ok = false;
+      if (!CmpPrimaryStyle(openXmlElement, value.PrimaryStyle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LatentStyleExceptionInfo? value)

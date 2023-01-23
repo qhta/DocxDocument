@@ -13,6 +13,11 @@ public static class RibbonConverter
     return openXmlElement?.StartFromScratch?.Value;
   }
   
+  private static bool CmpStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.StartFromScratch?.Value == value;
+  }
+  
   private static void SetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class RibbonConverter
   /// </summary>
   private static DM.QuickAccessToolbar? GetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
-    if (itemElement != null)
-      return DMX.QuickAccessToolbarConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.QuickAccessToolbarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>());
+  }
+  
+  private static bool CmpQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  {
+    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
@@ -50,10 +57,12 @@ public static class RibbonConverter
   /// </summary>
   private static DM.Tabs? GetTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>();
-    if (itemElement != null)
-      return DMX.TabsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.TabsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>());
+  }
+  
+  private static bool CmpTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
+  {
+    return DMX.TabsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value)
@@ -74,10 +83,12 @@ public static class RibbonConverter
   /// </summary>
   private static DM.ContextualTabs? GetContextualTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>();
-    if (itemElement != null)
-      return DMX.ContextualTabsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ContextualTabsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>());
+  }
+  
+  private static bool CmpContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value)
@@ -105,6 +116,24 @@ public static class RibbonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.Ribbon? openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStartFromScratch(openXmlElement, value.StartFromScratch, diffs, objName))
+        ok = false;
+      if (!CmpQuickAccessToolbar(openXmlElement, value.QuickAccessToolbar, diffs, objName))
+        ok = false;
+      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName))
+        ok = false;
+      if (!CmpContextualTabs(openXmlElement, value.ContextualTabs, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Ribbon? value)

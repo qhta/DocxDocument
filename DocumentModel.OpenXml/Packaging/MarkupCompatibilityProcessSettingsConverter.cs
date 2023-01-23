@@ -15,6 +15,13 @@ public static class MarkupCompatibilityProcessSettingsConverter
     return null;
   }
   
+  private static bool CmpProcessMode(DXPack.MarkupCompatibilityProcessSettings openXmlElement, DMPack.MarkupCompatibilityProcessMode? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement?.ProcessMode != null)
+      return EnumValueConverter.CmpValue<DXPack.MarkupCompatibilityProcessMode, DMPack.MarkupCompatibilityProcessMode>(openXmlElement.ProcessMode, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return openXmlElement == null && value == null;
+  }
+  
   /// <summary>
   /// Gets the target file format versions.
   /// </summary>
@@ -23,6 +30,13 @@ public static class MarkupCompatibilityProcessSettingsConverter
     if (openXmlElement?.TargetFileFormatVersions != null)
       return EnumValueConverter.GetValue<DX.FileFormatVersions, DM.FileFormatVersions>(openXmlElement.TargetFileFormatVersions);
     return null;
+  }
+  
+  private static bool CmpTargetFileFormatVersions(DXPack.MarkupCompatibilityProcessSettings openXmlElement, DM.FileFormatVersions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement?.TargetFileFormatVersions != null)
+      return EnumValueConverter.CmpValue<DX.FileFormatVersions, DM.FileFormatVersions>(openXmlElement.TargetFileFormatVersions, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return openXmlElement == null && value == null;
   }
   
   public static DMPack.MarkupCompatibilityProcessSettings? CreateModelElement(DXPack.MarkupCompatibilityProcessSettings? openXmlElement)
@@ -35,6 +49,20 @@ public static class MarkupCompatibilityProcessSettingsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.MarkupCompatibilityProcessSettings? openXmlElement, DMPack.MarkupCompatibilityProcessSettings? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpProcessMode(openXmlElement, value.ProcessMode, diffs, objName))
+        ok = false;
+      if (!CmpTargetFileFormatVersions(openXmlElement, value.TargetFileFormatVersions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MarkupCompatibilityProcessSettings? value)

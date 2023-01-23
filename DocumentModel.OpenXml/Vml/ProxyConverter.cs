@@ -13,6 +13,11 @@ public static class ProxyConverter
     return openXmlElement?.Start?.Value;
   }
   
+  private static bool CmpStart(DXVmlO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Start?.Value == value;
+  }
+  
   private static void SetStart(DXVmlO.Proxy openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ProxyConverter
   private static Boolean? GetEnd(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement?.End?.Value;
+  }
+  
+  private static bool CmpEnd(DXVmlO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.End?.Value == value;
   }
   
   private static void SetEnd(DXVmlO.Proxy openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class ProxyConverter
     return openXmlElement?.ShapeReference?.Value;
   }
   
+  private static bool CmpShapeReference(DXVmlO.Proxy openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShapeReference?.Value == value;
+  }
+  
   private static void SetShapeReference(DXVmlO.Proxy openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class ProxyConverter
   private static Int32? GetConnectionLocation(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement.ConnectionLocation?.Value;
+  }
+  
+  private static bool CmpConnectionLocation(DXVmlO.Proxy openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ConnectionLocation?.Value == value;
   }
   
   private static void SetConnectionLocation(DXVmlO.Proxy openXmlElement, Int32? value)
@@ -78,6 +98,24 @@ public static class ProxyConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.Proxy? openXmlElement, DMVml.Proxy? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+        ok = false;
+      if (!CmpEnd(openXmlElement, value.End, diffs, objName))
+        ok = false;
+      if (!CmpShapeReference(openXmlElement, value.ShapeReference, diffs, objName))
+        ok = false;
+      if (!CmpConnectionLocation(openXmlElement, value.ConnectionLocation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Proxy? value)

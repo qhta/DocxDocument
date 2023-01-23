@@ -17,6 +17,11 @@ public static class ConstraintsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXDrawDgms.Constraints openXmlElement, Collection<DMDrawsDgms.Constraint>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXDrawDgms.Constraints openXmlElement, Collection<DMDrawsDgms.Constraint>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Constraint>();
@@ -40,6 +45,18 @@ public static class ConstraintsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Constraints? openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Constraints? value)

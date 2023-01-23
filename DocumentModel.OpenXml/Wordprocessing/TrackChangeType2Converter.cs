@@ -13,6 +13,11 @@ public static class TrackChangeType2Converter
     return openXmlElement?.Author?.Value;
   }
   
+  private static bool CmpAuthor(DXO2010W.TrackChangeType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
+  }
+  
   private static void SetAuthor(DXO2010W.TrackChangeType openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class TrackChangeType2Converter
     return openXmlElement.Date?.Value;
   }
   
+  private static bool CmpDate(DXO2010W.TrackChangeType openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Date?.Value == value;
+  }
+  
   private static void SetDate(DXO2010W.TrackChangeType openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
@@ -40,6 +50,11 @@ public static class TrackChangeType2Converter
   private static String? GetId(DXO2010W.TrackChangeType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXO2010W.TrackChangeType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXO2010W.TrackChangeType openXmlElement, String? value)
@@ -61,6 +76,22 @@ public static class TrackChangeType2Converter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.TrackChangeType? openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TrackChangeType2? value)

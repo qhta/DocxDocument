@@ -10,10 +10,12 @@ public static class MarkerTypeConverter
   /// </summary>
   private static String? GetXPosition(DXDrawChartDraw.MarkerType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text;
+  }
+  
+  private static bool CmpXPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text == value;
   }
   
   private static void SetXPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class MarkerTypeConverter
   /// </summary>
   private static String? GetYPosition(DXDrawChartDraw.MarkerType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text;
+  }
+  
+  private static bool CmpYPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text == value;
   }
   
   private static void SetYPosition(DXDrawChartDraw.MarkerType openXmlElement, String? value)
@@ -61,6 +65,20 @@ public static class MarkerTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.MarkerType? openXmlElement, DMDrawsChartDraw.MarkerType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpXPosition(openXmlElement, value.XPosition, diffs, objName))
+        ok = false;
+      if (!CmpYPosition(openXmlElement, value.YPosition, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.MarkerType? value)
