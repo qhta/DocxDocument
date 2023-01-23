@@ -19,7 +19,9 @@ public static class MarkupCompatibilityProcessSettingsConverter
   {
     if (openXmlElement?.ProcessMode != null)
       return EnumValueConverter.CmpValue<DXPack.MarkupCompatibilityProcessMode, DMPack.MarkupCompatibilityProcessMode>(openXmlElement.ProcessMode, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
-    return openXmlElement == null && value == null;
+    if (openXmlElement?.ProcessMode == null && value == null) return true;
+    diffs?.Add(objName, "ProcessMode", openXmlElement?.ProcessMode, value);
+    return false;
   }
   
   /// <summary>
@@ -36,7 +38,9 @@ public static class MarkupCompatibilityProcessSettingsConverter
   {
     if (openXmlElement?.TargetFileFormatVersions != null)
       return EnumValueConverter.CmpValue<DX.FileFormatVersions, DM.FileFormatVersions>(openXmlElement.TargetFileFormatVersions, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
-    return openXmlElement == null && value == null;
+    if (openXmlElement?.TargetFileFormatVersions == null && value == null) return true;
+    diffs?.Add(objName, "TargetFileFormatVersions", openXmlElement?.TargetFileFormatVersions, value);
+    return false;
   }
   
   public static DMPack.MarkupCompatibilityProcessSettings? CreateModelElement(DXPack.MarkupCompatibilityProcessSettings? openXmlElement)
@@ -62,7 +66,9 @@ public static class MarkupCompatibilityProcessSettingsConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MarkupCompatibilityProcessSettings? value)

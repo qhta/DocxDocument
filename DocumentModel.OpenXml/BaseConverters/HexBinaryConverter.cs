@@ -4,19 +4,19 @@ namespace DocumentModel.OpenXml;
 
 public static class HexBinaryConverter
 {
-  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = element?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      var valStr = (string?)valProperty.GetValue(element);
+      var valStr = (string?)valProperty.GetValue(openXmlElement);
       if (valStr != null)
         return Convert.FromHexString(valStr);
     }
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, byte[]? value, DiffList? diffs, string? objectName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, byte[]? value, DiffList? diffs, string? objName)
   {
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null && value != null)
@@ -24,11 +24,11 @@ public static class HexBinaryConverter
       var valStr = (string?)valProperty.GetValue(element);
       var valueStr = Convert.ToHexString(value);
       if (valStr == valueStr) return true;
-      diffs?.Add(objectName, element?.GetType().ToString(), valStr, valueStr);
+      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
       return false;
     }
     if (valProperty == null && value == null) return true;
-    diffs?.Add(objectName, element?.GetType().ToString(), value, value);
+    diffs?.Add(objName, element?.GetType().ToString(), element, value);
     return false;
   }
 

@@ -10,12 +10,12 @@ public static class ParagraphPropertiesExtendedConverter
   /// </summary>
   private static String? GetParagraphStyleId(DXW.ParagraphPropertiesExtended openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.ParagraphStyleId>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.ParagraphStyleId>()?.Val?.Value;
   }
   
   private static bool CmpParagraphStyleId(DXW.ParagraphPropertiesExtended openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.ParagraphStyleId>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.ParagraphStyleId>()?.Val?.Value == value;
   }
   
   private static void SetParagraphStyleId(DXW.ParagraphPropertiesExtended openXmlElement, String? value)
@@ -1012,7 +1012,9 @@ public static class ParagraphPropertiesExtendedConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphPropertiesExtended? value)

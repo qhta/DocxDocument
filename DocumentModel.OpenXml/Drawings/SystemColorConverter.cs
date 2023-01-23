@@ -36,16 +36,19 @@ public static class SystemColorConverter
   private static bool CmpLastColor(DXDraw.SystemColor openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.LastColor?.Value != null)
-      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.LastColor?.Value == null && value == null) return true;
+    diffs?.Add(objName, "LastColor", openXmlElement?.LastColor?.Value, value?.ToString());
+    return false;
   }
   
   private static void SetLastColor(DXDraw.SystemColor openXmlElement, DM.RGB? value)
   {
-      if (value != null)
-        openXmlElement.LastColor = ((UInt32)value).ToString("X6");
-      else
-        openXmlElement.LastColor = null;
+    if (value != null)
+      openXmlElement.LastColor = ((UInt32)value).ToString("X6");
+    else
+      openXmlElement.LastColor = null;
   }
   
   private static Int32? GetTint(DXDraw.SystemColor openXmlElement)
@@ -786,7 +789,9 @@ public static class SystemColorConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SystemColor? value)

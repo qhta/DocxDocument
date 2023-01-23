@@ -18,16 +18,19 @@ public static class CommentExtensibleConverter
   private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.DurableId?.Value != null)
-      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.DurableId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.DurableId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.DurableId = null;
+    if (value != null)
+      openXmlElement.DurableId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.DurableId = null;
   }
   
   /// <summary>
@@ -124,7 +127,9 @@ public static class CommentExtensibleConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentExtensible? value)

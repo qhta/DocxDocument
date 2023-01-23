@@ -28,12 +28,12 @@ public static class SdtContentDateConverter
   /// </summary>
   private static String? GetDateFormat(DXW.SdtContentDate openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value;
   }
   
   private static bool CmpDateFormat(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value == value;
   }
   
   private static void SetDateFormat(DXW.SdtContentDate openXmlElement, String? value)
@@ -157,7 +157,9 @@ public static class SdtContentDateConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDate? value)

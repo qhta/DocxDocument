@@ -19,7 +19,30 @@ public static class WebExtensionBindingListConverter
   
   private static bool CmpWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXO2013WebExt.WebExtensionBinding>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXWebExt.WebExtensionBindingConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value)
@@ -56,7 +79,9 @@ public static class WebExtensionBindingListConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBindingList? value)

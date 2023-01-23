@@ -1033,7 +1033,30 @@ public static class GalleryRegularConverter
   
   private static bool CmpItems(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.Item>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXO2010CustUI.Item>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMX.ItemConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetItems(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.Item>? value)
@@ -1064,7 +1087,30 @@ public static class GalleryRegularConverter
   
   private static bool CmpButtonRegulars(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.ButtonRegular>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXO2010CustUI.ButtonRegular>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMX.ButtonRegularConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetButtonRegulars(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.ButtonRegular>? value)
@@ -1251,7 +1297,9 @@ public static class GalleryRegularConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.GalleryRegular? value)

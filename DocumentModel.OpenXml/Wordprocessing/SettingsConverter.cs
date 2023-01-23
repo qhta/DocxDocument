@@ -601,7 +601,30 @@ public static class SettingsConverter
   
   private static bool CmpActiveWritingStyles(DXW.Settings openXmlElement, Collection<DMW.ActiveWritingStyle>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.ActiveWritingStyle>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXW.ActiveWritingStyleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetActiveWritingStyles(DXW.Settings openXmlElement, Collection<DMW.ActiveWritingStyle>? value)
@@ -2079,7 +2102,30 @@ public static class SettingsConverter
   
   private static bool CmpAttachedSchemas(DXW.Settings openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.AttachedSchema>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!StringValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetAttachedSchemas(DXW.Settings openXmlElement, Collection<String>? value)
@@ -2311,12 +2357,12 @@ public static class SettingsConverter
   
   private static String? GetDecimalSymbol(DXW.Settings openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.DecimalSymbol>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.DecimalSymbol>()?.Val?.Value;
   }
   
   private static bool CmpDecimalSymbol(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.DecimalSymbol>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.DecimalSymbol>()?.Val?.Value == value;
   }
   
   private static void SetDecimalSymbol(DXW.Settings openXmlElement, String? value)
@@ -2333,12 +2379,12 @@ public static class SettingsConverter
   
   private static String? GetListSeparator(DXW.Settings openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.ListSeparator>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.ListSeparator>()?.Val?.Value;
   }
   
   private static bool CmpListSeparator(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.ListSeparator>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.ListSeparator>()?.Val?.Value == value;
   }
   
   private static void SetListSeparator(DXW.Settings openXmlElement, String? value)
@@ -2811,7 +2857,9 @@ public static class SettingsConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Settings? value)

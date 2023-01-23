@@ -10,12 +10,12 @@ public static class CategoryConverter
   /// </summary>
   private static String? GetName(DXW.Category openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
   }
   
   private static bool CmpName(DXW.Category openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value == value;
   }
   
   private static void SetName(DXW.Category openXmlElement, String? value)
@@ -79,7 +79,9 @@ public static class CategoryConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Category? value)

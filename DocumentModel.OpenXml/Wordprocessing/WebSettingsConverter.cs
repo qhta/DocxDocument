@@ -62,12 +62,12 @@ public static class WebSettingsConverter
   /// </summary>
   private static String? GetWebPageEncoding(DXW.WebSettings openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.WebPageEncoding>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.WebPageEncoding>()?.Val?.Value;
   }
   
   private static bool CmpWebPageEncoding(DXW.WebSettings openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.WebPageEncoding>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.WebPageEncoding>()?.Val?.Value == value;
   }
   
   private static void SetWebPageEncoding(DXW.WebSettings openXmlElement, String? value)
@@ -382,7 +382,9 @@ public static class WebSettingsConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.WebSettings? value)

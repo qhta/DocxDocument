@@ -1116,8 +1116,11 @@ public static class ShapeConverter
   private static bool CmpEncodedPackage(DXVml.Shape openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.EncodedPackage?.Value != null)
-      return Convert.FromBase64String(openXmlElement.EncodedPackage.Value) == value;
-    return openXmlElement == null && value == null;
+      if (Convert.FromBase64String(openXmlElement.EncodedPackage.Value) == value)
+        return true;
+    if (openXmlElement.EncodedPackage?.Value == null && value == null) return true;
+    diffs?.Add(objName, "EncodedPackage", openXmlElement?.EncodedPackage?.Value, value);
+    return false;
   }
   
   private static void SetEncodedPackage(DXVml.Shape openXmlElement, Byte[]? value)
@@ -1936,7 +1939,9 @@ public static class ShapeConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Shape? value)

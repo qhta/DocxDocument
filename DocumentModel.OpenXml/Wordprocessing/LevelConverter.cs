@@ -36,16 +36,19 @@ public static class LevelConverter
   private static bool CmpTemplateCode(DXW.Level openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.TemplateCode?.Value != null)
-      return UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.TemplateCode?.Value == null && value == null) return true;
+    diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetTemplateCode(DXW.Level openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.TemplateCode = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.TemplateCode = null;
+    if (value != null)
+      openXmlElement.TemplateCode = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.TemplateCode = null;
   }
   
   /// <summary>
@@ -441,7 +444,9 @@ public static class LevelConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Level? value)

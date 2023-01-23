@@ -60,16 +60,19 @@ public static class AllocatedCommandConverter
   private static bool CmpCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.CommandIndexBasedOn?.Value != null)
-      return UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.CommandIndexBasedOn?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CommandIndexBasedOn", openXmlElement?.CommandIndexBasedOn?.Value, value?.ToString("x4"));
+    return false;
   }
   
   private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value)
   {
-      if (value != null)
-        openXmlElement.CommandIndexBasedOn = ((UInt16)value).ToString("X4");
-      else
-        openXmlElement.CommandIndexBasedOn = null;
+    if (value != null)
+      openXmlElement.CommandIndexBasedOn = ((UInt16)value).ToString("X4");
+    else
+      openXmlElement.CommandIndexBasedOn = null;
   }
   
   /// <summary>
@@ -122,7 +125,9 @@ public static class AllocatedCommandConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommand? value)

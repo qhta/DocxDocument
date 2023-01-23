@@ -36,12 +36,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static String? GetStyleId(DXW.DocPartProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value;
   }
   
   private static bool CmpStyleId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value == value;
   }
   
   private static void SetStyleId(DXW.DocPartProperties openXmlElement, String? value)
@@ -139,12 +139,12 @@ public static class DocPartPropertiesConverter
   /// </summary>
   private static String? GetDescription(DXW.DocPartProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value;
   }
   
   private static bool CmpDescription(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value == value;
   }
   
   private static void SetDescription(DXW.DocPartProperties openXmlElement, String? value)
@@ -222,7 +222,9 @@ public static class DocPartPropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartProperties? value)

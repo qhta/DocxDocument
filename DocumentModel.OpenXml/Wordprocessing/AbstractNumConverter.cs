@@ -36,16 +36,19 @@ public static class AbstractNumConverter
   private static bool CmpNsid(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Nsid?.Val?.Value != null)
-      return UInt32.Parse(openXmlElement.Nsid.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.Nsid.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Nsid?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Nsid", openXmlElement?.Nsid?.Val?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetNsid(DXW.AbstractNum openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.Nsid = new DXW.Nsid { Val = ((UInt32)value).ToString("X8") };
-      else
-        openXmlElement.Nsid = null;
+    if (value != null)
+      openXmlElement.Nsid = new DXW.Nsid { Val = ((UInt32)value).ToString("X8") };
+    else
+      openXmlElement.Nsid = null;
   }
   
   /// <summary>
@@ -87,16 +90,19 @@ public static class AbstractNumConverter
   private static bool CmpTemplateCode(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.TemplateCode?.Val?.Value != null)
-      return UInt32.Parse(openXmlElement.TemplateCode.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.TemplateCode.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.TemplateCode?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Val?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetTemplateCode(DXW.AbstractNum openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.TemplateCode = new DXW.TemplateCode { Val = ((UInt32)value).ToString("X8") };
-      else
-        openXmlElement.TemplateCode = null;
+    if (value != null)
+      openXmlElement.TemplateCode = new DXW.TemplateCode { Val = ((UInt32)value).ToString("X8") };
+    else
+      openXmlElement.TemplateCode = null;
   }
   
   /// <summary>
@@ -188,7 +194,30 @@ public static class AbstractNumConverter
   
   private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.Level>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXW.LevelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value)
@@ -246,7 +275,9 @@ public static class AbstractNumConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AbstractNum? value)

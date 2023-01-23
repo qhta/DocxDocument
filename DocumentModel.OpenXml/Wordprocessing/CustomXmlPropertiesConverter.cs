@@ -10,12 +10,12 @@ public static class CustomXmlPropertiesConverter
   /// </summary>
   private static String? GetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value;
   }
   
   private static bool CmpCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value == value;
   }
   
   private static void SetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement, String? value)
@@ -44,7 +44,30 @@ public static class CustomXmlPropertiesConverter
   
   private static bool CmpCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.CustomXmlAttribute>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXW.CustomXmlAttributeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value)
@@ -84,7 +107,9 @@ public static class CustomXmlPropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlProperties? value)
