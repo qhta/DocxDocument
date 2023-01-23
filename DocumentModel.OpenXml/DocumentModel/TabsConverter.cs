@@ -17,6 +17,11 @@ public static class TabsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXO2010CustUI.Tabs openXmlElement, Collection<DM.Tab>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXO2010CustUI.Tabs openXmlElement, Collection<DM.Tab>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2010CustUI.Tab>();
@@ -40,6 +45,18 @@ public static class TabsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.Tabs? openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Tabs? value)

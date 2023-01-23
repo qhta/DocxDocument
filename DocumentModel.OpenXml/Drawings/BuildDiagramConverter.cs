@@ -13,6 +13,11 @@ public static class BuildDiagramConverter
     return openXmlElement?.Build?.Value;
   }
   
+  private static bool CmpBuild(DXDraw.BuildDiagram openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Build?.Value == value;
+  }
+  
   private static void SetBuild(DXDraw.BuildDiagram openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BuildDiagramConverter
   private static Boolean? GetReverseAnimation(DXDraw.BuildDiagram openXmlElement)
   {
     return openXmlElement?.ReverseAnimation?.Value;
+  }
+  
+  private static bool CmpReverseAnimation(DXDraw.BuildDiagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ReverseAnimation?.Value == value;
   }
   
   private static void SetReverseAnimation(DXDraw.BuildDiagram openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class BuildDiagramConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BuildDiagram? openXmlElement, DMDraws.BuildDiagram? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBuild(openXmlElement, value.Build, diffs, objName))
+        ok = false;
+      if (!CmpReverseAnimation(openXmlElement, value.ReverseAnimation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BuildDiagram? value)

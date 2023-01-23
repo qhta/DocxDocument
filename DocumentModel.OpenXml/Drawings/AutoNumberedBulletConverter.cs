@@ -13,6 +13,11 @@ public static class AutoNumberedBulletConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.TextAutoNumberSchemeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.TextAutoNumberSchemeKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(value);
@@ -24,6 +29,11 @@ public static class AutoNumberedBulletConverter
   private static Int32? GetStartAt(DXDraw.AutoNumberedBullet openXmlElement)
   {
     return openXmlElement.StartAt?.Value;
+  }
+  
+  private static bool CmpStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.StartAt?.Value == value;
   }
   
   private static void SetStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class AutoNumberedBulletConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AutoNumberedBullet? openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpStartAt(openXmlElement, value.StartAt, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AutoNumberedBullet? value)

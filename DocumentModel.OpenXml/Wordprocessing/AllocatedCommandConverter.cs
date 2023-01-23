@@ -13,6 +13,11 @@ public static class AllocatedCommandConverter
     return openXmlElement?.ArgumentValue?.Value;
   }
   
+  private static bool CmpArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ArgumentValue?.Value == value;
+  }
+  
   private static void SetArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class AllocatedCommandConverter
   private static String? GetCommandBasedOn(DXOW.AllocatedCommand openXmlElement)
   {
     return openXmlElement?.CommandBasedOn?.Value;
+  }
+  
+  private static bool CmpCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CommandBasedOn?.Value == value;
   }
   
   private static void SetCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value)
@@ -47,6 +57,13 @@ public static class AllocatedCommandConverter
     return null;
   }
   
+  private static bool CmpCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.CommandIndexBasedOn?.Value != null)
+      return UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value)
   {
       if (value != null)
@@ -61,6 +78,11 @@ public static class AllocatedCommandConverter
   private static String? GetAcceleratorName(DXOW.AllocatedCommand openXmlElement)
   {
     return openXmlElement?.AcceleratorName?.Value;
+  }
+  
+  private static bool CmpAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AcceleratorName?.Value == value;
   }
   
   private static void SetAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value)
@@ -83,6 +105,24 @@ public static class AllocatedCommandConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.AllocatedCommand? openXmlElement, DMW.AllocatedCommand? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpArgumentValue(openXmlElement, value.ArgumentValue, diffs, objName))
+        ok = false;
+      if (!CmpCommandBasedOn(openXmlElement, value.CommandBasedOn, diffs, objName))
+        ok = false;
+      if (!CmpCommandIndexBasedOn(openXmlElement, value.CommandIndexBasedOn, diffs, objName))
+        ok = false;
+      if (!CmpAcceleratorName(openXmlElement, value.AcceleratorName, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommand? value)

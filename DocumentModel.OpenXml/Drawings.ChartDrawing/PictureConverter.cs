@@ -13,6 +13,11 @@ public static class PictureConverter
     return openXmlElement?.Macro?.Value;
   }
   
+  private static bool CmpMacro(DXDrawChartDraw.Picture openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Macro?.Value == value;
+  }
+  
   private static void SetMacro(DXDrawChartDraw.Picture openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class PictureConverter
     return openXmlElement?.Published?.Value;
   }
   
+  private static bool CmpPublished(DXDrawChartDraw.Picture openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Published?.Value == value;
+  }
+  
   private static void SetPublished(DXDrawChartDraw.Picture openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -42,10 +52,12 @@ public static class PictureConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualPictureProperties? GetNonVisualPictureProperties(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureProperties>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.NonVisualPicturePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureProperties>());
+  }
+  
+  private static bool CmpNonVisualPictureProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.NonVisualPictureProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.NonVisualPicturePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualPictureProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.NonVisualPictureProperties? value)
@@ -66,10 +78,12 @@ public static class PictureConverter
   /// </summary>
   private static DMDrawsChartDraw.BlipFill? GetBlipFill(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.BlipFill>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.BlipFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.BlipFill>());
+  }
+  
+  private static bool CmpBlipFill(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.BlipFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.BlipFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlipFill(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.BlipFill? value)
@@ -90,10 +104,12 @@ public static class PictureConverter
   /// </summary>
   private static DMDrawsChartDraw.ShapeProperties? GetShapeProperties(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.ShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>());
+  }
+  
+  private static bool CmpShapeProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.ShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.ShapeProperties? value)
@@ -114,10 +130,12 @@ public static class PictureConverter
   /// </summary>
   private static DMDrawsChartDraw.Style? GetStyle(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.StyleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.StyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>());
+  }
+  
+  private static bool CmpStyle(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.Style? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.StyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyle(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.Style? value)
@@ -147,6 +165,28 @@ public static class PictureConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.Picture? openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName))
+        ok = false;
+      if (!CmpPublished(openXmlElement, value.Published, diffs, objName))
+        ok = false;
+      if (!CmpNonVisualPictureProperties(openXmlElement, value.NonVisualPictureProperties, diffs, objName))
+        ok = false;
+      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName))
+        ok = false;
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Picture? value)

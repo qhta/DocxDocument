@@ -13,6 +13,11 @@ public static class OleObjectConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DMVml.OleKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXVmlO.OleObject openXmlElement, DMVml.OleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DMVml.OleKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXVmlO.OleObject openXmlElement, DMVml.OleKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DMVml.OleKind>(value);
@@ -24,6 +29,11 @@ public static class OleObjectConverter
   private static String? GetProgId(DXVmlO.OleObject openXmlElement)
   {
     return openXmlElement?.ProgId?.Value;
+  }
+  
+  private static bool CmpProgId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ProgId?.Value == value;
   }
   
   private static void SetProgId(DXVmlO.OleObject openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class OleObjectConverter
     return openXmlElement?.ShapeId?.Value;
   }
   
+  private static bool CmpShapeId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShapeId?.Value == value;
+  }
+  
   private static void SetShapeId(DXVmlO.OleObject openXmlElement, String? value)
   {
     if (value != null)
@@ -58,6 +73,11 @@ public static class OleObjectConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DMVml.OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value);
   }
   
+  private static bool CmpDrawAspect(DXVmlO.OleObject openXmlElement, DMVml.OleDrawAspectKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DMVml.OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetDrawAspect(DXVmlO.OleObject openXmlElement, DMVml.OleDrawAspectKind? value)
   {
     openXmlElement.DrawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DMVml.OleDrawAspectKind>(value);
@@ -69,6 +89,11 @@ public static class OleObjectConverter
   private static String? GetObjectId(DXVmlO.OleObject openXmlElement)
   {
     return openXmlElement?.ObjectId?.Value;
+  }
+  
+  private static bool CmpObjectId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ObjectId?.Value == value;
   }
   
   private static void SetObjectId(DXVmlO.OleObject openXmlElement, String? value)
@@ -87,6 +112,11 @@ public static class OleObjectConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXVmlO.OleObject openXmlElement, String? value)
   {
     if (value != null)
@@ -103,6 +133,11 @@ public static class OleObjectConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DMVml.OleUpdateMode>(openXmlElement?.UpdateMode?.Value);
   }
   
+  private static bool CmpUpdateMode(DXVmlO.OleObject openXmlElement, DMVml.OleUpdateMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DMVml.OleUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetUpdateMode(DXVmlO.OleObject openXmlElement, DMVml.OleUpdateMode? value)
   {
     openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DMVml.OleUpdateMode>(value);
@@ -113,10 +148,12 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetLinkType(DXVmlO.OleObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.LinkType>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXVmlO.LinkType>()?.Text;
+  }
+  
+  private static bool CmpLinkType(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXVmlO.LinkType>()?.Text == value;
   }
   
   private static void SetLinkType(DXVmlO.OleObject openXmlElement, String? value)
@@ -136,10 +173,12 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetLockedField(DXVmlO.OleObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.LockedField>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXVmlO.LockedField>()?.Text;
+  }
+  
+  private static bool CmpLockedField(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXVmlO.LockedField>()?.Text == value;
   }
   
   private static void SetLockedField(DXVmlO.OleObject openXmlElement, String? value)
@@ -159,10 +198,12 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetFieldCodes(DXVmlO.OleObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.FieldCodes>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXVmlO.FieldCodes>()?.Text;
+  }
+  
+  private static bool CmpFieldCodes(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXVmlO.FieldCodes>()?.Text == value;
   }
   
   private static void SetFieldCodes(DXVmlO.OleObject openXmlElement, String? value)
@@ -195,6 +236,36 @@ public static class OleObjectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.OleObject? openXmlElement, DMVml.OleObject? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpProgId(openXmlElement, value.ProgId, diffs, objName))
+        ok = false;
+      if (!CmpShapeId(openXmlElement, value.ShapeId, diffs, objName))
+        ok = false;
+      if (!CmpDrawAspect(openXmlElement, value.DrawAspect, diffs, objName))
+        ok = false;
+      if (!CmpObjectId(openXmlElement, value.ObjectId, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpUpdateMode(openXmlElement, value.UpdateMode, diffs, objName))
+        ok = false;
+      if (!CmpLinkType(openXmlElement, value.LinkType, diffs, objName))
+        ok = false;
+      if (!CmpLockedField(openXmlElement, value.LockedField, diffs, objName))
+        ok = false;
+      if (!CmpFieldCodes(openXmlElement, value.FieldCodes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.OleObject? value)

@@ -13,6 +13,11 @@ public static class LabelControlConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class LabelControlConverter
   private static String? GetQualifiedId(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class LabelControlConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class LabelControlConverter
   private static String? GetIdMso(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
+  }
+  
+  private static bool CmpIdMso(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
   }
   
   private static void SetIdMso(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class LabelControlConverter
     return openXmlElement?.Screentip?.Value;
   }
   
+  private static bool CmpScreentip(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Screentip?.Value == value;
+  }
+  
   private static void SetScreentip(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class LabelControlConverter
   private static String? GetGetScreentip(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
+  }
+  
+  private static bool CmpGetScreentip(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetScreentip?.Value == value;
   }
   
   private static void SetGetScreentip(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class LabelControlConverter
     return openXmlElement?.Supertip?.Value;
   }
   
+  private static bool CmpSupertip(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Supertip?.Value == value;
+  }
+  
   private static void SetSupertip(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class LabelControlConverter
   private static String? GetGetSupertip(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
+  }
+  
+  private static bool CmpGetSupertip(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSupertip?.Value == value;
   }
   
   private static void SetGetSupertip(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -141,6 +181,11 @@ public static class LabelControlConverter
     return openXmlElement?.Enabled?.Value;
   }
   
+  private static bool CmpEnabled(DXO2010CustUI.LabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
+  }
+  
   private static void SetEnabled(DXO2010CustUI.LabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class LabelControlConverter
   private static String? GetGetEnabled(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
+  }
+  
+  private static bool CmpGetEnabled(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -173,6 +223,11 @@ public static class LabelControlConverter
     return openXmlElement?.Label?.Value;
   }
   
+  private static bool CmpLabel(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
+  }
+  
   private static void SetLabel(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -187,6 +242,11 @@ public static class LabelControlConverter
   private static String? GetGetLabel(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
+  }
+  
+  private static bool CmpGetLabel(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
   }
   
   private static void SetGetLabel(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -205,6 +265,11 @@ public static class LabelControlConverter
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
+  private static bool CmpInsertAfterMso(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
+  }
+  
   private static void SetInsertAfterMso(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -219,6 +284,11 @@ public static class LabelControlConverter
   private static String? GetInsertBeforeMso(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
+  }
+  
+  private static bool CmpInsertBeforeMso(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
   }
   
   private static void SetInsertBeforeMso(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -237,6 +307,11 @@ public static class LabelControlConverter
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
+  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
+  }
+  
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value)
   {
     if (value != null)
@@ -251,6 +326,11 @@ public static class LabelControlConverter
   private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -269,6 +349,11 @@ public static class LabelControlConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXO2010CustUI.LabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXO2010CustUI.LabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -283,6 +368,11 @@ public static class LabelControlConverter
   private static String? GetGetVisible(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -301,6 +391,11 @@ public static class LabelControlConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
+  private static bool CmpShowLabel(DXO2010CustUI.LabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
+  }
+  
   private static void SetShowLabel(DXO2010CustUI.LabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -315,6 +410,11 @@ public static class LabelControlConverter
   private static String? GetGetShowLabel(DXO2010CustUI.LabelControl openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
+  }
+  
+  private static bool CmpGetShowLabel(DXO2010CustUI.LabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
   }
   
   private static void SetGetShowLabel(DXO2010CustUI.LabelControl openXmlElement, String? value)
@@ -353,6 +453,56 @@ public static class LabelControlConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.LabelControl? openXmlElement, DM.LabelControl? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+        ok = false;
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+        ok = false;
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+        ok = false;
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.LabelControl? value)

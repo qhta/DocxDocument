@@ -13,6 +13,11 @@ public static class SVGBlipConverter
     return openXmlElement?.Embed?.Value;
   }
   
+  private static bool CmpEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Embed?.Value == value;
+  }
+  
   private static void SetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class SVGBlipConverter
   private static String? GetLink(DXO2019DrawSVG.SVGBlip openXmlElement)
   {
     return openXmlElement?.Link?.Value;
+  }
+  
+  private static bool CmpLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Link?.Value == value;
   }
   
   private static void SetLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class SVGBlipConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2019DrawSVG.SVGBlip? openXmlElement, DMDrawsSVG.SVGBlip? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName))
+        ok = false;
+      if (!CmpLink(openXmlElement, value.Link, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsSVG.SVGBlip? value)

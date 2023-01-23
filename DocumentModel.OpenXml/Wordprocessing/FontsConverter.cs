@@ -17,6 +17,11 @@ public static class FontsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Font>();
@@ -40,6 +45,18 @@ public static class FontsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Fonts? openXmlElement, DMW.Fonts? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Fonts? value)

@@ -7,10 +7,12 @@ public static class SampleDataConverter
 {
   private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.SampleData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
-    if (itemElement != null)
-      return DMXDrawsDgms.DataModelConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.DataModelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>());
+  }
+  
+  private static bool CmpDataModel(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataModel(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.DataModel? value)
@@ -35,6 +37,18 @@ public static class SampleDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.SampleData? openXmlElement, DMDrawsDgms.SampleData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDataModel(openXmlElement, value.DataModel, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.SampleData? value)

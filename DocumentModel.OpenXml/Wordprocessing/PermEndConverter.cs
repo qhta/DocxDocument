@@ -13,6 +13,11 @@ public static class PermEndConverter
     return openXmlElement.Id?.Value;
   }
   
+  private static bool CmpId(DXW.PermEnd openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.PermEnd openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
@@ -24,6 +29,11 @@ public static class PermEndConverter
   private static DMW.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DXW.PermEnd openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+  }
+  
+  private static bool CmpDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -41,6 +51,20 @@ public static class PermEndConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PermEnd? openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PermEnd? value)

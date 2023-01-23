@@ -15,6 +15,13 @@ public static class InkConverter
     return null;
   }
   
+  private static bool CmpInkData(DXVmlO.Ink openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.InkData?.Value != null)
+      return Convert.FromBase64String(openXmlElement.InkData.Value) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetInkData(DXVmlO.Ink openXmlElement, Byte[]? value)
   {
     if (value != null)
@@ -29,6 +36,11 @@ public static class InkConverter
   private static Boolean? GetAnnotationFlag(DXVmlO.Ink openXmlElement)
   {
     return openXmlElement?.AnnotationFlag?.Value;
+  }
+  
+  private static bool CmpAnnotationFlag(DXVmlO.Ink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AnnotationFlag?.Value == value;
   }
   
   private static void SetAnnotationFlag(DXVmlO.Ink openXmlElement, Boolean? value)
@@ -49,6 +61,20 @@ public static class InkConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.Ink? openXmlElement, DMVml.Ink? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpInkData(openXmlElement, value.InkData, diffs, objName))
+        ok = false;
+      if (!CmpAnnotationFlag(openXmlElement, value.AnnotationFlag, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Ink? value)

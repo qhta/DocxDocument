@@ -13,6 +13,11 @@ public static class OpenXmlFormulaElementConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(openXmlElement?.Dir?.Value);
   }
   
+  private static bool CmpDir(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement, DMDrawsChartDraws.FormulaDirection? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(openXmlElement?.Dir?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetDir(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement, DMDrawsChartDraws.FormulaDirection? value)
   {
     openXmlElement.Dir = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(value);
@@ -27,6 +32,18 @@ public static class OpenXmlFormulaElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.OpenXmlFormulaElement? openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDir(openXmlElement, value.Dir, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlFormulaElement? value)

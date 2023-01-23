@@ -17,6 +17,11 @@ public static class CustomColorListConverter
     return collection;
   }
   
+  private static bool CmpCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.CustomColor>();
@@ -40,6 +45,18 @@ public static class CustomColorListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.CustomColorList? openXmlElement, DMDraws.CustomColorList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCustomColors(openXmlElement, value.CustomColors, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomColorList? value)

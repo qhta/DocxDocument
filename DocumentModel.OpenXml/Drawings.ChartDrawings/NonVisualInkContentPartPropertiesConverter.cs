@@ -13,6 +13,11 @@ public static class NonVisualInkContentPartPropertiesConverter
     return openXmlElement?.IsComment?.Value;
   }
   
+  private static bool CmpIsComment(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IsComment?.Value == value;
+  }
+  
   private static void SetIsComment(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   private static DMDraws.ContentPartLocks? GetContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>();
-    if (itemElement != null)
-      return DMXDraws.ContentPartLocksConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ContentPartLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>());
+  }
+  
+  private static bool CmpContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.ContentPartLocks? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ContentPartLocksConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.ContentPartLocks? value)
@@ -50,10 +57,12 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList2? GetOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>());
+  }
+  
+  private static bool CmpOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.OfficeArtExtensionList2? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.OfficeArtExtensionList2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.OfficeArtExtensionList2? value)
@@ -80,6 +89,22 @@ public static class NonVisualInkContentPartPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010DrawChartDraw.NonVisualInkContentPartProperties? openXmlElement, DMDrawsChartDraws.NonVisualInkContentPartProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIsComment(openXmlElement, value.IsComment, diffs, objName))
+        ok = false;
+      if (!CmpContentPartLocks(openXmlElement, value.ContentPartLocks, diffs, objName))
+        ok = false;
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NonVisualInkContentPartProperties? value)

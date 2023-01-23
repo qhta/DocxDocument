@@ -10,9 +10,19 @@ public static class WebExTaskpanesPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.WebExTaskpanesPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.WebExTaskpanesPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.WebExTaskpanesPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -20,9 +30,12 @@ public static class WebExTaskpanesPartConverter
   /// </summary>
   private static DMWebExtUI.Taskpanes? GetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2013WebExtPane.Taskpanes rootElement)
-      return DMXWebExtUI.TaskpanesConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXWebExtUI.TaskpanesConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013WebExtPane.Taskpanes);
+  }
+  
+  private static bool CmpTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWebExtUI.Taskpanes? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWebExtUI.Taskpanes? value)
@@ -50,6 +63,11 @@ public static class WebExTaskpanesPartConverter
     return collection;
   }
   
+  private static bool CmpWebExtensionParts(DXPack.WebExTaskpanesPart openXmlElement, Collection<DMPack.WebExtensionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   public static DMPack.WebExTaskpanesPart? CreateModelElement(DXPack.WebExTaskpanesPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -62,6 +80,24 @@ public static class WebExTaskpanesPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.WebExTaskpanesPart? openXmlElement, DMPack.WebExTaskpanesPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpTaskpanes(openXmlElement, value.Taskpanes, diffs, objName))
+        ok = false;
+      if (!CmpWebExtensionParts(openXmlElement, value.WebExtensionParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExTaskpanesPart? value)

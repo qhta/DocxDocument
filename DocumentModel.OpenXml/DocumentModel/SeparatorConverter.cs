@@ -13,6 +13,11 @@ public static class SeparatorConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class SeparatorConverter
   private static String? GetQualifiedId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class SeparatorConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class SeparatorConverter
   private static Boolean? GetVisible(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
+  }
+  
+  private static bool CmpVisible(DXO2010CustUI.Separator openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
   }
   
   private static void SetVisible(DXO2010CustUI.Separator openXmlElement, Boolean? value)
@@ -77,6 +97,11 @@ public static class SeparatorConverter
     return openXmlElement?.GetVisible?.Value;
   }
   
+  private static bool CmpGetVisible(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
+  }
+  
   private static void SetGetVisible(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class SeparatorConverter
   private static String? GetInsertAfterMso(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
+  }
+  
+  private static bool CmpInsertAfterMso(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
   }
   
   private static void SetInsertAfterMso(DXO2010CustUI.Separator openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class SeparatorConverter
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
+  private static bool CmpInsertBeforeMso(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
+  }
+  
   private static void SetInsertBeforeMso(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
@@ -125,6 +160,11 @@ public static class SeparatorConverter
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
+  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
+  }
+  
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
@@ -139,6 +179,11 @@ public static class SeparatorConverter
   private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
@@ -166,6 +211,34 @@ public static class SeparatorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.Separator? openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Separator? value)

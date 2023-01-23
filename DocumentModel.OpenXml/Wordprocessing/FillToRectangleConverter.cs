@@ -13,6 +13,11 @@ public static class FillToRectangleConverter
     return openXmlElement.Left?.Value;
   }
   
+  private static bool CmpLeft(DXO2010W.FillToRectangle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Left?.Value == value;
+  }
+  
   private static void SetLeft(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Left = value;
@@ -24,6 +29,11 @@ public static class FillToRectangleConverter
   private static Int32? GetTop(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Top?.Value;
+  }
+  
+  private static bool CmpTop(DXO2010W.FillToRectangle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Top?.Value == value;
   }
   
   private static void SetTop(DXO2010W.FillToRectangle openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class FillToRectangleConverter
     return openXmlElement.Right?.Value;
   }
   
+  private static bool CmpRight(DXO2010W.FillToRectangle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Right?.Value == value;
+  }
+  
   private static void SetRight(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Right = value;
@@ -50,6 +65,11 @@ public static class FillToRectangleConverter
   private static Int32? GetBottom(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
+  }
+  
+  private static bool CmpBottom(DXO2010W.FillToRectangle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Bottom?.Value == value;
   }
   
   private static void SetBottom(DXO2010W.FillToRectangle openXmlElement, Int32? value)
@@ -69,6 +89,24 @@ public static class FillToRectangleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.FillToRectangle? openXmlElement, DMW.FillToRectangle? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLeft(openXmlElement, value.Left, diffs, objName))
+        ok = false;
+      if (!CmpTop(openXmlElement, value.Top, diffs, objName))
+        ok = false;
+      if (!CmpRight(openXmlElement, value.Right, diffs, objName))
+        ok = false;
+      if (!CmpBottom(openXmlElement, value.Bottom, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillToRectangle? value)

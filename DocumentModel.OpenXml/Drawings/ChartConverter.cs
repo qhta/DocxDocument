@@ -13,6 +13,11 @@ public static class ChartConverter
     return openXmlElement.SeriesIndex?.Value;
   }
   
+  private static bool CmpSeriesIndex(DXDraw.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.SeriesIndex?.Value == value;
+  }
+  
   private static void SetSeriesIndex(DXDraw.Chart openXmlElement, Int32? value)
   {
     openXmlElement.SeriesIndex = value;
@@ -26,6 +31,11 @@ public static class ChartConverter
     return openXmlElement.CategoryIndex?.Value;
   }
   
+  private static bool CmpCategoryIndex(DXDraw.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.CategoryIndex?.Value == value;
+  }
+  
   private static void SetCategoryIndex(DXDraw.Chart openXmlElement, Int32? value)
   {
     openXmlElement.CategoryIndex = value;
@@ -37,6 +47,11 @@ public static class ChartConverter
   private static DMDraws.ChartBuildStepKind? GetBuildStep(DXDraw.Chart openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value);
+  }
+  
+  private static bool CmpBuildStep(DXDraw.Chart openXmlElement, DMDraws.ChartBuildStepKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBuildStep(DXDraw.Chart openXmlElement, DMDraws.ChartBuildStepKind? value)
@@ -55,6 +70,22 @@ public static class ChartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Chart? openXmlElement, DMDraws.Chart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSeriesIndex(openXmlElement, value.SeriesIndex, diffs, objName))
+        ok = false;
+      if (!CmpCategoryIndex(openXmlElement, value.CategoryIndex, diffs, objName))
+        ok = false;
+      if (!CmpBuildStep(openXmlElement, value.BuildStep, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Chart? value)

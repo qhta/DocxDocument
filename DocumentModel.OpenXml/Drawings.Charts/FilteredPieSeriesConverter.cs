@@ -10,10 +10,12 @@ public static class FilteredPieSeriesConverter
   /// </summary>
   private static DMDrawsCharts.PieChartSeries3? GetPieChartSeries(DXO2013DrawChart.FilteredPieSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.PieChartSeries>();
-    if (itemElement != null)
-      return DMXDrawsCharts.PieChartSeries3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.PieChartSeries3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PieChartSeries>());
+  }
+  
+  private static bool CmpPieChartSeries(DXO2013DrawChart.FilteredPieSeries openXmlElement, DMDrawsCharts.PieChartSeries3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.PieChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PieChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPieChartSeries(DXO2013DrawChart.FilteredPieSeries openXmlElement, DMDrawsCharts.PieChartSeries3? value)
@@ -38,6 +40,18 @@ public static class FilteredPieSeriesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.FilteredPieSeries? openXmlElement, DMDrawsCharts.FilteredPieSeries? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPieChartSeries(openXmlElement, value.PieChartSeries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredPieSeries? value)

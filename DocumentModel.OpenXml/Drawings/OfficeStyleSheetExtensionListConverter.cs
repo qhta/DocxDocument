@@ -17,6 +17,11 @@ public static class OfficeStyleSheetExtensionListConverter
     return collection;
   }
   
+  private static bool CmpOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement, Collection<DMDraws.OfficeStyleSheetExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement, Collection<DMDraws.OfficeStyleSheetExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.OfficeStyleSheetExtension>();
@@ -40,6 +45,18 @@ public static class OfficeStyleSheetExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.OfficeStyleSheetExtensionList? openXmlElement, DMDraws.OfficeStyleSheetExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOfficeStyleSheetExtensions(openXmlElement, value.OfficeStyleSheetExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtensionList? value)

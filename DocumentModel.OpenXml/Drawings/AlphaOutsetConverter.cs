@@ -13,6 +13,11 @@ public static class AlphaOutsetConverter
     return openXmlElement.Radius?.Value;
   }
   
+  private static bool CmpRadius(DXDraw.AlphaOutset openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Radius?.Value == value;
+  }
+  
   private static void SetRadius(DXDraw.AlphaOutset openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
@@ -27,6 +32,18 @@ public static class AlphaOutsetConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AlphaOutset? openXmlElement, DMDraws.AlphaOutset? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadius(openXmlElement, value.Radius, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaOutset? value)

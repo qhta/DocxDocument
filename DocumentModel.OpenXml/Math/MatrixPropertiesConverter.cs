@@ -10,10 +10,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.VerticalAlignmentKind? GetBaseJustification(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BaseJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpBaseJustification(DXMath.MatrixProperties openXmlElement, DMMath.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBaseJustification(DXMath.MatrixProperties openXmlElement, DMMath.VerticalAlignmentKind? value)
@@ -34,10 +36,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.BooleanKind? GetHidePlaceholder(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.HidePlaceholder>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HidePlaceholder>()?.Val?.Value);
+  }
+  
+  private static bool CmpHidePlaceholder(DXMath.MatrixProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HidePlaceholder>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHidePlaceholder(DXMath.MatrixProperties openXmlElement, DMMath.BooleanKind? value)
@@ -58,10 +62,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static Int64? GetRowSpacingRule(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>()?.Val?.Value;
+  }
+  
+  private static bool CmpRowSpacingRule(DXMath.MatrixProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>()?.Val?.Value == value;
   }
   
   private static void SetRowSpacingRule(DXMath.MatrixProperties openXmlElement, Int64? value)
@@ -81,10 +87,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static Int64? GetColumnGapRule(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ColumnGapRule>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.ColumnGapRule>()?.Val?.Value;
+  }
+  
+  private static bool CmpColumnGapRule(DXMath.MatrixProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.ColumnGapRule>()?.Val?.Value == value;
   }
   
   private static void SetColumnGapRule(DXMath.MatrixProperties openXmlElement, Int64? value)
@@ -104,10 +112,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static UInt16? GetRowSpacing(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacing>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacing>()?.Val?.Value;
+  }
+  
+  private static bool CmpRowSpacing(DXMath.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.RowSpacing>()?.Val?.Value == value;
   }
   
   private static void SetRowSpacing(DXMath.MatrixProperties openXmlElement, UInt16? value)
@@ -127,10 +137,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static UInt32? GetColumnSpacing(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ColumnSpacing>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.ColumnSpacing>()?.Val?.Value;
+  }
+  
+  private static bool CmpColumnSpacing(DXMath.MatrixProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.ColumnSpacing>()?.Val?.Value == value;
   }
   
   private static void SetColumnSpacing(DXMath.MatrixProperties openXmlElement, UInt32? value)
@@ -150,10 +162,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static UInt16? GetColumnGap(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ColumnGap>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXMath.ColumnGap>()?.Val?.Value;
+  }
+  
+  private static bool CmpColumnGap(DXMath.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXMath.ColumnGap>()?.Val?.Value == value;
   }
   
   private static void SetColumnGap(DXMath.MatrixProperties openXmlElement, UInt16? value)
@@ -173,10 +187,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.MatrixColumns? GetMatrixColumns(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixColumns>();
-    if (itemElement != null)
-      return DMXMath.MatrixColumnsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.MatrixColumnsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumns>());
+  }
+  
+  private static bool CmpMatrixColumns(DXMath.MatrixProperties openXmlElement, DMMath.MatrixColumns? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.MatrixColumnsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumns>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMatrixColumns(DXMath.MatrixProperties openXmlElement, DMMath.MatrixColumns? value)
@@ -197,10 +213,12 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.MatrixProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
-    if (itemElement != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+  }
+  
+  private static bool CmpControlProperties(DXMath.MatrixProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControlProperties(DXMath.MatrixProperties openXmlElement, DMMath.ControlProperties? value)
@@ -233,6 +251,34 @@ public static class MatrixPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.MatrixProperties? openXmlElement, DMMath.MatrixProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBaseJustification(openXmlElement, value.BaseJustification, diffs, objName))
+        ok = false;
+      if (!CmpHidePlaceholder(openXmlElement, value.HidePlaceholder, diffs, objName))
+        ok = false;
+      if (!CmpRowSpacingRule(openXmlElement, value.RowSpacingRule, diffs, objName))
+        ok = false;
+      if (!CmpColumnGapRule(openXmlElement, value.ColumnGapRule, diffs, objName))
+        ok = false;
+      if (!CmpRowSpacing(openXmlElement, value.RowSpacing, diffs, objName))
+        ok = false;
+      if (!CmpColumnSpacing(openXmlElement, value.ColumnSpacing, diffs, objName))
+        ok = false;
+      if (!CmpColumnGap(openXmlElement, value.ColumnGap, diffs, objName))
+        ok = false;
+      if (!CmpMatrixColumns(openXmlElement, value.MatrixColumns, diffs, objName))
+        ok = false;
+      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixProperties? value)

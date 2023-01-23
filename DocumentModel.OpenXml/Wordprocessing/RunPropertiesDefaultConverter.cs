@@ -10,10 +10,12 @@ public static class RunPropertiesDefaultConverter
   /// </summary>
   private static DMW.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>());
+  }
+  
+  private static bool CmpRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value)
@@ -38,6 +40,18 @@ public static class RunPropertiesDefaultConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.RunPropertiesDefault? openXmlElement, DMW.RunPropertiesDefault? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunPropertiesBaseStyle(openXmlElement, value.RunPropertiesBaseStyle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesDefault? value)

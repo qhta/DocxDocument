@@ -10,10 +10,12 @@ public static class TitleConverter
   /// </summary>
   private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>());
+  }
+  
+  private static bool CmpChartText(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartText? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartText(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartText? value)
@@ -34,10 +36,12 @@ public static class TitleConverter
   /// </summary>
   private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
-    if (itemElement != null)
-      return DMXDrawsCharts.LayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.LayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Layout>());
+  }
+  
+  private static bool CmpLayout(DXDrawCharts.Title openXmlElement, DMDrawsCharts.Layout? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.LayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Layout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLayout(DXDrawCharts.Title openXmlElement, DMDrawsCharts.Layout? value)
@@ -58,8 +62,12 @@ public static class TitleConverter
   /// </summary>
   private static Boolean? GetOverlay(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Overlay>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.Overlay>() != null;
+  }
+  
+  private static bool CmpOverlay(DXDrawCharts.Title openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.Overlay>() != null == value;
   }
   
   private static void SetOverlay(DXDrawCharts.Title openXmlElement, Boolean? value)
@@ -82,10 +90,12 @@ public static class TitleConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+  }
+  
+  private static bool CmpChartShapeProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -106,10 +116,12 @@ public static class TitleConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+  }
+  
+  private static bool CmpTextProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.Title openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -130,10 +142,12 @@ public static class TitleConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.Title openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.Title openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -163,6 +177,28 @@ public static class TitleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Title? openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+        ok = false;
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+        ok = false;
+      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName))
+        ok = false;
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Title? value)

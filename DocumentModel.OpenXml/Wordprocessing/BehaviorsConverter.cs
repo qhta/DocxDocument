@@ -7,10 +7,12 @@ public static class BehaviorsConverter
 {
   private static DMW.DocPartBehaviorKind? GetBehavior(DXW.Behaviors openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Behavior>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value);
+  }
+  
+  private static bool CmpBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value)
@@ -35,6 +37,18 @@ public static class BehaviorsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Behaviors? openXmlElement, DMW.Behaviors? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBehavior(openXmlElement, value.Behavior, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Behaviors? value)

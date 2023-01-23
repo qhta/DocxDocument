@@ -15,6 +15,13 @@ public static class CommentExConverter
     return null;
   }
   
+  private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.ParaId?.Value != null)
+      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetParaId(DXO2013W.CommentEx openXmlElement, UInt32? value)
   {
       if (value != null)
@@ -33,6 +40,13 @@ public static class CommentExConverter
     return null;
   }
   
+  private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.ParaIdParent?.Value != null)
+      return UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value)
   {
       if (value != null)
@@ -47,6 +61,11 @@ public static class CommentExConverter
   private static Boolean? GetDone(DXO2013W.CommentEx openXmlElement)
   {
     return openXmlElement?.Done?.Value;
+  }
+  
+  private static bool CmpDone(DXO2013W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Done?.Value == value;
   }
   
   private static void SetDone(DXO2013W.CommentEx openXmlElement, Boolean? value)
@@ -68,6 +87,22 @@ public static class CommentExConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.CommentEx? openXmlElement, DMW.CommentEx? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName))
+        ok = false;
+      if (!CmpParaIdParent(openXmlElement, value.ParaIdParent, diffs, objName))
+        ok = false;
+      if (!CmpDone(openXmlElement, value.Done, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentEx? value)

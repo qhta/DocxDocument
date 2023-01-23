@@ -10,9 +10,12 @@ public static class LabelInfoPartConverter
   /// </summary>
   private static DM.ClassificationLabelList? GetClassificationLabelList(DXPack.LabelInfoPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXO2021MipLabelMeta.ClassificationLabelList rootElement)
-      return DMX.ClassificationLabelListConverter.CreateModelElement(rootElement);
-    return null;
+      return DMX.ClassificationLabelListConverter.CreateModelElement(openXmlElement?.RootElement as DXO2021MipLabelMeta.ClassificationLabelList);
+  }
+  
+  private static bool CmpClassificationLabelList(DXPack.LabelInfoPart openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetClassificationLabelList(DXPack.LabelInfoPart openXmlElement, DM.ClassificationLabelList? value)
@@ -30,9 +33,19 @@ public static class LabelInfoPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.LabelInfoPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   private static String? GetRelationshipType(DXPack.LabelInfoPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.LabelInfoPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.LabelInfoPart? CreateModelElement(DXPack.LabelInfoPart? openXmlElement)
@@ -46,6 +59,22 @@ public static class LabelInfoPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.LabelInfoPart? openXmlElement, DMPack.LabelInfoPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpClassificationLabelList(openXmlElement, value.ClassificationLabelList, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.LabelInfoPart? value)

@@ -13,6 +13,11 @@ public static class TableRowHeightConverter
     return openXmlElement.Val?.Value;
   }
   
+  private static bool CmpVal(DXW.TableRowHeight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Val?.Value == value;
+  }
+  
   private static void SetVal(DXW.TableRowHeight openXmlElement, UInt32? value)
   {
     openXmlElement.Val = value;
@@ -24,6 +29,11 @@ public static class TableRowHeightConverter
   private static DMW.HeightRuleKind? GetHeightType(DXW.TableRowHeight openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
+  }
+  
+  private static bool CmpHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value)
@@ -41,6 +51,20 @@ public static class TableRowHeightConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableRowHeight? openXmlElement, DMW.TableRowHeight? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpHeightType(openXmlElement, value.HeightType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowHeight? value)

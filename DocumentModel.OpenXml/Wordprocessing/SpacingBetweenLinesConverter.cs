@@ -13,6 +13,11 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement?.Before?.Value;
   }
   
+  private static bool CmpBefore(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Before?.Value == value;
+  }
+  
   private static void SetBefore(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement.BeforeLines?.Value;
   }
   
+  private static bool CmpBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BeforeLines?.Value == value;
+  }
+  
   private static void SetBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
   {
     openXmlElement.BeforeLines = value;
@@ -40,6 +50,11 @@ public static class SpacingBetweenLinesConverter
   private static Boolean? GetBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.BeforeAutoSpacing?.Value;
+  }
+  
+  private static bool CmpBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.BeforeAutoSpacing?.Value == value;
   }
   
   private static void SetBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
@@ -58,6 +73,11 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement?.After?.Value;
   }
   
+  private static bool CmpAfter(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.After?.Value == value;
+  }
+  
   private static void SetAfter(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
@@ -74,6 +94,11 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement.AfterLines?.Value;
   }
   
+  private static bool CmpAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.AfterLines?.Value == value;
+  }
+  
   private static void SetAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
   {
     openXmlElement.AfterLines = value;
@@ -85,6 +110,11 @@ public static class SpacingBetweenLinesConverter
   private static Boolean? GetAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.AfterAutoSpacing?.Value;
+  }
+  
+  private static bool CmpAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AfterAutoSpacing?.Value == value;
   }
   
   private static void SetAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
@@ -103,6 +133,11 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement?.Line?.Value;
   }
   
+  private static bool CmpLine(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Line?.Value == value;
+  }
+  
   private static void SetLine(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
@@ -117,6 +152,11 @@ public static class SpacingBetweenLinesConverter
   private static DMW.LineSpacingRuleKind? GetLineRule(DXW.SpacingBetweenLines openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value);
+  }
+  
+  private static bool CmpLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value)
@@ -140,6 +180,32 @@ public static class SpacingBetweenLinesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SpacingBetweenLines? openXmlElement, DMW.SpacingBetweenLines? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBefore(openXmlElement, value.Before, diffs, objName))
+        ok = false;
+      if (!CmpBeforeLines(openXmlElement, value.BeforeLines, diffs, objName))
+        ok = false;
+      if (!CmpBeforeAutoSpacing(openXmlElement, value.BeforeAutoSpacing, diffs, objName))
+        ok = false;
+      if (!CmpAfter(openXmlElement, value.After, diffs, objName))
+        ok = false;
+      if (!CmpAfterLines(openXmlElement, value.AfterLines, diffs, objName))
+        ok = false;
+      if (!CmpAfterAutoSpacing(openXmlElement, value.AfterAutoSpacing, diffs, objName))
+        ok = false;
+      if (!CmpLine(openXmlElement, value.Line, diffs, objName))
+        ok = false;
+      if (!CmpLineRule(openXmlElement, value.LineRule, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SpacingBetweenLines? value)

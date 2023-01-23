@@ -13,6 +13,11 @@ public static class EffectExtentConverter
     return openXmlElement.LeftEdge?.Value;
   }
   
+  private static bool CmpLeftEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LeftEdge?.Value == value;
+  }
+  
   private static void SetLeftEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
   {
     openXmlElement.LeftEdge = value;
@@ -24,6 +29,11 @@ public static class EffectExtentConverter
   private static Int64? GetTopEdge(DXDrawW.EffectExtent openXmlElement)
   {
     return openXmlElement.TopEdge?.Value;
+  }
+  
+  private static bool CmpTopEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.TopEdge?.Value == value;
   }
   
   private static void SetTopEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -39,6 +49,11 @@ public static class EffectExtentConverter
     return openXmlElement.RightEdge?.Value;
   }
   
+  private static bool CmpRightEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.RightEdge?.Value == value;
+  }
+  
   private static void SetRightEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
   {
     openXmlElement.RightEdge = value;
@@ -50,6 +65,11 @@ public static class EffectExtentConverter
   private static Int64? GetBottomEdge(DXDrawW.EffectExtent openXmlElement)
   {
     return openXmlElement.BottomEdge?.Value;
+  }
+  
+  private static bool CmpBottomEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BottomEdge?.Value == value;
   }
   
   private static void SetBottomEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -69,6 +89,24 @@ public static class EffectExtentConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.EffectExtent? openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLeftEdge(openXmlElement, value.LeftEdge, diffs, objName))
+        ok = false;
+      if (!CmpTopEdge(openXmlElement, value.TopEdge, diffs, objName))
+        ok = false;
+      if (!CmpRightEdge(openXmlElement, value.RightEdge, diffs, objName))
+        ok = false;
+      if (!CmpBottomEdge(openXmlElement, value.BottomEdge, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.EffectExtent? value)

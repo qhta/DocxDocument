@@ -13,6 +13,11 @@ public static class TabSetConverter
     return openXmlElement?.IdMso?.Value;
   }
   
+  private static bool CmpIdMso(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
+  }
+  
   private static void SetIdMso(DXO2010CustUI.TabSet openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class TabSetConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class TabSetConverter
   private static String? GetGetVisible(DXO2010CustUI.TabSet openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value)
@@ -63,6 +78,11 @@ public static class TabSetConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpTabs(DXO2010CustUI.TabSet openXmlElement, Collection<DM.Tab>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetTabs(DXO2010CustUI.TabSet openXmlElement, Collection<DM.Tab>? value)
@@ -91,6 +111,24 @@ public static class TabSetConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.TabSet? openXmlElement, DM.TabSet? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TabSet? value)

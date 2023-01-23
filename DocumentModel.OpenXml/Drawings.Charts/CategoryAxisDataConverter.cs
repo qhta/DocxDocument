@@ -7,10 +7,12 @@ public static class CategoryAxisDataConverter
 {
   private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.CategoryAxisData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>());
+  }
+  
+  private static bool CmpMultiLevelStringReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.MultiLevelStringReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.MultiLevelStringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMultiLevelStringReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.MultiLevelStringReference? value)
@@ -28,10 +30,12 @@ public static class CategoryAxisDataConverter
   
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.CategoryAxisData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+  }
+  
+  private static bool CmpNumberReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.NumberReference? value)
@@ -49,10 +53,12 @@ public static class CategoryAxisDataConverter
   
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.CategoryAxisData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+  }
+  
+  private static bool CmpNumberLiteral(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberLiteral(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.NumberLiteral? value)
@@ -70,10 +76,12 @@ public static class CategoryAxisDataConverter
   
   private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.CategoryAxisData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+  }
+  
+  private static bool CmpStringReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringReference(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.StringReference? value)
@@ -91,10 +99,12 @@ public static class CategoryAxisDataConverter
   
   private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.CategoryAxisData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>());
+  }
+  
+  private static bool CmpStringLiteral(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StringLiteralConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringLiteral(DXDrawCharts.CategoryAxisData openXmlElement, DMDrawsCharts.StringLiteral? value)
@@ -123,6 +133,26 @@ public static class CategoryAxisDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.CategoryAxisData? openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMultiLevelStringReference(openXmlElement, value.MultiLevelStringReference, diffs, objName))
+        ok = false;
+      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName))
+        ok = false;
+      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName))
+        ok = false;
+      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName))
+        ok = false;
+      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryAxisData? value)

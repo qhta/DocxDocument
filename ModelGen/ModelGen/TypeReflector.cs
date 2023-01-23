@@ -5,6 +5,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using Namotion.Reflection;
 
 using System.Diagnostics;
+using DocumentFormat.OpenXml.Office2016.Drawing;
 using DocumentFormat.OpenXml.Validation.Schema;
 
 namespace ModelGen;
@@ -298,20 +299,24 @@ public static class TypeReflector
 
   public static string PluralizeName(string aName)
   {
-    if (aName.EndsWith('y'))
+    if (aName.EndsWith("y"))
       return aName.Substring(0, aName.Length - 1) + "ies";
-    else if (aName.EndsWith('s'))
+    else if (aName.EndsWith("ss"))
       return aName + "es";
-    return aName + "s";
+    if (!aName.EndsWith("s"))
+      return aName + "s";
+    return aName;
   }
 
   public static string SingularizeName(string aName)
   {
     if (aName.EndsWith("ies"))
       return aName.Substring(0, aName.Length - 3) + "y";
-    else if (aName.EndsWith("ses"))
+    else if (aName.EndsWith("sses"))
       return aName.Substring(0, aName.Length - 2);
-    return aName.Substring(0, aName.Length - 1);
+    else if (aName.EndsWith("s"))
+      return aName.Substring(0, aName.Length - 1);
+    else return aName;
   }
 
   private static bool GenDocumentationComments(TypeInfo typeInfo)

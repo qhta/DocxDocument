@@ -13,6 +13,11 @@ public static class DataLabelVisibilitiesConverter
     return openXmlElement?.SeriesName?.Value;
   }
   
+  private static bool CmpSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SeriesName?.Value == value;
+  }
+  
   private static void SetSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class DataLabelVisibilitiesConverter
     return openXmlElement?.CategoryName?.Value;
   }
   
+  private static bool CmpCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CategoryName?.Value == value;
+  }
+  
   private static void SetCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class DataLabelVisibilitiesConverter
   private static Boolean? GetValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement)
   {
     return openXmlElement?.Value?.Value;
+  }
+  
+  private static bool CmpValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Value?.Value == value;
   }
   
   private static void SetValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
@@ -64,6 +79,22 @@ public static class DataLabelVisibilitiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.DataLabelVisibilities? openXmlElement, DMDrawsChartDraws.DataLabelVisibilities? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSeriesName(openXmlElement, value.SeriesName, diffs, objName))
+        ok = false;
+      if (!CmpCategoryName(openXmlElement, value.CategoryName, diffs, objName))
+        ok = false;
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelVisibilities? value)

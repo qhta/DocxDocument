@@ -17,6 +17,11 @@ public static class PivotFormatsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.PivotFormat>();
@@ -40,6 +45,18 @@ public static class PivotFormatsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.PivotFormats? openXmlElement, DMDrawsCharts.PivotFormats? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotFormats? value)

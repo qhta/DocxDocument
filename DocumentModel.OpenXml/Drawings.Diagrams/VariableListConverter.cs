@@ -7,8 +7,12 @@ public static class VariableListConverter
 {
   private static Boolean? GetOrganizationChart(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.OrganizationChart>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawDgms.OrganizationChart>() != null;
+  }
+  
+  private static bool CmpOrganizationChart(DXDrawDgms.VariableList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawDgms.OrganizationChart>() != null == value;
   }
   
   private static void SetOrganizationChart(DXDrawDgms.VariableList openXmlElement, Boolean? value)
@@ -28,10 +32,12 @@ public static class VariableListConverter
   
   private static Int32? GetMaxNumberOfChildren(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val?.Value;
+  }
+  
+  private static bool CmpMaxNumberOfChildren(DXDrawDgms.VariableList openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val?.Value == value;
   }
   
   private static void SetMaxNumberOfChildren(DXDrawDgms.VariableList openXmlElement, Int32? value)
@@ -48,10 +54,12 @@ public static class VariableListConverter
   
   private static Int32? GetPreferredNumberOfChildren(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val?.Value;
+  }
+  
+  private static bool CmpPreferredNumberOfChildren(DXDrawDgms.VariableList openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val?.Value == value;
   }
   
   private static void SetPreferredNumberOfChildren(DXDrawDgms.VariableList openXmlElement, Int32? value)
@@ -68,8 +76,12 @@ public static class VariableListConverter
   
   private static Boolean? GetBulletEnabled(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.BulletEnabled>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawDgms.BulletEnabled>() != null;
+  }
+  
+  private static bool CmpBulletEnabled(DXDrawDgms.VariableList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawDgms.BulletEnabled>() != null == value;
   }
   
   private static void SetBulletEnabled(DXDrawDgms.VariableList openXmlElement, Boolean? value)
@@ -89,10 +101,12 @@ public static class VariableListConverter
   
   private static DMDrawsDgms.DirectionKind? GetDirection(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Direction>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>(openXmlElement.GetFirstChild<DXDrawDgms.Direction>()?.Val?.Value);
+  }
+  
+  private static bool CmpDirection(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.DirectionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>(openXmlElement.GetFirstChild<DXDrawDgms.Direction>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDirection(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.DirectionKind? value)
@@ -110,10 +124,12 @@ public static class VariableListConverter
   
   private static DMDrawsDgms.HierarchyBranchStyleKind? GetHierarchyBranch(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.HierarchyBranch>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>(openXmlElement.GetFirstChild<DXDrawDgms.HierarchyBranch>()?.Val?.Value);
+  }
+  
+  private static bool CmpHierarchyBranch(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.HierarchyBranchStyleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>(openXmlElement.GetFirstChild<DXDrawDgms.HierarchyBranch>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHierarchyBranch(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.HierarchyBranchStyleKind? value)
@@ -131,10 +147,12 @@ public static class VariableListConverter
   
   private static DMDrawsDgms.AnimateOneByOneKind? GetAnimateOneByOne(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.AnimateOneByOne>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>(openXmlElement.GetFirstChild<DXDrawDgms.AnimateOneByOne>()?.Val?.Value);
+  }
+  
+  private static bool CmpAnimateOneByOne(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.AnimateOneByOneKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>(openXmlElement.GetFirstChild<DXDrawDgms.AnimateOneByOne>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAnimateOneByOne(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.AnimateOneByOneKind? value)
@@ -152,10 +170,12 @@ public static class VariableListConverter
   
   private static DMDrawsDgms.AnimationLevelStringKind? GetAnimationLevel(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.AnimationLevel>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>(openXmlElement.GetFirstChild<DXDrawDgms.AnimationLevel>()?.Val?.Value);
+  }
+  
+  private static bool CmpAnimationLevel(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.AnimationLevelStringKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>(openXmlElement.GetFirstChild<DXDrawDgms.AnimationLevel>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAnimationLevel(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.AnimationLevelStringKind? value)
@@ -173,10 +193,12 @@ public static class VariableListConverter
   
   private static DMDrawsDgms.ResizeHandlesStringKind? GetResizeHandles(DXDrawDgms.VariableList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ResizeHandles>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>(openXmlElement.GetFirstChild<DXDrawDgms.ResizeHandles>()?.Val?.Value);
+  }
+  
+  private static bool CmpResizeHandles(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.ResizeHandlesStringKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>(openXmlElement.GetFirstChild<DXDrawDgms.ResizeHandles>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetResizeHandles(DXDrawDgms.VariableList openXmlElement, DMDrawsDgms.ResizeHandlesStringKind? value)
@@ -209,6 +231,34 @@ public static class VariableListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.VariableList? openXmlElement, DMDrawsDgms.VariableList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOrganizationChart(openXmlElement, value.OrganizationChart, diffs, objName))
+        ok = false;
+      if (!CmpMaxNumberOfChildren(openXmlElement, value.MaxNumberOfChildren, diffs, objName))
+        ok = false;
+      if (!CmpPreferredNumberOfChildren(openXmlElement, value.PreferredNumberOfChildren, diffs, objName))
+        ok = false;
+      if (!CmpBulletEnabled(openXmlElement, value.BulletEnabled, diffs, objName))
+        ok = false;
+      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName))
+        ok = false;
+      if (!CmpHierarchyBranch(openXmlElement, value.HierarchyBranch, diffs, objName))
+        ok = false;
+      if (!CmpAnimateOneByOne(openXmlElement, value.AnimateOneByOne, diffs, objName))
+        ok = false;
+      if (!CmpAnimationLevel(openXmlElement, value.AnimationLevel, diffs, objName))
+        ok = false;
+      if (!CmpResizeHandles(openXmlElement, value.ResizeHandles, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.VariableList? value)

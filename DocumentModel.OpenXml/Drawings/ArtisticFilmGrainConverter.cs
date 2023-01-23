@@ -13,6 +13,11 @@ public static class ArtisticFilmGrainConverter
     return openXmlElement.Transparancy?.Value;
   }
   
+  private static bool CmpTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Transparancy?.Value == value;
+  }
+  
   private static void SetTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
@@ -24,6 +29,11 @@ public static class ArtisticFilmGrainConverter
   private static Int32? GetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement)
   {
     return openXmlElement.GrainSize?.Value;
+  }
+  
+  private static bool CmpGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GrainSize?.Value == value;
   }
   
   private static void SetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class ArtisticFilmGrainConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ArtisticFilmGrain? openXmlElement, DMDraws.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+        ok = false;
+      if (!CmpGrainSize(openXmlElement, value.GrainSize, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticFilmGrain? value)

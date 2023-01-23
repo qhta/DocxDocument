@@ -13,6 +13,11 @@ public static class GeoLocationQueryConverter
     return openXmlElement?.CountryRegion?.Value;
   }
   
+  private static bool CmpCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CountryRegion?.Value == value;
+  }
+  
   private static void SetCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class GeoLocationQueryConverter
   private static String? GetAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return openXmlElement?.AdminDistrict1?.Value;
+  }
+  
+  private static bool CmpAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AdminDistrict1?.Value == value;
   }
   
   private static void SetAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class GeoLocationQueryConverter
     return openXmlElement?.AdminDistrict2?.Value;
   }
   
+  private static bool CmpAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AdminDistrict2?.Value == value;
+  }
+  
   private static void SetAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class GeoLocationQueryConverter
     return openXmlElement?.PostalCode?.Value;
   }
   
+  private static bool CmpPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PostalCode?.Value == value;
+  }
+  
   private static void SetPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
   {
     if (value != null)
@@ -75,6 +95,11 @@ public static class GeoLocationQueryConverter
   private static DMDrawsChartDraws.EntityTypeEnum? GetEntityType(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+  }
+  
+  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEntityType(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
@@ -95,6 +120,26 @@ public static class GeoLocationQueryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoLocationQuery? openXmlElement, DMDrawsChartDraws.GeoLocationQuery? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCountryRegion(openXmlElement, value.CountryRegion, diffs, objName))
+        ok = false;
+      if (!CmpAdminDistrict1(openXmlElement, value.AdminDistrict1, diffs, objName))
+        ok = false;
+      if (!CmpAdminDistrict2(openXmlElement, value.AdminDistrict2, diffs, objName))
+        ok = false;
+      if (!CmpPostalCode(openXmlElement, value.PostalCode, diffs, objName))
+        ok = false;
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocationQuery? value)

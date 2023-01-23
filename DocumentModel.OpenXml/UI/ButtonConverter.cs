@@ -13,6 +13,11 @@ public static class ButtonConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
+  private static bool CmpSize(DXOCustUI.Button openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetSize(DXOCustUI.Button openXmlElement, DMUI.SizeKind? value)
   {
     openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
@@ -24,6 +29,11 @@ public static class ButtonConverter
   private static String? GetGetSize(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
+  }
+  
+  private static bool CmpGetSize(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSize?.Value == value;
   }
   
   private static void SetGetSize(DXOCustUI.Button openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class ButtonConverter
     return openXmlElement?.OnAction?.Value;
   }
   
+  private static bool CmpOnAction(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnAction?.Value == value;
+  }
+  
   private static void SetOnAction(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -56,6 +71,11 @@ public static class ButtonConverter
   private static Boolean? GetEnabled(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
+  }
+  
+  private static bool CmpEnabled(DXOCustUI.Button openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
   }
   
   private static void SetEnabled(DXOCustUI.Button openXmlElement, Boolean? value)
@@ -74,6 +94,11 @@ public static class ButtonConverter
     return openXmlElement?.GetEnabled?.Value;
   }
   
+  private static bool CmpGetEnabled(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
+  }
+  
   private static void SetGetEnabled(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -88,6 +113,11 @@ public static class ButtonConverter
   private static String? GetDescription(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Description?.Value;
+  }
+  
+  private static bool CmpDescription(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Description?.Value == value;
   }
   
   private static void SetDescription(DXOCustUI.Button openXmlElement, String? value)
@@ -106,6 +136,11 @@ public static class ButtonConverter
     return openXmlElement?.GetDescription?.Value;
   }
   
+  private static bool CmpGetDescription(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetDescription?.Value == value;
+  }
+  
   private static void SetGetDescription(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -120,6 +155,11 @@ public static class ButtonConverter
   private static String? GetImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Image?.Value;
+  }
+  
+  private static bool CmpImage(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Image?.Value == value;
   }
   
   private static void SetImage(DXOCustUI.Button openXmlElement, String? value)
@@ -138,6 +178,11 @@ public static class ButtonConverter
     return openXmlElement?.ImageMso?.Value;
   }
   
+  private static bool CmpImageMso(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ImageMso?.Value == value;
+  }
+  
   private static void SetImageMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -152,6 +197,11 @@ public static class ButtonConverter
   private static String? GetGetImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
+  }
+  
+  private static bool CmpGetImage(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetImage?.Value == value;
   }
   
   private static void SetGetImage(DXOCustUI.Button openXmlElement, String? value)
@@ -170,6 +220,11 @@ public static class ButtonConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -184,6 +239,11 @@ public static class ButtonConverter
   private static String? GetIdQ(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
+  }
+  
+  private static bool CmpIdQ(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdQ?.Value == value;
   }
   
   private static void SetIdQ(DXOCustUI.Button openXmlElement, String? value)
@@ -202,6 +262,11 @@ public static class ButtonConverter
     return openXmlElement?.IdMso?.Value;
   }
   
+  private static bool CmpIdMso(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
+  }
+  
   private static void SetIdMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -216,6 +281,11 @@ public static class ButtonConverter
   private static String? GetTag(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
+  }
+  
+  private static bool CmpTag(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
   }
   
   private static void SetTag(DXOCustUI.Button openXmlElement, String? value)
@@ -234,6 +304,11 @@ public static class ButtonConverter
     return openXmlElement?.Screentip?.Value;
   }
   
+  private static bool CmpScreentip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Screentip?.Value == value;
+  }
+  
   private static void SetScreentip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -248,6 +323,11 @@ public static class ButtonConverter
   private static String? GetGetScreentip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
+  }
+  
+  private static bool CmpGetScreentip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetScreentip?.Value == value;
   }
   
   private static void SetGetScreentip(DXOCustUI.Button openXmlElement, String? value)
@@ -266,6 +346,11 @@ public static class ButtonConverter
     return openXmlElement?.Supertip?.Value;
   }
   
+  private static bool CmpSupertip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Supertip?.Value == value;
+  }
+  
   private static void SetSupertip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -280,6 +365,11 @@ public static class ButtonConverter
   private static String? GetGetSupertip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
+  }
+  
+  private static bool CmpGetSupertip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSupertip?.Value == value;
   }
   
   private static void SetGetSupertip(DXOCustUI.Button openXmlElement, String? value)
@@ -298,6 +388,11 @@ public static class ButtonConverter
     return openXmlElement?.Label?.Value;
   }
   
+  private static bool CmpLabel(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
+  }
+  
   private static void SetLabel(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -312,6 +407,11 @@ public static class ButtonConverter
   private static String? GetGetLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
+  }
+  
+  private static bool CmpGetLabel(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
   }
   
   private static void SetGetLabel(DXOCustUI.Button openXmlElement, String? value)
@@ -330,6 +430,11 @@ public static class ButtonConverter
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
+  private static bool CmpInsertAfterMso(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
+  }
+  
   private static void SetInsertAfterMso(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -344,6 +449,11 @@ public static class ButtonConverter
   private static String? GetInsertBeforeMso(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
+  }
+  
+  private static bool CmpInsertBeforeMso(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.Button openXmlElement, String? value)
@@ -362,6 +472,11 @@ public static class ButtonConverter
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
+  private static bool CmpInsertAfterQ(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQ?.Value == value;
+  }
+  
   private static void SetInsertAfterQ(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -376,6 +491,11 @@ public static class ButtonConverter
   private static String? GetInsertBeforeQ(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQ(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQ?.Value == value;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.Button openXmlElement, String? value)
@@ -394,6 +514,11 @@ public static class ButtonConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXOCustUI.Button openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -408,6 +533,11 @@ public static class ButtonConverter
   private static String? GetGetVisible(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXOCustUI.Button openXmlElement, String? value)
@@ -426,6 +556,11 @@ public static class ButtonConverter
     return openXmlElement?.Keytip?.Value;
   }
   
+  private static bool CmpKeytip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Keytip?.Value == value;
+  }
+  
   private static void SetKeytip(DXOCustUI.Button openXmlElement, String? value)
   {
     if (value != null)
@@ -440,6 +575,11 @@ public static class ButtonConverter
   private static String? GetGetKeytip(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
+  }
+  
+  private static bool CmpGetKeytip(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetKeytip?.Value == value;
   }
   
   private static void SetGetKeytip(DXOCustUI.Button openXmlElement, String? value)
@@ -458,6 +598,11 @@ public static class ButtonConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
+  private static bool CmpShowLabel(DXOCustUI.Button openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
+  }
+  
   private static void SetShowLabel(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -472,6 +617,11 @@ public static class ButtonConverter
   private static String? GetGetShowLabel(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
+  }
+  
+  private static bool CmpGetShowLabel(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
   }
   
   private static void SetGetShowLabel(DXOCustUI.Button openXmlElement, String? value)
@@ -490,6 +640,11 @@ public static class ButtonConverter
     return openXmlElement?.ShowImage?.Value;
   }
   
+  private static bool CmpShowImage(DXOCustUI.Button openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowImage?.Value == value;
+  }
+  
   private static void SetShowImage(DXOCustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -504,6 +659,11 @@ public static class ButtonConverter
   private static String? GetGetShowImage(DXOCustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
+  }
+  
+  private static bool CmpGetShowImage(DXOCustUI.Button openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowImage?.Value == value;
   }
   
   private static void SetGetShowImage(DXOCustUI.Button openXmlElement, String? value)
@@ -554,6 +714,80 @@ public static class ButtonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOCustUI.Button? openXmlElement, DMUI.Button? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+        ok = false;
+      if (!CmpGetSize(openXmlElement, value.GetSize, diffs, objName))
+        ok = false;
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+        ok = false;
+      if (!CmpGetDescription(openXmlElement, value.GetDescription, diffs, objName))
+        ok = false;
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+        ok = false;
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+        ok = false;
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpIdQ(openXmlElement, value.IdQ, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+        ok = false;
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+        ok = false;
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+        ok = false;
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQ(openXmlElement, value.InsertAfterQ, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQ(openXmlElement, value.InsertBeforeQ, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+        ok = false;
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpShowImage(openXmlElement, value.ShowImage, diffs, objName))
+        ok = false;
+      if (!CmpGetShowImage(openXmlElement, value.GetShowImage, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Button? value)

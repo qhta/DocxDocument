@@ -7,10 +7,12 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
 {
   private static Boolean? GetHidden(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Hidden>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value;
+  }
+  
+  private static bool CmpHidden(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value == value;
   }
   
   private static void SetHidden(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value)
@@ -28,54 +30,70 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     }
   }
   
-  private static DMW.OnOffOnlyKind? GetCantSplit(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
+  private static Boolean? GetCantSplit(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetCantSplit(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpCantSplit(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.CantSplit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetCantSplit(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.CantSplit, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.CantSplit();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMW.OnOffOnlyKind? GetTableHeader(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
+  private static Boolean? GetTableHeader(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetTableHeader(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpTableHeader(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TableHeader>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetTableHeader(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableHeader, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.TableHeader();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+  }
+  
+  private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellSpacing(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableWidthType? value)
@@ -93,10 +111,12 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
   
   private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpTableJustification(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableJustification(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -125,6 +145,26 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpHidden(openXmlElement, value.Hidden, diffs, objName))
+        ok = false;
+      if (!CmpCantSplit(openXmlElement, value.CantSplit, diffs, objName))
+        ok = false;
+      if (!CmpTableHeader(openXmlElement, value.TableHeader, diffs, objName))
+        ok = false;
+      if (!CmpTableCellSpacing(openXmlElement, value.TableCellSpacing, diffs, objName))
+        ok = false;
+      if (!CmpTableJustification(openXmlElement, value.TableJustification, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableRowProperties? value)

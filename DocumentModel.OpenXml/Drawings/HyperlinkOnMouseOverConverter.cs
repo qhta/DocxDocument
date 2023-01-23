@@ -7,10 +7,12 @@ public static class HyperlinkOnMouseOverConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
-    if (itemElement != null)
-      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>());
+  }
+  
+  private static bool CmpHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.EmbeddedWavAudioFileType? value)
@@ -28,10 +30,12 @@ public static class HyperlinkOnMouseOverConverter
   
   private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkOnMouseOver openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>());
+  }
+  
+  private static bool CmpHyperlinkExtensionList(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkExtensionList(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.HyperlinkExtensionList? value)
@@ -57,6 +61,20 @@ public static class HyperlinkOnMouseOverConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.HyperlinkOnMouseOver? openXmlElement, DMDraws.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpHyperlinkSound(openXmlElement, value.HyperlinkSound, diffs, objName))
+        ok = false;
+      if (!CmpHyperlinkExtensionList(openXmlElement, value.HyperlinkExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkOnMouseOver? value)

@@ -13,6 +13,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BackstageGroupConverter
   private static String? GetQualifiedId(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class BackstageGroupConverter
   private static String? GetIdMso(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
+  }
+  
+  private static bool CmpIdMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
   }
   
   private static void SetIdMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
+  private static bool CmpInsertAfterMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
+  }
+  
   private static void SetInsertAfterMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class BackstageGroupConverter
   private static String? GetInsertBeforeMso(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
+  }
+  
+  private static bool CmpInsertBeforeMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
   }
   
   private static void SetInsertBeforeMso(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
+  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
+  }
+  
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class BackstageGroupConverter
   private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
+  }
+  
+  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -141,6 +181,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.Label?.Value;
   }
   
+  private static bool CmpLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
+  }
+  
   private static void SetLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class BackstageGroupConverter
   private static String? GetGetLabel(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
+  }
+  
+  private static bool CmpGetLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -173,6 +223,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXO2010CustUI.BackstageGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXO2010CustUI.BackstageGroup openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -187,6 +242,11 @@ public static class BackstageGroupConverter
   private static String? GetGetVisible(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -205,6 +265,11 @@ public static class BackstageGroupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues, DM.StyleKind>(openXmlElement?.Style?.Value);
   }
   
+  private static bool CmpStyle(DXO2010CustUI.BackstageGroup openXmlElement, DM.StyleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues, DM.StyleKind>(openXmlElement?.Style?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetStyle(DXO2010CustUI.BackstageGroup openXmlElement, DM.StyleKind? value)
   {
     openXmlElement.Style = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues, DM.StyleKind>(value);
@@ -216,6 +281,11 @@ public static class BackstageGroupConverter
   private static String? GetGetStyle(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.GetStyle?.Value;
+  }
+  
+  private static bool CmpGetStyle(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetStyle?.Value == value;
   }
   
   private static void SetGetStyle(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -234,6 +304,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.HelperText?.Value;
   }
   
+  private static bool CmpHelperText(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.HelperText?.Value == value;
+  }
+  
   private static void SetHelperText(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -248,6 +323,11 @@ public static class BackstageGroupConverter
   private static String? GetGetHelperText(DXO2010CustUI.BackstageGroup openXmlElement)
   {
     return openXmlElement?.GetHelperText?.Value;
+  }
+  
+  private static bool CmpGetHelperText(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetHelperText?.Value == value;
   }
   
   private static void SetGetHelperText(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
@@ -266,6 +346,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
+  private static bool CmpShowLabel(DXO2010CustUI.BackstageGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
+  }
+  
   private static void SetShowLabel(DXO2010CustUI.BackstageGroup openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -282,6 +367,11 @@ public static class BackstageGroupConverter
     return openXmlElement?.GetShowLabel?.Value;
   }
   
+  private static bool CmpGetShowLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
+  }
+  
   private static void SetGetShowLabel(DXO2010CustUI.BackstageGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -292,10 +382,12 @@ public static class BackstageGroupConverter
   
   private static DM.PrimaryItem? GetPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>();
-    if (itemElement != null)
-      return DMX.PrimaryItemConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.PrimaryItemConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>());
+  }
+  
+  private static bool CmpPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement, DM.PrimaryItem? value, DiffList? diffs, string? objName)
+  {
+    return DMX.PrimaryItemConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement, DM.PrimaryItem? value)
@@ -313,10 +405,12 @@ public static class BackstageGroupConverter
   
   private static DM.TopItemsGroupControls? GetTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>();
-    if (itemElement != null)
-      return DMX.TopItemsGroupControlsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.TopItemsGroupControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>());
+  }
+  
+  private static bool CmpTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.TopItemsGroupControls? value, DiffList? diffs, string? objName)
+  {
+    return DMX.TopItemsGroupControlsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.TopItemsGroupControls? value)
@@ -334,10 +428,12 @@ public static class BackstageGroupConverter
   
   private static DM.BottomItemsGroupControls? GetBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>();
-    if (itemElement != null)
-      return DMX.BottomItemsGroupControlsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BottomItemsGroupControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>());
+  }
+  
+  private static bool CmpBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.BottomItemsGroupControls? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BottomItemsGroupControlsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.BottomItemsGroupControls? value)
@@ -382,6 +478,58 @@ public static class BackstageGroupConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.BackstageGroup? openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+        ok = false;
+      if (!CmpGetStyle(openXmlElement, value.GetStyle, diffs, objName))
+        ok = false;
+      if (!CmpHelperText(openXmlElement, value.HelperText, diffs, objName))
+        ok = false;
+      if (!CmpGetHelperText(openXmlElement, value.GetHelperText, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpPrimaryItem(openXmlElement, value.PrimaryItem, diffs, objName))
+        ok = false;
+      if (!CmpTopItemsGroupControls(openXmlElement, value.TopItemsGroupControls, diffs, objName))
+        ok = false;
+      if (!CmpBottomItemsGroupControls(openXmlElement, value.BottomItemsGroupControls, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageGroup? value)

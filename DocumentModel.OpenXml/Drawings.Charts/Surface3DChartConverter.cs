@@ -10,8 +10,12 @@ public static class Surface3DChartConverter
   /// </summary>
   private static Boolean? GetWireframe(DXDrawCharts.Surface3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null;
+  }
+  
+  private static bool CmpWireframe(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null == value;
   }
   
   private static void SetWireframe(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value)
@@ -34,8 +38,12 @@ public static class Surface3DChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.Surface3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value)
@@ -53,7 +61,7 @@ public static class Surface3DChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.SurfaceChartSeries> GetSurfaceChartSerieses(DXDrawCharts.Surface3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.SurfaceChartSeries> GetSurfaceChartSeries(DXDrawCharts.Surface3DChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SurfaceChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SurfaceChartSeries>())
@@ -65,7 +73,12 @@ public static class Surface3DChartConverter
     return collection;
   }
   
-  private static void SetSurfaceChartSerieses(DXDrawCharts.Surface3DChart openXmlElement, Collection<DMDrawsCharts.SurfaceChartSeries>? value)
+  private static bool CmpSurfaceChartSeries(DXDrawCharts.Surface3DChart openXmlElement, Collection<DMDrawsCharts.SurfaceChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetSurfaceChartSeries(DXDrawCharts.Surface3DChart openXmlElement, Collection<DMDrawsCharts.SurfaceChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.SurfaceChartSeries>();
     if (value != null)
@@ -81,10 +94,12 @@ public static class Surface3DChartConverter
   
   private static DMDrawsCharts.BandFormats? GetBandFormats(DXDrawCharts.Surface3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>();
-    if (itemElement != null)
-      return DMXDrawsCharts.BandFormatsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.BandFormatsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>());
+  }
+  
+  private static bool CmpBandFormats(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.BandFormats? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.BandFormatsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBandFormats(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.BandFormats? value)
@@ -112,6 +127,11 @@ public static class Surface3DChartConverter
     return collection;
   }
   
+  private static bool CmpAxisIds(DXDrawCharts.Surface3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAxisIds(DXDrawCharts.Surface3DChart openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
@@ -128,10 +148,12 @@ public static class Surface3DChartConverter
   
   private static DMDrawsCharts.Surface3DChartExtensionList? GetSurface3DChartExtensionList(DXDrawCharts.Surface3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Surface3DChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.Surface3DChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.Surface3DChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Surface3DChartExtensionList>());
+  }
+  
+  private static bool CmpSurface3DChartExtensionList(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.Surface3DChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.Surface3DChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Surface3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSurface3DChartExtensionList(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.Surface3DChartExtensionList? value)
@@ -154,13 +176,35 @@ public static class Surface3DChartConverter
       var value = new DMDrawsCharts.Surface3DChart();
       value.Wireframe = GetWireframe(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.SurfaceChartSerieses = GetSurfaceChartSerieses(openXmlElement);
+      value.SurfaceChartSeries = GetSurfaceChartSeries(openXmlElement);
       value.BandFormats = GetBandFormats(openXmlElement);
       value.AxisIds = GetAxisIds(openXmlElement);
       value.Surface3DChartExtensionList = GetSurface3DChartExtensionList(openXmlElement);
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Surface3DChart? openXmlElement, DMDrawsCharts.Surface3DChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWireframe(openXmlElement, value.Wireframe, diffs, objName))
+        ok = false;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpSurfaceChartSeries(openXmlElement, value.SurfaceChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpBandFormats(openXmlElement, value.BandFormats, diffs, objName))
+        ok = false;
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+        ok = false;
+      if (!CmpSurface3DChartExtensionList(openXmlElement, value.Surface3DChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Surface3DChart? value)
@@ -171,7 +215,7 @@ public static class Surface3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetWireframe(openXmlElement, value?.Wireframe);
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetSurfaceChartSerieses(openXmlElement, value?.SurfaceChartSerieses);
+      SetSurfaceChartSeries(openXmlElement, value?.SurfaceChartSeries);
       SetBandFormats(openXmlElement, value?.BandFormats);
       SetAxisIds(openXmlElement, value?.AxisIds);
       SetSurface3DChartExtensionList(openXmlElement, value?.Surface3DChartExtensionList);

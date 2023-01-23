@@ -10,10 +10,12 @@ public static class PictureBulletConverter
   /// </summary>
   private static DMDraws.Blip? GetBlip(DXDraw.PictureBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blip>();
-    if (itemElement != null)
-      return DMXDraws.BlipConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BlipConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>());
+  }
+  
+  private static bool CmpBlip(DXDraw.PictureBullet openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlip(DXDraw.PictureBullet openXmlElement, DMDraws.Blip? value)
@@ -38,6 +40,18 @@ public static class PictureBulletConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.PictureBullet? openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureBullet? value)

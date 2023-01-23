@@ -17,6 +17,11 @@ public static class StrRefExtensionListConverter
     return collection;
   }
   
+  private static bool CmpStrRefExtensions(DXDrawCharts.StrRefExtensionList openXmlElement, Collection<DMDrawsCharts.StrRefExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetStrRefExtensions(DXDrawCharts.StrRefExtensionList openXmlElement, Collection<DMDrawsCharts.StrRefExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.StrRefExtension>();
@@ -40,6 +45,18 @@ public static class StrRefExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.StrRefExtensionList? openXmlElement, DMDrawsCharts.StrRefExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStrRefExtensions(openXmlElement, value.StrRefExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrRefExtensionList? value)

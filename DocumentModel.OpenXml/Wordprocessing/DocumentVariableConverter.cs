@@ -13,6 +13,11 @@ public static class DocumentVariableConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.DocumentVariable openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.DocumentVariable openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class DocumentVariableConverter
   private static String? GetVal(DXW.DocumentVariable openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXW.DocumentVariable openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXW.DocumentVariable openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class DocumentVariableConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocumentVariable? openXmlElement, DMW.DocumentVariable? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentVariable? value)

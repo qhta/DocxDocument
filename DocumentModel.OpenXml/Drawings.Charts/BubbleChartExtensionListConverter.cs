@@ -17,6 +17,11 @@ public static class BubbleChartExtensionListConverter
     return collection;
   }
   
+  private static bool CmpBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement, Collection<DMDrawsCharts.BubbleChartExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement, Collection<DMDrawsCharts.BubbleChartExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.BubbleChartExtension>();
@@ -40,6 +45,18 @@ public static class BubbleChartExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.BubbleChartExtensionList? openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBubbleChartExtensions(openXmlElement, value.BubbleChartExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartExtensionList? value)

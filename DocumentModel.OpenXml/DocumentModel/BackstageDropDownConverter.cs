@@ -13,6 +13,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BackstageDropDownConverter
   private static String? GetQualifiedId(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class BackstageDropDownConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
   
+  private static bool CmpAlignLabel(DXO2010CustUI.BackstageDropDown openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAlignLabel(DXO2010CustUI.BackstageDropDown openXmlElement, DM.ExpandKind? value)
   {
     openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
@@ -74,6 +94,11 @@ public static class BackstageDropDownConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
+  private static bool CmpExpand(DXO2010CustUI.BackstageDropDown openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExpand(DXO2010CustUI.BackstageDropDown openXmlElement, DM.ExpandKind? value)
   {
     openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
@@ -85,6 +110,11 @@ public static class BackstageDropDownConverter
   private static Boolean? GetEnabled(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
+  }
+  
+  private static bool CmpEnabled(DXO2010CustUI.BackstageDropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
   }
   
   private static void SetEnabled(DXO2010CustUI.BackstageDropDown openXmlElement, Boolean? value)
@@ -103,6 +133,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetEnabled?.Value;
   }
   
+  private static bool CmpGetEnabled(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
+  }
+  
   private static void SetGetEnabled(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -117,6 +152,11 @@ public static class BackstageDropDownConverter
   private static String? GetLabel(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.Label?.Value;
+  }
+  
+  private static bool CmpLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -135,6 +175,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetLabel?.Value;
   }
   
+  private static bool CmpGetLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
+  }
+  
   private static void SetGetLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -149,6 +194,11 @@ public static class BackstageDropDownConverter
   private static Boolean? GetVisible(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
+  }
+  
+  private static bool CmpVisible(DXO2010CustUI.BackstageDropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
   }
   
   private static void SetVisible(DXO2010CustUI.BackstageDropDown openXmlElement, Boolean? value)
@@ -167,6 +217,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetVisible?.Value;
   }
   
+  private static bool CmpGetVisible(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
+  }
+  
   private static void SetGetVisible(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -181,6 +236,11 @@ public static class BackstageDropDownConverter
   private static String? GetOnAction(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
+  }
+  
+  private static bool CmpOnAction(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnAction?.Value == value;
   }
   
   private static void SetOnAction(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -199,6 +259,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.Screentip?.Value;
   }
   
+  private static bool CmpScreentip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Screentip?.Value == value;
+  }
+  
   private static void SetScreentip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -213,6 +278,11 @@ public static class BackstageDropDownConverter
   private static String? GetGetScreentip(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
+  }
+  
+  private static bool CmpGetScreentip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetScreentip?.Value == value;
   }
   
   private static void SetGetScreentip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -231,6 +301,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.Supertip?.Value;
   }
   
+  private static bool CmpSupertip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Supertip?.Value == value;
+  }
+  
   private static void SetSupertip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -245,6 +320,11 @@ public static class BackstageDropDownConverter
   private static String? GetGetSupertip(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
+  }
+  
+  private static bool CmpGetSupertip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSupertip?.Value == value;
   }
   
   private static void SetGetSupertip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -263,6 +343,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.Keytip?.Value;
   }
   
+  private static bool CmpKeytip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Keytip?.Value == value;
+  }
+  
   private static void SetKeytip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -277,6 +362,11 @@ public static class BackstageDropDownConverter
   private static String? GetGetKeytip(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
+  }
+  
+  private static bool CmpGetKeytip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetKeytip?.Value == value;
   }
   
   private static void SetGetKeytip(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -295,6 +385,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
   
+  private static bool CmpGetSelectedItemIndex(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSelectedItemIndex?.Value == value;
+  }
+  
   private static void SetGetSelectedItemIndex(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -309,6 +404,11 @@ public static class BackstageDropDownConverter
   private static String? GetSizeString(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
+  }
+  
+  private static bool CmpSizeString(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SizeString?.Value == value;
   }
   
   private static void SetSizeString(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -327,6 +427,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetItemCount?.Value;
   }
   
+  private static bool CmpGetItemCount(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetItemCount?.Value == value;
+  }
+  
   private static void SetGetItemCount(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -343,6 +448,11 @@ public static class BackstageDropDownConverter
     return openXmlElement?.GetItemLabel?.Value;
   }
   
+  private static bool CmpGetItemLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetItemLabel?.Value == value;
+  }
+  
   private static void SetGetItemLabel(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
   {
     if (value != null)
@@ -357,6 +467,11 @@ public static class BackstageDropDownConverter
   private static String? GetGetItemID(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
+  }
+  
+  private static bool CmpGetItemID(DXO2010CustUI.BackstageDropDown openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetItemID?.Value == value;
   }
   
   private static void SetGetItemID(DXO2010CustUI.BackstageDropDown openXmlElement, String? value)
@@ -377,6 +492,11 @@ public static class BackstageDropDownConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpItemBackstageItems(DXO2010CustUI.BackstageDropDown openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetItemBackstageItems(DXO2010CustUI.BackstageDropDown openXmlElement, Collection<DM.BackstageItemType>? value)
@@ -425,6 +545,64 @@ public static class BackstageDropDownConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.BackstageDropDown? openXmlElement, DM.BackstageDropDown? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpAlignLabel(openXmlElement, value.AlignLabel, diffs, objName))
+        ok = false;
+      if (!CmpExpand(openXmlElement, value.Expand, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+        ok = false;
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+        ok = false;
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+        ok = false;
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+        ok = false;
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+        ok = false;
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+        ok = false;
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+        ok = false;
+      if (!CmpGetSelectedItemIndex(openXmlElement, value.GetSelectedItemIndex, diffs, objName))
+        ok = false;
+      if (!CmpSizeString(openXmlElement, value.SizeString, diffs, objName))
+        ok = false;
+      if (!CmpGetItemCount(openXmlElement, value.GetItemCount, diffs, objName))
+        ok = false;
+      if (!CmpGetItemLabel(openXmlElement, value.GetItemLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetItemID(openXmlElement, value.GetItemID, diffs, objName))
+        ok = false;
+      if (!CmpItemBackstageItems(openXmlElement, value.ItemBackstageItems, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageDropDown? value)

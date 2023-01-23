@@ -13,6 +13,11 @@ public static class DataLabelHiddenConverter
     return openXmlElement.Idx?.Value;
   }
   
+  private static bool CmpIdx(DXO2016DrawChartDraw.DataLabelHidden openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Idx?.Value == value;
+  }
+  
   private static void SetIdx(DXO2016DrawChartDraw.DataLabelHidden openXmlElement, UInt32? value)
   {
     openXmlElement.Idx = value;
@@ -27,6 +32,18 @@ public static class DataLabelHiddenConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.DataLabelHidden? openXmlElement, DMDrawsChartDraws.DataLabelHidden? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIdx(openXmlElement, value.Idx, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelHidden? value)

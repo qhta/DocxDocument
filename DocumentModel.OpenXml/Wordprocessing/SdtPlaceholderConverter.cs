@@ -10,10 +10,12 @@ public static class SdtPlaceholderConverter
   /// </summary>
   private static String? GetDocPartReference(DXW.SdtPlaceholder openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartReference>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement.GetFirstChild<DXW.DocPartReference>()?.Val?.Value;
+  }
+  
+  private static bool CmpDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement.GetFirstChild<DXW.DocPartReference>()?.Val?.Value == value;
   }
   
   private static void SetDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value)
@@ -37,6 +39,18 @@ public static class SdtPlaceholderConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtPlaceholder? openXmlElement, DMW.SdtPlaceholder? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDocPartReference(openXmlElement, value.DocPartReference, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtPlaceholder? value)

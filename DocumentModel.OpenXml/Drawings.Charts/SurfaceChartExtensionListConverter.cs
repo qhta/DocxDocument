@@ -17,6 +17,11 @@ public static class SurfaceChartExtensionListConverter
     return collection;
   }
   
+  private static bool CmpSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceChartExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceChartExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.SurfaceChartExtension>();
@@ -40,6 +45,18 @@ public static class SurfaceChartExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.SurfaceChartExtensionList? openXmlElement, DMDrawsCharts.SurfaceChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSurfaceChartExtensions(openXmlElement, value.SurfaceChartExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceChartExtensionList? value)

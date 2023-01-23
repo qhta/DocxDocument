@@ -7,10 +7,12 @@ public static class SdtPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunProperties>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+  }
+  
+  private static bool CmpRunProperties(DXW.SdtProperties openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXW.SdtProperties openXmlElement, DMW.RunProperties? value)
@@ -28,10 +30,12 @@ public static class SdtPropertiesConverter
   
   private static String? GetSdtAlias(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtAlias>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value;
+  }
+  
+  private static bool CmpSdtAlias(DXW.SdtProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value == value;
   }
   
   private static void SetSdtAlias(DXW.SdtProperties openXmlElement, String? value)
@@ -48,10 +52,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.LockingKind? GetLock(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Lock>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value);
+  }
+  
+  private static bool CmpLock(DXW.SdtProperties openXmlElement, DMW.LockingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLock(DXW.SdtProperties openXmlElement, DMW.LockingKind? value)
@@ -69,10 +75,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtPlaceholder? GetSdtPlaceholder(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtPlaceholder>();
-    if (itemElement != null)
-      return DMXW.SdtPlaceholderConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtPlaceholderConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtPlaceholder>());
+  }
+  
+  private static bool CmpSdtPlaceholder(DXW.SdtProperties openXmlElement, DMW.SdtPlaceholder? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtPlaceholderConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtPlaceholder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtPlaceholder(DXW.SdtProperties openXmlElement, DMW.SdtPlaceholder? value)
@@ -90,10 +98,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetShowingPlaceholder(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>()?.Val?.Value;
+  }
+  
+  private static bool CmpShowingPlaceholder(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>()?.Val?.Value == value;
   }
   
   private static void SetShowingPlaceholder(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -113,10 +123,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.DataBinding? GetDataBinding(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DataBinding>();
-    if (itemElement != null)
-      return DMXW.DataBindingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DataBindingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DataBinding>());
+  }
+  
+  private static bool CmpDataBinding(DXW.SdtProperties openXmlElement, DMW.DataBinding? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DataBindingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DataBinding>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataBinding(DXW.SdtProperties openXmlElement, DMW.DataBinding? value)
@@ -134,10 +146,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetTemporarySdt(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TemporarySdt>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.TemporarySdt>()?.Val?.Value;
+  }
+  
+  private static bool CmpTemporarySdt(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.TemporarySdt>()?.Val?.Value == value;
   }
   
   private static void SetTemporarySdt(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -157,10 +171,12 @@ public static class SdtPropertiesConverter
   
   private static Int32? GetSdtId(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.SdtId>()?.Val?.Value;
+  }
+  
+  private static bool CmpSdtId(DXW.SdtProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.SdtId>()?.Val?.Value == value;
   }
   
   private static void SetSdtId(DXW.SdtProperties openXmlElement, Int32? value)
@@ -177,10 +193,12 @@ public static class SdtPropertiesConverter
   
   private static String? GetTag(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Tag>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value;
+  }
+  
+  private static bool CmpTag(DXW.SdtProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value == value;
   }
   
   private static void SetTag(DXW.SdtProperties openXmlElement, String? value)
@@ -197,10 +215,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.Color3? GetColor(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.Color>();
-    if (itemElement != null)
-      return DMXW.Color3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.Color3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.Color>());
+  }
+  
+  private static bool CmpColor(DXW.SdtProperties openXmlElement, DMW.Color3? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.Color3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013W.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.SdtProperties openXmlElement, DMW.Color3? value)
@@ -218,10 +238,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtAppearance? GetAppearance(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.Appearance>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value);
+  }
+  
+  private static bool CmpAppearance(DXW.SdtProperties openXmlElement, DMW.SdtAppearance? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAppearance(DXW.SdtProperties openXmlElement, DMW.SdtAppearance? value)
@@ -239,8 +261,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetWebExtensionLinked(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.WebExtensionLinked>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013W.WebExtensionLinked>() != null;
+  }
+  
+  private static bool CmpWebExtensionLinked(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013W.WebExtensionLinked>() != null == value;
   }
   
   private static void SetWebExtensionLinked(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -260,8 +286,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetWebExtensionCreated(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.WebExtensionCreated>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013W.WebExtensionCreated>() != null;
+  }
+  
+  private static bool CmpWebExtensionCreated(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013W.WebExtensionCreated>() != null == value;
   }
   
   private static void SetWebExtensionCreated(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -281,8 +311,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentEquation(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentEquation>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentEquation>() != null;
+  }
+  
+  private static bool CmpSdtContentEquation(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentEquation>() != null == value;
   }
   
   private static void SetSdtContentEquation(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -302,10 +336,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentComboBox? GetSdtContentComboBox(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentComboBox>();
-    if (itemElement != null)
-      return DMXW.SdtContentComboBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentComboBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentComboBox>());
+  }
+  
+  private static bool CmpSdtContentComboBox(DXW.SdtProperties openXmlElement, DMW.SdtContentComboBox? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentComboBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentComboBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentComboBox(DXW.SdtProperties openXmlElement, DMW.SdtContentComboBox? value)
@@ -323,10 +359,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDate? GetSdtContentDate(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentDate>();
-    if (itemElement != null)
-      return DMXW.SdtContentDateConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentDateConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDate>());
+  }
+  
+  private static bool CmpSdtContentDate(DXW.SdtProperties openXmlElement, DMW.SdtContentDate? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentDateConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDate>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentDate(DXW.SdtProperties openXmlElement, DMW.SdtContentDate? value)
@@ -344,10 +382,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDocPartObject? GetSdtContentDocPartObject(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentDocPartObject>();
-    if (itemElement != null)
-      return DMXW.SdtContentDocPartObjectConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentDocPartObjectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartObject>());
+  }
+  
+  private static bool CmpSdtContentDocPartObject(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartObject? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentDocPartObjectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartObject>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentDocPartObject(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartObject? value)
@@ -365,10 +405,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDocPartList? GetSdtContentDocPartList(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentDocPartList>();
-    if (itemElement != null)
-      return DMXW.SdtContentDocPartListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentDocPartListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartList>());
+  }
+  
+  private static bool CmpSdtContentDocPartList(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartList? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentDocPartListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentDocPartList(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartList? value)
@@ -386,10 +428,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDropDownList? GetSdtContentDropDownList(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentDropDownList>();
-    if (itemElement != null)
-      return DMXW.SdtContentDropDownListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentDropDownListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDropDownList>());
+  }
+  
+  private static bool CmpSdtContentDropDownList(DXW.SdtProperties openXmlElement, DMW.SdtContentDropDownList? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentDropDownListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDropDownList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentDropDownList(DXW.SdtProperties openXmlElement, DMW.SdtContentDropDownList? value)
@@ -407,8 +451,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentPicture(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentPicture>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentPicture>() != null;
+  }
+  
+  private static bool CmpSdtContentPicture(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentPicture>() != null == value;
   }
   
   private static void SetSdtContentPicture(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -428,8 +476,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentRichText(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentRichText>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentRichText>() != null;
+  }
+  
+  private static bool CmpSdtContentRichText(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentRichText>() != null == value;
   }
   
   private static void SetSdtContentRichText(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -449,10 +501,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentText? GetSdtContentText(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtContentText>();
-    if (itemElement != null)
-      return DMXW.SdtContentTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentText>());
+  }
+  
+  private static bool CmpSdtContentText(DXW.SdtProperties openXmlElement, DMW.SdtContentText? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentText(DXW.SdtProperties openXmlElement, DMW.SdtContentText? value)
@@ -470,8 +524,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentCitation(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentCitation>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentCitation>() != null;
+  }
+  
+  private static bool CmpSdtContentCitation(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentCitation>() != null == value;
   }
   
   private static void SetSdtContentCitation(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -491,8 +549,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentGroup(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentGroup>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentGroup>() != null;
+  }
+  
+  private static bool CmpSdtContentGroup(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentGroup>() != null == value;
   }
   
   private static void SetSdtContentGroup(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -512,8 +574,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentBibliography(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentBibliography>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXW.SdtContentBibliography>() != null;
+  }
+  
+  private static bool CmpSdtContentBibliography(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SdtContentBibliography>() != null == value;
   }
   
   private static void SetSdtContentBibliography(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -533,8 +599,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetEntityPickerEmpty(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.EntityPickerEmpty>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010W.EntityPickerEmpty>() != null;
+  }
+  
+  private static bool CmpEntityPickerEmpty(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010W.EntityPickerEmpty>() != null == value;
   }
   
   private static void SetEntityPickerEmpty(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -554,10 +624,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentCheckBox? GetSdtContentCheckBox(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SdtContentCheckBox>();
-    if (itemElement != null)
-      return DMXW.SdtContentCheckBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtContentCheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SdtContentCheckBox>());
+  }
+  
+  private static bool CmpSdtContentCheckBox(DXW.SdtProperties openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtContentCheckBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SdtContentCheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtContentCheckBox(DXW.SdtProperties openXmlElement, DMW.SdtContentCheckBox? value)
@@ -575,10 +647,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtRepeatedSection? GetSdtRepeatedSection(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.SdtRepeatedSection>();
-    if (itemElement != null)
-      return DMXW.SdtRepeatedSectionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtRepeatedSectionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.SdtRepeatedSection>());
+  }
+  
+  private static bool CmpSdtRepeatedSection(DXW.SdtProperties openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtRepeatedSectionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013W.SdtRepeatedSection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtRepeatedSection(DXW.SdtProperties openXmlElement, DMW.SdtRepeatedSection? value)
@@ -596,8 +670,12 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtRepeatedSectionItem(DXW.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.SdtRepeatedSectionItem>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2013W.SdtRepeatedSectionItem>() != null;
+  }
+  
+  private static bool CmpSdtRepeatedSectionItem(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2013W.SdtRepeatedSectionItem>() != null == value;
   }
   
   private static void SetSdtRepeatedSectionItem(DXW.SdtProperties openXmlElement, Boolean? value)
@@ -652,6 +730,74 @@ public static class SdtPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtProperties? openXmlElement, DMW.SdtProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+        ok = false;
+      if (!CmpSdtAlias(openXmlElement, value.SdtAlias, diffs, objName))
+        ok = false;
+      if (!CmpLock(openXmlElement, value.Lock, diffs, objName))
+        ok = false;
+      if (!CmpSdtPlaceholder(openXmlElement, value.SdtPlaceholder, diffs, objName))
+        ok = false;
+      if (!CmpShowingPlaceholder(openXmlElement, value.ShowingPlaceholder, diffs, objName))
+        ok = false;
+      if (!CmpDataBinding(openXmlElement, value.DataBinding, diffs, objName))
+        ok = false;
+      if (!CmpTemporarySdt(openXmlElement, value.TemporarySdt, diffs, objName))
+        ok = false;
+      if (!CmpSdtId(openXmlElement, value.SdtId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+        ok = false;
+      if (!CmpAppearance(openXmlElement, value.Appearance, diffs, objName))
+        ok = false;
+      if (!CmpWebExtensionLinked(openXmlElement, value.WebExtensionLinked, diffs, objName))
+        ok = false;
+      if (!CmpWebExtensionCreated(openXmlElement, value.WebExtensionCreated, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentEquation(openXmlElement, value.SdtContentEquation, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentComboBox(openXmlElement, value.SdtContentComboBox, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentDate(openXmlElement, value.SdtContentDate, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentDocPartObject(openXmlElement, value.SdtContentDocPartObject, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentDocPartList(openXmlElement, value.SdtContentDocPartList, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentDropDownList(openXmlElement, value.SdtContentDropDownList, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentPicture(openXmlElement, value.SdtContentPicture, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentRichText(openXmlElement, value.SdtContentRichText, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentText(openXmlElement, value.SdtContentText, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentCitation(openXmlElement, value.SdtContentCitation, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentGroup(openXmlElement, value.SdtContentGroup, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentBibliography(openXmlElement, value.SdtContentBibliography, diffs, objName))
+        ok = false;
+      if (!CmpEntityPickerEmpty(openXmlElement, value.EntityPickerEmpty, diffs, objName))
+        ok = false;
+      if (!CmpSdtContentCheckBox(openXmlElement, value.SdtContentCheckBox, diffs, objName))
+        ok = false;
+      if (!CmpSdtRepeatedSection(openXmlElement, value.SdtRepeatedSection, diffs, objName))
+        ok = false;
+      if (!CmpSdtRepeatedSectionItem(openXmlElement, value.SdtRepeatedSectionItem, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtProperties? value)

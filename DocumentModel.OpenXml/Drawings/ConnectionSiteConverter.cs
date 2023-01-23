@@ -13,6 +13,11 @@ public static class ConnectionSiteConverter
     return openXmlElement?.Angle?.Value;
   }
   
+  private static bool CmpAngle(DXDraw.ConnectionSite openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Angle?.Value == value;
+  }
+  
   private static void SetAngle(DXDraw.ConnectionSite openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class ConnectionSiteConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.ConnectionSite openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Position>();
-    if (itemElement != null)
-      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>());
+  }
+  
+  private static bool CmpPosition(DXDraw.ConnectionSite openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPosition(DXDraw.ConnectionSite openXmlElement, DMDraws.AdjustPoint2DType? value)
@@ -55,6 +62,20 @@ public static class ConnectionSiteConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ConnectionSite? openXmlElement, DMDraws.ConnectionSite? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName))
+        ok = false;
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSite? value)

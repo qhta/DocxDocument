@@ -10,10 +10,12 @@ public static class Area3DChartConverter
   /// </summary>
   private static DMDrawsCharts.GroupingKind? GetGrouping(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Grouping>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value);
+  }
+  
+  private static bool CmpGrouping(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.GroupingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGrouping(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.GroupingKind? value)
@@ -34,8 +36,12 @@ public static class Area3DChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.Area3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.Area3DChart openXmlElement, Boolean? value)
@@ -53,7 +59,7 @@ public static class Area3DChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.AreaChartSeries> GetAreaChartSerieses(DXDrawCharts.Area3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.AreaChartSeries> GetAreaChartSeries(DXDrawCharts.Area3DChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.AreaChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaChartSeries>())
@@ -65,7 +71,12 @@ public static class Area3DChartConverter
     return collection;
   }
   
-  private static void SetAreaChartSerieses(DXDrawCharts.Area3DChart openXmlElement, Collection<DMDrawsCharts.AreaChartSeries>? value)
+  private static bool CmpAreaChartSeries(DXDrawCharts.Area3DChart openXmlElement, Collection<DMDrawsCharts.AreaChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetAreaChartSeries(DXDrawCharts.Area3DChart openXmlElement, Collection<DMDrawsCharts.AreaChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AreaChartSeries>();
     if (value != null)
@@ -81,10 +92,12 @@ public static class Area3DChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -102,10 +115,12 @@ public static class Area3DChartConverter
   
   private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DropLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>());
+  }
+  
+  private static bool CmpDropLines(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDropLines(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.DropLines? value)
@@ -123,10 +138,12 @@ public static class Area3DChartConverter
   
   private static UInt16? GetGapDepth(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value;
+  }
+  
+  private static bool CmpGapDepth(DXDrawCharts.Area3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value == value;
   }
   
   private static void SetGapDepth(DXDrawCharts.Area3DChart openXmlElement, UInt16? value)
@@ -153,6 +170,11 @@ public static class Area3DChartConverter
     return collection;
   }
   
+  private static bool CmpAxisIds(DXDrawCharts.Area3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAxisIds(DXDrawCharts.Area3DChart openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
@@ -169,10 +191,12 @@ public static class Area3DChartConverter
   
   private static DMDrawsCharts.Area3DChartExtensionList? GetArea3DChartExtensionList(DXDrawCharts.Area3DChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Area3DChartExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.Area3DChartExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.Area3DChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Area3DChartExtensionList>());
+  }
+  
+  private static bool CmpArea3DChartExtensionList(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.Area3DChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.Area3DChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Area3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArea3DChartExtensionList(DXDrawCharts.Area3DChart openXmlElement, DMDrawsCharts.Area3DChartExtensionList? value)
@@ -195,7 +219,7 @@ public static class Area3DChartConverter
       var value = new DMDrawsCharts.Area3DChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.AreaChartSerieses = GetAreaChartSerieses(openXmlElement);
+      value.AreaChartSeries = GetAreaChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.DropLines = GetDropLines(openXmlElement);
       value.GapDepth = GetGapDepth(openXmlElement);
@@ -206,6 +230,32 @@ public static class Area3DChartConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXDrawCharts.Area3DChart? openXmlElement, DMDrawsCharts.Area3DChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName))
+        ok = false;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpAreaChartSeries(openXmlElement, value.AreaChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpDropLines(openXmlElement, value.DropLines, diffs, objName))
+        ok = false;
+      if (!CmpGapDepth(openXmlElement, value.GapDepth, diffs, objName))
+        ok = false;
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+        ok = false;
+      if (!CmpArea3DChartExtensionList(openXmlElement, value.Area3DChartExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Area3DChart? value)
     where OpenXmlElementType: DXDrawCharts.Area3DChart, new()
   {
@@ -214,7 +264,7 @@ public static class Area3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetAreaChartSerieses(openXmlElement, value?.AreaChartSerieses);
+      SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetDropLines(openXmlElement, value?.DropLines);
       SetGapDepth(openXmlElement, value?.GapDepth);

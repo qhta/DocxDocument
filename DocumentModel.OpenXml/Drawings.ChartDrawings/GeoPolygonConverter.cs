@@ -13,6 +13,11 @@ public static class GeoPolygonConverter
     return openXmlElement?.PolygonId?.Value;
   }
   
+  private static bool CmpPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PolygonId?.Value == value;
+  }
+  
   private static void SetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class GeoPolygonConverter
     return openXmlElement.NumPoints?.Value;
   }
   
+  private static bool CmpNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.NumPoints?.Value == value;
+  }
+  
   private static void SetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value)
   {
     openXmlElement.NumPoints = value;
@@ -40,6 +50,11 @@ public static class GeoPolygonConverter
   private static String? GetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
     return openXmlElement?.PcaRings?.Value;
+  }
+  
+  private static bool CmpPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PcaRings?.Value == value;
   }
   
   private static void SetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
@@ -61,6 +76,22 @@ public static class GeoPolygonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement, DMDrawsChartDraws.GeoPolygon? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPolygonId(openXmlElement, value.PolygonId, diffs, objName))
+        ok = false;
+      if (!CmpNumPoints(openXmlElement, value.NumPoints, diffs, objName))
+        ok = false;
+      if (!CmpPcaRings(openXmlElement, value.PcaRings, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoPolygon? value)

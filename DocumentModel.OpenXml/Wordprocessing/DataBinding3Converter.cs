@@ -13,6 +13,11 @@ public static class DataBinding3Converter
     return openXmlElement?.PrefixMappings?.Value;
   }
   
+  private static bool CmpPrefixMappings(DXO2013W.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PrefixMappings?.Value == value;
+  }
+  
   private static void SetPrefixMappings(DXO2013W.DataBinding openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class DataBinding3Converter
     return openXmlElement?.XPath?.Value;
   }
   
+  private static bool CmpXPath(DXO2013W.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.XPath?.Value == value;
+  }
+  
   private static void SetXPath(DXO2013W.DataBinding openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class DataBinding3Converter
   private static String? GetStoreItemId(DXO2013W.DataBinding openXmlElement)
   {
     return openXmlElement?.StoreItemId?.Value;
+  }
+  
+  private static bool CmpStoreItemId(DXO2013W.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.StoreItemId?.Value == value;
   }
   
   private static void SetStoreItemId(DXO2013W.DataBinding openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class DataBinding3Converter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.DataBinding? openXmlElement, DMW.DataBinding3? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPrefixMappings(openXmlElement, value.PrefixMappings, diffs, objName))
+        ok = false;
+      if (!CmpXPath(openXmlElement, value.XPath, diffs, objName))
+        ok = false;
+      if (!CmpStoreItemId(openXmlElement, value.StoreItemId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DataBinding3? value)

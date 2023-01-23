@@ -13,6 +13,11 @@ public static class LinePropertiesExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDraw.LinePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDraw.LinePropertiesExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class LinePropertiesExtensionConverter
   
   private static DMDraws.LineSketchStyleProperties? GetLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>();
-    if (itemElement != null)
-      return DMXDraws.LineSketchStylePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.LineSketchStylePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>());
+  }
+  
+  private static bool CmpLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement, DMDraws.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.LineSketchStylePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement, DMDraws.LineSketchStyleProperties? value)
@@ -52,6 +59,20 @@ public static class LinePropertiesExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.LinePropertiesExtension? openXmlElement, DMDraws.LinePropertiesExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpLineSketchStyleProperties(openXmlElement, value.LineSketchStyleProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesExtension? value)

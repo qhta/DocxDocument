@@ -13,6 +13,11 @@ public static class CharacterBulletConverter
     return openXmlElement?.Char?.Value;
   }
   
+  private static bool CmpChar(DXDraw.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Char?.Value == value;
+  }
+  
   private static void SetChar(DXDraw.CharacterBullet openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class CharacterBulletConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.CharacterBullet? openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChar(openXmlElement, value.Char, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CharacterBullet? value)

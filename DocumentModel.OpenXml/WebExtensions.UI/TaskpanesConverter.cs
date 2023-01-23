@@ -17,6 +17,11 @@ public static class TaskpanesConverter
     return collection;
   }
   
+  private static bool CmpWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement, Collection<DMWebExtUI.WebExtensionTaskpane>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement, Collection<DMWebExtUI.WebExtensionTaskpane>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013WebExtPane.WebExtensionTaskpane>();
@@ -40,6 +45,18 @@ public static class TaskpanesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExtPane.Taskpanes? openXmlElement, DMWebExtUI.Taskpanes? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWebExtensionTaskpanes(openXmlElement, value.WebExtensionTaskpanes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.Taskpanes? value)

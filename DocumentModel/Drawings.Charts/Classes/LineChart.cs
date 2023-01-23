@@ -15,7 +15,7 @@ public class LineChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<LineChartSeries>? LineChartSerieses { get; set; }
+  public Collection<LineChartSeries>? LineChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

@@ -15,6 +15,16 @@ public static class DocPartsConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXW.DocParts? openXmlElement, DMW.DocParts? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocParts? value)
     where OpenXmlElementType: DXW.DocParts, new()
   {

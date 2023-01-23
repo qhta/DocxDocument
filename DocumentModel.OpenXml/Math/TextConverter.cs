@@ -13,6 +13,11 @@ public static class TextConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value);
   }
   
+  private static bool CmpSpace(DXMath.Text openXmlElement, DM.SpaceProcessingMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetSpace(DXMath.Text openXmlElement, DM.SpaceProcessingMode? value)
   {
     openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(value);
@@ -27,6 +32,18 @@ public static class TextConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Text? openXmlElement, DMMath.Text? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Text? value)

@@ -17,6 +17,11 @@ public static class OfficeArtExtensionListConverter
     return collection;
   }
   
+  private static bool CmpExtensions(DXO2013WebExtPane.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetExtensions(DXO2013WebExtPane.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.Extension>();
@@ -40,6 +45,18 @@ public static class OfficeArtExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExtPane.OfficeArtExtensionList? openXmlElement, DMWebExtUI.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtensions(openXmlElement, value.Extensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.OfficeArtExtensionList? value)

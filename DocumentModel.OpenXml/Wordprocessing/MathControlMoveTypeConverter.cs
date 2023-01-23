@@ -13,6 +13,11 @@ public static class MathControlMoveTypeConverter
     return openXmlElement?.Author?.Value;
   }
   
+  private static bool CmpAuthor(DXW.MathControlMoveType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
+  }
+  
   private static void SetAuthor(DXW.MathControlMoveType openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class MathControlMoveTypeConverter
     return openXmlElement.Date?.Value;
   }
   
+  private static bool CmpDate(DXW.MathControlMoveType openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Date?.Value == value;
+  }
+  
   private static void SetDate(DXW.MathControlMoveType openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
@@ -40,6 +50,11 @@ public static class MathControlMoveTypeConverter
   private static String? GetId(DXW.MathControlMoveType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.MathControlMoveType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.MathControlMoveType openXmlElement, String? value)
@@ -61,6 +76,22 @@ public static class MathControlMoveTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.MathControlMoveType? openXmlElement, DMW.MathControlMoveType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MathControlMoveType? value)

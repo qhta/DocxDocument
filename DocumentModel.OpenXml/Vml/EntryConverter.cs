@@ -13,6 +13,11 @@ public static class EntryConverter
     return openXmlElement.New?.Value;
   }
   
+  private static bool CmpNew(DXVmlO.Entry openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.New?.Value == value;
+  }
+  
   private static void SetNew(DXVmlO.Entry openXmlElement, Int32? value)
   {
     openXmlElement.New = value;
@@ -24,6 +29,11 @@ public static class EntryConverter
   private static Int32? GetOld(DXVmlO.Entry openXmlElement)
   {
     return openXmlElement.Old?.Value;
+  }
+  
+  private static bool CmpOld(DXVmlO.Entry openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Old?.Value == value;
   }
   
   private static void SetOld(DXVmlO.Entry openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class EntryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.Entry? openXmlElement, DMVml.Entry? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNew(openXmlElement, value.New, diffs, objName))
+        ok = false;
+      if (!CmpOld(openXmlElement, value.Old, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Entry? value)

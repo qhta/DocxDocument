@@ -13,6 +13,11 @@ public static class SymbolCharConverter
     return openXmlElement?.Font?.Value;
   }
   
+  private static bool CmpFont(DXW.SymbolChar openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Font?.Value == value;
+  }
+  
   private static void SetFont(DXW.SymbolChar openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,13 @@ public static class SymbolCharConverter
     if (openXmlElement.Char?.Value != null)
       return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber);
     return null;
+  }
+  
+  private static bool CmpChar(DXW.SymbolChar openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Char?.Value != null)
+      return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
   }
   
   private static void SetChar(DXW.SymbolChar openXmlElement, UInt16? value)
@@ -49,6 +61,20 @@ public static class SymbolCharConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SymbolChar? openXmlElement, DMW.SymbolChar? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFont(openXmlElement, value.Font, diffs, objName))
+        ok = false;
+      if (!CmpChar(openXmlElement, value.Char, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar? value)

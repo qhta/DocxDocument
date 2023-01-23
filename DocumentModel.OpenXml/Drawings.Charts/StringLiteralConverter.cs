@@ -7,10 +7,12 @@ public static class StringLiteralConverter
 {
   private static UInt32? GetPointCount(DXDrawCharts.StringLiteral openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+  }
+  
+  private static bool CmpPointCount(DXDrawCharts.StringLiteral openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value == value;
   }
   
   private static void SetPointCount(DXDrawCharts.StringLiteral openXmlElement, UInt32? value)
@@ -37,6 +39,11 @@ public static class StringLiteralConverter
     return collection;
   }
   
+  private static bool CmpStringPoints(DXDrawCharts.StringLiteral openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetStringPoints(DXDrawCharts.StringLiteral openXmlElement, Collection<DMDrawsCharts.StringPoint>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.StringPoint>();
@@ -53,10 +60,12 @@ public static class StringLiteralConverter
   
   private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXDrawCharts.StringLiteral openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>());
+  }
+  
+  private static bool CmpStrDataExtensionList(DXDrawCharts.StringLiteral openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.StrDataExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStrDataExtensionList(DXDrawCharts.StringLiteral openXmlElement, DMDrawsCharts.StrDataExtensionList? value)
@@ -83,6 +92,22 @@ public static class StringLiteralConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.StringLiteral? openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+        ok = false;
+      if (!CmpStringPoints(openXmlElement, value.StringPoints, diffs, objName))
+        ok = false;
+      if (!CmpStrDataExtensionList(openXmlElement, value.StrDataExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringLiteral? value)

@@ -17,6 +17,11 @@ public static class DateAxExtensionListConverter
     return collection;
   }
   
+  private static bool CmpDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.DateAxExtension>();
@@ -40,6 +45,18 @@ public static class DateAxExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement, DMDrawsCharts.DateAxExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDateAxExtensions(openXmlElement, value.DateAxExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxExtensionList? value)

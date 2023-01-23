@@ -7,10 +7,12 @@ public static class ControlPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunProperties>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+  }
+  
+  private static bool CmpRunProperties(DXMath.ControlProperties openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXMath.ControlProperties openXmlElement, DMW.RunProperties? value)
@@ -28,10 +30,12 @@ public static class ControlPropertiesConverter
   
   private static DMW.InsertedMathControl? GetInsertedMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.InsertedMathControl>();
-    if (itemElement != null)
-      return DMXW.InsertedMathControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.InsertedMathControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedMathControl>());
+  }
+  
+  private static bool CmpInsertedMathControl(DXMath.ControlProperties openXmlElement, DMW.InsertedMathControl? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.InsertedMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.InsertedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInsertedMathControl(DXMath.ControlProperties openXmlElement, DMW.InsertedMathControl? value)
@@ -49,10 +53,12 @@ public static class ControlPropertiesConverter
   
   private static DMW.DeletedMathControl? GetDeletedMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DeletedMathControl>();
-    if (itemElement != null)
-      return DMXW.DeletedMathControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.DeletedMathControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedMathControl>());
+  }
+  
+  private static bool CmpDeletedMathControl(DXMath.ControlProperties openXmlElement, DMW.DeletedMathControl? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.DeletedMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DeletedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeletedMathControl(DXMath.ControlProperties openXmlElement, DMW.DeletedMathControl? value)
@@ -70,10 +76,12 @@ public static class ControlPropertiesConverter
   
   private static DMW.MoveFromMathControl? GetMoveFromMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromMathControl>();
-    if (itemElement != null)
-      return DMXW.MoveFromMathControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveFromMathControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromMathControl>());
+  }
+  
+  private static bool CmpMoveFromMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveFromMathControl? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveFromMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveFromMathControl? value)
@@ -91,10 +99,12 @@ public static class ControlPropertiesConverter
   
   private static DMW.MoveToMathControl? GetMoveToMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToMathControl>();
-    if (itemElement != null)
-      return DMXW.MoveToMathControlConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.MoveToMathControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToMathControl>());
+  }
+  
+  private static bool CmpMoveToMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveToMathControl? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.MoveToMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveToMathControl? value)
@@ -123,6 +133,26 @@ public static class ControlPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.ControlProperties? openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+        ok = false;
+      if (!CmpInsertedMathControl(openXmlElement, value.InsertedMathControl, diffs, objName))
+        ok = false;
+      if (!CmpDeletedMathControl(openXmlElement, value.DeletedMathControl, diffs, objName))
+        ok = false;
+      if (!CmpMoveFromMathControl(openXmlElement, value.MoveFromMathControl, diffs, objName))
+        ok = false;
+      if (!CmpMoveToMathControl(openXmlElement, value.MoveToMathControl, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ControlProperties? value)

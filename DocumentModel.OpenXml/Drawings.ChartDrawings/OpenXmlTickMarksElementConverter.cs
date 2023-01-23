@@ -13,6 +13,11 @@ public static class OpenXmlTickMarksElementConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDrawsChartDraws.TickMarksType>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.TickMarksType? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDrawsChartDraws.TickMarksType>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.TickMarksType? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDrawsChartDraws.TickMarksType>(value);
@@ -23,10 +28,12 @@ public static class OpenXmlTickMarksElementConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -52,6 +59,20 @@ public static class OpenXmlTickMarksElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.OpenXmlTickMarksElement? openXmlElement, DMDrawsChartDraws.OpenXmlTickMarksElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlTickMarksElement? value)

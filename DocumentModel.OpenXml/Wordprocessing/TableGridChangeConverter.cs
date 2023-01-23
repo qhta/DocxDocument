@@ -13,6 +13,11 @@ public static class TableGridChangeConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXW.TableGridChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.TableGridChange openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class TableGridChangeConverter
   /// </summary>
   private static DMW.PreviousTableGrid? GetPreviousTableGrid(DXW.TableGridChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousTableGrid>();
-    if (itemElement != null)
-      return DMXW.PreviousTableGridConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PreviousTableGridConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousTableGrid>());
+  }
+  
+  private static bool CmpPreviousTableGrid(DXW.TableGridChange openXmlElement, DMW.PreviousTableGrid? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PreviousTableGridConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousTableGrid>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousTableGrid(DXW.TableGridChange openXmlElement, DMW.PreviousTableGrid? value)
@@ -55,6 +62,20 @@ public static class TableGridChangeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableGridChange? openXmlElement, DMW.TableGridChange? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpPreviousTableGrid(openXmlElement, value.PreviousTableGrid, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableGridChange? value)

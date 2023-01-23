@@ -13,6 +13,11 @@ public static class LineEndPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMDraws.LineEndKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMDraws.LineEndKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMDraws.LineEndKind>(value);
@@ -26,6 +31,11 @@ public static class LineEndPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMDraws.LineEndWidthKind>(openXmlElement?.Width?.Value);
   }
   
+  private static bool CmpWidth(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndWidthKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMDraws.LineEndWidthKind>(openXmlElement?.Width?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetWidth(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndWidthKind? value)
   {
     openXmlElement.Width = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMDraws.LineEndWidthKind>(value);
@@ -37,6 +47,11 @@ public static class LineEndPropertiesTypeConverter
   private static DMDraws.LineEndLengthKind? GetLength(DXDraw.LineEndPropertiesType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMDraws.LineEndLengthKind>(openXmlElement?.Length?.Value);
+  }
+  
+  private static bool CmpLength(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndLengthKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMDraws.LineEndLengthKind>(openXmlElement?.Length?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLength(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndLengthKind? value)
@@ -55,6 +70,22 @@ public static class LineEndPropertiesTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.LineEndPropertiesType? openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpLength(openXmlElement, value.Length, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineEndPropertiesType? value)

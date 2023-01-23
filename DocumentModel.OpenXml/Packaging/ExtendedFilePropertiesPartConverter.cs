@@ -10,14 +10,22 @@ public static class ExtendedFilePropertiesPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.ExtendedFilePropertiesPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMProps.ExtendedProperties? GetProperties(DXPack.ExtendedFilePropertiesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXExtProps.Properties rootElement)
-      return DMXProps.ExtendedPropertiesConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXProps.ExtendedPropertiesConverter.CreateModelElement(openXmlElement?.RootElement as DXExtProps.Properties);
+  }
+  
+  private static bool CmpProperties(DXPack.ExtendedFilePropertiesPart openXmlElement, DMProps.ExtendedProperties? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetProperties(DXPack.ExtendedFilePropertiesPart openXmlElement, DMProps.ExtendedProperties? value)
@@ -35,6 +43,11 @@ public static class ExtendedFilePropertiesPartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.ExtendedFilePropertiesPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.ExtendedFilePropertiesPart? CreateModelElement(DXPack.ExtendedFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -46,6 +59,22 @@ public static class ExtendedFilePropertiesPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ExtendedFilePropertiesPart? openXmlElement, DMPack.ExtendedFilePropertiesPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpProperties(openXmlElement, value.Properties, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedFilePropertiesPart? value)

@@ -13,6 +13,11 @@ public static class ReflectionConverter
     return openXmlElement.BlurRadius?.Value;
   }
   
+  private static bool CmpBlurRadius(DXO2010W.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BlurRadius?.Value == value;
+  }
+  
   private static void SetBlurRadius(DXO2010W.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.BlurRadius = value;
@@ -24,6 +29,11 @@ public static class ReflectionConverter
   private static Int32? GetStartingOpacity(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.StartingOpacity?.Value;
+  }
+  
+  private static bool CmpStartingOpacity(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.StartingOpacity?.Value == value;
   }
   
   private static void SetStartingOpacity(DXO2010W.Reflection openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class ReflectionConverter
     return openXmlElement.StartPosition?.Value;
   }
   
+  private static bool CmpStartPosition(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.StartPosition?.Value == value;
+  }
+  
   private static void SetStartPosition(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartPosition = value;
@@ -50,6 +65,11 @@ public static class ReflectionConverter
   private static Int32? GetEndingOpacity(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.EndingOpacity?.Value;
+  }
+  
+  private static bool CmpEndingOpacity(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.EndingOpacity?.Value == value;
   }
   
   private static void SetEndingOpacity(DXO2010W.Reflection openXmlElement, Int32? value)
@@ -65,6 +85,11 @@ public static class ReflectionConverter
     return openXmlElement.EndPosition?.Value;
   }
   
+  private static bool CmpEndPosition(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.EndPosition?.Value == value;
+  }
+  
   private static void SetEndPosition(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndPosition = value;
@@ -76,6 +101,11 @@ public static class ReflectionConverter
   private static Int64? GetDistanceFromText(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.DistanceFromText?.Value;
+  }
+  
+  private static bool CmpDistanceFromText(DXO2010W.Reflection openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DistanceFromText?.Value == value;
   }
   
   private static void SetDistanceFromText(DXO2010W.Reflection openXmlElement, Int64? value)
@@ -91,6 +121,11 @@ public static class ReflectionConverter
     return openXmlElement.DirectionAngle?.Value;
   }
   
+  private static bool CmpDirectionAngle(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DirectionAngle?.Value == value;
+  }
+  
   private static void SetDirectionAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.DirectionAngle = value;
@@ -102,6 +137,11 @@ public static class ReflectionConverter
   private static Int32? GetFadeDirection(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.FadeDirection?.Value;
+  }
+  
+  private static bool CmpFadeDirection(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FadeDirection?.Value == value;
   }
   
   private static void SetFadeDirection(DXO2010W.Reflection openXmlElement, Int32? value)
@@ -117,6 +157,11 @@ public static class ReflectionConverter
     return openXmlElement.HorizontalScalingFactor?.Value;
   }
   
+  private static bool CmpHorizontalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.HorizontalScalingFactor?.Value == value;
+  }
+  
   private static void SetHorizontalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalScalingFactor = value;
@@ -128,6 +173,11 @@ public static class ReflectionConverter
   private static Int32? GetVerticalScalingFactor(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.VerticalScalingFactor?.Value;
+  }
+  
+  private static bool CmpVerticalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VerticalScalingFactor?.Value == value;
   }
   
   private static void SetVerticalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value)
@@ -143,6 +193,11 @@ public static class ReflectionConverter
     return openXmlElement.HorizontalSkewAngle?.Value;
   }
   
+  private static bool CmpHorizontalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.HorizontalSkewAngle?.Value == value;
+  }
+  
   private static void SetHorizontalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkewAngle = value;
@@ -156,6 +211,11 @@ public static class ReflectionConverter
     return openXmlElement.VerticalSkewAngle?.Value;
   }
   
+  private static bool CmpVerticalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VerticalSkewAngle?.Value == value;
+  }
+  
   private static void SetVerticalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.VerticalSkewAngle = value;
@@ -167,6 +227,11 @@ public static class ReflectionConverter
   private static DMW.RectangleAlignmentKind? GetAlignment(DXO2010W.Reflection openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+  }
+  
+  private static bool CmpAlignment(DXO2010W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAlignment(DXO2010W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value)
@@ -195,6 +260,42 @@ public static class ReflectionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.Reflection? openXmlElement, DMW.Reflection? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+        ok = false;
+      if (!CmpStartingOpacity(openXmlElement, value.StartingOpacity, diffs, objName))
+        ok = false;
+      if (!CmpStartPosition(openXmlElement, value.StartPosition, diffs, objName))
+        ok = false;
+      if (!CmpEndingOpacity(openXmlElement, value.EndingOpacity, diffs, objName))
+        ok = false;
+      if (!CmpEndPosition(openXmlElement, value.EndPosition, diffs, objName))
+        ok = false;
+      if (!CmpDistanceFromText(openXmlElement, value.DistanceFromText, diffs, objName))
+        ok = false;
+      if (!CmpDirectionAngle(openXmlElement, value.DirectionAngle, diffs, objName))
+        ok = false;
+      if (!CmpFadeDirection(openXmlElement, value.FadeDirection, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalScalingFactor(openXmlElement, value.HorizontalScalingFactor, diffs, objName))
+        ok = false;
+      if (!CmpVerticalScalingFactor(openXmlElement, value.VerticalScalingFactor, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalSkewAngle(openXmlElement, value.HorizontalSkewAngle, diffs, objName))
+        ok = false;
+      if (!CmpVerticalSkewAngle(openXmlElement, value.VerticalSkewAngle, diffs, objName))
+        ok = false;
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Reflection? value)

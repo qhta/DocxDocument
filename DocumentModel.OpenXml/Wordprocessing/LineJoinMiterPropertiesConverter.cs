@@ -13,6 +13,11 @@ public static class LineJoinMiterPropertiesConverter
     return openXmlElement.Limit?.Value;
   }
   
+  private static bool CmpLimit(DXO2010W.LineJoinMiterProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Limit?.Value == value;
+  }
+  
   private static void SetLimit(DXO2010W.LineJoinMiterProperties openXmlElement, Int32? value)
   {
     openXmlElement.Limit = value;
@@ -27,6 +32,18 @@ public static class LineJoinMiterPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLimit(openXmlElement, value.Limit, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LineJoinMiterProperties? value)

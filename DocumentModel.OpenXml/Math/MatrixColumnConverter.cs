@@ -10,10 +10,12 @@ public static class MatrixColumnConverter
   /// </summary>
   private static DMMath.MatrixColumnProperties? GetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>();
-    if (itemElement != null)
-      return DMXMath.MatrixColumnPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.MatrixColumnPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>());
+  }
+  
+  private static bool CmpMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.MatrixColumnPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value)
@@ -38,6 +40,18 @@ public static class MatrixColumnConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.MatrixColumn? openXmlElement, DMMath.MatrixColumn? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMatrixColumnProperties(openXmlElement, value.MatrixColumnProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumn? value)

@@ -10,10 +10,12 @@ public static class BandFormatConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.BandFormat openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+  }
+  
+  private static bool CmpIndex(DXDrawCharts.BandFormat openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
   }
   
   private static void SetIndex(DXDrawCharts.BandFormat openXmlElement, UInt32? value)
@@ -33,10 +35,12 @@ public static class BandFormatConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.BandFormat openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+  }
+  
+  private static bool CmpChartShapeProperties(DXDrawCharts.BandFormat openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.BandFormat openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -62,6 +66,20 @@ public static class BandFormatConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.BandFormat? openXmlElement, DMDrawsCharts.BandFormat? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+        ok = false;
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BandFormat? value)

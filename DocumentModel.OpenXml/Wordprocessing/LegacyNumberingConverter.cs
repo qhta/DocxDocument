@@ -13,6 +13,11 @@ public static class LegacyNumberingConverter
     return openXmlElement?.Legacy?.Value;
   }
   
+  private static bool CmpLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Legacy?.Value == value;
+  }
+  
   private static void SetLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class LegacyNumberingConverter
     return openXmlElement?.LegacySpace?.Value;
   }
   
+  private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LegacySpace?.Value == value;
+  }
+  
   private static void SetLegacySpace(DXW.LegacyNumbering openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class LegacyNumberingConverter
   private static String? GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
     return openXmlElement?.LegacyIndent?.Value;
+  }
+  
+  private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LegacyIndent?.Value == value;
   }
   
   private static void SetLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class LegacyNumberingConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.LegacyNumbering? openXmlElement, DMW.LegacyNumbering? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLegacy(openXmlElement, value.Legacy, diffs, objName))
+        ok = false;
+      if (!CmpLegacySpace(openXmlElement, value.LegacySpace, diffs, objName))
+        ok = false;
+      if (!CmpLegacyIndent(openXmlElement, value.LegacyIndent, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LegacyNumbering? value)

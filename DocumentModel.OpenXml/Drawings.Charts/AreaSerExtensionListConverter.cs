@@ -17,6 +17,11 @@ public static class AreaSerExtensionListConverter
     return collection;
   }
   
+  private static bool CmpAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement, Collection<DMDrawsCharts.AreaSerExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement, Collection<DMDrawsCharts.AreaSerExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.AreaSerExtension>();
@@ -40,6 +45,18 @@ public static class AreaSerExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.AreaSerExtensionList? openXmlElement, DMDrawsCharts.AreaSerExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAreaSerExtensions(openXmlElement, value.AreaSerExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaSerExtensionList? value)

@@ -21,9 +21,9 @@ public class PreviousTableRowProperties
 
   public Boolean? Hidden { get; set; }
 
-  public OnOffOnlyKind? CantSplit { get; set; }
+  public Boolean? CantSplit { get; set; }
 
-  public OnOffOnlyKind? TableHeader { get; set; }
+  public Boolean? TableHeader { get; set; }
 
   public TableWidthType? TableCellSpacing { get; set; }
 

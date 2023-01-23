@@ -10,10 +10,12 @@ public static class StretchConverter
   /// </summary>
   private static DMDraws.RelativeRectangleType? GetFillRectangle(DXDraw.Stretch openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FillRectangle>();
-    if (itemElement != null)
-      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FillRectangle>());
+  }
+  
+  private static bool CmpFillRectangle(DXDraw.Stretch openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FillRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillRectangle(DXDraw.Stretch openXmlElement, DMDraws.RelativeRectangleType? value)
@@ -38,6 +40,18 @@ public static class StretchConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Stretch? openXmlElement, DMDraws.Stretch? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFillRectangle(openXmlElement, value.FillRectangle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Stretch? value)

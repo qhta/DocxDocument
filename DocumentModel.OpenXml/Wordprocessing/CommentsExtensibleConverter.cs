@@ -17,6 +17,11 @@ public static class CommentsExtensibleConverter
     return collection;
   }
   
+  private static bool CmpCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement, Collection<DMW.CommentExtensible>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement, Collection<DMW.CommentExtensible>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021WComtExt.CommentExtensible>();
@@ -33,10 +38,12 @@ public static class CommentsExtensibleConverter
   
   private static DMW.ExtensionList? GetExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>();
-    if (itemElement != null)
-      return DMXW.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement, DMW.ExtensionList? value)
@@ -62,6 +69,20 @@ public static class CommentsExtensibleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021WComtExt.CommentsExtensible? openXmlElement, DMW.CommentsExtensible? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCommentExtensibles(openXmlElement, value.CommentExtensibles, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsExtensible? value)

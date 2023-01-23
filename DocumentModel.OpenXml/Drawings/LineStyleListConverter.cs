@@ -7,10 +7,12 @@ public static class LineStyleListConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.LineStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Outline>();
-    if (itemElement != null)
-      return DMXDraws.OutlineConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+  }
+  
+  private static bool CmpOutline(DXDraw.LineStyleList openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOutline(DXDraw.LineStyleList openXmlElement, DMDraws.Outline? value)
@@ -35,6 +37,18 @@ public static class LineStyleListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.LineStyleList? openXmlElement, DMDraws.LineStyleList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineStyleList? value)

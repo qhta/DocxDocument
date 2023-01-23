@@ -13,6 +13,11 @@ public static class ConstraintConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DMDrawsDgms.ConstraintKind>(openXmlElement?.Type?.Value);
   }
   
+  private static bool CmpType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DMDrawsDgms.ConstraintKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintKind? value)
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DMDrawsDgms.ConstraintKind>(value);
@@ -26,6 +31,11 @@ public static class ConstraintConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(openXmlElement?.For?.Value);
   }
   
+  private static bool CmpFor(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintRelationshipKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(openXmlElement?.For?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetFor(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintRelationshipKind? value)
   {
     openXmlElement.For = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(value);
@@ -37,6 +47,11 @@ public static class ConstraintConverter
   private static String? GetForName(DXDrawDgms.Constraint openXmlElement)
   {
     return openXmlElement?.ForName?.Value;
+  }
+  
+  private static bool CmpForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ForName?.Value == value;
   }
   
   private static void SetForName(DXDrawDgms.Constraint openXmlElement, String? value)
@@ -55,6 +70,11 @@ public static class ConstraintConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType?.Value);
   }
   
+  private static bool CmpPointType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ElementKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetPointType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ElementKind? value)
   {
     openXmlElement.PointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(value);
@@ -66,6 +86,11 @@ public static class ConstraintConverter
   private static DMDrawsDgms.ConstraintKind? GetReferenceType(DXDrawDgms.Constraint openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DMDrawsDgms.ConstraintKind>(openXmlElement?.ReferenceType?.Value);
+  }
+  
+  private static bool CmpReferenceType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DMDrawsDgms.ConstraintKind>(openXmlElement?.ReferenceType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetReferenceType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintKind? value)
@@ -81,6 +106,11 @@ public static class ConstraintConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(openXmlElement?.ReferenceFor?.Value);
   }
   
+  private static bool CmpReferenceFor(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintRelationshipKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(openXmlElement?.ReferenceFor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetReferenceFor(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ConstraintRelationshipKind? value)
   {
     openXmlElement.ReferenceFor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DMDrawsDgms.ConstraintRelationshipKind>(value);
@@ -92,6 +122,11 @@ public static class ConstraintConverter
   private static String? GetReferenceForName(DXDrawDgms.Constraint openXmlElement)
   {
     return openXmlElement?.ReferenceForName?.Value;
+  }
+  
+  private static bool CmpReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ReferenceForName?.Value == value;
   }
   
   private static void SetReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value)
@@ -110,6 +145,11 @@ public static class ConstraintConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.ReferencePointType?.Value);
   }
   
+  private static bool CmpReferencePointType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ElementKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.ReferencePointType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetReferencePointType(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ElementKind? value)
   {
     openXmlElement.ReferencePointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DMDrawsDgms.ElementKind>(value);
@@ -121,6 +161,11 @@ public static class ConstraintConverter
   private static DMDrawsDgms.BoolOperatorKind? GetOperator(DXDrawDgms.Constraint openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues, DMDrawsDgms.BoolOperatorKind>(openXmlElement?.Operator?.Value);
+  }
+  
+  private static bool CmpOperator(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.BoolOperatorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues, DMDrawsDgms.BoolOperatorKind>(openXmlElement?.Operator?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOperator(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.BoolOperatorKind? value)
@@ -136,6 +181,11 @@ public static class ConstraintConverter
     return openXmlElement.Val?.Value;
   }
   
+  private static bool CmpVal(DXDrawDgms.Constraint openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Val?.Value == value;
+  }
+  
   private static void SetVal(DXDrawDgms.Constraint openXmlElement, Double? value)
   {
     openXmlElement.Val = value;
@@ -149,6 +199,11 @@ public static class ConstraintConverter
     return openXmlElement.Fact?.Value;
   }
   
+  private static bool CmpFact(DXDrawDgms.Constraint openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Fact?.Value == value;
+  }
+  
   private static void SetFact(DXDrawDgms.Constraint openXmlElement, Double? value)
   {
     openXmlElement.Fact = value;
@@ -159,10 +214,12 @@ public static class ConstraintConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Constraint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -198,6 +255,40 @@ public static class ConstraintConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Constraint? openXmlElement, DMDrawsDgms.Constraint? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpFor(openXmlElement, value.For, diffs, objName))
+        ok = false;
+      if (!CmpForName(openXmlElement, value.ForName, diffs, objName))
+        ok = false;
+      if (!CmpPointType(openXmlElement, value.PointType, diffs, objName))
+        ok = false;
+      if (!CmpReferenceType(openXmlElement, value.ReferenceType, diffs, objName))
+        ok = false;
+      if (!CmpReferenceFor(openXmlElement, value.ReferenceFor, diffs, objName))
+        ok = false;
+      if (!CmpReferenceForName(openXmlElement, value.ReferenceForName, diffs, objName))
+        ok = false;
+      if (!CmpReferencePointType(openXmlElement, value.ReferencePointType, diffs, objName))
+        ok = false;
+      if (!CmpOperator(openXmlElement, value.Operator, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpFact(openXmlElement, value.Fact, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Constraint? value)

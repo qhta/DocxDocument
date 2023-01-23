@@ -17,6 +17,11 @@ public static class TasksConverter
     return collection;
   }
   
+  private static bool CmpItems(DXO2021DocTasks.Tasks openXmlElement, Collection<DM.Task>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXO2021DocTasks.Tasks openXmlElement, Collection<DM.Task>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021DocTasks.Task>();
@@ -33,10 +38,12 @@ public static class TasksConverter
   
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.Tasks openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
-    if (itemElement != null)
-      return DMX.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value)
@@ -62,6 +69,20 @@ public static class TasksConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.Tasks? openXmlElement, DM.Tasks? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Tasks? value)

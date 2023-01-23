@@ -35,5 +35,5 @@ public partial class LatentStyles
   /// </summary>
   public Int32? TotalCount { get; set; }
 
-  //public Collection<LatentStyleExceptionInfo>? Items { get; set; }
+  //public Collection<LatentStyleExceptionInfo>? LatentStyleExceptionInfos { get; set; }
 }

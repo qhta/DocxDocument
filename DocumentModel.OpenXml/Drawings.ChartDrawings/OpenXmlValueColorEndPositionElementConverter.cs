@@ -10,8 +10,12 @@ public static class OpenXmlValueColorEndPositionElementConverter
   /// </summary>
   private static Boolean? GetExtremeValueColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>() != null;
+  }
+  
+  private static bool CmpExtremeValueColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>() != null == value;
   }
   
   private static void SetExtremeValueColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Boolean? value)
@@ -34,10 +38,12 @@ public static class OpenXmlValueColorEndPositionElementConverter
   /// </summary>
   private static Double? GetNumberColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>()?.Val?.Value;
+  }
+  
+  private static bool CmpNumberColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>()?.Val?.Value == value;
   }
   
   private static void SetNumberColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Double? value)
@@ -57,10 +63,12 @@ public static class OpenXmlValueColorEndPositionElementConverter
   /// </summary>
   private static Double? GetPercentageColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>()?.Val?.Value;
+  }
+  
+  private static bool CmpPercentageColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>()?.Val?.Value == value;
   }
   
   private static void SetPercentageColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Double? value)
@@ -86,6 +94,22 @@ public static class OpenXmlValueColorEndPositionElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement? openXmlElement, DMDrawsChartDraws.OpenXmlValueColorEndPositionElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtremeValueColorPosition(openXmlElement, value.ExtremeValueColorPosition, diffs, objName))
+        ok = false;
+      if (!CmpNumberColorPosition(openXmlElement, value.NumberColorPosition, diffs, objName))
+        ok = false;
+      if (!CmpPercentageColorPosition(openXmlElement, value.PercentageColorPosition, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlValueColorEndPositionElement? value)

@@ -10,10 +10,12 @@ public static class FramesetSplitbarConverter
   /// </summary>
   private static String? GetWidth(DXW.FramesetSplitbar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Width>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value;
+  }
+  
+  private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value == value;
   }
   
   private static void SetWidth(DXW.FramesetSplitbar openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class FramesetSplitbarConverter
   /// </summary>
   private static DMW.Color? GetColor(DXW.FramesetSplitbar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Color>();
-    if (itemElement != null)
-      return DMXW.ColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Color>());
+  }
+  
+  private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value)
@@ -55,48 +59,62 @@ public static class FramesetSplitbarConverter
   /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetNoBorder(DXW.FramesetSplitbar openXmlElement)
+  private static Boolean? GetNoBorder(DXW.FramesetSplitbar openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.NoBorder>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetNoBorder(DXW.FramesetSplitbar openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NoBorder>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.NoBorder, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.NoBorder>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.NoBorder();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
   /// <summary>
   /// Frameset Splitter Border Style.
   /// </summary>
-  private static DMW.OnOffOnlyKind? GetFlatBorders(DXW.FramesetSplitbar openXmlElement)
+  private static Boolean? GetFlatBorders(DXW.FramesetSplitbar openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FlatBorders>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetFlatBorders(DXW.FramesetSplitbar openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FlatBorders>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FlatBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.FlatBorders, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.FlatBorders>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.FlatBorders();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
@@ -112,6 +130,24 @@ public static class FramesetSplitbarConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.FramesetSplitbar? openXmlElement, DMW.FramesetSplitbar? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+        ok = false;
+      if (!CmpNoBorder(openXmlElement, value.NoBorder, diffs, objName))
+        ok = false;
+      if (!CmpFlatBorders(openXmlElement, value.FlatBorders, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FramesetSplitbar? value)

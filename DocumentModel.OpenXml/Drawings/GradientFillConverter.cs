@@ -13,6 +13,11 @@ public static class GradientFillConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value);
   }
   
+  private static bool CmpFlip(DXDraw.GradientFill openXmlElement, DMDraws.TileFlipKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetFlip(DXDraw.GradientFill openXmlElement, DMDraws.TileFlipKind? value)
   {
     openXmlElement.Flip = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(value);
@@ -24,6 +29,11 @@ public static class GradientFillConverter
   private static Boolean? GetRotateWithShape(DXDraw.GradientFill openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
+  }
+  
+  private static bool CmpRotateWithShape(DXDraw.GradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RotateWithShape?.Value == value;
   }
   
   private static void SetRotateWithShape(DXDraw.GradientFill openXmlElement, Boolean? value)
@@ -39,10 +49,12 @@ public static class GradientFillConverter
   /// </summary>
   private static DMDraws.GradientStopList? GetGradientStopList(DXDraw.GradientFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientStopList>();
-    if (itemElement != null)
-      return DMXDraws.GradientStopListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.GradientStopListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStopList>());
+  }
+  
+  private static bool CmpGradientStopList(DXDraw.GradientFill openXmlElement, DMDraws.GradientStopList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.GradientStopListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStopList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientStopList(DXDraw.GradientFill openXmlElement, DMDraws.GradientStopList? value)
@@ -60,10 +72,12 @@ public static class GradientFillConverter
   
   private static DMDraws.LinearGradientFill? GetLinearGradientFill(DXDraw.GradientFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LinearGradientFill>();
-    if (itemElement != null)
-      return DMXDraws.LinearGradientFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.LinearGradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LinearGradientFill>());
+  }
+  
+  private static bool CmpLinearGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.LinearGradientFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.LinearGradientFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LinearGradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLinearGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.LinearGradientFill? value)
@@ -81,10 +95,12 @@ public static class GradientFillConverter
   
   private static DMDraws.PathGradientFill? GetPathGradientFill(DXDraw.GradientFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PathGradientFill>();
-    if (itemElement != null)
-      return DMXDraws.PathGradientFillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PathGradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PathGradientFill>());
+  }
+  
+  private static bool CmpPathGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.PathGradientFill? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PathGradientFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PathGradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPathGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.PathGradientFill? value)
@@ -102,10 +118,12 @@ public static class GradientFillConverter
   
   private static DMDraws.RelativeRectangleType? GetTileRectangle(DXDraw.GradientFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.TileRectangle>();
-    if (itemElement != null)
-      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TileRectangle>());
+  }
+  
+  private static bool CmpTileRectangle(DXDraw.GradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.TileRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTileRectangle(DXDraw.GradientFill openXmlElement, DMDraws.RelativeRectangleType? value)
@@ -135,6 +153,28 @@ public static class GradientFillConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.GradientFill? openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFlip(openXmlElement, value.Flip, diffs, objName))
+        ok = false;
+      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName))
+        ok = false;
+      if (!CmpGradientStopList(openXmlElement, value.GradientStopList, diffs, objName))
+        ok = false;
+      if (!CmpLinearGradientFill(openXmlElement, value.LinearGradientFill, diffs, objName))
+        ok = false;
+      if (!CmpPathGradientFill(openXmlElement, value.PathGradientFill, diffs, objName))
+        ok = false;
+      if (!CmpTileRectangle(openXmlElement, value.TileRectangle, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientFill? value)

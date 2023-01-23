@@ -13,6 +13,11 @@ public static class CustomXmlElementConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXW.CustomXmlElement openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class CustomXmlElementConverter
     return openXmlElement?.Element?.Value;
   }
   
+  private static bool CmpElement(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Element?.Value == value;
+  }
+  
   private static void SetElement(DXW.CustomXmlElement openXmlElement, String? value)
   {
     if (value != null)
@@ -42,10 +52,12 @@ public static class CustomXmlElementConverter
   /// </summary>
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlProperties>();
-    if (itemElement != null)
-      return DMXW.CustomXmlPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.CustomXmlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlProperties>());
+  }
+  
+  private static bool CmpCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.CustomXmlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value)
@@ -72,6 +84,22 @@ public static class CustomXmlElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.CustomXmlElement? openXmlElement, DMW.CustomXmlElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpElement(openXmlElement, value.Element, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlProperties(openXmlElement, value.CustomXmlProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement? value)

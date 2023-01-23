@@ -10,10 +10,12 @@ public static class ParagraphConverter
   /// </summary>
   private static DMDraws.ParagraphProperties? GetParagraphProperties(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>();
-    if (itemElement != null)
-      return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>());
+  }
+  
+  private static bool CmpParagraphProperties(DXDraw.Paragraph openXmlElement, DMDraws.ParagraphProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ParagraphPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraphProperties(DXDraw.Paragraph openXmlElement, DMDraws.ParagraphProperties? value)
@@ -31,10 +33,12 @@ public static class ParagraphConverter
   
   private static DMDraws.Run? GetRun(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Run>();
-    if (itemElement != null)
-      return DMXDraws.RunConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Run>());
+  }
+  
+  private static bool CmpRun(DXDraw.Paragraph openXmlElement, DMDraws.Run? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRun(DXDraw.Paragraph openXmlElement, DMDraws.Run? value)
@@ -52,10 +56,12 @@ public static class ParagraphConverter
   
   private static DMDraws.Break? GetBreak(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Break>();
-    if (itemElement != null)
-      return DMXDraws.BreakConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BreakConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Break>());
+  }
+  
+  private static bool CmpBreak(DXDraw.Paragraph openXmlElement, DMDraws.Break? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BreakConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBreak(DXDraw.Paragraph openXmlElement, DMDraws.Break? value)
@@ -73,10 +79,12 @@ public static class ParagraphConverter
   
   private static DMDraws.Field? GetField(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Field>();
-    if (itemElement != null)
-      return DMXDraws.FieldConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.FieldConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Field>());
+  }
+  
+  private static bool CmpField(DXDraw.Paragraph openXmlElement, DMDraws.Field? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.FieldConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Field>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetField(DXDraw.Paragraph openXmlElement, DMDraws.Field? value)
@@ -94,8 +102,12 @@ public static class ParagraphConverter
   
   private static Boolean? GetTextMath(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.TextMath>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010Draw.TextMath>() != null;
+  }
+  
+  private static bool CmpTextMath(DXDraw.Paragraph openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010Draw.TextMath>() != null == value;
   }
   
   private static void SetTextMath(DXDraw.Paragraph openXmlElement, Boolean? value)
@@ -115,10 +127,12 @@ public static class ParagraphConverter
   
   private static DMDraws.EndParagraphRunProperties? GetEndParagraphRunProperties(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EndParagraphRunProperties>();
-    if (itemElement != null)
-      return DMXDraws.EndParagraphRunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.EndParagraphRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EndParagraphRunProperties>());
+  }
+  
+  private static bool CmpEndParagraphRunProperties(DXDraw.Paragraph openXmlElement, DMDraws.EndParagraphRunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.EndParagraphRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EndParagraphRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEndParagraphRunProperties(DXDraw.Paragraph openXmlElement, DMDraws.EndParagraphRunProperties? value)
@@ -148,6 +162,28 @@ public static class ParagraphConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Paragraph? openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName))
+        ok = false;
+      if (!CmpRun(openXmlElement, value.Run, diffs, objName))
+        ok = false;
+      if (!CmpBreak(openXmlElement, value.Break, diffs, objName))
+        ok = false;
+      if (!CmpField(openXmlElement, value.Field, diffs, objName))
+        ok = false;
+      if (!CmpTextMath(openXmlElement, value.TextMath, diffs, objName))
+        ok = false;
+      if (!CmpEndParagraphRunProperties(openXmlElement, value.EndParagraphRunProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Paragraph? value)

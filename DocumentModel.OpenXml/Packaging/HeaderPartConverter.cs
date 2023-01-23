@@ -20,6 +20,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpAlternativeFormatImportParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.AlternativeFormatImportPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ChartParts of the HeaderPart
   /// </summary>
@@ -35,9 +40,19 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpChartParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetContentType(DXPack.HeaderPart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.HeaderPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   /// <summary>
@@ -55,6 +70,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramColorsParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramDataParts of the HeaderPart
   /// </summary>
@@ -68,6 +88,11 @@ public static class HeaderPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramDataParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -85,6 +110,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the HeaderPart
   /// </summary>
@@ -98,6 +128,11 @@ public static class HeaderPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramPersistLayoutParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -115,6 +150,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpDiagramStyleParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the HeaderPart
   /// </summary>
@@ -128,6 +168,11 @@ public static class HeaderPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedControlPersistenceParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -145,6 +190,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedObjectParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedPackageParts of the HeaderPart
   /// </summary>
@@ -158,6 +208,11 @@ public static class HeaderPartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedPackageParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -175,14 +230,22 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpExtendedChartParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMW.Header? GetHeader(DXPack.HeaderPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Header rootElement)
-      return DMXW.HeaderConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.HeaderConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Header);
+  }
+  
+  private static bool CmpHeader(DXPack.HeaderPart openXmlElement, DMW.Header? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetHeader(DXPack.HeaderPart openXmlElement, DMW.Header? value)
@@ -210,6 +273,11 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
@@ -225,9 +293,19 @@ public static class HeaderPartConverter
     return collection;
   }
   
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.HeaderPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.HeaderPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.HeaderPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.HeaderPart? CreateModelElement(DXPack.HeaderPart? openXmlElement)
@@ -254,6 +332,48 @@ public static class HeaderPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.HeaderPart? openXmlElement, DMPack.HeaderPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAlternativeFormatImportParts(openXmlElement, value.AlternativeFormatImportParts, diffs, objName))
+        ok = false;
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+        ok = false;
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+        ok = false;
+      if (!CmpHeader(openXmlElement, value.Header, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.HeaderPart? value)

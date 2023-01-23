@@ -17,6 +17,11 @@ public static class RadarSerExtensionListConverter
     return collection;
   }
   
+  private static bool CmpRadarSerExtensions(DXDrawCharts.RadarSerExtensionList openXmlElement, Collection<DMDrawsCharts.RadarSerExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetRadarSerExtensions(DXDrawCharts.RadarSerExtensionList openXmlElement, Collection<DMDrawsCharts.RadarSerExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.RadarSerExtension>();
@@ -40,6 +45,18 @@ public static class RadarSerExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.RadarSerExtensionList? openXmlElement, DMDrawsCharts.RadarSerExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadarSerExtensions(openXmlElement, value.RadarSerExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarSerExtensionList? value)

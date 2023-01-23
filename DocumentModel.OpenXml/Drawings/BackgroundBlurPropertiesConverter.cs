@@ -10,10 +10,12 @@ public static class BackgroundBlurPropertiesConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>());
+  }
+  
+  private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
@@ -38,6 +40,18 @@ public static class BackgroundBlurPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DrawLivefeed.BackgroundBlurProperties? openXmlElement, DMDraws.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundBlurProperties? value)

@@ -10,10 +10,12 @@ public static class AccentConverter
   /// </summary>
   private static DMMath.AccentProperties? GetAccentProperties(DXMath.Accent openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.AccentProperties>();
-    if (itemElement != null)
-      return DMXMath.AccentPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.AccentPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.AccentProperties>());
+  }
+  
+  private static bool CmpAccentProperties(DXMath.Accent openXmlElement, DMMath.AccentProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.AccentPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.AccentProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAccentProperties(DXMath.Accent openXmlElement, DMMath.AccentProperties? value)
@@ -34,10 +36,12 @@ public static class AccentConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Accent openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.Accent openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Accent openXmlElement, DMMath.Base? value)
@@ -63,6 +67,20 @@ public static class AccentConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Accent? openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAccentProperties(openXmlElement, value.AccentProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Accent? value)

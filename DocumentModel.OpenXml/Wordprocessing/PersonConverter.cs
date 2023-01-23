@@ -13,6 +13,11 @@ public static class PersonConverter
     return openXmlElement?.Contact?.Value;
   }
   
+  private static bool CmpContact(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Contact?.Value == value;
+  }
+  
   private static void SetContact(DXO2013W.Person openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class PersonConverter
     return openXmlElement?.Author?.Value;
   }
   
+  private static bool CmpAuthor(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
+  }
+  
   private static void SetAuthor(DXO2013W.Person openXmlElement, String? value)
   {
     if (value != null)
@@ -42,10 +52,12 @@ public static class PersonConverter
   /// </summary>
   private static DMW.PresenceInfo? GetPresenceInfo(DXO2013W.Person openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>();
-    if (itemElement != null)
-      return DMXW.PresenceInfoConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.PresenceInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>());
+  }
+  
+  private static bool CmpPresenceInfo(DXO2013W.Person openXmlElement, DMW.PresenceInfo? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.PresenceInfoConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresenceInfo(DXO2013W.Person openXmlElement, DMW.PresenceInfo? value)
@@ -72,6 +84,22 @@ public static class PersonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.Person? openXmlElement, DMW.Person? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContact(openXmlElement, value.Contact, diffs, objName))
+        ok = false;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpPresenceInfo(openXmlElement, value.PresenceInfo, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Person? value)

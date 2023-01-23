@@ -13,6 +13,11 @@ public static class MacroWllTypeConverter
     return openXmlElement?.MacroName?.Value;
   }
   
+  private static bool CmpMacroName(DXOW.MacroWllType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MacroName?.Value == value;
+  }
+  
   private static void SetMacroName(DXOW.MacroWllType openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class MacroWllTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.MacroWllType? openXmlElement, DMW.MacroWllType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMacroName(openXmlElement, value.MacroName, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MacroWllType? value)

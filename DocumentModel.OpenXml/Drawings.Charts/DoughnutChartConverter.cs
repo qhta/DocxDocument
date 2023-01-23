@@ -10,8 +10,12 @@ public static class DoughnutChartConverter
   /// </summary>
   private static Boolean? GetVaryColors(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+  }
+  
+  private static bool CmpVaryColors(DXDrawCharts.DoughnutChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
   }
   
   private static void SetVaryColors(DXDrawCharts.DoughnutChart openXmlElement, Boolean? value)
@@ -29,7 +33,7 @@ public static class DoughnutChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSerieses(DXDrawCharts.DoughnutChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -41,7 +45,12 @@ public static class DoughnutChartConverter
     return collection;
   }
   
-  private static void SetPieChartSerieses(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
+  private static bool CmpPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
+  private static void SetPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.PieChartSeries>();
     if (value != null)
@@ -57,10 +66,12 @@ public static class DoughnutChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+  }
+  
+  private static bool CmpDataLabels(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -78,10 +89,12 @@ public static class DoughnutChartConverter
   
   private static UInt16? GetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value;
+  }
+  
+  private static bool CmpFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value == value;
   }
   
   private static void SetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement, UInt16? value)
@@ -98,10 +111,12 @@ public static class DoughnutChartConverter
   
   private static Byte? GetHoleSize(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpHoleSize(DXDrawCharts.DoughnutChart openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>()?.Val?.Value == value;
   }
   
   private static void SetHoleSize(DXDrawCharts.DoughnutChart openXmlElement, Byte? value)
@@ -118,10 +133,12 @@ public static class DoughnutChartConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -143,7 +160,7 @@ public static class DoughnutChartConverter
     {
       var value = new DMDrawsCharts.DoughnutChart();
       value.VaryColors = GetVaryColors(openXmlElement);
-      value.PieChartSerieses = GetPieChartSerieses(openXmlElement);
+      value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);
       value.FirstSliceAngle = GetFirstSliceAngle(openXmlElement);
       value.HoleSize = GetHoleSize(openXmlElement);
@@ -153,6 +170,28 @@ public static class DoughnutChartConverter
     return null;
   }
   
+  public static bool CompareModelElement(DXDrawCharts.DoughnutChart? openXmlElement, DMDrawsCharts.DoughnutChart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+        ok = false;
+      if (!CmpPieChartSeries(openXmlElement, value.PieChartSeries, diffs, objName))
+        ok = false;
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+        ok = false;
+      if (!CmpFirstSliceAngle(openXmlElement, value.FirstSliceAngle, diffs, objName))
+        ok = false;
+      if (!CmpHoleSize(openXmlElement, value.HoleSize, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
+  }
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DoughnutChart? value)
     where OpenXmlElementType: DXDrawCharts.DoughnutChart, new()
   {
@@ -160,7 +199,7 @@ public static class DoughnutChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
       SetDataLabels(openXmlElement, value?.DataLabels);
       SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
       SetHoleSize(openXmlElement, value?.HoleSize);

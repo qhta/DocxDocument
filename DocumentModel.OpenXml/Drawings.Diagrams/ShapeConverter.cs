@@ -13,6 +13,11 @@ public static class ShapeConverter
     return openXmlElement.Rotation?.Value;
   }
   
+  private static bool CmpRotation(DXDrawDgms.Shape openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Rotation?.Value == value;
+  }
+  
   private static void SetRotation(DXDrawDgms.Shape openXmlElement, Double? value)
   {
     openXmlElement.Rotation = value;
@@ -24,6 +29,11 @@ public static class ShapeConverter
   private static String? GetType(DXDrawDgms.Shape openXmlElement)
   {
     return openXmlElement?.Type?.Value;
+  }
+  
+  private static bool CmpType(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Type?.Value == value;
   }
   
   private static void SetType(DXDrawDgms.Shape openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class ShapeConverter
     return openXmlElement?.Blip?.Value;
   }
   
+  private static bool CmpBlip(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Blip?.Value == value;
+  }
+  
   private static void SetBlip(DXDrawDgms.Shape openXmlElement, String? value)
   {
     if (value != null)
@@ -58,6 +73,11 @@ public static class ShapeConverter
     return openXmlElement.ZOrderOffset?.Value;
   }
   
+  private static bool CmpZOrderOffset(DXDrawDgms.Shape openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ZOrderOffset?.Value == value;
+  }
+  
   private static void SetZOrderOffset(DXDrawDgms.Shape openXmlElement, Int32? value)
   {
     openXmlElement.ZOrderOffset = value;
@@ -69,6 +89,11 @@ public static class ShapeConverter
   private static Boolean? GetHideGeometry(DXDrawDgms.Shape openXmlElement)
   {
     return openXmlElement?.HideGeometry?.Value;
+  }
+  
+  private static bool CmpHideGeometry(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.HideGeometry?.Value == value;
   }
   
   private static void SetHideGeometry(DXDrawDgms.Shape openXmlElement, Boolean? value)
@@ -87,6 +112,11 @@ public static class ShapeConverter
     return openXmlElement?.LockedText?.Value;
   }
   
+  private static bool CmpLockedText(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LockedText?.Value == value;
+  }
+  
   private static void SetLockedText(DXDrawDgms.Shape openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -103,6 +133,11 @@ public static class ShapeConverter
     return openXmlElement?.BlipPlaceholder?.Value;
   }
   
+  private static bool CmpBlipPlaceholder(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.BlipPlaceholder?.Value == value;
+  }
+  
   private static void SetBlipPlaceholder(DXDrawDgms.Shape openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -116,10 +151,12 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsDgms.AdjustList? GetAdjustList(DXDrawDgms.Shape openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.AdjustListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.AdjustListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>());
+  }
+  
+  private static bool CmpAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.AdjustListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value)
@@ -140,10 +177,12 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Shape openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -176,6 +215,34 @@ public static class ShapeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Shape? openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+        ok = false;
+      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+        ok = false;
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+        ok = false;
+      if (!CmpZOrderOffset(openXmlElement, value.ZOrderOffset, diffs, objName))
+        ok = false;
+      if (!CmpHideGeometry(openXmlElement, value.HideGeometry, diffs, objName))
+        ok = false;
+      if (!CmpLockedText(openXmlElement, value.LockedText, diffs, objName))
+        ok = false;
+      if (!CmpBlipPlaceholder(openXmlElement, value.BlipPlaceholder, diffs, objName))
+        ok = false;
+      if (!CmpAdjustList(openXmlElement, value.AdjustList, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Shape? value)

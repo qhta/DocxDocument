@@ -10,10 +10,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableWidth(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableWidth>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableWidth>());
+  }
+  
+  private static bool CmpTableWidth(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableWidth>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableWidth(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
@@ -34,10 +36,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpTableJustification(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableJustification(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -58,10 +62,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+  }
+  
+  private static bool CmpTableCellSpacing(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellSpacing(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
@@ -82,10 +88,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableIndentation? GetTableIndentation(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
-    if (itemElement != null)
-      return DMXW.TableIndentationConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableIndentationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>());
+  }
+  
+  private static bool CmpTableIndentation(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableIndentation(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableIndentation? value)
@@ -106,10 +114,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableBorders? GetTableBorders(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableBorders>();
-    if (itemElement != null)
-      return DMXW.TableBordersConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>());
+  }
+  
+  private static bool CmpTableBorders(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableBorders(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableBorders? value)
@@ -130,10 +140,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
-    if (itemElement != null)
-      return DMXW.ShadingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+  }
+  
+  private static bool CmpShading(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.Shading? value)
@@ -154,10 +166,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableLayout? GetTableLayout(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableLayout>();
-    if (itemElement != null)
-      return DMXW.TableLayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableLayout>());
+  }
+  
+  private static bool CmpTableLayout(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableLayout? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableLayout(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableLayout? value)
@@ -178,10 +192,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
-    if (itemElement != null)
-      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableCellMarginDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>());
+  }
+  
+  private static bool CmpTableCellMarginDefault(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellMarginDefault(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableCellMarginDefault? value)
@@ -202,10 +218,12 @@ public static class PreviousTablePropertyExceptionsConverter
   /// </summary>
   private static DMW.TableLook? GetTableLook(DXW.PreviousTablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableLook>();
-    if (itemElement != null)
-      return DMXW.TableLookConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableLookConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableLook>());
+  }
+  
+  private static bool CmpTableLook(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableLook? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableLookConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableLook>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableLook(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.TableLook? value)
@@ -238,6 +256,34 @@ public static class PreviousTablePropertyExceptionsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PreviousTablePropertyExceptions? openXmlElement, DMW.PreviousTablePropertyExceptions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTableWidth(openXmlElement, value.TableWidth, diffs, objName))
+        ok = false;
+      if (!CmpTableJustification(openXmlElement, value.TableJustification, diffs, objName))
+        ok = false;
+      if (!CmpTableCellSpacing(openXmlElement, value.TableCellSpacing, diffs, objName))
+        ok = false;
+      if (!CmpTableIndentation(openXmlElement, value.TableIndentation, diffs, objName))
+        ok = false;
+      if (!CmpTableBorders(openXmlElement, value.TableBorders, diffs, objName))
+        ok = false;
+      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+        ok = false;
+      if (!CmpTableLayout(openXmlElement, value.TableLayout, diffs, objName))
+        ok = false;
+      if (!CmpTableCellMarginDefault(openXmlElement, value.TableCellMarginDefault, diffs, objName))
+        ok = false;
+      if (!CmpTableLook(openXmlElement, value.TableLook, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTablePropertyExceptions? value)

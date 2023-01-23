@@ -15,7 +15,7 @@ public class Surface3DChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<SurfaceChartSeries>? SurfaceChartSerieses { get; set; }
+  public Collection<SurfaceChartSeries>? SurfaceChartSeries { get; set; }
 
   public BandFormats? BandFormats { get; set; }
 

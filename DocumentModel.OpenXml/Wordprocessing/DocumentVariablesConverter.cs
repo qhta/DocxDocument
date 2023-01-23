@@ -17,6 +17,11 @@ public static class DocumentVariablesConverter
     return collection;
   }
   
+  private static bool CmpItems(DXW.DocumentVariables openXmlElement, Collection<DMW.DocumentVariable>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXW.DocumentVariables openXmlElement, Collection<DMW.DocumentVariable>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.DocumentVariable>();
@@ -40,6 +45,18 @@ public static class DocumentVariablesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.DocumentVariables? openXmlElement, DMW.DocumentVariables? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentVariables? value)

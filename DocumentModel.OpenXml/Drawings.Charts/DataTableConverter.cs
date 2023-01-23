@@ -10,8 +10,12 @@ public static class DataTableConverter
   /// </summary>
   private static Boolean? GetShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null;
+  }
+  
+  private static bool CmpShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null == value;
   }
   
   private static void SetShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -34,8 +38,12 @@ public static class DataTableConverter
   /// </summary>
   private static Boolean? GetShowVerticalBorder(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null;
+  }
+  
+  private static bool CmpShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null == value;
   }
   
   private static void SetShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -58,8 +66,12 @@ public static class DataTableConverter
   /// </summary>
   private static Boolean? GetShowOutlineBorder(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null;
+  }
+  
+  private static bool CmpShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null == value;
   }
   
   private static void SetShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -82,8 +94,12 @@ public static class DataTableConverter
   /// </summary>
   private static Boolean? GetShowKeys(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null;
+  }
+  
+  private static bool CmpShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null == value;
   }
   
   private static void SetShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -106,10 +122,12 @@ public static class DataTableConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+  }
+  
+  private static bool CmpChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -130,10 +148,12 @@ public static class DataTableConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+  }
+  
+  private static bool CmpTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -154,10 +174,12 @@ public static class DataTableConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DataTable openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -188,6 +210,30 @@ public static class DataTableConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.DataTable? openXmlElement, DMDrawsCharts.DataTable? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpShowHorizontalBorder(openXmlElement, value.ShowHorizontalBorder, diffs, objName))
+        ok = false;
+      if (!CmpShowVerticalBorder(openXmlElement, value.ShowVerticalBorder, diffs, objName))
+        ok = false;
+      if (!CmpShowOutlineBorder(openXmlElement, value.ShowOutlineBorder, diffs, objName))
+        ok = false;
+      if (!CmpShowKeys(openXmlElement, value.ShowKeys, diffs, objName))
+        ok = false;
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataTable? value)

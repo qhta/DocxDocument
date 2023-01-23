@@ -10,10 +10,12 @@ public static class NonVisualGroupShapePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>());
+  }
+  
+  private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value)
@@ -34,10 +36,12 @@ public static class NonVisualGroupShapePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? GetNonVisualGroupShapeDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeDrawingProperties>();
-    if (itemElement != null)
-      return DMXDrawsChartDraw.NonVisualGroupShapeDrawingPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraw.NonVisualGroupShapeDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeDrawingProperties>());
+  }
+  
+  private static bool CmpNonVisualGroupShapeDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraw.NonVisualGroupShapeDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualGroupShapeDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? value)
@@ -63,6 +67,20 @@ public static class NonVisualGroupShapePropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.NonVisualGroupShapeProperties? openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName))
+        ok = false;
+      if (!CmpNonVisualGroupShapeDrawingProperties(openXmlElement, value.NonVisualGroupShapeDrawingProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualGroupShapeProperties? value)

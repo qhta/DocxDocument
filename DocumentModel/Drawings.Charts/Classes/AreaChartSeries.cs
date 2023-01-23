@@ -36,7 +36,7 @@ public class AreaChartSeries
 
   public Collection<Trendline>? Trendlines { get; set; }
 
-  public Collection<ErrorBars>? ErrorBarses { get; set; }
+  public Collection<ErrorBars>? ErrorBars { get; set; }
 
   public CategoryAxisData? CategoryAxisData { get; set; }
 

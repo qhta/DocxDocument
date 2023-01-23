@@ -10,10 +10,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.RunFonts? GetRunFonts(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunFonts>();
-    if (itemElement != null)
-      return DMXW.RunFontsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunFontsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>());
+  }
+  
+  private static bool CmpRunFonts(DXW.StyleRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunFonts(DXW.StyleRunProperties openXmlElement, DMW.RunFonts? value)
@@ -34,10 +36,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetBold(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Bold>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value;
+  }
+  
+  private static bool CmpBold(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value == value;
   }
   
   private static void SetBold(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -60,10 +64,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetBoldComplexScript(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.BoldComplexScript>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpBoldComplexScript(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetBoldComplexScript(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -86,10 +92,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalic(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Italic>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value;
+  }
+  
+  private static bool CmpItalic(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value == value;
   }
   
   private static void SetItalic(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -112,10 +120,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalicComplexScript(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpItalicComplexScript(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetItalicComplexScript(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -138,10 +148,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetCaps(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Caps>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value;
+  }
+  
+  private static bool CmpCaps(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value == value;
   }
   
   private static void SetCaps(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -164,10 +176,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSmallCaps(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SmallCaps>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value;
+  }
+  
+  private static bool CmpSmallCaps(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value == value;
   }
   
   private static void SetSmallCaps(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -190,10 +204,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetStrike(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Strike>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value;
+  }
+  
+  private static bool CmpStrike(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value == value;
   }
   
   private static void SetStrike(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -216,10 +232,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetDoubleStrike(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.DoubleStrike>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value;
+  }
+  
+  private static bool CmpDoubleStrike(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value == value;
   }
   
   private static void SetDoubleStrike(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -242,10 +260,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetOutline(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Outline>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value;
+  }
+  
+  private static bool CmpOutline(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value == value;
   }
   
   private static void SetOutline(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -268,10 +288,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetShadow(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Shadow>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value;
+  }
+  
+  private static bool CmpShadow(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value == value;
   }
   
   private static void SetShadow(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -294,10 +316,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetEmboss(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Emboss>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value;
+  }
+  
+  private static bool CmpEmboss(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value == value;
   }
   
   private static void SetEmboss(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -320,10 +344,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetImprint(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Imprint>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value;
+  }
+  
+  private static bool CmpImprint(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value == value;
   }
   
   private static void SetImprint(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -346,10 +372,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetNoProof(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NoProof>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value;
+  }
+  
+  private static bool CmpNoProof(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value == value;
   }
   
   private static void SetNoProof(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -372,10 +400,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSnapToGrid(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SnapToGrid>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+  }
+  
+  private static bool CmpSnapToGrid(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value == value;
   }
   
   private static void SetSnapToGrid(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -398,10 +428,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetVanish(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Vanish>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value;
+  }
+  
+  private static bool CmpVanish(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value == value;
   }
   
   private static void SetVanish(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -424,10 +456,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetWebHidden(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.WebHidden>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value;
+  }
+  
+  private static bool CmpWebHidden(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value == value;
   }
   
   private static void SetWebHidden(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -450,10 +484,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.Color? GetColor(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Color>();
-    if (itemElement != null)
-      return DMXW.ColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Color>());
+  }
+  
+  private static bool CmpColor(DXW.StyleRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.StyleRunProperties openXmlElement, DMW.Color? value)
@@ -474,10 +510,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Int32? GetSpacing(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Spacing>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpacing(DXW.StyleRunProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value == value;
   }
   
   private static void SetSpacing(DXW.StyleRunProperties openXmlElement, Int32? value)
@@ -497,10 +535,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Int64? GetCharacterScale(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CharacterScale>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value;
+  }
+  
+  private static bool CmpCharacterScale(DXW.StyleRunProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value == value;
   }
   
   private static void SetCharacterScale(DXW.StyleRunProperties openXmlElement, Int64? value)
@@ -520,10 +560,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static UInt32? GetKern(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Kern>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value;
+  }
+  
+  private static bool CmpKern(DXW.StyleRunProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value == value;
   }
   
   private static void SetKern(DXW.StyleRunProperties openXmlElement, UInt32? value)
@@ -543,10 +585,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static String? GetPosition(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Position>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value;
+  }
+  
+  private static bool CmpPosition(DXW.StyleRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value == value;
   }
   
   private static void SetPosition(DXW.StyleRunProperties openXmlElement, String? value)
@@ -566,10 +610,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static String? GetFontSize(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FontSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpFontSize(DXW.StyleRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value == value;
   }
   
   private static void SetFontSize(DXW.StyleRunProperties openXmlElement, String? value)
@@ -589,10 +635,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static String? GetFontSizeComplexScript(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpFontSizeComplexScript(DXW.StyleRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetFontSizeComplexScript(DXW.StyleRunProperties openXmlElement, String? value)
@@ -612,10 +660,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.Underline? GetUnderline(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Underline>();
-    if (itemElement != null)
-      return DMXW.UnderlineConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.UnderlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Underline>());
+  }
+  
+  private static bool CmpUnderline(DXW.StyleRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderline(DXW.StyleRunProperties openXmlElement, DMW.Underline? value)
@@ -636,10 +686,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.TextEffectKind? GetTextEffect(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TextEffect>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value);
+  }
+  
+  private static bool CmpTextEffect(DXW.StyleRunProperties openXmlElement, DMW.TextEffectKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextEffect(DXW.StyleRunProperties openXmlElement, DMW.TextEffectKind? value)
@@ -660,10 +712,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.BorderType? GetBorder(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Border>();
-    if (itemElement != null)
-      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Border>());
+  }
+  
+  private static bool CmpBorder(DXW.StyleRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorder(DXW.StyleRunProperties openXmlElement, DMW.BorderType? value)
@@ -684,10 +738,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
-    if (itemElement != null)
-      return DMXW.ShadingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+  }
+  
+  private static bool CmpShading(DXW.StyleRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.StyleRunProperties openXmlElement, DMW.Shading? value)
@@ -708,10 +764,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.FitText? GetFitText(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FitText>();
-    if (itemElement != null)
-      return DMXW.FitTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.FitTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FitText>());
+  }
+  
+  private static bool CmpFitText(DXW.StyleRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFitText(DXW.StyleRunProperties openXmlElement, DMW.FitText? value)
@@ -732,10 +790,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.VerticalPositionKind? GetVerticalTextAlignment(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value);
+  }
+  
+  private static bool CmpVerticalTextAlignment(DXW.StyleRunProperties openXmlElement, DMW.VerticalPositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVerticalTextAlignment(DXW.StyleRunProperties openXmlElement, DMW.VerticalPositionKind? value)
@@ -756,10 +816,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.EmphasisMarkKind? GetEmphasis(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Emphasis>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value);
+  }
+  
+  private static bool CmpEmphasis(DXW.StyleRunProperties openXmlElement, DMW.EmphasisMarkKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEmphasis(DXW.StyleRunProperties openXmlElement, DMW.EmphasisMarkKind? value)
@@ -780,10 +842,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.LanguageType? GetLanguages(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Languages>();
-    if (itemElement != null)
-      return DMXW.LanguageTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.LanguageTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Languages>());
+  }
+  
+  private static bool CmpLanguages(DXW.StyleRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLanguages(DXW.StyleRunProperties openXmlElement, DMW.LanguageType? value)
@@ -804,10 +868,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.EastAsianLayout? GetEastAsianLayout(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.EastAsianLayout>();
-    if (itemElement != null)
-      return DMXW.EastAsianLayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.EastAsianLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>());
+  }
+  
+  private static bool CmpEastAsianLayout(DXW.StyleRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEastAsianLayout(DXW.StyleRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -828,10 +894,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSpecVanish(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SpecVanish>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpecVanish(DXW.StyleRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value == value;
   }
   
   private static void SetSpecVanish(DXW.StyleRunProperties openXmlElement, Boolean? value)
@@ -854,10 +922,12 @@ public static class StyleRunPropertiesConverter
   /// </summary>
   private static DMW.RunPropertiesChange? GetRunPropertiesChange(DXW.StyleRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunPropertiesChange>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesChange>());
+  }
+  
+  private static bool CmpRunPropertiesChange(DXW.StyleRunProperties openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunPropertiesChange(DXW.StyleRunProperties openXmlElement, DMW.RunPropertiesChange? value)
@@ -916,6 +986,86 @@ public static class StyleRunPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.StyleRunProperties? openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
+        ok = false;
+      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+        ok = false;
+      if (!CmpBoldComplexScript(openXmlElement, value.BoldComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
+        ok = false;
+      if (!CmpItalicComplexScript(openXmlElement, value.ItalicComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
+        ok = false;
+      if (!CmpSmallCaps(openXmlElement, value.SmallCaps, diffs, objName))
+        ok = false;
+      if (!CmpStrike(openXmlElement, value.Strike, diffs, objName))
+        ok = false;
+      if (!CmpDoubleStrike(openXmlElement, value.DoubleStrike, diffs, objName))
+        ok = false;
+      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+        ok = false;
+      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName))
+        ok = false;
+      if (!CmpEmboss(openXmlElement, value.Emboss, diffs, objName))
+        ok = false;
+      if (!CmpImprint(openXmlElement, value.Imprint, diffs, objName))
+        ok = false;
+      if (!CmpNoProof(openXmlElement, value.NoProof, diffs, objName))
+        ok = false;
+      if (!CmpSnapToGrid(openXmlElement, value.SnapToGrid, diffs, objName))
+        ok = false;
+      if (!CmpVanish(openXmlElement, value.Vanish, diffs, objName))
+        ok = false;
+      if (!CmpWebHidden(openXmlElement, value.WebHidden, diffs, objName))
+        ok = false;
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+        ok = false;
+      if (!CmpSpacing(openXmlElement, value.Spacing, diffs, objName))
+        ok = false;
+      if (!CmpCharacterScale(openXmlElement, value.CharacterScale, diffs, objName))
+        ok = false;
+      if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
+        ok = false;
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+        ok = false;
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+        ok = false;
+      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
+        ok = false;
+      if (!CmpTextEffect(openXmlElement, value.TextEffect, diffs, objName))
+        ok = false;
+      if (!CmpBorder(openXmlElement, value.Border, diffs, objName))
+        ok = false;
+      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+        ok = false;
+      if (!CmpFitText(openXmlElement, value.FitText, diffs, objName))
+        ok = false;
+      if (!CmpVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment, diffs, objName))
+        ok = false;
+      if (!CmpEmphasis(openXmlElement, value.Emphasis, diffs, objName))
+        ok = false;
+      if (!CmpLanguages(openXmlElement, value.Languages, diffs, objName))
+        ok = false;
+      if (!CmpEastAsianLayout(openXmlElement, value.EastAsianLayout, diffs, objName))
+        ok = false;
+      if (!CmpSpecVanish(openXmlElement, value.SpecVanish, diffs, objName))
+        ok = false;
+      if (!CmpRunPropertiesChange(openXmlElement, value.RunPropertiesChange, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleRunProperties? value)

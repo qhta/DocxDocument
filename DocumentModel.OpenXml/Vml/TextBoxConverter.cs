@@ -13,6 +13,11 @@ public static class TextBoxConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXVml.TextBox openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class TextBoxConverter
   private static String? GetStyle(DXVml.TextBox openXmlElement)
   {
     return openXmlElement?.Style?.Value;
+  }
+  
+  private static bool CmpStyle(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Style?.Value == value;
   }
   
   private static void SetStyle(DXVml.TextBox openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class TextBoxConverter
     return openXmlElement?.Inset?.Value;
   }
   
+  private static bool CmpInset(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Inset?.Value == value;
+  }
+  
   private static void SetInset(DXVml.TextBox openXmlElement, String? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class TextBoxConverter
     return openXmlElement?.SingleClick?.Value;
   }
   
+  private static bool CmpSingleClick(DXVml.TextBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SingleClick?.Value == value;
+  }
+  
   private static void SetSingleClick(DXVml.TextBox openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -71,10 +91,12 @@ public static class TextBoxConverter
   
   private static DMW.TextBoxContent? GetTextBoxContent(DXVml.TextBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TextBoxContent>();
-    if (itemElement != null)
-      return DMXW.TextBoxContentConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TextBoxContentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TextBoxContent>());
+  }
+  
+  private static bool CmpTextBoxContent(DXVml.TextBox openXmlElement, DMW.TextBoxContent? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TextBoxContentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TextBoxContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBoxContent(DXVml.TextBox openXmlElement, DMW.TextBoxContent? value)
@@ -103,6 +125,26 @@ public static class TextBoxConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.TextBox? openXmlElement, DMVml.TextBox? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+        ok = false;
+      if (!CmpInset(openXmlElement, value.Inset, diffs, objName))
+        ok = false;
+      if (!CmpSingleClick(openXmlElement, value.SingleClick, diffs, objName))
+        ok = false;
+      if (!CmpTextBoxContent(openXmlElement, value.TextBoxContent, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextBox? value)

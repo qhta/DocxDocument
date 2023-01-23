@@ -13,6 +13,11 @@ public static class BackgroundMarkConverter
     return openXmlElement.FirstXCoordinate?.Value;
   }
   
+  private static bool CmpFirstXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FirstXCoordinate?.Value == value;
+  }
+  
   private static void SetFirstXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.FirstXCoordinate = value;
@@ -24,6 +29,11 @@ public static class BackgroundMarkConverter
   private static Int32? GetFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
   {
     return openXmlElement.FirstYCoordinate?.Value;
+  }
+  
+  private static bool CmpFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FirstYCoordinate?.Value == value;
   }
   
   private static void SetFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class BackgroundMarkConverter
     return openXmlElement.SecondXCoordinate?.Value;
   }
   
+  private static bool CmpSecondXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.SecondXCoordinate?.Value == value;
+  }
+  
   private static void SetSecondXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.SecondXCoordinate = value;
@@ -50,6 +65,11 @@ public static class BackgroundMarkConverter
   private static Int32? GetSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
   {
     return openXmlElement.SecondYCoordinate?.Value;
+  }
+  
+  private static bool CmpSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.SecondYCoordinate?.Value == value;
   }
   
   private static void SetSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
@@ -69,6 +89,24 @@ public static class BackgroundMarkConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.BackgroundMark? openXmlElement, DMDraws.BackgroundMark? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFirstXCoordinate(openXmlElement, value.FirstXCoordinate, diffs, objName))
+        ok = false;
+      if (!CmpFirstYCoordinate(openXmlElement, value.FirstYCoordinate, diffs, objName))
+        ok = false;
+      if (!CmpSecondXCoordinate(openXmlElement, value.SecondXCoordinate, diffs, objName))
+        ok = false;
+      if (!CmpSecondYCoordinate(openXmlElement, value.SecondYCoordinate, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundMark? value)

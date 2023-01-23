@@ -15,7 +15,7 @@ public static class EnumValueConverter
     return null;
   }
 
-  public static bool CmpValue<OpenXmlEnumType, ModelEnumType>(DX.EnumValue<OpenXmlEnumType>? element, ModelEnumType? value)
+  public static bool CmpValue<OpenXmlEnumType, ModelEnumType>(DX.EnumValue<OpenXmlEnumType>? element, ModelEnumType? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
   {
@@ -23,9 +23,15 @@ public static class EnumValueConverter
     {
       var n = (int)Convert.ChangeType(element.Value, typeof(int));
       var m = (int)Convert.ChangeType(value, typeof(int));
-      return n == m;
+      if (n == m)
+        return true;
+      diffs?.Add(callerName, typeof(OpenXmlEnumType).Name, element.Value, value);
+      return false;
     }
-    return value == null;
+    if (element?.Value == null && value == null)
+      return true;
+    diffs?.Add(callerName, typeof(OpenXmlEnumType).Name, element?.Value, value);
+    return false;
   }
 
   public static DX.EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)

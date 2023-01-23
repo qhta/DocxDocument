@@ -13,6 +13,11 @@ public static class WebExtensionStoreReferenceConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class WebExtensionStoreReferenceConverter
   private static String? GetVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
     return openXmlElement?.Version?.Value;
+  }
+  
+  private static bool CmpVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Version?.Value == value;
   }
   
   private static void SetVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class WebExtensionStoreReferenceConverter
     return openXmlElement?.Store?.Value;
   }
   
+  private static bool CmpStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Store?.Value == value;
+  }
+  
   private static void SetStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class WebExtensionStoreReferenceConverter
     return openXmlElement?.StoreType?.Value;
   }
   
+  private static bool CmpStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.StoreType?.Value == value;
+  }
+  
   private static void SetStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
     if (value != null)
@@ -74,10 +94,12 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   private static DMWebExt.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>();
-    if (itemElement != null)
-      return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>());
+  }
+  
+  private static bool CmpOfficeArtExtensionList(DXO2013WebExt.WebExtensionStoreReference openXmlElement, DMWebExt.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXWebExt.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2013WebExt.WebExtensionStoreReference openXmlElement, DMWebExt.OfficeArtExtensionList? value)
@@ -106,6 +128,26 @@ public static class WebExtensionStoreReferenceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013WebExt.WebExtensionStoreReference? openXmlElement, DMWebExt.WebExtensionStoreReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpVersion(openXmlElement, value.Version, diffs, objName))
+        ok = false;
+      if (!CmpStore(openXmlElement, value.Store, diffs, objName))
+        ok = false;
+      if (!CmpStoreType(openXmlElement, value.StoreType, diffs, objName))
+        ok = false;
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionStoreReference? value)

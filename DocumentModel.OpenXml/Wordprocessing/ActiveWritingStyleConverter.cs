@@ -13,6 +13,11 @@ public static class ActiveWritingStyleConverter
     return openXmlElement?.Language?.Value;
   }
   
+  private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Language?.Value == value;
+  }
+  
   private static void SetLanguage(DXW.ActiveWritingStyle openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class ActiveWritingStyleConverter
     return openXmlElement.VendorID?.Value;
   }
   
+  private static bool CmpVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.VendorID?.Value == value;
+  }
+  
   private static void SetVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value)
   {
     openXmlElement.VendorID = value;
@@ -42,6 +52,11 @@ public static class ActiveWritingStyleConverter
     return openXmlElement.DllVersion?.Value;
   }
   
+  private static bool CmpDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DllVersion?.Value == value;
+  }
+  
   private static void SetDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value)
   {
     openXmlElement.DllVersion = value;
@@ -53,6 +68,11 @@ public static class ActiveWritingStyleConverter
   private static Boolean? GetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.NaturalLanguageGrammarCheck?.Value;
+  }
+  
+  private static bool CmpNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.NaturalLanguageGrammarCheck?.Value == value;
   }
   
   private static void SetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
@@ -71,6 +91,11 @@ public static class ActiveWritingStyleConverter
     return openXmlElement?.CheckStyle?.Value;
   }
   
+  private static bool CmpCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CheckStyle?.Value == value;
+  }
+  
   private static void SetCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -85,6 +110,11 @@ public static class ActiveWritingStyleConverter
   private static String? GetApplicationName(DXW.ActiveWritingStyle openXmlElement)
   {
     return openXmlElement?.ApplicationName?.Value;
+  }
+  
+  private static bool CmpApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ApplicationName?.Value == value;
   }
   
   private static void SetApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value)
@@ -109,6 +139,28 @@ public static class ActiveWritingStyleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ActiveWritingStyle? openXmlElement, DMW.ActiveWritingStyle? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+        ok = false;
+      if (!CmpVendorID(openXmlElement, value.VendorID, diffs, objName))
+        ok = false;
+      if (!CmpDllVersion(openXmlElement, value.DllVersion, diffs, objName))
+        ok = false;
+      if (!CmpNaturalLanguageGrammarCheck(openXmlElement, value.NaturalLanguageGrammarCheck, diffs, objName))
+        ok = false;
+      if (!CmpCheckStyle(openXmlElement, value.CheckStyle, diffs, objName))
+        ok = false;
+      if (!CmpApplicationName(openXmlElement, value.ApplicationName, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ActiveWritingStyle? value)

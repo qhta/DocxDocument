@@ -10,9 +10,12 @@ public static class MailMergeRecipientDataPartConverter
   /// </summary>
   private static DMW.Recipients? GetRecipients(DXPack.MailMergeRecipientDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Recipients rootElement)
-      return DMXW.RecipientsConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.RecipientsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Recipients);
+  }
+  
+  private static bool CmpRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.Recipients? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.Recipients? value)
@@ -30,9 +33,12 @@ public static class MailMergeRecipientDataPartConverter
   /// </summary>
   private static DMW.MailMergeRecipients? GetMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXOW.MailMergeRecipients rootElement)
-      return DMXW.MailMergeRecipientsConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.MailMergeRecipientsConverter.CreateModelElement(openXmlElement?.RootElement as DXOW.MailMergeRecipients);
+  }
+  
+  private static bool CmpMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.MailMergeRecipients? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.MailMergeRecipients? value)
@@ -50,6 +56,11 @@ public static class MailMergeRecipientDataPartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.MailMergeRecipientDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.MailMergeRecipientDataPart? CreateModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -61,6 +72,22 @@ public static class MailMergeRecipientDataPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement, DMPack.MailMergeRecipientDataPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRecipients(openXmlElement, value.Recipients, diffs, objName))
+        ok = false;
+      if (!CmpMailMergeRecipients(openXmlElement, value.MailMergeRecipients, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MailMergeRecipientDataPart? value)

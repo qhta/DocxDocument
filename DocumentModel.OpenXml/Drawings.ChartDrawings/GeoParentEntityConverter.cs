@@ -13,6 +13,11 @@ public static class GeoParentEntityConverter
     return openXmlElement?.EntityId?.Value;
   }
   
+  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoParentEntity openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityId?.Value == value;
+  }
+  
   private static void SetEntityId(DXO2016DrawChartDraw.GeoParentEntity openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class GeoParentEntityConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoParentEntity? openXmlElement, DMDrawsChartDraws.GeoParentEntity? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntity? value)

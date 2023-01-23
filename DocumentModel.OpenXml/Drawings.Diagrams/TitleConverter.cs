@@ -13,6 +13,11 @@ public static class TitleConverter
     return openXmlElement?.Language?.Value;
   }
   
+  private static bool CmpLanguage(DXDrawDgms.Title openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Language?.Value == value;
+  }
+  
   private static void SetLanguage(DXDrawDgms.Title openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class TitleConverter
   private static String? GetVal(DXDrawDgms.Title openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXDrawDgms.Title openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXDrawDgms.Title openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class TitleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Title? openXmlElement, DMDrawsDgms.Title? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Title? value)

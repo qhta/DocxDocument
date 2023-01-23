@@ -13,6 +13,11 @@ public static class RegroupTableConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
+  private static bool CmpExtension(DXVmlO.RegroupTable openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExtension(DXVmlO.RegroupTable openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
@@ -28,6 +33,11 @@ public static class RegroupTableConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEntries(DXVmlO.RegroupTable openXmlElement, Collection<DMVml.Entry>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetEntries(DXVmlO.RegroupTable openXmlElement, Collection<DMVml.Entry>? value)
@@ -54,6 +64,20 @@ public static class RegroupTableConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.RegroupTable? openXmlElement, DMVml.RegroupTable? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+        ok = false;
+      if (!CmpEntries(openXmlElement, value.Entries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.RegroupTable? value)

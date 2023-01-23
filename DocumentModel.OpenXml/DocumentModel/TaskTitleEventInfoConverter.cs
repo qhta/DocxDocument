@@ -13,6 +13,11 @@ public static class TaskTitleEventInfoConverter
     return openXmlElement?.Title?.Value;
   }
   
+  private static bool CmpTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Title?.Value == value;
+  }
+  
   private static void SetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class TaskTitleEventInfoConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskTitleEventInfo? value)

@@ -13,6 +13,11 @@ public static class ExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXO2021WExtList.Extension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXO2021WExtList.Extension openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class ExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021WExtList.Extension? openXmlElement, DMW.Extension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Extension? value)

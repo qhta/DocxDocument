@@ -13,6 +13,11 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
   
   private static DMDraws.NonVisualGroupProperties? GetNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>();
-    if (itemElement != null)
-      return DMXDraws.NonVisualGroupPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.NonVisualGroupPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>());
+  }
+  
+  private static bool CmpNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, DMDraws.NonVisualGroupProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.NonVisualGroupPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, DMDraws.NonVisualGroupProperties? value)
@@ -52,6 +59,20 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.NonVisualGroupDrawingShapePropsExtension? openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpNonVisualGroupProperties(openXmlElement, value.NonVisualGroupProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupDrawingShapePropsExtension? value)

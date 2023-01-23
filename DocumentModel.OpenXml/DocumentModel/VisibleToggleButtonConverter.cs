@@ -13,6 +13,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetPressed?.Value;
   }
   
+  private static bool CmpGetPressed(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetPressed?.Value == value;
+  }
+  
   private static void SetGetPressed(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetOnAction(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
+  }
+  
+  private static bool CmpOnAction(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OnAction?.Value == value;
   }
   
   private static void SetOnAction(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.Enabled?.Value;
   }
   
+  private static bool CmpEnabled(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Enabled?.Value == value;
+  }
+  
   private static void SetEnabled(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetGetEnabled(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
+  }
+  
+  private static bool CmpGetEnabled(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetEnabled?.Value == value;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.Description?.Value;
   }
   
+  private static bool CmpDescription(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Description?.Value == value;
+  }
+  
   private static void SetDescription(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetGetDescription(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
+  }
+  
+  private static bool CmpGetDescription(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetDescription?.Value == value;
   }
   
   private static void SetGetDescription(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.Image?.Value;
   }
   
+  private static bool CmpImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Image?.Value == value;
+  }
+  
   private static void SetImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetImageMso(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
+  }
+  
+  private static bool CmpImageMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ImageMso?.Value == value;
   }
   
   private static void SetImageMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -141,6 +181,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetImage?.Value;
   }
   
+  private static bool CmpGetImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetImage?.Value == value;
+  }
+  
   private static void SetGetImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetId(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -173,6 +223,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.QualifiedId?.Value;
   }
   
+  private static bool CmpQualifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
+  }
+  
   private static void SetQualifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -187,6 +242,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetTag(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
+  }
+  
+  private static bool CmpTag(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
   }
   
   private static void SetTag(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -205,6 +265,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.IdMso?.Value;
   }
   
+  private static bool CmpIdMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
+  }
+  
   private static void SetIdMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -219,6 +284,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetScreentip(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
+  }
+  
+  private static bool CmpScreentip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Screentip?.Value == value;
   }
   
   private static void SetScreentip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -237,6 +307,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetScreentip?.Value;
   }
   
+  private static bool CmpGetScreentip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetScreentip?.Value == value;
+  }
+  
   private static void SetGetScreentip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -251,6 +326,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetSupertip(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
+  }
+  
+  private static bool CmpSupertip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Supertip?.Value == value;
   }
   
   private static void SetSupertip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -269,6 +349,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetSupertip?.Value;
   }
   
+  private static bool CmpGetSupertip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetSupertip?.Value == value;
+  }
+  
   private static void SetGetSupertip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -283,6 +368,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetLabel(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Label?.Value;
+  }
+  
+  private static bool CmpLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
   }
   
   private static void SetLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -301,6 +391,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetLabel?.Value;
   }
   
+  private static bool CmpGetLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
+  }
+  
   private static void SetGetLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -315,6 +410,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetInsertAfterMso(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
+  }
+  
+  private static bool CmpInsertAfterMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterMso?.Value == value;
   }
   
   private static void SetInsertAfterMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -333,6 +433,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
+  private static bool CmpInsertBeforeMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeMso?.Value == value;
+  }
+  
   private static void SetInsertBeforeMso(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -347,6 +452,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetInsertAfterQulifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
+  }
+  
+  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
   }
   
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -365,6 +475,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
+  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
+  }
+  
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -379,6 +494,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetKeytip(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
+  }
+  
+  private static bool CmpKeytip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Keytip?.Value == value;
   }
   
   private static void SetKeytip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -397,6 +517,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetKeytip?.Value;
   }
   
+  private static bool CmpGetKeytip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetKeytip?.Value == value;
+  }
+  
   private static void SetGetKeytip(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -411,6 +536,11 @@ public static class VisibleToggleButtonConverter
   private static Boolean? GetShowLabel(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
+  }
+  
+  private static bool CmpShowLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
   }
   
   private static void SetShowLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value)
@@ -429,6 +559,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.GetShowLabel?.Value;
   }
   
+  private static bool CmpGetShowLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
+  }
+  
   private static void SetGetShowLabel(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
   {
     if (value != null)
@@ -445,6 +580,11 @@ public static class VisibleToggleButtonConverter
     return openXmlElement?.ShowImage?.Value;
   }
   
+  private static bool CmpShowImage(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowImage?.Value == value;
+  }
+  
   private static void SetShowImage(DXO2010CustUI.VisibleToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -459,6 +599,11 @@ public static class VisibleToggleButtonConverter
   private static String? GetGetShowImage(DXO2010CustUI.VisibleToggleButton openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
+  }
+  
+  private static bool CmpGetShowImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowImage?.Value == value;
   }
   
   private static void SetGetShowImage(DXO2010CustUI.VisibleToggleButton openXmlElement, String? value)
@@ -506,6 +651,74 @@ public static class VisibleToggleButtonConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.VisibleToggleButton? openXmlElement, DM.VisibleToggleButton? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGetPressed(openXmlElement, value.GetPressed, diffs, objName))
+        ok = false;
+      if (!CmpOnAction(openXmlElement, value.OnAction, diffs, objName))
+        ok = false;
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+        ok = false;
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+        ok = false;
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+        ok = false;
+      if (!CmpGetDescription(openXmlElement, value.GetDescription, diffs, objName))
+        ok = false;
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+        ok = false;
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+        ok = false;
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+        ok = false;
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+        ok = false;
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+        ok = false;
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+        ok = false;
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+        ok = false;
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+        ok = false;
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpShowImage(openXmlElement, value.ShowImage, diffs, objName))
+        ok = false;
+      if (!CmpGetShowImage(openXmlElement, value.GetShowImage, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.VisibleToggleButton? value)

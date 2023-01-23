@@ -17,6 +17,11 @@ public static class SubtotalsConverter
     return collection;
   }
   
+  private static bool CmpUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement, Collection<UInt32>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.UnsignedIntegerType>();
@@ -40,6 +45,18 @@ public static class SubtotalsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.Subtotals? openXmlElement, DMDrawsChartDraws.Subtotals? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUnsignedIntegerTypes(openXmlElement, value.UnsignedIntegerTypes, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Subtotals? value)

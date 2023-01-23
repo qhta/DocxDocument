@@ -13,6 +13,11 @@ public static class FixedCommandKeyboardCustomizationConverter
     return openXmlElement?.CommandName?.Value;
   }
   
+  private static bool CmpCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CommandName?.Value == value;
+  }
+  
   private static void SetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value)
   {
     if (value != null)
@@ -31,6 +36,13 @@ public static class FixedCommandKeyboardCustomizationConverter
     return null;
   }
   
+  private static bool CmpCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.CommandIndex?.Value != null)
+      return UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
   {
       if (value != null)
@@ -47,6 +59,13 @@ public static class FixedCommandKeyboardCustomizationConverter
     if (openXmlElement.Argument?.Value != null)
       return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber);
     return null;
+  }
+  
+  private static bool CmpArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Argument?.Value != null)
+      return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
   }
   
   private static void SetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
@@ -68,6 +87,22 @@ public static class FixedCommandKeyboardCustomizationConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement, DMW.FixedCommandKeyboardCustomization? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCommandName(openXmlElement, value.CommandName, diffs, objName))
+        ok = false;
+      if (!CmpCommandIndex(openXmlElement, value.CommandIndex, diffs, objName))
+        ok = false;
+      if (!CmpArgument(openXmlElement, value.Argument, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FixedCommandKeyboardCustomization? value)

@@ -15,6 +15,13 @@ public static class RgbColorModelHexConverter
     return null;
   }
   
+  private static bool CmpVal(DXO2010W.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Val?.Value != null)
+      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetVal(DXO2010W.RgbColorModelHex openXmlElement, DM.RGB? value)
   {
       if (value != null)
@@ -25,10 +32,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetTint(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Tint>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.Tint>()?.Val?.Value;
+  }
+  
+  private static bool CmpTint(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.Tint>()?.Val?.Value == value;
   }
   
   private static void SetTint(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -45,10 +54,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetShade(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Shade>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.Shade>()?.Val?.Value;
+  }
+  
+  private static bool CmpShade(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.Shade>()?.Val?.Value == value;
   }
   
   private static void SetShade(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -65,10 +76,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetAlpha(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Alpha>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.Alpha>()?.Val?.Value;
+  }
+  
+  private static bool CmpAlpha(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.Alpha>()?.Val?.Value == value;
   }
   
   private static void SetAlpha(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -85,10 +98,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetHueModulation(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.HueModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.HueModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpHueModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.HueModulation>()?.Val?.Value == value;
   }
   
   private static void SetHueModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -105,10 +120,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturation(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Saturation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.Saturation>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.Saturation>()?.Val?.Value == value;
   }
   
   private static void SetSaturation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -125,10 +142,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturationOffset(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturationOffset(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>()?.Val?.Value == value;
   }
   
   private static void SetSaturationOffset(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -145,10 +164,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetSaturationModulation(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpSaturationModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>()?.Val?.Value == value;
   }
   
   private static void SetSaturationModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -165,10 +186,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminance(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Luminance>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.Luminance>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminance(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.Luminance>()?.Val?.Value == value;
   }
   
   private static void SetLuminance(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -185,10 +208,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminanceOffset(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminanceOffset(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>()?.Val?.Value == value;
   }
   
   private static void SetLuminanceOffset(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -205,10 +230,12 @@ public static class RgbColorModelHexConverter
   
   private static Int32? GetLuminanceModulation(DXO2010W.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>()?.Val?.Value;
+  }
+  
+  private static bool CmpLuminanceModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>()?.Val?.Value == value;
   }
   
   private static void SetLuminanceModulation(DXO2010W.RgbColorModelHex openXmlElement, Int32? value)
@@ -242,6 +269,38 @@ public static class RgbColorModelHexConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.RgbColorModelHex? openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpTint(openXmlElement, value.Tint, diffs, objName))
+        ok = false;
+      if (!CmpShade(openXmlElement, value.Shade, diffs, objName))
+        ok = false;
+      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName))
+        ok = false;
+      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName))
+        ok = false;
+      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName))
+        ok = false;
+      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName))
+        ok = false;
+      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName))
+        ok = false;
+      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName))
+        ok = false;
+      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName))
+        ok = false;
+      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RgbColorModelHex? value)

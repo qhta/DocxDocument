@@ -13,6 +13,11 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return openXmlElement?.Macro?.Value;
   }
   
+  private static bool CmpMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Macro?.Value == value;
+  }
+  
   private static void SetMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   private static Boolean? GetPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Published?.Value;
+  }
+  
+  private static bool CmpPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Published?.Value == value;
   }
   
   private static void SetPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties? openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName))
+        ok = false;
+      if (!CmpPublished(openXmlElement, value.Published, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value)

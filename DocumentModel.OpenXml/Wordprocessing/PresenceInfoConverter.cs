@@ -13,6 +13,11 @@ public static class PresenceInfoConverter
     return openXmlElement?.ProviderId?.Value;
   }
   
+  private static bool CmpProviderId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ProviderId?.Value == value;
+  }
+  
   private static void SetProviderId(DXO2013W.PresenceInfo openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class PresenceInfoConverter
   private static String? GetUserId(DXO2013W.PresenceInfo openXmlElement)
   {
     return openXmlElement?.UserId?.Value;
+  }
+  
+  private static bool CmpUserId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UserId?.Value == value;
   }
   
   private static void SetUserId(DXO2013W.PresenceInfo openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class PresenceInfoConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.PresenceInfo? openXmlElement, DMW.PresenceInfo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpProviderId(openXmlElement, value.ProviderId, diffs, objName))
+        ok = false;
+      if (!CmpUserId(openXmlElement, value.UserId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PresenceInfo? value)

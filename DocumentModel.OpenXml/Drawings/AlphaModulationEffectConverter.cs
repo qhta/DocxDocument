@@ -10,10 +10,12 @@ public static class AlphaModulationEffectConverter
   /// </summary>
   private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.AlphaModulationEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
-    if (itemElement != null)
-      return DMXDraws.EffectContainerConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.EffectContainerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectContainer>());
+  }
+  
+  private static bool CmpEffectContainer(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectContainer(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.EffectContainer? value)
@@ -38,6 +40,18 @@ public static class AlphaModulationEffectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AlphaModulationEffect? openXmlElement, DMDraws.AlphaModulationEffect? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEffectContainer(openXmlElement, value.EffectContainer, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationEffect? value)

@@ -13,6 +13,11 @@ public static class CameraConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMDraws.PresetCameraKind>(openXmlElement?.Preset?.Value);
   }
   
+  private static bool CmpPreset(DXDraw.Camera openXmlElement, DMDraws.PresetCameraKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMDraws.PresetCameraKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetPreset(DXDraw.Camera openXmlElement, DMDraws.PresetCameraKind? value)
   {
     openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMDraws.PresetCameraKind>(value);
@@ -24,6 +29,11 @@ public static class CameraConverter
   private static Int32? GetFieldOfView(DXDraw.Camera openXmlElement)
   {
     return openXmlElement.FieldOfView?.Value;
+  }
+  
+  private static bool CmpFieldOfView(DXDraw.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.FieldOfView?.Value == value;
   }
   
   private static void SetFieldOfView(DXDraw.Camera openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class CameraConverter
     return openXmlElement.Zoom?.Value;
   }
   
+  private static bool CmpZoom(DXDraw.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Zoom?.Value == value;
+  }
+  
   private static void SetZoom(DXDraw.Camera openXmlElement, Int32? value)
   {
     openXmlElement.Zoom = value;
@@ -49,10 +64,12 @@ public static class CameraConverter
   /// </summary>
   private static DMDraws.Rotation? GetRotation(DXDraw.Camera openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Rotation>();
-    if (itemElement != null)
-      return DMXDraws.RotationConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RotationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>());
+  }
+  
+  private static bool CmpRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value)
@@ -80,6 +97,24 @@ public static class CameraConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Camera? openXmlElement, DMDraws.Camera? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPreset(openXmlElement, value.Preset, diffs, objName))
+        ok = false;
+      if (!CmpFieldOfView(openXmlElement, value.FieldOfView, diffs, objName))
+        ok = false;
+      if (!CmpZoom(openXmlElement, value.Zoom, diffs, objName))
+        ok = false;
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Camera? value)

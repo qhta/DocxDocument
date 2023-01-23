@@ -531,7 +531,7 @@ public static class ModelData
   };
   #endregion
 
-    #region Properties
+  #region Properties
 
   public static SortedStrings ExcludedProperties { get; } = new SortedStrings
   {
@@ -550,6 +550,11 @@ public static class ModelData
     "RootElementContext",
     "WebExtensions"
 
+  };
+
+  public static Dictionary<string, string> PropertyTranslateTable = new()
+  {
+    { "DXW.LatentStyles.Count", "TotalCount" },
   };
   #endregion
 
@@ -610,6 +615,7 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
     { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
     { typeof(DocumentFormat.OpenXml.OnOffValue), typeof(System.Boolean)},
+    { typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues), typeof(System.Boolean)},
     { typeof(DocumentFormat.OpenXml.Office2019.Drawing.Chart.BooleanFalse), typeof(System.Boolean) },
     { typeof(DocumentFormat.OpenXml.Office2010.ExcelAc.List), typeof(System.String) },
     { typeof(DocumentFormat.OpenXml.IntegerValue), typeof(System.Int64)},

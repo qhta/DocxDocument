@@ -13,6 +13,11 @@ public static class DataPointConverter
     return openXmlElement.Idx?.Value;
   }
   
+  private static bool CmpIdx(DXO2016DrawChartDraw.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Idx?.Value == value;
+  }
+  
   private static void SetIdx(DXO2016DrawChartDraw.DataPoint openXmlElement, UInt32? value)
   {
     openXmlElement.Idx = value;
@@ -23,10 +28,12 @@ public static class DataPointConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+  }
+  
+  private static bool CmpShapeProperties(DXO2016DrawChartDraw.DataPoint openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXO2016DrawChartDraw.DataPoint openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
@@ -47,10 +54,12 @@ public static class DataPointConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.DataPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2016DrawChartDraw.DataPoint openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.DataPoint openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -77,6 +86,22 @@ public static class DataPointConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.DataPoint? openXmlElement, DMDrawsChartDraws.DataPoint? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIdx(openXmlElement, value.Idx, diffs, objName))
+        ok = false;
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataPoint? value)

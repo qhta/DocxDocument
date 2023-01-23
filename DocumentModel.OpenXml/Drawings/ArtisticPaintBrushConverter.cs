@@ -13,6 +13,11 @@ public static class ArtisticPaintBrushConverter
     return openXmlElement.Transparancy?.Value;
   }
   
+  private static bool CmpTransparancy(DXO2010Draw.ArtisticPaintBrush openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Transparancy?.Value == value;
+  }
+  
   private static void SetTransparancy(DXO2010Draw.ArtisticPaintBrush openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
@@ -24,6 +29,11 @@ public static class ArtisticPaintBrushConverter
   private static Int32? GetBrushSize(DXO2010Draw.ArtisticPaintBrush openXmlElement)
   {
     return openXmlElement.BrushSize?.Value;
+  }
+  
+  private static bool CmpBrushSize(DXO2010Draw.ArtisticPaintBrush openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BrushSize?.Value == value;
   }
   
   private static void SetBrushSize(DXO2010Draw.ArtisticPaintBrush openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class ArtisticPaintBrushConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ArtisticPaintBrush? openXmlElement, DMDraws.ArtisticPaintBrush? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+        ok = false;
+      if (!CmpBrushSize(openXmlElement, value.BrushSize, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintBrush? value)

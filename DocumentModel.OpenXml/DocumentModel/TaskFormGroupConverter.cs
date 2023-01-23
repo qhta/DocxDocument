@@ -13,6 +13,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class TaskFormGroupConverter
   private static String? GetQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class TaskFormGroupConverter
   private static String? GetIdMso(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
+  }
+  
+  private static bool CmpIdMso(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.IdMso?.Value == value;
   }
   
   private static void SetIdMso(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.Label?.Value;
   }
   
+  private static bool CmpLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
+  }
+  
   private static void SetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class TaskFormGroupConverter
   private static String? GetGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
+  }
+  
+  private static bool CmpGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
   }
   
   private static void SetGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -109,6 +139,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.Visible?.Value;
   }
   
+  private static bool CmpVisible(DXO2010CustUI.TaskFormGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Visible?.Value == value;
+  }
+  
   private static void SetVisible(DXO2010CustUI.TaskFormGroup openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class TaskFormGroupConverter
   private static String? GetGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
+  }
+  
+  private static bool CmpGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetVisible?.Value == value;
   }
   
   private static void SetGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -141,6 +181,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.HelperText?.Value;
   }
   
+  private static bool CmpHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.HelperText?.Value == value;
+  }
+  
   private static void SetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class TaskFormGroupConverter
   private static String? GetGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.GetHelperText?.Value;
+  }
+  
+  private static bool CmpGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetHelperText?.Value == value;
   }
   
   private static void SetGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -173,6 +223,11 @@ public static class TaskFormGroupConverter
     return openXmlElement?.ShowLabel?.Value;
   }
   
+  private static bool CmpShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowLabel?.Value == value;
+  }
+  
   private static void SetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -187,6 +242,11 @@ public static class TaskFormGroupConverter
   private static String? GetGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
+  }
+  
+  private static bool CmpGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetShowLabel?.Value == value;
   }
   
   private static void SetGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
@@ -205,6 +265,11 @@ public static class TaskFormGroupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value);
   }
   
+  private static bool CmpAllowedTaskSizes(DXO2010CustUI.TaskFormGroup openXmlElement, DM.TaskSizesKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAllowedTaskSizes(DXO2010CustUI.TaskFormGroup openXmlElement, DM.TaskSizesKind? value)
   {
     openXmlElement.AllowedTaskSizes = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(value);
@@ -220,6 +285,11 @@ public static class TaskFormGroupConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpTaskFormGroupCategories(DXO2010CustUI.TaskFormGroup openXmlElement, Collection<DM.TaskFormGroupCategory>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetTaskFormGroupCategories(DXO2010CustUI.TaskFormGroup openXmlElement, Collection<DM.TaskFormGroupCategory>? value)
@@ -258,6 +328,44 @@ public static class TaskFormGroupConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.TaskFormGroup? openXmlElement, DM.TaskFormGroup? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+        ok = false;
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+        ok = false;
+      if (!CmpHelperText(openXmlElement, value.HelperText, diffs, objName))
+        ok = false;
+      if (!CmpGetHelperText(openXmlElement, value.GetHelperText, diffs, objName))
+        ok = false;
+      if (!CmpShowLabel(openXmlElement, value.ShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpGetShowLabel(openXmlElement, value.GetShowLabel, diffs, objName))
+        ok = false;
+      if (!CmpAllowedTaskSizes(openXmlElement, value.AllowedTaskSizes, diffs, objName))
+        ok = false;
+      if (!CmpTaskFormGroupCategories(openXmlElement, value.TaskFormGroupCategories, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskFormGroup? value)

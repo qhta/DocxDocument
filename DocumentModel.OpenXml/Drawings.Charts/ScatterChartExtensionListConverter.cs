@@ -17,6 +17,11 @@ public static class ScatterChartExtensionListConverter
     return collection;
   }
   
+  private static bool CmpScatterChartExtensions(DXDrawCharts.ScatterChartExtensionList openXmlElement, Collection<DMDrawsCharts.ScatterChartExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetScatterChartExtensions(DXDrawCharts.ScatterChartExtensionList openXmlElement, Collection<DMDrawsCharts.ScatterChartExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.ScatterChartExtension>();
@@ -40,6 +45,18 @@ public static class ScatterChartExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.ScatterChartExtensionList? openXmlElement, DMDrawsCharts.ScatterChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpScatterChartExtensions(openXmlElement, value.ScatterChartExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ScatterChartExtensionList? value)

@@ -13,6 +13,11 @@ public static class PageNumberTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value);
   }
   
+  private static bool CmpFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value)
   {
     openXmlElement.Format = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
@@ -24,6 +29,11 @@ public static class PageNumberTypeConverter
   private static Int32? GetStart(DXW.PageNumberType openXmlElement)
   {
     return openXmlElement.Start?.Value;
+  }
+  
+  private static bool CmpStart(DXW.PageNumberType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Start?.Value == value;
   }
   
   private static void SetStart(DXW.PageNumberType openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class PageNumberTypeConverter
     return openXmlElement.ChapterStyle?.Value;
   }
   
+  private static bool CmpChapterStyle(DXW.PageNumberType openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ChapterStyle?.Value == value;
+  }
+  
   private static void SetChapterStyle(DXW.PageNumberType openXmlElement, Byte? value)
   {
     openXmlElement.ChapterStyle = value;
@@ -50,6 +65,11 @@ public static class PageNumberTypeConverter
   private static DMW.ChapterSeparatorKind? GetChapterSeparator(DXW.PageNumberType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value);
+  }
+  
+  private static bool CmpChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -69,6 +89,24 @@ public static class PageNumberTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PageNumberType? openXmlElement, DMW.PageNumberType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+        ok = false;
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+        ok = false;
+      if (!CmpChapterStyle(openXmlElement, value.ChapterStyle, diffs, objName))
+        ok = false;
+      if (!CmpChapterSeparator(openXmlElement, value.ChapterSeparator, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageNumberType? value)

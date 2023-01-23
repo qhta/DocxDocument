@@ -13,6 +13,11 @@ public static class WrapTopBottomConverter
     return openXmlElement.DistanceFromTop?.Value;
   }
   
+  private static bool CmpDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DistanceFromTop?.Value == value;
+  }
+  
   private static void SetDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromTop = value;
@@ -26,6 +31,11 @@ public static class WrapTopBottomConverter
     return openXmlElement.DistanceFromBottom?.Value;
   }
   
+  private static bool CmpDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DistanceFromBottom?.Value == value;
+  }
+  
   private static void SetDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromBottom = value;
@@ -36,10 +46,12 @@ public static class WrapTopBottomConverter
   /// </summary>
   private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.WrapTopBottom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
-    if (itemElement != null)
-      return DMXDrawsW.EffectExtentConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsW.EffectExtentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>());
+  }
+  
+  private static bool CmpEffectExtent(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectExtent(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.EffectExtent? value)
@@ -66,6 +78,22 @@ public static class WrapTopBottomConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.WrapTopBottom? openXmlElement, DMDrawsW.WrapTopBottom? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDistanceFromTop(openXmlElement, value.DistanceFromTop, diffs, objName))
+        ok = false;
+      if (!CmpDistanceFromBottom(openXmlElement, value.DistanceFromBottom, diffs, objName))
+        ok = false;
+      if (!CmpEffectExtent(openXmlElement, value.EffectExtent, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTopBottom? value)

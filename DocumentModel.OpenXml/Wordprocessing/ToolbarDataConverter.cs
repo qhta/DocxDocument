@@ -13,6 +13,11 @@ public static class ToolbarDataConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXOW.ToolbarData openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXOW.ToolbarData openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class ToolbarDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.ToolbarData? openXmlElement, DMW.ToolbarData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ToolbarData? value)

@@ -10,10 +10,12 @@ public static class StringDataType3Converter
   /// </summary>
   private static UInt32? GetPointCount(DXO2013DrawChart.StringDataType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+  }
+  
+  private static bool CmpPointCount(DXO2013DrawChart.StringDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value == value;
   }
   
   private static void SetPointCount(DXO2013DrawChart.StringDataType openXmlElement, UInt32? value)
@@ -37,6 +39,18 @@ public static class StringDataType3Converter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.StringDataType? openXmlElement, DMDrawsCharts.StringDataType3? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPointCount(openXmlElement, value.PointCount, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringDataType3? value)

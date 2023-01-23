@@ -13,6 +13,11 @@ public static class NumericPointConverter
     return openXmlElement.Index?.Value;
   }
   
+  private static bool CmpIndex(DXDrawCharts.NumericPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Index?.Value == value;
+  }
+  
   private static void SetIndex(DXDrawCharts.NumericPoint openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
@@ -24,6 +29,11 @@ public static class NumericPointConverter
   private static String? GetFormatCode(DXDrawCharts.NumericPoint openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
+  }
+  
+  private static bool CmpFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FormatCode?.Value == value;
   }
   
   private static void SetFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value)
@@ -39,10 +49,12 @@ public static class NumericPointConverter
   /// </summary>
   private static String? GetNumericValue(DXDrawCharts.NumericPoint openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>()?.Text;
+  }
+  
+  private static bool CmpNumericValue(DXDrawCharts.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>()?.Text == value;
   }
   
   private static void SetNumericValue(DXDrawCharts.NumericPoint openXmlElement, String? value)
@@ -68,6 +80,22 @@ public static class NumericPointConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.NumericPoint? openXmlElement, DMDrawsCharts.NumericPoint? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+        ok = false;
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+        ok = false;
+      if (!CmpNumericValue(openXmlElement, value.NumericValue, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumericPoint? value)

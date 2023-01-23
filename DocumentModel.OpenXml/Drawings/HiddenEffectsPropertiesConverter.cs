@@ -10,10 +10,12 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   private static DMDraws.EffectList? GetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
-    if (itemElement != null)
-      return DMXDraws.EffectListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+  }
+  
+  private static bool CmpEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value)
@@ -34,10 +36,12 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   private static DMDraws.EffectDag? GetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
-    if (itemElement != null)
-      return DMXDraws.EffectDagConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+  }
+  
+  private static bool CmpEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value)
@@ -63,6 +67,20 @@ public static class HiddenEffectsPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.HiddenEffectsProperties? openXmlElement, DMDraws.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName))
+        ok = false;
+      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenEffectsProperties? value)

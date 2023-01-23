@@ -10,10 +10,12 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.RadicalProperties? GetRadicalProperties(DXMath.Radical openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RadicalProperties>();
-    if (itemElement != null)
-      return DMXMath.RadicalPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.RadicalPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.RadicalProperties>());
+  }
+  
+  private static bool CmpRadicalProperties(DXMath.Radical openXmlElement, DMMath.RadicalProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.RadicalPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.RadicalProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadicalProperties(DXMath.Radical openXmlElement, DMMath.RadicalProperties? value)
@@ -34,10 +36,12 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.Degree? GetDegree(DXMath.Radical openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Degree>();
-    if (itemElement != null)
-      return DMXMath.DegreeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.DegreeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Degree>());
+  }
+  
+  private static bool CmpDegree(DXMath.Radical openXmlElement, DMMath.Degree? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.DegreeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Degree>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDegree(DXMath.Radical openXmlElement, DMMath.Degree? value)
@@ -58,10 +62,12 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Radical openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.Radical openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Radical openXmlElement, DMMath.Base? value)
@@ -88,6 +94,22 @@ public static class RadicalConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.Radical? openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadicalProperties(openXmlElement, value.RadicalProperties, diffs, objName))
+        ok = false;
+      if (!CmpDegree(openXmlElement, value.Degree, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Radical? value)

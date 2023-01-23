@@ -17,6 +17,11 @@ public static class KeyMapCustomizationsConverter
     return collection;
   }
   
+  private static bool CmpKeyMapEntries(DXOW.KeyMapCustomizations openXmlElement, Collection<DMW.KeyMapEntry>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetKeyMapEntries(DXOW.KeyMapCustomizations openXmlElement, Collection<DMW.KeyMapEntry>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.KeyMapEntry>();
@@ -40,6 +45,18 @@ public static class KeyMapCustomizationsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.KeyMapCustomizations? openXmlElement, DMW.KeyMapCustomizations? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpKeyMapEntries(openXmlElement, value.KeyMapEntries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.KeyMapCustomizations? value)

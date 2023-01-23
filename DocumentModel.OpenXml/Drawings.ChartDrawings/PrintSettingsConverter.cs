@@ -10,10 +10,12 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.HeaderFooter? GetHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.HeaderFooterConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.HeaderFooterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>());
+  }
+  
+  private static bool CmpHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.HeaderFooter? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.HeaderFooterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.HeaderFooter? value)
@@ -34,10 +36,12 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.PageMargins? GetPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageMargins>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.PageMarginsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.PageMarginsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageMargins>());
+  }
+  
+  private static bool CmpPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageMargins? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.PageMarginsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageMargins>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageMargins? value)
@@ -58,10 +62,12 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.PageSetup? GetPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageSetup>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.PageSetupConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.PageSetupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageSetup>());
+  }
+  
+  private static bool CmpPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageSetup? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.PageSetupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageSetup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageSetup? value)
@@ -88,6 +94,22 @@ public static class PrintSettingsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.PrintSettings? openXmlElement, DMDrawsChartDraws.PrintSettings? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpHeaderFooter(openXmlElement, value.HeaderFooter, diffs, objName))
+        ok = false;
+      if (!CmpPageMargins(openXmlElement, value.PageMargins, diffs, objName))
+        ok = false;
+      if (!CmpPageSetup(openXmlElement, value.PageSetup, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PrintSettings? value)

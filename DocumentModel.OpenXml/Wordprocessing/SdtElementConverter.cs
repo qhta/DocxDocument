@@ -10,10 +10,12 @@ public static class SdtElementConverter
   /// </summary>
   private static DMW.SdtProperties? GetSdtProperties(DXW.SdtElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtProperties>();
-    if (itemElement != null)
-      return DMXW.SdtPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtProperties>());
+  }
+  
+  private static bool CmpSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value)
@@ -34,10 +36,12 @@ public static class SdtElementConverter
   /// </summary>
   private static DMW.SdtEndCharProperties? GetSdtEndCharProperties(DXW.SdtElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtEndCharProperties>();
-    if (itemElement != null)
-      return DMXW.SdtEndCharPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SdtEndCharPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtEndCharProperties>());
+  }
+  
+  private static bool CmpSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value)
@@ -63,6 +67,20 @@ public static class SdtElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtElement? openXmlElement, DMW.SdtElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSdtProperties(openXmlElement, value.SdtProperties, diffs, objName))
+        ok = false;
+      if (!CmpSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtElement? value)

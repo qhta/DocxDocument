@@ -13,6 +13,11 @@ public static class RelativeRectangleTypeConverter
     return openXmlElement.Left?.Value;
   }
   
+  private static bool CmpLeft(DXDraw.RelativeRectangleType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Left?.Value == value;
+  }
+  
   private static void SetLeft(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Left = value;
@@ -24,6 +29,11 @@ public static class RelativeRectangleTypeConverter
   private static Int32? GetTop(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Top?.Value;
+  }
+  
+  private static bool CmpTop(DXDraw.RelativeRectangleType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Top?.Value == value;
   }
   
   private static void SetTop(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
@@ -39,6 +49,11 @@ public static class RelativeRectangleTypeConverter
     return openXmlElement.Right?.Value;
   }
   
+  private static bool CmpRight(DXDraw.RelativeRectangleType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Right?.Value == value;
+  }
+  
   private static void SetRight(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Right = value;
@@ -50,6 +65,11 @@ public static class RelativeRectangleTypeConverter
   private static Int32? GetBottom(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
+  }
+  
+  private static bool CmpBottom(DXDraw.RelativeRectangleType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Bottom?.Value == value;
   }
   
   private static void SetBottom(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
@@ -69,6 +89,24 @@ public static class RelativeRectangleTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.RelativeRectangleType? openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLeft(openXmlElement, value.Left, diffs, objName))
+        ok = false;
+      if (!CmpTop(openXmlElement, value.Top, diffs, objName))
+        ok = false;
+      if (!CmpRight(openXmlElement, value.Right, diffs, objName))
+        ok = false;
+      if (!CmpBottom(openXmlElement, value.Bottom, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeRectangleType? value)

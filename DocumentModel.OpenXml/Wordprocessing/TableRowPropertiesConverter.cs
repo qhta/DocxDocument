@@ -7,10 +7,12 @@ public static class TableRowPropertiesConverter
 {
   private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
-    if (itemElement != null)
-      return DMXW.ConditionalFormatStyleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ConditionalFormatStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>());
+  }
+  
+  private static bool CmpConditionalFormatStyle(DXW.TableRowProperties openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConditionalFormatStyle(DXW.TableRowProperties openXmlElement, DMW.ConditionalFormatStyle? value)
@@ -28,10 +30,12 @@ public static class TableRowPropertiesConverter
   
   private static String? GetDivId(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.DivId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.DivId>()?.Val?.Value;
+  }
+  
+  private static bool CmpDivId(DXW.TableRowProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.DivId>()?.Val?.Value == value;
   }
   
   private static void SetDivId(DXW.TableRowProperties openXmlElement, String? value)
@@ -48,10 +52,12 @@ public static class TableRowPropertiesConverter
   
   private static Int32? GetGridBefore(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.GridBefore>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.GridBefore>()?.Val?.Value;
+  }
+  
+  private static bool CmpGridBefore(DXW.TableRowProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.GridBefore>()?.Val?.Value == value;
   }
   
   private static void SetGridBefore(DXW.TableRowProperties openXmlElement, Int32? value)
@@ -68,10 +74,12 @@ public static class TableRowPropertiesConverter
   
   private static Int32? GetGridAfter(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.GridAfter>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.GridAfter>()?.Val?.Value;
+  }
+  
+  private static bool CmpGridAfter(DXW.TableRowProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.GridAfter>()?.Val?.Value == value;
   }
   
   private static void SetGridAfter(DXW.TableRowProperties openXmlElement, Int32? value)
@@ -88,10 +96,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TableWidthType? GetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>());
+  }
+  
+  private static bool CmpWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
@@ -109,10 +119,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TableWidthType? GetWidthAfterTableRow(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>());
+  }
+  
+  private static bool CmpWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
@@ -130,10 +142,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TableRowHeight? GetTableRowHeight(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableRowHeight>();
-    if (itemElement != null)
-      return DMXW.TableRowHeightConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableRowHeightConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableRowHeight>());
+  }
+  
+  private static bool CmpTableRowHeight(DXW.TableRowProperties openXmlElement, DMW.TableRowHeight? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableRowHeightConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableRowHeight>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableRowHeight(DXW.TableRowProperties openXmlElement, DMW.TableRowHeight? value)
@@ -151,10 +165,12 @@ public static class TableRowPropertiesConverter
   
   private static Boolean? GetHidden(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Hidden>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value;
+  }
+  
+  private static bool CmpHidden(DXW.TableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value == value;
   }
   
   private static void SetHidden(DXW.TableRowProperties openXmlElement, Boolean? value)
@@ -172,54 +188,70 @@ public static class TableRowPropertiesConverter
     }
   }
   
-  private static DMW.OnOffOnlyKind? GetCantSplit(DXW.TableRowProperties openXmlElement)
+  private static Boolean? GetCantSplit(DXW.TableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetCantSplit(DXW.TableRowProperties openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpCantSplit(DXW.TableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.CantSplit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetCantSplit(DXW.TableRowProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.CantSplit, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.CantSplit>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.CantSplit();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMW.OnOffOnlyKind? GetTableHeader(DXW.TableRowProperties openXmlElement)
+  private static Boolean? GetTableHeader(DXW.TableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
+      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
     return null;
   }
   
-  private static void SetTableHeader(DXW.TableRowProperties openXmlElement, DMW.OnOffOnlyKind? value)
+  private static bool CmpTableHeader(DXW.TableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TableHeader>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetTableHeader(DXW.TableRowProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableHeader, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
+      var itemElement = openXmlElement.GetFirstChild<DXW.TableHeader>();
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXW.TableHeader();
+      openXmlElement.AddChild(itemElement);
     }
   }
   
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
-    if (itemElement != null)
-      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+  }
+  
+  private static bool CmpTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
@@ -237,10 +269,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
+  }
+  
+  private static bool CmpTableJustification(DXW.TableRowProperties openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableJustification(DXW.TableRowProperties openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -258,10 +292,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TrackChangeType? GetInserted(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Inserted>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>());
+  }
+  
+  private static bool CmpInserted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInserted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value)
@@ -279,10 +315,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TrackChangeType? GetDeleted(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Deleted>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Deleted>());
+  }
+  
+  private static bool CmpDeleted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Deleted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeleted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value)
@@ -300,10 +338,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TableRowPropertiesChange? GetTableRowPropertiesChange(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableRowPropertiesChange>();
-    if (itemElement != null)
-      return DMXW.TableRowPropertiesChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TableRowPropertiesChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableRowPropertiesChange>());
+  }
+  
+  private static bool CmpTableRowPropertiesChange(DXW.TableRowProperties openXmlElement, DMW.TableRowPropertiesChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TableRowPropertiesChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableRowPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableRowPropertiesChange(DXW.TableRowProperties openXmlElement, DMW.TableRowPropertiesChange? value)
@@ -321,10 +361,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TrackChangeType2? GetConflictInsertion(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>());
+  }
+  
+  private static bool CmpConflictInsertion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConflictInsertion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -342,10 +384,12 @@ public static class TableRowPropertiesConverter
   
   private static DMW.TrackChangeType2? GetConflictDeletion(DXW.TableRowProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>());
+  }
+  
+  private static bool CmpConflictDeletion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConflictDeletion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -386,6 +430,50 @@ public static class TableRowPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.TableRowProperties? openXmlElement, DMW.TableRowProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpConditionalFormatStyle(openXmlElement, value.ConditionalFormatStyle, diffs, objName))
+        ok = false;
+      if (!CmpDivId(openXmlElement, value.DivId, diffs, objName))
+        ok = false;
+      if (!CmpGridBefore(openXmlElement, value.GridBefore, diffs, objName))
+        ok = false;
+      if (!CmpGridAfter(openXmlElement, value.GridAfter, diffs, objName))
+        ok = false;
+      if (!CmpWidthBeforeTableRow(openXmlElement, value.WidthBeforeTableRow, diffs, objName))
+        ok = false;
+      if (!CmpWidthAfterTableRow(openXmlElement, value.WidthAfterTableRow, diffs, objName))
+        ok = false;
+      if (!CmpTableRowHeight(openXmlElement, value.TableRowHeight, diffs, objName))
+        ok = false;
+      if (!CmpHidden(openXmlElement, value.Hidden, diffs, objName))
+        ok = false;
+      if (!CmpCantSplit(openXmlElement, value.CantSplit, diffs, objName))
+        ok = false;
+      if (!CmpTableHeader(openXmlElement, value.TableHeader, diffs, objName))
+        ok = false;
+      if (!CmpTableCellSpacing(openXmlElement, value.TableCellSpacing, diffs, objName))
+        ok = false;
+      if (!CmpTableJustification(openXmlElement, value.TableJustification, diffs, objName))
+        ok = false;
+      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+        ok = false;
+      if (!CmpDeleted(openXmlElement, value.Deleted, diffs, objName))
+        ok = false;
+      if (!CmpTableRowPropertiesChange(openXmlElement, value.TableRowPropertiesChange, diffs, objName))
+        ok = false;
+      if (!CmpConflictInsertion(openXmlElement, value.ConflictInsertion, diffs, objName))
+        ok = false;
+      if (!CmpConflictDeletion(openXmlElement, value.ConflictDeletion, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowProperties? value)

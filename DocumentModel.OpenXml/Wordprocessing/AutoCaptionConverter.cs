@@ -13,6 +13,11 @@ public static class AutoCaptionConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXW.AutoCaption openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class AutoCaptionConverter
   private static String? GetCaption(DXW.AutoCaption openXmlElement)
   {
     return openXmlElement?.Caption?.Value;
+  }
+  
+  private static bool CmpCaption(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Caption?.Value == value;
   }
   
   private static void SetCaption(DXW.AutoCaption openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class AutoCaptionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.AutoCaption? openXmlElement, DMW.AutoCaption? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpCaption(openXmlElement, value.Caption, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaption? value)

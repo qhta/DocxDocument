@@ -13,6 +13,11 @@ public static class NumberFormatConverter
     return openXmlElement?.FormatCode?.Value;
   }
   
+  private static bool CmpFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FormatCode?.Value == value;
+  }
+  
   private static void SetFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class NumberFormatConverter
   private static Boolean? GetSourceLinked(DXO2016DrawChartDraw.NumberFormat openXmlElement)
   {
     return openXmlElement?.SourceLinked?.Value;
+  }
+  
+  private static bool CmpSourceLinked(DXO2016DrawChartDraw.NumberFormat openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SourceLinked?.Value == value;
   }
   
   private static void SetSourceLinked(DXO2016DrawChartDraw.NumberFormat openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class NumberFormatConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.NumberFormat? openXmlElement, DMDrawsChartDraws.NumberFormat? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+        ok = false;
+      if (!CmpSourceLinked(openXmlElement, value.SourceLinked, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumberFormat? value)

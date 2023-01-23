@@ -13,6 +13,11 @@ public static class ExtentConverter
     return openXmlElement.Cx?.Value;
   }
   
+  private static bool CmpCx(DXDrawChartDraw.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Cx?.Value == value;
+  }
+  
   private static void SetCx(DXDrawChartDraw.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cx = value;
@@ -24,6 +29,11 @@ public static class ExtentConverter
   private static Int64? GetCy(DXDrawChartDraw.Extent openXmlElement)
   {
     return openXmlElement.Cy?.Value;
+  }
+  
+  private static bool CmpCy(DXDrawChartDraw.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Cy?.Value == value;
   }
   
   private static void SetCy(DXDrawChartDraw.Extent openXmlElement, Int64? value)
@@ -41,6 +51,20 @@ public static class ExtentConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawChartDraw.Extent? openXmlElement, DMDrawsChartDraw.Extent? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCx(openXmlElement, value.Cx, diffs, objName))
+        ok = false;
+      if (!CmpCy(openXmlElement, value.Cy, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Extent? value)

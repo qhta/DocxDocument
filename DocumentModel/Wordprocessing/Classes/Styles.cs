@@ -15,8 +15,8 @@ public partial class Styles
   /// </summary>
   public LatentStyles? LatentStyles { get; set; }
 
-  ///// <summary>
-  ///// Defines Styles.
-  ///// </summary>
+  /// <summary>
+  /// Defines Styles.
+  /// </summary>
   //public Collection<DocumentModel.Wordprocessing.Style>? Items { get; set; }
 }

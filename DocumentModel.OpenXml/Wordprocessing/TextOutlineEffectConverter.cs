@@ -13,6 +13,11 @@ public static class TextOutlineEffectConverter
     return openXmlElement.LineWidth?.Value;
   }
   
+  private static bool CmpLineWidth(DXO2010W.TextOutlineEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LineWidth?.Value == value;
+  }
+  
   private static void SetLineWidth(DXO2010W.TextOutlineEffect openXmlElement, Int32? value)
   {
     openXmlElement.LineWidth = value;
@@ -24,6 +29,11 @@ public static class TextOutlineEffectConverter
   private static DMW.LineCapKind? GetCapType(DXO2010W.TextOutlineEffect openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LineCapValues, DMW.LineCapKind>(openXmlElement?.CapType?.Value);
+  }
+  
+  private static bool CmpCapType(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineCapKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LineCapValues, DMW.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCapType(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineCapKind? value)
@@ -39,6 +49,11 @@ public static class TextOutlineEffectConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues, DMW.CompoundLineKind>(openXmlElement?.Compound?.Value);
   }
   
+  private static bool CmpCompound(DXO2010W.TextOutlineEffect openXmlElement, DMW.CompoundLineKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues, DMW.CompoundLineKind>(openXmlElement?.Compound?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetCompound(DXO2010W.TextOutlineEffect openXmlElement, DMW.CompoundLineKind? value)
   {
     openXmlElement.Compound = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues, DMW.CompoundLineKind>(value);
@@ -52,6 +67,11 @@ public static class TextOutlineEffectConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues, DMW.PenAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
+  private static bool CmpAlignment(DXO2010W.TextOutlineEffect openXmlElement, DMW.PenAlignmentKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues, DMW.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAlignment(DXO2010W.TextOutlineEffect openXmlElement, DMW.PenAlignmentKind? value)
   {
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues, DMW.PenAlignmentKind>(value);
@@ -59,8 +79,12 @@ public static class TextOutlineEffectConverter
   
   private static Boolean? GetNoFillEmpty(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null;
+  }
+  
+  private static bool CmpNoFillEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null == value;
   }
   
   private static void SetNoFillEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)
@@ -80,10 +104,12 @@ public static class TextOutlineEffectConverter
   
   private static DMW.SolidColorFillProperties? GetSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>();
-    if (itemElement != null)
-      return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>());
+  }
+  
+  private static bool CmpSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value)
@@ -101,10 +127,12 @@ public static class TextOutlineEffectConverter
   
   private static DMW.GradientFillProperties? GetGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>();
-    if (itemElement != null)
-      return DMXW.GradientFillPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.GradientFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>());
+  }
+  
+  private static bool CmpGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value)
@@ -122,10 +150,12 @@ public static class TextOutlineEffectConverter
   
   private static DMW.PresetLineDashKind? GetPresetLineDashProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>()?.Val?.Value);
+  }
+  
+  private static bool CmpPresetLineDashProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.PresetLineDashKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetLineDashProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.PresetLineDashKind? value)
@@ -143,8 +173,12 @@ public static class TextOutlineEffectConverter
   
   private static Boolean? GetRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RoundEmpty>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010W.RoundEmpty>() != null;
+  }
+  
+  private static bool CmpRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010W.RoundEmpty>() != null == value;
   }
   
   private static void SetRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)
@@ -164,8 +198,12 @@ public static class TextOutlineEffectConverter
   
   private static Boolean? GetBevelEmpty(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.BevelEmpty>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010W.BevelEmpty>() != null;
+  }
+  
+  private static bool CmpBevelEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010W.BevelEmpty>() != null == value;
   }
   
   private static void SetBevelEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)
@@ -185,10 +223,12 @@ public static class TextOutlineEffectConverter
   
   private static DMW.LineJoinMiterProperties? GetLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>();
-    if (itemElement != null)
-      return DMXW.LineJoinMiterPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.LineJoinMiterPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>());
+  }
+  
+  private static bool CmpLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.LineJoinMiterPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value)
@@ -223,6 +263,38 @@ public static class TextOutlineEffectConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.TextOutlineEffect? openXmlElement, DMW.TextOutlineEffect? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLineWidth(openXmlElement, value.LineWidth, diffs, objName))
+        ok = false;
+      if (!CmpCapType(openXmlElement, value.CapType, diffs, objName))
+        ok = false;
+      if (!CmpCompound(openXmlElement, value.Compound, diffs, objName))
+        ok = false;
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+        ok = false;
+      if (!CmpNoFillEmpty(openXmlElement, value.NoFillEmpty, diffs, objName))
+        ok = false;
+      if (!CmpSolidColorFillProperties(openXmlElement, value.SolidColorFillProperties, diffs, objName))
+        ok = false;
+      if (!CmpGradientFillProperties(openXmlElement, value.GradientFillProperties, diffs, objName))
+        ok = false;
+      if (!CmpPresetLineDashProperties(openXmlElement, value.PresetLineDashProperties, diffs, objName))
+        ok = false;
+      if (!CmpRoundEmpty(openXmlElement, value.RoundEmpty, diffs, objName))
+        ok = false;
+      if (!CmpBevelEmpty(openXmlElement, value.BevelEmpty, diffs, objName))
+        ok = false;
+      if (!CmpLineJoinMiterProperties(openXmlElement, value.LineJoinMiterProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextOutlineEffect? value)

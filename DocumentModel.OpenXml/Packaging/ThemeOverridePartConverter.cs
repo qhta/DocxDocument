@@ -10,6 +10,11 @@ public static class ThemeOverridePartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the ThemeOverridePart
   /// </summary>
@@ -25,9 +30,19 @@ public static class ThemeOverridePartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.ThemeOverridePart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.ThemeOverridePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -35,9 +50,12 @@ public static class ThemeOverridePartConverter
   /// </summary>
   private static DMDraws.ThemeOverride? GetThemeOverride(DXPack.ThemeOverridePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXDraw.ThemeOverride rootElement)
-      return DMXDraws.ThemeOverrideConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDraws.ThemeOverrideConverter.CreateModelElement(openXmlElement?.RootElement as DXDraw.ThemeOverride);
+  }
+  
+  private static bool CmpThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMDraws.ThemeOverride? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMDraws.ThemeOverride? value)
@@ -62,6 +80,24 @@ public static class ThemeOverridePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ThemeOverridePart? openXmlElement, DMPack.ThemeOverridePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpThemeOverride(openXmlElement, value.ThemeOverride, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThemeOverridePart? value)

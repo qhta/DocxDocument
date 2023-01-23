@@ -7,10 +7,12 @@ public static class GradientStopListConverter
 {
   private static DMDraws.GradientStop? GetGradientStop(DXDraw.GradientStopList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientStop>();
-    if (itemElement != null)
-      return DMXDraws.GradientStopConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.GradientStopConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStop>());
+  }
+  
+  private static bool CmpGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.GradientStopConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value)
@@ -35,6 +37,18 @@ public static class GradientStopListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.GradientStopList? openXmlElement, DMDraws.GradientStopList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGradientStop(openXmlElement, value.GradientStop, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStopList? value)

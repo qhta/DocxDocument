@@ -17,6 +17,11 @@ public static class DataLabelsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXDrawCharts.DataLabels openXmlElement, Collection<DMDrawsCharts.DataLabel>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXDrawCharts.DataLabels openXmlElement, Collection<DMDrawsCharts.DataLabel>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.DataLabel>();
@@ -33,8 +38,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetDelete(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Delete>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+  }
+  
+  private static bool CmpDelete(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
   }
   
   private static void SetDelete(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -54,10 +63,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+  }
+  
+  private static bool CmpNumberingFormat(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberingFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.NumberingFormat? value)
@@ -75,10 +86,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+  }
+  
+  private static bool CmpChartShapeProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -96,10 +109,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+  }
+  
+  private static bool CmpTextProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -117,10 +132,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.DataLabelPositionKind? GetDataLabelPosition(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>()?.Val?.Value);
+  }
+  
+  private static bool CmpDataLabelPosition(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DataLabelPositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelPosition(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DataLabelPositionKind? value)
@@ -138,8 +155,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowLegendKey(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null;
+  }
+  
+  private static bool CmpShowLegendKey(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null == value;
   }
   
   private static void SetShowLegendKey(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -159,8 +180,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowValue(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null;
+  }
+  
+  private static bool CmpShowValue(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null == value;
   }
   
   private static void SetShowValue(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -180,8 +205,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowCategoryName(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null;
+  }
+  
+  private static bool CmpShowCategoryName(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null == value;
   }
   
   private static void SetShowCategoryName(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -201,8 +230,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowSeriesName(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null;
+  }
+  
+  private static bool CmpShowSeriesName(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null == value;
   }
   
   private static void SetShowSeriesName(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -222,8 +255,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowPercent(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null;
+  }
+  
+  private static bool CmpShowPercent(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null == value;
   }
   
   private static void SetShowPercent(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -243,8 +280,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowBubbleSize(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null;
+  }
+  
+  private static bool CmpShowBubbleSize(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null == value;
   }
   
   private static void SetShowBubbleSize(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -264,10 +305,12 @@ public static class DataLabelsConverter
   
   private static String? GetSeparator(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Separator>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.Separator>()?.Text;
+  }
+  
+  private static bool CmpSeparator(DXDrawCharts.DataLabels openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.Separator>()?.Text == value;
   }
   
   private static void SetSeparator(DXDrawCharts.DataLabels openXmlElement, String? value)
@@ -284,8 +327,12 @@ public static class DataLabelsConverter
   
   private static Boolean? GetShowLeaderLines(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowLeaderLines>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLeaderLines>() != null;
+  }
+  
+  private static bool CmpShowLeaderLines(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLeaderLines>() != null == value;
   }
   
   private static void SetShowLeaderLines(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -305,10 +352,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.LeaderLines? GetLeaderLines(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.LeaderLines>();
-    if (itemElement != null)
-      return DMXDrawsCharts.LeaderLinesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.LeaderLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.LeaderLines>());
+  }
+  
+  private static bool CmpLeaderLines(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.LeaderLines? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.LeaderLinesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.LeaderLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLeaderLines(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.LeaderLines? value)
@@ -326,10 +375,12 @@ public static class DataLabelsConverter
   
   private static DMDrawsCharts.DLblsExtensionList? GetDLblsExtensionList(DXDrawCharts.DataLabels openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DLblsExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DLblsExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DLblsExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DLblsExtensionList>());
+  }
+  
+  private static bool CmpDLblsExtensionList(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DLblsExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DLblsExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DLblsExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDLblsExtensionList(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DLblsExtensionList? value)
@@ -369,6 +420,48 @@ public static class DataLabelsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.DataLabels? openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName))
+        ok = false;
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+        ok = false;
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+        ok = false;
+      if (!CmpDataLabelPosition(openXmlElement, value.DataLabelPosition, diffs, objName))
+        ok = false;
+      if (!CmpShowLegendKey(openXmlElement, value.ShowLegendKey, diffs, objName))
+        ok = false;
+      if (!CmpShowValue(openXmlElement, value.ShowValue, diffs, objName))
+        ok = false;
+      if (!CmpShowCategoryName(openXmlElement, value.ShowCategoryName, diffs, objName))
+        ok = false;
+      if (!CmpShowSeriesName(openXmlElement, value.ShowSeriesName, diffs, objName))
+        ok = false;
+      if (!CmpShowPercent(openXmlElement, value.ShowPercent, diffs, objName))
+        ok = false;
+      if (!CmpShowBubbleSize(openXmlElement, value.ShowBubbleSize, diffs, objName))
+        ok = false;
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+        ok = false;
+      if (!CmpShowLeaderLines(openXmlElement, value.ShowLeaderLines, diffs, objName))
+        ok = false;
+      if (!CmpLeaderLines(openXmlElement, value.LeaderLines, diffs, objName))
+        ok = false;
+      if (!CmpDLblsExtensionList(openXmlElement, value.DLblsExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabels? value)

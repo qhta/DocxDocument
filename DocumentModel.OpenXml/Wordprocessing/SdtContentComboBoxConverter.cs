@@ -13,6 +13,11 @@ public static class SdtContentComboBoxConverter
     return openXmlElement?.LastValue?.Value;
   }
   
+  private static bool CmpLastValue(DXW.SdtContentComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastValue?.Value == value;
+  }
+  
   private static void SetLastValue(DXW.SdtContentComboBox openXmlElement, String? value)
   {
     if (value != null)
@@ -31,6 +36,11 @@ public static class SdtContentComboBoxConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpListItems(DXW.SdtContentComboBox openXmlElement, Collection<DMW.ListItem>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetListItems(DXW.SdtContentComboBox openXmlElement, Collection<DMW.ListItem>? value)
@@ -57,6 +67,20 @@ public static class SdtContentComboBoxConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtContentComboBox? openXmlElement, DMW.SdtContentComboBox? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLastValue(openXmlElement, value.LastValue, diffs, objName))
+        ok = false;
+      if (!CmpListItems(openXmlElement, value.ListItems, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentComboBox? value)

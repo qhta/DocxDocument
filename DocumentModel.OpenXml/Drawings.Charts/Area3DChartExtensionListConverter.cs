@@ -17,6 +17,11 @@ public static class Area3DChartExtensionListConverter
     return collection;
   }
   
+  private static bool CmpArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Area3DChartExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Area3DChartExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.Area3DChartExtension>();
@@ -40,6 +45,18 @@ public static class Area3DChartExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Area3DChartExtensionList? openXmlElement, DMDrawsCharts.Area3DChartExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpArea3DChartExtensions(openXmlElement, value.Area3DChartExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Area3DChartExtensionList? value)

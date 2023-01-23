@@ -17,6 +17,11 @@ public static class ConnectorLockingExtensionListConverter
     return collection;
   }
   
+  private static bool CmpConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement, Collection<DMDraws.ConnectorLockingExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement, Collection<DMDraws.ConnectorLockingExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.ConnectorLockingExtension>();
@@ -40,6 +45,18 @@ public static class ConnectorLockingExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ConnectorLockingExtensionList? openXmlElement, DMDraws.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpConnectorLockingExtensions(openXmlElement, value.ConnectorLockingExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectorLockingExtensionList? value)

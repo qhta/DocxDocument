@@ -10,10 +10,12 @@ public static class FilteredSeriesTitleConverter
   /// </summary>
   private static DMDrawsCharts.ChartText3? GetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartText3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartText3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>());
+  }
+  
+  private static bool CmpChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartText3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value)
@@ -38,6 +40,18 @@ public static class FilteredSeriesTitleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.FilteredSeriesTitle? openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredSeriesTitle? value)

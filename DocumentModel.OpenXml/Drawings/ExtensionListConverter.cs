@@ -17,6 +17,11 @@ public static class ExtensionListConverter
     return collection;
   }
   
+  private static bool CmpExtensions(DXDraw.ExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetExtensions(DXDraw.ExtensionList openXmlElement, Collection<DMDraws.Extension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.Extension>();
@@ -40,6 +45,18 @@ public static class ExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ExtensionList? openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtensions(openXmlElement, value.Extensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtensionList? value)

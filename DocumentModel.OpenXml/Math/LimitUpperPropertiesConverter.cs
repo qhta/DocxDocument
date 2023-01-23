@@ -10,10 +10,12 @@ public static class LimitUpperPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.LimitUpperProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
-    if (itemElement != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+  }
+  
+  private static bool CmpControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value)
@@ -38,6 +40,18 @@ public static class LimitUpperPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.LimitUpperProperties? openXmlElement, DMMath.LimitUpperProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpperProperties? value)

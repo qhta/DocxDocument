@@ -13,6 +13,11 @@ public static class OpenXmlTaskUserElementConverter
     return openXmlElement?.UserId?.Value;
   }
   
+  private static bool CmpUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UserId?.Value == value;
+  }
+  
   private static void SetUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class OpenXmlTaskUserElementConverter
     return openXmlElement?.UserName?.Value;
   }
   
+  private static bool CmpUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UserName?.Value == value;
+  }
+  
   private static void SetUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class OpenXmlTaskUserElementConverter
   private static String? GetUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement)
   {
     return openXmlElement?.UserProvider?.Value;
+  }
+  
+  private static bool CmpUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UserProvider?.Value == value;
   }
   
   private static void SetUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class OpenXmlTaskUserElementConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.OpenXmlTaskUserElement? openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUserId(openXmlElement, value.UserId, diffs, objName))
+        ok = false;
+      if (!CmpUserName(openXmlElement, value.UserName, diffs, objName))
+        ok = false;
+      if (!CmpUserProvider(openXmlElement, value.UserProvider, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.OpenXmlTaskUserElement? value)

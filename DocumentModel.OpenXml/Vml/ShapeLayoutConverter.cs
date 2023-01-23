@@ -13,6 +13,11 @@ public static class ShapeLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
+  private static bool CmpExtension(DXVmlO.ShapeLayout openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExtension(DXVmlO.ShapeLayout openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
@@ -23,10 +28,12 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.ShapeIdMap? GetShapeIdMap(DXVmlO.ShapeLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>();
-    if (itemElement != null)
-      return DMXVml.ShapeIdMapConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.ShapeIdMapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>());
+  }
+  
+  private static bool CmpShapeIdMap(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeIdMap? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.ShapeIdMapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeIdMap(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeIdMap? value)
@@ -47,10 +54,12 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.RegroupTable? GetRegroupTable(DXVmlO.ShapeLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>();
-    if (itemElement != null)
-      return DMXVml.RegroupTableConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.RegroupTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>());
+  }
+  
+  private static bool CmpRegroupTable(DXVmlO.ShapeLayout openXmlElement, DMVml.RegroupTable? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.RegroupTableConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRegroupTable(DXVmlO.ShapeLayout openXmlElement, DMVml.RegroupTable? value)
@@ -71,10 +80,12 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.Rules? GetRules(DXVmlO.ShapeLayout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Rules>();
-    if (itemElement != null)
-      return DMXVml.RulesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.RulesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Rules>());
+  }
+  
+  private static bool CmpRules(DXVmlO.ShapeLayout openXmlElement, DMVml.Rules? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.RulesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Rules>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRules(DXVmlO.ShapeLayout openXmlElement, DMVml.Rules? value)
@@ -102,6 +113,24 @@ public static class ShapeLayoutConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.ShapeLayout? openXmlElement, DMVml.ShapeLayout? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+        ok = false;
+      if (!CmpShapeIdMap(openXmlElement, value.ShapeIdMap, diffs, objName))
+        ok = false;
+      if (!CmpRegroupTable(openXmlElement, value.RegroupTable, diffs, objName))
+        ok = false;
+      if (!CmpRules(openXmlElement, value.Rules, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeLayout? value)

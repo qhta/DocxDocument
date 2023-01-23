@@ -13,6 +13,11 @@ public static class ColorTemperatureConverter
     return openXmlElement.ColorTemperatureValue?.Value;
   }
   
+  private static bool CmpColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColorTemperatureValue?.Value == value;
+  }
+  
   private static void SetColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value)
   {
     openXmlElement.ColorTemperatureValue = value;
@@ -27,6 +32,18 @@ public static class ColorTemperatureConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ColorTemperature? openXmlElement, DMDraws.ColorTemperature? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpColorTemperatureValue(openXmlElement, value.ColorTemperatureValue, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorTemperature? value)

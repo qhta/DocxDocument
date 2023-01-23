@@ -13,6 +13,11 @@ public static class PathConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXVml.Path openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class PathConverter
   private static String? GetValue(DXVml.Path openXmlElement)
   {
     return openXmlElement?.Value?.Value;
+  }
+  
+  private static bool CmpValue(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Value?.Value == value;
   }
   
   private static void SetValue(DXVml.Path openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class PathConverter
     return openXmlElement?.Limo?.Value;
   }
   
+  private static bool CmpLimo(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Limo?.Value == value;
+  }
+  
   private static void SetLimo(DXVml.Path openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class PathConverter
   private static String? GetTextboxRectangle(DXVml.Path openXmlElement)
   {
     return openXmlElement?.TextboxRectangle?.Value;
+  }
+  
+  private static bool CmpTextboxRectangle(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.TextboxRectangle?.Value == value;
   }
   
   private static void SetTextboxRectangle(DXVml.Path openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class PathConverter
     return openXmlElement?.AllowFill?.Value;
   }
   
+  private static bool CmpAllowFill(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowFill?.Value == value;
+  }
+  
   private static void SetAllowFill(DXVml.Path openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -91,6 +116,11 @@ public static class PathConverter
   private static Boolean? GetAllowStroke(DXVml.Path openXmlElement)
   {
     return openXmlElement?.AllowStroke?.Value;
+  }
+  
+  private static bool CmpAllowStroke(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowStroke?.Value == value;
   }
   
   private static void SetAllowStroke(DXVml.Path openXmlElement, Boolean? value)
@@ -109,6 +139,11 @@ public static class PathConverter
     return openXmlElement?.AllowShading?.Value;
   }
   
+  private static bool CmpAllowShading(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowShading?.Value == value;
+  }
+  
   private static void SetAllowShading(DXVml.Path openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -123,6 +158,11 @@ public static class PathConverter
   private static Boolean? GetShowArrowhead(DXVml.Path openXmlElement)
   {
     return openXmlElement?.ShowArrowhead?.Value;
+  }
+  
+  private static bool CmpShowArrowhead(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShowArrowhead?.Value == value;
   }
   
   private static void SetShowArrowhead(DXVml.Path openXmlElement, Boolean? value)
@@ -141,6 +181,11 @@ public static class PathConverter
     return openXmlElement?.AllowGradientShape?.Value;
   }
   
+  private static bool CmpAllowGradientShape(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowGradientShape?.Value == value;
+  }
+  
   private static void SetAllowGradientShape(DXVml.Path openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -155,6 +200,11 @@ public static class PathConverter
   private static Boolean? GetAllowTextPath(DXVml.Path openXmlElement)
   {
     return openXmlElement?.AllowTextPath?.Value;
+  }
+  
+  private static bool CmpAllowTextPath(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowTextPath?.Value == value;
   }
   
   private static void SetAllowTextPath(DXVml.Path openXmlElement, Boolean? value)
@@ -173,6 +223,11 @@ public static class PathConverter
     return openXmlElement?.AllowInsetPen?.Value;
   }
   
+  private static bool CmpAllowInsetPen(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowInsetPen?.Value == value;
+  }
+  
   private static void SetAllowInsetPen(DXVml.Path openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -189,6 +244,11 @@ public static class PathConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DMVml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value);
   }
   
+  private static bool CmpConnectionPointType(DXVml.Path openXmlElement, DMVml.ConnectKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DMVml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetConnectionPointType(DXVml.Path openXmlElement, DMVml.ConnectKind? value)
   {
     openXmlElement.ConnectionPointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DMVml.ConnectKind>(value);
@@ -200,6 +260,11 @@ public static class PathConverter
   private static String? GetConnectionPoints(DXVml.Path openXmlElement)
   {
     return openXmlElement?.ConnectionPoints?.Value;
+  }
+  
+  private static bool CmpConnectionPoints(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ConnectionPoints?.Value == value;
   }
   
   private static void SetConnectionPoints(DXVml.Path openXmlElement, String? value)
@@ -218,6 +283,11 @@ public static class PathConverter
     return openXmlElement?.ConnectAngles?.Value;
   }
   
+  private static bool CmpConnectAngles(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ConnectAngles?.Value == value;
+  }
+  
   private static void SetConnectAngles(DXVml.Path openXmlElement, String? value)
   {
     if (value != null)
@@ -232,6 +302,11 @@ public static class PathConverter
   private static Boolean? GetAllowExtrusion(DXVml.Path openXmlElement)
   {
     return openXmlElement?.AllowExtrusion?.Value;
+  }
+  
+  private static bool CmpAllowExtrusion(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AllowExtrusion?.Value == value;
   }
   
   private static void SetAllowExtrusion(DXVml.Path openXmlElement, Boolean? value)
@@ -265,6 +340,46 @@ public static class PathConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.Path? openXmlElement, DMVml.Path? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+        ok = false;
+      if (!CmpLimo(openXmlElement, value.Limo, diffs, objName))
+        ok = false;
+      if (!CmpTextboxRectangle(openXmlElement, value.TextboxRectangle, diffs, objName))
+        ok = false;
+      if (!CmpAllowFill(openXmlElement, value.AllowFill, diffs, objName))
+        ok = false;
+      if (!CmpAllowStroke(openXmlElement, value.AllowStroke, diffs, objName))
+        ok = false;
+      if (!CmpAllowShading(openXmlElement, value.AllowShading, diffs, objName))
+        ok = false;
+      if (!CmpShowArrowhead(openXmlElement, value.ShowArrowhead, diffs, objName))
+        ok = false;
+      if (!CmpAllowGradientShape(openXmlElement, value.AllowGradientShape, diffs, objName))
+        ok = false;
+      if (!CmpAllowTextPath(openXmlElement, value.AllowTextPath, diffs, objName))
+        ok = false;
+      if (!CmpAllowInsetPen(openXmlElement, value.AllowInsetPen, diffs, objName))
+        ok = false;
+      if (!CmpConnectionPointType(openXmlElement, value.ConnectionPointType, diffs, objName))
+        ok = false;
+      if (!CmpConnectionPoints(openXmlElement, value.ConnectionPoints, diffs, objName))
+        ok = false;
+      if (!CmpConnectAngles(openXmlElement, value.ConnectAngles, diffs, objName))
+        ok = false;
+      if (!CmpAllowExtrusion(openXmlElement, value.AllowExtrusion, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Path? value)

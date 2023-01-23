@@ -10,10 +10,12 @@ public static class NumberDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+  }
+  
+  private static bool CmpNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value)
@@ -34,10 +36,12 @@ public static class NumberDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+  }
+  
+  private static bool CmpNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value)
@@ -63,6 +67,20 @@ public static class NumberDataSourceTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.NumberDataSourceType? openXmlElement, DMDrawsCharts.NumberDataSourceType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName))
+        ok = false;
+      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberDataSourceType? value)

@@ -10,10 +10,12 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.GraphicFrameLocks? GetGraphicFrameLocks(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GraphicFrameLocks>();
-    if (itemElement != null)
-      return DMXDraws.GraphicFrameLocksConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.GraphicFrameLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicFrameLocks>());
+  }
+  
+  private static bool CmpGraphicFrameLocks(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.GraphicFrameLocks? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.GraphicFrameLocksConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicFrameLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGraphicFrameLocks(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.GraphicFrameLocks? value)
@@ -34,10 +36,12 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.ExtensionList? value)
@@ -63,6 +67,20 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.NonVisualGraphicFrameDrawingProperties? openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGraphicFrameLocks(openXmlElement, value.GraphicFrameLocks, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.NonVisualGraphicFrameDrawingProperties? value)

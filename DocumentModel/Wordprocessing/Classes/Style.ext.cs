@@ -8,20 +8,18 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
 {
   private ListOf<String>? _Aliases;
 
-  private String? _StyleName;
-
   /// <summary>
   ///   Primary Style Name.
   /// </summary>
   public String? Name
   {
-    get => _StyleName;
+    get => StyleName;
     set
     {
-      if (_StyleName != value)
+      if (StyleName != value)
       {
         NotifyPropertyChanging(nameof(Name));
-        _StyleName = value;
+        StyleName = value;
         NotifyPropertyChanged(nameof(Name));
       }
     }

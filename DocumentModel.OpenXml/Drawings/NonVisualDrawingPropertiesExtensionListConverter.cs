@@ -17,6 +17,11 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     return collection;
   }
   
+  private static bool CmpNonVisualDrawingPropertiesExtensions(DXDraw.NonVisualDrawingPropertiesExtensionList openXmlElement, Collection<DMDraws.NonVisualDrawingPropertiesExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetNonVisualDrawingPropertiesExtensions(DXDraw.NonVisualDrawingPropertiesExtensionList openXmlElement, Collection<DMDraws.NonVisualDrawingPropertiesExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.NonVisualDrawingPropertiesExtension>();
@@ -40,6 +45,18 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.NonVisualDrawingPropertiesExtensionList? openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpNonVisualDrawingPropertiesExtensions(openXmlElement, value.NonVisualDrawingPropertiesExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualDrawingPropertiesExtensionList? value)

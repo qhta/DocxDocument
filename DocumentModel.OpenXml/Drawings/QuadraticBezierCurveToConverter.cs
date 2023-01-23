@@ -17,6 +17,11 @@ public static class QuadraticBezierCurveToConverter
     return collection;
   }
   
+  private static bool CmpPoints(DXDraw.QuadraticBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetPoints(DXDraw.QuadraticBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.Point>();
@@ -40,6 +45,18 @@ public static class QuadraticBezierCurveToConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.QuadraticBezierCurveTo? openXmlElement, DMDraws.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPoints(openXmlElement, value.Points, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.QuadraticBezierCurveTo? value)

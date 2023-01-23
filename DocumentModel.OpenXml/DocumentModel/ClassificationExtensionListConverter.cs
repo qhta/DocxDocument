@@ -17,6 +17,11 @@ public static class ClassificationExtensionListConverter
     return collection;
   }
   
+  private static bool CmpClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement, Collection<DM.ClassificationExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement, Collection<DM.ClassificationExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021MipLabelMeta.ClassificationExtension>();
@@ -40,6 +45,18 @@ public static class ClassificationExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021MipLabelMeta.ClassificationExtensionList? openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpClassificationExtensions(openXmlElement, value.ClassificationExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationExtensionList? value)

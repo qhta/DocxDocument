@@ -13,6 +13,11 @@ public static class GeoLocationConverter
     return openXmlElement.Latitude?.Value;
   }
   
+  private static bool CmpLatitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Latitude?.Value == value;
+  }
+  
   private static void SetLatitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value)
   {
     openXmlElement.Latitude = value;
@@ -26,6 +31,11 @@ public static class GeoLocationConverter
     return openXmlElement.Longitude?.Value;
   }
   
+  private static bool CmpLongitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Longitude?.Value == value;
+  }
+  
   private static void SetLongitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value)
   {
     openXmlElement.Longitude = value;
@@ -37,6 +47,11 @@ public static class GeoLocationConverter
   private static String? GetEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
     return openXmlElement?.EntityName?.Value;
+  }
+  
+  private static bool CmpEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EntityName?.Value == value;
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value)
@@ -55,6 +70,11 @@ public static class GeoLocationConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
+  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetEntityType(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
@@ -65,10 +85,12 @@ public static class GeoLocationConverter
   /// </summary>
   private static DMDrawsChartDraws.Address? GetAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>();
-    if (itemElement != null)
-      return DMXDrawsChartDraws.AddressConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsChartDraws.AddressConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>());
+  }
+  
+  private static bool CmpAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.Address? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsChartDraws.AddressConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.Address? value)
@@ -97,6 +119,26 @@ public static class GeoLocationConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoLocation? openXmlElement, DMDrawsChartDraws.GeoLocation? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLatitude(openXmlElement, value.Latitude, diffs, objName))
+        ok = false;
+      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName))
+        ok = false;
+      if (!CmpEntityName(openXmlElement, value.EntityName, diffs, objName))
+        ok = false;
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+        ok = false;
+      if (!CmpAddress(openXmlElement, value.Address, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocation? value)

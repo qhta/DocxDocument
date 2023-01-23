@@ -10,7 +10,7 @@ public class Pie3DChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<PieChartSeries>? PieChartSerieses { get; set; }
+  public Collection<PieChartSeries>? PieChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

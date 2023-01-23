@@ -10,10 +10,12 @@ public static class UpDownBarsConverter
   /// </summary>
   private static UInt16? GetGapWidth(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value;
+  }
+  
+  private static bool CmpGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value == value;
   }
   
   private static void SetGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value)
@@ -33,10 +35,12 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.UpBars? GetUpBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>();
-    if (itemElement != null)
-      return DMXDrawsCharts.UpBarsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.UpBarsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>());
+  }
+  
+  private static bool CmpUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value)
@@ -57,10 +61,12 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.DownBars? GetDownBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DownBarsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DownBarsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>());
+  }
+  
+  private static bool CmpDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value)
@@ -81,10 +87,12 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -112,6 +120,24 @@ public static class UpDownBarsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.UpDownBars? openXmlElement, DMDrawsCharts.UpDownBars? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName))
+        ok = false;
+      if (!CmpUpBars(openXmlElement, value.UpBars, diffs, objName))
+        ok = false;
+      if (!CmpDownBars(openXmlElement, value.DownBars, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBars? value)

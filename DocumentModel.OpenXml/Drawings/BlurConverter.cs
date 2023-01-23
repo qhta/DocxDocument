@@ -13,6 +13,11 @@ public static class BlurConverter
     return openXmlElement.Radius?.Value;
   }
   
+  private static bool CmpRadius(DXDraw.Blur openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Radius?.Value == value;
+  }
+  
   private static void SetRadius(DXDraw.Blur openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
@@ -24,6 +29,11 @@ public static class BlurConverter
   private static Boolean? GetGrow(DXDraw.Blur openXmlElement)
   {
     return openXmlElement?.Grow?.Value;
+  }
+  
+  private static bool CmpGrow(DXDraw.Blur openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Grow?.Value == value;
   }
   
   private static void SetGrow(DXDraw.Blur openXmlElement, Boolean? value)
@@ -44,6 +54,20 @@ public static class BlurConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Blur? openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRadius(openXmlElement, value.Radius, diffs, objName))
+        ok = false;
+      if (!CmpGrow(openXmlElement, value.Grow, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blur? value)

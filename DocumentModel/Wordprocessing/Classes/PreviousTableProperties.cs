@@ -23,7 +23,7 @@ public class PreviousTableProperties
   /// <summary>
   ///   BiDiVisual.
   /// </summary>
-  public OnOffOnlyKind? BiDiVisual { get; set; }
+  public Boolean? BiDiVisual { get; set; }
 
   /// <summary>
   ///   TableWidth.

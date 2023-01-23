@@ -34,7 +34,10 @@
     <Compile Remove="Properties\ExtendedProperties.cs" />
     <Compile Remove="Wordprocessing\CategoryConverter - Copy.cs" />
     <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
+    <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
     <Compile Remove="Wordprocessing\ParagraphConverter - Copy.cs" />
+    <Compile Remove="Wordprocessing\StyleConverter.old.cs" />
+    <Compile Remove="Wordprocessing\StylesConverter.old.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +51,9 @@
   <ItemGroup>
     <Reference Include="Qhta.Collections">
       <HintPath>..\..\MyLib\Qhta.Collections\obj\Debug\Qhta.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TextUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>

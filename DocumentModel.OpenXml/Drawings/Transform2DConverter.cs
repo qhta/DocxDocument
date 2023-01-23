@@ -13,6 +13,11 @@ public static class Transform2DConverter
     return openXmlElement.Rotation?.Value;
   }
   
+  private static bool CmpRotation(DXDraw.Transform2D openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Rotation?.Value == value;
+  }
+  
   private static void SetRotation(DXDraw.Transform2D openXmlElement, Int32? value)
   {
     openXmlElement.Rotation = value;
@@ -24,6 +29,11 @@ public static class Transform2DConverter
   private static Boolean? GetHorizontalFlip(DXDraw.Transform2D openXmlElement)
   {
     return openXmlElement?.HorizontalFlip?.Value;
+  }
+  
+  private static bool CmpHorizontalFlip(DXDraw.Transform2D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.HorizontalFlip?.Value == value;
   }
   
   private static void SetHorizontalFlip(DXDraw.Transform2D openXmlElement, Boolean? value)
@@ -42,6 +52,11 @@ public static class Transform2DConverter
     return openXmlElement?.VerticalFlip?.Value;
   }
   
+  private static bool CmpVerticalFlip(DXDraw.Transform2D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.VerticalFlip?.Value == value;
+  }
+  
   private static void SetVerticalFlip(DXDraw.Transform2D openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -55,10 +70,12 @@ public static class Transform2DConverter
   /// </summary>
   private static DMDraws.Point2DType? GetOffset(DXDraw.Transform2D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Offset>();
-    if (itemElement != null)
-      return DMXDraws.Point2DTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Offset>());
+  }
+  
+  private static bool CmpOffset(DXDraw.Transform2D openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Offset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOffset(DXDraw.Transform2D openXmlElement, DMDraws.Point2DType? value)
@@ -79,10 +96,12 @@ public static class Transform2DConverter
   /// </summary>
   private static DMDraws.PositiveSize2DType? GetExtents(DXDraw.Transform2D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Extents>();
-    if (itemElement != null)
-      return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Extents>());
+  }
+  
+  private static bool CmpExtents(DXDraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Extents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtents(DXDraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value)
@@ -111,6 +130,26 @@ public static class Transform2DConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Transform2D? openXmlElement, DMDraws.Transform2D? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalFlip(openXmlElement, value.HorizontalFlip, diffs, objName))
+        ok = false;
+      if (!CmpVerticalFlip(openXmlElement, value.VerticalFlip, diffs, objName))
+        ok = false;
+      if (!CmpOffset(openXmlElement, value.Offset, diffs, objName))
+        ok = false;
+      if (!CmpExtents(openXmlElement, value.Extents, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Transform2D? value)

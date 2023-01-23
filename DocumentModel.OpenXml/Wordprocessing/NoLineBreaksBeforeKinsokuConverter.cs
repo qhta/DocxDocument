@@ -13,6 +13,11 @@ public static class NoLineBreaksBeforeKinsokuConverter
     return openXmlElement?.Language?.Value;
   }
   
+  private static bool CmpLanguage(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Language?.Value == value;
+  }
+  
   private static void SetLanguage(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class NoLineBreaksBeforeKinsokuConverter
   private static String? GetVal(DXW.NoLineBreaksBeforeKinsoku openXmlElement)
   {
     return openXmlElement?.Val?.Value;
+  }
+  
+  private static bool CmpVal(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Val?.Value == value;
   }
   
   private static void SetVal(DXW.NoLineBreaksBeforeKinsoku openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class NoLineBreaksBeforeKinsokuConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.NoLineBreaksBeforeKinsoku? openXmlElement, DMW.NoLineBreaksBeforeKinsoku? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+        ok = false;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NoLineBreaksBeforeKinsoku? value)

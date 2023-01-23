@@ -17,6 +17,11 @@ public static class SchemaLibraryConverter
     return collection;
   }
   
+  private static bool CmpSchemas(DXCustXmlSchRefs.SchemaLibrary openXmlElement, Collection<DMCustXml.Schema>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetSchemas(DXCustXmlSchRefs.SchemaLibrary openXmlElement, Collection<DMCustXml.Schema>? value)
   {
     openXmlElement.RemoveAllChildren<DXCustXmlSchRefs.Schema>();
@@ -40,6 +45,18 @@ public static class SchemaLibraryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXCustXmlSchRefs.SchemaLibrary? openXmlElement, DMCustXml.SchemaLibrary? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpSchemas(openXmlElement, value.Schemas, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaLibrary? value)

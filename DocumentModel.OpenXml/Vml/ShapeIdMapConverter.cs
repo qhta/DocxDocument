@@ -13,6 +13,11 @@ public static class ShapeIdMapConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
+  private static bool CmpExtension(DXVmlO.ShapeIdMap openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetExtension(DXVmlO.ShapeIdMap openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
@@ -24,6 +29,11 @@ public static class ShapeIdMapConverter
   private static String? GetData(DXVmlO.ShapeIdMap openXmlElement)
   {
     return openXmlElement?.Data?.Value;
+  }
+  
+  private static bool CmpData(DXVmlO.ShapeIdMap openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Data?.Value == value;
   }
   
   private static void SetData(DXVmlO.ShapeIdMap openXmlElement, String? value)
@@ -44,6 +54,20 @@ public static class ShapeIdMapConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVmlO.ShapeIdMap? openXmlElement, DMVml.ShapeIdMap? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+        ok = false;
+      if (!CmpData(openXmlElement, value.Data, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeIdMap? value)

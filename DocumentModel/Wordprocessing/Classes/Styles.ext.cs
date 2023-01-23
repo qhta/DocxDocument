@@ -10,27 +10,45 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 {
-  private readonly NCollection<Style> _StyleList = null!;
+  private readonly ObservableCollection<Style> _Items = null!;
+  private readonly NCollection<Style> _AllStyles = null!;
   private readonly SortedDictionary<string, Style> _StyleIds = null!;
 
   public Styles()
   {
     _StyleIds = new SortedDictionary<string, Style>();
-    _StyleList = new NCollection<Style>(StringComparer.InvariantCultureIgnoreCase);
-    _StyleList.CollectionChanged += Styles_CollectionChanged;
+    _AllStyles = new NCollection<Style>(StringComparer.InvariantCultureIgnoreCase);
+    _AllStyles.CollectionChanged += Styles_CollectionChanged;
+    _Items = new();
+    _Items.CollectionChanged += Styles_CollectionChanged;
     foreach (var item in BuiltInStyleStubs)
-      _StyleList.Add(new Style { Name = item.name, Type = item.kind, Aliases = item.alias });
+      _AllStyles.Add(new Style { Name = item.name, Type = item.kind, Aliases = item.alias });
     Debug.WriteLine($"_AllStylesCount = {AllStyles.Count}");
   }
 
-  public ICollection<Style> AllStyles
+  /// <summary>
+  /// Defines Styles.
+  /// </summary>
+  public Collection<Style> Items
   {
-    get => _StyleList;
+    get => _Items;
     set
     {
       foreach (var item in value)
       {
-        _StyleList.AddOrReplace(item);
+        _Items.Add(item);
+      }
+    }
+  }
+
+  public ICollection<Style> AllStyles
+  {
+    get => _AllStyles;
+    set
+    {
+      foreach (var item in value)
+      {
+        _AllStyles.AddOrReplace(item);
       }
     }
   }
@@ -84,57 +102,57 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 
   public void Add(string key, Style value)
   {
-    _StyleList.TryAdd(key, value);
+    _AllStyles.TryAdd(key, value);
   }
 
   public bool ContainsKey(string key)
   {
-    return _StyleList.ContainsKey(key);
+    return _AllStyles.ContainsKey(key);
   }
 
   public bool Remove(string key)
   {
-    return _StyleList.Remove(key);
+    return _AllStyles.Remove(key);
   }
 
   public bool TryGetValue(string key, [MaybeNullWhen(false)] out Style value)
   {
-    return _StyleList.TryGetValue(key, out value);
+    return _AllStyles.TryGetValue(key, out value);
   }
 
   public Style this[string key]
   {
-    get => _StyleList[key];
-    set => _StyleList[key] = value;
+    get => _AllStyles[key];
+    set => _AllStyles[key] = value;
   }
 
-  public ICollection<string> Keys => _StyleList.Keys;
+  public ICollection<string> Keys => _AllStyles.Keys;
 
-  public ICollection<Style> Values => _StyleList.Values;
+  public ICollection<Style> Values => _AllStyles.Values;
 
   public void Add(KeyValuePair<string, Style> item)
   {
-    ((ICollection<KeyValuePair<string, Style>>)_StyleList).Add(item);
+    ((ICollection<KeyValuePair<string, Style>>)_AllStyles).Add(item);
   }
 
   public bool Contains(KeyValuePair<string, Style> item)
   {
-    return ((ICollection<KeyValuePair<string, Style>>)_StyleList).Contains(item);
+    return ((ICollection<KeyValuePair<string, Style>>)_AllStyles).Contains(item);
   }
 
   public void CopyTo(KeyValuePair<string, Style>[] array, int arrayIndex)
   {
-    ((ICollection<KeyValuePair<string, Style>>)_StyleList).CopyTo(array, arrayIndex);
+    ((ICollection<KeyValuePair<string, Style>>)_AllStyles).CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, Style> item)
   {
-    return ((ICollection<KeyValuePair<string, Style>>)_StyleList).Remove(item);
+    return ((ICollection<KeyValuePair<string, Style>>)_AllStyles).Remove(item);
   }
 
   IEnumerator<KeyValuePair<string, Style>> IEnumerable<KeyValuePair<string, Style>>.GetEnumerator()
   {
-    return ((IEnumerable<KeyValuePair<string, Style>>)_StyleList).GetEnumerator();
+    return ((IEnumerable<KeyValuePair<string, Style>>)_AllStyles).GetEnumerator();
   }
 
   private void _StyleIdsAdd(string id, Style value)
@@ -150,18 +168,20 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     switch (args.Action)
     {
       case NotifyCollectionChangedAction.Reset:
-        foreach (var item in _StyleList)
+        foreach (var item in _AllStyles)
         {
           var style = item;
           style.PropertyChanging -= Item_PropertyChanging;
           style.PropertyChanged -= Item_PropertyChanged;
         }
-        _StyleList.Clear();
+        _AllStyles.Clear();
         break;
       case NotifyCollectionChangedAction.Add:
         if (args.NewItems != null)
           foreach (var newStyle in args.NewItems.Cast<Style>())
           {
+            if (sender == _Items)
+              _AllStyles.AddOrReplace(newStyle);
             var id = newStyle.StyleId;
             if (id != null)
               _StyleIdsAdd(id, newStyle);

@@ -13,6 +13,11 @@ public static class ArtisticPlasticWrapConverter
     return openXmlElement.Transparancy?.Value;
   }
   
+  private static bool CmpTransparancy(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Transparancy?.Value == value;
+  }
+  
   private static void SetTransparancy(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
@@ -24,6 +29,11 @@ public static class ArtisticPlasticWrapConverter
   private static Int32? GetSmoothness(DXO2010Draw.ArtisticPlasticWrap openXmlElement)
   {
     return openXmlElement.Smoothness?.Value;
+  }
+  
+  private static bool CmpSmoothness(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Smoothness?.Value == value;
   }
   
   private static void SetSmoothness(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class ArtisticPlasticWrapConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ArtisticPlasticWrap? openXmlElement, DMDraws.ArtisticPlasticWrap? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+        ok = false;
+      if (!CmpSmoothness(openXmlElement, value.Smoothness, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPlasticWrap? value)

@@ -13,6 +13,11 @@ public static class DashStopConverter
     return openXmlElement.DashLength?.Value;
   }
   
+  private static bool CmpDashLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.DashLength?.Value == value;
+  }
+  
   private static void SetDashLength(DXDraw.DashStop openXmlElement, Int32? value)
   {
     openXmlElement.DashLength = value;
@@ -24,6 +29,11 @@ public static class DashStopConverter
   private static Int32? GetSpaceLength(DXDraw.DashStop openXmlElement)
   {
     return openXmlElement.SpaceLength?.Value;
+  }
+  
+  private static bool CmpSpaceLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.SpaceLength?.Value == value;
   }
   
   private static void SetSpaceLength(DXDraw.DashStop openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class DashStopConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.DashStop? openXmlElement, DMDraws.DashStop? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDashLength(openXmlElement, value.DashLength, diffs, objName))
+        ok = false;
+      if (!CmpSpaceLength(openXmlElement, value.SpaceLength, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DashStop? value)

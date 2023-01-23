@@ -13,6 +13,11 @@ public static class UnderlineConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value);
   }
   
+  private static bool CmpVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(value);
@@ -24,6 +29,11 @@ public static class UnderlineConverter
   private static String? GetColor(DXW.Underline openXmlElement)
   {
     return openXmlElement?.Color?.Value;
+  }
+  
+  private static bool CmpColor(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Color?.Value == value;
   }
   
   private static void SetColor(DXW.Underline openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class UnderlineConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
+  private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value)
   {
     openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
@@ -53,6 +68,11 @@ public static class UnderlineConverter
   private static String? GetThemeTint(DXW.Underline openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
+  }
+  
+  private static bool CmpThemeTint(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ThemeTint?.Value == value;
   }
   
   private static void SetThemeTint(DXW.Underline openXmlElement, String? value)
@@ -69,6 +89,11 @@ public static class UnderlineConverter
   private static String? GetThemeShade(DXW.Underline openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
+  }
+  
+  private static bool CmpThemeShade(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ThemeShade?.Value == value;
   }
   
   private static void SetThemeShade(DXW.Underline openXmlElement, String? value)
@@ -92,6 +117,26 @@ public static class UnderlineConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Underline? openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+        ok = false;
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+        ok = false;
+      if (!CmpThemeColor(openXmlElement, value.ThemeColor, diffs, objName))
+        ok = false;
+      if (!CmpThemeTint(openXmlElement, value.ThemeTint, diffs, objName))
+        ok = false;
+      if (!CmpThemeShade(openXmlElement, value.ThemeShade, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Underline? value)

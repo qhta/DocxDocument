@@ -7,10 +7,12 @@ public static class SdtEndCharPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXW.SdtEndCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunProperties>();
-    if (itemElement != null)
-      return DMXW.RunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+  }
+  
+  private static bool CmpRunProperties(DXW.SdtEndCharProperties openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXW.SdtEndCharProperties openXmlElement, DMW.RunProperties? value)
@@ -35,6 +37,18 @@ public static class SdtEndCharPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtEndCharProperties? openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtEndCharProperties? value)

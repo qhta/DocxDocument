@@ -13,6 +13,11 @@ public static class ArtisticMarkerConverter
     return openXmlElement.Transparancy?.Value;
   }
   
+  private static bool CmpTransparancy(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Transparancy?.Value == value;
+  }
+  
   private static void SetTransparancy(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
@@ -24,6 +29,11 @@ public static class ArtisticMarkerConverter
   private static Int32? GetSize(DXO2010Draw.ArtisticMarker openXmlElement)
   {
     return openXmlElement.Size?.Value;
+  }
+  
+  private static bool CmpSize(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Size?.Value == value;
   }
   
   private static void SetSize(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class ArtisticMarkerConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.ArtisticMarker? openXmlElement, DMDraws.ArtisticMarker? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+        ok = false;
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMarker? value)

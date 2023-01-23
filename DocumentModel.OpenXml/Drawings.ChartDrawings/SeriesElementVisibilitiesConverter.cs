@@ -13,6 +13,11 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.ConnectorLines?.Value;
   }
   
+  private static bool CmpConnectorLines(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ConnectorLines?.Value == value;
+  }
+  
   private static void SetConnectorLines(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class SeriesElementVisibilitiesConverter
   private static Boolean? GetMeanLine(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.MeanLine?.Value;
+  }
+  
+  private static bool CmpMeanLine(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MeanLine?.Value == value;
   }
   
   private static void SetMeanLine(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.MeanMarker?.Value;
   }
   
+  private static bool CmpMeanMarker(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MeanMarker?.Value == value;
+  }
+  
   private static void SetMeanMarker(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.Nonoutliers?.Value;
   }
   
+  private static bool CmpNonoutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Nonoutliers?.Value == value;
+  }
+  
   private static void SetNonoutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -75,6 +95,11 @@ public static class SeriesElementVisibilitiesConverter
   private static Boolean? GetOutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.Outliers?.Value;
+  }
+  
+  private static bool CmpOutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Outliers?.Value == value;
   }
   
   private static void SetOutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
@@ -98,6 +123,26 @@ public static class SeriesElementVisibilitiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.SeriesElementVisibilities? openXmlElement, DMDrawsChartDraws.SeriesElementVisibilities? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpConnectorLines(openXmlElement, value.ConnectorLines, diffs, objName))
+        ok = false;
+      if (!CmpMeanLine(openXmlElement, value.MeanLine, diffs, objName))
+        ok = false;
+      if (!CmpMeanMarker(openXmlElement, value.MeanMarker, diffs, objName))
+        ok = false;
+      if (!CmpNonoutliers(openXmlElement, value.Nonoutliers, diffs, objName))
+        ok = false;
+      if (!CmpOutliers(openXmlElement, value.Outliers, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesElementVisibilities? value)

@@ -10,10 +10,12 @@ public static class RunPropertiesConverter
   /// </summary>
   private static DMMath.BooleanKind? GetLiteral(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Literal>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Literal>()?.Val?.Value);
+  }
+  
+  private static bool CmpLiteral(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Literal>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLiteral(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
@@ -31,10 +33,12 @@ public static class RunPropertiesConverter
   
   private static DMMath.BooleanKind? GetNormalText(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.NormalText>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NormalText>()?.Val?.Value);
+  }
+  
+  private static bool CmpNormalText(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NormalText>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNormalText(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
@@ -52,10 +56,12 @@ public static class RunPropertiesConverter
   
   private static DMMath.ScriptKind? GetScript(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Script>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(openXmlElement.GetFirstChild<DXMath.Script>()?.Val?.Value);
+  }
+  
+  private static bool CmpScript(DXMath.RunProperties openXmlElement, DMMath.ScriptKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(openXmlElement.GetFirstChild<DXMath.Script>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScript(DXMath.RunProperties openXmlElement, DMMath.ScriptKind? value)
@@ -73,10 +79,12 @@ public static class RunPropertiesConverter
   
   private static DMMath.StyleKind? GetStyle(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Style>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(openXmlElement.GetFirstChild<DXMath.Style>()?.Val?.Value);
+  }
+  
+  private static bool CmpStyle(DXMath.RunProperties openXmlElement, DMMath.StyleKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(openXmlElement.GetFirstChild<DXMath.Style>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyle(DXMath.RunProperties openXmlElement, DMMath.StyleKind? value)
@@ -94,10 +102,12 @@ public static class RunPropertiesConverter
   
   private static DMMath.Break? GetBreak(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Break>();
-    if (itemElement != null)
-      return DMXMath.BreakConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BreakConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Break>());
+  }
+  
+  private static bool CmpBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BreakConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value)
@@ -115,10 +125,12 @@ public static class RunPropertiesConverter
   
   private static DMMath.BooleanKind? GetAlignment(DXMath.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Alignment>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value);
+  }
+  
+  private static bool CmpAlignment(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAlignment(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
@@ -148,6 +160,28 @@ public static class RunPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.RunProperties? openXmlElement, DMMath.RunProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLiteral(openXmlElement, value.Literal, diffs, objName))
+        ok = false;
+      if (!CmpNormalText(openXmlElement, value.NormalText, diffs, objName))
+        ok = false;
+      if (!CmpScript(openXmlElement, value.Script, diffs, objName))
+        ok = false;
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+        ok = false;
+      if (!CmpBreak(openXmlElement, value.Break, diffs, objName))
+        ok = false;
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.RunProperties? value)

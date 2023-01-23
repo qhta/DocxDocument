@@ -13,6 +13,11 @@ public static class RelativeWidthConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWDraws.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value);
   }
   
+  private static bool CmpObjectId(DXO2010WDraw.RelativeWidth openXmlElement, DMWDraws.SizeRelativeHorizontallyKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWDraws.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetObjectId(DXO2010WDraw.RelativeWidth openXmlElement, DMWDraws.SizeRelativeHorizontallyKind? value)
   {
     openXmlElement.ObjectId = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWDraws.SizeRelativeHorizontallyKind>(value);
@@ -23,10 +28,12 @@ public static class RelativeWidthConverter
   /// </summary>
   private static String? GetPercentageWidth(DXO2010WDraw.RelativeWidth openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageWidth>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageWidth>()?.Text;
+  }
+  
+  private static bool CmpPercentageWidth(DXO2010WDraw.RelativeWidth openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageWidth>()?.Text == value;
   }
   
   private static void SetPercentageWidth(DXO2010WDraw.RelativeWidth openXmlElement, String? value)
@@ -51,6 +58,20 @@ public static class RelativeWidthConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010WDraw.RelativeWidth? openXmlElement, DMWDraws.RelativeWidth? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpObjectId(openXmlElement, value.ObjectId, diffs, objName))
+        ok = false;
+      if (!CmpPercentageWidth(openXmlElement, value.PercentageWidth, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWDraws.RelativeWidth? value)

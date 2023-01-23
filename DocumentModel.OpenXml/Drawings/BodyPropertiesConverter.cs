@@ -13,6 +13,11 @@ public static class BodyPropertiesConverter
     return openXmlElement.Rotation?.Value;
   }
   
+  private static bool CmpRotation(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Rotation?.Value == value;
+  }
+  
   private static void SetRotation(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.Rotation = value;
@@ -24,6 +29,11 @@ public static class BodyPropertiesConverter
   private static Boolean? GetUseParagraphSpacing(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.UseParagraphSpacing?.Value;
+  }
+  
+  private static bool CmpUseParagraphSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UseParagraphSpacing?.Value == value;
   }
   
   private static void SetUseParagraphSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -42,6 +52,11 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value);
   }
   
+  private static bool CmpVerticalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalOverflowKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVerticalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalOverflowKind? value)
   {
     openXmlElement.VerticalOverflow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(value);
@@ -53,6 +68,11 @@ public static class BodyPropertiesConverter
   private static DMDraws.TextHorizontalOverflowKind? GetHorizontalOverflow(DXDraw.BodyProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value);
+  }
+  
+  private static bool CmpHorizontalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextHorizontalOverflowKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHorizontalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextHorizontalOverflowKind? value)
@@ -68,6 +88,11 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(openXmlElement?.Vertical?.Value);
   }
   
+  private static bool CmpVertical(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(openXmlElement?.Vertical?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetVertical(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalKind? value)
   {
     openXmlElement.Vertical = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(value);
@@ -79,6 +104,11 @@ public static class BodyPropertiesConverter
   private static DMDraws.TextWrappingKind? GetWrap(DXDraw.BodyProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(openXmlElement?.Wrap?.Value);
+  }
+  
+  private static bool CmpWrap(DXDraw.BodyProperties openXmlElement, DMDraws.TextWrappingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWrap(DXDraw.BodyProperties openXmlElement, DMDraws.TextWrappingKind? value)
@@ -94,6 +124,11 @@ public static class BodyPropertiesConverter
     return openXmlElement.LeftInset?.Value;
   }
   
+  private static bool CmpLeftInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.LeftInset?.Value == value;
+  }
+  
   private static void SetLeftInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.LeftInset = value;
@@ -105,6 +140,11 @@ public static class BodyPropertiesConverter
   private static Int32? GetTopInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.TopInset?.Value;
+  }
+  
+  private static bool CmpTopInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.TopInset?.Value == value;
   }
   
   private static void SetTopInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -120,6 +160,11 @@ public static class BodyPropertiesConverter
     return openXmlElement.RightInset?.Value;
   }
   
+  private static bool CmpRightInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.RightInset?.Value == value;
+  }
+  
   private static void SetRightInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.RightInset = value;
@@ -131,6 +176,11 @@ public static class BodyPropertiesConverter
   private static Int32? GetBottomInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.BottomInset?.Value;
+  }
+  
+  private static bool CmpBottomInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.BottomInset?.Value == value;
   }
   
   private static void SetBottomInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -146,6 +196,11 @@ public static class BodyPropertiesConverter
     return openXmlElement.ColumnCount?.Value;
   }
   
+  private static bool CmpColumnCount(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnCount?.Value == value;
+  }
+  
   private static void SetColumnCount(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.ColumnCount = value;
@@ -159,6 +214,11 @@ public static class BodyPropertiesConverter
     return openXmlElement.ColumnSpacing?.Value;
   }
   
+  private static bool CmpColumnSpacing(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnSpacing?.Value == value;
+  }
+  
   private static void SetColumnSpacing(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.ColumnSpacing = value;
@@ -170,6 +230,11 @@ public static class BodyPropertiesConverter
   private static Boolean? GetRightToLeftColumns(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.RightToLeftColumns?.Value;
+  }
+  
+  private static bool CmpRightToLeftColumns(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RightToLeftColumns?.Value == value;
   }
   
   private static void SetRightToLeftColumns(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -188,6 +253,11 @@ public static class BodyPropertiesConverter
     return openXmlElement?.FromWordArt?.Value;
   }
   
+  private static bool CmpFromWordArt(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FromWordArt?.Value == value;
+  }
+  
   private static void SetFromWordArt(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -204,6 +274,11 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(openXmlElement?.Anchor?.Value);
   }
   
+  private static bool CmpAnchor(DXDraw.BodyProperties openXmlElement, DMDraws.TextAnchoringKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(openXmlElement?.Anchor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetAnchor(DXDraw.BodyProperties openXmlElement, DMDraws.TextAnchoringKind? value)
   {
     openXmlElement.Anchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(value);
@@ -215,6 +290,11 @@ public static class BodyPropertiesConverter
   private static Boolean? GetAnchorCenter(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.AnchorCenter?.Value;
+  }
+  
+  private static bool CmpAnchorCenter(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AnchorCenter?.Value == value;
   }
   
   private static void SetAnchorCenter(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -233,6 +313,11 @@ public static class BodyPropertiesConverter
     return openXmlElement?.ForceAntiAlias?.Value;
   }
   
+  private static bool CmpForceAntiAlias(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ForceAntiAlias?.Value == value;
+  }
+  
   private static void SetForceAntiAlias(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -247,6 +332,11 @@ public static class BodyPropertiesConverter
   private static Boolean? GetUpRight(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.UpRight?.Value;
+  }
+  
+  private static bool CmpUpRight(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UpRight?.Value == value;
   }
   
   private static void SetUpRight(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -265,6 +355,11 @@ public static class BodyPropertiesConverter
     return openXmlElement?.CompatibleLineSpacing?.Value;
   }
   
+  private static bool CmpCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CompatibleLineSpacing?.Value == value;
+  }
+  
   private static void SetCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -278,10 +373,12 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static DMDraws.PresetTextWrap? GetPresetTextWrap(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>();
-    if (itemElement != null)
-      return DMXDraws.PresetTextWrapConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PresetTextWrapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>());
+  }
+  
+  private static bool CmpPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PresetTextWrapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value)
@@ -299,8 +396,12 @@ public static class BodyPropertiesConverter
   
   private static Boolean? GetNoAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoAutoFit>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.NoAutoFit>() != null;
+  }
+  
+  private static bool CmpNoAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.NoAutoFit>() != null == value;
   }
   
   private static void SetNoAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -320,10 +421,12 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.NormalAutoFit? GetNormalAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>();
-    if (itemElement != null)
-      return DMXDraws.NormalAutoFitConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.NormalAutoFitConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>());
+  }
+  
+  private static bool CmpNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.NormalAutoFitConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value)
@@ -341,8 +444,12 @@ public static class BodyPropertiesConverter
   
   private static Boolean? GetShapeAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>() != null;
+  }
+  
+  private static bool CmpShapeAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>() != null == value;
   }
   
   private static void SetShapeAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -362,10 +469,12 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.Scene3DType? GetScene3DType(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
-    if (itemElement != null)
-      return DMXDraws.Scene3DTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.Scene3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>());
+  }
+  
+  private static bool CmpScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value)
@@ -383,10 +492,12 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.Shape3DType? GetShape3DType(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
-    if (itemElement != null)
-      return DMXDraws.Shape3DTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.Shape3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>());
+  }
+  
+  private static bool CmpShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value)
@@ -404,10 +515,12 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.FlatText? GetFlatText(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FlatText>();
-    if (itemElement != null)
-      return DMXDraws.FlatTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.FlatTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FlatText>());
+  }
+  
+  private static bool CmpFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value)
@@ -425,10 +538,12 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value)
@@ -479,6 +594,70 @@ public static class BodyPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BodyProperties? openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+        ok = false;
+      if (!CmpUseParagraphSpacing(openXmlElement, value.UseParagraphSpacing, diffs, objName))
+        ok = false;
+      if (!CmpVerticalOverflow(openXmlElement, value.VerticalOverflow, diffs, objName))
+        ok = false;
+      if (!CmpHorizontalOverflow(openXmlElement, value.HorizontalOverflow, diffs, objName))
+        ok = false;
+      if (!CmpVertical(openXmlElement, value.Vertical, diffs, objName))
+        ok = false;
+      if (!CmpWrap(openXmlElement, value.Wrap, diffs, objName))
+        ok = false;
+      if (!CmpLeftInset(openXmlElement, value.LeftInset, diffs, objName))
+        ok = false;
+      if (!CmpTopInset(openXmlElement, value.TopInset, diffs, objName))
+        ok = false;
+      if (!CmpRightInset(openXmlElement, value.RightInset, diffs, objName))
+        ok = false;
+      if (!CmpBottomInset(openXmlElement, value.BottomInset, diffs, objName))
+        ok = false;
+      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName))
+        ok = false;
+      if (!CmpColumnSpacing(openXmlElement, value.ColumnSpacing, diffs, objName))
+        ok = false;
+      if (!CmpRightToLeftColumns(openXmlElement, value.RightToLeftColumns, diffs, objName))
+        ok = false;
+      if (!CmpFromWordArt(openXmlElement, value.FromWordArt, diffs, objName))
+        ok = false;
+      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName))
+        ok = false;
+      if (!CmpAnchorCenter(openXmlElement, value.AnchorCenter, diffs, objName))
+        ok = false;
+      if (!CmpForceAntiAlias(openXmlElement, value.ForceAntiAlias, diffs, objName))
+        ok = false;
+      if (!CmpUpRight(openXmlElement, value.UpRight, diffs, objName))
+        ok = false;
+      if (!CmpCompatibleLineSpacing(openXmlElement, value.CompatibleLineSpacing, diffs, objName))
+        ok = false;
+      if (!CmpPresetTextWrap(openXmlElement, value.PresetTextWrap, diffs, objName))
+        ok = false;
+      if (!CmpNoAutoFit(openXmlElement, value.NoAutoFit, diffs, objName))
+        ok = false;
+      if (!CmpNormalAutoFit(openXmlElement, value.NormalAutoFit, diffs, objName))
+        ok = false;
+      if (!CmpShapeAutoFit(openXmlElement, value.ShapeAutoFit, diffs, objName))
+        ok = false;
+      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName))
+        ok = false;
+      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName))
+        ok = false;
+      if (!CmpFlatText(openXmlElement, value.FlatText, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BodyProperties? value)

@@ -38,10 +38,10 @@ public class Frame
   /// <summary>
   ///   Frame Cannot Be Resized.
   /// </summary>
-  public OnOffOnlyKind? NoResizeAllowed { get; set; }
+  public Boolean? NoResizeAllowed { get; set; }
 
   /// <summary>
   ///   Maintain Link to Existing File.
   /// </summary>
-  public OnOffOnlyKind? LinkedToFile { get; set; }
+  public Boolean? LinkedToFile { get; set; }
 }

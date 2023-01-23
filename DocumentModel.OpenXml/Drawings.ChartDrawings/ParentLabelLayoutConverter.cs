@@ -13,6 +13,11 @@ public static class ParentLabelLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value);
   }
   
+  private static bool CmpParentLabelLayoutVal(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayoutVal? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetParentLabelLayoutVal(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayoutVal? value)
   {
     openXmlElement.ParentLabelLayoutVal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(value);
@@ -27,6 +32,18 @@ public static class ParentLabelLayoutConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.ParentLabelLayout? openXmlElement, DMDrawsChartDraws.ParentLabelLayout? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpParentLabelLayoutVal(openXmlElement, value.ParentLabelLayoutVal, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ParentLabelLayout? value)

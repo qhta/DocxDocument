@@ -13,6 +13,11 @@ public static class ChooseConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXDrawDgms.Choose openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXDrawDgms.Choose openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class ChooseConverter
   
   private static DMDrawsDgms.DiagramChooseIf? GetDiagramChooseIf(DXDrawDgms.Choose openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseIf>();
-    if (itemElement != null)
-      return DMXDrawsDgms.DiagramChooseIfConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.DiagramChooseIfConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseIf>());
+  }
+  
+  private static bool CmpDiagramChooseIf(DXDrawDgms.Choose openXmlElement, DMDrawsDgms.DiagramChooseIf? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.DiagramChooseIfConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseIf>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDiagramChooseIf(DXDrawDgms.Choose openXmlElement, DMDrawsDgms.DiagramChooseIf? value)
@@ -44,10 +51,12 @@ public static class ChooseConverter
   
   private static DMDrawsDgms.DiagramChooseElse? GetDiagramChooseElse(DXDrawDgms.Choose openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseElse>();
-    if (itemElement != null)
-      return DMXDrawsDgms.DiagramChooseElseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.DiagramChooseElseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseElse>());
+  }
+  
+  private static bool CmpDiagramChooseElse(DXDrawDgms.Choose openXmlElement, DMDrawsDgms.DiagramChooseElse? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.DiagramChooseElseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramChooseElse>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDiagramChooseElse(DXDrawDgms.Choose openXmlElement, DMDrawsDgms.DiagramChooseElse? value)
@@ -74,6 +83,22 @@ public static class ChooseConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.Choose? openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpDiagramChooseIf(openXmlElement, value.DiagramChooseIf, diffs, objName))
+        ok = false;
+      if (!CmpDiagramChooseElse(openXmlElement, value.DiagramChooseElse, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Choose? value)

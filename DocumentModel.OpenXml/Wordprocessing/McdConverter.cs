@@ -13,6 +13,11 @@ public static class McdConverter
     return openXmlElement?.MacroName?.Value;
   }
   
+  private static bool CmpMacroName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MacroName?.Value == value;
+  }
+  
   private static void SetMacroName(DXOW.Mcd openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class McdConverter
     return openXmlElement?.Name?.Value;
   }
   
+  private static bool CmpName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
+  }
+  
   private static void SetName(DXOW.Mcd openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class McdConverter
   private static String? GetMenuHelp(DXOW.Mcd openXmlElement)
   {
     return openXmlElement?.MenuHelp?.Value;
+  }
+  
+  private static bool CmpMenuHelp(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MenuHelp?.Value == value;
   }
   
   private static void SetMenuHelp(DXOW.Mcd openXmlElement, String? value)
@@ -63,6 +78,13 @@ public static class McdConverter
     return null;
   }
   
+  private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.BEncrypt?.Value != null)
+      return Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
+  }
+  
   private static void SetBEncrypt(DXOW.Mcd openXmlElement, Byte? value)
   {
       if (value != null)
@@ -79,6 +101,13 @@ public static class McdConverter
     if (openXmlElement.Cmg?.Value != null)
       return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber);
     return null;
+  }
+  
+  private static bool CmpCmg(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement.Cmg?.Value != null)
+      return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber) == value;
+    return openXmlElement == null && value == null;
   }
   
   private static void SetCmg(DXOW.Mcd openXmlElement, Byte? value)
@@ -102,6 +131,26 @@ public static class McdConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.Mcd? openXmlElement, DMW.Mcd? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMacroName(openXmlElement, value.MacroName, diffs, objName))
+        ok = false;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpMenuHelp(openXmlElement, value.MenuHelp, diffs, objName))
+        ok = false;
+      if (!CmpBEncrypt(openXmlElement, value.BEncrypt, diffs, objName))
+        ok = false;
+      if (!CmpCmg(openXmlElement, value.Cmg, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcd? value)

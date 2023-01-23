@@ -7,10 +7,12 @@ public static class CaptionsConverter
 {
   private static DMW.Caption? GetCaption(DXW.Captions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Caption>();
-    if (itemElement != null)
-      return DMXW.CaptionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.CaptionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Caption>());
+  }
+  
+  private static bool CmpCaption(DXW.Captions openXmlElement, DMW.Caption? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.CaptionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Caption>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCaption(DXW.Captions openXmlElement, DMW.Caption? value)
@@ -28,10 +30,12 @@ public static class CaptionsConverter
   
   private static DMW.AutoCaptions? GetAutoCaptions(DXW.Captions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.AutoCaptions>();
-    if (itemElement != null)
-      return DMXW.AutoCaptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.AutoCaptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaptions>());
+  }
+  
+  private static bool CmpAutoCaptions(DXW.Captions openXmlElement, DMW.AutoCaptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.AutoCaptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAutoCaptions(DXW.Captions openXmlElement, DMW.AutoCaptions? value)
@@ -57,6 +61,20 @@ public static class CaptionsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Captions? openXmlElement, DMW.Captions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCaption(openXmlElement, value.Caption, diffs, objName))
+        ok = false;
+      if (!CmpAutoCaptions(openXmlElement, value.AutoCaptions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Captions? value)

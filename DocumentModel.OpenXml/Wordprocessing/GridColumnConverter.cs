@@ -13,6 +13,11 @@ public static class GridColumnConverter
     return openXmlElement?.Width?.Value;
   }
   
+  private static bool CmpWidth(DXW.GridColumn openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Width?.Value == value;
+  }
+  
   private static void SetWidth(DXW.GridColumn openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class GridColumnConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.GridColumn? openXmlElement, DMW.GridColumn? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GridColumn? value)

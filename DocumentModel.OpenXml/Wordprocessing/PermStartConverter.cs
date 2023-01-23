@@ -13,6 +13,11 @@ public static class PermStartConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
   }
   
+  private static bool CmpEditorGroup(DXW.PermStart openXmlElement, DMW.RangePermissionEditingGroupKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetEditorGroup(DXW.PermStart openXmlElement, DMW.RangePermissionEditingGroupKind? value)
   {
     openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(value);
@@ -24,6 +29,11 @@ public static class PermStartConverter
   private static String? GetEd(DXW.PermStart openXmlElement)
   {
     return openXmlElement?.Ed?.Value;
+  }
+  
+  private static bool CmpEd(DXW.PermStart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Ed?.Value == value;
   }
   
   private static void SetEd(DXW.PermStart openXmlElement, String? value)
@@ -42,6 +52,11 @@ public static class PermStartConverter
     return openXmlElement.ColumnFirst?.Value;
   }
   
+  private static bool CmpColumnFirst(DXW.PermStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnFirst?.Value == value;
+  }
+  
   private static void SetColumnFirst(DXW.PermStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnFirst = value;
@@ -53,6 +68,11 @@ public static class PermStartConverter
   private static Int32? GetColumnLast(DXW.PermStart openXmlElement)
   {
     return openXmlElement.ColumnLast?.Value;
+  }
+  
+  private static bool CmpColumnLast(DXW.PermStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnLast?.Value == value;
   }
   
   private static void SetColumnLast(DXW.PermStart openXmlElement, Int32? value)
@@ -68,6 +88,11 @@ public static class PermStartConverter
     return openXmlElement.Id?.Value;
   }
   
+  private static bool CmpId(DXW.PermStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Id?.Value == value;
+  }
+  
   private static void SetId(DXW.PermStart openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
@@ -79,6 +104,11 @@ public static class PermStartConverter
   private static DMW.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DXW.PermStart openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+  }
+  
+  private static bool CmpDisplacedByCustomXml(DXW.PermStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDisplacedByCustomXml(DXW.PermStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -100,6 +130,28 @@ public static class PermStartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PermStart? openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEditorGroup(openXmlElement, value.EditorGroup, diffs, objName))
+        ok = false;
+      if (!CmpEd(openXmlElement, value.Ed, diffs, objName))
+        ok = false;
+      if (!CmpColumnFirst(openXmlElement, value.ColumnFirst, diffs, objName))
+        ok = false;
+      if (!CmpColumnLast(openXmlElement, value.ColumnLast, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PermStart? value)

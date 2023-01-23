@@ -13,6 +13,11 @@ public static class CameraToolConverter
     return openXmlElement?.CellRange?.Value;
   }
   
+  private static bool CmpCellRange(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.CellRange?.Value == value;
+  }
+  
   private static void SetCellRange(DXO2010Draw.CameraTool openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class CameraToolConverter
   private static String? GetShapeId(DXO2010Draw.CameraTool openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
+  }
+  
+  private static bool CmpShapeId(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ShapeId?.Value == value;
   }
   
   private static void SetShapeId(DXO2010Draw.CameraTool openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class CameraToolConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.CameraTool? openXmlElement, DMDraws.CameraTool? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCellRange(openXmlElement, value.CellRange, diffs, objName))
+        ok = false;
+      if (!CmpShapeId(openXmlElement, value.ShapeId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CameraTool? value)

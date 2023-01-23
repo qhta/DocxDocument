@@ -13,6 +13,11 @@ public static class NumericLevelConverter
     return openXmlElement.PtCount?.Value;
   }
   
+  private static bool CmpPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.PtCount?.Value == value;
+  }
+  
   private static void SetPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement, UInt32? value)
   {
     openXmlElement.PtCount = value;
@@ -24,6 +29,11 @@ public static class NumericLevelConverter
   private static String? GetFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
+  }
+  
+  private static bool CmpFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FormatCode?.Value == value;
   }
   
   private static void SetFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)
@@ -40,6 +50,11 @@ public static class NumericLevelConverter
   private static String? GetName(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
+  }
+  
+  private static bool CmpName(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
   }
   
   private static void SetName(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)
@@ -60,6 +75,11 @@ public static class NumericLevelConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement, Collection<DMDrawsChartDraws.NumericValue>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement, Collection<DMDrawsChartDraws.NumericValue>? value)
@@ -88,6 +108,24 @@ public static class NumericLevelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.NumericLevel? openXmlElement, DMDrawsChartDraws.NumericLevel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName))
+        ok = false;
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+        ok = false;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpNumericValues(openXmlElement, value.NumericValues, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumericLevel? value)

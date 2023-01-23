@@ -13,6 +13,11 @@ public static class LayoutDefinitionConverter
     return openXmlElement?.UniqueId?.Value;
   }
   
+  private static bool CmpUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.UniqueId?.Value == value;
+  }
+  
   private static void SetUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class LayoutDefinitionConverter
     return openXmlElement?.MinVersion?.Value;
   }
   
+  private static bool CmpMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MinVersion?.Value == value;
+  }
+  
   private static void SetMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class LayoutDefinitionConverter
   private static String? GetDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement)
   {
     return openXmlElement?.DefaultStyle?.Value;
+  }
+  
+  private static bool CmpDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DefaultStyle?.Value == value;
   }
   
   private static void SetDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
@@ -63,6 +78,11 @@ public static class LayoutDefinitionConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpTitles(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Title>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetTitles(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Title>? value)
@@ -91,6 +111,11 @@ public static class LayoutDefinitionConverter
     return collection;
   }
   
+  private static bool CmpDescriptions(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Description>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetDescriptions(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Description>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.Description>();
@@ -107,10 +132,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.CategoryList? GetCategoryList(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.CategoryList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.CategoryListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.CategoryListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.CategoryList>());
+  }
+  
+  private static bool CmpCategoryList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.CategoryList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.CategoryListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.CategoryList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategoryList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.CategoryList? value)
@@ -128,10 +155,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.SampleData? GetSampleData(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.SampleData>();
-    if (itemElement != null)
-      return DMXDrawsDgms.SampleDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.SampleDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.SampleData>());
+  }
+  
+  private static bool CmpSampleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.SampleData? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.SampleDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.SampleData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSampleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.SampleData? value)
@@ -149,10 +178,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.StyleData? GetStyleData(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.StyleData>();
-    if (itemElement != null)
-      return DMXDrawsDgms.StyleDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.StyleDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.StyleData>());
+  }
+  
+  private static bool CmpStyleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.StyleData? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.StyleDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.StyleData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.StyleData? value)
@@ -170,10 +201,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.ColorData? GetColorData(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ColorData>();
-    if (itemElement != null)
-      return DMXDrawsDgms.ColorDataConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.ColorDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ColorData>());
+  }
+  
+  private static bool CmpColorData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.ColorData? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.ColorDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ColorData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.ColorData? value)
@@ -191,10 +224,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.LayoutNode? GetLayoutNode(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>();
-    if (itemElement != null)
-      return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>());
+  }
+  
+  private static bool CmpLayoutNode(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLayoutNode(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.LayoutNode? value)
@@ -212,10 +247,12 @@ public static class LayoutDefinitionConverter
   
   private static DMDrawsDgms.DiagramDefinitionExtensionList? GetDiagramDefinitionExtensionList(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.DiagramDefinitionExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsDgms.DiagramDefinitionExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsDgms.DiagramDefinitionExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramDefinitionExtensionList>());
+  }
+  
+  private static bool CmpDiagramDefinitionExtensionList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsDgms.DiagramDefinitionExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DiagramDefinitionExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDiagramDefinitionExtensionList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList? value)
@@ -250,6 +287,38 @@ public static class LayoutDefinitionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.LayoutDefinition? openXmlElement, DMDrawsDgms.LayoutDefinition? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUniqueId(openXmlElement, value.UniqueId, diffs, objName))
+        ok = false;
+      if (!CmpMinVersion(openXmlElement, value.MinVersion, diffs, objName))
+        ok = false;
+      if (!CmpDefaultStyle(openXmlElement, value.DefaultStyle, diffs, objName))
+        ok = false;
+      if (!CmpTitles(openXmlElement, value.Titles, diffs, objName))
+        ok = false;
+      if (!CmpDescriptions(openXmlElement, value.Descriptions, diffs, objName))
+        ok = false;
+      if (!CmpCategoryList(openXmlElement, value.CategoryList, diffs, objName))
+        ok = false;
+      if (!CmpSampleData(openXmlElement, value.SampleData, diffs, objName))
+        ok = false;
+      if (!CmpStyleData(openXmlElement, value.StyleData, diffs, objName))
+        ok = false;
+      if (!CmpColorData(openXmlElement, value.ColorData, diffs, objName))
+        ok = false;
+      if (!CmpLayoutNode(openXmlElement, value.LayoutNode, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDefinitionExtensionList(openXmlElement, value.DiagramDefinitionExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutDefinition? value)

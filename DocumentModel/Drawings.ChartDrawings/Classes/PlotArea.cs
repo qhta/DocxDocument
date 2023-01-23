@@ -10,7 +10,7 @@ public class PlotArea
   /// </summary>
   public PlotAreaRegion? PlotAreaRegion { get; set; }
 
-  public Collection<Axis>? Axises { get; set; }
+  public Collection<Axis>? Axis { get; set; }
 
   public ShapeProperties? ShapeProperties { get; set; }
 

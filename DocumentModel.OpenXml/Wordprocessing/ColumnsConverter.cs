@@ -13,6 +13,11 @@ public static class ColumnsConverter
     return openXmlElement?.EqualWidth?.Value;
   }
   
+  private static bool CmpEqualWidth(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.EqualWidth?.Value == value;
+  }
+  
   private static void SetEqualWidth(DXW.Columns openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ColumnsConverter
   private static String? GetSpace(DXW.Columns openXmlElement)
   {
     return openXmlElement?.Space?.Value;
+  }
+  
+  private static bool CmpSpace(DXW.Columns openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Space?.Value == value;
   }
   
   private static void SetSpace(DXW.Columns openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class ColumnsConverter
     return openXmlElement.ColumnCount?.Value;
   }
   
+  private static bool CmpColumnCount(DXW.Columns openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.ColumnCount?.Value == value;
+  }
+  
   private static void SetColumnCount(DXW.Columns openXmlElement, Int16? value)
   {
     openXmlElement.ColumnCount = value;
@@ -56,6 +71,11 @@ public static class ColumnsConverter
   private static Boolean? GetSeparator(DXW.Columns openXmlElement)
   {
     return openXmlElement?.Separator?.Value;
+  }
+  
+  private static bool CmpSeparator(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Separator?.Value == value;
   }
   
   private static void SetSeparator(DXW.Columns openXmlElement, Boolean? value)
@@ -76,6 +96,11 @@ public static class ColumnsConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value)
@@ -105,6 +130,26 @@ public static class ColumnsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Columns? openXmlElement, DMW.Columns? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEqualWidth(openXmlElement, value.EqualWidth, diffs, objName))
+        ok = false;
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+        ok = false;
+      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName))
+        ok = false;
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+        ok = false;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Columns? value)

@@ -1,15 +1,14 @@
 ﻿using DocumentFormat.OpenXml;
-
 using DocumentModel;
-
 using Qhta.TypeUtils;
-
 using Task = System.Threading.Tasks.Task;
+
 namespace ModelGen;
 
 public static class ModelManager
 {
 
+  #region Type conversion
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
     //if (typeInfo.Name == "AttachedTemplate")
@@ -274,6 +273,7 @@ public static class ModelManager
     }
     return result ?? typeInfo;
   }
+  #endregion
 
   #region Checking types
 
@@ -611,6 +611,23 @@ public static class ModelManager
   }
   #endregion
 
+  #region Property conversion
+
+  public static string GetTargetName(this PropInfo prop)
+  {
+    if (prop.DeclaringType != null)
+    {
+      if (prop.Name == "Count")
+        Debug.Assert(true);
+      var fullName = prop.DeclaringType.GetFullName(true) + "." + prop.Name;
+      if (ModelData.PropertyTranslateTable.TryGetValue(fullName, out var newName))
+        return newName;
+    }
+    return prop.Name;
+  }
+  #endregion
+
+  #region Namespace methods
   public static bool HasDuplicatesInNamespace(this TypeInfo type)
   {
     if (type.Name.Contains('`'))
@@ -622,16 +639,6 @@ public static class ModelManager
   {
     return TypeManager.GetNamespaceTypes(type.Namespace).Where(Item => Item.Name == type.Name).ToArray();
   }
-
-  public static int ReflectRemainingTypes()
-  {
-    int count = 0;
-    foreach (var type in TypeManager.AcceptedTypes.Where(item => !item.IsReflected).ToArray())
-    {
-      count++;
-      type.WaitForReflection();
-    }
-    return count;
-  }
+  #endregion
 
 }

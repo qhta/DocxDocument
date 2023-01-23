@@ -13,6 +13,11 @@ public static class BlipFillConverter
     return openXmlElement.Dpi?.Value;
   }
   
+  private static bool CmpDpi(DXDraw.BlipFill openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Dpi?.Value == value;
+  }
+  
   private static void SetDpi(DXDraw.BlipFill openXmlElement, UInt32? value)
   {
     openXmlElement.Dpi = value;
@@ -24,6 +29,11 @@ public static class BlipFillConverter
   private static Boolean? GetRotateWithShape(DXDraw.BlipFill openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
+  }
+  
+  private static bool CmpRotateWithShape(DXDraw.BlipFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RotateWithShape?.Value == value;
   }
   
   private static void SetRotateWithShape(DXDraw.BlipFill openXmlElement, Boolean? value)
@@ -39,10 +49,12 @@ public static class BlipFillConverter
   /// </summary>
   private static DMDraws.Blip? GetBlip(DXDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blip>();
-    if (itemElement != null)
-      return DMXDraws.BlipConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.BlipConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>());
+  }
+  
+  private static bool CmpBlip(DXDraw.BlipFill openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlip(DXDraw.BlipFill openXmlElement, DMDraws.Blip? value)
@@ -63,10 +75,12 @@ public static class BlipFillConverter
   /// </summary>
   private static DMDraws.RelativeRectangleType? GetSourceRectangle(DXDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SourceRectangle>();
-    if (itemElement != null)
-      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SourceRectangle>());
+  }
+  
+  private static bool CmpSourceRectangle(DXDraw.BlipFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SourceRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSourceRectangle(DXDraw.BlipFill openXmlElement, DMDraws.RelativeRectangleType? value)
@@ -84,10 +98,12 @@ public static class BlipFillConverter
   
   private static DMDraws.Tile? GetTile(DXDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tile>();
-    if (itemElement != null)
-      return DMXDraws.TileConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.TileConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Tile>());
+  }
+  
+  private static bool CmpTile(DXDraw.BlipFill openXmlElement, DMDraws.Tile? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.TileConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Tile>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTile(DXDraw.BlipFill openXmlElement, DMDraws.Tile? value)
@@ -105,10 +121,12 @@ public static class BlipFillConverter
   
   private static DMDraws.Stretch? GetStretch(DXDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Stretch>();
-    if (itemElement != null)
-      return DMXDraws.StretchConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.StretchConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Stretch>());
+  }
+  
+  private static bool CmpStretch(DXDraw.BlipFill openXmlElement, DMDraws.Stretch? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.StretchConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Stretch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStretch(DXDraw.BlipFill openXmlElement, DMDraws.Stretch? value)
@@ -138,6 +156,28 @@ public static class BlipFillConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.BlipFill? openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDpi(openXmlElement, value.Dpi, diffs, objName))
+        ok = false;
+      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName))
+        ok = false;
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+        ok = false;
+      if (!CmpSourceRectangle(openXmlElement, value.SourceRectangle, diffs, objName))
+        ok = false;
+      if (!CmpTile(openXmlElement, value.Tile, diffs, objName))
+        ok = false;
+      if (!CmpStretch(openXmlElement, value.Stretch, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipFill? value)

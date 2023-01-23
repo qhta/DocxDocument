@@ -13,6 +13,11 @@ public static class OEmbedConverter
     return openXmlElement?.OEmbedUrl?.Value;
   }
   
+  private static bool CmpOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.OEmbedUrl?.Value == value;
+  }
+  
   private static void SetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class OEmbedConverter
     return openXmlElement?.MediaType?.Value;
   }
   
+  private static bool CmpMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.MediaType?.Value == value;
+  }
+  
   private static void SetMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class OEmbedConverter
   private static Boolean? GetPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement)
   {
     return openXmlElement?.PicLocksAutoForOEmbed?.Value;
+  }
+  
+  private static bool CmpPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.PicLocksAutoForOEmbed?.Value == value;
   }
   
   private static void SetPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value)
@@ -64,6 +79,22 @@ public static class OEmbedConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOWY2020OEmb.OEmbed? openXmlElement, DMWOEmb.OEmbed? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOEmbedUrl(openXmlElement, value.OEmbedUrl, diffs, objName))
+        ok = false;
+      if (!CmpMediaType(openXmlElement, value.MediaType, diffs, objName))
+        ok = false;
+      if (!CmpPicLocksAutoForOEmbed(openXmlElement, value.PicLocksAutoForOEmbed, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWOEmb.OEmbed? value)

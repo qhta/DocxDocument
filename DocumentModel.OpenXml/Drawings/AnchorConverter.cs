@@ -13,6 +13,11 @@ public static class AnchorConverter
     return openXmlElement.X?.Value;
   }
   
+  private static bool CmpX(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.X?.Value == value;
+  }
+  
   private static void SetX(DXDraw.Anchor openXmlElement, Int64? value)
   {
     openXmlElement.X = value;
@@ -26,6 +31,11 @@ public static class AnchorConverter
     return openXmlElement.Y?.Value;
   }
   
+  private static bool CmpY(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Y?.Value == value;
+  }
+  
   private static void SetY(DXDraw.Anchor openXmlElement, Int64? value)
   {
     openXmlElement.Y = value;
@@ -37,6 +47,11 @@ public static class AnchorConverter
   private static Int64? GetZ(DXDraw.Anchor openXmlElement)
   {
     return openXmlElement.Z?.Value;
+  }
+  
+  private static bool CmpZ(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Z?.Value == value;
   }
   
   private static void SetZ(DXDraw.Anchor openXmlElement, Int64? value)
@@ -55,6 +70,22 @@ public static class AnchorConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Anchor? openXmlElement, DMDraws.Anchor? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpX(openXmlElement, value.X, diffs, objName))
+        ok = false;
+      if (!CmpY(openXmlElement, value.Y, diffs, objName))
+        ok = false;
+      if (!CmpZ(openXmlElement, value.Z, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Anchor? value)

@@ -10,14 +10,22 @@ public static class DiagramPersistLayoutPartConverter
     return openXmlElement?.ContentType;
   }
   
+  private static bool CmpContentType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
+  }
+  
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
   private static DMDrawsO.Drawing? GetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXODraw.Drawing rootElement)
-      return DMXDrawsO.DrawingConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXDrawsO.DrawingConverter.CreateModelElement(openXmlElement?.RootElement as DXODraw.Drawing);
+  }
+  
+  private static bool CmpDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDrawsO.Drawing? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDrawsO.Drawing? value)
@@ -45,9 +53,19 @@ public static class DiagramPersistLayoutPartConverter
     return collection;
   }
   
+  private static bool CmpImageParts(DXPack.DiagramPersistLayoutPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   public static DMPack.DiagramPersistLayoutPart? CreateModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement)
@@ -62,6 +80,24 @@ public static class DiagramPersistLayoutPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement, DMPack.DiagramPersistLayoutPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpDrawing(openXmlElement, value.Drawing, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramPersistLayoutPart? value)

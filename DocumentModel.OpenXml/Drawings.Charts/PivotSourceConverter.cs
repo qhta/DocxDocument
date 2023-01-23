@@ -10,10 +10,12 @@ public static class PivotSourceConverter
   /// </summary>
   private static String? GetPivotTableName(DXDrawCharts.PivotSource openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PivotTableName>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawCharts.PivotTableName>()?.Text;
+  }
+  
+  private static bool CmpPivotTableName(DXDrawCharts.PivotSource openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawCharts.PivotTableName>()?.Text == value;
   }
   
   private static void SetPivotTableName(DXDrawCharts.PivotSource openXmlElement, String? value)
@@ -33,10 +35,12 @@ public static class PivotSourceConverter
   /// </summary>
   private static UInt32? GetFormatId(DXDrawCharts.PivotSource openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>()?.Val?.Value;
+  }
+  
+  private static bool CmpFormatId(DXDrawCharts.PivotSource openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>()?.Val?.Value == value;
   }
   
   private static void SetFormatId(DXDrawCharts.PivotSource openXmlElement, UInt32? value)
@@ -56,10 +60,12 @@ public static class PivotSourceConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.PivotSource openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.PivotSource openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.PivotSource openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -86,6 +92,22 @@ public static class PivotSourceConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.PivotSource? openXmlElement, DMDrawsCharts.PivotSource? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPivotTableName(openXmlElement, value.PivotTableName, diffs, objName))
+        ok = false;
+      if (!CmpFormatId(openXmlElement, value.FormatId, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotSource? value)

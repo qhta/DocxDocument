@@ -17,6 +17,11 @@ public static class StylisticSetsConverter
     return collection;
   }
   
+  private static bool CmpStyleSets(DXO2010W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetStyleSets(DXO2010W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2010W.StyleSet>();
@@ -40,6 +45,18 @@ public static class StylisticSetsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.StylisticSets? openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStyleSets(openXmlElement, value.StyleSets, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StylisticSets? value)

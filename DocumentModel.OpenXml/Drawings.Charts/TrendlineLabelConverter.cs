@@ -10,10 +10,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
-    if (itemElement != null)
-      return DMXDrawsCharts.LayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.LayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Layout>());
+  }
+  
+  private static bool CmpLayout(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.Layout? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.LayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Layout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLayout(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.Layout? value)
@@ -34,10 +36,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>());
+  }
+  
+  private static bool CmpChartText(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ChartText? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartText(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ChartText? value)
@@ -58,10 +62,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
-    if (itemElement != null)
-      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+  }
+  
+  private static bool CmpNumberingFormat(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.NumberingFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.NumberingFormat? value)
@@ -82,10 +88,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+  }
+  
+  private static bool CmpChartShapeProperties(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -106,10 +114,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+  }
+  
+  private static bool CmpTextProperties(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -130,10 +140,12 @@ public static class TrendlineLabelConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.TrendlineLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -163,6 +175,28 @@ public static class TrendlineLabelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.TrendlineLabel? openXmlElement, DMDrawsCharts.TrendlineLabel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+        ok = false;
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+        ok = false;
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+        ok = false;
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TrendlineLabel? value)

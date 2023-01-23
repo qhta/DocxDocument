@@ -17,6 +17,11 @@ public static class SchemaReferencesConverter
     return collection;
   }
   
+  private static bool CmpItems(DXCustXmlDataProps.SchemaReferences openXmlElement, Collection<DMCustXml.SchemaReference>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXCustXmlDataProps.SchemaReferences openXmlElement, Collection<DMCustXml.SchemaReference>? value)
   {
     openXmlElement.RemoveAllChildren<DXCustXmlDataProps.SchemaReference>();
@@ -40,6 +45,18 @@ public static class SchemaReferencesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXCustXmlDataProps.SchemaReferences? openXmlElement, DMCustXml.SchemaReferences? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReferences? value)

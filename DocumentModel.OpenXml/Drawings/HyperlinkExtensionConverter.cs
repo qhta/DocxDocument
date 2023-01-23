@@ -13,6 +13,11 @@ public static class HyperlinkExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDraw.HyperlinkExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDraw.HyperlinkExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class HyperlinkExtensionConverter
   
   private static DMDraws.HyperlinkColorEnum? GetHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>()?.Val?.Value);
+  }
+  
+  private static bool CmpHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement, DMDraws.HyperlinkColorEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement, DMDraws.HyperlinkColorEnum? value)
@@ -52,6 +59,20 @@ public static class HyperlinkExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.HyperlinkExtension? openXmlElement, DMDraws.HyperlinkExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpHyperlinkColor(openXmlElement, value.HyperlinkColor, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkExtension? value)

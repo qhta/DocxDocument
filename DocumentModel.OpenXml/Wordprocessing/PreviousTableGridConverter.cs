@@ -17,6 +17,11 @@ public static class PreviousTableGridConverter
     return collection;
   }
   
+  private static bool CmpGridColumns(DXW.PreviousTableGrid openXmlElement, Collection<DMW.GridColumn>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetGridColumns(DXW.PreviousTableGrid openXmlElement, Collection<DMW.GridColumn>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.GridColumn>();
@@ -40,6 +45,18 @@ public static class PreviousTableGridConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.PreviousTableGrid? openXmlElement, DMW.PreviousTableGrid? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpGridColumns(openXmlElement, value.GridColumns, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableGrid? value)

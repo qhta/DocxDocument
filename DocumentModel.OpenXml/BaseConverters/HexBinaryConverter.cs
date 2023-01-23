@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml.VariantTypes;
+
+namespace DocumentModel.OpenXml;
 
 public static class HexBinaryConverter
 {
@@ -7,11 +9,27 @@ public static class HexBinaryConverter
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      var value = (string?)valProperty.GetValue(element);
-      if (value != null)
-        return Convert.FromHexString(value);
+      var valStr = (string?)valProperty.GetValue(element);
+      if (valStr != null)
+        return Convert.FromHexString(valStr);
     }
     return null;
+  }
+
+  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, byte[]? value, DiffList? diffs, string? objectName)
+  {
+    var valProperty = element?.GetType().GetProperty("Val");
+    if (valProperty != null && value != null)
+    {
+      var valStr = (string?)valProperty.GetValue(element);
+      var valueStr = Convert.ToHexString(value);
+      if (valStr == valueStr) return true;
+      diffs?.Add(objectName, element?.GetType().ToString(), valStr, valueStr);
+      return false;
+    }
+    if (valProperty == null && value == null) return true;
+    diffs?.Add(objectName, element?.GetType().ToString(), value, value);
+    return false;
   }
 
   public static byte[]? GetValue(string? value)

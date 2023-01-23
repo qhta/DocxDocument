@@ -17,6 +17,11 @@ public static class PieSerExtensionListConverter
     return collection;
   }
   
+  private static bool CmpPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement, Collection<DMDrawsCharts.PieSerExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement, Collection<DMDrawsCharts.PieSerExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.PieSerExtension>();
@@ -40,6 +45,18 @@ public static class PieSerExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.PieSerExtensionList? openXmlElement, DMDrawsCharts.PieSerExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPieSerExtensions(openXmlElement, value.PieSerExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieSerExtensionList? value)

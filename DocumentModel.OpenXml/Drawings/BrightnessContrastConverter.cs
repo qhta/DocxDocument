@@ -13,6 +13,11 @@ public static class BrightnessContrastConverter
     return openXmlElement.Bright?.Value;
   }
   
+  private static bool CmpBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Bright?.Value == value;
+  }
+  
   private static void SetBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
   {
     openXmlElement.Bright = value;
@@ -24,6 +29,11 @@ public static class BrightnessContrastConverter
   private static Int32? GetContrast(DXO2010Draw.BrightnessContrast openXmlElement)
   {
     return openXmlElement.Contrast?.Value;
+  }
+  
+  private static bool CmpContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Contrast?.Value == value;
   }
   
   private static void SetContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class BrightnessContrastConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010Draw.BrightnessContrast? openXmlElement, DMDraws.BrightnessContrast? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBright(openXmlElement, value.Bright, diffs, objName))
+        ok = false;
+      if (!CmpContrast(openXmlElement, value.Contrast, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BrightnessContrast? value)

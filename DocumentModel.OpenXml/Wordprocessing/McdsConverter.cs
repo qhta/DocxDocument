@@ -17,6 +17,11 @@ public static class McdsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXOW.Mcds openXmlElement, Collection<DMW.Mcd>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXOW.Mcds openXmlElement, Collection<DMW.Mcd>? value)
   {
     openXmlElement.RemoveAllChildren<DXOW.Mcd>();
@@ -40,6 +45,18 @@ public static class McdsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.Mcds? openXmlElement, DMW.Mcds? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcds? value)

@@ -13,6 +13,11 @@ public static class NumberingChangeConverter
     return openXmlElement?.Original?.Value;
   }
   
+  private static bool CmpOriginal(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Original?.Value == value;
+  }
+  
   private static void SetOriginal(DXW.NumberingChange openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class NumberingChangeConverter
   private static String? GetAuthor(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
+  }
+  
+  private static bool CmpAuthor(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Author?.Value == value;
   }
   
   private static void SetAuthor(DXW.NumberingChange openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class NumberingChangeConverter
     return openXmlElement.Date?.Value;
   }
   
+  private static bool CmpDate(DXW.NumberingChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Date?.Value == value;
+  }
+  
   private static void SetDate(DXW.NumberingChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
@@ -56,6 +71,11 @@ public static class NumberingChangeConverter
   private static String? GetId(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.NumberingChange openXmlElement, String? value)
@@ -78,6 +98,24 @@ public static class NumberingChangeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.NumberingChange? openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOriginal(openXmlElement, value.Original, diffs, objName))
+        ok = false;
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+        ok = false;
+      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange? value)

@@ -20,6 +20,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpChartParts(DXPack.SlidePart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the commentParts of the SlidePart
   /// </summary>
@@ -35,9 +40,19 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpcommentParts(DXPack.SlidePart openXmlElement, Collection<DMPack.PowerPointCommentPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetContentType(DXPack.SlidePart openXmlElement)
   {
     return openXmlElement?.ContentType;
+  }
+  
+  private static bool CmpContentType(DXPack.SlidePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ContentType == value;
   }
   
   /// <summary>
@@ -55,6 +70,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpCustomXmlParts(DXPack.SlidePart openXmlElement, Collection<DMPack.CustomXmlPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramColorsParts of the SlidePart
   /// </summary>
@@ -68,6 +88,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramColorsParts(DXPack.SlidePart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -85,6 +110,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpDiagramDataParts(DXPack.SlidePart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the SlidePart
   /// </summary>
@@ -98,6 +128,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.SlidePart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -115,6 +150,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpDiagramPersistLayoutParts(DXPack.SlidePart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the DiagramStyleParts of the SlidePart
   /// </summary>
@@ -128,6 +168,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpDiagramStyleParts(DXPack.SlidePart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -145,6 +190,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedControlPersistenceBinaryDataParts(DXPack.SlidePart openXmlElement, Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the SlidePart
   /// </summary>
@@ -158,6 +208,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedControlPersistenceParts(DXPack.SlidePart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -175,6 +230,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpEmbeddedObjectParts(DXPack.SlidePart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the EmbeddedPackageParts of the SlidePart
   /// </summary>
@@ -188,6 +248,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpEmbeddedPackageParts(DXPack.SlidePart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -205,6 +270,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpExtendedChartParts(DXPack.SlidePart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the ImageParts of the SlidePart
   /// </summary>
@@ -218,6 +288,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpImageParts(DXPack.SlidePart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -235,9 +310,19 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.SlidePart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static String? GetRelationshipType(DXPack.SlidePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
+  }
+  
+  private static bool CmpRelationshipType(DXPack.SlidePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
   }
   
   /// <summary>
@@ -255,6 +340,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpSlideParts(DXPack.SlidePart openXmlElement, Collection<DMPack.SlidePart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the UserDefinedTagsParts of the SlidePart
   /// </summary>
@@ -268,6 +358,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpUserDefinedTagsParts(DXPack.SlidePart openXmlElement, Collection<DMPack.UserDefinedTagsPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   /// <summary>
@@ -285,6 +380,11 @@ public static class SlidePartConverter
     return collection;
   }
   
+  private static bool CmpVmlDrawingParts(DXPack.SlidePart openXmlElement, Collection<DMPack.VmlDrawingPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   /// <summary>
   /// Gets the WebExtensionParts of the SlidePart
   /// </summary>
@@ -298,6 +398,11 @@ public static class SlidePartConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpWebExtensionParts(DXPack.SlidePart openXmlElement, Collection<DMPack.WebExtensionPart>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   public static DMPack.SlidePart? CreateModelElement(DXPack.SlidePart? openXmlElement)
@@ -329,6 +434,58 @@ public static class SlidePartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.SlidePart? openXmlElement, DMPack.SlidePart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+        ok = false;
+      if (!CmpcommentParts(openXmlElement, value.commentParts, diffs, objName))
+        ok = false;
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+        ok = false;
+      if (!CmpCustomXmlParts(openXmlElement, value.CustomXmlParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+        ok = false;
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value.EmbeddedControlPersistenceBinaryDataParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+        ok = false;
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+        ok = false;
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+        ok = false;
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+        ok = false;
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+        ok = false;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      if (!CmpSlideParts(openXmlElement, value.SlideParts, diffs, objName))
+        ok = false;
+      if (!CmpUserDefinedTagsParts(openXmlElement, value.UserDefinedTagsParts, diffs, objName))
+        ok = false;
+      if (!CmpVmlDrawingParts(openXmlElement, value.VmlDrawingParts, diffs, objName))
+        ok = false;
+      if (!CmpWebExtensionParts(openXmlElement, value.WebExtensionParts, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.SlidePart? value)

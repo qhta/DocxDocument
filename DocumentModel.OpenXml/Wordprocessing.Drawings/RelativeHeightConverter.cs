@@ -13,6 +13,11 @@ public static class RelativeHeightConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWDraws.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
+  private static bool CmpRelativeFrom(DXO2010WDraw.RelativeHeight openXmlElement, DMWDraws.SizeRelativeVerticallyKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWDraws.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetRelativeFrom(DXO2010WDraw.RelativeHeight openXmlElement, DMWDraws.SizeRelativeVerticallyKind? value)
   {
     openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWDraws.SizeRelativeVerticallyKind>(value);
@@ -23,10 +28,12 @@ public static class RelativeHeightConverter
   /// </summary>
   private static String? GetPercentageHeight(DXO2010WDraw.RelativeHeight openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageHeight>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageHeight>()?.Text;
+  }
+  
+  private static bool CmpPercentageHeight(DXO2010WDraw.RelativeHeight openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentageHeight>()?.Text == value;
   }
   
   private static void SetPercentageHeight(DXO2010WDraw.RelativeHeight openXmlElement, String? value)
@@ -51,6 +58,20 @@ public static class RelativeHeightConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010WDraw.RelativeHeight? openXmlElement, DMWDraws.RelativeHeight? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelativeFrom(openXmlElement, value.RelativeFrom, diffs, objName))
+        ok = false;
+      if (!CmpPercentageHeight(openXmlElement, value.PercentageHeight, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWDraws.RelativeHeight? value)

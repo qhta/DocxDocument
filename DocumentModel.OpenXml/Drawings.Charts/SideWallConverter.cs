@@ -7,10 +7,12 @@ public static class SideWallConverter
 {
   private static Byte? GetThickness(DXDrawCharts.SideWall openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val?.Value;
+  }
+  
+  private static bool CmpThickness(DXDrawCharts.SideWall openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val?.Value == value;
   }
   
   private static void SetThickness(DXDrawCharts.SideWall openXmlElement, Byte? value)
@@ -27,10 +29,12 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.SideWall openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+  }
+  
+  private static bool CmpShapeProperties(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ShapeProperties? value)
@@ -48,10 +52,12 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.SideWall openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
-    if (itemElement != null)
-      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+  }
+  
+  private static bool CmpPictureOptions(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureOptions(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -69,10 +75,12 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.SideWall openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -100,6 +108,24 @@ public static class SideWallConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.SideWall? openXmlElement, DMDrawsCharts.SideWall? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpThickness(openXmlElement, value.Thickness, diffs, objName))
+        ok = false;
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+        ok = false;
+      if (!CmpPictureOptions(openXmlElement, value.PictureOptions, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SideWall? value)

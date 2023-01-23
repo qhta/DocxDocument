@@ -17,6 +17,11 @@ public static class ShapeGuideListConverter
     return collection;
   }
   
+  private static bool CmpShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value)
   {
     openXmlElement.RemoveAllChildren<DXDraw.ShapeGuide>();
@@ -40,6 +45,18 @@ public static class ShapeGuideListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.ShapeGuideList? openXmlElement, DMDraws.ShapeGuideList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpShapeGuides(openXmlElement, value.ShapeGuides, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuideList? value)

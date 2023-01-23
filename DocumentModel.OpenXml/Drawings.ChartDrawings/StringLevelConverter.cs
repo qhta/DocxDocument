@@ -13,6 +13,11 @@ public static class StringLevelConverter
     return openXmlElement.PtCount?.Value;
   }
   
+  private static bool CmpPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.PtCount?.Value == value;
+  }
+  
   private static void SetPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement, UInt32? value)
   {
     openXmlElement.PtCount = value;
@@ -24,6 +29,11 @@ public static class StringLevelConverter
   private static String? GetName(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
+  }
+  
+  private static bool CmpName(DXO2016DrawChartDraw.StringLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Name?.Value == value;
   }
   
   private static void SetName(DXO2016DrawChartDraw.StringLevel openXmlElement, String? value)
@@ -44,6 +54,11 @@ public static class StringLevelConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement, Collection<DMDrawsChartDraws.ChartStringValue>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement, Collection<DMDrawsChartDraws.ChartStringValue>? value)
@@ -71,6 +86,22 @@ public static class StringLevelConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.StringLevel? openXmlElement, DMDrawsChartDraws.StringLevel? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName))
+        ok = false;
+      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+        ok = false;
+      if (!CmpChartStringValues(openXmlElement, value.ChartStringValues, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.StringLevel? value)

@@ -13,6 +13,11 @@ public static class VerticalPositionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
+  private static bool CmpRelativeFrom(DXDrawW.VerticalPosition openXmlElement, DMDrawsW.VerticalRelativePositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetRelativeFrom(DXDrawW.VerticalPosition openXmlElement, DMDrawsW.VerticalRelativePositionKind? value)
   {
     openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(value);
@@ -23,10 +28,12 @@ public static class VerticalPositionConverter
   /// </summary>
   private static String? GetVerticalAlignment(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.VerticalAlignment>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawW.VerticalAlignment>()?.Text;
+  }
+  
+  private static bool CmpVerticalAlignment(DXDrawW.VerticalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawW.VerticalAlignment>()?.Text == value;
   }
   
   private static void SetVerticalAlignment(DXDrawW.VerticalPosition openXmlElement, String? value)
@@ -46,10 +53,12 @@ public static class VerticalPositionConverter
   /// </summary>
   private static String? GetPositionOffset(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>()?.Text;
+  }
+  
+  private static bool CmpPositionOffset(DXDrawW.VerticalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>()?.Text == value;
   }
   
   private static void SetPositionOffset(DXDrawW.VerticalPosition openXmlElement, String? value)
@@ -69,10 +78,12 @@ public static class VerticalPositionConverter
   /// </summary>
   private static String? GetPercentagePositionVerticalOffset(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionVerticalOffset>();
-    if (itemElement != null)
-      return itemElement.Text;
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionVerticalOffset>()?.Text;
+  }
+  
+  private static bool CmpPercentagePositionVerticalOffset(DXDrawW.VerticalPosition openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionVerticalOffset>()?.Text == value;
   }
   
   private static void SetPercentagePositionVerticalOffset(DXDrawW.VerticalPosition openXmlElement, String? value)
@@ -99,6 +110,24 @@ public static class VerticalPositionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawW.VerticalPosition? openXmlElement, DMDrawsW.VerticalPosition? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelativeFrom(openXmlElement, value.RelativeFrom, diffs, objName))
+        ok = false;
+      if (!CmpVerticalAlignment(openXmlElement, value.VerticalAlignment, diffs, objName))
+        ok = false;
+      if (!CmpPositionOffset(openXmlElement, value.PositionOffset, diffs, objName))
+        ok = false;
+      if (!CmpPercentagePositionVerticalOffset(openXmlElement, value.PercentagePositionVerticalOffset, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.VerticalPosition? value)

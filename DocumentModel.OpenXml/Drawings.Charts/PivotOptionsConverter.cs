@@ -10,8 +10,12 @@ public static class PivotOptionsConverter
   /// </summary>
   private static Boolean? GetDropZoneFilter(DXO2010DrawCharts.PivotOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneFilter>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneFilter>() != null;
+  }
+  
+  private static bool CmpDropZoneFilter(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneFilter>() != null == value;
   }
   
   private static void SetDropZoneFilter(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value)
@@ -34,8 +38,12 @@ public static class PivotOptionsConverter
   /// </summary>
   private static Boolean? GetDropZoneCategories(DXO2010DrawCharts.PivotOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneCategories>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneCategories>() != null;
+  }
+  
+  private static bool CmpDropZoneCategories(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneCategories>() != null == value;
   }
   
   private static void SetDropZoneCategories(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value)
@@ -58,8 +66,12 @@ public static class PivotOptionsConverter
   /// </summary>
   private static Boolean? GetDropZoneData(DXO2010DrawCharts.PivotOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneData>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneData>() != null;
+  }
+  
+  private static bool CmpDropZoneData(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneData>() != null == value;
   }
   
   private static void SetDropZoneData(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value)
@@ -82,8 +94,12 @@ public static class PivotOptionsConverter
   /// </summary>
   private static Boolean? GetDropZoneSeries(DXO2010DrawCharts.PivotOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneSeries>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneSeries>() != null;
+  }
+  
+  private static bool CmpDropZoneSeries(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZoneSeries>() != null == value;
   }
   
   private static void SetDropZoneSeries(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value)
@@ -106,8 +122,12 @@ public static class PivotOptionsConverter
   /// </summary>
   private static Boolean? GetDropZonesVisible(DXO2010DrawCharts.PivotOptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZonesVisible>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZonesVisible>() != null;
+  }
+  
+  private static bool CmpDropZonesVisible(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXO2010DrawCharts.DropZonesVisible>() != null == value;
   }
   
   private static void SetDropZonesVisible(DXO2010DrawCharts.PivotOptions openXmlElement, Boolean? value)
@@ -138,6 +158,26 @@ public static class PivotOptionsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010DrawCharts.PivotOptions? openXmlElement, DMDrawsCharts.PivotOptions? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDropZoneFilter(openXmlElement, value.DropZoneFilter, diffs, objName))
+        ok = false;
+      if (!CmpDropZoneCategories(openXmlElement, value.DropZoneCategories, diffs, objName))
+        ok = false;
+      if (!CmpDropZoneData(openXmlElement, value.DropZoneData, diffs, objName))
+        ok = false;
+      if (!CmpDropZoneSeries(openXmlElement, value.DropZoneSeries, diffs, objName))
+        ok = false;
+      if (!CmpDropZonesVisible(openXmlElement, value.DropZonesVisible, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotOptions? value)

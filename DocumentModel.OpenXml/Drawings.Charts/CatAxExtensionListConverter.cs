@@ -17,6 +17,11 @@ public static class CatAxExtensionListConverter
     return collection;
   }
   
+  private static bool CmpCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.CatAxExtension>();
@@ -40,6 +45,18 @@ public static class CatAxExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.CatAxExtensionList? openXmlElement, DMDrawsCharts.CatAxExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCatAxExtensions(openXmlElement, value.CatAxExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CatAxExtensionList? value)

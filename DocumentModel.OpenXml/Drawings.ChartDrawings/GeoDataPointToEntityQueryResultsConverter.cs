@@ -17,6 +17,11 @@ public static class GeoDataPointToEntityQueryResultsConverter
     return collection;
   }
   
+  private static bool CmpItems(DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults openXmlElement, Collection<DMDrawsChartDraws.GeoDataPointToEntityQueryResult>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults openXmlElement, Collection<DMDrawsChartDraws.GeoDataPointToEntityQueryResult>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.GeoDataPointToEntityQueryResult>();
@@ -40,6 +45,18 @@ public static class GeoDataPointToEntityQueryResultsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults? openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQueryResults? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQueryResults? value)

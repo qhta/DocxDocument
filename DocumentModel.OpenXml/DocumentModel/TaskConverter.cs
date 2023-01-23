@@ -13,6 +13,11 @@ public static class TaskConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2021DocTasks.Task openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2021DocTasks.Task openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class TaskConverter
   /// </summary>
   private static DM.TaskAnchor? GetTaskAnchor(DXO2021DocTasks.Task openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>();
-    if (itemElement != null)
-      return DMX.TaskAnchorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.TaskAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>());
+  }
+  
+  private static bool CmpTaskAnchor(DXO2021DocTasks.Task openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  {
+    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskAnchor(DXO2021DocTasks.Task openXmlElement, DM.TaskAnchor? value)
@@ -50,10 +57,12 @@ public static class TaskConverter
   /// </summary>
   private static DM.TaskHistory? GetTaskHistory(DXO2021DocTasks.Task openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>();
-    if (itemElement != null)
-      return DMX.TaskHistoryConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.TaskHistoryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>());
+  }
+  
+  private static bool CmpTaskHistory(DXO2021DocTasks.Task openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
+  {
+    return DMX.TaskHistoryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskHistory(DXO2021DocTasks.Task openXmlElement, DM.TaskHistory? value)
@@ -74,10 +83,12 @@ public static class TaskConverter
   /// </summary>
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.Task openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
-    if (itemElement != null)
-      return DMX.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXO2021DocTasks.Task openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021DocTasks.Task openXmlElement, DM.ExtensionList? value)
@@ -105,6 +116,24 @@ public static class TaskConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2021DocTasks.Task? openXmlElement, DM.Task? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpTaskAnchor(openXmlElement, value.TaskAnchor, diffs, objName))
+        ok = false;
+      if (!CmpTaskHistory(openXmlElement, value.TaskHistory, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Task? value)

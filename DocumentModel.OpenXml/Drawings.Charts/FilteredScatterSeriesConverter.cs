@@ -10,10 +10,12 @@ public static class FilteredScatterSeriesConverter
   /// </summary>
   private static DMDrawsCharts.ScatterChartSeries3? GetScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>();
-    if (itemElement != null)
-      return DMXDrawsCharts.ScatterChartSeries3Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.ScatterChartSeries3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>());
+  }
+  
+  private static bool CmpScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.ScatterChartSeries3? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.ScatterChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.ScatterChartSeries3? value)
@@ -38,6 +40,18 @@ public static class FilteredScatterSeriesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013DrawChart.FilteredScatterSeries? openXmlElement, DMDrawsCharts.FilteredScatterSeries? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpScatterChartSeries(openXmlElement, value.ScatterChartSeries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredScatterSeries? value)

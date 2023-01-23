@@ -7,10 +7,12 @@ public static class AdjustHandleListConverter
 {
   private static DMDraws.AdjustHandleXY? GetAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>();
-    if (itemElement != null)
-      return DMXDraws.AdjustHandleXYConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AdjustHandleXYConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>());
+  }
+  
+  private static bool CmpAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandleXY? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AdjustHandleXYConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandleXY? value)
@@ -28,10 +30,12 @@ public static class AdjustHandleListConverter
   
   private static DMDraws.AdjustHandlePolar? GetAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>();
-    if (itemElement != null)
-      return DMXDraws.AdjustHandlePolarConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.AdjustHandlePolarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>());
+  }
+  
+  private static bool CmpAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandlePolar? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.AdjustHandlePolarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandlePolar? value)
@@ -57,6 +61,20 @@ public static class AdjustHandleListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AdjustHandleList? openXmlElement, DMDraws.AdjustHandleList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAdjustHandleXY(openXmlElement, value.AdjustHandleXY, diffs, objName))
+        ok = false;
+      if (!CmpAdjustHandlePolar(openXmlElement, value.AdjustHandlePolar, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustHandleList? value)

@@ -10,8 +10,12 @@ public static class SingleDataSourceRecordConverter
   /// </summary>
   private static Boolean? GetRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOW.RecordIncluded>();
-    return itemElement != null;
+    return openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null;
+  }
+  
+  private static bool CmpRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null == value;
   }
   
   private static void SetRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value)
@@ -34,10 +38,12 @@ public static class SingleDataSourceRecordConverter
   /// </summary>
   private static Int64? GetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOW.RecordHashCode>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val?.Value;
+  }
+  
+  private static bool CmpRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val?.Value == value;
   }
   
   private static void SetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value)
@@ -62,6 +68,20 @@ public static class SingleDataSourceRecordConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.SingleDataSourceRecord? openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRecordIncluded(openXmlElement, value.RecordIncluded, diffs, objName))
+        ok = false;
+      if (!CmpRecordHashCode(openXmlElement, value.RecordHashCode, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SingleDataSourceRecord? value)

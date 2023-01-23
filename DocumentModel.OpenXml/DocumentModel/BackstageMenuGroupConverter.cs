@@ -13,6 +13,11 @@ public static class BackstageMenuGroupConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BackstageMenuGroupConverter
   private static String? GetQualifiedId(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
+  }
+  
+  private static bool CmpQualifiedId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.QualifiedId?.Value == value;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -45,6 +55,11 @@ public static class BackstageMenuGroupConverter
     return openXmlElement?.Tag?.Value;
   }
   
+  private static bool CmpTag(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Tag?.Value == value;
+  }
+  
   private static void SetTag(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -59,6 +74,11 @@ public static class BackstageMenuGroupConverter
   private static String? GetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
     return openXmlElement?.Label?.Value;
+  }
+  
+  private static bool CmpLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Label?.Value == value;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -77,6 +97,11 @@ public static class BackstageMenuGroupConverter
     return openXmlElement?.GetLabel?.Value;
   }
   
+  private static bool CmpGetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetLabel?.Value == value;
+  }
+  
   private static void SetGetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
   {
     if (value != null)
@@ -93,6 +118,11 @@ public static class BackstageMenuGroupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value);
   }
   
+  private static bool CmpItemSize(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.ItemSizeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetItemSize(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.ItemSizeKind? value)
   {
     openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(value);
@@ -100,10 +130,12 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuButton? GetBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuButton>();
-    if (itemElement != null)
-      return DMX.BackstageMenuButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageMenuButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuButton>());
+  }
+  
+  private static bool CmpBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuButton? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageMenuButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuButton? value)
@@ -121,10 +153,12 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuCheckBox? GetBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>();
-    if (itemElement != null)
-      return DMX.BackstageMenuCheckBoxConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageMenuCheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>());
+  }
+  
+  private static bool CmpBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuCheckBox? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageMenuCheckBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuCheckBox? value)
@@ -142,10 +176,12 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageSubMenu? GetBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageSubMenu>();
-    if (itemElement != null)
-      return DMX.BackstageSubMenuConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageSubMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageSubMenu>());
+  }
+  
+  private static bool CmpBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageSubMenu? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageSubMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageSubMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageSubMenu? value)
@@ -163,10 +199,12 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuToggleButton? GetBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>();
-    if (itemElement != null)
-      return DMX.BackstageMenuToggleButtonConverter.CreateModelElement(itemElement);
-    return null;
+    return DMX.BackstageMenuToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>());
+  }
+  
+  private static bool CmpBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuToggleButton? value, DiffList? diffs, string? objName)
+  {
+    return DMX.BackstageMenuToggleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuToggleButton? value)
@@ -200,6 +238,36 @@ public static class BackstageMenuGroupConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010CustUI.BackstageMenuGroup? openXmlElement, DM.BackstageMenuGroup? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+        ok = false;
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+        ok = false;
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+        ok = false;
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+        ok = false;
+      if (!CmpItemSize(openXmlElement, value.ItemSize, diffs, objName))
+        ok = false;
+      if (!CmpBackstageMenuButton(openXmlElement, value.BackstageMenuButton, diffs, objName))
+        ok = false;
+      if (!CmpBackstageMenuCheckBox(openXmlElement, value.BackstageMenuCheckBox, diffs, objName))
+        ok = false;
+      if (!CmpBackstageSubMenu(openXmlElement, value.BackstageSubMenu, diffs, objName))
+        ok = false;
+      if (!CmpBackstageMenuToggleButton(openXmlElement, value.BackstageMenuToggleButton, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageMenuGroup? value)

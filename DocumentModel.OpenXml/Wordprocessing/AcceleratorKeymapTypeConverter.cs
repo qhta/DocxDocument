@@ -13,6 +13,11 @@ public static class AcceleratorKeymapTypeConverter
     return openXmlElement?.AcceleratorName?.Value;
   }
   
+  private static bool CmpAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AcceleratorName?.Value == value;
+  }
+  
   private static void SetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value)
   {
     if (value != null)
@@ -30,6 +35,18 @@ public static class AcceleratorKeymapTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXOW.AcceleratorKeymapType? openXmlElement, DMW.AcceleratorKeymapType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpAcceleratorName(openXmlElement, value.AcceleratorName, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AcceleratorKeymapType? value)

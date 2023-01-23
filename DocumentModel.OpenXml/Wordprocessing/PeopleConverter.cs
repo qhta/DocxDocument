@@ -17,6 +17,11 @@ public static class PeopleConverter
     return collection;
   }
   
+  private static bool CmpPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013W.Person>();
@@ -40,6 +45,18 @@ public static class PeopleConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2013W.People? openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpPersons(openXmlElement, value.Persons, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.People? value)

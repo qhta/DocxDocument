@@ -13,6 +13,11 @@ public static class Line3DChartExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.Line3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.Line3DChartExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class Line3DChartExtensionConverter
   
   private static DMDrawsCharts.FilteredLineSeriesExtension? GetFilteredLineSeriesExtension(DXDrawCharts.Line3DChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>();
-    if (itemElement != null)
-      return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>());
+  }
+  
+  private static bool CmpFilteredLineSeriesExtension(DXDrawCharts.Line3DChartExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredLineSeriesExtension(DXDrawCharts.Line3DChartExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value)
@@ -52,6 +59,20 @@ public static class Line3DChartExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Line3DChartExtension? openXmlElement, DMDrawsCharts.Line3DChartExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpFilteredLineSeriesExtension(openXmlElement, value.FilteredLineSeriesExtension, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Line3DChartExtension? value)

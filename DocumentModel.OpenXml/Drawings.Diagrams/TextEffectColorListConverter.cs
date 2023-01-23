@@ -7,10 +7,12 @@ public static class TextEffectColorListConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
-    if (itemElement != null)
-      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+  }
+  
+  private static bool CmpRgbColorModelPercentage(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelPercentage(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -28,10 +30,12 @@ public static class TextEffectColorListConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
-    if (itemElement != null)
-      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+  }
+  
+  private static bool CmpRgbColorModelHex(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -49,10 +53,12 @@ public static class TextEffectColorListConverter
   
   private static DMDraws.HslColor? GetHslColor(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
-    if (itemElement != null)
-      return DMXDraws.HslColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+  }
+  
+  private static bool CmpHslColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHslColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.HslColor? value)
@@ -70,10 +76,12 @@ public static class TextEffectColorListConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
-    if (itemElement != null)
-      return DMXDraws.SystemColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+  }
+  
+  private static bool CmpSystemColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSystemColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.SystemColor? value)
@@ -91,10 +99,12 @@ public static class TextEffectColorListConverter
   
   private static DMDraws.SchemeColor? GetSchemeColor(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
-    if (itemElement != null)
-      return DMXDraws.SchemeColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+  }
+  
+  private static bool CmpSchemeColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.SchemeColor? value)
@@ -112,10 +122,12 @@ public static class TextEffectColorListConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXDrawDgms.TextEffectColorList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
-    if (itemElement != null)
-      return DMXDraws.PresetColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+  }
+  
+  private static bool CmpPresetColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetColor(DXDrawDgms.TextEffectColorList openXmlElement, DMDraws.PresetColor? value)
@@ -145,6 +157,28 @@ public static class TextEffectColorListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.TextEffectColorList? openXmlElement, DMDrawsDgms.TextEffectColorList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName))
+        ok = false;
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+        ok = false;
+      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName))
+        ok = false;
+      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName))
+        ok = false;
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+        ok = false;
+      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextEffectColorList? value)

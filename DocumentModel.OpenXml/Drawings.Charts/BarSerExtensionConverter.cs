@@ -13,6 +13,11 @@ public static class BarSerExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.BarSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.BarSerExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class BarSerExtensionConverter
   
   private static DMDrawsCharts.InvertSolidFillFormat? GetInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>();
-    if (itemElement != null)
-      return DMXDrawsCharts.InvertSolidFillFormatConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.InvertSolidFillFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>());
+  }
+  
+  private static bool CmpInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value)
@@ -44,10 +51,12 @@ public static class BarSerExtensionConverter
   
   private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>();
-    if (itemElement != null)
-      return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>());
+  }
+  
+  private static bool CmpFilteredSeriesTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredSeriesTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value)
@@ -65,10 +74,12 @@ public static class BarSerExtensionConverter
   
   private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
-    if (itemElement != null)
-      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>());
+  }
+  
+  private static bool CmpFilteredCategoryTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredCategoryTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value)
@@ -86,10 +97,12 @@ public static class BarSerExtensionConverter
   
   private static DMDrawsCharts.DataLabelsRange? GetDataLabelsRange(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>();
-    if (itemElement != null)
-      return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>());
+  }
+  
+  private static bool CmpDataLabelsRange(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelsRange(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value)
@@ -107,10 +120,12 @@ public static class BarSerExtensionConverter
   
   private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
-    if (itemElement != null)
-      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>());
+  }
+  
+  private static bool CmpCategoryFilterExceptions(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategoryFilterExceptions(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value)
@@ -140,6 +155,28 @@ public static class BarSerExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.BarSerExtension? openXmlElement, DMDrawsCharts.BarSerExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpInvertSolidFillFormat(openXmlElement, value.InvertSolidFillFormat, diffs, objName))
+        ok = false;
+      if (!CmpFilteredSeriesTitle(openXmlElement, value.FilteredSeriesTitle, diffs, objName))
+        ok = false;
+      if (!CmpFilteredCategoryTitle(openXmlElement, value.FilteredCategoryTitle, diffs, objName))
+        ok = false;
+      if (!CmpDataLabelsRange(openXmlElement, value.DataLabelsRange, diffs, objName))
+        ok = false;
+      if (!CmpCategoryFilterExceptions(openXmlElement, value.CategoryFilterExceptions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarSerExtension? value)

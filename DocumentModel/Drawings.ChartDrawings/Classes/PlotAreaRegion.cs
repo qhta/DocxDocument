@@ -10,7 +10,7 @@ public class PlotAreaRegion
   /// </summary>
   public PlotSurface? PlotSurface { get; set; }
 
-  public Collection<Series>? Serieses { get; set; }
+  public Collection<Series>? Series { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

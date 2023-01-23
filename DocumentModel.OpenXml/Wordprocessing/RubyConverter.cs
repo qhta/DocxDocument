@@ -10,10 +10,12 @@ public static class RubyConverter
   /// </summary>
   private static DMW.RubyProperties? GetRubyProperties(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyProperties>();
-    if (itemElement != null)
-      return DMXW.RubyPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RubyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RubyProperties>());
+  }
+  
+  private static bool CmpRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RubyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value)
@@ -34,10 +36,12 @@ public static class RubyConverter
   /// </summary>
   private static DMW.RubyContent? GetRubyContent(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyContent>();
-    if (itemElement != null)
-      return DMXW.RubyContentConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RubyContentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RubyContent>());
+  }
+  
+  private static bool CmpRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RubyContentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value)
@@ -58,10 +62,12 @@ public static class RubyConverter
   /// </summary>
   private static DMW.RubyBase? GetRubyBase(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyBase>();
-    if (itemElement != null)
-      return DMXW.RubyBaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RubyBaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RubyBase>());
+  }
+  
+  private static bool CmpRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RubyBaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value)
@@ -88,6 +94,22 @@ public static class RubyConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Ruby? openXmlElement, DMW.Ruby? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRubyProperties(openXmlElement, value.RubyProperties, diffs, objName))
+        ok = false;
+      if (!CmpRubyContent(openXmlElement, value.RubyContent, diffs, objName))
+        ok = false;
+      if (!CmpRubyBase(openXmlElement, value.RubyBase, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Ruby? value)

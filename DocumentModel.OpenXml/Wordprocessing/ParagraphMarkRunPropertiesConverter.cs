@@ -10,10 +10,12 @@ public static class ParagraphMarkRunPropertiesConverter
   /// </summary>
   private static DMW.TrackChangeType? GetInserted(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Inserted>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>());
+  }
+  
+  private static bool CmpInserted(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInserted(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -34,10 +36,12 @@ public static class ParagraphMarkRunPropertiesConverter
   /// </summary>
   private static DMW.TrackChangeType? GetDeleted(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Deleted>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Deleted>());
+  }
+  
+  private static bool CmpDeleted(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Deleted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeleted(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -58,10 +62,12 @@ public static class ParagraphMarkRunPropertiesConverter
   /// </summary>
   private static DMW.TrackChangeType? GetMoveFrom(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFrom>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFrom>());
+  }
+  
+  private static bool CmpMoveFrom(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFrom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFrom(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -82,10 +88,12 @@ public static class ParagraphMarkRunPropertiesConverter
   /// </summary>
   private static DMW.TrackChangeType? GetMoveTo(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveTo>();
-    if (itemElement != null)
-      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveTo>());
+  }
+  
+  private static bool CmpMoveTo(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveTo(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -103,10 +111,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.TrackChangeType2? GetConflictInsertion(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>());
+  }
+  
+  private static bool CmpConflictInsertion(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConflictInsertion(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -124,10 +134,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.TrackChangeType2? GetConflictDeletion(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>();
-    if (itemElement != null)
-      return DMXW.TrackChangeType2Converter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>());
+  }
+  
+  private static bool CmpConflictDeletion(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConflictDeletion(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -145,10 +157,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static String? GetRunStyle(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunStyle>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.RunStyle>()?.Val?.Value;
+  }
+  
+  private static bool CmpRunStyle(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.RunStyle>()?.Val?.Value == value;
   }
   
   private static void SetRunStyle(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
@@ -165,10 +179,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.RunFonts? GetRunFonts(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.RunFonts>();
-    if (itemElement != null)
-      return DMXW.RunFontsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.RunFontsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>());
+  }
+  
+  private static bool CmpRunFonts(DXW.ParagraphMarkRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunFonts(DXW.ParagraphMarkRunProperties openXmlElement, DMW.RunFonts? value)
@@ -186,10 +202,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetBold(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Bold>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value;
+  }
+  
+  private static bool CmpBold(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value == value;
   }
   
   private static void SetBold(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -209,10 +227,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.BoldComplexScript>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -232,10 +252,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetItalic(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Italic>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value;
+  }
+  
+  private static bool CmpItalic(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value == value;
   }
   
   private static void SetItalic(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -255,10 +277,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -278,10 +302,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetCaps(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Caps>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value;
+  }
+  
+  private static bool CmpCaps(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value == value;
   }
   
   private static void SetCaps(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -301,10 +327,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetSmallCaps(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SmallCaps>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value;
+  }
+  
+  private static bool CmpSmallCaps(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value == value;
   }
   
   private static void SetSmallCaps(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -324,10 +352,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetStrike(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Strike>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value;
+  }
+  
+  private static bool CmpStrike(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value == value;
   }
   
   private static void SetStrike(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -347,10 +377,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetDoubleStrike(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.DoubleStrike>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value;
+  }
+  
+  private static bool CmpDoubleStrike(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value == value;
   }
   
   private static void SetDoubleStrike(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -370,10 +402,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetOutline(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Outline>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value;
+  }
+  
+  private static bool CmpOutline(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value == value;
   }
   
   private static void SetOutline(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -393,10 +427,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetShadow(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Shadow>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value;
+  }
+  
+  private static bool CmpShadow(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value == value;
   }
   
   private static void SetShadow(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -416,10 +452,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetEmboss(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Emboss>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value;
+  }
+  
+  private static bool CmpEmboss(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value == value;
   }
   
   private static void SetEmboss(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -439,10 +477,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetImprint(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Imprint>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value;
+  }
+  
+  private static bool CmpImprint(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value == value;
   }
   
   private static void SetImprint(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -462,10 +502,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetNoProof(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NoProof>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value;
+  }
+  
+  private static bool CmpNoProof(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value == value;
   }
   
   private static void SetNoProof(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -485,10 +527,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetSnapToGrid(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SnapToGrid>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+  }
+  
+  private static bool CmpSnapToGrid(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value == value;
   }
   
   private static void SetSnapToGrid(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -508,10 +552,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetVanish(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Vanish>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value;
+  }
+  
+  private static bool CmpVanish(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value == value;
   }
   
   private static void SetVanish(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -531,10 +577,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetWebHidden(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.WebHidden>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value;
+  }
+  
+  private static bool CmpWebHidden(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value == value;
   }
   
   private static void SetWebHidden(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -554,10 +602,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Color? GetColor(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Color>();
-    if (itemElement != null)
-      return DMXW.ColorConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Color>());
+  }
+  
+  private static bool CmpColor(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Color? value)
@@ -575,10 +625,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Int32? GetSpacing(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Spacing>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpacing(DXW.ParagraphMarkRunProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value == value;
   }
   
   private static void SetSpacing(DXW.ParagraphMarkRunProperties openXmlElement, Int32? value)
@@ -595,10 +647,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Int64? GetCharacterScale(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CharacterScale>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value;
+  }
+  
+  private static bool CmpCharacterScale(DXW.ParagraphMarkRunProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value == value;
   }
   
   private static void SetCharacterScale(DXW.ParagraphMarkRunProperties openXmlElement, Int64? value)
@@ -615,10 +669,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static UInt32? GetKern(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Kern>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value;
+  }
+  
+  private static bool CmpKern(DXW.ParagraphMarkRunProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value == value;
   }
   
   private static void SetKern(DXW.ParagraphMarkRunProperties openXmlElement, UInt32? value)
@@ -635,10 +691,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static String? GetPosition(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Position>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value;
+  }
+  
+  private static bool CmpPosition(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value == value;
   }
   
   private static void SetPosition(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
@@ -655,10 +713,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static String? GetFontSize(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FontSize>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value;
+  }
+  
+  private static bool CmpFontSize(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value == value;
   }
   
   private static void SetFontSize(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
@@ -675,10 +735,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static String? GetFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>();
-    if (itemElement != null)
-      return itemElement.Val?.Value;
-    return null;
+      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
@@ -695,10 +757,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.HighlightColorKind? GetHighlight(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Highlight>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value);
+  }
+  
+  private static bool CmpHighlight(DXW.ParagraphMarkRunProperties openXmlElement, DMW.HighlightColorKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHighlight(DXW.ParagraphMarkRunProperties openXmlElement, DMW.HighlightColorKind? value)
@@ -716,10 +780,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Underline? GetUnderline(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Underline>();
-    if (itemElement != null)
-      return DMXW.UnderlineConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.UnderlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Underline>());
+  }
+  
+  private static bool CmpUnderline(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderline(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Underline? value)
@@ -737,10 +803,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.TextEffectKind? GetTextEffect(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TextEffect>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value);
+  }
+  
+  private static bool CmpTextEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TextEffectKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TextEffectKind? value)
@@ -758,10 +826,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.BorderType? GetBorder(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Border>();
-    if (itemElement != null)
-      return DMXW.BorderTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Border>());
+  }
+  
+  private static bool CmpBorder(DXW.ParagraphMarkRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorder(DXW.ParagraphMarkRunProperties openXmlElement, DMW.BorderType? value)
@@ -779,10 +849,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Shading? GetShading(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
-    if (itemElement != null)
-      return DMXW.ShadingConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+  }
+  
+  private static bool CmpShading(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Shading? value)
@@ -800,10 +872,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.FitText? GetFitText(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.FitText>();
-    if (itemElement != null)
-      return DMXW.FitTextConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.FitTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FitText>());
+  }
+  
+  private static bool CmpFitText(DXW.ParagraphMarkRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFitText(DXW.ParagraphMarkRunProperties openXmlElement, DMW.FitText? value)
@@ -821,10 +895,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.VerticalPositionKind? GetVerticalTextAlignment(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value);
+  }
+  
+  private static bool CmpVerticalTextAlignment(DXW.ParagraphMarkRunProperties openXmlElement, DMW.VerticalPositionKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVerticalTextAlignment(DXW.ParagraphMarkRunProperties openXmlElement, DMW.VerticalPositionKind? value)
@@ -842,10 +918,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetRightToLeftText(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.RightToLeftText>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value;
+  }
+  
+  private static bool CmpRightToLeftText(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value == value;
   }
   
   private static void SetRightToLeftText(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -865,10 +943,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ComplexScript>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value;
+  }
+  
+  private static bool CmpComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value == value;
   }
   
   private static void SetComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -888,10 +968,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.EmphasisMarkKind? GetEmphasis(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Emphasis>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value);
+  }
+  
+  private static bool CmpEmphasis(DXW.ParagraphMarkRunProperties openXmlElement, DMW.EmphasisMarkKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEmphasis(DXW.ParagraphMarkRunProperties openXmlElement, DMW.EmphasisMarkKind? value)
@@ -909,10 +991,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.LanguageType? GetLanguages(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Languages>();
-    if (itemElement != null)
-      return DMXW.LanguageTypeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.LanguageTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Languages>());
+  }
+  
+  private static bool CmpLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value)
@@ -930,10 +1014,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.EastAsianLayout? GetEastAsianLayout(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.EastAsianLayout>();
-    if (itemElement != null)
-      return DMXW.EastAsianLayoutConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.EastAsianLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>());
+  }
+  
+  private static bool CmpEastAsianLayout(DXW.ParagraphMarkRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEastAsianLayout(DXW.ParagraphMarkRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -951,10 +1037,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetSpecVanish(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SpecVanish>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value;
+  }
+  
+  private static bool CmpSpecVanish(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value == value;
   }
   
   private static void SetSpecVanish(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -974,10 +1062,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Glow? GetGlow(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Glow>();
-    if (itemElement != null)
-      return DMXW.GlowConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.GlowConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Glow>());
+  }
+  
+  private static bool CmpGlow(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Glow? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.GlowConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Glow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGlow(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Glow? value)
@@ -995,10 +1085,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Reflection? GetReflection(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Reflection>();
-    if (itemElement != null)
-      return DMXW.ReflectionConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ReflectionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Reflection>());
+  }
+  
+  private static bool CmpReflection(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Reflection? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ReflectionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Reflection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetReflection(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Reflection? value)
@@ -1016,10 +1108,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.TextOutlineEffect? GetTextOutlineEffect(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.TextOutlineEffect>();
-    if (itemElement != null)
-      return DMXW.TextOutlineEffectConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.TextOutlineEffectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.TextOutlineEffect>());
+  }
+  
+  private static bool CmpTextOutlineEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TextOutlineEffect? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.TextOutlineEffectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.TextOutlineEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextOutlineEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.TextOutlineEffect? value)
@@ -1037,10 +1131,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.FillTextEffect? GetFillTextEffect(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.FillTextEffect>();
-    if (itemElement != null)
-      return DMXW.FillTextEffectConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.FillTextEffectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.FillTextEffect>());
+  }
+  
+  private static bool CmpFillTextEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.FillTextEffect? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.FillTextEffectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.FillTextEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillTextEffect(DXW.ParagraphMarkRunProperties openXmlElement, DMW.FillTextEffect? value)
@@ -1058,10 +1154,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Scene3D? GetScene3D(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Scene3D>();
-    if (itemElement != null)
-      return DMXW.Scene3DConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.Scene3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Scene3D>());
+  }
+  
+  private static bool CmpScene3D(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Scene3D? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.Scene3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScene3D(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Scene3D? value)
@@ -1079,10 +1177,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.Properties3D? GetProperties3D(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Properties3D>();
-    if (itemElement != null)
-      return DMXW.Properties3DConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.Properties3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Properties3D>());
+  }
+  
+  private static bool CmpProperties3D(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Properties3D? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.Properties3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Properties3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetProperties3D(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Properties3D? value)
@@ -1100,10 +1200,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.LigaturesKind? GetLigatures(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Ligatures>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>(openXmlElement.GetFirstChild<DXO2010W.Ligatures>()?.Val?.Value);
+  }
+  
+  private static bool CmpLigatures(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LigaturesKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>(openXmlElement.GetFirstChild<DXO2010W.Ligatures>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLigatures(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LigaturesKind? value)
@@ -1121,10 +1223,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.NumberFormKind? GetNumberingFormat(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.NumberingFormat>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>(openXmlElement.GetFirstChild<DXO2010W.NumberingFormat>()?.Val?.Value);
+  }
+  
+  private static bool CmpNumberingFormat(DXW.ParagraphMarkRunProperties openXmlElement, DMW.NumberFormKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>(openXmlElement.GetFirstChild<DXO2010W.NumberingFormat>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXW.ParagraphMarkRunProperties openXmlElement, DMW.NumberFormKind? value)
@@ -1142,10 +1246,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.NumberSpacingKind? GetNumberSpacing(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.NumberSpacing>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>(openXmlElement.GetFirstChild<DXO2010W.NumberSpacing>()?.Val?.Value);
+  }
+  
+  private static bool CmpNumberSpacing(DXW.ParagraphMarkRunProperties openXmlElement, DMW.NumberSpacingKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>(openXmlElement.GetFirstChild<DXO2010W.NumberSpacing>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberSpacing(DXW.ParagraphMarkRunProperties openXmlElement, DMW.NumberSpacingKind? value)
@@ -1163,10 +1269,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.StylisticSets? GetStylisticSets(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.StylisticSets>();
-    if (itemElement != null)
-      return DMXW.StylisticSetsConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.StylisticSetsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.StylisticSets>());
+  }
+  
+  private static bool CmpStylisticSets(DXW.ParagraphMarkRunProperties openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.StylisticSetsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.StylisticSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStylisticSets(DXW.ParagraphMarkRunProperties openXmlElement, DMW.StylisticSets? value)
@@ -1184,10 +1292,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.OnOffKind? GetContextualAlternatives(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.ContextualAlternatives>();
-    if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(itemElement.Val.Value);
-    return null;
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ContextualAlternatives>()?.Val?.Value);
+  }
+  
+  private static bool CmpContextualAlternatives(DXW.ParagraphMarkRunProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ContextualAlternatives>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContextualAlternatives(DXW.ParagraphMarkRunProperties openXmlElement, DMW.OnOffKind? value)
@@ -1205,10 +1315,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static Boolean? GetOfficeMath(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.OfficeMath>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value;
-    return null;
+    return openXmlElement.GetFirstChild<DXW.OfficeMath>()?.Val?.Value;
+  }
+  
+  private static bool CmpOfficeMath(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.GetFirstChild<DXW.OfficeMath>()?.Val?.Value == value;
   }
   
   private static void SetOfficeMath(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -1228,10 +1340,12 @@ public static class ParagraphMarkRunPropertiesConverter
   
   private static DMW.ParagraphMarkRunPropertiesChange? GetParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>();
-    if (itemElement != null)
-      return DMXW.ParagraphMarkRunPropertiesChangeConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.ParagraphMarkRunPropertiesChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>());
+  }
+  
+  private static bool CmpParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ParagraphMarkRunPropertiesChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value)
@@ -1312,6 +1426,130 @@ public static class ParagraphMarkRunPropertiesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.ParagraphMarkRunProperties? openXmlElement, DMW.ParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+        ok = false;
+      if (!CmpDeleted(openXmlElement, value.Deleted, diffs, objName))
+        ok = false;
+      if (!CmpMoveFrom(openXmlElement, value.MoveFrom, diffs, objName))
+        ok = false;
+      if (!CmpMoveTo(openXmlElement, value.MoveTo, diffs, objName))
+        ok = false;
+      if (!CmpConflictInsertion(openXmlElement, value.ConflictInsertion, diffs, objName))
+        ok = false;
+      if (!CmpConflictDeletion(openXmlElement, value.ConflictDeletion, diffs, objName))
+        ok = false;
+      if (!CmpRunStyle(openXmlElement, value.RunStyle, diffs, objName))
+        ok = false;
+      if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
+        ok = false;
+      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+        ok = false;
+      if (!CmpBoldComplexScript(openXmlElement, value.BoldComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
+        ok = false;
+      if (!CmpItalicComplexScript(openXmlElement, value.ItalicComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
+        ok = false;
+      if (!CmpSmallCaps(openXmlElement, value.SmallCaps, diffs, objName))
+        ok = false;
+      if (!CmpStrike(openXmlElement, value.Strike, diffs, objName))
+        ok = false;
+      if (!CmpDoubleStrike(openXmlElement, value.DoubleStrike, diffs, objName))
+        ok = false;
+      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+        ok = false;
+      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName))
+        ok = false;
+      if (!CmpEmboss(openXmlElement, value.Emboss, diffs, objName))
+        ok = false;
+      if (!CmpImprint(openXmlElement, value.Imprint, diffs, objName))
+        ok = false;
+      if (!CmpNoProof(openXmlElement, value.NoProof, diffs, objName))
+        ok = false;
+      if (!CmpSnapToGrid(openXmlElement, value.SnapToGrid, diffs, objName))
+        ok = false;
+      if (!CmpVanish(openXmlElement, value.Vanish, diffs, objName))
+        ok = false;
+      if (!CmpWebHidden(openXmlElement, value.WebHidden, diffs, objName))
+        ok = false;
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+        ok = false;
+      if (!CmpSpacing(openXmlElement, value.Spacing, diffs, objName))
+        ok = false;
+      if (!CmpCharacterScale(openXmlElement, value.CharacterScale, diffs, objName))
+        ok = false;
+      if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
+        ok = false;
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+        ok = false;
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+        ok = false;
+      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName))
+        ok = false;
+      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
+        ok = false;
+      if (!CmpTextEffect(openXmlElement, value.TextEffect, diffs, objName))
+        ok = false;
+      if (!CmpBorder(openXmlElement, value.Border, diffs, objName))
+        ok = false;
+      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+        ok = false;
+      if (!CmpFitText(openXmlElement, value.FitText, diffs, objName))
+        ok = false;
+      if (!CmpVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment, diffs, objName))
+        ok = false;
+      if (!CmpRightToLeftText(openXmlElement, value.RightToLeftText, diffs, objName))
+        ok = false;
+      if (!CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
+        ok = false;
+      if (!CmpEmphasis(openXmlElement, value.Emphasis, diffs, objName))
+        ok = false;
+      if (!CmpLanguages(openXmlElement, value.Languages, diffs, objName))
+        ok = false;
+      if (!CmpEastAsianLayout(openXmlElement, value.EastAsianLayout, diffs, objName))
+        ok = false;
+      if (!CmpSpecVanish(openXmlElement, value.SpecVanish, diffs, objName))
+        ok = false;
+      if (!CmpGlow(openXmlElement, value.Glow, diffs, objName))
+        ok = false;
+      if (!CmpReflection(openXmlElement, value.Reflection, diffs, objName))
+        ok = false;
+      if (!CmpTextOutlineEffect(openXmlElement, value.TextOutlineEffect, diffs, objName))
+        ok = false;
+      if (!CmpFillTextEffect(openXmlElement, value.FillTextEffect, diffs, objName))
+        ok = false;
+      if (!CmpScene3D(openXmlElement, value.Scene3D, diffs, objName))
+        ok = false;
+      if (!CmpProperties3D(openXmlElement, value.Properties3D, diffs, objName))
+        ok = false;
+      if (!CmpLigatures(openXmlElement, value.Ligatures, diffs, objName))
+        ok = false;
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+        ok = false;
+      if (!CmpNumberSpacing(openXmlElement, value.NumberSpacing, diffs, objName))
+        ok = false;
+      if (!CmpStylisticSets(openXmlElement, value.StylisticSets, diffs, objName))
+        ok = false;
+      if (!CmpContextualAlternatives(openXmlElement, value.ContextualAlternatives, diffs, objName))
+        ok = false;
+      if (!CmpOfficeMath(openXmlElement, value.OfficeMath, diffs, objName))
+        ok = false;
+      if (!CmpParagraphMarkRunPropertiesChange(openXmlElement, value.ParagraphMarkRunPropertiesChange, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphMarkRunProperties? value)

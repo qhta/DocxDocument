@@ -13,6 +13,11 @@ public static class FontRelationshipTypeConverter
     return openXmlElement?.FontKey?.Value;
   }
   
+  private static bool CmpFontKey(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.FontKey?.Value == value;
+  }
+  
   private static void SetFontKey(DXW.FontRelationshipType openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class FontRelationshipTypeConverter
     return openXmlElement?.Subsetted?.Value;
   }
   
+  private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Subsetted?.Value == value;
+  }
+  
   private static void SetSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class FontRelationshipTypeConverter
   private static String? GetId(DXW.FontRelationshipType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
+  }
+  
+  private static bool CmpId(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
   }
   
   private static void SetId(DXW.FontRelationshipType openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class FontRelationshipTypeConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.FontRelationshipType? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFontKey(openXmlElement, value.FontKey, diffs, objName))
+        ok = false;
+      if (!CmpSubsetted(openXmlElement, value.Subsetted, diffs, objName))
+        ok = false;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FontRelationshipType? value)

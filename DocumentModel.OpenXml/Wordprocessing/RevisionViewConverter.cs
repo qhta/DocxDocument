@@ -13,6 +13,11 @@ public static class RevisionViewConverter
     return openXmlElement?.Markup?.Value;
   }
   
+  private static bool CmpMarkup(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Markup?.Value == value;
+  }
+  
   private static void SetMarkup(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class RevisionViewConverter
   private static Boolean? GetComments(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.Comments?.Value;
+  }
+  
+  private static bool CmpComments(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Comments?.Value == value;
   }
   
   private static void SetComments(DXW.RevisionView openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class RevisionViewConverter
     return openXmlElement?.DisplayRevision?.Value;
   }
   
+  private static bool CmpDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.DisplayRevision?.Value == value;
+  }
+  
   private static void SetDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class RevisionViewConverter
     return openXmlElement?.Formatting?.Value;
   }
   
+  private static bool CmpFormatting(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Formatting?.Value == value;
+  }
+  
   private static void SetFormatting(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
@@ -75,6 +95,11 @@ public static class RevisionViewConverter
   private static Boolean? GetInkAnnotations(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.InkAnnotations?.Value;
+  }
+  
+  private static bool CmpInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.InkAnnotations?.Value == value;
   }
   
   private static void SetInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value)
@@ -98,6 +123,26 @@ public static class RevisionViewConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.RevisionView? openXmlElement, DMW.RevisionView? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpMarkup(openXmlElement, value.Markup, diffs, objName))
+        ok = false;
+      if (!CmpComments(openXmlElement, value.Comments, diffs, objName))
+        ok = false;
+      if (!CmpDisplayRevision(openXmlElement, value.DisplayRevision, diffs, objName))
+        ok = false;
+      if (!CmpFormatting(openXmlElement, value.Formatting, diffs, objName))
+        ok = false;
+      if (!CmpInkAnnotations(openXmlElement, value.InkAnnotations, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RevisionView? value)

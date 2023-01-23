@@ -17,6 +17,11 @@ public static class DiagramDefinitionExtensionListConverter
     return collection;
   }
   
+  private static bool CmpDiagramDefinitionExtensions(DXDrawDgms.DiagramDefinitionExtensionList openXmlElement, Collection<DMDrawsDgms.DiagramDefinitionExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetDiagramDefinitionExtensions(DXDrawDgms.DiagramDefinitionExtensionList openXmlElement, Collection<DMDrawsDgms.DiagramDefinitionExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawDgms.DiagramDefinitionExtension>();
@@ -40,6 +45,18 @@ public static class DiagramDefinitionExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawDgms.DiagramDefinitionExtensionList? openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpDiagramDefinitionExtensions(openXmlElement, value.DiagramDefinitionExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramDefinitionExtensionList? value)

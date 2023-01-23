@@ -10,10 +10,12 @@ public static class BorderBoxConverter
   /// </summary>
   private static DMMath.BorderBoxProperties? GetBorderBoxProperties(DXMath.BorderBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>();
-    if (itemElement != null)
-      return DMXMath.BorderBoxPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BorderBoxPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>());
+  }
+  
+  private static bool CmpBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value)
@@ -34,10 +36,12 @@ public static class BorderBoxConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.BorderBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
-    if (itemElement != null)
-      return DMXMath.BaseConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+  }
+  
+  private static bool CmpBase(DXMath.BorderBox openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  {
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.BorderBox openXmlElement, DMMath.Base? value)
@@ -63,6 +67,20 @@ public static class BorderBoxConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXMath.BorderBox? openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpBorderBoxProperties(openXmlElement, value.BorderBoxProperties, diffs, objName))
+        ok = false;
+      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBox? value)

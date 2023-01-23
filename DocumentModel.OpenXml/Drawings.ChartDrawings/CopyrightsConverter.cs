@@ -17,6 +17,11 @@ public static class CopyrightsConverter
     return collection;
   }
   
+  private static bool CmpCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.CopyrightXsdstring>();
@@ -40,6 +45,18 @@ public static class CopyrightsConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpCopyrightXsdstrings(openXmlElement, value.CopyrightXsdstrings, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Copyrights? value)

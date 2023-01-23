@@ -13,6 +13,11 @@ public static class SphereCoordinatesConverter
     return openXmlElement.Lattitude?.Value;
   }
   
+  private static bool CmpLattitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Lattitude?.Value == value;
+  }
+  
   private static void SetLattitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
   {
     openXmlElement.Lattitude = value;
@@ -26,6 +31,11 @@ public static class SphereCoordinatesConverter
     return openXmlElement.Longitude?.Value;
   }
   
+  private static bool CmpLongitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Longitude?.Value == value;
+  }
+  
   private static void SetLongitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
   {
     openXmlElement.Longitude = value;
@@ -37,6 +47,11 @@ public static class SphereCoordinatesConverter
   private static Int32? GetRevolution(DXO2010W.SphereCoordinates openXmlElement)
   {
     return openXmlElement.Revolution?.Value;
+  }
+  
+  private static bool CmpRevolution(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Revolution?.Value == value;
   }
   
   private static void SetRevolution(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
@@ -55,6 +70,22 @@ public static class SphereCoordinatesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2010W.SphereCoordinates? openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLattitude(openXmlElement, value.Lattitude, diffs, objName))
+        ok = false;
+      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName))
+        ok = false;
+      if (!CmpRevolution(openXmlElement, value.Revolution, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SphereCoordinates? value)

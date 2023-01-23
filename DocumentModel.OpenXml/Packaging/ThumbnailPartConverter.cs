@@ -10,6 +10,11 @@ public static class ThumbnailPartConverter
     return openXmlElement?.RelationshipType;
   }
   
+  private static bool CmpRelationshipType(DXPack.ThumbnailPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.RelationshipType == value;
+  }
+  
   public static DMPack.ThumbnailPart? CreateModelElement(DXPack.ThumbnailPart? openXmlElement)
   {
     if (openXmlElement != null)
@@ -19,6 +24,18 @@ public static class ThumbnailPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.ThumbnailPart? openXmlElement, DMPack.ThumbnailPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThumbnailPart? value)

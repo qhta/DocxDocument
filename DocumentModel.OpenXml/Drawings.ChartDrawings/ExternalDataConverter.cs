@@ -13,6 +13,11 @@ public static class ExternalDataConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ExternalDataConverter
   private static Boolean? GetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement)
   {
     return openXmlElement?.AutoUpdate?.Value;
+  }
+  
+  private static bool CmpAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.AutoUpdate?.Value == value;
   }
   
   private static void SetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement, Boolean? value)
@@ -47,6 +57,20 @@ public static class ExternalDataConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.ExternalData? openXmlElement, DMDrawsChartDraws.ExternalData? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpAutoUpdate(openXmlElement, value.AutoUpdate, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ExternalData? value)

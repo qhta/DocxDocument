@@ -10,10 +10,12 @@ public static class RunConverter
   /// </summary>
   private static DMDraws.RunProperties? GetRunProperties(DXDraw.Run openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
-    if (itemElement != null)
-      return DMXDraws.RunPropertiesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RunProperties>());
+  }
+  
+  private static bool CmpRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value)
@@ -37,6 +39,11 @@ public static class RunConverter
     return openXmlElement?.Text?.Text;
   }
   
+  private static bool CmpText(DXDraw.Run openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Text?.Text == value;
+  }
+  
   private static void SetText(DXDraw.Run openXmlElement, String? value)
   {
     if (value != null)
@@ -55,6 +62,20 @@ public static class RunConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.Run? openXmlElement, DMDraws.Run? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+        ok = false;
+      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Run? value)

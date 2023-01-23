@@ -13,6 +13,11 @@ public static class SdtContentDropDownListConverter
     return openXmlElement?.LastValue?.Value;
   }
   
+  private static bool CmpLastValue(DXW.SdtContentDropDownList openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.LastValue?.Value == value;
+  }
+  
   private static void SetLastValue(DXW.SdtContentDropDownList openXmlElement, String? value)
   {
     if (value != null)
@@ -31,6 +36,11 @@ public static class SdtContentDropDownListConverter
         collection.Add(newItem);
     }
     return collection;
+  }
+  
+  private static bool CmpListItems(DXW.SdtContentDropDownList openXmlElement, Collection<DMW.ListItem>? value, DiffList? diffs, string? objName)
+  {
+    return true;
   }
   
   private static void SetListItems(DXW.SdtContentDropDownList openXmlElement, Collection<DMW.ListItem>? value)
@@ -57,6 +67,20 @@ public static class SdtContentDropDownListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.SdtContentDropDownList? openXmlElement, DMW.SdtContentDropDownList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLastValue(openXmlElement, value.LastValue, diffs, objName))
+        ok = false;
+      if (!CmpListItems(openXmlElement, value.ListItems, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDropDownList? value)

@@ -13,6 +13,11 @@ public static class BackgroundConverter
     return openXmlElement?.Id?.Value;
   }
   
+  private static bool CmpId(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Id?.Value == value;
+  }
+  
   private static void SetId(DXVml.Background openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class BackgroundConverter
   private static Boolean? GetFilled(DXVml.Background openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
+  }
+  
+  private static bool CmpFilled(DXVml.Background openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Filled?.Value == value;
   }
   
   private static void SetFilled(DXVml.Background openXmlElement, Boolean? value)
@@ -45,6 +55,11 @@ public static class BackgroundConverter
     return openXmlElement?.Fillcolor?.Value;
   }
   
+  private static bool CmpFillcolor(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Fillcolor?.Value == value;
+  }
+  
   private static void SetFillcolor(DXVml.Background openXmlElement, String? value)
   {
     if (value != null)
@@ -61,6 +76,11 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
+  private static bool CmpBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
     openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
@@ -72,6 +92,11 @@ public static class BackgroundConverter
   private static DMVml.BlackAndWhiteMode? GetPureBlackWhiteMode(DXVml.Background openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+  }
+  
+  private static bool CmpPureBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPureBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value)
@@ -87,6 +112,11 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
   
+  private static bool CmpNormalBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetNormalBlackWhiteMode(DXVml.Background openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
     openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
@@ -100,6 +130,11 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMVml.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value);
   }
   
+  private static bool CmpTargetScreenSize(DXVml.Background openXmlElement, DMVml.ScreenSizeKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMVml.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetTargetScreenSize(DXVml.Background openXmlElement, DMVml.ScreenSizeKind? value)
   {
     openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMVml.ScreenSizeKind>(value);
@@ -110,10 +145,12 @@ public static class BackgroundConverter
   /// </summary>
   private static DMVml.Fill? GetFill(DXVml.Background openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXVml.Fill>();
-    if (itemElement != null)
-      return DMXVml.FillConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXVml.FillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>());
+  }
+  
+  private static bool CmpFill(DXVml.Background openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
+  {
+    return DMXVml.FillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFill(DXVml.Background openXmlElement, DMVml.Fill? value)
@@ -145,6 +182,32 @@ public static class BackgroundConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.Background? openXmlElement, DMVml.Background? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      if (!CmpFilled(openXmlElement, value.Filled, diffs, objName))
+        ok = false;
+      if (!CmpFillcolor(openXmlElement, value.Fillcolor, diffs, objName))
+        ok = false;
+      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName))
+        ok = false;
+      if (!CmpPureBlackWhiteMode(openXmlElement, value.PureBlackWhiteMode, diffs, objName))
+        ok = false;
+      if (!CmpNormalBlackWhiteMode(openXmlElement, value.NormalBlackWhiteMode, diffs, objName))
+        ok = false;
+      if (!CmpTargetScreenSize(openXmlElement, value.TargetScreenSize, diffs, objName))
+        ok = false;
+      if (!CmpFill(openXmlElement, value.Fill, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Background? value)

@@ -13,6 +13,11 @@ public static class ColumnConverter
     return openXmlElement?.Width?.Value;
   }
   
+  private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Width?.Value == value;
+  }
+  
   private static void SetWidth(DXW.Column openXmlElement, String? value)
   {
     if (value != null)
@@ -27,6 +32,11 @@ public static class ColumnConverter
   private static String? GetSpace(DXW.Column openXmlElement)
   {
     return openXmlElement?.Space?.Value;
+  }
+  
+  private static bool CmpSpace(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Space?.Value == value;
   }
   
   private static void SetSpace(DXW.Column openXmlElement, String? value)
@@ -47,6 +57,20 @@ public static class ColumnConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Column? openXmlElement, DMW.Column? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+        ok = false;
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Column? value)

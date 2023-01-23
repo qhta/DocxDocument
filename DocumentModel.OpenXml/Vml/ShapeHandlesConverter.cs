@@ -17,6 +17,11 @@ public static class ShapeHandlesConverter
     return collection;
   }
   
+  private static bool CmpItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value)
   {
     openXmlElement.RemoveAllChildren<DXVml.ShapeHandle>();
@@ -40,6 +45,18 @@ public static class ShapeHandlesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXVml.ShapeHandles? openXmlElement, DMVml.ShapeHandles? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeHandles? value)

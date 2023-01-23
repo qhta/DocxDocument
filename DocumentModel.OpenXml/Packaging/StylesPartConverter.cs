@@ -10,9 +10,12 @@ public static class StylesPartConverter
   /// </summary>
   private static DMW.Styles? GetStyles(DXPack.StylesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DXW.Styles rootElement)
-      return DMXW.StylesConverter.CreateModelElement(rootElement);
-    return null;
+      return DMXW.StylesConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Styles);
+  }
+  
+  private static bool CmpStyles(DXPack.StylesPart openXmlElement, DMW.Styles? value, DiffList? diffs, string? objName)
+  {
+      return true;
   }
   
   private static void SetStyles(DXPack.StylesPart openXmlElement, DMW.Styles? value)
@@ -34,6 +37,18 @@ public static class StylesPartConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXPack.StylesPart? openXmlElement, DMPack.StylesPart? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpStyles(openXmlElement, value.Styles, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.StylesPart? value)

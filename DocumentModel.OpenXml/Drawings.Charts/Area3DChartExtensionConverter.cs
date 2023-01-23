@@ -13,6 +13,11 @@ public static class Area3DChartExtensionConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXDrawCharts.Area3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXDrawCharts.Area3DChartExtension openXmlElement, String? value)
   {
     if (value != null)
@@ -23,10 +28,12 @@ public static class Area3DChartExtensionConverter
   
   private static DMDrawsCharts.FilteredAreaSeries? GetFilteredAreaSeries(DXDrawCharts.Area3DChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>();
-    if (itemElement != null)
-      return DMXDrawsCharts.FilteredAreaSeriesConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDrawsCharts.FilteredAreaSeriesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>());
+  }
+  
+  private static bool CmpFilteredAreaSeries(DXDrawCharts.Area3DChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value, DiffList? diffs, string? objName)
+  {
+    return DMXDrawsCharts.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredAreaSeries(DXDrawCharts.Area3DChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value)
@@ -52,6 +59,20 @@ public static class Area3DChartExtensionConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.Area3DChartExtension? openXmlElement, DMDrawsCharts.Area3DChartExtension? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpFilteredAreaSeries(openXmlElement, value.FilteredAreaSeries, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Area3DChartExtension? value)

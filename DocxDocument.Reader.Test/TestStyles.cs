@@ -1,7 +1,8 @@
 using DocumentFormat.OpenXml.Wordprocessing;
 
 using DocumentModel;
-
+using DocumentModel.OpenXml;
+using DocumentModel.OpenXml.Wordprocessing;
 using DMW = DocumentModel.Wordprocessing;
 using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
@@ -45,10 +46,16 @@ public class TestStyles : TestBase
     var document = reader.ReadDocument(Parts.StyleDefinitions);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Styles, "No document styles read");
+    var modelStyles = document.Styles;
     var modelDefinedStyles = document.Styles.DefinedStyles;
     int modelDefinedStylesCount = modelDefinedStyles?.Count() ?? 0;
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
     int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
+    var diffs = new DiffList();
+    var ok = StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, null);
+    if (!ok)
+      Assert.Fail(diffs.FirstOrDefault()?.ToString());
+
     WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var modelLatentStyles = document.Styles.LatentStyles;
     int modelLatentStylesCount = modelLatentStyles?.Count ?? 0;

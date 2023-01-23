@@ -13,6 +13,11 @@ public static class SchemaConverter
     return openXmlElement?.Uri?.Value;
   }
   
+  private static bool CmpUri(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Uri?.Value == value;
+  }
+  
   private static void SetUri(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
     if (value != null)
@@ -29,6 +34,11 @@ public static class SchemaConverter
     return openXmlElement?.ManifestLocation?.Value;
   }
   
+  private static bool CmpManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.ManifestLocation?.Value == value;
+  }
+  
   private static void SetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
     if (value != null)
@@ -43,6 +53,11 @@ public static class SchemaConverter
   private static String? GetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement)
   {
     return openXmlElement?.SchemaLocation?.Value;
+  }
+  
+  private static bool CmpSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.SchemaLocation?.Value == value;
   }
   
   private static void SetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
@@ -64,6 +79,22 @@ public static class SchemaConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXCustXmlSchRefs.Schema? openXmlElement, DMCustXml.Schema? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+        ok = false;
+      if (!CmpManifestLocation(openXmlElement, value.ManifestLocation, diffs, objName))
+        ok = false;
+      if (!CmpSchemaLocation(openXmlElement, value.SchemaLocation, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.Schema? value)

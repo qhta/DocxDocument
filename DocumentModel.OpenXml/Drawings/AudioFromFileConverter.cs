@@ -13,6 +13,11 @@ public static class AudioFromFileConverter
     return openXmlElement?.Link?.Value;
   }
   
+  private static bool CmpLink(DXDraw.AudioFromFile openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement?.Link?.Value == value;
+  }
+  
   private static void SetLink(DXDraw.AudioFromFile openXmlElement, String? value)
   {
     if (value != null)
@@ -26,10 +31,12 @@ public static class AudioFromFileConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.AudioFromFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
-    if (itemElement != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+  }
+  
+  private static bool CmpExtensionList(DXDraw.AudioFromFile openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  {
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.AudioFromFile openXmlElement, DMDraws.ExtensionList? value)
@@ -55,6 +62,20 @@ public static class AudioFromFileConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.AudioFromFile? openXmlElement, DMDraws.AudioFromFile? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLink(openXmlElement, value.Link, diffs, objName))
+        ok = false;
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromFile? value)

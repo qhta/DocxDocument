@@ -20,7 +20,7 @@ public class Bar3DChart
   /// </summary>
   public Boolean? VaryColors { get; set; }
 
-  public Collection<BarChartSeries>? BarChartSerieses { get; set; }
+  public Collection<BarChartSeries>? BarChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 

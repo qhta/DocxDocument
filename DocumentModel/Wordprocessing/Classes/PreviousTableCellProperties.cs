@@ -43,7 +43,7 @@ public class PreviousTableCellProperties
   /// <summary>
   ///   NoWrap.
   /// </summary>
-  public OnOffOnlyKind? NoWrap { get; set; }
+  public Boolean? NoWrap { get; set; }
 
   /// <summary>
   ///   TableCellMargin.
@@ -58,7 +58,7 @@ public class PreviousTableCellProperties
   /// <summary>
   ///   TableCellFitText.
   /// </summary>
-  public OnOffOnlyKind? TableCellFitText { get; set; }
+  public Boolean? TableCellFitText { get; set; }
 
   /// <summary>
   ///   TableCellVerticalAlignment.
@@ -68,7 +68,7 @@ public class PreviousTableCellProperties
   /// <summary>
   ///   HideMark.
   /// </summary>
-  public OnOffOnlyKind? HideMark { get; set; }
+  public Boolean? HideMark { get; set; }
 
   public TrackChangeType? CellInsertion { get; set; }
 

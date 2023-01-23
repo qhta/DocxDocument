@@ -17,6 +17,11 @@ public static class LineSerExtensionListConverter
     return collection;
   }
   
+  private static bool CmpLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement, Collection<DMDrawsCharts.LineSerExtension>? value, DiffList? diffs, string? objName)
+  {
+    return true;
+  }
+  
   private static void SetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement, Collection<DMDrawsCharts.LineSerExtension>? value)
   {
     openXmlElement.RemoveAllChildren<DXDrawCharts.LineSerExtension>();
@@ -40,6 +45,18 @@ public static class LineSerExtensionListConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDrawCharts.LineSerExtensionList? openXmlElement, DMDrawsCharts.LineSerExtensionList? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpLineSerExtensions(openXmlElement, value.LineSerExtensions, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LineSerExtensionList? value)

@@ -7,10 +7,12 @@ public static class FootnotesConverter
 {
   private static DMW.Footnote? GetFootnote(DXW.Footnotes openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Footnote>();
-    if (itemElement != null)
-      return DMXW.FootnoteConverter.CreateModelElement(itemElement);
-    return null;
+    return DMXW.FootnoteConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Footnote>());
+  }
+  
+  private static bool CmpFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Footnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value)
@@ -35,6 +37,18 @@ public static class FootnotesConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Footnotes? openXmlElement, DMW.Footnotes? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpFootnote(openXmlElement, value.Footnote, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes? value)

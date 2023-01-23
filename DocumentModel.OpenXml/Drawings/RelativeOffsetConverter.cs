@@ -13,6 +13,11 @@ public static class RelativeOffsetConverter
     return openXmlElement.OffsetX?.Value;
   }
   
+  private static bool CmpOffsetX(DXDraw.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.OffsetX?.Value == value;
+  }
+  
   private static void SetOffsetX(DXDraw.RelativeOffset openXmlElement, Int32? value)
   {
     openXmlElement.OffsetX = value;
@@ -24,6 +29,11 @@ public static class RelativeOffsetConverter
   private static Int32? GetOffsetY(DXDraw.RelativeOffset openXmlElement)
   {
     return openXmlElement.OffsetY?.Value;
+  }
+  
+  private static bool CmpOffsetY(DXDraw.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.OffsetY?.Value == value;
   }
   
   private static void SetOffsetY(DXDraw.RelativeOffset openXmlElement, Int32? value)
@@ -41,6 +51,20 @@ public static class RelativeOffsetConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXDraw.RelativeOffset? openXmlElement, DMDraws.RelativeOffset? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpOffsetX(openXmlElement, value.OffsetX, diffs, objName))
+        ok = false;
+      if (!CmpOffsetY(openXmlElement, value.OffsetY, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeOffset? value)

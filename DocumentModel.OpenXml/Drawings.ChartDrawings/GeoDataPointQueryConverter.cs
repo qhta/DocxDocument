@@ -13,6 +13,11 @@ public static class GeoDataPointQueryConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
+  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
   private static void SetEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
@@ -26,6 +31,11 @@ public static class GeoDataPointQueryConverter
     return openXmlElement.Latitude?.Value;
   }
   
+  private static bool CmpLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Latitude?.Value == value;
+  }
+  
   private static void SetLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
   {
     openXmlElement.Latitude = value;
@@ -37,6 +47,11 @@ public static class GeoDataPointQueryConverter
   private static Double? GetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
     return openXmlElement.Longitude?.Value;
+  }
+  
+  private static bool CmpLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
+  {
+    return openXmlElement.Longitude?.Value == value;
   }
   
   private static void SetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
@@ -55,6 +70,22 @@ public static class GeoDataPointQueryConverter
       return value;
     }
     return null;
+  }
+  
+  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoDataPointQuery? openXmlElement, DMDrawsChartDraws.GeoDataPointQuery? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+        ok = false;
+      if (!CmpLatitude(openXmlElement, value.Latitude, diffs, objName))
+        ok = false;
+      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    return openXmlElement == null && value == null;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointQuery? value)
