@@ -90,12 +90,12 @@ public static class MailMergeConverter
   /// </summary>
   private static String? GetConnectString(DXW.MailMerge openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.ConnectString>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.ConnectString>()?.Val?.Value;
   }
   
   private static bool CmpConnectString(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.ConnectString>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.ConnectString>()?.Val?.Value == value;
   }
   
   private static void SetConnectString(DXW.MailMerge openXmlElement, String? value)
@@ -115,12 +115,12 @@ public static class MailMergeConverter
   /// </summary>
   private static String? GetQuery(DXW.MailMerge openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.Query>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.Query>()?.Val?.Value;
   }
   
   private static bool CmpQuery(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.Query>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.Query>()?.Val?.Value == value;
   }
   
   private static void SetQuery(DXW.MailMerge openXmlElement, String? value)
@@ -246,12 +246,12 @@ public static class MailMergeConverter
   /// </summary>
   private static String? GetAddressFieldName(DXW.MailMerge openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.AddressFieldName>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.AddressFieldName>()?.Val?.Value;
   }
   
   private static bool CmpAddressFieldName(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.AddressFieldName>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.AddressFieldName>()?.Val?.Value == value;
   }
   
   private static void SetAddressFieldName(DXW.MailMerge openXmlElement, String? value)
@@ -271,12 +271,12 @@ public static class MailMergeConverter
   /// </summary>
   private static String? GetMailSubject(DXW.MailMerge openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.MailSubject>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.MailSubject>()?.Val?.Value;
   }
   
   private static bool CmpMailSubject(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.MailSubject>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.MailSubject>()?.Val?.Value == value;
   }
   
   private static void SetMailSubject(DXW.MailMerge openXmlElement, String? value)
@@ -488,7 +488,9 @@ public static class MailMergeConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MailMerge? value)

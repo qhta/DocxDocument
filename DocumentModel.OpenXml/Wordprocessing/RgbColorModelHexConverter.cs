@@ -18,16 +18,19 @@ public static class RgbColorModelHexConverter
   private static bool CmpVal(DXO2010W.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Val?.Value != null)
-      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString());
+    return false;
   }
   
   private static void SetVal(DXO2010W.RgbColorModelHex openXmlElement, DM.RGB? value)
   {
-      if (value != null)
-        openXmlElement.Val = ((UInt32)value).ToString("X6");
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = ((UInt32)value).ToString("X6");
+    else
+      openXmlElement.Val = null;
   }
   
   private static Int32? GetTint(DXO2010W.RgbColorModelHex openXmlElement)
@@ -300,7 +303,9 @@ public static class RgbColorModelHexConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RgbColorModelHex? value)

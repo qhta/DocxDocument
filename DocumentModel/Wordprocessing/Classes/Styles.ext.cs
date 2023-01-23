@@ -23,7 +23,6 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     _Items.CollectionChanged += Styles_CollectionChanged;
     foreach (var item in BuiltInStyleStubs)
       _AllStyles.Add(new Style { Name = item.name, Type = item.kind, Aliases = item.alias });
-    Debug.WriteLine($"_AllStylesCount = {AllStyles.Count}");
   }
 
   /// <summary>

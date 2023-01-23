@@ -10,12 +10,12 @@ public static class FramesetConverter
   /// </summary>
   private static String? GetFrameSize(DXW.Frameset openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value;
   }
   
   private static bool CmpFrameSize(DXW.Frameset openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value == value;
   }
   
   private static void SetFrameSize(DXW.Frameset openXmlElement, String? value)
@@ -160,7 +160,9 @@ public static class FramesetConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Frameset? value)

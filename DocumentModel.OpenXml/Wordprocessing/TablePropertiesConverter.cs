@@ -352,12 +352,12 @@ public static class TablePropertiesConverter
   /// </summary>
   private static String? GetTableCaption(DXW.TableProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.TableCaption>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.TableCaption>()?.Val?.Value;
   }
   
   private static bool CmpTableCaption(DXW.TableProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.TableCaption>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.TableCaption>()?.Val?.Value == value;
   }
   
   private static void SetTableCaption(DXW.TableProperties openXmlElement, String? value)
@@ -377,12 +377,12 @@ public static class TablePropertiesConverter
   /// </summary>
   private static String? GetTableDescription(DXW.TableProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.TableDescription>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.TableDescription>()?.Val?.Value;
   }
   
   private static bool CmpTableDescription(DXW.TableProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.TableDescription>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.TableDescription>()?.Val?.Value == value;
   }
   
   private static void SetTableDescription(DXW.TableProperties openXmlElement, String? value)
@@ -488,7 +488,9 @@ public static class TablePropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableProperties? value)

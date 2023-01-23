@@ -30,12 +30,12 @@ public static class SdtPropertiesConverter
   
   private static String? GetSdtAlias(DXW.SdtProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value;
   }
   
   private static bool CmpSdtAlias(DXW.SdtProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.SdtAlias>()?.Val?.Value == value;
   }
   
   private static void SetSdtAlias(DXW.SdtProperties openXmlElement, String? value)
@@ -193,12 +193,12 @@ public static class SdtPropertiesConverter
   
   private static String? GetTag(DXW.SdtProperties openXmlElement)
   {
-      return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value;
+    return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value;
   }
   
   private static bool CmpTag(DXW.SdtProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value == value;
+    return openXmlElement.GetFirstChild<DXW.Tag>()?.Val?.Value == value;
   }
   
   private static void SetTag(DXW.SdtProperties openXmlElement, String? value)
@@ -797,7 +797,9 @@ public static class SdtPropertiesConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtProperties? value)

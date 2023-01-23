@@ -18,16 +18,19 @@ public static class CommentIdConverter
   private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.ParaId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.ParaId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.ParaId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.ParaId = null;
+    if (value != null)
+      openXmlElement.ParaId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.ParaId = null;
   }
   
   /// <summary>
@@ -43,16 +46,19 @@ public static class CommentIdConverter
   private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.DurableId?.Value != null)
-      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.DurableId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.DurableId = ((UInt32)value).ToString("X8");
-      else
-        openXmlElement.DurableId = null;
+    if (value != null)
+      openXmlElement.DurableId = ((UInt32)value).ToString("X8");
+    else
+      openXmlElement.DurableId = null;
   }
   
   public static DMW.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
@@ -78,7 +84,9 @@ public static class CommentIdConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId? value)

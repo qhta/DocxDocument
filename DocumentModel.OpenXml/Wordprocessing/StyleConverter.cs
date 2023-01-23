@@ -528,16 +528,19 @@ public static class StyleConverter
   private static bool CmpRsid(DXW.Style openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement.Rsid?.Val?.Value != null)
-      return UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber) == value;
-    return openXmlElement == null && value == null;
+      if (UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber) == value)
+        return true;
+    if (openXmlElement.Rsid?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Rsid", openXmlElement?.Rsid?.Val?.Value, value?.ToString("x8"));
+    return false;
   }
   
   private static void SetRsid(DXW.Style openXmlElement, UInt32? value)
   {
-      if (value != null)
-        openXmlElement.Rsid = new DXW.Rsid { Val = ((UInt32)value).ToString("X8") };
-      else
-        openXmlElement.Rsid = null;
+    if (value != null)
+      openXmlElement.Rsid = new DXW.Rsid { Val = ((UInt32)value).ToString("X8") };
+    else
+      openXmlElement.Rsid = null;
   }
   
   /// <summary>
@@ -684,7 +687,30 @@ public static class StyleConverter
   
   private static bool CmpTableStyleProperties(DXW.Style openXmlElement, Collection<DMW.TableStyleProperties>? value, DiffList? diffs, string? objName)
   {
-    return true;
+    if (value != null)
+    {
+      var origElements = openXmlElement.Elements<DXW.TableStyleProperties>();
+      var origElementsCount = origElements.Count();
+      var modelElementsCount = value.Count();
+      if (origElementsCount != modelElementsCount)
+      {
+        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        return false;
+      }
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        var modelItem = modelEnumerator.Current;
+        if (!DMXW.TableStylePropertiesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+          ok = false;
+      }
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   private static void SetTableStyleProperties(DXW.Style openXmlElement, Collection<DMW.TableStyleProperties>? value)
@@ -796,7 +822,9 @@ public static class StyleConverter
         ok = false;
       return ok;
     }
-    return openXmlElement == null && value == null;
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    return false;
   }
   
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Style? value)
