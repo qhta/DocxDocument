@@ -31,12 +31,14 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static UInt16? GetVendorID(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement.VendorID?.Value;
+    return openXmlElement?.VendorID?.Value;
   }
   
   private static bool CmpVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VendorID?.Value == value;
+    if (openXmlElement?.VendorID?.Value == value) return true;
+    diffs?.Add(objName, "VendorID", openXmlElement?.VendorID?.Value, value);
+    return false;
   }
   
   private static void SetVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value)
@@ -49,12 +51,14 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static Int32? GetDllVersion(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement.DllVersion?.Value;
+    return openXmlElement?.DllVersion?.Value;
   }
   
   private static bool CmpDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DllVersion?.Value == value;
+    if (openXmlElement?.DllVersion?.Value == value) return true;
+    diffs?.Add(objName, "DllVersion", openXmlElement?.DllVersion?.Value, value);
+    return false;
   }
   
   private static void SetDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value)
@@ -161,7 +165,7 @@ public static class ActiveWritingStyleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

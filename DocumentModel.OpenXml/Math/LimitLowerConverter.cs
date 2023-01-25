@@ -15,7 +15,7 @@ public static class LimitLowerConverter
   
   private static bool CmpLimitLowerProperties(DXMath.LimitLower openXmlElement, DMMath.LimitLowerProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitLowerPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLowerProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitLowerPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitLowerProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimitLowerProperties(DXMath.LimitLower openXmlElement, DMMath.LimitLowerProperties? value)
@@ -41,7 +41,7 @@ public static class LimitLowerConverter
   
   private static bool CmpBase(DXMath.LimitLower openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.LimitLower openXmlElement, DMMath.Base? value)
@@ -67,7 +67,7 @@ public static class LimitLowerConverter
   
   private static bool CmpLimit(DXMath.LimitLower openXmlElement, DMMath.Limit? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Limit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Limit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimit(DXMath.LimitLower openXmlElement, DMMath.Limit? value)
@@ -110,7 +110,7 @@ public static class LimitLowerConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

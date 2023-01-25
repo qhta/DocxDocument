@@ -37,7 +37,7 @@ public static class UnderlineConverter
   
   private static bool CmpSolidFill(DXDraw.Underline openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidFill(DXDraw.Underline openXmlElement, DMDraws.SolidFill? value)
@@ -60,7 +60,7 @@ public static class UnderlineConverter
   
   private static bool CmpGradientFill(DXDraw.Underline openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFill(DXDraw.Underline openXmlElement, DMDraws.GradientFill? value)
@@ -83,7 +83,7 @@ public static class UnderlineConverter
   
   private static bool CmpPatternFill(DXDraw.Underline openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPatternFill(DXDraw.Underline openXmlElement, DMDraws.PatternFill? value)
@@ -129,7 +129,7 @@ public static class UnderlineConverter
   
   private static bool CmpCustomDash(DXDraw.Underline openXmlElement, DMDraws.CustomDash? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CustomDashConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.CustomDash>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CustomDashConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomDash>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomDash(DXDraw.Underline openXmlElement, DMDraws.CustomDash? value)
@@ -202,7 +202,7 @@ public static class UnderlineConverter
   
   private static bool CmpMiter(DXDraw.Underline openXmlElement, DMDraws.Miter? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.MiterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Miter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.MiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Miter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMiter(DXDraw.Underline openXmlElement, DMDraws.Miter? value)
@@ -225,7 +225,7 @@ public static class UnderlineConverter
   
   private static bool CmpHeadEnd(DXDraw.Underline openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HeadEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HeadEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHeadEnd(DXDraw.Underline openXmlElement, DMDraws.LineEndPropertiesType? value)
@@ -248,7 +248,7 @@ public static class UnderlineConverter
   
   private static bool CmpTailEnd(DXDraw.Underline openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.TailEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineEndPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TailEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTailEnd(DXDraw.Underline openXmlElement, DMDraws.LineEndPropertiesType? value)
@@ -271,7 +271,7 @@ public static class UnderlineConverter
   
   private static bool CmpLinePropertiesExtensionList(DXDraw.Underline openXmlElement, DMDraws.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LinePropertiesExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LinePropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LinePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LinePropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLinePropertiesExtensionList(DXDraw.Underline openXmlElement, DMDraws.LinePropertiesExtensionList? value)
@@ -341,7 +341,7 @@ public static class UnderlineConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

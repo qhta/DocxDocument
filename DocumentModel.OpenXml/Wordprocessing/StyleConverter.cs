@@ -283,7 +283,10 @@ public static class StyleConverter
   
   private static bool CmpUIPriority(DXW.Style openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.UIPriority>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.UIPriority>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.UIPriority", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetUIPriority(DXW.Style openXmlElement, Int32? value)
@@ -520,17 +523,17 @@ public static class StyleConverter
   /// </summary>
   private static UInt32? GetRsid(DXW.Style openXmlElement)
   {
-    if (openXmlElement.Rsid?.Val?.Value != null)
+    if (openXmlElement?.Rsid?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsid(DXW.Style openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Rsid?.Val?.Value != null)
+    if (openXmlElement?.Rsid?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.Rsid.Val.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Rsid?.Val?.Value == null && value == null) return true;
+    if (openXmlElement?.Rsid?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Rsid", openXmlElement?.Rsid?.Val?.Value, value?.ToString("x8"));
     return false;
   }
@@ -553,7 +556,7 @@ public static class StyleConverter
   
   private static bool CmpStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value)
@@ -579,7 +582,7 @@ public static class StyleConverter
   
   private static bool CmpStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value)
@@ -605,7 +608,7 @@ public static class StyleConverter
   
   private static bool CmpStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value)
@@ -631,7 +634,7 @@ public static class StyleConverter
   
   private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value)
@@ -657,7 +660,7 @@ public static class StyleConverter
   
   private static bool CmpStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value)
@@ -694,7 +697,7 @@ public static class StyleConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -709,7 +712,7 @@ public static class StyleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -823,7 +826,7 @@ public static class StyleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

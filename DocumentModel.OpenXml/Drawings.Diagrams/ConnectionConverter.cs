@@ -91,12 +91,14 @@ public static class ConnectionConverter
   /// </summary>
   private static UInt32? GetSourcePosition(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement.SourcePosition?.Value;
+    return openXmlElement?.SourcePosition?.Value;
   }
   
   private static bool CmpSourcePosition(DXDrawDgms.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SourcePosition?.Value == value;
+    if (openXmlElement?.SourcePosition?.Value == value) return true;
+    diffs?.Add(objName, "SourcePosition", openXmlElement?.SourcePosition?.Value, value);
+    return false;
   }
   
   private static void SetSourcePosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
@@ -109,12 +111,14 @@ public static class ConnectionConverter
   /// </summary>
   private static UInt32? GetDestinationPosition(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement.DestinationPosition?.Value;
+    return openXmlElement?.DestinationPosition?.Value;
   }
   
   private static bool CmpDestinationPosition(DXDrawDgms.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DestinationPosition?.Value == value;
+    if (openXmlElement?.DestinationPosition?.Value == value) return true;
+    diffs?.Add(objName, "DestinationPosition", openXmlElement?.DestinationPosition?.Value, value);
+    return false;
   }
   
   private static void SetDestinationPosition(DXDrawDgms.Connection openXmlElement, UInt32? value)
@@ -195,7 +199,7 @@ public static class ConnectionConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -259,7 +263,7 @@ public static class ConnectionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

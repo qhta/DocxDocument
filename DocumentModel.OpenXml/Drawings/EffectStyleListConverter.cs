@@ -12,7 +12,7 @@ public static class EffectStyleListConverter
   
   private static bool CmpEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value)
@@ -49,7 +49,7 @@ public static class EffectStyleListConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -30,7 +30,10 @@ public static class SchemeColorConverter
   
   private static bool CmpTint(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.Tint>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Tint>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.Tint", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetTint(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -52,7 +55,10 @@ public static class SchemeColorConverter
   
   private static bool CmpShade(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.Shade>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Shade>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.Shade", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetShade(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -74,7 +80,10 @@ public static class SchemeColorConverter
   
   private static bool CmpAlpha(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.Alpha>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Alpha>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.Alpha", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetAlpha(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -96,7 +105,10 @@ public static class SchemeColorConverter
   
   private static bool CmpHueModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.HueModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.HueModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.HueModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHueModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -118,7 +130,10 @@ public static class SchemeColorConverter
   
   private static bool CmpSaturation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.Saturation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Saturation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.Saturation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturation(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -140,7 +155,10 @@ public static class SchemeColorConverter
   
   private static bool CmpSaturationOffset(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.SaturationOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturationOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -162,7 +180,10 @@ public static class SchemeColorConverter
   
   private static bool CmpSaturationModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.SaturationModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturationModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -184,7 +205,10 @@ public static class SchemeColorConverter
   
   private static bool CmpLuminance(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.Luminance>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Luminance>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.Luminance", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminance(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -206,7 +230,10 @@ public static class SchemeColorConverter
   
   private static bool CmpLuminanceOffset(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.LuminanceOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminanceOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -228,7 +255,10 @@ public static class SchemeColorConverter
   
   private static bool CmpLuminanceModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.LuminanceModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminanceModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
@@ -294,7 +324,7 @@ public static class SchemeColorConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

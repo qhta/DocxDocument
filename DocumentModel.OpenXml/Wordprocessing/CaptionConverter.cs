@@ -70,12 +70,14 @@ public static class CaptionConverter
   /// </summary>
   private static Int32? GetHeading(DXW.Caption openXmlElement)
   {
-    return openXmlElement.Heading?.Value;
+    return openXmlElement?.Heading?.Value;
   }
   
   private static bool CmpHeading(DXW.Caption openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Heading?.Value == value;
+    if (openXmlElement?.Heading?.Value == value) return true;
+    diffs?.Add(objName, "Heading", openXmlElement?.Heading?.Value, value);
+    return false;
   }
   
   private static void SetHeading(DXW.Caption openXmlElement, Int32? value)
@@ -179,7 +181,7 @@ public static class CaptionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -298,12 +298,14 @@ public static class FillConverter
   /// </summary>
   private static Decimal? GetAngle(DXVml.Fill openXmlElement)
   {
-    return openXmlElement.Angle?.Value;
+    return openXmlElement?.Angle?.Value;
   }
   
   private static bool CmpAngle(DXVml.Fill openXmlElement, Decimal? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Angle?.Value == value;
+    if (openXmlElement?.Angle?.Value == value) return true;
+    diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
+    return false;
   }
   
   private static void SetAngle(DXVml.Fill openXmlElement, Decimal? value)
@@ -549,7 +551,7 @@ public static class FillConverter
   
   private static bool CmpFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.FillExtendedProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.FillExtendedProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value)
@@ -664,7 +666,7 @@ public static class FillConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

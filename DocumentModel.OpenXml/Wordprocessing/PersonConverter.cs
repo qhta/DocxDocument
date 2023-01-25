@@ -57,7 +57,7 @@ public static class PersonConverter
   
   private static bool CmpPresenceInfo(DXO2013W.Person openXmlElement, DMW.PresenceInfo? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PresenceInfoConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PresenceInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013W.PresenceInfo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresenceInfo(DXO2013W.Person openXmlElement, DMW.PresenceInfo? value)
@@ -100,7 +100,7 @@ public static class PersonConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

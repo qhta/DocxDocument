@@ -10,12 +10,14 @@ public static class ArtisticWatercolorSpongeConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticWatercolorSponge openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticWatercolorSponge openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticWatercolorSponge openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticWatercolorSpongeConverter
   /// </summary>
   private static Int32? GetBrushSize(DXO2010Draw.ArtisticWatercolorSponge openXmlElement)
   {
-    return openXmlElement.BrushSize?.Value;
+    return openXmlElement?.BrushSize?.Value;
   }
   
   private static bool CmpBrushSize(DXO2010Draw.ArtisticWatercolorSponge openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.BrushSize?.Value == value;
+    if (openXmlElement?.BrushSize?.Value == value) return true;
+    diffs?.Add(objName, "BrushSize", openXmlElement?.BrushSize?.Value, value);
+    return false;
   }
   
   private static void SetBrushSize(DXO2010Draw.ArtisticWatercolorSponge openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticWatercolorSpongeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

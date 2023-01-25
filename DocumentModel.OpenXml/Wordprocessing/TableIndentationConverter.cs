@@ -10,12 +10,14 @@ public static class TableIndentationConverter
   /// </summary>
   private static Int32? GetWidth(DXW.TableIndentation openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXW.TableIndentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXW.TableIndentation openXmlElement, Int32? value)
@@ -65,7 +67,7 @@ public static class TableIndentationConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

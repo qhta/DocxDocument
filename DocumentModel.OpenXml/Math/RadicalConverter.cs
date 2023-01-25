@@ -15,7 +15,7 @@ public static class RadicalConverter
   
   private static bool CmpRadicalProperties(DXMath.Radical openXmlElement, DMMath.RadicalProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.RadicalPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.RadicalProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.RadicalPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.RadicalProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadicalProperties(DXMath.Radical openXmlElement, DMMath.RadicalProperties? value)
@@ -41,7 +41,7 @@ public static class RadicalConverter
   
   private static bool CmpDegree(DXMath.Radical openXmlElement, DMMath.Degree? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DegreeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Degree>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DegreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Degree>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDegree(DXMath.Radical openXmlElement, DMMath.Degree? value)
@@ -67,7 +67,7 @@ public static class RadicalConverter
   
   private static bool CmpBase(DXMath.Radical openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Radical openXmlElement, DMMath.Base? value)
@@ -110,7 +110,7 @@ public static class RadicalConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

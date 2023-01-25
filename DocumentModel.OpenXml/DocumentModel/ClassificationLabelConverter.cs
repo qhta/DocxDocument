@@ -157,12 +157,14 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static UInt32? GetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement.ContentBits?.Value;
+    return openXmlElement?.ContentBits?.Value;
   }
   
   private static bool CmpContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ContentBits?.Value == value;
+    if (openXmlElement?.ContentBits?.Value == value) return true;
+    diffs?.Add(objName, "ContentBits", openXmlElement?.ContentBits?.Value, value);
+    return false;
   }
   
   private static void SetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, UInt32? value)
@@ -236,7 +238,7 @@ public static class ClassificationLabelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

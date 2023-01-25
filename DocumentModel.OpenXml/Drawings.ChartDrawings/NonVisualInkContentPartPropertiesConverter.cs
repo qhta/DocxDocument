@@ -36,7 +36,7 @@ public static class NonVisualInkContentPartPropertiesConverter
   
   private static bool CmpContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.ContentPartLocks? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ContentPartLocksConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ContentPartLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ContentPartLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.ContentPartLocks? value)
@@ -62,7 +62,7 @@ public static class NonVisualInkContentPartPropertiesConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.OfficeArtExtensionList2? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionList2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OfficeArtExtensionList2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.OfficeArtExtensionList2? value)
@@ -105,7 +105,7 @@ public static class NonVisualInkContentPartPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

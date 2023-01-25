@@ -10,12 +10,14 @@ public static class EntryConverter
   /// </summary>
   private static Int32? GetNew(DXVmlO.Entry openXmlElement)
   {
-    return openXmlElement.New?.Value;
+    return openXmlElement?.New?.Value;
   }
   
   private static bool CmpNew(DXVmlO.Entry openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.New?.Value == value;
+    if (openXmlElement?.New?.Value == value) return true;
+    diffs?.Add(objName, "New", openXmlElement?.New?.Value, value);
+    return false;
   }
   
   private static void SetNew(DXVmlO.Entry openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class EntryConverter
   /// </summary>
   private static Int32? GetOld(DXVmlO.Entry openXmlElement)
   {
-    return openXmlElement.Old?.Value;
+    return openXmlElement?.Old?.Value;
   }
   
   private static bool CmpOld(DXVmlO.Entry openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Old?.Value == value;
+    if (openXmlElement?.Old?.Value == value) return true;
+    diffs?.Add(objName, "Old", openXmlElement?.Old?.Value, value);
+    return false;
   }
   
   private static void SetOld(DXVmlO.Entry openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class EntryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

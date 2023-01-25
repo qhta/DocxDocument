@@ -15,7 +15,10 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.NumberingLevelReference", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value)
@@ -40,7 +43,10 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpNumberingId(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingId>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.NumberingId", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetNumberingId(DXW.NumberingProperties openXmlElement, Int32? value)
@@ -65,7 +71,7 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value)
@@ -91,7 +97,7 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value)
@@ -137,7 +143,7 @@ public static class NumberingPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

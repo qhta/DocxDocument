@@ -178,12 +178,14 @@ public static class ConstraintConverter
   /// </summary>
   private static Double? GetVal(DXDrawDgms.Constraint openXmlElement)
   {
-    return openXmlElement.Val?.Value;
+    return openXmlElement?.Val?.Value;
   }
   
   private static bool CmpVal(DXDrawDgms.Constraint openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXDrawDgms.Constraint openXmlElement, Double? value)
@@ -196,12 +198,14 @@ public static class ConstraintConverter
   /// </summary>
   private static Double? GetFact(DXDrawDgms.Constraint openXmlElement)
   {
-    return openXmlElement.Fact?.Value;
+    return openXmlElement?.Fact?.Value;
   }
   
   private static bool CmpFact(DXDrawDgms.Constraint openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Fact?.Value == value;
+    if (openXmlElement?.Fact?.Value == value) return true;
+    diffs?.Add(objName, "Fact", openXmlElement?.Fact?.Value, value);
+    return false;
   }
   
   private static void SetFact(DXDrawDgms.Constraint openXmlElement, Double? value)
@@ -219,7 +223,7 @@ public static class ConstraintConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -289,7 +293,7 @@ public static class ConstraintConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

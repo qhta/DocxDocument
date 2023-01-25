@@ -93,7 +93,10 @@ public static class ChartSpaceConverter
   
   private static bool CmpStyle(DXDrawCharts.ChartSpace openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010DrawCharts.Style", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXDrawCharts.ChartSpace openXmlElement, Byte? value)
@@ -115,7 +118,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpColorMapOverride(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ColorMapOverride? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ColorMapOverrideConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ColorMapOverride>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ColorMapOverrideConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ColorMapOverride>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorMapOverride(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ColorMapOverride? value)
@@ -138,7 +141,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpPivotSource(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PivotSource? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PivotSourceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PivotSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PivotSourceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PivotSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPivotSource(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PivotSource? value)
@@ -161,7 +164,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpProtection(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Protection? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ProtectionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Protection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ProtectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Protection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetProtection(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Protection? value)
@@ -184,7 +187,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpChart(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Chart? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Chart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Chart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChart(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Chart? value)
@@ -207,7 +210,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpShapeProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ShapeProperties? value)
@@ -230,7 +233,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpTextProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -253,7 +256,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpExternalData(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ExternalData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExternalDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExternalData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExternalDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExternalData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExternalData(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ExternalData? value)
@@ -276,7 +279,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpPrintSettings(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PrintSettings? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PrintSettingsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PrintSettings>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PrintSettingsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PrintSettings>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPrintSettings(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PrintSettings? value)
@@ -299,7 +302,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpUserShapesReference(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.RelationshipIdType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RelationshipIdTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UserShapesReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UserShapesReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUserShapesReference(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.RelationshipIdType? value)
@@ -322,7 +325,7 @@ public static class ChartSpaceConverter
   
   private static bool CmpChartSpaceExtensionList(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ChartSpaceExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartSpaceExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartSpaceExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartSpaceExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartSpaceExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartSpaceExtensionList(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ChartSpaceExtensionList? value)
@@ -398,7 +401,7 @@ public static class ChartSpaceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -28,12 +28,14 @@ public static class GeoDataPointQueryConverter
   /// </summary>
   private static Double? GetLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
-    return openXmlElement.Latitude?.Value;
+    return openXmlElement?.Latitude?.Value;
   }
   
   private static bool CmpLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Latitude?.Value == value;
+    if (openXmlElement?.Latitude?.Value == value) return true;
+    diffs?.Add(objName, "Latitude", openXmlElement?.Latitude?.Value, value);
+    return false;
   }
   
   private static void SetLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
@@ -46,12 +48,14 @@ public static class GeoDataPointQueryConverter
   /// </summary>
   private static Double? GetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
-    return openXmlElement.Longitude?.Value;
+    return openXmlElement?.Longitude?.Value;
   }
   
   private static bool CmpLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Longitude?.Value == value;
+    if (openXmlElement?.Longitude?.Value == value) return true;
+    diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
+    return false;
   }
   
   private static void SetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
@@ -86,7 +90,7 @@ public static class GeoDataPointQueryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

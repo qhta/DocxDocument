@@ -15,7 +15,10 @@ public static class DataSourceObjectConverter
   
   private static bool CmpUdlConnectionString(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UdlConnectionString>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.UdlConnectionString>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "UdlConnectionString", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetUdlConnectionString(DXW.DataSourceObject openXmlElement, String? value)
@@ -40,7 +43,10 @@ public static class DataSourceObjectConverter
   
   private static bool CmpDataSourceTableName(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DataSourceTableName>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.DataSourceTableName>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DataSourceTableName", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDataSourceTableName(DXW.DataSourceObject openXmlElement, String? value)
@@ -65,7 +71,7 @@ public static class DataSourceObjectConverter
   
   private static bool CmpSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SourceReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -91,7 +97,10 @@ public static class DataSourceObjectConverter
   
   private static bool CmpColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.ColumnDelimiter", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value)
@@ -181,7 +190,7 @@ public static class DataSourceObjectConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -196,7 +205,7 @@ public static class DataSourceObjectConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -221,7 +230,7 @@ public static class DataSourceObjectConverter
   
   private static bool CmpRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -279,7 +288,7 @@ public static class DataSourceObjectConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

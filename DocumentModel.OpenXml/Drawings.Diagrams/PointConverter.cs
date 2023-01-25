@@ -75,7 +75,7 @@ public static class PointConverter
   
   private static bool CmpPropertySet(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PropertySet? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PropertySetConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PropertySet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PropertySetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PropertySet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPropertySet(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PropertySet? value)
@@ -101,7 +101,7 @@ public static class PointConverter
   
   private static bool CmpShapeProperties(DXDrawDgms.Point openXmlElement, DMDrawsDgms.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDrawDgms.Point openXmlElement, DMDrawsDgms.ShapeProperties? value)
@@ -127,7 +127,7 @@ public static class PointConverter
   
   private static bool CmpTextBody(DXDrawDgms.Point openXmlElement, DMDrawsDgms.TextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.TextBodyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.TextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBody(DXDrawDgms.Point openXmlElement, DMDrawsDgms.TextBody? value)
@@ -153,7 +153,7 @@ public static class PointConverter
   
   private static bool CmpPtExtensionList(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPtExtensionList(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PtExtensionList? value)
@@ -208,7 +208,7 @@ public static class PointConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -36,7 +36,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticBlur(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticBlur? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticBlurConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticBlur>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticBlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticBlur>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticBlur(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticBlur? value)
@@ -62,7 +62,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticCement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCement? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCementConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCement>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticCementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCement>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticCement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCement? value)
@@ -88,7 +88,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticChalkSketch? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticChalkSketchConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticChalkSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticChalkSketch? value)
@@ -114,7 +114,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCrisscrossEtching? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCrisscrossEtchingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticCrisscrossEtchingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCrisscrossEtching? value)
@@ -140,7 +140,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticCutout(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCutout? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCutoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCutout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticCutoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCutout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticCutout(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCutout? value)
@@ -166,7 +166,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticFilmGrainConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticFilmGrainConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticFilmGrain? value)
@@ -192,7 +192,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticGlass(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlass? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlassConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlass>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticGlassConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlass>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticGlass(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlass? value)
@@ -218,7 +218,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowDiffused? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlowDiffusedConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticGlowDiffusedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowDiffused? value)
@@ -244,7 +244,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowEdges? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlowEdgesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticGlowEdgesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowEdges? value)
@@ -270,7 +270,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLightScreen? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticLightScreenConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLightScreen>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticLightScreenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLightScreen>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLightScreen? value)
@@ -296,7 +296,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLineDrawing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticLineDrawingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticLineDrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLineDrawing? value)
@@ -322,7 +322,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticMarker(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMarker? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticMarkerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMarker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticMarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMarker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticMarker(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMarker? value)
@@ -348,7 +348,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMosaicBubbles? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticMosaicBubblesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticMosaicBubblesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMosaicBubbles? value)
@@ -374,7 +374,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintStrokes? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPaintStrokesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPaintStrokesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintStrokes? value)
@@ -400,7 +400,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintBrush? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPaintBrushConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPaintBrushConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintBrush? value)
@@ -426,7 +426,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPastelsSmooth? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPastelsSmoothConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPastelsSmoothConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPastelsSmooth? value)
@@ -452,7 +452,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilGrayscale? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPencilGrayscaleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPencilGrayscaleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilGrayscale? value)
@@ -478,7 +478,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilSketch? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPencilSketchConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPencilSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilSketch? value)
@@ -504,7 +504,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPhotocopy? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPhotocopyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPhotocopyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPhotocopy? value)
@@ -530,7 +530,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPlasticWrap? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPlasticWrapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticPlasticWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPlasticWrap? value)
@@ -556,7 +556,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticTexturizer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticTexturizerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticTexturizer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticTexturizerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticTexturizer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticTexturizer? value)
@@ -582,7 +582,7 @@ public static class ImageEffectConverter
   
   private static bool CmpArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticWatercolorSponge? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticWatercolorSpongeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArtisticWatercolorSpongeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticWatercolorSponge? value)
@@ -608,7 +608,7 @@ public static class ImageEffectConverter
   
   private static bool CmpBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BackgroundRemoval? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundRemovalConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.BackgroundRemoval>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundRemovalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.BackgroundRemoval>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BackgroundRemoval? value)
@@ -634,7 +634,7 @@ public static class ImageEffectConverter
   
   private static bool CmpBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BrightnessContrast? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BrightnessContrastConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.BrightnessContrast>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BrightnessContrastConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.BrightnessContrast>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BrightnessContrast? value)
@@ -660,7 +660,7 @@ public static class ImageEffectConverter
   
   private static bool CmpColorTemperature(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ColorTemperature? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorTemperatureConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ColorTemperature>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ColorTemperatureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ColorTemperature>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorTemperature(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ColorTemperature? value)
@@ -686,7 +686,7 @@ public static class ImageEffectConverter
   
   private static bool CmpSaturation(DXO2010Draw.ImageEffect openXmlElement, DMDraws.Saturation2? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Saturation2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.Saturation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Saturation2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.Saturation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSaturation(DXO2010Draw.ImageEffect openXmlElement, DMDraws.Saturation2? value)
@@ -712,7 +712,7 @@ public static class ImageEffectConverter
   
   private static bool CmpSharpenSoften(DXO2010Draw.ImageEffect openXmlElement, DMDraws.SharpenSoften? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SharpenSoftenConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.SharpenSoften>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SharpenSoftenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.SharpenSoften>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSharpenSoften(DXO2010Draw.ImageEffect openXmlElement, DMDraws.SharpenSoften? value)
@@ -830,7 +830,7 @@ public static class ImageEffectConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

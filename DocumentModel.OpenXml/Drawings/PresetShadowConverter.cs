@@ -28,12 +28,14 @@ public static class PresetShadowConverter
   /// </summary>
   private static Int64? GetDistance(DXDraw.PresetShadow openXmlElement)
   {
-    return openXmlElement.Distance?.Value;
+    return openXmlElement?.Distance?.Value;
   }
   
   private static bool CmpDistance(DXDraw.PresetShadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Distance?.Value == value;
+    if (openXmlElement?.Distance?.Value == value) return true;
+    diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
+    return false;
   }
   
   private static void SetDistance(DXDraw.PresetShadow openXmlElement, Int64? value)
@@ -46,12 +48,14 @@ public static class PresetShadowConverter
   /// </summary>
   private static Int32? GetDirection(DXDraw.PresetShadow openXmlElement)
   {
-    return openXmlElement.Direction?.Value;
+    return openXmlElement?.Direction?.Value;
   }
   
   private static bool CmpDirection(DXDraw.PresetShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Direction?.Value == value;
+    if (openXmlElement?.Direction?.Value == value) return true;
+    diffs?.Add(objName, "Direction", openXmlElement?.Direction?.Value, value);
+    return false;
   }
   
   private static void SetDirection(DXDraw.PresetShadow openXmlElement, Int32? value)
@@ -69,7 +73,7 @@ public static class PresetShadowConverter
   
   private static bool CmpRgbColorModelPercentage(DXDraw.PresetShadow openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelPercentage(DXDraw.PresetShadow openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -95,7 +99,7 @@ public static class PresetShadowConverter
   
   private static bool CmpRgbColorModelHex(DXDraw.PresetShadow openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXDraw.PresetShadow openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -121,7 +125,7 @@ public static class PresetShadowConverter
   
   private static bool CmpHslColor(DXDraw.PresetShadow openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHslColor(DXDraw.PresetShadow openXmlElement, DMDraws.HslColor? value)
@@ -147,7 +151,7 @@ public static class PresetShadowConverter
   
   private static bool CmpSystemColor(DXDraw.PresetShadow openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSystemColor(DXDraw.PresetShadow openXmlElement, DMDraws.SystemColor? value)
@@ -173,7 +177,7 @@ public static class PresetShadowConverter
   
   private static bool CmpSchemeColor(DXDraw.PresetShadow openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXDraw.PresetShadow openXmlElement, DMDraws.SchemeColor? value)
@@ -199,7 +203,7 @@ public static class PresetShadowConverter
   
   private static bool CmpPresetColor(DXDraw.PresetShadow openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetColor(DXDraw.PresetShadow openXmlElement, DMDraws.PresetColor? value)
@@ -260,7 +264,7 @@ public static class PresetShadowConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

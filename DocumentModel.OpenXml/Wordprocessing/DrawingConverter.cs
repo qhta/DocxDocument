@@ -15,7 +15,7 @@ public static class DrawingConverter
   
   private static bool CmpAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.AnchorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawW.Anchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Anchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value)
@@ -41,7 +41,7 @@ public static class DrawingConverter
   
   private static bool CmpInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.InlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawW.Inline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.InlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Inline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value)
@@ -81,7 +81,7 @@ public static class DrawingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

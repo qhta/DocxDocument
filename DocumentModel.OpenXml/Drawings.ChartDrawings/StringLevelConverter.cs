@@ -10,12 +10,14 @@ public static class StringLevelConverter
   /// </summary>
   private static UInt32? GetPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
-    return openXmlElement.PtCount?.Value;
+    return openXmlElement?.PtCount?.Value;
   }
   
   private static bool CmpPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PtCount?.Value == value;
+    if (openXmlElement?.PtCount?.Value == value) return true;
+    diffs?.Add(objName, "PtCount", openXmlElement?.PtCount?.Value, value);
+    return false;
   }
   
   private static void SetPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement, UInt32? value)
@@ -65,7 +67,7 @@ public static class StringLevelConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -80,7 +82,7 @@ public static class StringLevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -125,7 +127,7 @@ public static class StringLevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class TextBodyConverter
   
   private static bool CmpBodyProperties(DXDrawDgms.TextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBodyProperties(DXDrawDgms.TextBody openXmlElement, DMDraws.BodyProperties? value)
@@ -41,7 +41,7 @@ public static class TextBodyConverter
   
   private static bool CmpListStyle(DXDrawDgms.TextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetListStyle(DXDrawDgms.TextBody openXmlElement, DMDraws.ListStyle? value)
@@ -64,7 +64,7 @@ public static class TextBodyConverter
   
   private static bool CmpParagraph(DXDrawDgms.TextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraph(DXDrawDgms.TextBody openXmlElement, DMDraws.Paragraph? value)
@@ -107,7 +107,7 @@ public static class TextBodyConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

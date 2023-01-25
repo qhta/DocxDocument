@@ -31,12 +31,14 @@ public static class RunTrackChangeType2Converter
   /// </summary>
   private static DateTime? GetDate(DXO2010W.RunTrackChangeType openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXO2010W.RunTrackChangeType openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXO2010W.RunTrackChangeType openXmlElement, DateTime? value)
@@ -92,7 +94,7 @@ public static class RunTrackChangeType2Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

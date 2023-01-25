@@ -15,7 +15,10 @@ public static class View3DConverter
   
   private static bool CmpRotateX(DXDrawCharts.View3D openXmlElement, SByte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.RotateX>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RotateX>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.RotateX", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRotateX(DXDrawCharts.View3D openXmlElement, SByte? value)
@@ -40,7 +43,10 @@ public static class View3DConverter
   
   private static bool CmpHeightPercent(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.HeightPercent>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.HeightPercent>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.HeightPercent", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHeightPercent(DXDrawCharts.View3D openXmlElement, UInt16? value)
@@ -65,7 +71,10 @@ public static class View3DConverter
   
   private static bool CmpRotateY(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.RotateY>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RotateY>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.RotateY", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRotateY(DXDrawCharts.View3D openXmlElement, UInt16? value)
@@ -90,7 +99,10 @@ public static class View3DConverter
   
   private static bool CmpDepthPercent(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.DepthPercent>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DepthPercent>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.DepthPercent", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDepthPercent(DXDrawCharts.View3D openXmlElement, UInt16? value)
@@ -143,7 +155,10 @@ public static class View3DConverter
   
   private static bool CmpPerspective(DXDrawCharts.View3D openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Perspective>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Perspective>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Perspective", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPerspective(DXDrawCharts.View3D openXmlElement, Byte? value)
@@ -168,7 +183,7 @@ public static class View3DConverter
   
   private static bool CmpExtensionList(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -223,7 +238,7 @@ public static class View3DConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,17 +10,17 @@ public static class SectionPropertiesConverter
   /// </summary>
   private static UInt32? GetRsidRPr(DXW.SectionProperties openXmlElement)
   {
-    if (openXmlElement.RsidRPr?.Value != null)
+    if (openXmlElement?.RsidRPr?.Value != null)
       return UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsidRPr(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.RsidRPr?.Value != null)
+    if (openXmlElement?.RsidRPr?.Value != null)
       if (UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.RsidRPr?.Value == null && value == null) return true;
+    if (openXmlElement?.RsidRPr?.Value == null && value == null) return true;
     diffs?.Add(objName, "RsidRPr", openXmlElement?.RsidRPr?.Value, value?.ToString("x8"));
     return false;
   }
@@ -38,17 +38,17 @@ public static class SectionPropertiesConverter
   /// </summary>
   private static UInt32? GetRsidDel(DXW.SectionProperties openXmlElement)
   {
-    if (openXmlElement.RsidDel?.Value != null)
+    if (openXmlElement?.RsidDel?.Value != null)
       return UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsidDel(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.RsidDel?.Value != null)
+    if (openXmlElement?.RsidDel?.Value != null)
       if (UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.RsidDel?.Value == null && value == null) return true;
+    if (openXmlElement?.RsidDel?.Value == null && value == null) return true;
     diffs?.Add(objName, "RsidDel", openXmlElement?.RsidDel?.Value, value?.ToString("x8"));
     return false;
   }
@@ -66,17 +66,17 @@ public static class SectionPropertiesConverter
   /// </summary>
   private static UInt32? GetRsidR(DXW.SectionProperties openXmlElement)
   {
-    if (openXmlElement.RsidR?.Value != null)
+    if (openXmlElement?.RsidR?.Value != null)
       return UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsidR(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.RsidR?.Value != null)
+    if (openXmlElement?.RsidR?.Value != null)
       if (UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.RsidR?.Value == null && value == null) return true;
+    if (openXmlElement?.RsidR?.Value == null && value == null) return true;
     diffs?.Add(objName, "RsidR", openXmlElement?.RsidR?.Value, value?.ToString("x8"));
     return false;
   }
@@ -94,17 +94,17 @@ public static class SectionPropertiesConverter
   /// </summary>
   private static UInt32? GetRsidSect(DXW.SectionProperties openXmlElement)
   {
-    if (openXmlElement.RsidSect?.Value != null)
+    if (openXmlElement?.RsidSect?.Value != null)
       return UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsidSect(DXW.SectionProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.RsidSect?.Value != null)
+    if (openXmlElement?.RsidSect?.Value != null)
       if (UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.RsidSect?.Value == null && value == null) return true;
+    if (openXmlElement?.RsidSect?.Value == null && value == null) return true;
     diffs?.Add(objName, "RsidSect", openXmlElement?.RsidSect?.Value, value?.ToString("x8"));
     return false;
   }
@@ -124,7 +124,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpHeaderReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.HeaderReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHeaderReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value)
@@ -147,7 +147,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpFooterReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FooterReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FooterReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFooterReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value)
@@ -170,7 +170,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpFootnoteProperties(DXW.SectionProperties openXmlElement, DMW.FootnoteProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FootnotePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FootnoteProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FootnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FootnoteProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFootnoteProperties(DXW.SectionProperties openXmlElement, DMW.FootnoteProperties? value)
@@ -193,7 +193,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpEndnoteProperties(DXW.SectionProperties openXmlElement, DMW.EndnoteProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EndnotePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.EndnoteProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EndnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndnoteProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEndnoteProperties(DXW.SectionProperties openXmlElement, DMW.EndnoteProperties? value)
@@ -239,7 +239,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPageSize(DXW.SectionProperties openXmlElement, DMW.PageSize? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PageSizeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PageSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PageSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageSize(DXW.SectionProperties openXmlElement, DMW.PageSize? value)
@@ -262,7 +262,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPageMargin(DXW.SectionProperties openXmlElement, DMW.PageMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PageMarginConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PageMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PageMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageMargin(DXW.SectionProperties openXmlElement, DMW.PageMargin? value)
@@ -285,7 +285,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPaperSource(DXW.SectionProperties openXmlElement, DMW.PaperSource? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PaperSourceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PaperSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PaperSourceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PaperSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPaperSource(DXW.SectionProperties openXmlElement, DMW.PaperSource? value)
@@ -308,7 +308,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPageBorders(DXW.SectionProperties openXmlElement, DMW.PageBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PageBordersConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PageBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PageBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageBorders(DXW.SectionProperties openXmlElement, DMW.PageBorders? value)
@@ -331,7 +331,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpLineNumberType(DXW.SectionProperties openXmlElement, DMW.LineNumberType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LineNumberTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.LineNumberType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LineNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LineNumberType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineNumberType(DXW.SectionProperties openXmlElement, DMW.LineNumberType? value)
@@ -354,7 +354,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPageNumberType(DXW.SectionProperties openXmlElement, DMW.PageNumberType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PageNumberTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PageNumberType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PageNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageNumberType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPageNumberType(DXW.SectionProperties openXmlElement, DMW.PageNumberType? value)
@@ -377,7 +377,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpColumns(DXW.SectionProperties openXmlElement, DMW.Columns? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColumnsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Columns>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Columns>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColumns(DXW.SectionProperties openXmlElement, DMW.Columns? value)
@@ -571,7 +571,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpDocGrid(DXW.SectionProperties openXmlElement, DMW.DocGrid? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocGridConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocGrid>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocGridConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocGrid>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocGrid(DXW.SectionProperties openXmlElement, DMW.DocGrid? value)
@@ -594,7 +594,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpPrinterSettingsReference(DXW.SectionProperties openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PrinterSettingsReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PrinterSettingsReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPrinterSettingsReference(DXW.SectionProperties openXmlElement, DMW.RelationshipType? value)
@@ -617,7 +617,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpFootnoteColumns(DXW.SectionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2013W.FootnoteColumns", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetFootnoteColumns(DXW.SectionProperties openXmlElement, Int32? value)
@@ -639,7 +642,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpSectionPropertiesChange(DXW.SectionProperties openXmlElement, DMW.SectionPropertiesChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SectionPropertiesChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SectionPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SectionPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SectionPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSectionPropertiesChange(DXW.SectionProperties openXmlElement, DMW.SectionPropertiesChange? value)
@@ -754,7 +757,7 @@ public static class SectionPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

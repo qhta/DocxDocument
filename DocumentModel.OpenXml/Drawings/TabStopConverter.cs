@@ -10,12 +10,14 @@ public static class TabStopConverter
   /// </summary>
   private static Int32? GetPosition(DXDraw.TabStop openXmlElement)
   {
-    return openXmlElement.Position?.Value;
+    return openXmlElement?.Position?.Value;
   }
   
   private static bool CmpPosition(DXDraw.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Position?.Value == value;
+    if (openXmlElement?.Position?.Value == value) return true;
+    diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
+    return false;
   }
   
   private static void SetPosition(DXDraw.TabStop openXmlElement, Int32? value)
@@ -65,7 +67,7 @@ public static class TabStopConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

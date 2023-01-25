@@ -28,12 +28,14 @@ public static class AlgorithmConverter
   /// </summary>
   private static UInt32? GetRevision(DXDrawDgms.Algorithm openXmlElement)
   {
-    return openXmlElement.Revision?.Value;
+    return openXmlElement?.Revision?.Value;
   }
   
   private static bool CmpRevision(DXDrawDgms.Algorithm openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Revision?.Value == value;
+    if (openXmlElement?.Revision?.Value == value) return true;
+    diffs?.Add(objName, "Revision", openXmlElement?.Revision?.Value, value);
+    return false;
   }
   
   private static void SetRevision(DXDrawDgms.Algorithm openXmlElement, UInt32? value)
@@ -62,7 +64,7 @@ public static class AlgorithmConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -77,7 +79,7 @@ public static class AlgorithmConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -102,7 +104,7 @@ public static class AlgorithmConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -148,7 +150,7 @@ public static class AlgorithmConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

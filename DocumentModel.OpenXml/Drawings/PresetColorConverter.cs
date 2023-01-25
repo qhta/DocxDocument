@@ -30,7 +30,10 @@ public static class PresetColorConverter
   
   private static bool CmpTint(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tint>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Tint", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetTint(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -52,7 +55,10 @@ public static class PresetColorConverter
   
   private static bool CmpShade(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shade>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Shade", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetShade(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -149,7 +155,10 @@ public static class PresetColorConverter
   
   private static bool CmpAlpha(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Alpha>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Alpha", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetAlpha(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -171,7 +180,10 @@ public static class PresetColorConverter
   
   private static bool CmpAlphaOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetAlphaOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -193,7 +205,10 @@ public static class PresetColorConverter
   
   private static bool CmpAlphaModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetAlphaModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -215,7 +230,10 @@ public static class PresetColorConverter
   
   private static bool CmpHue(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Hue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Hue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHue(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -237,7 +255,10 @@ public static class PresetColorConverter
   
   private static bool CmpHueOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.HueOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHueOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -259,7 +280,10 @@ public static class PresetColorConverter
   
   private static bool CmpHueModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.HueModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHueModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -281,7 +305,10 @@ public static class PresetColorConverter
   
   private static bool CmpSaturation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Saturation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Saturation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -303,7 +330,10 @@ public static class PresetColorConverter
   
   private static bool CmpSaturationOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.SaturationOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturationOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -325,7 +355,10 @@ public static class PresetColorConverter
   
   private static bool CmpSaturationModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.SaturationModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSaturationModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -347,7 +380,10 @@ public static class PresetColorConverter
   
   private static bool CmpLuminance(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Luminance>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Luminance", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminance(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -369,7 +405,10 @@ public static class PresetColorConverter
   
   private static bool CmpLuminanceOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.LuminanceOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminanceOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -391,7 +430,10 @@ public static class PresetColorConverter
   
   private static bool CmpLuminanceModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.LuminanceModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLuminanceModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -413,7 +455,10 @@ public static class PresetColorConverter
   
   private static bool CmpRed(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Red>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Red", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRed(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -435,7 +480,10 @@ public static class PresetColorConverter
   
   private static bool CmpRedOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.RedOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRedOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -457,7 +505,10 @@ public static class PresetColorConverter
   
   private static bool CmpRedModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.RedModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRedModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -479,7 +530,10 @@ public static class PresetColorConverter
   
   private static bool CmpGreen(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Green>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Green", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGreen(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -501,7 +555,10 @@ public static class PresetColorConverter
   
   private static bool CmpGreenOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.GreenOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGreenOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -523,7 +580,10 @@ public static class PresetColorConverter
   
   private static bool CmpGreenModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.GreenModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGreenModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -545,7 +605,10 @@ public static class PresetColorConverter
   
   private static bool CmpBlue(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.Blue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBlue(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -567,7 +630,10 @@ public static class PresetColorConverter
   
   private static bool CmpBlueOffset(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueOffset>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.BlueOffset", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBlueOffset(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -589,7 +655,10 @@ public static class PresetColorConverter
   
   private static bool CmpBlueModulation(DXDraw.PresetColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueModulation>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.BlueModulation", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBlueModulation(DXDraw.PresetColor openXmlElement, Int32? value)
@@ -759,7 +828,7 @@ public static class PresetColorConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

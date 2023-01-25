@@ -15,7 +15,7 @@ public static class ImagePropertiesConverter
   
   private static bool CmpImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ImageLayerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ImageLayer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ImageLayerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ImageLayer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value)
@@ -52,7 +52,7 @@ public static class ImagePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

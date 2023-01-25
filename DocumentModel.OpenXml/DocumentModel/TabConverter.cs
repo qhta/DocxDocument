@@ -306,7 +306,7 @@ public static class TabConverter
   
   private static bool CmpGroup(DXO2010CustUI.Tab openXmlElement, DM.Group? value, DiffList? diffs, string? objName)
   {
-    return DMX.GroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Group>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.GroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Group>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroup(DXO2010CustUI.Tab openXmlElement, DM.Group? value)
@@ -385,7 +385,7 @@ public static class TabConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

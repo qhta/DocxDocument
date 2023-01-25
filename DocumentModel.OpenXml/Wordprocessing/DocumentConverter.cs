@@ -33,7 +33,7 @@ public static class DocumentConverter
   
   private static bool CmpDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value)
@@ -59,7 +59,7 @@ public static class DocumentConverter
   
   private static bool CmpBody(DXW.Document openXmlElement, DMW.Body? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BodyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Body>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Body>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBody(DXW.Document openXmlElement, DMW.Body? value)
@@ -102,7 +102,7 @@ public static class DocumentConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

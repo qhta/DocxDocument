@@ -10,12 +10,14 @@ public static class NumericLevelConverter
   /// </summary>
   private static UInt32? GetPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
-    return openXmlElement.PtCount?.Value;
+    return openXmlElement?.PtCount?.Value;
   }
   
   private static bool CmpPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PtCount?.Value == value;
+    if (openXmlElement?.PtCount?.Value == value) return true;
+    diffs?.Add(objName, "PtCount", openXmlElement?.PtCount?.Value, value);
+    return false;
   }
   
   private static void SetPtCount(DXO2016DrawChartDraw.NumericLevel openXmlElement, UInt32? value)
@@ -86,7 +88,7 @@ public static class NumericLevelConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -101,7 +103,7 @@ public static class NumericLevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -149,7 +151,7 @@ public static class NumericLevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

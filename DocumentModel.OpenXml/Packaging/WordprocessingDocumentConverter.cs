@@ -11,14 +11,14 @@ public static class WordprocessingDocumentConverter
   private static DM.WordprocessingDocumentType? GetDocumentType(DXPack.WordprocessingDocument openXmlElement)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.GetValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement.DocumentType);
+      return EnumValueConverter.GetValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType);
     return null;
   }
   
   private static bool CmpDocumentType(DXPack.WordprocessingDocument openXmlElement, DM.WordprocessingDocumentType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement.DocumentType, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
     if (openXmlElement?.DocumentType == null && value == null) return true;
     diffs?.Add(objName, "DocumentType", openXmlElement?.DocumentType, value);
     return false;
@@ -45,7 +45,7 @@ public static class WordprocessingDocumentConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

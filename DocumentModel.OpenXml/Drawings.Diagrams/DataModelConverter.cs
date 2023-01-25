@@ -15,7 +15,7 @@ public static class DataModelConverter
   
   private static bool CmpPointList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.PointList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PointListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PointList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PointListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PointList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPointList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.PointList? value)
@@ -41,7 +41,7 @@ public static class DataModelConverter
   
   private static bool CmpConnectionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.ConnectionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ConnectionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ConnectionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ConnectionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ConnectionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConnectionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.ConnectionList? value)
@@ -67,7 +67,7 @@ public static class DataModelConverter
   
   private static bool CmpBackground(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Background? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.BackgroundConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Background>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Background>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackground(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Background? value)
@@ -93,7 +93,7 @@ public static class DataModelConverter
   
   private static bool CmpWhole(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Whole? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.WholeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Whole>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.WholeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Whole>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWhole(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Whole? value)
@@ -119,7 +119,7 @@ public static class DataModelConverter
   
   private static bool CmpDataModelExtensionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.DataModelExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModelExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.DataModelExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModelExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataModelExtensionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.DataModelExtensionList? value)
@@ -168,7 +168,7 @@ public static class DataModelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class AlphaBiLevelConverter
   /// </summary>
   private static Int32? GetThreshold(DXDraw.AlphaBiLevel openXmlElement)
   {
-    return openXmlElement.Threshold?.Value;
+    return openXmlElement?.Threshold?.Value;
   }
   
   private static bool CmpThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Threshold?.Value == value;
+    if (openXmlElement?.Threshold?.Value == value) return true;
+    diffs?.Add(objName, "Threshold", openXmlElement?.Threshold?.Value, value);
+    return false;
   }
   
   private static void SetThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class AlphaBiLevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

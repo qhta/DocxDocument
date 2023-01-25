@@ -128,7 +128,7 @@ public static class FormFieldDataConverter
   
   private static bool CmpHelpText(DXW.FormFieldData openXmlElement, DMW.HelpText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HelpTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.HelpText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HelpTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HelpText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHelpText(DXW.FormFieldData openXmlElement, DMW.HelpText? value)
@@ -151,7 +151,7 @@ public static class FormFieldDataConverter
   
   private static bool CmpStatusText(DXW.FormFieldData openXmlElement, DMW.StatusText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StatusTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.StatusText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StatusTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StatusText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStatusText(DXW.FormFieldData openXmlElement, DMW.StatusText? value)
@@ -174,7 +174,7 @@ public static class FormFieldDataConverter
   
   private static bool CmpCheckBox(DXW.FormFieldData openXmlElement, DMW.CheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CheckBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCheckBox(DXW.FormFieldData openXmlElement, DMW.CheckBox? value)
@@ -197,7 +197,7 @@ public static class FormFieldDataConverter
   
   private static bool CmpDropDownListFormField(DXW.FormFieldData openXmlElement, DMW.DropDownListFormField? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DropDownListFormFieldConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DropDownListFormField>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DropDownListFormFieldConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DropDownListFormField>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDropDownListFormField(DXW.FormFieldData openXmlElement, DMW.DropDownListFormField? value)
@@ -220,7 +220,7 @@ public static class FormFieldDataConverter
   
   private static bool CmpTextInput(DXW.FormFieldData openXmlElement, DMW.TextInput? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TextInputConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TextInput>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TextInputConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TextInput>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextInput(DXW.FormFieldData openXmlElement, DMW.TextInput? value)
@@ -284,7 +284,7 @@ public static class FormFieldDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

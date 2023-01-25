@@ -28,12 +28,14 @@ public static class DiagramConverter
   /// </summary>
   private static Int64? GetStyle(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement.Style?.Value;
+    return openXmlElement?.Style?.Value;
   }
   
   private static bool CmpStyle(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -109,12 +111,14 @@ public static class DiagramConverter
   /// </summary>
   private static Int64? GetScaleX(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement.ScaleX?.Value;
+    return openXmlElement?.ScaleX?.Value;
   }
   
   private static bool CmpScaleX(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ScaleX?.Value == value;
+    if (openXmlElement?.ScaleX?.Value == value) return true;
+    diffs?.Add(objName, "ScaleX", openXmlElement?.ScaleX?.Value, value);
+    return false;
   }
   
   private static void SetScaleX(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -127,12 +131,14 @@ public static class DiagramConverter
   /// </summary>
   private static Int64? GetScaleY(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement.ScaleY?.Value;
+    return openXmlElement?.ScaleY?.Value;
   }
   
   private static bool CmpScaleY(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ScaleY?.Value == value;
+    if (openXmlElement?.ScaleY?.Value == value) return true;
+    diffs?.Add(objName, "ScaleY", openXmlElement?.ScaleY?.Value, value);
+    return false;
   }
   
   private static void SetScaleY(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -145,12 +151,14 @@ public static class DiagramConverter
   /// </summary>
   private static Int64? GetFontSize(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement.FontSize?.Value;
+    return openXmlElement?.FontSize?.Value;
   }
   
   private static bool CmpFontSize(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FontSize?.Value == value;
+    if (openXmlElement?.FontSize?.Value == value) return true;
+    diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
+    return false;
   }
   
   private static void SetFontSize(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -184,12 +192,14 @@ public static class DiagramConverter
   /// </summary>
   private static Int64? GetBaseTextScale(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement.BaseTextScale?.Value;
+    return openXmlElement?.BaseTextScale?.Value;
   }
   
   private static bool CmpBaseTextScale(DXVmlO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.BaseTextScale?.Value == value;
+    if (openXmlElement?.BaseTextScale?.Value == value) return true;
+    diffs?.Add(objName, "BaseTextScale", openXmlElement?.BaseTextScale?.Value, value);
+    return false;
   }
   
   private static void SetBaseTextScale(DXVmlO.Diagram openXmlElement, Int64? value)
@@ -207,7 +217,7 @@ public static class DiagramConverter
   
   private static bool CmpRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RelationTableConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.RelationTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RelationTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.RelationTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value)
@@ -274,7 +284,7 @@ public static class DiagramConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

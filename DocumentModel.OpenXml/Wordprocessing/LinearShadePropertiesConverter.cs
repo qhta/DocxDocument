@@ -10,12 +10,14 @@ public static class LinearShadePropertiesConverter
   /// </summary>
   private static Int32? GetAngle(DXO2010W.LinearShadeProperties openXmlElement)
   {
-    return openXmlElement.Angle?.Value;
+    return openXmlElement?.Angle?.Value;
   }
   
   private static bool CmpAngle(DXO2010W.LinearShadeProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Angle?.Value == value;
+    if (openXmlElement?.Angle?.Value == value) return true;
+    diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
+    return false;
   }
   
   private static void SetAngle(DXO2010W.LinearShadeProperties openXmlElement, Int32? value)
@@ -65,7 +67,7 @@ public static class LinearShadePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

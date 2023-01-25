@@ -15,7 +15,7 @@ public static class StyleEntryConverter
   
   private static bool CmpModifiers(DXO2013DrawChartStyle.StyleEntry openXmlElement, DM.ListOf<String>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue(openXmlElement?.Modifiers) == value;
+    return ListValueConverter.CmpValue(openXmlElement?.Modifiers, value, diffs, objName);
   }
   
   private static void SetModifiers(DXO2013DrawChartStyle.StyleEntry openXmlElement, DM.ListOf<String>? value)
@@ -36,7 +36,7 @@ public static class StyleEntryConverter
   
   private static bool CmpLineReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.LineReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.LineReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.LineReference? value)
@@ -87,7 +87,7 @@ public static class StyleEntryConverter
   
   private static bool CmpFillReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.FillReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FillReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FillReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.FillReference? value)
@@ -113,7 +113,7 @@ public static class StyleEntryConverter
   
   private static bool CmpEffectReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.EffectReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.EffectReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.EffectReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.EffectReference? value)
@@ -139,7 +139,7 @@ public static class StyleEntryConverter
   
   private static bool CmpFontReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.FontReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FontReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FontReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFontReference(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.FontReference? value)
@@ -165,7 +165,7 @@ public static class StyleEntryConverter
   
   private static bool CmpShapeProperties(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.ShapeProperties? value)
@@ -191,7 +191,7 @@ public static class StyleEntryConverter
   
   private static bool CmpTextCharacterPropertiesType(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextCharacterPropertiesType(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value)
@@ -217,7 +217,7 @@ public static class StyleEntryConverter
   
   private static bool CmpTextBodyProperties(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBodyProperties(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value)
@@ -243,7 +243,7 @@ public static class StyleEntryConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)
@@ -307,7 +307,7 @@ public static class StyleEntryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

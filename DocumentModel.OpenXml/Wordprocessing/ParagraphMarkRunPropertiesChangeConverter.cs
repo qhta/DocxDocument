@@ -31,12 +31,14 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   /// </summary>
   private static DateTime? GetDate(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DateTime? value)
@@ -75,7 +77,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   
   private static bool CmpPreviousParagraphMarkRunProperties(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DMW.PreviousParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousParagraphMarkRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousParagraphMarkRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousParagraphMarkRunProperties(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DMW.PreviousParagraphMarkRunProperties? value)
@@ -121,7 +123,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

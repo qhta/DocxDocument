@@ -31,12 +31,14 @@ public static class BookmarkStartConverter
   /// </summary>
   private static Int32? GetColumnFirst(DXW.BookmarkStart openXmlElement)
   {
-    return openXmlElement.ColumnFirst?.Value;
+    return openXmlElement?.ColumnFirst?.Value;
   }
   
   private static bool CmpColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnFirst?.Value == value;
+    if (openXmlElement?.ColumnFirst?.Value == value) return true;
+    diffs?.Add(objName, "ColumnFirst", openXmlElement?.ColumnFirst?.Value, value);
+    return false;
   }
   
   private static void SetColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value)
@@ -49,12 +51,14 @@ public static class BookmarkStartConverter
   /// </summary>
   private static Int32? GetColumnLast(DXW.BookmarkStart openXmlElement)
   {
-    return openXmlElement.ColumnLast?.Value;
+    return openXmlElement?.ColumnLast?.Value;
   }
   
   private static bool CmpColumnLast(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnLast?.Value == value;
+    if (openXmlElement?.ColumnLast?.Value == value) return true;
+    diffs?.Add(objName, "ColumnLast", openXmlElement?.ColumnLast?.Value, value);
+    return false;
   }
   
   private static void SetColumnLast(DXW.BookmarkStart openXmlElement, Int32? value)
@@ -134,7 +138,7 @@ public static class BookmarkStartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

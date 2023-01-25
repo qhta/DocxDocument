@@ -33,7 +33,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ImagePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ImageProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ImagePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ImageProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value)
@@ -81,7 +81,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.WebVideoPropertyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013WDraw.WebVideoProperty>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.WebVideoPropertyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WDraw.WebVideoProperty>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value)
@@ -104,7 +104,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsSVG.SVGBlipConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2019DrawSVG.SVGBlip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsSVG.SVGBlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawSVG.SVGBlip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value)
@@ -127,7 +127,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value)
@@ -150,7 +150,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value, DiffList? diffs, string? objName)
   {
-    return DMXWOEmb.OEmbedConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOWY2020OEmb.OEmbed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXWOEmb.OEmbedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOWY2020OEmb.OEmbed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value)
@@ -173,7 +173,7 @@ public static class BlipExtensionConverter
   
   private static bool CmpOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value)
@@ -231,7 +231,7 @@ public static class BlipExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

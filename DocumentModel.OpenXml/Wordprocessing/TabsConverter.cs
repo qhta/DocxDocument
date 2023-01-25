@@ -12,7 +12,7 @@ public static class TabsConverter
   
   private static bool CmpTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TabStopConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TabStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TabStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TabStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value)
@@ -49,7 +49,7 @@ public static class TabsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

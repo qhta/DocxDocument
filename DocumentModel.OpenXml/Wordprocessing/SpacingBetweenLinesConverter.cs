@@ -31,12 +31,14 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   private static Int32? GetBeforeLines(DXW.SpacingBetweenLines openXmlElement)
   {
-    return openXmlElement.BeforeLines?.Value;
+    return openXmlElement?.BeforeLines?.Value;
   }
   
   private static bool CmpBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.BeforeLines?.Value == value;
+    if (openXmlElement?.BeforeLines?.Value == value) return true;
+    diffs?.Add(objName, "BeforeLines", openXmlElement?.BeforeLines?.Value, value);
+    return false;
   }
   
   private static void SetBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
@@ -91,12 +93,14 @@ public static class SpacingBetweenLinesConverter
   /// </summary>
   private static Int32? GetAfterLines(DXW.SpacingBetweenLines openXmlElement)
   {
-    return openXmlElement.AfterLines?.Value;
+    return openXmlElement?.AfterLines?.Value;
   }
   
   private static bool CmpAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.AfterLines?.Value == value;
+    if (openXmlElement?.AfterLines?.Value == value) return true;
+    diffs?.Add(objName, "AfterLines", openXmlElement?.AfterLines?.Value, value);
+    return false;
   }
   
   private static void SetAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
@@ -206,7 +210,7 @@ public static class SpacingBetweenLinesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class EffectExtentConverter
   /// </summary>
   private static Int64? GetLeftEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement.LeftEdge?.Value;
+    return openXmlElement?.LeftEdge?.Value;
   }
   
   private static bool CmpLeftEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LeftEdge?.Value == value;
+    if (openXmlElement?.LeftEdge?.Value == value) return true;
+    diffs?.Add(objName, "LeftEdge", openXmlElement?.LeftEdge?.Value, value);
+    return false;
   }
   
   private static void SetLeftEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class EffectExtentConverter
   /// </summary>
   private static Int64? GetTopEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement.TopEdge?.Value;
+    return openXmlElement?.TopEdge?.Value;
   }
   
   private static bool CmpTopEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.TopEdge?.Value == value;
+    if (openXmlElement?.TopEdge?.Value == value) return true;
+    diffs?.Add(objName, "TopEdge", openXmlElement?.TopEdge?.Value, value);
+    return false;
   }
   
   private static void SetTopEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -46,12 +50,14 @@ public static class EffectExtentConverter
   /// </summary>
   private static Int64? GetRightEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement.RightEdge?.Value;
+    return openXmlElement?.RightEdge?.Value;
   }
   
   private static bool CmpRightEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.RightEdge?.Value == value;
+    if (openXmlElement?.RightEdge?.Value == value) return true;
+    diffs?.Add(objName, "RightEdge", openXmlElement?.RightEdge?.Value, value);
+    return false;
   }
   
   private static void SetRightEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -64,12 +70,14 @@ public static class EffectExtentConverter
   /// </summary>
   private static Int64? GetBottomEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement.BottomEdge?.Value;
+    return openXmlElement?.BottomEdge?.Value;
   }
   
   private static bool CmpBottomEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.BottomEdge?.Value == value;
+    if (openXmlElement?.BottomEdge?.Value == value) return true;
+    diffs?.Add(objName, "BottomEdge", openXmlElement?.BottomEdge?.Value, value);
+    return false;
   }
   
   private static void SetBottomEdge(DXDrawW.EffectExtent openXmlElement, Int64? value)
@@ -107,7 +115,7 @@ public static class EffectExtentConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

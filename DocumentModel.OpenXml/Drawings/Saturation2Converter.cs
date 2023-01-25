@@ -10,12 +10,14 @@ public static class Saturation2Converter
   /// </summary>
   private static Int32? GetSaturationAmount(DXO2010Draw.Saturation openXmlElement)
   {
-    return openXmlElement.SaturationAmount?.Value;
+    return openXmlElement?.SaturationAmount?.Value;
   }
   
   private static bool CmpSaturationAmount(DXO2010Draw.Saturation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SaturationAmount?.Value == value;
+    if (openXmlElement?.SaturationAmount?.Value == value) return true;
+    diffs?.Add(objName, "SaturationAmount", openXmlElement?.SaturationAmount?.Value, value);
+    return false;
   }
   
   private static void SetSaturationAmount(DXO2010Draw.Saturation openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class Saturation2Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

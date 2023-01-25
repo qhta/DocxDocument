@@ -10,12 +10,14 @@ public static class AdjustConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawDgms.Adjust openXmlElement)
   {
-    return openXmlElement.Index?.Value;
+    return openXmlElement?.Index?.Value;
   }
   
   private static bool CmpIndex(DXDrawDgms.Adjust openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Index?.Value == value;
+    if (openXmlElement?.Index?.Value == value) return true;
+    diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawDgms.Adjust openXmlElement, UInt32? value)
@@ -28,12 +30,14 @@ public static class AdjustConverter
   /// </summary>
   private static Double? GetVal(DXDrawDgms.Adjust openXmlElement)
   {
-    return openXmlElement.Val?.Value;
+    return openXmlElement?.Val?.Value;
   }
   
   private static bool CmpVal(DXDrawDgms.Adjust openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXDrawDgms.Adjust openXmlElement, Double? value)
@@ -65,7 +69,7 @@ public static class AdjustConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

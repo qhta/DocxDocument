@@ -15,7 +15,7 @@ public static class PresentationOfConverter
   
   private static bool CmpAxis(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.AxisKind>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue<DXDrawDgms.AxisValues, DMDrawsDgms.AxisKind>(openXmlElement?.Axis) == value;
+    return ListValueConverter.CmpValue<DXDrawDgms.AxisValues, DMDrawsDgms.AxisKind>(openXmlElement?.Axis, value, diffs, objName);
   }
   
   private static void SetAxis(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.AxisKind>? value)
@@ -36,7 +36,7 @@ public static class PresentationOfConverter
   
   private static bool CmpPointType(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.ElementKind>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue<DXDrawDgms.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType) == value;
+    return ListValueConverter.CmpValue<DXDrawDgms.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType, value, diffs, objName);
   }
   
   private static void SetPointType(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.ElementKind>? value)
@@ -57,7 +57,7 @@ public static class PresentationOfConverter
   
   private static bool CmpHideLastTrans(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Boolean>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue(openXmlElement?.HideLastTrans) == value;
+    return ListValueConverter.CmpValue(openXmlElement?.HideLastTrans, value, diffs, objName);
   }
   
   private static void SetHideLastTrans(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Boolean>? value)
@@ -78,7 +78,7 @@ public static class PresentationOfConverter
   
   private static bool CmpStart(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue(openXmlElement?.Start) == value;
+    return ListValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName);
   }
   
   private static void SetStart(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
@@ -99,7 +99,7 @@ public static class PresentationOfConverter
   
   private static bool CmpCount(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<UInt32>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue(openXmlElement?.Count) == value;
+    return ListValueConverter.CmpValue(openXmlElement?.Count, value, diffs, objName);
   }
   
   private static void SetCount(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<UInt32>? value)
@@ -120,7 +120,7 @@ public static class PresentationOfConverter
   
   private static bool CmpStep(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.GetValue(openXmlElement?.Step) == value;
+    return ListValueConverter.CmpValue(openXmlElement?.Step, value, diffs, objName);
   }
   
   private static void SetStep(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
@@ -141,7 +141,7 @@ public static class PresentationOfConverter
   
   private static bool CmpExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -196,7 +196,7 @@ public static class PresentationOfConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

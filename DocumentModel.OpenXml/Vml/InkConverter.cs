@@ -10,17 +10,17 @@ public static class InkConverter
   /// </summary>
   private static Byte[]? GetInkData(DXVmlO.Ink openXmlElement)
   {
-    if (openXmlElement.InkData?.Value != null)
+    if (openXmlElement?.InkData?.Value != null)
       return Convert.FromBase64String(openXmlElement.InkData.Value);
     return null;
   }
   
   private static bool CmpInkData(DXVmlO.Ink openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.InkData?.Value != null)
+    if (openXmlElement?.InkData?.Value != null)
       if (Convert.FromBase64String(openXmlElement.InkData.Value) == value)
         return true;
-    if (openXmlElement.InkData?.Value == null && value == null) return true;
+    if (openXmlElement?.InkData?.Value == null && value == null) return true;
     diffs?.Add(objName, "InkData", openXmlElement?.InkData?.Value, value);
     return false;
   }
@@ -78,7 +78,7 @@ public static class InkConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

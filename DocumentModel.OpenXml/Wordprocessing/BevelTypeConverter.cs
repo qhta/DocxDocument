@@ -10,12 +10,14 @@ public static class BevelTypeConverter
   /// </summary>
   private static Int64? GetWidth(DXO2010W.BevelType openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXO2010W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXO2010W.BevelType openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class BevelTypeConverter
   /// </summary>
   private static Int64? GetHeight(DXO2010W.BevelType openXmlElement)
   {
-    return openXmlElement.Height?.Value;
+    return openXmlElement?.Height?.Value;
   }
   
   private static bool CmpHeight(DXO2010W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Height?.Value == value;
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXO2010W.BevelType openXmlElement, Int64? value)
@@ -86,7 +90,7 @@ public static class BevelTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

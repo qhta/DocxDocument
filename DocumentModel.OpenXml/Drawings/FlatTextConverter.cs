@@ -10,12 +10,14 @@ public static class FlatTextConverter
   /// </summary>
   private static Int64? GetZ(DXDraw.FlatText openXmlElement)
   {
-    return openXmlElement.Z?.Value;
+    return openXmlElement?.Z?.Value;
   }
   
   private static bool CmpZ(DXDraw.FlatText openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Z?.Value == value;
+    if (openXmlElement?.Z?.Value == value) return true;
+    diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
+    return false;
   }
   
   private static void SetZ(DXDraw.FlatText openXmlElement, Int64? value)
@@ -44,7 +46,7 @@ public static class FlatTextConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class LineNumberTypeConverter
   /// </summary>
   private static Int16? GetCountBy(DXW.LineNumberType openXmlElement)
   {
-    return openXmlElement.CountBy?.Value;
+    return openXmlElement?.CountBy?.Value;
   }
   
   private static bool CmpCountBy(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CountBy?.Value == value;
+    if (openXmlElement?.CountBy?.Value == value) return true;
+    diffs?.Add(objName, "CountBy", openXmlElement?.CountBy?.Value, value);
+    return false;
   }
   
   private static void SetCountBy(DXW.LineNumberType openXmlElement, Int16? value)
@@ -28,12 +30,14 @@ public static class LineNumberTypeConverter
   /// </summary>
   private static Int16? GetStart(DXW.LineNumberType openXmlElement)
   {
-    return openXmlElement.Start?.Value;
+    return openXmlElement?.Start?.Value;
   }
   
   private static bool CmpStart(DXW.LineNumberType openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Start?.Value == value;
+    if (openXmlElement?.Start?.Value == value) return true;
+    diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
+    return false;
   }
   
   private static void SetStart(DXW.LineNumberType openXmlElement, Int16? value)
@@ -110,7 +114,7 @@ public static class LineNumberTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -96,7 +96,7 @@ public static class DocumentBackgroundConverter
   
   private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.BackgroundConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Background>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Background>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value)
@@ -145,7 +145,7 @@ public static class DocumentBackgroundConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

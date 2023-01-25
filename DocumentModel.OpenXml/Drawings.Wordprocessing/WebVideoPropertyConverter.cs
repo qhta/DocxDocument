@@ -31,12 +31,14 @@ public static class WebVideoPropertyConverter
   /// </summary>
   private static UInt32? GetHeight(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
-    return openXmlElement.Height?.Value;
+    return openXmlElement?.Height?.Value;
   }
   
   private static bool CmpHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Height?.Value == value;
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
@@ -49,12 +51,14 @@ public static class WebVideoPropertyConverter
   /// </summary>
   private static UInt32? GetWidth(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
@@ -89,7 +93,7 @@ public static class WebVideoPropertyConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class DelimiterConverter
   
   private static bool CmpDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value)
@@ -52,7 +52,7 @@ public static class DelimiterConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -67,7 +67,7 @@ public static class DelimiterConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -109,7 +109,7 @@ public static class DelimiterConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

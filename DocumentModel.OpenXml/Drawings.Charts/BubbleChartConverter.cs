@@ -54,7 +54,7 @@ public static class BubbleChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -69,7 +69,7 @@ public static class BubbleChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -94,7 +94,7 @@ public static class BubbleChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -142,7 +142,10 @@ public static class BubbleChartConverter
   
   private static bool CmpBubbleScale(DXDrawCharts.BubbleChart openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.BubbleScale", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBubbleScale(DXDrawCharts.BubbleChart openXmlElement, UInt32? value)
@@ -226,7 +229,7 @@ public static class BubbleChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -241,7 +244,7 @@ public static class BubbleChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -266,7 +269,7 @@ public static class BubbleChartConverter
   
   private static bool CmpBubbleChartExtensionList(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BubbleChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BubbleChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBubbleChartExtensionList(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value)
@@ -327,7 +330,7 @@ public static class BubbleChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

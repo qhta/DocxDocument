@@ -31,12 +31,14 @@ public static class RunPropertiesChangeConverter
   /// </summary>
   private static DateTime? GetDate(DXW.RunPropertiesChange openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.RunPropertiesChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.RunPropertiesChange openXmlElement, DateTime? value)
@@ -75,7 +77,7 @@ public static class RunPropertiesChangeConverter
   
   private static bool CmpPreviousRunProperties(DXW.RunPropertiesChange openXmlElement, DMW.PreviousRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousRunProperties(DXW.RunPropertiesChange openXmlElement, DMW.PreviousRunProperties? value)
@@ -121,7 +123,7 @@ public static class RunPropertiesChangeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
