@@ -15,7 +15,10 @@ public static class MatrixColumnPropertiesConverter
   
   private static bool CmpMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.MatrixColumnCount", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value)
@@ -80,7 +83,7 @@ public static class MatrixColumnPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

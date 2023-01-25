@@ -10,12 +10,14 @@ public static class AlphaModulationFixedConverter
   /// </summary>
   private static Int32? GetAmount(DXDraw.AlphaModulationFixed openXmlElement)
   {
-    return openXmlElement.Amount?.Value;
+    return openXmlElement?.Amount?.Value;
   }
   
   private static bool CmpAmount(DXDraw.AlphaModulationFixed openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Amount?.Value == value;
+    if (openXmlElement?.Amount?.Value == value) return true;
+    diffs?.Add(objName, "Amount", openXmlElement?.Amount?.Value, value);
+    return false;
   }
   
   private static void SetAmount(DXDraw.AlphaModulationFixed openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class AlphaModulationFixedConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

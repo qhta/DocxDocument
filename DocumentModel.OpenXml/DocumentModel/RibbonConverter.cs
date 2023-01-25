@@ -36,7 +36,7 @@ public static class RibbonConverter
   
   private static bool CmpQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
   {
-    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
@@ -62,7 +62,7 @@ public static class RibbonConverter
   
   private static bool CmpTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
   {
-    return DMX.TabsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value)
@@ -88,7 +88,7 @@ public static class RibbonConverter
   
   private static bool CmpContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
   {
-    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ContextualTabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value)
@@ -134,7 +134,7 @@ public static class RibbonConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

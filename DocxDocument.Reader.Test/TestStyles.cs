@@ -52,8 +52,7 @@ public class TestStyles : TestBase
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
     int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
     var diffs = new DiffList();
-    var ok = StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, null);
-    if (!ok)
+    if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, null))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
 
     WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
@@ -175,17 +174,9 @@ public class TestStyles : TestBase
     if (origParPropsDefaults != null)
     {
       Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
-      TestParagraphPropertiesBaseStyle(modelParPropsDefaults.ParagraphPropertiesBaseStyle, origParPropsDefaults.ParagraphPropertiesBaseStyle);
-    }
-  }
-
-  private void TestParagraphPropertiesBaseStyle(DMW.ParagraphPropertiesBaseStyle? modelParPropsBaseStyle,
-    DXW.ParagraphPropertiesBaseStyle? origParPropsBaseStyle)
-  {
-    if (origParPropsBaseStyle != null)
-    {
-      Assert.IsNotNull(modelParPropsBaseStyle, "ParagraphPropertieBaseStyle is null");
-      Assert.That(modelParPropsBaseStyle.AdjustRightIndent, Is.EqualTo(origParPropsBaseStyle.AdjustRightIndent?.Val?.Value), "ParagraphPropertieBaseStyle.AdjustRightIndent");
+      var diffs = new DiffList();
+      if (!ParagraphPropertiesDefaultConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
 
@@ -195,6 +186,9 @@ public class TestStyles : TestBase
     if (origRunPropsDefaults != null)
     {
       Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
+      var diffs = new DiffList();
+      if (!RunPropertiesDefaultConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
 

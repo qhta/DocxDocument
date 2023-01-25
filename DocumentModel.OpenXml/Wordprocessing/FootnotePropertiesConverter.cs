@@ -41,7 +41,7 @@ public static class FootnotePropertiesConverter
   
   private static bool CmpNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value)
@@ -67,7 +67,10 @@ public static class FootnotePropertiesConverter
   
   private static bool CmpNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingStart>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.NumberingStart", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value)
@@ -138,7 +141,7 @@ public static class FootnotePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

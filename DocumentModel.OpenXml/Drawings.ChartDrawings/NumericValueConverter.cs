@@ -10,12 +10,14 @@ public static class NumericValueConverter
   /// </summary>
   private static UInt32? GetIdx(DXO2016DrawChartDraw.NumericValue openXmlElement)
   {
-    return openXmlElement.Idx?.Value;
+    return openXmlElement?.Idx?.Value;
   }
   
   private static bool CmpIdx(DXO2016DrawChartDraw.NumericValue openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Idx?.Value == value;
+    if (openXmlElement?.Idx?.Value == value) return true;
+    diffs?.Add(objName, "Idx", openXmlElement?.Idx?.Value, value);
+    return false;
   }
   
   private static void SetIdx(DXO2016DrawChartDraw.NumericValue openXmlElement, UInt32? value)
@@ -44,7 +46,7 @@ public static class NumericValueConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

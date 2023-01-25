@@ -15,7 +15,7 @@ public static class LayoutConverter
   
   private static bool CmpManualLayout(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ManualLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ManualLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ManualLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ManualLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ManualLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetManualLayout(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ManualLayout? value)
@@ -41,7 +41,7 @@ public static class LayoutConverter
   
   private static bool CmpExtensionList(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -81,7 +81,7 @@ public static class LayoutConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

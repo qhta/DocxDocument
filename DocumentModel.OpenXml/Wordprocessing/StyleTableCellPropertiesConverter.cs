@@ -15,7 +15,7 @@ public static class StyleTableCellPropertiesConverter
   
   private static bool CmpShading(DXW.StyleTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.StyleTableCellProperties openXmlElement, DMW.Shading? value)
@@ -72,7 +72,7 @@ public static class StyleTableCellPropertiesConverter
   
   private static bool CmpTableCellMargin(DXW.StyleTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellMargin(DXW.StyleTableCellProperties openXmlElement, DMW.TableCellMargin? value)
@@ -144,7 +144,7 @@ public static class StyleTableCellPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

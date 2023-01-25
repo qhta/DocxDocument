@@ -33,7 +33,7 @@ public static class OfficeStyleSheetExtensionConverter
   
   private static bool CmpThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
   {
-    return DMX.ThemeFamilyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013Theme.ThemeFamily>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ThemeFamilyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Theme.ThemeFamily>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value)
@@ -73,7 +73,7 @@ public static class OfficeStyleSheetExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

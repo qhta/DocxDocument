@@ -12,7 +12,7 @@ public static class MailMergeRecipientsConverter
   
   private static bool CmpSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SingleDataSourceRecordConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.SingleDataSourceRecord>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SingleDataSourceRecordConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.SingleDataSourceRecord>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value)
@@ -49,7 +49,7 @@ public static class MailMergeRecipientsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class TaskAnchorConverter
   
   private static bool CmpCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement, DM.CommentAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMX.CommentAnchorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.CommentAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.CommentAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement, DM.CommentAnchor? value)
@@ -41,7 +41,7 @@ public static class TaskAnchorConverter
   
   private static bool CmpExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement, DM.ExtensionList? value)
@@ -81,7 +81,7 @@ public static class TaskAnchorConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

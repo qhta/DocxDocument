@@ -12,7 +12,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpOutline(DXDraw.RunProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOutline(DXDraw.RunProperties openXmlElement, DMDraws.Outline? value)
@@ -60,7 +60,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpSolidFill(DXDraw.RunProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidFill(DXDraw.RunProperties openXmlElement, DMDraws.SolidFill? value)
@@ -83,7 +83,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpGradientFill(DXDraw.RunProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFill(DXDraw.RunProperties openXmlElement, DMDraws.GradientFill? value)
@@ -106,7 +106,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpBlipFill(DXDraw.RunProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlipFill(DXDraw.RunProperties openXmlElement, DMDraws.BlipFill? value)
@@ -129,7 +129,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpPatternFill(DXDraw.RunProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPatternFill(DXDraw.RunProperties openXmlElement, DMDraws.PatternFill? value)
@@ -177,7 +177,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpEffectList(DXDraw.RunProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectList(DXDraw.RunProperties openXmlElement, DMDraws.EffectList? value)
@@ -200,7 +200,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpEffectDag(DXDraw.RunProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectDag(DXDraw.RunProperties openXmlElement, DMDraws.EffectDag? value)
@@ -223,7 +223,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpHighlight(DXDraw.RunProperties openXmlElement, DMDraws.Highlight? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HighlightConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Highlight>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HighlightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Highlight>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHighlight(DXDraw.RunProperties openXmlElement, DMDraws.Highlight? value)
@@ -271,7 +271,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpUnderline(DXDraw.RunProperties openXmlElement, DMDraws.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.UnderlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderline(DXDraw.RunProperties openXmlElement, DMDraws.Underline? value)
@@ -319,7 +319,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpUnderlineFill(DXDraw.RunProperties openXmlElement, DMDraws.UnderlineFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.UnderlineFillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.UnderlineFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.UnderlineFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderlineFill(DXDraw.RunProperties openXmlElement, DMDraws.UnderlineFill? value)
@@ -342,7 +342,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpLatinFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLatinFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value)
@@ -365,7 +365,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpEastAsianFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEastAsianFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value)
@@ -388,7 +388,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpComplexScriptFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetComplexScriptFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value)
@@ -411,7 +411,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpSymbolFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SymbolFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SymbolFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSymbolFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value)
@@ -434,7 +434,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpHyperlinkOnClick(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkOnClick(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
@@ -457,7 +457,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpHyperlinkOnMouseOver(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnMouseOver>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnMouseOver>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHyperlinkOnMouseOver(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnMouseOver? value)
@@ -505,7 +505,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpExtensionList(DXDraw.RunProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.RunProperties openXmlElement, DMDraws.ExtensionList? value)
@@ -605,7 +605,7 @@ public static class RunPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

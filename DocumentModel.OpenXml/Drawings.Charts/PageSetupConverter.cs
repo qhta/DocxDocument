@@ -10,12 +10,14 @@ public static class PageSetupConverter
   /// </summary>
   private static UInt32? GetPaperSize(DXDrawCharts.PageSetup openXmlElement)
   {
-    return openXmlElement.PaperSize?.Value;
+    return openXmlElement?.PaperSize?.Value;
   }
   
   private static bool CmpPaperSize(DXDrawCharts.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PaperSize?.Value == value;
+    if (openXmlElement?.PaperSize?.Value == value) return true;
+    diffs?.Add(objName, "PaperSize", openXmlElement?.PaperSize?.Value, value);
+    return false;
   }
   
   private static void SetPaperSize(DXDrawCharts.PageSetup openXmlElement, UInt32? value)
@@ -28,12 +30,14 @@ public static class PageSetupConverter
   /// </summary>
   private static Int32? GetFirstPageNumber(DXDrawCharts.PageSetup openXmlElement)
   {
-    return openXmlElement.FirstPageNumber?.Value;
+    return openXmlElement?.FirstPageNumber?.Value;
   }
   
   private static bool CmpFirstPageNumber(DXDrawCharts.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FirstPageNumber?.Value == value;
+    if (openXmlElement?.FirstPageNumber?.Value == value) return true;
+    diffs?.Add(objName, "FirstPageNumber", openXmlElement?.FirstPageNumber?.Value, value);
+    return false;
   }
   
   private static void SetFirstPageNumber(DXDrawCharts.PageSetup openXmlElement, Int32? value)
@@ -127,12 +131,14 @@ public static class PageSetupConverter
   /// </summary>
   private static Int32? GetHorizontalDpi(DXDrawCharts.PageSetup openXmlElement)
   {
-    return openXmlElement.HorizontalDpi?.Value;
+    return openXmlElement?.HorizontalDpi?.Value;
   }
   
   private static bool CmpHorizontalDpi(DXDrawCharts.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalDpi?.Value == value;
+    if (openXmlElement?.HorizontalDpi?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalDpi", openXmlElement?.HorizontalDpi?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalDpi(DXDrawCharts.PageSetup openXmlElement, Int32? value)
@@ -145,12 +151,14 @@ public static class PageSetupConverter
   /// </summary>
   private static Int32? GetVerticalDpi(DXDrawCharts.PageSetup openXmlElement)
   {
-    return openXmlElement.VerticalDpi?.Value;
+    return openXmlElement?.VerticalDpi?.Value;
   }
   
   private static bool CmpVerticalDpi(DXDrawCharts.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalDpi?.Value == value;
+    if (openXmlElement?.VerticalDpi?.Value == value) return true;
+    diffs?.Add(objName, "VerticalDpi", openXmlElement?.VerticalDpi?.Value, value);
+    return false;
   }
   
   private static void SetVerticalDpi(DXDrawCharts.PageSetup openXmlElement, Int32? value)
@@ -163,12 +171,14 @@ public static class PageSetupConverter
   /// </summary>
   private static UInt32? GetCopies(DXDrawCharts.PageSetup openXmlElement)
   {
-    return openXmlElement.Copies?.Value;
+    return openXmlElement?.Copies?.Value;
   }
   
   private static bool CmpCopies(DXDrawCharts.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Copies?.Value == value;
+    if (openXmlElement?.Copies?.Value == value) return true;
+    diffs?.Add(objName, "Copies", openXmlElement?.Copies?.Value, value);
+    return false;
   }
   
   private static void SetCopies(DXDrawCharts.PageSetup openXmlElement, UInt32? value)
@@ -221,7 +231,7 @@ public static class PageSetupConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class NormalAutoFitConverter
   /// </summary>
   private static Int32? GetFontScale(DXDraw.NormalAutoFit openXmlElement)
   {
-    return openXmlElement.FontScale?.Value;
+    return openXmlElement?.FontScale?.Value;
   }
   
   private static bool CmpFontScale(DXDraw.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FontScale?.Value == value;
+    if (openXmlElement?.FontScale?.Value == value) return true;
+    diffs?.Add(objName, "FontScale", openXmlElement?.FontScale?.Value, value);
+    return false;
   }
   
   private static void SetFontScale(DXDraw.NormalAutoFit openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class NormalAutoFitConverter
   /// </summary>
   private static Int32? GetLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement)
   {
-    return openXmlElement.LineSpaceReduction?.Value;
+    return openXmlElement?.LineSpaceReduction?.Value;
   }
   
   private static bool CmpLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LineSpaceReduction?.Value == value;
+    if (openXmlElement?.LineSpaceReduction?.Value == value) return true;
+    diffs?.Add(objName, "LineSpaceReduction", openXmlElement?.LineSpaceReduction?.Value, value);
+    return false;
   }
   
   private static void SetLineSpaceReduction(DXDraw.NormalAutoFit openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class NormalAutoFitConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

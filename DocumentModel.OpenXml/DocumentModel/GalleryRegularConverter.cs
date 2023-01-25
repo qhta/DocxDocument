@@ -73,12 +73,14 @@ public static class GalleryRegularConverter
   /// </summary>
   private static Int64? GetColumns(DXO2010CustUI.GalleryRegular openXmlElement)
   {
-    return openXmlElement.Columns?.Value;
+    return openXmlElement?.Columns?.Value;
   }
   
   private static bool CmpColumns(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Columns?.Value == value;
+    if (openXmlElement?.Columns?.Value == value) return true;
+    diffs?.Add(objName, "Columns", openXmlElement?.Columns?.Value, value);
+    return false;
   }
   
   private static void SetColumns(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value)
@@ -91,12 +93,14 @@ public static class GalleryRegularConverter
   /// </summary>
   private static Int64? GetRows(DXO2010CustUI.GalleryRegular openXmlElement)
   {
-    return openXmlElement.Rows?.Value;
+    return openXmlElement?.Rows?.Value;
   }
   
   private static bool CmpRows(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Rows?.Value == value;
+    if (openXmlElement?.Rows?.Value == value) return true;
+    diffs?.Add(objName, "Rows", openXmlElement?.Rows?.Value, value);
+    return false;
   }
   
   private static void SetRows(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value)
@@ -109,12 +113,14 @@ public static class GalleryRegularConverter
   /// </summary>
   private static Int64? GetItemWidth(DXO2010CustUI.GalleryRegular openXmlElement)
   {
-    return openXmlElement.ItemWidth?.Value;
+    return openXmlElement?.ItemWidth?.Value;
   }
   
   private static bool CmpItemWidth(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ItemWidth?.Value == value;
+    if (openXmlElement?.ItemWidth?.Value == value) return true;
+    diffs?.Add(objName, "ItemWidth", openXmlElement?.ItemWidth?.Value, value);
+    return false;
   }
   
   private static void SetItemWidth(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value)
@@ -127,12 +133,14 @@ public static class GalleryRegularConverter
   /// </summary>
   private static Int64? GetItemHeight(DXO2010CustUI.GalleryRegular openXmlElement)
   {
-    return openXmlElement.ItemHeight?.Value;
+    return openXmlElement?.ItemHeight?.Value;
   }
   
   private static bool CmpItemHeight(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ItemHeight?.Value == value;
+    if (openXmlElement?.ItemHeight?.Value == value) return true;
+    diffs?.Add(objName, "ItemHeight", openXmlElement?.ItemHeight?.Value, value);
+    return false;
   }
   
   private static void SetItemHeight(DXO2010CustUI.GalleryRegular openXmlElement, Int64? value)
@@ -1040,7 +1048,7 @@ public static class GalleryRegularConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -1055,7 +1063,7 @@ public static class GalleryRegularConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -1094,7 +1102,7 @@ public static class GalleryRegularConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -1109,7 +1117,7 @@ public static class GalleryRegularConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -1298,7 +1306,7 @@ public static class GalleryRegularConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

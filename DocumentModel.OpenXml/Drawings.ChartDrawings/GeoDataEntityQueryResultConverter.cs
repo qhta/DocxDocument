@@ -15,7 +15,7 @@ public static class GeoDataEntityQueryResultConverter
   
   private static bool CmpGeoDataEntityQuery(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoDataEntityQueryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQuery>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoDataEntityQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQuery>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoDataEntityQuery(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoDataEntityQuery? value)
@@ -41,7 +41,7 @@ public static class GeoDataEntityQueryResultConverter
   
   private static bool CmpGeoData(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoData(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoData? value)
@@ -81,7 +81,7 @@ public static class GeoDataEntityQueryResultConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

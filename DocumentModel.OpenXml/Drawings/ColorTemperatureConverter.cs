@@ -10,12 +10,14 @@ public static class ColorTemperatureConverter
   /// </summary>
   private static Int32? GetColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement)
   {
-    return openXmlElement.ColorTemperatureValue?.Value;
+    return openXmlElement?.ColorTemperatureValue?.Value;
   }
   
   private static bool CmpColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColorTemperatureValue?.Value == value;
+    if (openXmlElement?.ColorTemperatureValue?.Value == value) return true;
+    diffs?.Add(objName, "ColorTemperatureValue", openXmlElement?.ColorTemperatureValue?.Value, value);
+    return false;
   }
   
   private static void SetColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class ColorTemperatureConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

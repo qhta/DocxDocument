@@ -33,7 +33,7 @@ public static class Area3DChartExtensionConverter
   
   private static bool CmpFilteredAreaSeries(DXDrawCharts.Area3DChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredAreaSeries(DXDrawCharts.Area3DChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value)
@@ -73,7 +73,7 @@ public static class Area3DChartExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

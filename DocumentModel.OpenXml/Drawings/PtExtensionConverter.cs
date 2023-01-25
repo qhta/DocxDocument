@@ -33,7 +33,7 @@ public static class PtExtensionConverter
   
   private static bool CmpNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value)
@@ -73,7 +73,7 @@ public static class PtExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

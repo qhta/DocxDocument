@@ -10,12 +10,14 @@ public static class AlphaReplaceConverter
   /// </summary>
   private static Int32? GetAlpha(DXDraw.AlphaReplace openXmlElement)
   {
-    return openXmlElement.Alpha?.Value;
+    return openXmlElement?.Alpha?.Value;
   }
   
   private static bool CmpAlpha(DXDraw.AlphaReplace openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Alpha?.Value == value;
+    if (openXmlElement?.Alpha?.Value == value) return true;
+    diffs?.Add(objName, "Alpha", openXmlElement?.Alpha?.Value, value);
+    return false;
   }
   
   private static void SetAlpha(DXDraw.AlphaReplace openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class AlphaReplaceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

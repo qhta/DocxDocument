@@ -15,7 +15,7 @@ public static class OfficeMathArgumentTypeConverter
   
   private static bool CmpArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement, DMMath.ArgumentProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ArgumentPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ArgumentProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ArgumentPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ArgumentProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement, DMMath.ArgumentProperties? value)
@@ -52,7 +52,7 @@ public static class OfficeMathArgumentTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

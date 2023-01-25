@@ -31,12 +31,14 @@ public static class DeletedMathControlConverter
   /// </summary>
   private static DateTime? GetDate(DXW.DeletedMathControl openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.DeletedMathControl openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.DeletedMathControl openXmlElement, DateTime? value)
@@ -72,7 +74,7 @@ public static class DeletedMathControlConverter
   
   private static bool CmpRunProperties(DXW.DeletedMathControl openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXW.DeletedMathControl openXmlElement, DMW.RunProperties? value)
@@ -118,7 +120,7 @@ public static class DeletedMathControlConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

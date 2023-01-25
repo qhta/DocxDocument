@@ -109,12 +109,14 @@ public static class BorderTypeConverter
   /// </summary>
   private static UInt32? GetSize(DXW.BorderType openXmlElement)
   {
-    return openXmlElement.Size?.Value;
+    return openXmlElement?.Size?.Value;
   }
   
   private static bool CmpSize(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Size?.Value == value;
+    if (openXmlElement?.Size?.Value == value) return true;
+    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    return false;
   }
   
   private static void SetSize(DXW.BorderType openXmlElement, UInt32? value)
@@ -127,12 +129,14 @@ public static class BorderTypeConverter
   /// </summary>
   private static UInt32? GetSpace(DXW.BorderType openXmlElement)
   {
-    return openXmlElement.Space?.Value;
+    return openXmlElement?.Space?.Value;
   }
   
   private static bool CmpSpace(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Space?.Value == value;
+    if (openXmlElement?.Space?.Value == value) return true;
+    diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
+    return false;
   }
   
   private static void SetSpace(DXW.BorderType openXmlElement, UInt32? value)
@@ -227,7 +231,7 @@ public static class BorderTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

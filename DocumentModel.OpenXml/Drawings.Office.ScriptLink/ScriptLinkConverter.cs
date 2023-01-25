@@ -36,7 +36,7 @@ public static class ScriptLinkConverter
   
   private static bool CmpOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value)
@@ -76,7 +76,7 @@ public static class ScriptLinkConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

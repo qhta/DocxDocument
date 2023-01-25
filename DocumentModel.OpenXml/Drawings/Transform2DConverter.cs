@@ -10,12 +10,14 @@ public static class Transform2DConverter
   /// </summary>
   private static Int32? GetRotation(DXDraw.Transform2D openXmlElement)
   {
-    return openXmlElement.Rotation?.Value;
+    return openXmlElement?.Rotation?.Value;
   }
   
   private static bool CmpRotation(DXDraw.Transform2D openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Rotation?.Value == value;
+    if (openXmlElement?.Rotation?.Value == value) return true;
+    diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
+    return false;
   }
   
   private static void SetRotation(DXDraw.Transform2D openXmlElement, Int32? value)
@@ -75,7 +77,7 @@ public static class Transform2DConverter
   
   private static bool CmpOffset(DXDraw.Transform2D openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Offset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Offset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOffset(DXDraw.Transform2D openXmlElement, DMDraws.Point2DType? value)
@@ -101,7 +103,7 @@ public static class Transform2DConverter
   
   private static bool CmpExtents(DXDraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Extents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Extents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtents(DXDraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value)
@@ -150,7 +152,7 @@ public static class Transform2DConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

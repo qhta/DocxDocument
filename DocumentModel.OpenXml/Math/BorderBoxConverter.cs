@@ -15,7 +15,7 @@ public static class BorderBoxConverter
   
   private static bool CmpBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BorderBoxProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value)
@@ -41,7 +41,7 @@ public static class BorderBoxConverter
   
   private static bool CmpBase(DXMath.BorderBox openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.BorderBox openXmlElement, DMMath.Base? value)
@@ -81,7 +81,7 @@ public static class BorderBoxConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

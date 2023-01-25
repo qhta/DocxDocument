@@ -10,12 +10,14 @@ public static class FormatOverrideConverter
   /// </summary>
   private static UInt32? GetIdx(DXO2016DrawChartDraw.FormatOverride openXmlElement)
   {
-    return openXmlElement.Idx?.Value;
+    return openXmlElement?.Idx?.Value;
   }
   
   private static bool CmpIdx(DXO2016DrawChartDraw.FormatOverride openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Idx?.Value == value;
+    if (openXmlElement?.Idx?.Value == value) return true;
+    diffs?.Add(objName, "Idx", openXmlElement?.Idx?.Value, value);
+    return false;
   }
   
   private static void SetIdx(DXO2016DrawChartDraw.FormatOverride openXmlElement, UInt32? value)
@@ -33,7 +35,7 @@ public static class FormatOverrideConverter
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.FormatOverride openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXO2016DrawChartDraw.FormatOverride openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
@@ -59,7 +61,7 @@ public static class FormatOverrideConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.FormatOverride openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.FormatOverride openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -102,7 +104,7 @@ public static class FormatOverrideConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

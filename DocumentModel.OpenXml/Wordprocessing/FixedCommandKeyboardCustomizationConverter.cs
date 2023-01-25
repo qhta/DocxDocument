@@ -31,17 +31,17 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// </summary>
   private static UInt16? GetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
-    if (openXmlElement.CommandIndex?.Value != null)
+    if (openXmlElement?.CommandIndex?.Value != null)
       return UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.CommandIndex?.Value != null)
+    if (openXmlElement?.CommandIndex?.Value != null)
       if (UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.CommandIndex?.Value == null && value == null) return true;
+    if (openXmlElement?.CommandIndex?.Value == null && value == null) return true;
     diffs?.Add(objName, "CommandIndex", openXmlElement?.CommandIndex?.Value, value?.ToString("x4"));
     return false;
   }
@@ -59,17 +59,17 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// </summary>
   private static UInt16? GetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
-    if (openXmlElement.Argument?.Value != null)
+    if (openXmlElement?.Argument?.Value != null)
       return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Argument?.Value != null)
+    if (openXmlElement?.Argument?.Value != null)
       if (UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Argument?.Value == null && value == null) return true;
+    if (openXmlElement?.Argument?.Value == null && value == null) return true;
     diffs?.Add(objName, "Argument", openXmlElement?.Argument?.Value, value?.ToString("x4"));
     return false;
   }
@@ -109,7 +109,7 @@ public static class FixedCommandKeyboardCustomizationConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

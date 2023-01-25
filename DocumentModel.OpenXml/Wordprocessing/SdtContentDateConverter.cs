@@ -10,12 +10,14 @@ public static class SdtContentDateConverter
   /// </summary>
   private static DateTime? GetFullDate(DXW.SdtContentDate openXmlElement)
   {
-    return openXmlElement.FullDate?.Value;
+    return openXmlElement?.FullDate?.Value;
   }
   
   private static bool CmpFullDate(DXW.SdtContentDate openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FullDate?.Value == value;
+    if (openXmlElement?.FullDate?.Value == value) return true;
+    diffs?.Add(objName, "FullDate", openXmlElement?.FullDate?.Value, value);
+    return false;
   }
   
   private static void SetFullDate(DXW.SdtContentDate openXmlElement, DateTime? value)
@@ -33,7 +35,10 @@ public static class SdtContentDateConverter
   
   private static bool CmpDateFormat(DXW.SdtContentDate openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DateFormat>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.DateFormat>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DateFormat", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDateFormat(DXW.SdtContentDate openXmlElement, String? value)
@@ -158,7 +163,7 @@ public static class SdtContentDateConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

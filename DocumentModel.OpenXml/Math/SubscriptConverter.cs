@@ -15,7 +15,7 @@ public static class SubscriptConverter
   
   private static bool CmpSubscriptProperties(DXMath.Subscript openXmlElement, DMMath.SubscriptProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubscriptPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SubscriptProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubscriptPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubscriptProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubscriptProperties(DXMath.Subscript openXmlElement, DMMath.SubscriptProperties? value)
@@ -41,7 +41,7 @@ public static class SubscriptConverter
   
   private static bool CmpBase(DXMath.Subscript openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Subscript openXmlElement, DMMath.Base? value)
@@ -67,7 +67,7 @@ public static class SubscriptConverter
   
   private static bool CmpSubArgument(DXMath.Subscript openXmlElement, DMMath.SubArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubArgument(DXMath.Subscript openXmlElement, DMMath.SubArgument? value)
@@ -110,7 +110,7 @@ public static class SubscriptConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

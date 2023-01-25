@@ -33,7 +33,7 @@ public static class ShapeLayoutConverter
   
   private static bool CmpShapeIdMap(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeIdMap? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapeIdMapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ShapeIdMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ShapeIdMap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeIdMap(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeIdMap? value)
@@ -59,7 +59,7 @@ public static class ShapeLayoutConverter
   
   private static bool CmpRegroupTable(DXVmlO.ShapeLayout openXmlElement, DMVml.RegroupTable? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RegroupTableConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RegroupTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.RegroupTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRegroupTable(DXVmlO.ShapeLayout openXmlElement, DMVml.RegroupTable? value)
@@ -85,7 +85,7 @@ public static class ShapeLayoutConverter
   
   private static bool CmpRules(DXVmlO.ShapeLayout openXmlElement, DMVml.Rules? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RulesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Rules>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RulesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Rules>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRules(DXVmlO.ShapeLayout openXmlElement, DMVml.Rules? value)
@@ -131,7 +131,7 @@ public static class ShapeLayoutConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

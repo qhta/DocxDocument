@@ -12,7 +12,7 @@ public static class LineReferenceConverter
   
   private static bool CmpRgbColorModelPercentage(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelPercentage(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -35,7 +35,7 @@ public static class LineReferenceConverter
   
   private static bool CmpRgbColorModelHex(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -58,7 +58,7 @@ public static class LineReferenceConverter
   
   private static bool CmpHslColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHslColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.HslColor? value)
@@ -81,7 +81,7 @@ public static class LineReferenceConverter
   
   private static bool CmpSystemColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSystemColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.SystemColor? value)
@@ -104,7 +104,7 @@ public static class LineReferenceConverter
   
   private static bool CmpSchemeColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.SchemeColor? value)
@@ -127,7 +127,7 @@ public static class LineReferenceConverter
   
   private static bool CmpPresetColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDraws.PresetColor? value)
@@ -150,7 +150,7 @@ public static class LineReferenceConverter
   
   private static bool CmpStyleColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDrawsChartsStyle.StyleColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.StyleColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.StyleColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.StyleColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.StyleColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyleColor(DXO2013DrawChartStyle.LineReference openXmlElement, DMDrawsChartsStyle.StyleColor? value)
@@ -205,7 +205,7 @@ public static class LineReferenceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

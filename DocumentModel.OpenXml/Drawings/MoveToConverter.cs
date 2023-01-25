@@ -15,7 +15,7 @@ public static class MoveToConverter
   
   private static bool CmpPoint(DXDraw.MoveTo openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Point>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Point>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPoint(DXDraw.MoveTo openXmlElement, DMDraws.AdjustPoint2DType? value)
@@ -52,7 +52,7 @@ public static class MoveToConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

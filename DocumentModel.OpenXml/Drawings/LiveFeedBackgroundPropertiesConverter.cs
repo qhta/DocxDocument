@@ -12,7 +12,7 @@ public static class LiveFeedBackgroundPropertiesConverter
   
   private static bool CmpBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundNormalProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundNormalPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundNormalProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundNormalPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundNormalProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundNormalProperties? value)
@@ -35,7 +35,7 @@ public static class LiveFeedBackgroundPropertiesConverter
   
   private static bool CmpBackgroundRemovedProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundRemovedProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundRemovedPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundRemovedProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundRemovedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundRemovedProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundRemovedProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundRemovedProperties? value)
@@ -58,7 +58,7 @@ public static class LiveFeedBackgroundPropertiesConverter
   
   private static bool CmpBackgroundBlurProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundBlurPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundBlurProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundBlurPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundBlurProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundBlurProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundBlurProperties? value)
@@ -81,7 +81,7 @@ public static class LiveFeedBackgroundPropertiesConverter
   
   private static bool CmpBackgroundCustomProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundCustomProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundCustomPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundCustomProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundCustomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundCustomProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundCustomProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundCustomProperties? value)
@@ -104,7 +104,7 @@ public static class LiveFeedBackgroundPropertiesConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
@@ -153,7 +153,7 @@ public static class LiveFeedBackgroundPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

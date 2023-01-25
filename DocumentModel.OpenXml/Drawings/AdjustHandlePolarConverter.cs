@@ -141,7 +141,7 @@ public static class AdjustHandlePolarConverter
   
   private static bool CmpPosition(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Position>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPosition(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustPoint2DType? value)
@@ -196,7 +196,7 @@ public static class AdjustHandlePolarConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

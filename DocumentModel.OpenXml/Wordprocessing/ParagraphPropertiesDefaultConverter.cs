@@ -15,7 +15,7 @@ public static class ParagraphPropertiesDefaultConverter
   
   private static bool CmpParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesBaseStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ParagraphPropertiesBaseStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ParagraphPropertiesBaseStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesBaseStyle? value)
@@ -52,7 +52,7 @@ public static class ParagraphPropertiesDefaultConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

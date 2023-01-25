@@ -33,7 +33,7 @@ public static class BubbleChartExtensionConverter
   
   private static bool CmpFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement, DMDrawsCharts.FilteredBubbleSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredBubbleSeriesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredBubbleSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement, DMDrawsCharts.FilteredBubbleSeries? value)
@@ -73,7 +73,7 @@ public static class BubbleChartExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -12,7 +12,7 @@ public static class EndnotesConverter
   
   private static bool CmpEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Endnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Endnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value)
@@ -49,7 +49,7 @@ public static class EndnotesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class SphereCoordinatesConverter
   /// </summary>
   private static Int32? GetLattitude(DXO2010W.SphereCoordinates openXmlElement)
   {
-    return openXmlElement.Lattitude?.Value;
+    return openXmlElement?.Lattitude?.Value;
   }
   
   private static bool CmpLattitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Lattitude?.Value == value;
+    if (openXmlElement?.Lattitude?.Value == value) return true;
+    diffs?.Add(objName, "Lattitude", openXmlElement?.Lattitude?.Value, value);
+    return false;
   }
   
   private static void SetLattitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class SphereCoordinatesConverter
   /// </summary>
   private static Int32? GetLongitude(DXO2010W.SphereCoordinates openXmlElement)
   {
-    return openXmlElement.Longitude?.Value;
+    return openXmlElement?.Longitude?.Value;
   }
   
   private static bool CmpLongitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Longitude?.Value == value;
+    if (openXmlElement?.Longitude?.Value == value) return true;
+    diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
+    return false;
   }
   
   private static void SetLongitude(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class SphereCoordinatesConverter
   /// </summary>
   private static Int32? GetRevolution(DXO2010W.SphereCoordinates openXmlElement)
   {
-    return openXmlElement.Revolution?.Value;
+    return openXmlElement?.Revolution?.Value;
   }
   
   private static bool CmpRevolution(DXO2010W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Revolution?.Value == value;
+    if (openXmlElement?.Revolution?.Value == value) return true;
+    diffs?.Add(objName, "Revolution", openXmlElement?.Revolution?.Value, value);
+    return false;
   }
   
   private static void SetRevolution(DXO2010W.SphereCoordinates openXmlElement, Int32? value)
@@ -86,7 +92,7 @@ public static class SphereCoordinatesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

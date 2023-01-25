@@ -15,7 +15,7 @@ public static class ShapeNonVisualPropertiesConverter
   
   private static bool CmpNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value)
@@ -41,7 +41,7 @@ public static class ShapeNonVisualPropertiesConverter
   
   private static bool CmpNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingShapeProperties? value)
@@ -81,7 +81,7 @@ public static class ShapeNonVisualPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

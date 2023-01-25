@@ -15,7 +15,7 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   
   private static bool CmpGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.GroupShapeLocks? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GroupShapeLocksConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GroupShapeLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GroupShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GroupShapeLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.GroupShapeLocks? value)
@@ -41,7 +41,7 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   
   private static bool CmpNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList? value)
@@ -81,7 +81,7 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

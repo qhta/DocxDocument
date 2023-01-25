@@ -151,12 +151,14 @@ public static class StrokeChildTypeConverter
   /// </summary>
   private static Decimal? GetMiterLimit(DXVmlO.StrokeChildType openXmlElement)
   {
-    return openXmlElement.MiterLimit?.Value;
+    return openXmlElement?.MiterLimit?.Value;
   }
   
   private static bool CmpMiterLimit(DXVmlO.StrokeChildType openXmlElement, Decimal? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MiterLimit?.Value == value;
+    if (openXmlElement?.MiterLimit?.Value == value) return true;
+    diffs?.Add(objName, "MiterLimit", openXmlElement?.MiterLimit?.Value, value);
+    return false;
   }
   
   private static void SetMiterLimit(DXVmlO.StrokeChildType openXmlElement, Decimal? value)
@@ -632,7 +634,7 @@ public static class StrokeChildTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class ArtisticBlurConverter
   /// </summary>
   private static Int32? GetRadius(DXO2010Draw.ArtisticBlur openXmlElement)
   {
-    return openXmlElement.Radius?.Value;
+    return openXmlElement?.Radius?.Value;
   }
   
   private static bool CmpRadius(DXO2010Draw.ArtisticBlur openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Radius?.Value == value;
+    if (openXmlElement?.Radius?.Value == value) return true;
+    diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
+    return false;
   }
   
   private static void SetRadius(DXO2010Draw.ArtisticBlur openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class ArtisticBlurConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

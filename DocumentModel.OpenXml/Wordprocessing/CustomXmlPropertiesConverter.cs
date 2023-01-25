@@ -15,7 +15,10 @@ public static class CustomXmlPropertiesConverter
   
   private static bool CmpCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "CustomXmlPlaceholder", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement, String? value)
@@ -51,7 +54,7 @@ public static class CustomXmlPropertiesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -66,7 +69,7 @@ public static class CustomXmlPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -108,7 +111,7 @@ public static class CustomXmlPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

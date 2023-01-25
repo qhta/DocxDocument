@@ -40,7 +40,7 @@ public static class TrendlineConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -92,7 +92,10 @@ public static class TrendlineConverter
   
   private static bool CmpPolynomialOrder(DXDrawCharts.Trendline openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.PolynomialOrder", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPolynomialOrder(DXDrawCharts.Trendline openXmlElement, Byte? value)
@@ -117,7 +120,10 @@ public static class TrendlineConverter
   
   private static bool CmpPeriod(DXDrawCharts.Trendline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Period>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Period>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Period", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPeriod(DXDrawCharts.Trendline openXmlElement, UInt32? value)
@@ -142,7 +148,10 @@ public static class TrendlineConverter
   
   private static bool CmpForward(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Forward>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Forward>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Forward", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetForward(DXDrawCharts.Trendline openXmlElement, Double? value)
@@ -167,7 +176,10 @@ public static class TrendlineConverter
   
   private static bool CmpBackward(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Backward>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Backward>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Backward", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBackward(DXDrawCharts.Trendline openXmlElement, Double? value)
@@ -192,7 +204,10 @@ public static class TrendlineConverter
   
   private static bool CmpIntercept(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Intercept", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIntercept(DXDrawCharts.Trendline openXmlElement, Double? value)
@@ -273,7 +288,7 @@ public static class TrendlineConverter
   
   private static bool CmpTrendlineLabel(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TrendlineLabelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TrendlineLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TrendlineLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTrendlineLabel(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineLabel? value)
@@ -299,7 +314,7 @@ public static class TrendlineConverter
   
   private static bool CmpExtensionList(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -369,7 +384,7 @@ public static class TrendlineConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

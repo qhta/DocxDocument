@@ -31,12 +31,14 @@ public static class SectionPropertiesChangeConverter
   /// </summary>
   private static DateTime? GetDate(DXW.SectionPropertiesChange openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.SectionPropertiesChange openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.SectionPropertiesChange openXmlElement, DateTime? value)
@@ -75,7 +77,7 @@ public static class SectionPropertiesChangeConverter
   
   private static bool CmpPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement, DMW.PreviousSectionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousSectionPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousSectionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousSectionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousSectionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement, DMW.PreviousSectionProperties? value)
@@ -121,7 +123,7 @@ public static class SectionPropertiesChangeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

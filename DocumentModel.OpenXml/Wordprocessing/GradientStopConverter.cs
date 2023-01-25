@@ -10,12 +10,14 @@ public static class GradientStopConverter
   /// </summary>
   private static Int32? GetStopPosition(DXO2010W.GradientStop openXmlElement)
   {
-    return openXmlElement.StopPosition?.Value;
+    return openXmlElement?.StopPosition?.Value;
   }
   
   private static bool CmpStopPosition(DXO2010W.GradientStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.StopPosition?.Value == value;
+    if (openXmlElement?.StopPosition?.Value == value) return true;
+    diffs?.Add(objName, "StopPosition", openXmlElement?.StopPosition?.Value, value);
+    return false;
   }
   
   private static void SetStopPosition(DXO2010W.GradientStop openXmlElement, Int32? value)
@@ -33,7 +35,7 @@ public static class GradientStopConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.GradientStop openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXO2010W.GradientStop openXmlElement, DMW.RgbColorModelHex? value)
@@ -59,7 +61,7 @@ public static class GradientStopConverter
   
   private static bool CmpSchemeColor(DXO2010W.GradientStop openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXO2010W.GradientStop openXmlElement, DMW.SchemeColor? value)
@@ -102,7 +104,7 @@ public static class GradientStopConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

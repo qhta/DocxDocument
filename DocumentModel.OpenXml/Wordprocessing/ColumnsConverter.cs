@@ -52,12 +52,14 @@ public static class ColumnsConverter
   /// </summary>
   private static Int16? GetColumnCount(DXW.Columns openXmlElement)
   {
-    return openXmlElement.ColumnCount?.Value;
+    return openXmlElement?.ColumnCount?.Value;
   }
   
   private static bool CmpColumnCount(DXW.Columns openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnCount?.Value == value;
+    if (openXmlElement?.ColumnCount?.Value == value) return true;
+    diffs?.Add(objName, "ColumnCount", openXmlElement?.ColumnCount?.Value, value);
+    return false;
   }
   
   private static void SetColumnCount(DXW.Columns openXmlElement, Int16? value)
@@ -107,7 +109,7 @@ public static class ColumnsConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -122,7 +124,7 @@ public static class ColumnsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -173,7 +175,7 @@ public static class ColumnsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

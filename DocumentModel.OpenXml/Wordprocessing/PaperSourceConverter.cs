@@ -10,12 +10,14 @@ public static class PaperSourceConverter
   /// </summary>
   private static UInt16? GetFirst(DXW.PaperSource openXmlElement)
   {
-    return openXmlElement.First?.Value;
+    return openXmlElement?.First?.Value;
   }
   
   private static bool CmpFirst(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.First?.Value == value;
+    if (openXmlElement?.First?.Value == value) return true;
+    diffs?.Add(objName, "First", openXmlElement?.First?.Value, value);
+    return false;
   }
   
   private static void SetFirst(DXW.PaperSource openXmlElement, UInt16? value)
@@ -28,12 +30,14 @@ public static class PaperSourceConverter
   /// </summary>
   private static UInt16? GetOther(DXW.PaperSource openXmlElement)
   {
-    return openXmlElement.Other?.Value;
+    return openXmlElement?.Other?.Value;
   }
   
   private static bool CmpOther(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Other?.Value == value;
+    if (openXmlElement?.Other?.Value == value) return true;
+    diffs?.Add(objName, "Other", openXmlElement?.Other?.Value, value);
+    return false;
   }
   
   private static void SetOther(DXW.PaperSource openXmlElement, UInt16? value)
@@ -65,7 +69,7 @@ public static class PaperSourceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

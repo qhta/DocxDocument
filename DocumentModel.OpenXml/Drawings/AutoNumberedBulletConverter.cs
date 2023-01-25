@@ -28,12 +28,14 @@ public static class AutoNumberedBulletConverter
   /// </summary>
   private static Int32? GetStartAt(DXDraw.AutoNumberedBullet openXmlElement)
   {
-    return openXmlElement.StartAt?.Value;
+    return openXmlElement?.StartAt?.Value;
   }
   
   private static bool CmpStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.StartAt?.Value == value;
+    if (openXmlElement?.StartAt?.Value == value) return true;
+    diffs?.Add(objName, "StartAt", openXmlElement?.StartAt?.Value, value);
+    return false;
   }
   
   private static void SetStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value)
@@ -65,7 +67,7 @@ public static class AutoNumberedBulletConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

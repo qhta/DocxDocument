@@ -348,7 +348,7 @@ public static class UnsizedSplitButtonConverter
   
   private static bool CmpVisibleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleButton? value)
@@ -371,7 +371,7 @@ public static class UnsizedSplitButtonConverter
   
   private static bool CmpVisibleToggleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleToggleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleToggleButton? value)
@@ -394,7 +394,7 @@ public static class UnsizedSplitButtonConverter
   
   private static bool CmpUnsizedMenu(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnsizedMenu(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.UnsizedMenu? value)
@@ -485,7 +485,7 @@ public static class UnsizedSplitButtonConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

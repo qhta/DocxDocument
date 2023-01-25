@@ -41,7 +41,10 @@ public static class FieldMapDataConverter
   
   private static bool CmpName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.Name>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Name", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.FieldMapData openXmlElement, String? value)
@@ -66,7 +69,10 @@ public static class FieldMapDataConverter
   
   private static bool CmpMappedName(DXW.FieldMapData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MappedName>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.MappedName>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "MappedName", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMappedName(DXW.FieldMapData openXmlElement, String? value)
@@ -91,7 +97,10 @@ public static class FieldMapDataConverter
   
   private static bool CmpColumnIndex(DXW.FieldMapData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnIndex>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.ColumnIndex", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetColumnIndex(DXW.FieldMapData openXmlElement, UInt32? value)
@@ -195,7 +204,7 @@ public static class FieldMapDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

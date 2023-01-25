@@ -15,7 +15,7 @@ public static class MathFunctionConverter
   
   private static bool CmpFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FunctionPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.FunctionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.FunctionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FunctionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value)
@@ -41,7 +41,7 @@ public static class MathFunctionConverter
   
   private static bool CmpFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FunctionNameConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.FunctionName>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.FunctionNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FunctionName>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value)
@@ -67,7 +67,7 @@ public static class MathFunctionConverter
   
   private static bool CmpBase(DXMath.MathFunction openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.MathFunction openXmlElement, DMMath.Base? value)
@@ -110,7 +110,7 @@ public static class MathFunctionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

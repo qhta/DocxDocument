@@ -15,7 +15,7 @@ public static class ValueColorsConverter
   
   private static bool CmpMinColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MinColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.MinColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MinColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.MinColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MinColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMinColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MinColorSolidColorFillProperties? value)
@@ -41,7 +41,7 @@ public static class ValueColorsConverter
   
   private static bool CmpMidColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MidColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.MidColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MidColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.MidColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MidColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMidColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MidColorSolidColorFillProperties? value)
@@ -67,7 +67,7 @@ public static class ValueColorsConverter
   
   private static bool CmpMaxColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MaxColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.MaxColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MaxColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.MaxColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MaxColorSolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMaxColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MaxColorSolidColorFillProperties? value)
@@ -110,7 +110,7 @@ public static class ValueColorsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

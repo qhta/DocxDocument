@@ -10,12 +10,14 @@ public static class AnchorConverter
   /// </summary>
   private static Int64? GetX(DXDraw.Anchor openXmlElement)
   {
-    return openXmlElement.X?.Value;
+    return openXmlElement?.X?.Value;
   }
   
   private static bool CmpX(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.X?.Value == value;
+    if (openXmlElement?.X?.Value == value) return true;
+    diffs?.Add(objName, "X", openXmlElement?.X?.Value, value);
+    return false;
   }
   
   private static void SetX(DXDraw.Anchor openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class AnchorConverter
   /// </summary>
   private static Int64? GetY(DXDraw.Anchor openXmlElement)
   {
-    return openXmlElement.Y?.Value;
+    return openXmlElement?.Y?.Value;
   }
   
   private static bool CmpY(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Y?.Value == value;
+    if (openXmlElement?.Y?.Value == value) return true;
+    diffs?.Add(objName, "Y", openXmlElement?.Y?.Value, value);
+    return false;
   }
   
   private static void SetY(DXDraw.Anchor openXmlElement, Int64? value)
@@ -46,12 +50,14 @@ public static class AnchorConverter
   /// </summary>
   private static Int64? GetZ(DXDraw.Anchor openXmlElement)
   {
-    return openXmlElement.Z?.Value;
+    return openXmlElement?.Z?.Value;
   }
   
   private static bool CmpZ(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Z?.Value == value;
+    if (openXmlElement?.Z?.Value == value) return true;
+    diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
+    return false;
   }
   
   private static void SetZ(DXDraw.Anchor openXmlElement, Int64? value)
@@ -86,7 +92,7 @@ public static class AnchorConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

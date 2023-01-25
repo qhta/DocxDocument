@@ -10,12 +10,14 @@ public static class PositiveSize2DTypeConverter
   /// </summary>
   private static Int64? GetCx(DXDraw.PositiveSize2DType openXmlElement)
   {
-    return openXmlElement.Cx?.Value;
+    return openXmlElement?.Cx?.Value;
   }
   
   private static bool CmpCx(DXDraw.PositiveSize2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Cx?.Value == value;
+    if (openXmlElement?.Cx?.Value == value) return true;
+    diffs?.Add(objName, "Cx", openXmlElement?.Cx?.Value, value);
+    return false;
   }
   
   private static void SetCx(DXDraw.PositiveSize2DType openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class PositiveSize2DTypeConverter
   /// </summary>
   private static Int64? GetCy(DXDraw.PositiveSize2DType openXmlElement)
   {
-    return openXmlElement.Cy?.Value;
+    return openXmlElement?.Cy?.Value;
   }
   
   private static bool CmpCy(DXDraw.PositiveSize2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Cy?.Value == value;
+    if (openXmlElement?.Cy?.Value == value) return true;
+    diffs?.Add(objName, "Cy", openXmlElement?.Cy?.Value, value);
+    return false;
   }
   
   private static void SetCy(DXDraw.PositiveSize2DType openXmlElement, Int64? value)
@@ -65,7 +69,7 @@ public static class PositiveSize2DTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -34,7 +34,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpRunFonts(DXW.PreviousRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunFonts(DXW.PreviousRunProperties openXmlElement, DMW.RunFonts? value)
@@ -457,7 +457,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpColor(DXW.PreviousRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.PreviousRunProperties openXmlElement, DMW.Color? value)
@@ -480,7 +480,10 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpSpacing(DXW.PreviousRunProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Spacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.Spacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSpacing(DXW.PreviousRunProperties openXmlElement, Int32? value)
@@ -502,7 +505,10 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpCharacterScale(DXW.PreviousRunProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CharacterScale>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.CharacterScale", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetCharacterScale(DXW.PreviousRunProperties openXmlElement, Int64? value)
@@ -524,7 +530,10 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpKern(DXW.PreviousRunProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Kern>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.Kern", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetKern(DXW.PreviousRunProperties openXmlElement, UInt32? value)
@@ -635,7 +644,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpUnderline(DXW.PreviousRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderline(DXW.PreviousRunProperties openXmlElement, DMW.Underline? value)
@@ -681,7 +690,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpBorder(DXW.PreviousRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorder(DXW.PreviousRunProperties openXmlElement, DMW.BorderType? value)
@@ -704,7 +713,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpShading(DXW.PreviousRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.PreviousRunProperties openXmlElement, DMW.Shading? value)
@@ -727,7 +736,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpFitText(DXW.PreviousRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FitTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFitText(DXW.PreviousRunProperties openXmlElement, DMW.FitText? value)
@@ -846,7 +855,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpLanguages(DXW.PreviousRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLanguages(DXW.PreviousRunProperties openXmlElement, DMW.LanguageType? value)
@@ -869,7 +878,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpEastAsianLayout(DXW.PreviousRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEastAsianLayout(DXW.PreviousRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -917,7 +926,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpGlow(DXW.PreviousRunProperties openXmlElement, DMW.Glow? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GlowConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Glow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Glow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGlow(DXW.PreviousRunProperties openXmlElement, DMW.Glow? value)
@@ -940,7 +949,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpReflection(DXW.PreviousRunProperties openXmlElement, DMW.Reflection? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ReflectionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Reflection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Reflection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetReflection(DXW.PreviousRunProperties openXmlElement, DMW.Reflection? value)
@@ -963,7 +972,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpTextOutlineEffect(DXW.PreviousRunProperties openXmlElement, DMW.TextOutlineEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TextOutlineEffectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.TextOutlineEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TextOutlineEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.TextOutlineEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextOutlineEffect(DXW.PreviousRunProperties openXmlElement, DMW.TextOutlineEffect? value)
@@ -986,7 +995,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpFillTextEffect(DXW.PreviousRunProperties openXmlElement, DMW.FillTextEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FillTextEffectConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.FillTextEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FillTextEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillTextEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillTextEffect(DXW.PreviousRunProperties openXmlElement, DMW.FillTextEffect? value)
@@ -1009,7 +1018,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpScene3D(DXW.PreviousRunProperties openXmlElement, DMW.Scene3D? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Scene3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScene3D(DXW.PreviousRunProperties openXmlElement, DMW.Scene3D? value)
@@ -1032,7 +1041,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpProperties3D(DXW.PreviousRunProperties openXmlElement, DMW.Properties3D? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Properties3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Properties3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.Properties3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Properties3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetProperties3D(DXW.PreviousRunProperties openXmlElement, DMW.Properties3D? value)
@@ -1124,7 +1133,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpStylisticSets(DXW.PreviousRunProperties openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StylisticSetsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.StylisticSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StylisticSetsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.StylisticSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStylisticSets(DXW.PreviousRunProperties openXmlElement, DMW.StylisticSets? value)
@@ -1328,7 +1337,7 @@ public static class PreviousRunPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

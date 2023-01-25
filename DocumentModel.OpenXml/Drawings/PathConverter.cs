@@ -10,12 +10,14 @@ public static class PathConverter
   /// </summary>
   private static Int64? GetWidth(DXDraw.Path openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXDraw.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXDraw.Path openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class PathConverter
   /// </summary>
   private static Int64? GetHeight(DXDraw.Path openXmlElement)
   {
-    return openXmlElement.Height?.Value;
+    return openXmlElement?.Height?.Value;
   }
   
   private static bool CmpHeight(DXDraw.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Height?.Value == value;
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXDraw.Path openXmlElement, Int64? value)
@@ -133,7 +137,7 @@ public static class PathConverter
   
   private static bool CmpMoveTo(DXDraw.Path openXmlElement, DMDraws.MoveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.MoveToConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.MoveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.MoveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.MoveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveTo(DXDraw.Path openXmlElement, DMDraws.MoveTo? value)
@@ -156,7 +160,7 @@ public static class PathConverter
   
   private static bool CmpLineTo(DXDraw.Path openXmlElement, DMDraws.LineTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineToConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LineTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineTo(DXDraw.Path openXmlElement, DMDraws.LineTo? value)
@@ -179,7 +183,7 @@ public static class PathConverter
   
   private static bool CmpArcTo(DXDraw.Path openXmlElement, DMDraws.ArcTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArcToConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ArcTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ArcToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ArcTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetArcTo(DXDraw.Path openXmlElement, DMDraws.ArcTo? value)
@@ -202,7 +206,7 @@ public static class PathConverter
   
   private static bool CmpQuadraticBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.QuadraticBezierCurveToConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.QuadraticBezierCurveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.QuadraticBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.QuadraticBezierCurveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetQuadraticBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.QuadraticBezierCurveTo? value)
@@ -225,7 +229,7 @@ public static class PathConverter
   
   private static bool CmpCubicBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.CubicBezierCurveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CubicBezierCurveToConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.CubicBezierCurveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CubicBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CubicBezierCurveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCubicBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.CubicBezierCurveTo? value)
@@ -292,7 +296,7 @@ public static class PathConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

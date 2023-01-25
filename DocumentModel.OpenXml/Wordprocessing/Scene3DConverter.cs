@@ -15,7 +15,7 @@ public static class Scene3DConverter
   
   private static bool CmpCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CameraConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value)
@@ -41,7 +41,7 @@ public static class Scene3DConverter
   
   private static bool CmpLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LightRigConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value)
@@ -81,7 +81,7 @@ public static class Scene3DConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

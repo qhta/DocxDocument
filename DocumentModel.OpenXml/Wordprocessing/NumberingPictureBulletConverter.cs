@@ -10,12 +10,14 @@ public static class NumberingPictureBulletConverter
   /// </summary>
   private static Int32? GetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement)
   {
-    return openXmlElement.NumberingPictureBulletId?.Value;
+    return openXmlElement?.NumberingPictureBulletId?.Value;
   }
   
   private static bool CmpNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.NumberingPictureBulletId?.Value == value;
+    if (openXmlElement?.NumberingPictureBulletId?.Value == value) return true;
+    diffs?.Add(objName, "NumberingPictureBulletId", openXmlElement?.NumberingPictureBulletId?.Value, value);
+    return false;
   }
   
   private static void SetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement, Int32? value)
@@ -33,7 +35,7 @@ public static class NumberingPictureBulletConverter
   
   private static bool CmpPictureBulletBase(DXW.NumberingPictureBullet openXmlElement, DMW.PictureBulletBase? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PictureBulletBaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PictureBulletBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PictureBulletBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PictureBulletBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement, DMW.PictureBulletBase? value)
@@ -59,7 +61,7 @@ public static class NumberingPictureBulletConverter
   
   private static bool CmpDrawing(DXW.NumberingPictureBullet openXmlElement, DMW.Drawing? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DrawingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Drawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Drawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDrawing(DXW.NumberingPictureBullet openXmlElement, DMW.Drawing? value)
@@ -102,7 +104,7 @@ public static class NumberingPictureBulletConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,10 @@ public static class BandFormatConverter
   
   private static bool CmpIndex(DXDrawCharts.BandFormat openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawCharts.BandFormat openXmlElement, UInt32? value)
@@ -40,7 +43,7 @@ public static class BandFormatConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.BandFormat openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.BandFormat openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -80,7 +83,7 @@ public static class BandFormatConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

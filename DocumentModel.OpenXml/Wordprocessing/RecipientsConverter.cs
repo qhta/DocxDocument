@@ -12,7 +12,7 @@ public static class RecipientsConverter
   
   private static bool CmpRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RecipientData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value)
@@ -49,7 +49,7 @@ public static class RecipientsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

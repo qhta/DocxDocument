@@ -93,7 +93,10 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpRowSpacingRule(DXMath.EquationArrayProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacingRule>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.RowSpacingRule", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRowSpacingRule(DXMath.EquationArrayProperties openXmlElement, Int64? value)
@@ -118,7 +121,10 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpRowSpacing(DXMath.EquationArrayProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.RowSpacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.RowSpacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.RowSpacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRowSpacing(DXMath.EquationArrayProperties openXmlElement, UInt16? value)
@@ -143,7 +149,7 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value)
@@ -195,7 +201,7 @@ public static class EquationArrayPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

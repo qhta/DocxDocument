@@ -54,7 +54,7 @@ public static class SurfaceChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -69,7 +69,7 @@ public static class SurfaceChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -94,7 +94,7 @@ public static class SurfaceChartConverter
   
   private static bool CmpBandFormats(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.BandFormats? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BandFormatsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BandFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BandFormats>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBandFormats(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.BandFormats? value)
@@ -131,7 +131,7 @@ public static class SurfaceChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -146,7 +146,7 @@ public static class SurfaceChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -171,7 +171,7 @@ public static class SurfaceChartConverter
   
   private static bool CmpSurfaceChartExtensionList(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.SurfaceChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SurfaceChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SurfaceChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SurfaceChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SurfaceChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSurfaceChartExtensionList(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.SurfaceChartExtensionList? value)
@@ -220,7 +220,7 @@ public static class SurfaceChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

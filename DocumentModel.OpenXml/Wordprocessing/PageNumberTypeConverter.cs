@@ -28,12 +28,14 @@ public static class PageNumberTypeConverter
   /// </summary>
   private static Int32? GetStart(DXW.PageNumberType openXmlElement)
   {
-    return openXmlElement.Start?.Value;
+    return openXmlElement?.Start?.Value;
   }
   
   private static bool CmpStart(DXW.PageNumberType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Start?.Value == value;
+    if (openXmlElement?.Start?.Value == value) return true;
+    diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
+    return false;
   }
   
   private static void SetStart(DXW.PageNumberType openXmlElement, Int32? value)
@@ -46,12 +48,14 @@ public static class PageNumberTypeConverter
   /// </summary>
   private static Byte? GetChapterStyle(DXW.PageNumberType openXmlElement)
   {
-    return openXmlElement.ChapterStyle?.Value;
+    return openXmlElement?.ChapterStyle?.Value;
   }
   
   private static bool CmpChapterStyle(DXW.PageNumberType openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ChapterStyle?.Value == value;
+    if (openXmlElement?.ChapterStyle?.Value == value) return true;
+    diffs?.Add(objName, "ChapterStyle", openXmlElement?.ChapterStyle?.Value, value);
+    return false;
   }
   
   private static void SetChapterStyle(DXW.PageNumberType openXmlElement, Byte? value)
@@ -107,7 +111,7 @@ public static class PageNumberTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -57,7 +57,7 @@ public static class CustomUIConverter
   
   private static bool CmpRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.RepurposedCommandsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.RepurposedCommandsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.RepurposedCommands>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value)
@@ -83,7 +83,7 @@ public static class CustomUIConverter
   
   private static bool CmpRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.RibbonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.RibbonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.Ribbon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value)
@@ -129,7 +129,7 @@ public static class CustomUIConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

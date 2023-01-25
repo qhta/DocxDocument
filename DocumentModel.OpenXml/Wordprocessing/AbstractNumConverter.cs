@@ -10,12 +10,14 @@ public static class AbstractNumConverter
   /// </summary>
   private static Int32? GetAbstractNumberId(DXW.AbstractNum openXmlElement)
   {
-    return openXmlElement.AbstractNumberId?.Value;
+    return openXmlElement?.AbstractNumberId?.Value;
   }
   
   private static bool CmpAbstractNumberId(DXW.AbstractNum openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.AbstractNumberId?.Value == value;
+    if (openXmlElement?.AbstractNumberId?.Value == value) return true;
+    diffs?.Add(objName, "AbstractNumberId", openXmlElement?.AbstractNumberId?.Value, value);
+    return false;
   }
   
   private static void SetAbstractNumberId(DXW.AbstractNum openXmlElement, Int32? value)
@@ -28,17 +30,17 @@ public static class AbstractNumConverter
   /// </summary>
   private static UInt32? GetNsid(DXW.AbstractNum openXmlElement)
   {
-    if (openXmlElement.Nsid?.Val?.Value != null)
+    if (openXmlElement?.Nsid?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.Nsid.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpNsid(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Nsid?.Val?.Value != null)
+    if (openXmlElement?.Nsid?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.Nsid.Val.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Nsid?.Val?.Value == null && value == null) return true;
+    if (openXmlElement?.Nsid?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Nsid", openXmlElement?.Nsid?.Val?.Value, value?.ToString("x8"));
     return false;
   }
@@ -82,17 +84,17 @@ public static class AbstractNumConverter
   /// </summary>
   private static UInt32? GetTemplateCode(DXW.AbstractNum openXmlElement)
   {
-    if (openXmlElement.TemplateCode?.Val?.Value != null)
+    if (openXmlElement?.TemplateCode?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.TemplateCode.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpTemplateCode(DXW.AbstractNum openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.TemplateCode?.Val?.Value != null)
+    if (openXmlElement?.TemplateCode?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.TemplateCode.Val.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.TemplateCode?.Val?.Value == null && value == null) return true;
+    if (openXmlElement?.TemplateCode?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Val?.Value, value?.ToString("x8"));
     return false;
   }
@@ -201,7 +203,7 @@ public static class AbstractNumConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -216,7 +218,7 @@ public static class AbstractNumConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -276,7 +278,7 @@ public static class AbstractNumConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

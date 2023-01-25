@@ -15,7 +15,7 @@ public static class NonVisualPicturePropertiesConverter
   
   private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value)
@@ -41,7 +41,7 @@ public static class NonVisualPicturePropertiesConverter
   
   private static bool CmpNonVisualPictureDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualPictureDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualPictureDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties? value)
@@ -81,7 +81,7 @@ public static class NonVisualPicturePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

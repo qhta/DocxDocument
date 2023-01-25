@@ -10,12 +10,14 @@ public static class WrapTopBottomConverter
   /// </summary>
   private static UInt32? GetDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement)
   {
-    return openXmlElement.DistanceFromTop?.Value;
+    return openXmlElement?.DistanceFromTop?.Value;
   }
   
   private static bool CmpDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DistanceFromTop?.Value == value;
+    if (openXmlElement?.DistanceFromTop?.Value == value) return true;
+    diffs?.Add(objName, "DistanceFromTop", openXmlElement?.DistanceFromTop?.Value, value);
+    return false;
   }
   
   private static void SetDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
@@ -28,12 +30,14 @@ public static class WrapTopBottomConverter
   /// </summary>
   private static UInt32? GetDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement)
   {
-    return openXmlElement.DistanceFromBottom?.Value;
+    return openXmlElement?.DistanceFromBottom?.Value;
   }
   
   private static bool CmpDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DistanceFromBottom?.Value == value;
+    if (openXmlElement?.DistanceFromBottom?.Value == value) return true;
+    diffs?.Add(objName, "DistanceFromBottom", openXmlElement?.DistanceFromBottom?.Value, value);
+    return false;
   }
   
   private static void SetDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
@@ -51,7 +55,7 @@ public static class WrapTopBottomConverter
   
   private static bool CmpEffectExtent(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectExtent(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.EffectExtent? value)
@@ -94,7 +98,7 @@ public static class WrapTopBottomConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

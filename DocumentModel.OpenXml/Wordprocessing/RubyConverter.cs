@@ -15,7 +15,7 @@ public static class RubyConverter
   
   private static bool CmpRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value)
@@ -41,7 +41,7 @@ public static class RubyConverter
   
   private static bool CmpRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyContentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value)
@@ -67,7 +67,7 @@ public static class RubyConverter
   
   private static bool CmpRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyBaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RubyBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value)
@@ -110,7 +110,7 @@ public static class RubyConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -36,7 +36,7 @@ public static class StyleLabelConverter
   
   private static bool CmpScene3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Scene3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.Scene3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScene3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Scene3D? value)
@@ -62,7 +62,7 @@ public static class StyleLabelConverter
   
   private static bool CmpShape3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Shape3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.Shape3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Shape3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.Shape3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShape3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Shape3D? value)
@@ -88,7 +88,7 @@ public static class StyleLabelConverter
   
   private static bool CmpTextProperties(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.TextPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextProperties(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.TextProperties? value)
@@ -114,7 +114,7 @@ public static class StyleLabelConverter
   
   private static bool CmpStyle(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Style? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyle(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Style? value)
@@ -140,7 +140,7 @@ public static class StyleLabelConverter
   
   private static bool CmpExtensionList(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -192,7 +192,7 @@ public static class StyleLabelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

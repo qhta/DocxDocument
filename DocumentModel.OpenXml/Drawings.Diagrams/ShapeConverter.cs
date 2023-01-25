@@ -10,12 +10,14 @@ public static class ShapeConverter
   /// </summary>
   private static Double? GetRotation(DXDrawDgms.Shape openXmlElement)
   {
-    return openXmlElement.Rotation?.Value;
+    return openXmlElement?.Rotation?.Value;
   }
   
   private static bool CmpRotation(DXDrawDgms.Shape openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Rotation?.Value == value;
+    if (openXmlElement?.Rotation?.Value == value) return true;
+    diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
+    return false;
   }
   
   private static void SetRotation(DXDrawDgms.Shape openXmlElement, Double? value)
@@ -70,12 +72,14 @@ public static class ShapeConverter
   /// </summary>
   private static Int32? GetZOrderOffset(DXDrawDgms.Shape openXmlElement)
   {
-    return openXmlElement.ZOrderOffset?.Value;
+    return openXmlElement?.ZOrderOffset?.Value;
   }
   
   private static bool CmpZOrderOffset(DXDrawDgms.Shape openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ZOrderOffset?.Value == value;
+    if (openXmlElement?.ZOrderOffset?.Value == value) return true;
+    diffs?.Add(objName, "ZOrderOffset", openXmlElement?.ZOrderOffset?.Value, value);
+    return false;
   }
   
   private static void SetZOrderOffset(DXDrawDgms.Shape openXmlElement, Int32? value)
@@ -156,7 +160,7 @@ public static class ShapeConverter
   
   private static bool CmpAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.AdjustListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.AdjustListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.AdjustList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value)
@@ -182,7 +186,7 @@ public static class ShapeConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value)
@@ -243,7 +247,7 @@ public static class ShapeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

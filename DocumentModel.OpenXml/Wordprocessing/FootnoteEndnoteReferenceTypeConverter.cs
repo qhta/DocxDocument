@@ -31,12 +31,14 @@ public static class FootnoteEndnoteReferenceTypeConverter
   /// </summary>
   private static Int64? GetId(DXW.FootnoteEndnoteReferenceType openXmlElement)
   {
-    return openXmlElement.Id?.Value;
+    return openXmlElement?.Id?.Value;
   }
   
   private static bool CmpId(DXW.FootnoteEndnoteReferenceType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.FootnoteEndnoteReferenceType openXmlElement, Int64? value)
@@ -68,7 +70,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

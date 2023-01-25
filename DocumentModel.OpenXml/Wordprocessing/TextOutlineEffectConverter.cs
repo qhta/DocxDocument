@@ -10,12 +10,14 @@ public static class TextOutlineEffectConverter
   /// </summary>
   private static Int32? GetLineWidth(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    return openXmlElement.LineWidth?.Value;
+    return openXmlElement?.LineWidth?.Value;
   }
   
   private static bool CmpLineWidth(DXO2010W.TextOutlineEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LineWidth?.Value == value;
+    if (openXmlElement?.LineWidth?.Value == value) return true;
+    diffs?.Add(objName, "LineWidth", openXmlElement?.LineWidth?.Value, value);
+    return false;
   }
   
   private static void SetLineWidth(DXO2010W.TextOutlineEffect openXmlElement, Int32? value)
@@ -109,7 +111,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value)
@@ -132,7 +134,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value)
@@ -228,7 +230,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LineJoinMiterPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LineJoinMiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LineJoinMiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value)
@@ -295,7 +297,7 @@ public static class TextOutlineEffectConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class WebSettingsConverter
   
   private static bool CmpFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramesetConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Frameset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value)
@@ -41,7 +41,7 @@ public static class WebSettingsConverter
   
   private static bool CmpDivs(DXW.WebSettings openXmlElement, DMW.Divs? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DivsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Divs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DivsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Divs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDivs(DXW.WebSettings openXmlElement, DMW.Divs? value)
@@ -67,7 +67,10 @@ public static class WebSettingsConverter
   
   private static bool CmpWebPageEncoding(DXW.WebSettings openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WebPageEncoding>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.WebPageEncoding>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "WebPageEncoding", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetWebPageEncoding(DXW.WebSettings openXmlElement, String? value)
@@ -288,7 +291,10 @@ public static class WebSettingsConverter
   
   private static bool CmpPixelsPerInch(DXW.WebSettings openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.PixelsPerInch>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PixelsPerInch>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.PixelsPerInch", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPixelsPerInch(DXW.WebSettings openXmlElement, Int32? value)
@@ -383,7 +389,7 @@ public static class WebSettingsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

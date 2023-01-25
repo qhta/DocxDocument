@@ -15,7 +15,10 @@ public static class PieChartSeriesConverter
   
   private static bool CmpIndex(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value)
@@ -40,7 +43,10 @@ public static class PieChartSeriesConverter
   
   private static bool CmpOrder(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetOrder(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value)
@@ -65,7 +71,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpSeriesText(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeriesText(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
@@ -91,7 +97,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -117,7 +123,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpPictureOptions(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureOptions(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -143,7 +149,10 @@ public static class PieChartSeriesConverter
   
   private static bool CmpExplosion(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Explosion", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetExplosion(DXDrawCharts.PieChartSeries openXmlElement, UInt32? value)
@@ -179,7 +188,7 @@ public static class PieChartSeriesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -194,7 +203,7 @@ public static class PieChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -219,7 +228,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpDataLabels(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -242,7 +251,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpCategoryAxisData(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategoryAxisData(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value)
@@ -265,7 +274,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpValues(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.Values? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetValues(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.Values? value)
@@ -288,7 +297,7 @@ public static class PieChartSeriesConverter
   
   private static bool CmpPieSerExtensionList(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.PieSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PieSerExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PieSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PieSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PieSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPieSerExtensionList(DXDrawCharts.PieChartSeries openXmlElement, DMDrawsCharts.PieSerExtensionList? value)
@@ -355,7 +364,7 @@ public static class PieChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -31,12 +31,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static UInt32? GetSmtId(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.SmtId?.Value;
+    return openXmlElement?.SmtId?.Value;
   }
   
   private static bool CmpSmtId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SmtId?.Value == value;
+    if (openXmlElement?.SmtId?.Value == value) return true;
+    diffs?.Add(objName, "SmtId", openXmlElement?.SmtId?.Value, value);
+    return false;
   }
   
   private static void SetSmtId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value)
@@ -112,12 +114,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static Int32? GetFontSize(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.FontSize?.Value;
+    return openXmlElement?.FontSize?.Value;
   }
   
   private static bool CmpFontSize(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FontSize?.Value == value;
+    if (openXmlElement?.FontSize?.Value == value) return true;
+    diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
+    return false;
   }
   
   private static void SetFontSize(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
@@ -208,12 +212,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static Int32? GetKerning(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.Kerning?.Value;
+    return openXmlElement?.Kerning?.Value;
   }
   
   private static bool CmpKerning(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Kerning?.Value == value;
+    if (openXmlElement?.Kerning?.Value == value) return true;
+    diffs?.Add(objName, "Kerning", openXmlElement?.Kerning?.Value, value);
+    return false;
   }
   
   private static void SetKerning(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
@@ -244,12 +250,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static Int32? GetSpacing(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.Spacing?.Value;
+    return openXmlElement?.Spacing?.Value;
   }
   
   private static bool CmpSpacing(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Spacing?.Value == value;
+    if (openXmlElement?.Spacing?.Value == value) return true;
+    diffs?.Add(objName, "Spacing", openXmlElement?.Spacing?.Value, value);
+    return false;
   }
   
   private static void SetSpacing(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
@@ -283,12 +291,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static Int32? GetBaseline(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.Baseline?.Value;
+    return openXmlElement?.Baseline?.Value;
   }
   
   private static bool CmpBaseline(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Baseline?.Value == value;
+    if (openXmlElement?.Baseline?.Value == value) return true;
+    diffs?.Add(objName, "Baseline", openXmlElement?.Baseline?.Value, value);
+    return false;
   }
   
   private static void SetBaseline(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
@@ -385,12 +395,14 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static UInt32? GetSmartTagId(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement.SmartTagId?.Value;
+    return openXmlElement?.SmartTagId?.Value;
   }
   
   private static bool CmpSmartTagId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SmartTagId?.Value == value;
+    if (openXmlElement?.SmartTagId?.Value == value) return true;
+    diffs?.Add(objName, "SmartTagId", openXmlElement?.SmartTagId?.Value, value);
+    return false;
   }
   
   private static void SetSmartTagId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value)
@@ -429,7 +441,7 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value)
@@ -529,7 +541,7 @@ public static class TextCharacterPropertiesTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

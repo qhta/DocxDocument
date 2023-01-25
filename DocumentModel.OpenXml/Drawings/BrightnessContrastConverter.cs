@@ -10,12 +10,14 @@ public static class BrightnessContrastConverter
   /// </summary>
   private static Int32? GetBright(DXO2010Draw.BrightnessContrast openXmlElement)
   {
-    return openXmlElement.Bright?.Value;
+    return openXmlElement?.Bright?.Value;
   }
   
   private static bool CmpBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Bright?.Value == value;
+    if (openXmlElement?.Bright?.Value == value) return true;
+    diffs?.Add(objName, "Bright", openXmlElement?.Bright?.Value, value);
+    return false;
   }
   
   private static void SetBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class BrightnessContrastConverter
   /// </summary>
   private static Int32? GetContrast(DXO2010Draw.BrightnessContrast openXmlElement)
   {
-    return openXmlElement.Contrast?.Value;
+    return openXmlElement?.Contrast?.Value;
   }
   
   private static bool CmpContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Contrast?.Value == value;
+    if (openXmlElement?.Contrast?.Value == value) return true;
+    diffs?.Add(objName, "Contrast", openXmlElement?.Contrast?.Value, value);
+    return false;
   }
   
   private static void SetContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class BrightnessContrastConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

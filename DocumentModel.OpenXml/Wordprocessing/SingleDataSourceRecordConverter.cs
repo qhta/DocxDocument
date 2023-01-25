@@ -43,7 +43,10 @@ public static class SingleDataSourceRecordConverter
   
   private static bool CmpRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.RecordHashCode>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXOW.RecordHashCode", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value)
@@ -82,7 +85,7 @@ public static class SingleDataSourceRecordConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class ChartText3Converter
   
   private static bool CmpStringReference(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringReference(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringReference? value)
@@ -41,7 +41,7 @@ public static class ChartText3Converter
   
   private static bool CmpRichText(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.RichText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RichTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RichText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RichTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.RichText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRichText(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.RichText? value)
@@ -67,7 +67,7 @@ public static class ChartText3Converter
   
   private static bool CmpStringLiteral(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StringLiteralConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StringLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringLiteral(DXO2013DrawChart.ChartText openXmlElement, DMDrawsCharts.StringLiteral? value)
@@ -110,7 +110,7 @@ public static class ChartText3Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
