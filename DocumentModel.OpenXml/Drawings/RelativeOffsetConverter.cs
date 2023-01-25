@@ -10,12 +10,14 @@ public static class RelativeOffsetConverter
   /// </summary>
   private static Int32? GetOffsetX(DXDraw.RelativeOffset openXmlElement)
   {
-    return openXmlElement.OffsetX?.Value;
+    return openXmlElement?.OffsetX?.Value;
   }
   
   private static bool CmpOffsetX(DXDraw.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.OffsetX?.Value == value;
+    if (openXmlElement?.OffsetX?.Value == value) return true;
+    diffs?.Add(objName, "OffsetX", openXmlElement?.OffsetX?.Value, value);
+    return false;
   }
   
   private static void SetOffsetX(DXDraw.RelativeOffset openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class RelativeOffsetConverter
   /// </summary>
   private static Int32? GetOffsetY(DXDraw.RelativeOffset openXmlElement)
   {
-    return openXmlElement.OffsetY?.Value;
+    return openXmlElement?.OffsetY?.Value;
   }
   
   private static bool CmpOffsetY(DXDraw.RelativeOffset openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.OffsetY?.Value == value;
+    if (openXmlElement?.OffsetY?.Value == value) return true;
+    diffs?.Add(objName, "OffsetY", openXmlElement?.OffsetY?.Value, value);
+    return false;
   }
   
   private static void SetOffsetY(DXDraw.RelativeOffset openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class RelativeOffsetConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -40,8 +40,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       {
         if (CustomProperties == null)
           CustomProperties = new CustomProperties();
-        if (item is CustomDocumentProperty customDocumentProperty)
-          CustomProperties.Add(customDocumentProperty);
+        CustomProperties.Add(item);
       }
     }
   }

@@ -66,7 +66,10 @@ public static class TextInputConverter
   
   private static bool CmpMaxLength(DXW.TextInput openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MaxLength>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.MaxLength", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMaxLength(DXW.TextInput openXmlElement, Int16? value)
@@ -136,7 +139,7 @@ public static class TextInputConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

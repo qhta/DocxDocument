@@ -37,7 +37,10 @@ public static class MaxValueColorEndPositionConverter
   
   private static bool CmpNumberColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberColorPosition>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2016DrawChartDraw.NumberColorPosition", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetNumberColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value)
@@ -59,7 +62,10 @@ public static class MaxValueColorEndPositionConverter
   
   private static bool CmpPercentageColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PercentageColorPosition>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2016DrawChartDraw.PercentageColorPosition", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPercentageColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement, Double? value)
@@ -101,7 +107,7 @@ public static class MaxValueColorEndPositionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

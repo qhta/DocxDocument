@@ -10,12 +10,14 @@ public static class EastAsianLayoutConverter
   /// </summary>
   private static Int32? GetId(DXW.EastAsianLayout openXmlElement)
   {
-    return openXmlElement.Id?.Value;
+    return openXmlElement?.Id?.Value;
   }
   
   private static bool CmpId(DXW.EastAsianLayout openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.EastAsianLayout openXmlElement, Int32? value)
@@ -137,7 +139,7 @@ public static class EastAsianLayoutConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

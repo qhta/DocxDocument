@@ -15,6 +15,17 @@ public partial class CustomProperties : ICollection<CustomDocumentProperty>
     return GetEnumerator();
   }
 
+  public void Add(DocumentProperty item)
+  {
+    if (CustomDocumentProperties == null)
+      CustomDocumentProperties = new Collection<CustomDocumentProperty>();
+    var customDocumentProperty = item as CustomDocumentProperty;
+    if (item == null)
+      customDocumentProperty = new CustomDocumentProperty(item);
+    if (customDocumentProperty != null)
+      CustomDocumentProperties.Add(customDocumentProperty);
+  }
+
   public void Add(CustomDocumentProperty item)
   {
     if (CustomDocumentProperties == null)
@@ -61,6 +72,8 @@ public partial class CustomProperties : ICollection<CustomDocumentProperty>
   {
     if (obj is CustomDocumentProperty item)
       Add(item);
+    if (obj is DocumentProperty item2)
+      Add(item2);
   }
 
   public void CopyTo(DocumentProperty[] array, int arrayIndex)

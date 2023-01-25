@@ -33,7 +33,7 @@ public static class PatternFillConverter
   
   private static bool CmpForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ForegroundColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ForegroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ForegroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ForegroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value)
@@ -59,7 +59,7 @@ public static class PatternFillConverter
   
   private static bool CmpBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BackgroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value)
@@ -102,7 +102,7 @@ public static class PatternFillConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

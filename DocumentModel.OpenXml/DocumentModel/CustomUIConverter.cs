@@ -57,7 +57,7 @@ public static class CustomUIConverter
   
   private static bool CmpCommands(DXO2010CustUI.CustomUI openXmlElement, DM.Commands? value, DiffList? diffs, string? objName)
   {
-    return DMX.CommandsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Commands>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.CommandsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Commands>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommands(DXO2010CustUI.CustomUI openXmlElement, DM.Commands? value)
@@ -83,7 +83,7 @@ public static class CustomUIConverter
   
   private static bool CmpRibbon(DXO2010CustUI.CustomUI openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
   {
-    return DMX.RibbonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Ribbon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.RibbonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Ribbon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRibbon(DXO2010CustUI.CustomUI openXmlElement, DM.Ribbon? value)
@@ -109,7 +109,7 @@ public static class CustomUIConverter
   
   private static bool CmpBackstage(DXO2010CustUI.CustomUI openXmlElement, DM.Backstage? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Backstage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Backstage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstage(DXO2010CustUI.CustomUI openXmlElement, DM.Backstage? value)
@@ -135,7 +135,7 @@ public static class CustomUIConverter
   
   private static bool CmpContextMenus(DXO2010CustUI.CustomUI openXmlElement, DM.ContextMenus? value, DiffList? diffs, string? objName)
   {
-    return DMX.ContextMenusConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextMenus>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ContextMenusConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ContextMenus>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContextMenus(DXO2010CustUI.CustomUI openXmlElement, DM.ContextMenus? value)
@@ -187,7 +187,7 @@ public static class CustomUIConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

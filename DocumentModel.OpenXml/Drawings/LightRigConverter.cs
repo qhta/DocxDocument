@@ -51,7 +51,7 @@ public static class LightRigConverter
   
   private static bool CmpRotation(DXDraw.LightRig openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRotation(DXDraw.LightRig openXmlElement, DMDraws.Rotation? value)
@@ -94,7 +94,7 @@ public static class LightRigConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

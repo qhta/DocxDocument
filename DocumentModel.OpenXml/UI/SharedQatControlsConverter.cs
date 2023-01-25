@@ -12,7 +12,7 @@ public static class SharedQatControlsConverter
   
   private static bool CmpQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value)
@@ -35,7 +35,7 @@ public static class SharedQatControlsConverter
   
   private static bool CmpUnsizedButton(DXOCustUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnsizedButton(DXOCustUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value)
@@ -58,7 +58,7 @@ public static class SharedQatControlsConverter
   
   private static bool CmpVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VerticalSeparator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value)
@@ -101,7 +101,7 @@ public static class SharedQatControlsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

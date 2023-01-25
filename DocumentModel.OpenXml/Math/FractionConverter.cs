@@ -15,7 +15,7 @@ public static class FractionConverter
   
   private static bool CmpFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FractionPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.FractionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.FractionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FractionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value)
@@ -41,7 +41,7 @@ public static class FractionConverter
   
   private static bool CmpNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.NumeratorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Numerator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.NumeratorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Numerator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value)
@@ -67,7 +67,7 @@ public static class FractionConverter
   
   private static bool CmpDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DenominatorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Denominator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DenominatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Denominator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value)
@@ -110,7 +110,7 @@ public static class FractionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

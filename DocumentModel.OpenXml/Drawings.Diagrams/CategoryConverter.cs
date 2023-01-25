@@ -31,12 +31,14 @@ public static class CategoryConverter
   /// </summary>
   private static UInt32? GetPriority(DXDrawDgms.Category openXmlElement)
   {
-    return openXmlElement.Priority?.Value;
+    return openXmlElement?.Priority?.Value;
   }
   
   private static bool CmpPriority(DXDrawDgms.Category openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Priority?.Value == value;
+    if (openXmlElement?.Priority?.Value == value) return true;
+    diffs?.Add(objName, "Priority", openXmlElement?.Priority?.Value, value);
+    return false;
   }
   
   private static void SetPriority(DXDrawDgms.Category openXmlElement, UInt32? value)
@@ -68,7 +70,7 @@ public static class CategoryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

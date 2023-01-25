@@ -10,12 +10,14 @@ public static class ArtisticCrisscrossEtchingConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticCrisscrossEtchingConverter
   /// </summary>
   private static Int32? GetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
   {
-    return openXmlElement.Pressure?.Value;
+    return openXmlElement?.Pressure?.Value;
   }
   
   private static bool CmpPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Pressure?.Value == value;
+    if (openXmlElement?.Pressure?.Value == value) return true;
+    diffs?.Add(objName, "Pressure", openXmlElement?.Pressure?.Value, value);
+    return false;
   }
   
   private static void SetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticCrisscrossEtchingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

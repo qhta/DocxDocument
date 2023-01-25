@@ -10,12 +10,14 @@ public static class VTClipboardDataConverter
   /// </summary>
   private static Int32? GetFormat(DXVT.VTClipboardData openXmlElement)
   {
-    return openXmlElement.Format?.Value;
+    return openXmlElement?.Format?.Value;
   }
   
   private static bool CmpFormat(DXVT.VTClipboardData openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Format?.Value == value;
+    if (openXmlElement?.Format?.Value == value) return true;
+    diffs?.Add(objName, "Format", openXmlElement?.Format?.Value, value);
+    return false;
   }
   
   private static void SetFormat(DXVT.VTClipboardData openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class VTClipboardDataConverter
   /// </summary>
   private static UInt32? GetSize(DXVT.VTClipboardData openXmlElement)
   {
-    return openXmlElement.Size?.Value;
+    return openXmlElement?.Size?.Value;
   }
   
   private static bool CmpSize(DXVT.VTClipboardData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Size?.Value == value;
+    if (openXmlElement?.Size?.Value == value) return true;
+    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    return false;
   }
   
   private static void SetSize(DXVT.VTClipboardData openXmlElement, UInt32? value)
@@ -65,7 +69,7 @@ public static class VTClipboardDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

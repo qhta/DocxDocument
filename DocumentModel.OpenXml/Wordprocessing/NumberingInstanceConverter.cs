@@ -10,12 +10,14 @@ public static class NumberingInstanceConverter
   /// </summary>
   private static Int32? GetNumberID(DXW.NumberingInstance openXmlElement)
   {
-    return openXmlElement.NumberID?.Value;
+    return openXmlElement?.NumberID?.Value;
   }
   
   private static bool CmpNumberID(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.NumberID?.Value == value;
+    if (openXmlElement?.NumberID?.Value == value) return true;
+    diffs?.Add(objName, "NumberID", openXmlElement?.NumberID?.Value, value);
+    return false;
   }
   
   private static void SetNumberID(DXW.NumberingInstance openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class NumberingInstanceConverter
   /// </summary>
   private static Int32? GetDurableId(DXW.NumberingInstance openXmlElement)
   {
-    return openXmlElement.DurableId?.Value;
+    return openXmlElement?.DurableId?.Value;
   }
   
   private static bool CmpDurableId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DurableId?.Value == value;
+    if (openXmlElement?.DurableId?.Value == value) return true;
+    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
+    return false;
   }
   
   private static void SetDurableId(DXW.NumberingInstance openXmlElement, Int32? value)
@@ -51,7 +55,10 @@ public static class NumberingInstanceConverter
   
   private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.AbstractNumId>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.AbstractNumId", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value)
@@ -87,7 +94,7 @@ public static class NumberingInstanceConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -102,7 +109,7 @@ public static class NumberingInstanceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -150,7 +157,7 @@ public static class NumberingInstanceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

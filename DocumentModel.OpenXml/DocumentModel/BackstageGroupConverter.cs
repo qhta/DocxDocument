@@ -387,7 +387,7 @@ public static class BackstageGroupConverter
   
   private static bool CmpPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement, DM.PrimaryItem? value, DiffList? diffs, string? objName)
   {
-    return DMX.PrimaryItemConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.PrimaryItemConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.PrimaryItem>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement, DM.PrimaryItem? value)
@@ -410,7 +410,7 @@ public static class BackstageGroupConverter
   
   private static bool CmpTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.TopItemsGroupControls? value, DiffList? diffs, string? objName)
   {
-    return DMX.TopItemsGroupControlsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TopItemsGroupControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.TopItemsGroupControls? value)
@@ -433,7 +433,7 @@ public static class BackstageGroupConverter
   
   private static bool CmpBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.BottomItemsGroupControls? value, DiffList? diffs, string? objName)
   {
-    return DMX.BottomItemsGroupControlsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BottomItemsGroupControlsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.BottomItemsGroupControls? value)
@@ -530,7 +530,7 @@ public static class BackstageGroupConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

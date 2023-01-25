@@ -12,7 +12,7 @@ public static class ContourColorConverter
   
   private static bool CmpRgbColorModelPercentage(DXDraw.ContourColor openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelPercentage(DXDraw.ContourColor openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -35,7 +35,7 @@ public static class ContourColorConverter
   
   private static bool CmpRgbColorModelHex(DXDraw.ContourColor openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXDraw.ContourColor openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -58,7 +58,7 @@ public static class ContourColorConverter
   
   private static bool CmpHslColor(DXDraw.ContourColor openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHslColor(DXDraw.ContourColor openXmlElement, DMDraws.HslColor? value)
@@ -81,7 +81,7 @@ public static class ContourColorConverter
   
   private static bool CmpSystemColor(DXDraw.ContourColor openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSystemColor(DXDraw.ContourColor openXmlElement, DMDraws.SystemColor? value)
@@ -104,7 +104,7 @@ public static class ContourColorConverter
   
   private static bool CmpSchemeColor(DXDraw.ContourColor openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXDraw.ContourColor openXmlElement, DMDraws.SchemeColor? value)
@@ -127,7 +127,7 @@ public static class ContourColorConverter
   
   private static bool CmpPresetColor(DXDraw.ContourColor openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetColor(DXDraw.ContourColor openXmlElement, DMDraws.PresetColor? value)
@@ -179,7 +179,7 @@ public static class ContourColorConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

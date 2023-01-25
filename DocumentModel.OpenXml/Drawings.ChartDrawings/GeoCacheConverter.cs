@@ -55,7 +55,7 @@ public static class GeoCacheConverter
   
   private static bool CmpClear(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.Clear? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ClearConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Clear>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ClearConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Clear>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetClear(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.Clear? value)
@@ -98,7 +98,7 @@ public static class GeoCacheConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

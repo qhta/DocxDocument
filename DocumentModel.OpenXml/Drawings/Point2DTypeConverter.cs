@@ -10,12 +10,14 @@ public static class Point2DTypeConverter
   /// </summary>
   private static Int64? GetX(DXDraw.Point2DType openXmlElement)
   {
-    return openXmlElement.X?.Value;
+    return openXmlElement?.X?.Value;
   }
   
   private static bool CmpX(DXDraw.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.X?.Value == value;
+    if (openXmlElement?.X?.Value == value) return true;
+    diffs?.Add(objName, "X", openXmlElement?.X?.Value, value);
+    return false;
   }
   
   private static void SetX(DXDraw.Point2DType openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class Point2DTypeConverter
   /// </summary>
   private static Int64? GetY(DXDraw.Point2DType openXmlElement)
   {
-    return openXmlElement.Y?.Value;
+    return openXmlElement?.Y?.Value;
   }
   
   private static bool CmpY(DXDraw.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Y?.Value == value;
+    if (openXmlElement?.Y?.Value == value) return true;
+    diffs?.Add(objName, "Y", openXmlElement?.Y?.Value, value);
+    return false;
   }
   
   private static void SetY(DXDraw.Point2DType openXmlElement, Int64? value)
@@ -65,7 +69,7 @@ public static class Point2DTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

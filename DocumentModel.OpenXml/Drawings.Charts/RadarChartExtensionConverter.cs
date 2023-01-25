@@ -33,7 +33,7 @@ public static class RadarChartExtensionConverter
   
   private static bool CmpFilteredRadarSeries(DXDrawCharts.RadarChartExtension openXmlElement, DMDrawsCharts.FilteredRadarSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredRadarSeriesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredRadarSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredRadarSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredRadarSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredRadarSeries(DXDrawCharts.RadarChartExtension openXmlElement, DMDrawsCharts.FilteredRadarSeries? value)
@@ -73,7 +73,7 @@ public static class RadarChartExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

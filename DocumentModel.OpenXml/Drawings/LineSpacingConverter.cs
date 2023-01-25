@@ -12,7 +12,10 @@ public static class LineSpacingConverter
   
   private static bool CmpSpacingPercent(DXDraw.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.SpacingPercent", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSpacingPercent(DXDraw.LineSpacing openXmlElement, Int32? value)
@@ -34,7 +37,10 @@ public static class LineSpacingConverter
   
   private static bool CmpSpacingPoints(DXDraw.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.SpacingPoints", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSpacingPoints(DXDraw.LineSpacing openXmlElement, Int32? value)
@@ -73,7 +79,7 @@ public static class LineSpacingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

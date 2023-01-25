@@ -10,12 +10,14 @@ public static class ChartStyleConverter
   /// </summary>
   private static UInt32? GetId(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return openXmlElement.Id?.Value;
+    return openXmlElement?.Id?.Value;
   }
   
   private static bool CmpId(DXO2013DrawChartStyle.ChartStyle openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013DrawChartStyle.ChartStyle openXmlElement, UInt32? value)
@@ -33,7 +35,7 @@ public static class ChartStyleConverter
   
   private static bool CmpAxisTitle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.AxisTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.AxisTitleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.AxisTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.AxisTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.AxisTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAxisTitle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.AxisTitle? value)
@@ -59,7 +61,7 @@ public static class ChartStyleConverter
   
   private static bool CmpCategoryAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.CategoryAxis? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.CategoryAxisConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.CategoryAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.CategoryAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.CategoryAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategoryAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.CategoryAxis? value)
@@ -85,7 +87,7 @@ public static class ChartStyleConverter
   
   private static bool CmpChartArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ChartArea? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ChartAreaConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ChartArea>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.ChartAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ChartArea>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ChartArea? value)
@@ -111,7 +113,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataLabelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabel? value)
@@ -137,7 +139,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataLabelCallout(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabelCallout? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataLabelCalloutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabelCallout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataLabelCalloutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataLabelCallout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelCallout(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabelCallout? value)
@@ -163,7 +165,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataPoint(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataPointConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataPointConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataPoint>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataPoint(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint? value)
@@ -189,7 +191,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataPoint3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataPoint3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataPoint3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataPoint3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataPoint3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint3D? value)
@@ -215,7 +217,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataPointLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataPointLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataPointLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataPointLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataPointLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointLine? value)
@@ -241,7 +243,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataPointMarker(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointMarker? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataPointMarkerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointMarker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataPointMarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataPointMarker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataPointMarker(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointMarker? value)
@@ -267,7 +269,7 @@ public static class ChartStyleConverter
   
   private static bool CmpMarkerLayoutProperties(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.MarkerLayoutPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.MarkerLayoutProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.MarkerLayoutPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.MarkerLayoutProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMarkerLayoutProperties(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties? value)
@@ -293,7 +295,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataPointWireframe(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointWireframe? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataPointWireframeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointWireframe>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataPointWireframeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataPointWireframe>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataPointWireframe(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointWireframe? value)
@@ -319,7 +321,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDataTableStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataTableStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DataTableStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataTableStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DataTableStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DataTableStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataTableStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataTableStyle? value)
@@ -345,7 +347,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDownBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DownBar? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DownBarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DownBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DownBarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DownBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDownBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DownBar? value)
@@ -371,7 +373,7 @@ public static class ChartStyleConverter
   
   private static bool CmpDropLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DropLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.DropLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DropLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.DropLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.DropLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDropLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DropLine? value)
@@ -397,7 +399,7 @@ public static class ChartStyleConverter
   
   private static bool CmpErrorBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ErrorBar? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ErrorBarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ErrorBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.ErrorBarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ErrorBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetErrorBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ErrorBar? value)
@@ -423,7 +425,7 @@ public static class ChartStyleConverter
   
   private static bool CmpFloor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Floor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FloorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Floor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.FloorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.Floor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFloor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Floor? value)
@@ -449,7 +451,7 @@ public static class ChartStyleConverter
   
   private static bool CmpGridlineMajor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMajor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.GridlineMajorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMajor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.GridlineMajorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.GridlineMajor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGridlineMajor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMajor? value)
@@ -475,7 +477,7 @@ public static class ChartStyleConverter
   
   private static bool CmpGridlineMinor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMinor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.GridlineMinorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMinor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.GridlineMinorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.GridlineMinor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGridlineMinor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMinor? value)
@@ -501,7 +503,7 @@ public static class ChartStyleConverter
   
   private static bool CmpHiLoLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.HiLoLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.HiLoLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.HiLoLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.HiLoLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.HiLoLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetHiLoLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.HiLoLine? value)
@@ -527,7 +529,7 @@ public static class ChartStyleConverter
   
   private static bool CmpLeaderLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LeaderLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.LeaderLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LeaderLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.LeaderLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LeaderLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLeaderLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LeaderLine? value)
@@ -553,7 +555,7 @@ public static class ChartStyleConverter
   
   private static bool CmpLegendStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LegendStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.LegendStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LegendStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.LegendStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LegendStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLegendStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LegendStyle? value)
@@ -579,7 +581,7 @@ public static class ChartStyleConverter
   
   private static bool CmpPlotArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.PlotAreaConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.PlotArea>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPlotArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea? value)
@@ -605,7 +607,7 @@ public static class ChartStyleConverter
   
   private static bool CmpPlotArea3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.PlotArea3DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.PlotArea3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.PlotArea3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPlotArea3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea3D? value)
@@ -631,7 +633,7 @@ public static class ChartStyleConverter
   
   private static bool CmpSeriesAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesAxis? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.SeriesAxisConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.SeriesAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.SeriesAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeriesAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesAxis? value)
@@ -657,7 +659,7 @@ public static class ChartStyleConverter
   
   private static bool CmpSeriesLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.SeriesLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.SeriesLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.SeriesLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeriesLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesLine? value)
@@ -683,7 +685,7 @@ public static class ChartStyleConverter
   
   private static bool CmpTitleStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TitleStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TitleStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TitleStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TitleStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TitleStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTitleStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TitleStyle? value)
@@ -709,7 +711,7 @@ public static class ChartStyleConverter
   
   private static bool CmpTrendlineStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TrendlineStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TrendlineStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TrendlineStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTrendlineStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineStyle? value)
@@ -735,7 +737,7 @@ public static class ChartStyleConverter
   
   private static bool CmpTrendlineLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TrendlineLabelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TrendlineLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTrendlineLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineLabel? value)
@@ -761,7 +763,7 @@ public static class ChartStyleConverter
   
   private static bool CmpUpBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.UpBar? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.UpBarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.UpBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.UpBarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.UpBar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUpBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.UpBar? value)
@@ -787,7 +789,7 @@ public static class ChartStyleConverter
   
   private static bool CmpValueAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ValueAxis? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ValueAxisConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ValueAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.ValueAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ValueAxis>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetValueAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ValueAxis? value)
@@ -813,7 +815,7 @@ public static class ChartStyleConverter
   
   private static bool CmpWall(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Wall? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.WallConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Wall>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.WallConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.Wall>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWall(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Wall? value)
@@ -839,7 +841,7 @@ public static class ChartStyleConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)
@@ -972,7 +974,7 @@ public static class ChartStyleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

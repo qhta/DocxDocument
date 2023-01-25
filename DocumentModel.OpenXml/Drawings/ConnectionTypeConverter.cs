@@ -10,12 +10,14 @@ public static class ConnectionTypeConverter
   /// </summary>
   private static UInt32? GetId(DXDraw.ConnectionType openXmlElement)
   {
-    return openXmlElement.Id?.Value;
+    return openXmlElement?.Id?.Value;
   }
   
   private static bool CmpId(DXDraw.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXDraw.ConnectionType openXmlElement, UInt32? value)
@@ -28,12 +30,14 @@ public static class ConnectionTypeConverter
   /// </summary>
   private static UInt32? GetIndex(DXDraw.ConnectionType openXmlElement)
   {
-    return openXmlElement.Index?.Value;
+    return openXmlElement?.Index?.Value;
   }
   
   private static bool CmpIndex(DXDraw.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Index?.Value == value;
+    if (openXmlElement?.Index?.Value == value) return true;
+    diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDraw.ConnectionType openXmlElement, UInt32? value)
@@ -65,7 +69,7 @@ public static class ConnectionTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

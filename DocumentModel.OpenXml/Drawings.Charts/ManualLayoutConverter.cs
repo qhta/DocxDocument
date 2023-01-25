@@ -145,7 +145,10 @@ public static class ManualLayoutConverter
   
   private static bool CmpLeft(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Left>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Left>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Left", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLeft(DXDrawCharts.ManualLayout openXmlElement, Double? value)
@@ -170,7 +173,10 @@ public static class ManualLayoutConverter
   
   private static bool CmpTop(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Top>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Top>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Top", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetTop(DXDrawCharts.ManualLayout openXmlElement, Double? value)
@@ -195,7 +201,10 @@ public static class ManualLayoutConverter
   
   private static bool CmpWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Width>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Width>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Width", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value)
@@ -220,7 +229,10 @@ public static class ManualLayoutConverter
   
   private static bool CmpHeight(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Height>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Height>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Height", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXDrawCharts.ManualLayout openXmlElement, Double? value)
@@ -245,7 +257,7 @@ public static class ManualLayoutConverter
   
   private static bool CmpExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -309,7 +321,7 @@ public static class ManualLayoutConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

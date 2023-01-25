@@ -31,12 +31,14 @@ public static class GeoPolygonConverter
   /// </summary>
   private static Int64? GetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
-    return openXmlElement.NumPoints?.Value;
+    return openXmlElement?.NumPoints?.Value;
   }
   
   private static bool CmpNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.NumPoints?.Value == value;
+    if (openXmlElement?.NumPoints?.Value == value) return true;
+    diffs?.Add(objName, "NumPoints", openXmlElement?.NumPoints?.Value, value);
+    return false;
   }
   
   private static void SetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value)
@@ -92,7 +94,7 @@ public static class GeoPolygonConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

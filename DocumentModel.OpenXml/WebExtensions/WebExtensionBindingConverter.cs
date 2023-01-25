@@ -78,7 +78,7 @@ public static class WebExtensionBindingConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement, DMWebExt.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExt.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXWebExt.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement, DMWebExt.OfficeArtExtensionList? value)
@@ -124,7 +124,7 @@ public static class WebExtensionBindingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

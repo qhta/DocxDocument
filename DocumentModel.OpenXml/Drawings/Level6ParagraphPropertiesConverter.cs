@@ -12,7 +12,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpLineSpacing(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineSpacing(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.LineSpacing? value)
@@ -35,7 +35,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpSpaceBefore(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSpaceBefore(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value)
@@ -58,7 +58,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpSpaceAfter(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSpaceAfter(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value)
@@ -106,7 +106,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpBulletColor(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.BulletColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BulletColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BulletColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BulletColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBulletColor(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.BulletColor? value)
@@ -154,7 +154,10 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.BulletSizePercentage", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
@@ -176,7 +179,10 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDraw.BulletSizePoints", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
@@ -223,7 +229,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpBulletFont(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BulletFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BulletFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBulletFont(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TextFontType? value)
@@ -271,7 +277,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpAutoNumberedBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AutoNumberedBulletConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAutoNumberedBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value)
@@ -294,7 +300,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpCharacterBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CharacterBulletConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CharacterBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCharacterBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value)
@@ -317,7 +323,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpPictureBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PictureBulletConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PictureBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PictureBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.PictureBullet? value)
@@ -340,7 +346,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpTabStopList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TabStopList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TabStopListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.TabStopList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TabStopList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTabStopList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TabStopList? value)
@@ -363,7 +369,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpDefaultRunProperties(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.DefaultRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.DefaultRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDefaultRunProperties(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value)
@@ -386,7 +392,7 @@ public static class Level6ParagraphPropertiesConverter
   
   private static bool CmpExtensionList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.ExtensionList? value)
@@ -471,7 +477,7 @@ public static class Level6ParagraphPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -43,7 +43,10 @@ public static class LayoutVariablePropertySetTypeConverter
   
   private static bool CmpMaxNumberOfChildren(DXDrawDgms.LayoutVariablePropertySetType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawDgms.MaxNumberOfChildren", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMaxNumberOfChildren(DXDrawDgms.LayoutVariablePropertySetType openXmlElement, Int32? value)
@@ -68,7 +71,10 @@ public static class LayoutVariablePropertySetTypeConverter
   
   private static bool CmpPreferredNumberOfChildren(DXDrawDgms.LayoutVariablePropertySetType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawDgms.PreferredNumberOfChildren", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPreferredNumberOfChildren(DXDrawDgms.LayoutVariablePropertySetType openXmlElement, Int32? value)
@@ -286,7 +292,7 @@ public static class LayoutVariablePropertySetTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

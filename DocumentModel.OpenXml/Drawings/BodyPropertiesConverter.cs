@@ -10,12 +10,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetRotation(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.Rotation?.Value;
+    return openXmlElement?.Rotation?.Value;
   }
   
   private static bool CmpRotation(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Rotation?.Value == value;
+    if (openXmlElement?.Rotation?.Value == value) return true;
+    diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
+    return false;
   }
   
   private static void SetRotation(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -121,12 +123,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetLeftInset(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.LeftInset?.Value;
+    return openXmlElement?.LeftInset?.Value;
   }
   
   private static bool CmpLeftInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LeftInset?.Value == value;
+    if (openXmlElement?.LeftInset?.Value == value) return true;
+    diffs?.Add(objName, "LeftInset", openXmlElement?.LeftInset?.Value, value);
+    return false;
   }
   
   private static void SetLeftInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -139,12 +143,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetTopInset(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.TopInset?.Value;
+    return openXmlElement?.TopInset?.Value;
   }
   
   private static bool CmpTopInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.TopInset?.Value == value;
+    if (openXmlElement?.TopInset?.Value == value) return true;
+    diffs?.Add(objName, "TopInset", openXmlElement?.TopInset?.Value, value);
+    return false;
   }
   
   private static void SetTopInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -157,12 +163,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetRightInset(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.RightInset?.Value;
+    return openXmlElement?.RightInset?.Value;
   }
   
   private static bool CmpRightInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.RightInset?.Value == value;
+    if (openXmlElement?.RightInset?.Value == value) return true;
+    diffs?.Add(objName, "RightInset", openXmlElement?.RightInset?.Value, value);
+    return false;
   }
   
   private static void SetRightInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -175,12 +183,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetBottomInset(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.BottomInset?.Value;
+    return openXmlElement?.BottomInset?.Value;
   }
   
   private static bool CmpBottomInset(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.BottomInset?.Value == value;
+    if (openXmlElement?.BottomInset?.Value == value) return true;
+    diffs?.Add(objName, "BottomInset", openXmlElement?.BottomInset?.Value, value);
+    return false;
   }
   
   private static void SetBottomInset(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -193,12 +203,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetColumnCount(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.ColumnCount?.Value;
+    return openXmlElement?.ColumnCount?.Value;
   }
   
   private static bool CmpColumnCount(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnCount?.Value == value;
+    if (openXmlElement?.ColumnCount?.Value == value) return true;
+    diffs?.Add(objName, "ColumnCount", openXmlElement?.ColumnCount?.Value, value);
+    return false;
   }
   
   private static void SetColumnCount(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -211,12 +223,14 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static Int32? GetColumnSpacing(DXDraw.BodyProperties openXmlElement)
   {
-    return openXmlElement.ColumnSpacing?.Value;
+    return openXmlElement?.ColumnSpacing?.Value;
   }
   
   private static bool CmpColumnSpacing(DXDraw.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnSpacing?.Value == value;
+    if (openXmlElement?.ColumnSpacing?.Value == value) return true;
+    diffs?.Add(objName, "ColumnSpacing", openXmlElement?.ColumnSpacing?.Value, value);
+    return false;
   }
   
   private static void SetColumnSpacing(DXDraw.BodyProperties openXmlElement, Int32? value)
@@ -378,7 +392,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetTextWrapConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetTextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetTextWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value)
@@ -426,7 +440,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NormalAutoFitConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.NormalAutoFitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NormalAutoFit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value)
@@ -474,7 +488,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value)
@@ -497,7 +511,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value)
@@ -520,7 +534,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value)
@@ -543,7 +557,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value)
@@ -658,7 +672,7 @@ public static class BodyPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

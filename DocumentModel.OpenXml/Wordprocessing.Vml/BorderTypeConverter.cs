@@ -28,12 +28,14 @@ public static class BorderTypeConverter
   /// </summary>
   private static Int64? GetWidth(DXVmlW.BorderType openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXVmlW.BorderType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXVmlW.BorderType openXmlElement, Int64? value)
@@ -89,7 +91,7 @@ public static class BorderTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

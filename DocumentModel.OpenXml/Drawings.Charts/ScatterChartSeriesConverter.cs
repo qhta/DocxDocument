@@ -15,7 +15,10 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpIndex(DXDrawCharts.ScatterChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawCharts.ScatterChartSeries openXmlElement, UInt32? value)
@@ -40,7 +43,10 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpOrder(DXDrawCharts.ScatterChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetOrder(DXDrawCharts.ScatterChartSeries openXmlElement, UInt32? value)
@@ -65,7 +71,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpSeriesText(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeriesText(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
@@ -91,7 +97,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -117,7 +123,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpMarker(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMarker(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.Marker? value)
@@ -154,7 +160,7 @@ public static class ScatterChartSeriesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -169,7 +175,7 @@ public static class ScatterChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -194,7 +200,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpDataLabels(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -231,7 +237,7 @@ public static class ScatterChartSeriesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -246,7 +252,7 @@ public static class ScatterChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -285,7 +291,7 @@ public static class ScatterChartSeriesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -300,7 +306,7 @@ public static class ScatterChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -325,7 +331,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpXValues(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.XValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.XValuesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.XValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.XValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.XValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetXValues(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.XValues? value)
@@ -348,7 +354,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpYValues(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.YValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.YValuesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.YValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.YValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.YValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetYValues(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.YValues? value)
@@ -396,7 +402,7 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpScatterSerExtensionList(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.ScatterSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ScatterSerExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ScatterSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ScatterSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ScatterSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScatterSerExtensionList(DXDrawCharts.ScatterChartSeries openXmlElement, DMDrawsCharts.ScatterSerExtensionList? value)
@@ -469,7 +475,7 @@ public static class ScatterChartSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

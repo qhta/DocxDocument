@@ -10,12 +10,14 @@ public static class ArtisticFilmGrainConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticFilmGrainConverter
   /// </summary>
   private static Int32? GetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement)
   {
-    return openXmlElement.GrainSize?.Value;
+    return openXmlElement?.GrainSize?.Value;
   }
   
   private static bool CmpGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GrainSize?.Value == value;
+    if (openXmlElement?.GrainSize?.Value == value) return true;
+    diffs?.Add(objName, "GrainSize", openXmlElement?.GrainSize?.Value, value);
+    return false;
   }
   
   private static void SetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticFilmGrainConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

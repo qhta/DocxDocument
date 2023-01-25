@@ -10,17 +10,17 @@ public static class CommentIdConverter
   /// </summary>
   private static UInt32? GetParaId(DXO2019WCid.CommentId openXmlElement)
   {
-    if (openXmlElement.ParaId?.Value != null)
+    if (openXmlElement?.ParaId?.Value != null)
       return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.ParaId?.Value != null)
+    if (openXmlElement?.ParaId?.Value != null)
       if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.ParaId?.Value == null && value == null) return true;
+    if (openXmlElement?.ParaId?.Value == null && value == null) return true;
     diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
     return false;
   }
@@ -38,17 +38,17 @@ public static class CommentIdConverter
   /// </summary>
   private static UInt32? GetDurableId(DXO2019WCid.CommentId openXmlElement)
   {
-    if (openXmlElement.DurableId?.Value != null)
+    if (openXmlElement?.DurableId?.Value != null)
       return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.DurableId?.Value != null)
+    if (openXmlElement?.DurableId?.Value != null)
       if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.DurableId?.Value == null && value == null) return true;
+    if (openXmlElement?.DurableId?.Value == null && value == null) return true;
     diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
     return false;
   }
@@ -85,7 +85,7 @@ public static class CommentIdConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

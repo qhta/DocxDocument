@@ -10,12 +10,14 @@ public static class GeoLocationConverter
   /// </summary>
   private static Double? GetLatitude(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
-    return openXmlElement.Latitude?.Value;
+    return openXmlElement?.Latitude?.Value;
   }
   
   private static bool CmpLatitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Latitude?.Value == value;
+    if (openXmlElement?.Latitude?.Value == value) return true;
+    diffs?.Add(objName, "Latitude", openXmlElement?.Latitude?.Value, value);
+    return false;
   }
   
   private static void SetLatitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value)
@@ -28,12 +30,14 @@ public static class GeoLocationConverter
   /// </summary>
   private static Double? GetLongitude(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
-    return openXmlElement.Longitude?.Value;
+    return openXmlElement?.Longitude?.Value;
   }
   
   private static bool CmpLongitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Longitude?.Value == value;
+    if (openXmlElement?.Longitude?.Value == value) return true;
+    diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
+    return false;
   }
   
   private static void SetLongitude(DXO2016DrawChartDraw.GeoLocation openXmlElement, Double? value)
@@ -90,7 +94,7 @@ public static class GeoLocationConverter
   
   private static bool CmpAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.Address? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.AddressConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.AddressConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Address>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.Address? value)
@@ -139,7 +143,7 @@ public static class GeoLocationConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -43,7 +43,10 @@ public static class RecipientDataConverter
   
   private static bool CmpColumnIndex(DXW.RecipientData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnIndex>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.ColumnIndex", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetColumnIndex(DXW.RecipientData openXmlElement, UInt32? value)
@@ -68,7 +71,7 @@ public static class RecipientDataConverter
   
   private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value)
@@ -111,7 +114,7 @@ public static class RecipientDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

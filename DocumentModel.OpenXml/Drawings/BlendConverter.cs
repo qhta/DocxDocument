@@ -33,7 +33,7 @@ public static class BlendConverter
   
   private static bool CmpEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value)
@@ -73,7 +73,7 @@ public static class BlendConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

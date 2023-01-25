@@ -10,12 +10,14 @@ public static class TaskProgressEventInfoConverter
   /// </summary>
   private static Int32? GetPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement)
   {
-    return openXmlElement.PercentComplete?.Value;
+    return openXmlElement?.PercentComplete?.Value;
   }
   
   private static bool CmpPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PercentComplete?.Value == value;
+    if (openXmlElement?.PercentComplete?.Value == value) return true;
+    diffs?.Add(objName, "PercentComplete", openXmlElement?.PercentComplete?.Value, value);
+    return false;
   }
   
   private static void SetPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class TaskProgressEventInfoConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

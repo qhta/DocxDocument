@@ -15,7 +15,7 @@ public static class FilteredPieSeriesConverter
   
   private static bool CmpPieChartSeries(DXO2013DrawChart.FilteredPieSeries openXmlElement, DMDrawsCharts.PieChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PieChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PieChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PieChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.PieChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPieChartSeries(DXO2013DrawChart.FilteredPieSeries openXmlElement, DMDrawsCharts.PieChartSeries3? value)
@@ -52,7 +52,7 @@ public static class FilteredPieSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

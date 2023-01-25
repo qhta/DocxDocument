@@ -15,7 +15,7 @@ public static class BackgroundRemovedPropertiesConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundRemovedProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundRemovedProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
@@ -52,7 +52,7 @@ public static class BackgroundRemovedPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

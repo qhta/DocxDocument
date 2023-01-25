@@ -15,7 +15,7 @@ public static class HiddenScene3DConverter
   
   private static bool CmpCamera(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.Camera? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CameraConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCamera(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.Camera? value)
@@ -41,7 +41,7 @@ public static class HiddenScene3DConverter
   
   private static bool CmpLightRig(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.LightRig? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LightRigConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLightRig(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.LightRig? value)
@@ -67,7 +67,7 @@ public static class HiddenScene3DConverter
   
   private static bool CmpBackdrop(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.Backdrop? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackdropConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Backdrop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackdropConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Backdrop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackdrop(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.Backdrop? value)
@@ -93,7 +93,7 @@ public static class HiddenScene3DConverter
   
   private static bool CmpExtensionList(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.ExtensionList? value)
@@ -139,7 +139,7 @@ public static class HiddenScene3DConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

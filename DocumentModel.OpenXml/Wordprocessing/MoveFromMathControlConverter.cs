@@ -12,7 +12,7 @@ public static class MoveFromMathControlConverter
   
   private static bool CmpRunProperties(DXW.MoveFromMathControl openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunProperties(DXW.MoveFromMathControl openXmlElement, DMW.RunProperties? value)
@@ -35,7 +35,7 @@ public static class MoveFromMathControlConverter
   
   private static bool CmpInsertedMathControl(DXW.MoveFromMathControl openXmlElement, DMW.InsertedMathControl? value, DiffList? diffs, string? objName)
   {
-    return DMXW.InsertedMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.InsertedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.InsertedMathControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsertedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInsertedMathControl(DXW.MoveFromMathControl openXmlElement, DMW.InsertedMathControl? value)
@@ -58,7 +58,7 @@ public static class MoveFromMathControlConverter
   
   private static bool CmpDeletedMathControl(DXW.MoveFromMathControl openXmlElement, DMW.DeletedMathControl? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DeletedMathControlConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DeletedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DeletedMathControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeletedMathControl(DXW.MoveFromMathControl openXmlElement, DMW.DeletedMathControl? value)
@@ -101,7 +101,7 @@ public static class MoveFromMathControlConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

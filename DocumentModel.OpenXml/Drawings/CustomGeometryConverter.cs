@@ -15,7 +15,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpAdjustValueList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustValueList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustValueList? value)
@@ -41,7 +41,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpShapeGuideList(DXDraw.CustomGeometry openXmlElement, DMDraws.ShapeGuideList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapeGuideListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeGuideList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapeGuideListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeGuideList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeGuideList(DXDraw.CustomGeometry openXmlElement, DMDraws.ShapeGuideList? value)
@@ -67,7 +67,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpAdjustHandleList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustHandleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustHandleListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustHandleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustHandleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustHandleList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustHandleList? value)
@@ -93,7 +93,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpConnectionSiteList(DXDraw.CustomGeometry openXmlElement, DMDraws.ConnectionSiteList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ConnectionSiteListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ConnectionSiteList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ConnectionSiteListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ConnectionSiteList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConnectionSiteList(DXDraw.CustomGeometry openXmlElement, DMDraws.ConnectionSiteList? value)
@@ -119,7 +119,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpRectangle(DXDraw.CustomGeometry openXmlElement, DMDraws.Rectangle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Rectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRectangle(DXDraw.CustomGeometry openXmlElement, DMDraws.Rectangle? value)
@@ -145,7 +145,7 @@ public static class CustomGeometryConverter
   
   private static bool CmpPathList(DXDraw.CustomGeometry openXmlElement, DMDraws.PathList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PathListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.PathList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PathListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PathList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPathList(DXDraw.CustomGeometry openXmlElement, DMDraws.PathList? value)
@@ -197,7 +197,7 @@ public static class CustomGeometryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

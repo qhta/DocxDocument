@@ -15,7 +15,7 @@ public static class FilteredScatterSeriesConverter
   
   private static bool CmpScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.ScatterChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ScatterChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ScatterChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.ScatterChartSeries3? value)
@@ -52,7 +52,7 @@ public static class FilteredScatterSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class VbaSuppDataConverter
   
   private static bool CmpDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocEventsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.DocEvents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocEventsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.DocEvents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value)
@@ -41,7 +41,7 @@ public static class VbaSuppDataConverter
   
   private static bool CmpMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value, DiffList? diffs, string? objName)
   {
-    return DMXW.McdsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.Mcds>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.McdsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.Mcds>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value)
@@ -81,7 +81,7 @@ public static class VbaSuppDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

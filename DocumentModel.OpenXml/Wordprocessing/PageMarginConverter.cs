@@ -10,12 +10,14 @@ public static class PageMarginConverter
   /// </summary>
   private static Int32? GetTop(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Top?.Value;
+    return openXmlElement?.Top?.Value;
   }
   
   private static bool CmpTop(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Top?.Value == value;
+    if (openXmlElement?.Top?.Value == value) return true;
+    diffs?.Add(objName, "Top", openXmlElement?.Top?.Value, value);
+    return false;
   }
   
   private static void SetTop(DXW.PageMargin openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class PageMarginConverter
   /// </summary>
   private static UInt32? GetRight(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Right?.Value;
+    return openXmlElement?.Right?.Value;
   }
   
   private static bool CmpRight(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Right?.Value == value;
+    if (openXmlElement?.Right?.Value == value) return true;
+    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
+    return false;
   }
   
   private static void SetRight(DXW.PageMargin openXmlElement, UInt32? value)
@@ -46,12 +50,14 @@ public static class PageMarginConverter
   /// </summary>
   private static Int32? GetBottom(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Bottom?.Value;
+    return openXmlElement?.Bottom?.Value;
   }
   
   private static bool CmpBottom(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Bottom?.Value == value;
+    if (openXmlElement?.Bottom?.Value == value) return true;
+    diffs?.Add(objName, "Bottom", openXmlElement?.Bottom?.Value, value);
+    return false;
   }
   
   private static void SetBottom(DXW.PageMargin openXmlElement, Int32? value)
@@ -64,12 +70,14 @@ public static class PageMarginConverter
   /// </summary>
   private static UInt32? GetLeft(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Left?.Value;
+    return openXmlElement?.Left?.Value;
   }
   
   private static bool CmpLeft(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Left?.Value == value;
+    if (openXmlElement?.Left?.Value == value) return true;
+    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
+    return false;
   }
   
   private static void SetLeft(DXW.PageMargin openXmlElement, UInt32? value)
@@ -82,12 +90,14 @@ public static class PageMarginConverter
   /// </summary>
   private static UInt32? GetHeader(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Header?.Value;
+    return openXmlElement?.Header?.Value;
   }
   
   private static bool CmpHeader(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Header?.Value == value;
+    if (openXmlElement?.Header?.Value == value) return true;
+    diffs?.Add(objName, "Header", openXmlElement?.Header?.Value, value);
+    return false;
   }
   
   private static void SetHeader(DXW.PageMargin openXmlElement, UInt32? value)
@@ -100,12 +110,14 @@ public static class PageMarginConverter
   /// </summary>
   private static UInt32? GetFooter(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Footer?.Value;
+    return openXmlElement?.Footer?.Value;
   }
   
   private static bool CmpFooter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Footer?.Value == value;
+    if (openXmlElement?.Footer?.Value == value) return true;
+    diffs?.Add(objName, "Footer", openXmlElement?.Footer?.Value, value);
+    return false;
   }
   
   private static void SetFooter(DXW.PageMargin openXmlElement, UInt32? value)
@@ -118,12 +130,14 @@ public static class PageMarginConverter
   /// </summary>
   private static UInt32? GetGutter(DXW.PageMargin openXmlElement)
   {
-    return openXmlElement.Gutter?.Value;
+    return openXmlElement?.Gutter?.Value;
   }
   
   private static bool CmpGutter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Gutter?.Value == value;
+    if (openXmlElement?.Gutter?.Value == value) return true;
+    diffs?.Add(objName, "Gutter", openXmlElement?.Gutter?.Value, value);
+    return false;
   }
   
   private static void SetGutter(DXW.PageMargin openXmlElement, UInt32? value)
@@ -170,7 +184,7 @@ public static class PageMarginConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

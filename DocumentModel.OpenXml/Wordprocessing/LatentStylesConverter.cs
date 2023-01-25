@@ -31,12 +31,14 @@ public static class LatentStylesConverter
   /// </summary>
   private static Int32? GetDefaultUiPriority(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement.DefaultUiPriority?.Value;
+    return openXmlElement?.DefaultUiPriority?.Value;
   }
   
   private static bool CmpDefaultUiPriority(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DefaultUiPriority?.Value == value;
+    if (openXmlElement?.DefaultUiPriority?.Value == value) return true;
+    diffs?.Add(objName, "DefaultUiPriority", openXmlElement?.DefaultUiPriority?.Value, value);
+    return false;
   }
   
   private static void SetDefaultUiPriority(DXW.LatentStyles openXmlElement, Int32? value)
@@ -112,12 +114,14 @@ public static class LatentStylesConverter
   /// </summary>
   private static Int32? GetTotalCount(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement.Count?.Value;
+    return openXmlElement?.Count?.Value;
   }
   
   private static bool CmpTotalCount(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Count?.Value == value;
+    if (openXmlElement?.Count?.Value == value) return true;
+    diffs?.Add(objName, "Count", openXmlElement?.Count?.Value, value);
+    return false;
   }
   
   private static void SetTotalCount(DXW.LatentStyles openXmlElement, Int32? value)
@@ -146,7 +150,7 @@ public static class LatentStylesConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -161,7 +165,7 @@ public static class LatentStylesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -218,7 +222,7 @@ public static class LatentStylesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

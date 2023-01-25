@@ -15,7 +15,7 @@ public static class DocPartConverter
   
   private static bool CmpDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocPartPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value)
@@ -41,7 +41,7 @@ public static class DocPartConverter
   
   private static bool CmpDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocPartBodyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocPartBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocPartBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value)
@@ -81,7 +81,7 @@ public static class DocPartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

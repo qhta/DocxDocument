@@ -115,12 +115,14 @@ public static class EditBoxConverter
   /// </summary>
   private static Int64? GetMaxLength(DXO2010CustUI.EditBox openXmlElement)
   {
-    return openXmlElement.MaxLength?.Value;
+    return openXmlElement?.MaxLength?.Value;
   }
   
   private static bool CmpMaxLength(DXO2010CustUI.EditBox openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MaxLength?.Value == value;
+    if (openXmlElement?.MaxLength?.Value == value) return true;
+    diffs?.Add(objName, "MaxLength", openXmlElement?.MaxLength?.Value, value);
+    return false;
   }
   
   private static void SetMaxLength(DXO2010CustUI.EditBox openXmlElement, Int64? value)
@@ -764,7 +766,7 @@ public static class EditBoxConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

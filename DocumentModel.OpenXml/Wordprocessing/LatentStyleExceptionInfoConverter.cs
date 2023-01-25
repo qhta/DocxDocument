@@ -52,12 +52,14 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static Int32? GetUiPriority(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement.UiPriority?.Value;
+    return openXmlElement?.UiPriority?.Value;
   }
   
   private static bool CmpUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.UiPriority?.Value == value;
+    if (openXmlElement?.UiPriority?.Value == value) return true;
+    diffs?.Add(objName, "UiPriority", openXmlElement?.UiPriority?.Value, value);
+    return false;
   }
   
   private static void SetUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value)
@@ -164,7 +166,7 @@ public static class LatentStyleExceptionInfoConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

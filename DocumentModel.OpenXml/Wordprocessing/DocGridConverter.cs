@@ -28,12 +28,14 @@ public static class DocGridConverter
   /// </summary>
   private static Int32? GetLinePitch(DXW.DocGrid openXmlElement)
   {
-    return openXmlElement.LinePitch?.Value;
+    return openXmlElement?.LinePitch?.Value;
   }
   
   private static bool CmpLinePitch(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LinePitch?.Value == value;
+    if (openXmlElement?.LinePitch?.Value == value) return true;
+    diffs?.Add(objName, "LinePitch", openXmlElement?.LinePitch?.Value, value);
+    return false;
   }
   
   private static void SetLinePitch(DXW.DocGrid openXmlElement, Int32? value)
@@ -46,12 +48,14 @@ public static class DocGridConverter
   /// </summary>
   private static Int32? GetCharacterSpace(DXW.DocGrid openXmlElement)
   {
-    return openXmlElement.CharacterSpace?.Value;
+    return openXmlElement?.CharacterSpace?.Value;
   }
   
   private static bool CmpCharacterSpace(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CharacterSpace?.Value == value;
+    if (openXmlElement?.CharacterSpace?.Value == value) return true;
+    diffs?.Add(objName, "CharacterSpace", openXmlElement?.CharacterSpace?.Value, value);
+    return false;
   }
   
   private static void SetCharacterSpace(DXW.DocGrid openXmlElement, Int32? value)
@@ -86,7 +90,7 @@ public static class DocGridConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

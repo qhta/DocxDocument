@@ -12,7 +12,7 @@ public static class BackstageGroupsConverter
   
   private static bool CmpTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskFormGroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TaskFormGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TaskFormGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.TaskFormGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value)
@@ -35,7 +35,7 @@ public static class BackstageGroupsConverter
   
   private static bool CmpBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroup? value)
@@ -58,7 +58,7 @@ public static class BackstageGroupsConverter
   
   private static bool CmpTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.TaskGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskGroup? value)
@@ -101,7 +101,7 @@ public static class BackstageGroupsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

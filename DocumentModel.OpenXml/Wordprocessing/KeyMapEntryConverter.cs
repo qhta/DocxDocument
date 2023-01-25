@@ -10,17 +10,17 @@ public static class KeyMapEntryConverter
   /// </summary>
   private static UInt16? GetCharacterMapPrimary(DXOW.KeyMapEntry openXmlElement)
   {
-    if (openXmlElement.CharacterMapPrimary?.Value != null)
+    if (openXmlElement?.CharacterMapPrimary?.Value != null)
       return UInt16.Parse(openXmlElement.CharacterMapPrimary.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpCharacterMapPrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.CharacterMapPrimary?.Value != null)
+    if (openXmlElement?.CharacterMapPrimary?.Value != null)
       if (UInt16.Parse(openXmlElement.CharacterMapPrimary.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.CharacterMapPrimary?.Value == null && value == null) return true;
+    if (openXmlElement?.CharacterMapPrimary?.Value == null && value == null) return true;
     diffs?.Add(objName, "CharacterMapPrimary", openXmlElement?.CharacterMapPrimary?.Value, value?.ToString("x4"));
     return false;
   }
@@ -38,17 +38,17 @@ public static class KeyMapEntryConverter
   /// </summary>
   private static UInt16? GetCharacterMapSecondary(DXOW.KeyMapEntry openXmlElement)
   {
-    if (openXmlElement.CharacterMapSecondary?.Value != null)
+    if (openXmlElement?.CharacterMapSecondary?.Value != null)
       return UInt16.Parse(openXmlElement.CharacterMapSecondary.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpCharacterMapSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.CharacterMapSecondary?.Value != null)
+    if (openXmlElement?.CharacterMapSecondary?.Value != null)
       if (UInt16.Parse(openXmlElement.CharacterMapSecondary.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.CharacterMapSecondary?.Value == null && value == null) return true;
+    if (openXmlElement?.CharacterMapSecondary?.Value == null && value == null) return true;
     diffs?.Add(objName, "CharacterMapSecondary", openXmlElement?.CharacterMapSecondary?.Value, value?.ToString("x4"));
     return false;
   }
@@ -66,17 +66,17 @@ public static class KeyMapEntryConverter
   /// </summary>
   private static UInt16? GetKeyCodePrimary(DXOW.KeyMapEntry openXmlElement)
   {
-    if (openXmlElement.KeyCodePrimary?.Value != null)
+    if (openXmlElement?.KeyCodePrimary?.Value != null)
       return UInt16.Parse(openXmlElement.KeyCodePrimary.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpKeyCodePrimary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.KeyCodePrimary?.Value != null)
+    if (openXmlElement?.KeyCodePrimary?.Value != null)
       if (UInt16.Parse(openXmlElement.KeyCodePrimary.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.KeyCodePrimary?.Value == null && value == null) return true;
+    if (openXmlElement?.KeyCodePrimary?.Value == null && value == null) return true;
     diffs?.Add(objName, "KeyCodePrimary", openXmlElement?.KeyCodePrimary?.Value, value?.ToString("x4"));
     return false;
   }
@@ -94,17 +94,17 @@ public static class KeyMapEntryConverter
   /// </summary>
   private static UInt16? GetKeyCodeSecondary(DXOW.KeyMapEntry openXmlElement)
   {
-    if (openXmlElement.KeyCodeSecondary?.Value != null)
+    if (openXmlElement?.KeyCodeSecondary?.Value != null)
       return UInt16.Parse(openXmlElement.KeyCodeSecondary.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpKeyCodeSecondary(DXOW.KeyMapEntry openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.KeyCodeSecondary?.Value != null)
+    if (openXmlElement?.KeyCodeSecondary?.Value != null)
       if (UInt16.Parse(openXmlElement.KeyCodeSecondary.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.KeyCodeSecondary?.Value == null && value == null) return true;
+    if (openXmlElement?.KeyCodeSecondary?.Value == null && value == null) return true;
     diffs?.Add(objName, "KeyCodeSecondary", openXmlElement?.KeyCodeSecondary?.Value, value?.ToString("x4"));
     return false;
   }
@@ -148,7 +148,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpFixedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.FixedCommandKeyboardCustomization? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FixedCommandKeyboardCustomizationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.FixedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FixedCommandKeyboardCustomizationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.FixedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFixedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.FixedCommandKeyboardCustomization? value)
@@ -174,7 +174,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.MacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.MacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value)
@@ -200,7 +200,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpAllocatedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.AcceleratorKeymapType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.AcceleratorKeymapTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.AllocatedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.AcceleratorKeymapTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.AllocatedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAllocatedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.AcceleratorKeymapType? value)
@@ -226,7 +226,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpWllMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOW.WllMacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.WllMacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWllMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value)
@@ -252,7 +252,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpCharacterInsertion(DXOW.KeyMapEntry openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement?.GetFirstChild<DXOW.CharacterInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXOW.CharacterInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCharacterInsertion(DXOW.KeyMapEntry openXmlElement, Byte[]? value)
@@ -316,7 +316,7 @@ public static class KeyMapEntryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

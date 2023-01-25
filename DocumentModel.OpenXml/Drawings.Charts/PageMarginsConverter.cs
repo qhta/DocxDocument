@@ -10,12 +10,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetLeft(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Left?.Value;
+    return openXmlElement?.Left?.Value;
   }
   
   private static bool CmpLeft(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Left?.Value == value;
+    if (openXmlElement?.Left?.Value == value) return true;
+    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
+    return false;
   }
   
   private static void SetLeft(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -28,12 +30,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetRight(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Right?.Value;
+    return openXmlElement?.Right?.Value;
   }
   
   private static bool CmpRight(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Right?.Value == value;
+    if (openXmlElement?.Right?.Value == value) return true;
+    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
+    return false;
   }
   
   private static void SetRight(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -46,12 +50,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetTop(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Top?.Value;
+    return openXmlElement?.Top?.Value;
   }
   
   private static bool CmpTop(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Top?.Value == value;
+    if (openXmlElement?.Top?.Value == value) return true;
+    diffs?.Add(objName, "Top", openXmlElement?.Top?.Value, value);
+    return false;
   }
   
   private static void SetTop(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -64,12 +70,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetBottom(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Bottom?.Value;
+    return openXmlElement?.Bottom?.Value;
   }
   
   private static bool CmpBottom(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Bottom?.Value == value;
+    if (openXmlElement?.Bottom?.Value == value) return true;
+    diffs?.Add(objName, "Bottom", openXmlElement?.Bottom?.Value, value);
+    return false;
   }
   
   private static void SetBottom(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -82,12 +90,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetHeader(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Header?.Value;
+    return openXmlElement?.Header?.Value;
   }
   
   private static bool CmpHeader(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Header?.Value == value;
+    if (openXmlElement?.Header?.Value == value) return true;
+    diffs?.Add(objName, "Header", openXmlElement?.Header?.Value, value);
+    return false;
   }
   
   private static void SetHeader(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -100,12 +110,14 @@ public static class PageMarginsConverter
   /// </summary>
   private static Double? GetFooter(DXDrawCharts.PageMargins openXmlElement)
   {
-    return openXmlElement.Footer?.Value;
+    return openXmlElement?.Footer?.Value;
   }
   
   private static bool CmpFooter(DXDrawCharts.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Footer?.Value == value;
+    if (openXmlElement?.Footer?.Value == value) return true;
+    diffs?.Add(objName, "Footer", openXmlElement?.Footer?.Value, value);
+    return false;
   }
   
   private static void SetFooter(DXDrawCharts.PageMargins openXmlElement, Double? value)
@@ -149,7 +161,7 @@ public static class PageMarginsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

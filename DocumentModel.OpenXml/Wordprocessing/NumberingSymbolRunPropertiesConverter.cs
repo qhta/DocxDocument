@@ -15,7 +15,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpRunFonts(DXW.NumberingSymbolRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunFonts(DXW.NumberingSymbolRunProperties openXmlElement, DMW.RunFonts? value)
@@ -489,7 +489,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpColor(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColor(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Color? value)
@@ -515,7 +515,10 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpSpacing(DXW.NumberingSymbolRunProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Spacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.Spacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetSpacing(DXW.NumberingSymbolRunProperties openXmlElement, Int32? value)
@@ -540,7 +543,10 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpCharacterScale(DXW.NumberingSymbolRunProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CharacterScale>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.CharacterScale", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetCharacterScale(DXW.NumberingSymbolRunProperties openXmlElement, Int64? value)
@@ -565,7 +571,10 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpKern(DXW.NumberingSymbolRunProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Kern>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.Kern", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetKern(DXW.NumberingSymbolRunProperties openXmlElement, UInt32? value)
@@ -665,7 +674,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpUnderline(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUnderline(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Underline? value)
@@ -717,7 +726,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpBorder(DXW.NumberingSymbolRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorder(DXW.NumberingSymbolRunProperties openXmlElement, DMW.BorderType? value)
@@ -743,7 +752,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpShading(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Shading? value)
@@ -769,7 +778,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpFitText(DXW.NumberingSymbolRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FitTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFitText(DXW.NumberingSymbolRunProperties openXmlElement, DMW.FitText? value)
@@ -903,7 +912,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.LanguageType? value)
@@ -929,7 +938,7 @@ public static class NumberingSymbolRunPropertiesConverter
   
   private static bool CmpEastAsianLayout(DXW.NumberingSymbolRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEastAsianLayout(DXW.NumberingSymbolRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -1099,7 +1108,7 @@ public static class NumberingSymbolRunPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

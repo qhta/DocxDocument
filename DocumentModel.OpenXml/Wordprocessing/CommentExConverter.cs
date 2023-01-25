@@ -10,17 +10,17 @@ public static class CommentExConverter
   /// </summary>
   private static UInt32? GetParaId(DXO2013W.CommentEx openXmlElement)
   {
-    if (openXmlElement.ParaId?.Value != null)
+    if (openXmlElement?.ParaId?.Value != null)
       return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.ParaId?.Value != null)
+    if (openXmlElement?.ParaId?.Value != null)
       if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.ParaId?.Value == null && value == null) return true;
+    if (openXmlElement?.ParaId?.Value == null && value == null) return true;
     diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
     return false;
   }
@@ -38,17 +38,17 @@ public static class CommentExConverter
   /// </summary>
   private static UInt32? GetParaIdParent(DXO2013W.CommentEx openXmlElement)
   {
-    if (openXmlElement.ParaIdParent?.Value != null)
+    if (openXmlElement?.ParaIdParent?.Value != null)
       return UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.ParaIdParent?.Value != null)
+    if (openXmlElement?.ParaIdParent?.Value != null)
       if (UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.ParaIdParent?.Value == null && value == null) return true;
+    if (openXmlElement?.ParaIdParent?.Value == null && value == null) return true;
     diffs?.Add(objName, "ParaIdParent", openXmlElement?.ParaIdParent?.Value, value?.ToString("x8"));
     return false;
   }
@@ -109,7 +109,7 @@ public static class CommentExConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

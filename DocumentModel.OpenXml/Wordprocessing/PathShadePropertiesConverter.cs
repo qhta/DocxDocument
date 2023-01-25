@@ -33,7 +33,7 @@ public static class PathShadePropertiesConverter
   
   private static bool CmpFillToRectangle(DXO2010W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillToRectangle(DXO2010W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value)
@@ -73,7 +73,7 @@ public static class PathShadePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

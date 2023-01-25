@@ -10,12 +10,14 @@ public static class NumericPointConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.NumericPoint openXmlElement)
   {
-    return openXmlElement.Index?.Value;
+    return openXmlElement?.Index?.Value;
   }
   
   private static bool CmpIndex(DXDrawCharts.NumericPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Index?.Value == value;
+    if (openXmlElement?.Index?.Value == value) return true;
+    diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawCharts.NumericPoint openXmlElement, UInt32? value)
@@ -96,7 +98,7 @@ public static class NumericPointConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

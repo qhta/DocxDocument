@@ -28,12 +28,14 @@ public static class WrapThroughConverter
   /// </summary>
   private static UInt32? GetDistanceFromLeft(DXDrawW.WrapThrough openXmlElement)
   {
-    return openXmlElement.DistanceFromLeft?.Value;
+    return openXmlElement?.DistanceFromLeft?.Value;
   }
   
   private static bool CmpDistanceFromLeft(DXDrawW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DistanceFromLeft?.Value == value;
+    if (openXmlElement?.DistanceFromLeft?.Value == value) return true;
+    diffs?.Add(objName, "DistanceFromLeft", openXmlElement?.DistanceFromLeft?.Value, value);
+    return false;
   }
   
   private static void SetDistanceFromLeft(DXDrawW.WrapThrough openXmlElement, UInt32? value)
@@ -46,12 +48,14 @@ public static class WrapThroughConverter
   /// </summary>
   private static UInt32? GetDistanceFromRight(DXDrawW.WrapThrough openXmlElement)
   {
-    return openXmlElement.DistanceFromRight?.Value;
+    return openXmlElement?.DistanceFromRight?.Value;
   }
   
   private static bool CmpDistanceFromRight(DXDrawW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DistanceFromRight?.Value == value;
+    if (openXmlElement?.DistanceFromRight?.Value == value) return true;
+    diffs?.Add(objName, "DistanceFromRight", openXmlElement?.DistanceFromRight?.Value, value);
+    return false;
   }
   
   private static void SetDistanceFromRight(DXDrawW.WrapThrough openXmlElement, UInt32? value)
@@ -69,7 +73,7 @@ public static class WrapThroughConverter
   
   private static bool CmpWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.WrapPolygonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawW.WrapPolygon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.WrapPolygon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value)
@@ -115,7 +119,7 @@ public static class WrapThroughConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

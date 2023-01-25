@@ -10,17 +10,17 @@ public static class CommentExtensibleConverter
   /// </summary>
   private static UInt32? GetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
-    if (openXmlElement.DurableId?.Value != null)
+    if (openXmlElement?.DurableId?.Value != null)
       return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.DurableId?.Value != null)
+    if (openXmlElement?.DurableId?.Value != null)
       if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.DurableId?.Value == null && value == null) return true;
+    if (openXmlElement?.DurableId?.Value == null && value == null) return true;
     diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
     return false;
   }
@@ -38,12 +38,14 @@ public static class CommentExtensibleConverter
   /// </summary>
   private static DateTime? GetDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
-    return openXmlElement.DateUtc?.Value;
+    return openXmlElement?.DateUtc?.Value;
   }
   
   private static bool CmpDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DateUtc?.Value == value;
+    if (openXmlElement?.DateUtc?.Value == value) return true;
+    diffs?.Add(objName, "DateUtc", openXmlElement?.DateUtc?.Value, value);
+    return false;
   }
   
   private static void SetDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement, DateTime? value)
@@ -82,7 +84,7 @@ public static class CommentExtensibleConverter
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value)
@@ -128,7 +130,7 @@ public static class CommentExtensibleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

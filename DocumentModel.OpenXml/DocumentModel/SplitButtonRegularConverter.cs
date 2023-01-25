@@ -348,7 +348,7 @@ public static class SplitButtonRegularConverter
   
   private static bool CmpVisibleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.VisibleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleButton? value)
@@ -371,7 +371,7 @@ public static class SplitButtonRegularConverter
   
   private static bool CmpVisibleToggleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.VisibleToggleButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVisibleToggleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleToggleButton? value)
@@ -394,7 +394,7 @@ public static class SplitButtonRegularConverter
   
   private static bool CmpMenuRegular(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMenuRegular(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.MenuRegular? value)
@@ -485,7 +485,7 @@ public static class SplitButtonRegularConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

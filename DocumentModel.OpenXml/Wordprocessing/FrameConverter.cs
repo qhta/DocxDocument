@@ -15,7 +15,10 @@ public static class FrameConverter
   
   private static bool CmpFrameSize(DXW.Frame openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "FrameSize", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetFrameSize(DXW.Frame openXmlElement, String? value)
@@ -65,7 +68,7 @@ public static class FrameConverter
   
   private static bool CmpSourceFileReference(DXW.Frame openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSourceFileReference(DXW.Frame openXmlElement, DMW.RelationshipType? value)
@@ -91,7 +94,10 @@ public static class FrameConverter
   
   private static bool CmpMarginWidth(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.MarginWidth>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MarginWidth>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.MarginWidth", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMarginWidth(DXW.Frame openXmlElement, UInt32? value)
@@ -116,7 +122,10 @@ public static class FrameConverter
   
   private static bool CmpMarginHeight(DXW.Frame openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.MarginHeight>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MarginHeight>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.MarginHeight", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMarginHeight(DXW.Frame openXmlElement, UInt32? value)
@@ -261,7 +270,7 @@ public static class FrameConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

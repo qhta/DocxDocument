@@ -12,7 +12,7 @@ public static class AutoCaptionsConverter
   
   private static bool CmpAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value, DiffList? diffs, string? objName)
   {
-    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value)
@@ -49,7 +49,7 @@ public static class AutoCaptionsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

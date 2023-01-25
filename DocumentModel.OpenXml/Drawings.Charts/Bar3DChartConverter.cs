@@ -106,7 +106,7 @@ public static class Bar3DChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -121,7 +121,7 @@ public static class Bar3DChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -146,7 +146,7 @@ public static class Bar3DChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -169,7 +169,10 @@ public static class Bar3DChartConverter
   
   private static bool CmpGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.GapWidth", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
@@ -191,7 +194,10 @@ public static class Bar3DChartConverter
   
   private static bool CmpGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.GapDepth", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
@@ -250,7 +256,7 @@ public static class Bar3DChartConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -265,7 +271,7 @@ public static class Bar3DChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -290,7 +296,7 @@ public static class Bar3DChartConverter
   
   private static bool CmpBar3DChartExtensionList(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.Bar3DChartExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Bar3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.Bar3DChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Bar3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBar3DChartExtensionList(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChartExtensionList? value)
@@ -354,7 +360,7 @@ public static class Bar3DChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -31,12 +31,14 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static DateTime? GetDate(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.MoveBookmarkType openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.MoveBookmarkType openXmlElement, DateTime? value)
@@ -70,12 +72,14 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static Int32? GetColumnFirst(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement.ColumnFirst?.Value;
+    return openXmlElement?.ColumnFirst?.Value;
   }
   
   private static bool CmpColumnFirst(DXW.MoveBookmarkType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnFirst?.Value == value;
+    if (openXmlElement?.ColumnFirst?.Value == value) return true;
+    diffs?.Add(objName, "ColumnFirst", openXmlElement?.ColumnFirst?.Value, value);
+    return false;
   }
   
   private static void SetColumnFirst(DXW.MoveBookmarkType openXmlElement, Int32? value)
@@ -88,12 +92,14 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static Int32? GetColumnLast(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement.ColumnLast?.Value;
+    return openXmlElement?.ColumnLast?.Value;
   }
   
   private static bool CmpColumnLast(DXW.MoveBookmarkType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.ColumnLast?.Value == value;
+    if (openXmlElement?.ColumnLast?.Value == value) return true;
+    diffs?.Add(objName, "ColumnLast", openXmlElement?.ColumnLast?.Value, value);
+    return false;
   }
   
   private static void SetColumnLast(DXW.MoveBookmarkType openXmlElement, Int32? value)
@@ -179,7 +185,7 @@ public static class MoveBookmarkTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

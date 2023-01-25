@@ -10,12 +10,14 @@ public static class TileConverter
   /// </summary>
   private static Int64? GetHorizontalOffset(DXDraw.Tile openXmlElement)
   {
-    return openXmlElement.HorizontalOffset?.Value;
+    return openXmlElement?.HorizontalOffset?.Value;
   }
   
   private static bool CmpHorizontalOffset(DXDraw.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalOffset?.Value == value;
+    if (openXmlElement?.HorizontalOffset?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalOffset", openXmlElement?.HorizontalOffset?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalOffset(DXDraw.Tile openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class TileConverter
   /// </summary>
   private static Int64? GetVerticalOffset(DXDraw.Tile openXmlElement)
   {
-    return openXmlElement.VerticalOffset?.Value;
+    return openXmlElement?.VerticalOffset?.Value;
   }
   
   private static bool CmpVerticalOffset(DXDraw.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalOffset?.Value == value;
+    if (openXmlElement?.VerticalOffset?.Value == value) return true;
+    diffs?.Add(objName, "VerticalOffset", openXmlElement?.VerticalOffset?.Value, value);
+    return false;
   }
   
   private static void SetVerticalOffset(DXDraw.Tile openXmlElement, Int64? value)
@@ -46,12 +50,14 @@ public static class TileConverter
   /// </summary>
   private static Int32? GetHorizontalRatio(DXDraw.Tile openXmlElement)
   {
-    return openXmlElement.HorizontalRatio?.Value;
+    return openXmlElement?.HorizontalRatio?.Value;
   }
   
   private static bool CmpHorizontalRatio(DXDraw.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalRatio?.Value == value;
+    if (openXmlElement?.HorizontalRatio?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalRatio(DXDraw.Tile openXmlElement, Int32? value)
@@ -64,12 +70,14 @@ public static class TileConverter
   /// </summary>
   private static Int32? GetVerticalRatio(DXDraw.Tile openXmlElement)
   {
-    return openXmlElement.VerticalRatio?.Value;
+    return openXmlElement?.VerticalRatio?.Value;
   }
   
   private static bool CmpVerticalRatio(DXDraw.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalRatio?.Value == value;
+    if (openXmlElement?.VerticalRatio?.Value == value) return true;
+    diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
+    return false;
   }
   
   private static void SetVerticalRatio(DXDraw.Tile openXmlElement, Int32? value)
@@ -149,7 +157,7 @@ public static class TileConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

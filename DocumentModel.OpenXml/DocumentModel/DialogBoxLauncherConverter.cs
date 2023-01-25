@@ -15,7 +15,7 @@ public static class DialogBoxLauncherConverter
   
   private static bool CmpButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value)
@@ -52,7 +52,7 @@ public static class DialogBoxLauncherConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class BackgroundRemovalConverter
   /// </summary>
   private static Int32? GetMarqueeTop(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
-    return openXmlElement.MarqueeTop?.Value;
+    return openXmlElement?.MarqueeTop?.Value;
   }
   
   private static bool CmpMarqueeTop(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MarqueeTop?.Value == value;
+    if (openXmlElement?.MarqueeTop?.Value == value) return true;
+    diffs?.Add(objName, "MarqueeTop", openXmlElement?.MarqueeTop?.Value, value);
+    return false;
   }
   
   private static void SetMarqueeTop(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class BackgroundRemovalConverter
   /// </summary>
   private static Int32? GetMarqueeBottom(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
-    return openXmlElement.MarqueeBottom?.Value;
+    return openXmlElement?.MarqueeBottom?.Value;
   }
   
   private static bool CmpMarqueeBottom(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MarqueeBottom?.Value == value;
+    if (openXmlElement?.MarqueeBottom?.Value == value) return true;
+    diffs?.Add(objName, "MarqueeBottom", openXmlElement?.MarqueeBottom?.Value, value);
+    return false;
   }
   
   private static void SetMarqueeBottom(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class BackgroundRemovalConverter
   /// </summary>
   private static Int32? GetMarqueeLeft(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
-    return openXmlElement.MarqueeLeft?.Value;
+    return openXmlElement?.MarqueeLeft?.Value;
   }
   
   private static bool CmpMarqueeLeft(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MarqueeLeft?.Value == value;
+    if (openXmlElement?.MarqueeLeft?.Value == value) return true;
+    diffs?.Add(objName, "MarqueeLeft", openXmlElement?.MarqueeLeft?.Value, value);
+    return false;
   }
   
   private static void SetMarqueeLeft(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value)
@@ -64,12 +70,14 @@ public static class BackgroundRemovalConverter
   /// </summary>
   private static Int32? GetMarqueeRight(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
-    return openXmlElement.MarqueeRight?.Value;
+    return openXmlElement?.MarqueeRight?.Value;
   }
   
   private static bool CmpMarqueeRight(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MarqueeRight?.Value == value;
+    if (openXmlElement?.MarqueeRight?.Value == value) return true;
+    diffs?.Add(objName, "MarqueeRight", openXmlElement?.MarqueeRight?.Value, value);
+    return false;
   }
   
   private static void SetMarqueeRight(DXO2010Draw.BackgroundRemoval openXmlElement, Int32? value)
@@ -98,7 +106,7 @@ public static class BackgroundRemovalConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -113,7 +121,7 @@ public static class BackgroundRemovalConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -152,7 +160,7 @@ public static class BackgroundRemovalConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -167,7 +175,7 @@ public static class BackgroundRemovalConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -221,7 +229,7 @@ public static class BackgroundRemovalConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

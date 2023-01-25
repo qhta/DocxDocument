@@ -54,7 +54,7 @@ public static class BackstageConverter
   
   private static bool CmpBackstageTab(DXO2010CustUI.Backstage openXmlElement, DM.BackstageTab? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageTabConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageTab>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageTabConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageTab>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageTab(DXO2010CustUI.Backstage openXmlElement, DM.BackstageTab? value)
@@ -77,7 +77,7 @@ public static class BackstageConverter
   
   private static bool CmpBackstageFastCommandButton(DXO2010CustUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageFastCommandButtonConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageFastCommandButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageFastCommandButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageFastCommandButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackstageFastCommandButton(DXO2010CustUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value)
@@ -123,7 +123,7 @@ public static class BackstageConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class ChartConverter
   /// </summary>
   private static Int32? GetSeriesIndex(DXDraw.Chart openXmlElement)
   {
-    return openXmlElement.SeriesIndex?.Value;
+    return openXmlElement?.SeriesIndex?.Value;
   }
   
   private static bool CmpSeriesIndex(DXDraw.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SeriesIndex?.Value == value;
+    if (openXmlElement?.SeriesIndex?.Value == value) return true;
+    diffs?.Add(objName, "SeriesIndex", openXmlElement?.SeriesIndex?.Value, value);
+    return false;
   }
   
   private static void SetSeriesIndex(DXDraw.Chart openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ChartConverter
   /// </summary>
   private static Int32? GetCategoryIndex(DXDraw.Chart openXmlElement)
   {
-    return openXmlElement.CategoryIndex?.Value;
+    return openXmlElement?.CategoryIndex?.Value;
   }
   
   private static bool CmpCategoryIndex(DXDraw.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CategoryIndex?.Value == value;
+    if (openXmlElement?.CategoryIndex?.Value == value) return true;
+    diffs?.Add(objName, "CategoryIndex", openXmlElement?.CategoryIndex?.Value, value);
+    return false;
   }
   
   private static void SetCategoryIndex(DXDraw.Chart openXmlElement, Int32? value)
@@ -86,7 +90,7 @@ public static class ChartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

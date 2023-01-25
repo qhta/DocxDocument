@@ -36,7 +36,7 @@ public static class TaskConverter
   
   private static bool CmpTaskAnchor(DXO2021DocTasks.Task openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskAnchor(DXO2021DocTasks.Task openXmlElement, DM.TaskAnchor? value)
@@ -62,7 +62,7 @@ public static class TaskConverter
   
   private static bool CmpTaskHistory(DXO2021DocTasks.Task openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskHistoryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.TaskHistoryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskHistory>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTaskHistory(DXO2021DocTasks.Task openXmlElement, DM.TaskHistory? value)
@@ -88,7 +88,7 @@ public static class TaskConverter
   
   private static bool CmpExtensionList(DXO2021DocTasks.Task openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2021DocTasks.Task openXmlElement, DM.ExtensionList? value)
@@ -134,7 +134,7 @@ public static class TaskConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class TaskPriorityEventInfoConverter
   /// </summary>
   private static Int32? GetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement)
   {
-    return openXmlElement.Value?.Value;
+    return openXmlElement?.Value?.Value;
   }
   
   private static bool CmpValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value)
@@ -44,7 +46,7 @@ public static class TaskPriorityEventInfoConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

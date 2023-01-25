@@ -15,7 +15,7 @@ public static class SuperscriptConverter
   
   private static bool CmpSuperscriptProperties(DXMath.Superscript openXmlElement, DMMath.SuperscriptProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperscriptPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperscriptPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SuperscriptProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperscriptProperties(DXMath.Superscript openXmlElement, DMMath.SuperscriptProperties? value)
@@ -41,7 +41,7 @@ public static class SuperscriptConverter
   
   private static bool CmpBase(DXMath.Superscript openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Superscript openXmlElement, DMMath.Base? value)
@@ -67,7 +67,7 @@ public static class SuperscriptConverter
   
   private static bool CmpSuperArgument(DXMath.Superscript openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperArgument(DXMath.Superscript openXmlElement, DMMath.SuperArgument? value)
@@ -110,7 +110,7 @@ public static class SuperscriptConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

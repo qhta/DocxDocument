@@ -10,12 +10,14 @@ public static class RotationConverter
   /// </summary>
   private static Int32? GetLatitude(DXDraw.Rotation openXmlElement)
   {
-    return openXmlElement.Latitude?.Value;
+    return openXmlElement?.Latitude?.Value;
   }
   
   private static bool CmpLatitude(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Latitude?.Value == value;
+    if (openXmlElement?.Latitude?.Value == value) return true;
+    diffs?.Add(objName, "Latitude", openXmlElement?.Latitude?.Value, value);
+    return false;
   }
   
   private static void SetLatitude(DXDraw.Rotation openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class RotationConverter
   /// </summary>
   private static Int32? GetLongitude(DXDraw.Rotation openXmlElement)
   {
-    return openXmlElement.Longitude?.Value;
+    return openXmlElement?.Longitude?.Value;
   }
   
   private static bool CmpLongitude(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Longitude?.Value == value;
+    if (openXmlElement?.Longitude?.Value == value) return true;
+    diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
+    return false;
   }
   
   private static void SetLongitude(DXDraw.Rotation openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class RotationConverter
   /// </summary>
   private static Int32? GetRevolution(DXDraw.Rotation openXmlElement)
   {
-    return openXmlElement.Revolution?.Value;
+    return openXmlElement?.Revolution?.Value;
   }
   
   private static bool CmpRevolution(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Revolution?.Value == value;
+    if (openXmlElement?.Revolution?.Value == value) return true;
+    diffs?.Add(objName, "Revolution", openXmlElement?.Revolution?.Value, value);
+    return false;
   }
   
   private static void SetRevolution(DXDraw.Rotation openXmlElement, Int32? value)
@@ -86,7 +92,7 @@ public static class RotationConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

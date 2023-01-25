@@ -127,12 +127,14 @@ public static class ExtrusionConverter
   /// </summary>
   private static Single? GetSkewAngle(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement.SkewAngle?.Value;
+    return openXmlElement?.SkewAngle?.Value;
   }
   
   private static bool CmpSkewAngle(DXVmlO.Extrusion openXmlElement, Single? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SkewAngle?.Value == value;
+    if (openXmlElement?.SkewAngle?.Value == value) return true;
+    diffs?.Add(objName, "SkewAngle", openXmlElement?.SkewAngle?.Value, value);
+    return false;
   }
   
   private static void SetSkewAngle(DXVmlO.Extrusion openXmlElement, Single? value)
@@ -229,12 +231,14 @@ public static class ExtrusionConverter
   /// </summary>
   private static Single? GetOrientationAngle(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement.OrientationAngle?.Value;
+    return openXmlElement?.OrientationAngle?.Value;
   }
   
   private static bool CmpOrientationAngle(DXVmlO.Extrusion openXmlElement, Single? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.OrientationAngle?.Value == value;
+    if (openXmlElement?.OrientationAngle?.Value == value) return true;
+    diffs?.Add(objName, "OrientationAngle", openXmlElement?.OrientationAngle?.Value, value);
+    return false;
   }
   
   private static void SetOrientationAngle(DXVmlO.Extrusion openXmlElement, Single? value)
@@ -352,12 +356,14 @@ public static class ExtrusionConverter
   /// </summary>
   private static Single? GetShininess(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement.Shininess?.Value;
+    return openXmlElement?.Shininess?.Value;
   }
   
   private static bool CmpShininess(DXVmlO.Extrusion openXmlElement, Single? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Shininess?.Value == value;
+    if (openXmlElement?.Shininess?.Value == value) return true;
+    diffs?.Add(objName, "Shininess", openXmlElement?.Shininess?.Value, value);
+    return false;
   }
   
   private static void SetShininess(DXVmlO.Extrusion openXmlElement, Single? value)
@@ -749,7 +755,7 @@ public static class ExtrusionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

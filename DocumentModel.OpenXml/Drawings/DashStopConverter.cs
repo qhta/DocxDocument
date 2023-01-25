@@ -10,12 +10,14 @@ public static class DashStopConverter
   /// </summary>
   private static Int32? GetDashLength(DXDraw.DashStop openXmlElement)
   {
-    return openXmlElement.DashLength?.Value;
+    return openXmlElement?.DashLength?.Value;
   }
   
   private static bool CmpDashLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DashLength?.Value == value;
+    if (openXmlElement?.DashLength?.Value == value) return true;
+    diffs?.Add(objName, "DashLength", openXmlElement?.DashLength?.Value, value);
+    return false;
   }
   
   private static void SetDashLength(DXDraw.DashStop openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class DashStopConverter
   /// </summary>
   private static Int32? GetSpaceLength(DXDraw.DashStop openXmlElement)
   {
-    return openXmlElement.SpaceLength?.Value;
+    return openXmlElement?.SpaceLength?.Value;
   }
   
   private static bool CmpSpaceLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SpaceLength?.Value == value;
+    if (openXmlElement?.SpaceLength?.Value == value) return true;
+    diffs?.Add(objName, "SpaceLength", openXmlElement?.SpaceLength?.Value, value);
+    return false;
   }
   
   private static void SetSpaceLength(DXDraw.DashStop openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class DashStopConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

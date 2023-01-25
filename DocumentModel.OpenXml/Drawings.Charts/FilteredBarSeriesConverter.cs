@@ -15,7 +15,7 @@ public static class FilteredBarSeriesConverter
   
   private static bool CmpBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.BarChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BarChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.BarChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.BarChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.BarChartSeries3? value)
@@ -52,7 +52,7 @@ public static class FilteredBarSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

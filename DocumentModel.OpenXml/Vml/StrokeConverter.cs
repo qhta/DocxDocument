@@ -570,7 +570,7 @@ public static class StrokeConverter
   
   private static bool CmpLeftStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.LeftStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.LeftStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLeftStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value)
@@ -596,7 +596,7 @@ public static class StrokeConverter
   
   private static bool CmpTopStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.TopStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.TopStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTopStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value)
@@ -622,7 +622,7 @@ public static class StrokeConverter
   
   private static bool CmpRightStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.RightStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.RightStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRightStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value)
@@ -648,7 +648,7 @@ public static class StrokeConverter
   
   private static bool CmpBottomStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.BottomStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.BottomStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBottomStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value)
@@ -674,7 +674,7 @@ public static class StrokeConverter
   
   private static bool CmpColumnStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColumnStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeChildTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ColumnStroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColumnStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value)
@@ -807,7 +807,7 @@ public static class StrokeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

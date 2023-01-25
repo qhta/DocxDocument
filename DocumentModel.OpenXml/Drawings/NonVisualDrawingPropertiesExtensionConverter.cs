@@ -33,7 +33,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpCompatExtension(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CompatExtension? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CompatExtensionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.CompatExtension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CompatExtensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.CompatExtension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCompatExtension(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CompatExtension? value)
@@ -56,7 +56,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpBackgroundProperties(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.BackgroundProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.BackgroundProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Draw.BackgroundProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBackgroundProperties(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.BackgroundProperties? value)
@@ -79,7 +79,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpCreationId(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CreationId? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CreationIdConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016Draw.CreationId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CreationIdConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016Draw.CreationId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCreationId(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CreationId? value)
@@ -102,7 +102,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpPredecessorDrawingElementReference(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.PredecessorDrawingElementReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PredecessorDrawingElementReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016Draw.PredecessorDrawingElementReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PredecessorDrawingElementReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016Draw.PredecessorDrawingElementReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPredecessorDrawingElementReference(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.PredecessorDrawingElementReference? value)
@@ -150,7 +150,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpClassificationOutcome(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.ClassificationOutcome? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ClassificationOutcomeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2021DrawDocCls.ClassificationOutcome>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ClassificationOutcomeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawDocCls.ClassificationOutcome>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetClassificationOutcome(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.ClassificationOutcome? value)
@@ -173,7 +173,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpScriptLink(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDrawsOScptLnk.ScriptLink? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOScptLnk.ScriptLinkConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.ScriptLink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsOScptLnk.ScriptLinkConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021ScptLnk.ScriptLink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetScriptLink(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDrawsOScptLnk.ScriptLink? value)
@@ -231,7 +231,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static Int32? GetLeftMargin(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return openXmlElement.LeftMargin?.Value;
+    return openXmlElement?.LeftMargin?.Value;
   }
   
   private static bool CmpLeftMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LeftMargin?.Value == value;
+    if (openXmlElement?.LeftMargin?.Value == value) return true;
+    diffs?.Add(objName, "LeftMargin", openXmlElement?.LeftMargin?.Value, value);
+    return false;
   }
   
   private static void SetLeftMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static Int32? GetRightMargin(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return openXmlElement.RightMargin?.Value;
+    return openXmlElement?.RightMargin?.Value;
   }
   
   private static bool CmpRightMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.RightMargin?.Value == value;
+    if (openXmlElement?.RightMargin?.Value == value) return true;
+    diffs?.Add(objName, "RightMargin", openXmlElement?.RightMargin?.Value, value);
+    return false;
   }
   
   private static void SetRightMargin(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static Int32? GetLevel(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return openXmlElement.Level?.Value;
+    return openXmlElement?.Level?.Value;
   }
   
   private static bool CmpLevel(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Level?.Value == value;
+    if (openXmlElement?.Level?.Value == value) return true;
+    diffs?.Add(objName, "Level", openXmlElement?.Level?.Value, value);
+    return false;
   }
   
   private static void SetLevel(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
@@ -64,12 +70,14 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static Int32? GetIndent(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return openXmlElement.Indent?.Value;
+    return openXmlElement?.Indent?.Value;
   }
   
   private static bool CmpIndent(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Indent?.Value == value;
+    if (openXmlElement?.Indent?.Value == value) return true;
+    diffs?.Add(objName, "Indent", openXmlElement?.Indent?.Value, value);
+    return false;
   }
   
   private static void SetIndent(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
@@ -100,12 +108,14 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static Int32? GetDefaultTabSize(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return openXmlElement.DefaultTabSize?.Value;
+    return openXmlElement?.DefaultTabSize?.Value;
   }
   
   private static bool CmpDefaultTabSize(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.DefaultTabSize?.Value == value;
+    if (openXmlElement?.DefaultTabSize?.Value == value) return true;
+    diffs?.Add(objName, "DefaultTabSize", openXmlElement?.DefaultTabSize?.Value, value);
+    return false;
   }
   
   private static void SetDefaultTabSize(DXDraw.TextParagraphPropertiesType openXmlElement, Int32? value)
@@ -225,7 +235,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value)
@@ -251,7 +261,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value)
@@ -277,7 +287,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value)
@@ -353,7 +363,7 @@ public static class TextParagraphPropertiesTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

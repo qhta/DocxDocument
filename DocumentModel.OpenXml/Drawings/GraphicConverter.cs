@@ -15,7 +15,7 @@ public static class GraphicConverter
   
   private static bool CmpGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GraphicDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GraphicData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value)
@@ -52,7 +52,7 @@ public static class GraphicConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

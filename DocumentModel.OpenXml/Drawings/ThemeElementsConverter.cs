@@ -15,7 +15,7 @@ public static class ThemeElementsConverter
   
   private static bool CmpColorScheme(DXDraw.ThemeElements openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorScheme(DXDraw.ThemeElements openXmlElement, DMDraws.ColorScheme? value)
@@ -41,7 +41,7 @@ public static class ThemeElementsConverter
   
   private static bool CmpFontScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FontScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FontSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FontScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FontSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FontScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFontScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FontScheme? value)
@@ -67,7 +67,7 @@ public static class ThemeElementsConverter
   
   private static bool CmpFormatScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FormatScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FormatSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FormatScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FormatSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FormatScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFormatScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FormatScheme? value)
@@ -93,7 +93,7 @@ public static class ThemeElementsConverter
   
   private static bool CmpExtensionList(DXDraw.ThemeElements openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.ThemeElements openXmlElement, DMDraws.ExtensionList? value)
@@ -139,7 +139,7 @@ public static class ThemeElementsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

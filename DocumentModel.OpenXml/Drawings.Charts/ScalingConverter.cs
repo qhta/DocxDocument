@@ -15,7 +15,10 @@ public static class ScalingConverter
   
   private static bool CmpLogBase(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.LogBase", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLogBase(DXDrawCharts.Scaling openXmlElement, Double? value)
@@ -66,7 +69,10 @@ public static class ScalingConverter
   
   private static bool CmpMaxAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.MaxAxisValue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMaxAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value)
@@ -91,7 +97,10 @@ public static class ScalingConverter
   
   private static bool CmpMinAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.MinAxisValue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetMinAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value)
@@ -116,7 +125,7 @@ public static class ScalingConverter
   
   private static bool CmpExtensionList(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -165,7 +174,7 @@ public static class ScalingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

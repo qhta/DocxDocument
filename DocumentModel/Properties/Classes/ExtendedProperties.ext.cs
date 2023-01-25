@@ -82,10 +82,13 @@ public partial class ExtendedProperties : ICollection<DocumentProperty>
     var prop = typeof(ExtendedProperties).GetProperty(propName);
     if (prop != null)
     {
-      if (value is String valStr && value.GetType() != prop.PropertyType)
+      if (value != null)
       {
-        var typeConverter = new ValueTypeConverter(prop.PropertyType);
-        value = typeConverter.ConvertFromInvariantString(valStr);
+        if (value.GetType() != prop.PropertyType)
+        {
+          var typeConverter = new ValueTypeConverter(prop.PropertyType);
+          value = typeConverter.ConvertFrom(null, CultureInfo.InvariantCulture, value);
+        }
       }
       prop.SetValue(this, value);
       return true;

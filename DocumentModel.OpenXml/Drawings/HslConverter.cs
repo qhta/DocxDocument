@@ -10,12 +10,14 @@ public static class HslConverter
   /// </summary>
   private static Int32? GetHue(DXDraw.Hsl openXmlElement)
   {
-    return openXmlElement.Hue?.Value;
+    return openXmlElement?.Hue?.Value;
   }
   
   private static bool CmpHue(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Hue?.Value == value;
+    if (openXmlElement?.Hue?.Value == value) return true;
+    diffs?.Add(objName, "Hue", openXmlElement?.Hue?.Value, value);
+    return false;
   }
   
   private static void SetHue(DXDraw.Hsl openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class HslConverter
   /// </summary>
   private static Int32? GetSaturation(DXDraw.Hsl openXmlElement)
   {
-    return openXmlElement.Saturation?.Value;
+    return openXmlElement?.Saturation?.Value;
   }
   
   private static bool CmpSaturation(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Saturation?.Value == value;
+    if (openXmlElement?.Saturation?.Value == value) return true;
+    diffs?.Add(objName, "Saturation", openXmlElement?.Saturation?.Value, value);
+    return false;
   }
   
   private static void SetSaturation(DXDraw.Hsl openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class HslConverter
   /// </summary>
   private static Int32? GetLuminance(DXDraw.Hsl openXmlElement)
   {
-    return openXmlElement.Luminance?.Value;
+    return openXmlElement?.Luminance?.Value;
   }
   
   private static bool CmpLuminance(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Luminance?.Value == value;
+    if (openXmlElement?.Luminance?.Value == value) return true;
+    diffs?.Add(objName, "Luminance", openXmlElement?.Luminance?.Value, value);
+    return false;
   }
   
   private static void SetLuminance(DXDraw.Hsl openXmlElement, Int32? value)
@@ -86,7 +92,7 @@ public static class HslConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -138,7 +138,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlRun(DXW.Hyperlink openXmlElement, DMW.CustomXmlRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CustomXmlRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CustomXmlRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlRun(DXW.Hyperlink openXmlElement, DMW.CustomXmlRun? value)
@@ -175,7 +175,7 @@ public static class HyperlinkConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -190,7 +190,7 @@ public static class HyperlinkConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -215,7 +215,7 @@ public static class HyperlinkConverter
   
   private static bool CmpChildHyperlink(DXW.Hyperlink openXmlElement, DMW.Hyperlink? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HyperlinkConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HyperlinkConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChildHyperlink(DXW.Hyperlink openXmlElement, DMW.Hyperlink? value)
@@ -238,7 +238,7 @@ public static class HyperlinkConverter
   
   private static bool CmpSdtRun(DXW.Hyperlink openXmlElement, DMW.SdtRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SdtRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SdtRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSdtRun(DXW.Hyperlink openXmlElement, DMW.SdtRun? value)
@@ -261,7 +261,7 @@ public static class HyperlinkConverter
   
   private static bool CmpProofError(DXW.Hyperlink openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofError>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetProofError(DXW.Hyperlink openXmlElement, DMW.ProofError? value)
@@ -284,7 +284,7 @@ public static class HyperlinkConverter
   
   private static bool CmpPermStart(DXW.Hyperlink openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermStartConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPermStart(DXW.Hyperlink openXmlElement, DMW.PermStart? value)
@@ -307,7 +307,7 @@ public static class HyperlinkConverter
   
   private static bool CmpPermEnd(DXW.Hyperlink openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermEndConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermEndConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPermEnd(DXW.Hyperlink openXmlElement, DMW.PermEnd? value)
@@ -330,7 +330,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBookmarkStart(DXW.Hyperlink openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBookmarkStart(DXW.Hyperlink openXmlElement, DMW.BookmarkStart? value)
@@ -353,7 +353,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBookmarkEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBookmarkEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value)
@@ -376,7 +376,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCommentRangeStart(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentRangeStart(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value)
@@ -399,7 +399,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCommentRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCommentRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value)
@@ -422,7 +422,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveFromRangeStart(DXW.Hyperlink openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRangeStart(DXW.Hyperlink openXmlElement, DMW.MoveBookmarkType? value)
@@ -445,7 +445,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveFromRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value)
@@ -468,7 +468,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveToRangeStart(DXW.Hyperlink openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRangeStart(DXW.Hyperlink openXmlElement, DMW.MoveBookmarkType? value)
@@ -491,7 +491,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveToRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupRangeType? value)
@@ -514,7 +514,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlInsRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlInsRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value)
@@ -537,7 +537,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlInsRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value)
@@ -560,7 +560,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlDelRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlDelRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value)
@@ -583,7 +583,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlDelRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value)
@@ -606,7 +606,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveFromRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value)
@@ -629,7 +629,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveFromRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value)
@@ -652,7 +652,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveToRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType? value)
@@ -675,7 +675,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlMoveToRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType? value)
@@ -698,7 +698,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictInsertionRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType2? value)
@@ -721,7 +721,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictInsertionRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType2? value)
@@ -744,7 +744,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictDeletionRangeStart(DXW.Hyperlink openXmlElement, DMW.TrackChangeType2? value)
@@ -767,7 +767,7 @@ public static class HyperlinkConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCustomXmlConflictDeletionRangeEnd(DXW.Hyperlink openXmlElement, DMW.MarkupType2? value)
@@ -790,7 +790,7 @@ public static class HyperlinkConverter
   
   private static bool CmpInsertedRun(DXW.Hyperlink openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.InsertedRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.InsertedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsertedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInsertedRun(DXW.Hyperlink openXmlElement, DMW.InsertedRun? value)
@@ -813,7 +813,7 @@ public static class HyperlinkConverter
   
   private static bool CmpDeletedRun(DXW.Hyperlink openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DeletedRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DeletedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDeletedRun(DXW.Hyperlink openXmlElement, DMW.DeletedRun? value)
@@ -836,7 +836,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveFromRun(DXW.Hyperlink openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveFromRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveFromRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveFromRun(DXW.Hyperlink openXmlElement, DMW.MoveFromRun? value)
@@ -859,7 +859,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMoveToRun(DXW.Hyperlink openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveToRunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveToRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMoveToRun(DXW.Hyperlink openXmlElement, DMW.MoveToRun? value)
@@ -882,7 +882,7 @@ public static class HyperlinkConverter
   
   private static bool CmpRunConflictInsertion(DXW.Hyperlink openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunConflictInsertionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunConflictInsertionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunConflictInsertion(DXW.Hyperlink openXmlElement, DMW.RunConflictInsertion? value)
@@ -905,7 +905,7 @@ public static class HyperlinkConverter
   
   private static bool CmpRunConflictDeletion(DXW.Hyperlink openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunConflictDeletionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunConflictDeletionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRunConflictDeletion(DXW.Hyperlink openXmlElement, DMW.RunConflictDeletion? value)
@@ -928,7 +928,7 @@ public static class HyperlinkConverter
   
   private static bool CmpParagraph(DXW.Hyperlink openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ParagraphConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetParagraph(DXW.Hyperlink openXmlElement, DMMath.Paragraph? value)
@@ -951,7 +951,7 @@ public static class HyperlinkConverter
   
   private static bool CmpOfficeMath(DXW.Hyperlink openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.OfficeMathConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.OfficeMathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.OfficeMath>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeMath(DXW.Hyperlink openXmlElement, DMMath.OfficeMath? value)
@@ -974,7 +974,7 @@ public static class HyperlinkConverter
   
   private static bool CmpAccent(DXW.Hyperlink openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.AccentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.AccentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Accent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAccent(DXW.Hyperlink openXmlElement, DMMath.Accent? value)
@@ -997,7 +997,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBar(DXW.Hyperlink openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Bar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBar(DXW.Hyperlink openXmlElement, DMMath.Bar? value)
@@ -1020,7 +1020,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBox(DXW.Hyperlink openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Box>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Box>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBox(DXW.Hyperlink openXmlElement, DMMath.Box? value)
@@ -1043,7 +1043,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBorderBox(DXW.Hyperlink openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BorderBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BorderBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BorderBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBorderBox(DXW.Hyperlink openXmlElement, DMMath.BorderBox? value)
@@ -1066,7 +1066,7 @@ public static class HyperlinkConverter
   
   private static bool CmpDelimiter(DXW.Hyperlink openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DelimiterConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DelimiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Delimiter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDelimiter(DXW.Hyperlink openXmlElement, DMMath.Delimiter? value)
@@ -1089,7 +1089,7 @@ public static class HyperlinkConverter
   
   private static bool CmpEquationArray(DXW.Hyperlink openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.EquationArrayConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.EquationArrayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArray>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEquationArray(DXW.Hyperlink openXmlElement, DMMath.EquationArray? value)
@@ -1112,7 +1112,7 @@ public static class HyperlinkConverter
   
   private static bool CmpFraction(DXW.Hyperlink openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FractionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.FractionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Fraction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFraction(DXW.Hyperlink openXmlElement, DMMath.Fraction? value)
@@ -1135,7 +1135,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMathFunction(DXW.Hyperlink openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MathFunctionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MathFunctionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathFunction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMathFunction(DXW.Hyperlink openXmlElement, DMMath.MathFunction? value)
@@ -1158,7 +1158,7 @@ public static class HyperlinkConverter
   
   private static bool CmpGroupChar(DXW.Hyperlink openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.GroupCharConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.GroupCharConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupChar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroupChar(DXW.Hyperlink openXmlElement, DMMath.GroupChar? value)
@@ -1181,7 +1181,7 @@ public static class HyperlinkConverter
   
   private static bool CmpLimitLower(DXW.Hyperlink openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitLowerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitLowerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitLower>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimitLower(DXW.Hyperlink openXmlElement, DMMath.LimitLower? value)
@@ -1204,7 +1204,7 @@ public static class HyperlinkConverter
   
   private static bool CmpLimitUpper(DXW.Hyperlink openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitUpperConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitUpperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitUpper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLimitUpper(DXW.Hyperlink openXmlElement, DMMath.LimitUpper? value)
@@ -1227,7 +1227,7 @@ public static class HyperlinkConverter
   
   private static bool CmpMatrix(DXW.Hyperlink openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MatrixConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MatrixConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Matrix>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMatrix(DXW.Hyperlink openXmlElement, DMMath.Matrix? value)
@@ -1250,7 +1250,7 @@ public static class HyperlinkConverter
   
   private static bool CmpNary(DXW.Hyperlink openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.NaryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.NaryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Nary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNary(DXW.Hyperlink openXmlElement, DMMath.Nary? value)
@@ -1273,7 +1273,7 @@ public static class HyperlinkConverter
   
   private static bool CmpPhantom(DXW.Hyperlink openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PhantomConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PhantomConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Phantom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPhantom(DXW.Hyperlink openXmlElement, DMMath.Phantom? value)
@@ -1296,7 +1296,7 @@ public static class HyperlinkConverter
   
   private static bool CmpRadical(DXW.Hyperlink openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.RadicalConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.RadicalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Radical>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRadical(DXW.Hyperlink openXmlElement, DMMath.Radical? value)
@@ -1319,7 +1319,7 @@ public static class HyperlinkConverter
   
   private static bool CmpPreSubSuper(DXW.Hyperlink openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PreSubSuperConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PreSubSuperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PreSubSuper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreSubSuper(DXW.Hyperlink openXmlElement, DMMath.PreSubSuper? value)
@@ -1342,7 +1342,7 @@ public static class HyperlinkConverter
   
   private static bool CmpSubscript(DXW.Hyperlink openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Subscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubscript(DXW.Hyperlink openXmlElement, DMMath.Subscript? value)
@@ -1365,7 +1365,7 @@ public static class HyperlinkConverter
   
   private static bool CmpSubSuperscript(DXW.Hyperlink openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubSuperscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubSuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubSuperscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubSuperscript(DXW.Hyperlink openXmlElement, DMMath.SubSuperscript? value)
@@ -1388,7 +1388,7 @@ public static class HyperlinkConverter
   
   private static bool CmpSuperscript(DXW.Hyperlink openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperscriptConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Superscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperscript(DXW.Hyperlink openXmlElement, DMMath.Superscript? value)
@@ -1411,7 +1411,7 @@ public static class HyperlinkConverter
   
   private static bool CmpRun(DXW.Hyperlink openXmlElement, DMMath.Run? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.RunConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRun(DXW.Hyperlink openXmlElement, DMMath.Run? value)
@@ -1434,7 +1434,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBidirectionalOverride(DXW.Hyperlink openXmlElement, DMW.BidirectionalOverride? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BidirectionalOverrideConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BidirectionalOverrideConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BidirectionalOverride>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBidirectionalOverride(DXW.Hyperlink openXmlElement, DMW.BidirectionalOverride? value)
@@ -1457,7 +1457,7 @@ public static class HyperlinkConverter
   
   private static bool CmpBidirectionalEmbedding(DXW.Hyperlink openXmlElement, DMW.BidirectionalEmbedding? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BidirectionalEmbedding>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBidirectionalEmbedding(DXW.Hyperlink openXmlElement, DMW.BidirectionalEmbedding? value)
@@ -1480,7 +1480,7 @@ public static class HyperlinkConverter
   
   private static bool CmpSubDocumentReference(DXW.Hyperlink openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.SubDocumentReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SubDocumentReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubDocumentReference(DXW.Hyperlink openXmlElement, DMW.RelationshipType? value)
@@ -1706,7 +1706,7 @@ public static class HyperlinkConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

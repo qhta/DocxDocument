@@ -41,7 +41,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   
   private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value)
@@ -67,7 +67,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   
   private static bool CmpTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableIndentation? value)
@@ -93,7 +93,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   
   private static bool CmpTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableBorders? value)
@@ -119,7 +119,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   
   private static bool CmpShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.Shading? value)
@@ -145,7 +145,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   
   private static bool CmpTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
@@ -197,7 +197,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

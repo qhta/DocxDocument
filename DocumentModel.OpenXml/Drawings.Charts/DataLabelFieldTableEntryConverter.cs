@@ -65,7 +65,7 @@ public static class DataLabelFieldTableEntryConverter
   
   private static bool CmpDataLabelFieldTableCache(DXO2013DrawChart.DataLabelFieldTableEntry openXmlElement, DMDrawsCharts.DataLabelFieldTableCache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelFieldTableCacheConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTableCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelFieldTableCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelFieldTableCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelFieldTableCache(DXO2013DrawChart.DataLabelFieldTableEntry openXmlElement, DMDrawsCharts.DataLabelFieldTableCache? value)
@@ -108,7 +108,7 @@ public static class DataLabelFieldTableEntryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

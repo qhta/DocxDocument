@@ -36,7 +36,7 @@ public static class RibbonConverter
   
   private static bool CmpOfficeMenu(DXOCustUI.Ribbon openXmlElement, DMUI.OfficeMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.OfficeMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.OfficeMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.OfficeMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.OfficeMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeMenu(DXOCustUI.Ribbon openXmlElement, DMUI.OfficeMenu? value)
@@ -62,7 +62,7 @@ public static class RibbonConverter
   
   private static bool CmpQuickAccessToolbar(DXOCustUI.Ribbon openXmlElement, DMUI.QuickAccessToolbar? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.QuickAccessToolbarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.QuickAccessToolbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetQuickAccessToolbar(DXOCustUI.Ribbon openXmlElement, DMUI.QuickAccessToolbar? value)
@@ -88,7 +88,7 @@ public static class RibbonConverter
   
   private static bool CmpTabs(DXOCustUI.Ribbon openXmlElement, DMUI.Tabs? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.TabsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTabs(DXOCustUI.Ribbon openXmlElement, DMUI.Tabs? value)
@@ -114,7 +114,7 @@ public static class RibbonConverter
   
   private static bool CmpContextualTabSets(DXOCustUI.Ribbon openXmlElement, DMUI.ContextualTabSets? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.ContextualTabSetsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXOCustUI.ContextualTabSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.ContextualTabSetsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.ContextualTabSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetContextualTabSets(DXOCustUI.Ribbon openXmlElement, DMUI.ContextualTabSets? value)
@@ -163,7 +163,7 @@ public static class RibbonConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

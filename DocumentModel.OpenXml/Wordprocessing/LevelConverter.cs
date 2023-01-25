@@ -10,12 +10,14 @@ public static class LevelConverter
   /// </summary>
   private static Int32? GetLevelIndex(DXW.Level openXmlElement)
   {
-    return openXmlElement.LevelIndex?.Value;
+    return openXmlElement?.LevelIndex?.Value;
   }
   
   private static bool CmpLevelIndex(DXW.Level openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LevelIndex?.Value == value;
+    if (openXmlElement?.LevelIndex?.Value == value) return true;
+    diffs?.Add(objName, "LevelIndex", openXmlElement?.LevelIndex?.Value, value);
+    return false;
   }
   
   private static void SetLevelIndex(DXW.Level openXmlElement, Int32? value)
@@ -28,17 +30,17 @@ public static class LevelConverter
   /// </summary>
   private static UInt32? GetTemplateCode(DXW.Level openXmlElement)
   {
-    if (openXmlElement.TemplateCode?.Value != null)
+    if (openXmlElement?.TemplateCode?.Value != null)
       return UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpTemplateCode(DXW.Level openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.TemplateCode?.Value != null)
+    if (openXmlElement?.TemplateCode?.Value != null)
       if (UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.TemplateCode?.Value == null && value == null) return true;
+    if (openXmlElement?.TemplateCode?.Value == null && value == null) return true;
     diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Value, value?.ToString("x8"));
     return false;
   }
@@ -82,7 +84,10 @@ public static class LevelConverter
   
   private static bool CmpStartNumberingValue(DXW.Level openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.StartNumberingValue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.StartNumberingValue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.StartNumberingValue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetStartNumberingValue(DXW.Level openXmlElement, Int32? value)
@@ -107,7 +112,7 @@ public static class LevelConverter
   
   private static bool CmpNumberingFormat(DXW.Level openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingFormat(DXW.Level openXmlElement, DMW.NumberingFormat? value)
@@ -133,7 +138,10 @@ public static class LevelConverter
   
   private static bool CmpLevelRestart(DXW.Level openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.LevelRestart>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LevelRestart>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.LevelRestart", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLevelRestart(DXW.Level openXmlElement, Int32? value)
@@ -237,7 +245,7 @@ public static class LevelConverter
   
   private static bool CmpLevelText(DXW.Level openXmlElement, DMW.LevelText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LevelTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.LevelText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LevelTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LevelText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLevelText(DXW.Level openXmlElement, DMW.LevelText? value)
@@ -263,7 +271,10 @@ public static class LevelConverter
   
   private static bool CmpLevelPictureBulletId(DXW.Level openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.LevelPictureBulletId>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LevelPictureBulletId>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.LevelPictureBulletId", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLevelPictureBulletId(DXW.Level openXmlElement, Int32? value)
@@ -288,7 +299,7 @@ public static class LevelConverter
   
   private static bool CmpLegacyNumbering(DXW.Level openXmlElement, DMW.LegacyNumbering? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LegacyNumberingConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.LegacyNumbering>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LegacyNumberingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LegacyNumbering>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLegacyNumbering(DXW.Level openXmlElement, DMW.LegacyNumbering? value)
@@ -340,7 +351,7 @@ public static class LevelConverter
   
   private static bool CmpPreviousParagraphProperties(DXW.Level openXmlElement, DMW.PreviousParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousParagraphPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.PreviousParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPreviousParagraphProperties(DXW.Level openXmlElement, DMW.PreviousParagraphProperties? value)
@@ -366,7 +377,7 @@ public static class LevelConverter
   
   private static bool CmpNumberingSymbolRunProperties(DXW.Level openXmlElement, DMW.NumberingSymbolRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingSymbolRunPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingSymbolRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingSymbolRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingSymbolRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingSymbolRunProperties(DXW.Level openXmlElement, DMW.NumberingSymbolRunProperties? value)
@@ -445,7 +456,7 @@ public static class LevelConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

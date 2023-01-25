@@ -33,7 +33,7 @@ public static class PresetGeometryConverter
   
   private static bool CmpAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value)
@@ -73,7 +73,7 @@ public static class PresetGeometryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

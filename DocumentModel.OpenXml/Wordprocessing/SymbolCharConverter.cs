@@ -31,17 +31,17 @@ public static class SymbolCharConverter
   /// </summary>
   private static UInt16? GetChar(DXW.SymbolChar openXmlElement)
   {
-    if (openXmlElement.Char?.Value != null)
+    if (openXmlElement?.Char?.Value != null)
       return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpChar(DXW.SymbolChar openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Char?.Value != null)
+    if (openXmlElement?.Char?.Value != null)
       if (UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Char?.Value == null && value == null) return true;
+    if (openXmlElement?.Char?.Value == null && value == null) return true;
     diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value?.ToString("x4"));
     return false;
   }
@@ -78,7 +78,7 @@ public static class SymbolCharConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

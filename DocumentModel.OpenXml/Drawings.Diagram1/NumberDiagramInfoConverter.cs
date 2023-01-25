@@ -10,12 +10,14 @@ public static class NumberDiagramInfoConverter
   /// </summary>
   private static UInt32? GetLvl(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement)
   {
-    return openXmlElement.Lvl?.Value;
+    return openXmlElement?.Lvl?.Value;
   }
   
   private static bool CmpLvl(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Lvl?.Value == value;
+    if (openXmlElement?.Lvl?.Value == value) return true;
+    diffs?.Add(objName, "Lvl", openXmlElement?.Lvl?.Value, value);
+    return false;
   }
   
   private static void SetLvl(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, UInt32? value)
@@ -51,7 +53,7 @@ public static class NumberDiagramInfoConverter
   
   private static bool CmpDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgm1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value)
@@ -94,7 +96,7 @@ public static class NumberDiagramInfoConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

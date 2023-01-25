@@ -31,17 +31,17 @@ public static class CheckBoxSymbolTypeConverter
   /// </summary>
   private static Byte[]? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
-    if (openXmlElement.Val?.Value != null)
+    if (openXmlElement?.Val?.Value != null)
       return Convert.FromHexString(openXmlElement.Val.Value);
     return null;
   }
   
   private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Val?.Value != null)
+    if (openXmlElement?.Val?.Value != null)
       if (Convert.FromHexString(openXmlElement.Val.Value) == value)
         return true;
-    if (openXmlElement.Val?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
@@ -78,7 +78,7 @@ public static class CheckBoxSymbolTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

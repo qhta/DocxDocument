@@ -10,12 +10,14 @@ public static class ArtisticLineDrawingConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticLineDrawing openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticLineDrawingConverter
   /// </summary>
   private static Int32? GetPencilSize(DXO2010Draw.ArtisticLineDrawing openXmlElement)
   {
-    return openXmlElement.PencilSize?.Value;
+    return openXmlElement?.PencilSize?.Value;
   }
   
   private static bool CmpPencilSize(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PencilSize?.Value == value;
+    if (openXmlElement?.PencilSize?.Value == value) return true;
+    diffs?.Add(objName, "PencilSize", openXmlElement?.PencilSize?.Value, value);
+    return false;
   }
   
   private static void SetPencilSize(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticLineDrawingConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

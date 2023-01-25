@@ -12,7 +12,7 @@ public static class FootnotesConverter
   
   private static bool CmpFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Footnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Footnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value)
@@ -49,7 +49,7 @@ public static class FootnotesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

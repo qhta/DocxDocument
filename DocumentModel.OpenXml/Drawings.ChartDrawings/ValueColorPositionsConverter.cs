@@ -10,12 +10,14 @@ public static class ValueColorPositionsConverter
   /// </summary>
   private static Int32? GetCount(DXO2016DrawChartDraw.ValueColorPositions openXmlElement)
   {
-    return openXmlElement.Count?.Value;
+    return openXmlElement?.Count?.Value;
   }
   
   private static bool CmpCount(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Count?.Value == value;
+    if (openXmlElement?.Count?.Value == value) return true;
+    diffs?.Add(objName, "Count", openXmlElement?.Count?.Value, value);
+    return false;
   }
   
   private static void SetCount(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, Int32? value)
@@ -33,7 +35,7 @@ public static class ValueColorPositionsConverter
   
   private static bool CmpMinValueColorEndPosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.MinValueColorEndPosition? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.MinValueColorEndPositionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MinValueColorEndPosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.MinValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MinValueColorEndPosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMinValueColorEndPosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.MinValueColorEndPosition? value)
@@ -59,7 +61,7 @@ public static class ValueColorPositionsConverter
   
   private static bool CmpValueColorMiddlePosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.ValueColorMiddlePosition? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ValueColorMiddlePositionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ValueColorMiddlePosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ValueColorMiddlePositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ValueColorMiddlePosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetValueColorMiddlePosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.ValueColorMiddlePosition? value)
@@ -85,7 +87,7 @@ public static class ValueColorPositionsConverter
   
   private static bool CmpMaxValueColorEndPosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.MaxValueColorEndPosition? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.MaxValueColorEndPositionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MaxValueColorEndPosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.MaxValueColorEndPositionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MaxValueColorEndPosition>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMaxValueColorEndPosition(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.MaxValueColorEndPosition? value)
@@ -131,7 +133,7 @@ public static class ValueColorPositionsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

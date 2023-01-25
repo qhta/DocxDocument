@@ -10,12 +10,14 @@ public static class GlowConverter
   /// </summary>
   private static Int64? GetGlowRadius(DXO2010W.Glow openXmlElement)
   {
-    return openXmlElement.GlowRadius?.Value;
+    return openXmlElement?.GlowRadius?.Value;
   }
   
   private static bool CmpGlowRadius(DXO2010W.Glow openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GlowRadius?.Value == value;
+    if (openXmlElement?.GlowRadius?.Value == value) return true;
+    diffs?.Add(objName, "GlowRadius", openXmlElement?.GlowRadius?.Value, value);
+    return false;
   }
   
   private static void SetGlowRadius(DXO2010W.Glow openXmlElement, Int64? value)
@@ -33,7 +35,7 @@ public static class GlowConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value)
@@ -59,7 +61,7 @@ public static class GlowConverter
   
   private static bool CmpSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value)
@@ -102,7 +104,7 @@ public static class GlowConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

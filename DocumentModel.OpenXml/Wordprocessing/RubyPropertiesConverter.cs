@@ -66,7 +66,10 @@ public static class RubyPropertiesConverter
   
   private static bool CmpPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.PhoneticGuideRaise", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value)
@@ -195,7 +198,7 @@ public static class RubyPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

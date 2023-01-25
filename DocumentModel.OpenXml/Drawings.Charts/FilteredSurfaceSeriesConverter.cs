@@ -15,7 +15,7 @@ public static class FilteredSurfaceSeriesConverter
   
   private static bool CmpSurfaceChartSeries(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.SurfaceChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SurfaceChartSeries3Converter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.SurfaceChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SurfaceChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.SurfaceChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSurfaceChartSeries(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.SurfaceChartSeries3? value)
@@ -52,7 +52,7 @@ public static class FilteredSurfaceSeriesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class BlurConverter
   /// </summary>
   private static Int64? GetRadius(DXDraw.Blur openXmlElement)
   {
-    return openXmlElement.Radius?.Value;
+    return openXmlElement?.Radius?.Value;
   }
   
   private static bool CmpRadius(DXDraw.Blur openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Radius?.Value == value;
+    if (openXmlElement?.Radius?.Value == value) return true;
+    diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
+    return false;
   }
   
   private static void SetRadius(DXDraw.Blur openXmlElement, Int64? value)
@@ -68,7 +70,7 @@ public static class BlurConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

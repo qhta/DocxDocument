@@ -107,7 +107,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BreakConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value)
@@ -182,7 +182,7 @@ public static class RunPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

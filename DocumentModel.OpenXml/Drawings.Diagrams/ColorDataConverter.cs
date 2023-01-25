@@ -12,7 +12,7 @@ public static class ColorDataConverter
   
   private static bool CmpDataModel(DXDrawDgms.ColorData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataModel(DXDrawDgms.ColorData openXmlElement, DMDrawsDgms.DataModel? value)
@@ -49,7 +49,7 @@ public static class ColorDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

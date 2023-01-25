@@ -15,7 +15,10 @@ public static class UpDownBarsConverter
   
   private static bool CmpGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.GapWidth", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value)
@@ -40,7 +43,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value)
@@ -66,7 +69,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value)
@@ -92,7 +95,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -138,7 +141,7 @@ public static class UpDownBarsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

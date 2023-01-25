@@ -12,7 +12,7 @@ public static class GradientStopListConverter
   
   private static bool CmpGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientStopConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value)
@@ -49,7 +49,7 @@ public static class GradientStopListConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

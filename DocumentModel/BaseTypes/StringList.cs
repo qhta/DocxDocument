@@ -2,6 +2,7 @@
 namespace DocumentModel;
 
 /// <summary>Represents the list of string
+[TypeConverter(typeof(StringListTypeConverter))]
 public class StringList : ICollection<string>, IEnumerable
 {
   private readonly List<string> _list = new();

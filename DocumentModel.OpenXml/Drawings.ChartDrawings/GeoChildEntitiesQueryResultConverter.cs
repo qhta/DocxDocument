@@ -15,7 +15,7 @@ public static class GeoChildEntitiesQueryResultConverter
   
   private static bool CmpGeoChildEntitiesQuery(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQuery? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoChildEntitiesQueryConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQuery>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoChildEntitiesQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQuery>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoChildEntitiesQuery(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQuery? value)
@@ -41,7 +41,7 @@ public static class GeoChildEntitiesQueryResultConverter
   
   private static bool CmpGeoChildEntities(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntities? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoChildEntitiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntities>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoChildEntitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntities>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoChildEntities(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntities? value)
@@ -81,7 +81,7 @@ public static class GeoChildEntitiesQueryResultConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -144,7 +144,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.LeftMargin>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.LeftMargin", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -169,7 +172,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpRightMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.RightMargin>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.RightMargin", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetRightMargin(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -220,7 +226,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.PreSpacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.PreSpacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -245,7 +254,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.PostSpacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.PostSpacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -270,7 +282,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.InterSpacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.InterSpacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -295,7 +310,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.IntraSpacing>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.IntraSpacing", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -317,7 +335,10 @@ public static class MathPropertiesConverter
   
   private static bool CmpWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.WrapIndent>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXMath.WrapIndent", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value)
@@ -467,7 +488,7 @@ public static class MathPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

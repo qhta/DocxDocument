@@ -5,8 +5,11 @@ using System.Xml;
 using System.Xml.Serialization;
 
 using DocumentModel.Properties;
+
 using Newtonsoft.Json;
+
 using Qhta.Xml.Serialization;
+
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
@@ -162,6 +165,8 @@ namespace DocxDocument.Reader.Test
       var properties = ReadProperties(filename, true);
       var serializer = JsonSerializer.Create();
       var textWriter = new StringWriter();
+      //JsonSerializerSettings settings = new JsonSerializerSettings { /*TypeNameHandling = TypeNameHandling.All,*/ Formatting = Formatting.Indented };
+      //var str = JsonConvert.SerializeObject(properties, settings);
       var jsonWriter = new JsonTextWriter(textWriter) { Formatting = Formatting.Indented };
       serializer.Serialize(jsonWriter, properties);
       string str = textWriter.ToString();
@@ -174,22 +179,25 @@ namespace DocxDocument.Reader.Test
       var jsonReader = new JsonTextReader(textReader);
       var newProperties = serializer.Deserialize<DocumentProperties>(jsonReader);
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-      var propertiesCount = properties.Count();
-      var newPropertiesCount = newProperties.Count();
-      Assert.That(newPropertiesCount, Is.EqualTo(propertiesCount), $"Deserialized properties count different for original");
+      if (newProperties != null)
+      {
+        var propertiesCount = properties.Count();
+        var newPropertiesCount = newProperties.Count();
+        Assert.That(newPropertiesCount, Is.EqualTo(propertiesCount), $"Deserialized properties count different from original");
+      }
     }
 
     [Test]
     public void TestPropertiesXmlSerialization()
     {
       var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-        .Where(item=>item.IsPublic && !item.IsGenericType);
+        .Where(item => item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
       var oldProperties = ReadProperties(filename, true);
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
-        new SerializationOptions{ AcceptAllProperties = true, });
+        new SerializationOptions { AcceptAllProperties = true, });
       serializer.Serialize(textWriter, oldProperties);
       textWriter.Flush();
       string str = textWriter.ToString();
@@ -206,7 +214,7 @@ namespace DocxDocument.Reader.Test
       Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
       var newPropArray = newProperties.ToArray();
       var oldPropArray = newProperties.ToArray();
-      for (int i=0; i<oldPropertiesCount; i++)
+      for (int i = 0; i < oldPropertiesCount; i++)
         Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
     }
 

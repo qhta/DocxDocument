@@ -33,7 +33,7 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
   
   private static bool CmpNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, DMDraws.NonVisualGroupProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NonVisualGroupPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.NonVisualGroupPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, DMDraws.NonVisualGroupProperties? value)
@@ -73,7 +73,7 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

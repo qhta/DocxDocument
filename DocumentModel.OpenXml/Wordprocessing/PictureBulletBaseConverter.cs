@@ -12,7 +12,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpGroup(DXW.PictureBulletBase openXmlElement, DMVml.Group? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.GroupConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Group>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.GroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Group>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGroup(DXW.PictureBulletBase openXmlElement, DMVml.Group? value)
@@ -35,7 +35,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpImageFile(DXW.PictureBulletBase openXmlElement, DMVml.ImageFile? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ImageFileConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.ImageFile>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ImageFileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.ImageFile>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageFile(DXW.PictureBulletBase openXmlElement, DMVml.ImageFile? value)
@@ -58,7 +58,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpLine(DXW.PictureBulletBase openXmlElement, DMVml.Line? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.LineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Line>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.LineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Line>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLine(DXW.PictureBulletBase openXmlElement, DMVml.Line? value)
@@ -81,7 +81,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpOval(DXW.PictureBulletBase openXmlElement, DMVml.Oval? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.OvalConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Oval>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.OvalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Oval>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOval(DXW.PictureBulletBase openXmlElement, DMVml.Oval? value)
@@ -104,7 +104,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpPolyLine(DXW.PictureBulletBase openXmlElement, DMVml.PolyLine? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.PolyLineConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.PolyLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.PolyLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.PolyLine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPolyLine(DXW.PictureBulletBase openXmlElement, DMVml.PolyLine? value)
@@ -127,7 +127,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpRectangle(DXW.PictureBulletBase openXmlElement, DMVml.Rectangle? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Rectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Rectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRectangle(DXW.PictureBulletBase openXmlElement, DMVml.Rectangle? value)
@@ -150,7 +150,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpRoundRectangle(DXW.PictureBulletBase openXmlElement, DMVml.RoundRectangle? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RoundRectangleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.RoundRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RoundRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.RoundRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRoundRectangle(DXW.PictureBulletBase openXmlElement, DMVml.RoundRectangle? value)
@@ -173,7 +173,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpShape(DXW.PictureBulletBase openXmlElement, DMVml.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Shape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Shape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShape(DXW.PictureBulletBase openXmlElement, DMVml.Shape? value)
@@ -196,7 +196,7 @@ public static class PictureBulletBaseConverter
   
   private static bool CmpShapetype(DXW.PictureBulletBase openXmlElement, DMVml.Shapetype? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapetypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Shapetype>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ShapetypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Shapetype>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapetype(DXW.PictureBulletBase openXmlElement, DMVml.Shapetype? value)
@@ -257,7 +257,7 @@ public static class PictureBulletBaseConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

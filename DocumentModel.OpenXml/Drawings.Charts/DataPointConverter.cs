@@ -15,7 +15,10 @@ public static class DataPointConverter
   
   private static bool CmpIndex(DXDrawCharts.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
@@ -68,7 +71,7 @@ public static class DataPointConverter
   
   private static bool CmpMarker(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMarker(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.Marker? value)
@@ -122,7 +125,10 @@ public static class DataPointConverter
   
   private static bool CmpExplosion(DXDrawCharts.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Explosion", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetExplosion(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
@@ -147,7 +153,7 @@ public static class DataPointConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -173,7 +179,7 @@ public static class DataPointConverter
   
   private static bool CmpPictureOptions(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureOptions(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -199,7 +205,7 @@ public static class DataPointConverter
   
   private static bool CmpExtensionList(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.ExtensionList? value)
@@ -257,7 +263,7 @@ public static class DataPointConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

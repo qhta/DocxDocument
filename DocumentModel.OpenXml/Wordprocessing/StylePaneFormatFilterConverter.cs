@@ -10,17 +10,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static UInt16? GetVal(DXW.StylePaneFormatFilter openXmlElement)
   {
-    if (openXmlElement.Val?.Value != null)
+    if (openXmlElement?.Val?.Value != null)
       return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Val?.Value != null)
+    if (openXmlElement?.Val?.Value != null)
       if (UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Val?.Value == null && value == null) return true;
+    if (openXmlElement?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString("x4"));
     return false;
   }
@@ -414,7 +414,7 @@ public static class StylePaneFormatFilterConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

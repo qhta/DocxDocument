@@ -15,7 +15,7 @@ public static class ThemeOverrideConverter
   
   private static bool CmpColorScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.ColorScheme? value)
@@ -41,7 +41,7 @@ public static class ThemeOverrideConverter
   
   private static bool CmpFontScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FontScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FontSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FontScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FontSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FontScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFontScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FontScheme? value)
@@ -67,7 +67,7 @@ public static class ThemeOverrideConverter
   
   private static bool CmpFormatScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FormatScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FormatSchemeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FormatScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FormatSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FormatScheme>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFormatScheme(DXDraw.ThemeOverride openXmlElement, DMDraws.FormatScheme? value)
@@ -110,7 +110,7 @@ public static class ThemeOverrideConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

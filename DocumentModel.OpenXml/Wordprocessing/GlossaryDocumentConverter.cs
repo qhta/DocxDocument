@@ -15,7 +15,7 @@ public static class GlossaryDocumentConverter
   
   private static bool CmpDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value)
@@ -41,7 +41,7 @@ public static class GlossaryDocumentConverter
   
   private static bool CmpDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocPartsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.DocParts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocPartsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocParts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value)
@@ -81,7 +81,7 @@ public static class GlossaryDocumentConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

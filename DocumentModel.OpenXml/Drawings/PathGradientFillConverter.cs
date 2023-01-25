@@ -33,7 +33,7 @@ public static class PathGradientFillConverter
   
   private static bool CmpFillToRectangle(DXDraw.PathGradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillToRectangle(DXDraw.PathGradientFill openXmlElement, DMDraws.RelativeRectangleType? value)
@@ -73,7 +73,7 @@ public static class PathGradientFillConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

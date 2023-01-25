@@ -28,12 +28,14 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static Int64? GetMaxShapeId(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return openXmlElement.MaxShapeId?.Value;
+    return openXmlElement?.MaxShapeId?.Value;
   }
   
   private static bool CmpMaxShapeId(DXVmlO.ShapeDefaults openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.MaxShapeId?.Value == value;
+    if (openXmlElement?.MaxShapeId?.Value == value) return true;
+    diffs?.Add(objName, "MaxShapeId", openXmlElement?.MaxShapeId?.Value, value);
+    return false;
   }
   
   private static void SetMaxShapeId(DXVmlO.ShapeDefaults openXmlElement, Int64? value)
@@ -216,7 +218,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpFill(DXVmlO.ShapeDefaults openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.FillConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Fill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFill(DXVmlO.ShapeDefaults openXmlElement, DMVml.Fill? value)
@@ -242,7 +244,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpImageData(DXVmlO.ShapeDefaults openXmlElement, DMVml.ImageData? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ImageDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.ImageData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ImageDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.ImageData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetImageData(DXVmlO.ShapeDefaults openXmlElement, DMVml.ImageData? value)
@@ -268,7 +270,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpStroke(DXVmlO.ShapeDefaults openXmlElement, DMVml.Stroke? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Stroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.StrokeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Stroke>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStroke(DXVmlO.ShapeDefaults openXmlElement, DMVml.Stroke? value)
@@ -294,7 +296,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpTextBox(DXVmlO.ShapeDefaults openXmlElement, DMVml.TextBox? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.TextBoxConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.TextBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.TextBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.TextBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBox(DXVmlO.ShapeDefaults openXmlElement, DMVml.TextBox? value)
@@ -320,7 +322,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpShadow(DXVmlO.ShapeDefaults openXmlElement, DMVml.Shadow? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShadowConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVml.Shadow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Shadow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShadow(DXVmlO.ShapeDefaults openXmlElement, DMVml.Shadow? value)
@@ -346,7 +348,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpSkew(DXVmlO.ShapeDefaults openXmlElement, DMVml.Skew? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.SkewConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Skew>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.SkewConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Skew>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSkew(DXVmlO.ShapeDefaults openXmlElement, DMVml.Skew? value)
@@ -372,7 +374,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpExtrusion(DXVmlO.ShapeDefaults openXmlElement, DMVml.Extrusion? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ExtrusionConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Extrusion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ExtrusionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Extrusion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtrusion(DXVmlO.ShapeDefaults openXmlElement, DMVml.Extrusion? value)
@@ -398,7 +400,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpCallout(DXVmlO.ShapeDefaults openXmlElement, DMVml.Callout? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.CalloutConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Callout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.CalloutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Callout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCallout(DXVmlO.ShapeDefaults openXmlElement, DMVml.Callout? value)
@@ -424,7 +426,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpLock(DXVmlO.ShapeDefaults openXmlElement, DMVml.Lock? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.LockConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.Lock>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.LockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Lock>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLock(DXVmlO.ShapeDefaults openXmlElement, DMVml.Lock? value)
@@ -450,7 +452,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMostRecentlyUsed? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ColorMostRecentlyUsedConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ColorMostRecentlyUsedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMostRecentlyUsed? value)
@@ -476,7 +478,7 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpColorMenu(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ColorMenuConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColorMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.ColorMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ColorMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetColorMenu(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMenu? value)
@@ -573,7 +575,7 @@ public static class ShapeDefaultsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

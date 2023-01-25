@@ -36,7 +36,7 @@ public static class ShapeConverter
   
   private static bool CmpShapeNonVisualProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeNonVisualProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeNonVisualProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.ShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeNonVisualProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeNonVisualProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeNonVisualProperties? value)
@@ -62,7 +62,7 @@ public static class ShapeConverter
   
   private static bool CmpShapeProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeProperties? value)
@@ -88,7 +88,7 @@ public static class ShapeConverter
   
   private static bool CmpShapeStyle(DXODraw.Shape openXmlElement, DMDrawsO.ShapeStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapeStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeStyle(DXODraw.Shape openXmlElement, DMDrawsO.ShapeStyle? value)
@@ -114,7 +114,7 @@ public static class ShapeConverter
   
   private static bool CmpTextBody(DXODraw.Shape openXmlElement, DMDrawsO.TextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.TextBodyConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.TextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.TextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTextBody(DXODraw.Shape openXmlElement, DMDrawsO.TextBody? value)
@@ -140,7 +140,7 @@ public static class ShapeConverter
   
   private static bool CmpTransform2D(DXODraw.Shape openXmlElement, DMDrawsO.Transform2D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.Transform2DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.Transform2D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.Transform2D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTransform2D(DXODraw.Shape openXmlElement, DMDrawsO.Transform2D? value)
@@ -166,7 +166,7 @@ public static class ShapeConverter
   
   private static bool CmpOfficeArtExtensionList(DXODraw.Shape openXmlElement, DMDrawsO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXODraw.Shape openXmlElement, DMDrawsO.OfficeArtExtensionList? value)
@@ -221,7 +221,7 @@ public static class ShapeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

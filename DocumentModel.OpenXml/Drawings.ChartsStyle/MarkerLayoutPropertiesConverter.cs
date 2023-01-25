@@ -28,12 +28,14 @@ public static class MarkerLayoutPropertiesConverter
   /// </summary>
   private static Byte? GetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement)
   {
-    return openXmlElement.Size?.Value;
+    return openXmlElement?.Size?.Value;
   }
   
   private static bool CmpSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Size?.Value == value;
+    if (openXmlElement?.Size?.Value == value) return true;
+    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    return false;
   }
   
   private static void SetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value)
@@ -65,7 +67,7 @@ public static class MarkerLayoutPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -28,12 +28,14 @@ public static class CameraConverter
   /// </summary>
   private static Int32? GetFieldOfView(DXDraw.Camera openXmlElement)
   {
-    return openXmlElement.FieldOfView?.Value;
+    return openXmlElement?.FieldOfView?.Value;
   }
   
   private static bool CmpFieldOfView(DXDraw.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FieldOfView?.Value == value;
+    if (openXmlElement?.FieldOfView?.Value == value) return true;
+    diffs?.Add(objName, "FieldOfView", openXmlElement?.FieldOfView?.Value, value);
+    return false;
   }
   
   private static void SetFieldOfView(DXDraw.Camera openXmlElement, Int32? value)
@@ -46,12 +48,14 @@ public static class CameraConverter
   /// </summary>
   private static Int32? GetZoom(DXDraw.Camera openXmlElement)
   {
-    return openXmlElement.Zoom?.Value;
+    return openXmlElement?.Zoom?.Value;
   }
   
   private static bool CmpZoom(DXDraw.Camera openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Zoom?.Value == value;
+    if (openXmlElement?.Zoom?.Value == value) return true;
+    diffs?.Add(objName, "Zoom", openXmlElement?.Zoom?.Value, value);
+    return false;
   }
   
   private static void SetZoom(DXDraw.Camera openXmlElement, Int32? value)
@@ -69,7 +73,7 @@ public static class CameraConverter
   
   private static bool CmpRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value)
@@ -115,7 +119,7 @@ public static class CameraConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

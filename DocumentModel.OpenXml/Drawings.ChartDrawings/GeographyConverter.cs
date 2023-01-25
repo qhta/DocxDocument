@@ -114,7 +114,7 @@ public static class GeographyConverter
   
   private static bool CmpGeoCache(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoCache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoCacheConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoCache(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoCache? value)
@@ -166,7 +166,7 @@ public static class GeographyConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,10 @@ public static class SdtPlaceholderConverter
   
   private static bool CmpDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DocPartReference>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartReference>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DocPartReference", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value)
@@ -51,7 +54,7 @@ public static class SdtPlaceholderConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

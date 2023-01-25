@@ -10,12 +10,14 @@ public static class ArtisticCementConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticCement openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticCementConverter
   /// </summary>
   private static Int32? GetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement)
   {
-    return openXmlElement.CrackSpacing?.Value;
+    return openXmlElement?.CrackSpacing?.Value;
   }
   
   private static bool CmpCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CrackSpacing?.Value == value;
+    if (openXmlElement?.CrackSpacing?.Value == value) return true;
+    diffs?.Add(objName, "CrackSpacing", openXmlElement?.CrackSpacing?.Value, value);
+    return false;
   }
   
   private static void SetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticCementConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

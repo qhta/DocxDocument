@@ -10,12 +10,14 @@ public static class ChartStringValueConverter
   /// </summary>
   private static UInt32? GetIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement)
   {
-    return openXmlElement.Index?.Value;
+    return openXmlElement?.Index?.Value;
   }
   
   private static bool CmpIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Index?.Value == value;
+    if (openXmlElement?.Index?.Value == value) return true;
+    diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement, UInt32? value)
@@ -44,7 +46,7 @@ public static class ChartStringValueConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

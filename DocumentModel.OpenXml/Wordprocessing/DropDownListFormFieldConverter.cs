@@ -15,7 +15,10 @@ public static class DropDownListFormFieldConverter
   
   private static bool CmpDropDownListSelection(DXW.DropDownListFormField openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.DropDownListSelection>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DropDownListSelection>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.DropDownListSelection", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDropDownListSelection(DXW.DropDownListFormField openXmlElement, Int32? value)
@@ -40,7 +43,10 @@ public static class DropDownListFormFieldConverter
   
   private static bool CmpDefaultDropDownListItemIndex(DXW.DropDownListFormField openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.DefaultDropDownListItemIndex>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DefaultDropDownListItemIndex>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.DefaultDropDownListItemIndex", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetDefaultDropDownListItemIndex(DXW.DropDownListFormField openXmlElement, Int32? value)
@@ -76,7 +82,7 @@ public static class DropDownListFormFieldConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -91,7 +97,7 @@ public static class DropDownListFormFieldConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -136,7 +142,7 @@ public static class DropDownListFormFieldConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

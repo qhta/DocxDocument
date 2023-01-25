@@ -67,12 +67,14 @@ public static class CellMergeConverter
   /// </summary>
   private static DateTime? GetDate(DXW.CellMerge openXmlElement)
   {
-    return openXmlElement.Date?.Value;
+    return openXmlElement?.Date?.Value;
   }
   
   private static bool CmpDate(DXW.CellMerge openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Date?.Value == value;
+    if (openXmlElement?.Date?.Value == value) return true;
+    diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
+    return false;
   }
   
   private static void SetDate(DXW.CellMerge openXmlElement, DateTime? value)
@@ -134,7 +136,7 @@ public static class CellMergeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

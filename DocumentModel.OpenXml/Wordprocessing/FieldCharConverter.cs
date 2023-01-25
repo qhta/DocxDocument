@@ -100,7 +100,7 @@ public static class FieldCharConverter
   
   private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value)
@@ -126,7 +126,7 @@ public static class FieldCharConverter
   
   private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value)
@@ -178,7 +178,7 @@ public static class FieldCharConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

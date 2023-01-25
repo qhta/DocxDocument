@@ -93,7 +93,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BreakConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value)
@@ -145,7 +145,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value)
@@ -197,7 +197,7 @@ public static class BoxPropertiesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class Vector3DTypeConverter
   /// </summary>
   private static Int64? GetDx(DXDraw.Vector3DType openXmlElement)
   {
-    return openXmlElement.Dx?.Value;
+    return openXmlElement?.Dx?.Value;
   }
   
   private static bool CmpDx(DXDraw.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Dx?.Value == value;
+    if (openXmlElement?.Dx?.Value == value) return true;
+    diffs?.Add(objName, "Dx", openXmlElement?.Dx?.Value, value);
+    return false;
   }
   
   private static void SetDx(DXDraw.Vector3DType openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class Vector3DTypeConverter
   /// </summary>
   private static Int64? GetDy(DXDraw.Vector3DType openXmlElement)
   {
-    return openXmlElement.Dy?.Value;
+    return openXmlElement?.Dy?.Value;
   }
   
   private static bool CmpDy(DXDraw.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Dy?.Value == value;
+    if (openXmlElement?.Dy?.Value == value) return true;
+    diffs?.Add(objName, "Dy", openXmlElement?.Dy?.Value, value);
+    return false;
   }
   
   private static void SetDy(DXDraw.Vector3DType openXmlElement, Int64? value)
@@ -46,12 +50,14 @@ public static class Vector3DTypeConverter
   /// </summary>
   private static Int64? GetDz(DXDraw.Vector3DType openXmlElement)
   {
-    return openXmlElement.Dz?.Value;
+    return openXmlElement?.Dz?.Value;
   }
   
   private static bool CmpDz(DXDraw.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Dz?.Value == value;
+    if (openXmlElement?.Dz?.Value == value) return true;
+    diffs?.Add(objName, "Dz", openXmlElement?.Dz?.Value, value);
+    return false;
   }
   
   private static void SetDz(DXDraw.Vector3DType openXmlElement, Int64? value)
@@ -86,7 +92,7 @@ public static class Vector3DTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

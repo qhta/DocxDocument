@@ -12,7 +12,7 @@ public static class DivsChildConverter
   
   private static bool CmpDiv(DXW.DivsChild openXmlElement, DMW.Div? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DivConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Div>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DivConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Div>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDiv(DXW.DivsChild openXmlElement, DMW.Div? value)
@@ -49,7 +49,7 @@ public static class DivsChildConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

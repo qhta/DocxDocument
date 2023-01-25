@@ -225,7 +225,7 @@ public static class ConnectionShapeLocksConverter
   
   private static bool CmpConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ConnectorLockingExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ConnectorLockingExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ConnectorLockingExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ConnectorLockingExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectorLockingExtensionList? value)
@@ -292,7 +292,7 @@ public static class ConnectionShapeLocksConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

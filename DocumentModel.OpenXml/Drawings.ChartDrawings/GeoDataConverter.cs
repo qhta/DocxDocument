@@ -52,12 +52,14 @@ public static class GeoDataConverter
   /// </summary>
   private static Double? GetEast(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement.East?.Value;
+    return openXmlElement?.East?.Value;
   }
   
   private static bool CmpEast(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.East?.Value == value;
+    if (openXmlElement?.East?.Value == value) return true;
+    diffs?.Add(objName, "East", openXmlElement?.East?.Value, value);
+    return false;
   }
   
   private static void SetEast(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
@@ -70,12 +72,14 @@ public static class GeoDataConverter
   /// </summary>
   private static Double? GetWest(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement.West?.Value;
+    return openXmlElement?.West?.Value;
   }
   
   private static bool CmpWest(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.West?.Value == value;
+    if (openXmlElement?.West?.Value == value) return true;
+    diffs?.Add(objName, "West", openXmlElement?.West?.Value, value);
+    return false;
   }
   
   private static void SetWest(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
@@ -88,12 +92,14 @@ public static class GeoDataConverter
   /// </summary>
   private static Double? GetNorth(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement.North?.Value;
+    return openXmlElement?.North?.Value;
   }
   
   private static bool CmpNorth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.North?.Value == value;
+    if (openXmlElement?.North?.Value == value) return true;
+    diffs?.Add(objName, "North", openXmlElement?.North?.Value, value);
+    return false;
   }
   
   private static void SetNorth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
@@ -106,12 +112,14 @@ public static class GeoDataConverter
   /// </summary>
   private static Double? GetSouth(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement.South?.Value;
+    return openXmlElement?.South?.Value;
   }
   
   private static bool CmpSouth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.South?.Value == value;
+    if (openXmlElement?.South?.Value == value) return true;
+    diffs?.Add(objName, "South", openXmlElement?.South?.Value, value);
+    return false;
   }
   
   private static void SetSouth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
@@ -129,7 +137,7 @@ public static class GeoDataConverter
   
   private static bool CmpGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoPolygonsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value)
@@ -155,7 +163,7 @@ public static class GeoDataConverter
   
   private static bool CmpCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.CopyrightsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Copyrights>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Copyrights>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value)
@@ -213,7 +221,7 @@ public static class GeoDataConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

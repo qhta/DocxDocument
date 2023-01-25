@@ -10,12 +10,14 @@ public static class ExtentConverter
   /// </summary>
   private static Int64? GetCx(DXDrawW.Extent openXmlElement)
   {
-    return openXmlElement.Cx?.Value;
+    return openXmlElement?.Cx?.Value;
   }
   
   private static bool CmpCx(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Cx?.Value == value;
+    if (openXmlElement?.Cx?.Value == value) return true;
+    diffs?.Add(objName, "Cx", openXmlElement?.Cx?.Value, value);
+    return false;
   }
   
   private static void SetCx(DXDrawW.Extent openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class ExtentConverter
   /// </summary>
   private static Int64? GetCy(DXDrawW.Extent openXmlElement)
   {
-    return openXmlElement.Cy?.Value;
+    return openXmlElement?.Cy?.Value;
   }
   
   private static bool CmpCy(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Cy?.Value == value;
+    if (openXmlElement?.Cy?.Value == value) return true;
+    diffs?.Add(objName, "Cy", openXmlElement?.Cy?.Value, value);
+    return false;
   }
   
   private static void SetCy(DXDrawW.Extent openXmlElement, Int64? value)
@@ -65,7 +69,7 @@ public static class ExtentConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

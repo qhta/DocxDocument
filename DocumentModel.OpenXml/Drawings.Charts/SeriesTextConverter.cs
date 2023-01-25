@@ -15,7 +15,7 @@ public static class SeriesTextConverter
   
   private static bool CmpStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value)
@@ -80,7 +80,7 @@ public static class SeriesTextConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -54,7 +54,7 @@ public static class ContentPartConverter
   
   private static bool CmpNonVisualContentPartProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.NonVisualContentPartProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.NonVisualContentPartProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.NonVisualContentPartProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNonVisualContentPartProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.NonVisualContentPartProperties? value)
@@ -80,7 +80,7 @@ public static class ContentPartConverter
   
   private static bool CmpApplicationNonVisualDrawingProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetApplicationNonVisualDrawingProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value)
@@ -106,7 +106,7 @@ public static class ContentPartConverter
   
   private static bool CmpTransform2D(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.Transform2D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.Transform2DConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.Transform2D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.Transform2D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetTransform2D(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.Transform2D? value)
@@ -132,7 +132,7 @@ public static class ContentPartConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetOfficeArtExtensionList(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.OfficeArtExtensionList? value)
@@ -184,7 +184,7 @@ public static class ContentPartConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

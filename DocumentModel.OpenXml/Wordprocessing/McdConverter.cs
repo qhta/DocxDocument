@@ -73,17 +73,17 @@ public static class McdConverter
   /// </summary>
   private static Byte? GetBEncrypt(DXOW.Mcd openXmlElement)
   {
-    if (openXmlElement.BEncrypt?.Value != null)
+    if (openXmlElement?.BEncrypt?.Value != null)
       return Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.BEncrypt?.Value != null)
+    if (openXmlElement?.BEncrypt?.Value != null)
       if (Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.BEncrypt?.Value == null && value == null) return true;
+    if (openXmlElement?.BEncrypt?.Value == null && value == null) return true;
     diffs?.Add(objName, "BEncrypt", openXmlElement?.BEncrypt?.Value, value?.ToString("x2"));
     return false;
   }
@@ -101,17 +101,17 @@ public static class McdConverter
   /// </summary>
   private static Byte? GetCmg(DXOW.Mcd openXmlElement)
   {
-    if (openXmlElement.Cmg?.Value != null)
+    if (openXmlElement?.Cmg?.Value != null)
       return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpCmg(DXOW.Mcd openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Cmg?.Value != null)
+    if (openXmlElement?.Cmg?.Value != null)
       if (Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.Cmg?.Value == null && value == null) return true;
+    if (openXmlElement?.Cmg?.Value == null && value == null) return true;
     diffs?.Add(objName, "Cmg", openXmlElement?.Cmg?.Value, value?.ToString("x2"));
     return false;
   }
@@ -157,7 +157,7 @@ public static class McdConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

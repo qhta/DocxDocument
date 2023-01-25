@@ -40,7 +40,7 @@ public static class MultiLevelStringReferenceConverter
   
   private static bool CmpMultiLevelStringCache(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLevelStringCache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MultiLevelStringCacheConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MultiLevelStringCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.MultiLevelStringCache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMultiLevelStringCache(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLevelStringCache? value)
@@ -66,7 +66,7 @@ public static class MultiLevelStringReferenceConverter
   
   private static bool CmpMultiLvlStrRefExtensionList(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLvlStrRefExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MultiLvlStrRefExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLvlStrRefExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MultiLvlStrRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.MultiLvlStrRefExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetMultiLvlStrRefExtensionList(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLvlStrRefExtensionList? value)
@@ -109,7 +109,7 @@ public static class MultiLevelStringReferenceConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

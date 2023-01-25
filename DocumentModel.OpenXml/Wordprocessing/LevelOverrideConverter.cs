@@ -10,12 +10,14 @@ public static class LevelOverrideConverter
   /// </summary>
   private static Int32? GetLevelIndex(DXW.LevelOverride openXmlElement)
   {
-    return openXmlElement.LevelIndex?.Value;
+    return openXmlElement?.LevelIndex?.Value;
   }
   
   private static bool CmpLevelIndex(DXW.LevelOverride openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LevelIndex?.Value == value;
+    if (openXmlElement?.LevelIndex?.Value == value) return true;
+    diffs?.Add(objName, "LevelIndex", openXmlElement?.LevelIndex?.Value, value);
+    return false;
   }
   
   private static void SetLevelIndex(DXW.LevelOverride openXmlElement, Int32? value)
@@ -33,7 +35,10 @@ public static class LevelOverrideConverter
   
   private static bool CmpStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXW.StartOverrideNumberingValue", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value)
@@ -58,7 +63,7 @@ public static class LevelOverrideConverter
   
   private static bool CmpLevel(DXW.LevelOverride openXmlElement, DMW.Level? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LevelConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Level>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Level>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLevel(DXW.LevelOverride openXmlElement, DMW.Level? value)
@@ -101,7 +106,7 @@ public static class LevelOverrideConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -15,7 +15,10 @@ public static class FramesetConverter
   
   private static bool CmpFrameSize(DXW.Frameset openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value == value;
+    var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "FrameSize", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetFrameSize(DXW.Frameset openXmlElement, String? value)
@@ -40,7 +43,7 @@ public static class FramesetConverter
   
   private static bool CmpFramesetSplitbar(DXW.Frameset openXmlElement, DMW.FramesetSplitbar? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramesetSplitbarConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.FramesetSplitbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FramesetSplitbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FramesetSplitbar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFramesetSplitbar(DXW.Frameset openXmlElement, DMW.FramesetSplitbar? value)
@@ -89,7 +92,7 @@ public static class FramesetConverter
   
   private static bool CmpChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramesetConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Frameset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value)
@@ -112,7 +115,7 @@ public static class FramesetConverter
   
   private static bool CmpFrame(DXW.Frameset openXmlElement, DMW.Frame? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FrameConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXW.Frame>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frame>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFrame(DXW.Frameset openXmlElement, DMW.Frame? value)
@@ -161,7 +164,7 @@ public static class FramesetConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

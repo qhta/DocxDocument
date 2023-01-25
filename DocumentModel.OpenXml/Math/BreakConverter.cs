@@ -10,12 +10,14 @@ public static class BreakConverter
   /// </summary>
   private static Int64? GetAlignAt(DXMath.Break openXmlElement)
   {
-    return openXmlElement.AlignAt?.Value;
+    return openXmlElement?.AlignAt?.Value;
   }
   
   private static bool CmpAlignAt(DXMath.Break openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.AlignAt?.Value == value;
+    if (openXmlElement?.AlignAt?.Value == value) return true;
+    diffs?.Add(objName, "AlignAt", openXmlElement?.AlignAt?.Value, value);
+    return false;
   }
   
   private static void SetAlignAt(DXMath.Break openXmlElement, Int64? value)
@@ -28,12 +30,14 @@ public static class BreakConverter
   /// </summary>
   private static Int64? GetVal(DXMath.Break openXmlElement)
   {
-    return openXmlElement.Val?.Value;
+    return openXmlElement?.Val?.Value;
   }
   
   private static bool CmpVal(DXMath.Break openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXMath.Break openXmlElement, Int64? value)
@@ -65,7 +69,7 @@ public static class BreakConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

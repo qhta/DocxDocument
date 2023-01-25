@@ -10,12 +10,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int32? GetHorizontalRatio(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.HorizontalRatio?.Value;
+    return openXmlElement?.HorizontalRatio?.Value;
   }
   
   private static bool CmpHorizontalRatio(DXDraw.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalRatio?.Value == value;
+    if (openXmlElement?.HorizontalRatio?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalRatio(DXDraw.TransformEffect openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int32? GetVerticalRatio(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.VerticalRatio?.Value;
+    return openXmlElement?.VerticalRatio?.Value;
   }
   
   private static bool CmpVerticalRatio(DXDraw.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalRatio?.Value == value;
+    if (openXmlElement?.VerticalRatio?.Value == value) return true;
+    diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
+    return false;
   }
   
   private static void SetVerticalRatio(DXDraw.TransformEffect openXmlElement, Int32? value)
@@ -46,12 +50,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int32? GetHorizontalSkew(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.HorizontalSkew?.Value;
+    return openXmlElement?.HorizontalSkew?.Value;
   }
   
   private static bool CmpHorizontalSkew(DXDraw.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalSkew?.Value == value;
+    if (openXmlElement?.HorizontalSkew?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalSkew", openXmlElement?.HorizontalSkew?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalSkew(DXDraw.TransformEffect openXmlElement, Int32? value)
@@ -64,12 +70,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int32? GetVerticalSkew(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.VerticalSkew?.Value;
+    return openXmlElement?.VerticalSkew?.Value;
   }
   
   private static bool CmpVerticalSkew(DXDraw.TransformEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalSkew?.Value == value;
+    if (openXmlElement?.VerticalSkew?.Value == value) return true;
+    diffs?.Add(objName, "VerticalSkew", openXmlElement?.VerticalSkew?.Value, value);
+    return false;
   }
   
   private static void SetVerticalSkew(DXDraw.TransformEffect openXmlElement, Int32? value)
@@ -82,12 +90,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int64? GetHorizontalShift(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.HorizontalShift?.Value;
+    return openXmlElement?.HorizontalShift?.Value;
   }
   
   private static bool CmpHorizontalShift(DXDraw.TransformEffect openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HorizontalShift?.Value == value;
+    if (openXmlElement?.HorizontalShift?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalShift", openXmlElement?.HorizontalShift?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalShift(DXDraw.TransformEffect openXmlElement, Int64? value)
@@ -100,12 +110,14 @@ public static class TransformEffectConverter
   /// </summary>
   private static Int64? GetVerticalShift(DXDraw.TransformEffect openXmlElement)
   {
-    return openXmlElement.VerticalShift?.Value;
+    return openXmlElement?.VerticalShift?.Value;
   }
   
   private static bool CmpVerticalShift(DXDraw.TransformEffect openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.VerticalShift?.Value == value;
+    if (openXmlElement?.VerticalShift?.Value == value) return true;
+    diffs?.Add(objName, "VerticalShift", openXmlElement?.VerticalShift?.Value, value);
+    return false;
   }
   
   private static void SetVerticalShift(DXDraw.TransformEffect openXmlElement, Int64? value)
@@ -149,7 +161,7 @@ public static class TransformEffectConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

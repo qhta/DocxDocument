@@ -10,17 +10,17 @@ public static class RsidsConverter
   /// </summary>
   private static UInt32? GetRsidRoot(DXW.Rsids openXmlElement)
   {
-    if (openXmlElement.RsidRoot?.Val?.Value != null)
+    if (openXmlElement?.RsidRoot?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpRsidRoot(DXW.Rsids openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.RsidRoot?.Val?.Value != null)
+    if (openXmlElement?.RsidRoot?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.RsidRoot?.Val?.Value == null && value == null) return true;
+    if (openXmlElement?.RsidRoot?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "RsidRoot", openXmlElement?.RsidRoot?.Val?.Value, value?.ToString("x8"));
     return false;
   }
@@ -54,7 +54,7 @@ public static class RsidsConverter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -69,7 +69,7 @@ public static class RsidsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -111,7 +111,7 @@ public static class RsidsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

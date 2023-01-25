@@ -10,12 +10,14 @@ public static class TableRowHeightConverter
   /// </summary>
   private static UInt32? GetVal(DXW.TableRowHeight openXmlElement)
   {
-    return openXmlElement.Val?.Value;
+    return openXmlElement?.Val?.Value;
   }
   
   private static bool CmpVal(DXW.TableRowHeight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.TableRowHeight openXmlElement, UInt32? value)
@@ -65,7 +67,7 @@ public static class TableRowHeightConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

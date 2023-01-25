@@ -10,12 +10,14 @@ public static class ArtisticGlowEdgesConverter
   /// </summary>
   private static Int32? GetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement)
   {
-    return openXmlElement.Transparancy?.Value;
+    return openXmlElement?.Transparancy?.Value;
   }
   
   private static bool CmpTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Transparancy?.Value == value;
+    if (openXmlElement?.Transparancy?.Value == value) return true;
+    diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
+    return false;
   }
   
   private static void SetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
@@ -28,12 +30,14 @@ public static class ArtisticGlowEdgesConverter
   /// </summary>
   private static Int32? GetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement)
   {
-    return openXmlElement.Smoothness?.Value;
+    return openXmlElement?.Smoothness?.Value;
   }
   
   private static bool CmpSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Smoothness?.Value == value;
+    if (openXmlElement?.Smoothness?.Value == value) return true;
+    diffs?.Add(objName, "Smoothness", openXmlElement?.Smoothness?.Value, value);
+    return false;
   }
   
   private static void SetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
@@ -65,7 +69,7 @@ public static class ArtisticGlowEdgesConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

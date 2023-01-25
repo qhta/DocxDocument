@@ -124,12 +124,14 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Int32? GetCryptographicAlgorithmSid(DXW.DocumentProtection openXmlElement)
   {
-    return openXmlElement.CryptographicAlgorithmSid?.Value;
+    return openXmlElement?.CryptographicAlgorithmSid?.Value;
   }
   
   private static bool CmpCryptographicAlgorithmSid(DXW.DocumentProtection openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CryptographicAlgorithmSid?.Value == value;
+    if (openXmlElement?.CryptographicAlgorithmSid?.Value == value) return true;
+    diffs?.Add(objName, "CryptographicAlgorithmSid", openXmlElement?.CryptographicAlgorithmSid?.Value, value);
+    return false;
   }
   
   private static void SetCryptographicAlgorithmSid(DXW.DocumentProtection openXmlElement, Int32? value)
@@ -142,12 +144,14 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static UInt32? GetCryptographicSpinCount(DXW.DocumentProtection openXmlElement)
   {
-    return openXmlElement.CryptographicSpinCount?.Value;
+    return openXmlElement?.CryptographicSpinCount?.Value;
   }
   
   private static bool CmpCryptographicSpinCount(DXW.DocumentProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.CryptographicSpinCount?.Value == value;
+    if (openXmlElement?.CryptographicSpinCount?.Value == value) return true;
+    diffs?.Add(objName, "CryptographicSpinCount", openXmlElement?.CryptographicSpinCount?.Value, value);
+    return false;
   }
   
   private static void SetCryptographicSpinCount(DXW.DocumentProtection openXmlElement, UInt32? value)
@@ -181,17 +185,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static UInt32? GetAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.AlgorithmIdExtensibility?.Value != null)
+    if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
       return UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.AlgorithmIdExtensibility?.Value != null)
+    if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
       if (UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.AlgorithmIdExtensibility?.Value == null && value == null) return true;
+    if (openXmlElement?.AlgorithmIdExtensibility?.Value == null && value == null) return true;
     diffs?.Add(objName, "AlgorithmIdExtensibility", openXmlElement?.AlgorithmIdExtensibility?.Value, value?.ToString("x8"));
     return false;
   }
@@ -230,17 +234,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static UInt32? GetCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.CryptographicProviderTypeExtensibility?.Value != null)
+    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
       return UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber);
     return null;
   }
   
   private static bool CmpCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.CryptographicProviderTypeExtensibility?.Value != null)
+    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
       if (UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber) == value)
         return true;
-    if (openXmlElement.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
+    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
     diffs?.Add(objName, "CryptographicProviderTypeExtensibility", openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value?.ToString("x8"));
     return false;
   }
@@ -279,17 +283,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Byte[]? GetHash(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.Hash?.Value != null)
+    if (openXmlElement?.Hash?.Value != null)
       return Convert.FromBase64String(openXmlElement.Hash.Value);
     return null;
   }
   
   private static bool CmpHash(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Hash?.Value != null)
+    if (openXmlElement?.Hash?.Value != null)
       if (Convert.FromBase64String(openXmlElement.Hash.Value) == value)
         return true;
-    if (openXmlElement.Hash?.Value == null && value == null) return true;
+    if (openXmlElement?.Hash?.Value == null && value == null) return true;
     diffs?.Add(objName, "Hash", openXmlElement?.Hash?.Value, value);
     return false;
   }
@@ -307,17 +311,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Byte[]? GetSalt(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.Salt?.Value != null)
+    if (openXmlElement?.Salt?.Value != null)
       return Convert.FromBase64String(openXmlElement.Salt.Value);
     return null;
   }
   
   private static bool CmpSalt(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.Salt?.Value != null)
+    if (openXmlElement?.Salt?.Value != null)
       if (Convert.FromBase64String(openXmlElement.Salt.Value) == value)
         return true;
-    if (openXmlElement.Salt?.Value == null && value == null) return true;
+    if (openXmlElement?.Salt?.Value == null && value == null) return true;
     diffs?.Add(objName, "Salt", openXmlElement?.Salt?.Value, value);
     return false;
   }
@@ -356,17 +360,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Byte[]? GetHashValue(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.HashValue?.Value != null)
+    if (openXmlElement?.HashValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.HashValue.Value);
     return null;
   }
   
   private static bool CmpHashValue(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.HashValue?.Value != null)
+    if (openXmlElement?.HashValue?.Value != null)
       if (Convert.FromBase64String(openXmlElement.HashValue.Value) == value)
         return true;
-    if (openXmlElement.HashValue?.Value == null && value == null) return true;
+    if (openXmlElement?.HashValue?.Value == null && value == null) return true;
     diffs?.Add(objName, "HashValue", openXmlElement?.HashValue?.Value, value);
     return false;
   }
@@ -384,17 +388,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Byte[]? GetSaltValue(DXW.DocumentProtection openXmlElement)
   {
-    if (openXmlElement.SaltValue?.Value != null)
+    if (openXmlElement?.SaltValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.SaltValue.Value);
     return null;
   }
   
   private static bool CmpSaltValue(DXW.DocumentProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement.SaltValue?.Value != null)
+    if (openXmlElement?.SaltValue?.Value != null)
       if (Convert.FromBase64String(openXmlElement.SaltValue.Value) == value)
         return true;
-    if (openXmlElement.SaltValue?.Value == null && value == null) return true;
+    if (openXmlElement?.SaltValue?.Value == null && value == null) return true;
     diffs?.Add(objName, "SaltValue", openXmlElement?.SaltValue?.Value, value);
     return false;
   }
@@ -412,12 +416,14 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static Int32? GetSpinCount(DXW.DocumentProtection openXmlElement)
   {
-    return openXmlElement.SpinCount?.Value;
+    return openXmlElement?.SpinCount?.Value;
   }
   
   private static bool CmpSpinCount(DXW.DocumentProtection openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.SpinCount?.Value == value;
+    if (openXmlElement?.SpinCount?.Value == value) return true;
+    diffs?.Add(objName, "SpinCount", openXmlElement?.SpinCount?.Value, value);
+    return false;
   }
   
   private static void SetSpinCount(DXW.DocumentProtection openXmlElement, Int32? value)
@@ -500,7 +506,7 @@ public static class DocumentProtectionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

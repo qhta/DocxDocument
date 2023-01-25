@@ -51,7 +51,7 @@ public static class LightRigConverter
   
   private static bool CmpSphereCoordinates(DXO2010W.LightRig openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SphereCoordinatesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SphereCoordinatesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SphereCoordinates>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSphereCoordinates(DXO2010W.LightRig openXmlElement, DMW.SphereCoordinates? value)
@@ -94,7 +94,7 @@ public static class LightRigConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -36,7 +36,7 @@ public static class DataStoreItemConverter
   
   private static bool CmpSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.SchemaReferences? value, DiffList? diffs, string? objName)
   {
-    return DMXCustXml.SchemaReferencesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXCustXml.SchemaReferencesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCustXmlDataProps.SchemaReferences>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.SchemaReferences? value)
@@ -76,7 +76,7 @@ public static class DataStoreItemConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

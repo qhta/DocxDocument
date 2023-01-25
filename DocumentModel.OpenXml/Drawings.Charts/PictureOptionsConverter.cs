@@ -125,7 +125,10 @@ public static class PictureOptionsConverter
   
   private static bool CmpPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.PictureStackUnit", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value)
@@ -173,7 +176,7 @@ public static class PictureOptionsConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

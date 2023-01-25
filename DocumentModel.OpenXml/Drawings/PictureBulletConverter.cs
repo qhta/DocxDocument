@@ -15,7 +15,7 @@ public static class PictureBulletConverter
   
   private static bool CmpBlip(DXDraw.PictureBullet openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBlip(DXDraw.PictureBullet openXmlElement, DMDraws.Blip? value)
@@ -52,7 +52,7 @@ public static class PictureBulletConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,12 +10,14 @@ public static class LinearGradientFillConverter
   /// </summary>
   private static Int32? GetAngle(DXDraw.LinearGradientFill openXmlElement)
   {
-    return openXmlElement.Angle?.Value;
+    return openXmlElement?.Angle?.Value;
   }
   
   private static bool CmpAngle(DXDraw.LinearGradientFill openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Angle?.Value == value;
+    if (openXmlElement?.Angle?.Value == value) return true;
+    diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
+    return false;
   }
   
   private static void SetAngle(DXDraw.LinearGradientFill openXmlElement, Int32? value)
@@ -68,7 +70,7 @@ public static class LinearGradientFillConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -52,12 +52,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetLeftChars(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.LeftChars?.Value;
+    return openXmlElement?.LeftChars?.Value;
   }
   
   private static bool CmpLeftChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.LeftChars?.Value == value;
+    if (openXmlElement?.LeftChars?.Value == value) return true;
+    diffs?.Add(objName, "LeftChars", openXmlElement?.LeftChars?.Value, value);
+    return false;
   }
   
   private static void SetLeftChars(DXW.Indentation openXmlElement, Int32? value)
@@ -70,12 +72,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetStartCharacters(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.StartCharacters?.Value;
+    return openXmlElement?.StartCharacters?.Value;
   }
   
   private static bool CmpStartCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.StartCharacters?.Value == value;
+    if (openXmlElement?.StartCharacters?.Value == value) return true;
+    diffs?.Add(objName, "StartCharacters", openXmlElement?.StartCharacters?.Value, value);
+    return false;
   }
   
   private static void SetStartCharacters(DXW.Indentation openXmlElement, Int32? value)
@@ -130,12 +134,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetRightChars(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.RightChars?.Value;
+    return openXmlElement?.RightChars?.Value;
   }
   
   private static bool CmpRightChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.RightChars?.Value == value;
+    if (openXmlElement?.RightChars?.Value == value) return true;
+    diffs?.Add(objName, "RightChars", openXmlElement?.RightChars?.Value, value);
+    return false;
   }
   
   private static void SetRightChars(DXW.Indentation openXmlElement, Int32? value)
@@ -148,12 +154,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetEndCharacters(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.EndCharacters?.Value;
+    return openXmlElement?.EndCharacters?.Value;
   }
   
   private static bool CmpEndCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.EndCharacters?.Value == value;
+    if (openXmlElement?.EndCharacters?.Value == value) return true;
+    diffs?.Add(objName, "EndCharacters", openXmlElement?.EndCharacters?.Value, value);
+    return false;
   }
   
   private static void SetEndCharacters(DXW.Indentation openXmlElement, Int32? value)
@@ -187,12 +195,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetHangingChars(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.HangingChars?.Value;
+    return openXmlElement?.HangingChars?.Value;
   }
   
   private static bool CmpHangingChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HangingChars?.Value == value;
+    if (openXmlElement?.HangingChars?.Value == value) return true;
+    diffs?.Add(objName, "HangingChars", openXmlElement?.HangingChars?.Value, value);
+    return false;
   }
   
   private static void SetHangingChars(DXW.Indentation openXmlElement, Int32? value)
@@ -226,12 +236,14 @@ public static class IndentationConverter
   /// </summary>
   private static Int32? GetFirstLineChars(DXW.Indentation openXmlElement)
   {
-    return openXmlElement.FirstLineChars?.Value;
+    return openXmlElement?.FirstLineChars?.Value;
   }
   
   private static bool CmpFirstLineChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FirstLineChars?.Value == value;
+    if (openXmlElement?.FirstLineChars?.Value == value) return true;
+    diffs?.Add(objName, "FirstLineChars", openXmlElement?.FirstLineChars?.Value, value);
+    return false;
   }
   
   private static void SetFirstLineChars(DXW.Indentation openXmlElement, Int32? value)
@@ -293,7 +305,7 @@ public static class IndentationConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

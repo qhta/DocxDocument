@@ -73,12 +73,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetPresentationStyleIndex(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.PresentationStyleIndex?.Value;
+    return openXmlElement?.PresentationStyleIndex?.Value;
   }
   
   private static bool CmpPresentationStyleIndex(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PresentationStyleIndex?.Value == value;
+    if (openXmlElement?.PresentationStyleIndex?.Value == value) return true;
+    diffs?.Add(objName, "PresentationStyleIndex", openXmlElement?.PresentationStyleIndex?.Value, value);
+    return false;
   }
   
   private static void SetPresentationStyleIndex(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -91,12 +93,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetPresentationStyleCount(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.PresentationStyleCount?.Value;
+    return openXmlElement?.PresentationStyleCount?.Value;
   }
   
   private static bool CmpPresentationStyleCount(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.PresentationStyleCount?.Value == value;
+    if (openXmlElement?.PresentationStyleCount?.Value == value) return true;
+    diffs?.Add(objName, "PresentationStyleCount", openXmlElement?.PresentationStyleCount?.Value, value);
+    return false;
   }
   
   private static void SetPresentationStyleCount(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -298,12 +302,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetRotation(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.Rotation?.Value;
+    return openXmlElement?.Rotation?.Value;
   }
   
   private static bool CmpRotation(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Rotation?.Value == value;
+    if (openXmlElement?.Rotation?.Value == value) return true;
+    diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
+    return false;
   }
   
   private static void SetRotation(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -358,12 +364,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetFixedWidthOverride(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.FixedWidthOverride?.Value;
+    return openXmlElement?.FixedWidthOverride?.Value;
   }
   
   private static bool CmpFixedWidthOverride(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FixedWidthOverride?.Value == value;
+    if (openXmlElement?.FixedWidthOverride?.Value == value) return true;
+    diffs?.Add(objName, "FixedWidthOverride", openXmlElement?.FixedWidthOverride?.Value, value);
+    return false;
   }
   
   private static void SetFixedWidthOverride(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -376,12 +384,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetFixedHeightOverride(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.FixedHeightOverride?.Value;
+    return openXmlElement?.FixedHeightOverride?.Value;
   }
   
   private static bool CmpFixedHeightOverride(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FixedHeightOverride?.Value == value;
+    if (openXmlElement?.FixedHeightOverride?.Value == value) return true;
+    diffs?.Add(objName, "FixedHeightOverride", openXmlElement?.FixedHeightOverride?.Value, value);
+    return false;
   }
   
   private static void SetFixedHeightOverride(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -394,12 +404,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetWidthScale(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.WidthScale?.Value;
+    return openXmlElement?.WidthScale?.Value;
   }
   
   private static bool CmpWidthScale(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.WidthScale?.Value == value;
+    if (openXmlElement?.WidthScale?.Value == value) return true;
+    diffs?.Add(objName, "WidthScale", openXmlElement?.WidthScale?.Value, value);
+    return false;
   }
   
   private static void SetWidthScale(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -412,12 +424,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetHightScale(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.HightScale?.Value;
+    return openXmlElement?.HightScale?.Value;
   }
   
   private static bool CmpHightScale(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.HightScale?.Value == value;
+    if (openXmlElement?.HightScale?.Value == value) return true;
+    diffs?.Add(objName, "HightScale", openXmlElement?.HightScale?.Value, value);
+    return false;
   }
   
   private static void SetHightScale(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -451,12 +465,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetFactorWidth(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.FactorWidth?.Value;
+    return openXmlElement?.FactorWidth?.Value;
   }
   
   private static bool CmpFactorWidth(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FactorWidth?.Value == value;
+    if (openXmlElement?.FactorWidth?.Value == value) return true;
+    diffs?.Add(objName, "FactorWidth", openXmlElement?.FactorWidth?.Value, value);
+    return false;
   }
   
   private static void SetFactorWidth(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -469,12 +485,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetFactorHeight(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.FactorHeight?.Value;
+    return openXmlElement?.FactorHeight?.Value;
   }
   
   private static bool CmpFactorHeight(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.FactorHeight?.Value == value;
+    if (openXmlElement?.FactorHeight?.Value == value) return true;
+    diffs?.Add(objName, "FactorHeight", openXmlElement?.FactorHeight?.Value, value);
+    return false;
   }
   
   private static void SetFactorHeight(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -487,12 +505,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetNeighborOffsetWidth(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.NeighborOffsetWidth?.Value;
+    return openXmlElement?.NeighborOffsetWidth?.Value;
   }
   
   private static bool CmpNeighborOffsetWidth(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.NeighborOffsetWidth?.Value == value;
+    if (openXmlElement?.NeighborOffsetWidth?.Value == value) return true;
+    diffs?.Add(objName, "NeighborOffsetWidth", openXmlElement?.NeighborOffsetWidth?.Value, value);
+    return false;
   }
   
   private static void SetNeighborOffsetWidth(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -505,12 +525,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetNeighborOffsetHeight(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.NeighborOffsetHeight?.Value;
+    return openXmlElement?.NeighborOffsetHeight?.Value;
   }
   
   private static bool CmpNeighborOffsetHeight(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.NeighborOffsetHeight?.Value == value;
+    if (openXmlElement?.NeighborOffsetHeight?.Value == value) return true;
+    diffs?.Add(objName, "NeighborOffsetHeight", openXmlElement?.NeighborOffsetHeight?.Value, value);
+    return false;
   }
   
   private static void SetNeighborOffsetHeight(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -523,12 +545,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetRadiusScale(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.RadiusScale?.Value;
+    return openXmlElement?.RadiusScale?.Value;
   }
   
   private static bool CmpRadiusScale(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.RadiusScale?.Value == value;
+    if (openXmlElement?.RadiusScale?.Value == value) return true;
+    diffs?.Add(objName, "RadiusScale", openXmlElement?.RadiusScale?.Value, value);
+    return false;
   }
   
   private static void SetRadiusScale(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -541,12 +565,14 @@ public static class PropertySetConverter
   /// </summary>
   private static Int32? GetIncludeAngleScale(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement.IncludeAngleScale?.Value;
+    return openXmlElement?.IncludeAngleScale?.Value;
   }
   
   private static bool CmpIncludeAngleScale(DXDrawDgms.PropertySet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.IncludeAngleScale?.Value == value;
+    if (openXmlElement?.IncludeAngleScale?.Value == value) return true;
+    diffs?.Add(objName, "IncludeAngleScale", openXmlElement?.IncludeAngleScale?.Value, value);
+    return false;
   }
   
   private static void SetIncludeAngleScale(DXDrawDgms.PropertySet openXmlElement, Int32? value)
@@ -564,7 +590,7 @@ public static class PropertySetConverter
   
   private static bool CmpPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PresentationLayoutVariables? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PresentationLayoutVariables? value)
@@ -590,7 +616,7 @@ public static class PropertySetConverter
   
   private static bool CmpStyle(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.Style? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetStyle(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.Style? value)
@@ -714,7 +740,7 @@ public static class PropertySetConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

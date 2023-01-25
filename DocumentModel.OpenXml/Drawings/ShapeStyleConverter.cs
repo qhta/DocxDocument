@@ -15,7 +15,7 @@ public static class ShapeStyleConverter
   
   private static bool CmpLineReference(DXDraw.ShapeStyle openXmlElement, DMDraws.LineReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.LineReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetLineReference(DXDraw.ShapeStyle openXmlElement, DMDraws.LineReference? value)
@@ -41,7 +41,7 @@ public static class ShapeStyleConverter
   
   private static bool CmpFillReference(DXDraw.ShapeStyle openXmlElement, DMDraws.FillReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FillReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFillReference(DXDraw.ShapeStyle openXmlElement, DMDraws.FillReference? value)
@@ -67,7 +67,7 @@ public static class ShapeStyleConverter
   
   private static bool CmpEffectReference(DXDraw.ShapeStyle openXmlElement, DMDraws.EffectReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetEffectReference(DXDraw.ShapeStyle openXmlElement, DMDraws.EffectReference? value)
@@ -93,7 +93,7 @@ public static class ShapeStyleConverter
   
   private static bool CmpFontReference(DXDraw.ShapeStyle openXmlElement, DMDraws.FontReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FontReferenceConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.FontReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FontReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFontReference(DXDraw.ShapeStyle openXmlElement, DMDraws.FontReference? value)
@@ -139,7 +139,7 @@ public static class ShapeStyleConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

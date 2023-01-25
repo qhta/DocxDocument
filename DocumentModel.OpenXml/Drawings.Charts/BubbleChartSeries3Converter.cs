@@ -15,7 +15,10 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpIndex(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetIndex(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value)
@@ -40,7 +43,10 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpOrder(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value == value;
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetOrder(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value)
@@ -65,7 +71,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpSeriesText(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSeriesText(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
@@ -91,7 +97,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetChartShapeProperties(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -117,7 +123,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpPictureOptions(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetPictureOptions(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -182,7 +188,7 @@ public static class BubbleChartSeries3Converter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -197,7 +203,7 @@ public static class BubbleChartSeries3Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -222,7 +228,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpDataLabels(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabels(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -259,7 +265,7 @@ public static class BubbleChartSeries3Converter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -274,7 +280,7 @@ public static class BubbleChartSeries3Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -313,7 +319,7 @@ public static class BubbleChartSeries3Converter
       var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().ToString()+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -328,7 +334,7 @@ public static class BubbleChartSeries3Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -353,7 +359,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpXValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.XValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.XValuesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.XValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.XValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.XValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetXValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.XValues? value)
@@ -376,7 +382,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpYValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.YValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.YValuesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.YValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.YValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.YValues>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetYValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.YValues? value)
@@ -399,7 +405,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpBubbleSize(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSize? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleSizeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BubbleSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BubbleSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBubbleSize(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSize? value)
@@ -447,7 +453,7 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpBubbleSerExtensionList(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleSerExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BubbleSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BubbleSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBubbleSerExtensionList(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSerExtensionList? value)
@@ -526,7 +532,7 @@ public static class BubbleChartSeries3Converter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

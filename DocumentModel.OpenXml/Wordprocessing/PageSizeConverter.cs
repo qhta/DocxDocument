@@ -10,12 +10,14 @@ public static class PageSizeConverter
   /// </summary>
   private static UInt32? GetWidth(DXW.PageSize openXmlElement)
   {
-    return openXmlElement.Width?.Value;
+    return openXmlElement?.Width?.Value;
   }
   
   private static bool CmpWidth(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXW.PageSize openXmlElement, UInt32? value)
@@ -28,12 +30,14 @@ public static class PageSizeConverter
   /// </summary>
   private static UInt32? GetHeight(DXW.PageSize openXmlElement)
   {
-    return openXmlElement.Height?.Value;
+    return openXmlElement?.Height?.Value;
   }
   
   private static bool CmpHeight(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Height?.Value == value;
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXW.PageSize openXmlElement, UInt32? value)
@@ -64,12 +68,14 @@ public static class PageSizeConverter
   /// </summary>
   private static UInt16? GetCode(DXW.PageSize openXmlElement)
   {
-    return openXmlElement.Code?.Value;
+    return openXmlElement?.Code?.Value;
   }
   
   private static bool CmpCode(DXW.PageSize openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.Code?.Value == value;
+    if (openXmlElement?.Code?.Value == value) return true;
+    diffs?.Add(objName, "Code", openXmlElement?.Code?.Value, value);
+    return false;
   }
   
   private static void SetCode(DXW.PageSize openXmlElement, UInt16? value)
@@ -107,7 +113,7 @@ public static class PageSizeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

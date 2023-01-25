@@ -12,7 +12,7 @@ public static class LineDefaultConverter
   
   private static bool CmpShapeProperties(DXDraw.LineDefault openXmlElement, DMDraws.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXDraw.LineDefault openXmlElement, DMDraws.ShapeProperties? value)
@@ -35,7 +35,7 @@ public static class LineDefaultConverter
   
   private static bool CmpBodyProperties(DXDraw.LineDefault openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBodyProperties(DXDraw.LineDefault openXmlElement, DMDraws.BodyProperties? value)
@@ -58,7 +58,7 @@ public static class LineDefaultConverter
   
   private static bool CmpListStyle(DXDraw.LineDefault openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetListStyle(DXDraw.LineDefault openXmlElement, DMDraws.ListStyle? value)
@@ -81,7 +81,7 @@ public static class LineDefaultConverter
   
   private static bool CmpShapeStyle(DXDraw.LineDefault openXmlElement, DMDraws.ShapeStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapeStyleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeStyle(DXDraw.LineDefault openXmlElement, DMDraws.ShapeStyle? value)
@@ -104,7 +104,7 @@ public static class LineDefaultConverter
   
   private static bool CmpExtensionList(DXDraw.LineDefault openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXDraw.LineDefault openXmlElement, DMDraws.ExtensionList? value)
@@ -153,7 +153,7 @@ public static class LineDefaultConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

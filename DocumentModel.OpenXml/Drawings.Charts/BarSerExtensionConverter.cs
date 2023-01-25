@@ -33,7 +33,7 @@ public static class BarSerExtensionConverter
   
   private static bool CmpInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value)
@@ -56,7 +56,7 @@ public static class BarSerExtensionConverter
   
   private static bool CmpFilteredSeriesTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredSeriesTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value)
@@ -79,7 +79,7 @@ public static class BarSerExtensionConverter
   
   private static bool CmpFilteredCategoryTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetFilteredCategoryTitle(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value)
@@ -102,7 +102,7 @@ public static class BarSerExtensionConverter
   
   private static bool CmpDataLabelsRange(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetDataLabelsRange(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value)
@@ -125,7 +125,7 @@ public static class BarSerExtensionConverter
   
   private static bool CmpCategoryFilterExceptions(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetCategoryFilterExceptions(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value)
@@ -177,7 +177,7 @@ public static class BarSerExtensionConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

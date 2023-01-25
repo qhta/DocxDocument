@@ -15,7 +15,7 @@ public static class NaryConverter
   
   private static bool CmpNaryProperties(DXMath.Nary openXmlElement, DMMath.NaryProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.NaryPropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.NaryProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.NaryPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.NaryProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetNaryProperties(DXMath.Nary openXmlElement, DMMath.NaryProperties? value)
@@ -41,7 +41,7 @@ public static class NaryConverter
   
   private static bool CmpSubArgument(DXMath.Nary openXmlElement, DMMath.SubArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSubArgument(DXMath.Nary openXmlElement, DMMath.SubArgument? value)
@@ -67,7 +67,7 @@ public static class NaryConverter
   
   private static bool CmpSuperArgument(DXMath.Nary openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetSuperArgument(DXMath.Nary openXmlElement, DMMath.SuperArgument? value)
@@ -93,7 +93,7 @@ public static class NaryConverter
   
   private static bool CmpBase(DXMath.Nary openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetBase(DXMath.Nary openXmlElement, DMMath.Base? value)
@@ -139,7 +139,7 @@ public static class NaryConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

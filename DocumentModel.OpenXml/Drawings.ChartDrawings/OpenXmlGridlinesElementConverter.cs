@@ -15,7 +15,7 @@ public static class OpenXmlGridlinesElementConverter
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetShapeProperties(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
@@ -41,7 +41,7 @@ public static class OpenXmlGridlinesElementConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ExtensionList? value)
@@ -81,7 +81,7 @@ public static class OpenXmlGridlinesElementConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
