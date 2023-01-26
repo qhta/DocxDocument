@@ -32,7 +32,7 @@ public class DigitalSignature : ModelElementImpl
       {
         var item = OpenXmlElement.GetFirstChild<VTBlob>();
         if (item != null)
-          return VariantConverter.CreateModelElement(item).ToBytes();
+          return VariantConverter.GetVariant(item).ToBytes();
       }
       return null;
     }

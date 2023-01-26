@@ -121,13 +121,13 @@ public static class VariantConverter
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
-        return CreateModelElement(vtVariant.FirstChild);
+        return GetVariant(vtVariant.FirstChild);
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
 
-  public static Variant CreateModelElement(OpenXmlElement openXmlElement)
+  public static Variant GetVariant(OpenXmlElement openXmlElement)
   {
     if (openXmlElement is VTBool vBool)
       return new Variant(VariantType.Bool, XmlConvert.ToBoolean(vBool.Text));
@@ -244,7 +244,7 @@ public static class VariantConverter
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
-        return new Variant(VariantType.Variant, CreateModelElement(vtVariant.FirstChild));
+        return new Variant(VariantType.Variant, GetVariant(vtVariant.FirstChild));
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");

@@ -2,7 +2,9 @@
 
 using System.ComponentModel;
 using System.Xml;
+
 using DocumentModel.BaseTypes;
+
 using Qhta.Conversion;
 
 namespace DocumentModel;
@@ -37,7 +39,9 @@ namespace DocumentModel;
 [XmlItemElement(typeof(Guid))]
 [XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
 [XmlItemElement(typeof(Variant))]
-public record Variant : IConvertible, IEquatable<Variant>
+[TypeConverter(typeof(VariantTypeConverter))]
+[JsonConverter(typeof(VariantJsonConverter))]
+public class Variant : IConvertible, IEquatable<Variant>
 {
   public static Dictionary<VariantType, Type> ItemTypes = new()
   {
@@ -159,8 +163,10 @@ public record Variant : IConvertible, IEquatable<Variant>
     return TypeCode.Object;
   }
 
-  public virtual object ToType(Type conversionType, IFormatProvider? provider)
+  public virtual object? ToType(Type conversionType, IFormatProvider? provider)
   {
+    if (conversionType.Name.StartsWith("Nullable`"))
+      conversionType = conversionType.GetGenericArguments()[0];
     if (conversionType == typeof(Boolean)) return ToBoolean(provider);
     if (conversionType == typeof(Byte)) return ToByte(provider);
     if (conversionType == typeof(SByte)) return ToSByte(provider);
@@ -179,8 +185,14 @@ public record Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(Char)) return ToChar(provider);
     if (conversionType == typeof(Guid)) return ToGuid(provider);
     if (conversionType == typeof(byte[])) return ToBytes(provider);
-    if (conversionType == typeof(Variant)) return new Variant(this);
+    if (conversionType == typeof(Variant)) return this;
     if (conversionType == typeof(object)) return this;
+    if (conversionType == typeof(VectorVariant))
+    {
+      var vector = new VectorVariant();
+      vector.Add(this);
+      return vector;
+    }
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
 
@@ -278,15 +290,15 @@ public record Variant : IConvertible, IEquatable<Variant>
     return Convert.ToDateTime(Value);
   }
 
-  public virtual string ToString(IFormatProvider? provider = null)
+  public virtual string? ToString(IFormatProvider? provider = null)
   {
     if (Value is byte[] bytes)
       return Convert.ToBase64String(bytes);
     if (VariantType == VariantType.Date)
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
-      return XmlConvert.ToString(ToDateTime());
-    return Convert.ToString(Value) ?? "";
+      return Value?.ToString();
+    return Convert.ToString(Value);
   }
 
   public virtual char ToChar(IFormatProvider? provider = null)
@@ -294,20 +306,35 @@ public record Variant : IConvertible, IEquatable<Variant>
     return Convert.ToChar(Value);
   }
 
-  public virtual bool Equals(Variant? other)
+  public override bool Equals(object? obj)
   {
-    var result = false;
+    if (obj == null) return false;
+    if (obj is Variant other)
+      return Equals(other);
+    other = new Variant(obj);
+    return Equals(other);
+  }
+
+  public bool Equals(Variant? other)
+  {
     if (other == null) return false;
-    if (VariantType != other.VariantType)
-      return false;
-    if (_Value == null && other._Value == null)
+    var result = false;
+    if (this.Value == null && other.Value == null)
       return true;
-    if (Value is byte[] thisBytes && other.Value is byte[] otherBytes)
+    if (this.Value is byte[] thisBytes && other.Value is byte[] otherBytes)
       result = thisBytes.SequenceEqual(otherBytes);
-    else if (Value is Variant thisVariant && other.Value is Variant otherVariant)
+    else if (this.Value is Variant thisVariant && other.Value is Variant otherVariant)
       result = thisVariant.Equals(otherVariant);
     else
-      result = _Value?.Equals(other._Value) == true;
+    {
+      result = this.Value?.Equals(other.Value) == true;
+      if (!result)
+      {
+        var thisValueStr = this.Value?.ToString();
+        var otherValueStr = other.Value?.ToString();
+        result = String.Equals(thisValueStr, otherValueStr);
+      }
+    }
     return result;
   }
 
@@ -498,7 +525,6 @@ public record Variant : IConvertible, IEquatable<Variant>
     if (value is string vString)
     {
       VariantType = VariantType.Lpwstr;
-      VariantType = VariantType.Bool;
       _Value = vString;
       return;
     }
@@ -803,12 +829,12 @@ public record Variant : IConvertible, IEquatable<Variant>
     return new Variant(VariantType.DateTime, value);
   }
 
-  public static implicit operator String(Variant value)
+  public static implicit operator String?(Variant value)
   {
     return value.ToString();
   }
 
-  public static implicit operator Variant(String value)
+  public static implicit operator Variant(String? value)
   {
     return new Variant(VariantType.Lpwstr, value);
   }
@@ -957,5 +983,10 @@ public record Variant : IConvertible, IEquatable<Variant>
   public override int GetHashCode()
   {
     return HashCode.Combine(VariantType, _Value);
+  }
+
+  public override string? ToString()
+  {
+    return ToString(CultureInfo.InvariantCulture)+$" ({VariantType})";
   }
 }

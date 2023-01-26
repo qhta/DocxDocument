@@ -1,0 +1,114 @@
+﻿using Qhta.Conversion;
+
+namespace DocumentModel.Properties;
+
+public partial class CoreProperties : ICollection<DocumentProperty>
+{
+  private static string[] _PropNames = null!;
+
+  public IEnumerator<DocumentProperty> GetEnumerator()
+  {
+    foreach (var name in GetPropNames())
+    {
+      var value = Get(name);
+      if (value != null) yield return new DocumentProperty { Name = name, Value = new Variant(value) };
+    }
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
+
+  public void Add(DocumentProperty item)
+  {
+    if (item.Name != null)
+      Set(item.Name, item);
+  }
+
+  public void Clear()
+  {
+    foreach (var name in GetPropNames()) Set(name, null);
+  }
+
+  public bool Contains(DocumentProperty item)
+  {
+    if (item.Name != null && GetPropNames().Contains(item.Name))
+      return Get(item.Name) != null;
+    return false;
+  }
+
+  public void CopyTo(DocumentProperty[] array, int arrayIndex)
+  {
+    var items = new List<DocumentProperty>();
+    foreach (var item in this) items.Add(item);
+    items.CopyTo(array, arrayIndex);
+  }
+
+  public bool Remove(DocumentProperty item)
+  {
+    if (item.Name != null && GetPropNames().Contains(item.Name))
+    {
+      Set(item.Name, null);
+      return true;
+    }
+    return false;
+  }
+
+  int ICollection<DocumentProperty>.Count => Count();
+
+  bool ICollection<DocumentProperty>.IsReadOnly => false;
+
+  public int Count()
+  {
+    var corePropertiesCount = 0;
+    foreach (var name in GetPropNames())
+    {
+      var item = Get(name);
+      if (item != null)
+        corePropertiesCount++;
+    }
+    return corePropertiesCount;
+  }
+
+  public object? Get(string propName)
+  {
+    var prop = typeof(CoreProperties).GetProperty(propName);
+    var value = prop?.GetValue(this, null);
+    return value;
+  }
+
+  public bool Set(string propName, object? value)
+  {
+    var prop = typeof(CoreProperties).GetProperty(propName);
+    if (prop != null)
+    {
+      if (value!=null && value.GetType() != prop.PropertyType)
+      {
+        if (value is String valStr)
+        {
+          var typeConverter = new ValueTypeConverter(prop.PropertyType);
+          value = typeConverter.ConvertFromInvariantString(valStr);
+        }
+        else if (value is Variant variant)
+          value = variant.ToType(prop.PropertyType, null);
+      }
+      prop.SetValue(this, value);
+      return true;
+    }
+    return false;
+  }
+
+  public static string[] GetPropNames()
+  {
+    if (_PropNames == null)
+      _PropNames = typeof(CoreProperties).GetProperties().Where(item => item.Name != "Count" || item.Name != "IsReadOnly").Select(item => item.Name).ToArray();
+    return _PropNames;
+  }
+
+  public void Add(object item)
+  {
+    if (item is DocumentProperty documentProperty)
+      Add(documentProperty);
+  }
+}

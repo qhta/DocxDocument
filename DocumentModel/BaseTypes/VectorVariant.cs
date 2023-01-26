@@ -1,10 +1,14 @@
+using DocumentModel.BaseTypes;
+
 namespace DocumentModel;
 
 /// <summary>
 ///   Variant implementation. Value is of any type.
 /// </summary>
 [XmlRoot("Vector")]
-public record VectorVariant : Variant, IList<object?>
+[TypeConverter(typeof(VectorVariantTypeConverter))]
+[JsonConverter(typeof(VectorJsonConverter))]
+public class VectorVariant : Variant, IList<object?>
 {
   private List<object?> _items = new();
 
@@ -88,4 +92,36 @@ public record VectorVariant : Variant, IList<object?>
     get => _items[index];
     set => _items[index] = value;
   }
+
+  public virtual bool Equals(VectorVariant? other)
+  {
+    if (other == null) return false;
+    if (this._items == null && other._items == null)
+      return true;
+    if (this._items == null || other._items == null)
+      return false;
+    if (this._items.Count != other._items.Count)
+      return false;
+    for (int i = 0; i<_items.Count; i++)
+    {
+      var thisItem = this._items[i];
+      var otherItem = other._items[i];
+      if (thisItem != null)
+      {
+        if (!thisItem.Equals(otherItem)) return false;
+      }
+      else
+      if (otherItem != null)
+      {
+        if (!otherItem.Equals(thisItem)) return false;
+      }
+    }
+    return true;
+  }
+
+  public override int GetHashCode()
+  {
+    return base.GetHashCode();
+  }
+
 }

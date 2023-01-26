@@ -46,4 +46,32 @@ public class StringList : ICollection<string>, IEnumerable
   public int Count => _list?.Count ?? 0;
 
   public bool IsReadOnly => false;
+
+  public override string ToString()
+  {
+    return String.Join(", ", _list.ToArray());
+  }
+
+  public override bool Equals(object? obj)
+  {
+    if (obj == null) return false;
+    if (obj is StringList other)
+      return Equals(other);
+    if (obj is string str)
+      return Count == 1 && _list[0].Equals(str);
+    return false;
+  }
+
+  public bool Equals(StringList other)
+  {
+    if (this.Count != other.Count) return false;
+    for (int i=0; i<this.Count; i++)
+      if (!this._list[i].Equals(other._list[i])) return false;
+    return true;
+  }
+
+  public override int GetHashCode()
+  {
+    return base.GetHashCode();
+  }
 }

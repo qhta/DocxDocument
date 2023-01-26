@@ -7,11 +7,11 @@ namespace DocumentModel.OpenXml.Properties;
 /// </summary>
 public static class CustomPropertiesConverter
 {
-  public static Collection<CustomDocumentProperty>? GetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
+  public static Collection<DocumentProperty>? GetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new Collection<CustomDocumentProperty>();
+      var collection = new Collection<DocumentProperty>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty>())
       {
         var newItem = CustomDocumentPropertyConverter.CreateModelElement(item);
@@ -23,7 +23,7 @@ public static class CustomPropertiesConverter
     return null;
   }
 
-  public static void SetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, Collection<CustomDocumentProperty>? value)
+  public static void SetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, Collection<DocumentProperty>? value)
   {
     if (openXmlElement != null)
     {

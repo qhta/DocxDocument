@@ -66,13 +66,13 @@ public static class CustomDocumentPropertyConverter
   /// <summary>
   ///   Variant Value
   /// </summary>
-  public static object? GetValue(CustomDocumentProperty openXmlElement)
+  public static Variant? GetValue(CustomDocumentProperty openXmlElement)
   {
     if (openXmlElement != null)
     {
       var valueElement = openXmlElement.Elements().FirstOrDefault(item => item.GetType().Name.StartsWith("VT"));
       if (valueElement != null)
-        return VariantConverter.GetValue(valueElement);
+        return VariantConverter.GetVariant(valueElement);
     }
     return null;
   }
@@ -93,9 +93,9 @@ public static class CustomDocumentPropertyConverter
     }
   }
 
-  public static DocumentModel.Properties.CustomDocumentProperty? CreateModelElement(CustomDocumentProperty? openXmlElement)
+  public static DocumentModel.Properties.DocumentProperty? CreateModelElement(CustomDocumentProperty? openXmlElement)
   {
-    var value = new DocumentModel.Properties.CustomDocumentProperty();
+    var value = new DocumentModel.Properties.DocumentProperty();
     if (openXmlElement != null)
     {
       value.FormatId = GetFormatId(openXmlElement);
@@ -107,7 +107,7 @@ public static class CustomDocumentPropertyConverter
     return value;
   }
 
-  public static CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.CustomDocumentProperty? value)
+  public static CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.DocumentProperty? value)
   {
     if (value != null)
     {
