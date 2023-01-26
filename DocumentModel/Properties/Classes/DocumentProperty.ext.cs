@@ -1,11 +1,5 @@
 using System.Runtime.Serialization;
-using Newtonsoft;
 using Newtonsoft.Json;
-//using Newtonsoft.Json.Converters;
-//using Newtonsoft.Json.Linq;
-//using Newtonsoft.Json.Serialization;
-//using Newtonsoft.Json.Schema;
-//using Newtonsoft.Json.Utilities;
 
 using DocumentModel.Math;
 
@@ -15,7 +9,7 @@ using JsonKnownTypes;
 namespace DocumentModel.Properties;
 
 /// <summary>
-///   Custom File Property.
+///   Document Property.
 /// </summary>
 [KnownType(typeof(CustomDocumentProperty))]
 [JsonConverter(typeof(JsonKnownTypesConverter<DocumentProperty>))]

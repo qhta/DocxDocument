@@ -15,13 +15,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="BaseTypes\VariantJsonConverter.cs" />
+    <Compile Remove="Properties\Classes\**" />
+    <EmbeddedResource Remove="Properties\Classes\**" />
+    <None Remove="Properties\Classes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BaseTypes\StringNum.cs" />
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
-    <Compile Remove="Properties\Classes\HeadingPairs.ext.cs" />
-    <Compile Remove="Properties\Classes\HeadingPairsJsonConverter.cs" />
-    <Compile Remove="Properties\Classes\HyperlinkList.cs" />
-    <Compile Remove="Properties\Classes\TitlesOfParts.cs" />
-    <Compile Remove="Properties\Classes\TitlesOfParts.ext.cs" />
+    <Compile Remove="Properties\HeadingPairs.cs" />
   </ItemGroup>
 
   <ItemGroup>

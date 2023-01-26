@@ -4,7 +4,7 @@ namespace DocumentModel;
 ///   Array Variant implementation.
 /// </summary>
 [XmlRoot("Array")]
-public record ArrayVariant : Variant, ICollection<object?>
+public class ArrayVariant : Variant, ICollection<object?>
 {
   private VariantType _baseType;
 

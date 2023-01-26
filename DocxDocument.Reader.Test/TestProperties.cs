@@ -26,31 +26,31 @@ namespace DocxDocument.Reader.Test
     public void TestNormalTemplateProperties()
     {
       var filename = Path.Combine(TestPath, "Normal.dotm");
-      ReadProperties(filename, true);
+      TestReadProperties(filename, true);
     }
 
     [Test]
     public void TestDocumentProperties()
     {
       var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-      ReadProperties(filename, true);
+      TestReadProperties(filename, true);
     }
 
     [Test]
     public void TestCustomProperties()
     {
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      ReadProperties(filename, true);
+      TestReadProperties(filename, true);
     }
 
     [Test]
     public void TestSampleDocsProperties()
     {
       foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-        ReadProperties(filename);
+        TestReadProperties(filename);
     }
 
-    public virtual DocumentModel.Properties.DocumentProperties ReadProperties(string filename, bool showDetails = false)
+    public virtual DocumentModel.Properties.DocumentProperties TestReadProperties(string filename, bool showDetails = false)
     {
       TestContext.Progress.WriteLine(filename);
       var reader = new DocxReader(filename);
@@ -162,14 +162,14 @@ namespace DocxDocument.Reader.Test
         .Where(item => item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var properties = ReadProperties(filename, true);
+      var oldProperties = TestReadProperties(filename, true);
       var serializer = JsonSerializer.Create();
       var textWriter = new StringWriter();
-      //JsonSerializerSettings settings = new JsonSerializerSettings { /*TypeNameHandling = TypeNameHandling.All,*/ Formatting = Formatting.Indented };
-      //var str = JsonConvert.SerializeObject(properties, settings);
-      var jsonWriter = new JsonTextWriter(textWriter) { Formatting = Formatting.Indented };
-      serializer.Serialize(jsonWriter, properties);
-      string str = textWriter.ToString();
+      JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, /*TypeNameHandling = TypeNameHandling.All,*/ Formatting = Formatting.Indented };
+      var str = JsonConvert.SerializeObject(oldProperties, settings);
+      //var jsonWriter = new JsonTextWriter(textWriter) { Formatting = Formatting.Indented, NullValueHandling = false };
+      //serializer.Serialize(jsonWriter, oldProperties);
+      //string str = textWriter.ToString();
       Debug.WriteLine(str);
       Debug.WriteLine("");
       TestContext.Out.WriteLine(str);
@@ -181,9 +181,16 @@ namespace DocxDocument.Reader.Test
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
       if (newProperties != null)
       {
-        var propertiesCount = properties.Count();
+        var oldPropertiesCount = oldProperties.Count();
         var newPropertiesCount = newProperties.Count();
-        Assert.That(newPropertiesCount, Is.EqualTo(propertiesCount), $"Deserialized properties count different from original");
+        Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count was different from original");
+        var enumerator = newProperties.GetEnumerator();
+        foreach (var oldProperty in oldProperties) 
+        {
+          enumerator.MoveNext();
+          var newProperty = enumerator.Current;
+          Assert.That(newProperty, Is.EqualTo(oldProperty), $"Deserialized property {newProperty.Name} was different from original");
+        }
       }
     }
 
@@ -194,7 +201,7 @@ namespace DocxDocument.Reader.Test
         .Where(item => item.IsPublic && !item.IsGenericType);
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var oldProperties = ReadProperties(filename, true);
+      var oldProperties = TestReadProperties(filename, true);
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
         new SerializationOptions { AcceptAllProperties = true, });

@@ -32,6 +32,7 @@
     <Compile Remove="Properties\CustomProperties.cs" />
     <Compile Remove="Properties\CustomPropertiesConverter - Copy.cs" />
     <Compile Remove="Properties\ExtendedProperties.cs" />
+    <Compile Remove="Properties\HeadingPairs.cs" />
     <Compile Remove="Wordprocessing\CategoryConverter - Copy.cs" />
     <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
     <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
