@@ -51,7 +51,13 @@ public partial class CustomProperties : ICollection<DocumentProperty>
     return CustomDocumentProperties?.Count ?? 0;
   }
 
-  public object? Get(string propName)
+  public DocumentProperty? GetProperty(string propName)
+  {
+    var prop = CustomDocumentProperties?.FirstOrDefault(item => item.Name == propName);
+    return prop;
+  }
+
+  public object? GetValue(string propName)
   {
     var prop = CustomDocumentProperties?.FirstOrDefault(item => item.Name == propName);
     return prop?.Value;

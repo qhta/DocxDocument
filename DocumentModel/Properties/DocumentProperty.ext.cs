@@ -16,9 +16,17 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
 {
   public DocumentProperty() { }
 
-  public DocumentProperty(string name, object? value = null)
+
+  public DocumentProperty(string name, Type? type = null, object? value = null)
   {
     Name = name;
+    if (type != null)
+    {
+      var typeName = type.Name;
+      if (typeName.StartsWith("Nullable`"))
+        typeName = type.GenericTypeArguments[0].Name;
+      Type = typeName;
+    }
     if (value != null)
     {
       if (value is Variant variant)
@@ -36,8 +44,8 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
 
   public bool Equals(DocumentProperty? other)
   {
-    if (Name == "Ukończono")
-      Debug.Assert(other != null);
+    //if (Name == "Ukończono")
+    //  Debug.Assert(other != null);
     if (other == null) return false;
     if (this.Name != other.Name)
       return false;
@@ -52,6 +60,12 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
       return this.Value.Equals(other.Value);
     return false;
   }
+
+  /// <summary>
+  ///   Expected value type name
+  /// </summary>
+  [XmlAttribute]
+  public String? Type { get; set; }
 
   /// <summary>
   ///   Format ID
@@ -73,6 +87,8 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
 
   public override string ToString()
   {
+    if (Type != null)
+      return $"{Name} ({Type}) = {Value}";
     return $"{Name} = {Value}";
   }
 
