@@ -162,6 +162,46 @@ public class Variant : IConvertible, IEquatable<Variant>
       return TypeCode.DBNull;
     return TypeCode.Object;
   }
+  public static TypeCode ToTypeCode(Type type)
+  {
+    if (type.Name.StartsWith("Nullable`"))
+      type = type.GenericTypeArguments[0];
+    if (type == typeof(Boolean))
+      return TypeCode.Boolean;
+    if (type == typeof(Byte))
+      return TypeCode.Byte;
+    if (type == typeof(Char))
+      return TypeCode.Char;
+    if (type == typeof(DateOnly))
+      return TypeCode.DateTime;
+    if (type == typeof(DateTime))
+      return TypeCode.DateTime;
+    if (type == typeof(Decimal))
+      return TypeCode.Decimal;
+    if (type == typeof(Double))
+      return TypeCode.Double;
+    if (type == typeof(Int16))
+      return TypeCode.Int16;
+    if (type == typeof(Int32))
+      return TypeCode.Int32;
+    if (type == typeof(Int64))
+      return TypeCode.Int64;
+    if (type == typeof(SByte))
+      return TypeCode.SByte;
+    if (type == typeof(Single))
+      return TypeCode.Single;
+    if (type == typeof(String))
+      return TypeCode.String;
+    if (type == typeof(UInt16))
+      return TypeCode.UInt16;
+    if (type == typeof(UInt32))
+      return TypeCode.UInt32;
+    if (type == typeof(UInt64))
+      return TypeCode.UInt64;
+    if (type == typeof(DBNull))
+      return TypeCode.DBNull;
+    return TypeCode.Object;
+  }
 
   public virtual object? ToType(Type conversionType, IFormatProvider? provider)
   {
@@ -298,7 +338,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
       return Value?.ToString();
-    var result = Convert.ToString(Value);
+    var result = Convert.ToString(Value, CultureInfo.InvariantCulture);
     return result;
   }
 

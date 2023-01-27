@@ -83,9 +83,9 @@ namespace DocxDocument.Reader.Test
         {
           foreach (var prop in coreProperties.Where(item => item.CanWrite))
           {
-            var value = document.Properties.Get(prop.Name);
-            if (value != null)
-              WriteLine($"    {prop.Name} = {value}");
+            var documentProperty = document.Properties.GetProperty(prop.Name);
+            if (documentProperty != null)
+              WriteLine($"    {documentProperty}");
           }
         }
       }
@@ -115,9 +115,9 @@ namespace DocxDocument.Reader.Test
         {
           foreach (var prop in contentProperties.Where(item => item.CanWrite))
           {
-            var value = document.Properties.Get(prop.Name);
-            if (value != null)
-              WriteLine($"    {prop.Name} = {value}");
+            var documentProperty = document.Properties.GetProperty(prop.Name);
+            if (documentProperty != null)
+              WriteLine($"    {documentProperty}");
           }
         }
       }
@@ -139,9 +139,9 @@ namespace DocxDocument.Reader.Test
           {
             if (prop?.Name != null)
             {
-              var value = document.Properties.Get(prop.Name);
-              if (value != null)
-                WriteLine($"    {prop.Name} = {value}");
+              var documentProperty = document.Properties.GetProperty(prop.Name);
+              if (documentProperty != null)
+                WriteLine($"    {documentProperty}");
             }
           }
         }
@@ -183,13 +183,10 @@ namespace DocxDocument.Reader.Test
         var oldPropertiesCount = oldProperties.Count();
         var newPropertiesCount = newProperties.Count();
         Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count was different from original");
-        var enumerator = newProperties.GetEnumerator();
-        foreach (var oldProperty in oldProperties) 
-        {
-          enumerator.MoveNext();
-          var newProperty = enumerator.Current;
-          Assert.That(newProperty, Is.EqualTo(oldProperty), $"Deserialized property {newProperty.Name} was different from original");
-        }
+        var newPropArray = newProperties.ToArray();
+        var oldPropArray = newProperties.ToArray();
+        for (int i = 0; i < oldPropertiesCount; i++)
+          Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
       }
     }
 

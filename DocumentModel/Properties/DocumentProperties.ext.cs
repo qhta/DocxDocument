@@ -1,4 +1,8 @@
-﻿namespace DocumentModel.Properties;
+﻿using System.Linq;
+
+using DocumentModel.UI;
+
+namespace DocumentModel.Properties;
 
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
@@ -22,24 +26,29 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
 
   public void Add(DocumentProperty item)
   {
+    if (CoreProperties == null)
+      CoreProperties = new CoreProperties();
+    if (ExtendedProperties == null)
+      ExtendedProperties = new ExtendedProperties();
     if (item.Name != null)
     {
-      if (CoreProperties == null)
-        CoreProperties = new CoreProperties();
-      if (CoreProperties.GetPropNames().Contains(item.Name))
+      if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))
       {
         CoreProperties.Set(item.Name, item.Value);
       }
-      else if (ExtendedProperties.GetPropNames().Contains(item.Name))
+      else if (ExtendedProperties.GetKnownProperties().ContainsKey(item.Name))
       {
-        if (ExtendedProperties == null)
-          ExtendedProperties = new ExtendedProperties();
         ExtendedProperties.Set(item.Name, item.Value);
       }
       else
       {
         if (CustomProperties == null)
           CustomProperties = new CustomProperties();
+        if (item.Type == null && item.Value is Variant variant)
+        {
+          var variantType = variant.GetTypeCode();
+          item.Type = variantType.ToString();
+        }
         CustomProperties.Add(item);
       }
     }
@@ -109,17 +118,32 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       count += ExtendedProperties.Count();
     if (CustomProperties != null)
       count += CustomProperties.Count();
-
     return count;
   }
 
-  public object? Get(string propName)
+  public DocumentProperty? GetProperty(string propName)
   {
-    var result = CoreProperties?.Get(propName);
-    if (result != null) return result;
-    result = ExtendedProperties?.Get(propName);
-    if (result != null) return result;
-    result = CustomProperties?.Get(propName);
+    DocumentProperty? result;
+    if (CoreProperties != null && CoreProperties.GetKnownProperties().ContainsKey(propName))
+      result = CoreProperties.GetProperty(propName);
+    else
+    if (ExtendedProperties != null && ExtendedProperties.GetKnownProperties().ContainsKey(propName))
+      result = ExtendedProperties.GetProperty(propName);
+    else
+      result = CustomProperties?.GetProperty(propName);
+    return result;
+  }
+
+  public object? GetValue(string propName)
+  {
+    object? result;
+    if (CoreProperties!=null && CoreProperties.GetKnownProperties().ContainsKey(propName))
+      result = CoreProperties.GetValue(propName);
+    else
+    if (ExtendedProperties != null && ExtendedProperties.GetKnownProperties().ContainsKey(propName))
+      result = ExtendedProperties.GetValue(propName);
+    else
+      result = CustomProperties?.GetValue(propName);
     return result;
   }
 
