@@ -19,7 +19,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestPropertiesJsonSerialization();
+    testInstance.TestPropertiesXmlSerialization();
     Console.WriteLine("Test passed");
   }
 

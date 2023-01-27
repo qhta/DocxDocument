@@ -23,17 +23,17 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Total Number of Pages.
   /// </summary>
-  public String? Pages { get; set; }
+  public int? Pages { get; set; }
 
   /// <summary>
   ///   Word Count.
   /// </summary>
-  public String? Words { get; set; }
+  public int? Words { get; set; }
 
   /// <summary>
   ///   Total Number of Characters.
   /// </summary>
-  public String? Characters { get; set; }
+  public int? Characters { get; set; }
 
   /// <summary>
   ///   Intended Format of Presentation.
@@ -43,42 +43,42 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Number of Lines.
   /// </summary>
-  public String? Lines { get; set; }
+  public int? Lines { get; set; }
 
   /// <summary>
   ///   Total Number of Paragraphs.
   /// </summary>
-  public String? Paragraphs { get; set; }
+  public int? Paragraphs { get; set; }
 
   /// <summary>
   ///   Slides Metadata Element.
   /// </summary>
-  public String? Slides { get; set; }
+  public int? Slides { get; set; }
 
   /// <summary>
   ///   Number of Slides Containing Notes.
   /// </summary>
-  public String? Notes { get; set; }
+  public int? Notes { get; set; }
 
   /// <summary>
   ///   Total Edit Time Metadata Element.
   /// </summary>
-  public String? TotalTime { get; set; }
+  public int? TotalTime { get; set; }
 
   /// <summary>
   ///   Number of Hidden Slides.
   /// </summary>
-  public String? HiddenSlides { get; set; }
+  public int? HiddenSlides { get; set; }
 
   /// <summary>
   ///   Total Number of Multimedia Clips.
   /// </summary>
-  public String? MultimediaClips { get; set; }
+  public int? MultimediaClips { get; set; }
 
   /// <summary>
   ///   Thumbnail Display Mode.
   /// </summary>
-  public String? ScaleCrop { get; set; }
+  public bool? ScaleCrop { get; set; }
 
   /// <summary>
   ///   Heading Pairs.
@@ -93,17 +93,17 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Links Up-to-Date.
   /// </summary>
-  public String? LinksUpToDate { get; set; }
+  public bool? LinksUpToDate { get; set; }
 
   /// <summary>
   ///   Number of Characters (With Spaces).
   /// </summary>
-  public String? CharactersWithSpaces { get; set; }
+  public int? CharactersWithSpaces { get; set; }
 
   /// <summary>
   ///   Shared Document.
   /// </summary>
-  public String? SharedDocument { get; set; }
+  public bool? SharedDocument { get; set; }
 
   /// <summary>
   ///   Relative Hyperlink Base.
@@ -118,7 +118,7 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Hyperlinks Changed.
   /// </summary>
-  public String? HyperlinksChanged { get; set; }
+  public bool? HyperlinksChanged { get; set; }
 
   /// <summary>
   ///   Digital Signature.
@@ -138,5 +138,5 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Document Security.
   /// </summary>
-  public String? DocumentSecurity { get; set; }
+  public int? DocumentSecurity { get; set; }
 }

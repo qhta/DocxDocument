@@ -15,22 +15,20 @@ public class VariantTypeConverter : TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   { 
+   object? result;
     if (destinationType == typeof(String) && value is Variant variant)
-      return variant.ToString(CultureInfo.InvariantCulture);
-    var result = base.ConvertTo(context, culture, value, destinationType); 
+      result = variant.ToString(CultureInfo.InvariantCulture);
+    else
+      result = base.ConvertTo(context, culture, value, destinationType); 
     return result;
   }
 
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
     if (sourceType == typeof(string))
-    {
       return true;
-    }
     if (sourceType == typeof(JArray))
-    {
       return true;
-    }
     return base.CanConvertFrom(context, sourceType);
   }
 
