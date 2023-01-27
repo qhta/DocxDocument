@@ -52,13 +52,13 @@ namespace DocxDocument.Reader.Test
 
     public virtual DocumentModel.Properties.DocumentProperties TestReadProperties(string filename, bool showDetails = false)
     {
-      TestContext.Progress.WriteLine(filename);
+      WriteLine(filename);
       var reader = new DocxReader(filename);
       var document = reader.ReadDocument(Parts.AllDocumentProperties);
       Assert.IsNotNull(document, "No document read");
       Assert.IsNotNull(document.Properties, "No document properties read");
       Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
-      TestContext.Progress.WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
+      WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
 
       #region CoreDocumentProperties
       CoreProperties? coreDocumentProperties = document.Properties.CoreProperties;
@@ -77,7 +77,7 @@ namespace DocxDocument.Reader.Test
         foreach (var prop in coreProperties.Where(item => item.CanWrite))
           if (prop.GetValue(coreDocumentProperties, null) != null)
             corePropertiesCount++;
-        TestContext.Progress.WriteLine(
+        WriteLine(
           $"  CoreProperties: defined {coreProperties.Count()} loaded {corePropertiesCount} expected {origCorePropertiesCount}");
         if (showDetails)
         {
@@ -85,7 +85,7 @@ namespace DocxDocument.Reader.Test
           {
             var value = document.Properties.Get(prop.Name);
             if (value != null)
-              TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
+              WriteLine($"    {prop.Name} = {value}");
           }
         }
       }
@@ -99,7 +99,7 @@ namespace DocxDocument.Reader.Test
       int origContentPropertiesCount = 0;
       if (contentDocumentProperties != null)
       {
-        var origExtraFilePropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Count() ?? 0;
+        var origExtraFilePropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements().Count() ?? 0;
         var origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
           ?.Count(item => statisticPropElementsNames.Contains(item.LocalName)) ?? 0;
         var contentProperties = typeof(ExtendedProperties).GetProperties();
@@ -109,7 +109,7 @@ namespace DocxDocument.Reader.Test
           if (prop.GetValue(contentDocumentProperties, null) != null)
             contentPropertiesCount++;
         }
-        TestContext.Progress.WriteLine(
+        WriteLine(
           $"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
         if (showDetails)
         {
@@ -117,7 +117,7 @@ namespace DocxDocument.Reader.Test
           {
             var value = document.Properties.Get(prop.Name);
             if (value != null)
-              TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
+              WriteLine($"    {prop.Name} = {value}");
           }
         }
       }
@@ -132,7 +132,7 @@ namespace DocxDocument.Reader.Test
       {
         customPropertiesCount = customDocumentProperties.Count();
         origCustomPropertiesCount = reader.WordprocessingDocument?.CustomFilePropertiesPart?.Properties.Count() ?? 0;
-        TestContext.Progress.WriteLine($"  CustomProperties = {customPropertiesCount}/{origCustomPropertiesCount}");
+        WriteLine($"  CustomProperties = {customPropertiesCount}/{origCustomPropertiesCount}");
         if (showDetails)
         {
           foreach (var prop in customDocumentProperties)
@@ -141,7 +141,7 @@ namespace DocxDocument.Reader.Test
             {
               var value = document.Properties.Get(prop.Name);
               if (value != null)
-                TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
+                WriteLine($"    {prop.Name} = {value}");
             }
           }
         }
@@ -165,15 +165,14 @@ namespace DocxDocument.Reader.Test
       var oldProperties = TestReadProperties(filename, true);
       var serializer = JsonSerializer.Create();
       var textWriter = new StringWriter();
-      JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, /*TypeNameHandling = TypeNameHandling.All,*/ Formatting = Formatting.Indented };
+      JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, 
+        /*TypeNameHandling = TypeNameHandling.All,*/ Formatting = Formatting.Indented };
       var str = JsonConvert.SerializeObject(oldProperties, settings);
       //var jsonWriter = new JsonTextWriter(textWriter) { Formatting = Formatting.Indented, NullValueHandling = false };
       //serializer.Serialize(jsonWriter, oldProperties);
       //string str = textWriter.ToString();
-      Debug.WriteLine(str);
-      Debug.WriteLine("");
-      TestContext.Out.WriteLine(str);
-      TestContext.Out.WriteLine();
+      WriteLine(str);
+      WriteLine();
 
       var textReader = new StringReader(str);
       var jsonReader = new JsonTextReader(textReader);
@@ -210,8 +209,8 @@ namespace DocxDocument.Reader.Test
       string str = textWriter.ToString();
       Debug.WriteLine(str);
       Debug.WriteLine("");
-      TestContext.Out.WriteLine(str);
-      TestContext.Out.WriteLine();
+      WriteLine(str);
+      WriteLine();
 
       var textReader = new StringReader(str);
       var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);

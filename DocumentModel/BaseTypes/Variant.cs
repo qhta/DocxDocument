@@ -298,7 +298,8 @@ public class Variant : IConvertible, IEquatable<Variant>
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
       return Value?.ToString();
-    return Convert.ToString(Value);
+    var result = Convert.ToString(Value);
+    return result;
   }
 
   public virtual char ToChar(IFormatProvider? provider = null)

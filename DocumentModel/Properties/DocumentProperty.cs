@@ -3,6 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   Document Property.
 /// </summary>
+[XmlContentProperty(nameof(Value))]
 public partial class DocumentProperty
 {
   /// <summary>
