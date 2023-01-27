@@ -83,73 +83,41 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Total Number of Pages.
   /// </summary>
-  public static String? GetPages(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetPages(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Pages?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Pages);
   }
 
-  public static void SetPages(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetPages(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Pages != null)
-    {
-      if (value != null)
-        openXmlElement.Pages.Text = value;
-      else
-        openXmlElement.Pages = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Pages { Text = value });
-    }
+    openXmlElement.Pages = Int32ValueConverter.CreateOpenXmlElement<Pages>(value);
   }
 
   /// <summary>
   ///   Word Count.
   /// </summary>
-  public static String? GetWords(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetWords(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Words?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Words);
   }
 
-  public static void SetWords(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetWords(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Words != null)
-    {
-      if (value != null)
-        openXmlElement.Words.Text = value;
-      else
-        openXmlElement.Words = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Words { Text = value });
-    }
+    openXmlElement.Words = Int32ValueConverter.CreateOpenXmlElement<Words>(value);
   }
 
   /// <summary>
   ///   Total Number of Characters.
   /// </summary>
-  public static String? GetCharacters(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetCharacters(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Characters?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Characters);
+
   }
 
-  public static void SetCharacters(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetCharacters(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Characters != null)
-    {
-      if (value != null)
-        openXmlElement.Characters.Text = value;
-      else
-        openXmlElement.Characters = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Characters { Text = value });
-    }
+    openXmlElement.Characters = Int32ValueConverter.CreateOpenXmlElement<Characters>(value);
   }
 
   /// <summary>
@@ -179,193 +147,111 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Number of Lines.
   /// </summary>
-  public static String? GetLines(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetLines(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Lines?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Lines);
+
   }
 
-  public static void SetLines(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetLines(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Lines != null)
-    {
-      if (value != null)
-        openXmlElement.Lines.Text = value;
-      else
-        openXmlElement.Lines = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Lines { Text = value });
-    }
+    openXmlElement.Lines = Int32ValueConverter.CreateOpenXmlElement<Lines>(value);
   }
 
   /// <summary>
   ///   Total Number of Paragraphs.
   /// </summary>
-  public static String? GetParagraphs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetParagraphs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Paragraphs?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Paragraphs);
+
   }
 
-  public static void SetParagraphs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetParagraphs(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Paragraphs != null)
-    {
-      if (value != null)
-        openXmlElement.Paragraphs.Text = value;
-      else
-        openXmlElement.Paragraphs = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Paragraphs { Text = value });
-    }
+    openXmlElement.Paragraphs = Int32ValueConverter.CreateOpenXmlElement<Paragraphs>(value);
   }
 
   /// <summary>
   ///   Slides Metadata Element.
   /// </summary>
-  public static String? GetSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Slides?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Slides);
+
   }
 
-  public static void SetSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Slides != null)
-    {
-      if (value != null)
-        openXmlElement.Slides.Text = value;
-      else
-        openXmlElement.Slides = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Slides { Text = value });
-    }
+    openXmlElement.Slides = Int32ValueConverter.CreateOpenXmlElement<Slides>(value);
   }
 
   /// <summary>
   ///   Number of Slides Containing Notes.
   /// </summary>
-  public static String? GetNotes(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetNotes(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.Notes?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.Notes);
+
   }
 
-  public static void SetNotes(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetNotes(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.Notes != null)
-    {
-      if (value != null)
-        openXmlElement.Notes.Text = value;
-      else
-        openXmlElement.Notes = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new Notes { Text = value });
-    }
+    openXmlElement.Notes = Int32ValueConverter.CreateOpenXmlElement<Notes>(value);
   }
 
   /// <summary>
   ///   Total Edit Time Metadata Element.
   /// </summary>
-  public static String? GetTotalTime(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetTotalTime(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.TotalTime?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.TotalTime);
+
   }
 
-  public static void SetTotalTime(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetTotalTime(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.TotalTime != null)
-    {
-      if (value != null)
-        openXmlElement.TotalTime.Text = value;
-      else
-        openXmlElement.TotalTime = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new TotalTime { Text = value });
-    }
+    openXmlElement.TotalTime = Int32ValueConverter.CreateOpenXmlElement<TotalTime>(value);
   }
 
   /// <summary>
   ///   Number of Hidden Slides.
   /// </summary>
-  public static String? GetHiddenSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetHiddenSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.HiddenSlides?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.HiddenSlides);
   }
 
-  public static void SetHiddenSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetHiddenSlides(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.HiddenSlides != null)
-    {
-      if (value != null)
-        openXmlElement.HiddenSlides.Text = value;
-      else
-        openXmlElement.HiddenSlides = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new HiddenSlides { Text = value });
-    }
+    openXmlElement.HiddenSlides = Int32ValueConverter.CreateOpenXmlElement<HiddenSlides>(value);
   }
 
   /// <summary>
   ///   Total Number of Multimedia Clips.
   /// </summary>
-  public static String? GetMultimediaClips(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetMultimediaClips(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.MultimediaClips?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.MultimediaClips);
+
   }
 
-  public static void SetMultimediaClips(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetMultimediaClips(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.MultimediaClips != null)
-    {
-      if (value != null)
-        openXmlElement.MultimediaClips.Text = value;
-      else
-        openXmlElement.MultimediaClips = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new MultimediaClips { Text = value });
-    }
+    openXmlElement.MultimediaClips = Int32ValueConverter.CreateOpenXmlElement<MultimediaClips>(value);
   }
 
   /// <summary>
   ///   Thumbnail Display Mode.
   /// </summary>
-  public static String? GetScaleCrop(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Boolean? GetScaleCrop(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.ScaleCrop?.Text;
+    return BooleanValueConverter.GetValue(openXmlElement?.ScaleCrop);
   }
 
-  public static void SetScaleCrop(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetScaleCrop(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Boolean? value)
   {
-    if (openXmlElement?.ScaleCrop != null)
-    {
-      if (value != null)
-        openXmlElement.ScaleCrop.Text = value;
-      else
-        openXmlElement.ScaleCrop = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new ScaleCrop { Text = value });
-    }
+    openXmlElement.ScaleCrop = BooleanValueConverter.CreateOpenXmlElement<ScaleCrop>(value);
   }
 
   /// <summary>
@@ -399,73 +285,42 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Links Up-to-Date.
   /// </summary>
-  public static String? GetLinksUpToDate(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Boolean? GetLinksUpToDate(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.LinksUpToDate?.Text;
+    return BooleanValueConverter.GetValue(openXmlElement?.LinksUpToDate);
   }
 
-  public static void SetLinksUpToDate(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetLinksUpToDate(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Boolean? value)
   {
-    if (openXmlElement?.LinksUpToDate != null)
-    {
-      if (value != null)
-        openXmlElement.LinksUpToDate.Text = value;
-      else
-        openXmlElement.LinksUpToDate = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new LinksUpToDate { Text = value });
-    }
+    openXmlElement.LinksUpToDate = BooleanValueConverter.CreateOpenXmlElement<LinksUpToDate>(value);
   }
 
   /// <summary>
   ///   Number of Characters (With Spaces).
   /// </summary>
-  public static String? GetCharactersWithSpaces(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetCharactersWithSpaces(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.CharactersWithSpaces?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.CharactersWithSpaces);
+
   }
 
-  public static void SetCharactersWithSpaces(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetCharactersWithSpaces(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.CharactersWithSpaces != null)
-    {
-      if (value != null)
-        openXmlElement.CharactersWithSpaces.Text = value;
-      else
-        openXmlElement.CharactersWithSpaces = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new CharactersWithSpaces { Text = value });
-    }
+    openXmlElement.CharactersWithSpaces = Int32ValueConverter.CreateOpenXmlElement<CharactersWithSpaces>(value);
   }
 
   /// <summary>
   ///   Shared Document.
   /// </summary>
-  public static String? GetSharedDocument(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Boolean? GetSharedDocument(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.SharedDocument?.Text;
+    return BooleanValueConverter.GetValue(openXmlElement?.SharedDocument);
   }
 
-  public static void SetSharedDocument(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetSharedDocument(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Boolean? value)
   {
-    if (openXmlElement?.SharedDocument != null)
-    {
-      if (value != null)
-        openXmlElement.SharedDocument.Text = value;
-      else
-        openXmlElement.SharedDocument = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new SharedDocument { Text = value });
-    }
+    openXmlElement.SharedDocument = BooleanValueConverter.CreateOpenXmlElement<SharedDocument>(value);
+
   }
 
   /// <summary>
@@ -509,25 +364,15 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Hyperlinks Changed.
   /// </summary>
-  public static String? GetHyperlinksChanged(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
+  public static Boolean? GetHyperlinksChanged(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
   {
-    return openXmlElement?.HyperlinksChanged?.Text;
+    return BooleanValueConverter.GetValue(openXmlElement?.LinksUpToDate);
   }
 
-  public static void SetHyperlinksChanged(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetHyperlinksChanged(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Boolean? value)
   {
-    if (openXmlElement?.HyperlinksChanged != null)
-    {
-      if (value != null)
-        openXmlElement.HyperlinksChanged.Text = value;
-      else
-        openXmlElement.HyperlinksChanged = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new HyperlinksChanged { Text = value });
-    }
+    openXmlElement.HyperlinksChanged = BooleanValueConverter.CreateOpenXmlElement<HyperlinksChanged>(value);
+
   }
 
   /// <summary>
@@ -595,25 +440,14 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Document Security.
   /// </summary>
-  public static String? GetDocumentSecurity(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static Int32? GetDocumentSecurity(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
-    return openXmlElement?.DocumentSecurity?.Text;
+    return Int32ValueConverter.GetValue(openXmlElement?.DocumentSecurity);
   }
 
-  public static void SetDocumentSecurity(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, String? value)
+  public static void SetDocumentSecurity(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, Int32? value)
   {
-    if (openXmlElement?.DocumentSecurity != null)
-    {
-      if (value != null)
-        openXmlElement.DocumentSecurity.Text = value;
-      else
-        openXmlElement.DocumentSecurity = null;
-    }
-    else
-    {
-      if (value != null)
-        openXmlElement?.AddChild(new DocumentSecurity { Text = value });
-    }
+    openXmlElement.DocumentSecurity = Int32ValueConverter.CreateOpenXmlElement<DocumentSecurity>(value);
   }
 
   public static ExtendedProperties? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)

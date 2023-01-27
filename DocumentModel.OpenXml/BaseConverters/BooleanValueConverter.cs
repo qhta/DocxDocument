@@ -1,4 +1,9 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using System.Xml.Linq;
+
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using DocumentFormat.OpenXml.Math;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml;
 
@@ -49,8 +54,31 @@ public static class BooleanValueConverter
     return false;
   }
 
+  public static bool? GetValue(DX.TypedOpenXmlLeafTextElement? element)
+  {
+    if (element?.Text != null)
+    {
+      var text = (string)element.Text.ToLower();
+      switch (text)
+      {
+        case "true": return true;
+        case "false": return false;
+        case "1": return true;
+        case "0": return false;
+      }
+    }
+    return null;
+  }
+
+  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, bool? value, DiffList? diffs, string? objName)
+  {
+    if (GetValue(element) == value)
+    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    return false;
+  }
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Boolean? value)
-    where OpenXmlElementType : OpenXmlElement, new()
+  where OpenXmlElementType : OpenXmlElement, new()
   {
     if (value != null)
     {
@@ -58,6 +86,8 @@ public static class BooleanValueConverter
       var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
       if (valProperty != null)
         valProperty.SetValue(element, (bool)value ? OnOffOnlyValues.On : OnOffOnlyValues.Off);
+      else if (element is DX.TypedOpenXmlLeafTextElement textElement)
+        textElement.Text = (bool)value ? "true" : "false";
       return element;
     }
     return null;

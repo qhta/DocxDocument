@@ -19,10 +19,10 @@ public class VectorVariantTypeConverter : TypeConverter
 
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
-    if (sourceType == typeof(JArray))
-    {
+    if (sourceType == typeof(string))
       return true;
-    }
+    if (sourceType == typeof(JArray))
+      return true;
     return base.CanConvertFrom(context, sourceType);
   }
 
