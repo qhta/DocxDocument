@@ -18,7 +18,7 @@ public static class VTArrayConverter
     { ArrayBaseValues.Decimal, VariantType.Decimal },
     { ArrayBaseValues.Bstr, VariantType.Bstr },
     { ArrayBaseValues.Date, VariantType.Date },
-    { ArrayBaseValues.Bool, VariantType.Bool },
+    { ArrayBaseValues.Bool, VariantType.Boolean },
     { ArrayBaseValues.Currency, VariantType.Currency },
     { ArrayBaseValues.Error, VariantType.Error }
   };

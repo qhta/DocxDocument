@@ -378,12 +378,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Digital Signature.
   /// </summary>
-  public static DocumentModel.Properties.DigitalSignature? GetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
+  public static byte[]? GetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement)
   {
     return DigitalSignatureConverter.CreateModelElement(openXmlElement?.DigitalSignature);
   }
 
-  public static void SetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, DocumentModel.Properties.DigitalSignature? value)
+  public static void SetDigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.Properties openXmlElement, byte[]? value)
   {
     if (openXmlElement != null)
       openXmlElement.DigitalSignature = DigitalSignatureConverter.CreateOpenXmlElement(value);

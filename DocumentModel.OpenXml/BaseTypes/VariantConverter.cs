@@ -130,7 +130,7 @@ public static class VariantConverter
   public static Variant GetVariant(OpenXmlElement openXmlElement)
   {
     if (openXmlElement is VTBool vBool)
-      return new Variant(VariantType.Bool, XmlConvert.ToBoolean(vBool.Text));
+      return new Variant(VariantType.Boolean, XmlConvert.ToBoolean(vBool.Text));
 
     if (openXmlElement is VTLPSTR vLPString)
       return new Variant(VariantType.Lpstr, vLPString.Text);
@@ -262,7 +262,7 @@ public static class VariantConverter
   {
     switch (variant.VariantType)
     {
-      case VariantType.Bool:
+      case VariantType.Boolean:
         return new VTBool { Text = XmlConvert.ToString(variant.ToBoolean()) };
       case VariantType.Lpstr:
         return new VTLPSTR { Text = (string?)variant.Value ?? String.Empty };

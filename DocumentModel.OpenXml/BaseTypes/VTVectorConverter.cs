@@ -19,7 +19,7 @@ public static class VTVectorConverter
     { VectorBaseValues.Lpwstr, VariantType.Lpwstr },
     { VectorBaseValues.Date, VariantType.Date },
     { VectorBaseValues.Filetime, VariantType.DateTime },
-    { VectorBaseValues.Bool, VariantType.Bool },
+    { VectorBaseValues.Bool, VariantType.Boolean },
     { VectorBaseValues.Currency, VariantType.Currency },
     { VectorBaseValues.Error, VariantType.Error },
     { VectorBaseValues.ClassId, VariantType.ClassId },
@@ -52,6 +52,7 @@ public static class VTVectorConverter
       var baseType = GetBaseType(openXmlElement);
       var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
       var _value = new VectorVariant();
+      _value.BaseType = baseType;
       foreach (var item in openXmlElement.Elements())
       {
         var itemValue = VariantConverter.GetValue(item);

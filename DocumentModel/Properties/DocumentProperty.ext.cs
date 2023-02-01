@@ -1,11 +1,6 @@
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
-using DocumentModel.Math;
-
-using Qhta.Conversion;
-using JsonKnownTypes;
-
+using DocumentModel.BaseTypes;
 
 namespace DocumentModel.Properties;
 
@@ -25,7 +20,7 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
       var typeName = type.Name;
       if (typeName.StartsWith("Nullable`"))
         typeName = type.GenericTypeArguments[0].Name;
-      Type = typeName;
+      Type = (VariantType?)(new VariantTypeNameConverter().ConvertFrom(typeName));
     }
     if (value != null)
     {
@@ -44,28 +39,37 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
 
   public bool Equals(DocumentProperty? other)
   {
-    //if (Name == "Ukończono")
-    //  Debug.Assert(other != null);
     if (other == null) return false;
     if (this.Name != other.Name)
       return false;
-    if (this.Value == other.Value)
-      return true;
-    //if (this.Value is string str1 && other.Value is string str2)
-    //  return String.Equals(str1, str2);
-    //if (this.Value is DateTime dt1 && other.Value is DateTime dt2)
-    //  return dt1.Year == dt2.Year && dt1.Month == dt2.Month && dt1.Day == dt2.Day
-    //         && dt1.Hour == dt2.Hour && dt1.Minute == dt2.Minute && dt1.Second == dt2.Second;
     if (this.Value != null)
       return this.Value.Equals(other.Value);
     return false;
   }
 
   /// <summary>
+  ///   Value of the property
+  /// </summary>
+  [TypeConverter(typeof(VariantXmlTypeConverter))]
+  public Variant? Value
+  {
+    get => _value;
+    set
+    {
+      if (Type == null && value != null)
+        Type = value.VariantType;
+      else if (value!=null && value.VariantType != Type && Type!=null)
+        value.VariantType = (VariantType)Type;
+      _value = value;
+    }
+  }
+  private Variant? _value;
+
+  /// <summary>
   ///   Expected value type name
   /// </summary>
   [XmlAttribute]
-  public String? Type { get; set; }
+  public VariantType? Type { get; set; }
 
   /// <summary>
   ///   Format ID

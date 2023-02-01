@@ -123,7 +123,7 @@ public partial class ExtendedProperties
   /// <summary>
   ///   Digital Signature.
   /// </summary>
-  public DigitalSignature? DigitalSignature { get; set; }
+  public byte[]? DigitalSignature { get; set; }
 
   /// <summary>
   ///   Application Name.

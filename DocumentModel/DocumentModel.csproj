@@ -23,7 +23,9 @@
   <ItemGroup>
     <Compile Remove="BaseTypes\StringNum.cs" />
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
+    <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\HeadingPairs.cs" />
+    <Compile Remove="Properties\VectorVariantType.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,14 +35,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Qhta.Conversion">
       <HintPath>..\..\MyLib\Qhta.Conversion\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Qhta.Xml.Serialization.Attributes">
-      <HintPath>..\..\MyLib\Qhta.Xml.Serialization.Attributes\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

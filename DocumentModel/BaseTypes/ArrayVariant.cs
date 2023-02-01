@@ -1,9 +1,12 @@
+using DocumentModel.BaseTypes;
+
 namespace DocumentModel;
 
 /// <summary>
 ///   Array Variant implementation.
 /// </summary>
 [XmlRoot("Array")]
+[TypeConverter(typeof(ArrayXmlTypeConverter))]
 public class ArrayVariant : Variant, ICollection<object?>
 {
   private VariantType _baseType;
