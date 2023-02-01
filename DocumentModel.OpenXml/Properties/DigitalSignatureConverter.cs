@@ -31,29 +31,26 @@ public static class DigitalSignatureConverter
     }
   }
 
-  public static DocumentModel.Properties.DigitalSignature? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
+  public static byte[]? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Properties.DigitalSignature();
-      value.VTBlob = GetVTBlob(openXmlElement)?.ToString();
-      return value;
+      return GetVTBlob(openXmlElement);
     }
     return null;
   }
 
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature openXmlElement, DocumentModel.Properties.DigitalSignature? value)
+  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature openXmlElement, byte[]? value)
   {
-    if (value?.VTBlob != null)
-      SetVTBlob(openXmlElement, Convert.FromBase64String(value.VTBlob));
+    SetVTBlob(openXmlElement, value);
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? CreateOpenXmlElement(DocumentModel.Properties.DigitalSignature? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? CreateOpenXmlElement(byte[]? value)
   {
-    if (value?.VTBlob != null)
+    if (value != null)
     {
       var openXmlElement = new DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature();
-      SetVTBlob(openXmlElement, Convert.FromBase64String(value.VTBlob));
+      SetVTBlob(openXmlElement, value);
       return openXmlElement;
     }
     return null;

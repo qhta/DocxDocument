@@ -46,8 +46,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
           CustomProperties = new CustomProperties();
         if (item.Type == null && item.Value is Variant variant)
         {
-          var variantType = variant.GetTypeCode();
-          item.Type = variantType.ToString();
+          item.Type = variant.VariantType;
         }
         CustomProperties.Add(item);
       }

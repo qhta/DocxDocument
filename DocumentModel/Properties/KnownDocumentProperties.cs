@@ -15,7 +15,8 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
         var typeName = prop.PropertyType.Name;
         if (typeName.StartsWith("Nullable`"))
           typeName = prop.PropertyType.GenericTypeArguments[0].Name;
-        yield return new DocumentProperty { Name = name, Type = typeName, Value = new Variant(value) };
+        Variant variant = (value is Variant valVariant) ? valVariant : new Variant(value);
+        yield return new DocumentProperty { Name = name, Type = variant.VariantType, Value = variant };
       }
     }
   }
@@ -86,7 +87,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
   {
     var prop = GetKnownProperties()[propName];
     var value = prop?.GetValue(this, null);
-    Variant? variant = (value != null) ? new Variant(value) : null;
+    Variant? variant = (value is Variant valVariant) ? valVariant : (value != null) ? new Variant(value) : null;
     return new DocumentProperty(propName, prop?.PropertyType, variant);
   }
 

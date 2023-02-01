@@ -19,20 +19,7 @@ public static class HeadingPairsConverter
   public static VectorVariant? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement?.VTVector == null) return null;
-    var vector = VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
-    if (vector == null) return null;
-    var result = new VectorVariant();
-    for (var i = 0; i < vector.Count; i++)
-    {
-      result.Add(vector[i]);
-      //var str = (string?)Convert.ChangeType(vector[i], typeof(string));
-      //i++;
-      //if (i >= vector.Count)
-      //  break;
-      //var num = (int?)Convert.ChangeType(vector[i], typeof(int));
-      //if (str != null && num != null)
-      //  result.Add(new StringNum { Str = str, Num = num });
-    }
+    var result = VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
     return result;
   }
 

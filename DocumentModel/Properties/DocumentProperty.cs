@@ -1,3 +1,5 @@
+using DocumentModel.BaseTypes;
+
 namespace DocumentModel.Properties;
 
 /// <summary>
@@ -11,10 +13,5 @@ public partial class DocumentProperty
   /// </summary>
   [XmlAttribute]
   public string? Name { get; set; }
-
-  /// <summary>
-  ///   Value of the property
-  /// </summary>
-  public Variant? Value { get; set; }
 
 }

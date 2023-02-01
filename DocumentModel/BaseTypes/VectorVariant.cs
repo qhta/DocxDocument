@@ -6,20 +6,24 @@ namespace DocumentModel;
 ///   Variant implementation. Value is of any type.
 /// </summary>
 [XmlRoot("Vector")]
-[TypeConverter(typeof(VectorVariantTypeConverter))]
+//[TypeConverter(typeof(VectorXmlTypeConverter))]
 [JsonConverter(typeof(VectorJsonConverter))]
 public class VectorVariant : Variant, IList<object?>
 {
-  private List<object?> _items = new();
+
+#pragma warning disable CS8600
+#pragma warning disable CS8603
+  private List<object?> _items => (List<object?>)_Value;
+#pragma warning restore
 
   public VectorVariant()
   {
+    _Value = new List<object?>();
     base.VariantType = VariantType.Vector;
   }
 
-  public VectorVariant(VariantType baseType)
+  public VectorVariant(VariantType baseType): this()
   {
-    base.VariantType = VariantType.Vector;
     BaseType = baseType;
   }
 
@@ -93,6 +97,13 @@ public class VectorVariant : Variant, IList<object?>
     set => _items[index] = value;
   }
 
+  public override bool Equals(Variant? variant)
+  {
+    if (variant is VectorVariant other)
+      return this.Equals(other);
+    return base.Equals(variant);
+  }
+
   public virtual bool Equals(VectorVariant? other)
   {
     if (other == null) return false;
@@ -124,4 +135,16 @@ public class VectorVariant : Variant, IList<object?>
     return base.GetHashCode();
   }
 
+  public override string? ToString(IFormatProvider? provider = null)
+  {
+    var result = "Vector";
+    if (BaseType != null) result += $" of {BaseType}";
+    result += " = [" + string.Join(" ", _items.Select(item => item?.ToString() ?? "")) + "]";
+    return result;
+  }
+
+  public override string? ToString()
+  {
+    return ToString(null);
+  }
 }
