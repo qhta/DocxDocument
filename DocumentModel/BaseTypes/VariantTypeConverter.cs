@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Xml;
+
+using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
 
@@ -34,9 +36,16 @@ public class VariantTypeConverter : TypeConverter
 
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
-    var result = new VectorVariant();
+    
+    if (value is string str)
+    {
+      var result = Variant.ConvertFrom(context, culture, str);
+      return result;
+    }
+    else
     if (value is JArray jArray)
     {
+      var result = new VectorVariant();
       foreach (var item in jArray)
       {
         if (item is JValue jValue)
@@ -61,5 +70,6 @@ public class VariantTypeConverter : TypeConverter
     }
     return base.ConvertFrom(context, culture, value);
   }
+
 
 }

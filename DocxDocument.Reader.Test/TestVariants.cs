@@ -1203,7 +1203,7 @@ public class TestVariants : TestBase
       { VariantType.Char, Char.MaxValue - 2 },
       { VariantType.Date, DateOnly.FromDateTime(DateTime.Now) },
       { VariantType.DateTime, DateTime.Now },
-      { VariantType.Bool, true },
+      { VariantType.Boolean, true },
       { VariantType.Currency, Decimal.MaxValue },
       { VariantType.Null, DBNull.Value },
       { VariantType.Error, UInt16.MaxValue },

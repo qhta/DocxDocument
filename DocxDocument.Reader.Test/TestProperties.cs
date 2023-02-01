@@ -204,8 +204,6 @@ namespace DocxDocument.Reader.Test
       serializer.Serialize(textWriter, oldProperties);
       textWriter.Flush();
       string str = textWriter.ToString();
-      Debug.WriteLine(str);
-      Debug.WriteLine("");
       WriteLine(str);
       WriteLine();
 
@@ -216,7 +214,7 @@ namespace DocxDocument.Reader.Test
       var newPropertiesCount = newProperties.Count();
       Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
       var newPropArray = newProperties.ToArray();
-      var oldPropArray = newProperties.ToArray();
+      var oldPropArray = oldProperties.ToArray();
       for (int i = 0; i < oldPropertiesCount; i++)
         Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
     }

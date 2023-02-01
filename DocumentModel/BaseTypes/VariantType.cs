@@ -76,6 +76,11 @@ public enum VariantType
   /// </summary>
   Decimal,
 
+    /// <summary>
+  ///   String Variant Type
+  /// </summary>
+  String,
+
   /// <summary>
   ///   LPSTR Variant Type.
   /// </summary>
@@ -109,7 +114,7 @@ public enum VariantType
   /// <summary>
   ///   Boolean Variant Type.
   /// </summary>
-  Bool,
+  Boolean,
 
   /// <summary>
   ///   Currency Variant Type.

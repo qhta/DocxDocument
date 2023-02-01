@@ -18,6 +18,7 @@ namespace DocumentModel;
 [XmlInclude(typeof(VectorVariant))]
 [XmlInclude(typeof(ArrayVariant))]
 [XmlContentProperty("Value")]
+
 [XmlItemElement(typeof(SByte))]
 [XmlItemElement(typeof(Int16))]
 [XmlItemElement(typeof(Int32))]
@@ -65,7 +66,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     { VariantType.Lpwstr, typeof(String) },
     { VariantType.Date, typeof(DateOnly) },
     { VariantType.DateTime, typeof(DateTime) },
-    { VariantType.Bool, typeof(Boolean) },
+    { VariantType.Boolean, typeof(Boolean) },
     { VariantType.Null, typeof(DBNull) },
     { VariantType.Error, typeof(NumId) },
     { VariantType.ClassId, typeof(Guid) },
@@ -114,7 +115,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
-  [XmlTypeConverter(typeof(VariantXmlConverter))]
+  [TypeConverter(typeof(VariantXmlTypeConverter))]
   [XmlElement]
   public virtual object? Value
   {
@@ -356,7 +357,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     return Equals(other);
   }
 
-  public bool Equals(Variant? other)
+  public virtual bool Equals(Variant? other)
   {
     if (other == null) return false;
     var result = false;
@@ -371,8 +372,8 @@ public class Variant : IConvertible, IEquatable<Variant>
       result = this.Value?.Equals(other.Value) == true;
       if (!result)
       {
-        var thisValueStr = this.Value?.ToString();
-        var otherValueStr = other.Value?.ToString();
+        var thisValueStr = this.ToString(CultureInfo.InvariantCulture);
+        var otherValueStr = other.ToString(CultureInfo.InvariantCulture);
         result = String.Equals(thisValueStr, otherValueStr);
       }
     }
@@ -475,7 +476,7 @@ public class Variant : IConvertible, IEquatable<Variant>
           return Convert.ToDateTime((string)value);
         return Convert.ToDateTime(value);
 
-      case VariantType.Bool:
+      case VariantType.Boolean:
         return Convert.ToBoolean(value);
 
       case VariantType.Currency:
@@ -558,7 +559,7 @@ public class Variant : IConvertible, IEquatable<Variant>
   {
     if (value is Boolean vBool)
     {
-      VariantType = VariantType.Bool;
+      VariantType = VariantType.Boolean;
       _Value = vBool;
       return;
     }
@@ -724,7 +725,7 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public static implicit operator Variant(bool value)
   {
-    return new Variant(VariantType.Bool, value);
+    return new Variant(VariantType.Boolean, value);
   }
 
   public static implicit operator byte(Variant value)
