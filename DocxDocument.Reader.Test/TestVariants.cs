@@ -1,5 +1,3 @@
-using System.Globalization;
-
 using DocumentModel;
 
 using Qhta.TypeUtils;
@@ -7,6 +5,8 @@ using Qhta.Xml.Serialization;
 
 using Variant = DocumentModel.Variant;
 using VariantType = DocumentModel.VariantType;
+
+using Newtonsoft.Json;
 
 namespace DocxDocument.Reader.Test;
 public class TestVariants : TestBase
@@ -1215,49 +1215,56 @@ public class TestVariants : TestBase
 
 
   [Test]
-  public void TestXmlVariantSerialization()
+  public void TestVariantXmlSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
-      //if (variantType == VariantType.Variant)
-      if (TestVariantValues.TryGetValue(variantType, out var val))
-      {
-        WriteLine($"Testing variant type {variantType}");
-        var variant = new Variant(variantType, val);
-        var textWriter = new StringWriter();
-        var serializer = new QXmlSerializer(typeof(Variant));
-        serializer.Serialize(textWriter, variant);
-        textWriter.Flush();
-        string str = textWriter.ToString();
-        WriteLine(str);
-        WriteLine();
+      TestVariantXmlSerialization(variantType);
+    }
+  }
 
-        var textReader = new StringReader(str);
-        var newVariant = (Variant?)serializer.Deserialize(textReader);
-        Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
-        Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
-          $"Deserialized variant VariantType different for VariantType.{variantType}");
-        Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
-        Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
-      }
+  public void TestVariantXmlSerialization(VariantType variantType)
+  {
+    if (TestVariantValues.TryGetValue(variantType, out var val))
+    {
+      var valStr = "null";
+      if (val != null)
+        valStr = $" {val} ({val.GetType().Name})";
+      WriteLine($"Testing variant type {variantType} = {valStr}");
+      var variant = new Variant(variantType, val);
+      var textWriter = new StringWriter();
+      var serializer = new QXmlSerializer(typeof(Variant));
+      serializer.Serialize(textWriter, variant);
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      WriteLine(str);
+      WriteLine();
+
+      var textReader = new StringReader(str);
+      var newVariant = (Variant?)serializer.Deserialize(textReader);
+      Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
+      Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
+        $"Deserialized variant VariantType different for VariantType.{variantType}");
+      Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
+      Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
     }
   }
 
   [Test]
-  public void TestXmlVectorVariantSerialization()
+  public void TestVectorXmlSerialization()
   {
-    var vectorVariant = new VectorVariant();
+    var oldVectorVariant = new VectorVariant();
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
       if (TestVariantValues.TryGetValue(variantType, out var val))
       {
         var variant = new Variant(variantType, val);
-        vectorVariant.Add(variant.Value);
+        oldVectorVariant.Add(variant.Value);
       }
     }
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(Variant));
-    serializer.Serialize(textWriter, vectorVariant);
+    var serializer = new QXmlSerializer(typeof(VectorVariant));
+    serializer.Serialize(textWriter, oldVectorVariant);
     textWriter.Flush();
     string str = textWriter.ToString();
     WriteLine(str);
@@ -1271,71 +1278,71 @@ public class TestVariants : TestBase
       Assert.That(newVariant.GetType(), Is.EqualTo(typeof(VectorVariant)), $"Deserialized variant type different");
       if (newVariant is VectorVariant newVectorVariant)
       {
-        Assert.That(newVariant.VariantType, Is.EqualTo(vectorVariant.VariantType), $"Deserialized variant VariantType different");
-        Assert.That(newVectorVariant.Count, Is.EqualTo(vectorVariant.Count), $"Deserialized variant count different");
+        Assert.That(newVariant.VariantType, Is.EqualTo(oldVectorVariant.VariantType), $"Deserialized variant VariantType different");
+        Assert.That(newVectorVariant.Count, Is.EqualTo(oldVectorVariant.Count), $"Deserialized variant count different");
         for (int i = 0; i < newVectorVariant.Count; i++)
-          Assert.That(newVectorVariant[i], Is.EqualTo(vectorVariant[i]), $"Deserialized variant value different");
+          Assert.That(newVectorVariant[i], Is.EqualTo(oldVectorVariant[i]), $"Deserialized variant value different");
 
-        Assert.That(newVariant.Value, Is.EqualTo(vectorVariant.Value), $"Deserialized variant value different");
-        Assert.That(newVectorVariant.BaseType, Is.EqualTo(vectorVariant.BaseType), $"Deserialized variant baseType different");
+        Assert.That(newVariant.Value, Is.EqualTo(oldVectorVariant.Value), $"Deserialized variant value different");
+        Assert.That(newVectorVariant.BaseType, Is.EqualTo(oldVectorVariant.BaseType), $"Deserialized variant baseType different");
       }
     }
   }
 
   [Test]
-  public void TestXmlArrayVariantSerialization()
+  public void TestArrayVariantXmlSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
-      if (variantType == VariantType.Variant)
-        if (TestVariantValues.TryGetValue(variantType, out var val))
+      if (variantType == VariantType.Variant && TestVariantValues.TryGetValue(variantType, out var val))
+      {
+        var arrayVariant = new ArrayVariant();
+        arrayVariant.Resize(10, variantType);
+        for (int i = 0; i < 10; i++)
         {
-          var arrayVariant = new ArrayVariant();
-          arrayVariant.Resize(10, variantType);
-          for (int i = 0; i < 10; i++)
-          {
-            Variant itemVariant;
-            var itemType = val?.GetType();
-            if (itemType?.IsNumeral() == true)
-              itemVariant = new Variant(variantType, i);
-            else if (itemType == typeof(DateOnly))
-              itemVariant = DateOnly.FromDayNumber(DateOnly.FromDateTime(DateTime.Now).DayNumber+i);
-            else if (itemType == typeof(DateTime))
-              itemVariant = DateTime.Now.AddDays(i);
-            else if (itemType == typeof(Guid))
-              itemVariant = Guid.NewGuid();
-            else
-              itemVariant = new Variant(variantType, val);
-            arrayVariant[i] = itemVariant.Value;
-          }
-          var textWriter = new StringWriter();
-          var serializer = new QXmlSerializer(typeof(Variant));
-          serializer.Serialize(textWriter, arrayVariant);
-          textWriter.Flush();
-          string str = textWriter.ToString();
-          WriteLine(str);
-          WriteLine();
+          Variant itemVariant;
+          var itemType = val?.GetType();
+          if (itemType?.IsNumeral() == true)
+            itemVariant = new Variant(variantType, i);
+          else if (itemType == typeof(DateOnly))
+            itemVariant = DateOnly.FromDayNumber(DateOnly.FromDateTime(DateTime.Now).DayNumber + i);
+          else if (itemType == typeof(DateTime))
+            itemVariant = DateTime.Now.AddDays(i);
+          else if (itemType == typeof(Guid))
+            itemVariant = Guid.NewGuid();
+          else
+            itemVariant = new Variant(variantType, val);
+          arrayVariant[i] = itemVariant.Value;
+        }
+        var textWriter = new StringWriter();
+        var serializer = new QXmlSerializer(typeof(Variant));
+        serializer.Serialize(textWriter, arrayVariant);
+        textWriter.Flush();
+        string str = textWriter.ToString();
+        WriteLine(str);
+        WriteLine();
 
-          var textReader = new StringReader(str);
-          var newVariant = (Variant?)serializer.Deserialize(textReader);
-          Assert.IsNotNull(newVariant, $"Deserialized variant is null");
-          if (newVariant != null)
+        var textReader = new StringReader(str);
+        var newVariant = (Variant?)serializer.Deserialize(textReader);
+        Assert.IsNotNull(newVariant, $"Deserialized variant is null");
+        if (newVariant != null)
+        {
+          Assert.That(newVariant.GetType(), Is.EqualTo(typeof(ArrayVariant)), $"Deserialized variant type different");
+          if (newVariant is ArrayVariant newArrayVariant)
           {
-            Assert.That(newVariant.GetType(), Is.EqualTo(typeof(ArrayVariant)), $"Deserialized variant type different");
-            if (newVariant is ArrayVariant newArrayVariant)
-            {
-              Assert.That(newVariant.VariantType, Is.EqualTo(arrayVariant.VariantType), $"Deserialized variant VariantType different");
-              Assert.That(newArrayVariant.Size, Is.EqualTo(arrayVariant.Size), $"Deserialized variant count different");
-              for (int i = 0; i < newArrayVariant.Size; i++)
-                Assert.That(newArrayVariant[i], Is.EqualTo(arrayVariant[i]), $"Deserialized variant value different");
+            Assert.That(newVariant.VariantType, Is.EqualTo(arrayVariant.VariantType), $"Deserialized variant VariantType different");
+            Assert.That(newArrayVariant.Size, Is.EqualTo(arrayVariant.Size), $"Deserialized variant count different");
+            for (int i = 0; i < newArrayVariant.Size; i++)
+              Assert.That(newArrayVariant[i], Is.EqualTo(arrayVariant[i]), $"Deserialized variant value different");
 
-              Assert.That(newVariant.Value, Is.EqualTo(arrayVariant.Value), $"Deserialized variant value different");
-              Assert.That(newArrayVariant.BaseType, Is.EqualTo(arrayVariant.BaseType), $"Deserialized variant baseType different");
-            }
+            Assert.That(newVariant.Value, Is.EqualTo(arrayVariant.Value), $"Deserialized variant value different");
+            Assert.That(newArrayVariant.BaseType, Is.EqualTo(arrayVariant.BaseType), $"Deserialized variant baseType different");
           }
         }
+      }
     }
   }
+
 }
 
 
