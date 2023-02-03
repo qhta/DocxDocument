@@ -50,7 +50,7 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
   /// <summary>
   ///   Value of the property
   /// </summary>
-  [TypeConverter(typeof(VariantXmlTypeConverter))]
+  [TypeConverter(typeof(VariantTypeXmlConverter))]
   public Variant? Value
   {
     get => _value;

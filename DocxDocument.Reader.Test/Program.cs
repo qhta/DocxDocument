@@ -1,4 +1,6 @@
-﻿namespace DocxDocument.Reader.Test;
+﻿using DocumentModel;
+
+namespace DocxDocument.Reader.Test;
 
 internal class Program
 {
@@ -36,7 +38,7 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    testInstance.TestXmlVectorVariantSerialization();
+    testInstance.TestVariantXmlSerialization();
     Console.WriteLine("Test passed");
   }
 }

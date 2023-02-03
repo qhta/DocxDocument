@@ -16,12 +16,27 @@ public class VariantTypeConverter : TypeConverter
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
-  { 
-   object? result;
-    if (destinationType == typeof(String) && value is Variant variant)
-      result = variant.ToString(CultureInfo.InvariantCulture);
+  {
+    //if (context?.Instance is VectorVariant)
+    //  return new VectorTypeConverter().ConvertTo(context, CultureInfo ? culture, object ? value, Type destinationType);
+    //if (context?.Instance is ArrayVariant)
+    //  return new ArrayTypeConverter().ConvertTo(ITypeDescriptorContext ? context, CultureInfo ? culture, object ? value, Type destinationType);
+    object? result = null;
+    if (destinationType == typeof(String))
+    {
+      if (value is Variant variant)
+        result = variant.ToString(CultureInfo.InvariantCulture);
+      else if (value != null)
+      {
+        var valueTypeConverter = new ValueTypeConverter(value.GetType());
+        if (valueTypeConverter.CanConvertTo(context, destinationType))
+          result = valueTypeConverter.ConvertTo(context, null, value, destinationType);
+        else
+          result = value.ToString();
+      }
+    }
     else
-      result = base.ConvertTo(context, culture, value, destinationType); 
+      result = base.ConvertTo(context, culture, value, destinationType);
     return result;
   }
 
@@ -36,7 +51,7 @@ public class VariantTypeConverter : TypeConverter
 
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
-    
+
     if (value is string str)
     {
       var result = Variant.ConvertFrom(context, culture, str);
@@ -51,19 +66,19 @@ public class VariantTypeConverter : TypeConverter
         if (item is JValue jValue)
         {
           result.Add(jValue.Value);
-        //  string? str = null;
-        //  int? num = null;
-        //  var firstItem = jToken.FirstOrDefault();
-        //  if (firstItem is JProperty jProperty)
-        //  {
-        //    str = jProperty.Value.Value<string>();
-        //    var nextItem = jToken.Next;
-        //    if (nextItem is JProperty jProperty2)
-        //    {
-        //      num = jProperty.Value.Value<int>();
-        //    }
-        //    result.Add(new StringNum { Str = str, Num = num });
-        //  }
+          //  string? str = null;
+          //  int? num = null;
+          //  var firstItem = jToken.FirstOrDefault();
+          //  if (firstItem is JProperty jProperty)
+          //  {
+          //    str = jProperty.Value.Value<string>();
+          //    var nextItem = jToken.Next;
+          //    if (nextItem is JProperty jProperty2)
+          //    {
+          //      num = jProperty.Value.Value<int>();
+          //    }
+          //    result.Add(new StringNum { Str = str, Num = num });
+          //  }
         }
       }
       return result;

@@ -115,7 +115,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
-  [TypeConverter(typeof(VariantXmlTypeConverter))]
+  [TypeConverter(typeof(VariantValueConverter))]
   [XmlElement]
   public virtual object? Value
   {

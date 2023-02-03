@@ -6,7 +6,7 @@ namespace DocumentModel;
 ///   Variant implementation. Value is of any type.
 /// </summary>
 [XmlRoot("Vector")]
-//[TypeConverter(typeof(VectorXmlTypeConverter))]
+[TypeConverter(typeof(VectorTypeXmlConverter))]
 [JsonConverter(typeof(VectorJsonConverter))]
 public class VectorVariant : Variant, IList<object?>
 {
@@ -28,6 +28,15 @@ public class VectorVariant : Variant, IList<object?>
   }
 
   [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
+
+//  [TypeConverter(typeof(VariantValueConverter))]
+//  [XmlConverter(typeof(VectorValueXmlConverter))]
+  [XmlIgnore]
+  public override object? Value
+  {
+    get => _Value;
+    set => SetValue(value);
+  }
 
   /// <summary>
   ///   Vector Base Type

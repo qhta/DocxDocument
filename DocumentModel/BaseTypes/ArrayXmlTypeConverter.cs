@@ -3,7 +3,7 @@ using System.Xml;
 
 using Qhta.TypeUtils;
 
-namespace DocumentModel.BaseTypes;
+namespace DocumentModel;
 
 public class ArrayXmlTypeConverter : VariantTypeConverter, IXmlConverter
 {
