@@ -3,7 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   This class provides access to the "core properties", such as Title and
 /// </summary>
-public partial class CoreProperties
+public partial class CoreProperties: KnownDocumentProperties
 {
   /// <summary>
   ///   The title.

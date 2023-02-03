@@ -3,7 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   Application Specific File Properties.
 /// </summary>
-public partial class ExtendedProperties
+public partial class ExtendedProperties: KnownDocumentProperties
 {
   /// <summary>
   ///   Name of Document Template.

@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 using DocumentModel.BaseTypes;
 
 namespace DocumentModel.Properties;
@@ -7,12 +5,12 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   Document Property.
 /// </summary>
-public partial class DocumentProperty : IEquatable<DocumentProperty>
+[XmlContentProperty(nameof(Value))]
+public partial class Setting : IEquatable<Setting>
 {
-  public DocumentProperty() { }
+  public Setting() { }
 
-
-  public DocumentProperty(string name, Type? type = null, object? value = null)
+  public Setting(string name, Type? type = null, object? value = null)
   {
     Name = name;
     if (type != null)
@@ -31,13 +29,13 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     }
   }
 
-  public DocumentProperty(DocumentProperty other)
+  public Setting(Setting other)
   {
     Name = other.Name;
     Value = other.Value;
   }
 
-  public bool Equals(DocumentProperty? other)
+  public bool Equals(Setting? other)
   {
     if (other == null) return false;
     if (this.Name != other.Name)
@@ -46,6 +44,12 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
       return this.Value.Equals(other.Value);
     return false;
   }
+
+  /// <summary>
+  ///   Custom File Property Name
+  /// </summary>
+  [XmlAttribute]
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Value of the property
@@ -98,7 +102,7 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
 
   public override bool Equals(object? obj)
   {
-    if (obj is DocumentProperty other)
+    if (obj is Setting other)
       return Equals(other);
     return base.Equals(obj);
   }

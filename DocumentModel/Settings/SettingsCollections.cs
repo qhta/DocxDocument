@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel.Properties;
 
-public class KnownDocumentProperties : ICollection<DocumentProperty>
+public class SettingsCollections : ICollection<Setting>
 {
-  private Dictionary<string, PropertyInfo> _properties = null!;
+  private Dictionary<string, Setting> _settings = null!;
 
-  public IEnumerator<DocumentProperty> GetEnumerator()
+  public IEnumerator<Setting> GetEnumerator()
   {
-    foreach (var prop in GetKnownProperties().Values)
+    foreach (var prop in GetSettings().Values)
     {
       string name = prop.Name;
       var value = GetValue(name);
@@ -16,7 +16,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
         if (typeName.StartsWith("Nullable`"))
           typeName = prop.PropertyType.GenericTypeArguments[0].Name;
         Variant variant = (value is Variant valVariant) ? valVariant : new Variant(value);
-        yield return new DocumentProperty { Name = name, Type = variant.VariantType, Value = variant };
+        yield return new Setting { Name = name, Type = variant.VariantType, Value = variant };
       }
     }
   }
@@ -26,7 +26,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
     return GetEnumerator();
   }
 
-  public void Add(DocumentProperty item)
+  public void Add(Setting item)
   {
     if (item.Name != null)
       Set(item.Name, item);
@@ -34,26 +34,26 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public void Clear()
   {
-    foreach (var prop in GetKnownProperties().Values) Set(prop.Name, null);
+    foreach (var prop in GetSettings().Values) Set(prop.Name, null);
   }
 
-  public bool Contains(DocumentProperty item)
+  public bool Contains(Setting item)
   {
-    if (item.Name != null && GetKnownProperties().ContainsKey(item.Name))
+    if (item.Name != null && GetSettings().ContainsKey(item.Name))
       return GetValue(item.Name) != null;
     return false;
   }
 
-  public void CopyTo(DocumentProperty[] array, int arrayIndex)
+  public void CopyTo(Setting[] array, int arrayIndex)
   {
-    var items = new List<DocumentProperty>();
+    var items = new List<Setting>();
     foreach (var item in this) items.Add(item);
     items.CopyTo(array, arrayIndex);
   }
 
-  public bool Remove(DocumentProperty item)
+  public bool Remove(Setting item)
   {
-    if (item.Name != null && GetKnownProperties().ContainsKey(item.Name))
+    if (item.Name != null && GetSettings().ContainsKey(item.Name))
     {
       Set(item.Name, null);
       return true;
@@ -61,34 +61,34 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
     return false;
   }
 
-  int ICollection<DocumentProperty>.Count => Count();
+  int ICollection<Setting>.Count => Count();
 
-  bool ICollection<DocumentProperty>.IsReadOnly => false;
+  bool ICollection<Setting>.IsReadOnly => false;
 
   public int Count()
   {
-    var knownPropertiesCount = 0;
-    foreach (var name in GetKnownProperties().Keys)
+    var corePropertiesCount = 0;
+    foreach (var name in GetSettings().Keys)
     {
       var item = GetValue(name);
       if (item != null)
-        knownPropertiesCount++;
+        corePropertiesCount++;
     }
-    return knownPropertiesCount;
+    return corePropertiesCount;
   }
 
   public object? GetValue(string propName)
   {
-    var prop = GetKnownProperties()[propName];
+    var prop = GetSettings()[propName];
     return prop?.GetValue(this, null);
   }
 
-  public DocumentProperty? GetProperty(string propName)
+  public Setting? GetProperty(string propName)
   {
-    var prop = GetKnownProperties()[propName];
+    var prop = GetSettings()[propName];
     var value = prop?.GetValue(this, null);
     Variant? variant = (value is Variant valVariant) ? valVariant : (value != null) ? new Variant(value) : null;
-    return new DocumentProperty(propName, prop?.PropertyType, variant);
+    return new Setting(propName, prop?.PropertyType, variant);
   }
 
   public bool Set(string propName, object? value)
@@ -112,7 +112,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
     return false;
   }
 
-  public Dictionary<string, PropertyInfo> GetKnownProperties()
+  public Dictionary<string, PropertyInfo> GetSettings()
   {
     if (_properties == null)
       _properties = this.GetType().GetProperties()
@@ -122,7 +122,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public void Add(object item)
   {
-    if (item is DocumentProperty documentProperty)
-      Add(documentProperty);
+    if (item is Setting Setting)
+      Add(Setting);
   }
 }
