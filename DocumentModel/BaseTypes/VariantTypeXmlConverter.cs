@@ -6,7 +6,7 @@ using Qhta.TypeUtils;
 
 namespace DocumentModel.BaseTypes;
 
-public class VariantXmlTypeConverter : VariantTypeConverter, IXmlConverter
+public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
 {
   public virtual bool CanRead => true;
 
@@ -21,7 +21,7 @@ public class VariantXmlTypeConverter : VariantTypeConverter, IXmlConverter
   {
     if (value is VectorVariant)
     {
-      new VectorXmlTypeConverter().WriteXml(context, writer, value, serializer);
+      new VectorTypeXmlConverter().WriteXml(context, writer, value, serializer);
     }
     else
     if (value is ArrayVariant)
@@ -55,7 +55,7 @@ public class VariantXmlTypeConverter : VariantTypeConverter, IXmlConverter
       }
       else
       if (reader.LocalName == "Vector")
-        return new VectorXmlTypeConverter().ReadXml(context, reader, objectType, existingValue, serializer);
+        return new VectorTypeXmlConverter().ReadXml(context, reader, objectType, existingValue, serializer);
       else
       throw new NotImplementedException($"Unexpected reader node type {reader.NodeType}");
     }
