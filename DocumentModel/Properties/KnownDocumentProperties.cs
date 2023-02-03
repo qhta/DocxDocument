@@ -67,14 +67,14 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public int Count()
   {
-    var corePropertiesCount = 0;
+    var knownPropertiesCount = 0;
     foreach (var name in GetKnownProperties().Keys)
     {
       var item = GetValue(name);
       if (item != null)
-        corePropertiesCount++;
+        knownPropertiesCount++;
     }
-    return corePropertiesCount;
+    return knownPropertiesCount;
   }
 
   public object? GetValue(string propName)
