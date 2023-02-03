@@ -45,19 +45,6 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
         if (item is JValue jValue)
         {
           result.Add(jValue.Value);
-          //  string? str = null;
-          //  int? num = null;
-          //  var firstItem = jToken.FirstOrDefault();
-          //  if (firstItem is JProperty jProperty)
-          //  {
-          //    str = jProperty.Value.Value<string>();
-          //    var nextItem = jToken.Next;
-          //    if (nextItem is JProperty jProperty2)
-          //    {
-          //      num = jProperty.Value.Value<int>();
-          //    }
-          //    result.Add(new StringNum { Str = str, Num = num });
-          //  }
         }
       }
       return result;

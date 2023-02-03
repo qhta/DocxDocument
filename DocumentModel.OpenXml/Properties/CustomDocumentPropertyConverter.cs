@@ -98,7 +98,7 @@ public static class CustomDocumentPropertyConverter
     var value = new DocumentModel.Properties.DocumentProperty();
     if (openXmlElement != null)
     {
-      value.FormatId = GetFormatId(openXmlElement);
+      //value.FormatId = GetFormatId(openXmlElement);
       value.PropertyId = GetPropertyId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.LinkTarget = GetLinkTarget(openXmlElement);
@@ -112,7 +112,8 @@ public static class CustomDocumentPropertyConverter
     if (value != null)
     {
       var openXmlElement = new CustomDocumentProperty();
-      SetFormatId(openXmlElement, value.FormatId);
+      //SetFormatId(openXmlElement, value.FormatId);
+      SetFormatId(openXmlElement, FMTIDS.UserDefinedProperties);
       SetPropertyId(openXmlElement, value.PropertyId);
       SetName(openXmlElement, value.Name);
       SetLinkTarget(openXmlElement, value.LinkTarget);
