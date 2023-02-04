@@ -132,9 +132,14 @@ public enum VariantType
   Error,
 
   /// <summary>
-  ///   Class ID Variant Type.
+  ///   Enum Variant Type.
   /// </summary>
-  ClassId,
+  Enum,
+
+  /// <summary>
+  ///   Global Unique ID Variant Type.
+  /// </summary>
+  Guid,
 
   /// <summary>
   ///   Clipboard Data Variant Type.

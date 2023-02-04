@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 using DocumentModel;
 
 using Qhta.TypeUtils;
@@ -9,6 +10,13 @@ using VariantType = DocumentModel.VariantType;
 using Newtonsoft.Json;
 
 namespace DocxDocument.Reader.Test;
+public enum Numbers: UInt64
+{
+  One = 1,
+  MaxUInt32 = UInt32.MaxValue,
+  MaxUInt64 =UInt64.MaxValue,
+}
+
 public class TestVariants : TestBase
 {
 
@@ -1095,6 +1103,31 @@ public class TestVariants : TestBase
   }
 
   [Test]
+  public void TestEnumVariantType()
+  {
+    Variant variant;
+
+    variant = new Variant(VariantType.Enum, Numbers.One);
+    Assert.That((int)variant, Is.EqualTo(1), "Enum set/ Int get");
+    variant = new Variant(VariantType.Enum, Numbers.MaxUInt32);
+    Assert.That((UInt32)variant, Is.EqualTo(UInt32.MaxValue), "Enum set/ UInt32 get");
+    variant = new Variant(VariantType.Enum, Numbers.MaxUInt64);
+    Assert.That((UInt64)variant, Is.EqualTo(UInt64.MaxValue), "Enum set/ UInt64 get");
+
+    variant = new Variant(VariantType.Enum, 1);
+    Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.One), "Int set/ Enum get");
+    variant = new Variant(VariantType.Enum, UInt32.MaxValue);
+    Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.MaxUInt32), "UInt32 set/ Enum get");
+    variant = new Variant(VariantType.Enum, UInt64.MaxValue);
+    Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.MaxUInt64), "UInt64 set/ Enum get");
+
+    variant = new Variant(VariantType.Enum, "One");
+    Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.One), "String set/ Enum get");
+    variant = new Variant(VariantType.Enum, Numbers.One);
+    Assert.That(variant.ToString(), Is.EqualTo("One"), "Enum set/ String get");
+  }
+
+  [Test]
   public void TestInternalVariantType()
   {
     Variant variant;
@@ -1207,7 +1240,8 @@ public class TestVariants : TestBase
       { VariantType.Currency, Decimal.MaxValue },
       { VariantType.Null, DBNull.Value },
       { VariantType.Error, UInt16.MaxValue },
-      { VariantType.ClassId, Guid.NewGuid() },
+      { VariantType.Enum, Numbers.MaxUInt64 },
+      { VariantType.Guid, Guid.NewGuid() },
       { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
       // VariantType.Variant can't be tested here as deserialization results in internal vector value
       //{ VariantType.Variant, new Variant(123) },
@@ -1233,7 +1267,7 @@ public class TestVariants : TestBase
       WriteLine($"Testing variant type {variantType} = {valStr}");
       var variant = new Variant(variantType, val);
       var textWriter = new StringWriter();
-      var serializer = new QXmlSerializer(typeof(Variant));
+      var serializer = new QXmlSerializer(typeof(Variant), new Type[]{typeof(Numbers)});
       serializer.Serialize(textWriter, variant);
       textWriter.Flush();
       string str = textWriter.ToString();
@@ -1245,6 +1279,7 @@ public class TestVariants : TestBase
       Assert.IsNotNull(newVariant, $"Deserialized variant is null for VariantType.{variantType}");
       Assert.That(newVariant?.VariantType, Is.EqualTo(variant.VariantType),
         $"Deserialized variant VariantType different for VariantType.{variantType}");
+      var xl = newVariant?.Value;
       Assert.That(newVariant?.Value, Is.EqualTo(variant.Value), $"Deserialized variant value different for VariantType.{variantType}");
       Assert.That(newVariant, Is.EqualTo(variant), $"Deserialized variant different for VariantType.{variantType}");
     }
