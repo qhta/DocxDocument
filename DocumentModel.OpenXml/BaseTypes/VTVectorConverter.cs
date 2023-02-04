@@ -22,7 +22,7 @@ public static class VTVectorConverter
     { VectorBaseValues.Bool, VariantType.Boolean },
     { VectorBaseValues.Currency, VariantType.Currency },
     { VectorBaseValues.Error, VariantType.Error },
-    { VectorBaseValues.ClassId, VariantType.ClassId },
+    { VectorBaseValues.ClassId, VariantType.Guid },
     { VectorBaseValues.ClipboardData, VariantType.ClipboardData },
     { VectorBaseValues.Variant, VariantType.Variant }
   };

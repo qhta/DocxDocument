@@ -44,10 +44,10 @@ public class VariantTypeNameConverter : TypeConverter
         return VariantType.Array;
       if (str == "Byte[]")
         return VariantType.Blob;
-      var result = Enum.Parse<VariantType>(str);
-      return result;
+      if (Enum.TryParse<VariantType>(str, out var variantType))
+        return variantType;
     }
-    return base.ConvertFrom(context, culture, value);
+    return null;
   }
 
 }
