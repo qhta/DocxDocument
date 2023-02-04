@@ -3,7 +3,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 ///   Application Specific File Properties.
 /// </summary>
-public partial class ExtendedProperties: KnownDocumentProperties
+public partial class ContentProperties: KnownDocumentProperties
 {
   /// <summary>
   ///   Name of Document Template.
@@ -21,59 +21,9 @@ public partial class ExtendedProperties: KnownDocumentProperties
   public String? Company { get; set; }
 
   /// <summary>
-  ///   Total Number of Pages.
-  /// </summary>
-  public int? Pages { get; set; }
-
-  /// <summary>
-  ///   Word Count.
-  /// </summary>
-  public int? Words { get; set; }
-
-  /// <summary>
-  ///   Total Number of Characters.
-  /// </summary>
-  public int? Characters { get; set; }
-
-  /// <summary>
   ///   Intended Format of Presentation.
   /// </summary>
   public String? PresentationFormat { get; set; }
-
-  /// <summary>
-  ///   Number of Lines.
-  /// </summary>
-  public int? Lines { get; set; }
-
-  /// <summary>
-  ///   Total Number of Paragraphs.
-  /// </summary>
-  public int? Paragraphs { get; set; }
-
-  /// <summary>
-  ///   Slides Metadata Element.
-  /// </summary>
-  public int? Slides { get; set; }
-
-  /// <summary>
-  ///   Number of Slides Containing Notes.
-  /// </summary>
-  public int? Notes { get; set; }
-
-  /// <summary>
-  ///   Total Edit Time Metadata Element.
-  /// </summary>
-  public int? TotalTime { get; set; }
-
-  /// <summary>
-  ///   Number of Hidden Slides.
-  /// </summary>
-  public int? HiddenSlides { get; set; }
-
-  /// <summary>
-  ///   Total Number of Multimedia Clips.
-  /// </summary>
-  public int? MultimediaClips { get; set; }
 
   /// <summary>
   ///   Thumbnail Display Mode.
@@ -96,11 +46,6 @@ public partial class ExtendedProperties: KnownDocumentProperties
   public bool? LinksUpToDate { get; set; }
 
   /// <summary>
-  ///   Number of Characters (With Spaces).
-  /// </summary>
-  public int? CharactersWithSpaces { get; set; }
-
-  /// <summary>
   ///   Shared Document.
   /// </summary>
   public bool? SharedDocument { get; set; }
@@ -121,6 +66,11 @@ public partial class ExtendedProperties: KnownDocumentProperties
   public bool? HyperlinksChanged { get; set; }
 
   /// <summary>
+  ///   Document Security.
+  /// </summary>
+  public int? DocumentSecurity { get; set; }
+
+  /// <summary>
   ///   Digital Signature.
   /// </summary>
   public byte[]? DigitalSignature { get; set; }
@@ -135,8 +85,4 @@ public partial class ExtendedProperties: KnownDocumentProperties
   /// </summary>
   public String? ApplicationVersion { get; set; }
 
-  /// <summary>
-  ///   Document Security.
-  /// </summary>
-  public int? DocumentSecurity { get; set; }
 }

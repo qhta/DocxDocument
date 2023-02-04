@@ -114,15 +114,17 @@ public partial class DocxReader
   {
     var properties = new DMP.DocumentProperties();
     if (parts.HasFlag(Parts.CoreFileProperties))
-      properties.CoreProperties = DocumentModel.OpenXml.Properties.CorePropertiesConverter.CreateModelElement(WordprocessingDocument.PackageProperties);
+      properties.CoreProperties = DMXProps.CorePropertiesConverter.CreateModelElement(WordprocessingDocument.PackageProperties);
 
     if (parts.HasFlag(Parts.ExtendedFileProperties) && WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null)
-      properties.ExtendedProperties =
-        DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateModelElement(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+    {
+      properties.ContentProperties = DMXProps.ExtendedPropertiesConverter.GetContentProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+      properties.StatisticProperties = DMXProps.ExtendedPropertiesConverter.GetStatisticProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+    }
 
     if (parts.HasFlag(Parts.CustomFileProperties) && WordprocessingDocument.CustomFilePropertiesPart?.Properties != null)
       properties.CustomProperties =
-        DocumentModel.OpenXml.Properties.CustomPropertiesConverter.CreateModelElement(WordprocessingDocument.CustomFilePropertiesPart.Properties);
+        DMXProps.CustomPropertiesConverter.CreateModelElement(WordprocessingDocument.CustomFilePropertiesPart.Properties);
       
     return properties;
   }
