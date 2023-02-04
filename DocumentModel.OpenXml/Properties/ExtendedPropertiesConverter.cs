@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.ExtendedProperties;
+
 using DocumentModel.Properties;
 
 namespace DocumentModel.OpenXml.Properties;
@@ -450,30 +451,19 @@ public static class ExtendedPropertiesConverter
     openXmlElement.DocumentSecurity = Int32ValueConverter.CreateOpenXmlElement<DocumentSecurity>(value);
   }
 
-  public static ExtendedProperties? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
+  public static ContentProperties? GetContentProperties(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
   {
-    var value = new ExtendedProperties();
+    var value = new ContentProperties();
     if (openXmlElement != null)
     {
       value.Template = GetTemplate(openXmlElement);
       value.Manager = GetManager(openXmlElement);
       value.Company = GetCompany(openXmlElement);
-      value.Pages = GetPages(openXmlElement);
-      value.Words = GetWords(openXmlElement);
-      value.Characters = GetCharacters(openXmlElement);
       value.PresentationFormat = GetPresentationFormat(openXmlElement);
-      value.Lines = GetLines(openXmlElement);
-      value.Paragraphs = GetParagraphs(openXmlElement);
-      value.Slides = GetSlides(openXmlElement);
-      value.Notes = GetNotes(openXmlElement);
-      value.TotalTime = GetTotalTime(openXmlElement);
-      value.HiddenSlides = GetHiddenSlides(openXmlElement);
-      value.MultimediaClips = GetMultimediaClips(openXmlElement);
       value.ScaleCrop = GetScaleCrop(openXmlElement);
       value.HeadingPairs = GetHeadingPairs(openXmlElement);
       value.TitlesOfParts = GetTitlesOfParts(openXmlElement);
       value.LinksUpToDate = GetLinksUpToDate(openXmlElement);
-      value.CharactersWithSpaces = GetCharactersWithSpaces(openXmlElement);
       value.SharedDocument = GetSharedDocument(openXmlElement);
       value.HyperlinkBase = GetHyperlinkBase(openXmlElement);
       value.HyperlinkList = GetHyperlinkList(openXmlElement);
@@ -486,38 +476,64 @@ public static class ExtendedPropertiesConverter
     return value;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(ExtendedProperties value)
+  public static StatisticProperties? GetStatisticProperties(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement)
+  {
+    var value = new StatisticProperties();
+    if (openXmlElement != null)
+    {
+      value.Pages = GetPages(openXmlElement);
+      value.Words = GetWords(openXmlElement);
+      value.Characters = GetCharacters(openXmlElement);
+      value.CharactersWithSpaces = GetCharactersWithSpaces(openXmlElement);
+      value.Lines = GetLines(openXmlElement);
+      value.Paragraphs = GetParagraphs(openXmlElement);
+      value.Slides = GetSlides(openXmlElement);
+      value.Notes = GetNotes(openXmlElement);
+      value.HiddenSlides = GetHiddenSlides(openXmlElement);
+      value.MultimediaClips = GetMultimediaClips(openXmlElement);
+      value.TotalTime = GetTotalTime(openXmlElement);
+    }
+    return value;
+  }
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(ContentProperties? value1, StatisticProperties? value2)
     where OpenXmlElementType : DocumentFormat.OpenXml.ExtendedProperties.Properties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     {
-      SetTemplate(openXmlElement, value.Template);
-      SetManager(openXmlElement, value.Manager);
-      SetCompany(openXmlElement, value.Company);
-      SetPages(openXmlElement, value.Pages);
-      SetWords(openXmlElement, value.Words);
-      SetCharacters(openXmlElement, value.Characters);
-      SetPresentationFormat(openXmlElement, value.PresentationFormat);
-      SetLines(openXmlElement, value.Lines);
-      SetParagraphs(openXmlElement, value.Paragraphs);
-      SetSlides(openXmlElement, value.Slides);
-      SetNotes(openXmlElement, value.Notes);
-      SetTotalTime(openXmlElement, value.TotalTime);
-      SetHiddenSlides(openXmlElement, value.HiddenSlides);
-      SetMultimediaClips(openXmlElement, value.MultimediaClips);
-      SetScaleCrop(openXmlElement, value.ScaleCrop);
-      SetHeadingPairs(openXmlElement, value.HeadingPairs);
-      SetTitlesOfParts(openXmlElement, value.TitlesOfParts);
-      SetLinksUpToDate(openXmlElement, value.LinksUpToDate);
-      SetCharactersWithSpaces(openXmlElement, value.CharactersWithSpaces);
-      SetSharedDocument(openXmlElement, value.SharedDocument);
-      SetHyperlinkBase(openXmlElement, value.HyperlinkBase);
-      SetHyperlinkList(openXmlElement, value.HyperlinkList);
-      SetHyperlinksChanged(openXmlElement, value.HyperlinksChanged);
-      SetDigitalSignature(openXmlElement, value.DigitalSignature);
-      SetApplication(openXmlElement, value.Application);
-      SetApplicationVersion(openXmlElement, value.ApplicationVersion);
-      SetDocumentSecurity(openXmlElement, value.DocumentSecurity);
+      if (value1 != null)
+      {
+        SetTemplate(openXmlElement, value1.Template);
+        SetManager(openXmlElement, value1.Manager);
+        SetCompany(openXmlElement, value1.Company);
+        SetPresentationFormat(openXmlElement, value1.PresentationFormat);
+        SetScaleCrop(openXmlElement, value1.ScaleCrop);
+        SetHeadingPairs(openXmlElement, value1.HeadingPairs);
+        SetTitlesOfParts(openXmlElement, value1.TitlesOfParts);
+        SetLinksUpToDate(openXmlElement, value1.LinksUpToDate);
+        SetSharedDocument(openXmlElement, value1.SharedDocument);
+        SetHyperlinkBase(openXmlElement, value1.HyperlinkBase);
+        SetHyperlinkList(openXmlElement, value1.HyperlinkList);
+        SetHyperlinksChanged(openXmlElement, value1.HyperlinksChanged);
+        SetDigitalSignature(openXmlElement, value1.DigitalSignature);
+        SetApplication(openXmlElement, value1.Application);
+        SetApplicationVersion(openXmlElement, value1.ApplicationVersion);
+        SetDocumentSecurity(openXmlElement, value1.DocumentSecurity);
+      }
+      if (value2 != null)
+      {
+        SetPages(openXmlElement, value2.Pages);
+        SetWords(openXmlElement, value2.Words);
+        SetCharacters(openXmlElement, value2.Characters);
+        SetCharactersWithSpaces(openXmlElement, value2.CharactersWithSpaces);
+        SetLines(openXmlElement, value2.Lines);
+        SetParagraphs(openXmlElement, value2.Paragraphs);
+        SetSlides(openXmlElement, value2.Slides);
+        SetNotes(openXmlElement, value2.Notes);
+        SetTotalTime(openXmlElement, value2.TotalTime);
+        SetHiddenSlides(openXmlElement, value2.HiddenSlides);
+        SetMultimediaClips(openXmlElement, value2.MultimediaClips);
+      }
     }
     return openXmlElement;
   }

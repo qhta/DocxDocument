@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Properties;
+﻿using DocumentModel.Wordprocessing;
+
+namespace DocumentModel.Properties;
 
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
@@ -6,21 +8,34 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   public CoreProperties? CoreProperties { get; set; }
 
   [XmlIgnore]
-  public ExtendedProperties? ExtendedProperties { get; set; }
+  public ContentProperties? ContentProperties { get; set; }
+
+  [XmlIgnore]
+  public StatisticProperties? StatisticProperties { get; set; }
 
   [XmlIgnore]
   public CustomProperties? CustomProperties { get; set; }
+
+  [XmlIgnore]
+  public DocumentSettings? DocumentSettings { get; set; }
+
 
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CoreProperties != null)
       foreach (var property in CoreProperties)
         yield return property;
-    if (ExtendedProperties != null)
-      foreach (var property in ExtendedProperties)
+    if (ContentProperties != null)
+      foreach (var property in ContentProperties)
+        yield return property;
+    if (StatisticProperties != null)
+      foreach (var property in StatisticProperties)
         yield return property;
     if (CustomProperties != null)
       foreach (var property in CustomProperties)
+        yield return property;
+    if (DocumentSettings != null)
+      foreach (var property in DocumentSettings)
         yield return property;
   }
 
@@ -33,17 +48,27 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   {
     if (CoreProperties == null)
       CoreProperties = new CoreProperties();
-    if (ExtendedProperties == null)
-      ExtendedProperties = new ExtendedProperties();
+    if (ContentProperties == null)
+      ContentProperties = new ContentProperties();
+    if (StatisticProperties == null)
+      StatisticProperties = new StatisticProperties();
     if (item.Name != null)
     {
       if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))
       {
         CoreProperties.Set(item.Name, item.Value);
       }
-      else if (ExtendedProperties.GetKnownProperties().ContainsKey(item.Name))
+      else if (ContentProperties.GetKnownProperties().ContainsKey(item.Name))
       {
-        ExtendedProperties.Set(item.Name, item.Value);
+        ContentProperties.Set(item.Name, item.Value);
+      }
+      else if (StatisticProperties.GetKnownProperties().ContainsKey(item.Name))
+      {
+        StatisticProperties.Set(item.Name, item.Value);
+      }
+      else if (DocumentSettings.GetKnownProperties().ContainsKey(item.Name))
+      {
+        StatisticProperties.Set(item.Name, item.Value);
       }
       else
       {
@@ -62,8 +87,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   {
     if (CoreProperties != null)
       CoreProperties.Clear();
-    if (ExtendedProperties != null)
-      ExtendedProperties.Clear();
+    if (ContentProperties != null)
+      ContentProperties.Clear();
     if (CustomProperties != null)
       CustomProperties.Clear();
   }
@@ -72,7 +97,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   {
     if (CoreProperties != null && CoreProperties.Contains(item))
       return true;
-    if (ExtendedProperties != null && ExtendedProperties.Contains(item))
+    if (ContentProperties != null && ContentProperties.Contains(item))
       return true;
     if (CustomProperties != null && CustomProperties.Contains(item))
       return true;
@@ -86,10 +111,10 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       CoreProperties.CopyTo(array, arrayIndex);
       arrayIndex += CoreProperties.Count();
     }
-    if (ExtendedProperties != null)
+    if (ContentProperties != null)
     {
-      ExtendedProperties.CopyTo(array, arrayIndex);
-      arrayIndex += ExtendedProperties.Count();
+      ContentProperties.CopyTo(array, arrayIndex);
+      arrayIndex += ContentProperties.Count();
     }
     if (CustomProperties != null)
       CustomProperties.CopyTo(array, arrayIndex);
@@ -100,8 +125,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (CoreProperties != null)
       if (CoreProperties.Remove(item))
         return true;
-    if (ExtendedProperties != null)
-      if (ExtendedProperties.Remove(item))
+    if (ContentProperties != null)
+      if (ContentProperties.Remove(item))
         return true;
     if (CustomProperties != null)
       if (CustomProperties.Remove(item))
@@ -118,8 +143,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     var count = 0;
     if (CoreProperties != null)
       count += CoreProperties.Count();
-    if (ExtendedProperties != null)
-      count += ExtendedProperties.Count();
+    if (ContentProperties != null)
+      count += ContentProperties.Count();
     if (CustomProperties != null)
       count += CustomProperties.Count();
     return count;
@@ -131,8 +156,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (CoreProperties != null && CoreProperties.GetKnownProperties().ContainsKey(propName))
       result = CoreProperties.GetProperty(propName);
     else
-    if (ExtendedProperties != null && ExtendedProperties.GetKnownProperties().ContainsKey(propName))
-      result = ExtendedProperties.GetProperty(propName);
+    if (ContentProperties != null && ContentProperties.GetKnownProperties().ContainsKey(propName))
+      result = ContentProperties.GetProperty(propName);
     else
       result = CustomProperties?.GetProperty(propName);
     return result;
@@ -144,8 +169,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (CoreProperties!=null && CoreProperties.GetKnownProperties().ContainsKey(propName))
       result = CoreProperties.GetValue(propName);
     else
-    if (ExtendedProperties != null && ExtendedProperties.GetKnownProperties().ContainsKey(propName))
-      result = ExtendedProperties.GetValue(propName);
+    if (ContentProperties != null && ContentProperties.GetKnownProperties().ContainsKey(propName))
+      result = ContentProperties.GetValue(propName);
     else
       result = CustomProperties?.GetValue(propName);
     return result;

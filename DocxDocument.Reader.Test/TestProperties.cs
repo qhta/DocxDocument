@@ -85,28 +85,38 @@ namespace DocxDocument.Reader.Test
           }
         }
       }
-
       #endregion
 
-
-      #region ContentDocumentProperties
-      ExtendedProperties? contentDocumentProperties = document.Properties.ExtendedProperties;
+      #region ExtendedDocumentProperties
+      ContentProperties? contentDocumentProperties = document.Properties.ContentProperties;
+      StatisticProperties? statisticDocumentProperties = document.Properties.StatisticProperties;
       int contentPropertiesCount = 0;
+      int statisticPropertiesCount = 0;
+      int origExtendedPropertiesCount = 0;
       int origContentPropertiesCount = 0;
+      int origStatisticPropertiesCount = 0;
       if (contentDocumentProperties != null)
       {
-        var origExtraFilePropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements().Count() ?? 0;
-        var origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
+        origExtendedPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements().Count() ?? 0;
+        origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
           ?.Count(item => statisticPropElementsNames.Contains(item.LocalName)) ?? 0;
-        var contentProperties = typeof(ExtendedProperties).GetProperties();
-        origContentPropertiesCount = origExtraFilePropertiesCount;// - origStatisticPropertiesCount;
+        origContentPropertiesCount = origExtendedPropertiesCount - origStatisticPropertiesCount;
+        var contentProperties = typeof(ContentProperties).GetProperties();
         foreach (var prop in contentProperties.Where(item => item.CanWrite))
         {
           if (prop.GetValue(contentDocumentProperties, null) != null)
             contentPropertiesCount++;
         }
+        var statisticProperties = typeof(StatisticProperties).GetProperties();
+        foreach (var prop in statisticProperties.Where(item => item.CanWrite))
+        {
+          if (prop.GetValue(statisticDocumentProperties, null) != null)
+            statisticPropertiesCount++;
+        }
         WriteLine(
           $"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
+        WriteLine(
+          $"  StatisticProperties: defined {statisticProperties.Count()} loaded {statisticPropertiesCount} expected {origStatisticPropertiesCount}");
         if (showDetails)
         {
           foreach (var prop in contentProperties.Where(item => item.CanWrite))
@@ -146,6 +156,7 @@ namespace DocxDocument.Reader.Test
 
       Assert.That(corePropertiesCount, Is.EqualTo(origCorePropertiesCount), "Invalid core properties count");
       Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
+      Assert.That(statisticPropertiesCount, Is.EqualTo(origStatisticPropertiesCount), "Invalid content properties count");
       Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
 
       return document.Properties;

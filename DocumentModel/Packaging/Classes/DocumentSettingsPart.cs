@@ -1,4 +1,4 @@
-using DocumentModel.Wordprocessing;
+using DocumentModel.Properties;
 
 namespace DocumentModel.Packaging;
 
@@ -19,5 +19,5 @@ public class DocumentSettingsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Settings? Settings { get; set; }
+  public DocumentSettings? Settings { get; set; }
 }

@@ -1,3 +1,5 @@
+using DocumentModel.Properties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -2564,7 +2566,7 @@ public static class SettingsConverter
     }
   }
   
-  public static DMW.Settings? CreateModelElement(DXW.Settings? openXmlElement)
+  public static DocumentSettings? CreateModelElement(DXW.Settings? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -2675,7 +2677,7 @@ public static class SettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Settings? openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Settings? openXmlElement, DocumentSettings? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -2889,7 +2891,7 @@ public static class SettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Settings? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentSettings? value)
     where OpenXmlElementType: DXW.Settings, new()
   {
     if (value != null)

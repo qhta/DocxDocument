@@ -223,7 +223,6 @@ global using DMXPack = DocumentModel.OpenXml.Packaging;
 //global using DMXP = DocumentModel.OpenXml.Presentation;
 //global using DMXPVml = DocumentModel.OpenXml.Presentation.Vml;
 global using DMXProps = DocumentModel.OpenXml.Properties;
-//global using DMXProps = DocumentModel.OpenXml.Properties;
 //global using DMXS = DocumentModel.OpenXml.Spreadsheet;
 //global using DMXSVml = DocumentModel.OpenXml.Spreadsheet.Vml;
 global using DMXUI = DocumentModel.OpenXml.UI;
