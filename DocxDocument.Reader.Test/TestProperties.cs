@@ -1,5 +1,5 @@
 using System.Reflection;
-
+using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel.Properties;
 
 using Newtonsoft.Json;
@@ -127,7 +127,6 @@ namespace DocxDocument.Reader.Test
           }
         }
       }
-
       #endregion
 
       #region CustomDocumentProperties
@@ -154,10 +153,36 @@ namespace DocxDocument.Reader.Test
       }
       #endregion
 
+      #region DocumentSettings
+      DocumentSettings? documentSettings = document.Properties.DocumentSettings;
+      int origDocumentSettingsCount = 0;
+      int documentSettingsCount = 0;
+      if (documentSettings != null)
+      {
+        origDocumentSettingsCount = reader.WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart?.Settings?.Elements().Count() ?? 0;
+        var modelDocumentSettings = typeof(DocumentSettings).GetProperties();
+        foreach (var prop in modelDocumentSettings.Where(item => item.CanWrite))
+          if (prop.GetValue(documentSettings, null) != null)
+            documentSettingsCount++;
+        WriteLine(
+          $"  DocumentSettings: defined {modelDocumentSettings.Count()} loaded {documentSettingsCount} expected {origDocumentSettingsCount}");
+        if (showDetails)
+        {
+          foreach (var prop in modelDocumentSettings.Where(item => item.CanWrite))
+          {
+            var documentProperty = document.Properties.GetProperty(prop.Name);
+            if (documentProperty?.Value != null)
+              WriteLine($"    {documentProperty}");
+          }
+        }
+      }
+      #endregion
+
       Assert.That(corePropertiesCount, Is.EqualTo(origCorePropertiesCount), "Invalid core properties count");
       Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
       Assert.That(statisticPropertiesCount, Is.EqualTo(origStatisticPropertiesCount), "Invalid content properties count");
       Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
+      Assert.That(documentSettingsCount, Is.EqualTo(origDocumentSettingsCount), "Invalid document settings count");
 
       return document.Properties;
     }

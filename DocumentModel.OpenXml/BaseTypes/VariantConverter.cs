@@ -196,7 +196,7 @@ public static class VariantConverter
       return new Variant(VariantType.Empty, null);
 
     if (openXmlElement is VTClassId vclassId)
-      return new Variant(VariantType.ClassId, XmlConvert.ToGuid(vclassId.Text));
+      return new Variant(VariantType.Guid, XmlConvert.ToGuid(vclassId.Text));
 
     if (openXmlElement is VTError vError)
       return new Variant(VariantType.Error, new NumId(vError.Text));
@@ -306,7 +306,7 @@ public static class VariantConverter
         return new VTNull();
       case VariantType.Empty:
         return new VTEmpty();
-      case VariantType.ClassId:
+      case VariantType.Guid:
         return new VTClassId { Text = XmlConvert.ToString(variant.ToGuid()) };
       case VariantType.Error:
         return new VTError { Text = variant.Value is NumId HexLong ? HexLong.ToString() : string.Empty };

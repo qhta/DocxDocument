@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
 
-public class VariantTypeConverter : TypeConverter
+public class VariantTypeConverter : BaseTypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -28,7 +28,7 @@ public class VariantTypeConverter : TypeConverter
         result = variant.ToString(CultureInfo.InvariantCulture);
       else if (value != null)
       {
-        var valueTypeConverter = new ValueTypeConverter(value.GetType());
+        var valueTypeConverter = new ValueTypeConverter(value.GetType(), KnownTypes?.Values);
         if (valueTypeConverter.CanConvertTo(context, destinationType))
           result = valueTypeConverter.ConvertTo(context, null, value, destinationType);
         else
@@ -51,7 +51,6 @@ public class VariantTypeConverter : TypeConverter
 
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
-
     if (value is string str)
     {
       var result = Variant.ConvertFrom(context, culture, str);

@@ -9,9 +9,11 @@ public static class HexBinaryConverter
     var valProperty = openXmlElement?.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      var valStr = (string?)valProperty.GetValue(openXmlElement);
-      if (valStr != null)
+      var value = valProperty.GetValue(openXmlElement);
+      if (value is string valStr)
         return Convert.FromHexString(valStr);
+      if (value is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+        return Convert.FromHexString(hexBinaryValue.Value);
     }
     return null;
   }

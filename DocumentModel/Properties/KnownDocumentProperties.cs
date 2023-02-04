@@ -2,7 +2,10 @@
 
 public class KnownDocumentProperties : ICollection<DocumentProperty>
 {
+
   private Dictionary<string, PropertyInfo> _properties = null!;
+
+  //private Dictionary<string, Type> KnowTypes { get; } = new();
 
   public IEnumerator<DocumentProperty> GetEnumerator()
   {

@@ -6,6 +6,8 @@ namespace DocumentModel;
 
 public class VariantValueConverter : TypeConverter
 {
+  public Dictionary<string, Type> KnownTypes { get; } = new Dictionary<string, Type>();
+
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
     if (destinationType == typeof(String))
@@ -22,7 +24,7 @@ public class VariantValueConverter : TypeConverter
         result = variant.ToString(CultureInfo.InvariantCulture);
       else if (value != null)
       {
-        var valueTypeConverter = new ValueTypeConverter(value.GetType());
+        var valueTypeConverter = new ValueTypeConverter(value.GetType(), KnownTypes.Values);
         if (valueTypeConverter.CanConvertTo(context, destinationType))
           result = valueTypeConverter.ConvertTo(context, null, value, destinationType);
         else

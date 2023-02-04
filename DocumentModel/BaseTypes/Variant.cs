@@ -1,5 +1,6 @@
 //#define TraceSetValue
 
+using System;
 using System.ComponentModel;
 using System.Xml;
 
@@ -69,7 +70,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     { VariantType.Boolean, typeof(Boolean) },
     { VariantType.Null, typeof(DBNull) },
     { VariantType.Error, typeof(NumId) },
-    { VariantType.ClassId, typeof(Guid) },
+    { VariantType.Guid, typeof(Guid) },
     { VariantType.ClipboardData, typeof(byte[]) },
     { VariantType.Variant, typeof(Variant) }
   };
@@ -97,6 +98,12 @@ public class Variant : IConvertible, IEquatable<Variant>
   public Variant(VariantType variantType, object? value)
   {
     VariantType = variantType;
+    if (value != null)
+    {
+      var valueType = value.GetType();
+      if (valueType != null && valueType.IsEnum)
+        EnumType = valueType;
+    }
     SetValue(value);
   }
 
@@ -115,11 +122,26 @@ public class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
+  [XmlAttribute]
+  public virtual Type? EnumType
+  {
+    get => (_VariantType == VariantType.Enum) ? _EnumType : null;
+    set
+    {
+#if TraceSetValue
+      Debug.WriteLine($"Set EnumType({value})");
+#endif
+      _EnumType = value;
+    }
+  }
+
+  private Type? _EnumType;
+
   [TypeConverter(typeof(VariantValueConverter))]
   [XmlElement]
   public virtual object? Value
   {
-    get => _Value;
+    get => GetValue();
     set => SetValue(value);
   }
 
@@ -222,6 +244,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(Single)) return ToSingle(provider);
     if (conversionType == typeof(DateOnly)) return ToDateOnly(provider);
     if (conversionType == typeof(DateTime)) return ToDateTime(provider);
+    if (conversionType.IsEnum) return typeof(Variant).GetMethod("ToEnum")?.MakeGenericMethod(conversionType).Invoke(this, new object?[]{provider});
     if (conversionType == typeof(String)) return ToString(provider);
     if (conversionType == typeof(Char)) return ToChar(provider);
     if (conversionType == typeof(Guid)) return ToGuid(provider);
@@ -348,6 +371,16 @@ public class Variant : IConvertible, IEquatable<Variant>
     return Convert.ToChar(Value);
   }
 
+  public virtual EnumType ToEnum<EnumType>(IFormatProvider? provider = null)
+  where EnumType: struct, IConvertible
+  {
+    if (Value is string str)
+      return Enum.Parse<EnumType>(str);
+    if (Value!=null)
+      return (EnumType)Enum.ToObject(typeof(EnumType), Value);
+    throw new InvalidOperationException($"Value is null when converting variant to Enum");
+  }
+
   public override bool Equals(object? obj)
   {
     if (obj == null) return false;
@@ -378,6 +411,22 @@ public class Variant : IConvertible, IEquatable<Variant>
       }
     }
     return result;
+  }
+
+  public object? GetValue()
+  {
+#if TraceSetValue
+    Debug.WriteLine($"GetValue()");
+#endif
+    var val = ConvertValue(VariantType, _Value);
+    if (val != null && VariantType == VariantType.Enum && EnumType != null)
+    {
+      if (val is string str)
+        val = Enum.Parse(EnumType, str);
+      else
+        val = Enum.ToObject(EnumType, val);
+    }
+    return val;
   }
 
   public void SetValue(object? value)
@@ -503,7 +552,13 @@ public class Variant : IConvertible, IEquatable<Variant>
           throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
         return null;
 
-      case VariantType.ClassId:
+      case VariantType.Enum:
+        return value;
+        //if (value is string ename)
+        //  return Enum.Parse(Type.GetType(EnumType), ename);
+        //return Enum.ToObject(Type.GetType(EnumType), value);
+
+      case VariantType.Guid:
         if (value is string gstr)
           return new Guid(gstr);
         if (value is Guid guid)
@@ -681,7 +736,7 @@ public class Variant : IConvertible, IEquatable<Variant>
 
     if (value is Guid vclassId)
     {
-      VariantType = VariantType.ClassId;
+      VariantType = VariantType.Guid;
       _Value = vclassId;
       return;
     }
@@ -911,7 +966,7 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public static implicit operator Variant(Guid value)
   {
-    return new Variant(VariantType.ClassId, value);
+    return new Variant(VariantType.Guid, value);
   }
 
   public virtual byte[] ToBytes(IFormatProvider? provider = null)

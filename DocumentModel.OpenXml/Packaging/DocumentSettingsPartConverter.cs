@@ -1,3 +1,4 @@
+using DocumentModel.OpenXml.Properties;
 using DocumentModel.Properties;
 
 namespace DocumentModel.OpenXml.Packaging;
@@ -52,7 +53,7 @@ public static class DocumentSettingsPartConverter
   /// </summary>
   private static DocumentSettings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
   {
-      return DMXW.SettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
+      return DocumentSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
   }
   
   private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DocumentSettings? value, DiffList? diffs, string? objName)
@@ -64,7 +65,7 @@ public static class DocumentSettingsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.SettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
+       var rootElement = DocumentSettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
        if (rootElement != null)
          openXmlElement.Settings = rootElement;
     }
