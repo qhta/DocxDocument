@@ -12,7 +12,7 @@ public class ExtendedFilePropertiesPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public ExtendedProperties? Properties { get; set; }
+  public ContentProperties? Properties { get; set; }
 
   public String? RelationshipType { get; set; }
 }
