@@ -15,7 +15,7 @@ namespace DocumentModel;
 /// </summary>
 [XmlInclude(typeof(DateOnly))]
 [XmlInclude(typeof(DBNull))]
-[XmlInclude(typeof(NumId))]
+[XmlInclude(typeof(HexInt))]
 [XmlInclude(typeof(VectorVariant))]
 [XmlInclude(typeof(ArrayVariant))]
 [XmlContentProperty("Value")]
@@ -36,7 +36,7 @@ namespace DocumentModel;
 [XmlItemElement(typeof(DateTime))]
 [XmlItemElement(typeof(Boolean))]
 [XmlItemElement(typeof(Decimal))]
-[XmlItemElement(typeof(NumId))]
+[XmlItemElement(typeof(HexInt))]
 [XmlItemElement("null", Value = null)]
 [XmlItemElement(typeof(Guid))]
 [XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
@@ -69,7 +69,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     { VariantType.DateTime, typeof(DateTime) },
     { VariantType.Boolean, typeof(Boolean) },
     { VariantType.Null, typeof(DBNull) },
-    { VariantType.Error, typeof(NumId) },
+    { VariantType.HexInt, typeof(HexInt) },
     { VariantType.Guid, typeof(Guid) },
     { VariantType.ClipboardData, typeof(byte[]) },
     { VariantType.Variant, typeof(Variant) }
@@ -272,56 +272,56 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public virtual byte ToByte(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return Byte.Parse(str, NumberStyles.HexNumber);
     return Convert.ToByte(Value);
   }
 
   public virtual sbyte ToSByte(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return SByte.Parse(str, NumberStyles.HexNumber);
     return Convert.ToSByte(Value);
   }
 
   public virtual short ToInt16(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return Int16.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt16(Value);
   }
 
   public virtual ushort ToUInt16(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return UInt16.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt16(Value);
   }
 
   public virtual int ToInt32(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return Int32.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt32(Value);
   }
 
   public virtual uint ToUInt32(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return UInt32.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt32(Value);
   }
 
   public virtual long ToInt64(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return Int64.Parse(str, NumberStyles.HexNumber);
     return Convert.ToInt64(Value);
   }
 
   public virtual ulong ToUInt64(IFormatProvider? provider = null)
   {
-    if (VariantType == VariantType.Error && Value is string str)
+    if (VariantType == VariantType.HexInt && Value is string str)
       return UInt64.Parse(str, NumberStyles.HexNumber);
     return Convert.ToUInt64(Value);
   }
@@ -539,14 +539,14 @@ public class Variant : IConvertible, IEquatable<Variant>
       case VariantType.Empty:
         return null;
 
-      case VariantType.Error:
+      case VariantType.HexInt:
         if (value is string hstr)
-          return new NumId(hstr);
+          return new HexInt(hstr);
         if (value is int int32)
-          return (NumId)int32;
+          return (HexInt)int32;
         if (value is ushort uint16)
-          return (NumId)uint16;
-        if (value is NumId hexWord)
+          return (HexInt)uint16;
+        if (value is HexInt hexWord)
           return hexWord;
         if (value != null)
           throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
@@ -741,9 +741,9 @@ public class Variant : IConvertible, IEquatable<Variant>
       return;
     }
 
-    if (value is NumId vError)
+    if (value is HexInt vError)
     {
-      VariantType = VariantType.Error;
+      VariantType = VariantType.HexInt;
       _Value = vError;
       return;
     }
@@ -754,7 +754,6 @@ public class Variant : IConvertible, IEquatable<Variant>
       _Value = vBlob;
       return;
     }
-    ;
 
     if (value is object[] oBlob)
     {
@@ -766,6 +765,7 @@ public class Variant : IConvertible, IEquatable<Variant>
 
     if (value is Variant variant)
     {
+      VariantType = VariantType.Variant;
       _Value = variant;
       return;
     }
@@ -1060,7 +1060,7 @@ public class Variant : IConvertible, IEquatable<Variant>
         return Convert.ToString(vUInt64);
       if (value is DBNull)
         return "DBNull";
-      if (value is NumId vWord)
+      if (value is HexInt vWord)
         return vWord.ToString();
       return Convert.ToString(value);
     }

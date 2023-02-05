@@ -76,7 +76,7 @@ public static class VariantConverter
       return XmlConvert.ToGuid(vclassId.Text);
 
     if (openXmlElement is VTError vError)
-      return new NumId(vError.Text);
+      return new HexInt(vError.Text);
 
     if (openXmlElement is VTBlob vBlob)
       return new Variant(VariantType.Blob, Convert.FromBase64String(vBlob.Text));
@@ -199,7 +199,7 @@ public static class VariantConverter
       return new Variant(VariantType.Guid, XmlConvert.ToGuid(vclassId.Text));
 
     if (openXmlElement is VTError vError)
-      return new Variant(VariantType.Error, new NumId(vError.Text));
+      return new Variant(VariantType.HexInt, new HexInt(vError.Text));
 
     if (openXmlElement is VTBlob vBlob)
       return new Variant(VariantType.Blob, Convert.FromBase64String(vBlob.Text));
@@ -308,8 +308,8 @@ public static class VariantConverter
         return new VTEmpty();
       case VariantType.Guid:
         return new VTClassId { Text = XmlConvert.ToString(variant.ToGuid()) };
-      case VariantType.Error:
-        return new VTError { Text = variant.Value is NumId HexLong ? HexLong.ToString() : string.Empty };
+      case VariantType.HexInt:
+        return new VTError { Text = variant.Value is HexInt HexLong ? HexLong.ToString() : string.Empty };
       case VariantType.Blob:
         return new VTBlob { Text = variant.Value is byte[] blob ? Convert.ToBase64String(blob) : String.Empty };
       case VariantType.OBlob:

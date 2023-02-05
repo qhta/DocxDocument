@@ -21,7 +21,7 @@ public static class VTVectorConverter
     { VectorBaseValues.Filetime, VariantType.DateTime },
     { VectorBaseValues.Bool, VariantType.Boolean },
     { VectorBaseValues.Currency, VariantType.Currency },
-    { VectorBaseValues.Error, VariantType.Error },
+    { VectorBaseValues.Error, VariantType.HexInt },
     { VectorBaseValues.ClassId, VariantType.Guid },
     { VectorBaseValues.ClipboardData, VariantType.ClipboardData },
     { VectorBaseValues.Variant, VariantType.Variant }

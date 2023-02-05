@@ -3,27 +3,27 @@ using DocumentModel.BaseTypes;
 
 namespace DocumentModel;
 
-[TypeConverter(typeof(NumIdTypeConverter))]
-public record NumId : IConvertible
+[TypeConverter(typeof(HexIntTypeConverter))]
+public record HexInt : IConvertible
 {
   private readonly int Value;
 
-  public NumId(string val)
+  public HexInt(string val)
   {
     Value = int.Parse(val, NumberStyles.HexNumber);
   }
 
-  public NumId(int value)
+  public HexInt(int value)
   {
     Value = value;
   }
 
-  public NumId(uint value)
+  public HexInt(uint value)
   {
     Value = (int)value;
   }
 
-  public NumId(ulong value)
+  public HexInt(ulong value)
   {
     Value = (int)value;
   }
@@ -134,54 +134,54 @@ public record NumId : IConvertible
       return Value;
     if (targetType == typeof(String))
       return ToString();
-    if (targetType == typeof(NumId))
-      return new NumId(Value);
+    if (targetType == typeof(HexInt))
+      return new HexInt(Value);
     return ((IConvertible)Value).ToType(targetType, provider);
   }
 
-  public static implicit operator NumId(string val)
+  public static implicit operator HexInt(string val)
   {
-    return new NumId(val);
+    return new HexInt(val);
   }
 
-  public static implicit operator string?(NumId? val)
+  public static implicit operator string?(HexInt? val)
   {
     return val?.ToString();
   }
 
-  public static implicit operator ushort(NumId val)
+  public static implicit operator ushort(HexInt val)
   {
     return (ushort)val.Value;
   }
 
-  public static implicit operator uint(NumId val)
+  public static implicit operator uint(HexInt val)
   {
     return (uint)val.Value;
   }
 
-  public static implicit operator uint?(NumId? val)
+  public static implicit operator uint?(HexInt? val)
   {
     return (val != null) ? (uint)val.Value : null;
   }
 
-  public static implicit operator ulong(NumId val)
+  public static implicit operator ulong(HexInt val)
   {
     return (ulong)val.Value;
   }
 
-  public static implicit operator NumId(ushort val)
+  public static implicit operator HexInt(ushort val)
   {
-    return new NumId((ulong)val);
+    return new HexInt((ulong)val);
   }
 
-  public static implicit operator NumId(uint val)
+  public static implicit operator HexInt(uint val)
   {
-    return new NumId((ulong)val);
+    return new HexInt((ulong)val);
   }
 
-  public static implicit operator NumId(ulong val)
+  public static implicit operator HexInt(ulong val)
   {
-    return new NumId(val);
+    return new HexInt(val);
   }
 
   public override string ToString()
