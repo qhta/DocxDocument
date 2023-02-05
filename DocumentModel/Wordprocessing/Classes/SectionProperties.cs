@@ -8,22 +8,22 @@ public class SectionProperties
   /// <summary>
   ///   Physical Section Mark Character Revision ID
   /// </summary>
-  public NumId? RsidRPr { get; set; }
+  public HexInt? RsidRPr { get; set; }
 
   /// <summary>
   ///   Section Deletion Revision ID
   /// </summary>
-  public NumId? RsidDel { get; set; }
+  public HexInt? RsidDel { get; set; }
 
   /// <summary>
   ///   Section Addition Revision ID
   /// </summary>
-  public NumId? RsidR { get; set; }
+  public HexInt? RsidR { get; set; }
 
   /// <summary>
   ///   Section Properties Revision ID
   /// </summary>
-  public NumId? RsidSect { get; set; }
+  public HexInt? RsidSect { get; set; }
 
   public HeaderFooterReferenceType? HeaderReference { get; set; }
 

@@ -10,37 +10,37 @@ public class Paragraph
   /// <summary>
   ///   Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  public NumId? RsidParagraphMarkRevision { get; set; }
+  public HexInt? RsidParagraphMarkRevision { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Paragraph
   /// </summary>
-  public NumId? RsidParagraphAddition { get; set; }
+  public HexInt? RsidParagraphAddition { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Paragraph Deletion
   /// </summary>
-  public NumId? RsidParagraphDeletion { get; set; }
+  public HexInt? RsidParagraphDeletion { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Paragraph Properties
   /// </summary>
-  public NumId? RsidParagraphProperties { get; set; }
+  public HexInt? RsidParagraphProperties { get; set; }
 
   /// <summary>
   ///   Default Revision Identifier for Runs
   /// </summary>
-  public NumId? RsidRunAdditionDefault { get; set; }
+  public HexInt? RsidRunAdditionDefault { get; set; }
 
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public NumId? ParagraphId { get; set; }
+  public HexInt? ParagraphId { get; set; }
 
   /// <summary>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public NumId? TextId { get; set; }
+  public HexInt? TextId { get; set; }
 
   /// <summary>
   ///   noSpellErr, this property is only available in Office 2010 and later.

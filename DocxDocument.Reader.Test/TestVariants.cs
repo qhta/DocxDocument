@@ -1096,9 +1096,9 @@ public class TestVariants : TestBase
   {
     Variant variant;
 
-    variant = new Variant(VariantType.Error, 0xFFFF);
+    variant = new Variant(VariantType.HexInt, 0xFFFF);
     Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
-    variant = new Variant(VariantType.Error, "FFFF");
+    variant = new Variant(VariantType.HexInt, "FFFF");
     Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
   }
 
@@ -1239,7 +1239,7 @@ public class TestVariants : TestBase
       { VariantType.Boolean, true },
       { VariantType.Currency, Decimal.MaxValue },
       { VariantType.Null, DBNull.Value },
-      { VariantType.Error, UInt16.MaxValue },
+      { VariantType.HexInt, UInt16.MaxValue },
       { VariantType.Enum, Numbers.MaxUInt64 },
       { VariantType.Guid, Guid.NewGuid() },
       { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
@@ -1288,17 +1288,25 @@ public class TestVariants : TestBase
   [Test]
   public void TestVectorXmlSerialization()
   {
+    TestVectorXmlSerialization(null);
+  }
+
+  public void TestVectorXmlSerialization(VariantType? itemType)
+  {
     var oldVectorVariant = new VectorVariant();
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
     {
       if (TestVariantValues.TryGetValue(variantType, out var val))
       {
-        var variant = new Variant(variantType, val);
-        oldVectorVariant.Add(variant.Value);
+        if (itemType == null || variantType == itemType)
+        {
+          var variant = new Variant(variantType, val);
+          oldVectorVariant.Add(variant.Value);
+        }
       }
     }
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(VectorVariant));
+    var serializer = new QXmlSerializer(typeof(VectorVariant), new Type[]{typeof(Numbers)});
     serializer.Serialize(textWriter, oldVectorVariant);
     textWriter.Flush();
     string str = textWriter.ToString();

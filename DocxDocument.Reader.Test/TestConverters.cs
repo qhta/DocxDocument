@@ -137,16 +137,16 @@ public class TestConverters : TestBase
       var origId = origRsIds.RsidRoot;
       if (showDetails)
         WriteLine($"  RsidRoot={origRsIds.RsidRoot?.Val?.Value}");
-      var modelId = NumIdConverter.GetValue(origId);
-      var backId = NumIdConverter.CreateOpenXmlElement<RsidRoot>(modelId);
+      var modelId = HexIntConverter.GetValue(origId);
+      var backId = HexIntConverter.CreateOpenXmlElement<RsidRoot>(modelId);
       Assert.That(backId?.Val?.Value, Is.EqualTo(origId?.Val?.Value));
 
       foreach (var origId1 in origRsIds.Elements<Rsid>())
       {
         if (showDetails)
           WriteLine($"   Rsid={origId1?.Val?.Value}");
-        var modelId1 = NumIdConverter.GetValue(origId1);
-        var backId1 = NumIdConverter.CreateOpenXmlElement<Rsid>(modelId1);
+        var modelId1 = HexIntConverter.GetValue(origId1);
+        var backId1 = HexIntConverter.CreateOpenXmlElement<Rsid>(modelId1);
         Assert.That(backId1?.Val?.Value, Is.EqualTo(origId1?.Val?.Value));
       }
     }
@@ -166,12 +166,12 @@ public class TestConverters : TestBase
         if (showDetails)
           WriteLine($"   Nsid={item.Nsid?.Val?.Value}  TemplateCode={item.TemplateCode?.Val?.Value}");
         var origId1 = item.Nsid;
-        var modelId1 = NumIdConverter.GetValue(origId1);
-        var backId1 = NumIdConverter.CreateOpenXmlElement<Nsid>(modelId1);
+        var modelId1 = HexIntConverter.GetValue(origId1);
+        var backId1 = HexIntConverter.CreateOpenXmlElement<Nsid>(modelId1);
         Assert.That(backId1?.Val?.Value, Is.EqualTo(origId1?.Val?.Value));
         var origId2 = item.TemplateCode;
-        var modelId2 = NumIdConverter.GetValue(origId2);
-        var backId2 = NumIdConverter.CreateOpenXmlElement<TemplateCode>(modelId2);
+        var modelId2 = HexIntConverter.GetValue(origId2);
+        var backId2 = HexIntConverter.CreateOpenXmlElement<TemplateCode>(modelId2);
         Assert.That(backId2?.Val?.Value, Is.EqualTo(origId2?.Val?.Value));
       }
     }

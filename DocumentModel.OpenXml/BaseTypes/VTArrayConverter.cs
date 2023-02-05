@@ -20,7 +20,7 @@ public static class VTArrayConverter
     { ArrayBaseValues.Date, VariantType.Date },
     { ArrayBaseValues.Bool, VariantType.Boolean },
     { ArrayBaseValues.Currency, VariantType.Currency },
-    { ArrayBaseValues.Error, VariantType.Error }
+    { ArrayBaseValues.Error, VariantType.HexInt }
   };
 
   public static VariantType? GetBaseType(VTArray openXmlElement)
