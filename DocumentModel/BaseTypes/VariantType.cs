@@ -129,7 +129,7 @@ public enum VariantType
   /// <summary>
   ///   Error Status Code Variant Type.
   /// </summary>
-  Error,
+  HexInt,
 
   /// <summary>
   ///   Enum Variant Type.

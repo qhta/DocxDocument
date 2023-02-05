@@ -13,7 +13,7 @@ public class AbstractNum
   /// <summary>
   ///   Abstract Numbering Definition Identifier.
   /// </summary>
-  public NumId? Nsid { get; set; }
+  public HexInt? Nsid { get; set; }
 
   /// <summary>
   ///   Abstract Numbering Definition Type.
@@ -23,7 +23,7 @@ public class AbstractNum
   /// <summary>
   ///   Numbering Template Code.
   /// </summary>
-  public NumId? TemplateCode { get; set; }
+  public HexInt? TemplateCode { get; set; }
 
   /// <summary>
   ///   Abstract Numbering Definition Name.

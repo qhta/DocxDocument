@@ -8,32 +8,32 @@ public class TableRow
   /// <summary>
   ///   Revision Identifier for Table Row Glyph Formatting
   /// </summary>
-  public NumId? RsidTableRowMarkRevision { get; set; }
+  public HexInt? RsidTableRowMarkRevision { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Table Row
   /// </summary>
-  public NumId? RsidTableRowAddition { get; set; }
+  public HexInt? RsidTableRowAddition { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Table Row Deletion
   /// </summary>
-  public NumId? RsidTableRowDeletion { get; set; }
+  public HexInt? RsidTableRowDeletion { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Table Row Properties
   /// </summary>
-  public NumId? RsidTableRowProperties { get; set; }
+  public HexInt? RsidTableRowProperties { get; set; }
 
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  public NumId? ParagraphId { get; set; }
+  public HexInt? ParagraphId { get; set; }
 
   /// <summary>
   ///   textId, this property is only available in Office 2010 and later.
   /// </summary>
-  public NumId? TextId { get; set; }
+  public HexInt? TextId { get; set; }
 
   /// <summary>
   ///   Table-Level Property Exceptions.

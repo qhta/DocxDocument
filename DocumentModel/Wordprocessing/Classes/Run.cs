@@ -8,17 +8,17 @@ public class Run
   /// <summary>
   ///   Revision Identifier for Run Properties
   /// </summary>
-  public NumId? RsidRunProperties { get; set; }
+  public HexInt? RsidRunProperties { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
-  public NumId? RsidRunDeletion { get; set; }
+  public HexInt? RsidRunDeletion { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
-  public NumId? RsidRunAddition { get; set; }
+  public HexInt? RsidRunAddition { get; set; }
 
   /// <summary>
   ///   Run Properties.

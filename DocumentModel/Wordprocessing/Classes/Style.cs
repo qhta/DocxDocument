@@ -98,7 +98,7 @@ public partial class Style
   /// <summary>
   ///   Revision Identifier for Style Definition.
   /// </summary>
-  public NumId? Rsid { get; set; }
+  public HexInt? Rsid { get; set; }
 
   /// <summary>
   ///   Style Paragraph Properties.

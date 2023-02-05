@@ -43,7 +43,7 @@ public class WriteProtection
   /// <summary>
   ///   Cryptographic Algorithm Extensibility
   /// </summary>
-  public NumId? AlgorithmIdExtensibility { get; set; }
+  public HexInt? AlgorithmIdExtensibility { get; set; }
 
   /// <summary>
   ///   Algorithm Extensibility Source
@@ -53,7 +53,7 @@ public class WriteProtection
   /// <summary>
   ///   Cryptographic Provider Type Extensibility
   /// </summary>
-  public NumId? CryptographicProviderTypeExtensibility { get; set; }
+  public HexInt? CryptographicProviderTypeExtensibility { get; set; }
 
   /// <summary>
   ///   Provider Type Extensibility Source

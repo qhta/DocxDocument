@@ -2,7 +2,7 @@
 
 namespace DocumentModel.BaseTypes;
 
-public class NumIdTypeConverter : TypeConverter
+public class HexIntTypeConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -21,13 +21,13 @@ public class NumIdTypeConverter : TypeConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new NumId(str);
+      return new HexInt(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is NumId hexWord)
+    if (value is HexInt hexWord)
       return hexWord.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }
