@@ -15,7 +15,9 @@ public static class StyleColorConverter
   
   private static bool CmpVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value)
@@ -83,7 +85,10 @@ public static class StyleColorConverter
   
   private static bool CmpComplement(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Complement", val, value);
+    return false;
   }
   
   private static void SetComplement(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
@@ -108,7 +113,10 @@ public static class StyleColorConverter
   
   private static bool CmpInverse(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Inverse", val, value);
+    return false;
   }
   
   private static void SetInverse(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
@@ -133,7 +141,10 @@ public static class StyleColorConverter
   
   private static bool CmpGray(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gray", val, value);
+    return false;
   }
   
   private static void SetGray(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
@@ -683,7 +694,10 @@ public static class StyleColorConverter
   
   private static bool CmpGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gamma", val, value);
+    return false;
   }
   
   private static void SetGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
@@ -708,7 +722,10 @@ public static class StyleColorConverter
   
   private static bool CmpInverseGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.InverseGamma", val, value);
+    return false;
   }
   
   private static void SetInverseGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)

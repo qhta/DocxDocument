@@ -12,7 +12,9 @@ public static class Model3DReferenceRelationshipPartConverter
   
   private static bool CmpContentType(DXPack.Model3DReferenceRelationshipPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   private static String? GetRelationshipType(DXPack.Model3DReferenceRelationshipPart openXmlElement)
@@ -22,7 +24,9 @@ public static class Model3DReferenceRelationshipPartConverter
   
   private static bool CmpRelationshipType(DXPack.Model3DReferenceRelationshipPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.Model3DReferenceRelationshipPart? CreateModelElement(DXPack.Model3DReferenceRelationshipPart? openXmlElement)

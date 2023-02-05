@@ -15,7 +15,9 @@ public static class AltChunkConverter
   
   private static bool CmpId(DXW.AltChunk openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.AltChunk openXmlElement, String? value)

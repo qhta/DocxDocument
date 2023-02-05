@@ -15,7 +15,9 @@ public static class SaveThroughXsltConverter
   
   private static bool CmpId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.SaveThroughXslt openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SaveThroughXsltConverter
   
   private static bool CmpSolutionId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SolutionId?.Value == value;
+    if (openXmlElement?.SolutionId?.Value == value) return true;
+    diffs?.Add(objName, "SolutionId", openXmlElement?.SolutionId?.Value, value);
+    return false;
   }
   
   private static void SetSolutionId(DXW.SaveThroughXslt openXmlElement, String? value)

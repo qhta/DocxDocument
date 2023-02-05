@@ -15,7 +15,9 @@ public static class DataModelExtensionBlockConverter
   
   private static bool CmpRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelId?.Value == value;
+    if (openXmlElement?.RelId?.Value == value) return true;
+    diffs?.Add(objName, "RelId", openXmlElement?.RelId?.Value, value);
+    return false;
   }
   
   private static void SetRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class DataModelExtensionBlockConverter
   
   private static bool CmpMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinVer?.Value == value;
+    if (openXmlElement?.MinVer?.Value == value) return true;
+    diffs?.Add(objName, "MinVer", openXmlElement?.MinVer?.Value, value);
+    return false;
   }
   
   private static void SetMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value)

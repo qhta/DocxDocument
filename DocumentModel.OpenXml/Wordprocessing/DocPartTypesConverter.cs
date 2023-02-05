@@ -15,7 +15,9 @@ public static class DocPartTypesConverter
   
   private static bool CmpAll(DXW.DocPartTypes openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.All?.Value == value;
+    if (openXmlElement?.All?.Value == value) return true;
+    diffs?.Add(objName, "All", openXmlElement?.All?.Value, value);
+    return false;
   }
   
   private static void SetAll(DXW.DocPartTypes openXmlElement, Boolean? value)

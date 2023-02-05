@@ -33,7 +33,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpOn(DXVmlO.StrokeChildType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVmlO.StrokeChildType openXmlElement, Boolean? value)
@@ -54,7 +56,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpWeight(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Weight?.Value == value;
+    if (openXmlElement?.Weight?.Value == value) return true;
+    diffs?.Add(objName, "Weight", openXmlElement?.Weight?.Value, value);
+    return false;
   }
   
   private static void SetWeight(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpColor(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color?.Value == value;
+    if (openXmlElement?.Color?.Value == value) return true;
+    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
+    return false;
   }
   
   private static void SetColor(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpColor2(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color2?.Value == value;
+    if (openXmlElement?.Color2?.Value == value) return true;
+    diffs?.Add(objName, "Color2", openXmlElement?.Color2?.Value, value);
+    return false;
   }
   
   private static void SetColor2(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -117,7 +125,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpOpacity(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Opacity?.Value == value;
+    if (openXmlElement?.Opacity?.Value == value) return true;
+    diffs?.Add(objName, "Opacity", openXmlElement?.Opacity?.Value, value);
+    return false;
   }
   
   private static void SetOpacity(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -212,7 +222,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpDashStyle(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DashStyle?.Value == value;
+    if (openXmlElement?.DashStyle?.Value == value) return true;
+    diffs?.Add(objName, "DashStyle", openXmlElement?.DashStyle?.Value, value);
+    return false;
   }
   
   private static void SetDashStyle(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -233,7 +245,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpInsetPen(DXVmlO.StrokeChildType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsetPen?.Value == value;
+    if (openXmlElement?.InsetPen?.Value == value) return true;
+    diffs?.Add(objName, "InsetPen", openXmlElement?.InsetPen?.Value, value);
+    return false;
   }
   
   private static void SetInsetPen(DXVmlO.StrokeChildType openXmlElement, Boolean? value)
@@ -272,7 +286,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpSource(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Source?.Value == value;
+    if (openXmlElement?.Source?.Value == value) return true;
+    diffs?.Add(objName, "Source", openXmlElement?.Source?.Value, value);
+    return false;
   }
   
   private static void SetSource(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -311,7 +327,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpImageSize(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageSize?.Value == value;
+    if (openXmlElement?.ImageSize?.Value == value) return true;
+    diffs?.Add(objName, "ImageSize", openXmlElement?.ImageSize?.Value, value);
+    return false;
   }
   
   private static void SetImageSize(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -332,7 +350,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpImageAlignShape(DXVmlO.StrokeChildType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageAlignShape?.Value == value;
+    if (openXmlElement?.ImageAlignShape?.Value == value) return true;
+    diffs?.Add(objName, "ImageAlignShape", openXmlElement?.ImageAlignShape?.Value, value);
+    return false;
   }
   
   private static void SetImageAlignShape(DXVmlO.StrokeChildType openXmlElement, Boolean? value)
@@ -461,7 +481,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpHref(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -482,7 +504,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpAlternateImageReference(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlternateImageReference?.Value == value;
+    if (openXmlElement?.AlternateImageReference?.Value == value) return true;
+    diffs?.Add(objName, "AlternateImageReference", openXmlElement?.AlternateImageReference?.Value, value);
+    return false;
   }
   
   private static void SetAlternateImageReference(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -503,7 +527,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpTitle(DXVmlO.StrokeChildType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVmlO.StrokeChildType openXmlElement, String? value)
@@ -524,7 +550,9 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpForceDash(DXVmlO.StrokeChildType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDash?.Value == value;
+    if (openXmlElement?.ForceDash?.Value == value) return true;
+    diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
+    return false;
   }
   
   private static void SetForceDash(DXVmlO.StrokeChildType openXmlElement, Boolean? value)

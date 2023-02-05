@@ -15,7 +15,10 @@ public static class PictureOptionsConverter
   
   private static bool CmpApplyToFront(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToFront>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToFront>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ApplyToFront", val, value);
+    return false;
   }
   
   private static void SetApplyToFront(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class PictureOptionsConverter
   
   private static bool CmpApplyToSides(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToSides>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToSides>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ApplyToSides", val, value);
+    return false;
   }
   
   private static void SetApplyToSides(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class PictureOptionsConverter
   
   private static bool CmpApplyToEnd(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToEnd>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToEnd>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ApplyToEnd", val, value);
+    return false;
   }
   
   private static void SetApplyToEnd(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)

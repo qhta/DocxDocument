@@ -15,7 +15,9 @@ public static class ConnectionConverter
   
   private static bool CmpModelId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ModelId?.Value == value;
+    if (openXmlElement?.ModelId?.Value == value) return true;
+    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
+    return false;
   }
   
   private static void SetModelId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class ConnectionConverter
   
   private static bool CmpSourceId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SourceId?.Value == value;
+    if (openXmlElement?.SourceId?.Value == value) return true;
+    diffs?.Add(objName, "SourceId", openXmlElement?.SourceId?.Value, value);
+    return false;
   }
   
   private static void SetSourceId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class ConnectionConverter
   
   private static bool CmpDestinationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DestinationId?.Value == value;
+    if (openXmlElement?.DestinationId?.Value == value) return true;
+    diffs?.Add(objName, "DestinationId", openXmlElement?.DestinationId?.Value, value);
+    return false;
   }
   
   private static void SetDestinationId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -136,7 +142,9 @@ public static class ConnectionConverter
   
   private static bool CmpParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ParentTransitionId?.Value == value;
+    if (openXmlElement?.ParentTransitionId?.Value == value) return true;
+    diffs?.Add(objName, "ParentTransitionId", openXmlElement?.ParentTransitionId?.Value, value);
+    return false;
   }
   
   private static void SetParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -157,7 +165,9 @@ public static class ConnectionConverter
   
   private static bool CmpSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SiblingTransitionId?.Value == value;
+    if (openXmlElement?.SiblingTransitionId?.Value == value) return true;
+    diffs?.Add(objName, "SiblingTransitionId", openXmlElement?.SiblingTransitionId?.Value, value);
+    return false;
   }
   
   private static void SetSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
@@ -178,7 +188,9 @@ public static class ConnectionConverter
   
   private static bool CmpPresentationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PresentationId?.Value == value;
+    if (openXmlElement?.PresentationId?.Value == value) return true;
+    diffs?.Add(objName, "PresentationId", openXmlElement?.PresentationId?.Value, value);
+    return false;
   }
   
   private static void SetPresentationId(DXDrawDgms.Connection openXmlElement, String? value)

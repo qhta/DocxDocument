@@ -15,7 +15,9 @@ public static class HyperlinkRelationshipConverter
   
   private static bool CmpRelationshipType(DXPack.HyperlinkRelationship openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.HyperlinkRelationship? CreateModelElement(DXPack.HyperlinkRelationship? openXmlElement)

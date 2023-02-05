@@ -15,7 +15,9 @@ public static class OEmbedSharedConverter
   
   private static bool CmpSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SrcUrl?.Value == value;
+    if (openXmlElement?.SrcUrl?.Value == value) return true;
+    diffs?.Add(objName, "SrcUrl", openXmlElement?.SrcUrl?.Value, value);
+    return false;
   }
   
   private static void SetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class OEmbedSharedConverter
   
   private static bool CmpType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)

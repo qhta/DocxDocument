@@ -15,7 +15,9 @@ public static class GroupConverter
   
   private static bool CmpId(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Group openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class GroupConverter
   
   private static bool CmpStyle(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.Group openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class GroupConverter
   
   private static bool CmpHref(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.Group openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class GroupConverter
   
   private static bool CmpTarget(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Target?.Value == value;
+    if (openXmlElement?.Target?.Value == value) return true;
+    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
+    return false;
   }
   
   private static void SetTarget(DXVml.Group openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class GroupConverter
   
   private static bool CmpClass(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Class?.Value == value;
+    if (openXmlElement?.Class?.Value == value) return true;
+    diffs?.Add(objName, "Class", openXmlElement?.Class?.Value, value);
+    return false;
   }
   
   private static void SetClass(DXVml.Group openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class GroupConverter
   
   private static bool CmpTitle(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.Group openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class GroupConverter
   
   private static bool CmpAlternate(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Alternate?.Value == value;
+    if (openXmlElement?.Alternate?.Value == value) return true;
+    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
+    return false;
   }
   
   private static void SetAlternate(DXVml.Group openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class GroupConverter
   
   private static bool CmpCoordinateSize(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateSize?.Value == value;
+    if (openXmlElement?.CoordinateSize?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateSize(DXVml.Group openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class GroupConverter
   
   private static bool CmpCoordinateOrigin(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateOrigin?.Value == value;
+    if (openXmlElement?.CoordinateOrigin?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateOrigin", openXmlElement?.CoordinateOrigin?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateOrigin(DXVml.Group openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class GroupConverter
   
   private static bool CmpWrapCoordinates(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.WrapCoordinates?.Value == value;
+    if (openXmlElement?.WrapCoordinates?.Value == value) return true;
+    diffs?.Add(objName, "WrapCoordinates", openXmlElement?.WrapCoordinates?.Value, value);
+    return false;
   }
   
   private static void SetWrapCoordinates(DXVml.Group openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class GroupConverter
   
   private static bool CmpPrint(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Print?.Value == value;
+    if (openXmlElement?.Print?.Value == value) return true;
+    diffs?.Add(objName, "Print", openXmlElement?.Print?.Value, value);
+    return false;
   }
   
   private static void SetPrint(DXVml.Group openXmlElement, Boolean? value)
@@ -246,7 +268,9 @@ public static class GroupConverter
   
   private static bool CmpOptionalString(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OptionalString?.Value == value;
+    if (openXmlElement?.OptionalString?.Value == value) return true;
+    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
+    return false;
   }
   
   private static void SetOptionalString(DXVml.Group openXmlElement, String? value)
@@ -267,7 +291,9 @@ public static class GroupConverter
   
   private static bool CmpOned(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Oned?.Value == value;
+    if (openXmlElement?.Oned?.Value == value) return true;
+    diffs?.Add(objName, "Oned", openXmlElement?.Oned?.Value, value);
+    return false;
   }
   
   private static void SetOned(DXVml.Group openXmlElement, Boolean? value)
@@ -308,7 +334,9 @@ public static class GroupConverter
   
   private static bool CmpDoubleClickNotify(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DoubleClickNotify?.Value == value;
+    if (openXmlElement?.DoubleClickNotify?.Value == value) return true;
+    diffs?.Add(objName, "DoubleClickNotify", openXmlElement?.DoubleClickNotify?.Value, value);
+    return false;
   }
   
   private static void SetDoubleClickNotify(DXVml.Group openXmlElement, Boolean? value)
@@ -329,7 +357,9 @@ public static class GroupConverter
   
   private static bool CmpButton(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Button?.Value == value;
+    if (openXmlElement?.Button?.Value == value) return true;
+    diffs?.Add(objName, "Button", openXmlElement?.Button?.Value, value);
+    return false;
   }
   
   private static void SetButton(DXVml.Group openXmlElement, Boolean? value)
@@ -350,7 +380,9 @@ public static class GroupConverter
   
   private static bool CmpUserHidden(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserHidden?.Value == value;
+    if (openXmlElement?.UserHidden?.Value == value) return true;
+    diffs?.Add(objName, "UserHidden", openXmlElement?.UserHidden?.Value, value);
+    return false;
   }
   
   private static void SetUserHidden(DXVml.Group openXmlElement, Boolean? value)
@@ -371,7 +403,9 @@ public static class GroupConverter
   
   private static bool CmpBullet(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bullet?.Value == value;
+    if (openXmlElement?.Bullet?.Value == value) return true;
+    diffs?.Add(objName, "Bullet", openXmlElement?.Bullet?.Value, value);
+    return false;
   }
   
   private static void SetBullet(DXVml.Group openXmlElement, Boolean? value)
@@ -392,7 +426,9 @@ public static class GroupConverter
   
   private static bool CmpHorizontal(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Horizontal?.Value == value;
+    if (openXmlElement?.Horizontal?.Value == value) return true;
+    diffs?.Add(objName, "Horizontal", openXmlElement?.Horizontal?.Value, value);
+    return false;
   }
   
   private static void SetHorizontal(DXVml.Group openXmlElement, Boolean? value)
@@ -413,7 +449,9 @@ public static class GroupConverter
   
   private static bool CmpHorizontalStandard(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalStandard?.Value == value;
+    if (openXmlElement?.HorizontalStandard?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalStandard", openXmlElement?.HorizontalStandard?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalStandard(DXVml.Group openXmlElement, Boolean? value)
@@ -434,7 +472,9 @@ public static class GroupConverter
   
   private static bool CmpHorizontalNoShade(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalNoShade?.Value == value;
+    if (openXmlElement?.HorizontalNoShade?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalNoShade", openXmlElement?.HorizontalNoShade?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalNoShade(DXVml.Group openXmlElement, Boolean? value)
@@ -493,7 +533,9 @@ public static class GroupConverter
   
   private static bool CmpAllowInCell(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInCell?.Value == value;
+    if (openXmlElement?.AllowInCell?.Value == value) return true;
+    diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
+    return false;
   }
   
   private static void SetAllowInCell(DXVml.Group openXmlElement, Boolean? value)
@@ -514,7 +556,9 @@ public static class GroupConverter
   
   private static bool CmpAllowOverlap(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXVml.Group openXmlElement, Boolean? value)
@@ -535,7 +579,9 @@ public static class GroupConverter
   
   private static bool CmpUserDrawn(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserDrawn?.Value == value;
+    if (openXmlElement?.UserDrawn?.Value == value) return true;
+    diffs?.Add(objName, "UserDrawn", openXmlElement?.UserDrawn?.Value, value);
+    return false;
   }
   
   private static void SetUserDrawn(DXVml.Group openXmlElement, Boolean? value)
@@ -680,7 +726,9 @@ public static class GroupConverter
   
   private static bool CmpTableProperties(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TableProperties?.Value == value;
+    if (openXmlElement?.TableProperties?.Value == value) return true;
+    diffs?.Add(objName, "TableProperties", openXmlElement?.TableProperties?.Value, value);
+    return false;
   }
   
   private static void SetTableProperties(DXVml.Group openXmlElement, String? value)
@@ -701,7 +749,9 @@ public static class GroupConverter
   
   private static bool CmpTableLimits(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TableLimits?.Value == value;
+    if (openXmlElement?.TableLimits?.Value == value) return true;
+    diffs?.Add(objName, "TableLimits", openXmlElement?.TableLimits?.Value, value);
+    return false;
   }
   
   private static void SetTableLimits(DXVml.Group openXmlElement, String? value)
@@ -1064,7 +1114,10 @@ public static class GroupConverter
   
   private static bool CmpAnchorLock(DXVml.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXVmlW.AnchorLock", val, value);
+    return false;
   }
   
   private static void SetAnchorLock(DXVml.Group openXmlElement, Boolean? value)

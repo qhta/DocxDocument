@@ -12,7 +12,10 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpNoFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value)
@@ -129,7 +132,10 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpGroupFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    return false;
   }
   
   private static void SetGroupFill(DXDraw.BackgroundFillStyleList openXmlElement, Boolean? value)

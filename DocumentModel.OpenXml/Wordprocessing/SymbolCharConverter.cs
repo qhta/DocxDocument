@@ -15,7 +15,9 @@ public static class SymbolCharConverter
   
   private static bool CmpFont(DXW.SymbolChar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Font?.Value == value;
+    if (openXmlElement?.Font?.Value == value) return true;
+    diffs?.Add(objName, "Font", openXmlElement?.Font?.Value, value);
+    return false;
   }
   
   private static void SetFont(DXW.SymbolChar openXmlElement, String? value)

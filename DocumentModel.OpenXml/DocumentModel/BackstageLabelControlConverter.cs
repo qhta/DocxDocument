@@ -15,7 +15,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpTag(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)
@@ -135,7 +143,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -156,7 +166,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -177,7 +189,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -198,7 +212,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)
@@ -219,7 +235,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
@@ -240,7 +258,9 @@ public static class BackstageLabelControlConverter
   
   private static bool CmpNoWrap(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoWrap?.Value == value;
+    if (openXmlElement?.NoWrap?.Value == value) return true;
+    diffs?.Add(objName, "NoWrap", openXmlElement?.NoWrap?.Value, value);
+    return false;
   }
   
   private static void SetNoWrap(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)

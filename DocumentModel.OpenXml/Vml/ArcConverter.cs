@@ -15,7 +15,9 @@ public static class ArcConverter
   
   private static bool CmpOptionalString(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OptionalString?.Value == value;
+    if (openXmlElement?.OptionalString?.Value == value) return true;
+    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
+    return false;
   }
   
   private static void SetOptionalString(DXVml.Arc openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ArcConverter
   
   private static bool CmpOned(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Oned?.Value == value;
+    if (openXmlElement?.Oned?.Value == value) return true;
+    diffs?.Add(objName, "Oned", openXmlElement?.Oned?.Value, value);
+    return false;
   }
   
   private static void SetOned(DXVml.Arc openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class ArcConverter
   
   private static bool CmpDoubleClickNotify(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DoubleClickNotify?.Value == value;
+    if (openXmlElement?.DoubleClickNotify?.Value == value) return true;
+    diffs?.Add(objName, "DoubleClickNotify", openXmlElement?.DoubleClickNotify?.Value, value);
+    return false;
   }
   
   private static void SetDoubleClickNotify(DXVml.Arc openXmlElement, Boolean? value)
@@ -98,7 +104,9 @@ public static class ArcConverter
   
   private static bool CmpButton(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Button?.Value == value;
+    if (openXmlElement?.Button?.Value == value) return true;
+    diffs?.Add(objName, "Button", openXmlElement?.Button?.Value, value);
+    return false;
   }
   
   private static void SetButton(DXVml.Arc openXmlElement, Boolean? value)
@@ -119,7 +127,9 @@ public static class ArcConverter
   
   private static bool CmpUserHidden(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserHidden?.Value == value;
+    if (openXmlElement?.UserHidden?.Value == value) return true;
+    diffs?.Add(objName, "UserHidden", openXmlElement?.UserHidden?.Value, value);
+    return false;
   }
   
   private static void SetUserHidden(DXVml.Arc openXmlElement, Boolean? value)
@@ -140,7 +150,9 @@ public static class ArcConverter
   
   private static bool CmpBullet(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bullet?.Value == value;
+    if (openXmlElement?.Bullet?.Value == value) return true;
+    diffs?.Add(objName, "Bullet", openXmlElement?.Bullet?.Value, value);
+    return false;
   }
   
   private static void SetBullet(DXVml.Arc openXmlElement, Boolean? value)
@@ -161,7 +173,9 @@ public static class ArcConverter
   
   private static bool CmpHorizontal(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Horizontal?.Value == value;
+    if (openXmlElement?.Horizontal?.Value == value) return true;
+    diffs?.Add(objName, "Horizontal", openXmlElement?.Horizontal?.Value, value);
+    return false;
   }
   
   private static void SetHorizontal(DXVml.Arc openXmlElement, Boolean? value)
@@ -182,7 +196,9 @@ public static class ArcConverter
   
   private static bool CmpHorizontalStandard(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalStandard?.Value == value;
+    if (openXmlElement?.HorizontalStandard?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalStandard", openXmlElement?.HorizontalStandard?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalStandard(DXVml.Arc openXmlElement, Boolean? value)
@@ -203,7 +219,9 @@ public static class ArcConverter
   
   private static bool CmpHorizontalNoShade(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalNoShade?.Value == value;
+    if (openXmlElement?.HorizontalNoShade?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalNoShade", openXmlElement?.HorizontalNoShade?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalNoShade(DXVml.Arc openXmlElement, Boolean? value)
@@ -262,7 +280,9 @@ public static class ArcConverter
   
   private static bool CmpAllowInCell(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInCell?.Value == value;
+    if (openXmlElement?.AllowInCell?.Value == value) return true;
+    diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
+    return false;
   }
   
   private static void SetAllowInCell(DXVml.Arc openXmlElement, Boolean? value)
@@ -283,7 +303,9 @@ public static class ArcConverter
   
   private static bool CmpAllowOverlap(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXVml.Arc openXmlElement, Boolean? value)
@@ -304,7 +326,9 @@ public static class ArcConverter
   
   private static bool CmpUserDrawn(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserDrawn?.Value == value;
+    if (openXmlElement?.UserDrawn?.Value == value) return true;
+    diffs?.Add(objName, "UserDrawn", openXmlElement?.UserDrawn?.Value, value);
+    return false;
   }
   
   private static void SetUserDrawn(DXVml.Arc openXmlElement, Boolean? value)
@@ -325,7 +349,9 @@ public static class ArcConverter
   
   private static bool CmpBorderTopColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderTopColor?.Value == value;
+    if (openXmlElement?.BorderTopColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderTopColor", openXmlElement?.BorderTopColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderTopColor(DXVml.Arc openXmlElement, String? value)
@@ -346,7 +372,9 @@ public static class ArcConverter
   
   private static bool CmpBorderLeftColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderLeftColor?.Value == value;
+    if (openXmlElement?.BorderLeftColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderLeftColor", openXmlElement?.BorderLeftColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderLeftColor(DXVml.Arc openXmlElement, String? value)
@@ -367,7 +395,9 @@ public static class ArcConverter
   
   private static bool CmpBorderBottomColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderBottomColor?.Value == value;
+    if (openXmlElement?.BorderBottomColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderBottomColor", openXmlElement?.BorderBottomColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderBottomColor(DXVml.Arc openXmlElement, String? value)
@@ -388,7 +418,9 @@ public static class ArcConverter
   
   private static bool CmpBorderRightColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderRightColor?.Value == value;
+    if (openXmlElement?.BorderRightColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderRightColor", openXmlElement?.BorderRightColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderRightColor(DXVml.Arc openXmlElement, String? value)
@@ -487,7 +519,9 @@ public static class ArcConverter
   
   private static bool CmpFilled(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Filled?.Value == value;
+    if (openXmlElement?.Filled?.Value == value) return true;
+    diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
+    return false;
   }
   
   private static void SetFilled(DXVml.Arc openXmlElement, Boolean? value)
@@ -508,7 +542,9 @@ public static class ArcConverter
   
   private static bool CmpFillColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FillColor?.Value == value;
+    if (openXmlElement?.FillColor?.Value == value) return true;
+    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
+    return false;
   }
   
   private static void SetFillColor(DXVml.Arc openXmlElement, String? value)
@@ -529,7 +565,9 @@ public static class ArcConverter
   
   private static bool CmpStroked(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Stroked?.Value == value;
+    if (openXmlElement?.Stroked?.Value == value) return true;
+    diffs?.Add(objName, "Stroked", openXmlElement?.Stroked?.Value, value);
+    return false;
   }
   
   private static void SetStroked(DXVml.Arc openXmlElement, Boolean? value)
@@ -550,7 +588,9 @@ public static class ArcConverter
   
   private static bool CmpStrokeColor(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeColor?.Value == value;
+    if (openXmlElement?.StrokeColor?.Value == value) return true;
+    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
+    return false;
   }
   
   private static void SetStrokeColor(DXVml.Arc openXmlElement, String? value)
@@ -571,7 +611,9 @@ public static class ArcConverter
   
   private static bool CmpStrokeWeight(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeWeight?.Value == value;
+    if (openXmlElement?.StrokeWeight?.Value == value) return true;
+    diffs?.Add(objName, "StrokeWeight", openXmlElement?.StrokeWeight?.Value, value);
+    return false;
   }
   
   private static void SetStrokeWeight(DXVml.Arc openXmlElement, String? value)
@@ -592,7 +634,9 @@ public static class ArcConverter
   
   private static bool CmpInsetPen(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsetPen?.Value == value;
+    if (openXmlElement?.InsetPen?.Value == value) return true;
+    diffs?.Add(objName, "InsetPen", openXmlElement?.InsetPen?.Value, value);
+    return false;
   }
   
   private static void SetInsetPen(DXVml.Arc openXmlElement, Boolean? value)
@@ -705,7 +749,9 @@ public static class ArcConverter
   
   private static bool CmpForceDash(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDash?.Value == value;
+    if (openXmlElement?.ForceDash?.Value == value) return true;
+    diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
+    return false;
   }
   
   private static void SetForceDash(DXVml.Arc openXmlElement, Boolean? value)
@@ -726,7 +772,9 @@ public static class ArcConverter
   
   private static bool CmpOleIcon(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OleIcon?.Value == value;
+    if (openXmlElement?.OleIcon?.Value == value) return true;
+    diffs?.Add(objName, "OleIcon", openXmlElement?.OleIcon?.Value, value);
+    return false;
   }
   
   private static void SetOleIcon(DXVml.Arc openXmlElement, Boolean? value)
@@ -747,7 +795,9 @@ public static class ArcConverter
   
   private static bool CmpOle(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Ole?.Value == value;
+    if (openXmlElement?.Ole?.Value == value) return true;
+    diffs?.Add(objName, "Ole", openXmlElement?.Ole?.Value, value);
+    return false;
   }
   
   private static void SetOle(DXVml.Arc openXmlElement, Boolean? value)
@@ -768,7 +818,9 @@ public static class ArcConverter
   
   private static bool CmpPreferRelative(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PreferRelative?.Value == value;
+    if (openXmlElement?.PreferRelative?.Value == value) return true;
+    diffs?.Add(objName, "PreferRelative", openXmlElement?.PreferRelative?.Value, value);
+    return false;
   }
   
   private static void SetPreferRelative(DXVml.Arc openXmlElement, Boolean? value)
@@ -789,7 +841,9 @@ public static class ArcConverter
   
   private static bool CmpClipToWrap(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ClipToWrap?.Value == value;
+    if (openXmlElement?.ClipToWrap?.Value == value) return true;
+    diffs?.Add(objName, "ClipToWrap", openXmlElement?.ClipToWrap?.Value, value);
+    return false;
   }
   
   private static void SetClipToWrap(DXVml.Arc openXmlElement, Boolean? value)
@@ -810,7 +864,9 @@ public static class ArcConverter
   
   private static bool CmpClip(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Clip?.Value == value;
+    if (openXmlElement?.Clip?.Value == value) return true;
+    diffs?.Add(objName, "Clip", openXmlElement?.Clip?.Value, value);
+    return false;
   }
   
   private static void SetClip(DXVml.Arc openXmlElement, Boolean? value)
@@ -859,7 +915,9 @@ public static class ArcConverter
   
   private static bool CmpId(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Arc openXmlElement, String? value)
@@ -880,7 +938,9 @@ public static class ArcConverter
   
   private static bool CmpStyle(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.Arc openXmlElement, String? value)
@@ -901,7 +961,9 @@ public static class ArcConverter
   
   private static bool CmpHref(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.Arc openXmlElement, String? value)
@@ -922,7 +984,9 @@ public static class ArcConverter
   
   private static bool CmpTarget(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Target?.Value == value;
+    if (openXmlElement?.Target?.Value == value) return true;
+    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
+    return false;
   }
   
   private static void SetTarget(DXVml.Arc openXmlElement, String? value)
@@ -943,7 +1007,9 @@ public static class ArcConverter
   
   private static bool CmpTitle(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.Arc openXmlElement, String? value)
@@ -964,7 +1030,9 @@ public static class ArcConverter
   
   private static bool CmpAlternate(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Alternate?.Value == value;
+    if (openXmlElement?.Alternate?.Value == value) return true;
+    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
+    return false;
   }
   
   private static void SetAlternate(DXVml.Arc openXmlElement, String? value)
@@ -985,7 +1053,9 @@ public static class ArcConverter
   
   private static bool CmpCoordinateSize(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateSize?.Value == value;
+    if (openXmlElement?.CoordinateSize?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateSize(DXVml.Arc openXmlElement, String? value)
@@ -1006,7 +1076,9 @@ public static class ArcConverter
   
   private static bool CmpCoordinateOrigin(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateOrigin?.Value == value;
+    if (openXmlElement?.CoordinateOrigin?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateOrigin", openXmlElement?.CoordinateOrigin?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateOrigin(DXVml.Arc openXmlElement, String? value)
@@ -1027,7 +1099,9 @@ public static class ArcConverter
   
   private static bool CmpWrapcoords(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Wrapcoords?.Value == value;
+    if (openXmlElement?.Wrapcoords?.Value == value) return true;
+    diffs?.Add(objName, "Wrapcoords", openXmlElement?.Wrapcoords?.Value, value);
+    return false;
   }
   
   private static void SetWrapcoords(DXVml.Arc openXmlElement, String? value)
@@ -1048,7 +1122,9 @@ public static class ArcConverter
   
   private static bool CmpPrint(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Print?.Value == value;
+    if (openXmlElement?.Print?.Value == value) return true;
+    diffs?.Add(objName, "Print", openXmlElement?.Print?.Value, value);
+    return false;
   }
   
   private static void SetPrint(DXVml.Arc openXmlElement, Boolean? value)
@@ -1474,7 +1550,10 @@ public static class ArcConverter
   
   private static bool CmpAnchorLock(DXVml.Arc openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXVmlW.AnchorLock", val, value);
+    return false;
   }
   
   private static void SetAnchorLock(DXVml.Arc openXmlElement, Boolean? value)

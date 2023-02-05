@@ -15,7 +15,9 @@ public static class ControlConverter
   
   private static bool CmpName(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.Control openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ControlConverter
   
   private static bool CmpShapeId(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXW.Control openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ControlConverter
   
   private static bool CmpId(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.Control openXmlElement, String? value)

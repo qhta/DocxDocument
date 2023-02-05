@@ -35,7 +35,9 @@ public static class LinearGradientFillConverter
   
   private static bool CmpScaled(DXDraw.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Scaled?.Value == value;
+    if (openXmlElement?.Scaled?.Value == value) return true;
+    diffs?.Add(objName, "Scaled", openXmlElement?.Scaled?.Value, value);
+    return false;
   }
   
   private static void SetScaled(DXDraw.LinearGradientFill openXmlElement, Boolean? value)

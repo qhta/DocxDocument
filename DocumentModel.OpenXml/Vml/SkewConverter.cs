@@ -33,7 +33,9 @@ public static class SkewConverter
   
   private static bool CmpId(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVmlO.Skew openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class SkewConverter
   
   private static bool CmpOn(DXVmlO.Skew openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVmlO.Skew openXmlElement, Boolean? value)
@@ -75,7 +79,9 @@ public static class SkewConverter
   
   private static bool CmpOffset(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Offset?.Value == value;
+    if (openXmlElement?.Offset?.Value == value) return true;
+    diffs?.Add(objName, "Offset", openXmlElement?.Offset?.Value, value);
+    return false;
   }
   
   private static void SetOffset(DXVmlO.Skew openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class SkewConverter
   
   private static bool CmpOrigin(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Origin?.Value == value;
+    if (openXmlElement?.Origin?.Value == value) return true;
+    diffs?.Add(objName, "Origin", openXmlElement?.Origin?.Value, value);
+    return false;
   }
   
   private static void SetOrigin(DXVmlO.Skew openXmlElement, String? value)
@@ -117,7 +125,9 @@ public static class SkewConverter
   
   private static bool CmpMatrix(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Matrix?.Value == value;
+    if (openXmlElement?.Matrix?.Value == value) return true;
+    diffs?.Add(objName, "Matrix", openXmlElement?.Matrix?.Value, value);
+    return false;
   }
   
   private static void SetMatrix(DXVmlO.Skew openXmlElement, String? value)

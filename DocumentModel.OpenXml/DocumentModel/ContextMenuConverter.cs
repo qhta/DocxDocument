@@ -15,7 +15,9 @@ public static class ContextMenuConverter
   
   private static bool CmpIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value)

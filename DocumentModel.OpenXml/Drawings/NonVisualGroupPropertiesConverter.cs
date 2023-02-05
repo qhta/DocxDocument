@@ -15,7 +15,9 @@ public static class NonVisualGroupPropertiesConverter
   
   private static bool CmpIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsLegacyGroup?.Value == value;
+    if (openXmlElement?.IsLegacyGroup?.Value == value) return true;
+    diffs?.Add(objName, "IsLegacyGroup", openXmlElement?.IsLegacyGroup?.Value, value);
+    return false;
   }
   
   private static void SetIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement, Boolean? value)

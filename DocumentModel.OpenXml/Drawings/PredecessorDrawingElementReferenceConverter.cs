@@ -15,7 +15,9 @@ public static class PredecessorDrawingElementReferenceConverter
   
   private static bool CmpPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Pred?.Value == value;
+    if (openXmlElement?.Pred?.Value == value) return true;
+    diffs?.Add(objName, "Pred", openXmlElement?.Pred?.Value, value);
+    return false;
   }
   
   private static void SetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value)

@@ -27,6 +27,8 @@
     <Compile Remove="BaseTypes\VTVectorReader.cs" />
     <Compile Remove="BaseTypes\VTVectorWriter.cs" />
     <Compile Remove="Drawings\BevelTypeConverter - Copy.cs" />
+    <Compile Remove="Packaging\DocumentSettingsPartConverter.cs" />
+    <Compile Remove="Packaging\ExtendedFilePropertiesPartConverter.cs" />
     <Compile Remove="Properties\CoreProperties.cs" />
     <Compile Remove="Properties\CustomDocumentProperty.cs" />
     <Compile Remove="Properties\CustomProperties.cs" />
@@ -37,6 +39,7 @@
     <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
     <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
     <Compile Remove="Wordprocessing\ParagraphConverter - Copy.cs" />
+    <Compile Remove="Wordprocessing\SettingsConverter.cs" />
     <Compile Remove="Wordprocessing\StyleConverter.old.cs" />
     <Compile Remove="Wordprocessing\StylesConverter.old.cs" />
   </ItemGroup>

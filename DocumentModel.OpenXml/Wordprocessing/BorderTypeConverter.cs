@@ -33,7 +33,9 @@ public static class BorderTypeConverter
   
   private static bool CmpColor(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color?.Value == value;
+    if (openXmlElement?.Color?.Value == value) return true;
+    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
+    return false;
   }
   
   private static void SetColor(DXW.BorderType openXmlElement, String? value)
@@ -72,7 +74,9 @@ public static class BorderTypeConverter
   
   private static bool CmpThemeTint(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ThemeTint?.Value == value;
+    if (openXmlElement?.ThemeTint?.Value == value) return true;
+    diffs?.Add(objName, "ThemeTint", openXmlElement?.ThemeTint?.Value, value);
+    return false;
   }
   
   private static void SetThemeTint(DXW.BorderType openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class BorderTypeConverter
   
   private static bool CmpThemeShade(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ThemeShade?.Value == value;
+    if (openXmlElement?.ThemeShade?.Value == value) return true;
+    diffs?.Add(objName, "ThemeShade", openXmlElement?.ThemeShade?.Value, value);
+    return false;
   }
   
   private static void SetThemeShade(DXW.BorderType openXmlElement, String? value)
@@ -154,7 +160,9 @@ public static class BorderTypeConverter
   
   private static bool CmpShadow(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Shadow?.Value == value;
+    if (openXmlElement?.Shadow?.Value == value) return true;
+    diffs?.Add(objName, "Shadow", openXmlElement?.Shadow?.Value, value);
+    return false;
   }
   
   private static void SetShadow(DXW.BorderType openXmlElement, Boolean? value)
@@ -175,7 +183,9 @@ public static class BorderTypeConverter
   
   private static bool CmpFrame(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Frame?.Value == value;
+    if (openXmlElement?.Frame?.Value == value) return true;
+    diffs?.Add(objName, "Frame", openXmlElement?.Frame?.Value, value);
+    return false;
   }
   
   private static void SetFrame(DXW.BorderType openXmlElement, Boolean? value)

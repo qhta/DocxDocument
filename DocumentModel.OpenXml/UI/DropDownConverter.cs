@@ -15,7 +15,9 @@ public static class DropDownConverter
   
   private static bool CmpOnAction(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnAction?.Value == value;
+    if (openXmlElement?.OnAction?.Value == value) return true;
+    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
+    return false;
   }
   
   private static void SetOnAction(DXOCustUI.DropDown openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class DropDownConverter
   
   private static bool CmpEnabled(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class DropDownConverter
   
   private static bool CmpGetEnabled(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.DropDown openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class DropDownConverter
   
   private static bool CmpImage(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.DropDown openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class DropDownConverter
   
   private static bool CmpImageMso(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.DropDown openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class DropDownConverter
   
   private static bool CmpGetImage(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXOCustUI.DropDown openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class DropDownConverter
   
   private static bool CmpShowItemImage(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowItemImage?.Value == value;
+    if (openXmlElement?.ShowItemImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowItemImage", openXmlElement?.ShowItemImage?.Value, value);
+    return false;
   }
   
   private static void SetShowItemImage(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -162,7 +176,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemCount(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemCount?.Value == value;
+    if (openXmlElement?.GetItemCount?.Value == value) return true;
+    diffs?.Add(objName, "GetItemCount", openXmlElement?.GetItemCount?.Value, value);
+    return false;
   }
   
   private static void SetGetItemCount(DXOCustUI.DropDown openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemLabel(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemLabel?.Value == value;
+    if (openXmlElement?.GetItemLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetItemLabel", openXmlElement?.GetItemLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetItemLabel(DXOCustUI.DropDown openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemScreentip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemScreentip?.Value == value;
+    if (openXmlElement?.GetItemScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetItemScreentip", openXmlElement?.GetItemScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetItemScreentip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemSupertip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemSupertip?.Value == value;
+    if (openXmlElement?.GetItemSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetItemSupertip", openXmlElement?.GetItemSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetItemSupertip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemImage(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemImage?.Value == value;
+    if (openXmlElement?.GetItemImage?.Value == value) return true;
+    diffs?.Add(objName, "GetItemImage", openXmlElement?.GetItemImage?.Value, value);
+    return false;
   }
   
   private static void SetGetItemImage(DXOCustUI.DropDown openXmlElement, String? value)
@@ -267,7 +291,9 @@ public static class DropDownConverter
   
   private static bool CmpGetItemID(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemID?.Value == value;
+    if (openXmlElement?.GetItemID?.Value == value) return true;
+    diffs?.Add(objName, "GetItemID", openXmlElement?.GetItemID?.Value, value);
+    return false;
   }
   
   private static void SetGetItemID(DXOCustUI.DropDown openXmlElement, String? value)
@@ -288,7 +314,9 @@ public static class DropDownConverter
   
   private static bool CmpSizeString(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SizeString?.Value == value;
+    if (openXmlElement?.SizeString?.Value == value) return true;
+    diffs?.Add(objName, "SizeString", openXmlElement?.SizeString?.Value, value);
+    return false;
   }
   
   private static void SetSizeString(DXOCustUI.DropDown openXmlElement, String? value)
@@ -309,7 +337,9 @@ public static class DropDownConverter
   
   private static bool CmpGetSelectedItemID(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSelectedItemID?.Value == value;
+    if (openXmlElement?.GetSelectedItemID?.Value == value) return true;
+    diffs?.Add(objName, "GetSelectedItemID", openXmlElement?.GetSelectedItemID?.Value, value);
+    return false;
   }
   
   private static void SetGetSelectedItemID(DXOCustUI.DropDown openXmlElement, String? value)
@@ -330,7 +360,9 @@ public static class DropDownConverter
   
   private static bool CmpGetSelectedItemIndex(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSelectedItemIndex?.Value == value;
+    if (openXmlElement?.GetSelectedItemIndex?.Value == value) return true;
+    diffs?.Add(objName, "GetSelectedItemIndex", openXmlElement?.GetSelectedItemIndex?.Value, value);
+    return false;
   }
   
   private static void SetGetSelectedItemIndex(DXOCustUI.DropDown openXmlElement, String? value)
@@ -351,7 +383,9 @@ public static class DropDownConverter
   
   private static bool CmpShowItemLabel(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowItemLabel?.Value == value;
+    if (openXmlElement?.ShowItemLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowItemLabel", openXmlElement?.ShowItemLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowItemLabel(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -372,7 +406,9 @@ public static class DropDownConverter
   
   private static bool CmpId(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.DropDown openXmlElement, String? value)
@@ -393,7 +429,9 @@ public static class DropDownConverter
   
   private static bool CmpIdQ(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.DropDown openXmlElement, String? value)
@@ -414,7 +452,9 @@ public static class DropDownConverter
   
   private static bool CmpIdMso(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.DropDown openXmlElement, String? value)
@@ -435,7 +475,9 @@ public static class DropDownConverter
   
   private static bool CmpTag(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXOCustUI.DropDown openXmlElement, String? value)
@@ -456,7 +498,9 @@ public static class DropDownConverter
   
   private static bool CmpScreentip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -477,7 +521,9 @@ public static class DropDownConverter
   
   private static bool CmpGetScreentip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -498,7 +544,9 @@ public static class DropDownConverter
   
   private static bool CmpSupertip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -519,7 +567,9 @@ public static class DropDownConverter
   
   private static bool CmpGetSupertip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -540,7 +590,9 @@ public static class DropDownConverter
   
   private static bool CmpLabel(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.DropDown openXmlElement, String? value)
@@ -561,7 +613,9 @@ public static class DropDownConverter
   
   private static bool CmpGetLabel(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXOCustUI.DropDown openXmlElement, String? value)
@@ -582,7 +636,9 @@ public static class DropDownConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.DropDown openXmlElement, String? value)
@@ -603,7 +659,9 @@ public static class DropDownConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.DropDown openXmlElement, String? value)
@@ -624,7 +682,9 @@ public static class DropDownConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.DropDown openXmlElement, String? value)
@@ -645,7 +705,9 @@ public static class DropDownConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.DropDown openXmlElement, String? value)
@@ -666,7 +728,9 @@ public static class DropDownConverter
   
   private static bool CmpVisible(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -687,7 +751,9 @@ public static class DropDownConverter
   
   private static bool CmpGetVisible(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXOCustUI.DropDown openXmlElement, String? value)
@@ -708,7 +774,9 @@ public static class DropDownConverter
   
   private static bool CmpKeytip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -729,7 +797,9 @@ public static class DropDownConverter
   
   private static bool CmpGetKeytip(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXOCustUI.DropDown openXmlElement, String? value)
@@ -750,7 +820,9 @@ public static class DropDownConverter
   
   private static bool CmpShowLabel(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -771,7 +843,9 @@ public static class DropDownConverter
   
   private static bool CmpGetShowLabel(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXOCustUI.DropDown openXmlElement, String? value)
@@ -792,7 +866,9 @@ public static class DropDownConverter
   
   private static bool CmpShowImage(DXOCustUI.DropDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXOCustUI.DropDown openXmlElement, Boolean? value)
@@ -813,7 +889,9 @@ public static class DropDownConverter
   
   private static bool CmpGetShowImage(DXOCustUI.DropDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXOCustUI.DropDown openXmlElement, String? value)

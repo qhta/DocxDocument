@@ -51,7 +51,9 @@ public static class ConstraintConverter
   
   private static bool CmpForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForName?.Value == value;
+    if (openXmlElement?.ForName?.Value == value) return true;
+    diffs?.Add(objName, "ForName", openXmlElement?.ForName?.Value, value);
+    return false;
   }
   
   private static void SetForName(DXDrawDgms.Constraint openXmlElement, String? value)
@@ -126,7 +128,9 @@ public static class ConstraintConverter
   
   private static bool CmpReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ReferenceForName?.Value == value;
+    if (openXmlElement?.ReferenceForName?.Value == value) return true;
+    diffs?.Add(objName, "ReferenceForName", openXmlElement?.ReferenceForName?.Value, value);
+    return false;
   }
   
   private static void SetReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value)

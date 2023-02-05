@@ -81,7 +81,10 @@ public static class Level5ParagraphPropertiesConverter
   
   private static bool CmpBulletColorText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletColorText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.BulletColorText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.BulletColorText", val, value);
+    return false;
   }
   
   private static void SetBulletColorText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value)
@@ -129,7 +132,10 @@ public static class Level5ParagraphPropertiesConverter
   
   private static bool CmpBulletSizeText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletSizeText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.BulletSizeText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.BulletSizeText", val, value);
+    return false;
   }
   
   private static void SetBulletSizeText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value)
@@ -204,7 +210,10 @@ public static class Level5ParagraphPropertiesConverter
   
   private static bool CmpBulletFontText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletFontText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.BulletFontText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.BulletFontText", val, value);
+    return false;
   }
   
   private static void SetBulletFontText(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value)
@@ -252,7 +261,10 @@ public static class Level5ParagraphPropertiesConverter
   
   private static bool CmpNoBullet(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoBullet", val, value);
+    return false;
   }
   
   private static void SetNoBullet(DXDraw.Level5ParagraphProperties openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class RectangleConverter
   
   private static bool CmpLeft(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Left?.Value == value;
+    if (openXmlElement?.Left?.Value == value) return true;
+    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
+    return false;
   }
   
   private static void SetLeft(DXDraw.Rectangle openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class RectangleConverter
   
   private static bool CmpTop(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Top?.Value == value;
+    if (openXmlElement?.Top?.Value == value) return true;
+    diffs?.Add(objName, "Top", openXmlElement?.Top?.Value, value);
+    return false;
   }
   
   private static void SetTop(DXDraw.Rectangle openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class RectangleConverter
   
   private static bool CmpRight(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Right?.Value == value;
+    if (openXmlElement?.Right?.Value == value) return true;
+    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
+    return false;
   }
   
   private static void SetRight(DXDraw.Rectangle openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class RectangleConverter
   
   private static bool CmpBottom(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bottom?.Value == value;
+    if (openXmlElement?.Bottom?.Value == value) return true;
+    diffs?.Add(objName, "Bottom", openXmlElement?.Bottom?.Value, value);
+    return false;
   }
   
   private static void SetBottom(DXDraw.Rectangle openXmlElement, String? value)

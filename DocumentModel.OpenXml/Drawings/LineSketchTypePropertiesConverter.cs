@@ -15,7 +15,10 @@ public static class LineSketchTypePropertiesConverter
   
   private static bool CmpLineSketchNoneEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchNoneEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchNoneEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DrawSketchyShps.LineSketchNoneEmpty", val, value);
+    return false;
   }
   
   private static void SetLineSketchNoneEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class LineSketchTypePropertiesConverter
   
   private static bool CmpLineSketchCurvedEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchCurvedEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchCurvedEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DrawSketchyShps.LineSketchCurvedEmpty", val, value);
+    return false;
   }
   
   private static void SetLineSketchCurvedEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class LineSketchTypePropertiesConverter
   
   private static bool CmpLineSketchFreehandEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchFreehandEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchFreehandEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DrawSketchyShps.LineSketchFreehandEmpty", val, value);
+    return false;
   }
   
   private static void SetLineSketchFreehandEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value)
@@ -99,7 +108,10 @@ public static class LineSketchTypePropertiesConverter
   
   private static bool CmpLineSketchScribbleEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchScribbleEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchScribbleEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DrawSketchyShps.LineSketchScribbleEmpty", val, value);
+    return false;
   }
   
   private static void SetLineSketchScribbleEmpty(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, Boolean? value)

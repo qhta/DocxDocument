@@ -15,7 +15,9 @@ public static class DataBindingConverter
   
   private static bool CmpPrefixMappings(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PrefixMappings?.Value == value;
+    if (openXmlElement?.PrefixMappings?.Value == value) return true;
+    diffs?.Add(objName, "PrefixMappings", openXmlElement?.PrefixMappings?.Value, value);
+    return false;
   }
   
   private static void SetPrefixMappings(DXW.DataBinding openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class DataBindingConverter
   
   private static bool CmpXPath(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.XPath?.Value == value;
+    if (openXmlElement?.XPath?.Value == value) return true;
+    diffs?.Add(objName, "XPath", openXmlElement?.XPath?.Value, value);
+    return false;
   }
   
   private static void SetXPath(DXW.DataBinding openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class DataBindingConverter
   
   private static bool CmpStoreItemId(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StoreItemId?.Value == value;
+    if (openXmlElement?.StoreItemId?.Value == value) return true;
+    diffs?.Add(objName, "StoreItemId", openXmlElement?.StoreItemId?.Value, value);
+    return false;
   }
   
   private static void SetStoreItemId(DXW.DataBinding openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class EmbeddedWavAudioFileTypeConverter
   
   private static bool CmpEmbed(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Embed?.Value == value;
+    if (openXmlElement?.Embed?.Value == value) return true;
+    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
+    return false;
   }
   
   private static void SetEmbed(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class EmbeddedWavAudioFileTypeConverter
   
   private static bool CmpName(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDraw.EmbeddedWavAudioFileType openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class EmbeddedWavAudioFileTypeConverter
   
   private static bool CmpBuiltIn(DXDraw.EmbeddedWavAudioFileType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BuiltIn?.Value == value;
+    if (openXmlElement?.BuiltIn?.Value == value) return true;
+    diffs?.Add(objName, "BuiltIn", openXmlElement?.BuiltIn?.Value, value);
+    return false;
   }
   
   private static void SetBuiltIn(DXDraw.EmbeddedWavAudioFileType openXmlElement, Boolean? value)

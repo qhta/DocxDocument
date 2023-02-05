@@ -15,7 +15,9 @@ public static class ToolbarDataConverter
   
   private static bool CmpId(DXOW.ToolbarData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOW.ToolbarData openXmlElement, String? value)

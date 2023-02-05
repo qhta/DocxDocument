@@ -56,7 +56,10 @@ public static class GroupShapePropertiesConverter
   
   private static bool CmpNoFill(DXODraw.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXODraw.GroupShapeProperties openXmlElement, Boolean? value)
@@ -173,7 +176,10 @@ public static class GroupShapePropertiesConverter
   
   private static bool CmpGroupFill(DXODraw.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    return false;
   }
   
   private static void SetGroupFill(DXODraw.GroupShapeProperties openXmlElement, Boolean? value)

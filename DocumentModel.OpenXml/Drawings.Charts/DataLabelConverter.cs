@@ -40,7 +40,10 @@ public static class DataLabelConverter
   
   private static bool CmpDelete(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -203,7 +206,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowLegendKey(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowLegendKey", val, value);
+    return false;
   }
   
   private static void SetShowLegendKey(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -228,7 +234,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowValue(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowValue", val, value);
+    return false;
   }
   
   private static void SetShowValue(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -253,7 +262,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowCategoryName(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowCategoryName", val, value);
+    return false;
   }
   
   private static void SetShowCategoryName(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -278,7 +290,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowSeriesName(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowSeriesName", val, value);
+    return false;
   }
   
   private static void SetShowSeriesName(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -303,7 +318,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowPercent(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowPercent", val, value);
+    return false;
   }
   
   private static void SetShowPercent(DXDrawCharts.DataLabel openXmlElement, Boolean? value)
@@ -328,7 +346,10 @@ public static class DataLabelConverter
   
   private static bool CmpShowBubbleSize(DXDrawCharts.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowBubbleSize", val, value);
+    return false;
   }
   
   private static void SetShowBubbleSize(DXDrawCharts.DataLabel openXmlElement, Boolean? value)

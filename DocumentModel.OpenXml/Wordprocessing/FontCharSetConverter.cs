@@ -15,7 +15,9 @@ public static class FontCharSetConverter
   
   private static bool CmpVal(DXW.FontCharSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.FontCharSet openXmlElement, String? value)

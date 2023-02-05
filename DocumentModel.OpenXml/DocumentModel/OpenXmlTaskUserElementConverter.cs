@@ -15,7 +15,9 @@ public static class OpenXmlTaskUserElementConverter
   
   private static bool CmpUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserId?.Value == value;
+    if (openXmlElement?.UserId?.Value == value) return true;
+    diffs?.Add(objName, "UserId", openXmlElement?.UserId?.Value, value);
+    return false;
   }
   
   private static void SetUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class OpenXmlTaskUserElementConverter
   
   private static bool CmpUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserName?.Value == value;
+    if (openXmlElement?.UserName?.Value == value) return true;
+    diffs?.Add(objName, "UserName", openXmlElement?.UserName?.Value, value);
+    return false;
   }
   
   private static void SetUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class OpenXmlTaskUserElementConverter
   
   private static bool CmpUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserProvider?.Value == value;
+    if (openXmlElement?.UserProvider?.Value == value) return true;
+    diffs?.Add(objName, "UserProvider", openXmlElement?.UserProvider?.Value, value);
+    return false;
   }
   
   private static void SetUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)

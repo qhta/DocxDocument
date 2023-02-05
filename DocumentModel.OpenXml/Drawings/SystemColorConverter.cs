@@ -108,7 +108,10 @@ public static class SystemColorConverter
   
   private static bool CmpComplement(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Complement", val, value);
+    return false;
   }
   
   private static void SetComplement(DXDraw.SystemColor openXmlElement, Boolean? value)
@@ -133,7 +136,10 @@ public static class SystemColorConverter
   
   private static bool CmpInverse(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Inverse", val, value);
+    return false;
   }
   
   private static void SetInverse(DXDraw.SystemColor openXmlElement, Boolean? value)
@@ -158,7 +164,10 @@ public static class SystemColorConverter
   
   private static bool CmpGray(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gray", val, value);
+    return false;
   }
   
   private static void SetGray(DXDraw.SystemColor openXmlElement, Boolean? value)
@@ -708,7 +717,10 @@ public static class SystemColorConverter
   
   private static bool CmpGamma(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gamma", val, value);
+    return false;
   }
   
   private static void SetGamma(DXDraw.SystemColor openXmlElement, Boolean? value)
@@ -733,7 +745,10 @@ public static class SystemColorConverter
   
   private static bool CmpInverseGamma(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.InverseGamma", val, value);
+    return false;
   }
   
   private static void SetInverseGamma(DXDraw.SystemColor openXmlElement, Boolean? value)

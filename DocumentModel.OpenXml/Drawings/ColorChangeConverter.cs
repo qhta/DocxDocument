@@ -15,7 +15,9 @@ public static class ColorChangeConverter
   
   private static bool CmpUseAlpha(DXDraw.ColorChange openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UseAlpha?.Value == value;
+    if (openXmlElement?.UseAlpha?.Value == value) return true;
+    diffs?.Add(objName, "UseAlpha", openXmlElement?.UseAlpha?.Value, value);
+    return false;
   }
   
   private static void SetUseAlpha(DXDraw.ColorChange openXmlElement, Boolean? value)

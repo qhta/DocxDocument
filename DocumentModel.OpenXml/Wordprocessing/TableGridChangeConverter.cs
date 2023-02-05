@@ -15,7 +15,9 @@ public static class TableGridChangeConverter
   
   private static bool CmpId(DXW.TableGridChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.TableGridChange openXmlElement, String? value)

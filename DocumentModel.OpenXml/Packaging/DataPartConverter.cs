@@ -15,7 +15,9 @@ public static class DataPartConverter
   
   private static bool CmpUri(DXPack.DataPart openXmlElement, Uri? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri == value;
+    if (openXmlElement?.Uri == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri, value);
+    return false;
   }
   
   /// <summary>
@@ -28,7 +30,9 @@ public static class DataPartConverter
   
   private static bool CmpContentType(DXPack.DataPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   public static DMPack.DataPart? CreateModelElement(DXPack.DataPart? openXmlElement)

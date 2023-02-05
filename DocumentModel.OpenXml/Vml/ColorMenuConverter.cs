@@ -33,7 +33,9 @@ public static class ColorMenuConverter
   
   private static bool CmpStrokeColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeColor?.Value == value;
+    if (openXmlElement?.StrokeColor?.Value == value) return true;
+    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
+    return false;
   }
   
   private static void SetStrokeColor(DXVmlO.ColorMenu openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class ColorMenuConverter
   
   private static bool CmpFillColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FillColor?.Value == value;
+    if (openXmlElement?.FillColor?.Value == value) return true;
+    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
+    return false;
   }
   
   private static void SetFillColor(DXVmlO.ColorMenu openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class ColorMenuConverter
   
   private static bool CmpShadowColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShadowColor?.Value == value;
+    if (openXmlElement?.ShadowColor?.Value == value) return true;
+    diffs?.Add(objName, "ShadowColor", openXmlElement?.ShadowColor?.Value, value);
+    return false;
   }
   
   private static void SetShadowColor(DXVmlO.ColorMenu openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class ColorMenuConverter
   
   private static bool CmpExtrusionColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ExtrusionColor?.Value == value;
+    if (openXmlElement?.ExtrusionColor?.Value == value) return true;
+    diffs?.Add(objName, "ExtrusionColor", openXmlElement?.ExtrusionColor?.Value, value);
+    return false;
   }
   
   private static void SetExtrusionColor(DXVmlO.ColorMenu openXmlElement, String? value)

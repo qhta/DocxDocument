@@ -34,7 +34,10 @@ public static class FormFieldDataConverter
   
   private static bool CmpEnabled(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Enabled>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Enabled>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Enabled", val, value);
+    return false;
   }
   
   private static void SetEnabled(DXW.FormFieldData openXmlElement, Boolean? value)
@@ -59,7 +62,10 @@ public static class FormFieldDataConverter
   
   private static bool CmpCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.CalculateOnExit>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.CalculateOnExit>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.CalculateOnExit", val, value);
+    return false;
   }
   
   private static void SetCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value)

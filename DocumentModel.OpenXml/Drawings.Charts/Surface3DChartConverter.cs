@@ -15,7 +15,10 @@ public static class Surface3DChartConverter
   
   private static bool CmpWireframe(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Wireframe", val, value);
+    return false;
   }
   
   private static void SetWireframe(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class Surface3DChartConverter
   
   private static bool CmpVaryColors(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    return false;
   }
   
   private static void SetVaryColors(DXDrawCharts.Surface3DChart openXmlElement, Boolean? value)

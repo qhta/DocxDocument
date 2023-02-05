@@ -15,7 +15,9 @@ public static class BlipConverter
   
   private static bool CmpEmbed(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Embed?.Value == value;
+    if (openXmlElement?.Embed?.Value == value) return true;
+    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
+    return false;
   }
   
   private static void SetEmbed(DXDraw.Blip openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BlipConverter
   
   private static bool CmpLink(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Link?.Value == value;
+    if (openXmlElement?.Link?.Value == value) return true;
+    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
+    return false;
   }
   
   private static void SetLink(DXDraw.Blip openXmlElement, String? value)
@@ -95,7 +99,10 @@ public static class BlipConverter
   
   private static bool CmpAlphaCeiling(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaCeiling", val, value);
+    return false;
   }
   
   private static void SetAlphaCeiling(DXDraw.Blip openXmlElement, Boolean? value)
@@ -120,7 +127,10 @@ public static class BlipConverter
   
   private static bool CmpAlphaFloor(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaFloor", val, value);
+    return false;
   }
   
   private static void SetAlphaFloor(DXDraw.Blip openXmlElement, Boolean? value)
@@ -375,7 +385,10 @@ public static class BlipConverter
   
   private static bool CmpGrayscale(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Grayscale", val, value);
+    return false;
   }
   
   private static void SetGrayscale(DXDraw.Blip openXmlElement, Boolean? value)

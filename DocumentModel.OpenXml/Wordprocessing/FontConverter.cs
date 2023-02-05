@@ -15,7 +15,9 @@ public static class FontConverter
   
   private static bool CmpName(DXW.Font openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.Font openXmlElement, String? value)
@@ -142,7 +144,10 @@ public static class FontConverter
   
   private static bool CmpNotTrueType(DXW.Font openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NotTrueType>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NotTrueType>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NotTrueType", val, value);
+    return false;
   }
   
   private static void SetNotTrueType(DXW.Font openXmlElement, Boolean? value)

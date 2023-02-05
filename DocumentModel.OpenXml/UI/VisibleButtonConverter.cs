@@ -15,7 +15,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpOnAction(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnAction?.Value == value;
+    if (openXmlElement?.OnAction?.Value == value) return true;
+    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
+    return false;
   }
   
   private static void SetOnAction(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpEnabled(DXOCustUI.VisibleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.VisibleButton openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetEnabled(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpDescription(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Description?.Value == value;
+    if (openXmlElement?.Description?.Value == value) return true;
+    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
+    return false;
   }
   
   private static void SetDescription(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetDescription(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetDescription?.Value == value;
+    if (openXmlElement?.GetDescription?.Value == value) return true;
+    diffs?.Add(objName, "GetDescription", openXmlElement?.GetDescription?.Value, value);
+    return false;
   }
   
   private static void SetGetDescription(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpImage(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpImageMso(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetImage(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpId(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpIdQ(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpIdMso(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpTag(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -267,7 +291,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpScreentip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -288,7 +314,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetScreentip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -309,7 +337,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpSupertip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -330,7 +360,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetSupertip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -351,7 +383,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpLabel(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -372,7 +406,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetLabel(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -393,7 +429,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -414,7 +452,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -435,7 +475,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -456,7 +498,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -477,7 +521,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpKeytip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -498,7 +544,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetKeytip(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -519,7 +567,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpShowLabel(DXOCustUI.VisibleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXOCustUI.VisibleButton openXmlElement, Boolean? value)
@@ -540,7 +590,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetShowLabel(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXOCustUI.VisibleButton openXmlElement, String? value)
@@ -561,7 +613,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpShowImage(DXOCustUI.VisibleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXOCustUI.VisibleButton openXmlElement, Boolean? value)
@@ -582,7 +636,9 @@ public static class VisibleButtonConverter
   
   private static bool CmpGetShowImage(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXOCustUI.VisibleButton openXmlElement, String? value)

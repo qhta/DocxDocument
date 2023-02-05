@@ -15,7 +15,9 @@ public static class ValueAxisScalingConverter
   
   private static bool CmpMax(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Max?.Value == value;
+    if (openXmlElement?.Max?.Value == value) return true;
+    diffs?.Add(objName, "Max", openXmlElement?.Max?.Value, value);
+    return false;
   }
   
   private static void SetMax(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ValueAxisScalingConverter
   
   private static bool CmpMin(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Min?.Value == value;
+    if (openXmlElement?.Min?.Value == value) return true;
+    diffs?.Add(objName, "Min", openXmlElement?.Min?.Value, value);
+    return false;
   }
   
   private static void SetMin(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ValueAxisScalingConverter
   
   private static bool CmpMajorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MajorUnit?.Value == value;
+    if (openXmlElement?.MajorUnit?.Value == value) return true;
+    diffs?.Add(objName, "MajorUnit", openXmlElement?.MajorUnit?.Value, value);
+    return false;
   }
   
   private static void SetMajorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ValueAxisScalingConverter
   
   private static bool CmpMinorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinorUnit?.Value == value;
+    if (openXmlElement?.MinorUnit?.Value == value) return true;
+    diffs?.Add(objName, "MinorUnit", openXmlElement?.MinorUnit?.Value, value);
+    return false;
   }
   
   private static void SetMinorUnit(DXO2016DrawChartDraw.ValueAxisScaling openXmlElement, String? value)

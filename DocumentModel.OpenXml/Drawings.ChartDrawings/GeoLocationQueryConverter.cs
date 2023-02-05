@@ -15,7 +15,9 @@ public static class GeoLocationQueryConverter
   
   private static bool CmpCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CountryRegion?.Value == value;
+    if (openXmlElement?.CountryRegion?.Value == value) return true;
+    diffs?.Add(objName, "CountryRegion", openXmlElement?.CountryRegion?.Value, value);
+    return false;
   }
   
   private static void SetCountryRegion(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class GeoLocationQueryConverter
   
   private static bool CmpAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AdminDistrict1?.Value == value;
+    if (openXmlElement?.AdminDistrict1?.Value == value) return true;
+    diffs?.Add(objName, "AdminDistrict1", openXmlElement?.AdminDistrict1?.Value, value);
+    return false;
   }
   
   private static void SetAdminDistrict1(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class GeoLocationQueryConverter
   
   private static bool CmpAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AdminDistrict2?.Value == value;
+    if (openXmlElement?.AdminDistrict2?.Value == value) return true;
+    diffs?.Add(objName, "AdminDistrict2", openXmlElement?.AdminDistrict2?.Value, value);
+    return false;
   }
   
   private static void SetAdminDistrict2(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class GeoLocationQueryConverter
   
   private static bool CmpPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PostalCode?.Value == value;
+    if (openXmlElement?.PostalCode?.Value == value) return true;
+    diffs?.Add(objName, "PostalCode", openXmlElement?.PostalCode?.Value, value);
+    return false;
   }
   
   private static void SetPostalCode(DXO2016DrawChartDraw.GeoLocationQuery openXmlElement, String? value)

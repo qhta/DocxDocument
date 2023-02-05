@@ -15,7 +15,9 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   
   private static bool CmpMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Macro?.Value == value;
+    if (openXmlElement?.Macro?.Value == value) return true;
+    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
+    return false;
   }
   
   private static void SetMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   
   private static bool CmpPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Published?.Value == value;
+    if (openXmlElement?.Published?.Value == value) return true;
+    diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
+    return false;
   }
   
   private static void SetPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value)

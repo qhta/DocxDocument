@@ -15,7 +15,9 @@ public static class NonVisualInkContentPartPropertiesConverter
   
   private static bool CmpIsComment(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsComment?.Value == value;
+    if (openXmlElement?.IsComment?.Value == value) return true;
+    diffs?.Add(objName, "IsComment", openXmlElement?.IsComment?.Value, value);
+    return false;
   }
   
   private static void SetIsComment(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, Boolean? value)

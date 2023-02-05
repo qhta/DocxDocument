@@ -15,7 +15,9 @@ public static class RuleConverter
   
   private static bool CmpId(DXVmlO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVmlO.Rule openXmlElement, String? value)
@@ -72,7 +74,9 @@ public static class RuleConverter
   
   private static bool CmpShapeReference(DXVmlO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeReference?.Value == value;
+    if (openXmlElement?.ShapeReference?.Value == value) return true;
+    diffs?.Add(objName, "ShapeReference", openXmlElement?.ShapeReference?.Value, value);
+    return false;
   }
   
   private static void SetShapeReference(DXVmlO.Rule openXmlElement, String? value)

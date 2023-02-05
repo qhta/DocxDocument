@@ -151,7 +151,10 @@ public static class DataSourceObjectConverter
   
   private static bool CmpFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FirstRowHeader>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.FirstRowHeader>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.FirstRowHeader", val, value);
+    return false;
   }
   
   private static void SetFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class SdtContentTextConverter
   
   private static bool CmpMultiLine(DXW.SdtContentText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MultiLine?.Value == value;
+    if (openXmlElement?.MultiLine?.Value == value) return true;
+    diffs?.Add(objName, "MultiLine", openXmlElement?.MultiLine?.Value, value);
+    return false;
   }
   
   private static void SetMultiLine(DXW.SdtContentText openXmlElement, Boolean? value)

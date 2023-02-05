@@ -15,7 +15,9 @@ public static class EffectConverter
   
   private static bool CmpReference(DXDraw.Effect openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Reference?.Value == value;
+    if (openXmlElement?.Reference?.Value == value) return true;
+    diffs?.Add(objName, "Reference", openXmlElement?.Reference?.Value, value);
+    return false;
   }
   
   private static void SetReference(DXDraw.Effect openXmlElement, String? value)

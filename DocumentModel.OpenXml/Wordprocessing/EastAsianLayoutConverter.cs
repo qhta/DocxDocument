@@ -35,7 +35,9 @@ public static class EastAsianLayoutConverter
   
   private static bool CmpCombine(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Combine?.Value == value;
+    if (openXmlElement?.Combine?.Value == value) return true;
+    diffs?.Add(objName, "Combine", openXmlElement?.Combine?.Value, value);
+    return false;
   }
   
   private static void SetCombine(DXW.EastAsianLayout openXmlElement, Boolean? value)
@@ -74,7 +76,9 @@ public static class EastAsianLayoutConverter
   
   private static bool CmpVertical(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Vertical?.Value == value;
+    if (openXmlElement?.Vertical?.Value == value) return true;
+    diffs?.Add(objName, "Vertical", openXmlElement?.Vertical?.Value, value);
+    return false;
   }
   
   private static void SetVertical(DXW.EastAsianLayout openXmlElement, Boolean? value)
@@ -95,7 +99,9 @@ public static class EastAsianLayoutConverter
   
   private static bool CmpVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.VerticalCompress?.Value == value;
+    if (openXmlElement?.VerticalCompress?.Value == value) return true;
+    diffs?.Add(objName, "VerticalCompress", openXmlElement?.VerticalCompress?.Value, value);
+    return false;
   }
   
   private static void SetVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value)

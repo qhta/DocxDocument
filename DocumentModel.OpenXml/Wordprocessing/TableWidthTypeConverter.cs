@@ -15,7 +15,9 @@ public static class TableWidthTypeConverter
   
   private static bool CmpWidth(DXW.TableWidthType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXW.TableWidthType openXmlElement, String? value)

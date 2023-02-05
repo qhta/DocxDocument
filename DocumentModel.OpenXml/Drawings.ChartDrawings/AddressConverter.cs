@@ -15,7 +15,9 @@ public static class AddressConverter
   
   private static bool CmpAddress1(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Address1?.Value == value;
+    if (openXmlElement?.Address1?.Value == value) return true;
+    diffs?.Add(objName, "Address1", openXmlElement?.Address1?.Value, value);
+    return false;
   }
   
   private static void SetAddress1(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class AddressConverter
   
   private static bool CmpCountryRegion(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CountryRegion?.Value == value;
+    if (openXmlElement?.CountryRegion?.Value == value) return true;
+    diffs?.Add(objName, "CountryRegion", openXmlElement?.CountryRegion?.Value, value);
+    return false;
   }
   
   private static void SetCountryRegion(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class AddressConverter
   
   private static bool CmpAdminDistrict1(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AdminDistrict1?.Value == value;
+    if (openXmlElement?.AdminDistrict1?.Value == value) return true;
+    diffs?.Add(objName, "AdminDistrict1", openXmlElement?.AdminDistrict1?.Value, value);
+    return false;
   }
   
   private static void SetAdminDistrict1(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class AddressConverter
   
   private static bool CmpAdminDistrict2(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AdminDistrict2?.Value == value;
+    if (openXmlElement?.AdminDistrict2?.Value == value) return true;
+    diffs?.Add(objName, "AdminDistrict2", openXmlElement?.AdminDistrict2?.Value, value);
+    return false;
   }
   
   private static void SetAdminDistrict2(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class AddressConverter
   
   private static bool CmpPostalCode(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PostalCode?.Value == value;
+    if (openXmlElement?.PostalCode?.Value == value) return true;
+    diffs?.Add(objName, "PostalCode", openXmlElement?.PostalCode?.Value, value);
+    return false;
   }
   
   private static void SetPostalCode(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class AddressConverter
   
   private static bool CmpLocality(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Locality?.Value == value;
+    if (openXmlElement?.Locality?.Value == value) return true;
+    diffs?.Add(objName, "Locality", openXmlElement?.Locality?.Value, value);
+    return false;
   }
   
   private static void SetLocality(DXO2016DrawChartDraw.Address openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class AddressConverter
   
   private static bool CmpIsoCountryCode(DXO2016DrawChartDraw.Address openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsoCountryCode?.Value == value;
+    if (openXmlElement?.IsoCountryCode?.Value == value) return true;
+    diffs?.Add(objName, "IsoCountryCode", openXmlElement?.IsoCountryCode?.Value, value);
+    return false;
   }
   
   private static void SetIsoCountryCode(DXO2016DrawChartDraw.Address openXmlElement, String? value)

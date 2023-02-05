@@ -66,7 +66,10 @@ public static class DataLabelsConverter
   
   private static bool CmpDelete(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -183,7 +186,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowLegendKey(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowLegendKey", val, value);
+    return false;
   }
   
   private static void SetShowLegendKey(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -208,7 +214,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowValue(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowValue", val, value);
+    return false;
   }
   
   private static void SetShowValue(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -233,7 +242,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowCategoryName(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowCategoryName", val, value);
+    return false;
   }
   
   private static void SetShowCategoryName(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -258,7 +270,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowSeriesName(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowSeriesName", val, value);
+    return false;
   }
   
   private static void SetShowSeriesName(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -283,7 +298,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowPercent(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowPercent", val, value);
+    return false;
   }
   
   private static void SetShowPercent(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -308,7 +326,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowBubbleSize(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowBubbleSize", val, value);
+    return false;
   }
   
   private static void SetShowBubbleSize(DXDrawCharts.DataLabels openXmlElement, Boolean? value)
@@ -355,7 +376,10 @@ public static class DataLabelsConverter
   
   private static bool CmpShowLeaderLines(DXDrawCharts.DataLabels openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLeaderLines>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowLeaderLines>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowLeaderLines", val, value);
+    return false;
   }
   
   private static void SetShowLeaderLines(DXDrawCharts.DataLabels openXmlElement, Boolean? value)

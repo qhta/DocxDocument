@@ -15,7 +15,9 @@ public static class WriteProtectionConverter
   
   private static bool CmpRecommended(DXW.WriteProtection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Recommended?.Value == value;
+    if (openXmlElement?.Recommended?.Value == value) return true;
+    diffs?.Add(objName, "Recommended", openXmlElement?.Recommended?.Value, value);
+    return false;
   }
   
   private static void SetRecommended(DXW.WriteProtection openXmlElement, Boolean? value)
@@ -130,7 +132,9 @@ public static class WriteProtectionConverter
   
   private static bool CmpCryptographicProvider(DXW.WriteProtection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CryptographicProvider?.Value == value;
+    if (openXmlElement?.CryptographicProvider?.Value == value) return true;
+    diffs?.Add(objName, "CryptographicProvider", openXmlElement?.CryptographicProvider?.Value, value);
+    return false;
   }
   
   private static void SetCryptographicProvider(DXW.WriteProtection openXmlElement, String? value)
@@ -179,7 +183,9 @@ public static class WriteProtectionConverter
   
   private static bool CmpAlgorithmIdExtensibilitySource(DXW.WriteProtection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlgorithmIdExtensibilitySource?.Value == value;
+    if (openXmlElement?.AlgorithmIdExtensibilitySource?.Value == value) return true;
+    diffs?.Add(objName, "AlgorithmIdExtensibilitySource", openXmlElement?.AlgorithmIdExtensibilitySource?.Value, value);
+    return false;
   }
   
   private static void SetAlgorithmIdExtensibilitySource(DXW.WriteProtection openXmlElement, String? value)
@@ -228,7 +234,9 @@ public static class WriteProtectionConverter
   
   private static bool CmpCryptographicProviderTypeExtSource(DXW.WriteProtection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CryptographicProviderTypeExtSource?.Value == value;
+    if (openXmlElement?.CryptographicProviderTypeExtSource?.Value == value) return true;
+    diffs?.Add(objName, "CryptographicProviderTypeExtSource", openXmlElement?.CryptographicProviderTypeExtSource?.Value, value);
+    return false;
   }
   
   private static void SetCryptographicProviderTypeExtSource(DXW.WriteProtection openXmlElement, String? value)
@@ -305,7 +313,9 @@ public static class WriteProtectionConverter
   
   private static bool CmpAlgorithmName(DXW.WriteProtection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlgorithmName?.Value == value;
+    if (openXmlElement?.AlgorithmName?.Value == value) return true;
+    diffs?.Add(objName, "AlgorithmName", openXmlElement?.AlgorithmName?.Value, value);
+    return false;
   }
   
   private static void SetAlgorithmName(DXW.WriteProtection openXmlElement, String? value)

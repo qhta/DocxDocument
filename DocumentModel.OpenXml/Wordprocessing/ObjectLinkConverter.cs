@@ -33,7 +33,9 @@ public static class ObjectLinkConverter
   
   private static bool CmpLockedField(DXW.ObjectLink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LockedField?.Value == value;
+    if (openXmlElement?.LockedField?.Value == value) return true;
+    diffs?.Add(objName, "LockedField", openXmlElement?.LockedField?.Value, value);
+    return false;
   }
   
   private static void SetLockedField(DXW.ObjectLink openXmlElement, Boolean? value)
@@ -72,7 +74,9 @@ public static class ObjectLinkConverter
   
   private static bool CmpId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.ObjectLink openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class ObjectLinkConverter
   
   private static bool CmpProgId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ProgId?.Value == value;
+    if (openXmlElement?.ProgId?.Value == value) return true;
+    diffs?.Add(objName, "ProgId", openXmlElement?.ProgId?.Value, value);
+    return false;
   }
   
   private static void SetProgId(DXW.ObjectLink openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class ObjectLinkConverter
   
   private static bool CmpShapeId(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXW.ObjectLink openXmlElement, String? value)
@@ -135,7 +143,9 @@ public static class ObjectLinkConverter
   
   private static bool CmpFieldCodes(DXW.ObjectLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FieldCodes?.Value == value;
+    if (openXmlElement?.FieldCodes?.Value == value) return true;
+    diffs?.Add(objName, "FieldCodes", openXmlElement?.FieldCodes?.Value, value);
+    return false;
   }
   
   private static void SetFieldCodes(DXW.ObjectLink openXmlElement, String? value)

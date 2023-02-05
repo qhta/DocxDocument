@@ -15,7 +15,9 @@ public static class MarkupType2Converter
   
   private static bool CmpId(DXO2010W.MarkupType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010W.MarkupType openXmlElement, String? value)

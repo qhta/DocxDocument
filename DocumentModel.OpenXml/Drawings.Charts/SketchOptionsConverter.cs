@@ -15,7 +15,10 @@ public static class SketchOptionsConverter
   
   private static bool CmpInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010DrawCharts.InSketchMode>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010DrawCharts.InSketchMode", val, value);
+    return false;
   }
   
   private static void SetInSketchMode(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class SketchOptionsConverter
   
   private static bool CmpShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010DrawCharts.ShowSketchButton>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010DrawCharts.ShowSketchButton", val, value);
+    return false;
   }
   
   private static void SetShowSketchButton(DXO2010DrawCharts.SketchOptions openXmlElement, Boolean? value)

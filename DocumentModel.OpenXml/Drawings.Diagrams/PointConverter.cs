@@ -15,7 +15,9 @@ public static class PointConverter
   
   private static bool CmpModelId(DXDrawDgms.Point openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ModelId?.Value == value;
+    if (openXmlElement?.ModelId?.Value == value) return true;
+    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
+    return false;
   }
   
   private static void SetModelId(DXDrawDgms.Point openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class PointConverter
   
   private static bool CmpConnectionId(DXDrawDgms.Point openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ConnectionId?.Value == value;
+    if (openXmlElement?.ConnectionId?.Value == value) return true;
+    diffs?.Add(objName, "ConnectionId", openXmlElement?.ConnectionId?.Value, value);
+    return false;
   }
   
   private static void SetConnectionId(DXDrawDgms.Point openXmlElement, String? value)

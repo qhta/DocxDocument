@@ -15,7 +15,9 @@ public static class BuildChartConverter
   
   private static bool CmpBuild(DXDraw.BuildChart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Build?.Value == value;
+    if (openXmlElement?.Build?.Value == value) return true;
+    diffs?.Add(objName, "Build", openXmlElement?.Build?.Value, value);
+    return false;
   }
   
   private static void SetBuild(DXDraw.BuildChart openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BuildChartConverter
   
   private static bool CmpAnimateBackground(DXDraw.BuildChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AnimateBackground?.Value == value;
+    if (openXmlElement?.AnimateBackground?.Value == value) return true;
+    diffs?.Add(objName, "AnimateBackground", openXmlElement?.AnimateBackground?.Value, value);
+    return false;
   }
   
   private static void SetAnimateBackground(DXDraw.BuildChart openXmlElement, Boolean? value)

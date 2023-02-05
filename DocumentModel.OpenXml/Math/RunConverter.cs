@@ -179,7 +179,10 @@ public static class RunConverter
   
   private static bool CmpNoBreakHyphen(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoBreakHyphen>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoBreakHyphen>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoBreakHyphen", val, value);
+    return false;
   }
   
   private static void SetNoBreakHyphen(DXMath.Run openXmlElement, Boolean? value)
@@ -204,7 +207,10 @@ public static class RunConverter
   
   private static bool CmpSoftHyphen(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SoftHyphen>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.SoftHyphen>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SoftHyphen", val, value);
+    return false;
   }
   
   private static void SetSoftHyphen(DXMath.Run openXmlElement, Boolean? value)
@@ -229,7 +235,10 @@ public static class RunConverter
   
   private static bool CmpDayShort(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DayShort>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.DayShort>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DayShort", val, value);
+    return false;
   }
   
   private static void SetDayShort(DXMath.Run openXmlElement, Boolean? value)
@@ -254,7 +263,10 @@ public static class RunConverter
   
   private static bool CmpMonthShort(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MonthShort>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.MonthShort>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MonthShort", val, value);
+    return false;
   }
   
   private static void SetMonthShort(DXMath.Run openXmlElement, Boolean? value)
@@ -279,7 +291,10 @@ public static class RunConverter
   
   private static bool CmpYearShort(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.YearShort>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.YearShort>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.YearShort", val, value);
+    return false;
   }
   
   private static void SetYearShort(DXMath.Run openXmlElement, Boolean? value)
@@ -304,7 +319,10 @@ public static class RunConverter
   
   private static bool CmpDayLong(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DayLong>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.DayLong>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DayLong", val, value);
+    return false;
   }
   
   private static void SetDayLong(DXMath.Run openXmlElement, Boolean? value)
@@ -329,7 +347,10 @@ public static class RunConverter
   
   private static bool CmpMonthLong(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MonthLong>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.MonthLong>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MonthLong", val, value);
+    return false;
   }
   
   private static void SetMonthLong(DXMath.Run openXmlElement, Boolean? value)
@@ -354,7 +375,10 @@ public static class RunConverter
   
   private static bool CmpYearLong(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.YearLong>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.YearLong>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.YearLong", val, value);
+    return false;
   }
   
   private static void SetYearLong(DXMath.Run openXmlElement, Boolean? value)
@@ -379,7 +403,10 @@ public static class RunConverter
   
   private static bool CmpAnnotationReferenceMark(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AnnotationReferenceMark>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.AnnotationReferenceMark>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AnnotationReferenceMark", val, value);
+    return false;
   }
   
   private static void SetAnnotationReferenceMark(DXMath.Run openXmlElement, Boolean? value)
@@ -404,7 +431,10 @@ public static class RunConverter
   
   private static bool CmpFootnoteReferenceMark(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FootnoteReferenceMark>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.FootnoteReferenceMark>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.FootnoteReferenceMark", val, value);
+    return false;
   }
   
   private static void SetFootnoteReferenceMark(DXMath.Run openXmlElement, Boolean? value)
@@ -429,7 +459,10 @@ public static class RunConverter
   
   private static bool CmpEndnoteReferenceMark(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.EndnoteReferenceMark>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.EndnoteReferenceMark>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.EndnoteReferenceMark", val, value);
+    return false;
   }
   
   private static void SetEndnoteReferenceMark(DXMath.Run openXmlElement, Boolean? value)
@@ -454,7 +487,10 @@ public static class RunConverter
   
   private static bool CmpSeparatorMark(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SeparatorMark>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.SeparatorMark>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SeparatorMark", val, value);
+    return false;
   }
   
   private static void SetSeparatorMark(DXMath.Run openXmlElement, Boolean? value)
@@ -479,7 +515,10 @@ public static class RunConverter
   
   private static bool CmpContinuationSeparatorMark(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ContinuationSeparatorMark>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.ContinuationSeparatorMark>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ContinuationSeparatorMark", val, value);
+    return false;
   }
   
   private static void SetContinuationSeparatorMark(DXMath.Run openXmlElement, Boolean? value)
@@ -527,7 +566,10 @@ public static class RunConverter
   
   private static bool CmpPageNumber(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.PageNumber>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.PageNumber>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.PageNumber", val, value);
+    return false;
   }
   
   private static void SetPageNumber(DXMath.Run openXmlElement, Boolean? value)
@@ -552,7 +594,10 @@ public static class RunConverter
   
   private static bool CmpCarriageReturn(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.CarriageReturn>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.CarriageReturn>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.CarriageReturn", val, value);
+    return false;
   }
   
   private static void SetCarriageReturn(DXMath.Run openXmlElement, Boolean? value)
@@ -577,7 +622,10 @@ public static class RunConverter
   
   private static bool CmpTabChar(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.TabChar>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.TabChar>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.TabChar", val, value);
+    return false;
   }
   
   private static void SetTabChar(DXMath.Run openXmlElement, Boolean? value)
@@ -809,7 +857,10 @@ public static class RunConverter
   
   private static bool CmpLastRenderedPageBreak(DXMath.Run openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.LastRenderedPageBreak>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXW.LastRenderedPageBreak>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.LastRenderedPageBreak", val, value);
+    return false;
   }
   
   private static void SetLastRenderedPageBreak(DXMath.Run openXmlElement, Boolean? value)

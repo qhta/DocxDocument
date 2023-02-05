@@ -15,7 +15,10 @@ public static class ProtectionConverter
   
   private static bool CmpChartObject(DXDrawCharts.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ChartObject>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ChartObject>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ChartObject", val, value);
+    return false;
   }
   
   private static void SetChartObject(DXDrawCharts.Protection openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class ProtectionConverter
   
   private static bool CmpData(DXDrawCharts.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Data>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Data>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Data", val, value);
+    return false;
   }
   
   private static void SetData(DXDrawCharts.Protection openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class ProtectionConverter
   
   private static bool CmpFormatting(DXDrawCharts.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Formatting>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Formatting>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Formatting", val, value);
+    return false;
   }
   
   private static void SetFormatting(DXDrawCharts.Protection openXmlElement, Boolean? value)
@@ -99,7 +108,10 @@ public static class ProtectionConverter
   
   private static bool CmpSelection(DXDrawCharts.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Selection>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Selection>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Selection", val, value);
+    return false;
   }
   
   private static void SetSelection(DXDrawCharts.Protection openXmlElement, Boolean? value)
@@ -127,7 +139,10 @@ public static class ProtectionConverter
   
   private static bool CmpUserInterface(DXDrawCharts.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.UserInterface>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.UserInterface>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.UserInterface", val, value);
+    return false;
   }
   
   private static void SetUserInterface(DXDrawCharts.Protection openXmlElement, Boolean? value)

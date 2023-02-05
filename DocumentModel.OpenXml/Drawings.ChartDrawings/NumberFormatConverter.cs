@@ -15,7 +15,9 @@ public static class NumberFormatConverter
   
   private static bool CmpFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FormatCode?.Value == value;
+    if (openXmlElement?.FormatCode?.Value == value) return true;
+    diffs?.Add(objName, "FormatCode", openXmlElement?.FormatCode?.Value, value);
+    return false;
   }
   
   private static void SetFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class NumberFormatConverter
   
   private static bool CmpSourceLinked(DXO2016DrawChartDraw.NumberFormat openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SourceLinked?.Value == value;
+    if (openXmlElement?.SourceLinked?.Value == value) return true;
+    diffs?.Add(objName, "SourceLinked", openXmlElement?.SourceLinked?.Value, value);
+    return false;
   }
   
   private static void SetSourceLinked(DXO2016DrawChartDraw.NumberFormat openXmlElement, Boolean? value)

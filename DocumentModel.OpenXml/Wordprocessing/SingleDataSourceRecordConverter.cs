@@ -15,7 +15,10 @@ public static class SingleDataSourceRecordConverter
   
   private static bool CmpRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXOW.RecordIncluded", val, value);
+    return false;
   }
   
   private static void SetRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value)

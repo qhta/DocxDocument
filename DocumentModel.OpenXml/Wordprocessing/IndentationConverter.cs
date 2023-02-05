@@ -15,7 +15,9 @@ public static class IndentationConverter
   
   private static bool CmpLeft(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Left?.Value == value;
+    if (openXmlElement?.Left?.Value == value) return true;
+    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
+    return false;
   }
   
   private static void SetLeft(DXW.Indentation openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class IndentationConverter
   
   private static bool CmpStart(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Start?.Value == value;
+    if (openXmlElement?.Start?.Value == value) return true;
+    diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
+    return false;
   }
   
   private static void SetStart(DXW.Indentation openXmlElement, String? value)
@@ -97,7 +101,9 @@ public static class IndentationConverter
   
   private static bool CmpRight(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Right?.Value == value;
+    if (openXmlElement?.Right?.Value == value) return true;
+    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
+    return false;
   }
   
   private static void SetRight(DXW.Indentation openXmlElement, String? value)
@@ -118,7 +124,9 @@ public static class IndentationConverter
   
   private static bool CmpEnd(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.End?.Value == value;
+    if (openXmlElement?.End?.Value == value) return true;
+    diffs?.Add(objName, "End", openXmlElement?.End?.Value, value);
+    return false;
   }
   
   private static void SetEnd(DXW.Indentation openXmlElement, String? value)
@@ -179,7 +187,9 @@ public static class IndentationConverter
   
   private static bool CmpHanging(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hanging?.Value == value;
+    if (openXmlElement?.Hanging?.Value == value) return true;
+    diffs?.Add(objName, "Hanging", openXmlElement?.Hanging?.Value, value);
+    return false;
   }
   
   private static void SetHanging(DXW.Indentation openXmlElement, String? value)
@@ -220,7 +230,9 @@ public static class IndentationConverter
   
   private static bool CmpFirstLine(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FirstLine?.Value == value;
+    if (openXmlElement?.FirstLine?.Value == value) return true;
+    diffs?.Add(objName, "FirstLine", openXmlElement?.FirstLine?.Value, value);
+    return false;
   }
   
   private static void SetFirstLine(DXW.Indentation openXmlElement, String? value)

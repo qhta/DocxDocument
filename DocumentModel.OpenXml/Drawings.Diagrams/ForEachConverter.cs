@@ -15,7 +15,9 @@ public static class ForEachConverter
   
   private static bool CmpName(DXDrawDgms.ForEach openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDrawDgms.ForEach openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ForEachConverter
   
   private static bool CmpReference(DXDrawDgms.ForEach openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Reference?.Value == value;
+    if (openXmlElement?.Reference?.Value == value) return true;
+    diffs?.Add(objName, "Reference", openXmlElement?.Reference?.Value, value);
+    return false;
   }
   
   private static void SetReference(DXDrawDgms.ForEach openXmlElement, String? value)

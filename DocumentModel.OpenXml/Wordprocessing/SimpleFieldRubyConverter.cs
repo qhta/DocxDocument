@@ -15,7 +15,9 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpInstruction(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Instruction?.Value == value;
+    if (openXmlElement?.Instruction?.Value == value) return true;
+    diffs?.Add(objName, "Instruction", openXmlElement?.Instruction?.Value, value);
+    return false;
   }
   
   private static void SetInstruction(DXW.SimpleFieldRuby openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FieldLock?.Value == value;
+    if (openXmlElement?.FieldLock?.Value == value) return true;
+    diffs?.Add(objName, "FieldLock", openXmlElement?.FieldLock?.Value, value);
+    return false;
   }
   
   private static void SetFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Dirty?.Value == value;
+    if (openXmlElement?.Dirty?.Value == value) return true;
+    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
+    return false;
   }
   
   private static void SetDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class ThemeFamilyConverter
   
   private static bool CmpName(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXO2013Theme.ThemeFamily openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ThemeFamilyConverter
   
   private static bool CmpId(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013Theme.ThemeFamily openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ThemeFamilyConverter
   
   private static bool CmpVid(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Vid?.Value == value;
+    if (openXmlElement?.Vid?.Value == value) return true;
+    diffs?.Add(objName, "Vid", openXmlElement?.Vid?.Value, value);
+    return false;
   }
   
   private static void SetVid(DXO2013Theme.ThemeFamily openXmlElement, String? value)

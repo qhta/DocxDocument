@@ -15,7 +15,9 @@ public static class DataLabelVisibilitiesConverter
   
   private static bool CmpSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SeriesName?.Value == value;
+    if (openXmlElement?.SeriesName?.Value == value) return true;
+    diffs?.Add(objName, "SeriesName", openXmlElement?.SeriesName?.Value, value);
+    return false;
   }
   
   private static void SetSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class DataLabelVisibilitiesConverter
   
   private static bool CmpCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CategoryName?.Value == value;
+    if (openXmlElement?.CategoryName?.Value == value) return true;
+    diffs?.Add(objName, "CategoryName", openXmlElement?.CategoryName?.Value, value);
+    return false;
   }
   
   private static void SetCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class DataLabelVisibilitiesConverter
   
   private static bool CmpValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)

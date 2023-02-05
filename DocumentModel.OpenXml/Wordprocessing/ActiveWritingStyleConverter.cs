@@ -15,7 +15,9 @@ public static class ActiveWritingStyleConverter
   
   private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Language?.Value == value;
+    if (openXmlElement?.Language?.Value == value) return true;
+    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
+    return false;
   }
   
   private static void SetLanguage(DXW.ActiveWritingStyle openXmlElement, String? value)
@@ -76,7 +78,9 @@ public static class ActiveWritingStyleConverter
   
   private static bool CmpNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NaturalLanguageGrammarCheck?.Value == value;
+    if (openXmlElement?.NaturalLanguageGrammarCheck?.Value == value) return true;
+    diffs?.Add(objName, "NaturalLanguageGrammarCheck", openXmlElement?.NaturalLanguageGrammarCheck?.Value, value);
+    return false;
   }
   
   private static void SetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
@@ -97,7 +101,9 @@ public static class ActiveWritingStyleConverter
   
   private static bool CmpCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CheckStyle?.Value == value;
+    if (openXmlElement?.CheckStyle?.Value == value) return true;
+    diffs?.Add(objName, "CheckStyle", openXmlElement?.CheckStyle?.Value, value);
+    return false;
   }
   
   private static void SetCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
@@ -118,7 +124,9 @@ public static class ActiveWritingStyleConverter
   
   private static bool CmpApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ApplicationName?.Value == value;
+    if (openXmlElement?.ApplicationName?.Value == value) return true;
+    diffs?.Add(objName, "ApplicationName", openXmlElement?.ApplicationName?.Value, value);
+    return false;
   }
   
   private static void SetApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value)

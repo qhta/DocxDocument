@@ -15,7 +15,10 @@ public static class BubbleChartConverter
   
   private static bool CmpVaryColors(DXDrawCharts.BubbleChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    return false;
   }
   
   private static void SetVaryColors(DXDrawCharts.BubbleChart openXmlElement, Boolean? value)
@@ -117,7 +120,10 @@ public static class BubbleChartConverter
   
   private static bool CmpBubble3D(DXDrawCharts.BubbleChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Bubble3D", val, value);
+    return false;
   }
   
   private static void SetBubble3D(DXDrawCharts.BubbleChart openXmlElement, Boolean? value)
@@ -167,7 +173,10 @@ public static class BubbleChartConverter
   
   private static bool CmpShowNegativeBubbles(DXDrawCharts.BubbleChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowNegativeBubbles>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowNegativeBubbles>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowNegativeBubbles", val, value);
+    return false;
   }
   
   private static void SetShowNegativeBubbles(DXDrawCharts.BubbleChart openXmlElement, Boolean? value)

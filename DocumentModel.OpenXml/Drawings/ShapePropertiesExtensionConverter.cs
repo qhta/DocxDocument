@@ -15,7 +15,9 @@ public static class ShapePropertiesExtensionConverter
   
   private static bool CmpUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value)
@@ -148,7 +150,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static bool CmpShadowObscured(DXDraw.ShapePropertiesExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010Draw.ShadowObscured>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010Draw.ShadowObscured>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010Draw.ShadowObscured", val, value);
+    return false;
   }
   
   private static void SetShadowObscured(DXDraw.ShapePropertiesExtension openXmlElement, Boolean? value)

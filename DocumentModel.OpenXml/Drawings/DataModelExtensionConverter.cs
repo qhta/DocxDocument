@@ -15,7 +15,9 @@ public static class DataModelExtensionConverter
   
   private static bool CmpUri(DXDraw.DataModelExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDraw.DataModelExtension openXmlElement, String? value)
@@ -56,7 +58,10 @@ public static class DataModelExtensionConverter
   
   private static bool CmpRecolorImages(DXDraw.DataModelExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010DrawDgm.RecolorImages>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010DrawDgm.RecolorImages>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010DrawDgm.RecolorImages", val, value);
+    return false;
   }
   
   private static void SetRecolorImages(DXDraw.DataModelExtension openXmlElement, Boolean? value)

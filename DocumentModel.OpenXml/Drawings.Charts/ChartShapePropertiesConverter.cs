@@ -102,7 +102,10 @@ public static class ChartShapePropertiesConverter
   
   private static bool CmpNoFill(DXDrawCharts.ChartShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXDrawCharts.ChartShapeProperties openXmlElement, Boolean? value)

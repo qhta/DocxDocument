@@ -15,7 +15,9 @@ public static class RepurposedCommandConverter
   
   private static bool CmpOnAction(DXOCustUI.RepurposedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnAction?.Value == value;
+    if (openXmlElement?.OnAction?.Value == value) return true;
+    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
+    return false;
   }
   
   private static void SetOnAction(DXOCustUI.RepurposedCommand openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class RepurposedCommandConverter
   
   private static bool CmpEnabled(DXOCustUI.RepurposedCommand openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.RepurposedCommand openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class RepurposedCommandConverter
   
   private static bool CmpGetEnabled(DXOCustUI.RepurposedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.RepurposedCommand openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class RepurposedCommandConverter
   
   private static bool CmpIdMso(DXOCustUI.RepurposedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.RepurposedCommand openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class PresenceInfoConverter
   
   private static bool CmpProviderId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ProviderId?.Value == value;
+    if (openXmlElement?.ProviderId?.Value == value) return true;
+    diffs?.Add(objName, "ProviderId", openXmlElement?.ProviderId?.Value, value);
+    return false;
   }
   
   private static void SetProviderId(DXO2013W.PresenceInfo openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class PresenceInfoConverter
   
   private static bool CmpUserId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserId?.Value == value;
+    if (openXmlElement?.UserId?.Value == value) return true;
+    diffs?.Add(objName, "UserId", openXmlElement?.UserId?.Value, value);
+    return false;
   }
   
   private static void SetUserId(DXO2013W.PresenceInfo openXmlElement, String? value)
