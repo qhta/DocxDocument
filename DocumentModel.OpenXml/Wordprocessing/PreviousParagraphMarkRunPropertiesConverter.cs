@@ -207,7 +207,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpBold(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Bold", val, value);
+    return false;
   }
   
   private static void SetBold(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -232,7 +235,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpBoldComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.BoldComplexScript", val, value);
+    return false;
   }
   
   private static void SetBoldComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -257,7 +263,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpItalic(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Italic", val, value);
+    return false;
   }
   
   private static void SetItalic(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -282,7 +291,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpItalicComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ItalicComplexScript", val, value);
+    return false;
   }
   
   private static void SetItalicComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -307,7 +319,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpCaps(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Caps", val, value);
+    return false;
   }
   
   private static void SetCaps(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -332,7 +347,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpSmallCaps(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SmallCaps", val, value);
+    return false;
   }
   
   private static void SetSmallCaps(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -357,7 +375,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpStrike(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Strike", val, value);
+    return false;
   }
   
   private static void SetStrike(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -382,7 +403,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpDoubleStrike(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoubleStrike", val, value);
+    return false;
   }
   
   private static void SetDoubleStrike(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -407,7 +431,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpOutline(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Outline", val, value);
+    return false;
   }
   
   private static void SetOutline(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -432,7 +459,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpShadow(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Shadow", val, value);
+    return false;
   }
   
   private static void SetShadow(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -457,7 +487,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpEmboss(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Emboss", val, value);
+    return false;
   }
   
   private static void SetEmboss(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -482,7 +515,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpImprint(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Imprint", val, value);
+    return false;
   }
   
   private static void SetImprint(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -507,7 +543,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpNoProof(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoProof", val, value);
+    return false;
   }
   
   private static void SetNoProof(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -532,7 +571,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpSnapToGrid(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SnapToGrid", val, value);
+    return false;
   }
   
   private static void SetSnapToGrid(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -557,7 +599,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpVanish(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Vanish", val, value);
+    return false;
   }
   
   private static void SetVanish(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -582,7 +627,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpWebHidden(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WebHidden", val, value);
+    return false;
   }
   
   private static void SetWebHidden(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -932,7 +980,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpRightToLeftText(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.RightToLeftText", val, value);
+    return false;
   }
   
   private static void SetRightToLeftText(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -957,7 +1008,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ComplexScript", val, value);
+    return false;
   }
   
   private static void SetComplexScript(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -1051,7 +1105,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpSpecVanish(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SpecVanish", val, value);
+    return false;
   }
   
   private static void SetSpecVanish(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)
@@ -1329,7 +1386,10 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpOfficeMath(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.OfficeMath>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.OfficeMath>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.OfficeMath", val, value);
+    return false;
   }
   
   private static void SetOfficeMath(DXW.PreviousParagraphMarkRunProperties openXmlElement, Boolean? value)

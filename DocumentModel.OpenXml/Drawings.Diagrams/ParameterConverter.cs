@@ -33,7 +33,9 @@ public static class ParameterConverter
   
   private static bool CmpVal(DXDrawDgms.Parameter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXDrawDgms.Parameter openXmlElement, String? value)

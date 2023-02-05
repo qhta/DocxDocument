@@ -15,7 +15,9 @@ public static class FormulaConverter
   
   private static bool CmpEquation(DXVml.Formula openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Equation?.Value == value;
+    if (openXmlElement?.Equation?.Value == value) return true;
+    diffs?.Add(objName, "Equation", openXmlElement?.Equation?.Value, value);
+    return false;
   }
   
   private static void SetEquation(DXVml.Formula openXmlElement, String? value)

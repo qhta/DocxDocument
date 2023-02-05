@@ -15,7 +15,9 @@ public static class WebExtensionStoreReferenceConverter
   
   private static bool CmpId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class WebExtensionStoreReferenceConverter
   
   private static bool CmpVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Version?.Value == value;
+    if (openXmlElement?.Version?.Value == value) return true;
+    diffs?.Add(objName, "Version", openXmlElement?.Version?.Value, value);
+    return false;
   }
   
   private static void SetVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class WebExtensionStoreReferenceConverter
   
   private static bool CmpStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Store?.Value == value;
+    if (openXmlElement?.Store?.Value == value) return true;
+    diffs?.Add(objName, "Store", openXmlElement?.Store?.Value, value);
+    return false;
   }
   
   private static void SetStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class WebExtensionStoreReferenceConverter
   
   private static bool CmpStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StoreType?.Value == value;
+    if (openXmlElement?.StoreType?.Value == value) return true;
+    diffs?.Add(objName, "StoreType", openXmlElement?.StoreType?.Value, value);
+    return false;
   }
   
   private static void SetStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)

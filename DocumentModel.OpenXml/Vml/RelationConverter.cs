@@ -33,7 +33,9 @@ public static class RelationConverter
   
   private static bool CmpSourceId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SourceId?.Value == value;
+    if (openXmlElement?.SourceId?.Value == value) return true;
+    diffs?.Add(objName, "SourceId", openXmlElement?.SourceId?.Value, value);
+    return false;
   }
   
   private static void SetSourceId(DXVmlO.Relation openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class RelationConverter
   
   private static bool CmpDestinationId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DestinationId?.Value == value;
+    if (openXmlElement?.DestinationId?.Value == value) return true;
+    diffs?.Add(objName, "DestinationId", openXmlElement?.DestinationId?.Value, value);
+    return false;
   }
   
   private static void SetDestinationId(DXVmlO.Relation openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class RelationConverter
   
   private static bool CmpCenterShapeId(DXVmlO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CenterShapeId?.Value == value;
+    if (openXmlElement?.CenterShapeId?.Value == value) return true;
+    diffs?.Add(objName, "CenterShapeId", openXmlElement?.CenterShapeId?.Value, value);
+    return false;
   }
   
   private static void SetCenterShapeId(DXVmlO.Relation openXmlElement, String? value)

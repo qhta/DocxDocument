@@ -15,7 +15,9 @@ public static class ColumnsConverter
   
   private static bool CmpEqualWidth(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EqualWidth?.Value == value;
+    if (openXmlElement?.EqualWidth?.Value == value) return true;
+    diffs?.Add(objName, "EqualWidth", openXmlElement?.EqualWidth?.Value, value);
+    return false;
   }
   
   private static void SetEqualWidth(DXW.Columns openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class ColumnsConverter
   
   private static bool CmpSpace(DXW.Columns openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Space?.Value == value;
+    if (openXmlElement?.Space?.Value == value) return true;
+    diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
+    return false;
   }
   
   private static void SetSpace(DXW.Columns openXmlElement, String? value)
@@ -77,7 +81,9 @@ public static class ColumnsConverter
   
   private static bool CmpSeparator(DXW.Columns openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Separator?.Value == value;
+    if (openXmlElement?.Separator?.Value == value) return true;
+    diffs?.Add(objName, "Separator", openXmlElement?.Separator?.Value, value);
+    return false;
   }
   
   private static void SetSeparator(DXW.Columns openXmlElement, Boolean? value)

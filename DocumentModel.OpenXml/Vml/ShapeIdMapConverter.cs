@@ -33,7 +33,9 @@ public static class ShapeIdMapConverter
   
   private static bool CmpData(DXVmlO.ShapeIdMap openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Data?.Value == value;
+    if (openXmlElement?.Data?.Value == value) return true;
+    diffs?.Add(objName, "Data", openXmlElement?.Data?.Value, value);
+    return false;
   }
   
   private static void SetData(DXVmlO.ShapeIdMap openXmlElement, String? value)

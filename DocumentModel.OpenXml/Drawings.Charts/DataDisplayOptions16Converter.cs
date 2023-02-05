@@ -15,7 +15,10 @@ public static class DataDisplayOptions16Converter
   
   private static bool CmpBooleanFalse(DXDrawCharts.DataDisplayOptions16 openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2019DrawChart.BooleanFalse>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2019DrawChart.BooleanFalse>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2019DrawChart.BooleanFalse", val, value);
+    return false;
   }
   
   private static void SetBooleanFalse(DXDrawCharts.DataDisplayOptions16 openXmlElement, Boolean? value)

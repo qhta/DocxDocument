@@ -15,7 +15,9 @@ public static class Area3DChartExtensionConverter
   
   private static bool CmpUri(DXDrawCharts.Area3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDrawCharts.Area3DChartExtension openXmlElement, String? value)

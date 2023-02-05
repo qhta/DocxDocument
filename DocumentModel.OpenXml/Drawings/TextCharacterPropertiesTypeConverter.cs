@@ -15,7 +15,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSmtClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SmtClean?.Value == value;
+    if (openXmlElement?.SmtClean?.Value == value) return true;
+    diffs?.Add(objName, "SmtClean", openXmlElement?.SmtClean?.Value, value);
+    return false;
   }
   
   private static void SetSmtClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -56,7 +58,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpKumimoji(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Kumimoji?.Value == value;
+    if (openXmlElement?.Kumimoji?.Value == value) return true;
+    diffs?.Add(objName, "Kumimoji", openXmlElement?.Kumimoji?.Value, value);
+    return false;
   }
   
   private static void SetKumimoji(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Language?.Value == value;
+    if (openXmlElement?.Language?.Value == value) return true;
+    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
+    return false;
   }
   
   private static void SetLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)
@@ -98,7 +104,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpAlternativeLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlternativeLanguage?.Value == value;
+    if (openXmlElement?.AlternativeLanguage?.Value == value) return true;
+    diffs?.Add(objName, "AlternativeLanguage", openXmlElement?.AlternativeLanguage?.Value, value);
+    return false;
   }
   
   private static void SetAlternativeLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)
@@ -139,7 +147,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpBold(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bold?.Value == value;
+    if (openXmlElement?.Bold?.Value == value) return true;
+    diffs?.Add(objName, "Bold", openXmlElement?.Bold?.Value, value);
+    return false;
   }
   
   private static void SetBold(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -160,7 +170,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpItalic(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Italic?.Value == value;
+    if (openXmlElement?.Italic?.Value == value) return true;
+    diffs?.Add(objName, "Italic", openXmlElement?.Italic?.Value, value);
+    return false;
   }
   
   private static void SetItalic(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -275,7 +287,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpNormalizeHeight(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NormalizeHeight?.Value == value;
+    if (openXmlElement?.NormalizeHeight?.Value == value) return true;
+    diffs?.Add(objName, "NormalizeHeight", openXmlElement?.NormalizeHeight?.Value, value);
+    return false;
   }
   
   private static void SetNormalizeHeight(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -316,7 +330,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpNoProof(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoProof?.Value == value;
+    if (openXmlElement?.NoProof?.Value == value) return true;
+    diffs?.Add(objName, "NoProof", openXmlElement?.NoProof?.Value, value);
+    return false;
   }
   
   private static void SetNoProof(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -337,7 +353,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpDirty(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Dirty?.Value == value;
+    if (openXmlElement?.Dirty?.Value == value) return true;
+    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
+    return false;
   }
   
   private static void SetDirty(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -358,7 +376,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSpellingError(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SpellingError?.Value == value;
+    if (openXmlElement?.SpellingError?.Value == value) return true;
+    diffs?.Add(objName, "SpellingError", openXmlElement?.SpellingError?.Value, value);
+    return false;
   }
   
   private static void SetSpellingError(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -379,7 +399,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSmartTagClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SmartTagClean?.Value == value;
+    if (openXmlElement?.SmartTagClean?.Value == value) return true;
+    diffs?.Add(objName, "SmartTagClean", openXmlElement?.SmartTagClean?.Value, value);
+    return false;
   }
   
   private static void SetSmartTagClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -420,7 +442,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpBookmark(DXDraw.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bookmark?.Value == value;
+    if (openXmlElement?.Bookmark?.Value == value) return true;
+    diffs?.Add(objName, "Bookmark", openXmlElement?.Bookmark?.Value, value);
+    return false;
   }
   
   private static void SetBookmark(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)

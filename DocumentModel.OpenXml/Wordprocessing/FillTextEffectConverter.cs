@@ -15,7 +15,10 @@ public static class FillTextEffectConverter
   
   private static bool CmpNoFillEmpty(DXO2010W.FillTextEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010W.NoFillEmpty", val, value);
+    return false;
   }
   
   private static void SetNoFillEmpty(DXO2010W.FillTextEffect openXmlElement, Boolean? value)

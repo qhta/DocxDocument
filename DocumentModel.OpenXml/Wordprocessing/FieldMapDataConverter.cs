@@ -150,7 +150,10 @@ public static class FieldMapDataConverter
   
   private static bool CmpDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DynamicAddress>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DynamicAddress>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DynamicAddress", val, value);
+    return false;
   }
   
   private static void SetDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value)

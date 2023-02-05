@@ -15,7 +15,9 @@ public static class FontRelationshipTypeConverter
   
   private static bool CmpFontKey(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FontKey?.Value == value;
+    if (openXmlElement?.FontKey?.Value == value) return true;
+    diffs?.Add(objName, "FontKey", openXmlElement?.FontKey?.Value, value);
+    return false;
   }
   
   private static void SetFontKey(DXW.FontRelationshipType openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class FontRelationshipTypeConverter
   
   private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Subsetted?.Value == value;
+    if (openXmlElement?.Subsetted?.Value == value) return true;
+    diffs?.Add(objName, "Subsetted", openXmlElement?.Subsetted?.Value, value);
+    return false;
   }
   
   private static void SetSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class FontRelationshipTypeConverter
   
   private static bool CmpId(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.FontRelationshipType openXmlElement, String? value)

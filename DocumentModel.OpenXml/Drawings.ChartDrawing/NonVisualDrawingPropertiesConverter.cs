@@ -35,7 +35,9 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpName(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpDescription(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Description?.Value == value;
+    if (openXmlElement?.Description?.Value == value) return true;
+    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
+    return false;
   }
   
   private static void SetDescription(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)
@@ -77,7 +81,9 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpHidden(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hidden?.Value == value;
+    if (openXmlElement?.Hidden?.Value == value) return true;
+    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    return false;
   }
   
   private static void SetHidden(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, Boolean? value)
@@ -98,7 +104,9 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpTitle(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXDrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class CameraToolConverter
   
   private static bool CmpCellRange(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CellRange?.Value == value;
+    if (openXmlElement?.CellRange?.Value == value) return true;
+    diffs?.Add(objName, "CellRange", openXmlElement?.CellRange?.Value, value);
+    return false;
   }
   
   private static void SetCellRange(DXO2010Draw.CameraTool openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class CameraToolConverter
   
   private static bool CmpShapeId(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXO2010Draw.CameraTool openXmlElement, String? value)

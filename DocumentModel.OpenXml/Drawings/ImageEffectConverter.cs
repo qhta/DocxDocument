@@ -15,7 +15,9 @@ public static class ImageEffectConverter
   
   private static bool CmpVisible(DXO2010Draw.ImageEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010Draw.ImageEffect openXmlElement, Boolean? value)

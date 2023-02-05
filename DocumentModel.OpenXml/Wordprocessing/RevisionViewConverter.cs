@@ -15,7 +15,9 @@ public static class RevisionViewConverter
   
   private static bool CmpMarkup(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Markup?.Value == value;
+    if (openXmlElement?.Markup?.Value == value) return true;
+    diffs?.Add(objName, "Markup", openXmlElement?.Markup?.Value, value);
+    return false;
   }
   
   private static void SetMarkup(DXW.RevisionView openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class RevisionViewConverter
   
   private static bool CmpComments(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Comments?.Value == value;
+    if (openXmlElement?.Comments?.Value == value) return true;
+    diffs?.Add(objName, "Comments", openXmlElement?.Comments?.Value, value);
+    return false;
   }
   
   private static void SetComments(DXW.RevisionView openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class RevisionViewConverter
   
   private static bool CmpDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DisplayRevision?.Value == value;
+    if (openXmlElement?.DisplayRevision?.Value == value) return true;
+    diffs?.Add(objName, "DisplayRevision", openXmlElement?.DisplayRevision?.Value, value);
+    return false;
   }
   
   private static void SetDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value)
@@ -78,7 +84,9 @@ public static class RevisionViewConverter
   
   private static bool CmpFormatting(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Formatting?.Value == value;
+    if (openXmlElement?.Formatting?.Value == value) return true;
+    diffs?.Add(objName, "Formatting", openXmlElement?.Formatting?.Value, value);
+    return false;
   }
   
   private static void SetFormatting(DXW.RevisionView openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class RevisionViewConverter
   
   private static bool CmpInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InkAnnotations?.Value == value;
+    if (openXmlElement?.InkAnnotations?.Value == value) return true;
+    diffs?.Add(objName, "InkAnnotations", openXmlElement?.InkAnnotations?.Value, value);
+    return false;
   }
   
   private static void SetInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value)

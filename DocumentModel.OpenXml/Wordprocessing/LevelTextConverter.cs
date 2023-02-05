@@ -15,7 +15,9 @@ public static class LevelTextConverter
   
   private static bool CmpVal(DXW.LevelText openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.LevelText openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LevelTextConverter
   
   private static bool CmpNull(DXW.LevelText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Null?.Value == value;
+    if (openXmlElement?.Null?.Value == value) return true;
+    diffs?.Add(objName, "Null", openXmlElement?.Null?.Value, value);
+    return false;
   }
   
   private static void SetNull(DXW.LevelText openXmlElement, Boolean? value)

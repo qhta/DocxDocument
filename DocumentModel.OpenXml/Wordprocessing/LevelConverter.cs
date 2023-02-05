@@ -63,7 +63,9 @@ public static class LevelConverter
   
   private static bool CmpTentative(DXW.Level openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tentative?.Value == value;
+    if (openXmlElement?.Tentative?.Value == value) return true;
+    diffs?.Add(objName, "Tentative", openXmlElement?.Tentative?.Value, value);
+    return false;
   }
   
   private static void SetTentative(DXW.Level openXmlElement, Boolean? value)
@@ -191,7 +193,10 @@ public static class LevelConverter
   
   private static bool CmpIsLegalNumberingStyle(DXW.Level openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.IsLegalNumberingStyle", val, value);
+    return false;
   }
   
   private static void SetIsLegalNumberingStyle(DXW.Level openXmlElement, Boolean? value)

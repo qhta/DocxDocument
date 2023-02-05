@@ -15,7 +15,9 @@ public static class WebVideoPropertyConverter
   
   private static bool CmpEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EmbeddedHtml?.Value == value;
+    if (openXmlElement?.EmbeddedHtml?.Value == value) return true;
+    diffs?.Add(objName, "EmbeddedHtml", openXmlElement?.EmbeddedHtml?.Value, value);
+    return false;
   }
   
   private static void SetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value)

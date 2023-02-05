@@ -15,7 +15,9 @@ public static class DataStoreItemConverter
   
   private static bool CmpItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ItemId?.Value == value;
+    if (openXmlElement?.ItemId?.Value == value) return true;
+    diffs?.Add(objName, "ItemId", openXmlElement?.ItemId?.Value, value);
+    return false;
   }
   
   private static void SetItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value)

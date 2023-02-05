@@ -35,7 +35,9 @@ public static class BlurConverter
   
   private static bool CmpGrow(DXDraw.Blur openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Grow?.Value == value;
+    if (openXmlElement?.Grow?.Value == value) return true;
+    diffs?.Add(objName, "Grow", openXmlElement?.Grow?.Value, value);
+    return false;
   }
   
   private static void SetGrow(DXDraw.Blur openXmlElement, Boolean? value)

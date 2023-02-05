@@ -33,7 +33,9 @@ public static class ColorMostRecentlyUsedConverter
   
   private static bool CmpColors(DXVmlO.ColorMostRecentlyUsed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Colors?.Value == value;
+    if (openXmlElement?.Colors?.Value == value) return true;
+    diffs?.Add(objName, "Colors", openXmlElement?.Colors?.Value, value);
+    return false;
   }
   
   private static void SetColors(DXVmlO.ColorMostRecentlyUsed openXmlElement, String? value)

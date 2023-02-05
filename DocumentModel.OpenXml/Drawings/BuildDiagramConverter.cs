@@ -15,7 +15,9 @@ public static class BuildDiagramConverter
   
   private static bool CmpBuild(DXDraw.BuildDiagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Build?.Value == value;
+    if (openXmlElement?.Build?.Value == value) return true;
+    diffs?.Add(objName, "Build", openXmlElement?.Build?.Value, value);
+    return false;
   }
   
   private static void SetBuild(DXDraw.BuildDiagram openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BuildDiagramConverter
   
   private static bool CmpReverseAnimation(DXDraw.BuildDiagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ReverseAnimation?.Value == value;
+    if (openXmlElement?.ReverseAnimation?.Value == value) return true;
+    diffs?.Add(objName, "ReverseAnimation", openXmlElement?.ReverseAnimation?.Value, value);
+    return false;
   }
   
   private static void SetReverseAnimation(DXDraw.BuildDiagram openXmlElement, Boolean? value)

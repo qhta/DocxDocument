@@ -33,7 +33,9 @@ public static class StyleConverter
   
   private static bool CmpStyleId(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StyleId?.Value == value;
+    if (openXmlElement?.StyleId?.Value == value) return true;
+    diffs?.Add(objName, "StyleId", openXmlElement?.StyleId?.Value, value);
+    return false;
   }
   
   private static void SetStyleId(DXW.Style openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class StyleConverter
   
   private static bool CmpDefault(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Default?.Value == value;
+    if (openXmlElement?.Default?.Value == value) return true;
+    diffs?.Add(objName, "Default", openXmlElement?.Default?.Value, value);
+    return false;
   }
   
   private static void SetDefault(DXW.Style openXmlElement, Boolean? value)
@@ -75,7 +79,9 @@ public static class StyleConverter
   
   private static bool CmpCustomStyle(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CustomStyle?.Value == value;
+    if (openXmlElement?.CustomStyle?.Value == value) return true;
+    diffs?.Add(objName, "CustomStyle", openXmlElement?.CustomStyle?.Value, value);
+    return false;
   }
   
   private static void SetCustomStyle(DXW.Style openXmlElement, Boolean? value)

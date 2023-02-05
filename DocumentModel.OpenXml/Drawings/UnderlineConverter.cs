@@ -12,7 +12,10 @@ public static class UnderlineConverter
   
   private static bool CmpNoFill(DXDraw.Underline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXDraw.Underline openXmlElement, Boolean? value)
@@ -152,7 +155,10 @@ public static class UnderlineConverter
   
   private static bool CmpRound(DXDraw.Underline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Round>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Round>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Round", val, value);
+    return false;
   }
   
   private static void SetRound(DXDraw.Underline openXmlElement, Boolean? value)
@@ -177,7 +183,10 @@ public static class UnderlineConverter
   
   private static bool CmpLineJoinBevel(DXDraw.Underline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.LineJoinBevel>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.LineJoinBevel>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.LineJoinBevel", val, value);
+    return false;
   }
   
   private static void SetLineJoinBevel(DXDraw.Underline openXmlElement, Boolean? value)

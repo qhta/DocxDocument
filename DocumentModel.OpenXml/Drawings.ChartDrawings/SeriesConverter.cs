@@ -33,7 +33,9 @@ public static class SeriesConverter
   
   private static bool CmpHidden(DXO2016DrawChartDraw.Series openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hidden?.Value == value;
+    if (openXmlElement?.Hidden?.Value == value) return true;
+    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    return false;
   }
   
   private static void SetHidden(DXO2016DrawChartDraw.Series openXmlElement, Boolean? value)
@@ -74,7 +76,9 @@ public static class SeriesConverter
   
   private static bool CmpUniqueId(DXO2016DrawChartDraw.Series openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UniqueId?.Value == value;
+    if (openXmlElement?.UniqueId?.Value == value) return true;
+    diffs?.Add(objName, "UniqueId", openXmlElement?.UniqueId?.Value, value);
+    return false;
   }
   
   private static void SetUniqueId(DXO2016DrawChartDraw.Series openXmlElement, String? value)

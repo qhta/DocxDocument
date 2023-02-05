@@ -15,7 +15,9 @@ public static class SampleDataTypeConverter
   
   private static bool CmpUseDefault(DXDrawDgms.SampleDataType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UseDefault?.Value == value;
+    if (openXmlElement?.UseDefault?.Value == value) return true;
+    diffs?.Add(objName, "UseDefault", openXmlElement?.UseDefault?.Value, value);
+    return false;
   }
   
   private static void SetUseDefault(DXDrawDgms.SampleDataType openXmlElement, Boolean? value)

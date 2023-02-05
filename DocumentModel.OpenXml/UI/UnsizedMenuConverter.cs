@@ -33,7 +33,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpDescription(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Description?.Value == value;
+    if (openXmlElement?.Description?.Value == value) return true;
+    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
+    return false;
   }
   
   private static void SetDescription(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetDescription(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetDescription?.Value == value;
+    if (openXmlElement?.GetDescription?.Value == value) return true;
+    diffs?.Add(objName, "GetDescription", openXmlElement?.GetDescription?.Value, value);
+    return false;
   }
   
   private static void SetGetDescription(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpId(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpIdQ(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -117,7 +125,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpIdMso(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -138,7 +148,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpTag(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -159,7 +171,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpImage(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -180,7 +194,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpImageMso(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -201,7 +217,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetImage(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -222,7 +240,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpScreentip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -243,7 +263,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetScreentip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -264,7 +286,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpSupertip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -285,7 +309,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetSupertip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -306,7 +332,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpEnabled(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value)
@@ -327,7 +355,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetEnabled(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -348,7 +378,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -369,7 +401,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -390,7 +424,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -411,7 +447,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -432,7 +470,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -453,7 +493,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -474,7 +516,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpVisible(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value)
@@ -495,7 +539,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetVisible(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -516,7 +562,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpKeytip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -537,7 +585,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetKeytip(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -558,7 +608,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpShowLabel(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value)
@@ -579,7 +631,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetShowLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXOCustUI.UnsizedMenu openXmlElement, String? value)
@@ -600,7 +654,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpShowImage(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXOCustUI.UnsizedMenu openXmlElement, Boolean? value)
@@ -621,7 +677,9 @@ public static class UnsizedMenuConverter
   
   private static bool CmpGetShowImage(DXOCustUI.UnsizedMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXOCustUI.UnsizedMenu openXmlElement, String? value)

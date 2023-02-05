@@ -15,7 +15,9 @@ public static class ListItemConverter
   
   private static bool CmpDisplayText(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DisplayText?.Value == value;
+    if (openXmlElement?.DisplayText?.Value == value) return true;
+    diffs?.Add(objName, "DisplayText", openXmlElement?.DisplayText?.Value, value);
+    return false;
   }
   
   private static void SetDisplayText(DXW.ListItem openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ListItemConverter
   
   private static bool CmpValue(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXW.ListItem openXmlElement, String? value)

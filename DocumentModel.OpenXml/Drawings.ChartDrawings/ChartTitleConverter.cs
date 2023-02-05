@@ -51,7 +51,9 @@ public static class ChartTitleConverter
   
   private static bool CmpOverlay(DXO2016DrawChartDraw.ChartTitle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Overlay?.Value == value;
+    if (openXmlElement?.Overlay?.Value == value) return true;
+    diffs?.Add(objName, "Overlay", openXmlElement?.Overlay?.Value, value);
+    return false;
   }
   
   private static void SetOverlay(DXO2016DrawChartDraw.ChartTitle openXmlElement, Boolean? value)

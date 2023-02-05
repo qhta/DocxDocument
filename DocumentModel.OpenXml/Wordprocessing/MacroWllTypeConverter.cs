@@ -15,7 +15,9 @@ public static class MacroWllTypeConverter
   
   private static bool CmpMacroName(DXOW.MacroWllType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MacroName?.Value == value;
+    if (openXmlElement?.MacroName?.Value == value) return true;
+    diffs?.Add(objName, "MacroName", openXmlElement?.MacroName?.Value, value);
+    return false;
   }
   
   private static void SetMacroName(DXOW.MacroWllType openXmlElement, String? value)

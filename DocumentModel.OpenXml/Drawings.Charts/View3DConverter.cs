@@ -127,7 +127,10 @@ public static class View3DConverter
   
   private static bool CmpRightAngleAxes(DXDrawCharts.View3D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.RightAngleAxes>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.RightAngleAxes>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.RightAngleAxes", val, value);
+    return false;
   }
   
   private static void SetRightAngleAxes(DXDrawCharts.View3D openXmlElement, Boolean? value)

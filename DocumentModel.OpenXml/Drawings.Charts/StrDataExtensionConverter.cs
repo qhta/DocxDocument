@@ -15,7 +15,9 @@ public static class StrDataExtensionConverter
   
   private static bool CmpUri(DXDrawCharts.StrDataExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDrawCharts.StrDataExtension openXmlElement, String? value)
@@ -33,7 +35,10 @@ public static class StrDataExtensionConverter
   
   private static bool CmpAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013DrawChart.AutoGeneneratedCategories", val, value);
+    return false;
   }
   
   private static void SetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value)

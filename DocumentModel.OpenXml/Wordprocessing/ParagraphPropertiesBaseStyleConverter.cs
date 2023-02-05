@@ -15,7 +15,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpKeepNext(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.KeepNext>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.KeepNext>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.KeepNext", val, value);
+    return false;
   }
   
   private static void SetKeepNext(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpKeepLines(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.KeepLines>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.KeepLines>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.KeepLines", val, value);
+    return false;
   }
   
   private static void SetKeepLines(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpPageBreakBefore(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.PageBreakBefore>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.PageBreakBefore>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.PageBreakBefore", val, value);
+    return false;
   }
   
   private static void SetPageBreakBefore(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -125,7 +134,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpWidowControl(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WidowControl>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WidowControl>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WidowControl", val, value);
+    return false;
   }
   
   private static void SetWidowControl(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -179,7 +191,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpSuppressLineNumbers(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressLineNumbers>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressLineNumbers>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressLineNumbers", val, value);
+    return false;
   }
   
   private static void SetSuppressLineNumbers(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -285,7 +300,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpSuppressAutoHyphens(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressAutoHyphens>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressAutoHyphens>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressAutoHyphens", val, value);
+    return false;
   }
   
   private static void SetSuppressAutoHyphens(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -313,7 +331,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpKinsoku(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Kinsoku>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Kinsoku>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Kinsoku", val, value);
+    return false;
   }
   
   private static void SetKinsoku(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -341,7 +362,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpWordWrap(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WordWrap>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WordWrap>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WordWrap", val, value);
+    return false;
   }
   
   private static void SetWordWrap(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -369,7 +393,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpOverflowPunctuation(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.OverflowPunctuation>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.OverflowPunctuation>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.OverflowPunctuation", val, value);
+    return false;
   }
   
   private static void SetOverflowPunctuation(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -397,7 +424,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpTopLinePunctuation(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.TopLinePunctuation>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.TopLinePunctuation>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.TopLinePunctuation", val, value);
+    return false;
   }
   
   private static void SetTopLinePunctuation(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -425,7 +455,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpAutoSpaceDE(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AutoSpaceDE>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AutoSpaceDE>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AutoSpaceDE", val, value);
+    return false;
   }
   
   private static void SetAutoSpaceDE(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -453,7 +486,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpAutoSpaceDN(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AutoSpaceDN>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AutoSpaceDN>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AutoSpaceDN", val, value);
+    return false;
   }
   
   private static void SetAutoSpaceDN(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -481,7 +517,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpBiDi(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.BiDi", val, value);
+    return false;
   }
   
   private static void SetBiDi(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -509,7 +548,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpAdjustRightIndent(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AdjustRightIndent>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AdjustRightIndent>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AdjustRightIndent", val, value);
+    return false;
   }
   
   private static void SetAdjustRightIndent(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -537,7 +579,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpSnapToGrid(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SnapToGrid", val, value);
+    return false;
   }
   
   private static void SetSnapToGrid(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -617,7 +662,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpContextualSpacing(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ContextualSpacing>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ContextualSpacing>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ContextualSpacing", val, value);
+    return false;
   }
   
   private static void SetContextualSpacing(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -645,7 +693,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpMirrorIndents(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MirrorIndents>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.MirrorIndents>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MirrorIndents", val, value);
+    return false;
   }
   
   private static void SetMirrorIndents(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)
@@ -673,7 +724,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpSuppressOverlap(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressOverlap>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressOverlap>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressOverlap", val, value);
+    return false;
   }
   
   private static void SetSuppressOverlap(DXW.ParagraphPropertiesBaseStyle openXmlElement, Boolean? value)

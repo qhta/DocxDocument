@@ -15,7 +15,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpId(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpTag(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpEnabled(DXO2010CustUI.BackstageEditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.BackstageEditBox openXmlElement, Boolean? value)
@@ -135,7 +143,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -156,7 +166,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpLabel(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -177,7 +189,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -198,7 +212,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpVisible(DXO2010CustUI.BackstageEditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.BackstageEditBox openXmlElement, Boolean? value)
@@ -219,7 +235,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -240,7 +258,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpKeytip(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -261,7 +281,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpGetKeytip(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -282,7 +304,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpGetText(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetText?.Value == value;
+    if (openXmlElement?.GetText?.Value == value) return true;
+    diffs?.Add(objName, "GetText", openXmlElement?.GetText?.Value, value);
+    return false;
   }
   
   private static void SetGetText(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -303,7 +327,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpOnChange(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnChange?.Value == value;
+    if (openXmlElement?.OnChange?.Value == value) return true;
+    diffs?.Add(objName, "OnChange", openXmlElement?.OnChange?.Value, value);
+    return false;
   }
   
   private static void SetOnChange(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)
@@ -344,7 +370,9 @@ public static class BackstageEditBoxConverter
   
   private static bool CmpSizeString(DXO2010CustUI.BackstageEditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SizeString?.Value == value;
+    if (openXmlElement?.SizeString?.Value == value) return true;
+    diffs?.Add(objName, "SizeString", openXmlElement?.SizeString?.Value, value);
+    return false;
   }
   
   private static void SetSizeString(DXO2010CustUI.BackstageEditBox openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class ColumnConverter
   
   private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXW.Column openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ColumnConverter
   
   private static bool CmpSpace(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Space?.Value == value;
+    if (openXmlElement?.Space?.Value == value) return true;
+    diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
+    return false;
   }
   
   private static void SetSpace(DXW.Column openXmlElement, String? value)

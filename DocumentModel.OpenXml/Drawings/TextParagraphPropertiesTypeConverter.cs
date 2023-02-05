@@ -133,7 +133,9 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpRightToLeft(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RightToLeft?.Value == value;
+    if (openXmlElement?.RightToLeft?.Value == value) return true;
+    diffs?.Add(objName, "RightToLeft", openXmlElement?.RightToLeft?.Value, value);
+    return false;
   }
   
   private static void SetRightToLeft(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
@@ -154,7 +156,9 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpEastAsianLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EastAsianLineBreak?.Value == value;
+    if (openXmlElement?.EastAsianLineBreak?.Value == value) return true;
+    diffs?.Add(objName, "EastAsianLineBreak", openXmlElement?.EastAsianLineBreak?.Value, value);
+    return false;
   }
   
   private static void SetEastAsianLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
@@ -193,7 +197,9 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpLatinLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LatinLineBreak?.Value == value;
+    if (openXmlElement?.LatinLineBreak?.Value == value) return true;
+    diffs?.Add(objName, "LatinLineBreak", openXmlElement?.LatinLineBreak?.Value, value);
+    return false;
   }
   
   private static void SetLatinLineBreak(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)
@@ -214,7 +220,9 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpHeight(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Height?.Value == value;
+    if (openXmlElement?.Height?.Value == value) return true;
+    diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
+    return false;
   }
   
   private static void SetHeight(DXDraw.TextParagraphPropertiesType openXmlElement, Boolean? value)

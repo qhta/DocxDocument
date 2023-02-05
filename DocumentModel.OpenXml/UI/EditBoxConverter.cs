@@ -15,7 +15,9 @@ public static class EditBoxConverter
   
   private static bool CmpEnabled(DXOCustUI.EditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.EditBox openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetEnabled(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.EditBox openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class EditBoxConverter
   
   private static bool CmpImage(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.EditBox openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class EditBoxConverter
   
   private static bool CmpImageMso(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.EditBox openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetImage(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXOCustUI.EditBox openXmlElement, String? value)
@@ -140,7 +150,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetText(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetText?.Value == value;
+    if (openXmlElement?.GetText?.Value == value) return true;
+    diffs?.Add(objName, "GetText", openXmlElement?.GetText?.Value, value);
+    return false;
   }
   
   private static void SetGetText(DXOCustUI.EditBox openXmlElement, String? value)
@@ -161,7 +173,9 @@ public static class EditBoxConverter
   
   private static bool CmpOnChange(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnChange?.Value == value;
+    if (openXmlElement?.OnChange?.Value == value) return true;
+    diffs?.Add(objName, "OnChange", openXmlElement?.OnChange?.Value, value);
+    return false;
   }
   
   private static void SetOnChange(DXOCustUI.EditBox openXmlElement, String? value)
@@ -182,7 +196,9 @@ public static class EditBoxConverter
   
   private static bool CmpSizeString(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SizeString?.Value == value;
+    if (openXmlElement?.SizeString?.Value == value) return true;
+    diffs?.Add(objName, "SizeString", openXmlElement?.SizeString?.Value, value);
+    return false;
   }
   
   private static void SetSizeString(DXOCustUI.EditBox openXmlElement, String? value)
@@ -203,7 +219,9 @@ public static class EditBoxConverter
   
   private static bool CmpId(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.EditBox openXmlElement, String? value)
@@ -224,7 +242,9 @@ public static class EditBoxConverter
   
   private static bool CmpIdQ(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.EditBox openXmlElement, String? value)
@@ -245,7 +265,9 @@ public static class EditBoxConverter
   
   private static bool CmpIdMso(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.EditBox openXmlElement, String? value)
@@ -266,7 +288,9 @@ public static class EditBoxConverter
   
   private static bool CmpTag(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXOCustUI.EditBox openXmlElement, String? value)
@@ -287,7 +311,9 @@ public static class EditBoxConverter
   
   private static bool CmpScreentip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -308,7 +334,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetScreentip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -329,7 +357,9 @@ public static class EditBoxConverter
   
   private static bool CmpSupertip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -350,7 +380,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetSupertip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -371,7 +403,9 @@ public static class EditBoxConverter
   
   private static bool CmpLabel(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.EditBox openXmlElement, String? value)
@@ -392,7 +426,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetLabel(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXOCustUI.EditBox openXmlElement, String? value)
@@ -413,7 +449,9 @@ public static class EditBoxConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.EditBox openXmlElement, String? value)
@@ -434,7 +472,9 @@ public static class EditBoxConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.EditBox openXmlElement, String? value)
@@ -455,7 +495,9 @@ public static class EditBoxConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.EditBox openXmlElement, String? value)
@@ -476,7 +518,9 @@ public static class EditBoxConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.EditBox openXmlElement, String? value)
@@ -497,7 +541,9 @@ public static class EditBoxConverter
   
   private static bool CmpVisible(DXOCustUI.EditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXOCustUI.EditBox openXmlElement, Boolean? value)
@@ -518,7 +564,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetVisible(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXOCustUI.EditBox openXmlElement, String? value)
@@ -539,7 +587,9 @@ public static class EditBoxConverter
   
   private static bool CmpKeytip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -560,7 +610,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetKeytip(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXOCustUI.EditBox openXmlElement, String? value)
@@ -581,7 +633,9 @@ public static class EditBoxConverter
   
   private static bool CmpShowLabel(DXOCustUI.EditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXOCustUI.EditBox openXmlElement, Boolean? value)
@@ -602,7 +656,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetShowLabel(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXOCustUI.EditBox openXmlElement, String? value)
@@ -623,7 +679,9 @@ public static class EditBoxConverter
   
   private static bool CmpShowImage(DXOCustUI.EditBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXOCustUI.EditBox openXmlElement, Boolean? value)
@@ -644,7 +702,9 @@ public static class EditBoxConverter
   
   private static bool CmpGetShowImage(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXOCustUI.EditBox openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class SchemaConverter
   
   private static bool CmpUri(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXCustXmlSchRefs.Schema openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SchemaConverter
   
   private static bool CmpManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ManifestLocation?.Value == value;
+    if (openXmlElement?.ManifestLocation?.Value == value) return true;
+    diffs?.Add(objName, "ManifestLocation", openXmlElement?.ManifestLocation?.Value, value);
+    return false;
   }
   
   private static void SetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class SchemaConverter
   
   private static bool CmpSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SchemaLocation?.Value == value;
+    if (openXmlElement?.SchemaLocation?.Value == value) return true;
+    diffs?.Add(objName, "SchemaLocation", openXmlElement?.SchemaLocation?.Value, value);
+    return false;
   }
   
   private static void SetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class SchemaReferenceConverter
   
   private static bool CmpUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value)

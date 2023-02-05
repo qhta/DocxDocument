@@ -15,7 +15,9 @@ public static class AcceleratorKeymapTypeConverter
   
   private static bool CmpAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AcceleratorName?.Value == value;
+    if (openXmlElement?.AcceleratorName?.Value == value) return true;
+    diffs?.Add(objName, "AcceleratorName", openXmlElement?.AcceleratorName?.Value, value);
+    return false;
   }
   
   private static void SetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value)

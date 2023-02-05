@@ -149,7 +149,10 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpInvertIfNegative(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.InvertIfNegative", val, value);
+    return false;
   }
   
   private static void SetInvertIfNegative(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value)
@@ -428,7 +431,10 @@ public static class BubbleChartSeries3Converter
   
   private static bool CmpBubble3D(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Bubble3D", val, value);
+    return false;
   }
   
   private static void SetBubble3D(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value)

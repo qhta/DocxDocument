@@ -15,7 +15,9 @@ public static class BackgroundConverter
   
   private static bool CmpId(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Background openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackgroundConverter
   
   private static bool CmpFilled(DXVml.Background openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Filled?.Value == value;
+    if (openXmlElement?.Filled?.Value == value) return true;
+    diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
+    return false;
   }
   
   private static void SetFilled(DXVml.Background openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class BackgroundConverter
   
   private static bool CmpFillcolor(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Fillcolor?.Value == value;
+    if (openXmlElement?.Fillcolor?.Value == value) return true;
+    diffs?.Add(objName, "Fillcolor", openXmlElement?.Fillcolor?.Value, value);
+    return false;
   }
   
   private static void SetFillcolor(DXVml.Background openXmlElement, String? value)

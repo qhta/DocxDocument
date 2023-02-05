@@ -15,7 +15,9 @@ public static class CustomXmlElementConverter
   
   private static bool CmpUri(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXW.CustomXmlElement openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class CustomXmlElementConverter
   
   private static bool CmpElement(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Element?.Value == value;
+    if (openXmlElement?.Element?.Value == value) return true;
+    diffs?.Add(objName, "Element", openXmlElement?.Element?.Value, value);
+    return false;
   }
   
   private static void SetElement(DXW.CustomXmlElement openXmlElement, String? value)

@@ -93,7 +93,10 @@ public static class ErrorBarsConverter
   
   private static bool CmpNoEndCap(DXDrawCharts.ErrorBars openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.NoEndCap>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.NoEndCap>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.NoEndCap", val, value);
+    return false;
   }
   
   private static void SetNoEndCap(DXDrawCharts.ErrorBars openXmlElement, Boolean? value)

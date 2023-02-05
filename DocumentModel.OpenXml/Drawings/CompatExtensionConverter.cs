@@ -15,7 +15,9 @@ public static class CompatExtensionConverter
   
   private static bool CmpShapeId(DXO2010Draw.CompatExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXO2010Draw.CompatExtension openXmlElement, String? value)

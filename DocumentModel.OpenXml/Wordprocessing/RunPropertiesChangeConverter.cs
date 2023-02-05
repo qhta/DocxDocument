@@ -15,7 +15,9 @@ public static class RunPropertiesChangeConverter
   
   private static bool CmpAuthor(DXW.RunPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Author?.Value == value;
+    if (openXmlElement?.Author?.Value == value) return true;
+    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
+    return false;
   }
   
   private static void SetAuthor(DXW.RunPropertiesChange openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class RunPropertiesChangeConverter
   
   private static bool CmpId(DXW.RunPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.RunPropertiesChange openXmlElement, String? value)

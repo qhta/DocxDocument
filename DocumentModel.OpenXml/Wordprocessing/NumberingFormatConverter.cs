@@ -33,7 +33,9 @@ public static class NumberingFormatConverter
   
   private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Format?.Value == value;
+    if (openXmlElement?.Format?.Value == value) return true;
+    diffs?.Add(objName, "Format", openXmlElement?.Format?.Value, value);
+    return false;
   }
   
   private static void SetFormat(DXW.NumberingFormat openXmlElement, String? value)

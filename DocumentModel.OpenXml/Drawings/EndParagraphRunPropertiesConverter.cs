@@ -35,7 +35,10 @@ public static class EndParagraphRunPropertiesConverter
   
   private static bool CmpNoFill(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value)
@@ -152,7 +155,10 @@ public static class EndParagraphRunPropertiesConverter
   
   private static bool CmpGroupFill(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    return false;
   }
   
   private static void SetGroupFill(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value)
@@ -246,7 +252,10 @@ public static class EndParagraphRunPropertiesConverter
   
   private static bool CmpUnderlineFollowsText(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.UnderlineFollowsText", val, value);
+    return false;
   }
   
   private static void SetUnderlineFollowsText(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value)
@@ -294,7 +303,10 @@ public static class EndParagraphRunPropertiesConverter
   
   private static bool CmpUnderlineFillText(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.UnderlineFillText", val, value);
+    return false;
   }
   
   private static void SetUnderlineFillText(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value)
@@ -480,7 +492,10 @@ public static class EndParagraphRunPropertiesConverter
   
   private static bool CmpRightToLeft(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.RightToLeft", val, value);
+    return false;
   }
   
   private static void SetRightToLeft(DXDraw.EndParagraphRunProperties openXmlElement, Boolean? value)

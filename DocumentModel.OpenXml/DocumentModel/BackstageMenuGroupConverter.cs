@@ -15,7 +15,9 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpTag(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageMenuGroup openXmlElement, String? value)

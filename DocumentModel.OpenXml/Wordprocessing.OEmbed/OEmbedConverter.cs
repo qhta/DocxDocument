@@ -15,7 +15,9 @@ public static class OEmbedConverter
   
   private static bool CmpOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OEmbedUrl?.Value == value;
+    if (openXmlElement?.OEmbedUrl?.Value == value) return true;
+    diffs?.Add(objName, "OEmbedUrl", openXmlElement?.OEmbedUrl?.Value, value);
+    return false;
   }
   
   private static void SetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class OEmbedConverter
   
   private static bool CmpMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MediaType?.Value == value;
+    if (openXmlElement?.MediaType?.Value == value) return true;
+    diffs?.Add(objName, "MediaType", openXmlElement?.MediaType?.Value, value);
+    return false;
   }
   
   private static void SetMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class OEmbedConverter
   
   private static bool CmpPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PicLocksAutoForOEmbed?.Value == value;
+    if (openXmlElement?.PicLocksAutoForOEmbed?.Value == value) return true;
+    diffs?.Add(objName, "PicLocksAutoForOEmbed", openXmlElement?.PicLocksAutoForOEmbed?.Value, value);
+    return false;
   }
   
   private static void SetPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value)

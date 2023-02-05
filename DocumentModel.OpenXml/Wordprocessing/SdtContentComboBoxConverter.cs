@@ -15,7 +15,9 @@ public static class SdtContentComboBoxConverter
   
   private static bool CmpLastValue(DXW.SdtContentComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LastValue?.Value == value;
+    if (openXmlElement?.LastValue?.Value == value) return true;
+    diffs?.Add(objName, "LastValue", openXmlElement?.LastValue?.Value, value);
+    return false;
   }
   
   private static void SetLastValue(DXW.SdtContentComboBox openXmlElement, String? value)

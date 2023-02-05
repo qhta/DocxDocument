@@ -95,7 +95,10 @@ public static class WebSettingsConverter
   
   private static bool CmpOptimizeForBrowser(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.OptimizeForBrowser>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.OptimizeForBrowser>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.OptimizeForBrowser", val, value);
+    return false;
   }
   
   private static void SetOptimizeForBrowser(DXW.WebSettings openXmlElement, Boolean? value)
@@ -123,7 +126,10 @@ public static class WebSettingsConverter
   
   private static bool CmpRelyOnVML(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.RelyOnVML>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.RelyOnVML>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.RelyOnVML", val, value);
+    return false;
   }
   
   private static void SetRelyOnVML(DXW.WebSettings openXmlElement, Boolean? value)
@@ -151,7 +157,10 @@ public static class WebSettingsConverter
   
   private static bool CmpAllowPNG(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AllowPNG>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AllowPNG>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AllowPNG", val, value);
+    return false;
   }
   
   private static void SetAllowPNG(DXW.WebSettings openXmlElement, Boolean? value)
@@ -179,7 +188,10 @@ public static class WebSettingsConverter
   
   private static bool CmpDoNotRelyOnCSS(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotRelyOnCSS>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotRelyOnCSS>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotRelyOnCSS", val, value);
+    return false;
   }
   
   private static void SetDoNotRelyOnCSS(DXW.WebSettings openXmlElement, Boolean? value)
@@ -207,7 +219,10 @@ public static class WebSettingsConverter
   
   private static bool CmpDoNotSaveAsSingleFile(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSaveAsSingleFile>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotSaveAsSingleFile>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotSaveAsSingleFile", val, value);
+    return false;
   }
   
   private static void SetDoNotSaveAsSingleFile(DXW.WebSettings openXmlElement, Boolean? value)
@@ -235,7 +250,10 @@ public static class WebSettingsConverter
   
   private static bool CmpDoNotOrganizeInFolder(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotOrganizeInFolder>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotOrganizeInFolder>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotOrganizeInFolder", val, value);
+    return false;
   }
   
   private static void SetDoNotOrganizeInFolder(DXW.WebSettings openXmlElement, Boolean? value)
@@ -263,7 +281,10 @@ public static class WebSettingsConverter
   
   private static bool CmpDoNotUseLongFileNames(DXW.WebSettings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotUseLongFileNames>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotUseLongFileNames>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotUseLongFileNames", val, value);
+    return false;
   }
   
   private static void SetDoNotUseLongFileNames(DXW.WebSettings openXmlElement, Boolean? value)

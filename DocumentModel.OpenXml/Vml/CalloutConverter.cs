@@ -33,7 +33,9 @@ public static class CalloutConverter
   
   private static bool CmpOn(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -54,7 +56,9 @@ public static class CalloutConverter
   
   private static bool CmpType(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXVmlO.Callout openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class CalloutConverter
   
   private static bool CmpGap(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Gap?.Value == value;
+    if (openXmlElement?.Gap?.Value == value) return true;
+    diffs?.Add(objName, "Gap", openXmlElement?.Gap?.Value, value);
+    return false;
   }
   
   private static void SetGap(DXVmlO.Callout openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class CalloutConverter
   
   private static bool CmpDropAuto(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DropAuto?.Value == value;
+    if (openXmlElement?.DropAuto?.Value == value) return true;
+    diffs?.Add(objName, "DropAuto", openXmlElement?.DropAuto?.Value, value);
+    return false;
   }
   
   private static void SetDropAuto(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -135,7 +143,9 @@ public static class CalloutConverter
   
   private static bool CmpDrop(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Drop?.Value == value;
+    if (openXmlElement?.Drop?.Value == value) return true;
+    diffs?.Add(objName, "Drop", openXmlElement?.Drop?.Value, value);
+    return false;
   }
   
   private static void SetDrop(DXVmlO.Callout openXmlElement, String? value)
@@ -156,7 +166,9 @@ public static class CalloutConverter
   
   private static bool CmpDistance(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Distance?.Value == value;
+    if (openXmlElement?.Distance?.Value == value) return true;
+    diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
+    return false;
   }
   
   private static void SetDistance(DXVmlO.Callout openXmlElement, String? value)
@@ -177,7 +189,9 @@ public static class CalloutConverter
   
   private static bool CmpLengthSpecified(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LengthSpecified?.Value == value;
+    if (openXmlElement?.LengthSpecified?.Value == value) return true;
+    diffs?.Add(objName, "LengthSpecified", openXmlElement?.LengthSpecified?.Value, value);
+    return false;
   }
   
   private static void SetLengthSpecified(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -198,7 +212,9 @@ public static class CalloutConverter
   
   private static bool CmpLength(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Length?.Value == value;
+    if (openXmlElement?.Length?.Value == value) return true;
+    diffs?.Add(objName, "Length", openXmlElement?.Length?.Value, value);
+    return false;
   }
   
   private static void SetLength(DXVmlO.Callout openXmlElement, String? value)
@@ -219,7 +235,9 @@ public static class CalloutConverter
   
   private static bool CmpAccentBar(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AccentBar?.Value == value;
+    if (openXmlElement?.AccentBar?.Value == value) return true;
+    diffs?.Add(objName, "AccentBar", openXmlElement?.AccentBar?.Value, value);
+    return false;
   }
   
   private static void SetAccentBar(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -240,7 +258,9 @@ public static class CalloutConverter
   
   private static bool CmpTextBorder(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextBorder?.Value == value;
+    if (openXmlElement?.TextBorder?.Value == value) return true;
+    diffs?.Add(objName, "TextBorder", openXmlElement?.TextBorder?.Value, value);
+    return false;
   }
   
   private static void SetTextBorder(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -261,7 +281,9 @@ public static class CalloutConverter
   
   private static bool CmpMinusX(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinusX?.Value == value;
+    if (openXmlElement?.MinusX?.Value == value) return true;
+    diffs?.Add(objName, "MinusX", openXmlElement?.MinusX?.Value, value);
+    return false;
   }
   
   private static void SetMinusX(DXVmlO.Callout openXmlElement, Boolean? value)
@@ -282,7 +304,9 @@ public static class CalloutConverter
   
   private static bool CmpMinusY(DXVmlO.Callout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinusY?.Value == value;
+    if (openXmlElement?.MinusY?.Value == value) return true;
+    diffs?.Add(objName, "MinusY", openXmlElement?.MinusY?.Value, value);
+    return false;
   }
   
   private static void SetMinusY(DXVmlO.Callout openXmlElement, Boolean? value)

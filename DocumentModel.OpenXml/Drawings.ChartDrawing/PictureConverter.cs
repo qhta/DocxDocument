@@ -15,7 +15,9 @@ public static class PictureConverter
   
   private static bool CmpMacro(DXDrawChartDraw.Picture openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Macro?.Value == value;
+    if (openXmlElement?.Macro?.Value == value) return true;
+    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
+    return false;
   }
   
   private static void SetMacro(DXDrawChartDraw.Picture openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class PictureConverter
   
   private static bool CmpPublished(DXDrawChartDraw.Picture openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Published?.Value == value;
+    if (openXmlElement?.Published?.Value == value) return true;
+    diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
+    return false;
   }
   
   private static void SetPublished(DXDrawChartDraw.Picture openXmlElement, Boolean? value)

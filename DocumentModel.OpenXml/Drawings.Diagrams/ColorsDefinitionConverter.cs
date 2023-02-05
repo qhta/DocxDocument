@@ -15,7 +15,9 @@ public static class ColorsDefinitionConverter
   
   private static bool CmpUniqueId(DXDrawDgms.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UniqueId?.Value == value;
+    if (openXmlElement?.UniqueId?.Value == value) return true;
+    diffs?.Add(objName, "UniqueId", openXmlElement?.UniqueId?.Value, value);
+    return false;
   }
   
   private static void SetUniqueId(DXDrawDgms.ColorsDefinition openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ColorsDefinitionConverter
   
   private static bool CmpMinVersion(DXDrawDgms.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinVersion?.Value == value;
+    if (openXmlElement?.MinVersion?.Value == value) return true;
+    diffs?.Add(objName, "MinVersion", openXmlElement?.MinVersion?.Value, value);
+    return false;
   }
   
   private static void SetMinVersion(DXDrawDgms.ColorsDefinition openXmlElement, String? value)

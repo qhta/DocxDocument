@@ -15,7 +15,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpId(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpIdQ(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpVisible(DXOCustUI.ButtonGroup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXOCustUI.ButtonGroup openXmlElement, Boolean? value)
@@ -78,7 +84,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpGetVisible(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.ButtonGroup openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class ButtonGroupConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.ButtonGroup openXmlElement, String? value)

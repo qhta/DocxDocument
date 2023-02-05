@@ -12,7 +12,9 @@ public static class ImagePartConverter
   
   private static bool CmpRelationshipType(DXPack.ImagePart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.ImagePart? CreateModelElement(DXPack.ImagePart? openXmlElement)

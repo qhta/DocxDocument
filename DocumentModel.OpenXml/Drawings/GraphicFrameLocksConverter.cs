@@ -15,7 +15,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoGrouping(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoGrouping?.Value == value;
+    if (openXmlElement?.NoGrouping?.Value == value) return true;
+    diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
+    return false;
   }
   
   private static void SetNoGrouping(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoDrilldown(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoDrilldown?.Value == value;
+    if (openXmlElement?.NoDrilldown?.Value == value) return true;
+    diffs?.Add(objName, "NoDrilldown", openXmlElement?.NoDrilldown?.Value, value);
+    return false;
   }
   
   private static void SetNoDrilldown(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoSelection(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoSelection?.Value == value;
+    if (openXmlElement?.NoSelection?.Value == value) return true;
+    diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
+    return false;
   }
   
   private static void SetNoSelection(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
@@ -78,7 +84,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoChangeAspect(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoChangeAspect?.Value == value;
+    if (openXmlElement?.NoChangeAspect?.Value == value) return true;
+    diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
+    return false;
   }
   
   private static void SetNoChangeAspect(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoMove(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoMove?.Value == value;
+    if (openXmlElement?.NoMove?.Value == value) return true;
+    diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
+    return false;
   }
   
   private static void SetNoMove(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
@@ -120,7 +130,9 @@ public static class GraphicFrameLocksConverter
   
   private static bool CmpNoResize(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoResize?.Value == value;
+    if (openXmlElement?.NoResize?.Value == value) return true;
+    diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
+    return false;
   }
   
   private static void SetNoResize(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)

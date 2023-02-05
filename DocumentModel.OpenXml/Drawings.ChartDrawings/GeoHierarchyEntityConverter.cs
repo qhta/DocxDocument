@@ -15,7 +15,9 @@ public static class GeoHierarchyEntityConverter
   
   private static bool CmpEntityName(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EntityName?.Value == value;
+    if (openXmlElement?.EntityName?.Value == value) return true;
+    diffs?.Add(objName, "EntityName", openXmlElement?.EntityName?.Value, value);
+    return false;
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class GeoHierarchyEntityConverter
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EntityId?.Value == value;
+    if (openXmlElement?.EntityId?.Value == value) return true;
+    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
+    return false;
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoHierarchyEntity openXmlElement, String? value)

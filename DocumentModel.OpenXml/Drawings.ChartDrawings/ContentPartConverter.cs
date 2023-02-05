@@ -15,7 +15,9 @@ public static class ContentPartConverter
   
   private static bool CmpRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipId?.Value == value;
+    if (openXmlElement?.RelationshipId?.Value == value) return true;
+    diffs?.Add(objName, "RelationshipId", openXmlElement?.RelationshipId?.Value, value);
+    return false;
   }
   
   private static void SetRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value)

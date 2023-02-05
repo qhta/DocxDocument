@@ -15,7 +15,9 @@ public static class ShapeConverter
   
   private static bool CmpMacro(DXDrawChartDraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Macro?.Value == value;
+    if (openXmlElement?.Macro?.Value == value) return true;
+    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
+    return false;
   }
   
   private static void SetMacro(DXDrawChartDraw.Shape openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ShapeConverter
   
   private static bool CmpTextLink(DXDrawChartDraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextLink?.Value == value;
+    if (openXmlElement?.TextLink?.Value == value) return true;
+    diffs?.Add(objName, "TextLink", openXmlElement?.TextLink?.Value, value);
+    return false;
   }
   
   private static void SetTextLink(DXDrawChartDraw.Shape openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ShapeConverter
   
   private static bool CmpLockText(DXDrawChartDraw.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LockText?.Value == value;
+    if (openXmlElement?.LockText?.Value == value) return true;
+    diffs?.Add(objName, "LockText", openXmlElement?.LockText?.Value, value);
+    return false;
   }
   
   private static void SetLockText(DXDrawChartDraw.Shape openXmlElement, Boolean? value)
@@ -78,7 +84,9 @@ public static class ShapeConverter
   
   private static bool CmpPublished(DXDrawChartDraw.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Published?.Value == value;
+    if (openXmlElement?.Published?.Value == value) return true;
+    diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
+    return false;
   }
   
   private static void SetPublished(DXDrawChartDraw.Shape openXmlElement, Boolean? value)

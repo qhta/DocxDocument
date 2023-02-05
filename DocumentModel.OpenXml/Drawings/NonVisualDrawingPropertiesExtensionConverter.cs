@@ -15,7 +15,9 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, String? value)
@@ -125,7 +127,10 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   
   private static bool CmpDecorative(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2019Draw.Decorative>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2019Draw.Decorative>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2019Draw.Decorative", val, value);
+    return false;
   }
   
   private static void SetDecorative(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, Boolean? value)

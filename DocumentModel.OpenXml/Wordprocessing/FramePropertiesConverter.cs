@@ -53,7 +53,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpWidth(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Width?.Value == value;
+    if (openXmlElement?.Width?.Value == value) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    return false;
   }
   
   private static void SetWidth(DXW.FrameProperties openXmlElement, String? value)
@@ -94,7 +96,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpVerticalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.VerticalSpace?.Value == value;
+    if (openXmlElement?.VerticalSpace?.Value == value) return true;
+    diffs?.Add(objName, "VerticalSpace", openXmlElement?.VerticalSpace?.Value, value);
+    return false;
   }
   
   private static void SetVerticalSpace(DXW.FrameProperties openXmlElement, String? value)
@@ -115,7 +119,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpHorizontalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalSpace?.Value == value;
+    if (openXmlElement?.HorizontalSpace?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalSpace", openXmlElement?.HorizontalSpace?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalSpace(DXW.FrameProperties openXmlElement, String? value)
@@ -190,7 +196,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpX(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.X?.Value == value;
+    if (openXmlElement?.X?.Value == value) return true;
+    diffs?.Add(objName, "X", openXmlElement?.X?.Value, value);
+    return false;
   }
   
   private static void SetX(DXW.FrameProperties openXmlElement, String? value)
@@ -229,7 +237,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpY(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Y?.Value == value;
+    if (openXmlElement?.Y?.Value == value) return true;
+    diffs?.Add(objName, "Y", openXmlElement?.Y?.Value, value);
+    return false;
   }
   
   private static void SetY(DXW.FrameProperties openXmlElement, String? value)
@@ -286,7 +296,9 @@ public static class FramePropertiesConverter
   
   private static bool CmpAnchorLock(DXW.FrameProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AnchorLock?.Value == value;
+    if (openXmlElement?.AnchorLock?.Value == value) return true;
+    diffs?.Add(objName, "AnchorLock", openXmlElement?.AnchorLock?.Value, value);
+    return false;
   }
   
   private static void SetAnchorLock(DXW.FrameProperties openXmlElement, Boolean? value)

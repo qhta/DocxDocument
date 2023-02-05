@@ -53,7 +53,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpStyle(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVmlO.ShapeDefaults openXmlElement, String? value)
@@ -74,7 +76,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpBeFilled(DXVmlO.ShapeDefaults openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BeFilled?.Value == value;
+    if (openXmlElement?.BeFilled?.Value == value) return true;
+    diffs?.Add(objName, "BeFilled", openXmlElement?.BeFilled?.Value, value);
+    return false;
   }
   
   private static void SetBeFilled(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
@@ -95,7 +99,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpFillColor(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FillColor?.Value == value;
+    if (openXmlElement?.FillColor?.Value == value) return true;
+    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
+    return false;
   }
   
   private static void SetFillColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
@@ -116,7 +122,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpIsStroke(DXVmlO.ShapeDefaults openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsStroke?.Value == value;
+    if (openXmlElement?.IsStroke?.Value == value) return true;
+    diffs?.Add(objName, "IsStroke", openXmlElement?.IsStroke?.Value, value);
+    return false;
   }
   
   private static void SetIsStroke(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
@@ -137,7 +145,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpStrokeColor(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeColor?.Value == value;
+    if (openXmlElement?.StrokeColor?.Value == value) return true;
+    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
+    return false;
   }
   
   private static void SetStrokeColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
@@ -158,7 +168,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpAllowInCell(DXVmlO.ShapeDefaults openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInCell?.Value == value;
+    if (openXmlElement?.AllowInCell?.Value == value) return true;
+    diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
+    return false;
   }
   
   private static void SetAllowInCell(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
@@ -179,7 +191,9 @@ public static class ShapeDefaultsConverter
   
   private static bool CmpAllowOverlap(DXVmlO.ShapeDefaults openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)

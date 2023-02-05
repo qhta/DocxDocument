@@ -15,7 +15,9 @@ public static class FixedCommandKeyboardCustomizationConverter
   
   private static bool CmpCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CommandName?.Value == value;
+    if (openXmlElement?.CommandName?.Value == value) return true;
+    diffs?.Add(objName, "CommandName", openXmlElement?.CommandName?.Value, value);
+    return false;
   }
   
   private static void SetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value)

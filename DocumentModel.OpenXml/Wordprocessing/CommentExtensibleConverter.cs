@@ -63,7 +63,9 @@ public static class CommentExtensibleConverter
   
   private static bool CmpIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IntelligentPlaceholder?.Value == value;
+    if (openXmlElement?.IntelligentPlaceholder?.Value == value) return true;
+    diffs?.Add(objName, "IntelligentPlaceholder", openXmlElement?.IntelligentPlaceholder?.Value, value);
+    return false;
   }
   
   private static void SetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value)

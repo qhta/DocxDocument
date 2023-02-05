@@ -15,7 +15,9 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpBefore(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Before?.Value == value;
+    if (openXmlElement?.Before?.Value == value) return true;
+    diffs?.Add(objName, "Before", openXmlElement?.Before?.Value, value);
+    return false;
   }
   
   private static void SetBefore(DXW.SpacingBetweenLines openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BeforeAutoSpacing?.Value == value;
+    if (openXmlElement?.BeforeAutoSpacing?.Value == value) return true;
+    diffs?.Add(objName, "BeforeAutoSpacing", openXmlElement?.BeforeAutoSpacing?.Value, value);
+    return false;
   }
   
   private static void SetBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpAfter(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.After?.Value == value;
+    if (openXmlElement?.After?.Value == value) return true;
+    diffs?.Add(objName, "After", openXmlElement?.After?.Value, value);
+    return false;
   }
   
   private static void SetAfter(DXW.SpacingBetweenLines openXmlElement, String? value)
@@ -118,7 +124,9 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AfterAutoSpacing?.Value == value;
+    if (openXmlElement?.AfterAutoSpacing?.Value == value) return true;
+    diffs?.Add(objName, "AfterAutoSpacing", openXmlElement?.AfterAutoSpacing?.Value, value);
+    return false;
   }
   
   private static void SetAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
@@ -139,7 +147,9 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpLine(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Line?.Value == value;
+    if (openXmlElement?.Line?.Value == value) return true;
+    diffs?.Add(objName, "Line", openXmlElement?.Line?.Value, value);
+    return false;
   }
   
   private static void SetLine(DXW.SpacingBetweenLines openXmlElement, String? value)

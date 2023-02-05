@@ -35,7 +35,9 @@ public static class BlipFillConverter
   
   private static bool CmpRotateWithShape(DXDraw.BlipFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RotateWithShape?.Value == value;
+    if (openXmlElement?.RotateWithShape?.Value == value) return true;
+    diffs?.Add(objName, "RotateWithShape", openXmlElement?.RotateWithShape?.Value, value);
+    return false;
   }
   
   private static void SetRotateWithShape(DXDraw.BlipFill openXmlElement, Boolean? value)

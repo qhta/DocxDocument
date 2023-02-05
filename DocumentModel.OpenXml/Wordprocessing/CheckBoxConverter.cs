@@ -34,7 +34,10 @@ public static class CheckBoxConverter
   
   private static bool CmpAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AutomaticallySizeFormField", val, value);
+    return false;
   }
   
   private static void SetAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value)
@@ -59,7 +62,10 @@ public static class CheckBoxConverter
   
   private static bool CmpDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DefaultCheckBoxFormFieldState", val, value);
+    return false;
   }
   
   private static void SetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value)
@@ -84,7 +90,10 @@ public static class CheckBoxConverter
   
   private static bool CmpChecked(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Checked>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Checked>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Checked", val, value);
+    return false;
   }
   
   private static void SetChecked(DXW.CheckBox openXmlElement, Boolean? value)

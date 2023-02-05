@@ -43,7 +43,10 @@ public static class DataPointConverter
   
   private static bool CmpInvertIfNegative(DXDrawCharts.DataPoint openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.InvertIfNegative", val, value);
+    return false;
   }
   
   private static void SetInvertIfNegative(DXDrawCharts.DataPoint openXmlElement, Boolean? value)
@@ -97,7 +100,10 @@ public static class DataPointConverter
   
   private static bool CmpBubble3D(DXDrawCharts.DataPoint openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Bubble3D", val, value);
+    return false;
   }
   
   private static void SetBubble3D(DXDrawCharts.DataPoint openXmlElement, Boolean? value)

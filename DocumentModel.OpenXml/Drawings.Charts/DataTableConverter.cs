@@ -15,7 +15,10 @@ public static class DataTableConverter
   
   private static bool CmpShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowHorizontalBorder", val, value);
+    return false;
   }
   
   private static void SetShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class DataTableConverter
   
   private static bool CmpShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowVerticalBorder", val, value);
+    return false;
   }
   
   private static void SetShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class DataTableConverter
   
   private static bool CmpShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowOutlineBorder", val, value);
+    return false;
   }
   
   private static void SetShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
@@ -99,7 +108,10 @@ public static class DataTableConverter
   
   private static bool CmpShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowKeys", val, value);
+    return false;
   }
   
   private static void SetShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class DLblExtensionConverter
   
   private static bool CmpUri(DXDrawCharts.DLblExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDrawCharts.DLblExtension openXmlElement, String? value)
@@ -56,7 +58,10 @@ public static class DLblExtensionConverter
   
   private static bool CmpExceptionForSave(DXDrawCharts.DLblExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.ExceptionForSave>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.ExceptionForSave>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013DrawChart.ExceptionForSave", val, value);
+    return false;
   }
   
   private static void SetExceptionForSave(DXDrawCharts.DLblExtension openXmlElement, Boolean? value)
@@ -81,7 +86,10 @@ public static class DLblExtensionConverter
   
   private static bool CmpShowDataLabelsRange(DXDrawCharts.DLblExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013DrawChart.ShowDataLabelsRange", val, value);
+    return false;
   }
   
   private static void SetShowDataLabelsRange(DXDrawCharts.DLblExtension openXmlElement, Boolean? value)

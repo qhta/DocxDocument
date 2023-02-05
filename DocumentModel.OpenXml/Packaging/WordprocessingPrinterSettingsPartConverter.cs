@@ -12,7 +12,9 @@ public static class WordprocessingPrinterSettingsPartConverter
   
   private static bool CmpContentType(DXPack.WordprocessingPrinterSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   private static String? GetRelationshipType(DXPack.WordprocessingPrinterSettingsPart openXmlElement)
@@ -22,7 +24,9 @@ public static class WordprocessingPrinterSettingsPartConverter
   
   private static bool CmpRelationshipType(DXPack.WordprocessingPrinterSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.WordprocessingPrinterSettingsPart? CreateModelElement(DXPack.WordprocessingPrinterSettingsPart? openXmlElement)

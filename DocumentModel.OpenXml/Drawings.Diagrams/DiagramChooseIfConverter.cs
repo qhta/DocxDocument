@@ -15,7 +15,9 @@ public static class DiagramChooseIfConverter
   
   private static bool CmpName(DXDrawDgms.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDrawDgms.DiagramChooseIf openXmlElement, String? value)
@@ -180,7 +182,9 @@ public static class DiagramChooseIfConverter
   
   private static bool CmpArgument(DXDrawDgms.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Argument?.Value == value;
+    if (openXmlElement?.Argument?.Value == value) return true;
+    diffs?.Add(objName, "Argument", openXmlElement?.Argument?.Value, value);
+    return false;
   }
   
   private static void SetArgument(DXDrawDgms.DiagramChooseIf openXmlElement, String? value)
@@ -219,7 +223,9 @@ public static class DiagramChooseIfConverter
   
   private static bool CmpVal(DXDrawDgms.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXDrawDgms.DiagramChooseIf openXmlElement, String? value)

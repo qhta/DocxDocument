@@ -73,7 +73,9 @@ public static class PathConverter
   
   private static bool CmpStroke(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Stroke?.Value == value;
+    if (openXmlElement?.Stroke?.Value == value) return true;
+    diffs?.Add(objName, "Stroke", openXmlElement?.Stroke?.Value, value);
+    return false;
   }
   
   private static void SetStroke(DXDraw.Path openXmlElement, Boolean? value)
@@ -94,7 +96,9 @@ public static class PathConverter
   
   private static bool CmpExtrusionOk(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ExtrusionOk?.Value == value;
+    if (openXmlElement?.ExtrusionOk?.Value == value) return true;
+    diffs?.Add(objName, "ExtrusionOk", openXmlElement?.ExtrusionOk?.Value, value);
+    return false;
   }
   
   private static void SetExtrusionOk(DXDraw.Path openXmlElement, Boolean? value)
@@ -112,7 +116,10 @@ public static class PathConverter
   
   private static bool CmpCloseShapePath(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.CloseShapePath>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.CloseShapePath>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.CloseShapePath", val, value);
+    return false;
   }
   
   private static void SetCloseShapePath(DXDraw.Path openXmlElement, Boolean? value)

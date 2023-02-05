@@ -15,7 +15,9 @@ public static class AutoCaptionConverter
   
   private static bool CmpName(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.AutoCaption openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class AutoCaptionConverter
   
   private static bool CmpCaption(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Caption?.Value == value;
+    if (openXmlElement?.Caption?.Value == value) return true;
+    diffs?.Add(objName, "Caption", openXmlElement?.Caption?.Value, value);
+    return false;
   }
   
   private static void SetCaption(DXW.AutoCaption openXmlElement, String? value)

@@ -15,7 +15,10 @@ public static class HiddenFillPropertiesConverter
   
   private static bool CmpNoFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value)
@@ -147,7 +150,10 @@ public static class HiddenFillPropertiesConverter
   
   private static bool CmpGroupFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    return false;
   }
   
   private static void SetGroupFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value)

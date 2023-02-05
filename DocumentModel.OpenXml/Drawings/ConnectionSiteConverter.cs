@@ -15,7 +15,9 @@ public static class ConnectionSiteConverter
   
   private static bool CmpAngle(DXDraw.ConnectionSite openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Angle?.Value == value;
+    if (openXmlElement?.Angle?.Value == value) return true;
+    diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
+    return false;
   }
   
   private static void SetAngle(DXDraw.ConnectionSite openXmlElement, String? value)

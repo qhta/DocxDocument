@@ -15,7 +15,9 @@ public static class CategoryAxisScalingConverter
   
   private static bool CmpGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GapWidth?.Value == value;
+    if (openXmlElement?.GapWidth?.Value == value) return true;
+    diffs?.Add(objName, "GapWidth", openXmlElement?.GapWidth?.Value, value);
+    return false;
   }
   
   private static void SetGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value)

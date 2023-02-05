@@ -33,7 +33,9 @@ public static class ExtrusionConverter
   
   private static bool CmpOn(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -90,7 +92,9 @@ public static class ExtrusionConverter
   
   private static bool CmpViewpointOrigin(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ViewpointOrigin?.Value == value;
+    if (openXmlElement?.ViewpointOrigin?.Value == value) return true;
+    diffs?.Add(objName, "ViewpointOrigin", openXmlElement?.ViewpointOrigin?.Value, value);
+    return false;
   }
   
   private static void SetViewpointOrigin(DXVmlO.Extrusion openXmlElement, String? value)
@@ -111,7 +115,9 @@ public static class ExtrusionConverter
   
   private static bool CmpViewpoint(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Viewpoint?.Value == value;
+    if (openXmlElement?.Viewpoint?.Value == value) return true;
+    diffs?.Add(objName, "Viewpoint", openXmlElement?.Viewpoint?.Value, value);
+    return false;
   }
   
   private static void SetViewpoint(DXVmlO.Extrusion openXmlElement, String? value)
@@ -152,7 +158,9 @@ public static class ExtrusionConverter
   
   private static bool CmpSkewAmount(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SkewAmount?.Value == value;
+    if (openXmlElement?.SkewAmount?.Value == value) return true;
+    diffs?.Add(objName, "SkewAmount", openXmlElement?.SkewAmount?.Value, value);
+    return false;
   }
   
   private static void SetSkewAmount(DXVmlO.Extrusion openXmlElement, String? value)
@@ -173,7 +181,9 @@ public static class ExtrusionConverter
   
   private static bool CmpForceDepth(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDepth?.Value == value;
+    if (openXmlElement?.ForceDepth?.Value == value) return true;
+    diffs?.Add(objName, "ForceDepth", openXmlElement?.ForceDepth?.Value, value);
+    return false;
   }
   
   private static void SetForceDepth(DXVmlO.Extrusion openXmlElement, String? value)
@@ -194,7 +204,9 @@ public static class ExtrusionConverter
   
   private static bool CmpBackDepth(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BackDepth?.Value == value;
+    if (openXmlElement?.BackDepth?.Value == value) return true;
+    diffs?.Add(objName, "BackDepth", openXmlElement?.BackDepth?.Value, value);
+    return false;
   }
   
   private static void SetBackDepth(DXVmlO.Extrusion openXmlElement, String? value)
@@ -215,7 +227,9 @@ public static class ExtrusionConverter
   
   private static bool CmpOrientation(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Orientation?.Value == value;
+    if (openXmlElement?.Orientation?.Value == value) return true;
+    diffs?.Add(objName, "Orientation", openXmlElement?.Orientation?.Value, value);
+    return false;
   }
   
   private static void SetOrientation(DXVmlO.Extrusion openXmlElement, String? value)
@@ -256,7 +270,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLockRotationCenter(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LockRotationCenter?.Value == value;
+    if (openXmlElement?.LockRotationCenter?.Value == value) return true;
+    diffs?.Add(objName, "LockRotationCenter", openXmlElement?.LockRotationCenter?.Value, value);
+    return false;
   }
   
   private static void SetLockRotationCenter(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -277,7 +293,9 @@ public static class ExtrusionConverter
   
   private static bool CmpAutoRotationCenter(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AutoRotationCenter?.Value == value;
+    if (openXmlElement?.AutoRotationCenter?.Value == value) return true;
+    diffs?.Add(objName, "AutoRotationCenter", openXmlElement?.AutoRotationCenter?.Value, value);
+    return false;
   }
   
   private static void SetAutoRotationCenter(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -298,7 +316,9 @@ public static class ExtrusionConverter
   
   private static bool CmpRotationCenter(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RotationCenter?.Value == value;
+    if (openXmlElement?.RotationCenter?.Value == value) return true;
+    diffs?.Add(objName, "RotationCenter", openXmlElement?.RotationCenter?.Value, value);
+    return false;
   }
   
   private static void SetRotationCenter(DXVmlO.Extrusion openXmlElement, String? value)
@@ -319,7 +339,9 @@ public static class ExtrusionConverter
   
   private static bool CmpRotationAngle(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RotationAngle?.Value == value;
+    if (openXmlElement?.RotationAngle?.Value == value) return true;
+    diffs?.Add(objName, "RotationAngle", openXmlElement?.RotationAngle?.Value, value);
+    return false;
   }
   
   private static void SetRotationAngle(DXVmlO.Extrusion openXmlElement, String? value)
@@ -340,7 +362,9 @@ public static class ExtrusionConverter
   
   private static bool CmpColor(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color?.Value == value;
+    if (openXmlElement?.Color?.Value == value) return true;
+    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
+    return false;
   }
   
   private static void SetColor(DXVmlO.Extrusion openXmlElement, String? value)
@@ -381,7 +405,9 @@ public static class ExtrusionConverter
   
   private static bool CmpSpecularity(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Specularity?.Value == value;
+    if (openXmlElement?.Specularity?.Value == value) return true;
+    diffs?.Add(objName, "Specularity", openXmlElement?.Specularity?.Value, value);
+    return false;
   }
   
   private static void SetSpecularity(DXVmlO.Extrusion openXmlElement, String? value)
@@ -402,7 +428,9 @@ public static class ExtrusionConverter
   
   private static bool CmpDiffusity(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Diffusity?.Value == value;
+    if (openXmlElement?.Diffusity?.Value == value) return true;
+    diffs?.Add(objName, "Diffusity", openXmlElement?.Diffusity?.Value, value);
+    return false;
   }
   
   private static void SetDiffusity(DXVmlO.Extrusion openXmlElement, String? value)
@@ -423,7 +451,9 @@ public static class ExtrusionConverter
   
   private static bool CmpMetal(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Metal?.Value == value;
+    if (openXmlElement?.Metal?.Value == value) return true;
+    diffs?.Add(objName, "Metal", openXmlElement?.Metal?.Value, value);
+    return false;
   }
   
   private static void SetMetal(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -444,7 +474,9 @@ public static class ExtrusionConverter
   
   private static bool CmpEdge(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Edge?.Value == value;
+    if (openXmlElement?.Edge?.Value == value) return true;
+    diffs?.Add(objName, "Edge", openXmlElement?.Edge?.Value, value);
+    return false;
   }
   
   private static void SetEdge(DXVmlO.Extrusion openXmlElement, String? value)
@@ -465,7 +497,9 @@ public static class ExtrusionConverter
   
   private static bool CmpFacet(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Facet?.Value == value;
+    if (openXmlElement?.Facet?.Value == value) return true;
+    diffs?.Add(objName, "Facet", openXmlElement?.Facet?.Value, value);
+    return false;
   }
   
   private static void SetFacet(DXVmlO.Extrusion openXmlElement, String? value)
@@ -486,7 +520,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightFace(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightFace?.Value == value;
+    if (openXmlElement?.LightFace?.Value == value) return true;
+    diffs?.Add(objName, "LightFace", openXmlElement?.LightFace?.Value, value);
+    return false;
   }
   
   private static void SetLightFace(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -507,7 +543,9 @@ public static class ExtrusionConverter
   
   private static bool CmpBrightness(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Brightness?.Value == value;
+    if (openXmlElement?.Brightness?.Value == value) return true;
+    diffs?.Add(objName, "Brightness", openXmlElement?.Brightness?.Value, value);
+    return false;
   }
   
   private static void SetBrightness(DXVmlO.Extrusion openXmlElement, String? value)
@@ -528,7 +566,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightPosition(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightPosition?.Value == value;
+    if (openXmlElement?.LightPosition?.Value == value) return true;
+    diffs?.Add(objName, "LightPosition", openXmlElement?.LightPosition?.Value, value);
+    return false;
   }
   
   private static void SetLightPosition(DXVmlO.Extrusion openXmlElement, String? value)
@@ -549,7 +589,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightLevel(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightLevel?.Value == value;
+    if (openXmlElement?.LightLevel?.Value == value) return true;
+    diffs?.Add(objName, "LightLevel", openXmlElement?.LightLevel?.Value, value);
+    return false;
   }
   
   private static void SetLightLevel(DXVmlO.Extrusion openXmlElement, String? value)
@@ -570,7 +612,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightHarsh(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightHarsh?.Value == value;
+    if (openXmlElement?.LightHarsh?.Value == value) return true;
+    diffs?.Add(objName, "LightHarsh", openXmlElement?.LightHarsh?.Value, value);
+    return false;
   }
   
   private static void SetLightHarsh(DXVmlO.Extrusion openXmlElement, Boolean? value)
@@ -591,7 +635,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightPosition2(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightPosition2?.Value == value;
+    if (openXmlElement?.LightPosition2?.Value == value) return true;
+    diffs?.Add(objName, "LightPosition2", openXmlElement?.LightPosition2?.Value, value);
+    return false;
   }
   
   private static void SetLightPosition2(DXVmlO.Extrusion openXmlElement, String? value)
@@ -612,7 +658,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightLevel2(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightLevel2?.Value == value;
+    if (openXmlElement?.LightLevel2?.Value == value) return true;
+    diffs?.Add(objName, "LightLevel2", openXmlElement?.LightLevel2?.Value, value);
+    return false;
   }
   
   private static void SetLightLevel2(DXVmlO.Extrusion openXmlElement, String? value)
@@ -633,7 +681,9 @@ public static class ExtrusionConverter
   
   private static bool CmpLightHarsh2(DXVmlO.Extrusion openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LightHarsh2?.Value == value;
+    if (openXmlElement?.LightHarsh2?.Value == value) return true;
+    diffs?.Add(objName, "LightHarsh2", openXmlElement?.LightHarsh2?.Value, value);
+    return false;
   }
   
   private static void SetLightHarsh2(DXVmlO.Extrusion openXmlElement, Boolean? value)

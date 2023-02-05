@@ -15,7 +15,9 @@ public static class SignatureLineConverter
   
   private static bool CmpIsSignatureLine(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsSignatureLine?.Value == value;
+    if (openXmlElement?.IsSignatureLine?.Value == value) return true;
+    diffs?.Add(objName, "IsSignatureLine", openXmlElement?.IsSignatureLine?.Value, value);
+    return false;
   }
   
   private static void SetIsSignatureLine(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class SignatureLineConverter
   
   private static bool CmpId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class SignatureLineConverter
   
   private static bool CmpProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ProviderId?.Value == value;
+    if (openXmlElement?.ProviderId?.Value == value) return true;
+    diffs?.Add(objName, "ProviderId", openXmlElement?.ProviderId?.Value, value);
+    return false;
   }
   
   private static void SetProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSigningInstructionsSet(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SigningInstructionsSet?.Value == value;
+    if (openXmlElement?.SigningInstructionsSet?.Value == value) return true;
+    diffs?.Add(objName, "SigningInstructionsSet", openXmlElement?.SigningInstructionsSet?.Value, value);
+    return false;
   }
   
   private static void SetSigningInstructionsSet(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class SignatureLineConverter
   
   private static bool CmpAllowComments(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowComments?.Value == value;
+    if (openXmlElement?.AllowComments?.Value == value) return true;
+    diffs?.Add(objName, "AllowComments", openXmlElement?.AllowComments?.Value, value);
+    return false;
   }
   
   private static void SetAllowComments(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
@@ -120,7 +130,9 @@ public static class SignatureLineConverter
   
   private static bool CmpShowSignDate(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowSignDate?.Value == value;
+    if (openXmlElement?.ShowSignDate?.Value == value) return true;
+    diffs?.Add(objName, "ShowSignDate", openXmlElement?.ShowSignDate?.Value, value);
+    return false;
   }
   
   private static void SetShowSignDate(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
@@ -141,7 +153,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SuggestedSigner?.Value == value;
+    if (openXmlElement?.SuggestedSigner?.Value == value) return true;
+    diffs?.Add(objName, "SuggestedSigner", openXmlElement?.SuggestedSigner?.Value, value);
+    return false;
   }
   
   private static void SetSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SuggestedSigner2?.Value == value;
+    if (openXmlElement?.SuggestedSigner2?.Value == value) return true;
+    diffs?.Add(objName, "SuggestedSigner2", openXmlElement?.SuggestedSigner2?.Value, value);
+    return false;
   }
   
   private static void SetSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SuggestedSignerEmail?.Value == value;
+    if (openXmlElement?.SuggestedSignerEmail?.Value == value) return true;
+    diffs?.Add(objName, "SuggestedSignerEmail", openXmlElement?.SuggestedSignerEmail?.Value, value);
+    return false;
   }
   
   private static void SetSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SigningInstructions?.Value == value;
+    if (openXmlElement?.SigningInstructions?.Value == value) return true;
+    diffs?.Add(objName, "SigningInstructions", openXmlElement?.SigningInstructions?.Value, value);
+    return false;
   }
   
   private static void SetSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class SignatureLineConverter
   
   private static bool CmpAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AdditionalXml?.Value == value;
+    if (openXmlElement?.AdditionalXml?.Value == value) return true;
+    diffs?.Add(objName, "AdditionalXml", openXmlElement?.AdditionalXml?.Value, value);
+    return false;
   }
   
   private static void SetAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class SignatureLineConverter
   
   private static bool CmpSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SignatureProviderUrl?.Value == value;
+    if (openXmlElement?.SignatureProviderUrl?.Value == value) return true;
+    diffs?.Add(objName, "SignatureProviderUrl", openXmlElement?.SignatureProviderUrl?.Value, value);
+    return false;
   }
   
   private static void SetSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value)

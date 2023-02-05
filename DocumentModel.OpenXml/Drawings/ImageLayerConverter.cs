@@ -15,7 +15,9 @@ public static class ImageLayerConverter
   
   private static bool CmpEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Embed?.Value == value;
+    if (openXmlElement?.Embed?.Value == value) return true;
+    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
+    return false;
   }
   
   private static void SetEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value)

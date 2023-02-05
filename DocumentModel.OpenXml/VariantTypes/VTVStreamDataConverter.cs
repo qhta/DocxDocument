@@ -15,7 +15,9 @@ public static class VTVStreamDataConverter
   
   private static bool CmpVersion(DXVT.VTVStreamData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Version?.Value == value;
+    if (openXmlElement?.Version?.Value == value) return true;
+    diffs?.Add(objName, "Version", openXmlElement?.Version?.Value, value);
+    return false;
   }
   
   private static void SetVersion(DXVT.VTVStreamData openXmlElement, String? value)

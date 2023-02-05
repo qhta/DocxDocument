@@ -41,8 +41,7 @@ public static class ZoomConverter
   private static bool CmpPercent(DXW.Zoom openXmlElement, int? value, DiffList? diffs, string? objName)
   {
     var valStr = (value != null) ? (value.ToString() + "%") : null;
-    if (openXmlElement?.Percent?.Value == valStr)
-      return true;
+    if (openXmlElement?.Percent?.Value == valStr) return true;
     diffs?.Add(objName, "Percent", openXmlElement?.Percent?.Value, valStr);
     return false;
   }

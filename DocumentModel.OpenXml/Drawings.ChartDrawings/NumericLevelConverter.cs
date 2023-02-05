@@ -35,7 +35,9 @@ public static class NumericLevelConverter
   
   private static bool CmpFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FormatCode?.Value == value;
+    if (openXmlElement?.FormatCode?.Value == value) return true;
+    diffs?.Add(objName, "FormatCode", openXmlElement?.FormatCode?.Value, value);
+    return false;
   }
   
   private static void SetFormatCode(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class NumericLevelConverter
   
   private static bool CmpName(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXO2016DrawChartDraw.NumericLevel openXmlElement, String? value)

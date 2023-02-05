@@ -71,7 +71,9 @@ public static class CommentExConverter
   
   private static bool CmpDone(DXO2013W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Done?.Value == value;
+    if (openXmlElement?.Done?.Value == value) return true;
+    diffs?.Add(objName, "Done", openXmlElement?.Done?.Value, value);
+    return false;
   }
   
   private static void SetDone(DXO2013W.CommentEx openXmlElement, Boolean? value)

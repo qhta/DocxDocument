@@ -24,12 +24,15 @@ public static class ModelDisplay
     LineLength = 0;
   }
 
-  public static void WriteSameLine(string? str)
+  public static void WriteSameLine(string str)
   {
+    int maxLength = Console.WindowWidth-1;
+    if (str.Length>maxLength)
+      str = str.Substring(maxLength);
     var l = str?.Length ?? 0;
     int n = (l < LineLength) ? LineLength - l : 0;
     Writer.Write($"\r{str}");
-    if (n>0)
+    if (n > 0)
       Writer.Write(new String(' ',n));
     LineLength = l;
   }

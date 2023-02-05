@@ -55,7 +55,9 @@ public static class GeoLocationConverter
   
   private static bool CmpEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EntityName?.Value == value;
+    if (openXmlElement?.EntityName?.Value == value) return true;
+    diffs?.Add(objName, "EntityName", openXmlElement?.EntityName?.Value, value);
+    return false;
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value)

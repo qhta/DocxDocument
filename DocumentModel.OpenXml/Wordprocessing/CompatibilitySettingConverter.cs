@@ -33,7 +33,9 @@ public static class CompatibilitySettingConverter
   
   private static bool CmpUri(DXW.CompatibilitySetting openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXW.CompatibilitySetting openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class CompatibilitySettingConverter
   
   private static bool CmpVal(DXW.CompatibilitySetting openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.CompatibilitySetting openXmlElement, String? value)

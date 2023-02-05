@@ -15,7 +15,9 @@ public static class ItemConverter
   
   private static bool CmpId(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.Item openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ItemConverter
   
   private static bool CmpLabel(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.Item openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ItemConverter
   
   private static bool CmpImage(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.Item openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ItemConverter
   
   private static bool CmpImageMso(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.Item openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class ItemConverter
   
   private static bool CmpScreentip(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.Item openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ItemConverter
   
   private static bool CmpSupertip(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.Item openXmlElement, String? value)

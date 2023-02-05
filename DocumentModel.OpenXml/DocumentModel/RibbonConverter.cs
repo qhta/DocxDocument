@@ -15,7 +15,9 @@ public static class RibbonConverter
   
   private static bool CmpStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StartFromScratch?.Value == value;
+    if (openXmlElement?.StartFromScratch?.Value == value) return true;
+    diffs?.Add(objName, "StartFromScratch", openXmlElement?.StartFromScratch?.Value, value);
+    return false;
   }
   
   private static void SetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value)

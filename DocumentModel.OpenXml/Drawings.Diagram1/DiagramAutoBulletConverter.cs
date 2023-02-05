@@ -15,7 +15,9 @@ public static class DiagramAutoBulletConverter
   
   private static bool CmpAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AutoBulletPrefix?.Value == value;
+    if (openXmlElement?.AutoBulletPrefix?.Value == value) return true;
+    diffs?.Add(objName, "AutoBulletPrefix", openXmlElement?.AutoBulletPrefix?.Value, value);
+    return false;
   }
   
   private static void SetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class DiagramAutoBulletConverter
   
   private static bool CmpLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LeadZeros?.Value == value;
+    if (openXmlElement?.LeadZeros?.Value == value) return true;
+    diffs?.Add(objName, "LeadZeros", openXmlElement?.LeadZeros?.Value, value);
+    return false;
   }
   
   private static void SetLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)
@@ -57,7 +61,10 @@ public static class DiagramAutoBulletConverter
   
   private static bool CmpNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoBullet", val, value);
+    return false;
   }
   
   private static void SetNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)

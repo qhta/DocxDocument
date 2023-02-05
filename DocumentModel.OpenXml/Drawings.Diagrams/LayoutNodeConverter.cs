@@ -15,7 +15,9 @@ public static class LayoutNodeConverter
   
   private static bool CmpName(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDrawDgms.LayoutNode openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LayoutNodeConverter
   
   private static bool CmpStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StyleLabel?.Value == value;
+    if (openXmlElement?.StyleLabel?.Value == value) return true;
+    diffs?.Add(objName, "StyleLabel", openXmlElement?.StyleLabel?.Value, value);
+    return false;
   }
   
   private static void SetStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class LayoutNodeConverter
   
   private static bool CmpMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MoveWith?.Value == value;
+    if (openXmlElement?.MoveWith?.Value == value) return true;
+    diffs?.Add(objName, "MoveWith", openXmlElement?.MoveWith?.Value, value);
+    return false;
   }
   
   private static void SetMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value)

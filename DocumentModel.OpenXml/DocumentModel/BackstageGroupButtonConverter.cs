@@ -51,7 +51,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpScreentip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -72,7 +74,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetScreentip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpSupertip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetSupertip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -135,7 +143,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpId(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -156,7 +166,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -177,7 +189,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpTag(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -198,7 +212,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpOnAction(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnAction?.Value == value;
+    if (openXmlElement?.OnAction?.Value == value) return true;
+    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
+    return false;
   }
   
   private static void SetOnAction(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -219,7 +235,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpIsDefinitive(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsDefinitive?.Value == value;
+    if (openXmlElement?.IsDefinitive?.Value == value) return true;
+    diffs?.Add(objName, "IsDefinitive", openXmlElement?.IsDefinitive?.Value, value);
+    return false;
   }
   
   private static void SetIsDefinitive(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value)
@@ -240,7 +258,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpEnabled(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value)
@@ -261,7 +281,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -282,7 +304,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpLabel(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -303,7 +327,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -324,7 +350,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpVisible(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.BackstageGroupButton openXmlElement, Boolean? value)
@@ -345,7 +373,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -366,7 +396,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpKeytip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -387,7 +419,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetKeytip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -408,7 +442,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpImage(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -429,7 +465,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpImageMso(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)
@@ -450,7 +488,9 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpGetImage(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXO2010CustUI.BackstageGroupButton openXmlElement, String? value)

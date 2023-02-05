@@ -15,7 +15,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpId(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXDraw.HyperlinkType openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpInvalidUrl(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InvalidUrl?.Value == value;
+    if (openXmlElement?.InvalidUrl?.Value == value) return true;
+    diffs?.Add(objName, "InvalidUrl", openXmlElement?.InvalidUrl?.Value, value);
+    return false;
   }
   
   private static void SetInvalidUrl(DXDraw.HyperlinkType openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpAction(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Action?.Value == value;
+    if (openXmlElement?.Action?.Value == value) return true;
+    diffs?.Add(objName, "Action", openXmlElement?.Action?.Value, value);
+    return false;
   }
   
   private static void SetAction(DXDraw.HyperlinkType openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpTargetFrame(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TargetFrame?.Value == value;
+    if (openXmlElement?.TargetFrame?.Value == value) return true;
+    diffs?.Add(objName, "TargetFrame", openXmlElement?.TargetFrame?.Value, value);
+    return false;
   }
   
   private static void SetTargetFrame(DXDraw.HyperlinkType openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpTooltip(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tooltip?.Value == value;
+    if (openXmlElement?.Tooltip?.Value == value) return true;
+    diffs?.Add(objName, "Tooltip", openXmlElement?.Tooltip?.Value, value);
+    return false;
   }
   
   private static void SetTooltip(DXDraw.HyperlinkType openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpHistory(DXDraw.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.History?.Value == value;
+    if (openXmlElement?.History?.Value == value) return true;
+    diffs?.Add(objName, "History", openXmlElement?.History?.Value, value);
+    return false;
   }
   
   private static void SetHistory(DXDraw.HyperlinkType openXmlElement, Boolean? value)
@@ -141,7 +153,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpHighlightClick(DXDraw.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HighlightClick?.Value == value;
+    if (openXmlElement?.HighlightClick?.Value == value) return true;
+    diffs?.Add(objName, "HighlightClick", openXmlElement?.HighlightClick?.Value, value);
+    return false;
   }
   
   private static void SetHighlightClick(DXDraw.HyperlinkType openXmlElement, Boolean? value)
@@ -162,7 +176,9 @@ public static class HyperlinkTypeConverter
   
   private static bool CmpEndSound(DXDraw.HyperlinkType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EndSound?.Value == value;
+    if (openXmlElement?.EndSound?.Value == value) return true;
+    diffs?.Add(objName, "EndSound", openXmlElement?.EndSound?.Value, value);
+    return false;
   }
   
   private static void SetEndSound(DXDraw.HyperlinkType openXmlElement, Boolean? value)

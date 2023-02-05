@@ -15,7 +15,9 @@ public static class AllocatedCommandConverter
   
   private static bool CmpArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ArgumentValue?.Value == value;
+    if (openXmlElement?.ArgumentValue?.Value == value) return true;
+    diffs?.Add(objName, "ArgumentValue", openXmlElement?.ArgumentValue?.Value, value);
+    return false;
   }
   
   private static void SetArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class AllocatedCommandConverter
   
   private static bool CmpCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CommandBasedOn?.Value == value;
+    if (openXmlElement?.CommandBasedOn?.Value == value) return true;
+    diffs?.Add(objName, "CommandBasedOn", openXmlElement?.CommandBasedOn?.Value, value);
+    return false;
   }
   
   private static void SetCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value)
@@ -85,7 +89,9 @@ public static class AllocatedCommandConverter
   
   private static bool CmpAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AcceleratorName?.Value == value;
+    if (openXmlElement?.AcceleratorName?.Value == value) return true;
+    diffs?.Add(objName, "AcceleratorName", openXmlElement?.AcceleratorName?.Value, value);
+    return false;
   }
   
   private static void SetAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value)

@@ -53,7 +53,9 @@ public static class BorderTypeConverter
   
   private static bool CmpShadow(DXVmlW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Shadow?.Value == value;
+    if (openXmlElement?.Shadow?.Value == value) return true;
+    diffs?.Add(objName, "Shadow", openXmlElement?.Shadow?.Value, value);
+    return false;
   }
   
   private static void SetShadow(DXVmlW.BorderType openXmlElement, Boolean? value)

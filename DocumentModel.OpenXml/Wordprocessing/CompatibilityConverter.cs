@@ -15,7 +15,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseSingleBorderForContiguousCells(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseSingleBorderForContiguousCells>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseSingleBorderForContiguousCells>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseSingleBorderForContiguousCells", val, value);
+    return false;
   }
   
   private static void SetUseSingleBorderForContiguousCells(DXW.Compatibility openXmlElement, Boolean? value)
@@ -43,7 +46,10 @@ public static class CompatibilityConverter
   
   private static bool CmpWordPerfectJustification(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WordPerfectJustification>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WordPerfectJustification>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WordPerfectJustification", val, value);
+    return false;
   }
   
   private static void SetWordPerfectJustification(DXW.Compatibility openXmlElement, Boolean? value)
@@ -71,7 +77,10 @@ public static class CompatibilityConverter
   
   private static bool CmpNoTabHangIndent(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoTabHangIndent>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoTabHangIndent>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoTabHangIndent", val, value);
+    return false;
   }
   
   private static void SetNoTabHangIndent(DXW.Compatibility openXmlElement, Boolean? value)
@@ -99,7 +108,10 @@ public static class CompatibilityConverter
   
   private static bool CmpNoLeading(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoLeading>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoLeading>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoLeading", val, value);
+    return false;
   }
   
   private static void SetNoLeading(DXW.Compatibility openXmlElement, Boolean? value)
@@ -127,7 +139,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSpaceForUnderline(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SpaceForUnderline>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SpaceForUnderline>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SpaceForUnderline", val, value);
+    return false;
   }
   
   private static void SetSpaceForUnderline(DXW.Compatibility openXmlElement, Boolean? value)
@@ -155,7 +170,10 @@ public static class CompatibilityConverter
   
   private static bool CmpNoColumnBalance(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoColumnBalance>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoColumnBalance>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoColumnBalance", val, value);
+    return false;
   }
   
   private static void SetNoColumnBalance(DXW.Compatibility openXmlElement, Boolean? value)
@@ -183,7 +201,10 @@ public static class CompatibilityConverter
   
   private static bool CmpBalanceSingleByteDoubleByteWidth(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.BalanceSingleByteDoubleByteWidth>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.BalanceSingleByteDoubleByteWidth>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.BalanceSingleByteDoubleByteWidth", val, value);
+    return false;
   }
   
   private static void SetBalanceSingleByteDoubleByteWidth(DXW.Compatibility openXmlElement, Boolean? value)
@@ -211,7 +232,10 @@ public static class CompatibilityConverter
   
   private static bool CmpNoExtraLineSpacing(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoExtraLineSpacing>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoExtraLineSpacing>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoExtraLineSpacing", val, value);
+    return false;
   }
   
   private static void SetNoExtraLineSpacing(DXW.Compatibility openXmlElement, Boolean? value)
@@ -239,7 +263,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotLeaveBackslashAlone(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotLeaveBackslashAlone>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotLeaveBackslashAlone>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotLeaveBackslashAlone", val, value);
+    return false;
   }
   
   private static void SetDoNotLeaveBackslashAlone(DXW.Compatibility openXmlElement, Boolean? value)
@@ -267,7 +294,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUnderlineTrailingSpaces(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UnderlineTrailingSpaces>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UnderlineTrailingSpaces>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UnderlineTrailingSpaces", val, value);
+    return false;
   }
   
   private static void SetUnderlineTrailingSpaces(DXW.Compatibility openXmlElement, Boolean? value)
@@ -295,7 +325,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotExpandShiftReturn(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotExpandShiftReturn>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotExpandShiftReturn>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotExpandShiftReturn", val, value);
+    return false;
   }
   
   private static void SetDoNotExpandShiftReturn(DXW.Compatibility openXmlElement, Boolean? value)
@@ -323,7 +356,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSpacingInWholePoints(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SpacingInWholePoints>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SpacingInWholePoints>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SpacingInWholePoints", val, value);
+    return false;
   }
   
   private static void SetSpacingInWholePoints(DXW.Compatibility openXmlElement, Boolean? value)
@@ -351,7 +387,10 @@ public static class CompatibilityConverter
   
   private static bool CmpLineWrapLikeWord6(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.LineWrapLikeWord6>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.LineWrapLikeWord6>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.LineWrapLikeWord6", val, value);
+    return false;
   }
   
   private static void SetLineWrapLikeWord6(DXW.Compatibility openXmlElement, Boolean? value)
@@ -379,7 +418,10 @@ public static class CompatibilityConverter
   
   private static bool CmpPrintBodyTextBeforeHeader(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.PrintBodyTextBeforeHeader>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.PrintBodyTextBeforeHeader>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.PrintBodyTextBeforeHeader", val, value);
+    return false;
   }
   
   private static void SetPrintBodyTextBeforeHeader(DXW.Compatibility openXmlElement, Boolean? value)
@@ -407,7 +449,10 @@ public static class CompatibilityConverter
   
   private static bool CmpPrintColorBlackWhite(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.PrintColorBlackWhite>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.PrintColorBlackWhite>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.PrintColorBlackWhite", val, value);
+    return false;
   }
   
   private static void SetPrintColorBlackWhite(DXW.Compatibility openXmlElement, Boolean? value)
@@ -435,7 +480,10 @@ public static class CompatibilityConverter
   
   private static bool CmpWordPerfectSpaceWidth(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WordPerfectSpaceWidth>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WordPerfectSpaceWidth>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WordPerfectSpaceWidth", val, value);
+    return false;
   }
   
   private static void SetWordPerfectSpaceWidth(DXW.Compatibility openXmlElement, Boolean? value)
@@ -463,7 +511,10 @@ public static class CompatibilityConverter
   
   private static bool CmpShowBreaksInFrames(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ShowBreaksInFrames>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ShowBreaksInFrames>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ShowBreaksInFrames", val, value);
+    return false;
   }
   
   private static void SetShowBreaksInFrames(DXW.Compatibility openXmlElement, Boolean? value)
@@ -491,7 +542,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSubFontBySize(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SubFontBySize>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SubFontBySize>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SubFontBySize", val, value);
+    return false;
   }
   
   private static void SetSubFontBySize(DXW.Compatibility openXmlElement, Boolean? value)
@@ -519,7 +573,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSuppressBottomSpacing(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressBottomSpacing>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressBottomSpacing>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressBottomSpacing", val, value);
+    return false;
   }
   
   private static void SetSuppressBottomSpacing(DXW.Compatibility openXmlElement, Boolean? value)
@@ -547,7 +604,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSuppressTopSpacing(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressTopSpacing>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressTopSpacing>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressTopSpacing", val, value);
+    return false;
   }
   
   private static void SetSuppressTopSpacing(DXW.Compatibility openXmlElement, Boolean? value)
@@ -575,7 +635,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSuppressSpacingAtTopOfPage(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressSpacingAtTopOfPage>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressSpacingAtTopOfPage>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressSpacingAtTopOfPage", val, value);
+    return false;
   }
   
   private static void SetSuppressSpacingAtTopOfPage(DXW.Compatibility openXmlElement, Boolean? value)
@@ -603,7 +666,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSuppressTopSpacingWordPerfect(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressTopSpacingWordPerfect>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressTopSpacingWordPerfect>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressTopSpacingWordPerfect", val, value);
+    return false;
   }
   
   private static void SetSuppressTopSpacingWordPerfect(DXW.Compatibility openXmlElement, Boolean? value)
@@ -631,7 +697,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSuppressSpacingBeforeAfterPageBreak(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SuppressSpacingBeforeAfterPageBreak>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SuppressSpacingBeforeAfterPageBreak>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SuppressSpacingBeforeAfterPageBreak", val, value);
+    return false;
   }
   
   private static void SetSuppressSpacingBeforeAfterPageBreak(DXW.Compatibility openXmlElement, Boolean? value)
@@ -659,7 +728,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSwapBordersFacingPages(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SwapBordersFacingPages>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SwapBordersFacingPages>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SwapBordersFacingPages", val, value);
+    return false;
   }
   
   private static void SetSwapBordersFacingPages(DXW.Compatibility openXmlElement, Boolean? value)
@@ -687,7 +759,10 @@ public static class CompatibilityConverter
   
   private static bool CmpConvertMailMergeEscape(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ConvertMailMergeEscape>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ConvertMailMergeEscape>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ConvertMailMergeEscape", val, value);
+    return false;
   }
   
   private static void SetConvertMailMergeEscape(DXW.Compatibility openXmlElement, Boolean? value)
@@ -715,7 +790,10 @@ public static class CompatibilityConverter
   
   private static bool CmpTruncateFontHeightsLikeWordPerfect(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.TruncateFontHeightsLikeWordPerfect>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.TruncateFontHeightsLikeWordPerfect>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.TruncateFontHeightsLikeWordPerfect", val, value);
+    return false;
   }
   
   private static void SetTruncateFontHeightsLikeWordPerfect(DXW.Compatibility openXmlElement, Boolean? value)
@@ -743,7 +821,10 @@ public static class CompatibilityConverter
   
   private static bool CmpMacWordSmallCaps(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MacWordSmallCaps>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.MacWordSmallCaps>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MacWordSmallCaps", val, value);
+    return false;
   }
   
   private static void SetMacWordSmallCaps(DXW.Compatibility openXmlElement, Boolean? value)
@@ -771,7 +852,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUsePrinterMetrics(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UsePrinterMetrics>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UsePrinterMetrics>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UsePrinterMetrics", val, value);
+    return false;
   }
   
   private static void SetUsePrinterMetrics(DXW.Compatibility openXmlElement, Boolean? value)
@@ -799,7 +883,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotSuppressParagraphBorders(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSuppressParagraphBorders>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotSuppressParagraphBorders>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotSuppressParagraphBorders", val, value);
+    return false;
   }
   
   private static void SetDoNotSuppressParagraphBorders(DXW.Compatibility openXmlElement, Boolean? value)
@@ -827,7 +914,10 @@ public static class CompatibilityConverter
   
   private static bool CmpWrapTrailSpaces(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.WrapTrailSpaces>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.WrapTrailSpaces>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.WrapTrailSpaces", val, value);
+    return false;
   }
   
   private static void SetWrapTrailSpaces(DXW.Compatibility openXmlElement, Boolean? value)
@@ -855,7 +945,10 @@ public static class CompatibilityConverter
   
   private static bool CmpFootnoteLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FootnoteLayoutLikeWord8>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.FootnoteLayoutLikeWord8>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.FootnoteLayoutLikeWord8", val, value);
+    return false;
   }
   
   private static void SetFootnoteLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value)
@@ -883,7 +976,10 @@ public static class CompatibilityConverter
   
   private static bool CmpShapeLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ShapeLayoutLikeWord8>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ShapeLayoutLikeWord8>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ShapeLayoutLikeWord8", val, value);
+    return false;
   }
   
   private static void SetShapeLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value)
@@ -911,7 +1007,10 @@ public static class CompatibilityConverter
   
   private static bool CmpAlignTablesRowByRow(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AlignTablesRowByRow>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AlignTablesRowByRow>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AlignTablesRowByRow", val, value);
+    return false;
   }
   
   private static void SetAlignTablesRowByRow(DXW.Compatibility openXmlElement, Boolean? value)
@@ -939,7 +1038,10 @@ public static class CompatibilityConverter
   
   private static bool CmpForgetLastTabAlignment(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ForgetLastTabAlignment>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ForgetLastTabAlignment>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ForgetLastTabAlignment", val, value);
+    return false;
   }
   
   private static void SetForgetLastTabAlignment(DXW.Compatibility openXmlElement, Boolean? value)
@@ -967,7 +1069,10 @@ public static class CompatibilityConverter
   
   private static bool CmpAdjustLineHeightInTable(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AdjustLineHeightInTable>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AdjustLineHeightInTable>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AdjustLineHeightInTable", val, value);
+    return false;
   }
   
   private static void SetAdjustLineHeightInTable(DXW.Compatibility openXmlElement, Boolean? value)
@@ -995,7 +1100,10 @@ public static class CompatibilityConverter
   
   private static bool CmpAutoSpaceLikeWord95(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AutoSpaceLikeWord95>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AutoSpaceLikeWord95>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AutoSpaceLikeWord95", val, value);
+    return false;
   }
   
   private static void SetAutoSpaceLikeWord95(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1023,7 +1131,10 @@ public static class CompatibilityConverter
   
   private static bool CmpNoSpaceRaiseLower(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoSpaceRaiseLower>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoSpaceRaiseLower>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoSpaceRaiseLower", val, value);
+    return false;
   }
   
   private static void SetNoSpaceRaiseLower(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1051,7 +1162,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotUseHTMLParagraphAutoSpacing(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotUseHTMLParagraphAutoSpacing>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotUseHTMLParagraphAutoSpacing>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotUseHTMLParagraphAutoSpacing", val, value);
+    return false;
   }
   
   private static void SetDoNotUseHTMLParagraphAutoSpacing(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1079,7 +1193,10 @@ public static class CompatibilityConverter
   
   private static bool CmpLayoutRawTableWidth(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.LayoutRawTableWidth>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.LayoutRawTableWidth>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.LayoutRawTableWidth", val, value);
+    return false;
   }
   
   private static void SetLayoutRawTableWidth(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1107,7 +1224,10 @@ public static class CompatibilityConverter
   
   private static bool CmpLayoutTableRowsApart(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.LayoutTableRowsApart>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.LayoutTableRowsApart>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.LayoutTableRowsApart", val, value);
+    return false;
   }
   
   private static void SetLayoutTableRowsApart(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1135,7 +1255,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseWord97LineBreakRules(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseWord97LineBreakRules>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseWord97LineBreakRules>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseWord97LineBreakRules", val, value);
+    return false;
   }
   
   private static void SetUseWord97LineBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1163,7 +1286,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotBreakWrappedTables(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotBreakWrappedTables>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotBreakWrappedTables>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotBreakWrappedTables", val, value);
+    return false;
   }
   
   private static void SetDoNotBreakWrappedTables(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1191,7 +1317,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotSnapToGridInCell(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSnapToGridInCell>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotSnapToGridInCell>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotSnapToGridInCell", val, value);
+    return false;
   }
   
   private static void SetDoNotSnapToGridInCell(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1219,7 +1348,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSelectFieldWithFirstOrLastChar(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SelectFieldWithFirstOrLastChar>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SelectFieldWithFirstOrLastChar>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SelectFieldWithFirstOrLastChar", val, value);
+    return false;
   }
   
   private static void SetSelectFieldWithFirstOrLastChar(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1247,7 +1379,10 @@ public static class CompatibilityConverter
   
   private static bool CmpApplyBreakingRules(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ApplyBreakingRules>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ApplyBreakingRules>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ApplyBreakingRules", val, value);
+    return false;
   }
   
   private static void SetApplyBreakingRules(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1275,7 +1410,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotWrapTextWithPunctuation(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotWrapTextWithPunctuation>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotWrapTextWithPunctuation>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotWrapTextWithPunctuation", val, value);
+    return false;
   }
   
   private static void SetDoNotWrapTextWithPunctuation(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1303,7 +1441,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotUseEastAsianBreakRules(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotUseEastAsianBreakRules>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotUseEastAsianBreakRules>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotUseEastAsianBreakRules", val, value);
+    return false;
   }
   
   private static void SetDoNotUseEastAsianBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1331,7 +1472,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseWord2002TableStyleRules(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseWord2002TableStyleRules>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseWord2002TableStyleRules>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseWord2002TableStyleRules", val, value);
+    return false;
   }
   
   private static void SetUseWord2002TableStyleRules(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1359,7 +1503,10 @@ public static class CompatibilityConverter
   
   private static bool CmpGrowAutofit(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.GrowAutofit>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.GrowAutofit>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.GrowAutofit", val, value);
+    return false;
   }
   
   private static void SetGrowAutofit(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1387,7 +1534,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseFarEastLayout(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseFarEastLayout>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseFarEastLayout>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseFarEastLayout", val, value);
+    return false;
   }
   
   private static void SetUseFarEastLayout(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1415,7 +1565,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseNormalStyleForList(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseNormalStyleForList>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseNormalStyleForList>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseNormalStyleForList", val, value);
+    return false;
   }
   
   private static void SetUseNormalStyleForList(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1443,7 +1596,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotUseIndentAsNumberingTabStop(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotUseIndentAsNumberingTabStop>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotUseIndentAsNumberingTabStop>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotUseIndentAsNumberingTabStop", val, value);
+    return false;
   }
   
   private static void SetDoNotUseIndentAsNumberingTabStop(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1471,7 +1627,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseAltKinsokuLineBreakRules(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseAltKinsokuLineBreakRules>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseAltKinsokuLineBreakRules>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseAltKinsokuLineBreakRules", val, value);
+    return false;
   }
   
   private static void SetUseAltKinsokuLineBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1499,7 +1658,10 @@ public static class CompatibilityConverter
   
   private static bool CmpAllowSpaceOfSameStyleInTable(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AllowSpaceOfSameStyleInTable>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AllowSpaceOfSameStyleInTable>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AllowSpaceOfSameStyleInTable", val, value);
+    return false;
   }
   
   private static void SetAllowSpaceOfSameStyleInTable(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1527,7 +1689,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotSuppressIndentation(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSuppressIndentation>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotSuppressIndentation>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotSuppressIndentation", val, value);
+    return false;
   }
   
   private static void SetDoNotSuppressIndentation(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1555,7 +1720,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotAutofitConstrainedTables(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotAutofitConstrainedTables>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotAutofitConstrainedTables>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotAutofitConstrainedTables", val, value);
+    return false;
   }
   
   private static void SetDoNotAutofitConstrainedTables(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1583,7 +1751,10 @@ public static class CompatibilityConverter
   
   private static bool CmpAutofitToFirstFixedWidthCell(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.AutofitToFirstFixedWidthCell>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.AutofitToFirstFixedWidthCell>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.AutofitToFirstFixedWidthCell", val, value);
+    return false;
   }
   
   private static void SetAutofitToFirstFixedWidthCell(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1611,7 +1782,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUnderlineTabInNumberingList(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UnderlineTabInNumberingList>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UnderlineTabInNumberingList>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UnderlineTabInNumberingList", val, value);
+    return false;
   }
   
   private static void SetUnderlineTabInNumberingList(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1639,7 +1813,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDisplayHangulFixedWidth(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DisplayHangulFixedWidth>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DisplayHangulFixedWidth>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DisplayHangulFixedWidth", val, value);
+    return false;
   }
   
   private static void SetDisplayHangulFixedWidth(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1667,7 +1844,10 @@ public static class CompatibilityConverter
   
   private static bool CmpSplitPageBreakAndParagraphMark(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.SplitPageBreakAndParagraphMark>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.SplitPageBreakAndParagraphMark>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.SplitPageBreakAndParagraphMark", val, value);
+    return false;
   }
   
   private static void SetSplitPageBreakAndParagraphMark(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1695,7 +1875,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotVerticallyAlignCellWithShape(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotVerticallyAlignCellWithShape>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotVerticallyAlignCellWithShape>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotVerticallyAlignCellWithShape", val, value);
+    return false;
   }
   
   private static void SetDoNotVerticallyAlignCellWithShape(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1723,7 +1906,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotBreakConstrainedForcedTable(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotBreakConstrainedForcedTable>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotBreakConstrainedForcedTable>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotBreakConstrainedForcedTable", val, value);
+    return false;
   }
   
   private static void SetDoNotBreakConstrainedForcedTable(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1751,7 +1937,10 @@ public static class CompatibilityConverter
   
   private static bool CmpDoNotVerticallyAlignInTextBox(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotVerticallyAlignInTextBox>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotVerticallyAlignInTextBox>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotVerticallyAlignInTextBox", val, value);
+    return false;
   }
   
   private static void SetDoNotVerticallyAlignInTextBox(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1779,7 +1968,10 @@ public static class CompatibilityConverter
   
   private static bool CmpUseAnsiKerningPairs(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.UseAnsiKerningPairs>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.UseAnsiKerningPairs>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.UseAnsiKerningPairs", val, value);
+    return false;
   }
   
   private static void SetUseAnsiKerningPairs(DXW.Compatibility openXmlElement, Boolean? value)
@@ -1807,7 +1999,10 @@ public static class CompatibilityConverter
   
   private static bool CmpCachedColumnBalance(DXW.Compatibility openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.CachedColumnBalance>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.CachedColumnBalance>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.CachedColumnBalance", val, value);
+    return false;
   }
   
   private static void SetCachedColumnBalance(DXW.Compatibility openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class ShapeConverter
   
   private static bool CmpId(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Shape openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ShapeConverter
   
   private static bool CmpStyle(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.Shape openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ShapeConverter
   
   private static bool CmpHref(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.Shape openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ShapeConverter
   
   private static bool CmpTarget(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Target?.Value == value;
+    if (openXmlElement?.Target?.Value == value) return true;
+    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
+    return false;
   }
   
   private static void SetTarget(DXVml.Shape openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class ShapeConverter
   
   private static bool CmpClass(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Class?.Value == value;
+    if (openXmlElement?.Class?.Value == value) return true;
+    diffs?.Add(objName, "Class", openXmlElement?.Class?.Value, value);
+    return false;
   }
   
   private static void SetClass(DXVml.Shape openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ShapeConverter
   
   private static bool CmpTitle(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.Shape openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class ShapeConverter
   
   private static bool CmpAlternate(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Alternate?.Value == value;
+    if (openXmlElement?.Alternate?.Value == value) return true;
+    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
+    return false;
   }
   
   private static void SetAlternate(DXVml.Shape openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class ShapeConverter
   
   private static bool CmpCoordinateSize(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateSize?.Value == value;
+    if (openXmlElement?.CoordinateSize?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateSize(DXVml.Shape openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class ShapeConverter
   
   private static bool CmpCoordinateOrigin(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateOrigin?.Value == value;
+    if (openXmlElement?.CoordinateOrigin?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateOrigin", openXmlElement?.CoordinateOrigin?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateOrigin(DXVml.Shape openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class ShapeConverter
   
   private static bool CmpWrapCoordinates(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.WrapCoordinates?.Value == value;
+    if (openXmlElement?.WrapCoordinates?.Value == value) return true;
+    diffs?.Add(objName, "WrapCoordinates", openXmlElement?.WrapCoordinates?.Value, value);
+    return false;
   }
   
   private static void SetWrapCoordinates(DXVml.Shape openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class ShapeConverter
   
   private static bool CmpPrint(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Print?.Value == value;
+    if (openXmlElement?.Print?.Value == value) return true;
+    diffs?.Add(objName, "Print", openXmlElement?.Print?.Value, value);
+    return false;
   }
   
   private static void SetPrint(DXVml.Shape openXmlElement, Boolean? value)
@@ -246,7 +268,9 @@ public static class ShapeConverter
   
   private static bool CmpOptionalString(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OptionalString?.Value == value;
+    if (openXmlElement?.OptionalString?.Value == value) return true;
+    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
+    return false;
   }
   
   private static void SetOptionalString(DXVml.Shape openXmlElement, String? value)
@@ -267,7 +291,9 @@ public static class ShapeConverter
   
   private static bool CmpOned(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Oned?.Value == value;
+    if (openXmlElement?.Oned?.Value == value) return true;
+    diffs?.Add(objName, "Oned", openXmlElement?.Oned?.Value, value);
+    return false;
   }
   
   private static void SetOned(DXVml.Shape openXmlElement, Boolean? value)
@@ -308,7 +334,9 @@ public static class ShapeConverter
   
   private static bool CmpDoubleClickNotify(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DoubleClickNotify?.Value == value;
+    if (openXmlElement?.DoubleClickNotify?.Value == value) return true;
+    diffs?.Add(objName, "DoubleClickNotify", openXmlElement?.DoubleClickNotify?.Value, value);
+    return false;
   }
   
   private static void SetDoubleClickNotify(DXVml.Shape openXmlElement, Boolean? value)
@@ -329,7 +357,9 @@ public static class ShapeConverter
   
   private static bool CmpButton(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Button?.Value == value;
+    if (openXmlElement?.Button?.Value == value) return true;
+    diffs?.Add(objName, "Button", openXmlElement?.Button?.Value, value);
+    return false;
   }
   
   private static void SetButton(DXVml.Shape openXmlElement, Boolean? value)
@@ -350,7 +380,9 @@ public static class ShapeConverter
   
   private static bool CmpUserHidden(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserHidden?.Value == value;
+    if (openXmlElement?.UserHidden?.Value == value) return true;
+    diffs?.Add(objName, "UserHidden", openXmlElement?.UserHidden?.Value, value);
+    return false;
   }
   
   private static void SetUserHidden(DXVml.Shape openXmlElement, Boolean? value)
@@ -371,7 +403,9 @@ public static class ShapeConverter
   
   private static bool CmpBullet(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bullet?.Value == value;
+    if (openXmlElement?.Bullet?.Value == value) return true;
+    diffs?.Add(objName, "Bullet", openXmlElement?.Bullet?.Value, value);
+    return false;
   }
   
   private static void SetBullet(DXVml.Shape openXmlElement, Boolean? value)
@@ -392,7 +426,9 @@ public static class ShapeConverter
   
   private static bool CmpHorizontal(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Horizontal?.Value == value;
+    if (openXmlElement?.Horizontal?.Value == value) return true;
+    diffs?.Add(objName, "Horizontal", openXmlElement?.Horizontal?.Value, value);
+    return false;
   }
   
   private static void SetHorizontal(DXVml.Shape openXmlElement, Boolean? value)
@@ -413,7 +449,9 @@ public static class ShapeConverter
   
   private static bool CmpHorizontalStandard(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalStandard?.Value == value;
+    if (openXmlElement?.HorizontalStandard?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalStandard", openXmlElement?.HorizontalStandard?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalStandard(DXVml.Shape openXmlElement, Boolean? value)
@@ -434,7 +472,9 @@ public static class ShapeConverter
   
   private static bool CmpHorizontalNoShade(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalNoShade?.Value == value;
+    if (openXmlElement?.HorizontalNoShade?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalNoShade", openXmlElement?.HorizontalNoShade?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalNoShade(DXVml.Shape openXmlElement, Boolean? value)
@@ -493,7 +533,9 @@ public static class ShapeConverter
   
   private static bool CmpAllowInCell(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInCell?.Value == value;
+    if (openXmlElement?.AllowInCell?.Value == value) return true;
+    diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
+    return false;
   }
   
   private static void SetAllowInCell(DXVml.Shape openXmlElement, Boolean? value)
@@ -514,7 +556,9 @@ public static class ShapeConverter
   
   private static bool CmpAllowOverlap(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXVml.Shape openXmlElement, Boolean? value)
@@ -535,7 +579,9 @@ public static class ShapeConverter
   
   private static bool CmpUserDrawn(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserDrawn?.Value == value;
+    if (openXmlElement?.UserDrawn?.Value == value) return true;
+    diffs?.Add(objName, "UserDrawn", openXmlElement?.UserDrawn?.Value, value);
+    return false;
   }
   
   private static void SetUserDrawn(DXVml.Shape openXmlElement, Boolean? value)
@@ -556,7 +602,9 @@ public static class ShapeConverter
   
   private static bool CmpBorderTopColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderTopColor?.Value == value;
+    if (openXmlElement?.BorderTopColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderTopColor", openXmlElement?.BorderTopColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderTopColor(DXVml.Shape openXmlElement, String? value)
@@ -577,7 +625,9 @@ public static class ShapeConverter
   
   private static bool CmpBorderLeftColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderLeftColor?.Value == value;
+    if (openXmlElement?.BorderLeftColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderLeftColor", openXmlElement?.BorderLeftColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderLeftColor(DXVml.Shape openXmlElement, String? value)
@@ -598,7 +648,9 @@ public static class ShapeConverter
   
   private static bool CmpBorderBottomColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderBottomColor?.Value == value;
+    if (openXmlElement?.BorderBottomColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderBottomColor", openXmlElement?.BorderBottomColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderBottomColor(DXVml.Shape openXmlElement, String? value)
@@ -619,7 +671,9 @@ public static class ShapeConverter
   
   private static bool CmpBorderRightColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderRightColor?.Value == value;
+    if (openXmlElement?.BorderRightColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderRightColor", openXmlElement?.BorderRightColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderRightColor(DXVml.Shape openXmlElement, String? value)
@@ -718,7 +772,9 @@ public static class ShapeConverter
   
   private static bool CmpFilled(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Filled?.Value == value;
+    if (openXmlElement?.Filled?.Value == value) return true;
+    diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
+    return false;
   }
   
   private static void SetFilled(DXVml.Shape openXmlElement, Boolean? value)
@@ -739,7 +795,9 @@ public static class ShapeConverter
   
   private static bool CmpFillColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FillColor?.Value == value;
+    if (openXmlElement?.FillColor?.Value == value) return true;
+    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
+    return false;
   }
   
   private static void SetFillColor(DXVml.Shape openXmlElement, String? value)
@@ -760,7 +818,9 @@ public static class ShapeConverter
   
   private static bool CmpStroked(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Stroked?.Value == value;
+    if (openXmlElement?.Stroked?.Value == value) return true;
+    diffs?.Add(objName, "Stroked", openXmlElement?.Stroked?.Value, value);
+    return false;
   }
   
   private static void SetStroked(DXVml.Shape openXmlElement, Boolean? value)
@@ -781,7 +841,9 @@ public static class ShapeConverter
   
   private static bool CmpStrokeColor(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeColor?.Value == value;
+    if (openXmlElement?.StrokeColor?.Value == value) return true;
+    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
+    return false;
   }
   
   private static void SetStrokeColor(DXVml.Shape openXmlElement, String? value)
@@ -802,7 +864,9 @@ public static class ShapeConverter
   
   private static bool CmpStrokeWeight(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeWeight?.Value == value;
+    if (openXmlElement?.StrokeWeight?.Value == value) return true;
+    diffs?.Add(objName, "StrokeWeight", openXmlElement?.StrokeWeight?.Value, value);
+    return false;
   }
   
   private static void SetStrokeWeight(DXVml.Shape openXmlElement, String? value)
@@ -823,7 +887,9 @@ public static class ShapeConverter
   
   private static bool CmpInsetPen(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsetPen?.Value == value;
+    if (openXmlElement?.InsetPen?.Value == value) return true;
+    diffs?.Add(objName, "InsetPen", openXmlElement?.InsetPen?.Value, value);
+    return false;
   }
   
   private static void SetInsetPen(DXVml.Shape openXmlElement, Boolean? value)
@@ -936,7 +1002,9 @@ public static class ShapeConverter
   
   private static bool CmpForceDash(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDash?.Value == value;
+    if (openXmlElement?.ForceDash?.Value == value) return true;
+    diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
+    return false;
   }
   
   private static void SetForceDash(DXVml.Shape openXmlElement, Boolean? value)
@@ -957,7 +1025,9 @@ public static class ShapeConverter
   
   private static bool CmpOleIcon(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OleIcon?.Value == value;
+    if (openXmlElement?.OleIcon?.Value == value) return true;
+    diffs?.Add(objName, "OleIcon", openXmlElement?.OleIcon?.Value, value);
+    return false;
   }
   
   private static void SetOleIcon(DXVml.Shape openXmlElement, Boolean? value)
@@ -978,7 +1048,9 @@ public static class ShapeConverter
   
   private static bool CmpOle(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Ole?.Value == value;
+    if (openXmlElement?.Ole?.Value == value) return true;
+    diffs?.Add(objName, "Ole", openXmlElement?.Ole?.Value, value);
+    return false;
   }
   
   private static void SetOle(DXVml.Shape openXmlElement, Boolean? value)
@@ -999,7 +1071,9 @@ public static class ShapeConverter
   
   private static bool CmpPreferRelative(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PreferRelative?.Value == value;
+    if (openXmlElement?.PreferRelative?.Value == value) return true;
+    diffs?.Add(objName, "PreferRelative", openXmlElement?.PreferRelative?.Value, value);
+    return false;
   }
   
   private static void SetPreferRelative(DXVml.Shape openXmlElement, Boolean? value)
@@ -1020,7 +1094,9 @@ public static class ShapeConverter
   
   private static bool CmpClipToWrap(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ClipToWrap?.Value == value;
+    if (openXmlElement?.ClipToWrap?.Value == value) return true;
+    diffs?.Add(objName, "ClipToWrap", openXmlElement?.ClipToWrap?.Value, value);
+    return false;
   }
   
   private static void SetClipToWrap(DXVml.Shape openXmlElement, Boolean? value)
@@ -1041,7 +1117,9 @@ public static class ShapeConverter
   
   private static bool CmpClip(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Clip?.Value == value;
+    if (openXmlElement?.Clip?.Value == value) return true;
+    diffs?.Add(objName, "Clip", openXmlElement?.Clip?.Value, value);
+    return false;
   }
   
   private static void SetClip(DXVml.Shape openXmlElement, Boolean? value)
@@ -1062,7 +1140,9 @@ public static class ShapeConverter
   
   private static bool CmpType(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXVml.Shape openXmlElement, String? value)
@@ -1083,7 +1163,9 @@ public static class ShapeConverter
   
   private static bool CmpAdjustment(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Adjustment?.Value == value;
+    if (openXmlElement?.Adjustment?.Value == value) return true;
+    diffs?.Add(objName, "Adjustment", openXmlElement?.Adjustment?.Value, value);
+    return false;
   }
   
   private static void SetAdjustment(DXVml.Shape openXmlElement, String? value)
@@ -1104,7 +1186,9 @@ public static class ShapeConverter
   
   private static bool CmpEdgePath(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EdgePath?.Value == value;
+    if (openXmlElement?.EdgePath?.Value == value) return true;
+    diffs?.Add(objName, "EdgePath", openXmlElement?.EdgePath?.Value, value);
+    return false;
   }
   
   private static void SetEdgePath(DXVml.Shape openXmlElement, String? value)
@@ -1153,7 +1237,9 @@ public static class ShapeConverter
   
   private static bool CmpEquationXml(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EquationXml?.Value == value;
+    if (openXmlElement?.EquationXml?.Value == value) return true;
+    diffs?.Add(objName, "EquationXml", openXmlElement?.EquationXml?.Value, value);
+    return false;
   }
   
   private static void SetEquationXml(DXVml.Shape openXmlElement, String? value)
@@ -1539,7 +1625,10 @@ public static class ShapeConverter
   
   private static bool CmpAnchorLock(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXVmlW.AnchorLock", val, value);
+    return false;
   }
   
   private static void SetAnchorLock(DXVml.Shape openXmlElement, Boolean? value)
@@ -1679,7 +1768,10 @@ public static class ShapeConverter
   
   private static bool CmpInkAnnotationFlag(DXVml.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXVmlP.InkAnnotationFlag>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXVmlP.InkAnnotationFlag>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXVmlP.InkAnnotationFlag", val, value);
+    return false;
   }
   
   private static void SetInkAnnotationFlag(DXVml.Shape openXmlElement, Boolean? value)

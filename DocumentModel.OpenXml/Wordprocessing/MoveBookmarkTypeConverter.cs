@@ -15,7 +15,9 @@ public static class MoveBookmarkTypeConverter
   
   private static bool CmpAuthor(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Author?.Value == value;
+    if (openXmlElement?.Author?.Value == value) return true;
+    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
+    return false;
   }
   
   private static void SetAuthor(DXW.MoveBookmarkType openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class MoveBookmarkTypeConverter
   
   private static bool CmpName(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.MoveBookmarkType openXmlElement, String? value)
@@ -135,7 +139,9 @@ public static class MoveBookmarkTypeConverter
   
   private static bool CmpId(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.MoveBookmarkType openXmlElement, String? value)

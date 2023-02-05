@@ -15,7 +15,9 @@ public static class ObjectPropertiesConverter
   
   private static bool CmpId(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013Draw.ObjectProperties openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ObjectPropertiesConverter
   
   private static bool CmpIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IsActiveX?.Value == value;
+    if (openXmlElement?.IsActiveX?.Value == value) return true;
+    diffs?.Add(objName, "IsActiveX", openXmlElement?.IsActiveX?.Value, value);
+    return false;
   }
   
   private static void SetIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class ObjectPropertiesConverter
   
   private static bool CmpLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LinkType?.Value == value;
+    if (openXmlElement?.LinkType?.Value == value) return true;
+    diffs?.Add(objName, "LinkType", openXmlElement?.LinkType?.Value, value);
+    return false;
   }
   
   private static void SetLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value)

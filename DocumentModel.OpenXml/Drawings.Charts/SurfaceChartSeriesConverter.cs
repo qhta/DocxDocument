@@ -201,7 +201,10 @@ public static class SurfaceChartSeriesConverter
   
   private static bool CmpBubble3D(DXDrawCharts.SurfaceChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Bubble3D", val, value);
+    return false;
   }
   
   private static void SetBubble3D(DXDrawCharts.SurfaceChartSeries openXmlElement, Boolean? value)

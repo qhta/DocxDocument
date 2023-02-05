@@ -115,7 +115,10 @@ public static class LegendConverter
   
   private static bool CmpOverlay(DXDrawCharts.Legend openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Overlay>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Overlay>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Overlay", val, value);
+    return false;
   }
   
   private static void SetOverlay(DXDrawCharts.Legend openXmlElement, Boolean? value)

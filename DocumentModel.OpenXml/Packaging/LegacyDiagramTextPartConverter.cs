@@ -12,7 +12,9 @@ public static class LegacyDiagramTextPartConverter
   
   private static bool CmpContentType(DXPack.LegacyDiagramTextPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   private static String? GetRelationshipType(DXPack.LegacyDiagramTextPart openXmlElement)
@@ -22,7 +24,9 @@ public static class LegacyDiagramTextPartConverter
   
   private static bool CmpRelationshipType(DXPack.LegacyDiagramTextPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.LegacyDiagramTextPart? CreateModelElement(DXPack.LegacyDiagramTextPart? openXmlElement)

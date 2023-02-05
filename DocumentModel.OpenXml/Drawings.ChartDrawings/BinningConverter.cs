@@ -33,7 +33,9 @@ public static class BinningConverter
   
   private static bool CmpUnderflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Underflow?.Value == value;
+    if (openXmlElement?.Underflow?.Value == value) return true;
+    diffs?.Add(objName, "Underflow", openXmlElement?.Underflow?.Value, value);
+    return false;
   }
   
   private static void SetUnderflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class BinningConverter
   
   private static bool CmpOverflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Overflow?.Value == value;
+    if (openXmlElement?.Overflow?.Value == value) return true;
+    diffs?.Add(objName, "Overflow", openXmlElement?.Overflow?.Value, value);
+    return false;
   }
   
   private static void SetOverflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)

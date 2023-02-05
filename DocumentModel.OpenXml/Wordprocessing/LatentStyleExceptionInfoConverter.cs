@@ -15,7 +15,9 @@ public static class LatentStyleExceptionInfoConverter
   
   private static bool CmpName(DXW.LatentStyleExceptionInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.LatentStyleExceptionInfo openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LatentStyleExceptionInfoConverter
   
   private static bool CmpLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Locked?.Value == value;
+    if (openXmlElement?.Locked?.Value == value) return true;
+    diffs?.Add(objName, "Locked", openXmlElement?.Locked?.Value, value);
+    return false;
   }
   
   private static void SetLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class LatentStyleExceptionInfoConverter
   
   private static bool CmpSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SemiHidden?.Value == value;
+    if (openXmlElement?.SemiHidden?.Value == value) return true;
+    diffs?.Add(objName, "SemiHidden", openXmlElement?.SemiHidden?.Value, value);
+    return false;
   }
   
   private static void SetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -98,7 +104,9 @@ public static class LatentStyleExceptionInfoConverter
   
   private static bool CmpUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UnhideWhenUsed?.Value == value;
+    if (openXmlElement?.UnhideWhenUsed?.Value == value) return true;
+    diffs?.Add(objName, "UnhideWhenUsed", openXmlElement?.UnhideWhenUsed?.Value, value);
+    return false;
   }
   
   private static void SetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
@@ -119,7 +127,9 @@ public static class LatentStyleExceptionInfoConverter
   
   private static bool CmpPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PrimaryStyle?.Value == value;
+    if (openXmlElement?.PrimaryStyle?.Value == value) return true;
+    diffs?.Add(objName, "PrimaryStyle", openXmlElement?.PrimaryStyle?.Value, value);
+    return false;
   }
   
   private static void SetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)

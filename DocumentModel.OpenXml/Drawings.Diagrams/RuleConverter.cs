@@ -51,7 +51,9 @@ public static class RuleConverter
   
   private static bool CmpForName(DXDrawDgms.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForName?.Value == value;
+    if (openXmlElement?.ForName?.Value == value) return true;
+    diffs?.Add(objName, "ForName", openXmlElement?.ForName?.Value, value);
+    return false;
   }
   
   private static void SetForName(DXDrawDgms.Rule openXmlElement, String? value)

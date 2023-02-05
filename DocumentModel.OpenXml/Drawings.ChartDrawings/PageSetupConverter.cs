@@ -73,7 +73,9 @@ public static class PageSetupConverter
   
   private static bool CmpBlackAndWhite(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BlackAndWhite?.Value == value;
+    if (openXmlElement?.BlackAndWhite?.Value == value) return true;
+    diffs?.Add(objName, "BlackAndWhite", openXmlElement?.BlackAndWhite?.Value, value);
+    return false;
   }
   
   private static void SetBlackAndWhite(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)
@@ -94,7 +96,9 @@ public static class PageSetupConverter
   
   private static bool CmpDraft(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Draft?.Value == value;
+    if (openXmlElement?.Draft?.Value == value) return true;
+    diffs?.Add(objName, "Draft", openXmlElement?.Draft?.Value, value);
+    return false;
   }
   
   private static void SetDraft(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)
@@ -115,7 +119,9 @@ public static class PageSetupConverter
   
   private static bool CmpUseFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UseFirstPageNumber?.Value == value;
+    if (openXmlElement?.UseFirstPageNumber?.Value == value) return true;
+    diffs?.Add(objName, "UseFirstPageNumber", openXmlElement?.UseFirstPageNumber?.Value, value);
+    return false;
   }
   
   private static void SetUseFirstPageNumber(DXO2016DrawChartDraw.PageSetup openXmlElement, Boolean? value)

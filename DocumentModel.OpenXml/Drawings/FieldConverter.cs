@@ -15,7 +15,9 @@ public static class FieldConverter
   
   private static bool CmpId(DXDraw.Field openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXDraw.Field openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class FieldConverter
   
   private static bool CmpType(DXDraw.Field openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXDraw.Field openXmlElement, String? value)
@@ -109,7 +113,9 @@ public static class FieldConverter
   
   private static bool CmpText(DXDraw.Field openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Text?.Text == value;
+    if (openXmlElement?.Text?.Text == value) return true;
+    diffs?.Add(objName, "Text", openXmlElement?.Text?.Text, value);
+    return false;
   }
   
   private static void SetText(DXDraw.Field openXmlElement, String? value)

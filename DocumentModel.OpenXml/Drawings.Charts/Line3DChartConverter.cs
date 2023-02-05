@@ -41,7 +41,10 @@ public static class Line3DChartConverter
   
   private static bool CmpVaryColors(DXDrawCharts.Line3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    return false;
   }
   
   private static void SetVaryColors(DXDrawCharts.Line3DChart openXmlElement, Boolean? value)

@@ -377,7 +377,10 @@ public static class ScatterChartSeriesConverter
   
   private static bool CmpSmooth(DXDrawCharts.ScatterChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Smooth>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Smooth>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Smooth", val, value);
+    return false;
   }
   
   private static void SetSmooth(DXDrawCharts.ScatterChartSeries openXmlElement, Boolean? value)

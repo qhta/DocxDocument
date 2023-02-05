@@ -15,7 +15,9 @@ public static class HeaderFooterConverter
   
   private static bool CmpAlignWithMargins(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlignWithMargins?.Value == value;
+    if (openXmlElement?.AlignWithMargins?.Value == value) return true;
+    diffs?.Add(objName, "AlignWithMargins", openXmlElement?.AlignWithMargins?.Value, value);
+    return false;
   }
   
   private static void SetAlignWithMargins(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class HeaderFooterConverter
   
   private static bool CmpDifferentOddEven(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DifferentOddEven?.Value == value;
+    if (openXmlElement?.DifferentOddEven?.Value == value) return true;
+    diffs?.Add(objName, "DifferentOddEven", openXmlElement?.DifferentOddEven?.Value, value);
+    return false;
   }
   
   private static void SetDifferentOddEven(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class HeaderFooterConverter
   
   private static bool CmpDifferentFirst(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DifferentFirst?.Value == value;
+    if (openXmlElement?.DifferentFirst?.Value == value) return true;
+    diffs?.Add(objName, "DifferentFirst", openXmlElement?.DifferentFirst?.Value, value);
+    return false;
   }
   
   private static void SetDifferentFirst(DXDrawCharts.HeaderFooter openXmlElement, Boolean? value)

@@ -15,7 +15,10 @@ public static class ChartSpaceConverter
   
   private static bool CmpDate1904(DXDrawCharts.ChartSpace openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Date1904>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Date1904>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Date1904", val, value);
+    return false;
   }
   
   private static void SetDate1904(DXDrawCharts.ChartSpace openXmlElement, Boolean? value)
@@ -68,7 +71,10 @@ public static class ChartSpaceConverter
   
   private static bool CmpRoundedCorners(DXDrawCharts.ChartSpace openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.RoundedCorners>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.RoundedCorners>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.RoundedCorners", val, value);
+    return false;
   }
   
   private static void SetRoundedCorners(DXDrawCharts.ChartSpace openXmlElement, Boolean? value)

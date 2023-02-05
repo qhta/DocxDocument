@@ -15,7 +15,9 @@ public static class DocPartNameConverter
   
   private static bool CmpVal(DXW.DocPartName openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.DocPartName openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class DocPartNameConverter
   
   private static bool CmpDecorated(DXW.DocPartName openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Decorated?.Value == value;
+    if (openXmlElement?.Decorated?.Value == value) return true;
+    diffs?.Add(objName, "Decorated", openXmlElement?.Decorated?.Value, value);
+    return false;
   }
   
   private static void SetDecorated(DXW.DocPartName openXmlElement, Boolean? value)

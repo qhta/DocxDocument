@@ -15,7 +15,9 @@ public static class GeoPolygonConverter
   
   private static bool CmpPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PolygonId?.Value == value;
+    if (openXmlElement?.PolygonId?.Value == value) return true;
+    diffs?.Add(objName, "PolygonId", openXmlElement?.PolygonId?.Value, value);
+    return false;
   }
   
   private static void SetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class GeoPolygonConverter
   
   private static bool CmpPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PcaRings?.Value == value;
+    if (openXmlElement?.PcaRings?.Value == value) return true;
+    diffs?.Add(objName, "PcaRings", openXmlElement?.PcaRings?.Value, value);
+    return false;
   }
   
   private static void SetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)

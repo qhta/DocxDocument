@@ -15,7 +15,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpId(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.RoundRectangle openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpStyle(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.RoundRectangle openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpHref(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.RoundRectangle openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpTarget(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Target?.Value == value;
+    if (openXmlElement?.Target?.Value == value) return true;
+    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
+    return false;
   }
   
   private static void SetTarget(DXVml.RoundRectangle openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpClass(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Class?.Value == value;
+    if (openXmlElement?.Class?.Value == value) return true;
+    diffs?.Add(objName, "Class", openXmlElement?.Class?.Value, value);
+    return false;
   }
   
   private static void SetClass(DXVml.RoundRectangle openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpTitle(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.RoundRectangle openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpAlternate(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Alternate?.Value == value;
+    if (openXmlElement?.Alternate?.Value == value) return true;
+    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
+    return false;
   }
   
   private static void SetAlternate(DXVml.RoundRectangle openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpCoordinateSize(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CoordinateSize?.Value == value;
+    if (openXmlElement?.CoordinateSize?.Value == value) return true;
+    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
+    return false;
   }
   
   private static void SetCoordinateSize(DXVml.RoundRectangle openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpWrapCoordinates(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.WrapCoordinates?.Value == value;
+    if (openXmlElement?.WrapCoordinates?.Value == value) return true;
+    diffs?.Add(objName, "WrapCoordinates", openXmlElement?.WrapCoordinates?.Value, value);
+    return false;
   }
   
   private static void SetWrapCoordinates(DXVml.RoundRectangle openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpPrint(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Print?.Value == value;
+    if (openXmlElement?.Print?.Value == value) return true;
+    diffs?.Add(objName, "Print", openXmlElement?.Print?.Value, value);
+    return false;
   }
   
   private static void SetPrint(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -225,7 +245,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpOptionalString(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OptionalString?.Value == value;
+    if (openXmlElement?.OptionalString?.Value == value) return true;
+    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
+    return false;
   }
   
   private static void SetOptionalString(DXVml.RoundRectangle openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpOned(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Oned?.Value == value;
+    if (openXmlElement?.Oned?.Value == value) return true;
+    diffs?.Add(objName, "Oned", openXmlElement?.Oned?.Value, value);
+    return false;
   }
   
   private static void SetOned(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -287,7 +311,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpDoubleClickNotify(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DoubleClickNotify?.Value == value;
+    if (openXmlElement?.DoubleClickNotify?.Value == value) return true;
+    diffs?.Add(objName, "DoubleClickNotify", openXmlElement?.DoubleClickNotify?.Value, value);
+    return false;
   }
   
   private static void SetDoubleClickNotify(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -308,7 +334,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpButton(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Button?.Value == value;
+    if (openXmlElement?.Button?.Value == value) return true;
+    diffs?.Add(objName, "Button", openXmlElement?.Button?.Value, value);
+    return false;
   }
   
   private static void SetButton(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -329,7 +357,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpUserHidden(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserHidden?.Value == value;
+    if (openXmlElement?.UserHidden?.Value == value) return true;
+    diffs?.Add(objName, "UserHidden", openXmlElement?.UserHidden?.Value, value);
+    return false;
   }
   
   private static void SetUserHidden(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -350,7 +380,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpBullet(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bullet?.Value == value;
+    if (openXmlElement?.Bullet?.Value == value) return true;
+    diffs?.Add(objName, "Bullet", openXmlElement?.Bullet?.Value, value);
+    return false;
   }
   
   private static void SetBullet(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -371,7 +403,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpHorizontal(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Horizontal?.Value == value;
+    if (openXmlElement?.Horizontal?.Value == value) return true;
+    diffs?.Add(objName, "Horizontal", openXmlElement?.Horizontal?.Value, value);
+    return false;
   }
   
   private static void SetHorizontal(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -392,7 +426,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpHorizontalStandard(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalStandard?.Value == value;
+    if (openXmlElement?.HorizontalStandard?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalStandard", openXmlElement?.HorizontalStandard?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalStandard(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -413,7 +449,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpHorizontalNoShade(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalNoShade?.Value == value;
+    if (openXmlElement?.HorizontalNoShade?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalNoShade", openXmlElement?.HorizontalNoShade?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalNoShade(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -472,7 +510,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpAllowInCell(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInCell?.Value == value;
+    if (openXmlElement?.AllowInCell?.Value == value) return true;
+    diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
+    return false;
   }
   
   private static void SetAllowInCell(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -493,7 +533,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpAllowOverlap(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -514,7 +556,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpUserDrawn(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UserDrawn?.Value == value;
+    if (openXmlElement?.UserDrawn?.Value == value) return true;
+    diffs?.Add(objName, "UserDrawn", openXmlElement?.UserDrawn?.Value, value);
+    return false;
   }
   
   private static void SetUserDrawn(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -535,7 +579,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpBorderTopColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderTopColor?.Value == value;
+    if (openXmlElement?.BorderTopColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderTopColor", openXmlElement?.BorderTopColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderTopColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -556,7 +602,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpBorderLeftColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderLeftColor?.Value == value;
+    if (openXmlElement?.BorderLeftColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderLeftColor", openXmlElement?.BorderLeftColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderLeftColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -577,7 +625,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpBorderBottomColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderBottomColor?.Value == value;
+    if (openXmlElement?.BorderBottomColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderBottomColor", openXmlElement?.BorderBottomColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderBottomColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -598,7 +648,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpBorderRightColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BorderRightColor?.Value == value;
+    if (openXmlElement?.BorderRightColor?.Value == value) return true;
+    diffs?.Add(objName, "BorderRightColor", openXmlElement?.BorderRightColor?.Value, value);
+    return false;
   }
   
   private static void SetBorderRightColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -697,7 +749,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpFilled(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Filled?.Value == value;
+    if (openXmlElement?.Filled?.Value == value) return true;
+    diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
+    return false;
   }
   
   private static void SetFilled(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -718,7 +772,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpFillColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FillColor?.Value == value;
+    if (openXmlElement?.FillColor?.Value == value) return true;
+    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
+    return false;
   }
   
   private static void SetFillColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -739,7 +795,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpStroked(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Stroked?.Value == value;
+    if (openXmlElement?.Stroked?.Value == value) return true;
+    diffs?.Add(objName, "Stroked", openXmlElement?.Stroked?.Value, value);
+    return false;
   }
   
   private static void SetStroked(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -760,7 +818,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpStrokeColor(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeColor?.Value == value;
+    if (openXmlElement?.StrokeColor?.Value == value) return true;
+    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
+    return false;
   }
   
   private static void SetStrokeColor(DXVml.RoundRectangle openXmlElement, String? value)
@@ -781,7 +841,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpStrokeWeight(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.StrokeWeight?.Value == value;
+    if (openXmlElement?.StrokeWeight?.Value == value) return true;
+    diffs?.Add(objName, "StrokeWeight", openXmlElement?.StrokeWeight?.Value, value);
+    return false;
   }
   
   private static void SetStrokeWeight(DXVml.RoundRectangle openXmlElement, String? value)
@@ -802,7 +864,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpInsetPen(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsetPen?.Value == value;
+    if (openXmlElement?.InsetPen?.Value == value) return true;
+    diffs?.Add(objName, "InsetPen", openXmlElement?.InsetPen?.Value, value);
+    return false;
   }
   
   private static void SetInsetPen(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -915,7 +979,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpForceDash(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDash?.Value == value;
+    if (openXmlElement?.ForceDash?.Value == value) return true;
+    diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
+    return false;
   }
   
   private static void SetForceDash(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -936,7 +1002,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpOleIcon(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OleIcon?.Value == value;
+    if (openXmlElement?.OleIcon?.Value == value) return true;
+    diffs?.Add(objName, "OleIcon", openXmlElement?.OleIcon?.Value, value);
+    return false;
   }
   
   private static void SetOleIcon(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -957,7 +1025,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpOle(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Ole?.Value == value;
+    if (openXmlElement?.Ole?.Value == value) return true;
+    diffs?.Add(objName, "Ole", openXmlElement?.Ole?.Value, value);
+    return false;
   }
   
   private static void SetOle(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -978,7 +1048,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpPreferRelative(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PreferRelative?.Value == value;
+    if (openXmlElement?.PreferRelative?.Value == value) return true;
+    diffs?.Add(objName, "PreferRelative", openXmlElement?.PreferRelative?.Value, value);
+    return false;
   }
   
   private static void SetPreferRelative(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -999,7 +1071,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpClipToWrap(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ClipToWrap?.Value == value;
+    if (openXmlElement?.ClipToWrap?.Value == value) return true;
+    diffs?.Add(objName, "ClipToWrap", openXmlElement?.ClipToWrap?.Value, value);
+    return false;
   }
   
   private static void SetClipToWrap(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -1020,7 +1094,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpClip(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Clip?.Value == value;
+    if (openXmlElement?.Clip?.Value == value) return true;
+    diffs?.Add(objName, "Clip", openXmlElement?.Clip?.Value, value);
+    return false;
   }
   
   private static void SetClip(DXVml.RoundRectangle openXmlElement, Boolean? value)
@@ -1069,7 +1145,9 @@ public static class RoundRectangleConverter
   
   private static bool CmpArcSize(DXVml.RoundRectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ArcSize?.Value == value;
+    if (openXmlElement?.ArcSize?.Value == value) return true;
+    diffs?.Add(objName, "ArcSize", openXmlElement?.ArcSize?.Value, value);
+    return false;
   }
   
   private static void SetArcSize(DXVml.RoundRectangle openXmlElement, String? value)
@@ -1455,7 +1533,10 @@ public static class RoundRectangleConverter
   
   private static bool CmpAnchorLock(DXVml.RoundRectangle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXVmlW.AnchorLock", val, value);
+    return false;
   }
   
   private static void SetAnchorLock(DXVml.RoundRectangle openXmlElement, Boolean? value)

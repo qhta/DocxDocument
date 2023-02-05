@@ -15,7 +15,9 @@ public static class BlipExtensionConverter
   
   private static bool CmpUri(DXDraw.BlipExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDraw.BlipExtension openXmlElement, String? value)
@@ -56,7 +58,10 @@ public static class BlipExtensionConverter
   
   private static bool CmpUseLocalDpi(DXDraw.BlipExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010Draw.UseLocalDpi", val, value);
+    return false;
   }
   
   private static void SetUseLocalDpi(DXDraw.BlipExtension openXmlElement, Boolean? value)

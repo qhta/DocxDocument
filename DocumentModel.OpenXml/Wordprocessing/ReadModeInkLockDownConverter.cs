@@ -15,7 +15,9 @@ public static class ReadModeInkLockDownConverter
   
   private static bool CmpUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UseActualPages?.Value == value;
+    if (openXmlElement?.UseActualPages?.Value == value) return true;
+    diffs?.Add(objName, "UseActualPages", openXmlElement?.UseActualPages?.Value, value);
+    return false;
   }
   
   private static void SetUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value)
@@ -76,7 +78,9 @@ public static class ReadModeInkLockDownConverter
   
   private static bool CmpFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FontSize?.Value == value;
+    if (openXmlElement?.FontSize?.Value == value) return true;
+    diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
+    return false;
   }
   
   private static void SetFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value)

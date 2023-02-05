@@ -400,7 +400,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpFormProtection(DXW.SectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.FormProtection>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.FormProtection>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.FormProtection", val, value);
+    return false;
   }
   
   private static void SetFormProtection(DXW.SectionProperties openXmlElement, Boolean? value)
@@ -448,7 +451,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpNoEndnote(DXW.SectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.NoEndnote>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.NoEndnote>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.NoEndnote", val, value);
+    return false;
   }
   
   private static void SetNoEndnote(DXW.SectionProperties openXmlElement, Boolean? value)
@@ -473,7 +479,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpTitlePage(DXW.SectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.TitlePage>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.TitlePage>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.TitlePage", val, value);
+    return false;
   }
   
   private static void SetTitlePage(DXW.SectionProperties openXmlElement, Boolean? value)
@@ -521,7 +530,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpBiDi(DXW.SectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.BiDi", val, value);
+    return false;
   }
   
   private static void SetBiDi(DXW.SectionProperties openXmlElement, Boolean? value)
@@ -546,7 +558,10 @@ public static class SectionPropertiesConverter
   
   private static bool CmpGutterOnRight(DXW.SectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.GutterOnRight>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.GutterOnRight>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.GutterOnRight", val, value);
+    return false;
   }
   
   private static void SetGutterOnRight(DXW.SectionProperties openXmlElement, Boolean? value)

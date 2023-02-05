@@ -15,7 +15,9 @@ public static class LegacyNumberingConverter
   
   private static bool CmpLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Legacy?.Value == value;
+    if (openXmlElement?.Legacy?.Value == value) return true;
+    diffs?.Add(objName, "Legacy", openXmlElement?.Legacy?.Value, value);
+    return false;
   }
   
   private static void SetLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class LegacyNumberingConverter
   
   private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LegacySpace?.Value == value;
+    if (openXmlElement?.LegacySpace?.Value == value) return true;
+    diffs?.Add(objName, "LegacySpace", openXmlElement?.LegacySpace?.Value, value);
+    return false;
   }
   
   private static void SetLegacySpace(DXW.LegacyNumbering openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class LegacyNumberingConverter
   
   private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LegacyIndent?.Value == value;
+    if (openXmlElement?.LegacyIndent?.Value == value) return true;
+    diffs?.Add(objName, "LegacyIndent", openXmlElement?.LegacyIndent?.Value, value);
+    return false;
   }
   
   private static void SetLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value)

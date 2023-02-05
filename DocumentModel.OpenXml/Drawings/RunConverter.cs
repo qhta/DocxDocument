@@ -41,7 +41,9 @@ public static class RunConverter
   
   private static bool CmpText(DXDraw.Run openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Text?.Text == value;
+    if (openXmlElement?.Text?.Text == value) return true;
+    diffs?.Add(objName, "Text", openXmlElement?.Text?.Text, value);
+    return false;
   }
   
   private static void SetText(DXDraw.Run openXmlElement, String? value)

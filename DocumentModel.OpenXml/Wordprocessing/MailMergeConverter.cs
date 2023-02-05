@@ -41,7 +41,10 @@ public static class MailMergeConverter
   
   private static bool CmpLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.LinkToQuery>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.LinkToQuery>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.LinkToQuery", val, value);
+    return false;
   }
   
   private static void SetLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value)
@@ -203,7 +206,10 @@ public static class MailMergeConverter
   
   private static bool CmpDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.DoNotSuppressBlankLines", val, value);
+    return false;
   }
   
   private static void SetDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value)
@@ -313,7 +319,10 @@ public static class MailMergeConverter
   
   private static bool CmpMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MailAsAttachment>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.MailAsAttachment>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MailAsAttachment", val, value);
+    return false;
   }
   
   private static void SetMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value)
@@ -341,7 +350,10 @@ public static class MailMergeConverter
   
   private static bool CmpViewMergedData(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.ViewMergedData>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.ViewMergedData>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.ViewMergedData", val, value);
+    return false;
   }
   
   private static void SetViewMergedData(DXW.MailMerge openXmlElement, Boolean? value)

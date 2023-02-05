@@ -144,7 +144,10 @@ public static class RubyPropertiesConverter
   
   private static bool CmpDirty(DXW.RubyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Dirty>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Dirty>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Dirty", val, value);
+    return false;
   }
   
   private static void SetDirty(DXW.RubyProperties openXmlElement, Boolean? value)

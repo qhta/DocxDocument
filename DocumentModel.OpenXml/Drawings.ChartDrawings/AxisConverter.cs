@@ -35,7 +35,9 @@ public static class AxisConverter
   
   private static bool CmpHidden(DXO2016DrawChartDraw.Axis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hidden?.Value == value;
+    if (openXmlElement?.Hidden?.Value == value) return true;
+    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    return false;
   }
   
   private static void SetHidden(DXO2016DrawChartDraw.Axis openXmlElement, Boolean? value)

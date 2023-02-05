@@ -15,7 +15,9 @@ public static class CheckBoxSymbolTypeConverter
   
   private static bool CmpFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Font?.Value == value;
+    if (openXmlElement?.Font?.Value == value) return true;
+    diffs?.Add(objName, "Font", openXmlElement?.Font?.Value, value);
+    return false;
   }
   
   private static void SetFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value)

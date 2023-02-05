@@ -15,7 +15,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.XAdjustmentGuide?.Value == value;
+    if (openXmlElement?.XAdjustmentGuide?.Value == value) return true;
+    diffs?.Add(objName, "XAdjustmentGuide", openXmlElement?.XAdjustmentGuide?.Value, value);
+    return false;
   }
   
   private static void SetXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpMinX(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinX?.Value == value;
+    if (openXmlElement?.MinX?.Value == value) return true;
+    diffs?.Add(objName, "MinX", openXmlElement?.MinX?.Value, value);
+    return false;
   }
   
   private static void SetMinX(DXDraw.AdjustHandleXY openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpMaxX(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MaxX?.Value == value;
+    if (openXmlElement?.MaxX?.Value == value) return true;
+    diffs?.Add(objName, "MaxX", openXmlElement?.MaxX?.Value, value);
+    return false;
   }
   
   private static void SetMaxX(DXDraw.AdjustHandleXY openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.YAdjustmentGuide?.Value == value;
+    if (openXmlElement?.YAdjustmentGuide?.Value == value) return true;
+    diffs?.Add(objName, "YAdjustmentGuide", openXmlElement?.YAdjustmentGuide?.Value, value);
+    return false;
   }
   
   private static void SetYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpMinY(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinY?.Value == value;
+    if (openXmlElement?.MinY?.Value == value) return true;
+    diffs?.Add(objName, "MinY", openXmlElement?.MinY?.Value, value);
+    return false;
   }
   
   private static void SetMinY(DXDraw.AdjustHandleXY openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class AdjustHandleXYConverter
   
   private static bool CmpMaxY(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MaxY?.Value == value;
+    if (openXmlElement?.MaxY?.Value == value) return true;
+    diffs?.Add(objName, "MaxY", openXmlElement?.MaxY?.Value, value);
+    return false;
   }
   
   private static void SetMaxY(DXDraw.AdjustHandleXY openXmlElement, String? value)

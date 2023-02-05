@@ -15,7 +15,9 @@ public static class WebExtensionTaskpaneConverter
   
   private static bool CmpDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DockState?.Value == value;
+    if (openXmlElement?.DockState?.Value == value) return true;
+    diffs?.Add(objName, "DockState", openXmlElement?.DockState?.Value, value);
+    return false;
   }
   
   private static void SetDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class WebExtensionTaskpaneConverter
   
   private static bool CmpVisibility(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visibility?.Value == value;
+    if (openXmlElement?.Visibility?.Value == value) return true;
+    diffs?.Add(objName, "Visibility", openXmlElement?.Visibility?.Value, value);
+    return false;
   }
   
   private static void SetVisibility(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value)
@@ -97,7 +101,9 @@ public static class WebExtensionTaskpaneConverter
   
   private static bool CmpLocked(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Locked?.Value == value;
+    if (openXmlElement?.Locked?.Value == value) return true;
+    diffs?.Add(objName, "Locked", openXmlElement?.Locked?.Value, value);
+    return false;
   }
   
   private static void SetLocked(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value)

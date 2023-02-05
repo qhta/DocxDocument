@@ -15,7 +15,9 @@ public static class ThemeConverter
   
   private static bool CmpName(DXDraw.Theme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDraw.Theme openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ThemeConverter
   
   private static bool CmpThemeId(DXDraw.Theme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ThemeId?.Value == value;
+    if (openXmlElement?.ThemeId?.Value == value) return true;
+    diffs?.Add(objName, "ThemeId", openXmlElement?.ThemeId?.Value, value);
+    return false;
   }
   
   private static void SetThemeId(DXDraw.Theme openXmlElement, String? value)

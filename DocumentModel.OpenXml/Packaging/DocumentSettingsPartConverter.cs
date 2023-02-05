@@ -1,6 +1,3 @@
-using DocumentModel.OpenXml.Properties;
-using DocumentModel.Properties;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
@@ -15,7 +12,9 @@ public static class DocumentSettingsPartConverter
   
   private static bool CmpContentType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   /// <summary>
@@ -45,27 +44,29 @@ public static class DocumentSettingsPartConverter
   
   private static bool CmpRelationshipType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentSettings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
+  private static DMW.Settings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
   {
-      return DocumentSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
+      return DMXW.SettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
   }
   
-  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DocumentSettings? value, DiffList? diffs, string? objName)
+  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DocumentSettings? value)
+  private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentSettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
+       var rootElement = DMXW.SettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
        if (rootElement != null)
          openXmlElement.Settings = rootElement;
     }

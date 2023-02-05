@@ -15,7 +15,9 @@ public static class WrapPolygonConverter
   
   private static bool CmpEdited(DXDrawW.WrapPolygon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Edited?.Value == value;
+    if (openXmlElement?.Edited?.Value == value) return true;
+    diffs?.Add(objName, "Edited", openXmlElement?.Edited?.Value, value);
+    return false;
   }
   
   private static void SetEdited(DXDrawW.WrapPolygon openXmlElement, Boolean? value)

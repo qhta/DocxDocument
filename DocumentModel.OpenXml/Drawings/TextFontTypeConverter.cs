@@ -15,7 +15,9 @@ public static class TextFontTypeConverter
   
   private static bool CmpTypeface(DXDraw.TextFontType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Typeface?.Value == value;
+    if (openXmlElement?.Typeface?.Value == value) return true;
+    diffs?.Add(objName, "Typeface", openXmlElement?.Typeface?.Value, value);
+    return false;
   }
   
   private static void SetTypeface(DXDraw.TextFontType openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class TaskTitleEventInfoConverter
   
   private static bool CmpTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value)

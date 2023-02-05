@@ -15,7 +15,9 @@ public static class LatentStylesConverter
   
   private static bool CmpDefaultLockedState(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DefaultLockedState?.Value == value;
+    if (openXmlElement?.DefaultLockedState?.Value == value) return true;
+    diffs?.Add(objName, "DefaultLockedState", openXmlElement?.DefaultLockedState?.Value, value);
+    return false;
   }
   
   private static void SetDefaultLockedState(DXW.LatentStyles openXmlElement, Boolean? value)
@@ -56,7 +58,9 @@ public static class LatentStylesConverter
   
   private static bool CmpDefaultSemiHidden(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DefaultSemiHidden?.Value == value;
+    if (openXmlElement?.DefaultSemiHidden?.Value == value) return true;
+    diffs?.Add(objName, "DefaultSemiHidden", openXmlElement?.DefaultSemiHidden?.Value, value);
+    return false;
   }
   
   private static void SetDefaultSemiHidden(DXW.LatentStyles openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class LatentStylesConverter
   
   private static bool CmpDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DefaultUnhideWhenUsed?.Value == value;
+    if (openXmlElement?.DefaultUnhideWhenUsed?.Value == value) return true;
+    diffs?.Add(objName, "DefaultUnhideWhenUsed", openXmlElement?.DefaultUnhideWhenUsed?.Value, value);
+    return false;
   }
   
   private static void SetDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement, Boolean? value)
@@ -98,7 +104,9 @@ public static class LatentStylesConverter
   
   private static bool CmpDefaultPrimaryStyle(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DefaultPrimaryStyle?.Value == value;
+    if (openXmlElement?.DefaultPrimaryStyle?.Value == value) return true;
+    diffs?.Add(objName, "DefaultPrimaryStyle", openXmlElement?.DefaultPrimaryStyle?.Value, value);
+    return false;
   }
   
   private static void SetDefaultPrimaryStyle(DXW.LatentStyles openXmlElement, Boolean? value)

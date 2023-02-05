@@ -122,7 +122,10 @@ public static class HslColorConverter
   
   private static bool CmpComplement(DXDraw.HslColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Complement", val, value);
+    return false;
   }
   
   private static void SetComplement(DXDraw.HslColor openXmlElement, Boolean? value)
@@ -147,7 +150,10 @@ public static class HslColorConverter
   
   private static bool CmpInverse(DXDraw.HslColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Inverse", val, value);
+    return false;
   }
   
   private static void SetInverse(DXDraw.HslColor openXmlElement, Boolean? value)
@@ -172,7 +178,10 @@ public static class HslColorConverter
   
   private static bool CmpGray(DXDraw.HslColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gray", val, value);
+    return false;
   }
   
   private static void SetGray(DXDraw.HslColor openXmlElement, Boolean? value)
@@ -722,7 +731,10 @@ public static class HslColorConverter
   
   private static bool CmpGamma(DXDraw.HslColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Gamma", val, value);
+    return false;
   }
   
   private static void SetGamma(DXDraw.HslColor openXmlElement, Boolean? value)
@@ -747,7 +759,10 @@ public static class HslColorConverter
   
   private static bool CmpInverseGamma(DXDraw.HslColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.InverseGamma", val, value);
+    return false;
   }
   
   private static void SetInverseGamma(DXDraw.HslColor openXmlElement, Boolean? value)

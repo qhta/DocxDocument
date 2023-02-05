@@ -15,7 +15,9 @@ public static class BookmarkStartConverter
   
   private static bool CmpName(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.BookmarkStart openXmlElement, String? value)
@@ -94,7 +96,9 @@ public static class BookmarkStartConverter
   
   private static bool CmpId(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.BookmarkStart openXmlElement, String? value)

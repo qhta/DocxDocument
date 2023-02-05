@@ -15,7 +15,9 @@ public static class ComboBoxConverter
   
   private static bool CmpShowItemImage(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowItemImage?.Value == value;
+    if (openXmlElement?.ShowItemImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowItemImage", openXmlElement?.ShowItemImage?.Value, value);
+    return false;
   }
   
   private static void SetShowItemImage(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemCount(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemCount?.Value == value;
+    if (openXmlElement?.GetItemCount?.Value == value) return true;
+    diffs?.Add(objName, "GetItemCount", openXmlElement?.GetItemCount?.Value, value);
+    return false;
   }
   
   private static void SetGetItemCount(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemLabel(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemLabel?.Value == value;
+    if (openXmlElement?.GetItemLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetItemLabel", openXmlElement?.GetItemLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetItemLabel(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemScreentip?.Value == value;
+    if (openXmlElement?.GetItemScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetItemScreentip", openXmlElement?.GetItemScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetItemScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemSupertip?.Value == value;
+    if (openXmlElement?.GetItemSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetItemSupertip", openXmlElement?.GetItemSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetItemSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemImage(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemImage?.Value == value;
+    if (openXmlElement?.GetItemImage?.Value == value) return true;
+    diffs?.Add(objName, "GetItemImage", openXmlElement?.GetItemImage?.Value, value);
+    return false;
   }
   
   private static void SetGetItemImage(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetItemID(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetItemID?.Value == value;
+    if (openXmlElement?.GetItemID?.Value == value) return true;
+    diffs?.Add(objName, "GetItemID", openXmlElement?.GetItemID?.Value, value);
+    return false;
   }
   
   private static void SetGetItemID(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class ComboBoxConverter
   
   private static bool CmpSizeString(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SizeString?.Value == value;
+    if (openXmlElement?.SizeString?.Value == value) return true;
+    diffs?.Add(objName, "SizeString", openXmlElement?.SizeString?.Value, value);
+    return false;
   }
   
   private static void SetSizeString(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class ComboBoxConverter
   
   private static bool CmpInvalidateContentOnDrop(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InvalidateContentOnDrop?.Value == value;
+    if (openXmlElement?.InvalidateContentOnDrop?.Value == value) return true;
+    diffs?.Add(objName, "InvalidateContentOnDrop", openXmlElement?.InvalidateContentOnDrop?.Value, value);
+    return false;
   }
   
   private static void SetInvalidateContentOnDrop(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -204,7 +222,9 @@ public static class ComboBoxConverter
   
   private static bool CmpEnabled(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -225,7 +245,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class ComboBoxConverter
   
   private static bool CmpImage(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -267,7 +291,9 @@ public static class ComboBoxConverter
   
   private static bool CmpImageMso(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -288,7 +314,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetImage(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -329,7 +357,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetText(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetText?.Value == value;
+    if (openXmlElement?.GetText?.Value == value) return true;
+    diffs?.Add(objName, "GetText", openXmlElement?.GetText?.Value, value);
+    return false;
   }
   
   private static void SetGetText(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -350,7 +380,9 @@ public static class ComboBoxConverter
   
   private static bool CmpOnChange(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnChange?.Value == value;
+    if (openXmlElement?.OnChange?.Value == value) return true;
+    diffs?.Add(objName, "OnChange", openXmlElement?.OnChange?.Value, value);
+    return false;
   }
   
   private static void SetOnChange(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -371,7 +403,9 @@ public static class ComboBoxConverter
   
   private static bool CmpId(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -392,7 +426,9 @@ public static class ComboBoxConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -413,7 +449,9 @@ public static class ComboBoxConverter
   
   private static bool CmpTag(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -434,7 +472,9 @@ public static class ComboBoxConverter
   
   private static bool CmpIdMso(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -455,7 +495,9 @@ public static class ComboBoxConverter
   
   private static bool CmpScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -476,7 +518,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -497,7 +541,9 @@ public static class ComboBoxConverter
   
   private static bool CmpSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -518,7 +564,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -539,7 +587,9 @@ public static class ComboBoxConverter
   
   private static bool CmpLabel(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -560,7 +610,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -581,7 +633,9 @@ public static class ComboBoxConverter
   
   private static bool CmpInsertAfterMso(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -602,7 +656,9 @@ public static class ComboBoxConverter
   
   private static bool CmpInsertBeforeMso(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -623,7 +679,9 @@ public static class ComboBoxConverter
   
   private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
+    if (openXmlElement?.InsertAfterQulifiedId?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQulifiedId", openXmlElement?.InsertAfterQulifiedId?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -644,7 +702,9 @@ public static class ComboBoxConverter
   
   private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
+    if (openXmlElement?.InsertBeforeQulifiedId?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQulifiedId", openXmlElement?.InsertBeforeQulifiedId?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -665,7 +725,9 @@ public static class ComboBoxConverter
   
   private static bool CmpVisible(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -686,7 +748,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -707,7 +771,9 @@ public static class ComboBoxConverter
   
   private static bool CmpKeytip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -728,7 +794,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetKeytip(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -749,7 +817,9 @@ public static class ComboBoxConverter
   
   private static bool CmpShowLabel(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -770,7 +840,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetShowLabel(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXO2010CustUI.ComboBox openXmlElement, String? value)
@@ -791,7 +863,9 @@ public static class ComboBoxConverter
   
   private static bool CmpShowImage(DXO2010CustUI.ComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXO2010CustUI.ComboBox openXmlElement, Boolean? value)
@@ -812,7 +886,9 @@ public static class ComboBoxConverter
   
   private static bool CmpGetShowImage(DXO2010CustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXO2010CustUI.ComboBox openXmlElement, String? value)

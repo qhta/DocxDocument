@@ -15,7 +15,9 @@ public static class SupplementalFontConverter
   
   private static bool CmpScript(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Script?.Value == value;
+    if (openXmlElement?.Script?.Value == value) return true;
+    diffs?.Add(objName, "Script", openXmlElement?.Script?.Value, value);
+    return false;
   }
   
   private static void SetScript(DXDraw.SupplementalFont openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SupplementalFontConverter
   
   private static bool CmpTypeface(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Typeface?.Value == value;
+    if (openXmlElement?.Typeface?.Value == value) return true;
+    diffs?.Add(objName, "Typeface", openXmlElement?.Typeface?.Value, value);
+    return false;
   }
   
   private static void SetTypeface(DXDraw.SupplementalFont openXmlElement, String? value)

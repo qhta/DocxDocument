@@ -51,7 +51,9 @@ public static class GeographyConverter
   
   private static bool CmpCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CultureLanguage?.Value == value;
+    if (openXmlElement?.CultureLanguage?.Value == value) return true;
+    diffs?.Add(objName, "CultureLanguage", openXmlElement?.CultureLanguage?.Value, value);
+    return false;
   }
   
   private static void SetCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
@@ -72,7 +74,9 @@ public static class GeographyConverter
   
   private static bool CmpCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CultureRegion?.Value == value;
+    if (openXmlElement?.CultureRegion?.Value == value) return true;
+    diffs?.Add(objName, "CultureRegion", openXmlElement?.CultureRegion?.Value, value);
+    return false;
   }
   
   private static void SetCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class GeographyConverter
   
   private static bool CmpAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Attribution?.Value == value;
+    if (openXmlElement?.Attribution?.Value == value) return true;
+    diffs?.Add(objName, "Attribution", openXmlElement?.Attribution?.Value, value);
+    return false;
   }
   
   private static void SetAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value)

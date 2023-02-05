@@ -15,7 +15,9 @@ public static class McdConverter
   
   private static bool CmpMacroName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MacroName?.Value == value;
+    if (openXmlElement?.MacroName?.Value == value) return true;
+    diffs?.Add(objName, "MacroName", openXmlElement?.MacroName?.Value, value);
+    return false;
   }
   
   private static void SetMacroName(DXOW.Mcd openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class McdConverter
   
   private static bool CmpName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXOW.Mcd openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class McdConverter
   
   private static bool CmpMenuHelp(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MenuHelp?.Value == value;
+    if (openXmlElement?.MenuHelp?.Value == value) return true;
+    diffs?.Add(objName, "MenuHelp", openXmlElement?.MenuHelp?.Value, value);
+    return false;
   }
   
   private static void SetMenuHelp(DXOW.Mcd openXmlElement, String? value)

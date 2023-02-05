@@ -12,7 +12,9 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
   
   private static bool CmpRelationshipType(DXPack.EmbeddedControlPersistenceBinaryDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(DXPack.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)

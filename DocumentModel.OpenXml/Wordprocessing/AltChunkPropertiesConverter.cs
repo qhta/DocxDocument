@@ -15,7 +15,10 @@ public static class AltChunkPropertiesConverter
   
   private static bool CmpMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.MatchSource>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.MatchSource>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.MatchSource", val, value);
+    return false;
   }
   
   private static void SetMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value)

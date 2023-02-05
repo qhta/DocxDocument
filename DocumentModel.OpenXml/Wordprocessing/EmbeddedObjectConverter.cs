@@ -15,7 +15,9 @@ public static class EmbeddedObjectConverter
   
   private static bool CmpDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DxaOriginal?.Value == value;
+    if (openXmlElement?.DxaOriginal?.Value == value) return true;
+    diffs?.Add(objName, "DxaOriginal", openXmlElement?.DxaOriginal?.Value, value);
+    return false;
   }
   
   private static void SetDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class EmbeddedObjectConverter
   
   private static bool CmpDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DyaOriginal?.Value == value;
+    if (openXmlElement?.DyaOriginal?.Value == value) return true;
+    diffs?.Add(objName, "DyaOriginal", openXmlElement?.DyaOriginal?.Value, value);
+    return false;
   }
   
   private static void SetDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value)

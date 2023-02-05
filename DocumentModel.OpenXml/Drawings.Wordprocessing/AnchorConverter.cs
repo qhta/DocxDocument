@@ -95,7 +95,9 @@ public static class AnchorConverter
   
   private static bool CmpSimplePos(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SimplePos?.Value == value;
+    if (openXmlElement?.SimplePos?.Value == value) return true;
+    diffs?.Add(objName, "SimplePos", openXmlElement?.SimplePos?.Value, value);
+    return false;
   }
   
   private static void SetSimplePos(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -136,7 +138,9 @@ public static class AnchorConverter
   
   private static bool CmpBehindDoc(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BehindDoc?.Value == value;
+    if (openXmlElement?.BehindDoc?.Value == value) return true;
+    diffs?.Add(objName, "BehindDoc", openXmlElement?.BehindDoc?.Value, value);
+    return false;
   }
   
   private static void SetBehindDoc(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -157,7 +161,9 @@ public static class AnchorConverter
   
   private static bool CmpLocked(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Locked?.Value == value;
+    if (openXmlElement?.Locked?.Value == value) return true;
+    diffs?.Add(objName, "Locked", openXmlElement?.Locked?.Value, value);
+    return false;
   }
   
   private static void SetLocked(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -178,7 +184,9 @@ public static class AnchorConverter
   
   private static bool CmpLayoutInCell(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LayoutInCell?.Value == value;
+    if (openXmlElement?.LayoutInCell?.Value == value) return true;
+    diffs?.Add(objName, "LayoutInCell", openXmlElement?.LayoutInCell?.Value, value);
+    return false;
   }
   
   private static void SetLayoutInCell(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -199,7 +207,9 @@ public static class AnchorConverter
   
   private static bool CmpHidden(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hidden?.Value == value;
+    if (openXmlElement?.Hidden?.Value == value) return true;
+    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    return false;
   }
   
   private static void SetHidden(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -220,7 +230,9 @@ public static class AnchorConverter
   
   private static bool CmpAllowOverlap(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowOverlap?.Value == value;
+    if (openXmlElement?.AllowOverlap?.Value == value) return true;
+    diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
+    return false;
   }
   
   private static void SetAllowOverlap(DXDrawW.Anchor openXmlElement, Boolean? value)
@@ -424,7 +436,10 @@ public static class AnchorConverter
   
   private static bool CmpWrapNone(DXDrawW.Anchor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawW.WrapNone>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawW.WrapNone>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawW.WrapNone", val, value);
+    return false;
   }
   
   private static void SetWrapNone(DXDrawW.Anchor openXmlElement, Boolean? value)

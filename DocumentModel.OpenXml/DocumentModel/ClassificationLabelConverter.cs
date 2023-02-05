@@ -15,7 +15,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SetDate?.Value == value;
+    if (openXmlElement?.SetDate?.Value == value) return true;
+    diffs?.Add(objName, "SetDate", openXmlElement?.SetDate?.Value, value);
+    return false;
   }
   
   private static void SetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Method?.Value == value;
+    if (openXmlElement?.Method?.Value == value) return true;
+    diffs?.Add(objName, "Method", openXmlElement?.Method?.Value, value);
+    return false;
   }
   
   private static void SetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SiteId?.Value == value;
+    if (openXmlElement?.SiteId?.Value == value) return true;
+    diffs?.Add(objName, "SiteId", openXmlElement?.SiteId?.Value, value);
+    return false;
   }
   
   private static void SetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ActionId?.Value == value;
+    if (openXmlElement?.ActionId?.Value == value) return true;
+    diffs?.Add(objName, "ActionId", openXmlElement?.ActionId?.Value, value);
+    return false;
   }
   
   private static void SetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
@@ -182,7 +196,9 @@ public static class ClassificationLabelConverter
   
   private static bool CmpRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Removed?.Value == value;
+    if (openXmlElement?.Removed?.Value == value) return true;
+    diffs?.Add(objName, "Removed", openXmlElement?.Removed?.Value, value);
+    return false;
   }
   
   private static void SetRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)

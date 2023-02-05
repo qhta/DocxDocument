@@ -94,7 +94,10 @@ public static class CategoryFilterExceptionConverter
   
   private static bool CmpInvertIfNegativeBoolean(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.InvertIfNegativeBoolean>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.InvertIfNegativeBoolean>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013DrawChart.InvertIfNegativeBoolean", val, value);
+    return false;
   }
   
   private static void SetInvertIfNegativeBoolean(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value)
@@ -122,7 +125,10 @@ public static class CategoryFilterExceptionConverter
   
   private static bool CmpBubble3D(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.Bubble3D>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.Bubble3D>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013DrawChart.Bubble3D", val, value);
+    return false;
   }
   
   private static void SetBubble3D(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value)

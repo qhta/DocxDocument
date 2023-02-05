@@ -55,7 +55,9 @@ public static class LineNumberTypeConverter
   
   private static bool CmpDistance(DXW.LineNumberType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Distance?.Value == value;
+    if (openXmlElement?.Distance?.Value == value) return true;
+    diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
+    return false;
   }
   
   private static void SetDistance(DXW.LineNumberType openXmlElement, String? value)

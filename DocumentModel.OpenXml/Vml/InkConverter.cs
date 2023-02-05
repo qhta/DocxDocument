@@ -43,7 +43,9 @@ public static class InkConverter
   
   private static bool CmpAnnotationFlag(DXVmlO.Ink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AnnotationFlag?.Value == value;
+    if (openXmlElement?.AnnotationFlag?.Value == value) return true;
+    diffs?.Add(objName, "AnnotationFlag", openXmlElement?.AnnotationFlag?.Value, value);
+    return false;
   }
   
   private static void SetAnnotationFlag(DXVmlO.Ink openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class CommandConverter
   
   private static bool CmpOnAction(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnAction?.Value == value;
+    if (openXmlElement?.OnAction?.Value == value) return true;
+    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
+    return false;
   }
   
   private static void SetOnAction(DXO2010CustUI.Command openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class CommandConverter
   
   private static bool CmpEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class CommandConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.Command openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class CommandConverter
   
   private static bool CmpIdMso(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXO2010CustUI.Command openXmlElement, String? value)

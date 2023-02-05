@@ -33,7 +33,9 @@ public static class OleObjectConverter
   
   private static bool CmpProgId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ProgId?.Value == value;
+    if (openXmlElement?.ProgId?.Value == value) return true;
+    diffs?.Add(objName, "ProgId", openXmlElement?.ProgId?.Value, value);
+    return false;
   }
   
   private static void SetProgId(DXVmlO.OleObject openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class OleObjectConverter
   
   private static bool CmpShapeId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXVmlO.OleObject openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class OleObjectConverter
   
   private static bool CmpObjectId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ObjectId?.Value == value;
+    if (openXmlElement?.ObjectId?.Value == value) return true;
+    diffs?.Add(objName, "ObjectId", openXmlElement?.ObjectId?.Value, value);
+    return false;
   }
   
   private static void SetObjectId(DXVmlO.OleObject openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class OleObjectConverter
   
   private static bool CmpId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVmlO.OleObject openXmlElement, String? value)

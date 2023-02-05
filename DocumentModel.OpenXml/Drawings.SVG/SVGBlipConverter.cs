@@ -15,7 +15,9 @@ public static class SVGBlipConverter
   
   private static bool CmpEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Embed?.Value == value;
+    if (openXmlElement?.Embed?.Value == value) return true;
+    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
+    return false;
   }
   
   private static void SetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SVGBlipConverter
   
   private static bool CmpLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Link?.Value == value;
+    if (openXmlElement?.Link?.Value == value) return true;
+    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
+    return false;
   }
   
   private static void SetLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)

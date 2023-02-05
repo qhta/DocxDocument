@@ -33,7 +33,9 @@ public static class PermStartConverter
   
   private static bool CmpEd(DXW.PermStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Ed?.Value == value;
+    if (openXmlElement?.Ed?.Value == value) return true;
+    diffs?.Add(objName, "Ed", openXmlElement?.Ed?.Value, value);
+    return false;
   }
   
   private static void SetEd(DXW.PermStart openXmlElement, String? value)

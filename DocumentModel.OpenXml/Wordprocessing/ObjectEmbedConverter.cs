@@ -33,7 +33,9 @@ public static class ObjectEmbedConverter
   
   private static bool CmpId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.ObjectEmbed openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class ObjectEmbedConverter
   
   private static bool CmpProgId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ProgId?.Value == value;
+    if (openXmlElement?.ProgId?.Value == value) return true;
+    diffs?.Add(objName, "ProgId", openXmlElement?.ProgId?.Value, value);
+    return false;
   }
   
   private static void SetProgId(DXW.ObjectEmbed openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class ObjectEmbedConverter
   
   private static bool CmpShapeId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeId?.Value == value;
+    if (openXmlElement?.ShapeId?.Value == value) return true;
+    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
+    return false;
   }
   
   private static void SetShapeId(DXW.ObjectEmbed openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class ObjectEmbedConverter
   
   private static bool CmpFieldCodes(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FieldCodes?.Value == value;
+    if (openXmlElement?.FieldCodes?.Value == value) return true;
+    diffs?.Add(objName, "FieldCodes", openXmlElement?.FieldCodes?.Value, value);
+    return false;
   }
   
   private static void SetFieldCodes(DXW.ObjectEmbed openXmlElement, String? value)

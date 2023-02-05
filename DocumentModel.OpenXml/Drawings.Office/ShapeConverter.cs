@@ -15,7 +15,9 @@ public static class ShapeConverter
   
   private static bool CmpModelId(DXODraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ModelId?.Value == value;
+    if (openXmlElement?.ModelId?.Value == value) return true;
+    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
+    return false;
   }
   
   private static void SetModelId(DXODraw.Shape openXmlElement, String? value)

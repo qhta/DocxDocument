@@ -176,7 +176,10 @@ public static class PreviousTableRowPropertiesConverter
   
   private static bool CmpHidden(DXW.PreviousTableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value == value;
+    var val = openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXW.Hidden", val, value);
+    return false;
   }
   
   private static void SetHidden(DXW.PreviousTableRowProperties openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UniqueId?.Value == value;
+    if (openXmlElement?.UniqueId?.Value == value) return true;
+    diffs?.Add(objName, "UniqueId", openXmlElement?.UniqueId?.Value, value);
+    return false;
   }
   
   private static void SetUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.MinVersion?.Value == value;
+    if (openXmlElement?.MinVersion?.Value == value) return true;
+    diffs?.Add(objName, "MinVersion", openXmlElement?.MinVersion?.Value, value);
+    return false;
   }
   
   private static void SetMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DefaultStyle?.Value == value;
+    if (openXmlElement?.DefaultStyle?.Value == value) return true;
+    diffs?.Add(objName, "DefaultStyle", openXmlElement?.DefaultStyle?.Value, value);
+    return false;
   }
   
   private static void SetDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value)

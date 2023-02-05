@@ -15,7 +15,9 @@ public static class PropertySetConverter
   
   private static bool CmpPresentationElementId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PresentationElementId?.Value == value;
+    if (openXmlElement?.PresentationElementId?.Value == value) return true;
+    diffs?.Add(objName, "PresentationElementId", openXmlElement?.PresentationElementId?.Value, value);
+    return false;
   }
   
   private static void SetPresentationElementId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class PropertySetConverter
   
   private static bool CmpPresentationName(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PresentationName?.Value == value;
+    if (openXmlElement?.PresentationName?.Value == value) return true;
+    diffs?.Add(objName, "PresentationName", openXmlElement?.PresentationName?.Value, value);
+    return false;
   }
   
   private static void SetPresentationName(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class PropertySetConverter
   
   private static bool CmpPresentationStyleLabel(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PresentationStyleLabel?.Value == value;
+    if (openXmlElement?.PresentationStyleLabel?.Value == value) return true;
+    diffs?.Add(objName, "PresentationStyleLabel", openXmlElement?.PresentationStyleLabel?.Value, value);
+    return false;
   }
   
   private static void SetPresentationStyleLabel(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -118,7 +124,9 @@ public static class PropertySetConverter
   
   private static bool CmpLayoutTypeId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LayoutTypeId?.Value == value;
+    if (openXmlElement?.LayoutTypeId?.Value == value) return true;
+    diffs?.Add(objName, "LayoutTypeId", openXmlElement?.LayoutTypeId?.Value, value);
+    return false;
   }
   
   private static void SetLayoutTypeId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -139,7 +147,9 @@ public static class PropertySetConverter
   
   private static bool CmpLayoutCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LayoutCategoryId?.Value == value;
+    if (openXmlElement?.LayoutCategoryId?.Value == value) return true;
+    diffs?.Add(objName, "LayoutCategoryId", openXmlElement?.LayoutCategoryId?.Value, value);
+    return false;
   }
   
   private static void SetLayoutCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -160,7 +170,9 @@ public static class PropertySetConverter
   
   private static bool CmpQuickStyleTypeId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QuickStyleTypeId?.Value == value;
+    if (openXmlElement?.QuickStyleTypeId?.Value == value) return true;
+    diffs?.Add(objName, "QuickStyleTypeId", openXmlElement?.QuickStyleTypeId?.Value, value);
+    return false;
   }
   
   private static void SetQuickStyleTypeId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -181,7 +193,9 @@ public static class PropertySetConverter
   
   private static bool CmpQuickStyleCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QuickStyleCategoryId?.Value == value;
+    if (openXmlElement?.QuickStyleCategoryId?.Value == value) return true;
+    diffs?.Add(objName, "QuickStyleCategoryId", openXmlElement?.QuickStyleCategoryId?.Value, value);
+    return false;
   }
   
   private static void SetQuickStyleCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -202,7 +216,9 @@ public static class PropertySetConverter
   
   private static bool CmpColorType(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ColorType?.Value == value;
+    if (openXmlElement?.ColorType?.Value == value) return true;
+    diffs?.Add(objName, "ColorType", openXmlElement?.ColorType?.Value, value);
+    return false;
   }
   
   private static void SetColorType(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -223,7 +239,9 @@ public static class PropertySetConverter
   
   private static bool CmpColorCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ColorCategoryId?.Value == value;
+    if (openXmlElement?.ColorCategoryId?.Value == value) return true;
+    diffs?.Add(objName, "ColorCategoryId", openXmlElement?.ColorCategoryId?.Value, value);
+    return false;
   }
   
   private static void SetColorCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -244,7 +262,9 @@ public static class PropertySetConverter
   
   private static bool CmpCoherent3D(DXDrawDgms.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Coherent3D?.Value == value;
+    if (openXmlElement?.Coherent3D?.Value == value) return true;
+    diffs?.Add(objName, "Coherent3D", openXmlElement?.Coherent3D?.Value, value);
+    return false;
   }
   
   private static void SetCoherent3D(DXDrawDgms.PropertySet openXmlElement, Boolean? value)
@@ -265,7 +285,9 @@ public static class PropertySetConverter
   
   private static bool CmpPlaceholderText(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PlaceholderText?.Value == value;
+    if (openXmlElement?.PlaceholderText?.Value == value) return true;
+    diffs?.Add(objName, "PlaceholderText", openXmlElement?.PlaceholderText?.Value, value);
+    return false;
   }
   
   private static void SetPlaceholderText(DXDrawDgms.PropertySet openXmlElement, String? value)
@@ -286,7 +308,9 @@ public static class PropertySetConverter
   
   private static bool CmpPlaceholder(DXDrawDgms.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Placeholder?.Value == value;
+    if (openXmlElement?.Placeholder?.Value == value) return true;
+    diffs?.Add(objName, "Placeholder", openXmlElement?.Placeholder?.Value, value);
+    return false;
   }
   
   private static void SetPlaceholder(DXDrawDgms.PropertySet openXmlElement, Boolean? value)
@@ -327,7 +351,9 @@ public static class PropertySetConverter
   
   private static bool CmpVerticalFlip(DXDrawDgms.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.VerticalFlip?.Value == value;
+    if (openXmlElement?.VerticalFlip?.Value == value) return true;
+    diffs?.Add(objName, "VerticalFlip", openXmlElement?.VerticalFlip?.Value, value);
+    return false;
   }
   
   private static void SetVerticalFlip(DXDrawDgms.PropertySet openXmlElement, Boolean? value)
@@ -348,7 +374,9 @@ public static class PropertySetConverter
   
   private static bool CmpHorizontalFlip(DXDrawDgms.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalFlip?.Value == value;
+    if (openXmlElement?.HorizontalFlip?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalFlip", openXmlElement?.HorizontalFlip?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalFlip(DXDrawDgms.PropertySet openXmlElement, Boolean? value)
@@ -449,7 +477,9 @@ public static class PropertySetConverter
   
   private static bool CmpTextChanged(DXDrawDgms.PropertySet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextChanged?.Value == value;
+    if (openXmlElement?.TextChanged?.Value == value) return true;
+    diffs?.Add(objName, "TextChanged", openXmlElement?.TextChanged?.Value, value);
+    return false;
   }
   
   private static void SetTextChanged(DXDrawDgms.PropertySet openXmlElement, Boolean? value)

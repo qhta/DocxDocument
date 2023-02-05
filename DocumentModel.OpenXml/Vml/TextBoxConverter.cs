@@ -15,7 +15,9 @@ public static class TextBoxConverter
   
   private static bool CmpId(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.TextBox openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class TextBoxConverter
   
   private static bool CmpStyle(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.TextBox openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class TextBoxConverter
   
   private static bool CmpInset(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Inset?.Value == value;
+    if (openXmlElement?.Inset?.Value == value) return true;
+    diffs?.Add(objName, "Inset", openXmlElement?.Inset?.Value, value);
+    return false;
   }
   
   private static void SetInset(DXVml.TextBox openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class TextBoxConverter
   
   private static bool CmpSingleClick(DXVml.TextBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SingleClick?.Value == value;
+    if (openXmlElement?.SingleClick?.Value == value) return true;
+    diffs?.Add(objName, "SingleClick", openXmlElement?.SingleClick?.Value, value);
+    return false;
   }
   
   private static void SetSingleClick(DXVml.TextBox openXmlElement, Boolean? value)

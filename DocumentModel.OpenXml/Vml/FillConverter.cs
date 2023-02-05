@@ -15,7 +15,9 @@ public static class FillConverter
   
   private static bool CmpId(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Fill openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class FillConverter
   
   private static bool CmpOn(DXVml.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVml.Fill openXmlElement, Boolean? value)
@@ -75,7 +79,9 @@ public static class FillConverter
   
   private static bool CmpColor(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color?.Value == value;
+    if (openXmlElement?.Color?.Value == value) return true;
+    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
+    return false;
   }
   
   private static void SetColor(DXVml.Fill openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class FillConverter
   
   private static bool CmpOpacity(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Opacity?.Value == value;
+    if (openXmlElement?.Opacity?.Value == value) return true;
+    diffs?.Add(objName, "Opacity", openXmlElement?.Opacity?.Value, value);
+    return false;
   }
   
   private static void SetOpacity(DXVml.Fill openXmlElement, String? value)
@@ -117,7 +125,9 @@ public static class FillConverter
   
   private static bool CmpColor2(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color2?.Value == value;
+    if (openXmlElement?.Color2?.Value == value) return true;
+    diffs?.Add(objName, "Color2", openXmlElement?.Color2?.Value, value);
+    return false;
   }
   
   private static void SetColor2(DXVml.Fill openXmlElement, String? value)
@@ -138,7 +148,9 @@ public static class FillConverter
   
   private static bool CmpSource(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Source?.Value == value;
+    if (openXmlElement?.Source?.Value == value) return true;
+    diffs?.Add(objName, "Source", openXmlElement?.Source?.Value, value);
+    return false;
   }
   
   private static void SetSource(DXVml.Fill openXmlElement, String? value)
@@ -159,7 +171,9 @@ public static class FillConverter
   
   private static bool CmpHref(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.Fill openXmlElement, String? value)
@@ -180,7 +194,9 @@ public static class FillConverter
   
   private static bool CmpAlternateImageReference(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlternateImageReference?.Value == value;
+    if (openXmlElement?.AlternateImageReference?.Value == value) return true;
+    diffs?.Add(objName, "AlternateImageReference", openXmlElement?.AlternateImageReference?.Value, value);
+    return false;
   }
   
   private static void SetAlternateImageReference(DXVml.Fill openXmlElement, String? value)
@@ -201,7 +217,9 @@ public static class FillConverter
   
   private static bool CmpSize(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Size?.Value == value;
+    if (openXmlElement?.Size?.Value == value) return true;
+    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    return false;
   }
   
   private static void SetSize(DXVml.Fill openXmlElement, String? value)
@@ -222,7 +240,9 @@ public static class FillConverter
   
   private static bool CmpOrigin(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Origin?.Value == value;
+    if (openXmlElement?.Origin?.Value == value) return true;
+    diffs?.Add(objName, "Origin", openXmlElement?.Origin?.Value, value);
+    return false;
   }
   
   private static void SetOrigin(DXVml.Fill openXmlElement, String? value)
@@ -243,7 +263,9 @@ public static class FillConverter
   
   private static bool CmpPosition(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Position?.Value == value;
+    if (openXmlElement?.Position?.Value == value) return true;
+    diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
+    return false;
   }
   
   private static void SetPosition(DXVml.Fill openXmlElement, String? value)
@@ -282,7 +304,9 @@ public static class FillConverter
   
   private static bool CmpColors(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Colors?.Value == value;
+    if (openXmlElement?.Colors?.Value == value) return true;
+    diffs?.Add(objName, "Colors", openXmlElement?.Colors?.Value, value);
+    return false;
   }
   
   private static void SetColors(DXVml.Fill openXmlElement, String? value)
@@ -323,7 +347,9 @@ public static class FillConverter
   
   private static bool CmpAlignShape(DXVml.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlignShape?.Value == value;
+    if (openXmlElement?.AlignShape?.Value == value) return true;
+    diffs?.Add(objName, "AlignShape", openXmlElement?.AlignShape?.Value, value);
+    return false;
   }
   
   private static void SetAlignShape(DXVml.Fill openXmlElement, Boolean? value)
@@ -344,7 +370,9 @@ public static class FillConverter
   
   private static bool CmpFocus(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Focus?.Value == value;
+    if (openXmlElement?.Focus?.Value == value) return true;
+    diffs?.Add(objName, "Focus", openXmlElement?.Focus?.Value, value);
+    return false;
   }
   
   private static void SetFocus(DXVml.Fill openXmlElement, String? value)
@@ -365,7 +393,9 @@ public static class FillConverter
   
   private static bool CmpFocusSize(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FocusSize?.Value == value;
+    if (openXmlElement?.FocusSize?.Value == value) return true;
+    diffs?.Add(objName, "FocusSize", openXmlElement?.FocusSize?.Value, value);
+    return false;
   }
   
   private static void SetFocusSize(DXVml.Fill openXmlElement, String? value)
@@ -386,7 +416,9 @@ public static class FillConverter
   
   private static bool CmpFocusPosition(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FocusPosition?.Value == value;
+    if (openXmlElement?.FocusPosition?.Value == value) return true;
+    diffs?.Add(objName, "FocusPosition", openXmlElement?.FocusPosition?.Value, value);
+    return false;
   }
   
   private static void SetFocusPosition(DXVml.Fill openXmlElement, String? value)
@@ -425,7 +457,9 @@ public static class FillConverter
   
   private static bool CmpDetectMouseClick(DXVml.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DetectMouseClick?.Value == value;
+    if (openXmlElement?.DetectMouseClick?.Value == value) return true;
+    diffs?.Add(objName, "DetectMouseClick", openXmlElement?.DetectMouseClick?.Value, value);
+    return false;
   }
   
   private static void SetDetectMouseClick(DXVml.Fill openXmlElement, Boolean? value)
@@ -446,7 +480,9 @@ public static class FillConverter
   
   private static bool CmpTitle(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.Fill openXmlElement, String? value)
@@ -467,7 +503,9 @@ public static class FillConverter
   
   private static bool CmpOpacity2(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Opacity2?.Value == value;
+    if (openXmlElement?.Opacity2?.Value == value) return true;
+    diffs?.Add(objName, "Opacity2", openXmlElement?.Opacity2?.Value, value);
+    return false;
   }
   
   private static void SetOpacity2(DXVml.Fill openXmlElement, String? value)
@@ -488,7 +526,9 @@ public static class FillConverter
   
   private static bool CmpRecolor(DXVml.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Recolor?.Value == value;
+    if (openXmlElement?.Recolor?.Value == value) return true;
+    diffs?.Add(objName, "Recolor", openXmlElement?.Recolor?.Value, value);
+    return false;
   }
   
   private static void SetRecolor(DXVml.Fill openXmlElement, Boolean? value)
@@ -509,7 +549,9 @@ public static class FillConverter
   
   private static bool CmpRotate(DXVml.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Rotate?.Value == value;
+    if (openXmlElement?.Rotate?.Value == value) return true;
+    diffs?.Add(objName, "Rotate", openXmlElement?.Rotate?.Value, value);
+    return false;
   }
   
   private static void SetRotate(DXVml.Fill openXmlElement, Boolean? value)
@@ -530,7 +572,9 @@ public static class FillConverter
   
   private static bool CmpRelationshipId(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipId?.Value == value;
+    if (openXmlElement?.RelationshipId?.Value == value) return true;
+    diffs?.Add(objName, "RelationshipId", openXmlElement?.RelationshipId?.Value, value);
+    return false;
   }
   
   private static void SetRelationshipId(DXVml.Fill openXmlElement, String? value)

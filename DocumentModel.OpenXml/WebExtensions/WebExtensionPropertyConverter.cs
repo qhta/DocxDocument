@@ -15,7 +15,9 @@ public static class WebExtensionPropertyConverter
   
   private static bool CmpName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class WebExtensionPropertyConverter
   
   private static bool CmpValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)

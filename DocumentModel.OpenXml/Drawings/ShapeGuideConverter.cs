@@ -15,7 +15,9 @@ public static class ShapeGuideConverter
   
   private static bool CmpName(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDraw.ShapeGuide openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ShapeGuideConverter
   
   private static bool CmpFormula(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Formula?.Value == value;
+    if (openXmlElement?.Formula?.Value == value) return true;
+    diffs?.Add(objName, "Formula", openXmlElement?.Formula?.Value, value);
+    return false;
   }
   
   private static void SetFormula(DXDraw.ShapeGuide openXmlElement, String? value)

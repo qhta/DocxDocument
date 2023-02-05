@@ -15,7 +15,9 @@ public static class ClipPathConverter
   
   private static bool CmpValue(DXVmlO.ClipPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXVmlO.ClipPath openXmlElement, String? value)

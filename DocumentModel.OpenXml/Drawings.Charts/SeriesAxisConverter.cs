@@ -69,7 +69,10 @@ public static class SeriesAxisConverter
   
   private static bool CmpDelete(DXDrawCharts.SeriesAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXDrawCharts.SeriesAxis openXmlElement, Boolean? value)
