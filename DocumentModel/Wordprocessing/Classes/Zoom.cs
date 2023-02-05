@@ -13,5 +13,5 @@ public class Zoom
   /// <summary>
   ///   Zoom Percentage
   /// </summary>
-  public String? Percent { get; set; }
+  public int? Percent { get; set; }
 }
