@@ -26,20 +26,31 @@ public static class ZoomConverter
   /// <summary>
   /// Zoom Percentage
   /// </summary>
-  private static String? GetPercent(DXW.Zoom openXmlElement)
+  private static int? GetPercent(DXW.Zoom openXmlElement)
   {
-    return openXmlElement?.Percent?.Value;
+    var valStr = openXmlElement?.Percent?.Value;
+    if (valStr != null)
+    {
+      if (valStr.EndsWith('%'))
+        valStr = valStr.Substring(0, valStr.Length - 1);
+      return Convert.ToInt32(valStr);
+    }
+    return null;
   }
   
-  private static bool CmpPercent(DXW.Zoom openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPercent(DXW.Zoom openXmlElement, int? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Percent?.Value == value;
+    var valStr = (value != null) ? (value.ToString() + "%") : null;
+    if (openXmlElement?.Percent?.Value == valStr)
+      return true;
+    diffs?.Add(objName, "Percent", openXmlElement?.Percent?.Value, valStr);
+    return false;
   }
   
-  private static void SetPercent(DXW.Zoom openXmlElement, String? value)
+  private static void SetPercent(DXW.Zoom openXmlElement, int? value)
   {
     if (value != null)
-      openXmlElement.Percent = new StringValue { Value = value };
+      openXmlElement.Percent = new StringValue { Value = (value != null) ? (value.ToString() + "%") : null };
     else
       openXmlElement.Percent = null;
   }
