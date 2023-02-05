@@ -15,7 +15,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpTag(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpIdMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpInsertAfterMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpInsertBeforeMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQulifiedId?.Value == value;
+    if (openXmlElement?.InsertAfterQulifiedId?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQulifiedId", openXmlElement?.InsertAfterQulifiedId?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQulifiedId?.Value == value;
+    if (openXmlElement?.InsertBeforeQulifiedId?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQulifiedId", openXmlElement?.InsertBeforeQulifiedId?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpVisible(DXO2010CustUI.TaskGroupCategory openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.TaskGroupCategory openXmlElement, Boolean? value)
@@ -204,7 +222,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpLabel(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class TaskGroupCategoryConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.TaskGroupCategory openXmlElement, String? value)

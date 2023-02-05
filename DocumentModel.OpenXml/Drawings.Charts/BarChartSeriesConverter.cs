@@ -123,7 +123,10 @@ public static class BarChartSeriesConverter
   
   private static bool CmpInvertIfNegative(DXDrawCharts.BarChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.InvertIfNegative", val, value);
+    return false;
   }
   
   private static void SetInvertIfNegative(DXDrawCharts.BarChartSeries openXmlElement, Boolean? value)

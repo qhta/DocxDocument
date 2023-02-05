@@ -15,7 +15,10 @@ public static class SurfaceChartConverter
   
   private static bool CmpWireframe(DXDrawCharts.SurfaceChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Wireframe>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Wireframe", val, value);
+    return false;
   }
   
   private static void SetWireframe(DXDrawCharts.SurfaceChart openXmlElement, Boolean? value)

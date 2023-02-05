@@ -43,7 +43,9 @@ public static class TableLookConverter
   
   private static bool CmpFirstRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FirstRow?.Value == value;
+    if (openXmlElement?.FirstRow?.Value == value) return true;
+    diffs?.Add(objName, "FirstRow", openXmlElement?.FirstRow?.Value, value);
+    return false;
   }
   
   private static void SetFirstRow(DXW.TableLook openXmlElement, Boolean? value)
@@ -64,7 +66,9 @@ public static class TableLookConverter
   
   private static bool CmpLastRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LastRow?.Value == value;
+    if (openXmlElement?.LastRow?.Value == value) return true;
+    diffs?.Add(objName, "LastRow", openXmlElement?.LastRow?.Value, value);
+    return false;
   }
   
   private static void SetLastRow(DXW.TableLook openXmlElement, Boolean? value)
@@ -85,7 +89,9 @@ public static class TableLookConverter
   
   private static bool CmpFirstColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FirstColumn?.Value == value;
+    if (openXmlElement?.FirstColumn?.Value == value) return true;
+    diffs?.Add(objName, "FirstColumn", openXmlElement?.FirstColumn?.Value, value);
+    return false;
   }
   
   private static void SetFirstColumn(DXW.TableLook openXmlElement, Boolean? value)
@@ -106,7 +112,9 @@ public static class TableLookConverter
   
   private static bool CmpLastColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LastColumn?.Value == value;
+    if (openXmlElement?.LastColumn?.Value == value) return true;
+    diffs?.Add(objName, "LastColumn", openXmlElement?.LastColumn?.Value, value);
+    return false;
   }
   
   private static void SetLastColumn(DXW.TableLook openXmlElement, Boolean? value)
@@ -127,7 +135,9 @@ public static class TableLookConverter
   
   private static bool CmpNoHorizontalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoHorizontalBand?.Value == value;
+    if (openXmlElement?.NoHorizontalBand?.Value == value) return true;
+    diffs?.Add(objName, "NoHorizontalBand", openXmlElement?.NoHorizontalBand?.Value, value);
+    return false;
   }
   
   private static void SetNoHorizontalBand(DXW.TableLook openXmlElement, Boolean? value)
@@ -148,7 +158,9 @@ public static class TableLookConverter
   
   private static bool CmpNoVerticalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoVerticalBand?.Value == value;
+    if (openXmlElement?.NoVerticalBand?.Value == value) return true;
+    diffs?.Add(objName, "NoVerticalBand", openXmlElement?.NoVerticalBand?.Value, value);
+    return false;
   }
   
   private static void SetNoVerticalBand(DXW.TableLook openXmlElement, Boolean? value)

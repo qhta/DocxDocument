@@ -33,7 +33,9 @@ public static class RunFontsConverter
   
   private static bool CmpAscii(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Ascii?.Value == value;
+    if (openXmlElement?.Ascii?.Value == value) return true;
+    diffs?.Add(objName, "Ascii", openXmlElement?.Ascii?.Value, value);
+    return false;
   }
   
   private static void SetAscii(DXW.RunFonts openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class RunFontsConverter
   
   private static bool CmpHighAnsi(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HighAnsi?.Value == value;
+    if (openXmlElement?.HighAnsi?.Value == value) return true;
+    diffs?.Add(objName, "HighAnsi", openXmlElement?.HighAnsi?.Value, value);
+    return false;
   }
   
   private static void SetHighAnsi(DXW.RunFonts openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class RunFontsConverter
   
   private static bool CmpEastAsia(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EastAsia?.Value == value;
+    if (openXmlElement?.EastAsia?.Value == value) return true;
+    diffs?.Add(objName, "EastAsia", openXmlElement?.EastAsia?.Value, value);
+    return false;
   }
   
   private static void SetEastAsia(DXW.RunFonts openXmlElement, String? value)
@@ -96,7 +102,9 @@ public static class RunFontsConverter
   
   private static bool CmpComplexScript(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ComplexScript?.Value == value;
+    if (openXmlElement?.ComplexScript?.Value == value) return true;
+    diffs?.Add(objName, "ComplexScript", openXmlElement?.ComplexScript?.Value, value);
+    return false;
   }
   
   private static void SetComplexScript(DXW.RunFonts openXmlElement, String? value)

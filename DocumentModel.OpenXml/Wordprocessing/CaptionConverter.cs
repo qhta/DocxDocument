@@ -15,7 +15,9 @@ public static class CaptionConverter
   
   private static bool CmpName(DXW.Caption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXW.Caption openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class CaptionConverter
   
   private static bool CmpChapterNumber(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ChapterNumber?.Value == value;
+    if (openXmlElement?.ChapterNumber?.Value == value) return true;
+    diffs?.Add(objName, "ChapterNumber", openXmlElement?.ChapterNumber?.Value, value);
+    return false;
   }
   
   private static void SetChapterNumber(DXW.Caption openXmlElement, Boolean? value)
@@ -95,7 +99,9 @@ public static class CaptionConverter
   
   private static bool CmpNoLabel(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoLabel?.Value == value;
+    if (openXmlElement?.NoLabel?.Value == value) return true;
+    diffs?.Add(objName, "NoLabel", openXmlElement?.NoLabel?.Value, value);
+    return false;
   }
   
   private static void SetNoLabel(DXW.Caption openXmlElement, Boolean? value)

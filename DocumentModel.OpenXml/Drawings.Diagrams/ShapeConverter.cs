@@ -35,7 +35,9 @@ public static class ShapeConverter
   
   private static bool CmpType(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXDrawDgms.Shape openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class ShapeConverter
   
   private static bool CmpBlip(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Blip?.Value == value;
+    if (openXmlElement?.Blip?.Value == value) return true;
+    diffs?.Add(objName, "Blip", openXmlElement?.Blip?.Value, value);
+    return false;
   }
   
   private static void SetBlip(DXDrawDgms.Shape openXmlElement, String? value)
@@ -97,7 +101,9 @@ public static class ShapeConverter
   
   private static bool CmpHideGeometry(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HideGeometry?.Value == value;
+    if (openXmlElement?.HideGeometry?.Value == value) return true;
+    diffs?.Add(objName, "HideGeometry", openXmlElement?.HideGeometry?.Value, value);
+    return false;
   }
   
   private static void SetHideGeometry(DXDrawDgms.Shape openXmlElement, Boolean? value)
@@ -118,7 +124,9 @@ public static class ShapeConverter
   
   private static bool CmpLockedText(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LockedText?.Value == value;
+    if (openXmlElement?.LockedText?.Value == value) return true;
+    diffs?.Add(objName, "LockedText", openXmlElement?.LockedText?.Value, value);
+    return false;
   }
   
   private static void SetLockedText(DXDrawDgms.Shape openXmlElement, Boolean? value)
@@ -139,7 +147,9 @@ public static class ShapeConverter
   
   private static bool CmpBlipPlaceholder(DXDrawDgms.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.BlipPlaceholder?.Value == value;
+    if (openXmlElement?.BlipPlaceholder?.Value == value) return true;
+    diffs?.Add(objName, "BlipPlaceholder", openXmlElement?.BlipPlaceholder?.Value, value);
+    return false;
   }
   
   private static void SetBlipPlaceholder(DXDrawDgms.Shape openXmlElement, Boolean? value)

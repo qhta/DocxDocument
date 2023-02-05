@@ -15,7 +15,9 @@ public static class QuickTimeFromFileConverter
   
   private static bool CmpLink(DXDraw.QuickTimeFromFile openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Link?.Value == value;
+    if (openXmlElement?.Link?.Value == value) return true;
+    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
+    return false;
   }
   
   private static void SetLink(DXDraw.QuickTimeFromFile openXmlElement, String? value)

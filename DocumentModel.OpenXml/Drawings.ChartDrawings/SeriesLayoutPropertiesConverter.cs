@@ -90,7 +90,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static bool CmpAggregation(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Aggregation>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Aggregation>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2016DrawChartDraw.Aggregation", val, value);
+    return false;
   }
   
   private static void SetAggregation(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, Boolean? value)

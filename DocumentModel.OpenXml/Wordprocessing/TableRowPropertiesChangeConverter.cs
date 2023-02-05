@@ -15,7 +15,9 @@ public static class TableRowPropertiesChangeConverter
   
   private static bool CmpAuthor(DXW.TableRowPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Author?.Value == value;
+    if (openXmlElement?.Author?.Value == value) return true;
+    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
+    return false;
   }
   
   private static void SetAuthor(DXW.TableRowPropertiesChange openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class TableRowPropertiesChangeConverter
   
   private static bool CmpId(DXW.TableRowPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.TableRowPropertiesChange openXmlElement, String? value)

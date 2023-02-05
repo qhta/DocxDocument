@@ -15,7 +15,9 @@ public static class ProxyConverter
   
   private static bool CmpStart(DXVmlO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Start?.Value == value;
+    if (openXmlElement?.Start?.Value == value) return true;
+    diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
+    return false;
   }
   
   private static void SetStart(DXVmlO.Proxy openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class ProxyConverter
   
   private static bool CmpEnd(DXVmlO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.End?.Value == value;
+    if (openXmlElement?.End?.Value == value) return true;
+    diffs?.Add(objName, "End", openXmlElement?.End?.Value, value);
+    return false;
   }
   
   private static void SetEnd(DXVmlO.Proxy openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class ProxyConverter
   
   private static bool CmpShapeReference(DXVmlO.Proxy openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShapeReference?.Value == value;
+    if (openXmlElement?.ShapeReference?.Value == value) return true;
+    diffs?.Add(objName, "ShapeReference", openXmlElement?.ShapeReference?.Value, value);
+    return false;
   }
   
   private static void SetShapeReference(DXVmlO.Proxy openXmlElement, String? value)

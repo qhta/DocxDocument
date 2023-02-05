@@ -15,7 +15,10 @@ public static class OpenXmlValueColorEndPositionElementConverter
   
   private static bool CmpExtremeValueColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtremeValueColorPosition>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2016DrawChartDraw.ExtremeValueColorPosition", val, value);
+    return false;
   }
   
   private static void SetExtremeValueColorPosition(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement openXmlElement, Boolean? value)

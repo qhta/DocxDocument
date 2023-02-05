@@ -33,7 +33,9 @@ public static class EffectContainerTypeConverter
   
   private static bool CmpName(DXDraw.EffectContainerType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDraw.EffectContainerType openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class PersonConverter
   
   private static bool CmpContact(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Contact?.Value == value;
+    if (openXmlElement?.Contact?.Value == value) return true;
+    diffs?.Add(objName, "Contact", openXmlElement?.Contact?.Value, value);
+    return false;
   }
   
   private static void SetContact(DXO2013W.Person openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class PersonConverter
   
   private static bool CmpAuthor(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Author?.Value == value;
+    if (openXmlElement?.Author?.Value == value) return true;
+    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
+    return false;
   }
   
   private static void SetAuthor(DXO2013W.Person openXmlElement, String? value)

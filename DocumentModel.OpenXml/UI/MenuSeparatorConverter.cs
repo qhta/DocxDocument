@@ -15,7 +15,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpId(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -141,7 +153,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class MenuSeparatorConverter
   
   private static bool CmpGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetTitle?.Value == value;
+    if (openXmlElement?.GetTitle?.Value == value) return true;
+    diffs?.Add(objName, "GetTitle", openXmlElement?.GetTitle?.Value, value);
+    return false;
   }
   
   private static void SetGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)

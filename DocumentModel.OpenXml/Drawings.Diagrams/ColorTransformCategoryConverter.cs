@@ -15,7 +15,9 @@ public static class ColorTransformCategoryConverter
   
   private static bool CmpType(DXDrawDgms.ColorTransformCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXDrawDgms.ColorTransformCategory openXmlElement, String? value)

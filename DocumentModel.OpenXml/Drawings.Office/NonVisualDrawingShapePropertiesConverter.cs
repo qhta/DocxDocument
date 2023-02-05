@@ -15,7 +15,9 @@ public static class NonVisualDrawingShapePropertiesConverter
   
   private static bool CmpTextBox(DXODraw.NonVisualDrawingShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextBox?.Value == value;
+    if (openXmlElement?.TextBox?.Value == value) return true;
+    diffs?.Add(objName, "TextBox", openXmlElement?.TextBox?.Value, value);
+    return false;
   }
   
   private static void SetTextBox(DXODraw.NonVisualDrawingShapeProperties openXmlElement, Boolean? value)

@@ -41,7 +41,10 @@ public static class LineChartConverter
   
   private static bool CmpVaryColors(DXDrawCharts.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    return false;
   }
   
   private static void SetVaryColors(DXDrawCharts.LineChart openXmlElement, Boolean? value)
@@ -212,7 +215,10 @@ public static class LineChartConverter
   
   private static bool CmpShowMarker(DXDrawCharts.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowMarker>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowMarker>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowMarker", val, value);
+    return false;
   }
   
   private static void SetShowMarker(DXDrawCharts.LineChart openXmlElement, Boolean? value)
@@ -237,7 +243,10 @@ public static class LineChartConverter
   
   private static bool CmpSmooth(DXDrawCharts.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Smooth>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Smooth>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Smooth", val, value);
+    return false;
   }
   
   private static void SetSmooth(DXDrawCharts.LineChart openXmlElement, Boolean? value)

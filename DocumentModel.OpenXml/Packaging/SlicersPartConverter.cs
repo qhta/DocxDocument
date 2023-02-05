@@ -12,7 +12,9 @@ public static class SlicersPartConverter
   
   private static bool CmpContentType(DXPack.SlicersPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   private static String? GetRelationshipType(DXPack.SlicersPart openXmlElement)
@@ -22,7 +24,9 @@ public static class SlicersPartConverter
   
   private static bool CmpRelationshipType(DXPack.SlicersPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.SlicersPart? CreateModelElement(DXPack.SlicersPart? openXmlElement)

@@ -69,7 +69,10 @@ public static class DateAxisConverter
   
   private static bool CmpDelete(DXDrawCharts.DateAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXDrawCharts.DateAxis openXmlElement, Boolean? value)
@@ -430,7 +433,10 @@ public static class DateAxisConverter
   
   private static bool CmpAutoLabeled(DXDrawCharts.DateAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.AutoLabeled", val, value);
+    return false;
   }
   
   private static void SetAutoLabeled(DXDrawCharts.DateAxis openXmlElement, Boolean? value)

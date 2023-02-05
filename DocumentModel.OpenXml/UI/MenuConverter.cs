@@ -33,7 +33,9 @@ public static class MenuConverter
   
   private static bool CmpGetSize(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSize?.Value == value;
+    if (openXmlElement?.GetSize?.Value == value) return true;
+    diffs?.Add(objName, "GetSize", openXmlElement?.GetSize?.Value, value);
+    return false;
   }
   
   private static void SetGetSize(DXOCustUI.Menu openXmlElement, String? value)
@@ -72,7 +74,9 @@ public static class MenuConverter
   
   private static bool CmpDescription(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Description?.Value == value;
+    if (openXmlElement?.Description?.Value == value) return true;
+    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
+    return false;
   }
   
   private static void SetDescription(DXOCustUI.Menu openXmlElement, String? value)
@@ -93,7 +97,9 @@ public static class MenuConverter
   
   private static bool CmpGetDescription(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetDescription?.Value == value;
+    if (openXmlElement?.GetDescription?.Value == value) return true;
+    diffs?.Add(objName, "GetDescription", openXmlElement?.GetDescription?.Value, value);
+    return false;
   }
   
   private static void SetGetDescription(DXOCustUI.Menu openXmlElement, String? value)
@@ -114,7 +120,9 @@ public static class MenuConverter
   
   private static bool CmpId(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXOCustUI.Menu openXmlElement, String? value)
@@ -135,7 +143,9 @@ public static class MenuConverter
   
   private static bool CmpIdQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdQ?.Value == value;
+    if (openXmlElement?.IdQ?.Value == value) return true;
+    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
+    return false;
   }
   
   private static void SetIdQ(DXOCustUI.Menu openXmlElement, String? value)
@@ -156,7 +166,9 @@ public static class MenuConverter
   
   private static bool CmpIdMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXOCustUI.Menu openXmlElement, String? value)
@@ -177,7 +189,9 @@ public static class MenuConverter
   
   private static bool CmpTag(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXOCustUI.Menu openXmlElement, String? value)
@@ -198,7 +212,9 @@ public static class MenuConverter
   
   private static bool CmpImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXOCustUI.Menu openXmlElement, String? value)
@@ -219,7 +235,9 @@ public static class MenuConverter
   
   private static bool CmpImageMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXOCustUI.Menu openXmlElement, String? value)
@@ -240,7 +258,9 @@ public static class MenuConverter
   
   private static bool CmpGetImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXOCustUI.Menu openXmlElement, String? value)
@@ -261,7 +281,9 @@ public static class MenuConverter
   
   private static bool CmpScreentip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Screentip?.Value == value;
+    if (openXmlElement?.Screentip?.Value == value) return true;
+    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
+    return false;
   }
   
   private static void SetScreentip(DXOCustUI.Menu openXmlElement, String? value)
@@ -282,7 +304,9 @@ public static class MenuConverter
   
   private static bool CmpGetScreentip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetScreentip?.Value == value;
+    if (openXmlElement?.GetScreentip?.Value == value) return true;
+    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
+    return false;
   }
   
   private static void SetGetScreentip(DXOCustUI.Menu openXmlElement, String? value)
@@ -303,7 +327,9 @@ public static class MenuConverter
   
   private static bool CmpSupertip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Supertip?.Value == value;
+    if (openXmlElement?.Supertip?.Value == value) return true;
+    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
+    return false;
   }
   
   private static void SetSupertip(DXOCustUI.Menu openXmlElement, String? value)
@@ -324,7 +350,9 @@ public static class MenuConverter
   
   private static bool CmpGetSupertip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetSupertip?.Value == value;
+    if (openXmlElement?.GetSupertip?.Value == value) return true;
+    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
+    return false;
   }
   
   private static void SetGetSupertip(DXOCustUI.Menu openXmlElement, String? value)
@@ -345,7 +373,9 @@ public static class MenuConverter
   
   private static bool CmpEnabled(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXOCustUI.Menu openXmlElement, Boolean? value)
@@ -366,7 +396,9 @@ public static class MenuConverter
   
   private static bool CmpGetEnabled(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXOCustUI.Menu openXmlElement, String? value)
@@ -387,7 +419,9 @@ public static class MenuConverter
   
   private static bool CmpLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXOCustUI.Menu openXmlElement, String? value)
@@ -408,7 +442,9 @@ public static class MenuConverter
   
   private static bool CmpGetLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXOCustUI.Menu openXmlElement, String? value)
@@ -429,7 +465,9 @@ public static class MenuConverter
   
   private static bool CmpInsertAfterMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterMso?.Value == value;
+    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterMso(DXOCustUI.Menu openXmlElement, String? value)
@@ -450,7 +488,9 @@ public static class MenuConverter
   
   private static bool CmpInsertBeforeMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeMso?.Value == value;
+    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.Menu openXmlElement, String? value)
@@ -471,7 +511,9 @@ public static class MenuConverter
   
   private static bool CmpInsertAfterQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertAfterQ?.Value == value;
+    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertAfterQ(DXOCustUI.Menu openXmlElement, String? value)
@@ -492,7 +534,9 @@ public static class MenuConverter
   
   private static bool CmpInsertBeforeQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.InsertBeforeQ?.Value == value;
+    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
+    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
+    return false;
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.Menu openXmlElement, String? value)
@@ -513,7 +557,9 @@ public static class MenuConverter
   
   private static bool CmpVisible(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXOCustUI.Menu openXmlElement, Boolean? value)
@@ -534,7 +580,9 @@ public static class MenuConverter
   
   private static bool CmpGetVisible(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXOCustUI.Menu openXmlElement, String? value)
@@ -555,7 +603,9 @@ public static class MenuConverter
   
   private static bool CmpKeytip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Keytip?.Value == value;
+    if (openXmlElement?.Keytip?.Value == value) return true;
+    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
+    return false;
   }
   
   private static void SetKeytip(DXOCustUI.Menu openXmlElement, String? value)
@@ -576,7 +626,9 @@ public static class MenuConverter
   
   private static bool CmpGetKeytip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetKeytip?.Value == value;
+    if (openXmlElement?.GetKeytip?.Value == value) return true;
+    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
+    return false;
   }
   
   private static void SetGetKeytip(DXOCustUI.Menu openXmlElement, String? value)
@@ -597,7 +649,9 @@ public static class MenuConverter
   
   private static bool CmpShowLabel(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowLabel?.Value == value;
+    if (openXmlElement?.ShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetShowLabel(DXOCustUI.Menu openXmlElement, Boolean? value)
@@ -618,7 +672,9 @@ public static class MenuConverter
   
   private static bool CmpGetShowLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowLabel?.Value == value;
+    if (openXmlElement?.GetShowLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetShowLabel(DXOCustUI.Menu openXmlElement, String? value)
@@ -639,7 +695,9 @@ public static class MenuConverter
   
   private static bool CmpShowImage(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowImage?.Value == value;
+    if (openXmlElement?.ShowImage?.Value == value) return true;
+    diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
+    return false;
   }
   
   private static void SetShowImage(DXOCustUI.Menu openXmlElement, Boolean? value)
@@ -660,7 +718,9 @@ public static class MenuConverter
   
   private static bool CmpGetShowImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetShowImage?.Value == value;
+    if (openXmlElement?.GetShowImage?.Value == value) return true;
+    diffs?.Add(objName, "GetShowImage", openXmlElement?.GetShowImage?.Value, value);
+    return false;
   }
   
   private static void SetGetShowImage(DXOCustUI.Menu openXmlElement, String? value)

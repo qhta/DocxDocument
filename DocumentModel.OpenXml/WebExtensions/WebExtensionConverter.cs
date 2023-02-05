@@ -15,7 +15,9 @@ public static class WebExtensionConverter
   
   private static bool CmpFronzen(DXO2013WebExt.WebExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Fronzen?.Value == value;
+    if (openXmlElement?.Fronzen?.Value == value) return true;
+    diffs?.Add(objName, "Fronzen", openXmlElement?.Fronzen?.Value, value);
+    return false;
   }
   
   private static void SetFronzen(DXO2013WebExt.WebExtension openXmlElement, Boolean? value)
@@ -36,7 +38,9 @@ public static class WebExtensionConverter
   
   private static bool CmpId(DXO2013WebExt.WebExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013WebExt.WebExtension openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class WebExtensionConverter
   
   private static bool CmpFrozen(DXO2013WebExt.WebExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Frozen?.Value == value;
+    if (openXmlElement?.Frozen?.Value == value) return true;
+    diffs?.Add(objName, "Frozen", openXmlElement?.Frozen?.Value, value);
+    return false;
   }
   
   private static void SetFrozen(DXO2013WebExt.WebExtension openXmlElement, Boolean? value)

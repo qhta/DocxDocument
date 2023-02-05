@@ -15,7 +15,9 @@ public static class ImageControlConverter
   
   private static bool CmpId(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class ImageControlConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class ImageControlConverter
   
   private static bool CmpTag(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class ImageControlConverter
   
   private static bool CmpEnabled(DXO2010CustUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Enabled?.Value == value;
+    if (openXmlElement?.Enabled?.Value == value) return true;
+    diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
+    return false;
   }
   
   private static void SetEnabled(DXO2010CustUI.ImageControl openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class ImageControlConverter
   
   private static bool CmpGetEnabled(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetEnabled?.Value == value;
+    if (openXmlElement?.GetEnabled?.Value == value) return true;
+    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
+    return false;
   }
   
   private static void SetGetEnabled(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class ImageControlConverter
   
   private static bool CmpVisible(DXO2010CustUI.ImageControl openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.ImageControl openXmlElement, Boolean? value)
@@ -141,7 +153,9 @@ public static class ImageControlConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -162,7 +176,9 @@ public static class ImageControlConverter
   
   private static bool CmpImage(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Image?.Value == value;
+    if (openXmlElement?.Image?.Value == value) return true;
+    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
+    return false;
   }
   
   private static void SetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -183,7 +199,9 @@ public static class ImageControlConverter
   
   private static bool CmpImageMso(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageMso?.Value == value;
+    if (openXmlElement?.ImageMso?.Value == value) return true;
+    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
+    return false;
   }
   
   private static void SetImageMso(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -204,7 +222,9 @@ public static class ImageControlConverter
   
   private static bool CmpGetImage(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetImage?.Value == value;
+    if (openXmlElement?.GetImage?.Value == value) return true;
+    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
+    return false;
   }
   
   private static void SetGetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -225,7 +245,9 @@ public static class ImageControlConverter
   
   private static bool CmpAltText(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AltText?.Value == value;
+    if (openXmlElement?.AltText?.Value == value) return true;
+    diffs?.Add(objName, "AltText", openXmlElement?.AltText?.Value, value);
+    return false;
   }
   
   private static void SetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)
@@ -246,7 +268,9 @@ public static class ImageControlConverter
   
   private static bool CmpGetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetAltText?.Value == value;
+    if (openXmlElement?.GetAltText?.Value == value) return true;
+    diffs?.Add(objName, "GetAltText", openXmlElement?.GetAltText?.Value, value);
+    return false;
   }
   
   private static void SetGetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class LanguageTypeConverter
   
   private static bool CmpVal(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXW.LanguageType openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LanguageTypeConverter
   
   private static bool CmpEastAsia(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EastAsia?.Value == value;
+    if (openXmlElement?.EastAsia?.Value == value) return true;
+    diffs?.Add(objName, "EastAsia", openXmlElement?.EastAsia?.Value, value);
+    return false;
   }
   
   private static void SetEastAsia(DXW.LanguageType openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class LanguageTypeConverter
   
   private static bool CmpBidi(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bidi?.Value == value;
+    if (openXmlElement?.Bidi?.Value == value) return true;
+    diffs?.Add(objName, "Bidi", openXmlElement?.Bidi?.Value, value);
+    return false;
   }
   
   private static void SetBidi(DXW.LanguageType openXmlElement, String? value)

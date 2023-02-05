@@ -35,7 +35,9 @@ public static class NumericPointConverter
   
   private static bool CmpFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FormatCode?.Value == value;
+    if (openXmlElement?.FormatCode?.Value == value) return true;
+    diffs?.Add(objName, "FormatCode", openXmlElement?.FormatCode?.Value, value);
+    return false;
   }
   
   private static void SetFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value)

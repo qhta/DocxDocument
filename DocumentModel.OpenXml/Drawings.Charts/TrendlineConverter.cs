@@ -232,7 +232,10 @@ public static class TrendlineConverter
   
   private static bool CmpDisplayRSquaredValue(DXDrawCharts.Trendline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.DisplayRSquaredValue>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.DisplayRSquaredValue>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.DisplayRSquaredValue", val, value);
+    return false;
   }
   
   private static void SetDisplayRSquaredValue(DXDrawCharts.Trendline openXmlElement, Boolean? value)
@@ -260,7 +263,10 @@ public static class TrendlineConverter
   
   private static bool CmpDisplayEquation(DXDrawCharts.Trendline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.DisplayEquation>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.DisplayEquation>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.DisplayEquation", val, value);
+    return false;
   }
   
   private static void SetDisplayEquation(DXDrawCharts.Trendline openXmlElement, Boolean? value)

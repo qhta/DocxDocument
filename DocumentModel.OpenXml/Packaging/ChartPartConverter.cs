@@ -75,7 +75,9 @@ public static class ChartPartConverter
   
   private static bool CmpContentType(DXPack.ChartPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   /// <summary>
@@ -105,7 +107,9 @@ public static class ChartPartConverter
   
   private static bool CmpRelationshipType(DXPack.ChartPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.ChartPart? CreateModelElement(DXPack.ChartPart? openXmlElement)

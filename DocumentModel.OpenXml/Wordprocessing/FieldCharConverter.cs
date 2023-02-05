@@ -33,7 +33,9 @@ public static class FieldCharConverter
   
   private static bool CmpFieldLock(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FieldLock?.Value == value;
+    if (openXmlElement?.FieldLock?.Value == value) return true;
+    diffs?.Add(objName, "FieldLock", openXmlElement?.FieldLock?.Value, value);
+    return false;
   }
   
   private static void SetFieldLock(DXW.FieldChar openXmlElement, Boolean? value)
@@ -54,7 +56,9 @@ public static class FieldCharConverter
   
   private static bool CmpDirty(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Dirty?.Value == value;
+    if (openXmlElement?.Dirty?.Value == value) return true;
+    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
+    return false;
   }
   
   private static void SetDirty(DXW.FieldChar openXmlElement, Boolean? value)

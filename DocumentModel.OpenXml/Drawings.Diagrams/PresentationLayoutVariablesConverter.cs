@@ -12,7 +12,10 @@ public static class PresentationLayoutVariablesConverter
   
   private static bool CmpOrganizationChart(DXDrawDgms.PresentationLayoutVariables openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawDgms.OrganizationChart>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawDgms.OrganizationChart>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawDgms.OrganizationChart", val, value);
+    return false;
   }
   
   private static void SetOrganizationChart(DXDrawDgms.PresentationLayoutVariables openXmlElement, Boolean? value)
@@ -87,7 +90,10 @@ public static class PresentationLayoutVariablesConverter
   
   private static bool CmpBulletEnabled(DXDrawDgms.PresentationLayoutVariables openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawDgms.BulletEnabled>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawDgms.BulletEnabled>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawDgms.BulletEnabled", val, value);
+    return false;
   }
   
   private static void SetBulletEnabled(DXDrawDgms.PresentationLayoutVariables openXmlElement, Boolean? value)

@@ -53,7 +53,9 @@ public static class DiagramConverter
   
   private static bool CmpAutoFormat(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AutoFormat?.Value == value;
+    if (openXmlElement?.AutoFormat?.Value == value) return true;
+    diffs?.Add(objName, "AutoFormat", openXmlElement?.AutoFormat?.Value, value);
+    return false;
   }
   
   private static void SetAutoFormat(DXVmlO.Diagram openXmlElement, Boolean? value)
@@ -74,7 +76,9 @@ public static class DiagramConverter
   
   private static bool CmpReverse(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Reverse?.Value == value;
+    if (openXmlElement?.Reverse?.Value == value) return true;
+    diffs?.Add(objName, "Reverse", openXmlElement?.Reverse?.Value, value);
+    return false;
   }
   
   private static void SetReverse(DXVmlO.Diagram openXmlElement, Boolean? value)
@@ -95,7 +99,9 @@ public static class DiagramConverter
   
   private static bool CmpAutoLayout(DXVmlO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AutoLayout?.Value == value;
+    if (openXmlElement?.AutoLayout?.Value == value) return true;
+    diffs?.Add(objName, "AutoLayout", openXmlElement?.AutoLayout?.Value, value);
+    return false;
   }
   
   private static void SetAutoLayout(DXVmlO.Diagram openXmlElement, Boolean? value)
@@ -176,7 +182,9 @@ public static class DiagramConverter
   
   private static bool CmpConstrainBounds(DXVmlO.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ConstrainBounds?.Value == value;
+    if (openXmlElement?.ConstrainBounds?.Value == value) return true;
+    diffs?.Add(objName, "ConstrainBounds", openXmlElement?.ConstrainBounds?.Value, value);
+    return false;
   }
   
   private static void SetConstrainBounds(DXVmlO.Diagram openXmlElement, String? value)

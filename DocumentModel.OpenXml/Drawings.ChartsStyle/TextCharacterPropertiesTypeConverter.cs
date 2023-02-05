@@ -15,7 +15,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSmtClean(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SmtClean?.Value == value;
+    if (openXmlElement?.SmtClean?.Value == value) return true;
+    diffs?.Add(objName, "SmtClean", openXmlElement?.SmtClean?.Value, value);
+    return false;
   }
   
   private static void SetSmtClean(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -56,7 +58,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpKumimoji(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Kumimoji?.Value == value;
+    if (openXmlElement?.Kumimoji?.Value == value) return true;
+    diffs?.Add(objName, "Kumimoji", openXmlElement?.Kumimoji?.Value, value);
+    return false;
   }
   
   private static void SetKumimoji(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -77,7 +81,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Language?.Value == value;
+    if (openXmlElement?.Language?.Value == value) return true;
+    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
+    return false;
   }
   
   private static void SetLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
@@ -98,7 +104,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpAlternativeLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlternativeLanguage?.Value == value;
+    if (openXmlElement?.AlternativeLanguage?.Value == value) return true;
+    diffs?.Add(objName, "AlternativeLanguage", openXmlElement?.AlternativeLanguage?.Value, value);
+    return false;
   }
   
   private static void SetAlternativeLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
@@ -139,7 +147,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpBold(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bold?.Value == value;
+    if (openXmlElement?.Bold?.Value == value) return true;
+    diffs?.Add(objName, "Bold", openXmlElement?.Bold?.Value, value);
+    return false;
   }
   
   private static void SetBold(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -160,7 +170,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpItalic(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Italic?.Value == value;
+    if (openXmlElement?.Italic?.Value == value) return true;
+    diffs?.Add(objName, "Italic", openXmlElement?.Italic?.Value, value);
+    return false;
   }
   
   private static void SetItalic(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -275,7 +287,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpNormalizeHeight(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NormalizeHeight?.Value == value;
+    if (openXmlElement?.NormalizeHeight?.Value == value) return true;
+    diffs?.Add(objName, "NormalizeHeight", openXmlElement?.NormalizeHeight?.Value, value);
+    return false;
   }
   
   private static void SetNormalizeHeight(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -316,7 +330,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpNoProof(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoProof?.Value == value;
+    if (openXmlElement?.NoProof?.Value == value) return true;
+    diffs?.Add(objName, "NoProof", openXmlElement?.NoProof?.Value, value);
+    return false;
   }
   
   private static void SetNoProof(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -337,7 +353,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpDirty(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Dirty?.Value == value;
+    if (openXmlElement?.Dirty?.Value == value) return true;
+    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
+    return false;
   }
   
   private static void SetDirty(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -358,7 +376,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSpellingError(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SpellingError?.Value == value;
+    if (openXmlElement?.SpellingError?.Value == value) return true;
+    diffs?.Add(objName, "SpellingError", openXmlElement?.SpellingError?.Value, value);
+    return false;
   }
   
   private static void SetSpellingError(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -379,7 +399,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpSmartTagClean(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.SmartTagClean?.Value == value;
+    if (openXmlElement?.SmartTagClean?.Value == value) return true;
+    diffs?.Add(objName, "SmartTagClean", openXmlElement?.SmartTagClean?.Value, value);
+    return false;
   }
   
   private static void SetSmartTagClean(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -420,7 +442,9 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpBookmark(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Bookmark?.Value == value;
+    if (openXmlElement?.Bookmark?.Value == value) return true;
+    diffs?.Add(objName, "Bookmark", openXmlElement?.Bookmark?.Value, value);
+    return false;
   }
   
   private static void SetBookmark(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
@@ -464,7 +488,10 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpNoFill(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    return false;
   }
   
   private static void SetNoFill(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -581,7 +608,10 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpGroupFill(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    return false;
   }
   
   private static void SetGroupFill(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -675,7 +705,10 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpUnderlineFollowsText(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.UnderlineFollowsText", val, value);
+    return false;
   }
   
   private static void SetUnderlineFollowsText(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -700,7 +733,10 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpUnderlineFillText(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.UnderlineFillText", val, value);
+    return false;
   }
   
   private static void SetUnderlineFillText(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)
@@ -886,7 +922,10 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpRightToLeft(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.RightToLeft", val, value);
+    return false;
   }
   
   private static void SetRightToLeft(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, Boolean? value)

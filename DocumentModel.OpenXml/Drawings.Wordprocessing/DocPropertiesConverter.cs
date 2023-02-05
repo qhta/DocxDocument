@@ -35,7 +35,9 @@ public static class DocPropertiesConverter
   
   private static bool CmpName(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDrawW.DocProperties openXmlElement, String? value)
@@ -56,7 +58,9 @@ public static class DocPropertiesConverter
   
   private static bool CmpDescription(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Description?.Value == value;
+    if (openXmlElement?.Description?.Value == value) return true;
+    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
+    return false;
   }
   
   private static void SetDescription(DXDrawW.DocProperties openXmlElement, String? value)
@@ -77,7 +81,9 @@ public static class DocPropertiesConverter
   
   private static bool CmpHidden(DXDrawW.DocProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Hidden?.Value == value;
+    if (openXmlElement?.Hidden?.Value == value) return true;
+    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    return false;
   }
   
   private static void SetHidden(DXDrawW.DocProperties openXmlElement, Boolean? value)
@@ -98,7 +104,9 @@ public static class DocPropertiesConverter
   
   private static bool CmpTitle(DXDrawW.DocProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXDrawW.DocProperties openXmlElement, String? value)

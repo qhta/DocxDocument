@@ -15,7 +15,9 @@ public static class BackstageItemTypeConverter
   
   private static bool CmpId(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.BackstageItemType openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackstageItemTypeConverter
   
   private static bool CmpLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Label?.Value == value;
+    if (openXmlElement?.Label?.Value == value) return true;
+    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
+    return false;
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class BackstageItemTypeConverter
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetLabel?.Value == value;
+    if (openXmlElement?.GetLabel?.Value == value) return true;
+    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
+    return false;
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value)

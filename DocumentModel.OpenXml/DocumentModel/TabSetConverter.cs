@@ -15,7 +15,9 @@ public static class TabSetConverter
   
   private static bool CmpIdMso(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.IdMso?.Value == value;
+    if (openXmlElement?.IdMso?.Value == value) return true;
+    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
+    return false;
   }
   
   private static void SetIdMso(DXO2010CustUI.TabSet openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class TabSetConverter
   
   private static bool CmpVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Visible?.Value == value;
+    if (openXmlElement?.Visible?.Value == value) return true;
+    diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
+    return false;
   }
   
   private static void SetVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class TabSetConverter
   
   private static bool CmpGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetVisible?.Value == value;
+    if (openXmlElement?.GetVisible?.Value == value) return true;
+    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
+    return false;
   }
   
   private static void SetGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class BackstageConverter
   
   private static bool CmpOnShow(DXO2010CustUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnShow?.Value == value;
+    if (openXmlElement?.OnShow?.Value == value) return true;
+    diffs?.Add(objName, "OnShow", openXmlElement?.OnShow?.Value, value);
+    return false;
   }
   
   private static void SetOnShow(DXO2010CustUI.Backstage openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class BackstageConverter
   
   private static bool CmpOnHide(DXO2010CustUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnHide?.Value == value;
+    if (openXmlElement?.OnHide?.Value == value) return true;
+    diffs?.Add(objName, "OnHide", openXmlElement?.OnHide?.Value, value);
+    return false;
   }
   
   private static void SetOnHide(DXO2010CustUI.Backstage openXmlElement, String? value)

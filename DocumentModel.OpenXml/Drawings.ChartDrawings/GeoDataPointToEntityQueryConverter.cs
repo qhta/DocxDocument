@@ -33,7 +33,9 @@ public static class GeoDataPointToEntityQueryConverter
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.EntityId?.Value == value;
+    if (openXmlElement?.EntityId?.Value == value) return true;
+    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
+    return false;
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value)

@@ -35,7 +35,9 @@ public static class TransformConverter
   
   private static bool CmpHorizontalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.HorizontalFlip?.Value == value;
+    if (openXmlElement?.HorizontalFlip?.Value == value) return true;
+    diffs?.Add(objName, "HorizontalFlip", openXmlElement?.HorizontalFlip?.Value, value);
+    return false;
   }
   
   private static void SetHorizontalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value)
@@ -56,7 +58,9 @@ public static class TransformConverter
   
   private static bool CmpVerticalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.VerticalFlip?.Value == value;
+    if (openXmlElement?.VerticalFlip?.Value == value) return true;
+    diffs?.Add(objName, "VerticalFlip", openXmlElement?.VerticalFlip?.Value, value);
+    return false;
   }
   
   private static void SetVerticalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value)

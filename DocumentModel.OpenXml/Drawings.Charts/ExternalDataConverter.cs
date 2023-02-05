@@ -15,7 +15,9 @@ public static class ExternalDataConverter
   
   private static bool CmpId(DXDrawCharts.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXDrawCharts.ExternalData openXmlElement, String? value)
@@ -36,7 +38,10 @@ public static class ExternalDataConverter
   
   private static bool CmpAutoUpdate(DXDrawCharts.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.AutoUpdate", val, value);
+    return false;
   }
   
   private static void SetAutoUpdate(DXDrawCharts.ExternalData openXmlElement, Boolean? value)

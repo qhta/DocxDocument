@@ -35,7 +35,9 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value)
@@ -151,7 +153,10 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpTaskCreateEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskCreateEventInfo>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskCreateEventInfo>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DocTasks.TaskCreateEventInfo", val, value);
+    return false;
   }
   
   private static void SetTaskCreateEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
@@ -268,7 +273,10 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpTaskDeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskDeleteEventInfo>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskDeleteEventInfo>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DocTasks.TaskDeleteEventInfo", val, value);
+    return false;
   }
   
   private static void SetTaskDeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
@@ -293,7 +301,10 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpTaskUndeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndeleteEventInfo>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndeleteEventInfo>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DocTasks.TaskUndeleteEventInfo", val, value);
+    return false;
   }
   
   private static void SetTaskUndeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
@@ -318,7 +329,10 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpTaskUnassignAll(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUnassignAll>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUnassignAll>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2021DocTasks.TaskUnassignAll", val, value);
+    return false;
   }
   
   private static void SetTaskUnassignAll(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class ScriptLinkConverter
   
   private static bool CmpVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value)

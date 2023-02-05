@@ -15,7 +15,9 @@ public static class SnapshotConverter
   
   private static bool CmpEmbed(DXO2013WebExt.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Embed?.Value == value;
+    if (openXmlElement?.Embed?.Value == value) return true;
+    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
+    return false;
   }
   
   private static void SetEmbed(DXO2013WebExt.Snapshot openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class SnapshotConverter
   
   private static bool CmpLink(DXO2013WebExt.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Link?.Value == value;
+    if (openXmlElement?.Link?.Value == value) return true;
+    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
+    return false;
   }
   
   private static void SetLink(DXO2013WebExt.Snapshot openXmlElement, String? value)
@@ -95,7 +99,10 @@ public static class SnapshotConverter
   
   private static bool CmpAlphaCeiling(DXO2013WebExt.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaCeiling", val, value);
+    return false;
   }
   
   private static void SetAlphaCeiling(DXO2013WebExt.Snapshot openXmlElement, Boolean? value)
@@ -120,7 +127,10 @@ public static class SnapshotConverter
   
   private static bool CmpAlphaFloor(DXO2013WebExt.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaFloor", val, value);
+    return false;
   }
   
   private static void SetAlphaFloor(DXO2013WebExt.Snapshot openXmlElement, Boolean? value)
@@ -375,7 +385,10 @@ public static class SnapshotConverter
   
   private static bool CmpGrayscale(DXO2013WebExt.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Grayscale", val, value);
+    return false;
   }
   
   private static void SetGrayscale(DXO2013WebExt.Snapshot openXmlElement, Boolean? value)

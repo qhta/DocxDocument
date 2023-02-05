@@ -15,7 +15,9 @@ public static class FormatSchemeConverter
   
   private static bool CmpName(DXDraw.FormatScheme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Name?.Value == value;
+    if (openXmlElement?.Name?.Value == value) return true;
+    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
+    return false;
   }
   
   private static void SetName(DXDraw.FormatScheme openXmlElement, String? value)

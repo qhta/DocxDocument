@@ -15,7 +15,9 @@ public static class GeoCacheConverter
   
   private static bool CmpProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Provider?.Value == value;
+    if (openXmlElement?.Provider?.Value == value) return true;
+    diffs?.Add(objName, "Provider", openXmlElement?.Provider?.Value, value);
+    return false;
   }
   
   private static void SetProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value)

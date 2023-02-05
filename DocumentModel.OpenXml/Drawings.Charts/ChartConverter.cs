@@ -41,7 +41,10 @@ public static class ChartConverter
   
   private static bool CmpAutoTitleDeleted(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.AutoTitleDeleted", val, value);
+    return false;
   }
   
   private static void SetAutoTitleDeleted(DXDrawCharts.Chart openXmlElement, Boolean? value)
@@ -251,7 +254,10 @@ public static class ChartConverter
   
   private static bool CmpPlotVisibleOnly(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.PlotVisibleOnly", val, value);
+    return false;
   }
   
   private static void SetPlotVisibleOnly(DXDrawCharts.Chart openXmlElement, Boolean? value)
@@ -305,7 +311,10 @@ public static class ChartConverter
   
   private static bool CmpShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowDataLabelsOverMaximum", val, value);
+    return false;
   }
   
   private static void SetShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement, Boolean? value)

@@ -15,7 +15,9 @@ public static class LayoutContainerConverter
   
   private static bool CmpId(DXO2010CustUI.LayoutContainer openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2010CustUI.LayoutContainer openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class LayoutContainerConverter
   
   private static bool CmpQualifiedId(DXO2010CustUI.LayoutContainer openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.QualifiedId?.Value == value;
+    if (openXmlElement?.QualifiedId?.Value == value) return true;
+    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
+    return false;
   }
   
   private static void SetQualifiedId(DXO2010CustUI.LayoutContainer openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class LayoutContainerConverter
   
   private static bool CmpTag(DXO2010CustUI.LayoutContainer openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tag?.Value == value;
+    if (openXmlElement?.Tag?.Value == value) return true;
+    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
+    return false;
   }
   
   private static void SetTag(DXO2010CustUI.LayoutContainer openXmlElement, String? value)

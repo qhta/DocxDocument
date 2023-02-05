@@ -15,7 +15,9 @@ public static class CommentConverter
   
   private static bool CmpInitials(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Initials?.Value == value;
+    if (openXmlElement?.Initials?.Value == value) return true;
+    diffs?.Add(objName, "Initials", openXmlElement?.Initials?.Value, value);
+    return false;
   }
   
   private static void SetInitials(DXW.Comment openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class CommentConverter
   
   private static bool CmpAuthor(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Author?.Value == value;
+    if (openXmlElement?.Author?.Value == value) return true;
+    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
+    return false;
   }
   
   private static void SetAuthor(DXW.Comment openXmlElement, String? value)
@@ -77,7 +81,9 @@ public static class CommentConverter
   
   private static bool CmpId(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.Comment openXmlElement, String? value)

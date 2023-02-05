@@ -35,7 +35,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpUseParagraphSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UseParagraphSpacing?.Value == value;
+    if (openXmlElement?.UseParagraphSpacing?.Value == value) return true;
+    diffs?.Add(objName, "UseParagraphSpacing", openXmlElement?.UseParagraphSpacing?.Value, value);
+    return false;
   }
   
   private static void SetUseParagraphSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -248,7 +250,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpRightToLeftColumns(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RightToLeftColumns?.Value == value;
+    if (openXmlElement?.RightToLeftColumns?.Value == value) return true;
+    diffs?.Add(objName, "RightToLeftColumns", openXmlElement?.RightToLeftColumns?.Value, value);
+    return false;
   }
   
   private static void SetRightToLeftColumns(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -269,7 +273,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpFromWordArt(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FromWordArt?.Value == value;
+    if (openXmlElement?.FromWordArt?.Value == value) return true;
+    diffs?.Add(objName, "FromWordArt", openXmlElement?.FromWordArt?.Value, value);
+    return false;
   }
   
   private static void SetFromWordArt(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -308,7 +314,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpAnchorCenter(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AnchorCenter?.Value == value;
+    if (openXmlElement?.AnchorCenter?.Value == value) return true;
+    diffs?.Add(objName, "AnchorCenter", openXmlElement?.AnchorCenter?.Value, value);
+    return false;
   }
   
   private static void SetAnchorCenter(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -329,7 +337,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpForceAntiAlias(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceAntiAlias?.Value == value;
+    if (openXmlElement?.ForceAntiAlias?.Value == value) return true;
+    diffs?.Add(objName, "ForceAntiAlias", openXmlElement?.ForceAntiAlias?.Value, value);
+    return false;
   }
   
   private static void SetForceAntiAlias(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -350,7 +360,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpUpRight(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.UpRight?.Value == value;
+    if (openXmlElement?.UpRight?.Value == value) return true;
+    diffs?.Add(objName, "UpRight", openXmlElement?.UpRight?.Value, value);
+    return false;
   }
   
   private static void SetUpRight(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -371,7 +383,9 @@ public static class BodyPropertiesConverter
   
   private static bool CmpCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CompatibleLineSpacing?.Value == value;
+    if (openXmlElement?.CompatibleLineSpacing?.Value == value) return true;
+    diffs?.Add(objName, "CompatibleLineSpacing", openXmlElement?.CompatibleLineSpacing?.Value, value);
+    return false;
   }
   
   private static void SetCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -415,7 +429,10 @@ public static class BodyPropertiesConverter
   
   private static bool CmpNoAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoAutoFit>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.NoAutoFit>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.NoAutoFit", val, value);
+    return false;
   }
   
   private static void SetNoAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)
@@ -463,7 +480,10 @@ public static class BodyPropertiesConverter
   
   private static bool CmpShapeAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.ShapeAutoFit", val, value);
+    return false;
   }
   
   private static void SetShapeAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)

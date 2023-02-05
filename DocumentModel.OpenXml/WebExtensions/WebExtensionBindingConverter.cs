@@ -15,7 +15,9 @@ public static class WebExtensionBindingConverter
   
   private static bool CmpId(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class WebExtensionBindingConverter
   
   private static bool CmpType(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Type?.Value == value;
+    if (openXmlElement?.Type?.Value == value) return true;
+    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
+    return false;
   }
   
   private static void SetType(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class WebExtensionBindingConverter
   
   private static bool CmpAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AppReference?.Value == value;
+    if (openXmlElement?.AppReference?.Value == value) return true;
+    diffs?.Add(objName, "AppReference", openXmlElement?.AppReference?.Value, value);
+    return false;
   }
   
   private static void SetAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)

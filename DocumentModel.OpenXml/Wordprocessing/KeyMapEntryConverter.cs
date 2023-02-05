@@ -127,7 +127,9 @@ public static class KeyMapEntryConverter
   
   private static bool CmpMask(DXOW.KeyMapEntry openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Mask?.Value == value;
+    if (openXmlElement?.Mask?.Value == value) return true;
+    diffs?.Add(objName, "Mask", openXmlElement?.Mask?.Value, value);
+    return false;
   }
   
   private static void SetMask(DXOW.KeyMapEntry openXmlElement, Boolean? value)

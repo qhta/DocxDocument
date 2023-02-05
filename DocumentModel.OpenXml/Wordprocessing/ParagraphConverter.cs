@@ -211,7 +211,9 @@ public static class ParagraphConverter
   
   private static bool CmpNoSpellError(DXW.Paragraph openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.NoSpellError?.Value == value;
+    if (openXmlElement?.NoSpellError?.Value == value) return true;
+    diffs?.Add(objName, "NoSpellError", openXmlElement?.NoSpellError?.Value, value);
+    return false;
   }
   
   private static void SetNoSpellError(DXW.Paragraph openXmlElement, Boolean? value)

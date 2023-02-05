@@ -15,7 +15,9 @@ public static class Color3Converter
   
   private static bool CmpVal(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXO2013W.Color openXmlElement, String? value)
@@ -54,7 +56,9 @@ public static class Color3Converter
   
   private static bool CmpThemeTint(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ThemeTint?.Value == value;
+    if (openXmlElement?.ThemeTint?.Value == value) return true;
+    diffs?.Add(objName, "ThemeTint", openXmlElement?.ThemeTint?.Value, value);
+    return false;
   }
   
   private static void SetThemeTint(DXO2013W.Color openXmlElement, String? value)
@@ -75,7 +79,9 @@ public static class Color3Converter
   
   private static bool CmpThemeShade(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ThemeShade?.Value == value;
+    if (openXmlElement?.ThemeShade?.Value == value) return true;
+    diffs?.Add(objName, "ThemeShade", openXmlElement?.ThemeShade?.Value, value);
+    return false;
   }
   
   private static void SetThemeShade(DXO2013W.Color openXmlElement, String? value)

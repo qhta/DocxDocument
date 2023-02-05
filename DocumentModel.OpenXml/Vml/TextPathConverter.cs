@@ -15,7 +15,9 @@ public static class TextPathConverter
   
   private static bool CmpId(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.TextPath openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class TextPathConverter
   
   private static bool CmpStyle(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Style?.Value == value;
+    if (openXmlElement?.Style?.Value == value) return true;
+    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
+    return false;
   }
   
   private static void SetStyle(DXVml.TextPath openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class TextPathConverter
   
   private static bool CmpOn(DXVml.TextPath openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVml.TextPath openXmlElement, Boolean? value)
@@ -78,7 +84,9 @@ public static class TextPathConverter
   
   private static bool CmpFitShape(DXVml.TextPath openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FitShape?.Value == value;
+    if (openXmlElement?.FitShape?.Value == value) return true;
+    diffs?.Add(objName, "FitShape", openXmlElement?.FitShape?.Value, value);
+    return false;
   }
   
   private static void SetFitShape(DXVml.TextPath openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class TextPathConverter
   
   private static bool CmpFitPath(DXVml.TextPath openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.FitPath?.Value == value;
+    if (openXmlElement?.FitPath?.Value == value) return true;
+    diffs?.Add(objName, "FitPath", openXmlElement?.FitPath?.Value, value);
+    return false;
   }
   
   private static void SetFitPath(DXVml.TextPath openXmlElement, Boolean? value)
@@ -120,7 +130,9 @@ public static class TextPathConverter
   
   private static bool CmpTrim(DXVml.TextPath openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Trim?.Value == value;
+    if (openXmlElement?.Trim?.Value == value) return true;
+    diffs?.Add(objName, "Trim", openXmlElement?.Trim?.Value, value);
+    return false;
   }
   
   private static void SetTrim(DXVml.TextPath openXmlElement, Boolean? value)
@@ -141,7 +153,9 @@ public static class TextPathConverter
   
   private static bool CmpXScale(DXVml.TextPath openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.XScale?.Value == value;
+    if (openXmlElement?.XScale?.Value == value) return true;
+    diffs?.Add(objName, "XScale", openXmlElement?.XScale?.Value, value);
+    return false;
   }
   
   private static void SetXScale(DXVml.TextPath openXmlElement, Boolean? value)
@@ -162,7 +176,9 @@ public static class TextPathConverter
   
   private static bool CmpString(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.String?.Value == value;
+    if (openXmlElement?.String?.Value == value) return true;
+    diffs?.Add(objName, "String", openXmlElement?.String?.Value, value);
+    return false;
   }
   
   private static void SetString(DXVml.TextPath openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class StrokeConverter
   
   private static bool CmpId(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Stroke openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class StrokeConverter
   
   private static bool CmpOn(DXVml.Stroke openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.On?.Value == value;
+    if (openXmlElement?.On?.Value == value) return true;
+    diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
+    return false;
   }
   
   private static void SetOn(DXVml.Stroke openXmlElement, Boolean? value)
@@ -57,7 +61,9 @@ public static class StrokeConverter
   
   private static bool CmpWeight(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Weight?.Value == value;
+    if (openXmlElement?.Weight?.Value == value) return true;
+    diffs?.Add(objName, "Weight", openXmlElement?.Weight?.Value, value);
+    return false;
   }
   
   private static void SetWeight(DXVml.Stroke openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class StrokeConverter
   
   private static bool CmpColor(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color?.Value == value;
+    if (openXmlElement?.Color?.Value == value) return true;
+    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
+    return false;
   }
   
   private static void SetColor(DXVml.Stroke openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class StrokeConverter
   
   private static bool CmpOpacity(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Opacity?.Value == value;
+    if (openXmlElement?.Opacity?.Value == value) return true;
+    diffs?.Add(objName, "Opacity", openXmlElement?.Opacity?.Value, value);
+    return false;
   }
   
   private static void SetOpacity(DXVml.Stroke openXmlElement, String? value)
@@ -138,7 +148,9 @@ public static class StrokeConverter
   
   private static bool CmpMiterlimit(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Miterlimit?.Value == value;
+    if (openXmlElement?.Miterlimit?.Value == value) return true;
+    diffs?.Add(objName, "Miterlimit", openXmlElement?.Miterlimit?.Value, value);
+    return false;
   }
   
   private static void SetMiterlimit(DXVml.Stroke openXmlElement, String? value)
@@ -195,7 +207,9 @@ public static class StrokeConverter
   
   private static bool CmpDashStyle(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DashStyle?.Value == value;
+    if (openXmlElement?.DashStyle?.Value == value) return true;
+    diffs?.Add(objName, "DashStyle", openXmlElement?.DashStyle?.Value, value);
+    return false;
   }
   
   private static void SetDashStyle(DXVml.Stroke openXmlElement, String? value)
@@ -234,7 +248,9 @@ public static class StrokeConverter
   
   private static bool CmpSource(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Source?.Value == value;
+    if (openXmlElement?.Source?.Value == value) return true;
+    diffs?.Add(objName, "Source", openXmlElement?.Source?.Value, value);
+    return false;
   }
   
   private static void SetSource(DXVml.Stroke openXmlElement, String? value)
@@ -273,7 +289,9 @@ public static class StrokeConverter
   
   private static bool CmpImageSize(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageSize?.Value == value;
+    if (openXmlElement?.ImageSize?.Value == value) return true;
+    diffs?.Add(objName, "ImageSize", openXmlElement?.ImageSize?.Value, value);
+    return false;
   }
   
   private static void SetImageSize(DXVml.Stroke openXmlElement, String? value)
@@ -294,7 +312,9 @@ public static class StrokeConverter
   
   private static bool CmpImageAlignShape(DXVml.Stroke openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ImageAlignShape?.Value == value;
+    if (openXmlElement?.ImageAlignShape?.Value == value) return true;
+    diffs?.Add(objName, "ImageAlignShape", openXmlElement?.ImageAlignShape?.Value, value);
+    return false;
   }
   
   private static void SetImageAlignShape(DXVml.Stroke openXmlElement, Boolean? value)
@@ -315,7 +335,9 @@ public static class StrokeConverter
   
   private static bool CmpColor2(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Color2?.Value == value;
+    if (openXmlElement?.Color2?.Value == value) return true;
+    diffs?.Add(objName, "Color2", openXmlElement?.Color2?.Value, value);
+    return false;
   }
   
   private static void SetColor2(DXVml.Stroke openXmlElement, String? value)
@@ -444,7 +466,9 @@ public static class StrokeConverter
   
   private static bool CmpHref(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Href?.Value == value;
+    if (openXmlElement?.Href?.Value == value) return true;
+    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
+    return false;
   }
   
   private static void SetHref(DXVml.Stroke openXmlElement, String? value)
@@ -465,7 +489,9 @@ public static class StrokeConverter
   
   private static bool CmpAlternateImageReference(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AlternateImageReference?.Value == value;
+    if (openXmlElement?.AlternateImageReference?.Value == value) return true;
+    diffs?.Add(objName, "AlternateImageReference", openXmlElement?.AlternateImageReference?.Value, value);
+    return false;
   }
   
   private static void SetAlternateImageReference(DXVml.Stroke openXmlElement, String? value)
@@ -486,7 +512,9 @@ public static class StrokeConverter
   
   private static bool CmpTitle(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Title?.Value == value;
+    if (openXmlElement?.Title?.Value == value) return true;
+    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
+    return false;
   }
   
   private static void SetTitle(DXVml.Stroke openXmlElement, String? value)
@@ -507,7 +535,9 @@ public static class StrokeConverter
   
   private static bool CmpForceDash(DXVml.Stroke openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ForceDash?.Value == value;
+    if (openXmlElement?.ForceDash?.Value == value) return true;
+    diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
+    return false;
   }
   
   private static void SetForceDash(DXVml.Stroke openXmlElement, Boolean? value)
@@ -528,7 +558,9 @@ public static class StrokeConverter
   
   private static bool CmpRelationshipId(DXVml.Stroke openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipId?.Value == value;
+    if (openXmlElement?.RelationshipId?.Value == value) return true;
+    diffs?.Add(objName, "RelationshipId", openXmlElement?.RelationshipId?.Value, value);
+    return false;
   }
   
   private static void SetRelationshipId(DXVml.Stroke openXmlElement, String? value)
@@ -549,7 +581,9 @@ public static class StrokeConverter
   
   private static bool CmpInsetpen(DXVml.Stroke openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Insetpen?.Value == value;
+    if (openXmlElement?.Insetpen?.Value == value) return true;
+    diffs?.Add(objName, "Insetpen", openXmlElement?.Insetpen?.Value, value);
+    return false;
   }
   
   private static void SetInsetpen(DXVml.Stroke openXmlElement, Boolean? value)

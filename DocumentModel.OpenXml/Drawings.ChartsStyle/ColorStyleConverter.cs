@@ -15,7 +15,9 @@ public static class ColorStyleConverter
   
   private static bool CmpMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Method?.Value == value;
+    if (openXmlElement?.Method?.Value == value) return true;
+    diffs?.Add(objName, "Method", openXmlElement?.Method?.Value, value);
+    return false;
   }
   
   private static void SetMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value)

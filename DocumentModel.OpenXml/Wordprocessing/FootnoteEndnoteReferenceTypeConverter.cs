@@ -15,7 +15,9 @@ public static class FootnoteEndnoteReferenceTypeConverter
   
   private static bool CmpCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.CustomMarkFollows?.Value == value;
+    if (openXmlElement?.CustomMarkFollows?.Value == value) return true;
+    diffs?.Add(objName, "CustomMarkFollows", openXmlElement?.CustomMarkFollows?.Value, value);
+    return false;
   }
   
   private static void SetCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value)

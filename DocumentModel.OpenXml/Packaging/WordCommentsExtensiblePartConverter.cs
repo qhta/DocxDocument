@@ -35,7 +35,9 @@ public static class WordCommentsExtensiblePartConverter
   
   private static bool CmpContentType(DXPack.WordCommentsExtensiblePart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ContentType == value;
+    if (openXmlElement?.ContentType == value) return true;
+    diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
+    return false;
   }
   
   private static String? GetRelationshipType(DXPack.WordCommentsExtensiblePart openXmlElement)
@@ -45,7 +47,9 @@ public static class WordCommentsExtensiblePartConverter
   
   private static bool CmpRelationshipType(DXPack.WordCommentsExtensiblePart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.RelationshipType == value;
+    if (openXmlElement?.RelationshipType == value) return true;
+    diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
+    return false;
   }
   
   public static DMPack.WordCommentsExtensiblePart? CreateModelElement(DXPack.WordCommentsExtensiblePart? openXmlElement)

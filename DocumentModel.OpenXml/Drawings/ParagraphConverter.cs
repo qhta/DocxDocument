@@ -107,7 +107,10 @@ public static class ParagraphConverter
   
   private static bool CmpTextMath(DXDraw.Paragraph openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010Draw.TextMath>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010Draw.TextMath>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010Draw.TextMath", val, value);
+    return false;
   }
   
   private static void SetTextMath(DXDraw.Paragraph openXmlElement, Boolean? value)

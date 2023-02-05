@@ -69,7 +69,10 @@ public static class CategoryAxisConverter
   
   private static bool CmpDelete(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value)
@@ -430,7 +433,10 @@ public static class CategoryAxisConverter
   
   private static bool CmpAutoLabeled(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.AutoLabeled", val, value);
+    return false;
   }
   
   private static void SetAutoLabeled(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value)
@@ -553,7 +559,10 @@ public static class CategoryAxisConverter
   
   private static bool CmpNoMultiLevelLabels(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.NoMultiLevelLabels>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.NoMultiLevelLabels>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.NoMultiLevelLabels", val, value);
+    return false;
   }
   
   private static void SetNoMultiLevelLabels(DXDrawCharts.CategoryAxis openXmlElement, Boolean? value)

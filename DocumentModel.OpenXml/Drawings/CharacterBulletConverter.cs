@@ -15,7 +15,9 @@ public static class CharacterBulletConverter
   
   private static bool CmpChar(DXDraw.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Char?.Value == value;
+    if (openXmlElement?.Char?.Value == value) return true;
+    diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value);
+    return false;
   }
   
   private static void SetChar(DXDraw.CharacterBullet openXmlElement, String? value)

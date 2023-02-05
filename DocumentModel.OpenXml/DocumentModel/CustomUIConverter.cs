@@ -15,7 +15,9 @@ public static class CustomUIConverter
   
   private static bool CmpOnLoad(DXO2010CustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.OnLoad?.Value == value;
+    if (openXmlElement?.OnLoad?.Value == value) return true;
+    diffs?.Add(objName, "OnLoad", openXmlElement?.OnLoad?.Value, value);
+    return false;
   }
   
   private static void SetOnLoad(DXO2010CustUI.CustomUI openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class CustomUIConverter
   
   private static bool CmpLoadImage(DXO2010CustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.LoadImage?.Value == value;
+    if (openXmlElement?.LoadImage?.Value == value) return true;
+    diffs?.Add(objName, "LoadImage", openXmlElement?.LoadImage?.Value, value);
+    return false;
   }
   
   private static void SetLoadImage(DXO2010CustUI.CustomUI openXmlElement, String? value)

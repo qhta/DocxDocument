@@ -15,7 +15,9 @@ public static class StyleLabelDescriptionConverter
   
   private static bool CmpLanguage(DXDrawDgms.StyleLabelDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Language?.Value == value;
+    if (openXmlElement?.Language?.Value == value) return true;
+    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
+    return false;
   }
   
   private static void SetLanguage(DXDrawDgms.StyleLabelDescription openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class StyleLabelDescriptionConverter
   
   private static bool CmpVal(DXDrawDgms.StyleLabelDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Val?.Value == value;
+    if (openXmlElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    return false;
   }
   
   private static void SetVal(DXDrawDgms.StyleLabelDescription openXmlElement, String? value)

@@ -15,7 +15,9 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
   
   private static bool CmpUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Uri?.Value == value;
+    if (openXmlElement?.Uri?.Value == value) return true;
+    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
+    return false;
   }
   
   private static void SetUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value)

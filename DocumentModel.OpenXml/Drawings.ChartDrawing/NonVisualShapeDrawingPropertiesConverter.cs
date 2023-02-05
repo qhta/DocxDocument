@@ -15,7 +15,9 @@ public static class NonVisualShapeDrawingPropertiesConverter
   
   private static bool CmpTextBox(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextBox?.Value == value;
+    if (openXmlElement?.TextBox?.Value == value) return true;
+    diffs?.Add(objName, "TextBox", openXmlElement?.TextBox?.Value, value);
+    return false;
   }
   
   private static void SetTextBox(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, Boolean? value)

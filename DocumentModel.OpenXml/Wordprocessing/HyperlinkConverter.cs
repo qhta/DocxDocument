@@ -15,7 +15,9 @@ public static class HyperlinkConverter
   
   private static bool CmpTargetFrame(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TargetFrame?.Value == value;
+    if (openXmlElement?.TargetFrame?.Value == value) return true;
+    diffs?.Add(objName, "TargetFrame", openXmlElement?.TargetFrame?.Value, value);
+    return false;
   }
   
   private static void SetTargetFrame(DXW.Hyperlink openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class HyperlinkConverter
   
   private static bool CmpTooltip(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Tooltip?.Value == value;
+    if (openXmlElement?.Tooltip?.Value == value) return true;
+    diffs?.Add(objName, "Tooltip", openXmlElement?.Tooltip?.Value, value);
+    return false;
   }
   
   private static void SetTooltip(DXW.Hyperlink openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class HyperlinkConverter
   
   private static bool CmpDocLocation(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.DocLocation?.Value == value;
+    if (openXmlElement?.DocLocation?.Value == value) return true;
+    diffs?.Add(objName, "DocLocation", openXmlElement?.DocLocation?.Value, value);
+    return false;
   }
   
   private static void SetDocLocation(DXW.Hyperlink openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class HyperlinkConverter
   
   private static bool CmpHistory(DXW.Hyperlink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.History?.Value == value;
+    if (openXmlElement?.History?.Value == value) return true;
+    diffs?.Add(objName, "History", openXmlElement?.History?.Value, value);
+    return false;
   }
   
   private static void SetHistory(DXW.Hyperlink openXmlElement, Boolean? value)
@@ -99,7 +107,9 @@ public static class HyperlinkConverter
   
   private static bool CmpAnchor(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Anchor?.Value == value;
+    if (openXmlElement?.Anchor?.Value == value) return true;
+    diffs?.Add(objName, "Anchor", openXmlElement?.Anchor?.Value, value);
+    return false;
   }
   
   private static void SetAnchor(DXW.Hyperlink openXmlElement, String? value)
@@ -120,7 +130,9 @@ public static class HyperlinkConverter
   
   private static bool CmpId(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXW.Hyperlink openXmlElement, String? value)

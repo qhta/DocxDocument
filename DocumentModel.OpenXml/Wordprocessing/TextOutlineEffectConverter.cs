@@ -86,7 +86,10 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpNoFillEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010W.NoFillEmpty", val, value);
+    return false;
   }
   
   private static void SetNoFillEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)
@@ -180,7 +183,10 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010W.RoundEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010W.RoundEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010W.RoundEmpty", val, value);
+    return false;
   }
   
   private static void SetRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)
@@ -205,7 +211,10 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpBevelEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2010W.BevelEmpty>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2010W.BevelEmpty>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2010W.BevelEmpty", val, value);
+    return false;
   }
   
   private static void SetBevelEmpty(DXO2010W.TextOutlineEffect openXmlElement, Boolean? value)

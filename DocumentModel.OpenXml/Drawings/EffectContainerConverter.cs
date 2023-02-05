@@ -81,7 +81,10 @@ public static class EffectContainerConverter
   
   private static bool CmpAlphaCeiling(DXDraw.EffectContainer openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaCeiling", val, value);
+    return false;
   }
   
   private static void SetAlphaCeiling(DXDraw.EffectContainer openXmlElement, Boolean? value)
@@ -106,7 +109,10 @@ public static class EffectContainerConverter
   
   private static bool CmpAlphaFloor(DXDraw.EffectContainer openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.AlphaFloor", val, value);
+    return false;
   }
   
   private static void SetAlphaFloor(DXDraw.EffectContainer openXmlElement, Boolean? value)
@@ -453,7 +459,10 @@ public static class EffectContainerConverter
   
   private static bool CmpGrayscale(DXDraw.EffectContainer openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDraw.Grayscale", val, value);
+    return false;
   }
   
   private static void SetGrayscale(DXDraw.EffectContainer openXmlElement, Boolean? value)

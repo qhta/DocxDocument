@@ -40,7 +40,10 @@ public static class DataLabel3Converter
   
   private static bool CmpDelete(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    return false;
   }
   
   private static void SetDelete(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -203,7 +206,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowLegendKey(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowLegendKey>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowLegendKey", val, value);
+    return false;
   }
   
   private static void SetShowLegendKey(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -228,7 +234,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowValue(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowValue>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowValue", val, value);
+    return false;
   }
   
   private static void SetShowValue(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -253,7 +262,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowCategoryName(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowCategoryName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowCategoryName", val, value);
+    return false;
   }
   
   private static void SetShowCategoryName(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -278,7 +290,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowSeriesName(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowSeriesName>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowSeriesName", val, value);
+    return false;
   }
   
   private static void SetShowSeriesName(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -303,7 +318,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowPercent(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowPercent>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowPercent", val, value);
+    return false;
   }
   
   private static void SetShowPercent(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)
@@ -328,7 +346,10 @@ public static class DataLabel3Converter
   
   private static bool CmpShowBubbleSize(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowBubbleSize>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXDrawCharts.ShowBubbleSize", val, value);
+    return false;
   }
   
   private static void SetShowBubbleSize(DXO2013DrawChart.DataLabel openXmlElement, Boolean? value)

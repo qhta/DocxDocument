@@ -15,7 +15,9 @@ public static class PathConverter
   
   private static bool CmpId(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Id?.Value == value;
+    if (openXmlElement?.Id?.Value == value) return true;
+    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    return false;
   }
   
   private static void SetId(DXVml.Path openXmlElement, String? value)
@@ -36,7 +38,9 @@ public static class PathConverter
   
   private static bool CmpValue(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Value?.Value == value;
+    if (openXmlElement?.Value?.Value == value) return true;
+    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
+    return false;
   }
   
   private static void SetValue(DXVml.Path openXmlElement, String? value)
@@ -57,7 +61,9 @@ public static class PathConverter
   
   private static bool CmpLimo(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.Limo?.Value == value;
+    if (openXmlElement?.Limo?.Value == value) return true;
+    diffs?.Add(objName, "Limo", openXmlElement?.Limo?.Value, value);
+    return false;
   }
   
   private static void SetLimo(DXVml.Path openXmlElement, String? value)
@@ -78,7 +84,9 @@ public static class PathConverter
   
   private static bool CmpTextboxRectangle(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.TextboxRectangle?.Value == value;
+    if (openXmlElement?.TextboxRectangle?.Value == value) return true;
+    diffs?.Add(objName, "TextboxRectangle", openXmlElement?.TextboxRectangle?.Value, value);
+    return false;
   }
   
   private static void SetTextboxRectangle(DXVml.Path openXmlElement, String? value)
@@ -99,7 +107,9 @@ public static class PathConverter
   
   private static bool CmpAllowFill(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowFill?.Value == value;
+    if (openXmlElement?.AllowFill?.Value == value) return true;
+    diffs?.Add(objName, "AllowFill", openXmlElement?.AllowFill?.Value, value);
+    return false;
   }
   
   private static void SetAllowFill(DXVml.Path openXmlElement, Boolean? value)
@@ -120,7 +130,9 @@ public static class PathConverter
   
   private static bool CmpAllowStroke(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowStroke?.Value == value;
+    if (openXmlElement?.AllowStroke?.Value == value) return true;
+    diffs?.Add(objName, "AllowStroke", openXmlElement?.AllowStroke?.Value, value);
+    return false;
   }
   
   private static void SetAllowStroke(DXVml.Path openXmlElement, Boolean? value)
@@ -141,7 +153,9 @@ public static class PathConverter
   
   private static bool CmpAllowShading(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowShading?.Value == value;
+    if (openXmlElement?.AllowShading?.Value == value) return true;
+    diffs?.Add(objName, "AllowShading", openXmlElement?.AllowShading?.Value, value);
+    return false;
   }
   
   private static void SetAllowShading(DXVml.Path openXmlElement, Boolean? value)
@@ -162,7 +176,9 @@ public static class PathConverter
   
   private static bool CmpShowArrowhead(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ShowArrowhead?.Value == value;
+    if (openXmlElement?.ShowArrowhead?.Value == value) return true;
+    diffs?.Add(objName, "ShowArrowhead", openXmlElement?.ShowArrowhead?.Value, value);
+    return false;
   }
   
   private static void SetShowArrowhead(DXVml.Path openXmlElement, Boolean? value)
@@ -183,7 +199,9 @@ public static class PathConverter
   
   private static bool CmpAllowGradientShape(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowGradientShape?.Value == value;
+    if (openXmlElement?.AllowGradientShape?.Value == value) return true;
+    diffs?.Add(objName, "AllowGradientShape", openXmlElement?.AllowGradientShape?.Value, value);
+    return false;
   }
   
   private static void SetAllowGradientShape(DXVml.Path openXmlElement, Boolean? value)
@@ -204,7 +222,9 @@ public static class PathConverter
   
   private static bool CmpAllowTextPath(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowTextPath?.Value == value;
+    if (openXmlElement?.AllowTextPath?.Value == value) return true;
+    diffs?.Add(objName, "AllowTextPath", openXmlElement?.AllowTextPath?.Value, value);
+    return false;
   }
   
   private static void SetAllowTextPath(DXVml.Path openXmlElement, Boolean? value)
@@ -225,7 +245,9 @@ public static class PathConverter
   
   private static bool CmpAllowInsetPen(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowInsetPen?.Value == value;
+    if (openXmlElement?.AllowInsetPen?.Value == value) return true;
+    diffs?.Add(objName, "AllowInsetPen", openXmlElement?.AllowInsetPen?.Value, value);
+    return false;
   }
   
   private static void SetAllowInsetPen(DXVml.Path openXmlElement, Boolean? value)
@@ -264,7 +286,9 @@ public static class PathConverter
   
   private static bool CmpConnectionPoints(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ConnectionPoints?.Value == value;
+    if (openXmlElement?.ConnectionPoints?.Value == value) return true;
+    diffs?.Add(objName, "ConnectionPoints", openXmlElement?.ConnectionPoints?.Value, value);
+    return false;
   }
   
   private static void SetConnectionPoints(DXVml.Path openXmlElement, String? value)
@@ -285,7 +309,9 @@ public static class PathConverter
   
   private static bool CmpConnectAngles(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.ConnectAngles?.Value == value;
+    if (openXmlElement?.ConnectAngles?.Value == value) return true;
+    diffs?.Add(objName, "ConnectAngles", openXmlElement?.ConnectAngles?.Value, value);
+    return false;
   }
   
   private static void SetConnectAngles(DXVml.Path openXmlElement, String? value)
@@ -306,7 +332,9 @@ public static class PathConverter
   
   private static bool CmpAllowExtrusion(DXVml.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.AllowExtrusion?.Value == value;
+    if (openXmlElement?.AllowExtrusion?.Value == value) return true;
+    diffs?.Add(objName, "AllowExtrusion", openXmlElement?.AllowExtrusion?.Value, value);
+    return false;
   }
   
   private static void SetAllowExtrusion(DXVml.Path openXmlElement, Boolean? value)

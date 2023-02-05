@@ -15,7 +15,9 @@ public static class NonVisualPictureDrawingPropertiesConverter
   
   private static bool CmpPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.PreferRelativeResize?.Value == value;
+    if (openXmlElement?.PreferRelativeResize?.Value == value) return true;
+    diffs?.Add(objName, "PreferRelativeResize", openXmlElement?.PreferRelativeResize?.Value, value);
+    return false;
   }
   
   private static void SetPreferRelativeResize(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, Boolean? value)

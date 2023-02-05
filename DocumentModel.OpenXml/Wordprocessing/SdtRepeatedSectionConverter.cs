@@ -40,7 +40,10 @@ public static class SdtRepeatedSectionConverter
   
   private static bool CmpDoNotAllowInsertDeleteSection(DXO2013W.SdtRepeatedSection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement.GetFirstChild<DXO2013W.DoNotAllowInsertDeleteSection>() != null == value;
+    var val = openXmlElement.GetFirstChild<DXO2013W.DoNotAllowInsertDeleteSection>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013W.DoNotAllowInsertDeleteSection", val, value);
+    return false;
   }
   
   private static void SetDoNotAllowInsertDeleteSection(DXO2013W.SdtRepeatedSection openXmlElement, Boolean? value)
