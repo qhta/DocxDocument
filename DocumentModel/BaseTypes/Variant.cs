@@ -7,6 +7,7 @@ using System.Xml;
 using DocumentModel.BaseTypes;
 
 using Qhta.Conversion;
+using Qhta.TypeUtils;
 
 namespace DocumentModel;
 
@@ -41,6 +42,8 @@ namespace DocumentModel;
 [XmlItemElement(typeof(Guid))]
 [XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
 [XmlItemElement(typeof(Variant))]
+
+
 [TypeConverter(typeof(VariantTypeConverter))]
 [JsonConverter(typeof(VariantJsonConverter))]
 public class Variant : IConvertible, IEquatable<Variant>
@@ -102,7 +105,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     {
       var valueType = value.GetType();
       if (valueType != null && valueType.IsEnum)
-        EnumType = valueType;
+        Type = valueType;
     }
     SetValue(value);
   }
@@ -123,19 +126,19 @@ public class Variant : IConvertible, IEquatable<Variant>
   }
 
   [XmlAttribute]
-  public virtual Type? EnumType
-  {
-    get => (_VariantType == VariantType.Enum) ? _EnumType : null;
-    set
-    {
-#if TraceSetValue
-      Debug.WriteLine($"Set EnumType({value})");
-#endif
-      _EnumType = value;
-    }
-  }
+  public virtual Type? Type { get; set; }
+//  {
+//    get => (_VariantType == VariantType.Enum) ? _EnumType : null;
+//    set
+//    {
+//#if TraceSetValue
+//      Debug.WriteLine($"Set EnumType({value})");
+//#endif
+//      _EnumType = value;
+//    }
+//  }
 
-  private Type? _EnumType;
+  //private Type? _EnumType;
 
   [TypeConverter(typeof(VariantValueConverter))]
   [XmlElement]
@@ -230,6 +233,8 @@ public class Variant : IConvertible, IEquatable<Variant>
   {
     if (conversionType.Name.StartsWith("Nullable`"))
       conversionType = conversionType.GetGenericArguments()[0];
+    if (_Value?.GetType() == conversionType)
+      return _Value;
     if (conversionType == typeof(Boolean)) return ToBoolean(provider);
     if (conversionType == typeof(Byte)) return ToByte(provider);
     if (conversionType == typeof(SByte)) return ToSByte(provider);
@@ -252,10 +257,12 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (conversionType == typeof(Variant)) return this;
     if (conversionType == typeof(object)) return this;
     if (conversionType == typeof(VectorVariant))
+      return new VectorVariant { this };
+
+    if (conversionType.TryGetConverter(out var typeConverter) && typeConverter!=null)
     {
-      var vector = new VectorVariant();
-      vector.Add(this);
-      return vector;
+      if (_Value is string && typeConverter.CanConvertFrom(typeof(string)))
+        return typeConverter.ConvertFrom(_Value);
     }
     throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
   }
@@ -362,6 +369,11 @@ public class Variant : IConvertible, IEquatable<Variant>
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
       return Value?.ToString();
+    if (_Value?.GetType().TryGetConverter(out var typeConverter) == true)
+    {
+      if (typeConverter!=null && typeConverter.CanConvertTo(typeof(string)))
+        return typeConverter.ConvertToInvariantString(_Value);
+    }
     var result = Convert.ToString(Value, CultureInfo.InvariantCulture);
     return result;
   }
@@ -419,12 +431,12 @@ public class Variant : IConvertible, IEquatable<Variant>
     Debug.WriteLine($"GetValue()");
 #endif
     var val = ConvertValue(VariantType, _Value);
-    if (val != null && VariantType == VariantType.Enum && EnumType != null)
+    if (val != null && VariantType == VariantType.Enum && Type != null)
     {
       if (val is string str)
-        val = Enum.Parse(EnumType, str);
+        val = Enum.Parse(Type, str);
       else
-        val = Enum.ToObject(EnumType, val);
+        val = Enum.ToObject(Type, val);
     }
     return val;
   }
@@ -606,7 +618,7 @@ public class Variant : IConvertible, IEquatable<Variant>
         return null;
 
       default:
-        return null;
+        return value;
     }
   }
 
@@ -706,9 +718,6 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (value is DateOnly vDate)
     {
       VariantType = VariantType.Date;
-      // conversion to date time is needed
-      // as DateOnly serialization is not supported in 2022
-      //_Value = vDate.ToDateTime(default(TimeOnly));
       _Value = vDate;
       return;
     }
@@ -770,7 +779,11 @@ public class Variant : IConvertible, IEquatable<Variant>
       return;
     }
 
-    if (value is Object vObj) _Value = vObj;
+    if (value is Object vObj)
+    {
+      VariantType = VariantType.Object;
+      _Value = vObj;
+    }
   }
 
   public static implicit operator bool(Variant value)
