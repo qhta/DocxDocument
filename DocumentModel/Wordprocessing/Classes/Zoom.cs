@@ -3,12 +3,13 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Magnification Setting.
 /// </summary>
+[TypeConverter(typeof(ZoomTypeConverter))]
 public class Zoom
 {
   /// <summary>
   ///   Zoom Type
   /// </summary>
-  public PresetZoomKind? Val { get; set; }
+  public PresetZoomKind? Kind { get; set; }
 
   /// <summary>
   ///   Zoom Percentage
