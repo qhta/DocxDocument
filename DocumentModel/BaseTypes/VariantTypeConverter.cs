@@ -25,7 +25,11 @@ public class VariantTypeConverter : BaseTypeConverter
     if (destinationType == typeof(String))
     {
       if (value is Variant variant)
+      {
+        if (variant.VariantType == VariantType.Object)
+          Debug.Assert(true);
         result = variant.ToString(CultureInfo.InvariantCulture);
+      }
       else if (value != null)
       {
         var valueTypeConverter = new ValueTypeConverter(value.GetType(), KnownTypes?.Values);

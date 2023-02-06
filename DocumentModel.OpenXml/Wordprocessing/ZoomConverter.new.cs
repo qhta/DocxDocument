@@ -59,7 +59,7 @@ public static class ZoomConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Zoom();
-      value.Val = GetVal(openXmlElement);
+      value.Kind = GetVal(openXmlElement);
       value.Percent = GetPercent(openXmlElement);
       return value;
     }
@@ -71,7 +71,7 @@ public static class ZoomConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Kind, diffs, objName))
         ok = false;
       if (!CmpPercent(openXmlElement, value.Percent, diffs, objName))
         ok = false;
@@ -88,7 +88,7 @@ public static class ZoomConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
+      SetVal(openXmlElement, value?.Kind);
       SetPercent(openXmlElement, value?.Percent);
       return openXmlElement;
     }

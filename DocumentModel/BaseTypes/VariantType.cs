@@ -194,5 +194,10 @@ public enum VariantType
   /// <summary>
   ///   Array Variant Type.
   /// </summary>
-  Array
+  Array,
+
+  /// <summary>
+  ///   Object Variant Type.
+  /// </summary>
+  Object,
 }
