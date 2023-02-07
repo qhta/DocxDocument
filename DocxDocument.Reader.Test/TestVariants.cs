@@ -1244,7 +1244,6 @@ public class TestVariants : TestBase
       { VariantType.Guid, Guid.NewGuid() },
       { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
       // VariantType.Variant can't be tested here as deserialization results in internal vector value
-      //{ VariantType.Variant, new Variant(123) },
     };
 
 
@@ -1301,7 +1300,10 @@ public class TestVariants : TestBase
         if (itemType == null || variantType == itemType)
         {
           var variant = new Variant(variantType, val);
-          oldVectorVariant.Add(variant.Value);
+          if (variantType == VariantType.Empty)
+            oldVectorVariant.Add(null);
+          else
+            oldVectorVariant.Add(variant.Value);
         }
       }
     }

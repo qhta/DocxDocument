@@ -70,7 +70,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
         }
         else if (xmlSerializer != null && !(item is string))
         {
-          xmlSerializer.WriteObject(item);
+          xmlSerializer.WriteObject(item, this);
         }
         else
         {
@@ -92,7 +92,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
       var ok = reader.MoveToFirstAttribute();
       while (ok && reader.NodeType == XmlNodeType.Attribute)
       {
-        if (reader.Name == "baseType")
+        if (reader.LocalName == "baseType")
         {
           var baseTypeStr = reader.Value;
           if (Enum.TryParse<VariantType>(baseTypeStr, out var baseType))
@@ -103,12 +103,12 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
       reader.Read();
       while (reader.NodeType == XmlNodeType.Element)
       {
-        if (reader.Name == "null")
+        if (reader.LocalName == "null")
         {
           result.Add(null);
           reader.Read();
         }
-        else if (xmlSerializer != null && reader.Name != "String")
+        else if (xmlSerializer != null && reader.LocalName != "String")
         {
           var item = xmlSerializer.ReadObject(context);
           if (item != null)
@@ -116,7 +116,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
         }
         else
         {
-          var typeName = reader.Name;
+          var typeName = reader.LocalName;
           var type = Type.GetType(typeName);
           if (type == null)
           {
@@ -128,7 +128,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
           if (!reader.IsEmptyElement)
           {
             reader.Read();
-            var str = reader.ReadContentAs(type, null);
+            var str = reader.ReadContentAs(type);
             result.Add(str);
             reader.Read();
           }
