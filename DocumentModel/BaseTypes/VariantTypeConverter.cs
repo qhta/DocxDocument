@@ -26,8 +26,8 @@ public class VariantTypeConverter : BaseTypeConverter
     {
       if (value is Variant variant)
       {
-        if (variant.VariantType == VariantType.Object)
-          Debug.Assert(true);
+        //if (variant.VariantType == VariantType.Object)
+        //  Debug.Assert(true);
         result = variant.ToString(CultureInfo.InvariantCulture);
       }
       else if (value != null)

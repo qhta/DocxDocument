@@ -25,7 +25,6 @@ internal class Program
     Console.WriteLine("Test passed");
   }
 
-
   private static void RunTestConverters()
   {
     var testInstance = new TestConverters();
@@ -38,9 +37,9 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    //testInstance.TestInternalVariantType();
+    //testInstance.TestObjectVariantType();
     //testInstance.TestVariantXmlSerialization();
-    testInstance.TestVectorXmlSerialization();
+    testInstance.TestVectorXmlSerialization(/*VariantType.Single*/);
     Console.WriteLine("Test passed");
   }
 }

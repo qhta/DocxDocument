@@ -1,8 +1,5 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Xml;
-
-using Qhta.TypeUtils;
 
 namespace DocumentModel.BaseTypes;
 
@@ -72,7 +69,14 @@ public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
           }
         }
         var str = reader.ReadElementContentAsString();
-        var variant = new Variant(variantType, aType, str);
+        Variant variant;
+        if (aType!=null && serializer?.TryGetTypeConverter(aType, out var converter)==true)
+        {
+          var val = converter.ConvertFrom(str);
+          variant = new Variant(variantType, aType, val);
+        }
+        else
+          variant = new Variant(variantType, aType, str);
         if (reader.NodeType == XmlNodeType.EndElement)
           reader.Read();
         return variant;
