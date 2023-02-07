@@ -108,7 +108,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
           result.Add(null);
           reader.Read();
         }
-        else if (xmlSerializer != null && reader.LocalName != "String")
+        else if (xmlSerializer != null)
         {
           var item = xmlSerializer.ReadObject(context);
           if (item != null)
@@ -127,6 +127,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
           }
           if (!reader.IsEmptyElement)
           {
+
             reader.Read();
             var str = reader.ReadContentAs(type);
             result.Add(str);

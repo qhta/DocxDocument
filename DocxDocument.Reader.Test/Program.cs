@@ -39,8 +39,8 @@ internal class Program
     var testInstance = new TestVariants();
     testInstance.Setup();
     //testInstance.TestInternalVariantType();
-    testInstance.TestVariantXmlSerialization(/*VariantType.Enum*/);
-    //testInstance.TestVectorXmlSerialization();
+    //testInstance.TestVariantXmlSerialization();
+    testInstance.TestVectorXmlSerialization();
     Console.WriteLine("Test passed");
   }
 }
