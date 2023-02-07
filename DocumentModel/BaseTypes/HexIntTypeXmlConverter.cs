@@ -2,7 +2,7 @@
 
 namespace DocumentModel.BaseTypes;
 
-public class HexIntTypeConverter : TypeConverter
+public class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -27,8 +27,31 @@ public class HexIntTypeConverter : TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is HexInt hexWord)
-      return hexWord.ToString();
+    if (value is HexInt hexInt)
+      return hexInt.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
+  }
+
+  public bool CanRead => true;
+  public bool CanWrite => false;
+
+  public void WriteXml(object? context, IXmlWriter writer, object? value, IXmlSerializer? serializer)
+  {
+    throw new NotImplementedException();
+  }
+
+  public object? ReadXml(object? context, IXmlReader reader, Type objectType, object? existingValue, IXmlSerializer? serializer)
+  {
+    reader.Read(); // read pass start element;
+    var str = reader.Value;
+    var val = new HexInt(str);
+    reader.Read(); // read pass string value;
+    reader.Read(); // read pass end element;
+    return val;
+  }
+
+  public bool CanConvert(Type objectType)
+  {
+    return objectType == typeof(HexInt);
   }
 }

@@ -3,7 +3,7 @@ using DocumentModel.BaseTypes;
 
 namespace DocumentModel;
 
-[TypeConverter(typeof(HexIntTypeConverter))]
+[TypeConverter(typeof(HexIntTypeXmlConverter))]
 public record HexInt : IConvertible
 {
   private readonly int Value;
