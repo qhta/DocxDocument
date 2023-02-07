@@ -6,7 +6,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestProperties();
+    RunTestVariants();
   }
 
   private static void RunTestStyles()
@@ -39,8 +39,8 @@ internal class Program
     var testInstance = new TestVariants();
     testInstance.Setup();
     //testInstance.TestInternalVariantType();
-    //testInstance.TestVariantXmlSerialization(VariantType.Blob);
-    testInstance.TestVectorXmlSerialization(VariantType.Enum);
+    testInstance.TestVariantXmlSerialization(/*VariantType.Enum*/);
+    //testInstance.TestVectorXmlSerialization();
     Console.WriteLine("Test passed");
   }
 }

@@ -28,6 +28,15 @@ public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
     {
       new ArrayXmlTypeConverter().WriteXml(context, writer, value, serializer);
     }
+    else if (value is Variant variant && context == null)
+    {
+      writer.WriteStartElement("Variant");
+      writer.WriteAttributeString("TypeName", variant.TypeName);
+      var valueStr = base.ConvertToInvariantString(value);
+      if (valueStr != null)
+        writer.WriteValue(valueStr);
+      writer.WriteEndElement("Variant");
+    }
     else
     {
       var valueStr = base.ConvertToInvariantString(value);
@@ -47,8 +56,23 @@ public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
     {
       if (reader.LocalName == "Variant")
       {
+        var typeName = reader.GetAttribute("TypeName");
+        Type? aType = null;
+        if (!Enum.TryParse<VariantType>(typeName, out var variantType))
+        {
+          if (typeName != null && serializer!=null)
+          {
+            if (!serializer.TryGetKnownType(typeName, out var type))
+              type = Type.GetType(typeName);
+            aType = type;
+            if (type != null && type.IsEnum)
+              variantType = VariantType.Enum;
+            else
+              variantType = VariantType.Object;
+          }
+        }
         var str = reader.ReadElementContentAsString();
-        var variant = new Variant(str);
+        var variant = new Variant(variantType, aType, str);
         if (reader.NodeType == XmlNodeType.EndElement)
           reader.Read();
         return variant;

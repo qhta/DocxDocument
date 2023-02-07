@@ -28,6 +28,7 @@ public class VectorVariant : Variant, IList<object?>
   }
 
   [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
+  [XmlIgnore] public new string TypeName => "Vector";
 
 //  [TypeConverter(typeof(VariantValueConverter))]
 //  [XmlConverter(typeof(VectorValueXmlConverter))]
@@ -55,10 +56,10 @@ public class VectorVariant : Variant, IList<object?>
 
   public void Add(object? item)
   {
-    if (item == null)
-      _items.Add(DBNull.Value);
-    else
-      _items.Add(item);
+    //if (item == null)
+    //  _items.Add(DBNull.Value);
+    //else
+    _items.Add(item);
   }
 
   public void Clear()

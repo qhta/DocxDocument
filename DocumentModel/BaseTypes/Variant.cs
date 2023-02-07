@@ -40,11 +40,11 @@ namespace DocumentModel;
 [XmlItemElement(typeof(HexInt))]
 [XmlItemElement("null", Value = null)]
 [XmlItemElement(typeof(Guid))]
-[XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter))]
+[XmlItemElement(typeof(byte[]), ConverterType = typeof(Base64TypeConverter), ElementName="Blob")]
 [XmlItemElement(typeof(Variant))]
 
 
-[TypeConverter(typeof(VariantTypeConverter))]
+[TypeConverter(typeof(VariantTypeXmlConverter))]
 [JsonConverter(typeof(VariantJsonConverter))]
 public class Variant : IConvertible, IEquatable<Variant>
 {
@@ -98,19 +98,26 @@ public class Variant : IConvertible, IEquatable<Variant>
       Value = DBNull.Value;
   }
 
-  public Variant(VariantType variantType, object? value)
+  public Variant(VariantType variantType, object? value): this(variantType, null, value)
+  {
+  }
+
+  public Variant(VariantType variantType, Type? valueType, object? value)
   {
     VariantType = variantType;
+    if (variantType == VariantType.Empty)
+      return;
     if (value != null)
     {
-      var valueType = value.GetType();
+      if (valueType == null)
+        valueType = value.GetType();
       if (valueType != null && valueType.IsEnum)
         Type = valueType;
     }
     SetValue(value);
   }
 
-  [XmlAttribute]
+  [XmlIgnore]
   public virtual VariantType VariantType
   {
     get => _VariantType;
@@ -126,19 +133,34 @@ public class Variant : IConvertible, IEquatable<Variant>
   }
 
   [XmlAttribute]
-  public virtual Type? Type { get; set; }
-//  {
-//    get => (_VariantType == VariantType.Enum) ? _EnumType : null;
-//    set
-//    {
-//#if TraceSetValue
-//      Debug.WriteLine($"Set EnumType({value})");
-//#endif
-//      _EnumType = value;
-//    }
-//  }
+  public virtual string TypeName
+  {
+    get
+    {
+      if (VariantType == VariantType.Enum)
+        return Type?.FullName ?? "Enum";
+      if (VariantType == VariantType.Object)
+        return Type?.FullName ?? "Object";
+      return VariantType.ToString();
+    }
+    set
+    {
+      if (Enum.TryParse<VariantType>(value, out var variantType)) 
+        VariantType = (VariantType)variantType;
+      else
+      {
+        var type = Type.GetType(value);
+        Type = type;
+        if (type != null && type.IsEnum)
+          VariantType = VariantType.Enum;
+        else
+          VariantType = VariantType.Object;
+      }
+    }
+  }
 
-  //private Type? _EnumType;
+  [XmlIgnore]
+  public virtual Type? Type { get; set; }
 
   [TypeConverter(typeof(VariantValueConverter))]
   [XmlElement]
@@ -535,6 +557,8 @@ public class Variant : IConvertible, IEquatable<Variant>
       case VariantType.DateTime:
         if (value is string)
           return Convert.ToDateTime((string)value);
+        if (value is DateTime dt)
+          return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
         return Convert.ToDateTime(value);
 
       case VariantType.Boolean:
