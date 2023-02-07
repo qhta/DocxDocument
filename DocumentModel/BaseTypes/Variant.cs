@@ -111,7 +111,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     {
       if (valueType == null)
         valueType = value.GetType();
-      if (valueType != null && valueType.IsEnum)
+      if (valueType != null)
         Type = valueType;
     }
     SetValue(value);
@@ -590,9 +590,8 @@ public class Variant : IConvertible, IEquatable<Variant>
 
       case VariantType.Enum:
         return value;
-        //if (value is string ename)
-        //  return Enum.Parse(Type.GetType(EnumType), ename);
-        //return Enum.ToObject(Type.GetType(EnumType), value);
+      case VariantType.Object:
+        return value;
 
       case VariantType.Guid:
         if (value is string gstr)
@@ -1121,6 +1120,6 @@ public class Variant : IConvertible, IEquatable<Variant>
 
   public override string? ToString()
   {
-    return ToString(CultureInfo.InvariantCulture)+$" ({VariantType})";
+    return ToString(CultureInfo.InvariantCulture)+$" ({TypeName})";
   }
 }

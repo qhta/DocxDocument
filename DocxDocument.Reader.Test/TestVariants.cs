@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 using DocumentModel;
 
@@ -8,6 +9,8 @@ using Variant = DocumentModel.Variant;
 using VariantType = DocumentModel.VariantType;
 
 using Newtonsoft.Json;
+using Qhta.Conversion;
+using System.Xml.Serialization;
 
 namespace DocxDocument.Reader.Test;
 public enum Numbers: UInt64
@@ -15,6 +18,127 @@ public enum Numbers: UInt64
   One = 1,
   MaxUInt32 = UInt32.MaxValue,
   MaxUInt64 =UInt64.MaxValue,
+}
+
+[TypeConverter(typeof(RGBTypeConverter))]
+public struct RGB: IConvertible
+{
+  [XmlIgnore] public Byte R { get; set; }
+  [XmlIgnore] public Byte G { get; set; }
+  [XmlIgnore] public Byte B { get; set; }
+
+  public static implicit operator RGB(UInt32 value) => new RGB { R = (byte)(value >> 16), G = (byte)(value >> 8), B = (byte)(value) };
+  public static implicit operator UInt32(RGB value) => (UInt32)value.R << 16 | (UInt32)(value.G << 8) | value.B;
+
+  public override string ToString()
+  {
+    return R.ToString("X2") + G.ToString("X2") + B.ToString("X2");
+  }
+
+  public TypeCode GetTypeCode()
+  {
+    return TypeCode.Object;
+  }
+
+  public bool ToBoolean(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public byte ToByte(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public char ToChar(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public DateTime ToDateTime(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public decimal ToDecimal(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public double ToDouble(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public short ToInt16(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public int ToInt32(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public long ToInt64(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public sbyte ToSByte(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public float ToSingle(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public string ToString(IFormatProvider? provider)
+  {
+    return ToUInt32(provider).ToString("X6");
+  }
+
+  public object ToType(Type conversionType, IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public ushort ToUInt16(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  public uint ToUInt32(IFormatProvider? provider)
+  {
+    return this;
+  }
+
+  public ulong ToUInt64(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+}
+
+public class RGBTypeConverter : BaseTypeConverter
+{
+  public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
+  {
+    if (value is RGB val)
+      return val.ToString();
+    return base.ConvertTo(context, culture, value, destinationType);
+  }
+
+  public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
+  {
+    if (value is string str)
+    {
+      if (UInt32.TryParse(str, NumberStyles.HexNumber, null, out var val))
+        return (RGB)val;
+    }
+    return base.ConvertFrom(context, culture, value);
+  }
 }
 
 public class TestVariants : TestBase
@@ -1128,6 +1252,15 @@ public class TestVariants : TestBase
   }
 
   [Test]
+  public void TestObjectVariantType()
+  {
+    Variant variant;
+
+    variant = new Variant(VariantType.Object, new RGB{ R=16,G=32, B=48 });
+    Assert.That((UInt32)variant, Is.EqualTo(0x102030), "Object set/ UInt32 get");
+  }
+
+  [Test]
   public void TestInternalVariantType()
   {
     Variant variant;
@@ -1240,9 +1373,11 @@ public class TestVariants : TestBase
       { VariantType.Currency, Decimal.MaxValue },
       { VariantType.Null, DBNull.Value },
       { VariantType.HexInt, UInt16.MaxValue },
-      { VariantType.Enum, Numbers.MaxUInt64 },
       { VariantType.Guid, Guid.NewGuid() },
       { VariantType.Blob, new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }},
+      { VariantType.Enum, Numbers.MaxUInt64 },
+      { VariantType.Object, new RGB{ R=0x10,G=0x20, B=0x30 } },
+
       // VariantType.Variant can't be tested here as deserialization results in internal vector value
     };
 
@@ -1266,7 +1401,7 @@ public class TestVariants : TestBase
       WriteLine($"Testing variant type {variantType} = {valStr}");
       var variant = new Variant(variantType, val);
       var textWriter = new StringWriter();
-      var serializer = new QXmlSerializer(typeof(Variant), new Type[]{typeof(Numbers)});
+      var serializer = new QXmlSerializer(typeof(Variant), new Type[]{typeof(Numbers), typeof(RGB)});
       serializer.Serialize(textWriter, variant);
       textWriter.Flush();
       string str = textWriter.ToString();
@@ -1308,7 +1443,7 @@ public class TestVariants : TestBase
       }
     }
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(VectorVariant), new Type[]{typeof(Numbers)});
+    var serializer = new QXmlSerializer(typeof(VectorVariant), new Type[]{typeof(Numbers), typeof(RGB)});
     serializer.Serialize(textWriter, oldVectorVariant);
     textWriter.Flush();
     string str = textWriter.ToString();
