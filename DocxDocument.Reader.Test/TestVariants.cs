@@ -11,6 +11,7 @@ using VariantType = DocumentModel.VariantType;
 using Newtonsoft.Json;
 using Qhta.Conversion;
 using System.Xml.Serialization;
+using Qhta.SystemUtils;
 
 namespace DocxDocument.Reader.Test;
 public enum Numbers: UInt64
@@ -1154,7 +1155,7 @@ public class TestVariants : TestBase
   public void TestDateTimeVariantType()
   {
     Variant variant;
-    var dt = DateTime.Now;
+    var dt = DateTime.Now.Truncate();
     var date = DateOnly.FromDateTime(dt);
     var dt2 = date.ToDateTime(new TimeOnly());
     variant = dt;
@@ -1162,12 +1163,12 @@ public class TestVariants : TestBase
     Assert.That((DateOnly)variant, Is.EqualTo(date), "DateTime set/ DateOnly get");
     variant = date;
     Assert.That((DateOnly)variant, Is.EqualTo(date), "DateOnly set/ DateOnly get");
-    Assert.That((DateTime)variant, Is.EqualTo(dt2), "DateOnly  set/ DateTime get");
+    Assert.That((DateTime)variant, Is.EqualTo(dt2), "DateOnly set/ DateTime get");
     dt2 = DateTime.Parse("2003-02-01");
     date = DateOnly.Parse("2003-02-01");
     variant = "2003-02-01";
     Assert.That((DateOnly)variant, Is.EqualTo(date), "String set/ DateOnly get");
-    Assert.That((DateTime)variant, Is.EqualTo(dt2), "String  set/ DateTime get");
+    Assert.That((DateTime)variant, Is.EqualTo(dt2), "String set/ DateTime get");
   }
 
   [Test]
@@ -1238,16 +1239,16 @@ public class TestVariants : TestBase
     variant = new Variant(VariantType.Enum, Numbers.MaxUInt64);
     Assert.That((UInt64)variant, Is.EqualTo(UInt64.MaxValue), "Enum set/ UInt64 get");
 
-    variant = new Variant(VariantType.Enum, 1);
+    variant = new Variant(VariantType.Enum, typeof(Numbers), 1);
     Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.One), "Int set/ Enum get");
-    variant = new Variant(VariantType.Enum, UInt32.MaxValue);
+    variant = new Variant(VariantType.Enum, typeof(Numbers), UInt32.MaxValue);
     Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.MaxUInt32), "UInt32 set/ Enum get");
-    variant = new Variant(VariantType.Enum, UInt64.MaxValue);
+    variant = new Variant(VariantType.Enum, typeof(Numbers), UInt64.MaxValue);
     Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.MaxUInt64), "UInt64 set/ Enum get");
 
-    variant = new Variant(VariantType.Enum, "One");
+    variant = new Variant(VariantType.Enum, typeof(Numbers), "One");
     Assert.That(variant.ToEnum<Numbers>(), Is.EqualTo(Numbers.One), "String set/ Enum get");
-    variant = new Variant(VariantType.Enum, Numbers.One);
+    variant = new Variant(VariantType.Enum, typeof(Numbers), Numbers.One);
     Assert.That(variant.ToString(), Is.EqualTo("One"), "Enum set/ String get");
   }
 

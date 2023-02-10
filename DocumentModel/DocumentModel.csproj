@@ -24,14 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="BaseTypes\StringNum.cs" />
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />
-    <Compile Remove="Properties\HeadingPairs.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DeepEqual" Version="4.2.1" />
     <PackageReference Include="JsonKnownTypes" Version="0.5.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
@@ -45,6 +44,9 @@
   <ItemGroup>
     <Reference Include="Qhta.Conversion">
       <HintPath>..\..\MyLib\Qhta.Conversion\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TextUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
