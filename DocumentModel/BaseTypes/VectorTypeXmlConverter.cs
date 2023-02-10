@@ -70,7 +70,7 @@ public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
         }
         else if (xmlSerializer != null && !(item is string))
         {
-          xmlSerializer.WriteObject(item, this);
+          xmlSerializer.WriteObject(this, item);
         }
         else
         {

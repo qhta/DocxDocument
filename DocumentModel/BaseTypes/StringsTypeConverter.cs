@@ -1,23 +1,15 @@
-﻿using Newtonsoft.Json.Linq;
+﻿namespace DocumentModel;
 
-namespace DocumentModel;
-
-public class StringListTypeConverter : TypeConverter
+public class StringsTypeConverter : TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
-    if (destinationType == null)
-      return false;
-    if (destinationType == typeof(String))
-      return true;
-    if (destinationType == typeof(JArray))
-      return true;
-    return base.CanConvertFrom(context, destinationType);
+    return destinationType == typeof(String);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is StringList stringList)
+    if (value is Strings stringList)
     {
       if (destinationType == typeof(string))
       {
@@ -31,22 +23,20 @@ public class StringListTypeConverter : TypeConverter
   {
     if (sourceType == typeof(String))
       return true;
-    if (sourceType == typeof(JArray))
-      return true;
     return base.CanConvertFrom(context, sourceType);
   }
 
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
-    var result = new StringList();
-    if (value is JArray jArray)
+    if (value is string str)
     {
-      foreach (var item in jArray)
-      {
-        string? str = (item as JValue)?.Value<string>();
-        if (str != null)
-          result.Add(str);
-      }
+      var result = new Strings();
+      str = str.Replace("\" \"", "\t");
+      str = str.ReplaceStart("\"", "");
+      str = str.ReplaceEnd("\"", "");
+      var ss = str.Split('\t');
+      foreach (var s in ss)
+        result.Add(s);
       return result;
     }
     return base.ConvertFrom(context, culture, value);

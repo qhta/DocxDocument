@@ -90,7 +90,7 @@ public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
     else
     if (reader.NodeType == XmlNodeType.Text)
     {
-      var str = reader.ReadContentAsString();
+      var str = reader.ReadString();
       var variant = new Variant(str);
       if (reader.NodeType == XmlNodeType.EndElement)
         reader.Read();
