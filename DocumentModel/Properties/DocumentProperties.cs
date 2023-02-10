@@ -77,10 +77,10 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       {
         if (CustomProperties == null)
           CustomProperties = new CustomProperties();
-        if (item.Type == null && item.Value is Variant variant)
-        {
-          item.Type = variant.VariantType;
-        }
+        //if (item.Type == null && item.Value is Variant variant)
+        //{
+        //  item.Type = variant.VariantType;
+        //}
         CustomProperties.Add(item);
       }
     }

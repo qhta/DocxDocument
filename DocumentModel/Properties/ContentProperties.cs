@@ -33,12 +33,12 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Heading Pairs.
   /// </summary>
-  public VectorVariant? HeadingPairs { get; set; }
+  public HeadingPairs? HeadingPairs { get; set; }
 
   /// <summary>
   ///   Part Titles.
   /// </summary>
-  public VectorVariant? TitlesOfParts { get; set; }
+  public Strings? TitlesOfParts { get; set; }
 
   /// <summary>
   ///   Links Up-to-Date.
@@ -58,7 +58,7 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Hyperlink List.
   /// </summary>
-  public VectorVariant? HyperlinkList { get; set; }
+  public Strings? HyperlinkList { get; set; }
 
   /// <summary>
   ///   Hyperlinks Changed.

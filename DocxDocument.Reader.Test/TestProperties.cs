@@ -244,11 +244,15 @@ namespace DocxDocument.Reader.Test
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
       var oldPropertiesCount = oldProperties.Count();
       var newPropertiesCount = newProperties.Count();
-      Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
       var newPropArray = newProperties.ToArray();
       var oldPropArray = oldProperties.ToArray();
-      for (int i = 0; i < oldPropertiesCount; i++)
+      for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
+      {
+        if (newPropArray[i].Name == "HeadingPairs")
+          Debug.Assert(true);
         Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
+      }
+      Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
     }
 
   }

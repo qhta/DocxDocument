@@ -40,6 +40,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Qhta.SystemUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.SystemUtils.dll</HintPath>
+    </Reference>
     <Reference Include="Qhta.TextUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
     </Reference>

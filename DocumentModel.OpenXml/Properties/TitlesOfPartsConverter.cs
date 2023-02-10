@@ -16,22 +16,22 @@ public static class TitlesOfPartsConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static StringList? GetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static Strings? GetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     return VTVectorConverter.GetStringList(openXmlElement?.VTVector);
   }
 
-  public static void SetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, StringList? value)
+  public static void SetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, Strings? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static Strings? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = GetStringList(openXmlElement);
+      var value = GetStrings(openXmlElement);
       return value;
     }
     return null;
@@ -48,12 +48,12 @@ public static class TitlesOfPartsConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(StringList? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(Strings? value)
   {
     if (value != null)
     {
       var openXmlElement = new DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts();
-      SetStringList(openXmlElement, value);
+      SetStrings(openXmlElement, value);
       return openXmlElement;
     }
     return null;

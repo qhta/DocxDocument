@@ -18,8 +18,8 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
         var typeName = prop.PropertyType.Name;
         if (typeName.StartsWith("Nullable`"))
           typeName = prop.PropertyType.GenericTypeArguments[0].Name;
-        Variant variant = (value is Variant valVariant) ? valVariant : new Variant(value);
-        yield return new DocumentProperty { Name = name, Type = variant.VariantType, Value = variant };
+        //Variant variant = (value is Variant valVariant) ? valVariant : new Variant(value);
+        yield return new DocumentProperty { Name = name, /*Type = variant.VariantType, */Value = value };
       }
     }
   }
@@ -90,8 +90,8 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
   {
     var prop = GetKnownProperties()[propName];
     var value = prop?.GetValue(this, null);
-    Variant? variant = (value is Variant valVariant) ? valVariant : (value != null) ? new Variant(value) : null;
-    return new DocumentProperty(propName, prop?.PropertyType, variant);
+    //Variant? variant = (value is Variant valVariant) ? valVariant : (value != null) ? new Variant(value) : null;
+    return new DocumentProperty(propName, prop?.PropertyType, value);
   }
 
   public bool Set(string propName, object? value)
@@ -106,8 +106,8 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
           var typeConverter = new ValueTypeConverter(prop.PropertyType);
           value = typeConverter.ConvertFromInvariantString(valStr);
         }
-        else if (value is Variant variant)
-          value = variant.ToType(prop.PropertyType, null);
+        //else if (value is Variant variant)
+        //  value = variant.ToType(prop.PropertyType, null);
       }
       prop.SetValue(this, value);
       return true;

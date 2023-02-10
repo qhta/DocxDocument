@@ -1,3 +1,5 @@
+using DeepEqual.Syntax;
+
 using DocumentModel.BaseTypes;
 
 namespace DocumentModel.Properties;
@@ -17,16 +19,17 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     {
       var typeName = type.Name;
       if (typeName.StartsWith("Nullable`"))
-        typeName = type.GenericTypeArguments[0].Name;
-      Type = (VariantType?)(new VariantTypeNameConverter().ConvertFrom(typeName));
+        type = type.GenericTypeArguments[0];
+      Type = type;//(VariantType?)(new VariantTypeNameConverter().ConvertFrom(typeName));
     }
-    if (value != null)
-    {
-      if (value is Variant variant)
-        Value = variant;
-      else
-        Value = new Variant(value);
-    }
+    Value = value;
+    //if (value != null)
+    //{
+    //  if (value is Variant variant)
+    //    Value = variant;
+    //  else
+    //    Value = new Variant(value);
+    //}
   }
 
   public DocumentProperty(DocumentProperty other)
@@ -41,7 +44,25 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     if (this.Name != other.Name)
       return false;
     if (this.Value != null)
-      return this.Value.Equals(other.Value);
+    {
+      var ok = this.Value.IsDeepEqual(other.Value);
+      //if (!ok)
+      //{
+      //  if (this.Value is IEnumerable collection1 && other.Value is IEnumerable collection2)
+      //  {
+      //    if (this.Value.GetType().GenericTypeArguments.FirstOrDefault()==other.Value.GetType().GenericTypeArguments.FirstOrDefault())
+      //    {
+      //      var methodInfo = typeof(Enumerable).GetMethod("SequenceEqual", BindingFlags.Public | BindingFlags.Static);
+      //      if (methodInfo != null)
+      //      {
+      //        methodInfo = methodInfo.MakeGenericMethod(this.Value.GetType().GenericTypeArguments.First());
+      //        ok =  (bool)(methodInfo.Invoke(null, new object[]{collection1, collection2 }) ?? false);
+      //      }
+      //    }
+      //  }
+      //}
+      return ok;
+    }
     return false;
   }
 
@@ -54,26 +75,27 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
   /// <summary>
   ///   Value of the property
   /// </summary>
-  [TypeConverter(typeof(VariantTypeXmlConverter))]
-  public Variant? Value
+  //[TypeConverter(typeof(VariantTypeXmlConverter))]
+  [TypeConverter(typeof(DocumentPropertyXmlConverter))]
+  public object? Value
   {
     get => _value;
     set
     {
       if (Type == null && value != null)
-        Type = value.VariantType;
-      else if (value!=null && value.VariantType != Type && Type!=null)
-        value.VariantType = (VariantType)Type;
+        Type = value.GetType();
+      //else if (value!=null && value.VariantType != Type && Type!=null)
+      //  value.VariantType = (VariantType)Type;
       _value = value;
     }
   }
-  private Variant? _value;
+  private object? _value;
 
   /// <summary>
   ///   Expected value type name
   /// </summary>
   [XmlAttribute]
-  public VariantType? Type { get; set; }
+  public Type? Type { get; set; }
 
   /// <summary>
   ///   Property ID
