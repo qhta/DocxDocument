@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public class ValueValueConverter : TypeConverter
+internal class ValueValueConverter : TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {

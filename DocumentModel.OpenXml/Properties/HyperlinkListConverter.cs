@@ -16,18 +16,18 @@ public static class HyperlinkListConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static Strings? GetStrings(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
+  public static StringList? GetStrings(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
   {
     return VTVectorConverter.GetStringList(openXmlElement?.VTVector);
   }
 
-  public static void SetStrings(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, Strings? value)
+  public static void SetStrings(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static Strings? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
+  public static StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,7 +48,7 @@ public static class HyperlinkListConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(Strings? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(StringList? value)
   {
     if (value != null)
     {

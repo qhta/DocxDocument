@@ -270,12 +270,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Part Titles.
   /// </summary>
-  public static Strings? GetTitlesOfParts(DXExtProps.Properties openXmlElement)
+  public static StringList? GetTitlesOfParts(DXExtProps.Properties openXmlElement)
   {
     return TitlesOfPartsConverter.GetStrings(openXmlElement?.TitlesOfParts);
   }
 
-  public static void SetTitlesOfParts(DXExtProps.Properties openXmlElement, Strings? value)
+  public static void SetTitlesOfParts(DXExtProps.Properties openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       TitlesOfPartsConverter.SetStrings(openXmlElement.TitlesOfParts, value);
@@ -349,12 +349,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Hyperlink List.
   /// </summary>
-  public static Strings? GetHyperlinkList(DXExtProps.Properties? openXmlElement)
+  public static StringList? GetHyperlinkList(DXExtProps.Properties? openXmlElement)
   {
     return HyperlinkListConverter.GetStrings(openXmlElement?.HyperlinkList);
   }
 
-  public static void SetHyperlinkList(DXExtProps.Properties openXmlElement, Strings? value)
+  public static void SetHyperlinkList(DXExtProps.Properties openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       HyperlinkListConverter.SetStrings(openXmlElement.HyperlinkList, value);

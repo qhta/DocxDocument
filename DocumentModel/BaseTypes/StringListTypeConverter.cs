@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public class StringsTypeConverter : TypeConverter
+internal class StringListTypeConverter : TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -9,7 +9,7 @@ public class StringsTypeConverter : TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is Strings stringList)
+    if (value is StringList stringList)
     {
       if (destinationType == typeof(string))
       {
@@ -30,7 +30,7 @@ public class StringsTypeConverter : TypeConverter
   {
     if (value is string str)
     {
-      var result = new Strings();
+      var result = new StringList();
       str = str.Replace("\" \"", "\t");
       str = str.ReplaceStart("\"", "");
       str = str.ReplaceEnd("\"", "");

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace DocumentModel.BaseTypes;
-public class VectorJsonConverter : JsonConverter
+internal class VectorJsonConverter : JsonConverter
 {
   public override bool CanConvert(Type objectType)
   {

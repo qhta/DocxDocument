@@ -2,8 +2,8 @@
 namespace DocumentModel;
 
 /// <summary>Represents the list of string
-[TypeConverter(typeof(StringsTypeConverter))]
-public class Strings : ICollection<string>, IEnumerable
+[TypeConverter(typeof(StringListTypeConverter))]
+public class StringList : ICollection<string>, IEnumerable
 {
   private readonly List<string> _list = new();
 
@@ -55,14 +55,14 @@ public class Strings : ICollection<string>, IEnumerable
   public override bool Equals(object? obj)
   {
     if (obj == null) return false;
-    if (obj is Strings other)
+    if (obj is StringList other)
       return Equals(other);
     if (obj is string str)
       return Count == 1 && _list[0].Equals(str);
     return false;
   }
 
-  public bool Equals(Strings other)
+  public bool Equals(StringList other)
   {
     if (this.Count != other.Count) return false;
     for (int i=0; i<this.Count; i++)
