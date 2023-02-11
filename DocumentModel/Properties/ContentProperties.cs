@@ -38,7 +38,7 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Part Titles.
   /// </summary>
-  public Strings? TitlesOfParts { get; set; }
+  public StringList? TitlesOfParts { get; set; }
 
   /// <summary>
   ///   Links Up-to-Date.
@@ -58,7 +58,7 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Hyperlink List.
   /// </summary>
-  public Strings? HyperlinkList { get; set; }
+  public StringList? HyperlinkList { get; set; }
 
   /// <summary>
   ///   Hyperlinks Changed.

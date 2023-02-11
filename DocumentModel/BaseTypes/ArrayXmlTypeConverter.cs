@@ -5,7 +5,7 @@ using Qhta.TypeUtils;
 
 namespace DocumentModel;
 
-public class ArrayXmlTypeConverter : VariantTypeConverter, IXmlConverter
+internal class ArrayXmlTypeConverter : VariantTypeConverter, IXmlConverter
 {
   public virtual bool CanRead => true;
 

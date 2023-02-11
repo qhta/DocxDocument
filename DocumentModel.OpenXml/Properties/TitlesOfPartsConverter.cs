@@ -16,18 +16,18 @@ public static class TitlesOfPartsConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static Strings? GetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static StringList? GetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     return VTVectorConverter.GetStringList(openXmlElement?.VTVector);
   }
 
-  public static void SetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, Strings? value)
+  public static void SetStrings(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static Strings? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,7 +48,7 @@ public static class TitlesOfPartsConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(Strings? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(StringList? value)
   {
     if (value != null)
     {

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Magnification Setting.
 /// </summary>
-public class ZoomTypeConverter: TypeConverter
+internal class ZoomTypeConverter: TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {

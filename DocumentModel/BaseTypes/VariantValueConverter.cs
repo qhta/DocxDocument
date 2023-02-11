@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
 
-public class VariantValueConverter : TypeConverter
+internal class VariantValueConverter : TypeConverter
 {
   public Dictionary<string, Type> KnownTypes { get; } = new Dictionary<string, Type>();
 
