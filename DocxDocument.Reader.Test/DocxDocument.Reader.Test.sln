@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Conversion", "..\..\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml", "..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj", "{8D2D8F96-1DF7-4869-8083-DA10FF0DF816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8D2D8F96-1DF7-4869-8083-DA10FF0DF816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2D8F96-1DF7-4869-8083-DA10FF0DF816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2D8F96-1DF7-4869-8083-DA10FF0DF816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
