@@ -226,13 +226,18 @@ namespace DocxDocument.Reader.Test
     public void TestPropertiesXmlSerialization()
     {
       var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-        .Where(item => item.IsPublic && !item.IsGenericType);
+        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var oldProperties = TestReadProperties(filename, true);
+      var reader = new DocxReader(filename);
+      var document = reader.ReadDocument(Parts.AllDocumentProperties);
+      var oldProperties = document.Properties;//TestReadProperties(filename, true);
+      Assert.IsNotNull(oldProperties, "No document properties read");
+      if (oldProperties == null)
+        return;
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
-        new SerializationOptions { AcceptAllProperties = true, });
+        new SerializationOptions { AcceptAllProperties = true });
       serializer.Serialize(textWriter, oldProperties);
       textWriter.Flush();
       string str = textWriter.ToString();

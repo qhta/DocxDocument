@@ -79,13 +79,13 @@ public static class VTVectorConverter
     }
   }
 
-  public static Strings? GetStringList(VTVector? openXmlElement)
+  public static StringList? GetStringList(VTVector? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var baseType = GetBaseType(openXmlElement);
       var itemType = typeof(string);
-      var _value = new Strings();
+      var _value = new StringList();
       foreach (var item in openXmlElement.Elements())
       {
         var itemValue = VariantConverter.GetValue(item);
@@ -102,7 +102,7 @@ public static class VTVectorConverter
     return null;
   }
 
-  public static void SetStringList(VTVector openXmlElement, Strings? value)
+  public static void SetStringList(VTVector openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
     {
@@ -127,7 +127,7 @@ public static class VTVectorConverter
     return openXmlElement;
   }
 
-  public static VTVector CreateOpenXmlElement(Strings? value)
+  public static VTVector CreateOpenXmlElement(StringList? value)
   {
     var openXmlElement = new VTVector();
     if (value != null)

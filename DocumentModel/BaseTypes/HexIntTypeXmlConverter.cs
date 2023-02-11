@@ -2,7 +2,7 @@
 
 namespace DocumentModel.BaseTypes;
 
-public class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
+internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {

@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
 
-public class VariantTypeConverter : BaseTypeConverter
+internal class VariantTypeConverter : BaseTypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {

@@ -3,7 +3,7 @@ using System.Xml;
 
 namespace DocumentModel.BaseTypes;
 
-public class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
+internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
 {
   public virtual bool CanRead => true;
 

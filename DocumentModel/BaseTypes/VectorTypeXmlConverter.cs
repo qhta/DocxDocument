@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
 
-public class VectorTypeXmlConverter : TypeConverter, IXmlConverter
+internal class VectorTypeXmlConverter : TypeConverter, IXmlConverter
 {
   public virtual bool CanRead => true;
 
