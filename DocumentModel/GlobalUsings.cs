@@ -15,5 +15,6 @@ global using System.Xml.Serialization;
 global using Qhta.Conversion;
 global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
+global using Qhta.Xml;
 global using Qhta.Xml.Serialization;
 global using Newtonsoft.Json;
