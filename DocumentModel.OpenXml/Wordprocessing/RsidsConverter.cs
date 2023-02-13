@@ -45,7 +45,7 @@ public static class RsidsConverter
     return collection;
   }
   
-  private static bool CmpItems(DXW.Rsids openXmlElement, Collection<HexInt>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Rsids openXmlElement, IEnumerable<HexInt>? value, DiffList? diffs, string? objName)
   {
     if (value != null)
     {
@@ -73,7 +73,7 @@ public static class RsidsConverter
     return false;
   }
   
-  private static void SetItems(DXW.Rsids openXmlElement, Collection<HexInt>? value)
+  private static void SetItems(DXW.Rsids openXmlElement, IEnumerable<HexInt>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Rsid>();
     if (value != null)
@@ -92,8 +92,12 @@ public static class RsidsConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Rsids();
-      value.RsidRoot = GetRsidRoot(openXmlElement);
-      value.RsIdItems = GetItems(openXmlElement);
+      var rsidRoot = GetRsidRoot(openXmlElement);
+      if (rsidRoot!=null)
+        value.Add(rsidRoot);
+      var rsIdItems = GetItems(openXmlElement);
+      foreach (var item in rsIdItems)
+        value.Add(item);
       return value;
     }
     return null;
@@ -104,9 +108,12 @@ public static class RsidsConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRsidRoot(openXmlElement, value.RsidRoot, diffs, objName))
+      if (!CmpRsidRoot(openXmlElement, value.FirstOrDefault(), diffs, objName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.RsIdItems, diffs, objName))
+      var items = value.ToList();
+      if (items.Count>0)
+        items.RemoveAt(0);
+      if (!CmpItems(openXmlElement, items, diffs, objName))
         ok = false;
       return ok;
     }
@@ -121,8 +128,11 @@ public static class RsidsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetRsidRoot(openXmlElement, value?.RsidRoot);
-      SetItems(openXmlElement, value?.RsIdItems);
+      SetRsidRoot(openXmlElement, value.FirstOrDefault());
+            var items = value.ToList();
+      if (items.Count>0)
+        items.RemoveAt(0);
+      SetItems(openXmlElement, items);
       return openXmlElement;
     }
     return default;
