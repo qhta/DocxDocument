@@ -2,7 +2,7 @@ using DeepEqual.Syntax;
 
 using DocumentModel.BaseTypes;
 
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 /// <summary>
 ///   Document Property.

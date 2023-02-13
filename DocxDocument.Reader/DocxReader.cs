@@ -1,11 +1,11 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 
 using DM = DocumentModel;
-using DMP = DocumentModel.Properties;
+using DMP = DocumentModel;
 using DMW = DocumentModel.Wordprocessing;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 using W10 = DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel.Properties;
+using DocumentModel;
 
 namespace DocxDocument.Reader;
 

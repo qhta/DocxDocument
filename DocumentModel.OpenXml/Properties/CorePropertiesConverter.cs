@@ -1,5 +1,5 @@
 using System.IO.Packaging;
-using DocumentModel.Properties;
+using DocumentModel;
 
 namespace DocumentModel.OpenXml.Properties;
 

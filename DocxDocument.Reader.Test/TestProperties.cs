@@ -1,6 +1,6 @@
 using System.Reflection;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Properties;
+using DocumentModel;
 
 using Newtonsoft.Json;
 
@@ -46,7 +46,7 @@ namespace DocxDocument.Reader.Test
         TestReadProperties(filename);
     }
 
-    public virtual DocumentModel.Properties.DocumentProperties TestReadProperties(string filename, bool showDetails = false)
+    public virtual DocumentModel.DocumentProperties TestReadProperties(string filename, bool showDetails = false)
     {
       WriteLine(filename);
       var reader = new DocxReader(filename);

@@ -1,6 +1,6 @@
 ﻿using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {

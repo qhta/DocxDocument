@@ -93,9 +93,9 @@ public static class CustomDocumentPropertyConverter
     }
   }
 
-  public static DocumentModel.Properties.DocumentProperty? CreateModelElement(CustomDocumentProperty? openXmlElement)
+  public static DocumentModel.DocumentProperty? CreateModelElement(CustomDocumentProperty? openXmlElement)
   {
-    var value = new DocumentModel.Properties.DocumentProperty();
+    var value = new DocumentModel.DocumentProperty();
     if (openXmlElement != null)
     {
       //value.FormatId = GetFormatId(openXmlElement);
@@ -107,7 +107,7 @@ public static class CustomDocumentPropertyConverter
     return value;
   }
 
-  public static CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.DocumentProperty? value)
+  public static CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.DocumentProperty? value)
   {
     if (value != null)
     {

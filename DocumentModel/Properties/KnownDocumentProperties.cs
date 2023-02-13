@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Properties;
+﻿namespace DocumentModel;
 
 public class KnownDocumentProperties : ICollection<DocumentProperty>
 {
