@@ -1,6 +1,4 @@
-﻿using DocumentModel.Wordprocessing;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
@@ -15,6 +13,9 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
 
   [XmlIgnore]
   public DocumentSettings? DocumentSettings { get; set; }
+
+  [XmlIgnore]
+  public DMW.WebSettings? WebSettings { get; set; }
 
   [XmlIgnore]
   public CustomProperties? CustomProperties { get; set; }
@@ -35,10 +36,12 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (DocumentSettings != null)
       foreach (var property in DocumentSettings)
         yield return property;
+    if (WebSettings != null)
+      foreach (var property in WebSettings)
+        yield return property;
     if (CustomProperties != null)
       foreach (var property in CustomProperties)
-        yield return property;
-  }
+        yield return property;  }
 
   IEnumerator IEnumerable.GetEnumerator()
   {
@@ -55,6 +58,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       StatisticProperties = new StatisticProperties();
     if (DocumentSettings == null)
       DocumentSettings = new DocumentSettings();
+    if (WebSettings == null)
+      WebSettings = new DMW.WebSettings();
     if (item.Name != null)
     {
       if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))
@@ -72,6 +77,10 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       else if (DocumentSettings.GetKnownProperties().ContainsKey(item.Name))
       {
         DocumentSettings.Set(item.Name, item.Value);
+      }
+      else if (WebSettings.GetKnownProperties().ContainsKey(item.Name))
+      {
+        WebSettings.Set(item.Name, item.Value);
       }
       else
       {

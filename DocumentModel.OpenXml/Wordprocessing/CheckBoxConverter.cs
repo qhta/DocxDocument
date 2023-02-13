@@ -29,12 +29,16 @@ public static class CheckBoxConverter
   
   private static Boolean? GetAutomaticallySizeFormField(DXW.CheckBox openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>()?.Val?.Value;
+    var val = GetAutomaticallySizeFormField(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AutomaticallySizeFormField", val, value);
     return false;
@@ -57,12 +61,16 @@ public static class CheckBoxConverter
   
   private static Boolean? GetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>()?.Val?.Value;
+    var val = GetDefaultCheckBoxFormFieldState(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DefaultCheckBoxFormFieldState", val, value);
     return false;
@@ -85,12 +93,16 @@ public static class CheckBoxConverter
   
   private static Boolean? GetChecked(DXW.CheckBox openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Checked>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Checked>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpChecked(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Checked>()?.Val?.Value;
+    var val = GetChecked(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Checked", val, value);
     return false;

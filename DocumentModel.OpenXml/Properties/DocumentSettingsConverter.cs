@@ -2431,24 +2431,24 @@ public static class DocumentSettingsConverter
     }
   }
 
-  private static byte[]? GetDocumentId(DXW.Settings openXmlElement)
+  private static HexInt? GetDocumentId(DXW.Settings openXmlElement)
   {
-    return HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
+    return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
   }
 
-  private static bool CmpDocumentId(DXW.Settings openXmlElement, byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentId(DXW.Settings openXmlElement, HexInt? value, DiffList? diffs, string? objName)
   {
-    return HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
+    return HexIntConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
 
-  private static void SetDocumentId(DXW.Settings openXmlElement, byte[]? value)
+  private static void SetDocumentId(DXW.Settings openXmlElement, HexInt? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.DocumentId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = HexBinaryConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
+      itemElement = HexIntConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -2550,24 +2550,35 @@ public static class DocumentSettingsConverter
     }
   }
 
-  private static string? GetPersistentDocumentId(DXW.Settings openXmlElement)
+  private static Guid? GetPersistentDocumentId(DXW.Settings openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value;
+    var element = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (element?.Val?.Value != null)
+      return Guid.Parse(element.Val.Value);
+    return null;
   }
 
-  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, string? value, DiffList? diffs, string? objName)
+  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, Guid? value, DiffList? diffs, string? objName)
   {
-    return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value == value;
+    var element = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (element?.Val?.Value != null)
+    {
+      var val = Guid.Parse(element.Val.Value);
+      if (val == value)
+        return true;
+    }
+    diffs?.Add(objName, "PersistentDocumentId", element?.Val?.Value, value);
+    return false;
   }
 
-  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, string? value)
+  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, Guid? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2013W.PersistentDocumentId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013W.PersistentDocumentId { Val = value };
+      itemElement = new DXO2013W.PersistentDocumentId { Val = ((Guid)value).ToString("B") };
       openXmlElement.AddChild(itemElement);
     }
   }

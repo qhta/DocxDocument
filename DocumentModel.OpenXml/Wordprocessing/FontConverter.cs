@@ -139,12 +139,16 @@ public static class FontConverter
   /// </summary>
   private static Boolean? GetNotTrueType(DXW.Font openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.NotTrueType>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.NotTrueType>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpNotTrueType(DXW.Font openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.NotTrueType>()?.Val?.Value;
+    var val = GetNotTrueType(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.NotTrueType", val, value);
     return false;

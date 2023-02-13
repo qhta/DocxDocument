@@ -33,12 +33,16 @@ public static class DivConverter
   /// </summary>
   private static Boolean? GetBlockQuote(DXW.Div openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.BlockQuote>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.BlockQuote>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpBlockQuote(DXW.Div openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.BlockQuote>()?.Val?.Value;
+    var val = GetBlockQuote(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BlockQuote", val, value);
     return false;
@@ -64,12 +68,16 @@ public static class DivConverter
   /// </summary>
   private static Boolean? GetBodyDiv(DXW.Div openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.BodyDiv>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.BodyDiv>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpBodyDiv(DXW.Div openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.BodyDiv>()?.Val?.Value;
+    var val = GetBodyDiv(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BodyDiv", val, value);
     return false;

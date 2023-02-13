@@ -16,6 +16,36 @@ public static class HexIntConverter
     return null;
   }
 
+    public static HexInt? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
+  {
+    var valProperty = openXmlElement?.GetType().GetProperty("Val");
+    if (valProperty != null)
+    {
+      var value = valProperty.GetValue(openXmlElement);
+      if (value is string valStr)
+        return valStr;
+      if (value is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+        return hexBinaryValue.Value;
+    }
+    return null;
+  }
+
+    public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexInt? value, DiffList? diffs, string? objName)
+  {
+    var valProperty = element?.GetType().GetProperty("Val");
+    if (valProperty != null && value != null)
+    {
+      var valStr = (string?)valProperty.GetValue(element);
+      var valueStr = value.ToString();
+      if (valStr == valueStr) return true;
+      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
+      return false;
+    }
+    if (valProperty == null && value == null) return true;
+    diffs?.Add(objName, element?.GetType().ToString(), element, value);
+    return false;
+  }
+
   public static DX.HexBinaryValue? CreateHexBinaryValue(HexInt? value)
   {
     if (value != null) return new DX.HexBinaryValue(value);
