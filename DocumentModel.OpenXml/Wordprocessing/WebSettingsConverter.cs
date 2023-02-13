@@ -384,11 +384,11 @@ public static class WebSettingsConverter
     }
   }
 
-  public static DMW.WebSettings? CreateModelElement(DXW.WebSettings? openXmlElement)
+  public static DM.WebSettings? CreateModelElement(DXW.WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.WebSettings();
+      var value = new DM.WebSettings();
       value.Frameset = GetFrameset(openXmlElement);
       value.Divs = GetDivs(openXmlElement);
       value.WebPageEncoding = GetWebPageEncoding(openXmlElement);
@@ -406,7 +406,7 @@ public static class WebSettingsConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.WebSettings? openXmlElement, DMW.WebSettings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.WebSettings? openXmlElement, DM.WebSettings? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -442,7 +442,7 @@ public static class WebSettingsConverter
     return false;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.WebSettings? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.WebSettings? value)
     where OpenXmlElementType : DXW.WebSettings, new()
   {
     if (value != null)

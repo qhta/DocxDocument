@@ -15,7 +15,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   public DocumentSettings? DocumentSettings { get; set; }
 
   [XmlIgnore]
-  public DMW.WebSettings? WebSettings { get; set; }
+  public WebSettings? WebSettings { get; set; }
 
   [XmlIgnore]
   public CustomProperties? CustomProperties { get; set; }
@@ -59,7 +59,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (DocumentSettings == null)
       DocumentSettings = new DocumentSettings();
     if (WebSettings == null)
-      WebSettings = new DMW.WebSettings();
+      WebSettings = new DM.WebSettings();
     if (item.Name != null)
     {
       if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))

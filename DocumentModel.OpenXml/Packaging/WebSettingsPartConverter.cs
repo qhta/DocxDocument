@@ -32,17 +32,17 @@ public static class WebSettingsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMW.WebSettings? GetWebSettings(DXPack.WebSettingsPart openXmlElement)
+  private static DM.WebSettings? GetWebSettings(DXPack.WebSettingsPart openXmlElement)
   {
       return DMXW.WebSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.WebSettings);
   }
   
-  private static bool CmpWebSettings(DXPack.WebSettingsPart openXmlElement, DMW.WebSettings? value, DiffList? diffs, string? objName)
+  private static bool CmpWebSettings(DXPack.WebSettingsPart openXmlElement, DM.WebSettings? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetWebSettings(DXPack.WebSettingsPart openXmlElement, DMW.WebSettings? value)
+  private static void SetWebSettings(DXPack.WebSettingsPart openXmlElement, DM.WebSettings? value)
   {
     if (value != null)
     {
