@@ -1,7 +1,7 @@
 using System.IO.Packaging;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentModel.OpenXml.Properties;
-using DocumentModel.Properties;
+using DocumentModel;
 
 namespace DocumentModel.OpenXml.Packaging;
 

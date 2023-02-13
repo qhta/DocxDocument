@@ -1,6 +1,6 @@
 
 
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 /// <summary>
 ///   Heading Pairs.

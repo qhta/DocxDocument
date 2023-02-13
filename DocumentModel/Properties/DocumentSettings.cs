@@ -2,7 +2,7 @@ using DocumentModel.CustomXml;
 using DocumentModel.Math;
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 /// <summary>
 ///   Document Settings.

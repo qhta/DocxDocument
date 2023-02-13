@@ -3,12 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Listing of All Revision Save ID Values.
 /// </summary>
-public class Rsids
+public class Rsids//: Collection<HexInt>
 {
   /// <summary>
   ///   Original Document Revision Save ID.
   /// </summary>
-  public UInt32? RsidRoot { get; set; }
+  public HexInt? RsidRoot { get; set; }
 
-  public Collection<UInt32>? Items { get; set; }
+  public Collection<HexInt>? RsIdItems { get; set; }
 }

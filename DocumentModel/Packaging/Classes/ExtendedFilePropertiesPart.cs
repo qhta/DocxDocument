@@ -1,4 +1,4 @@
-using DocumentModel.Properties;
+using DocumentModel;
 
 namespace DocumentModel.Packaging;
 
