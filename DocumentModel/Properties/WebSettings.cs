@@ -1,4 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
+namespace DocumentModel;
 
 /// <summary>
 ///   Web Page Settings.
