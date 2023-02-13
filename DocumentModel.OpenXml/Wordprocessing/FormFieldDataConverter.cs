@@ -29,12 +29,16 @@ public static class FormFieldDataConverter
   
   private static Boolean? GetEnabled(DXW.FormFieldData openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Enabled>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Enabled>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpEnabled(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Enabled>()?.Val?.Value;
+    var val = GetEnabled(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Enabled", val, value);
     return false;
@@ -57,12 +61,16 @@ public static class FormFieldDataConverter
   
   private static Boolean? GetCalculateOnExit(DXW.FormFieldData openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.CalculateOnExit>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.CalculateOnExit>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.CalculateOnExit>()?.Val?.Value;
+    var val = GetCalculateOnExit(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.CalculateOnExit", val, value);
     return false;

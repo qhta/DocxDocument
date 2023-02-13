@@ -188,12 +188,16 @@ public static class LevelConverter
   /// </summary>
   private static Boolean? GetIsLegalNumberingStyle(DXW.Level openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpIsLegalNumberingStyle(DXW.Level openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>()?.Val?.Value;
+    var val = GetIsLegalNumberingStyle(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.IsLegalNumberingStyle", val, value);
     return false;

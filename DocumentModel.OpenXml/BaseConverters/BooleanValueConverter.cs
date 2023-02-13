@@ -73,6 +73,7 @@ public static class BooleanValueConverter
   public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, bool? value, DiffList? diffs, string? objName)
   {
     if (GetValue(element) == value)
+      return true;
     diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
     return false;
   }

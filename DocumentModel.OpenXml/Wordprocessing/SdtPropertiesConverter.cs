@@ -101,12 +101,16 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetShowingPlaceholder(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpShowingPlaceholder(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.ShowingPlaceholder>()?.Val?.Value;
+    var val = GetShowingPlaceholder(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ShowingPlaceholder", val, value);
     return false;
@@ -152,12 +156,16 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetTemporarySdt(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.TemporarySdt>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.TemporarySdt>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpTemporarySdt(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.TemporarySdt>()?.Val?.Value;
+    var val = GetTemporarySdt(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.TemporarySdt", val, value);
     return false;
