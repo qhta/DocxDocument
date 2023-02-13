@@ -1,4 +1,4 @@
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 /// <summary>
 ///   This class provides access to the "core properties", such as Title and

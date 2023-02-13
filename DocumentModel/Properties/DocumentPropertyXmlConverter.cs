@@ -9,7 +9,7 @@ using DocumentModel.Drawings;
 
 using Qhta.TestHelper;
 
-namespace DocumentModel.Properties;
+namespace DocumentModel;
 
 internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
 {

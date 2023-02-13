@@ -33,19 +33,19 @@ public static class RsidsConverter
       openXmlElement.RsidRoot = null;
   }
   
-  private static Collection<UInt32> GetItems(DXW.Rsids openXmlElement)
+  private static Collection<HexInt> GetItems(DXW.Rsids openXmlElement)
   {
-    var collection = new Collection<UInt32>();
+    var collection = new Collection<HexInt>();
     foreach (var item in openXmlElement.Elements<DXW.Rsid>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
-        collection.Add((UInt32)newItem);
+        collection.Add((HexInt)newItem);
     }
     return collection;
   }
   
-  private static bool CmpItems(DXW.Rsids openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Rsids openXmlElement, Collection<HexInt>? value, DiffList? diffs, string? objName)
   {
     if (value != null)
     {
@@ -73,7 +73,7 @@ public static class RsidsConverter
     return false;
   }
   
-  private static void SetItems(DXW.Rsids openXmlElement, Collection<UInt32>? value)
+  private static void SetItems(DXW.Rsids openXmlElement, Collection<HexInt>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Rsid>();
     if (value != null)
@@ -93,7 +93,7 @@ public static class RsidsConverter
     {
       var value = new DMW.Rsids();
       value.RsidRoot = GetRsidRoot(openXmlElement);
-      value.Items = GetItems(openXmlElement);
+      value.RsIdItems = GetItems(openXmlElement);
       return value;
     }
     return null;
@@ -106,7 +106,7 @@ public static class RsidsConverter
       var ok = true;
       if (!CmpRsidRoot(openXmlElement, value.RsidRoot, diffs, objName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.RsIdItems, diffs, objName))
         ok = false;
       return ok;
     }
@@ -122,7 +122,7 @@ public static class RsidsConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetRsidRoot(openXmlElement, value?.RsidRoot);
-      SetItems(openXmlElement, value?.Items);
+      SetItems(openXmlElement, value?.RsIdItems);
       return openXmlElement;
     }
     return default;
