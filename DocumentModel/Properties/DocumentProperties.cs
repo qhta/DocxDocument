@@ -59,7 +59,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (DocumentSettings == null)
       DocumentSettings = new DocumentSettings();
     if (WebSettings == null)
-      WebSettings = new DM.WebSettings();
+      WebSettings = new WebSettings();
     if (item.Name != null)
     {
       if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))

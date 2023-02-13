@@ -1,8 +1,13 @@
+using System.Reflection;
+
 using DocumentFormat.OpenXml.Wordprocessing;
 
 using DocumentModel;
 using DocumentModel.OpenXml;
 using DocumentModel.OpenXml.Wordprocessing;
+
+using Qhta.Xml.Serialization;
+
 using DMW = DocumentModel.Wordprocessing;
 using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
@@ -191,5 +196,43 @@ public class TestStyles : TestBase
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
+
+      [Test]
+    public void TestStylesXmlSerialization()
+    {
+      var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+
+      var filename = Path.Combine(TestPath, "CustomProperties.docx");
+      var reader = new DocxReader(filename);
+      var document = reader.ReadDocument(Parts.StyleDefinitions);
+      DMW.Styles oldStyles = document.Styles ?? new DMW.Styles();//TestReadProperties(filename, true);
+      Assert.IsNotNull(oldStyles, "No document styles read");
+      if (oldStyles == null)
+        return;
+      var textWriter = new StringWriter();
+      var serializer = new QXmlSerializer(typeof(Styles), extraTypes.ToArray(),
+        new SerializationOptions { AcceptAllProperties = true });
+      serializer.Serialize(textWriter, oldStyles);
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      WriteLine(str);
+      WriteLine();
+
+      //var textReader = new StringReader(str);
+      //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
+      //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
+      //var oldPropertiesCount = oldStyles.Count;
+      //var newPropertiesCount = newProperties.Count();
+      //var newPropArray = newProperties.ToArray();
+      //var oldPropArray = oldStyles.ToArray();
+      //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
+      //{
+      //  if (newPropArray[i].Name == "HeadingPairs")
+      //    Debug.Assert(true);
+      //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
+      //}
+      //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+    }
 
 }
