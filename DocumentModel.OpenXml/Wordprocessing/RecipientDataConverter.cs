@@ -10,12 +10,16 @@ public static class RecipientDataConverter
   /// </summary>
   private static Boolean? GetActive(DXW.RecipientData openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Active>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Active>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpActive(DXW.RecipientData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Active>()?.Val?.Value;
+    var val = GetActive(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Active", val, value);
     return false;

@@ -18,3 +18,4 @@ global using Qhta.TypeUtils;
 global using Qhta.Xml;
 global using Qhta.Xml.Serialization;
 global using Newtonsoft.Json;
+global using DMW = DocumentModel.Wordprocessing;

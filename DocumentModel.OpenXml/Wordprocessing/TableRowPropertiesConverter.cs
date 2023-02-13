@@ -171,12 +171,16 @@ public static class TableRowPropertiesConverter
   
   private static Boolean? GetHidden(DXW.TableRowProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Hidden>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpHidden(DXW.TableRowProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Hidden>()?.Val?.Value;
+    var val = GetHidden(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Hidden", val, value);
     return false;

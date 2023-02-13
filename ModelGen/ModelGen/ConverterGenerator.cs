@@ -7,6 +7,7 @@ using Qhta.TypeUtils;
 using Qhta.TextUtils;
 using Text = DocumentFormat.OpenXml.Drawing.Text;
 using System.Reflection;
+using System.Xml.Linq;
 
 namespace ModelGen;
 
@@ -1553,7 +1554,11 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(true);
-    Writer.WriteLine($"return openXmlElement.GetFirstChild<{origPropTypeName}>()?.Val?.Value;");
+    Writer.WriteLine($"var element = openXmlElement.GetFirstChild<{origPropTypeName}>();");
+    Writer.WriteLine($"if (element?.Val?.Value != null)");
+    Writer.WriteLine($"  return element.Val.Value;");
+    Writer.WriteLine($"if (element != null) return false;");
+    Writer.WriteLine($"return null;");
     return true;
   }
 
@@ -1561,7 +1566,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(true);
-    Writer.WriteLine($"var val = openXmlElement.GetFirstChild<{origPropTypeName}>()?.Val?.Value;");
+    Writer.WriteLine($"var val = Get{origPropTypeName}(openXmlElement);");
     Writer.WriteLine($"if (val == value) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origPropTypeName}\", val, value);");
     Writer.WriteLine($"return false;");

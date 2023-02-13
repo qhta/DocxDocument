@@ -36,12 +36,16 @@ public static class MailMergeConverter
   /// </summary>
   private static Boolean? GetLinkToQuery(DXW.MailMerge openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.LinkToQuery>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.LinkToQuery>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.LinkToQuery>()?.Val?.Value;
+    var val = GetLinkToQuery(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.LinkToQuery", val, value);
     return false;
@@ -201,12 +205,16 @@ public static class MailMergeConverter
   /// </summary>
   private static Boolean? GetDoNotSuppressBlankLines(DXW.MailMerge openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>()?.Val?.Value;
+    var val = GetDoNotSuppressBlankLines(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotSuppressBlankLines", val, value);
     return false;
@@ -314,12 +322,16 @@ public static class MailMergeConverter
   /// </summary>
   private static Boolean? GetMailAsAttachment(DXW.MailMerge openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.MailAsAttachment>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.MailAsAttachment>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.MailAsAttachment>()?.Val?.Value;
+    var val = GetMailAsAttachment(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.MailAsAttachment", val, value);
     return false;
@@ -345,12 +357,16 @@ public static class MailMergeConverter
   /// </summary>
   private static Boolean? GetViewMergedData(DXW.MailMerge openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ViewMergedData>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.ViewMergedData>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpViewMergedData(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.ViewMergedData>()?.Val?.Value;
+    var val = GetViewMergedData(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ViewMergedData", val, value);
     return false;

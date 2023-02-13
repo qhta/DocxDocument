@@ -61,12 +61,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetBold(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Bold>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpBold(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Bold>()?.Val?.Value;
+    var val = GetBold(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Bold", val, value);
     return false;
@@ -92,12 +96,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetBoldComplexScript(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.BoldComplexScript>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpBoldComplexScript(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.BoldComplexScript>()?.Val?.Value;
+    var val = GetBoldComplexScript(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BoldComplexScript", val, value);
     return false;
@@ -123,12 +131,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalic(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Italic>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpItalic(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Italic>()?.Val?.Value;
+    var val = GetItalic(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Italic", val, value);
     return false;
@@ -154,12 +166,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalicComplexScript(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpItalicComplexScript(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>()?.Val?.Value;
+    var val = GetItalicComplexScript(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ItalicComplexScript", val, value);
     return false;
@@ -185,12 +201,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetCaps(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Caps>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpCaps(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Caps>()?.Val?.Value;
+    var val = GetCaps(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Caps", val, value);
     return false;
@@ -216,12 +236,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetSmallCaps(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.SmallCaps>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpSmallCaps(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SmallCaps>()?.Val?.Value;
+    var val = GetSmallCaps(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SmallCaps", val, value);
     return false;
@@ -247,12 +271,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetStrike(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Strike>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpStrike(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Strike>()?.Val?.Value;
+    var val = GetStrike(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Strike", val, value);
     return false;
@@ -278,12 +306,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetDoubleStrike(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.DoubleStrike>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpDoubleStrike(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.DoubleStrike>()?.Val?.Value;
+    var val = GetDoubleStrike(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoubleStrike", val, value);
     return false;
@@ -309,12 +341,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetOutline(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Outline>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpOutline(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Outline>()?.Val?.Value;
+    var val = GetOutline(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Outline", val, value);
     return false;
@@ -340,12 +376,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetShadow(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Shadow>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpShadow(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Shadow>()?.Val?.Value;
+    var val = GetShadow(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Shadow", val, value);
     return false;
@@ -371,12 +411,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetEmboss(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Emboss>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpEmboss(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Emboss>()?.Val?.Value;
+    var val = GetEmboss(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Emboss", val, value);
     return false;
@@ -402,12 +446,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetImprint(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Imprint>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpImprint(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Imprint>()?.Val?.Value;
+    var val = GetImprint(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Imprint", val, value);
     return false;
@@ -433,12 +481,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetNoProof(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.NoProof>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpNoProof(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.NoProof>()?.Val?.Value;
+    var val = GetNoProof(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.NoProof", val, value);
     return false;
@@ -464,12 +516,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetSnapToGrid(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.SnapToGrid>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpSnapToGrid(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SnapToGrid>()?.Val?.Value;
+    var val = GetSnapToGrid(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SnapToGrid", val, value);
     return false;
@@ -495,12 +551,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetVanish(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.Vanish>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpVanish(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.Vanish>()?.Val?.Value;
+    var val = GetVanish(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.Vanish", val, value);
     return false;
@@ -526,12 +586,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetWebHidden(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.WebHidden>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpWebHidden(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.WebHidden>()?.Val?.Value;
+    var val = GetWebHidden(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.WebHidden", val, value);
     return false;
@@ -924,12 +988,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetRightToLeftText(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.RightToLeftText>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpRightToLeftText(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.RightToLeftText>()?.Val?.Value;
+    var val = GetRightToLeftText(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.RightToLeftText", val, value);
     return false;
@@ -955,12 +1023,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetComplexScript(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.ComplexScript>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpComplexScript(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.ComplexScript>()?.Val?.Value;
+    var val = GetComplexScript(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ComplexScript", val, value);
     return false;
@@ -1064,12 +1136,16 @@ public static class RunPropertiesConverter
   /// </summary>
   private static Boolean? GetSpecVanish(DXW.RunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.SpecVanish>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpSpecVanish(DXW.RunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SpecVanish>()?.Val?.Value;
+    var val = GetSpecVanish(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SpecVanish", val, value);
     return false;

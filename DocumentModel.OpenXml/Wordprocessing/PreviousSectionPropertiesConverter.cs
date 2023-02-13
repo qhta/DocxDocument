@@ -382,12 +382,16 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetFormProtection(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.FormProtection>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.FormProtection>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.FormProtection>()?.Val?.Value;
+    var val = GetFormProtection(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.FormProtection", val, value);
     return false;
@@ -439,12 +443,16 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetNoEndnote(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.NoEndnote>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.NoEndnote>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.NoEndnote>()?.Val?.Value;
+    var val = GetNoEndnote(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.NoEndnote", val, value);
     return false;
@@ -470,12 +478,16 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetTitlePage(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.TitlePage>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.TitlePage>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.TitlePage>()?.Val?.Value;
+    var val = GetTitlePage(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.TitlePage", val, value);
     return false;
@@ -527,12 +539,16 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetBiDi(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.BiDi>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.BiDi>()?.Val?.Value;
+    var val = GetBiDi(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BiDi", val, value);
     return false;
@@ -558,12 +574,16 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetGutterOnRight(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.GutterOnRight>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.GutterOnRight>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.GutterOnRight>()?.Val?.Value;
+    var val = GetGutterOnRight(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.GutterOnRight", val, value);
     return false;

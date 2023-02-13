@@ -262,7 +262,7 @@ public class DocumentSettings: KnownDocumentProperties
 
     public string? ListSeparator { get; set; }
 
-    public byte[]? DocumentId { get; set; }
+    public HexInt? DocumentId { get; set; }
 
     public OnOffKind? DiscardImageEditingData { get; set; }
 
@@ -272,5 +272,5 @@ public class DocumentSettings: KnownDocumentProperties
 
     public bool? ChartTrackingRefBased { get; set; }
 
-    public string? PersistentDocumentId { get; set; }
+    public Guid? PersistentDocumentId { get; set; }
 }

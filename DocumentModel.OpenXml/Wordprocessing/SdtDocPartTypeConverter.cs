@@ -66,12 +66,16 @@ public static class SdtDocPartTypeConverter
   /// </summary>
   private static Boolean? GetDocPartUnique(DXW.SdtDocPartType openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.DocPartUnique>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.DocPartUnique>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
   
   private static bool CmpDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.DocPartUnique>()?.Val?.Value;
+    var val = GetDocPartUnique(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DocPartUnique", val, value);
     return false;

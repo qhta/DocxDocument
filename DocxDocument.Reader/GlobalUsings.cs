@@ -9,3 +9,4 @@ global using System.IO;
 global using System.Linq;
 
 global using DMXProps = DocumentModel.OpenXml.Properties;
+global using DMXW = DocumentModel.OpenXml.Wordprocessing;

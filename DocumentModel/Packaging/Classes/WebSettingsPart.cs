@@ -1,5 +1,3 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Packaging;
 
 /// <summary>
@@ -14,5 +12,5 @@ public class WebSettingsPart
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public WebSettings? WebSettings { get; set; }
+  public DMW.WebSettings? WebSettings { get; set; }
 }

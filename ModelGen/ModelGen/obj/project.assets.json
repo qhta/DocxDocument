@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "DeepEqual/4.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/DeepEqual.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/DeepEqual.dll": {}
+        }
+      },
       "DocumentFormat.OpenXml/2.19.0": {
         "type": "package",
         "dependencies": {
@@ -707,6 +716,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DeepEqual": "4.2.1",
           "JsonKnownTypes": "0.5.5",
           "Newtonsoft.Json": "13.0.2",
           "Qhta.Xml": "1.0.0",
@@ -730,21 +740,11 @@
           "bin/placeholder/DocumentModel.Attributes.dll": {}
         }
       },
-      "Qhta.Collections/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Qhta.Collections.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.Collections.dll": {}
-        }
-      },
       "Qhta.Conversion/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Qhta.Collections": "1.0.0",
+          "Qhta.Xml": "1.0.0",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "compile": {
@@ -752,19 +752,6 @@
         },
         "runtime": {
           "bin/placeholder/Qhta.Conversion.dll": {}
-        }
-      },
-      "Qhta.TestHelper/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Qhta.Conversion": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Qhta.TestHelper.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Qhta.TestHelper.dll": {}
         }
       },
       "Qhta.Xml/1.0.0": {
@@ -777,13 +764,26 @@
           "bin/placeholder/Qhta.Xml.dll": {}
         }
       },
+      "Qhta.Xml.Reflection/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Qhta.Xml": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Qhta.Xml.Reflection.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Qhta.Xml.Reflection.dll": {}
+        }
+      },
       "Qhta.Xml.Serialization/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Qhta.Conversion": "1.0.0",
-          "Qhta.TestHelper": "1.0.0",
           "Qhta.Xml": "1.0.0",
+          "Qhta.Xml.Reflection": "1.0.0",
           "System.CodeDom": "7.0.0",
           "System.Collections.Specialized": "4.3.0",
           "System.Security.Permissions": "7.0.0"
@@ -808,6 +808,22 @@
     }
   },
   "libraries": {
+    "DeepEqual/4.2.1": {
+      "sha512": "aaBFzb5mQdYyZ4hVWcVobS+iq9+aHpgcYgQXcV1l54vjAVONVq6H5F4nnGiyb+ErBhyy8eRvIPkJ3BGSWiflgg==",
+      "type": "package",
+      "path": "deepequal/4.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "deepequal.4.2.1.nupkg.sha512",
+        "deepequal.nuspec",
+        "lib/net6.0/DeepEqual.dll",
+        "lib/netcoreapp3.1/DeepEqual.dll",
+        "lib/netstandard2.0/DeepEqual.dll",
+        "lib/netstandard2.1/DeepEqual.dll"
+      ]
+    },
     "DocumentFormat.OpenXml/2.19.0": {
       "sha512": "BLFqodowHZHR/A/sKU/6e+63J5ONWDdv8hEuSZOUiBfGFuVmsG9P3o+LMSq+dajNWE1q+lqVSa1H5FuhLX8/fA==",
       "type": "package",
@@ -2899,25 +2915,20 @@
       "path": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj",
       "msbuildProject": "../DocumentModel.Attributes/DocumentModel.Attributes.csproj"
     },
-    "Qhta.Collections/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.Collections/Qhta.Collections.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.Collections/Qhta.Collections.csproj"
-    },
     "Qhta.Conversion/1.0.0": {
       "type": "project",
       "path": "../../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj",
       "msbuildProject": "../../../MyLib/Qhta.Conversion/Qhta.Conversion.csproj"
     },
-    "Qhta.TestHelper/1.0.0": {
-      "type": "project",
-      "path": "../../../MyLib/Qhta.TestHelper/Qhta.TestHelper.csproj",
-      "msbuildProject": "../../../MyLib/Qhta.TestHelper/Qhta.TestHelper.csproj"
-    },
     "Qhta.Xml/1.0.0": {
       "type": "project",
       "path": "../../../MyLib/Qhta.Xml/Qhta.Xml.csproj",
       "msbuildProject": "../../../MyLib/Qhta.Xml/Qhta.Xml.csproj"
+    },
+    "Qhta.Xml.Reflection/1.0.0": {
+      "type": "project",
+      "path": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj",
+      "msbuildProject": "../../../MyLib/Qhta.Xml.Reflection/Qhta.Xml.Reflection.csproj"
     },
     "Qhta.Xml.Serialization/1.0.0": {
       "type": "project",
