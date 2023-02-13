@@ -28,6 +28,7 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
   /// <summary>
   /// Defines Styles.
   /// </summary>
+  [XmlIgnore]
   public Collection<Style> Items
   {
     get => _Items;
@@ -40,6 +41,7 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     }
   }
 
+  [XmlIgnore]
   public ICollection<Style> AllStyles
   {
     get => _AllStyles;
@@ -52,6 +54,7 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     }
   }
 
+  [XmlIgnore]
   public IDictionary<string, Style> StyleIndex => _StyleIds;
 
   public IEnumerable<Style> DefinedStyles => AllStyles.Where(item => item.IsDefined);
@@ -125,7 +128,10 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     set => _AllStyles[key] = value;
   }
 
+  [XmlIgnore]
   public ICollection<string> Keys => _AllStyles.Keys;
+  
+  [XmlIgnore]
 
   public ICollection<Style> Values => _AllStyles.Values;
 

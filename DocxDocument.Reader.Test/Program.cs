@@ -13,7 +13,7 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestDocumentStyles ();
+    testInstance.TestStylesXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 

@@ -92,22 +92,8 @@ public partial class DocxReader
     var document = new DMW.Document();
     if (parts.HasFlag(Parts.AllDocumentProperties))
       document.Properties = ReadDocumentProperties(parts);
-    //if (parts.HasFlag(Parts.AllDocumentSettings))
-    //  document.Settings = ReadDocumentSettings(parts);
-    //var t1 = DateTime.Now;
-    //if (parts.HasFlag(Parts.Theme))
-    //  document.DocumentTheme = ReadTheme(WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme);
-    //var t2 = DateTime.Now;
-    //if (parts.HasFlag(Parts.NumberingDefinitions))
-    //  document.ListDefinitions = ReadListDefinitions(WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering);
-    //var t3 = DateTime.Now;
     if (parts.HasFlag(Parts.StyleDefinitions))
       document.Styles = ReadStyleDefinitions(parts);
-    //var t4 = DateTime.Now;
-    //Debug.WriteLine($"ReadDocumentProperties {(t1 - t0).TotalMilliseconds} ms");
-    //Debug.WriteLine($"ReadTheme {(t2 - t1).TotalMilliseconds} ms");
-    //Debug.WriteLine($"ReadListDefinitions {(t3 - t2).TotalMilliseconds} ms");
-    //Debug.WriteLine($"ReadStyleDefinitions {(t4 - t3).TotalMilliseconds} ms");
     return document;
   }
 
@@ -143,7 +129,7 @@ public partial class DocxReader
     DMW.Styles styleDefinitions;
     var stylesOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<StylesPart>()?.FirstOrDefault()?.Styles;
     if (stylesOpenXmlElement != null)
-      styleDefinitions = DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateModelElement(stylesOpenXmlElement) ?? new();
+      styleDefinitions = DMXW.StylesConverter.CreateModelElement(stylesOpenXmlElement) ?? new();
     else
       styleDefinitions = new();
     return styleDefinitions;
