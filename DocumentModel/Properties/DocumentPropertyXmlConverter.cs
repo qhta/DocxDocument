@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DocumentModel.BaseTypes;
+using DocumentModel;
 using DocumentModel.Drawings;
 
 using Qhta.TestHelper;

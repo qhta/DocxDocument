@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 using Qhta.TypeUtils;
 
-namespace DocumentModel.BaseTypes;
+namespace DocumentModel;
 internal class VariantJsonConverter : JsonConverter
 {
   public override bool CanConvert(Type objectType)

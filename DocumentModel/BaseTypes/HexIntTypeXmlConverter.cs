@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace DocumentModel.BaseTypes;
+﻿namespace DocumentModel;
 
 internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 {

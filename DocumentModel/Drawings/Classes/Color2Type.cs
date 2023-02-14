@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Color2Type Class.
 /// </summary>
-public class Color2Type
+public partial class Color2Type
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

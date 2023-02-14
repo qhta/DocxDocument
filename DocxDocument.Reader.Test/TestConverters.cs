@@ -6,7 +6,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Wordprocessing;
 
-using DocumentModel.BaseTypes;
+using DocumentModel;
 using DocumentModel.OpenXml;
 
 
