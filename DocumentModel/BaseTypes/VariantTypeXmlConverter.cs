@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Xml;
 
-namespace DocumentModel.BaseTypes;
+namespace DocumentModel;
 
 internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
 {

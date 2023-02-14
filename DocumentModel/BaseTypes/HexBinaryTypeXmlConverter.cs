@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
+internal class HexBinaryTypeXmlConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -19,14 +19,14 @@ internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new HexInt(str);
+      return new HexBinary(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is HexInt hexInt)
-      return hexInt.ToString();
+    if (value is HexBinary hexBinary)
+      return hexBinary.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }
 
@@ -42,7 +42,7 @@ internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
   {
     reader.Read(); // read pass start element;
     var str = reader.Value;
-    var val = new HexInt(str);
+    var val = new HexBinary(str);
     reader.Read(); // read pass string value;
     reader.Read(); // read pass end element;
     return val;
@@ -50,6 +50,6 @@ internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 
   public bool CanConvert(Type objectType)
   {
-    return objectType == typeof(HexInt);
+    return objectType == typeof(HexBinary);
   }
 }

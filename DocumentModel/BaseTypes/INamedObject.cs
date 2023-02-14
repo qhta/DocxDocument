@@ -2,5 +2,5 @@
 
 public interface INamedObject
 {
-  public string Name { get; }
+  public string? Name { get; }
 }

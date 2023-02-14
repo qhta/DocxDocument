@@ -34,6 +34,8 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public void Add(T item)
   {
     var name = item.Name;
+    if (name==null)
+      throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
     if (!TryAdd(name, item))
       throw new InvalidOperationException($"{item.GetType()} \"{name}\" already exists");
     var aliasedObject = item as IAliasedObject;
@@ -49,7 +51,10 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
 
   public bool AddOrReplace(T item)
   {
-    bool ok = AddOrReplace(item.Name, item);
+    var name = item.Name;
+    if (name==null)
+      throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
+    bool ok = AddOrReplace(name, item);
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
     {
@@ -91,7 +96,9 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public bool Contains(T item)
   {
     var name = item.Name;
-    return _dictionary.ContainsKey(name);
+    if (name!=null)
+      return _dictionary.ContainsKey(name);
+    return _dictionary.Values.Contains(item);
   }
 
   public void CopyTo(T[] array, int arrayIndex)
@@ -102,6 +109,8 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public bool Remove(T item)
   {
     var name = item.Name;
+    if (name==null)
+      throw new InvalidOperationException($"{item.GetType()} must have a name to be removed from named collection");
     var ok = _dictionary.Remove(name);
     if (ok)
       NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item));

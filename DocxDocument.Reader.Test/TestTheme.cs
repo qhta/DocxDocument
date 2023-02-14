@@ -172,7 +172,7 @@ public class TestTheme : TestBase
     }
   }
 
-  private void TestParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults, 
+  private void TestParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults,
     DXW.ParagraphPropertiesDefault? origParPropsDefaults)
   {
     if (origParPropsDefaults != null)
@@ -196,42 +196,42 @@ public class TestTheme : TestBase
     }
   }
 
-      [Test]
-    public void TestThemeXmlSerialization()
-    {
-      var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+  [Test]
+  public void TestThemeXmlSerialization()
+  {
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
-      var filename = Path.Combine(TestPath, "CustomProperties.docx");
-      var reader = new DocxReader(filename);
-      var document = reader.ReadDocument(Parts.StyleDefinitions);
-      DMDraws.Theme oldTheme = document.Theme ?? new DMDraws.Theme();//TestReadProperties(filename, true);
-      Assert.IsNotNull(oldTheme, "No document theme read");
-      if (oldTheme == null)
-        return;
-      var textWriter = new StringWriter();
-      var serializer = new QXmlSerializer(typeof(DMDraws.Theme), extraTypes.ToArray(),
-        new SerializationOptions { AcceptAllProperties = true });
-      serializer.Serialize(textWriter, oldTheme);
-      textWriter.Flush();
-      string str = textWriter.ToString();
-      WriteLine(str);
-      WriteLine();
+    var filename = Path.Combine(TestPath, "CustomProperties.docx");
+    var reader = new DocxReader(filename);
+    var document = reader.ReadDocument(Parts.Theme);
+    DMDraws.Theme oldTheme = document.Theme ?? new DMDraws.Theme();//TestReadProperties(filename, true);
+    Assert.IsNotNull(oldTheme, "No document theme read");
+    if (oldTheme == null)
+      return;
+    var textWriter = new StringWriter();
+    var serializer = new QXmlSerializer(typeof(DMDraws.Theme), extraTypes.ToArray(),
+      new SerializationOptions { AcceptAllProperties = true });
+    serializer.Serialize(textWriter, oldTheme);
+    textWriter.Flush();
+    string str = textWriter.ToString();
+    WriteLine(str);
+    WriteLine();
 
-      //var textReader = new StringReader(str);
-      //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-      //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-      //var oldPropertiesCount = oldTheme.Count;
-      //var newPropertiesCount = newProperties.Count();
-      //var newPropArray = newProperties.ToArray();
-      //var oldPropArray = oldTheme.ToArray();
-      //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
-      //{
-      //  if (newPropArray[i].Name == "HeadingPairs")
-      //    Debug.Assert(true);
-      //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-      //}
-      //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
-    }
+    //var textReader = new StringReader(str);
+    //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
+    //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
+    //var oldPropertiesCount = oldTheme.Count;
+    //var newPropertiesCount = newProperties.Count();
+    //var newPropArray = newProperties.ToArray();
+    //var oldPropArray = oldTheme.ToArray();
+    //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
+    //{
+    //  if (newPropArray[i].Name == "HeadingPairs")
+    //    Debug.Assert(true);
+    //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
+    //}
+    //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+  }
 
 }

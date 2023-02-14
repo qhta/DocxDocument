@@ -101,7 +101,7 @@ public static class SystemColorConverter
     }
   }
   
-  private static Boolean? GetComplement(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetComplement(DXDraw.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
   }
@@ -129,7 +129,7 @@ public static class SystemColorConverter
     }
   }
   
-  private static Boolean? GetInverse(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetInverse(DXDraw.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
   }
@@ -157,12 +157,12 @@ public static class SystemColorConverter
     }
   }
   
-  private static Boolean? GetGray(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetGray(DXDraw.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
   }
   
-  private static bool CmpGray(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGray(DXDraw.SystemColor openXmlElement, Boolean value, DiffList? diffs, string? objName)
   {
     var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
     if (val == value) return true;
@@ -710,7 +710,7 @@ public static class SystemColorConverter
     }
   }
   
-  private static Boolean? GetGamma(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetGamma(DXDraw.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
   }
@@ -738,7 +738,7 @@ public static class SystemColorConverter
     }
   }
   
-  private static Boolean? GetInverseGamma(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetInverseGamma(DXDraw.SystemColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
   }

@@ -13,7 +13,8 @@ public class TextFontType
   /// <summary>
   ///   Panose Setting
   /// </summary>
-  public Byte[]? Panose { get; set; }
+  [XmlAttribute]
+  public HexBinary? Panose { get; set; }
 
   /// <summary>
   ///   Similar Font Family

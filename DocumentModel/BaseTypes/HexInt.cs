@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using DocumentModel.BaseTypes;
+using DocumentModel;
 
 namespace DocumentModel;
 

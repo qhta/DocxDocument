@@ -1,6 +1,6 @@
 using DeepEqual.Syntax;
 
-using DocumentModel.BaseTypes;
+using DocumentModel;
 
 namespace DocumentModel;
 

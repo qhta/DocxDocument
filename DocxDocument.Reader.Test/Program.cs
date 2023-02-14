@@ -6,7 +6,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestProperties();
+    RunTestTheme();
   }
 
   private static void RunTestTheme()
@@ -14,6 +14,7 @@ internal class Program
     var testInstance = new TestTheme();
     testInstance.Setup();
     testInstance.TestDocumentTheme();
+    testInstance.TestThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 

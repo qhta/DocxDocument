@@ -115,7 +115,7 @@ public static class HslColorConverter
     }
   }
   
-  private static Boolean? GetComplement(DXDraw.HslColor openXmlElement)
+  private static Boolean GetComplement(DXDraw.HslColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
   }
@@ -143,7 +143,7 @@ public static class HslColorConverter
     }
   }
   
-  private static Boolean? GetInverse(DXDraw.HslColor openXmlElement)
+  private static Boolean GetInverse(DXDraw.HslColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
   }
@@ -171,7 +171,7 @@ public static class HslColorConverter
     }
   }
   
-  private static Boolean? GetGray(DXDraw.HslColor openXmlElement)
+  private static Boolean GetGray(DXDraw.HslColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
   }
@@ -724,7 +724,7 @@ public static class HslColorConverter
     }
   }
   
-  private static Boolean? GetGamma(DXDraw.HslColor openXmlElement)
+  private static Boolean GetGamma(DXDraw.HslColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
   }
@@ -752,7 +752,7 @@ public static class HslColorConverter
     }
   }
   
-  private static Boolean? GetInverseGamma(DXDraw.HslColor openXmlElement)
+  private static Boolean GetInverseGamma(DXDraw.HslColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
   }

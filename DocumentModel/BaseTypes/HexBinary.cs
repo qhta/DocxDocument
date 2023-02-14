@@ -1,8 +1,14 @@
 ﻿namespace DocumentModel;
 
+[TypeConverter(typeof(HexBinaryTypeXmlConverter))]
 public record HexBinary
 {
   private readonly byte[] value;
+
+  public HexBinary(byte[] val)
+  {
+    value = val;
+  }
 
   public HexBinary(string val)
   {
@@ -31,7 +37,7 @@ public record HexBinary
 
   public static implicit operator HexBinary(byte[] val)
   {
-    return new(val);
+    return new HexBinary(val);
   }
 
   public static implicit operator byte(HexBinary val)
