@@ -4,27 +4,27 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace DocumentModel;
 
-public class NCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<string, T>, INotifyCollectionChanged where T : class, INamedObject
+public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<string, T>, INotifyCollectionChanged where T : class, INamedObject
 {
   private readonly SortedDictionary<string, T> _dictionary = null!;
 
-  public NCollection()
+  public NamedCollection()
   {
     _dictionary = new SortedDictionary<string, T>();
   }
 
-  public NCollection(IComparer<string> comparer)
+  public NamedCollection(IComparer<string> comparer)
   {
     _dictionary = new SortedDictionary<string, T>(comparer);
   }
 
-  public NCollection(Func<string,string> keyFunc)
+  public NamedCollection(Func<string,string> keyFunc)
   {
     _dictionary = new SortedDictionary<string, T>();
     _keyFunc = keyFunc;
   }
 
-  public NCollection(IComparer<string> comparer, Func<string, string> keyFunc)
+  public NamedCollection(IComparer<string> comparer, Func<string, string> keyFunc)
   {
     _dictionary = new SortedDictionary<string, T>(comparer);
     _keyFunc = keyFunc;
