@@ -6,13 +6,14 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestProperties();
+    RunTestStyles();
   }
 
   private static void RunTestStyles()
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
+    //testInstance.TestDocumentStyles();
     testInstance.TestStylesXmlSerialization();
     Console.WriteLine("\nTest passed");
   }

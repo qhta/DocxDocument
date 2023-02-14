@@ -98,6 +98,7 @@ public partial class Style
   /// <summary>
   ///   Revision Identifier for Style Definition.
   /// </summary>
+  [XmlAttribute]
   public HexInt? Rsid { get; set; }
 
   /// <summary>

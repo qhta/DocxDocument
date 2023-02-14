@@ -57,9 +57,9 @@ public static class StylesConverter
     }
   }
   
-  private static Collection<DMW.Style> GetItems(DXW.Styles openXmlElement)
+  private static DMW.DefinedStyles GetItems(DXW.Styles openXmlElement)
   {
-    var collection = new Collection<DMW.Style>();
+    var collection = new DMW.DefinedStyles();
     foreach (var item in openXmlElement.Elements<DXW.Style>())
     {
       var newItem = DMXW.StyleConverter.CreateModelElement(item);
@@ -69,13 +69,13 @@ public static class StylesConverter
     return collection;
   }
   
-  private static bool CmpItems(DXW.Styles openXmlElement, Collection<DMW.Style>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Styles openXmlElement, DMW.DefinedStyles? value, DiffList? diffs, string? objName)
   {
     if (value != null)
     {
       var origElements = openXmlElement.Elements<DXW.Style>();
       var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
+      var modelElementsCount = value.Count;
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -97,7 +97,7 @@ public static class StylesConverter
     return false;
   }
   
-  private static void SetItems(DXW.Styles openXmlElement, Collection<DMW.Style>? value)
+  private static void SetItems(DXW.Styles openXmlElement, DMW.DefinedStyles? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Style>();
     if (value != null)
@@ -118,7 +118,7 @@ public static class StylesConverter
       var value = new DMW.Styles();
       value.DocDefaults = GetDocDefaults(openXmlElement);
       value.LatentStyles = GetLatentStyles(openXmlElement);
-      value.Items = GetItems(openXmlElement);
+      value.DefinedStyles = GetItems(openXmlElement);
       return value;
     }
     return null;
@@ -133,7 +133,7 @@ public static class StylesConverter
         ok = false;
       if (!CmpLatentStyles(openXmlElement, value.LatentStyles, diffs, objName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.DefinedStyles, diffs, objName))
         ok = false;
       return ok;
     }
@@ -150,7 +150,7 @@ public static class StylesConverter
       var openXmlElement = new OpenXmlElementType();
       SetDocDefaults(openXmlElement, value?.DocDefaults);
       SetLatentStyles(openXmlElement, value?.LatentStyles);
-      SetItems(openXmlElement, value?.Items);
+      SetItems(openXmlElement, value?.DefinedStyles);
       return openXmlElement;
     }
     return default;
