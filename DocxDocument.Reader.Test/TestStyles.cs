@@ -53,7 +53,7 @@ public class TestStyles : TestBase
     Assert.IsNotNull(document.Styles, "No document styles read");
     var modelStyles = document.Styles;
     var modelDefinedStyles = document.Styles.DefinedStyles;
-    int modelDefinedStylesCount = modelDefinedStyles?.Count() ?? 0;
+    int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
     int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
     var diffs = new DiffList();

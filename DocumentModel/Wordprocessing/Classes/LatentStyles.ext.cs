@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
+[XmlContentProperty("LatentStyleExceptions")]
 public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDictionary<string, LatentStyleExceptionInfo>
 {
   private readonly ObservableCollection<LatentStyleExceptionInfo> _Items = null!;
@@ -18,7 +19,7 @@ public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDict
     _Items.CollectionChanged += Styles_CollectionChanged;
   }
 
-  public Collection<LatentStyleExceptionInfo> LatentStyleExceptionInfos
+  public Collection<LatentStyleExceptionInfo> LatentStyleExceptions
   {
     get => _Items;
     set

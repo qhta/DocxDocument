@@ -202,7 +202,7 @@ public static class LatentStylesConverter
       value.DefaultUnhideWhenUsed = GetDefaultUnhideWhenUsed(openXmlElement);
       value.DefaultPrimaryStyle = GetDefaultPrimaryStyle(openXmlElement);
       value.TotalCount = GetTotalCount(openXmlElement);
-      value.LatentStyleExceptionInfos = GetLatentStyleExceptionInfos(openXmlElement);
+      value.LatentStyleExceptions = GetLatentStyleExceptionInfos(openXmlElement);
       return value;
     }
     return null;
@@ -225,7 +225,7 @@ public static class LatentStylesConverter
         ok = false;
       if (!CmpTotalCount(openXmlElement, value.TotalCount, diffs, objName))
         ok = false;
-      if (!CmpLatentStyleExceptionInfos(openXmlElement, value.LatentStyleExceptionInfos, diffs, objName))
+      if (!CmpLatentStyleExceptionInfos(openXmlElement, value.LatentStyleExceptions, diffs, objName))
         ok = false;
       return ok;
     }
@@ -246,7 +246,7 @@ public static class LatentStylesConverter
       SetDefaultUnhideWhenUsed(openXmlElement, value?.DefaultUnhideWhenUsed);
       SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
       SetTotalCount(openXmlElement, value?.TotalCount);
-      SetLatentStyleExceptionInfos(openXmlElement, value?.LatentStyleExceptionInfos);
+      SetLatentStyleExceptionInfos(openXmlElement, value?.LatentStyleExceptions);
       return openXmlElement;
     }
     return default;

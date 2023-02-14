@@ -18,5 +18,5 @@ public partial class Styles
   /// <summary>
   /// Defines Styles.
   /// </summary>
-  //public Collection<DocumentModel.Wordprocessing.Style>? Items { get; set; }
+  public DefinedStyles DefinedStyles { get; set; } = new DefinedStyles();
 }
