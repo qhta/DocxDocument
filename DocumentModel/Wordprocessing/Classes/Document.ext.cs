@@ -1,5 +1,3 @@
-using DocumentModel;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -12,4 +10,7 @@ public partial class Document
   public Styles? Styles { get; set; }
 
   public DMDraws.Theme? Theme { get; set; }
+
+  public Fonts? Fonts { get; set; }
+
 }

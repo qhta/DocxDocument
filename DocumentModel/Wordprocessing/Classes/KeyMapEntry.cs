@@ -53,5 +53,5 @@ public class KeyMapEntry
   /// <summary>
   ///   CharacterInsertion.
   /// </summary>
-  public Byte[]? CharacterInsertion { get; set; }
+  public HexBinary? CharacterInsertion { get; set; }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.OpenXml;
 
 public static class HexBinaryConverter
 {
-  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
+  public static HexBinary? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
     var valProperty = openXmlElement?.GetType().GetProperty("Val");
     if (valProperty != null)
@@ -18,7 +18,7 @@ public static class HexBinaryConverter
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, byte[]? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexBinary? value, DiffList? diffs, string? objName)
   {
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null && value != null)
@@ -34,14 +34,14 @@ public static class HexBinaryConverter
     return false;
   }
 
-  public static byte[]? GetValue(string? value)
+  public static HexBinary? GetValue(string? value)
   {
     if (value != null)
       return Convert.FromHexString(value);
     return null;
   }
 
-  public static HexBinaryType? CreateValue<HexBinaryType>(byte[]? value)
+  public static HexBinaryType? CreateValue<HexBinaryType>(HexBinary? value)
     where HexBinaryType : DX.HexBinaryValue, new()
   {
     if (value != null)
@@ -53,7 +53,7 @@ public static class HexBinaryConverter
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[]? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(HexBinary? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     if (value != null)
