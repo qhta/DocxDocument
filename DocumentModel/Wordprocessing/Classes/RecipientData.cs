@@ -18,5 +18,5 @@ public class RecipientData
   /// <summary>
   ///   Unique Value for Record.
   /// </summary>
-  public Byte[]? UniqueTag { get; set; }
+  public HexBinary? UniqueTag { get; set; }
 }

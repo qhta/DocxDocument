@@ -59,17 +59,22 @@ public static class FontConverter
   /// <summary>
   /// Panose1Number.
   /// </summary>
-  private static Byte[]? GetPanose1Number(DXW.Font openXmlElement)
+  private static DM.HexBinary? GetPanose1Number(DXW.Font openXmlElement)
   {
-    return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Panose1Number>());
+    var element =  openXmlElement?.GetFirstChild<DXW.Panose1Number>();
+    if (element != null)
+    {
+      return DMX.HexBinaryConverter.GetValue(element);
+    }
+    return null;
   }
   
-  private static bool CmpPanose1Number(DXW.Font openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpPanose1Number(DXW.Font openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Panose1Number>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+      return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Panose1Number>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetPanose1Number(DXW.Font openXmlElement, Byte[]? value)
+  private static void SetPanose1Number(DXW.Font openXmlElement, HexBinary? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Panose1Number>();
     if (itemElement != null)
@@ -332,7 +337,7 @@ public static class FontConverter
       var value = new DMW.Font();
       value.Name = GetName(openXmlElement);
       value.AltName = GetAltName(openXmlElement);
-      value.Panose1Number = GetPanose1Number(openXmlElement);
+      value.Panose = GetPanose1Number(openXmlElement);
       value.FontCharSet = GetFontCharSet(openXmlElement);
       value.FontFamily = GetFontFamily(openXmlElement);
       value.NotTrueType = GetNotTrueType(openXmlElement);
@@ -356,7 +361,7 @@ public static class FontConverter
         ok = false;
       if (!CmpAltName(openXmlElement, value.AltName, diffs, objName))
         ok = false;
-      if (!CmpPanose1Number(openXmlElement, value.Panose1Number, diffs, objName))
+      if (!CmpPanose1Number(openXmlElement, value.Panose, diffs, objName))
         ok = false;
       if (!CmpFontCharSet(openXmlElement, value.FontCharSet, diffs, objName))
         ok = false;
@@ -391,7 +396,7 @@ public static class FontConverter
       var openXmlElement = new OpenXmlElementType();
       SetName(openXmlElement, value?.Name);
       SetAltName(openXmlElement, value?.AltName);
-      SetPanose1Number(openXmlElement, value?.Panose1Number);
+      SetPanose1Number(openXmlElement, value?.Panose);
       SetFontCharSet(openXmlElement, value?.FontCharSet);
       SetFontFamily(openXmlElement, value?.FontFamily);
       SetNotTrueType(openXmlElement, value?.NotTrueType);

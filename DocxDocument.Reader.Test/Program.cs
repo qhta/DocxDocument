@@ -6,14 +6,23 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestTheme();
+    RunTestFonts();
+  }
+
+  private static void RunTestFonts()
+  {
+    var testInstance = new TestFonts();
+    testInstance.Setup();
+    //testInstance.TestDocumentFonts();
+    testInstance.TestFontsXmlSerialization();
+    Console.WriteLine("\nTest passed");
   }
 
   private static void RunTestTheme()
   {
     var testInstance = new TestTheme();
     testInstance.Setup();
-    testInstance.TestDocumentTheme();
+    //testInstance.TestDocumentTheme();
     testInstance.TestThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }

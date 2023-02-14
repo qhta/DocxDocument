@@ -1,10 +1,5 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
-using DocumentModel;
-using DocumentModel.OpenXml;
-using DocumentModel.OpenXml.Wordprocessing;
-using DMW = DocumentModel.Wordprocessing;
-using DXW = DocumentFormat.OpenXml.Wordprocessing;
+using Qhta.Xml.Serialization;
+using System.Reflection;
 
 namespace DocxDocument.Reader.Test;
 
@@ -43,7 +38,7 @@ public class TestFonts : TestBase
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.StyleDefinitions);
+    var document = reader.ReadDocument(Parts.FontTable);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     //var modelFonts = document.Fonts;
@@ -159,4 +154,41 @@ public class TestFonts : TestBase
     return document.Fonts;
   }
 
+  [Test]
+  public void TestFontsXmlSerialization()
+  {
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+
+    var filename = Path.Combine(TestPath, "CustomProperties.docx");
+    var reader = new DocxReader(filename);
+    var document = reader.ReadDocument(Parts.FontTable);
+    var oldFonts = document.Fonts ?? new();
+    Assert.IsNotNull(oldFonts, "No document fonts read");
+    if (oldFonts == null)
+      return;
+    var textWriter = new StringWriter();
+    var serializer = new QXmlSerializer(typeof(DMW.Fonts), extraTypes.ToArray(),
+      new SerializationOptions { AcceptAllProperties = true });
+    serializer.Serialize(textWriter, oldFonts);
+    textWriter.Flush();
+    string str = textWriter.ToString();
+    WriteLine(str);
+    WriteLine();
+
+    //var textReader = new StringReader(str);
+    //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
+    //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
+    //var oldPropertiesCount = oldTheme.Count;
+    //var newPropertiesCount = newProperties.Count();
+    //var newPropArray = newProperties.ToArray();
+    //var oldPropArray = oldTheme.ToArray();
+    //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
+    //{
+    //  if (newPropArray[i].Name == "HeadingPairs")
+    //    Debug.Assert(true);
+    //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
+    //}
+    //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+  }
 }

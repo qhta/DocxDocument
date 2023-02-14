@@ -50,10 +50,10 @@ public class TestTheme : TestBase
     var document = reader.ReadDocument(Parts.Theme);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Theme, "No document Theme read");
-    var modelTheme = document.Theme;
-    var modelDefinedTheme = document.Theme.ThemeElements;
-    //int modelDefinedThemeCount = modelDefinedTheme?.Count() ?? 0;
-    //var origDefinedTheme = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Theme;
+    //var modelTheme = document.Theme;
+    //var modelThemeColors = document.Theme.ThemeElements?.ColorScheme?.ThemeColors;
+    //int modelThemeColorsCount = modelThemeColors?.Count() ?? 0;
+    //var modelThemeColors = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Theme;
     //int origDefinedThemeCount = origDefinedTheme?.Elements<Style>().Count() ?? 0;
     //var diffs = new DiffList();
     //if (!ThemeConverter.CompareModelElement(origDefinedTheme, modelTheme, diffs, null))

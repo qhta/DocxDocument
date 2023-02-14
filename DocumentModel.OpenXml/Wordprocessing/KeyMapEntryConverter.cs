@@ -247,17 +247,17 @@ public static class KeyMapEntryConverter
   /// <summary>
   /// CharacterInsertion.
   /// </summary>
-  private static Byte[]? GetCharacterInsertion(DXOW.KeyMapEntry openXmlElement)
+  private static HexBinary? GetCharacterInsertion(DXOW.KeyMapEntry openXmlElement)
   {
     return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXOW.CharacterInsertion>());
   }
   
-  private static bool CmpCharacterInsertion(DXOW.KeyMapEntry openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterInsertion(DXOW.KeyMapEntry openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
     return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXOW.CharacterInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetCharacterInsertion(DXOW.KeyMapEntry openXmlElement, Byte[]? value)
+  private static void SetCharacterInsertion(DXOW.KeyMapEntry openXmlElement, HexBinary? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXOW.CharacterInsertion>();
     if (itemElement != null)
