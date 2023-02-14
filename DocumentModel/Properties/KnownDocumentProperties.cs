@@ -5,8 +5,6 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   private Dictionary<string, PropertyInfo> _properties = null!;
 
-  //private Dictionary<string, Type> KnowTypes { get; } = new();
-
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     foreach (var prop in GetKnownProperties().Values)
@@ -15,11 +13,10 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
       var value = GetValue(name);
       if (value != null)
       {
-        var typeName = prop.PropertyType.Name;
-        if (typeName.StartsWith("Nullable`"))
-          typeName = prop.PropertyType.GenericTypeArguments[0].Name;
-        //Variant variant = (value is Variant valVariant) ? valVariant : new Variant(value);
-        yield return new DocumentProperty { Name = name, /*Type = variant.VariantType, */Value = value };
+        var type = prop.PropertyType;
+        if (type.Name.StartsWith("Nullable`"))
+          type = prop.PropertyType.GenericTypeArguments[0];
+        yield return new DocumentProperty { Name = name, Type = type, Value = value };
       }
     }
   }
@@ -90,7 +87,6 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
   {
     var prop = GetKnownProperties()[propName];
     var value = prop?.GetValue(this, null);
-    //Variant? variant = (value is Variant valVariant) ? valVariant : (value != null) ? new Variant(value) : null;
     return new DocumentProperty(propName, prop?.PropertyType, value);
   }
 
@@ -106,8 +102,6 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
           var typeConverter = new ValueTypeConverter(prop.PropertyType);
           value = typeConverter.ConvertFromInvariantString(valStr);
         }
-        //else if (value is Variant variant)
-        //  value = variant.ToType(prop.PropertyType, null);
       }
       prop.SetValue(this, value);
       return true;
