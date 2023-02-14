@@ -1,7 +1,30 @@
 ﻿namespace DocumentModel;
 
+[TypeConverter(typeof(RGBTypeXmlConverter))]
 public struct RGB
 {
+  public RGB(string str)
+  {
+    var value = UInt32.Parse(str, NumberStyles.HexNumber);
+    R = (byte)(value >> 16);
+    G = (byte)(value >> 8);
+    B = (byte)(value);
+  }
+
+  public RGB(UInt32 value)
+  {
+    R = (byte)(value >> 16);
+    G = (byte)(value >> 8);
+    B = (byte)(value);
+  }
+
+  public RGB(byte r, byte g, byte b)
+  {
+    R = r;
+    G = g;
+    B = b;
+  }
+
   public Byte R { get; set; }
   public Byte G { get; set; }
   public Byte B { get; set; }

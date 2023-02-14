@@ -1,4 +1,4 @@
-using DocumentModel.BaseTypes;
+using DocumentModel;
 
 namespace DocumentModel;
 

@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Xml;
 
-using DocumentModel.BaseTypes;
+using DocumentModel;
 
 using Qhta.Conversion;
 using Qhta.TypeUtils;

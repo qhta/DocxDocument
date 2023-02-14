@@ -31,14 +31,14 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Panose Setting
   /// </summary>
-  private static Byte[]? GetPanose(DXDraw.TextFontType openXmlElement)
+  private static HexBinary? GetPanose(DXDraw.TextFontType openXmlElement)
   {
     if (openXmlElement?.Panose?.Value != null)
       return Convert.FromHexString(openXmlElement.Panose.Value);
     return null;
   }
   
-  private static bool CmpPanose(DXDraw.TextFontType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpPanose(DXDraw.TextFontType openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Panose?.Value != null)
       if (Convert.FromHexString(openXmlElement.Panose.Value) == value)
@@ -48,7 +48,7 @@ public static class TextFontTypeConverter
     return false;
   }
   
-  private static void SetPanose(DXDraw.TextFontType openXmlElement, Byte[]? value)
+  private static void SetPanose(DXDraw.TextFontType openXmlElement, HexBinary? value)
   {
     if (value != null)
       openXmlElement.Panose = Convert.ToHexString(value);
