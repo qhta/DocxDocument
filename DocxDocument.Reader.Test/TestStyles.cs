@@ -8,7 +8,6 @@ using DocumentModel.OpenXml.Wordprocessing;
 
 using Qhta.Xml.Serialization;
 
-using DMW = DocumentModel.Wordprocessing;
 using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocxDocument.Reader.Test;

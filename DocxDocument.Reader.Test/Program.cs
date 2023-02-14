@@ -6,7 +6,15 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestStyles();
+    RunTestProperties();
+  }
+
+  private static void RunTestTheme()
+  {
+    var testInstance = new TestTheme();
+    testInstance.Setup();
+    testInstance.TestDocumentTheme();
+    Console.WriteLine("\nTest passed");
   }
 
   private static void RunTestStyles()

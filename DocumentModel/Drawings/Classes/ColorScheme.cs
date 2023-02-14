@@ -13,62 +13,62 @@ public class ColorScheme
   /// <summary>
   ///   Dark 1.
   /// </summary>
-  public Dark1Color? Dark1Color { get; set; }
+  public Color2Type? Dark1Color { get; set; }
 
   /// <summary>
   ///   Light 1.
   /// </summary>
-  public Light1Color? Light1Color { get; set; }
+  public Color2Type? Light1Color { get; set; }
 
   /// <summary>
   ///   Dark 2.
   /// </summary>
-  public Dark2Color? Dark2Color { get; set; }
+  public Color2Type? Dark2Color { get; set; }
 
   /// <summary>
   ///   Light 2.
   /// </summary>
-  public Light2Color? Light2Color { get; set; }
+  public Color2Type? Light2Color { get; set; }
 
   /// <summary>
   ///   Accent 1.
   /// </summary>
-  public Accent1Color? Accent1Color { get; set; }
+  public Color2Type? Accent1Color { get; set; }
 
   /// <summary>
   ///   Accent 2.
   /// </summary>
-  public Accent2Color? Accent2Color { get; set; }
+  public Color2Type? Accent2Color { get; set; }
 
   /// <summary>
   ///   Accent 3.
   /// </summary>
-  public Accent3Color? Accent3Color { get; set; }
+  public Color2Type? Accent3Color { get; set; }
 
   /// <summary>
   ///   Accent 4.
   /// </summary>
-  public Accent4Color? Accent4Color { get; set; }
+  public Color2Type? Accent4Color { get; set; }
 
   /// <summary>
   ///   Accent 5.
   /// </summary>
-  public Accent5Color? Accent5Color { get; set; }
+  public Color2Type? Accent5Color { get; set; }
 
   /// <summary>
   ///   Accent 6.
   /// </summary>
-  public Accent6Color? Accent6Color { get; set; }
+  public Color2Type? Accent6Color { get; set; }
 
   /// <summary>
   ///   Hyperlink.
   /// </summary>
-  public Hyperlink? Hyperlink { get; set; }
+  public Color2Type? Hyperlink { get; set; }
 
   /// <summary>
   ///   Followed Hyperlink.
   /// </summary>
-  public FollowedHyperlinkColor? FollowedHyperlinkColor { get; set; }
+  public Color2Type? FollowedHyperlinkColor { get; set; }
 
   /// <summary>
   ///   ExtensionList.

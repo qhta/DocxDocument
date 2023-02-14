@@ -1,12 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 
-using DM = DocumentModel;
-using DMP = DocumentModel;
-using DMW = DocumentModel.Wordprocessing;
-using WP = DocumentFormat.OpenXml.Wordprocessing;
-using W10 = DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel;
-
 namespace DocxDocument.Reader;
 
 [Flags]
@@ -25,11 +18,11 @@ public enum Parts: Int64
   //AllDocumentSettings        = 0x70,
   //Glossary                   = 0x80,
 
-  //NumberingDefinitions       = 0x100,
+  NumberingDefinitions       = 0x100,
   StyleDefinitions           = 0x200,
-  //Theme                      = 0x400,
-  //Stylistics                 = 0x700,
-  //FontTable                  = 0x800,
+  Theme                      = 0x400,
+  FontTable                  = 0x800,
+  Stylistics                 = 0xF00,
 
   //HeadersAndFooters          = 0x1000,
   //FootnotesAndEndNotes       = 0x2000,
@@ -87,19 +80,20 @@ public partial class DocxReader
 
   public DMW.Document ReadDocument(Parts parts)
   {
-    //WP.Settings
-    var t0 = DateTime.Now;
+    //var t0 = DateTime.Now;
     var document = new DMW.Document();
     if (parts.HasFlag(Parts.AllDocumentProperties))
       document.Properties = ReadDocumentProperties(parts);
     if (parts.HasFlag(Parts.StyleDefinitions))
-      document.Styles = ReadStyleDefinitions(parts);
+      document.Styles = ReadStyles();
+    if (parts.HasFlag(Parts.Theme))
+      document.Theme = ReadTheme();
     return document;
   }
 
-  private DMP.DocumentProperties ReadDocumentProperties(Parts parts)
+  private DM.DocumentProperties ReadDocumentProperties(Parts parts)
   {
-    var properties = new DMP.DocumentProperties();
+    var properties = new DM.DocumentProperties();
     if (parts.HasFlag(Parts.CoreFileProperties))
       properties.CoreProperties = DMXProps.CorePropertiesConverter.CreateModelElement(WordprocessingDocument.PackageProperties);
 
@@ -124,7 +118,7 @@ public partial class DocxReader
     return properties;
   }
 
-  private DMW.Styles ReadStyleDefinitions(Parts parts)
+  private DMW.Styles ReadStyles()
   {
     DMW.Styles styleDefinitions;
     var stylesOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<StylesPart>()?.FirstOrDefault()?.Styles;
@@ -133,6 +127,17 @@ public partial class DocxReader
     else
       styleDefinitions = new();
     return styleDefinitions;
+  }
+
+  private DMDraws.Theme ReadTheme()
+  {
+    DMDraws.Theme theme;
+    var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<ThemePart>()?.FirstOrDefault()?.Theme;
+    if (themeOpenXmlElement != null)
+      theme = DMXDraws.ThemeConverter.CreateModelElement(themeOpenXmlElement) ?? new();
+    else
+      theme = new();
+    return theme;
   }
 
   //private DM.ListDefinitions ReadListDefinitions(WP.Numbering? numbering)
