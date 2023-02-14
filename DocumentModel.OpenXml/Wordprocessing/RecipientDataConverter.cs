@@ -71,17 +71,17 @@ public static class RecipientDataConverter
   /// <summary>
   /// Unique Value for Record.
   /// </summary>
-  private static Byte[]? GetUniqueTag(DXW.RecipientData openXmlElement)
+  private static HexBinary? GetUniqueTag(DXW.RecipientData openXmlElement)
   {
     return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXW.UniqueTag>());
   }
   
-  private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
     return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetUniqueTag(DXW.RecipientData openXmlElement, Byte[]? value)
+  private static void SetUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.UniqueTag>();
     if (itemElement != null)

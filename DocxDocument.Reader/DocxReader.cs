@@ -3,14 +3,14 @@
 namespace DocxDocument.Reader;
 
 [Flags]
-public enum Parts: Int64
+public enum Parts : Int64
 {
-  CoreFileProperties         = 0x01,
-  ExtendedFileProperties     = 0x02,
-  CustomFileProperties       = 0x04,
-  DocumentSettings           = 0x08,
-  AllDocumentProperties      = 0x0F,
-  
+  CoreFileProperties = 0x01,
+  ExtendedFileProperties = 0x02,
+  CustomFileProperties = 0x04,
+  DocumentSettings = 0x08,
+  AllDocumentProperties = 0x0F,
+
   //MainDocument               = 0x08,
 
   //WebSettings                = 0x20,
@@ -18,11 +18,11 @@ public enum Parts: Int64
   //AllDocumentSettings        = 0x70,
   //Glossary                   = 0x80,
 
-  NumberingDefinitions       = 0x100,
-  StyleDefinitions           = 0x200,
-  Theme                      = 0x400,
-  FontTable                  = 0x800,
-  Stylistics                 = 0xF00,
+  NumberingDefinitions = 0x100,
+  StyleDefinitions = 0x200,
+  Theme = 0x400,
+  FontTable = 0x800,
+  Stylistics = 0xF00,
 
   //HeadersAndFooters          = 0x1000,
   //FootnotesAndEndNotes       = 0x2000,
@@ -88,6 +88,8 @@ public partial class DocxReader
       document.Styles = ReadStyles();
     if (parts.HasFlag(Parts.Theme))
       document.Theme = ReadTheme();
+    if (parts.HasFlag(Parts.FontTable))
+      document.Fonts = ReadFonts();
     return document;
   }
 
@@ -138,6 +140,17 @@ public partial class DocxReader
     else
       theme = new();
     return theme;
+  }
+
+  private DMW.Fonts ReadFonts()
+  {
+    DMW.Fonts fonts;
+    var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<FontTablePart>()?.FirstOrDefault()?.Fonts;
+    if (themeOpenXmlElement != null)
+      fonts = DMXW.FontsConverter.CreateModelElement(themeOpenXmlElement) ?? new();
+    else
+      fonts = new();
+    return fonts;
   }
 
   //private DM.ListDefinitions ReadListDefinitions(WP.Numbering? numbering)

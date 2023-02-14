@@ -18,7 +18,8 @@ public class Font
   /// <summary>
   ///   Panose1Number.
   /// </summary>
-  public Byte[]? Panose1Number { get; set; }
+  [XmlAttribute]
+  public HexBinary? Panose { get; set; }
 
   /// <summary>
   ///   FontCharSet.

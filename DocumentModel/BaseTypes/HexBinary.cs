@@ -23,6 +23,8 @@ public record HexBinary
     value = result;
   }
 
+  public int Length => value.Length;
+
   //public static implicit operator string(HexBinary val) => val.ToString();
 
   public static implicit operator HexBinary(string val)
@@ -83,11 +85,12 @@ public record HexBinary
   public override string ToString()
   {
     var sb = new StringBuilder();
-    foreach (var b in value)
-    {
-      var s = b.ToString("X2");
-      sb.Append(s);
-    }
+    if (value!=null)
+      foreach (var b in value)
+      {
+        var s = b.ToString("X2");
+        sb.Append(s);
+      }
     return sb.ToString();
   }
 }
