@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 [TypeConverter(typeof(HexBinaryTypeXmlConverter))]
-public record HexBinary
+public record HexBinary: IEquatable<HexBinary>
 {
   private readonly byte[] value;
 
@@ -92,5 +92,17 @@ public record HexBinary
         sb.Append(s);
       }
     return sb.ToString();
+  }
+
+  public virtual bool Equals(HexBinary? other)
+  {
+    if (other!=null)
+      return this.value.SequenceEqual(other.value);
+    return false;
+  }
+
+  public override int GetHashCode()
+  {
+    return value.GetHashCode();
   }
 }

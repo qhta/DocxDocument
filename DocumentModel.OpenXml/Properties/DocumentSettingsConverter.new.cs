@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Bibliography;
+
 using DocumentModel.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml.Properties;
@@ -90,7 +92,11 @@ public static class DocumentSettingsConverter
   /// </summary>
   private static bool? GetRemovePersonalInformation(DXW.Settings openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.RemovePersonalInformation>()?.Val?.Value;
+    var element = openXmlElement.GetFirstChild<DXW.RemovePersonalInformation>();
+    if (element?.Val?.Value != null)
+      return element.Val.Value;
+    if (element != null) return false;
+    return null;
   }
 
   private static bool CmpRemovePersonalInformation(DXW.Settings openXmlElement, bool? value, DiffList? diffs, string? objName)
