@@ -103,8 +103,8 @@ public class ConverterGenerator : BaseCodeGenerator
     if (File.Exists(baseConverterPath))
       return false;
     var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
-    if (filePath.EndsWith(@"\Properties"))
-      return false;
+    //if (filePath.EndsWith(@"\Properties"))
+    //  return false;
     var newFilename = Path.ChangeExtension(filename, ".new.cs");
     if (File.Exists(newFilename))
       return false;
@@ -1566,7 +1566,7 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropType = prop.PropertyType;
     var origPropTypeName = origPropType.GetFullName(true);
-    Writer.WriteLine($"var val = Get{origPropTypeName}(openXmlElement);");
+    Writer.WriteLine($"var val = Get{origPropType.Name}(openXmlElement);");
     Writer.WriteLine($"if (val == value) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origPropTypeName}\", val, value);");
     Writer.WriteLine($"return false;");

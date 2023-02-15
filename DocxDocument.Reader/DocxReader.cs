@@ -111,7 +111,7 @@ public partial class DocxReader
 
     if (parts.HasFlag(Parts.DocumentSettings) && WordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings != null)
       properties.DocumentSettings =
-        DMXProps.DocumentSettingsConverter.CreateModelElement(WordprocessingDocument.MainDocumentPart.DocumentSettingsPart.Settings);
+        DMXW.SettingsConverter.CreateModelElement(WordprocessingDocument.MainDocumentPart.DocumentSettingsPart.Settings);
 
     if (parts.HasFlag(Parts.DocumentSettings) && WordprocessingDocument.MainDocumentPart?.WebSettingsPart?.WebSettings != null)
       properties.WebSettings =

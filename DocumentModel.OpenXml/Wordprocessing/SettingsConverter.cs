@@ -97,7 +97,7 @@ public static class SettingsConverter
   
   private static bool CmpRemovePersonalInformation(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.RemovePersonalInformation(openXmlElement);
+    var val = GetRemovePersonalInformation(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.RemovePersonalInformation", val, value);
     return false;
@@ -132,7 +132,7 @@ public static class SettingsConverter
   
   private static bool CmpRemoveDateAndTime(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.RemoveDateAndTime(openXmlElement);
+    var val = GetRemoveDateAndTime(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.RemoveDateAndTime", val, value);
     return false;
@@ -167,7 +167,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotDisplayPageBoundaries(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotDisplayPageBoundaries(openXmlElement);
+    var val = GetDoNotDisplayPageBoundaries(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotDisplayPageBoundaries", val, value);
     return false;
@@ -202,7 +202,7 @@ public static class SettingsConverter
   
   private static bool CmpDisplayBackgroundShape(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DisplayBackgroundShape(openXmlElement);
+    var val = GetDisplayBackgroundShape(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DisplayBackgroundShape", val, value);
     return false;
@@ -237,7 +237,7 @@ public static class SettingsConverter
   
   private static bool CmpPrintPostScriptOverText(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.PrintPostScriptOverText(openXmlElement);
+    var val = GetPrintPostScriptOverText(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.PrintPostScriptOverText", val, value);
     return false;
@@ -272,7 +272,7 @@ public static class SettingsConverter
   
   private static bool CmpPrintFractionalCharacterWidth(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.PrintFractionalCharacterWidth(openXmlElement);
+    var val = GetPrintFractionalCharacterWidth(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.PrintFractionalCharacterWidth", val, value);
     return false;
@@ -307,7 +307,7 @@ public static class SettingsConverter
   
   private static bool CmpPrintFormsData(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.PrintFormsData(openXmlElement);
+    var val = GetPrintFormsData(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.PrintFormsData", val, value);
     return false;
@@ -342,7 +342,7 @@ public static class SettingsConverter
   
   private static bool CmpEmbedTrueTypeFonts(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.EmbedTrueTypeFonts(openXmlElement);
+    var val = GetEmbedTrueTypeFonts(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.EmbedTrueTypeFonts", val, value);
     return false;
@@ -377,7 +377,7 @@ public static class SettingsConverter
   
   private static bool CmpEmbedSystemFonts(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.EmbedSystemFonts(openXmlElement);
+    var val = GetEmbedSystemFonts(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.EmbedSystemFonts", val, value);
     return false;
@@ -412,7 +412,7 @@ public static class SettingsConverter
   
   private static bool CmpSaveSubsetFonts(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.SaveSubsetFonts(openXmlElement);
+    var val = GetSaveSubsetFonts(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SaveSubsetFonts", val, value);
     return false;
@@ -447,7 +447,7 @@ public static class SettingsConverter
   
   private static bool CmpSaveFormsData(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.SaveFormsData(openXmlElement);
+    var val = GetSaveFormsData(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SaveFormsData", val, value);
     return false;
@@ -482,7 +482,7 @@ public static class SettingsConverter
   
   private static bool CmpMirrorMargins(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.MirrorMargins(openXmlElement);
+    var val = GetMirrorMargins(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.MirrorMargins", val, value);
     return false;
@@ -517,7 +517,7 @@ public static class SettingsConverter
   
   private static bool CmpAlignBorderAndEdges(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.AlignBorderAndEdges(openXmlElement);
+    var val = GetAlignBorderAndEdges(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AlignBorderAndEdges", val, value);
     return false;
@@ -552,7 +552,7 @@ public static class SettingsConverter
   
   private static bool CmpBordersDoNotSurroundHeader(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.BordersDoNotSurroundHeader(openXmlElement);
+    var val = GetBordersDoNotSurroundHeader(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BordersDoNotSurroundHeader", val, value);
     return false;
@@ -587,7 +587,7 @@ public static class SettingsConverter
   
   private static bool CmpBordersDoNotSurroundFooter(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.BordersDoNotSurroundFooter(openXmlElement);
+    var val = GetBordersDoNotSurroundFooter(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BordersDoNotSurroundFooter", val, value);
     return false;
@@ -622,7 +622,7 @@ public static class SettingsConverter
   
   private static bool CmpGutterAtTop(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.GutterAtTop(openXmlElement);
+    var val = GetGutterAtTop(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.GutterAtTop", val, value);
     return false;
@@ -657,7 +657,7 @@ public static class SettingsConverter
   
   private static bool CmpHideSpellingErrors(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.HideSpellingErrors(openXmlElement);
+    var val = GetHideSpellingErrors(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.HideSpellingErrors", val, value);
     return false;
@@ -692,7 +692,7 @@ public static class SettingsConverter
   
   private static bool CmpHideGrammaticalErrors(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.HideGrammaticalErrors(openXmlElement);
+    var val = GetHideGrammaticalErrors(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.HideGrammaticalErrors", val, value);
     return false;
@@ -713,7 +713,7 @@ public static class SettingsConverter
     }
   }
   
-  private static Collection<DMW.ActiveWritingStyle> GetActiveWritingStyles(DXW.Settings openXmlElement)
+  private static Collection<DMW.ActiveWritingStyle>? GetActiveWritingStyles(DXW.Settings openXmlElement)
   {
     var collection = new Collection<DMW.ActiveWritingStyle>();
     foreach (var item in openXmlElement.Elements<DXW.ActiveWritingStyle>())
@@ -722,7 +722,9 @@ public static class SettingsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpActiveWritingStyles(DXW.Settings openXmlElement, Collection<DMW.ActiveWritingStyle>? value, DiffList? diffs, string? objName)
@@ -801,7 +803,7 @@ public static class SettingsConverter
   
   private static bool CmpFormsDesign(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.FormsDesign(openXmlElement);
+    var val = GetFormsDesign(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.FormsDesign", val, value);
     return false;
@@ -856,7 +858,7 @@ public static class SettingsConverter
   
   private static bool CmpLinkStyles(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.LinkStyles(openXmlElement);
+    var val = GetLinkStyles(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.LinkStyles", val, value);
     return false;
@@ -1002,7 +1004,7 @@ public static class SettingsConverter
   
   private static bool CmpTrackRevisions(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.TrackRevisions(openXmlElement);
+    var val = GetTrackRevisions(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.TrackRevisions", val, value);
     return false;
@@ -1034,7 +1036,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotTrackMoves(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotTrackMoves(openXmlElement);
+    var val = GetDoNotTrackMoves(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotTrackMoves", val, value);
     return false;
@@ -1066,7 +1068,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotTrackFormatting(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotTrackFormatting(openXmlElement);
+    var val = GetDoNotTrackFormatting(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotTrackFormatting", val, value);
     return false;
@@ -1121,7 +1123,7 @@ public static class SettingsConverter
   
   private static bool CmpAutoFormatOverride(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.AutoFormatOverride(openXmlElement);
+    var val = GetAutoFormatOverride(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AutoFormatOverride", val, value);
     return false;
@@ -1178,7 +1180,7 @@ public static class SettingsConverter
   
   private static bool CmpAutoHyphenation(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.AutoHyphenation(openXmlElement);
+    var val = GetAutoHyphenation(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AutoHyphenation", val, value);
     return false;
@@ -1257,7 +1259,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotHyphenateCaps(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotHyphenateCaps(openXmlElement);
+    var val = GetDoNotHyphenateCaps(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotHyphenateCaps", val, value);
     return false;
@@ -1289,7 +1291,7 @@ public static class SettingsConverter
   
   private static bool CmpShowEnvelope(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.ShowEnvelope(openXmlElement);
+    var val = GetShowEnvelope(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ShowEnvelope", val, value);
     return false;
@@ -1390,7 +1392,7 @@ public static class SettingsConverter
   
   private static bool CmpEvenAndOddHeaders(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.EvenAndOddHeaders(openXmlElement);
+    var val = GetEvenAndOddHeaders(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.EvenAndOddHeaders", val, value);
     return false;
@@ -1422,7 +1424,7 @@ public static class SettingsConverter
   
   private static bool CmpBookFoldReversePrinting(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.BookFoldReversePrinting(openXmlElement);
+    var val = GetBookFoldReversePrinting(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BookFoldReversePrinting", val, value);
     return false;
@@ -1454,7 +1456,7 @@ public static class SettingsConverter
   
   private static bool CmpBookFoldPrinting(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.BookFoldPrinting(openXmlElement);
+    var val = GetBookFoldPrinting(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.BookFoldPrinting", val, value);
     return false;
@@ -1605,7 +1607,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotUseMarginsForDrawingGridOrigin(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotUseMarginsForDrawingGridOrigin(openXmlElement);
+    var val = GetDoNotUseMarginsForDrawingGridOrigin(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotUseMarginsForDrawingGridOrigin", val, value);
     return false;
@@ -1681,7 +1683,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotShadeFormData(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotShadeFormData(openXmlElement);
+    var val = GetDoNotShadeFormData(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotShadeFormData", val, value);
     return false;
@@ -1713,7 +1715,7 @@ public static class SettingsConverter
   
   private static bool CmpNoPunctuationKerning(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.NoPunctuationKerning(openXmlElement);
+    var val = GetNoPunctuationKerning(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.NoPunctuationKerning", val, value);
     return false;
@@ -1768,7 +1770,7 @@ public static class SettingsConverter
   
   private static bool CmpPrintTwoOnOne(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.PrintTwoOnOne(openXmlElement);
+    var val = GetPrintTwoOnOne(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.PrintTwoOnOne", val, value);
     return false;
@@ -1800,7 +1802,7 @@ public static class SettingsConverter
   
   private static bool CmpStrictFirstAndLastChars(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.StrictFirstAndLastChars(openXmlElement);
+    var val = GetStrictFirstAndLastChars(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.StrictFirstAndLastChars", val, value);
     return false;
@@ -1878,7 +1880,7 @@ public static class SettingsConverter
   
   private static bool CmpSavePreviewPicture(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.SavePreviewPicture(openXmlElement);
+    var val = GetSavePreviewPicture(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SavePreviewPicture", val, value);
     return false;
@@ -1910,7 +1912,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotValidateAgainstSchema(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotValidateAgainstSchema(openXmlElement);
+    var val = GetDoNotValidateAgainstSchema(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotValidateAgainstSchema", val, value);
     return false;
@@ -1942,7 +1944,7 @@ public static class SettingsConverter
   
   private static bool CmpSaveInvalidXml(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.SaveInvalidXml(openXmlElement);
+    var val = GetSaveInvalidXml(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SaveInvalidXml", val, value);
     return false;
@@ -1974,7 +1976,7 @@ public static class SettingsConverter
   
   private static bool CmpIgnoreMixedContent(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.IgnoreMixedContent(openXmlElement);
+    var val = GetIgnoreMixedContent(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.IgnoreMixedContent", val, value);
     return false;
@@ -2006,7 +2008,7 @@ public static class SettingsConverter
   
   private static bool CmpAlwaysShowPlaceholderText(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.AlwaysShowPlaceholderText(openXmlElement);
+    var val = GetAlwaysShowPlaceholderText(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AlwaysShowPlaceholderText", val, value);
     return false;
@@ -2038,7 +2040,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotDemarcateInvalidXml(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotDemarcateInvalidXml(openXmlElement);
+    var val = GetDoNotDemarcateInvalidXml(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotDemarcateInvalidXml", val, value);
     return false;
@@ -2070,7 +2072,7 @@ public static class SettingsConverter
   
   private static bool CmpSaveXmlDataOnly(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.SaveXmlDataOnly(openXmlElement);
+    var val = GetSaveXmlDataOnly(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SaveXmlDataOnly", val, value);
     return false;
@@ -2102,7 +2104,7 @@ public static class SettingsConverter
   
   private static bool CmpUseXsltWhenSaving(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.UseXsltWhenSaving(openXmlElement);
+    var val = GetUseXsltWhenSaving(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.UseXsltWhenSaving", val, value);
     return false;
@@ -2157,7 +2159,7 @@ public static class SettingsConverter
   
   private static bool CmpShowXmlTags(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.ShowXmlTags(openXmlElement);
+    var val = GetShowXmlTags(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ShowXmlTags", val, value);
     return false;
@@ -2189,7 +2191,7 @@ public static class SettingsConverter
   
   private static bool CmpAlwaysMergeEmptyNamespace(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.AlwaysMergeEmptyNamespace(openXmlElement);
+    var val = GetAlwaysMergeEmptyNamespace(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.AlwaysMergeEmptyNamespace", val, value);
     return false;
@@ -2221,7 +2223,7 @@ public static class SettingsConverter
   
   private static bool CmpUpdateFieldsOnOpen(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.UpdateFieldsOnOpen(openXmlElement);
+    var val = GetUpdateFieldsOnOpen(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.UpdateFieldsOnOpen", val, value);
     return false;
@@ -2414,7 +2416,7 @@ public static class SettingsConverter
   
   private static bool CmpUICompatibleWith97To2003(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.UICompatibleWith97To2003(openXmlElement);
+    var val = GetUICompatibleWith97To2003(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.UICompatibleWith97To2003", val, value);
     return false;
@@ -2435,7 +2437,7 @@ public static class SettingsConverter
     }
   }
   
-  private static Collection<String> GetAttachedSchemas(DXW.Settings openXmlElement)
+  private static Collection<String>? GetAttachedSchemas(DXW.Settings openXmlElement)
   {
     var collection = new Collection<String>();
     foreach (var item in openXmlElement.Elements<DXW.AttachedSchema>())
@@ -2444,7 +2446,9 @@ public static class SettingsConverter
       if (newItem != null)
         collection.Add((string)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAttachedSchemas(DXW.Settings openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
@@ -2546,7 +2550,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotIncludeSubdocsInStats(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotIncludeSubdocsInStats(openXmlElement);
+    var val = GetDoNotIncludeSubdocsInStats(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotIncludeSubdocsInStats", val, value);
     return false;
@@ -2578,7 +2582,7 @@ public static class SettingsConverter
   
   private static bool CmpDoNotAutoCompressPictures(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDXW.DoNotAutoCompressPictures(openXmlElement);
+    var val = GetDoNotAutoCompressPictures(openXmlElement);
     if (val == value) return true;
     diffs?.Add(objName, "DXW.DoNotAutoCompressPictures", val, value);
     return false;
@@ -2601,7 +2605,8 @@ public static class SettingsConverter
   
   private static Boolean? GetForceUpgrade(DXW.Settings openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ForceUpgrade>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.ForceUpgrade>();
+    return (element!=null) ? true : null;
   }
   
   private static bool CmpForceUpgrade(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -2769,24 +2774,24 @@ public static class SettingsConverter
     }
   }
   
-  private static Byte[]? GetDocumentId(DXW.Settings openXmlElement)
+  private static HexInt? GetDocumentId(DXW.Settings openXmlElement)
   {
-    return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
+    return DMX.HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
   }
   
-  private static bool CmpDocumentId(DXW.Settings openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentId(DXW.Settings openXmlElement, HexInt? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexIntConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetDocumentId(DXW.Settings openXmlElement, Byte[]? value)
+  private static void SetDocumentId(DXW.Settings openXmlElement, HexInt? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.DocumentId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.HexBinaryConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
+      itemElement = DMX.HexIntConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -2891,33 +2896,39 @@ public static class SettingsConverter
     }
   }
   
-  private static String? GetPersistentDocumentId(DXW.Settings openXmlElement)
+  private static Guid? GetPersistentDocumentId(DXW.Settings openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value;
+    var element = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (element?.Val?.Value!=null)
+      return Guid.Parse(element.Val.Value);
+    return null;
   }
   
-  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, Guid? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value == value;
+    var val =  GetPersistentDocumentId(openXmlElement);
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013W.PersistentDocumentId", val, value);
+    return false;
   }
   
-  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, String? value)
+  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, Guid? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2013W.PersistentDocumentId>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value != null)
+    if (value is Guid val)
     {
-      itemElement = new DXO2013W.PersistentDocumentId { Val = value };
+      itemElement = new DXO2013W.PersistentDocumentId { Val = val.ToString("B") };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMW.Settings? CreateModelElement(DXW.Settings? openXmlElement)
+  public static DMProps.DocumentSettings? CreateModelElement(DXW.Settings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Settings();
+      var value = new DMProps.DocumentSettings();
       value.WriteProtection = GetWriteProtection(openXmlElement);
       value.View = GetView(openXmlElement);
       value.Zoom = GetZoom(openXmlElement);
@@ -3024,7 +3035,7 @@ public static class SettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Settings? openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Settings? openXmlElement, DMProps.DocumentSettings? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -3238,7 +3249,7 @@ public static class SettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Settings? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMProps.DocumentSettings? value)
     where OpenXmlElementType: DXW.Settings, new()
   {
     if (value != null)
