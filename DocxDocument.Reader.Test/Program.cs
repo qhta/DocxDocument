@@ -6,15 +6,15 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestFonts();
+    RunTestProperties();
   }
 
   private static void RunTestFonts()
   {
     var testInstance = new TestFonts();
     testInstance.Setup();
-    //testInstance.TestDocumentFonts();
-    testInstance.TestFontsXmlSerialization();
+    testInstance.TestDocumentFonts();
+    //testInstance.TestFontsXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 
@@ -40,6 +40,8 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
+    testInstance.TestReadProperties(@"D:\VS\Projects\DocxDocument\DocxDocument.Reader.Test\SampleDocs\SDT.docx", true);
+    testInstance.TestSampleDocsProperties();
     testInstance.TestPropertiesXmlSerialization();
     Console.WriteLine("Test passed");
   }
@@ -56,9 +58,9 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    testInstance.TestEnumVariantType();
-    //testInstance.TestVariantXmlSerialization();
-    //testInstance.TestVectorXmlSerialization();
+    //testInstance.TestEnumVariantType();
+    testInstance.TestVariantXmlSerialization();
+    testInstance.TestVectorXmlSerialization();
     Console.WriteLine("Test passed");
   }
 }

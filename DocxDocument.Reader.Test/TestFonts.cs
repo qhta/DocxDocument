@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 using Qhta.Xml.Serialization;
 using System.Reflection;
 
@@ -176,19 +178,20 @@ public class TestFonts : TestBase
     WriteLine(str);
     WriteLine();
 
-    //var textReader = new StringReader(str);
-    //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-    //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-    //var oldPropertiesCount = oldTheme.Count;
-    //var newPropertiesCount = newProperties.Count();
-    //var newPropArray = newProperties.ToArray();
-    //var oldPropArray = oldTheme.ToArray();
-    //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
-    //{
-    //  if (newPropArray[i].Name == "HeadingPairs")
-    //    Debug.Assert(true);
-    //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-    //}
-    //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+    var textReader = new StringReader(str);
+    var newFonts = (Fonts?)serializer.Deserialize(textReader);
+    Assert.IsNotNull(newFonts, $"Deserialized fonts are null");
+    var oldFontsCount = oldFonts.Count;
+    var newFontsCount = newFonts.Count();
+    var newFontsArray = newFonts.ToArray();
+    var oldFontsArray = oldFonts.ToArray();
+    for (int i = 0; i < Math.Min(oldFontsCount, newFontsCount); i++)
+    {
+      var oldItem = oldFontsArray[i];
+      var newItem = newFontsArray[i];
+      Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized font \"{newItem.Name}\" is different from original");
+    }
+    Assert.That(newFontsCount, Is.EqualTo(oldFontsCount), $"Deserialized fonts count is different from original");
   }
+
 }
