@@ -5,9 +5,9 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class FontsConverter
 {
-  private static Collection<DMW.Font> GetItems(DXW.Fonts openXmlElement)
+  private static DMW.Fonts GetItems(DXW.Fonts openXmlElement)
   {
-    var collection = new Collection<DMW.Font>();
+    var collection = new DMW.Fonts();
     foreach (var item in openXmlElement.Elements<DXW.Font>())
     {
       var newItem = DMXW.FontConverter.CreateModelElement(item);
@@ -17,7 +17,7 @@ public static class FontsConverter
     return collection;
   }
   
-  private static bool CmpItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Fonts openXmlElement, DMW.Fonts? value, DiffList? diffs, string? objName)
   {
     if (value != null)
     {
@@ -45,7 +45,7 @@ public static class FontsConverter
     return false;
   }
   
-  private static void SetItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value)
+  private static void SetItems(DXW.Fonts openXmlElement, DMW.Fonts? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Font>();
     if (value != null)
@@ -63,9 +63,7 @@ public static class FontsConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Fonts();
-      value.Items = GetItems(openXmlElement);
-      return value;
+      return GetItems(openXmlElement);
     }
     return null;
   }
@@ -75,7 +73,7 @@ public static class FontsConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -90,7 +88,7 @@ public static class FontsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetItems(openXmlElement, value?.Items);
+      SetItems(openXmlElement, value);
       return openXmlElement;
     }
     return default;
