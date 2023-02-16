@@ -43,11 +43,11 @@ public static class LinearShadePropertiesConverter
     openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DMW.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LinearShadeProperties();
+      var value = new DocumentModel.Wordprocessing.LinearShadeProperties();
       value.Angle = GetAngle(openXmlElement);
       value.Scaled = GetScaled(openXmlElement);
       return value;

@@ -28,11 +28,11 @@ public static class TaskTitleEventInfoConverter
       openXmlElement.Title = null;
   }
   
-  public static DM.TaskTitleEventInfo? CreateModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement)
+  public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskTitleEventInfo();
+      var value = new DocumentModel.TaskTitleEventInfo();
       value.Title = GetTitle(openXmlElement);
       return value;
     }

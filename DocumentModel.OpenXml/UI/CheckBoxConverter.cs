@@ -557,11 +557,11 @@ public static class CheckBoxConverter
       openXmlElement.GetKeytip = null;
   }
   
-  public static DMUI.CheckBox? CreateModelElement(DXOCustUI.CheckBox? openXmlElement)
+  public static DocumentModel.UI.CheckBox? CreateModelElement(DXOCustUI.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.CheckBox();
+      var value = new DocumentModel.UI.CheckBox();
       value.GetPressed = GetGetPressed(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);

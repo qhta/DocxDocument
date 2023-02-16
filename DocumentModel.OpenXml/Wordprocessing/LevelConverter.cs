@@ -28,27 +28,27 @@ public static class LevelConverter
   /// <summary>
   /// Template Code
   /// </summary>
-  private static UInt32? GetTemplateCode(DXW.Level openXmlElement)
+  private static DM.HexInt? GetTemplateCode(DXW.Level openXmlElement)
   {
     if (openXmlElement?.TemplateCode?.Value != null)
-      return UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.TemplateCode.Value);
     return null;
   }
   
-  private static bool CmpTemplateCode(DXW.Level openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpTemplateCode(DXW.Level openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.TemplateCode?.Value != null)
-      if (UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.TemplateCode.Value) == value)
         return true;
-    if (openXmlElement?.TemplateCode?.Value == null && value == null) return true;
-    diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.TemplateCode?.Value == null && value == null) return true;
+    diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Value, value);
     return false;
   }
   
-  private static void SetTemplateCode(DXW.Level openXmlElement, UInt32? value)
+  private static void SetTemplateCode(DXW.Level openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.TemplateCode = ((UInt32)value).ToString("X8");
+      openXmlElement.TemplateCode = value.ToString();
     else
       openXmlElement.TemplateCode = null;
   }
@@ -109,7 +109,10 @@ public static class LevelConverter
   /// </summary>
   private static DMW.NumberingFormat? GetNumberingFormat(DXW.Level openXmlElement)
   {
-    return DMXW.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
+    if (element != null)
+      return DMXW.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXW.Level openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -249,7 +252,10 @@ public static class LevelConverter
   /// </summary>
   private static DMW.LevelText? GetLevelText(DXW.Level openXmlElement)
   {
-    return DMXW.LevelTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.LevelText>());
+    var element = openXmlElement?.GetFirstChild<DXW.LevelText>();
+    if (element != null)
+      return DMXW.LevelTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevelText(DXW.Level openXmlElement, DMW.LevelText? value, DiffList? diffs, string? objName)
@@ -303,7 +309,10 @@ public static class LevelConverter
   /// </summary>
   private static DMW.LegacyNumbering? GetLegacyNumbering(DXW.Level openXmlElement)
   {
-    return DMXW.LegacyNumberingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.LegacyNumbering>());
+    var element = openXmlElement?.GetFirstChild<DXW.LegacyNumbering>();
+    if (element != null)
+      return DMXW.LegacyNumberingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLegacyNumbering(DXW.Level openXmlElement, DMW.LegacyNumbering? value, DiffList? diffs, string? objName)
@@ -355,7 +364,10 @@ public static class LevelConverter
   /// </summary>
   private static DMW.PreviousParagraphProperties? GetPreviousParagraphProperties(DXW.Level openXmlElement)
   {
-    return DMXW.PreviousParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.PreviousParagraphProperties>();
+    if (element != null)
+      return DMXW.PreviousParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreviousParagraphProperties(DXW.Level openXmlElement, DMW.PreviousParagraphProperties? value, DiffList? diffs, string? objName)
@@ -381,7 +393,10 @@ public static class LevelConverter
   /// </summary>
   private static DMW.NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(DXW.Level openXmlElement)
   {
-    return DMXW.NumberingSymbolRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingSymbolRunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingSymbolRunProperties>();
+    if (element != null)
+      return DMXW.NumberingSymbolRunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingSymbolRunProperties(DXW.Level openXmlElement, DMW.NumberingSymbolRunProperties? value, DiffList? diffs, string? objName)
@@ -402,11 +417,11 @@ public static class LevelConverter
     }
   }
   
-  public static DMW.Level? CreateModelElement(DXW.Level? openXmlElement)
+  public static DocumentModel.Wordprocessing.Level? CreateModelElement(DXW.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Level();
+      var value = new DocumentModel.Wordprocessing.Level();
       value.LevelIndex = GetLevelIndex(openXmlElement);
       value.TemplateCode = GetTemplateCode(openXmlElement);
       value.Tentative = GetTentative(openXmlElement);

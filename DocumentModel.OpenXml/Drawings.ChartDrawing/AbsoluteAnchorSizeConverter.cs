@@ -10,7 +10,10 @@ public static class AbsoluteAnchorSizeConverter
   /// </summary>
   private static DMDrawsChartDraw.FromAnchor? GetFromAnchor(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>();
+    if (element != null)
+      return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFromAnchor(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class AbsoluteAnchorSizeConverter
   /// </summary>
   private static DMDrawsChartDraw.Extent? GetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ExtentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Extent>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Extent>();
+    if (element != null)
+      return DMXDrawsChartDraw.ExtentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Extent? value, DiffList? diffs, string? objName)
@@ -59,7 +65,10 @@ public static class AbsoluteAnchorSizeConverter
   
   private static DMDrawsChartDraw.Shape? GetShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>();
+    if (element != null)
+      return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value, DiffList? diffs, string? objName)
@@ -82,7 +91,10 @@ public static class AbsoluteAnchorSizeConverter
   
   private static DMDrawsChartDraw.GroupShape? GetGroupShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    if (element != null)
+      return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
@@ -105,7 +117,10 @@ public static class AbsoluteAnchorSizeConverter
   
   private static DMDrawsChartDraw.GraphicFrame? GetGraphicFrame(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    if (element != null)
+      return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphicFrame(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
@@ -128,7 +143,10 @@ public static class AbsoluteAnchorSizeConverter
   
   private static DMDrawsChartDraw.ConnectionShape? GetConnectionShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    if (element != null)
+      return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConnectionShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value, DiffList? diffs, string? objName)
@@ -151,7 +169,10 @@ public static class AbsoluteAnchorSizeConverter
   
   private static DMDrawsChartDraw.Picture? GetPicture(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.PictureConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>();
+    if (element != null)
+      return DMXDrawsChartDraw.PictureConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPicture(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
@@ -172,11 +193,11 @@ public static class AbsoluteAnchorSizeConverter
     }
   }
   
-  public static DMDrawsChartDraw.AbsoluteAnchorSize? CreateModelElement(DXDrawChartDraw.AbsoluteAnchorSize? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? CreateModelElement(DXDrawChartDraw.AbsoluteAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.AbsoluteAnchorSize();
+      var value = new DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize();
       value.FromAnchor = GetFromAnchor(openXmlElement);
       value.Extent = GetExtent(openXmlElement);
       value.Shape = GetShape(openXmlElement);

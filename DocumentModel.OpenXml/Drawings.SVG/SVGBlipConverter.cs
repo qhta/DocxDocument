@@ -51,11 +51,11 @@ public static class SVGBlipConverter
       openXmlElement.Link = null;
   }
   
-  public static DMDrawsSVG.SVGBlip? CreateModelElement(DXO2019DrawSVG.SVGBlip? openXmlElement)
+  public static DocumentModel.Drawings.SVG.SVGBlip? CreateModelElement(DXO2019DrawSVG.SVGBlip? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsSVG.SVGBlip();
+      var value = new DocumentModel.Drawings.SVG.SVGBlip();
       value.Embed = GetEmbed(openXmlElement);
       value.Link = GetLink(openXmlElement);
       return value;

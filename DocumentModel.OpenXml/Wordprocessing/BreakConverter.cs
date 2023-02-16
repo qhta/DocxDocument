@@ -41,11 +41,11 @@ public static class BreakConverter
     openXmlElement.Clear = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(value);
   }
   
-  public static DMW.Break? CreateModelElement(DXW.Break? openXmlElement)
+  public static DocumentModel.Wordprocessing.Break? CreateModelElement(DXW.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Break();
+      var value = new DocumentModel.Wordprocessing.Break();
       value.Type = GetType(openXmlElement);
       value.Clear = GetClear(openXmlElement);
       return value;

@@ -224,11 +224,11 @@ public static class HeaderFooterConverter
     }
   }
   
-  public static DMDrawsChartDraws.HeaderFooter? CreateModelElement(DXO2016DrawChartDraw.HeaderFooter? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DXO2016DrawChartDraw.HeaderFooter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.HeaderFooter();
+      var value = new DocumentModel.Drawings.ChartDrawings.HeaderFooter();
       value.AlignWithMargins = GetAlignWithMargins(openXmlElement);
       value.DifferentOddEven = GetDifferentOddEven(openXmlElement);
       value.DifferentFirst = GetDifferentFirst(openXmlElement);

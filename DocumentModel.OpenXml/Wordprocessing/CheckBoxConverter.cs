@@ -123,11 +123,11 @@ public static class CheckBoxConverter
     }
   }
   
-  public static DMW.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
+  public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CheckBox();
+      var value = new DocumentModel.Wordprocessing.CheckBox();
       value.FormFieldSize = GetFormFieldSize(openXmlElement);
       value.AutomaticallySizeFormField = GetAutomaticallySizeFormField(openXmlElement);
       value.DefaultCheckBoxFormFieldState = GetDefaultCheckBoxFormFieldState(openXmlElement);

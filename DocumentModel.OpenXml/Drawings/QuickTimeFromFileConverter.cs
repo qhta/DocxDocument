@@ -33,7 +33,10 @@ public static class QuickTimeFromFileConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.QuickTimeFromFile openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.QuickTimeFromFile openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class QuickTimeFromFileConverter
     }
   }
   
-  public static DMDraws.QuickTimeFromFile? CreateModelElement(DXDraw.QuickTimeFromFile? openXmlElement)
+  public static DocumentModel.Drawings.QuickTimeFromFile? CreateModelElement(DXDraw.QuickTimeFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.QuickTimeFromFile();
+      var value = new DocumentModel.Drawings.QuickTimeFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

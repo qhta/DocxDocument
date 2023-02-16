@@ -8,7 +8,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.AlternativeFormatImportPart> GetAlternativeFormatImportParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.AlternativeFormatImportPart>? GetAlternativeFormatImportParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.AlternativeFormatImportPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.AlternativeFormatImportPart>())
@@ -28,7 +28,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the ChartParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.ChartPart> GetChartParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.ChartPart>? GetChartParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartPart>())
@@ -60,7 +60,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the DiagramColorsParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.DiagramColorsPart> GetDiagramColorsParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.DiagramColorsPart>? GetDiagramColorsParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramColorsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramColorsPart>())
@@ -80,7 +80,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the DiagramDataParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.DiagramDataPart> GetDiagramDataParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.DiagramDataPart>? GetDiagramDataParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramDataPart>())
@@ -100,7 +100,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramLayoutDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramLayoutDefinitionPart>())
@@ -120,7 +120,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramPersistLayoutPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramPersistLayoutPart>())
@@ -140,7 +140,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the DiagramStyleParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.DiagramStylePart> GetDiagramStyleParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.DiagramStylePart>? GetDiagramStyleParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramStylePart>())
@@ -160,7 +160,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
@@ -180,7 +180,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -200,7 +200,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -220,7 +220,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the ExtendedChartParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.ExtendedChartPart> GetExtendedChartParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.ExtendedChartPart>? GetExtendedChartParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.ExtendedChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ExtendedChartPart>())
@@ -263,7 +263,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the ImageParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -283,7 +283,7 @@ public static class HeaderPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the HeaderPart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.HeaderPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.HeaderPart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -312,11 +312,11 @@ public static class HeaderPartConverter
     return false;
   }
   
-  public static DMPack.HeaderPart? CreateModelElement(DXPack.HeaderPart? openXmlElement)
+  public static DocumentModel.Packaging.HeaderPart? CreateModelElement(DXPack.HeaderPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.HeaderPart();
+      var value = new DocumentModel.Packaging.HeaderPart();
       value.AlternativeFormatImportParts = GetAlternativeFormatImportParts(openXmlElement);
       value.ChartParts = GetChartParts(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);

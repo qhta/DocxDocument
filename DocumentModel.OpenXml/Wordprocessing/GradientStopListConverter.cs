@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class GradientStopListConverter
 {
-  private static Collection<DMW.GradientStop> GetGradientStops(DXO2010W.GradientStopList openXmlElement)
+  private static Collection<DMW.GradientStop>? GetGradientStops(DXO2010W.GradientStopList openXmlElement)
   {
     var collection = new Collection<DMW.GradientStop>();
     foreach (var item in openXmlElement.Elements<DXO2010W.GradientStop>())
@@ -14,7 +14,9 @@ public static class GradientStopListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class GradientStopListConverter
     }
   }
   
-  public static DMW.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
+  public static DocumentModel.Wordprocessing.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.GradientStopList();
+      var value = new DocumentModel.Wordprocessing.GradientStopList();
       value.GradientStops = GetGradientStops(openXmlElement);
       return value;
     }

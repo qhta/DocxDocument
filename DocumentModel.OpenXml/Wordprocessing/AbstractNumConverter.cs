@@ -182,7 +182,7 @@ public static class AbstractNumConverter
     }
   }
   
-  private static Collection<DMW.Level> GetLevels(DXW.AbstractNum openXmlElement)
+  private static Collection<DMW.Level>? GetLevels(DXW.AbstractNum openXmlElement)
   {
     var collection = new Collection<DMW.Level>();
     foreach (var item in openXmlElement.Elements<DXW.Level>())
@@ -191,7 +191,9 @@ public static class AbstractNumConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value, DiffList? diffs, string? objName)
@@ -236,11 +238,11 @@ public static class AbstractNumConverter
     }
   }
   
-  public static DMW.AbstractNum? CreateModelElement(DXW.AbstractNum? openXmlElement)
+  public static DocumentModel.Wordprocessing.AbstractNum? CreateModelElement(DXW.AbstractNum? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AbstractNum();
+      var value = new DocumentModel.Wordprocessing.AbstractNum();
       value.AbstractNumberId = GetAbstractNumberId(openXmlElement);
       value.Nsid = GetNsid(openXmlElement);
       value.MultiLevelType = GetMultiLevelType(openXmlElement);

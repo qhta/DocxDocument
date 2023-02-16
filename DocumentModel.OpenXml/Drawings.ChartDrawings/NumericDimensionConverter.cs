@@ -25,7 +25,10 @@ public static class NumericDimensionConverter
   
   private static DMDrawsChartDraws.OpenXmlFormulaElement? GetFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>();
+    if (element != null)
+      return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
@@ -48,7 +51,10 @@ public static class NumericDimensionConverter
   
   private static DMDrawsChartDraws.OpenXmlFormulaElement? GetNfFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NfFormula>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NfFormula>();
+    if (element != null)
+      return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNfFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
@@ -69,7 +75,7 @@ public static class NumericDimensionConverter
     }
   }
   
-  private static Collection<DMDrawsChartDraws.NumericLevel> GetNumericLevels(DXO2016DrawChartDraw.NumericDimension openXmlElement)
+  private static Collection<DMDrawsChartDraws.NumericLevel>? GetNumericLevels(DXO2016DrawChartDraw.NumericDimension openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.NumericLevel>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.NumericLevel>())
@@ -78,7 +84,9 @@ public static class NumericDimensionConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpNumericLevels(DXO2016DrawChartDraw.NumericDimension openXmlElement, Collection<DMDrawsChartDraws.NumericLevel>? value, DiffList? diffs, string? objName)
@@ -125,7 +133,10 @@ public static class NumericDimensionConverter
   
   private static DMDrawsChartDraws.NumericLevel? GetNumericLevel(DXO2016DrawChartDraw.NumericDimension openXmlElement)
   {
-    return DMXDrawsChartDraws.NumericLevelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumericLevel>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumericLevel>();
+    if (element != null)
+      return DMXDrawsChartDraws.NumericLevelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumericLevel(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.NumericLevel? value, DiffList? diffs, string? objName)
@@ -146,11 +157,11 @@ public static class NumericDimensionConverter
     }
   }
   
-  public static DMDrawsChartDraws.NumericDimension? CreateModelElement(DXO2016DrawChartDraw.NumericDimension? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.NumericDimension? CreateModelElement(DXO2016DrawChartDraw.NumericDimension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.NumericDimension();
+      var value = new DocumentModel.Drawings.ChartDrawings.NumericDimension();
       value.Type = GetType(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       value.NfFormula = GetNfFormula(openXmlElement);

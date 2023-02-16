@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoChildEntitiesConverter
 {
-  private static Collection<DMDrawsChartDraws.GeoHierarchyEntity> GetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement)
+  private static Collection<DMDrawsChartDraws.GeoHierarchyEntity>? GetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.GeoHierarchyEntity>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.GeoHierarchyEntity>())
@@ -14,7 +14,9 @@ public static class GeoChildEntitiesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, Collection<DMDrawsChartDraws.GeoHierarchyEntity>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class GeoChildEntitiesConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoChildEntities? CreateModelElement(DXO2016DrawChartDraw.GeoChildEntities? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntities? CreateModelElement(DXO2016DrawChartDraw.GeoChildEntities? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoChildEntities();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildEntities();
       value.GeoHierarchyEntities = GetGeoHierarchyEntities(openXmlElement);
       return value;
     }

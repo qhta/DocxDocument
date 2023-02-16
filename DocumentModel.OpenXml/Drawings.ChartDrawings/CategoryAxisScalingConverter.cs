@@ -28,11 +28,11 @@ public static class CategoryAxisScalingConverter
       openXmlElement.GapWidth = null;
   }
   
-  public static DMDrawsChartDraws.CategoryAxisScaling? CreateModelElement(DXO2016DrawChartDraw.CategoryAxisScaling? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(DXO2016DrawChartDraw.CategoryAxisScaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.CategoryAxisScaling();
+      var value = new DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling();
       value.GapWidth = GetGapWidth(openXmlElement);
       return value;
     }

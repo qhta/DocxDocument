@@ -41,11 +41,11 @@ public static class FillExtendedPropertiesConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMVml.FillKind>(value);
   }
   
-  public static DMVml.FillExtendedProperties? CreateModelElement(DXVmlO.FillExtendedProperties? openXmlElement)
+  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DXVmlO.FillExtendedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.FillExtendedProperties();
+      var value = new DocumentModel.Vml.FillExtendedProperties();
       value.Extension = GetExtension(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;

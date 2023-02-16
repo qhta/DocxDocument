@@ -10,7 +10,10 @@ public static class ParagraphPropertiesDefaultConverter
   /// </summary>
   private static DMW.ParagraphPropertiesBaseStyle? GetParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement)
   {
-    return DMXW.ParagraphPropertiesBaseStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>());
+    var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
+    if (element != null)
+      return DMXW.ParagraphPropertiesBaseStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesBaseStyle? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class ParagraphPropertiesDefaultConverter
     }
   }
   
-  public static DMW.ParagraphPropertiesDefault? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
+  public static DocumentModel.Wordprocessing.ParagraphPropertiesDefault? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphPropertiesDefault();
+      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesDefault();
       value.ParagraphPropertiesBaseStyle = GetParagraphPropertiesBaseStyle(openXmlElement);
       return value;
     }

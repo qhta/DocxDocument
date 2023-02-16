@@ -10,7 +10,10 @@ public static class LimitUpperPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.LimitUpperProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class LimitUpperPropertiesConverter
     }
   }
   
-  public static DMMath.LimitUpperProperties? CreateModelElement(DXMath.LimitUpperProperties? openXmlElement)
+  public static DocumentModel.Math.LimitUpperProperties? CreateModelElement(DXMath.LimitUpperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.LimitUpperProperties();
+      var value = new DocumentModel.Math.LimitUpperProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

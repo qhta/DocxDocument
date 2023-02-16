@@ -46,11 +46,11 @@ public static class GeoDataPointToEntityQueryConverter
       openXmlElement.EntityId = null;
   }
   
-  public static DMDrawsChartDraws.GeoDataPointToEntityQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointToEntityQuery? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointToEntityQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoDataPointToEntityQuery();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQuery();
       value.EntityType = GetEntityType(openXmlElement);
       value.EntityId = GetEntityId(openXmlElement);
       return value;

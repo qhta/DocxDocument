@@ -17,11 +17,11 @@ public static class ThumbnailPartConverter
     return false;
   }
   
-  public static DMPack.ThumbnailPart? CreateModelElement(DXPack.ThumbnailPart? openXmlElement)
+  public static DocumentModel.Packaging.ThumbnailPart? CreateModelElement(DXPack.ThumbnailPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ThumbnailPart();
+      var value = new DocumentModel.Packaging.ThumbnailPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

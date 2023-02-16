@@ -45,11 +45,11 @@ public static class ArtisticLightScreenConverter
     openXmlElement.GridSize = value;
   }
   
-  public static DMDraws.ArtisticLightScreen? CreateModelElement(DXO2010Draw.ArtisticLightScreen? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticLightScreen? CreateModelElement(DXO2010Draw.ArtisticLightScreen? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticLightScreen();
+      var value = new DocumentModel.Drawings.ArtisticLightScreen();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.GridSize = GetGridSize(openXmlElement);
       return value;

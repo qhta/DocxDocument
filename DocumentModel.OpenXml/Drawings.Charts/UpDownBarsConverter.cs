@@ -38,7 +38,10 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.UpBars? GetUpBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    return DMXDrawsCharts.UpBarsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>();
+    if (element != null)
+      return DMXDrawsCharts.UpBarsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value, DiffList? diffs, string? objName)
@@ -64,7 +67,10 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.DownBars? GetDownBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    return DMXDrawsCharts.DownBarsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>();
+    if (element != null)
+      return DMXDrawsCharts.DownBarsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
@@ -90,7 +96,10 @@ public static class UpDownBarsConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.UpDownBars openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -111,11 +120,11 @@ public static class UpDownBarsConverter
     }
   }
   
-  public static DMDrawsCharts.UpDownBars? CreateModelElement(DXDrawCharts.UpDownBars? openXmlElement)
+  public static DocumentModel.Drawings.Charts.UpDownBars? CreateModelElement(DXDrawCharts.UpDownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.UpDownBars();
+      var value = new DocumentModel.Drawings.Charts.UpDownBars();
       value.GapWidth = GetGapWidth(openXmlElement);
       value.UpBars = GetUpBars(openXmlElement);
       value.DownBars = GetDownBars(openXmlElement);

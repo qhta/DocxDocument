@@ -74,11 +74,11 @@ public static class EmbeddedWavAudioFileTypeConverter
       openXmlElement.BuiltIn = null;
   }
   
-  public static DMDraws.EmbeddedWavAudioFileType? CreateModelElement(DXDraw.EmbeddedWavAudioFileType? openXmlElement)
+  public static DocumentModel.Drawings.EmbeddedWavAudioFileType? CreateModelElement(DXDraw.EmbeddedWavAudioFileType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.EmbeddedWavAudioFileType();
+      var value = new DocumentModel.Drawings.EmbeddedWavAudioFileType();
       value.Embed = GetEmbed(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.BuiltIn = GetBuiltIn(openXmlElement);

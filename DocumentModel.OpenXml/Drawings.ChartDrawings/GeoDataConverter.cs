@@ -136,7 +136,10 @@ public static class GeoDataConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoPolygons? GetGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoPolygonsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoPolygonsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value, DiffList? diffs, string? objName)
@@ -162,7 +165,10 @@ public static class GeoDataConverter
   /// </summary>
   private static DMDrawsChartDraws.Copyrights? GetCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return DMXDrawsChartDraws.CopyrightsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Copyrights>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Copyrights>();
+    if (element != null)
+      return DMXDrawsChartDraws.CopyrightsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
@@ -183,11 +189,11 @@ public static class GeoDataConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoData? CreateModelElement(DXO2016DrawChartDraw.GeoData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoData? CreateModelElement(DXO2016DrawChartDraw.GeoData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoData();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoData();
       value.EntityName = GetEntityName(openXmlElement);
       value.EntityId = GetEntityId(openXmlElement);
       value.East = GetEast(openXmlElement);

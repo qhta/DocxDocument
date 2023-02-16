@@ -52,8 +52,10 @@
     <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
     <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
     <Compile Remove="Wordprocessing\ParagraphConverter - Copy.cs" />
+    <Compile Remove="Wordprocessing\SettingsConverter.cs" />
     <Compile Remove="Wordprocessing\StyleConverter.old.cs" />
     <Compile Remove="Wordprocessing\StylesConverter.old.cs" />
+    <Compile Remove="Wordprocessing\WebSettingsConverter.cs" />
   </ItemGroup>
 
   <ItemGroup>

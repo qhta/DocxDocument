@@ -7,7 +7,10 @@ public static class ExtrusionColorConverter
 {
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement)
   {
-    return DMXW.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
+    if (element != null)
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class ExtrusionColorConverter
   
   private static DMW.SchemeColor? GetSchemeColor(DXO2010W.ExtrusionColor openXmlElement)
   {
-    return DMXW.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
+    if (element != null)
+      return DMXW.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXO2010W.ExtrusionColor openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class ExtrusionColorConverter
     }
   }
   
-  public static DMW.ExtrusionColor? CreateModelElement(DXO2010W.ExtrusionColor? openXmlElement)
+  public static DocumentModel.Wordprocessing.ExtrusionColor? CreateModelElement(DXO2010W.ExtrusionColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ExtrusionColor();
+      var value = new DocumentModel.Wordprocessing.ExtrusionColor();
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
       return value;

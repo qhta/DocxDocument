@@ -10,7 +10,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.DefaultParagraphProperties? GetDefaultParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.DefaultParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.DefaultParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.DefaultParagraphProperties>();
+    if (element != null)
+      return DMXDraws.DefaultParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDefaultParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level1ParagraphProperties? GetLevel1ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level1ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level1ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level1ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level1ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel1ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level1ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level2ParagraphProperties? GetLevel2ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level2ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level2ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level2ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level2ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel2ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level2ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level3ParagraphProperties? GetLevel3ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level3ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level3ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level3ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level3ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel3ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level4ParagraphProperties? GetLevel4ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level4ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level4ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level4ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level4ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel4ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level4ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -140,7 +155,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level5ParagraphProperties? GetLevel5ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level5ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level5ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level5ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level5ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel5ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level5ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -166,7 +184,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level6ParagraphProperties? GetLevel6ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level6ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level6ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level6ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level6ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel6ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level6ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -192,7 +213,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level7ParagraphProperties? GetLevel7ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level7ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level7ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level7ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level7ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel7ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level7ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -218,7 +242,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level8ParagraphProperties? GetLevel8ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level8ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level8ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level8ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level8ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel8ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level8ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -244,7 +271,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.Level9ParagraphProperties? GetLevel9ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.Level9ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Level9ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Level9ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.Level9ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevel9ParagraphProperties(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.Level9ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -270,7 +300,10 @@ public static class TextListStyleTypeConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXO2019DrawDgm12.TextListStyleType openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2019DrawDgm12.TextListStyleType openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -291,11 +324,11 @@ public static class TextListStyleTypeConverter
     }
   }
   
-  public static DMDrawsDgm2.TextListStyleType? CreateModelElement(DXO2019DrawDgm12.TextListStyleType? openXmlElement)
+  public static DocumentModel.Drawings.Diagram2.TextListStyleType? CreateModelElement(DXO2019DrawDgm12.TextListStyleType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgm2.TextListStyleType();
+      var value = new DocumentModel.Drawings.Diagram2.TextListStyleType();
       value.DefaultParagraphProperties = GetDefaultParagraphProperties(openXmlElement);
       value.Level1ParagraphProperties = GetLevel1ParagraphProperties(openXmlElement);
       value.Level2ParagraphProperties = GetLevel2ParagraphProperties(openXmlElement);

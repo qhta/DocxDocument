@@ -48,11 +48,11 @@ public static class CategoryConverter
     openXmlElement.Priority = value;
   }
   
-  public static DMDrawsDgms.Category? CreateModelElement(DXDrawDgms.Category? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Category? CreateModelElement(DXDrawDgms.Category? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Category();
+      var value = new DocumentModel.Drawings.Diagrams.Category();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;

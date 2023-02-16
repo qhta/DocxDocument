@@ -524,7 +524,10 @@ public static class BackstageTabConverter
   /// </summary>
   private static DM.BackstageGroups? GetBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement)
   {
-    return DMX.BackstageGroupsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroups>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroups>();
+    if (element != null)
+      return DMX.BackstageGroupsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.BackstageGroups? value, DiffList? diffs, string? objName)
@@ -550,7 +553,10 @@ public static class BackstageTabConverter
   /// </summary>
   private static DM.SimpleGroups? GetSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement)
   {
-    return DMX.SimpleGroupsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.SimpleGroups>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SimpleGroups>();
+    if (element != null)
+      return DMX.SimpleGroupsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.SimpleGroups? value, DiffList? diffs, string? objName)
@@ -571,11 +577,11 @@ public static class BackstageTabConverter
     }
   }
   
-  public static DM.BackstageTab? CreateModelElement(DXO2010CustUI.BackstageTab? openXmlElement)
+  public static DocumentModel.BackstageTab? CreateModelElement(DXO2010CustUI.BackstageTab? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageTab();
+      var value = new DocumentModel.BackstageTab();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

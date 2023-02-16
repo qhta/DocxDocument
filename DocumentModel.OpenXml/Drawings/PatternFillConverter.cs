@@ -28,7 +28,10 @@ public static class PatternFillConverter
   /// </summary>
   private static DMDraws.ForegroundColor? GetForegroundColor(DXDraw.PatternFill openXmlElement)
   {
-    return DMXDraws.ForegroundColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ForegroundColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ForegroundColor>();
+    if (element != null)
+      return DMXDraws.ForegroundColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value, DiffList? diffs, string? objName)
@@ -54,7 +57,10 @@ public static class PatternFillConverter
   /// </summary>
   private static DMDraws.BackgroundColor? GetBackgroundColor(DXDraw.PatternFill openXmlElement)
   {
-    return DMXDraws.BackgroundColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BackgroundColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BackgroundColor>();
+    if (element != null)
+      return DMXDraws.BackgroundColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value, DiffList? diffs, string? objName)
@@ -75,11 +81,11 @@ public static class PatternFillConverter
     }
   }
   
-  public static DMDraws.PatternFill? CreateModelElement(DXDraw.PatternFill? openXmlElement)
+  public static DocumentModel.Drawings.PatternFill? CreateModelElement(DXDraw.PatternFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PatternFill();
+      var value = new DocumentModel.Drawings.PatternFill();
       value.Preset = GetPreset(openXmlElement);
       value.ForegroundColor = GetForegroundColor(openXmlElement);
       value.BackgroundColor = GetBackgroundColor(openXmlElement);

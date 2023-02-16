@@ -29,11 +29,11 @@ public static class ControlPropertiesPartConverter
     return false;
   }
   
-  public static DMPack.ControlPropertiesPart? CreateModelElement(DXPack.ControlPropertiesPart? openXmlElement)
+  public static DocumentModel.Packaging.ControlPropertiesPart? CreateModelElement(DXPack.ControlPropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ControlPropertiesPart();
+      var value = new DocumentModel.Packaging.ControlPropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

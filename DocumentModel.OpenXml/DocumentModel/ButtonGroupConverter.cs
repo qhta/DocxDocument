@@ -214,7 +214,10 @@ public static class ButtonGroupConverter
   
   private static DM.ControlCloneRegular? GetControlCloneRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.ControlCloneRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneRegular>();
+    if (element != null)
+      return DMX.ControlCloneRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlCloneRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
@@ -237,7 +240,10 @@ public static class ButtonGroupConverter
   
   private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.ButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    if (element != null)
+      return DMX.ButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
@@ -260,7 +266,10 @@ public static class ButtonGroupConverter
   
   private static DM.ToggleButtonRegular? GetToggleButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.ToggleButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>();
+    if (element != null)
+      return DMX.ToggleButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpToggleButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.ToggleButtonRegular? value, DiffList? diffs, string? objName)
@@ -283,7 +292,10 @@ public static class ButtonGroupConverter
   
   private static DM.GalleryRegular? GetGalleryRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.GalleryRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.GalleryRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.GalleryRegular>();
+    if (element != null)
+      return DMX.GalleryRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGalleryRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.GalleryRegular? value, DiffList? diffs, string? objName)
@@ -306,7 +318,10 @@ public static class ButtonGroupConverter
   
   private static DM.MenuRegular? GetMenuRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.MenuRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>();
+    if (element != null)
+      return DMX.MenuRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
@@ -329,7 +344,10 @@ public static class ButtonGroupConverter
   
   private static DM.DynamicMenuRegular? GetDynamicMenuRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.DynamicMenuRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>();
+    if (element != null)
+      return DMX.DynamicMenuRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDynamicMenuRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.DynamicMenuRegular? value, DiffList? diffs, string? objName)
@@ -352,7 +370,10 @@ public static class ButtonGroupConverter
   
   private static DM.SplitButtonRegular? GetSplitButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.SplitButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButtonRegular>();
+    if (element != null)
+      return DMX.SplitButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButtonRegular(DXO2010CustUI.ButtonGroup openXmlElement, DM.SplitButtonRegular? value, DiffList? diffs, string? objName)
@@ -375,7 +396,10 @@ public static class ButtonGroupConverter
   
   private static DM.Separator? GetSeparator(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return DMX.SeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Separator>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Separator>();
+    if (element != null)
+      return DMX.SeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeparator(DXO2010CustUI.ButtonGroup openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
@@ -396,11 +420,11 @@ public static class ButtonGroupConverter
     }
   }
   
-  public static DM.ButtonGroup? CreateModelElement(DXO2010CustUI.ButtonGroup? openXmlElement)
+  public static DocumentModel.ButtonGroup? CreateModelElement(DXO2010CustUI.ButtonGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ButtonGroup();
+      var value = new DocumentModel.ButtonGroup();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

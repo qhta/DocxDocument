@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Math;
 /// </summary>
 public static class MatrixRowConverter
 {
-  private static Collection<DMMath.Base> GetBases(DXMath.MatrixRow openXmlElement)
+  private static Collection<DMMath.Base>? GetBases(DXMath.MatrixRow openXmlElement)
   {
     var collection = new Collection<DMMath.Base>();
     foreach (var item in openXmlElement.Elements<DXMath.Base>())
@@ -14,7 +14,9 @@ public static class MatrixRowConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBases(DXMath.MatrixRow openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class MatrixRowConverter
     }
   }
   
-  public static DMMath.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
+  public static DocumentModel.Math.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixRow();
+      var value = new DocumentModel.Math.MatrixRow();
       value.Bases = GetBases(openXmlElement);
       return value;
     }

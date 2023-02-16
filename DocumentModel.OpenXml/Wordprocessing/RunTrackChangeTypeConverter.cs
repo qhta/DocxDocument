@@ -71,11 +71,11 @@ public static class RunTrackChangeTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.RunTrackChangeType? CreateModelElement(DXW.RunTrackChangeType? openXmlElement)
+  public static DocumentModel.Wordprocessing.RunTrackChangeType? CreateModelElement(DXW.RunTrackChangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunTrackChangeType();
+      var value = new DocumentModel.Wordprocessing.RunTrackChangeType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

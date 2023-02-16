@@ -10,7 +10,10 @@ public static class GroupShapeNonVisualPropertiesConverter
   /// </summary>
   private static DMDrawsO.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXODraw.GroupShapeNonVisualProperties openXmlElement)
   {
-    return DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>();
+    if (element != null)
+      return DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingProperties(DXODraw.GroupShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GroupShapeNonVisualPropertiesConverter
   /// </summary>
   private static DMDrawsO.NonVisualGroupDrawingShapeProperties? GetNonVisualGroupDrawingShapeProperties(DXODraw.GroupShapeNonVisualProperties openXmlElement)
   {
-    return DMXDrawsO.NonVisualGroupDrawingShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualGroupDrawingShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualGroupDrawingShapeProperties>();
+    if (element != null)
+      return DMXDrawsO.NonVisualGroupDrawingShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGroupDrawingShapeProperties(DXODraw.GroupShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualGroupDrawingShapeProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class GroupShapeNonVisualPropertiesConverter
     }
   }
   
-  public static DMDrawsO.GroupShapeNonVisualProperties? CreateModelElement(DXODraw.GroupShapeNonVisualProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.GroupShapeNonVisualProperties? CreateModelElement(DXODraw.GroupShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.GroupShapeNonVisualProperties();
+      var value = new DocumentModel.Drawings.Office.GroupShapeNonVisualProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualGroupDrawingShapeProperties = GetNonVisualGroupDrawingShapeProperties(openXmlElement);
       return value;

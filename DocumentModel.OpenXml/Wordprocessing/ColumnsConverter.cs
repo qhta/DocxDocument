@@ -94,7 +94,7 @@ public static class ColumnsConverter
       openXmlElement.Separator = null;
   }
   
-  private static Collection<DMW.Column> GetItems(DXW.Columns openXmlElement)
+  private static Collection<DMW.Column>? GetItems(DXW.Columns openXmlElement)
   {
     var collection = new Collection<DMW.Column>();
     foreach (var item in openXmlElement.Elements<DXW.Column>())
@@ -103,7 +103,9 @@ public static class ColumnsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value, DiffList? diffs, string? objName)
@@ -148,11 +150,11 @@ public static class ColumnsConverter
     }
   }
   
-  public static DMW.Columns? CreateModelElement(DXW.Columns? openXmlElement)
+  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(DXW.Columns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Columns();
+      var value = new DocumentModel.Wordprocessing.Columns();
       value.EqualWidth = GetEqualWidth(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       value.ColumnCount = GetColumnCount(openXmlElement);

@@ -28,11 +28,11 @@ public static class RelationshipTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.RelationshipType? CreateModelElement(DXW.RelationshipType? openXmlElement)
+  public static DocumentModel.Wordprocessing.RelationshipType? CreateModelElement(DXW.RelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RelationshipType();
+      var value = new DocumentModel.Wordprocessing.RelationshipType();
       value.Id = GetId(openXmlElement);
       return value;
     }

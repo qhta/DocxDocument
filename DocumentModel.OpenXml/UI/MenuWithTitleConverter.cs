@@ -692,7 +692,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.UnsizedControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>();
+    if (element != null)
+      return DMXUI.UnsizedControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedControlClone(DXOCustUI.MenuWithTitle openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
@@ -715,7 +718,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.MenuWithTitle openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -738,7 +744,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.CheckBox? GetCheckBox(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>();
+    if (element != null)
+      return DMXUI.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXOCustUI.MenuWithTitle openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
@@ -761,7 +770,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.UnsizedGallery? GetUnsizedGallery(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.UnsizedGalleryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>();
+    if (element != null)
+      return DMXUI.UnsizedGalleryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedGallery(DXOCustUI.MenuWithTitle openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
@@ -784,7 +796,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.UnsizedToggleButton? GetUnsizedToggleButton(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>();
+    if (element != null)
+      return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedToggleButton(DXOCustUI.MenuWithTitle openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
@@ -807,7 +822,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.MenuSeparator? GetMenuSeparator(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.MenuSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.MenuSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuSeparator>();
+    if (element != null)
+      return DMXUI.MenuSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuSeparator(DXOCustUI.MenuWithTitle openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
@@ -830,7 +848,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.SplitButtonWithTitle? GetSplitButtonWithTitle(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.SplitButtonWithTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.SplitButtonWithTitle>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.SplitButtonWithTitle>();
+    if (element != null)
+      return DMXUI.SplitButtonWithTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButtonWithTitle(DXOCustUI.MenuWithTitle openXmlElement, DMUI.SplitButtonWithTitle? value, DiffList? diffs, string? objName)
@@ -853,7 +874,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.MenuWithTitle? GetChildMenuWithTitle(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.MenuWithTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>();
+    if (element != null)
+      return DMXUI.MenuWithTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildMenuWithTitle(DXOCustUI.MenuWithTitle openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs, string? objName)
@@ -876,7 +900,10 @@ public static class MenuWithTitleConverter
   
   private static DMUI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DXOCustUI.MenuWithTitle openXmlElement)
   {
-    return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>();
+    if (element != null)
+      return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedDynamicMenu(DXOCustUI.MenuWithTitle openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
@@ -897,11 +924,11 @@ public static class MenuWithTitleConverter
     }
   }
   
-  public static DMUI.MenuWithTitle? CreateModelElement(DXOCustUI.MenuWithTitle? openXmlElement)
+  public static DocumentModel.UI.MenuWithTitle? CreateModelElement(DXOCustUI.MenuWithTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.MenuWithTitle();
+      var value = new DocumentModel.UI.MenuWithTitle();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

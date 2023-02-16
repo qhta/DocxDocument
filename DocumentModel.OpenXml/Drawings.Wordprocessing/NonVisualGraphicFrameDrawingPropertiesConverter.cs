@@ -10,7 +10,10 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.GraphicFrameLocks? GetGraphicFrameLocks(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement)
   {
-    return DMXDraws.GraphicFrameLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GraphicFrameLocks>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GraphicFrameLocks>();
+    if (element != null)
+      return DMXDraws.GraphicFrameLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphicFrameLocks(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.GraphicFrameLocks? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawW.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
     }
   }
   
-  public static DMDrawsW.NonVisualGraphicFrameDrawingProperties? CreateModelElement(DXDrawW.NonVisualGraphicFrameDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? CreateModelElement(DXDrawW.NonVisualGraphicFrameDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.NonVisualGraphicFrameDrawingProperties();
+      var value = new DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties();
       value.GraphicFrameLocks = GetGraphicFrameLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

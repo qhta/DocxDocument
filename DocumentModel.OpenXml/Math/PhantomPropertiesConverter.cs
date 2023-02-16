@@ -140,7 +140,10 @@ public static class PhantomPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.PhantomProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.PhantomProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -161,11 +164,11 @@ public static class PhantomPropertiesConverter
     }
   }
   
-  public static DMMath.PhantomProperties? CreateModelElement(DXMath.PhantomProperties? openXmlElement)
+  public static DocumentModel.Math.PhantomProperties? CreateModelElement(DXMath.PhantomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.PhantomProperties();
+      var value = new DocumentModel.Math.PhantomProperties();
       value.ShowPhantom = GetShowPhantom(openXmlElement);
       value.ZeroWidth = GetZeroWidth(openXmlElement);
       value.ZeroAscent = GetZeroAscent(openXmlElement);

@@ -5,11 +5,11 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DataPartReferenceRelationshipConverter
 {
-  public static DMPack.DataPartReferenceRelationship? CreateModelElement(DXPack.DataPartReferenceRelationship? openXmlElement)
+  public static DocumentModel.Packaging.DataPartReferenceRelationship? CreateModelElement(DXPack.DataPartReferenceRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DataPartReferenceRelationship();
+      var value = new DocumentModel.Packaging.DataPartReferenceRelationship();
       return value;
     }
     return null;

@@ -421,7 +421,10 @@ public static class BackstagePrimaryMenuConverter
   
   private static DM.BackstageMenuGroup? GetBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return DMX.BackstageMenuGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>();
+    if (element != null)
+      return DMX.BackstageMenuGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, DM.BackstageMenuGroup? value, DiffList? diffs, string? objName)
@@ -442,11 +445,11 @@ public static class BackstagePrimaryMenuConverter
     }
   }
   
-  public static DM.BackstagePrimaryMenu? CreateModelElement(DXO2010CustUI.BackstagePrimaryMenu? openXmlElement)
+  public static DocumentModel.BackstagePrimaryMenu? CreateModelElement(DXO2010CustUI.BackstagePrimaryMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstagePrimaryMenu();
+      var value = new DocumentModel.BackstagePrimaryMenu();
       value.Screentip = GetScreentip(openXmlElement);
       value.GetScreentip = GetGetScreentip(openXmlElement);
       value.Supertip = GetSupertip(openXmlElement);

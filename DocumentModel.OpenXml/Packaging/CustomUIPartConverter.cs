@@ -28,11 +28,11 @@ public static class CustomUIPartConverter
     }
   }
   
-  public static DMPack.CustomUIPart? CreateModelElement(DXPack.CustomUIPart? openXmlElement)
+  public static DocumentModel.Packaging.CustomUIPart? CreateModelElement(DXPack.CustomUIPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.CustomUIPart();
+      var value = new DocumentModel.Packaging.CustomUIPart();
       value.CustomUI = GetCustomUI(openXmlElement);
       return value;
     }

@@ -108,7 +108,10 @@ public static class WrapSquareConverter
   /// </summary>
   private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.WrapSquare openXmlElement)
   {
-    return DMXDrawsW.EffectExtentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
+    if (element != null)
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectExtent(DXDrawW.WrapSquare openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
@@ -129,11 +132,11 @@ public static class WrapSquareConverter
     }
   }
   
-  public static DMDrawsW.WrapSquare? CreateModelElement(DXDrawW.WrapSquare? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WrapSquare? CreateModelElement(DXDrawW.WrapSquare? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.WrapSquare();
+      var value = new DocumentModel.Drawings.Wordprocessing.WrapSquare();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);

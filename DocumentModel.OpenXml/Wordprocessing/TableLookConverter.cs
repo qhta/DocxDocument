@@ -8,27 +8,27 @@ public static class TableLookConverter
   /// <summary>
   /// val
   /// </summary>
-  private static UInt16? GetVal(DXW.TableLook openXmlElement)
+  private static DM.HexChar? GetVal(DXW.TableLook openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
-      return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.Val.Value);
     return null;
   }
   
-  private static bool CmpVal(DXW.TableLook openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.TableLook openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Val.Value) == value)
         return true;
-    if (openXmlElement?.Val?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetVal(DXW.TableLook openXmlElement, UInt16? value)
+  private static void SetVal(DXW.TableLook openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.Val = ((UInt16)value).ToString("X4");
+      openXmlElement.Val = value.ToString();
     else
       openXmlElement.Val = null;
   }
@@ -171,11 +171,11 @@ public static class TableLookConverter
       openXmlElement.NoVerticalBand = null;
   }
   
-  public static DMW.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableLook();
+      var value = new DocumentModel.Wordprocessing.TableLook();
       value.Val = GetVal(openXmlElement);
       value.FirstRow = GetFirstRow(openXmlElement);
       value.LastRow = GetLastRow(openXmlElement);

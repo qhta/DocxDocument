@@ -43,7 +43,7 @@ public static class DiagramPersistLayoutPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramPersistLayoutPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class DiagramPersistLayoutPartConverter
     return false;
   }
   
-  public static DMPack.DiagramPersistLayoutPart? CreateModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement)
+  public static DocumentModel.Packaging.DiagramPersistLayoutPart? CreateModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DiagramPersistLayoutPart();
+      var value = new DocumentModel.Packaging.DiagramPersistLayoutPart();
       value.ContentType = GetContentType(openXmlElement);
       value.Drawing = GetDrawing(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);

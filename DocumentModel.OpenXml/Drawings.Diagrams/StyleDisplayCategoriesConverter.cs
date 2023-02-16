@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class StyleDisplayCategoriesConverter
 {
-  private static Collection<DMDrawsDgms.StyleDisplayCategory> GetItems(DXDrawDgms.StyleDisplayCategories openXmlElement)
+  private static Collection<DMDrawsDgms.StyleDisplayCategory>? GetItems(DXDrawDgms.StyleDisplayCategories openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.StyleDisplayCategory>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.StyleDisplayCategory>())
@@ -14,7 +14,9 @@ public static class StyleDisplayCategoriesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXDrawDgms.StyleDisplayCategories openXmlElement, Collection<DMDrawsDgms.StyleDisplayCategory>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class StyleDisplayCategoriesConverter
     }
   }
   
-  public static DMDrawsDgms.StyleDisplayCategories? CreateModelElement(DXDrawDgms.StyleDisplayCategories? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? CreateModelElement(DXDrawDgms.StyleDisplayCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.StyleDisplayCategories();
+      var value = new DocumentModel.Drawings.Diagrams.StyleDisplayCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }

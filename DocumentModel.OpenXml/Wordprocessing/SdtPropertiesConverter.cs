@@ -7,7 +7,10 @@ public static class SdtPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunProperties>();
+    if (element != null)
+      return DMXW.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXW.SdtProperties openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
@@ -78,7 +81,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtPlaceholder? GetSdtPlaceholder(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtPlaceholderConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtPlaceholder>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtPlaceholder>();
+    if (element != null)
+      return DMXW.SdtPlaceholderConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtPlaceholder(DXW.SdtProperties openXmlElement, DMW.SdtPlaceholder? value, DiffList? diffs, string? objName)
@@ -133,7 +139,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.DataBinding? GetDataBinding(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.DataBindingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DataBinding>());
+    var element = openXmlElement?.GetFirstChild<DXW.DataBinding>();
+    if (element != null)
+      return DMXW.DataBindingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataBinding(DXW.SdtProperties openXmlElement, DMW.DataBinding? value, DiffList? diffs, string? objName)
@@ -238,7 +247,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.Color3? GetColor(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.Color3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.Color>());
+    var element = openXmlElement?.GetFirstChild<DXO2013W.Color>();
+    if (element != null)
+      return DMXW.Color3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColor(DXW.SdtProperties openXmlElement, DMW.Color3? value, DiffList? diffs, string? objName)
@@ -368,7 +380,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentComboBox? GetSdtContentComboBox(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentComboBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentComboBox>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentComboBox>();
+    if (element != null)
+      return DMXW.SdtContentComboBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentComboBox(DXW.SdtProperties openXmlElement, DMW.SdtContentComboBox? value, DiffList? diffs, string? objName)
@@ -391,7 +406,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDate? GetSdtContentDate(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentDateConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDate>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentDate>();
+    if (element != null)
+      return DMXW.SdtContentDateConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentDate(DXW.SdtProperties openXmlElement, DMW.SdtContentDate? value, DiffList? diffs, string? objName)
@@ -414,7 +432,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDocPartObject? GetSdtContentDocPartObject(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentDocPartObjectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartObject>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentDocPartObject>();
+    if (element != null)
+      return DMXW.SdtContentDocPartObjectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentDocPartObject(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartObject? value, DiffList? diffs, string? objName)
@@ -437,7 +458,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDocPartList? GetSdtContentDocPartList(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentDocPartListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDocPartList>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentDocPartList>();
+    if (element != null)
+      return DMXW.SdtContentDocPartListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentDocPartList(DXW.SdtProperties openXmlElement, DMW.SdtContentDocPartList? value, DiffList? diffs, string? objName)
@@ -460,7 +484,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentDropDownList? GetSdtContentDropDownList(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentDropDownListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentDropDownList>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentDropDownList>();
+    if (element != null)
+      return DMXW.SdtContentDropDownListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentDropDownList(DXW.SdtProperties openXmlElement, DMW.SdtContentDropDownList? value, DiffList? diffs, string? objName)
@@ -539,7 +566,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentText? GetSdtContentText(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtContentText>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentText>();
+    if (element != null)
+      return DMXW.SdtContentTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentText(DXW.SdtProperties openXmlElement, DMW.SdtContentText? value, DiffList? diffs, string? objName)
@@ -674,7 +704,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtContentCheckBox? GetSdtContentCheckBox(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtContentCheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SdtContentCheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.SdtContentCheckBox>();
+    if (element != null)
+      return DMXW.SdtContentCheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtContentCheckBox(DXW.SdtProperties openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs, string? objName)
@@ -697,7 +730,10 @@ public static class SdtPropertiesConverter
   
   private static DMW.SdtRepeatedSection? GetSdtRepeatedSection(DXW.SdtProperties openXmlElement)
   {
-    return DMXW.SdtRepeatedSectionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.SdtRepeatedSection>());
+    var element = openXmlElement?.GetFirstChild<DXO2013W.SdtRepeatedSection>();
+    if (element != null)
+      return DMXW.SdtRepeatedSectionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtRepeatedSection(DXW.SdtProperties openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs, string? objName)
@@ -746,11 +782,11 @@ public static class SdtPropertiesConverter
     }
   }
   
-  public static DMW.SdtProperties? CreateModelElement(DXW.SdtProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtProperties? CreateModelElement(DXW.SdtProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtProperties();
+      var value = new DocumentModel.Wordprocessing.SdtProperties();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.SdtAlias = GetSdtAlias(openXmlElement);
       value.Lock = GetLock(openXmlElement);

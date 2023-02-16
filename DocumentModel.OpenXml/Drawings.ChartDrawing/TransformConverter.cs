@@ -76,7 +76,10 @@ public static class TransformConverter
   /// </summary>
   private static DMDraws.Point2DType? GetOffset(DXDrawChartDraw.Transform openXmlElement)
   {
-    return DMXDraws.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Offset>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Offset>();
+    if (element != null)
+      return DMXDraws.Point2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOffset(DXDrawChartDraw.Transform openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
@@ -102,7 +105,10 @@ public static class TransformConverter
   /// </summary>
   private static DMDraws.PositiveSize2DType? GetExtents(DXDrawChartDraw.Transform openXmlElement)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Extents>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Extents>();
+    if (element != null)
+      return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtents(DXDrawChartDraw.Transform openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
@@ -123,11 +129,11 @@ public static class TransformConverter
     }
   }
   
-  public static DMDrawsChartDraw.Transform? CreateModelElement(DXDrawChartDraw.Transform? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.Transform? CreateModelElement(DXDrawChartDraw.Transform? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.Transform();
+      var value = new DocumentModel.Drawings.ChartDrawing.Transform();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);

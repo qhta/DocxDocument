@@ -220,7 +220,10 @@ public static class DiagramConverter
   /// </summary>
   private static DMVml.RelationTable? GetRelationTable(DXVmlO.Diagram openXmlElement)
   {
-    return DMXVml.RelationTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.RelationTable>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.RelationTable>();
+    if (element != null)
+      return DMXVml.RelationTableConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value, DiffList? diffs, string? objName)
@@ -241,11 +244,11 @@ public static class DiagramConverter
     }
   }
   
-  public static DMVml.Diagram? CreateModelElement(DXVmlO.Diagram? openXmlElement)
+  public static DocumentModel.Vml.Diagram? CreateModelElement(DXVmlO.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Diagram();
+      var value = new DocumentModel.Vml.Diagram();
       value.Extension = GetExtension(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.AutoFormat = GetAutoFormat(openXmlElement);

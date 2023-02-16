@@ -29,11 +29,11 @@ public static class StylesWithEffectsPartConverter
     return false;
   }
   
-  public static DMPack.StylesWithEffectsPart? CreateModelElement(DXPack.StylesWithEffectsPart? openXmlElement)
+  public static DocumentModel.Packaging.StylesWithEffectsPart? CreateModelElement(DXPack.StylesWithEffectsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.StylesWithEffectsPart();
+      var value = new DocumentModel.Packaging.StylesWithEffectsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

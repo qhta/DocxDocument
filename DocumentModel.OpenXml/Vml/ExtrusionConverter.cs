@@ -694,11 +694,11 @@ public static class ExtrusionConverter
       openXmlElement.LightHarsh2 = null;
   }
   
-  public static DMVml.Extrusion? CreateModelElement(DXVmlO.Extrusion? openXmlElement)
+  public static DocumentModel.Vml.Extrusion? CreateModelElement(DXVmlO.Extrusion? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Extrusion();
+      var value = new DocumentModel.Vml.Extrusion();
       value.Extension = GetExtension(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Type = GetType(openXmlElement);

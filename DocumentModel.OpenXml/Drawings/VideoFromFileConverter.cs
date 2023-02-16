@@ -33,7 +33,10 @@ public static class VideoFromFileConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.VideoFromFile openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.VideoFromFile openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class VideoFromFileConverter
     }
   }
   
-  public static DMDraws.VideoFromFile? CreateModelElement(DXDraw.VideoFromFile? openXmlElement)
+  public static DocumentModel.Drawings.VideoFromFile? CreateModelElement(DXDraw.VideoFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.VideoFromFile();
+      var value = new DocumentModel.Drawings.VideoFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

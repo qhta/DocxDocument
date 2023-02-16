@@ -28,11 +28,11 @@ public static class PredecessorDrawingElementReferenceConverter
       openXmlElement.Pred = null;
   }
   
-  public static DMDraws.PredecessorDrawingElementReference? CreateModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement)
+  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PredecessorDrawingElementReference();
+      var value = new DocumentModel.Drawings.PredecessorDrawingElementReference();
       value.Pred = GetPred(openXmlElement);
       return value;
     }

@@ -29,11 +29,11 @@ public static class XmlSignaturePartConverter
     return false;
   }
   
-  public static DMPack.XmlSignaturePart? CreateModelElement(DXPack.XmlSignaturePart? openXmlElement)
+  public static DocumentModel.Packaging.XmlSignaturePart? CreateModelElement(DXPack.XmlSignaturePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.XmlSignaturePart();
+      var value = new DocumentModel.Packaging.XmlSignaturePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

@@ -85,11 +85,11 @@ public static class ForegroundMarkConverter
     openXmlElement.SecondYCoordinate = value;
   }
   
-  public static DMDraws.ForegroundMark? CreateModelElement(DXO2010Draw.ForegroundMark? openXmlElement)
+  public static DocumentModel.Drawings.ForegroundMark? CreateModelElement(DXO2010Draw.ForegroundMark? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ForegroundMark();
+      var value = new DocumentModel.Drawings.ForegroundMark();
       value.FirstXCoordinate = GetFirstXCoordinate(openXmlElement);
       value.FirstYCoordinate = GetFirstYCoordinate(openXmlElement);
       value.SecondXCoordinate = GetSecondXCoordinate(openXmlElement);

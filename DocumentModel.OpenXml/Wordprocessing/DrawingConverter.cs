@@ -10,7 +10,10 @@ public static class DrawingConverter
   /// </summary>
   private static DMDrawsW.Anchor? GetAnchor(DXW.Drawing openXmlElement)
   {
-    return DMXDrawsW.AnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.Anchor>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.Anchor>();
+    if (element != null)
+      return DMXDrawsW.AnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class DrawingConverter
   /// </summary>
   private static DMDrawsW.Inline? GetInline(DXW.Drawing openXmlElement)
   {
-    return DMXDrawsW.InlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.Inline>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.Inline>();
+    if (element != null)
+      return DMXDrawsW.InlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class DrawingConverter
     }
   }
   
-  public static DMW.Drawing? CreateModelElement(DXW.Drawing? openXmlElement)
+  public static DocumentModel.Wordprocessing.Drawing? CreateModelElement(DXW.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Drawing();
+      var value = new DocumentModel.Wordprocessing.Drawing();
       value.Anchor = GetAnchor(openXmlElement);
       value.Inline = GetInline(openXmlElement);
       return value;

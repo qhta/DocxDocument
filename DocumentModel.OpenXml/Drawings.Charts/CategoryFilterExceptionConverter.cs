@@ -35,7 +35,10 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   private static DMDrawsCharts.ShapeProperties3? GetShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement)
   {
-    return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.ShapeProperties3? value, DiffList? diffs, string? objName)
@@ -151,7 +154,10 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   private static DMDrawsCharts.Marker3? GetMarker(DXO2013DrawChart.CategoryFilterException openXmlElement)
   {
-    return DMXDrawsCharts.Marker3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.Marker>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.Marker>();
+    if (element != null)
+      return DMXDrawsCharts.Marker3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMarker(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.Marker3? value, DiffList? diffs, string? objName)
@@ -177,7 +183,10 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   private static DMDrawsCharts.DataLabel3? GetDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement)
   {
-    return DMXDrawsCharts.DataLabel3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabel>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabel>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabel3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.DataLabel3? value, DiffList? diffs, string? objName)
@@ -198,11 +207,11 @@ public static class CategoryFilterExceptionConverter
     }
   }
   
-  public static DMDrawsCharts.CategoryFilterException? CreateModelElement(DXO2013DrawChart.CategoryFilterException? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CategoryFilterException? CreateModelElement(DXO2013DrawChart.CategoryFilterException? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.CategoryFilterException();
+      var value = new DocumentModel.Drawings.Charts.CategoryFilterException();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.Explosion = GetExplosion(openXmlElement);

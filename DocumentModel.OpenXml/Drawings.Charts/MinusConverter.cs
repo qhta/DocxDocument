@@ -7,7 +7,10 @@ public static class MinusConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.Minus openXmlElement)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    if (element != null)
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberReference(DXDrawCharts.Minus openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class MinusConverter
   
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.Minus openXmlElement)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberLiteral(DXDrawCharts.Minus openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class MinusConverter
     }
   }
   
-  public static DMDrawsCharts.Minus? CreateModelElement(DXDrawCharts.Minus? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Minus? CreateModelElement(DXDrawCharts.Minus? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Minus();
+      var value = new DocumentModel.Drawings.Charts.Minus();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

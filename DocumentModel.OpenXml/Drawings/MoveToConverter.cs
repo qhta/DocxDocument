@@ -10,7 +10,10 @@ public static class MoveToConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPoint(DXDraw.MoveTo openXmlElement)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Point>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Point>();
+    if (element != null)
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPoint(DXDraw.MoveTo openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class MoveToConverter
     }
   }
   
-  public static DMDraws.MoveTo? CreateModelElement(DXDraw.MoveTo? openXmlElement)
+  public static DocumentModel.Drawings.MoveTo? CreateModelElement(DXDraw.MoveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.MoveTo();
+      var value = new DocumentModel.Drawings.MoveTo();
       value.Point = GetPoint(openXmlElement);
       return value;
     }

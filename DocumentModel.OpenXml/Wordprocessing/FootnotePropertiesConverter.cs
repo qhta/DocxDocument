@@ -36,7 +36,10 @@ public static class FootnotePropertiesConverter
   /// </summary>
   private static DMW.NumberingFormat? GetNumberingFormat(DXW.FootnoteProperties openXmlElement)
   {
-    return DMXW.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
+    if (element != null)
+      return DMXW.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -111,11 +114,11 @@ public static class FootnotePropertiesConverter
     }
   }
   
-  public static DMW.FootnoteProperties? CreateModelElement(DXW.FootnoteProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.FootnoteProperties? CreateModelElement(DXW.FootnoteProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteProperties();
+      var value = new DocumentModel.Wordprocessing.FootnoteProperties();
       value.FootnotePosition = GetFootnotePosition(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);

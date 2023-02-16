@@ -63,11 +63,11 @@ public static class GeoDataPointQueryConverter
     openXmlElement.Longitude = value;
   }
   
-  public static DMDrawsChartDraws.GeoDataPointQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointQuery? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoDataPointQuery();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery();
       value.EntityType = GetEntityType(openXmlElement);
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);

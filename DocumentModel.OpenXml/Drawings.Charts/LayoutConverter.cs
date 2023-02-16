@@ -10,7 +10,10 @@ public static class LayoutConverter
   /// </summary>
   private static DMDrawsCharts.ManualLayout? GetManualLayout(DXDrawCharts.Layout openXmlElement)
   {
-    return DMXDrawsCharts.ManualLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ManualLayout>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ManualLayout>();
+    if (element != null)
+      return DMXDrawsCharts.ManualLayoutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpManualLayout(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ManualLayout? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class LayoutConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.Layout openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.Layout openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class LayoutConverter
     }
   }
   
-  public static DMDrawsCharts.Layout? CreateModelElement(DXDrawCharts.Layout? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Layout? CreateModelElement(DXDrawCharts.Layout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Layout();
+      var value = new DocumentModel.Drawings.Charts.Layout();
       value.ManualLayout = GetManualLayout(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

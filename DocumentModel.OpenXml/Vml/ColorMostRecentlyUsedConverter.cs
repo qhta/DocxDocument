@@ -46,11 +46,11 @@ public static class ColorMostRecentlyUsedConverter
       openXmlElement.Colors = null;
   }
   
-  public static DMVml.ColorMostRecentlyUsed? CreateModelElement(DXVmlO.ColorMostRecentlyUsed? openXmlElement)
+  public static DocumentModel.Vml.ColorMostRecentlyUsed? CreateModelElement(DXVmlO.ColorMostRecentlyUsed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ColorMostRecentlyUsed();
+      var value = new DocumentModel.Vml.ColorMostRecentlyUsed();
       value.Extension = GetExtension(openXmlElement);
       value.Colors = GetColors(openXmlElement);
       return value;

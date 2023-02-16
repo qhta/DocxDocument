@@ -30,7 +30,10 @@ public static class StrRefExtensionConverter
   
   private static DMDrawsCharts.FullReference? GetFullReference(DXDrawCharts.StrRefExtension openXmlElement)
   {
-    return DMXDrawsCharts.FullReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FullReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FullReference>();
+    if (element != null)
+      return DMXDrawsCharts.FullReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFullReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FullReference? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class StrRefExtensionConverter
   
   private static DMDrawsCharts.LevelReference? GetLevelReference(DXDrawCharts.StrRefExtension openXmlElement)
   {
-    return DMXDrawsCharts.LevelReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.LevelReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.LevelReference>();
+    if (element != null)
+      return DMXDrawsCharts.LevelReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLevelReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.LevelReference? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class StrRefExtensionConverter
   
   private static DMDrawsCharts.FormulaReference? GetFormulaReference(DXDrawCharts.StrRefExtension openXmlElement)
   {
-    return DMXDrawsCharts.FormulaReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FormulaReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FormulaReference>();
+    if (element != null)
+      return DMXDrawsCharts.FormulaReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormulaReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value, DiffList? diffs, string? objName)
@@ -97,11 +106,11 @@ public static class StrRefExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.StrRefExtension? CreateModelElement(DXDrawCharts.StrRefExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StrRefExtension? CreateModelElement(DXDrawCharts.StrRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StrRefExtension();
+      var value = new DocumentModel.Drawings.Charts.StrRefExtension();
       value.Uri = GetUri(openXmlElement);
       value.FullReference = GetFullReference(openXmlElement);
       value.LevelReference = GetLevelReference(openXmlElement);

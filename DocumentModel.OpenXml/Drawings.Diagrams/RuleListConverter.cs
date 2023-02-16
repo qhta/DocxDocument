@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class RuleListConverter
 {
-  private static Collection<DMDrawsDgms.Rule> GetRules(DXDrawDgms.RuleList openXmlElement)
+  private static Collection<DMDrawsDgms.Rule>? GetRules(DXDrawDgms.RuleList openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Rule>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Rule>())
@@ -14,7 +14,9 @@ public static class RuleListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpRules(DXDrawDgms.RuleList openXmlElement, Collection<DMDrawsDgms.Rule>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class RuleListConverter
     }
   }
   
-  public static DMDrawsDgms.RuleList? CreateModelElement(DXDrawDgms.RuleList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.RuleList? CreateModelElement(DXDrawDgms.RuleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.RuleList();
+      var value = new DocumentModel.Drawings.Diagrams.RuleList();
       value.Rules = GetRules(openXmlElement);
       return value;
     }

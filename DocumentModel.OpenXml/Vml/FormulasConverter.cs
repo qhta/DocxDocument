@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Vml;
 /// </summary>
 public static class FormulasConverter
 {
-  private static Collection<DMVml.Formula> GetItems(DXVml.Formulas openXmlElement)
+  private static Collection<DMVml.Formula>? GetItems(DXVml.Formulas openXmlElement)
   {
     var collection = new Collection<DMVml.Formula>();
     foreach (var item in openXmlElement.Elements<DXVml.Formula>())
@@ -14,7 +14,9 @@ public static class FormulasConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXVml.Formulas openXmlElement, Collection<DMVml.Formula>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class FormulasConverter
     }
   }
   
-  public static DMVml.Formulas? CreateModelElement(DXVml.Formulas? openXmlElement)
+  public static DocumentModel.Vml.Formulas? CreateModelElement(DXVml.Formulas? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Formulas();
+      var value = new DocumentModel.Vml.Formulas();
       value.Items = GetItems(openXmlElement);
       return value;
     }

@@ -43,7 +43,7 @@ public static class AlgorithmConverter
     openXmlElement.Revision = value;
   }
   
-  private static Collection<DMDrawsDgms.Parameter> GetParameters(DXDrawDgms.Algorithm openXmlElement)
+  private static Collection<DMDrawsDgms.Parameter>? GetParameters(DXDrawDgms.Algorithm openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Parameter>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Parameter>())
@@ -52,7 +52,9 @@ public static class AlgorithmConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpParameters(DXDrawDgms.Algorithm openXmlElement, Collection<DMDrawsDgms.Parameter>? value, DiffList? diffs, string? objName)
@@ -99,7 +101,10 @@ public static class AlgorithmConverter
   
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Algorithm openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -120,11 +125,11 @@ public static class AlgorithmConverter
     }
   }
   
-  public static DMDrawsDgms.Algorithm? CreateModelElement(DXDrawDgms.Algorithm? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Algorithm? CreateModelElement(DXDrawDgms.Algorithm? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Algorithm();
+      var value = new DocumentModel.Drawings.Diagrams.Algorithm();
       value.Type = GetType(openXmlElement);
       value.Revision = GetRevision(openXmlElement);
       value.Parameters = GetParameters(openXmlElement);

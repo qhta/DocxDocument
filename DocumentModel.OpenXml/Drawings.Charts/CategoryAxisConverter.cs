@@ -38,7 +38,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.Scaling? GetScaling(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.ScalingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>();
+    if (element != null)
+      return DMXDrawsCharts.ScalingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScaling(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.Scaling? value, DiffList? diffs, string? objName)
@@ -121,7 +124,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.MajorGridlines? GetMajorGridlines(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMajorGridlines(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.MajorGridlines? value, DiffList? diffs, string? objName)
@@ -147,7 +153,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.MinorGridlines? GetMinorGridlines(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMinorGridlines(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.MinorGridlines? value, DiffList? diffs, string? objName)
@@ -173,7 +182,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.TitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Title>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    if (element != null)
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTitle(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
@@ -199,7 +211,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -303,7 +318,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -329,7 +347,10 @@ public static class CategoryAxisConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -582,7 +603,10 @@ public static class CategoryAxisConverter
   
   private static DMDrawsCharts.CatAxExtensionList? GetCatAxExtensionList(DXDrawCharts.CategoryAxis openXmlElement)
   {
-    return DMXDrawsCharts.CatAxExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.CatAxExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.CatAxExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.CatAxExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCatAxExtensionList(DXDrawCharts.CategoryAxis openXmlElement, DMDrawsCharts.CatAxExtensionList? value, DiffList? diffs, string? objName)
@@ -603,11 +627,11 @@ public static class CategoryAxisConverter
     }
   }
   
-  public static DMDrawsCharts.CategoryAxis? CreateModelElement(DXDrawCharts.CategoryAxis? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CategoryAxis? CreateModelElement(DXDrawCharts.CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.CategoryAxis();
+      var value = new DocumentModel.Drawings.Charts.CategoryAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

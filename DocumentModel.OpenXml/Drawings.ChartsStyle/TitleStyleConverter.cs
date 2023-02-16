@@ -7,7 +7,10 @@ public static class TitleStyleConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.LineReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineReference>();
+    if (element != null)
+      return DMXDrawsChartsStyle.LineReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineReference(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.LineReference? value, DiffList? diffs, string? objName)
@@ -52,7 +55,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.FillReference? GetFillReference(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.FillReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FillReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FillReference>();
+    if (element != null)
+      return DMXDrawsChartsStyle.FillReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFillReference(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.FillReference? value, DiffList? diffs, string? objName)
@@ -75,7 +81,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.EffectReference? GetEffectReference(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.EffectReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.EffectReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.EffectReference>();
+    if (element != null)
+      return DMXDrawsChartsStyle.EffectReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectReference(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.EffectReference? value, DiffList? diffs, string? objName)
@@ -98,7 +107,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.FontReference? GetFontReference(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.FontReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FontReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FontReference>();
+    if (element != null)
+      return DMXDrawsChartsStyle.FontReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFontReference(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.FontReference? value, DiffList? diffs, string? objName)
@@ -121,7 +133,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.ShapeProperties? GetShapeProperties(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartsStyle.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -144,7 +159,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>();
+    if (element != null)
+      return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextCharacterPropertiesType(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
@@ -167,7 +185,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.TextBodyProperties? GetTextBodyProperties(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>();
+    if (element != null)
+      return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBodyProperties(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value, DiffList? diffs, string? objName)
@@ -190,7 +211,10 @@ public static class TitleStyleConverter
   
   private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.TitleStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.TitleStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -211,11 +235,11 @@ public static class TitleStyleConverter
     }
   }
   
-  public static DMDrawsChartsStyle.TitleStyle? CreateModelElement(DXO2013DrawChartStyle.TitleStyle? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.TitleStyle? CreateModelElement(DXO2013DrawChartStyle.TitleStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.TitleStyle();
+      var value = new DocumentModel.Drawings.ChartsStyle.TitleStyle();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);

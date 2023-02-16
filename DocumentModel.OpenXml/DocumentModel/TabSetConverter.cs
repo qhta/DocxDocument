@@ -74,7 +74,7 @@ public static class TabSetConverter
       openXmlElement.GetVisible = null;
   }
   
-  private static Collection<DM.Tab> GetTabs(DXO2010CustUI.TabSet openXmlElement)
+  private static Collection<DM.Tab>? GetTabs(DXO2010CustUI.TabSet openXmlElement)
   {
     var collection = new Collection<DM.Tab>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.Tab>())
@@ -83,7 +83,9 @@ public static class TabSetConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTabs(DXO2010CustUI.TabSet openXmlElement, Collection<DM.Tab>? value, DiffList? diffs, string? objName)
@@ -128,11 +130,11 @@ public static class TabSetConverter
     }
   }
   
-  public static DM.TabSet? CreateModelElement(DXO2010CustUI.TabSet? openXmlElement)
+  public static DocumentModel.TabSet? CreateModelElement(DXO2010CustUI.TabSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TabSet();
+      var value = new DocumentModel.TabSet();
       value.IdMso = GetIdMso(openXmlElement);
       value.Visible = GetVisible(openXmlElement);
       value.GetVisible = GetGetVisible(openXmlElement);

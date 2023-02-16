@@ -48,11 +48,11 @@ public static class ColorTransformCategoryConverter
     openXmlElement.Priority = value;
   }
   
-  public static DMDrawsDgms.ColorTransformCategory? CreateModelElement(DXDrawDgms.ColorTransformCategory? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(DXDrawDgms.ColorTransformCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ColorTransformCategory();
+      var value = new DocumentModel.Drawings.Diagrams.ColorTransformCategory();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;

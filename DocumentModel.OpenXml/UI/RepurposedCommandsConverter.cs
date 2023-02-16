@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class RepurposedCommandsConverter
 {
-  private static Collection<DMUI.RepurposedCommand> GetItems(DXOCustUI.RepurposedCommands openXmlElement)
+  private static Collection<DMUI.RepurposedCommand>? GetItems(DXOCustUI.RepurposedCommands openXmlElement)
   {
     var collection = new Collection<DMUI.RepurposedCommand>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.RepurposedCommand>())
@@ -14,7 +14,9 @@ public static class RepurposedCommandsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.RepurposedCommands openXmlElement, Collection<DMUI.RepurposedCommand>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class RepurposedCommandsConverter
     }
   }
   
-  public static DMUI.RepurposedCommands? CreateModelElement(DXOCustUI.RepurposedCommands? openXmlElement)
+  public static DocumentModel.UI.RepurposedCommands? CreateModelElement(DXOCustUI.RepurposedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.RepurposedCommands();
+      var value = new DocumentModel.UI.RepurposedCommands();
       value.Items = GetItems(openXmlElement);
       return value;
     }

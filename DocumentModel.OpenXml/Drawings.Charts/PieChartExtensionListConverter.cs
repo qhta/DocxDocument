@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PieChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.PieChartExtension> GetPieChartExtensions(DXDrawCharts.PieChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartExtension>? GetPieChartExtensions(DXDrawCharts.PieChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartExtension>())
@@ -14,7 +14,9 @@ public static class PieChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieChartExtensions(DXDrawCharts.PieChartExtensionList openXmlElement, Collection<DMDrawsCharts.PieChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PieChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.PieChartExtensionList? CreateModelElement(DXDrawCharts.PieChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PieChartExtensionList? CreateModelElement(DXDrawCharts.PieChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PieChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.PieChartExtensionList();
       value.PieChartExtensions = GetPieChartExtensions(openXmlElement);
       return value;
     }

@@ -46,11 +46,11 @@ public static class HeaderFooterReferenceTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.HeaderFooterReferenceType? CreateModelElement(DXW.HeaderFooterReferenceType? openXmlElement)
+  public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? CreateModelElement(DXW.HeaderFooterReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.HeaderFooterReferenceType();
+      var value = new DocumentModel.Wordprocessing.HeaderFooterReferenceType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

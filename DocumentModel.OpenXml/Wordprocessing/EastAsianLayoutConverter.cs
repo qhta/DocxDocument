@@ -112,11 +112,11 @@ public static class EastAsianLayoutConverter
       openXmlElement.VerticalCompress = null;
   }
   
-  public static DMW.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
+  public static DocumentModel.Wordprocessing.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.EastAsianLayout();
+      var value = new DocumentModel.Wordprocessing.EastAsianLayout();
       value.Id = GetId(openXmlElement);
       value.Combine = GetCombine(openXmlElement);
       value.CombineBrackets = GetCombineBrackets(openXmlElement);

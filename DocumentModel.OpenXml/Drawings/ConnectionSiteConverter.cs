@@ -33,7 +33,10 @@ public static class ConnectionSiteConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.ConnectionSite openXmlElement)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Position>();
+    if (element != null)
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPosition(DXDraw.ConnectionSite openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class ConnectionSiteConverter
     }
   }
   
-  public static DMDraws.ConnectionSite? CreateModelElement(DXDraw.ConnectionSite? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionSite? CreateModelElement(DXDraw.ConnectionSite? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ConnectionSite();
+      var value = new DocumentModel.Drawings.ConnectionSite();
       value.Angle = GetAngle(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       return value;

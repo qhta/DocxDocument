@@ -52,11 +52,11 @@ public static class VbaDataPartConverter
     }
   }
   
-  public static DMPack.VbaDataPart? CreateModelElement(DXPack.VbaDataPart? openXmlElement)
+  public static DocumentModel.Packaging.VbaDataPart? CreateModelElement(DXPack.VbaDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.VbaDataPart();
+      var value = new DocumentModel.Packaging.VbaDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.VbaSuppData = GetVbaSuppData(openXmlElement);

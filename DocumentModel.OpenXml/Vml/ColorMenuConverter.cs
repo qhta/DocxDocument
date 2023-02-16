@@ -115,11 +115,11 @@ public static class ColorMenuConverter
       openXmlElement.ExtrusionColor = null;
   }
   
-  public static DMVml.ColorMenu? CreateModelElement(DXVmlO.ColorMenu? openXmlElement)
+  public static DocumentModel.Vml.ColorMenu? CreateModelElement(DXVmlO.ColorMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ColorMenu();
+      var value = new DocumentModel.Vml.ColorMenu();
       value.Extension = GetExtension(openXmlElement);
       value.StrokeColor = GetStrokeColor(openXmlElement);
       value.FillColor = GetFillColor(openXmlElement);

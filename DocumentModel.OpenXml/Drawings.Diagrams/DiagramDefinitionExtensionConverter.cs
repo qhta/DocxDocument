@@ -30,7 +30,10 @@ public static class DiagramDefinitionExtensionConverter
   
   private static DMDrawsDgm1.NumberDiagramInfoList? GetNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
   {
-    return DMXDrawsDgm1.NumberDiagramInfoListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>());
+    var element = openXmlElement?.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>();
+    if (element != null)
+      return DMXDrawsDgm1.NumberDiagramInfoListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class DiagramDefinitionExtensionConverter
   
   private static DMDrawsDgm2.TextListStyleType? GetTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
   {
-    return DMXDrawsDgm2.TextListStyleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>());
+    var element = openXmlElement?.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>();
+    if (element != null)
+      return DMXDrawsDgm2.TextListStyleTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm2.TextListStyleType? value, DiffList? diffs, string? objName)
@@ -74,11 +80,11 @@ public static class DiagramDefinitionExtensionConverter
     }
   }
   
-  public static DMDrawsDgms.DiagramDefinitionExtension? CreateModelElement(DXDrawDgms.DiagramDefinitionExtension? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension? CreateModelElement(DXDrawDgms.DiagramDefinitionExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.DiagramDefinitionExtension();
+      var value = new DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberDiagramInfoList = GetNumberDiagramInfoList(openXmlElement);
       value.TextListStyleType = GetTextListStyleType(openXmlElement);

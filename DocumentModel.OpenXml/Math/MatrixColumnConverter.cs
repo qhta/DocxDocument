@@ -10,7 +10,10 @@ public static class MatrixColumnConverter
   /// </summary>
   private static DMMath.MatrixColumnProperties? GetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement)
   {
-    return DMXMath.MatrixColumnPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MatrixColumnProperties>();
+    if (element != null)
+      return DMXMath.MatrixColumnPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class MatrixColumnConverter
     }
   }
   
-  public static DMMath.MatrixColumn? CreateModelElement(DXMath.MatrixColumn? openXmlElement)
+  public static DocumentModel.Math.MatrixColumn? CreateModelElement(DXMath.MatrixColumn? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixColumn();
+      var value = new DocumentModel.Math.MatrixColumn();
       value.MatrixColumnProperties = GetMatrixColumnProperties(openXmlElement);
       return value;
     }

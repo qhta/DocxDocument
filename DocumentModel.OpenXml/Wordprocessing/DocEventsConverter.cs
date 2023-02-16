@@ -330,11 +330,11 @@ public static class DocEventsConverter
     }
   }
   
-  public static DMW.DocEvents? CreateModelElement(DXOW.DocEvents? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocEvents? CreateModelElement(DXOW.DocEvents? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocEvents();
+      var value = new DocumentModel.Wordprocessing.DocEvents();
       value.EventDocNewXsdString = GetEventDocNewXsdString(openXmlElement);
       value.EventDocOpenXsdString = GetEventDocOpenXsdString(openXmlElement);
       value.EventDocCloseXsdString = GetEventDocCloseXsdString(openXmlElement);

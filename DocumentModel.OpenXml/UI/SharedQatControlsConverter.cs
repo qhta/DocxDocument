@@ -7,7 +7,10 @@ public static class SharedQatControlsConverter
 {
   private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement)
   {
-    return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
+    if (element != null)
+      return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class SharedQatControlsConverter
   
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.SharedQatControls openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class SharedQatControlsConverter
   
   private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement)
   {
-    return DMXUI.VerticalSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>();
+    if (element != null)
+      return DMXUI.VerticalSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVerticalSeparator(DXOCustUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class SharedQatControlsConverter
     }
   }
   
-  public static DMUI.SharedQatControls? CreateModelElement(DXOCustUI.SharedQatControls? openXmlElement)
+  public static DocumentModel.UI.SharedQatControls? CreateModelElement(DXOCustUI.SharedQatControls? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.SharedQatControls();
+      var value = new DocumentModel.UI.SharedQatControls();
       value.QuickAccessToolbarControlClone = GetQuickAccessToolbarControlClone(openXmlElement);
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       value.VerticalSeparator = GetVerticalSeparator(openXmlElement);

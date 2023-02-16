@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PieSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.PieSerExtension> GetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.PieSerExtension>? GetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieSerExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieSerExtension>())
@@ -14,7 +14,9 @@ public static class PieSerExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement, Collection<DMDrawsCharts.PieSerExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PieSerExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.PieSerExtensionList? CreateModelElement(DXDrawCharts.PieSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PieSerExtensionList? CreateModelElement(DXDrawCharts.PieSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PieSerExtensionList();
+      var value = new DocumentModel.Drawings.Charts.PieSerExtensionList();
       value.PieSerExtensions = GetPieSerExtensions(openXmlElement);
       return value;
     }

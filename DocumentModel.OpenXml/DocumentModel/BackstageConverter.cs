@@ -53,7 +53,10 @@ public static class BackstageConverter
   
   private static DM.BackstageTab? GetBackstageTab(DXO2010CustUI.Backstage openXmlElement)
   {
-    return DMX.BackstageTabConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageTab>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageTab>();
+    if (element != null)
+      return DMX.BackstageTabConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageTab(DXO2010CustUI.Backstage openXmlElement, DM.BackstageTab? value, DiffList? diffs, string? objName)
@@ -76,7 +79,10 @@ public static class BackstageConverter
   
   private static DM.BackstageFastCommandButton? GetBackstageFastCommandButton(DXO2010CustUI.Backstage openXmlElement)
   {
-    return DMX.BackstageFastCommandButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageFastCommandButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageFastCommandButton>();
+    if (element != null)
+      return DMX.BackstageFastCommandButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageFastCommandButton(DXO2010CustUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value, DiffList? diffs, string? objName)
@@ -97,11 +103,11 @@ public static class BackstageConverter
     }
   }
   
-  public static DM.Backstage? CreateModelElement(DXO2010CustUI.Backstage? openXmlElement)
+  public static DocumentModel.Backstage? CreateModelElement(DXO2010CustUI.Backstage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Backstage();
+      var value = new DocumentModel.Backstage();
       value.OnShow = GetOnShow(openXmlElement);
       value.OnHide = GetOnHide(openXmlElement);
       value.BackstageTab = GetBackstageTab(openXmlElement);

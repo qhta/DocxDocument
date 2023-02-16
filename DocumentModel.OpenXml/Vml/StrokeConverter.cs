@@ -599,7 +599,10 @@ public static class StrokeConverter
   /// </summary>
   private static DMVml.StrokeChildType? GetLeftStroke(DXVml.Stroke openXmlElement)
   {
-    return DMXVml.StrokeChildTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.LeftStroke>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.LeftStroke>();
+    if (element != null)
+      return DMXVml.StrokeChildTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLeftStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
@@ -625,7 +628,10 @@ public static class StrokeConverter
   /// </summary>
   private static DMVml.StrokeChildType? GetTopStroke(DXVml.Stroke openXmlElement)
   {
-    return DMXVml.StrokeChildTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.TopStroke>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.TopStroke>();
+    if (element != null)
+      return DMXVml.StrokeChildTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTopStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
@@ -651,7 +657,10 @@ public static class StrokeConverter
   /// </summary>
   private static DMVml.StrokeChildType? GetRightStroke(DXVml.Stroke openXmlElement)
   {
-    return DMXVml.StrokeChildTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.RightStroke>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.RightStroke>();
+    if (element != null)
+      return DMXVml.StrokeChildTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRightStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
@@ -677,7 +686,10 @@ public static class StrokeConverter
   /// </summary>
   private static DMVml.StrokeChildType? GetBottomStroke(DXVml.Stroke openXmlElement)
   {
-    return DMXVml.StrokeChildTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.BottomStroke>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.BottomStroke>();
+    if (element != null)
+      return DMXVml.StrokeChildTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBottomStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
@@ -703,7 +715,10 @@ public static class StrokeConverter
   /// </summary>
   private static DMVml.StrokeChildType? GetColumnStroke(DXVml.Stroke openXmlElement)
   {
-    return DMXVml.StrokeChildTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColumnStroke>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ColumnStroke>();
+    if (element != null)
+      return DMXVml.StrokeChildTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColumnStroke(DXVml.Stroke openXmlElement, DMVml.StrokeChildType? value, DiffList? diffs, string? objName)
@@ -724,11 +739,11 @@ public static class StrokeConverter
     }
   }
   
-  public static DMVml.Stroke? CreateModelElement(DXVml.Stroke? openXmlElement)
+  public static DocumentModel.Vml.Stroke? CreateModelElement(DXVml.Stroke? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Stroke();
+      var value = new DocumentModel.Vml.Stroke();
       value.Id = GetId(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Weight = GetWeight(openXmlElement);

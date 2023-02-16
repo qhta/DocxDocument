@@ -7,7 +7,10 @@ public static class Accent3ColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Accent3Color openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.Accent3Color openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class Accent3ColorConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.Accent3Color openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.Accent3Color openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class Accent3ColorConverter
   
   private static DMDraws.HslColor? GetHslColor(DXDraw.Accent3Color openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.Accent3Color openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class Accent3ColorConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.Accent3Color openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.Accent3Color openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class Accent3ColorConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.Accent3Color openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.Accent3Color openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class Accent3ColorConverter
     }
   }
   
-  public static DMDraws.Accent3Color? CreateModelElement(DXDraw.Accent3Color? openXmlElement)
+  public static DocumentModel.Drawings.Accent3Color? CreateModelElement(DXDraw.Accent3Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Accent3Color();
+      var value = new DocumentModel.Drawings.Accent3Color();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

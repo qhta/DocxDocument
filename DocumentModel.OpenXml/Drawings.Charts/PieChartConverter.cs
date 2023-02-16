@@ -36,7 +36,7 @@ public static class PieChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.PieChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries>? GetPieChartSeries(DXDrawCharts.PieChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -45,7 +45,9 @@ public static class PieChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieChartSeries(DXDrawCharts.PieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
@@ -92,7 +94,10 @@ public static class PieChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.PieChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -140,7 +145,10 @@ public static class PieChartConverter
   
   private static DMDrawsCharts.PieChartExtensionList? GetPieChartExtensionList(DXDrawCharts.PieChart openXmlElement)
   {
-    return DMXDrawsCharts.PieChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PieChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PieChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.PieChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPieChartExtensionList(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChartExtensionList? value, DiffList? diffs, string? objName)
@@ -161,11 +169,11 @@ public static class PieChartConverter
     }
   }
   
-  public static DMDrawsCharts.PieChart? CreateModelElement(DXDrawCharts.PieChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PieChart? CreateModelElement(DXDrawCharts.PieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PieChart();
+      var value = new DocumentModel.Drawings.Charts.PieChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

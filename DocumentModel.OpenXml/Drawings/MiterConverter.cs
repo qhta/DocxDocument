@@ -25,11 +25,11 @@ public static class MiterConverter
     openXmlElement.Limit = value;
   }
   
-  public static DMDraws.Miter? CreateModelElement(DXDraw.Miter? openXmlElement)
+  public static DocumentModel.Drawings.Miter? CreateModelElement(DXDraw.Miter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Miter();
+      var value = new DocumentModel.Drawings.Miter();
       value.Limit = GetLimit(openXmlElement);
       return value;
     }

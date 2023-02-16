@@ -391,7 +391,7 @@ public static class TaskGroupConverter
     openXmlElement.AllowedTaskSizes = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(value);
   }
   
-  private static Collection<DM.TaskGroupCategory> GetTaskGroupCategories(DXO2010CustUI.TaskGroup openXmlElement)
+  private static Collection<DM.TaskGroupCategory>? GetTaskGroupCategories(DXO2010CustUI.TaskGroup openXmlElement)
   {
     var collection = new Collection<DM.TaskGroupCategory>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.TaskGroupCategory>())
@@ -400,7 +400,9 @@ public static class TaskGroupConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTaskGroupCategories(DXO2010CustUI.TaskGroup openXmlElement, Collection<DM.TaskGroupCategory>? value, DiffList? diffs, string? objName)
@@ -445,11 +447,11 @@ public static class TaskGroupConverter
     }
   }
   
-  public static DM.TaskGroup? CreateModelElement(DXO2010CustUI.TaskGroup? openXmlElement)
+  public static DocumentModel.TaskGroup? CreateModelElement(DXO2010CustUI.TaskGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskGroup();
+      var value = new DocumentModel.TaskGroup();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

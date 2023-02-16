@@ -45,11 +45,11 @@ public static class ArtisticCementConverter
     openXmlElement.CrackSpacing = value;
   }
   
-  public static DMDraws.ArtisticCement? CreateModelElement(DXO2010Draw.ArtisticCement? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticCement? CreateModelElement(DXO2010Draw.ArtisticCement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticCement();
+      var value = new DocumentModel.Drawings.ArtisticCement();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.CrackSpacing = GetCrackSpacing(openXmlElement);
       return value;

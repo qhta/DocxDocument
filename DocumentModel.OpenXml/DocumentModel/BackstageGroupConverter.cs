@@ -416,7 +416,10 @@ public static class BackstageGroupConverter
   
   private static DM.PrimaryItem? GetPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    return DMX.PrimaryItemConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.PrimaryItem>();
+    if (element != null)
+      return DMX.PrimaryItemConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPrimaryItem(DXO2010CustUI.BackstageGroup openXmlElement, DM.PrimaryItem? value, DiffList? diffs, string? objName)
@@ -439,7 +442,10 @@ public static class BackstageGroupConverter
   
   private static DM.TopItemsGroupControls? GetTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    return DMX.TopItemsGroupControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TopItemsGroupControls>();
+    if (element != null)
+      return DMX.TopItemsGroupControlsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTopItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.TopItemsGroupControls? value, DiffList? diffs, string? objName)
@@ -462,7 +468,10 @@ public static class BackstageGroupConverter
   
   private static DM.BottomItemsGroupControls? GetBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement)
   {
-    return DMX.BottomItemsGroupControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BottomItemsGroupControls>();
+    if (element != null)
+      return DMX.BottomItemsGroupControlsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBottomItemsGroupControls(DXO2010CustUI.BackstageGroup openXmlElement, DM.BottomItemsGroupControls? value, DiffList? diffs, string? objName)
@@ -483,11 +492,11 @@ public static class BackstageGroupConverter
     }
   }
   
-  public static DM.BackstageGroup? CreateModelElement(DXO2010CustUI.BackstageGroup? openXmlElement)
+  public static DocumentModel.BackstageGroup? CreateModelElement(DXO2010CustUI.BackstageGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageGroup();
+      var value = new DocumentModel.BackstageGroup();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

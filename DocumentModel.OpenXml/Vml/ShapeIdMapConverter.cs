@@ -46,11 +46,11 @@ public static class ShapeIdMapConverter
       openXmlElement.Data = null;
   }
   
-  public static DMVml.ShapeIdMap? CreateModelElement(DXVmlO.ShapeIdMap? openXmlElement)
+  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DXVmlO.ShapeIdMap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ShapeIdMap();
+      var value = new DocumentModel.Vml.ShapeIdMap();
       value.Extension = GetExtension(openXmlElement);
       value.Data = GetData(openXmlElement);
       return value;

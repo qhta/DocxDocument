@@ -7,7 +7,10 @@ public static class MajorTickMarksTickMarksConverter
 {
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.MajorTickMarksTickMarks openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.MajorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class MajorTickMarksTickMarksConverter
     }
   }
   
-  public static DMDrawsChartDraws.MajorTickMarksTickMarks? CreateModelElement(DXO2016DrawChartDraw.MajorTickMarksTickMarks? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.MajorTickMarksTickMarks? CreateModelElement(DXO2016DrawChartDraw.MajorTickMarksTickMarks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.MajorTickMarksTickMarks();
+      var value = new DocumentModel.Drawings.ChartDrawings.MajorTickMarksTickMarks();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

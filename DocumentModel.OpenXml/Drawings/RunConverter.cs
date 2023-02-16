@@ -10,7 +10,10 @@ public static class RunConverter
   /// </summary>
   private static DMDraws.RunProperties? GetRunProperties(DXDraw.Run openXmlElement)
   {
-    return DMXDraws.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
+    if (element != null)
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class RunConverter
       openXmlElement.Text = null;
   }
   
-  public static DMDraws.Run? CreateModelElement(DXDraw.Run? openXmlElement)
+  public static DocumentModel.Drawings.Run? CreateModelElement(DXDraw.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Run();
+      var value = new DocumentModel.Drawings.Run();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.Text = GetText(openXmlElement);
       return value;

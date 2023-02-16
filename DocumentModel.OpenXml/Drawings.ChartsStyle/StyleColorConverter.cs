@@ -743,11 +743,11 @@ public static class StyleColorConverter
     }
   }
   
-  public static DMDrawsChartsStyle.StyleColor? CreateModelElement(DXO2013DrawChartStyle.StyleColor? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.StyleColor? CreateModelElement(DXO2013DrawChartStyle.StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.StyleColor();
+      var value = new DocumentModel.Drawings.ChartsStyle.StyleColor();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);

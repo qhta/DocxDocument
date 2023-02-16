@@ -30,7 +30,10 @@ public static class NonVisualPicturePropertiesExtensionConverter
   
   private static DMDraws.CameraTool? GetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    return DMXDraws.CameraToolConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.CameraTool>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.CameraTool>();
+    if (element != null)
+      return DMXDraws.CameraToolConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.CameraTool? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class NonVisualPicturePropertiesExtensionConverter
   
   private static DMDraws.SignatureLine? GetSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    return DMXDraws.SignatureLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.SignatureLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013Draw.SignatureLine>();
+    if (element != null)
+      return DMXDraws.SignatureLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.SignatureLine? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class NonVisualPicturePropertiesExtensionConverter
   
   private static DMDraws.ObjectProperties? GetObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    return DMXDraws.ObjectPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013Draw.ObjectProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013Draw.ObjectProperties>();
+    if (element != null)
+      return DMXDraws.ObjectPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.ObjectProperties? value, DiffList? diffs, string? objName)
@@ -99,7 +108,10 @@ public static class NonVisualPicturePropertiesExtensionConverter
   
   private static DMDraws.LiveFeedProperties? GetLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    return DMXDraws.LiveFeedPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>();
+    if (element != null)
+      return DMXDraws.LiveFeedPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.LiveFeedProperties? value, DiffList? diffs, string? objName)
@@ -120,11 +132,11 @@ public static class NonVisualPicturePropertiesExtensionConverter
     }
   }
   
-  public static DMDraws.NonVisualPicturePropertiesExtension? CreateModelElement(DXDraw.NonVisualPicturePropertiesExtension? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DXDraw.NonVisualPicturePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.NonVisualPicturePropertiesExtension();
+      var value = new DocumentModel.Drawings.NonVisualPicturePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.CameraTool = GetCameraTool(openXmlElement);
       value.SignatureLine = GetSignatureLine(openXmlElement);

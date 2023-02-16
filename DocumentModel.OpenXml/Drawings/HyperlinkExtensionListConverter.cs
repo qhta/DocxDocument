@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkExtensionListConverter
 {
-  private static Collection<DMDraws.HyperlinkExtension> GetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement)
+  private static Collection<DMDraws.HyperlinkExtension>? GetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.HyperlinkExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.HyperlinkExtension>())
@@ -14,7 +14,9 @@ public static class HyperlinkExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class HyperlinkExtensionListConverter
     }
   }
   
-  public static DMDraws.HyperlinkExtensionList? CreateModelElement(DXDraw.HyperlinkExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DXDraw.HyperlinkExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HyperlinkExtensionList();
+      var value = new DocumentModel.Drawings.HyperlinkExtensionList();
       value.HyperlinkExtensions = GetHyperlinkExtensions(openXmlElement);
       return value;
     }

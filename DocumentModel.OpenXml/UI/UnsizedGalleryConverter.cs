@@ -1097,7 +1097,7 @@ public static class UnsizedGalleryConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DMUI.Item> GetItems(DXOCustUI.UnsizedGallery openXmlElement)
+  private static Collection<DMUI.Item>? GetItems(DXOCustUI.UnsizedGallery openXmlElement)
   {
     var collection = new Collection<DMUI.Item>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
@@ -1106,7 +1106,9 @@ public static class UnsizedGalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.UnsizedGallery openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
@@ -1151,7 +1153,7 @@ public static class UnsizedGalleryConverter
     }
   }
   
-  private static Collection<DMUI.UnsizedButton> GetUnsizedButtons(DXOCustUI.UnsizedGallery openXmlElement)
+  private static Collection<DMUI.UnsizedButton>? GetUnsizedButtons(DXOCustUI.UnsizedGallery openXmlElement)
   {
     var collection = new Collection<DMUI.UnsizedButton>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.UnsizedButton>())
@@ -1160,7 +1162,9 @@ public static class UnsizedGalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpUnsizedButtons(DXOCustUI.UnsizedGallery openXmlElement, Collection<DMUI.UnsizedButton>? value, DiffList? diffs, string? objName)
@@ -1205,11 +1209,11 @@ public static class UnsizedGalleryConverter
     }
   }
   
-  public static DMUI.UnsizedGallery? CreateModelElement(DXOCustUI.UnsizedGallery? openXmlElement)
+  public static DocumentModel.UI.UnsizedGallery? CreateModelElement(DXOCustUI.UnsizedGallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedGallery();
+      var value = new DocumentModel.UI.UnsizedGallery();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.InvalidateContentOnDrop = GetInvalidateContentOnDrop(openXmlElement);

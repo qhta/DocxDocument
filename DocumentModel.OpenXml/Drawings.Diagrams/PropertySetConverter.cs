@@ -615,7 +615,10 @@ public static class PropertySetConverter
   /// </summary>
   private static DMDrawsDgms.PresentationLayoutVariables? GetPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement)
   {
-    return DMXDrawsDgms.PresentationLayoutVariablesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>();
+    if (element != null)
+      return DMXDrawsDgms.PresentationLayoutVariablesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PresentationLayoutVariables? value, DiffList? diffs, string? objName)
@@ -641,7 +644,10 @@ public static class PropertySetConverter
   /// </summary>
   private static DMDrawsDgms.Style? GetStyle(DXDrawDgms.PropertySet openXmlElement)
   {
-    return DMXDrawsDgms.StyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Style>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Style>();
+    if (element != null)
+      return DMXDrawsDgms.StyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStyle(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.Style? value, DiffList? diffs, string? objName)
@@ -662,11 +668,11 @@ public static class PropertySetConverter
     }
   }
   
-  public static DMDrawsDgms.PropertySet? CreateModelElement(DXDrawDgms.PropertySet? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PropertySet? CreateModelElement(DXDrawDgms.PropertySet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.PropertySet();
+      var value = new DocumentModel.Drawings.Diagrams.PropertySet();
       value.PresentationElementId = GetPresentationElementId(openXmlElement);
       value.PresentationName = GetPresentationName(openXmlElement);
       value.PresentationStyleLabel = GetPresentationStyleLabel(openXmlElement);

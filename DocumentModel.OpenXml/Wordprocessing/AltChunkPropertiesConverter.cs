@@ -40,11 +40,11 @@ public static class AltChunkPropertiesConverter
     }
   }
   
-  public static DMW.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AltChunkProperties();
+      var value = new DocumentModel.Wordprocessing.AltChunkProperties();
       value.MatchSource = GetMatchSource(openXmlElement);
       return value;
     }

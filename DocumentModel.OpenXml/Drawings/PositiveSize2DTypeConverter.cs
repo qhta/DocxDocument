@@ -45,11 +45,11 @@ public static class PositiveSize2DTypeConverter
     openXmlElement.Cy = value;
   }
   
-  public static DMDraws.PositiveSize2DType? CreateModelElement(DXDraw.PositiveSize2DType? openXmlElement)
+  public static DocumentModel.Drawings.PositiveSize2DType? CreateModelElement(DXDraw.PositiveSize2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PositiveSize2DType();
+      var value = new DocumentModel.Drawings.PositiveSize2DType();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;

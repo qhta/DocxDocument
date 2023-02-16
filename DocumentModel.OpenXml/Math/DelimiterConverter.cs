@@ -10,7 +10,10 @@ public static class DelimiterConverter
   /// </summary>
   private static DMMath.DelimiterProperties? GetDelimiterProperties(DXMath.Delimiter openXmlElement)
   {
-    return DMXMath.DelimiterPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>();
+    if (element != null)
+      return DMXMath.DelimiterPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
@@ -31,7 +34,7 @@ public static class DelimiterConverter
     }
   }
   
-  private static Collection<DMMath.Base> GetBases(DXMath.Delimiter openXmlElement)
+  private static Collection<DMMath.Base>? GetBases(DXMath.Delimiter openXmlElement)
   {
     var collection = new Collection<DMMath.Base>();
     foreach (var item in openXmlElement.Elements<DXMath.Base>())
@@ -40,7 +43,9 @@ public static class DelimiterConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
@@ -85,11 +90,11 @@ public static class DelimiterConverter
     }
   }
   
-  public static DMMath.Delimiter? CreateModelElement(DXMath.Delimiter? openXmlElement)
+  public static DocumentModel.Math.Delimiter? CreateModelElement(DXMath.Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Delimiter();
+      var value = new DocumentModel.Math.Delimiter();
       value.DelimiterProperties = GetDelimiterProperties(openXmlElement);
       value.Bases = GetBases(openXmlElement);
       return value;

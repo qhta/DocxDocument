@@ -98,11 +98,11 @@ public static class HorizontalPositionConverter
     }
   }
   
-  public static DMDrawsW.HorizontalPosition? CreateModelElement(DXDrawW.HorizontalPosition? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.HorizontalPosition? CreateModelElement(DXDrawW.HorizontalPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.HorizontalPosition();
+      var value = new DocumentModel.Drawings.Wordprocessing.HorizontalPosition();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.HorizontalAlignment = GetHorizontalAlignment(openXmlElement);
       value.PositionOffset = GetPositionOffset(openXmlElement);

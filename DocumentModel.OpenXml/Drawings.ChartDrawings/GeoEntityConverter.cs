@@ -46,11 +46,11 @@ public static class GeoEntityConverter
     openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
   }
   
-  public static DMDrawsChartDraws.GeoEntity? CreateModelElement(DXO2016DrawChartDraw.GeoEntity? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoEntity? CreateModelElement(DXO2016DrawChartDraw.GeoEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoEntity();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoEntity();
       value.EntityName = GetEntityName(openXmlElement);
       value.EntityType = GetEntityType(openXmlElement);
       return value;

@@ -25,11 +25,11 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
     openXmlElement.Id = value;
   }
   
-  public static DMW.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteEndnoteSeparatorReferenceType();
+      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType();
       value.Id = GetId(openXmlElement);
       return value;
     }

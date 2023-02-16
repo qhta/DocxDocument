@@ -137,7 +137,10 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.DelimiterProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -158,11 +161,11 @@ public static class DelimiterPropertiesConverter
     }
   }
   
-  public static DMMath.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
+  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.DelimiterProperties();
+      var value = new DocumentModel.Math.DelimiterProperties();
       value.BeginChar = GetBeginChar(openXmlElement);
       value.SeparatorChar = GetSeparatorChar(openXmlElement);
       value.EndChar = GetEndChar(openXmlElement);

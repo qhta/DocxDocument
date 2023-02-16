@@ -35,7 +35,10 @@ public static class NumberReferenceConverter
   /// </summary>
   private static DMDrawsCharts.NumberingCache? GetNumberingCache(DXDrawCharts.NumberReference openXmlElement)
   {
-    return DMXDrawsCharts.NumberingCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingCache>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingCache>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingCacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingCache(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumberingCache? value, DiffList? diffs, string? objName)
@@ -61,7 +64,10 @@ public static class NumberReferenceConverter
   /// </summary>
   private static DMDrawsCharts.NumRefExtensionList? GetNumRefExtensionList(DXDrawCharts.NumberReference openXmlElement)
   {
-    return DMXDrawsCharts.NumRefExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumRefExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumRefExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.NumRefExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumRefExtensionList(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumRefExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +88,11 @@ public static class NumberReferenceConverter
     }
   }
   
-  public static DMDrawsCharts.NumberReference? CreateModelElement(DXDrawCharts.NumberReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(DXDrawCharts.NumberReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.NumberReference();
+      var value = new DocumentModel.Drawings.Charts.NumberReference();
       value.Formula = GetFormula(openXmlElement);
       value.NumberingCache = GetNumberingCache(openXmlElement);
       value.NumRefExtensionList = GetNumRefExtensionList(openXmlElement);

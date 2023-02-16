@@ -48,7 +48,7 @@ public static class StringLevelConverter
       openXmlElement.Name = null;
   }
   
-  private static Collection<DMDrawsChartDraws.ChartStringValue> GetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement)
+  private static Collection<DMDrawsChartDraws.ChartStringValue>? GetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.ChartStringValue>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.ChartStringValue>())
@@ -57,7 +57,9 @@ public static class StringLevelConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement, Collection<DMDrawsChartDraws.ChartStringValue>? value, DiffList? diffs, string? objName)
@@ -102,11 +104,11 @@ public static class StringLevelConverter
     }
   }
   
-  public static DMDrawsChartDraws.StringLevel? CreateModelElement(DXO2016DrawChartDraw.StringLevel? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.StringLevel? CreateModelElement(DXO2016DrawChartDraw.StringLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.StringLevel();
+      var value = new DocumentModel.Drawings.ChartDrawings.StringLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.ChartStringValues = GetChartStringValues(openXmlElement);

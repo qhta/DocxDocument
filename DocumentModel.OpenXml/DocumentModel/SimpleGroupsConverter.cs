@@ -7,7 +7,10 @@ public static class SimpleGroupsConverter
 {
   private static DM.BackstageGroup? GetBackstageGroup(DXO2010CustUI.SimpleGroups openXmlElement)
   {
-    return DMX.BackstageGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>();
+    if (element != null)
+      return DMX.BackstageGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageGroup(DXO2010CustUI.SimpleGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class SimpleGroupsConverter
   
   private static DM.TaskGroup? GetTaskGroup(DXO2010CustUI.SimpleGroups openXmlElement)
   {
-    return DMX.TaskGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>();
+    if (element != null)
+      return DMX.TaskGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskGroup(DXO2010CustUI.SimpleGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class SimpleGroupsConverter
     }
   }
   
-  public static DM.SimpleGroups? CreateModelElement(DXO2010CustUI.SimpleGroups? openXmlElement)
+  public static DocumentModel.SimpleGroups? CreateModelElement(DXO2010CustUI.SimpleGroups? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.SimpleGroups();
+      var value = new DocumentModel.SimpleGroups();
       value.BackstageGroup = GetBackstageGroup(openXmlElement);
       value.TaskGroup = GetTaskGroup(openXmlElement);
       return value;

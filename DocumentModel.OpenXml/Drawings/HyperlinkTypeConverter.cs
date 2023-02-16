@@ -194,7 +194,10 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkType openXmlElement)
   {
-    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
+    if (element != null)
+      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkSound(DXDraw.HyperlinkType openXmlElement, DMDraws.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
@@ -220,7 +223,10 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkType openXmlElement)
   {
-    return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
+    if (element != null)
+      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkExtensionList(DXDraw.HyperlinkType openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
@@ -241,11 +247,11 @@ public static class HyperlinkTypeConverter
     }
   }
   
-  public static DMDraws.HyperlinkType? CreateModelElement(DXDraw.HyperlinkType? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkType? CreateModelElement(DXDraw.HyperlinkType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HyperlinkType();
+      var value = new DocumentModel.Drawings.HyperlinkType();
       value.Id = GetId(openXmlElement);
       value.InvalidUrl = GetInvalidUrl(openXmlElement);
       value.Action = GetAction(openXmlElement);

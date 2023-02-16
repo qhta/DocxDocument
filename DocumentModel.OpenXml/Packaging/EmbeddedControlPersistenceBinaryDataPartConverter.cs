@@ -17,11 +17,11 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
     return false;
   }
   
-  public static DMPack.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(DXPack.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
+  public static DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(DXPack.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.EmbeddedControlPersistenceBinaryDataPart();
+      var value = new DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

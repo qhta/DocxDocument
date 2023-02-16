@@ -148,7 +148,10 @@ public static class AdjustHandleXYConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.AdjustHandleXY openXmlElement)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Position>();
+    if (element != null)
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPosition(DXDraw.AdjustHandleXY openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
@@ -169,11 +172,11 @@ public static class AdjustHandleXYConverter
     }
   }
   
-  public static DMDraws.AdjustHandleXY? CreateModelElement(DXDraw.AdjustHandleXY? openXmlElement)
+  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DXDraw.AdjustHandleXY? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AdjustHandleXY();
+      var value = new DocumentModel.Drawings.AdjustHandleXY();
       value.XAdjustmentGuide = GetXAdjustmentGuide(openXmlElement);
       value.MinX = GetMinX(openXmlElement);
       value.MaxX = GetMaxX(openXmlElement);

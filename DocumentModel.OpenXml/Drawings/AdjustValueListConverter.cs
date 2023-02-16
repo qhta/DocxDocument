@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class AdjustValueListConverter
 {
-  private static Collection<DMDraws.ShapeGuide> GetShapeGuides(DXDraw.AdjustValueList openXmlElement)
+  private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.AdjustValueList openXmlElement)
   {
     var collection = new Collection<DMDraws.ShapeGuide>();
     foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
@@ -14,7 +14,9 @@ public static class AdjustValueListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpShapeGuides(DXDraw.AdjustValueList openXmlElement, Collection<DMDraws.ShapeGuide>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AdjustValueListConverter
     }
   }
   
-  public static DMDraws.AdjustValueList? CreateModelElement(DXDraw.AdjustValueList? openXmlElement)
+  public static DocumentModel.Drawings.AdjustValueList? CreateModelElement(DXDraw.AdjustValueList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AdjustValueList();
+      var value = new DocumentModel.Drawings.AdjustValueList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }

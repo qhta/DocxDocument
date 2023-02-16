@@ -66,7 +66,10 @@ public static class AreaChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.SeriesText? GetSeriesText(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>();
+    if (element != null)
+      return DMXDrawsCharts.SeriesTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesText(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
@@ -92,7 +95,10 @@ public static class AreaChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -118,7 +124,10 @@ public static class AreaChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureOptions(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
@@ -139,7 +148,7 @@ public static class AreaChartSeries3Converter
     }
   }
   
-  private static Collection<DMDrawsCharts.DataPoint> GetDataPoints(DXO2013DrawChart.AreaChartSeries openXmlElement)
+  private static Collection<DMDrawsCharts.DataPoint>? GetDataPoints(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.DataPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.DataPoint>())
@@ -148,7 +157,9 @@ public static class AreaChartSeries3Converter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDataPoints(DXO2013DrawChart.AreaChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value, DiffList? diffs, string? objName)
@@ -195,7 +206,10 @@ public static class AreaChartSeries3Converter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -216,7 +230,7 @@ public static class AreaChartSeries3Converter
     }
   }
   
-  private static Collection<DMDrawsCharts.Trendline> GetTrendlines(DXO2013DrawChart.AreaChartSeries openXmlElement)
+  private static Collection<DMDrawsCharts.Trendline>? GetTrendlines(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Trendline>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Trendline>())
@@ -225,7 +239,9 @@ public static class AreaChartSeries3Converter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTrendlines(DXO2013DrawChart.AreaChartSeries openXmlElement, Collection<DMDrawsCharts.Trendline>? value, DiffList? diffs, string? objName)
@@ -270,7 +286,7 @@ public static class AreaChartSeries3Converter
     }
   }
   
-  private static Collection<DMDrawsCharts.ErrorBars> GetErrorBars(DXO2013DrawChart.AreaChartSeries openXmlElement)
+  private static Collection<DMDrawsCharts.ErrorBars>? GetErrorBars(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.ErrorBars>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.ErrorBars>())
@@ -279,7 +295,9 @@ public static class AreaChartSeries3Converter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpErrorBars(DXO2013DrawChart.AreaChartSeries openXmlElement, Collection<DMDrawsCharts.ErrorBars>? value, DiffList? diffs, string? objName)
@@ -326,7 +344,10 @@ public static class AreaChartSeries3Converter
   
   private static DMDrawsCharts.CategoryAxisData? GetCategoryAxisData(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.CategoryAxisDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.CategoryAxisData>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.CategoryAxisData>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryAxisDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryAxisData(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
@@ -349,7 +370,10 @@ public static class AreaChartSeries3Converter
   
   private static DMDrawsCharts.Values? GetValues(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.ValuesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Values>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Values>();
+    if (element != null)
+      return DMXDrawsCharts.ValuesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValues(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.Values? value, DiffList? diffs, string? objName)
@@ -372,7 +396,10 @@ public static class AreaChartSeries3Converter
   
   private static DMDrawsCharts.AreaSerExtensionList? GetAreaSerExtensionList(DXO2013DrawChart.AreaChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.AreaSerExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.AreaSerExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.AreaSerExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.AreaSerExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAreaSerExtensionList(DXO2013DrawChart.AreaChartSeries openXmlElement, DMDrawsCharts.AreaSerExtensionList? value, DiffList? diffs, string? objName)
@@ -393,11 +420,11 @@ public static class AreaChartSeries3Converter
     }
   }
   
-  public static DMDrawsCharts.AreaChartSeries3? CreateModelElement(DXO2013DrawChart.AreaChartSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaChartSeries3? CreateModelElement(DXO2013DrawChart.AreaChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.AreaChartSeries3();
+      var value = new DocumentModel.Drawings.Charts.AreaChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

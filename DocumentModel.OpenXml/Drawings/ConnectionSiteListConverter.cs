@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ConnectionSiteListConverter
 {
-  private static Collection<DMDraws.ConnectionSite> GetConnectionSites(DXDraw.ConnectionSiteList openXmlElement)
+  private static Collection<DMDraws.ConnectionSite>? GetConnectionSites(DXDraw.ConnectionSiteList openXmlElement)
   {
     var collection = new Collection<DMDraws.ConnectionSite>();
     foreach (var item in openXmlElement.Elements<DXDraw.ConnectionSite>())
@@ -14,7 +14,9 @@ public static class ConnectionSiteListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpConnectionSites(DXDraw.ConnectionSiteList openXmlElement, Collection<DMDraws.ConnectionSite>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ConnectionSiteListConverter
     }
   }
   
-  public static DMDraws.ConnectionSiteList? CreateModelElement(DXDraw.ConnectionSiteList? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionSiteList? CreateModelElement(DXDraw.ConnectionSiteList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ConnectionSiteList();
+      var value = new DocumentModel.Drawings.ConnectionSiteList();
       value.ConnectionSites = GetConnectionSites(openXmlElement);
       return value;
     }

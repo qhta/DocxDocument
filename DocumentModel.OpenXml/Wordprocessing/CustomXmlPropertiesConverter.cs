@@ -33,7 +33,7 @@ public static class CustomXmlPropertiesConverter
     }
   }
   
-  private static Collection<DMW.CustomXmlAttribute> GetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement)
+  private static Collection<DMW.CustomXmlAttribute>? GetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement)
   {
     var collection = new Collection<DMW.CustomXmlAttribute>();
     foreach (var item in openXmlElement.Elements<DXW.CustomXmlAttribute>())
@@ -42,7 +42,9 @@ public static class CustomXmlPropertiesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value, DiffList? diffs, string? objName)
@@ -87,11 +89,11 @@ public static class CustomXmlPropertiesConverter
     }
   }
   
-  public static DMW.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CustomXmlProperties();
+      var value = new DocumentModel.Wordprocessing.CustomXmlProperties();
       value.CustomXmlPlaceholder = GetCustomXmlPlaceholder(openXmlElement);
       value.CustomXmlAttributes = GetCustomXmlAttributes(openXmlElement);
       return value;

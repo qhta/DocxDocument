@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LineSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.LineSerExtension> GetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.LineSerExtension>? GetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.LineSerExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.LineSerExtension>())
@@ -14,7 +14,9 @@ public static class LineSerExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement, Collection<DMDrawsCharts.LineSerExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class LineSerExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.LineSerExtensionList? CreateModelElement(DXDrawCharts.LineSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineSerExtensionList? CreateModelElement(DXDrawCharts.LineSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LineSerExtensionList();
+      var value = new DocumentModel.Drawings.Charts.LineSerExtensionList();
       value.LineSerExtensions = GetLineSerExtensions(openXmlElement);
       return value;
     }

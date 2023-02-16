@@ -718,11 +718,11 @@ public static class DynamicMenuRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.DynamicMenuRegular? CreateModelElement(DXO2010CustUI.DynamicMenuRegular? openXmlElement)
+  public static DocumentModel.DynamicMenuRegular? CreateModelElement(DXO2010CustUI.DynamicMenuRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.DynamicMenuRegular();
+      var value = new DocumentModel.DynamicMenuRegular();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);

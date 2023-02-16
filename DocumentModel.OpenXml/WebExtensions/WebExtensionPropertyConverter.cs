@@ -51,11 +51,11 @@ public static class WebExtensionPropertyConverter
       openXmlElement.Value = null;
   }
   
-  public static DMWebExt.WebExtensionProperty? CreateModelElement(DXO2013WebExt.WebExtensionProperty? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionProperty? CreateModelElement(DXO2013WebExt.WebExtensionProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExt.WebExtensionProperty();
+      var value = new DocumentModel.WebExtensions.WebExtensionProperty();
       value.Name = GetName(openXmlElement);
       value.Value = GetValue(openXmlElement);
       return value;

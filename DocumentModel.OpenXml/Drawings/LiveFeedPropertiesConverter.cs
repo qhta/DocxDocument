@@ -10,7 +10,10 @@ public static class LiveFeedPropertiesConverter
   /// </summary>
   private static DMDraws.LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement)
   {
-    return DMXDraws.LiveFeedBackgroundPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>();
+    if (element != null)
+      return DMXDraws.LiveFeedBackgroundPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLiveFeedBackgroundProperties(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.LiveFeedBackgroundProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class LiveFeedPropertiesConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class LiveFeedPropertiesConverter
     }
   }
   
-  public static DMDraws.LiveFeedProperties? CreateModelElement(DXO2021DrawLivefeed.LiveFeedProperties? openXmlElement)
+  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DXO2021DrawLivefeed.LiveFeedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LiveFeedProperties();
+      var value = new DocumentModel.Drawings.LiveFeedProperties();
       value.LiveFeedBackgroundProperties = GetLiveFeedBackgroundProperties(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;

@@ -92,7 +92,10 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.StyleTableProperties openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -118,7 +121,10 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableIndentation? GetTableIndentation(DXW.StyleTableProperties openXmlElement)
   {
-    return DMXW.TableIndentationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
+    if (element != null)
+      return DMXW.TableIndentationConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableIndentation(DXW.StyleTableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
@@ -144,7 +150,10 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableBorders? GetTableBorders(DXW.StyleTableProperties openXmlElement)
   {
-    return DMXW.TableBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableBorders>();
+    if (element != null)
+      return DMXW.TableBordersConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableBorders(DXW.StyleTableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
@@ -170,7 +179,10 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.StyleTableProperties openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.StyleTableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -196,7 +208,10 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement)
   {
-    return DMXW.TableCellMarginDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
+    if (element != null)
+      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
@@ -217,11 +232,11 @@ public static class StyleTablePropertiesConverter
     }
   }
   
-  public static DMW.StyleTableProperties? CreateModelElement(DXW.StyleTableProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.StyleTableProperties? CreateModelElement(DXW.StyleTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StyleTableProperties();
+      var value = new DocumentModel.Wordprocessing.StyleTableProperties();
       value.TableStyleRowBandSize = GetTableStyleRowBandSize(openXmlElement);
       value.TableStyleColumnBandSize = GetTableStyleColumnBandSize(openXmlElement);
       value.TableJustification = GetTableJustification(openXmlElement);

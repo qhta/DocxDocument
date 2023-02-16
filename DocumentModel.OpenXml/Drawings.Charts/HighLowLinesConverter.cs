@@ -7,7 +7,10 @@ public static class HighLowLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.HighLowLines openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.HighLowLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class HighLowLinesConverter
     }
   }
   
-  public static DMDrawsCharts.HighLowLines? CreateModelElement(DXDrawCharts.HighLowLines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.HighLowLines? CreateModelElement(DXDrawCharts.HighLowLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.HighLowLines();
+      var value = new DocumentModel.Drawings.Charts.HighLowLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

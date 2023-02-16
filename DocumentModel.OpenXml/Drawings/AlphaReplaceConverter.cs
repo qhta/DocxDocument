@@ -25,11 +25,11 @@ public static class AlphaReplaceConverter
     openXmlElement.Alpha = value;
   }
   
-  public static DMDraws.AlphaReplace? CreateModelElement(DXDraw.AlphaReplace? openXmlElement)
+  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(DXDraw.AlphaReplace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AlphaReplace();
+      var value = new DocumentModel.Drawings.AlphaReplace();
       value.Alpha = GetAlpha(openXmlElement);
       return value;
     }

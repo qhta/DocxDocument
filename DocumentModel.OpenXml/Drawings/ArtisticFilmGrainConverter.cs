@@ -45,11 +45,11 @@ public static class ArtisticFilmGrainConverter
     openXmlElement.GrainSize = value;
   }
   
-  public static DMDraws.ArtisticFilmGrain? CreateModelElement(DXO2010Draw.ArtisticFilmGrain? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticFilmGrain? CreateModelElement(DXO2010Draw.ArtisticFilmGrain? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticFilmGrain();
+      var value = new DocumentModel.Drawings.ArtisticFilmGrain();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.GrainSize = GetGrainSize(openXmlElement);
       return value;

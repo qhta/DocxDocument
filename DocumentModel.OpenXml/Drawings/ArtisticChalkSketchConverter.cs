@@ -45,11 +45,11 @@ public static class ArtisticChalkSketchConverter
     openXmlElement.Pressure = value;
   }
   
-  public static DMDraws.ArtisticChalkSketch? CreateModelElement(DXO2010Draw.ArtisticChalkSketch? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticChalkSketch? CreateModelElement(DXO2010Draw.ArtisticChalkSketch? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticChalkSketch();
+      var value = new DocumentModel.Drawings.ArtisticChalkSketch();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;

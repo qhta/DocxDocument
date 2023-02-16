@@ -152,11 +152,11 @@ public static class PictureOptionsConverter
     }
   }
   
-  public static DMDrawsCharts.PictureOptions? CreateModelElement(DXDrawCharts.PictureOptions? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DXDrawCharts.PictureOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PictureOptions();
+      var value = new DocumentModel.Drawings.Charts.PictureOptions();
       value.ApplyToFront = GetApplyToFront(openXmlElement);
       value.ApplyToSides = GetApplyToSides(openXmlElement);
       value.ApplyToEnd = GetApplyToEnd(openXmlElement);

@@ -99,7 +99,10 @@ public static class TextBoxConverter
   
   private static DMW.TextBoxContent? GetTextBoxContent(DXVml.TextBox openXmlElement)
   {
-    return DMXW.TextBoxContentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TextBoxContent>());
+    var element = openXmlElement?.GetFirstChild<DXW.TextBoxContent>();
+    if (element != null)
+      return DMXW.TextBoxContentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBoxContent(DXVml.TextBox openXmlElement, DMW.TextBoxContent? value, DiffList? diffs, string? objName)
@@ -120,11 +123,11 @@ public static class TextBoxConverter
     }
   }
   
-  public static DMVml.TextBox? CreateModelElement(DXVml.TextBox? openXmlElement)
+  public static DocumentModel.Vml.TextBox? CreateModelElement(DXVml.TextBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.TextBox();
+      var value = new DocumentModel.Vml.TextBox();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Inset = GetInset(openXmlElement);

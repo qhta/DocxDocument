@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ValAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.ValAxExtension> GetValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.ValAxExtension>? GetValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.ValAxExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.ValAxExtension>())
@@ -14,7 +14,9 @@ public static class ValAxExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement, Collection<DMDrawsCharts.ValAxExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ValAxExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.ValAxExtensionList? CreateModelElement(DXDrawCharts.ValAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(DXDrawCharts.ValAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ValAxExtensionList();
+      var value = new DocumentModel.Drawings.Charts.ValAxExtensionList();
       value.ValAxExtensions = GetValAxExtensions(openXmlElement);
       return value;
     }

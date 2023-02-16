@@ -7,7 +7,10 @@ public static class TabsConverter
 {
   private static DMW.TabStop? GetTabStop(DXW.Tabs openXmlElement)
   {
-    return DMXW.TabStopConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TabStop>());
+    var element = openXmlElement?.GetFirstChild<DXW.TabStop>();
+    if (element != null)
+      return DMXW.TabStopConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class TabsConverter
     }
   }
   
-  public static DMW.Tabs? CreateModelElement(DXW.Tabs? openXmlElement)
+  public static DocumentModel.Wordprocessing.Tabs? CreateModelElement(DXW.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Tabs();
+      var value = new DocumentModel.Wordprocessing.Tabs();
       value.TabStop = GetTabStop(openXmlElement);
       return value;
     }

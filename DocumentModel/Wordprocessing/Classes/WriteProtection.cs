@@ -63,12 +63,12 @@ public class WriteProtection
   /// <summary>
   ///   Password Hash
   /// </summary>
-  public Byte[]? Hash { get; set; }
+  public Base64Binary? Hash { get; set; }
 
   /// <summary>
   ///   Salt for Password Verifier
   /// </summary>
-  public Byte[]? Salt { get; set; }
+  public Base64Binary? Salt { get; set; }
 
   /// <summary>
   ///   algorithmName, this property is only available in Office 2010 and later.
@@ -78,12 +78,12 @@ public class WriteProtection
   /// <summary>
   ///   hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? HashValue { get; set; }
+  public Base64Binary? HashValue { get; set; }
 
   /// <summary>
   ///   saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? SaltValue { get; set; }
+  public Base64Binary? SaltValue { get; set; }
 
   /// <summary>
   ///   spinCount, this property is only available in Office 2010 and later.

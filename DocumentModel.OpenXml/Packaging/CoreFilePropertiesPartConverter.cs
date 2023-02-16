@@ -29,11 +29,11 @@ public static class CoreFilePropertiesPartConverter
     return false;
   }
   
-  public static DMPack.CoreFilePropertiesPart? CreateModelElement(DXPack.CoreFilePropertiesPart? openXmlElement)
+  public static DocumentModel.Packaging.CoreFilePropertiesPart? CreateModelElement(DXPack.CoreFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.CoreFilePropertiesPart();
+      var value = new DocumentModel.Packaging.CoreFilePropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

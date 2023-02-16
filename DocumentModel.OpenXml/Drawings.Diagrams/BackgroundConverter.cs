@@ -35,7 +35,10 @@ public static class BackgroundConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDrawDgms.Background openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -58,7 +61,10 @@ public static class BackgroundConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDrawDgms.Background openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -81,7 +87,10 @@ public static class BackgroundConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXDrawDgms.Background openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -104,7 +113,10 @@ public static class BackgroundConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDrawDgms.Background openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -155,7 +167,10 @@ public static class BackgroundConverter
   
   private static DMDraws.EffectList? GetEffectList(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXDrawDgms.Background openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -178,7 +193,10 @@ public static class BackgroundConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXDrawDgms.Background openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXDrawDgms.Background openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -199,11 +217,11 @@ public static class BackgroundConverter
     }
   }
   
-  public static DMDrawsDgms.Background? CreateModelElement(DXDrawDgms.Background? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Background? CreateModelElement(DXDrawDgms.Background? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Background();
+      var value = new DocumentModel.Drawings.Diagrams.Background();
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);
       value.GradientFill = GetGradientFill(openXmlElement);

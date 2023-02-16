@@ -10,7 +10,10 @@ public static class UpDownBarTypeConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.UpDownBarType openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.UpDownBarType openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class UpDownBarTypeConverter
     }
   }
   
-  public static DMDrawsCharts.UpDownBarType? CreateModelElement(DXDrawCharts.UpDownBarType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.UpDownBarType? CreateModelElement(DXDrawCharts.UpDownBarType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.UpDownBarType();
+      var value = new DocumentModel.Drawings.Charts.UpDownBarType();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

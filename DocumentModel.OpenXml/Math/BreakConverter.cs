@@ -45,11 +45,11 @@ public static class BreakConverter
     openXmlElement.Val = value;
   }
   
-  public static DMMath.Break? CreateModelElement(DXMath.Break? openXmlElement)
+  public static DocumentModel.Math.Break? CreateModelElement(DXMath.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Break();
+      var value = new DocumentModel.Math.Break();
       value.AlignAt = GetAlignAt(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

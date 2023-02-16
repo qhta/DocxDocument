@@ -151,7 +151,10 @@ public static class BackgroundConverter
   /// </summary>
   private static DMVml.Fill? GetFill(DXVml.Background openXmlElement)
   {
-    return DMXVml.FillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Fill>();
+    if (element != null)
+      return DMXVml.FillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFill(DXVml.Background openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
@@ -172,11 +175,11 @@ public static class BackgroundConverter
     }
   }
   
-  public static DMVml.Background? CreateModelElement(DXVml.Background? openXmlElement)
+  public static DocumentModel.Vml.Background? CreateModelElement(DXVml.Background? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Background();
+      var value = new DocumentModel.Vml.Background();
       value.Id = GetId(openXmlElement);
       value.Filled = GetFilled(openXmlElement);
       value.Fillcolor = GetFillcolor(openXmlElement);

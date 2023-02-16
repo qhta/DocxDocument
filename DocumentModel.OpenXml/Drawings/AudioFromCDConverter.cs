@@ -10,7 +10,10 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.AudioCDTimeType? GetStartTime(DXDraw.AudioFromCD openXmlElement)
   {
-    return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.StartTime>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.StartTime>();
+    if (element != null)
+      return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStartTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.AudioCDTimeType? GetEndTime(DXDraw.AudioFromCD openXmlElement)
   {
-    return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EndTime>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EndTime>();
+    if (element != null)
+      return DMXDraws.AudioCDTimeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEndTime(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioCDTimeType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class AudioFromCDConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.AudioFromCD openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.AudioFromCD openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class AudioFromCDConverter
     }
   }
   
-  public static DMDraws.AudioFromCD? CreateModelElement(DXDraw.AudioFromCD? openXmlElement)
+  public static DocumentModel.Drawings.AudioFromCD? CreateModelElement(DXDraw.AudioFromCD? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AudioFromCD();
+      var value = new DocumentModel.Drawings.AudioFromCD();
       value.StartTime = GetStartTime(openXmlElement);
       value.EndTime = GetEndTime(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

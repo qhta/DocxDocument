@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class CommandsConverter
 {
-  private static Collection<DM.Command> GetItems(DXO2010CustUI.Commands openXmlElement)
+  private static Collection<DM.Command>? GetItems(DXO2010CustUI.Commands openXmlElement)
   {
     var collection = new Collection<DM.Command>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.Command>())
@@ -14,7 +14,9 @@ public static class CommandsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2010CustUI.Commands openXmlElement, Collection<DM.Command>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CommandsConverter
     }
   }
   
-  public static DM.Commands? CreateModelElement(DXO2010CustUI.Commands? openXmlElement)
+  public static DocumentModel.Commands? CreateModelElement(DXO2010CustUI.Commands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Commands();
+      var value = new DocumentModel.Commands();
       value.Items = GetItems(openXmlElement);
       return value;
     }

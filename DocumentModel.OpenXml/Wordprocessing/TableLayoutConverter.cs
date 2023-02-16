@@ -23,11 +23,11 @@ public static class TableLayoutConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(value);
   }
   
-  public static DMW.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableLayout();
+      var value = new DocumentModel.Wordprocessing.TableLayout();
       value.Type = GetType(openXmlElement);
       return value;
     }

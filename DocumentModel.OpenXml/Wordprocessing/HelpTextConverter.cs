@@ -46,11 +46,11 @@ public static class HelpTextConverter
       openXmlElement.Val = null;
   }
   
-  public static DMW.HelpText? CreateModelElement(DXW.HelpText? openXmlElement)
+  public static DocumentModel.Wordprocessing.HelpText? CreateModelElement(DXW.HelpText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.HelpText();
+      var value = new DocumentModel.Wordprocessing.HelpText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

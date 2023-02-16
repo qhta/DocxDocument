@@ -45,11 +45,11 @@ public static class ArtisticGlowDiffusedConverter
     openXmlElement.Intensity = value;
   }
   
-  public static DMDraws.ArtisticGlowDiffused? CreateModelElement(DXO2010Draw.ArtisticGlowDiffused? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticGlowDiffused? CreateModelElement(DXO2010Draw.ArtisticGlowDiffused? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticGlowDiffused();
+      var value = new DocumentModel.Drawings.ArtisticGlowDiffused();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Intensity = GetIntensity(openXmlElement);
       return value;

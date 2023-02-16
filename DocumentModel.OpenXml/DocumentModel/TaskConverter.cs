@@ -33,7 +33,10 @@ public static class TaskConverter
   /// </summary>
   private static DM.TaskAnchor? GetTaskAnchor(DXO2021DocTasks.Task openXmlElement)
   {
-    return DMX.TaskAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>();
+    if (element != null)
+      return DMX.TaskAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskAnchor(DXO2021DocTasks.Task openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class TaskConverter
   /// </summary>
   private static DM.TaskHistory? GetTaskHistory(DXO2021DocTasks.Task openXmlElement)
   {
-    return DMX.TaskHistoryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskHistory>();
+    if (element != null)
+      return DMX.TaskHistoryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskHistory(DXO2021DocTasks.Task openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
@@ -85,7 +91,10 @@ public static class TaskConverter
   /// </summary>
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.Task openXmlElement)
   {
-    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    if (element != null)
+      return DMX.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021DocTasks.Task openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
@@ -106,11 +115,11 @@ public static class TaskConverter
     }
   }
   
-  public static DM.Task? CreateModelElement(DXO2021DocTasks.Task? openXmlElement)
+  public static DocumentModel.Task? CreateModelElement(DXO2021DocTasks.Task? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Task();
+      var value = new DocumentModel.Task();
       value.Id = GetId(openXmlElement);
       value.TaskAnchor = GetTaskAnchor(openXmlElement);
       value.TaskHistory = GetTaskHistory(openXmlElement);

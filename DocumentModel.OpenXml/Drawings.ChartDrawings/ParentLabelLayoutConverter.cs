@@ -23,11 +23,11 @@ public static class ParentLabelLayoutConverter
     openXmlElement.ParentLabelLayoutVal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(value);
   }
   
-  public static DMDrawsChartDraws.ParentLabelLayout? CreateModelElement(DXO2016DrawChartDraw.ParentLabelLayout? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? CreateModelElement(DXO2016DrawChartDraw.ParentLabelLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ParentLabelLayout();
+      var value = new DocumentModel.Drawings.ChartDrawings.ParentLabelLayout();
       value.ParentLabelLayoutVal = GetParentLabelLayoutVal(openXmlElement);
       return value;
     }

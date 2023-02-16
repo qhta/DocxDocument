@@ -7,7 +7,10 @@ public static class ColorDataConverter
 {
   private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.ColorData openXmlElement)
   {
-    return DMXDrawsDgms.DataModelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
+    if (element != null)
+      return DMXDrawsDgms.DataModelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataModel(DXDrawDgms.ColorData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class ColorDataConverter
     }
   }
   
-  public static DMDrawsDgms.ColorData? CreateModelElement(DXDrawDgms.ColorData? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorData? CreateModelElement(DXDrawDgms.ColorData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ColorData();
+      var value = new DocumentModel.Drawings.Diagrams.ColorData();
       value.DataModel = GetDataModel(openXmlElement);
       return value;
     }

@@ -35,7 +35,10 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -58,7 +61,10 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -81,7 +87,10 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -104,7 +113,10 @@ public static class BackgroundFillStyleListConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -153,11 +165,11 @@ public static class BackgroundFillStyleListConverter
     }
   }
   
-  public static DMDraws.BackgroundFillStyleList? CreateModelElement(DXDraw.BackgroundFillStyleList? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundFillStyleList? CreateModelElement(DXDraw.BackgroundFillStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BackgroundFillStyleList();
+      var value = new DocumentModel.Drawings.BackgroundFillStyleList();
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);
       value.GradientFill = GetGradientFill(openXmlElement);

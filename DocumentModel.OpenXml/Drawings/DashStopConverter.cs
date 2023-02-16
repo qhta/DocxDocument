@@ -45,11 +45,11 @@ public static class DashStopConverter
     openXmlElement.SpaceLength = value;
   }
   
-  public static DMDraws.DashStop? CreateModelElement(DXDraw.DashStop? openXmlElement)
+  public static DocumentModel.Drawings.DashStop? CreateModelElement(DXDraw.DashStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.DashStop();
+      var value = new DocumentModel.Drawings.DashStop();
       value.DashLength = GetDashLength(openXmlElement);
       value.SpaceLength = GetSpaceLength(openXmlElement);
       return value;

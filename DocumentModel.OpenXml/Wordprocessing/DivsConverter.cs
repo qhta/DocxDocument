@@ -7,7 +7,10 @@ public static class DivsConverter
 {
   private static DMW.Div? GetDiv(DXW.Divs openXmlElement)
   {
-    return DMXW.DivConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Div>());
+    var element = openXmlElement?.GetFirstChild<DXW.Div>();
+    if (element != null)
+      return DMXW.DivConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDiv(DXW.Divs openXmlElement, DMW.Div? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class DivsConverter
     }
   }
   
-  public static DMW.Divs? CreateModelElement(DXW.Divs? openXmlElement)
+  public static DocumentModel.Wordprocessing.Divs? CreateModelElement(DXW.Divs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Divs();
+      var value = new DocumentModel.Wordprocessing.Divs();
       value.Div = GetDiv(openXmlElement);
       return value;
     }

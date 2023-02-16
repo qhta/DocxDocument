@@ -280,7 +280,7 @@ public class Shape
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public Byte[]? EncodedPackage { get; set; }
+  public Base64Binary? EncodedPackage { get; set; }
 
   /// <summary>
   ///   Storage for Alternate Math Content

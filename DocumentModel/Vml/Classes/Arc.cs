@@ -210,7 +210,7 @@ public class Arc
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public Byte[]? Gfxdata { get; set; }
+  public Base64Binary? Gfxdata { get; set; }
 
   /// <summary>
   ///   Unique Identifier

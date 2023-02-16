@@ -35,7 +35,10 @@ public static class MultiLevelStringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.MultiLevelStringCache? GetMultiLevelStringCache(DXDrawCharts.MultiLevelStringReference openXmlElement)
   {
-    return DMXDrawsCharts.MultiLevelStringCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringCache>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringCache>();
+    if (element != null)
+      return DMXDrawsCharts.MultiLevelStringCacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMultiLevelStringCache(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLevelStringCache? value, DiffList? diffs, string? objName)
@@ -61,7 +64,10 @@ public static class MultiLevelStringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.MultiLvlStrRefExtensionList? GetMultiLvlStrRefExtensionList(DXDrawCharts.MultiLevelStringReference openXmlElement)
   {
-    return DMXDrawsCharts.MultiLvlStrRefExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLvlStrRefExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLvlStrRefExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.MultiLvlStrRefExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMultiLvlStrRefExtensionList(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLvlStrRefExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +88,11 @@ public static class MultiLevelStringReferenceConverter
     }
   }
   
-  public static DMDrawsCharts.MultiLevelStringReference? CreateModelElement(DXDrawCharts.MultiLevelStringReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? CreateModelElement(DXDrawCharts.MultiLevelStringReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.MultiLevelStringReference();
+      var value = new DocumentModel.Drawings.Charts.MultiLevelStringReference();
       value.Formula = GetFormula(openXmlElement);
       value.MultiLevelStringCache = GetMultiLevelStringCache(openXmlElement);
       value.MultiLvlStrRefExtensionList = GetMultiLvlStrRefExtensionList(openXmlElement);

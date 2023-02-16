@@ -63,11 +63,11 @@ public static class BevelTypeConverter
     openXmlElement.PresetProfileType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DMW.BevelPresetKind>(value);
   }
   
-  public static DMW.BevelType? CreateModelElement(DXO2010W.BevelType? openXmlElement)
+  public static DocumentModel.Wordprocessing.BevelType? CreateModelElement(DXO2010W.BevelType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.BevelType();
+      var value = new DocumentModel.Wordprocessing.BevelType();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.PresetProfileType = GetPresetProfileType(openXmlElement);

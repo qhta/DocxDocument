@@ -28,7 +28,10 @@ public static class ChartShapePropertiesConverter
   /// </summary>
   private static DMDraws.Transform2D? GetTransform2D(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.Transform2DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Transform2D>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Transform2D>();
+    if (element != null)
+      return DMXDraws.Transform2DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTransform2D(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Transform2D? value, DiffList? diffs, string? objName)
@@ -51,7 +54,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.CustomGeometry? GetCustomGeometry(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.CustomGeometryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>();
+    if (element != null)
+      return DMXDraws.CustomGeometryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.CustomGeometry? value, DiffList? diffs, string? objName)
@@ -74,7 +80,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.PresetGeometry? GetPresetGeometry(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.PresetGeometryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>();
+    if (element != null)
+      return DMXDraws.PresetGeometryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PresetGeometry? value, DiffList? diffs, string? objName)
@@ -125,7 +134,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -148,7 +160,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -171,7 +186,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -194,7 +212,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -217,7 +238,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.Outline? GetOutline(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    if (element != null)
+      return DMXDraws.OutlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOutline(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
@@ -240,7 +264,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.EffectList? GetEffectList(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -263,7 +290,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -286,7 +316,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.Scene3DType? GetScene3DType(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.Scene3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
+    if (element != null)
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScene3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
@@ -309,7 +342,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.Shape3DType? GetShape3DType(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.Shape3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
+    if (element != null)
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
@@ -332,7 +368,10 @@ public static class ChartShapePropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawCharts.ChartShapeProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -353,11 +392,11 @@ public static class ChartShapePropertiesConverter
     }
   }
   
-  public static DMDrawsCharts.ChartShapeProperties? CreateModelElement(DXDrawCharts.ChartShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartShapeProperties? CreateModelElement(DXDrawCharts.ChartShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ChartShapeProperties();
+      var value = new DocumentModel.Drawings.Charts.ChartShapeProperties();
       value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
       value.Transform2D = GetTransform2D(openXmlElement);
       value.CustomGeometry = GetCustomGeometry(openXmlElement);

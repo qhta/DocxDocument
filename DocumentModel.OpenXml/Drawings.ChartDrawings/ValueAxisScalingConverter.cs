@@ -97,11 +97,11 @@ public static class ValueAxisScalingConverter
       openXmlElement.MinorUnit = null;
   }
   
-  public static DMDrawsChartDraws.ValueAxisScaling? CreateModelElement(DXO2016DrawChartDraw.ValueAxisScaling? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? CreateModelElement(DXO2016DrawChartDraw.ValueAxisScaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ValueAxisScaling();
+      var value = new DocumentModel.Drawings.ChartDrawings.ValueAxisScaling();
       value.Max = GetMax(openXmlElement);
       value.Min = GetMin(openXmlElement);
       value.MajorUnit = GetMajorUnit(openXmlElement);

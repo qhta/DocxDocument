@@ -52,11 +52,11 @@ public static class CustomizationPartConverter
     }
   }
   
-  public static DMPack.CustomizationPart? CreateModelElement(DXPack.CustomizationPart? openXmlElement)
+  public static DocumentModel.Packaging.CustomizationPart? CreateModelElement(DXPack.CustomizationPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.CustomizationPart();
+      var value = new DocumentModel.Packaging.CustomizationPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.TemplateCommandGroup = GetTemplateCommandGroup(openXmlElement);

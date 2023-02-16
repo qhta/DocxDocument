@@ -28,7 +28,10 @@ public static class DataLabelsConverter
   /// </summary>
   private static DMDrawsChartDraws.NumberFormat? GetNumberFormat(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.NumberFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberFormat>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberFormat>();
+    if (element != null)
+      return DMXDrawsChartDraws.NumberFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberFormat(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.NumberFormat? value, DiffList? diffs, string? objName)
@@ -54,7 +57,10 @@ public static class DataLabelsConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -80,7 +86,10 @@ public static class DataLabelsConverter
   /// </summary>
   private static DMDrawsChartDraws.TxPrTextBody? GetTxPrTextBody(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
+    if (element != null)
+      return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTxPrTextBody(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.TxPrTextBody? value, DiffList? diffs, string? objName)
@@ -106,7 +115,10 @@ public static class DataLabelsConverter
   /// </summary>
   private static DMDrawsChartDraws.DataLabelVisibilities? GetDataLabelVisibilities(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.DataLabelVisibilitiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataLabelVisibilities>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataLabelVisibilities>();
+    if (element != null)
+      return DMXDrawsChartDraws.DataLabelVisibilitiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelVisibilities(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.DataLabelVisibilities? value, DiffList? diffs, string? objName)
@@ -152,7 +164,7 @@ public static class DataLabelsConverter
     }
   }
   
-  private static Collection<DMDrawsChartDraws.DataLabel> GetItems(DXO2016DrawChartDraw.DataLabels openXmlElement)
+  private static Collection<DMDrawsChartDraws.DataLabel>? GetItems(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.DataLabel>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.DataLabel>())
@@ -161,7 +173,9 @@ public static class DataLabelsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2016DrawChartDraw.DataLabels openXmlElement, Collection<DMDrawsChartDraws.DataLabel>? value, DiffList? diffs, string? objName)
@@ -206,7 +220,7 @@ public static class DataLabelsConverter
     }
   }
   
-  private static Collection<DMDrawsChartDraws.DataLabelHidden> GetDataLabelHiddens(DXO2016DrawChartDraw.DataLabels openXmlElement)
+  private static Collection<DMDrawsChartDraws.DataLabelHidden>? GetDataLabelHiddens(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.DataLabelHidden>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.DataLabelHidden>())
@@ -215,7 +229,9 @@ public static class DataLabelsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDataLabelHiddens(DXO2016DrawChartDraw.DataLabels openXmlElement, Collection<DMDrawsChartDraws.DataLabelHidden>? value, DiffList? diffs, string? objName)
@@ -262,7 +278,10 @@ public static class DataLabelsConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.DataLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -283,11 +302,11 @@ public static class DataLabelsConverter
     }
   }
   
-  public static DMDrawsChartDraws.DataLabels? CreateModelElement(DXO2016DrawChartDraw.DataLabels? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.DataLabels? CreateModelElement(DXO2016DrawChartDraw.DataLabels? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.DataLabels();
+      var value = new DocumentModel.Drawings.ChartDrawings.DataLabels();
       value.Pos = GetPos(openXmlElement);
       value.NumberFormat = GetNumberFormat(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

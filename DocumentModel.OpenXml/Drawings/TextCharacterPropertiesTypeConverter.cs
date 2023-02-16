@@ -460,7 +460,10 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static DMDraws.Outline? GetOutline(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    if (element != null)
+      return DMXDraws.OutlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
@@ -481,11 +484,11 @@ public static class TextCharacterPropertiesTypeConverter
     }
   }
   
-  public static DMDraws.TextCharacterPropertiesType? CreateModelElement(DXDraw.TextCharacterPropertiesType? openXmlElement)
+  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(DXDraw.TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TextCharacterPropertiesType();
+      var value = new DocumentModel.Drawings.TextCharacterPropertiesType();
       value.SmtClean = GetSmtClean(openXmlElement);
       value.SmtId = GetSmtId(openXmlElement);
       value.Kumimoji = GetKumimoji(openXmlElement);

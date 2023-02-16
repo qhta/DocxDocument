@@ -28,11 +28,11 @@ public static class WebExtensionPartReferenceConverter
       openXmlElement.Id = null;
   }
   
-  public static DMWebExtUI.WebExtensionPartReference? CreateModelElement(DXO2013WebExtPane.WebExtensionPartReference? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(DXO2013WebExtPane.WebExtensionPartReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExtUI.WebExtensionPartReference();
+      var value = new DocumentModel.WebExtensions.UI.WebExtensionPartReference();
       value.Id = GetId(openXmlElement);
       return value;
     }

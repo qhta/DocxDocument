@@ -252,7 +252,10 @@ public static class ManualLayoutConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.ManualLayout openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -273,11 +276,11 @@ public static class ManualLayoutConverter
     }
   }
   
-  public static DMDrawsCharts.ManualLayout? CreateModelElement(DXDrawCharts.ManualLayout? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ManualLayout? CreateModelElement(DXDrawCharts.ManualLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ManualLayout();
+      var value = new DocumentModel.Drawings.Charts.ManualLayout();
       value.LayoutTarget = GetLayoutTarget(openXmlElement);
       value.LeftMode = GetLeftMode(openXmlElement);
       value.TopMode = GetTopMode(openXmlElement);

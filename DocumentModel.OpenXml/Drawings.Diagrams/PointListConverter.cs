@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class PointListConverter
 {
-  private static Collection<DMDrawsDgms.Point> GetPoints(DXDrawDgms.PointList openXmlElement)
+  private static Collection<DMDrawsDgms.Point>? GetPoints(DXDrawDgms.PointList openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Point>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Point>())
@@ -14,7 +14,9 @@ public static class PointListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PointListConverter
     }
   }
   
-  public static DMDrawsDgms.PointList? CreateModelElement(DXDrawDgms.PointList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DXDrawDgms.PointList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.PointList();
+      var value = new DocumentModel.Drawings.Diagrams.PointList();
       value.Points = GetPoints(openXmlElement);
       return value;
     }

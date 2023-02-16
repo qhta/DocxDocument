@@ -43,11 +43,11 @@ public static class StyleSetConverter
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DMW.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
+  public static DocumentModel.Wordprocessing.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StyleSet();
+      var value = new DocumentModel.Wordprocessing.StyleSet();
       value.Id = GetId(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

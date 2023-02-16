@@ -17,11 +17,11 @@ public static class CustomXmlPartConverter
     return false;
   }
   
-  public static DMPack.CustomXmlPart? CreateModelElement(DXPack.CustomXmlPart? openXmlElement)
+  public static DocumentModel.Packaging.CustomXmlPart? CreateModelElement(DXPack.CustomXmlPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.CustomXmlPart();
+      var value = new DocumentModel.Packaging.CustomXmlPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

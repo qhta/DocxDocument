@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BandFormatsConverter
 {
-  private static Collection<DMDrawsCharts.BandFormat> GetItems(DXDrawCharts.BandFormats openXmlElement)
+  private static Collection<DMDrawsCharts.BandFormat>? GetItems(DXDrawCharts.BandFormats openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.BandFormat>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.BandFormat>())
@@ -14,7 +14,9 @@ public static class BandFormatsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXDrawCharts.BandFormats openXmlElement, Collection<DMDrawsCharts.BandFormat>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class BandFormatsConverter
     }
   }
   
-  public static DMDrawsCharts.BandFormats? CreateModelElement(DXDrawCharts.BandFormats? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DXDrawCharts.BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BandFormats();
+      var value = new DocumentModel.Drawings.Charts.BandFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }

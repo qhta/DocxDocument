@@ -271,11 +271,11 @@ public static class BackstageLabelControlConverter
       openXmlElement.NoWrap = null;
   }
   
-  public static DM.BackstageLabelControl? CreateModelElement(DXO2010CustUI.BackstageLabelControl? openXmlElement)
+  public static DocumentModel.BackstageLabelControl? CreateModelElement(DXO2010CustUI.BackstageLabelControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageLabelControl();
+      var value = new DocumentModel.BackstageLabelControl();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

@@ -7,7 +7,10 @@ public static class MinorGridlinesGridlinesConverter
 {
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class MinorGridlinesGridlinesConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class MinorGridlinesGridlinesConverter
     }
   }
   
-  public static DMDrawsChartDraws.MinorGridlinesGridlines? CreateModelElement(DXO2016DrawChartDraw.MinorGridlinesGridlines? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines? CreateModelElement(DXO2016DrawChartDraw.MinorGridlinesGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.MinorGridlinesGridlines();
+      var value = new DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

@@ -46,7 +46,10 @@ public static class LightRigConverter
   /// </summary>
   private static DMW.SphereCoordinates? GetSphereCoordinates(DXO2010W.LightRig openXmlElement)
   {
-    return DMXW.SphereCoordinatesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.SphereCoordinates>();
+    if (element != null)
+      return DMXW.SphereCoordinatesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSphereCoordinates(DXO2010W.LightRig openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
@@ -67,11 +70,11 @@ public static class LightRigConverter
     }
   }
   
-  public static DMW.LightRig? CreateModelElement(DXO2010W.LightRig? openXmlElement)
+  public static DocumentModel.Wordprocessing.LightRig? CreateModelElement(DXO2010W.LightRig? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LightRig();
+      var value = new DocumentModel.Wordprocessing.LightRig();
       value.LightRigType = GetLightRigType(openXmlElement);
       value.LightDirectionType = GetLightDirectionType(openXmlElement);
       value.SphereCoordinates = GetSphereCoordinates(openXmlElement);

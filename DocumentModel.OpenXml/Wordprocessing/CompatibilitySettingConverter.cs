@@ -69,11 +69,11 @@ public static class CompatibilitySettingConverter
       openXmlElement.Val = null;
   }
   
-  public static DMW.CompatibilitySetting? CreateModelElement(DXW.CompatibilitySetting? openXmlElement)
+  public static DocumentModel.Wordprocessing.CompatibilitySetting? CreateModelElement(DXW.CompatibilitySetting? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CompatibilitySetting();
+      var value = new DocumentModel.Wordprocessing.CompatibilitySetting();
       value.Name = GetName(openXmlElement);
       value.Uri = GetUri(openXmlElement);
       value.Val = GetVal(openXmlElement);

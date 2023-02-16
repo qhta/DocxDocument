@@ -28,11 +28,11 @@ public static class EffectConverter
       openXmlElement.Reference = null;
   }
   
-  public static DMDraws.Effect? CreateModelElement(DXDraw.Effect? openXmlElement)
+  public static DocumentModel.Drawings.Effect? CreateModelElement(DXDraw.Effect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Effect();
+      var value = new DocumentModel.Drawings.Effect();
       value.Reference = GetReference(openXmlElement);
       return value;
     }

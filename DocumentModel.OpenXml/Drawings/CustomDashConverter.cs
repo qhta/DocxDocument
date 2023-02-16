@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomDashConverter
 {
-  private static Collection<DMDraws.DashStop> GetDashStops(DXDraw.CustomDash openXmlElement)
+  private static Collection<DMDraws.DashStop>? GetDashStops(DXDraw.CustomDash openXmlElement)
   {
     var collection = new Collection<DMDraws.DashStop>();
     foreach (var item in openXmlElement.Elements<DXDraw.DashStop>())
@@ -14,7 +14,9 @@ public static class CustomDashConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CustomDashConverter
     }
   }
   
-  public static DMDraws.CustomDash? CreateModelElement(DXDraw.CustomDash? openXmlElement)
+  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DXDraw.CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.CustomDash();
+      var value = new DocumentModel.Drawings.CustomDash();
       value.DashStops = GetDashStops(openXmlElement);
       return value;
     }

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class McdsConverter
 {
-  private static Collection<DMW.Mcd> GetItems(DXOW.Mcds openXmlElement)
+  private static Collection<DMW.Mcd>? GetItems(DXOW.Mcds openXmlElement)
   {
     var collection = new Collection<DMW.Mcd>();
     foreach (var item in openXmlElement.Elements<DXOW.Mcd>())
@@ -14,7 +14,9 @@ public static class McdsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOW.Mcds openXmlElement, Collection<DMW.Mcd>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class McdsConverter
     }
   }
   
-  public static DMW.Mcds? CreateModelElement(DXOW.Mcds? openXmlElement)
+  public static DocumentModel.Wordprocessing.Mcds? CreateModelElement(DXOW.Mcds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Mcds();
+      var value = new DocumentModel.Wordprocessing.Mcds();
       value.Items = GetItems(openXmlElement);
       return value;
     }

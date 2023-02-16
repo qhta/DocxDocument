@@ -35,7 +35,10 @@ public static class DataLabelsRangeConverter
   /// </summary>
   private static DMDrawsCharts.DataLabelsRangeChache? GetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
@@ -56,11 +59,11 @@ public static class DataLabelsRangeConverter
     }
   }
   
-  public static DMDrawsCharts.DataLabelsRange? CreateModelElement(DXO2013DrawChart.DataLabelsRange? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DXO2013DrawChart.DataLabelsRange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DataLabelsRange();
+      var value = new DocumentModel.Drawings.Charts.DataLabelsRange();
       value.Formula = GetFormula(openXmlElement);
       value.DataLabelsRangeChache = GetDataLabelsRangeChache(openXmlElement);
       return value;

@@ -45,11 +45,11 @@ public static class ArtisticPhotocopyConverter
     openXmlElement.Detail = value;
   }
   
-  public static DMDraws.ArtisticPhotocopy? CreateModelElement(DXO2010Draw.ArtisticPhotocopy? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(DXO2010Draw.ArtisticPhotocopy? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticPhotocopy();
+      var value = new DocumentModel.Drawings.ArtisticPhotocopy();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Detail = GetDetail(openXmlElement);
       return value;

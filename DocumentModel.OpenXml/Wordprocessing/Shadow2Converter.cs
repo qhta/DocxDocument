@@ -168,7 +168,10 @@ public static class Shadow2Converter
   /// </summary>
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.Shadow openXmlElement)
   {
-    return DMXW.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
+    if (element != null)
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXO2010W.Shadow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -194,7 +197,10 @@ public static class Shadow2Converter
   /// </summary>
   private static DMW.SchemeColor? GetSchemeColor(DXO2010W.Shadow openXmlElement)
   {
-    return DMXW.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
+    if (element != null)
+      return DMXW.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXO2010W.Shadow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
@@ -215,11 +221,11 @@ public static class Shadow2Converter
     }
   }
   
-  public static DMW.Shadow2? CreateModelElement(DXO2010W.Shadow? openXmlElement)
+  public static DocumentModel.Wordprocessing.Shadow2? CreateModelElement(DXO2010W.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Shadow2();
+      var value = new DocumentModel.Wordprocessing.Shadow2();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.DistanceFromText = GetDistanceFromText(openXmlElement);
       value.DirectionAngle = GetDirectionAngle(openXmlElement);

@@ -45,11 +45,11 @@ public static class TaskScheduleEventInfoConverter
     openXmlElement.DueDate = value;
   }
   
-  public static DM.TaskScheduleEventInfo? CreateModelElement(DXO2021DocTasks.TaskScheduleEventInfo? openXmlElement)
+  public static DocumentModel.TaskScheduleEventInfo? CreateModelElement(DXO2021DocTasks.TaskScheduleEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskScheduleEventInfo();
+      var value = new DocumentModel.TaskScheduleEventInfo();
       value.StartDate = GetStartDate(openXmlElement);
       value.DueDate = GetDueDate(openXmlElement);
       return value;

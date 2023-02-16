@@ -59,11 +59,11 @@ public static class MatrixColumnPropertiesConverter
     }
   }
   
-  public static DMMath.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
+  public static DocumentModel.Math.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixColumnProperties();
+      var value = new DocumentModel.Math.MatrixColumnProperties();
       value.MatrixColumnCount = GetMatrixColumnCount(openXmlElement);
       value.MatrixColumnJustification = GetMatrixColumnJustification(openXmlElement);
       return value;

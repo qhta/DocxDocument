@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentsConverter
 {
-  private static Collection<DMW.Comment> GetItems(DXW.Comments openXmlElement)
+  private static Collection<DMW.Comment>? GetItems(DXW.Comments openXmlElement)
   {
     var collection = new Collection<DMW.Comment>();
     foreach (var item in openXmlElement.Elements<DXW.Comment>())
@@ -14,7 +14,9 @@ public static class CommentsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CommentsConverter
     }
   }
   
-  public static DMW.Comments? CreateModelElement(DXW.Comments? openXmlElement)
+  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(DXW.Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Comments();
+      var value = new DocumentModel.Wordprocessing.Comments();
       value.Items = GetItems(openXmlElement);
       return value;
     }

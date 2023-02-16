@@ -177,7 +177,7 @@ public class ConverterCreator
     DateTime t2 = DateTime.Now;
     var ts = t2 - t1;
     ModelDisplay.WriteLine($"Validation time is {ts}");
-    ModelDisplay.WriteLine($"Invalid {invalidTypesCount} types found and repaired");
+    ModelDisplay.WriteLine($"{invalidTypesCount} types checked");
     return ts;
   }
 

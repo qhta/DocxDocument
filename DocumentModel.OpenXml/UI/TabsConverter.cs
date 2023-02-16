@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class TabsConverter
 {
-  private static Collection<DMUI.Tab> GetItems(DXOCustUI.Tabs openXmlElement)
+  private static Collection<DMUI.Tab>? GetItems(DXOCustUI.Tabs openXmlElement)
   {
     var collection = new Collection<DMUI.Tab>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Tab>())
@@ -14,7 +14,9 @@ public static class TabsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.Tabs openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class TabsConverter
     }
   }
   
-  public static DMUI.Tabs? CreateModelElement(DXOCustUI.Tabs? openXmlElement)
+  public static DocumentModel.UI.Tabs? CreateModelElement(DXOCustUI.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.Tabs();
+      var value = new DocumentModel.UI.Tabs();
       value.Items = GetItems(openXmlElement);
       return value;
     }

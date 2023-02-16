@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class TaskHistoryConverter
 {
-  private static Collection<DM.TaskHistoryEvent> GetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement)
+  private static Collection<DM.TaskHistoryEvent>? GetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement)
   {
     var collection = new Collection<DM.TaskHistoryEvent>();
     foreach (var item in openXmlElement.Elements<DXO2021DocTasks.TaskHistoryEvent>())
@@ -14,7 +14,9 @@ public static class TaskHistoryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class TaskHistoryConverter
     }
   }
   
-  public static DM.TaskHistory? CreateModelElement(DXO2021DocTasks.TaskHistory? openXmlElement)
+  public static DocumentModel.TaskHistory? CreateModelElement(DXO2021DocTasks.TaskHistory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskHistory();
+      var value = new DocumentModel.TaskHistory();
       value.TaskHistoryEvents = GetTaskHistoryEvents(openXmlElement);
       return value;
     }

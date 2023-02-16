@@ -7,7 +7,10 @@ public static class MailMergeRecipientsConverter
 {
   private static DMW.SingleDataSourceRecord? GetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement)
   {
-    return DMXW.SingleDataSourceRecordConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOW.SingleDataSourceRecord>());
+    var element = openXmlElement?.GetFirstChild<DXOW.SingleDataSourceRecord>();
+    if (element != null)
+      return DMXW.SingleDataSourceRecordConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class MailMergeRecipientsConverter
     }
   }
   
-  public static DMW.MailMergeRecipients? CreateModelElement(DXOW.MailMergeRecipients? openXmlElement)
+  public static DocumentModel.Wordprocessing.MailMergeRecipients? CreateModelElement(DXOW.MailMergeRecipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MailMergeRecipients();
+      var value = new DocumentModel.Wordprocessing.MailMergeRecipients();
       value.SingleDataSourceRecord = GetSingleDataSourceRecord(openXmlElement);
       return value;
     }

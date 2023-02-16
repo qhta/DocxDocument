@@ -28,7 +28,10 @@ public static class GroupShapePropertiesConverter
   /// </summary>
   private static DMDraws.TransformGroup? GetTransformGroup(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.TransformGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TransformGroup>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TransformGroup>();
+    if (element != null)
+      return DMXDraws.TransformGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTransformGroup(DXODraw.GroupShapeProperties openXmlElement, DMDraws.TransformGroup? value, DiffList? diffs, string? objName)
@@ -79,7 +82,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXODraw.GroupShapeProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -102,7 +108,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXODraw.GroupShapeProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -125,7 +134,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXODraw.GroupShapeProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -148,7 +160,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXODraw.GroupShapeProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -199,7 +214,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.EffectList? GetEffectList(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXODraw.GroupShapeProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -222,7 +240,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXODraw.GroupShapeProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -245,7 +266,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.Scene3DType? GetScene3DType(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.Scene3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
+    if (element != null)
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScene3DType(DXODraw.GroupShapeProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
@@ -268,7 +292,10 @@ public static class GroupShapePropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXODraw.GroupShapeProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXODraw.GroupShapeProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -289,11 +316,11 @@ public static class GroupShapePropertiesConverter
     }
   }
   
-  public static DMDrawsO.GroupShapeProperties? CreateModelElement(DXODraw.GroupShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.GroupShapeProperties? CreateModelElement(DXODraw.GroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.GroupShapeProperties();
+      var value = new DocumentModel.Drawings.Office.GroupShapeProperties();
       value.BlackWhiteMode = GetBlackWhiteMode(openXmlElement);
       value.TransformGroup = GetTransformGroup(openXmlElement);
       value.NoFill = GetNoFill(openXmlElement);

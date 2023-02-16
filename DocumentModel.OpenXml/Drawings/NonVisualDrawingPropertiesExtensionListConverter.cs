@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class NonVisualDrawingPropertiesExtensionListConverter
 {
-  private static Collection<DMDraws.NonVisualDrawingPropertiesExtension> GetNonVisualDrawingPropertiesExtensions(DXDraw.NonVisualDrawingPropertiesExtensionList openXmlElement)
+  private static Collection<DMDraws.NonVisualDrawingPropertiesExtension>? GetNonVisualDrawingPropertiesExtensions(DXDraw.NonVisualDrawingPropertiesExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.NonVisualDrawingPropertiesExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.NonVisualDrawingPropertiesExtension>())
@@ -14,7 +14,9 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpNonVisualDrawingPropertiesExtensions(DXDraw.NonVisualDrawingPropertiesExtensionList openXmlElement, Collection<DMDraws.NonVisualDrawingPropertiesExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     }
   }
   
-  public static DMDraws.NonVisualDrawingPropertiesExtensionList? CreateModelElement(DXDraw.NonVisualDrawingPropertiesExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? CreateModelElement(DXDraw.NonVisualDrawingPropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.NonVisualDrawingPropertiesExtensionList();
+      var value = new DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList();
       value.NonVisualDrawingPropertiesExtensions = GetNonVisualDrawingPropertiesExtensions(openXmlElement);
       return value;
     }

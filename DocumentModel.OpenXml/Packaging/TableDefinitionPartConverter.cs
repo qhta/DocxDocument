@@ -20,7 +20,7 @@ public static class TableDefinitionPartConverter
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  private static Collection<DMPack.QueryTablePart> GetQueryTableParts(DXPack.TableDefinitionPart openXmlElement)
+  private static Collection<DMPack.QueryTablePart>? GetQueryTableParts(DXPack.TableDefinitionPart openXmlElement)
   {
     var collection = new Collection<DMPack.QueryTablePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.QueryTablePart>())
@@ -49,11 +49,11 @@ public static class TableDefinitionPartConverter
     return false;
   }
   
-  public static DMPack.TableDefinitionPart? CreateModelElement(DXPack.TableDefinitionPart? openXmlElement)
+  public static DocumentModel.Packaging.TableDefinitionPart? CreateModelElement(DXPack.TableDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.TableDefinitionPart();
+      var value = new DocumentModel.Packaging.TableDefinitionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.QueryTableParts = GetQueryTableParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

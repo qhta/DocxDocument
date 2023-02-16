@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ShapeGuideListConverter
 {
-  private static Collection<DMDraws.ShapeGuide> GetShapeGuides(DXDraw.ShapeGuideList openXmlElement)
+  private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.ShapeGuideList openXmlElement)
   {
     var collection = new Collection<DMDraws.ShapeGuide>();
     foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
@@ -14,7 +14,9 @@ public static class ShapeGuideListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ShapeGuideListConverter
     }
   }
   
-  public static DMDraws.ShapeGuideList? CreateModelElement(DXDraw.ShapeGuideList? openXmlElement)
+  public static DocumentModel.Drawings.ShapeGuideList? CreateModelElement(DXDraw.ShapeGuideList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ShapeGuideList();
+      var value = new DocumentModel.Drawings.ShapeGuideList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }

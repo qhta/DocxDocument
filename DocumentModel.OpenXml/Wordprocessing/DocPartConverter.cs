@@ -10,7 +10,10 @@ public static class DocPartConverter
   /// </summary>
   private static DMW.DocPartProperties? GetDocPartProperties(DXW.DocPart openXmlElement)
   {
-    return DMXW.DocPartPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.DocPartProperties>();
+    if (element != null)
+      return DMXW.DocPartPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocPartProperties(DXW.DocPart openXmlElement, DMW.DocPartProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class DocPartConverter
   /// </summary>
   private static DMW.DocPartBody? GetDocPartBody(DXW.DocPart openXmlElement)
   {
-    return DMXW.DocPartBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocPartBody>());
+    var element = openXmlElement?.GetFirstChild<DXW.DocPartBody>();
+    if (element != null)
+      return DMXW.DocPartBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocPartBody(DXW.DocPart openXmlElement, DMW.DocPartBody? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class DocPartConverter
     }
   }
   
-  public static DMW.DocPart? CreateModelElement(DXW.DocPart? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocPart? CreateModelElement(DXW.DocPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocPart();
+      var value = new DocumentModel.Wordprocessing.DocPart();
       value.DocPartProperties = GetDocPartProperties(openXmlElement);
       value.DocPartBody = GetDocPartBody(openXmlElement);
       return value;

@@ -10,7 +10,10 @@ public static class GeoParentEntitiesQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoParentEntitiesQuery? GetGeoParentEntitiesQuery(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoParentEntitiesQueryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQuery>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQuery>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoParentEntitiesQueryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoParentEntitiesQuery(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQuery? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GeoParentEntitiesQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoEntity? GetGeoEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoEntityConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoEntity>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoEntity>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoEntityConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoEntity? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class GeoParentEntitiesQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoParentEntity? GetGeoParentEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoParentEntityConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntity>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntity>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoParentEntityConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoParentEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoParentEntity? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class GeoParentEntitiesQueryResultConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoParentEntitiesQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoParentEntitiesQueryResult();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult();
       value.GeoParentEntitiesQuery = GetGeoParentEntitiesQuery(openXmlElement);
       value.GeoEntity = GetGeoEntity(openXmlElement);
       value.GeoParentEntity = GetGeoParentEntity(openXmlElement);

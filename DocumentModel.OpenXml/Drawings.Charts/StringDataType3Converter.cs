@@ -33,11 +33,11 @@ public static class StringDataType3Converter
     }
   }
   
-  public static DMDrawsCharts.StringDataType3? CreateModelElement(DXO2013DrawChart.StringDataType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringDataType3? CreateModelElement(DXO2013DrawChart.StringDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StringDataType3();
+      var value = new DocumentModel.Drawings.Charts.StringDataType3();
       value.PointCount = GetPointCount(openXmlElement);
       return value;
     }

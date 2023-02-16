@@ -45,11 +45,11 @@ public static class BrightnessContrastConverter
     openXmlElement.Contrast = value;
   }
   
-  public static DMDraws.BrightnessContrast? CreateModelElement(DXO2010Draw.BrightnessContrast? openXmlElement)
+  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(DXO2010Draw.BrightnessContrast? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BrightnessContrast();
+      var value = new DocumentModel.Drawings.BrightnessContrast();
       value.Bright = GetBright(openXmlElement);
       value.Contrast = GetContrast(openXmlElement);
       return value;

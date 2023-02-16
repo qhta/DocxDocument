@@ -1138,7 +1138,7 @@ public static class GalleryConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DMUI.Item> GetItems(DXOCustUI.Gallery openXmlElement)
+  private static Collection<DMUI.Item>? GetItems(DXOCustUI.Gallery openXmlElement)
   {
     var collection = new Collection<DMUI.Item>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
@@ -1147,7 +1147,9 @@ public static class GalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.Gallery openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
@@ -1192,7 +1194,7 @@ public static class GalleryConverter
     }
   }
   
-  private static Collection<DMUI.UnsizedButton> GetUnsizedButtons(DXOCustUI.Gallery openXmlElement)
+  private static Collection<DMUI.UnsizedButton>? GetUnsizedButtons(DXOCustUI.Gallery openXmlElement)
   {
     var collection = new Collection<DMUI.UnsizedButton>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.UnsizedButton>())
@@ -1201,7 +1203,9 @@ public static class GalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpUnsizedButtons(DXOCustUI.Gallery openXmlElement, Collection<DMUI.UnsizedButton>? value, DiffList? diffs, string? objName)
@@ -1246,11 +1250,11 @@ public static class GalleryConverter
     }
   }
   
-  public static DMUI.Gallery? CreateModelElement(DXOCustUI.Gallery? openXmlElement)
+  public static DocumentModel.UI.Gallery? CreateModelElement(DXOCustUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.Gallery();
+      var value = new DocumentModel.UI.Gallery();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);

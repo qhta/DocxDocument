@@ -23,11 +23,11 @@ public static class TextConverter
     openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(value);
   }
   
-  public static DMMath.Text? CreateModelElement(DXMath.Text? openXmlElement)
+  public static DocumentModel.Math.Text? CreateModelElement(DXMath.Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Text();
+      var value = new DocumentModel.Math.Text();
       value.Space = GetSpace(openXmlElement);
       return value;
     }

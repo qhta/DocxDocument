@@ -51,11 +51,11 @@ public static class StyleDefinitionTitleConverter
       openXmlElement.Val = null;
   }
   
-  public static DMDrawsDgms.StyleDefinitionTitle? CreateModelElement(DXDrawDgms.StyleDefinitionTitle? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleDefinitionTitle? CreateModelElement(DXDrawDgms.StyleDefinitionTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.StyleDefinitionTitle();
+      var value = new DocumentModel.Drawings.Diagrams.StyleDefinitionTitle();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

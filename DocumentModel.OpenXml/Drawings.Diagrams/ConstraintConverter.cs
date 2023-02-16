@@ -222,7 +222,10 @@ public static class ConstraintConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Constraint openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -243,11 +246,11 @@ public static class ConstraintConverter
     }
   }
   
-  public static DMDrawsDgms.Constraint? CreateModelElement(DXDrawDgms.Constraint? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Constraint? CreateModelElement(DXDrawDgms.Constraint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Constraint();
+      var value = new DocumentModel.Drawings.Diagrams.Constraint();
       value.Type = GetType(openXmlElement);
       value.For = GetFor(openXmlElement);
       value.ForName = GetForName(openXmlElement);

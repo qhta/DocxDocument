@@ -20,11 +20,11 @@ public static class HyperlinkRelationshipConverter
     return false;
   }
   
-  public static DMPack.HyperlinkRelationship? CreateModelElement(DXPack.HyperlinkRelationship? openXmlElement)
+  public static DocumentModel.Packaging.HyperlinkRelationship? CreateModelElement(DXPack.HyperlinkRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.HyperlinkRelationship();
+      var value = new DocumentModel.Packaging.HyperlinkRelationship();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

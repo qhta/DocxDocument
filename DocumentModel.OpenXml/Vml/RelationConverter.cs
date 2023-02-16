@@ -92,11 +92,11 @@ public static class RelationConverter
       openXmlElement.CenterShapeId = null;
   }
   
-  public static DMVml.Relation? CreateModelElement(DXVmlO.Relation? openXmlElement)
+  public static DocumentModel.Vml.Relation? CreateModelElement(DXVmlO.Relation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Relation();
+      var value = new DocumentModel.Vml.Relation();
       value.Extension = GetExtension(openXmlElement);
       value.SourceId = GetSourceId(openXmlElement);
       value.DestinationId = GetDestinationId(openXmlElement);

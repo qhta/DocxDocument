@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PivotFormatsConverter
 {
-  private static Collection<DMDrawsCharts.PivotFormat> GetItems(DXDrawCharts.PivotFormats openXmlElement)
+  private static Collection<DMDrawsCharts.PivotFormat>? GetItems(DXDrawCharts.PivotFormats openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PivotFormat>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PivotFormat>())
@@ -14,7 +14,9 @@ public static class PivotFormatsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PivotFormatsConverter
     }
   }
   
-  public static DMDrawsCharts.PivotFormats? CreateModelElement(DXDrawCharts.PivotFormats? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PivotFormats? CreateModelElement(DXDrawCharts.PivotFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PivotFormats();
+      var value = new DocumentModel.Drawings.Charts.PivotFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }

@@ -59,7 +59,7 @@ public static class HexBinaryConverter
     if (value != null)
     {
       var element = new OpenXmlElementType();
-      if (value.Length > 0)
+      if (((HexBinary)value).Length > 0)
       {
         var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
         if (valProperty != null)

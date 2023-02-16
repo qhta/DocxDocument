@@ -25,11 +25,11 @@ public static class AlphaOutsetConverter
     openXmlElement.Radius = value;
   }
   
-  public static DMDraws.AlphaOutset? CreateModelElement(DXDraw.AlphaOutset? openXmlElement)
+  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DXDraw.AlphaOutset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AlphaOutset();
+      var value = new DocumentModel.Drawings.AlphaOutset();
       value.Radius = GetRadius(openXmlElement);
       return value;
     }

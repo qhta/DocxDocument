@@ -33,7 +33,10 @@ public static class ColorChangeConverter
   /// </summary>
   private static DMDraws.ColorFrom? GetColorFrom(DXDraw.ColorChange openXmlElement)
   {
-    return DMXDraws.ColorFromConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorFrom>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorFrom>();
+    if (element != null)
+      return DMXDraws.ColorFromConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorFrom(DXDraw.ColorChange openXmlElement, DMDraws.ColorFrom? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class ColorChangeConverter
   /// </summary>
   private static DMDraws.ColorTo? GetColorTo(DXDraw.ColorChange openXmlElement)
   {
-    return DMXDraws.ColorToConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorTo>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorTo>();
+    if (element != null)
+      return DMXDraws.ColorToConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorTo(DXDraw.ColorChange openXmlElement, DMDraws.ColorTo? value, DiffList? diffs, string? objName)
@@ -80,11 +86,11 @@ public static class ColorChangeConverter
     }
   }
   
-  public static DMDraws.ColorChange? CreateModelElement(DXDraw.ColorChange? openXmlElement)
+  public static DocumentModel.Drawings.ColorChange? CreateModelElement(DXDraw.ColorChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ColorChange();
+      var value = new DocumentModel.Drawings.ColorChange();
       value.UseAlpha = GetUseAlpha(openXmlElement);
       value.ColorFrom = GetColorFrom(openXmlElement);
       value.ColorTo = GetColorTo(openXmlElement);

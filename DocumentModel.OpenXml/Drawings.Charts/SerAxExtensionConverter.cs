@@ -30,7 +30,10 @@ public static class SerAxExtensionConverter
   
   private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.SerAxExtension openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.SerAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class SerAxExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.SerAxExtension? CreateModelElement(DXDrawCharts.SerAxExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SerAxExtension? CreateModelElement(DXDrawCharts.SerAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SerAxExtension();
+      var value = new DocumentModel.Drawings.Charts.SerAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

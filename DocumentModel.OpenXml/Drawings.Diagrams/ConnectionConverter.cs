@@ -206,7 +206,10 @@ public static class ConnectionConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Connection openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -227,11 +230,11 @@ public static class ConnectionConverter
     }
   }
   
-  public static DMDrawsDgms.Connection? CreateModelElement(DXDrawDgms.Connection? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Connection? CreateModelElement(DXDrawDgms.Connection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Connection();
+      var value = new DocumentModel.Drawings.Diagrams.Connection();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.SourceId = GetSourceId(openXmlElement);

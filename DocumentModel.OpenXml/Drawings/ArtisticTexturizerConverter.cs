@@ -45,11 +45,11 @@ public static class ArtisticTexturizerConverter
     openXmlElement.Scaling = value;
   }
   
-  public static DMDraws.ArtisticTexturizer? CreateModelElement(DXO2010Draw.ArtisticTexturizer? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticTexturizer? CreateModelElement(DXO2010Draw.ArtisticTexturizer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticTexturizer();
+      var value = new DocumentModel.Drawings.ArtisticTexturizer();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       return value;

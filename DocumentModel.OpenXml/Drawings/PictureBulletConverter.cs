@@ -10,7 +10,10 @@ public static class PictureBulletConverter
   /// </summary>
   private static DMDraws.Blip? GetBlip(DXDraw.PictureBullet openXmlElement)
   {
-    return DMXDraws.BlipConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Blip>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Blip>();
+    if (element != null)
+      return DMXDraws.BlipConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlip(DXDraw.PictureBullet openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class PictureBulletConverter
     }
   }
   
-  public static DMDraws.PictureBullet? CreateModelElement(DXDraw.PictureBullet? openXmlElement)
+  public static DocumentModel.Drawings.PictureBullet? CreateModelElement(DXDraw.PictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PictureBullet();
+      var value = new DocumentModel.Drawings.PictureBullet();
       value.Blip = GetBlip(openXmlElement);
       return value;
     }

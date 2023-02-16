@@ -178,11 +178,11 @@ public static class SpacingBetweenLinesConverter
     openXmlElement.LineRule = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(value);
   }
   
-  public static DMW.SpacingBetweenLines? CreateModelElement(DXW.SpacingBetweenLines? openXmlElement)
+  public static DocumentModel.Wordprocessing.SpacingBetweenLines? CreateModelElement(DXW.SpacingBetweenLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SpacingBetweenLines();
+      var value = new DocumentModel.Wordprocessing.SpacingBetweenLines();
       value.Before = GetBefore(openXmlElement);
       value.BeforeLines = GetBeforeLines(openXmlElement);
       value.BeforeAutoSpacing = GetBeforeAutoSpacing(openXmlElement);

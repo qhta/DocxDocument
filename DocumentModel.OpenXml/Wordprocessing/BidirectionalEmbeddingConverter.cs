@@ -25,7 +25,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.CustomXmlRun? GetCustomXmlRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.CustomXmlRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlRun>();
+    if (element != null)
+      return DMXW.CustomXmlRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlRun(DXW.BidirectionalEmbedding openXmlElement, DMW.CustomXmlRun? value, DiffList? diffs, string? objName)
@@ -46,7 +49,7 @@ public static class BidirectionalEmbeddingConverter
     }
   }
   
-  private static Collection<DMW.SimpleField> GetSimpleFields(DXW.BidirectionalEmbedding openXmlElement)
+  private static Collection<DMW.SimpleField>? GetSimpleFields(DXW.BidirectionalEmbedding openXmlElement)
   {
     var collection = new Collection<DMW.SimpleField>();
     foreach (var item in openXmlElement.Elements<DXW.SimpleField>())
@@ -55,7 +58,9 @@ public static class BidirectionalEmbeddingConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSimpleFields(DXW.BidirectionalEmbedding openXmlElement, Collection<DMW.SimpleField>? value, DiffList? diffs, string? objName)
@@ -102,7 +107,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.Hyperlink? GetHyperlink(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.HyperlinkConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Hyperlink>());
+    var element = openXmlElement?.GetFirstChild<DXW.Hyperlink>();
+    if (element != null)
+      return DMXW.HyperlinkConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlink(DXW.BidirectionalEmbedding openXmlElement, DMW.Hyperlink? value, DiffList? diffs, string? objName)
@@ -125,7 +133,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.SdtRun? GetSdtRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.SdtRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtRun>();
+    if (element != null)
+      return DMXW.SdtRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtRun(DXW.BidirectionalEmbedding openXmlElement, DMW.SdtRun? value, DiffList? diffs, string? objName)
@@ -148,7 +159,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.ProofError? GetProofError(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+    var element = openXmlElement?.GetFirstChild<DXW.ProofError>();
+    if (element != null)
+      return DMXW.ProofErrorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProofError(DXW.BidirectionalEmbedding openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
@@ -171,7 +185,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.PermStart? GetPermStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermStart>();
+    if (element != null)
+      return DMXW.PermStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermStart(DXW.BidirectionalEmbedding openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
@@ -194,7 +211,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.PermEnd? GetPermEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermEnd>();
+    if (element != null)
+      return DMXW.PermEndConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
@@ -217,7 +237,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
+    if (element != null)
+      return DMXW.BookmarkStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkStart(DXW.BidirectionalEmbedding openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
@@ -240,7 +263,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -263,7 +289,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -286,7 +315,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -309,7 +341,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -332,7 +367,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -355,7 +393,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -378,7 +419,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -401,7 +445,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -424,7 +471,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -447,7 +497,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -470,7 +523,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -493,7 +549,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -516,7 +575,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -539,7 +601,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -562,7 +627,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -585,7 +653,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -608,7 +679,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -631,7 +705,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.BidirectionalEmbedding openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -654,7 +731,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.BidirectionalEmbedding openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -677,7 +757,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
+    if (element != null)
+      return DMXW.InsertedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInsertedRun(DXW.BidirectionalEmbedding openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
@@ -700,7 +783,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
+    if (element != null)
+      return DMXW.DeletedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedRun(DXW.BidirectionalEmbedding openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
@@ -723,7 +809,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MoveFromRun? GetMoveFromRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
+    if (element != null)
+      return DMXW.MoveFromRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRun(DXW.BidirectionalEmbedding openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
@@ -746,7 +835,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
+    if (element != null)
+      return DMXW.MoveToRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRun(DXW.BidirectionalEmbedding openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
@@ -769,7 +861,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
+    if (element != null)
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictInsertion(DXW.BidirectionalEmbedding openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
@@ -792,7 +887,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
+    if (element != null)
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictDeletion(DXW.BidirectionalEmbedding openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
@@ -815,7 +913,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Paragraph? GetParagraph(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
+    if (element != null)
+      return DMXMath.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXW.BidirectionalEmbedding openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
@@ -838,7 +939,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+    var element = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
+    if (element != null)
+      return DMXMath.OfficeMathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeMath(DXW.BidirectionalEmbedding openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
@@ -861,7 +965,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Accent? GetAccent(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.AccentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Accent>();
+    if (element != null)
+      return DMXMath.AccentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAccent(DXW.BidirectionalEmbedding openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
@@ -884,7 +991,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Bar? GetBar(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.BarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Bar>();
+    if (element != null)
+      return DMXMath.BarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBar(DXW.BidirectionalEmbedding openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
@@ -907,7 +1017,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Box? GetBox(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Box>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Box>();
+    if (element != null)
+      return DMXMath.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBox(DXW.BidirectionalEmbedding openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
@@ -930,7 +1043,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.BorderBox? GetBorderBox(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.BorderBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
+    if (element != null)
+      return DMXMath.BorderBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBorderBox(DXW.BidirectionalEmbedding openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
@@ -953,7 +1069,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Delimiter? GetDelimiter(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.DelimiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
+    if (element != null)
+      return DMXMath.DelimiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDelimiter(DXW.BidirectionalEmbedding openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
@@ -976,7 +1095,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.EquationArray? GetEquationArray(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.EquationArrayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>());
+    var element = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
+    if (element != null)
+      return DMXMath.EquationArrayConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEquationArray(DXW.BidirectionalEmbedding openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
@@ -999,7 +1121,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Fraction? GetFraction(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.FractionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Fraction>();
+    if (element != null)
+      return DMXMath.FractionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFraction(DXW.BidirectionalEmbedding openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
@@ -1022,7 +1147,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.MathFunction? GetMathFunction(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.MathFunctionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
+    if (element != null)
+      return DMXMath.MathFunctionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMathFunction(DXW.BidirectionalEmbedding openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
@@ -1045,7 +1173,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.GroupChar? GetGroupChar(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.GroupCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
+    if (element != null)
+      return DMXMath.GroupCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupChar(DXW.BidirectionalEmbedding openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
@@ -1068,7 +1199,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.LimitLower? GetLimitLower(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.LimitLowerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
+    if (element != null)
+      return DMXMath.LimitLowerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitLower(DXW.BidirectionalEmbedding openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
@@ -1091,7 +1225,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.LimitUpper? GetLimitUpper(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.LimitUpperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
+    if (element != null)
+      return DMXMath.LimitUpperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitUpper(DXW.BidirectionalEmbedding openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
@@ -1114,7 +1251,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Matrix? GetMatrix(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.MatrixConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Matrix>();
+    if (element != null)
+      return DMXMath.MatrixConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrix(DXW.BidirectionalEmbedding openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
@@ -1137,7 +1277,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Nary? GetNary(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.NaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Nary>();
+    if (element != null)
+      return DMXMath.NaryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNary(DXW.BidirectionalEmbedding openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
@@ -1160,7 +1303,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Phantom? GetPhantom(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.PhantomConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Phantom>();
+    if (element != null)
+      return DMXMath.PhantomConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPhantom(DXW.BidirectionalEmbedding openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
@@ -1183,7 +1329,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Radical? GetRadical(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.RadicalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Radical>();
+    if (element != null)
+      return DMXMath.RadicalConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadical(DXW.BidirectionalEmbedding openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
@@ -1206,7 +1355,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.PreSubSuper? GetPreSubSuper(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.PreSubSuperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
+    if (element != null)
+      return DMXMath.PreSubSuperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreSubSuper(DXW.BidirectionalEmbedding openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
@@ -1229,7 +1381,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Subscript? GetSubscript(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.SubscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Subscript>();
+    if (element != null)
+      return DMXMath.SubscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubscript(DXW.BidirectionalEmbedding openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
@@ -1252,7 +1407,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.SubSuperscript? GetSubSuperscript(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.SubSuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
+    if (element != null)
+      return DMXMath.SubSuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubSuperscript(DXW.BidirectionalEmbedding openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
@@ -1275,7 +1433,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Superscript? GetSuperscript(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.SuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Superscript>();
+    if (element != null)
+      return DMXMath.SuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperscript(DXW.BidirectionalEmbedding openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
@@ -1298,7 +1459,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMMath.Run? GetRun(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXMath.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Run>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Run>();
+    if (element != null)
+      return DMXMath.RunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRun(DXW.BidirectionalEmbedding openXmlElement, DMMath.Run? value, DiffList? diffs, string? objName)
@@ -1321,7 +1485,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.BidirectionalOverride? GetBidirectionalOverride(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.BidirectionalOverrideConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>();
+    if (element != null)
+      return DMXW.BidirectionalOverrideConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBidirectionalOverride(DXW.BidirectionalEmbedding openXmlElement, DMW.BidirectionalOverride? value, DiffList? diffs, string? objName)
@@ -1344,7 +1511,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.BidirectionalEmbedding? GetChildBidirectionalEmbedding(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>();
+    if (element != null)
+      return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildBidirectionalEmbedding(DXW.BidirectionalEmbedding openXmlElement, DMW.BidirectionalEmbedding? value, DiffList? diffs, string? objName)
@@ -1367,7 +1537,10 @@ public static class BidirectionalEmbeddingConverter
   
   private static DMW.RelationshipType? GetSubDocumentReference(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SubDocumentReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.SubDocumentReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubDocumentReference(DXW.BidirectionalEmbedding openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -1388,11 +1561,11 @@ public static class BidirectionalEmbeddingConverter
     }
   }
   
-  public static DMW.BidirectionalEmbedding? CreateModelElement(DXW.BidirectionalEmbedding? openXmlElement)
+  public static DocumentModel.Wordprocessing.BidirectionalEmbedding? CreateModelElement(DXW.BidirectionalEmbedding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.BidirectionalEmbedding();
+      var value = new DocumentModel.Wordprocessing.BidirectionalEmbedding();
       value.Val = GetVal(openXmlElement);
       value.CustomXmlRun = GetCustomXmlRun(openXmlElement);
       value.SimpleFields = GetSimpleFields(openXmlElement);

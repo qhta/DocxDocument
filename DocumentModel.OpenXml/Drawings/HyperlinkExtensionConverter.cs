@@ -51,11 +51,11 @@ public static class HyperlinkExtensionConverter
     }
   }
   
-  public static DMDraws.HyperlinkExtension? CreateModelElement(DXDraw.HyperlinkExtension? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkExtension? CreateModelElement(DXDraw.HyperlinkExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HyperlinkExtension();
+      var value = new DocumentModel.Drawings.HyperlinkExtension();
       value.Uri = GetUri(openXmlElement);
       value.HyperlinkColor = GetHyperlinkColor(openXmlElement);
       return value;

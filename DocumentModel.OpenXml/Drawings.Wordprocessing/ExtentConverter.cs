@@ -45,11 +45,11 @@ public static class ExtentConverter
     openXmlElement.Cy = value;
   }
   
-  public static DMDrawsW.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.Extent();
+      var value = new DocumentModel.Drawings.Wordprocessing.Extent();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;

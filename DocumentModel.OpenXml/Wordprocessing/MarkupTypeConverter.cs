@@ -28,11 +28,11 @@ public static class MarkupTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.MarkupType? CreateModelElement(DXW.MarkupType? openXmlElement)
+  public static DocumentModel.Wordprocessing.MarkupType? CreateModelElement(DXW.MarkupType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MarkupType();
+      var value = new DocumentModel.Wordprocessing.MarkupType();
       value.Id = GetId(openXmlElement);
       return value;
     }

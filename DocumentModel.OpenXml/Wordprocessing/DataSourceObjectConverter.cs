@@ -66,7 +66,10 @@ public static class DataSourceObjectConverter
   /// </summary>
   private static DMW.RelationshipType? GetSourceReference(DXW.DataSourceObject openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SourceReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.SourceReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -176,7 +179,7 @@ public static class DataSourceObjectConverter
     }
   }
   
-  private static Collection<DMW.FieldMapData> GetFieldMapDatas(DXW.DataSourceObject openXmlElement)
+  private static Collection<DMW.FieldMapData>? GetFieldMapDatas(DXW.DataSourceObject openXmlElement)
   {
     var collection = new Collection<DMW.FieldMapData>();
     foreach (var item in openXmlElement.Elements<DXW.FieldMapData>())
@@ -185,7 +188,9 @@ public static class DataSourceObjectConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpFieldMapDatas(DXW.DataSourceObject openXmlElement, Collection<DMW.FieldMapData>? value, DiffList? diffs, string? objName)
@@ -232,7 +237,10 @@ public static class DataSourceObjectConverter
   
   private static DMW.RelationshipType? GetRecipientDataReference(DXW.DataSourceObject openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RecipientDataReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.RecipientDataReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -253,11 +261,11 @@ public static class DataSourceObjectConverter
     }
   }
   
-  public static DMW.DataSourceObject? CreateModelElement(DXW.DataSourceObject? openXmlElement)
+  public static DocumentModel.Wordprocessing.DataSourceObject? CreateModelElement(DXW.DataSourceObject? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DataSourceObject();
+      var value = new DocumentModel.Wordprocessing.DataSourceObject();
       value.UdlConnectionString = GetUdlConnectionString(openXmlElement);
       value.DataSourceTableName = GetDataSourceTableName(openXmlElement);
       value.SourceReference = GetSourceReference(openXmlElement);

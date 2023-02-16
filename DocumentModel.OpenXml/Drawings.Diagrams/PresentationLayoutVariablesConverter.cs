@@ -226,11 +226,11 @@ public static class PresentationLayoutVariablesConverter
     }
   }
   
-  public static DMDrawsDgms.PresentationLayoutVariables? CreateModelElement(DXDrawDgms.PresentationLayoutVariables? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? CreateModelElement(DXDrawDgms.PresentationLayoutVariables? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.PresentationLayoutVariables();
+      var value = new DocumentModel.Drawings.Diagrams.PresentationLayoutVariables();
       value.OrganizationChart = GetOrganizationChart(openXmlElement);
       value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
       value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);

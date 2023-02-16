@@ -29,11 +29,11 @@ public static class SlicersPartConverter
     return false;
   }
   
-  public static DMPack.SlicersPart? CreateModelElement(DXPack.SlicersPart? openXmlElement)
+  public static DocumentModel.Packaging.SlicersPart? CreateModelElement(DXPack.SlicersPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SlicersPart();
+      var value = new DocumentModel.Packaging.SlicersPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

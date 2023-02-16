@@ -209,11 +209,11 @@ public static class ClassificationLabelConverter
       openXmlElement.Removed = null;
   }
   
-  public static DM.ClassificationLabel? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabel? openXmlElement)
+  public static DocumentModel.ClassificationLabel? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ClassificationLabel();
+      var value = new DocumentModel.ClassificationLabel();
       value.Id = GetId(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.SetDate = GetSetDate(openXmlElement);

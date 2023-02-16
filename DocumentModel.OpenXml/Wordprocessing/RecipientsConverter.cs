@@ -7,7 +7,10 @@ public static class RecipientsConverter
 {
   private static DMW.RecipientData? GetRecipientData(DXW.Recipients openXmlElement)
   {
-    return DMXW.RecipientDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RecipientData>());
+    var element = openXmlElement?.GetFirstChild<DXW.RecipientData>();
+    if (element != null)
+      return DMXW.RecipientDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class RecipientsConverter
     }
   }
   
-  public static DMW.Recipients? CreateModelElement(DXW.Recipients? openXmlElement)
+  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(DXW.Recipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Recipients();
+      var value = new DocumentModel.Wordprocessing.Recipients();
       value.RecipientData = GetRecipientData(openXmlElement);
       return value;
     }

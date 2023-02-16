@@ -28,11 +28,11 @@ public static class ClassificationExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  public static DM.ClassificationExtension? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtension? openXmlElement)
+  public static DocumentModel.ClassificationExtension? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ClassificationExtension();
+      var value = new DocumentModel.ClassificationExtension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

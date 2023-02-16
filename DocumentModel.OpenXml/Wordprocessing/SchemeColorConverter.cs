@@ -273,11 +273,11 @@ public static class SchemeColorConverter
     }
   }
   
-  public static DMW.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
+  public static DocumentModel.Wordprocessing.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SchemeColor();
+      var value = new DocumentModel.Wordprocessing.SchemeColor();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);

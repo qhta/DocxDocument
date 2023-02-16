@@ -97,11 +97,11 @@ public static class RepurposedCommandConverter
       openXmlElement.IdMso = null;
   }
   
-  public static DMUI.RepurposedCommand? CreateModelElement(DXOCustUI.RepurposedCommand? openXmlElement)
+  public static DocumentModel.UI.RepurposedCommand? CreateModelElement(DXOCustUI.RepurposedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.RepurposedCommand();
+      var value = new DocumentModel.UI.RepurposedCommand();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

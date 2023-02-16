@@ -7,7 +7,10 @@ public static class ShapeDefaultsConverter
 {
   private static DMVml.ShapeDefaults? GetChildShapeDefaults(DXW.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ShapeDefaultsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>();
+    if (element != null)
+      return DMXVml.ShapeDefaultsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildShapeDefaults(DXW.ShapeDefaults openXmlElement, DMVml.ShapeDefaults? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class ShapeDefaultsConverter
   
   private static DMVml.ShapeLayout? GetShapeLayout(DXW.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ShapeLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>();
+    if (element != null)
+      return DMXVml.ShapeLayoutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeLayout(DXW.ShapeDefaults openXmlElement, DMVml.ShapeLayout? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class ShapeDefaultsConverter
     }
   }
   
-  public static DMW.ShapeDefaults? CreateModelElement(DXW.ShapeDefaults? openXmlElement)
+  public static DocumentModel.Wordprocessing.ShapeDefaults? CreateModelElement(DXW.ShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ShapeDefaults();
+      var value = new DocumentModel.Wordprocessing.ShapeDefaults();
       value.ChildShapeDefaults = GetChildShapeDefaults(openXmlElement);
       value.ShapeLayout = GetShapeLayout(openXmlElement);
       return value;

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PreviousTableGridConverter
 {
-  private static Collection<DMW.GridColumn> GetGridColumns(DXW.PreviousTableGrid openXmlElement)
+  private static Collection<DMW.GridColumn>? GetGridColumns(DXW.PreviousTableGrid openXmlElement)
   {
     var collection = new Collection<DMW.GridColumn>();
     foreach (var item in openXmlElement.Elements<DXW.GridColumn>())
@@ -14,7 +14,9 @@ public static class PreviousTableGridConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpGridColumns(DXW.PreviousTableGrid openXmlElement, Collection<DMW.GridColumn>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PreviousTableGridConverter
     }
   }
   
-  public static DMW.PreviousTableGrid? CreateModelElement(DXW.PreviousTableGrid? openXmlElement)
+  public static DocumentModel.Wordprocessing.PreviousTableGrid? CreateModelElement(DXW.PreviousTableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PreviousTableGrid();
+      var value = new DocumentModel.Wordprocessing.PreviousTableGrid();
       value.GridColumns = GetGridColumns(openXmlElement);
       return value;
     }

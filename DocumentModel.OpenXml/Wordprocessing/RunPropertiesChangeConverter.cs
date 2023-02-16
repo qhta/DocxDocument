@@ -76,7 +76,10 @@ public static class RunPropertiesChangeConverter
   /// </summary>
   private static DMW.PreviousRunProperties? GetPreviousRunProperties(DXW.RunPropertiesChange openXmlElement)
   {
-    return DMXW.PreviousRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>();
+    if (element != null)
+      return DMXW.PreviousRunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreviousRunProperties(DXW.RunPropertiesChange openXmlElement, DMW.PreviousRunProperties? value, DiffList? diffs, string? objName)
@@ -97,11 +100,11 @@ public static class RunPropertiesChangeConverter
     }
   }
   
-  public static DMW.RunPropertiesChange? CreateModelElement(DXW.RunPropertiesChange? openXmlElement)
+  public static DocumentModel.Wordprocessing.RunPropertiesChange? CreateModelElement(DXW.RunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunPropertiesChange();
+      var value = new DocumentModel.Wordprocessing.RunPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

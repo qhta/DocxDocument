@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LineChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.LineChartExtension> GetLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.LineChartExtension>? GetLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.LineChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartExtension>())
@@ -14,7 +14,9 @@ public static class LineChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement, Collection<DMDrawsCharts.LineChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class LineChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.LineChartExtensionList? CreateModelElement(DXDrawCharts.LineChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineChartExtensionList? CreateModelElement(DXDrawCharts.LineChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LineChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.LineChartExtensionList();
       value.LineChartExtensions = GetLineChartExtensions(openXmlElement);
       return value;
     }

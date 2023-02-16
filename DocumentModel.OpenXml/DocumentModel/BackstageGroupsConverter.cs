@@ -7,7 +7,10 @@ public static class BackstageGroupsConverter
 {
   private static DM.TaskFormGroup? GetTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement)
   {
-    return DMX.TaskFormGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TaskFormGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskFormGroup>();
+    if (element != null)
+      return DMX.TaskFormGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class BackstageGroupsConverter
   
   private static DM.BackstageGroup? GetBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement)
   {
-    return DMX.BackstageGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>();
+    if (element != null)
+      return DMX.BackstageGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class BackstageGroupsConverter
   
   private static DM.TaskGroup? GetTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement)
   {
-    return DMX.TaskGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>();
+    if (element != null)
+      return DMX.TaskGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class BackstageGroupsConverter
     }
   }
   
-  public static DM.BackstageGroups? CreateModelElement(DXO2010CustUI.BackstageGroups? openXmlElement)
+  public static DocumentModel.BackstageGroups? CreateModelElement(DXO2010CustUI.BackstageGroups? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageGroups();
+      var value = new DocumentModel.BackstageGroups();
       value.TaskFormGroup = GetTaskFormGroup(openXmlElement);
       value.BackstageGroup = GetBackstageGroup(openXmlElement);
       value.TaskGroup = GetTaskGroup(openXmlElement);

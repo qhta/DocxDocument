@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class FormatOverridesConverter
 {
-  private static Collection<DMDrawsChartDraws.FormatOverride> GetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement)
+  private static Collection<DMDrawsChartDraws.FormatOverride>? GetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.FormatOverride>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.FormatOverride>())
@@ -14,7 +14,9 @@ public static class FormatOverridesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement, Collection<DMDrawsChartDraws.FormatOverride>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class FormatOverridesConverter
     }
   }
   
-  public static DMDrawsChartDraws.FormatOverrides? CreateModelElement(DXO2016DrawChartDraw.FormatOverrides? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.FormatOverrides? CreateModelElement(DXO2016DrawChartDraw.FormatOverrides? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.FormatOverrides();
+      var value = new DocumentModel.Drawings.ChartDrawings.FormatOverrides();
       value.Items = GetItems(openXmlElement);
       return value;
     }

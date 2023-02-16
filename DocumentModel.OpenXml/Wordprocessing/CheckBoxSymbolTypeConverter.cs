@@ -31,36 +31,36 @@ public static class CheckBoxSymbolTypeConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
+  private static DM.HexInt? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
-      return Convert.FromHexString(openXmlElement.Val.Value);
+      return HexIntConverter.GetValue(openXmlElement.Val.Value);
     return null;
   }
   
-  private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (Convert.FromHexString(openXmlElement.Val.Value) == value)
+      if (HexIntConverter.GetValue(openXmlElement.Val.Value) == value)
         return true;
     if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value)
+  private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.Val = Convert.ToHexString(value);
+      openXmlElement.Val = value.ToString();
     else
       openXmlElement.Val = null;
   }
   
-  public static DMW.CheckBoxSymbolType? CreateModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement)
+  public static DocumentModel.Wordprocessing.CheckBoxSymbolType? CreateModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CheckBoxSymbolType();
+      var value = new DocumentModel.Wordprocessing.CheckBoxSymbolType();
       value.Font = GetFont(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

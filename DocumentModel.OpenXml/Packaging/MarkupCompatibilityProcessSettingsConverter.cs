@@ -43,11 +43,11 @@ public static class MarkupCompatibilityProcessSettingsConverter
     return false;
   }
   
-  public static DMPack.MarkupCompatibilityProcessSettings? CreateModelElement(DXPack.MarkupCompatibilityProcessSettings? openXmlElement)
+  public static DocumentModel.Packaging.MarkupCompatibilityProcessSettings? CreateModelElement(DXPack.MarkupCompatibilityProcessSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.MarkupCompatibilityProcessSettings();
+      var value = new DocumentModel.Packaging.MarkupCompatibilityProcessSettings();
       value.ProcessMode = GetProcessMode(openXmlElement);
       value.TargetFileFormatVersions = GetTargetFileFormatVersions(openXmlElement);
       return value;

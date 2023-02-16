@@ -46,11 +46,11 @@ public static class MarkupRangeTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.MarkupRangeType? CreateModelElement(DXW.MarkupRangeType? openXmlElement)
+  public static DocumentModel.Wordprocessing.MarkupRangeType? CreateModelElement(DXW.MarkupRangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MarkupRangeType();
+      var value = new DocumentModel.Wordprocessing.MarkupRangeType();
       value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

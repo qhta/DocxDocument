@@ -65,11 +65,11 @@ public static class SphereCoordinatesConverter
     openXmlElement.Revolution = value;
   }
   
-  public static DMW.SphereCoordinates? CreateModelElement(DXO2010W.SphereCoordinates? openXmlElement)
+  public static DocumentModel.Wordprocessing.SphereCoordinates? CreateModelElement(DXO2010W.SphereCoordinates? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SphereCoordinates();
+      var value = new DocumentModel.Wordprocessing.SphereCoordinates();
       value.Lattitude = GetLattitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
       value.Revolution = GetRevolution(openXmlElement);

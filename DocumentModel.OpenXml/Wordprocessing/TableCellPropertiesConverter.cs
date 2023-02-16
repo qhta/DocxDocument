@@ -10,7 +10,10 @@ public static class TableCellPropertiesConverter
   /// </summary>
   private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.ConditionalFormatStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>());
+    var element = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
+    if (element != null)
+      return DMXW.ConditionalFormatStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConditionalFormatStyle(DXW.TableCellProperties openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TableCellPropertiesConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableCellWidth(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellWidth>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellWidth>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellWidth(DXW.TableCellProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -142,7 +148,10 @@ public static class TableCellPropertiesConverter
   /// </summary>
   private static DMW.TableCellBorders? GetTableCellBorders(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TableCellBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellBorders>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellBorders>();
+    if (element != null)
+      return DMXW.TableCellBordersConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellBorders(DXW.TableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
@@ -168,7 +177,10 @@ public static class TableCellPropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.TableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -225,7 +237,10 @@ public static class TableCellPropertiesConverter
   /// </summary>
   private static DMW.TableCellMargin? GetTableCellMargin(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TableCellMarginConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
+    if (element != null)
+      return DMXW.TableCellMarginConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellMargin(DXW.TableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
@@ -362,7 +377,10 @@ public static class TableCellPropertiesConverter
   
   private static DMW.TrackChangeType? GetCellInsertion(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CellInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXW.CellInsertion>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCellInsertion(DXW.TableCellProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -385,7 +403,10 @@ public static class TableCellPropertiesConverter
   
   private static DMW.TrackChangeType? GetCellDeletion(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CellDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXW.CellDeletion>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCellDeletion(DXW.TableCellProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -408,7 +429,10 @@ public static class TableCellPropertiesConverter
   
   private static DMW.CellMerge? GetCellMerge(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.CellMergeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CellMerge>());
+    var element = openXmlElement?.GetFirstChild<DXW.CellMerge>();
+    if (element != null)
+      return DMXW.CellMergeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCellMerge(DXW.TableCellProperties openXmlElement, DMW.CellMerge? value, DiffList? diffs, string? objName)
@@ -431,7 +455,10 @@ public static class TableCellPropertiesConverter
   
   private static DMW.TableCellPropertiesChange? GetTableCellPropertiesChange(DXW.TableCellProperties openXmlElement)
   {
-    return DMXW.TableCellPropertiesChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellPropertiesChange>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellPropertiesChange>();
+    if (element != null)
+      return DMXW.TableCellPropertiesChangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellPropertiesChange(DXW.TableCellProperties openXmlElement, DMW.TableCellPropertiesChange? value, DiffList? diffs, string? objName)
@@ -452,11 +479,11 @@ public static class TableCellPropertiesConverter
     }
   }
   
-  public static DMW.TableCellProperties? CreateModelElement(DXW.TableCellProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableCellProperties? CreateModelElement(DXW.TableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableCellProperties();
+      var value = new DocumentModel.Wordprocessing.TableCellProperties();
       value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
       value.TableCellWidth = GetTableCellWidth(openXmlElement);
       value.GridSpan = GetGridSpan(openXmlElement);

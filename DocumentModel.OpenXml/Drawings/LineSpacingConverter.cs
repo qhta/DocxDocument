@@ -55,11 +55,11 @@ public static class LineSpacingConverter
     }
   }
   
-  public static DMDraws.LineSpacing? CreateModelElement(DXDraw.LineSpacing? openXmlElement)
+  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DXDraw.LineSpacing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LineSpacing();
+      var value = new DocumentModel.Drawings.LineSpacing();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

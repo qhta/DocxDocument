@@ -33,7 +33,10 @@ public static class SampleDataTypeConverter
   /// </summary>
   private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.SampleDataType openXmlElement)
   {
-    return DMXDrawsDgms.DataModelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
+    if (element != null)
+      return DMXDrawsDgms.DataModelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataModel(DXDrawDgms.SampleDataType openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class SampleDataTypeConverter
     }
   }
   
-  public static DMDrawsDgms.SampleDataType? CreateModelElement(DXDrawDgms.SampleDataType? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(DXDrawDgms.SampleDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.SampleDataType();
+      var value = new DocumentModel.Drawings.Diagrams.SampleDataType();
       value.UseDefault = GetUseDefault(openXmlElement);
       value.DataModel = GetDataModel(openXmlElement);
       return value;

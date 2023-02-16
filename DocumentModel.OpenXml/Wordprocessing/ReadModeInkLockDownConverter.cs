@@ -91,11 +91,11 @@ public static class ReadModeInkLockDownConverter
       openXmlElement.FontSize = null;
   }
   
-  public static DMW.ReadModeInkLockDown? CreateModelElement(DXW.ReadModeInkLockDown? openXmlElement)
+  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(DXW.ReadModeInkLockDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ReadModeInkLockDown();
+      var value = new DocumentModel.Wordprocessing.ReadModeInkLockDown();
       value.UseActualPages = GetUseActualPages(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);

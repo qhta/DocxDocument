@@ -87,11 +87,11 @@ public static class SdtContentDocPartListConverter
     }
   }
   
-  public static DMW.SdtContentDocPartList? CreateModelElement(DXW.SdtContentDocPartList? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtContentDocPartList? CreateModelElement(DXW.SdtContentDocPartList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtContentDocPartList();
+      var value = new DocumentModel.Wordprocessing.SdtContentDocPartList();
       value.DocPartGallery = GetDocPartGallery(openXmlElement);
       value.DocPartCategory = GetDocPartCategory(openXmlElement);
       value.DocPartUnique = GetDocPartUnique(openXmlElement);

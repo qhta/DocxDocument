@@ -13,5 +13,5 @@ public class CheckBoxSymbolType
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? Val { get; set; }
+  public HexInt? Val { get; set; }
 }

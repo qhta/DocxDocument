@@ -8,7 +8,7 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  private static Collection<DMPack.ChartColorStylePart> GetChartColorStyleParts(DXPack.ChartPart openXmlElement)
+  private static Collection<DMPack.ChartColorStylePart>? GetChartColorStyleParts(DXPack.ChartPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartColorStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartColorStylePart>())
@@ -51,7 +51,7 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  private static Collection<DMPack.ChartStylePart> GetChartStyleParts(DXPack.ChartPart openXmlElement)
+  private static Collection<DMPack.ChartStylePart>? GetChartStyleParts(DXPack.ChartPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartStylePart>())
@@ -83,7 +83,7 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets the ImageParts of the ChartPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ChartPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.ChartPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -112,11 +112,11 @@ public static class ChartPartConverter
     return false;
   }
   
-  public static DMPack.ChartPart? CreateModelElement(DXPack.ChartPart? openXmlElement)
+  public static DocumentModel.Packaging.ChartPart? CreateModelElement(DXPack.ChartPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ChartPart();
+      var value = new DocumentModel.Packaging.ChartPart();
       value.ChartColorStyleParts = GetChartColorStyleParts(openXmlElement);
       value.ChartSpace = GetChartSpace(openXmlElement);
       value.ChartStyleParts = GetChartStyleParts(openXmlElement);

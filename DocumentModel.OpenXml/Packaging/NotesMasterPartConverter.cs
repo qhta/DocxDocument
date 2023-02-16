@@ -8,7 +8,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the ChartParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.ChartPart> GetChartParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.ChartPart>? GetChartParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartPart>())
@@ -40,7 +40,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the CustomXmlParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.CustomXmlPart> GetCustomXmlParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.CustomXmlPart>? GetCustomXmlParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.CustomXmlPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.CustomXmlPart>())
@@ -60,7 +60,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the DiagramColorsParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.DiagramColorsPart> GetDiagramColorsParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.DiagramColorsPart>? GetDiagramColorsParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramColorsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramColorsPart>())
@@ -80,7 +80,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the DiagramDataParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.DiagramDataPart> GetDiagramDataParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.DiagramDataPart>? GetDiagramDataParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramDataPart>())
@@ -100,7 +100,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramLayoutDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramLayoutDefinitionPart>())
@@ -120,7 +120,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramPersistLayoutPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramPersistLayoutPart>())
@@ -140,7 +140,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the DiagramStyleParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.DiagramStylePart> GetDiagramStyleParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.DiagramStylePart>? GetDiagramStyleParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramStylePart>())
@@ -160,7 +160,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistenceBinaryDataPart>())
@@ -180,7 +180,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -200,7 +200,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -220,7 +220,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the ExtendedChartParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.ExtendedChartPart> GetExtendedChartParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.ExtendedChartPart>? GetExtendedChartParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.ExtendedChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ExtendedChartPart>())
@@ -240,7 +240,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the ImageParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -260,7 +260,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -292,7 +292,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the UserDefinedTagsParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.UserDefinedTagsPart> GetUserDefinedTagsParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.UserDefinedTagsPart>? GetUserDefinedTagsParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.UserDefinedTagsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.UserDefinedTagsPart>())
@@ -312,7 +312,7 @@ public static class NotesMasterPartConverter
   /// <summary>
   /// Gets the VmlDrawingParts of the NotesMasterPart
   /// </summary>
-  private static Collection<DMPack.VmlDrawingPart> GetVmlDrawingParts(DXPack.NotesMasterPart openXmlElement)
+  private static Collection<DMPack.VmlDrawingPart>? GetVmlDrawingParts(DXPack.NotesMasterPart openXmlElement)
   {
     var collection = new Collection<DMPack.VmlDrawingPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.VmlDrawingPart>())
@@ -329,11 +329,11 @@ public static class NotesMasterPartConverter
     return true;
   }
   
-  public static DMPack.NotesMasterPart? CreateModelElement(DXPack.NotesMasterPart? openXmlElement)
+  public static DocumentModel.Packaging.NotesMasterPart? CreateModelElement(DXPack.NotesMasterPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.NotesMasterPart();
+      var value = new DocumentModel.Packaging.NotesMasterPart();
       value.ChartParts = GetChartParts(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.CustomXmlParts = GetCustomXmlParts(openXmlElement);

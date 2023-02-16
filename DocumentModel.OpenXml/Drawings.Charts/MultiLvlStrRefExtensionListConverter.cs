@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class MultiLvlStrRefExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.MultiLvlStrRefExtension> GetMultiLvlStrRefExtensions(DXDrawCharts.MultiLvlStrRefExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.MultiLvlStrRefExtension>? GetMultiLvlStrRefExtensions(DXDrawCharts.MultiLvlStrRefExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.MultiLvlStrRefExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.MultiLvlStrRefExtension>())
@@ -14,7 +14,9 @@ public static class MultiLvlStrRefExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpMultiLvlStrRefExtensions(DXDrawCharts.MultiLvlStrRefExtensionList openXmlElement, Collection<DMDrawsCharts.MultiLvlStrRefExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class MultiLvlStrRefExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.MultiLvlStrRefExtensionList? CreateModelElement(DXDrawCharts.MultiLvlStrRefExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? CreateModelElement(DXDrawCharts.MultiLvlStrRefExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.MultiLvlStrRefExtensionList();
+      var value = new DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList();
       value.MultiLvlStrRefExtensions = GetMultiLvlStrRefExtensions(openXmlElement);
       return value;
     }

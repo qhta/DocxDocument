@@ -109,11 +109,11 @@ public static class TextInputConverter
     }
   }
   
-  public static DMW.TextInput? CreateModelElement(DXW.TextInput? openXmlElement)
+  public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(DXW.TextInput? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TextInput();
+      var value = new DocumentModel.Wordprocessing.TextInput();
       value.TextBoxFormFieldType = GetTextBoxFormFieldType(openXmlElement);
       value.DefaultTextBoxFormFieldString = GetDefaultTextBoxFormFieldString(openXmlElement);
       value.MaxLength = GetMaxLength(openXmlElement);

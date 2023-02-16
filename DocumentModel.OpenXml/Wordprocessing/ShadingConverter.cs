@@ -197,11 +197,11 @@ public static class ShadingConverter
       openXmlElement.ThemeFillShade = null;
   }
   
-  public static DMW.Shading? CreateModelElement(DXW.Shading? openXmlElement)
+  public static DocumentModel.Wordprocessing.Shading? CreateModelElement(DXW.Shading? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Shading();
+      var value = new DocumentModel.Wordprocessing.Shading();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);

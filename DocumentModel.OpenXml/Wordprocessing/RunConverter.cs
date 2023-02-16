@@ -8,27 +8,27 @@ public static class RunConverter
   /// <summary>
   /// Revision Identifier for Run Properties
   /// </summary>
-  private static UInt32? GetRsidRunProperties(DXW.Run openXmlElement)
+  private static DM.HexInt? GetRsidRunProperties(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunProperties?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunProperties.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidRunProperties.Value);
     return null;
   }
   
-  private static bool CmpRsidRunProperties(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidRunProperties?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidRunProperties.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidRunProperties.Value) == value)
         return true;
-    if (openXmlElement?.RsidRunProperties?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunProperties", openXmlElement?.RsidRunProperties?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidRunProperties?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunProperties", openXmlElement?.RsidRunProperties?.Value, value);
     return false;
   }
   
-  private static void SetRsidRunProperties(DXW.Run openXmlElement, UInt32? value)
+  private static void SetRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidRunProperties = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidRunProperties = value.ToString();
     else
       openXmlElement.RsidRunProperties = null;
   }
@@ -36,27 +36,27 @@ public static class RunConverter
   /// <summary>
   /// Revision Identifier for Run Deletion
   /// </summary>
-  private static UInt32? GetRsidRunDeletion(DXW.Run openXmlElement)
+  private static DM.HexInt? GetRsidRunDeletion(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunDeletion?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunDeletion.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidRunDeletion.Value);
     return null;
   }
   
-  private static bool CmpRsidRunDeletion(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidRunDeletion?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidRunDeletion.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidRunDeletion.Value) == value)
         return true;
-    if (openXmlElement?.RsidRunDeletion?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunDeletion", openXmlElement?.RsidRunDeletion?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidRunDeletion?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunDeletion", openXmlElement?.RsidRunDeletion?.Value, value);
     return false;
   }
   
-  private static void SetRsidRunDeletion(DXW.Run openXmlElement, UInt32? value)
+  private static void SetRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidRunDeletion = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidRunDeletion = value.ToString();
     else
       openXmlElement.RsidRunDeletion = null;
   }
@@ -64,27 +64,27 @@ public static class RunConverter
   /// <summary>
   /// Revision Identifier for Run
   /// </summary>
-  private static UInt32? GetRsidRunAddition(DXW.Run openXmlElement)
+  private static DM.HexInt? GetRsidRunAddition(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunAddition?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunAddition.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidRunAddition.Value);
     return null;
   }
   
-  private static bool CmpRsidRunAddition(DXW.Run openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidRunAddition?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidRunAddition.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidRunAddition.Value) == value)
         return true;
-    if (openXmlElement?.RsidRunAddition?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunAddition", openXmlElement?.RsidRunAddition?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidRunAddition?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunAddition", openXmlElement?.RsidRunAddition?.Value, value);
     return false;
   }
   
-  private static void SetRsidRunAddition(DXW.Run openXmlElement, UInt32? value)
+  private static void SetRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidRunAddition = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidRunAddition = value.ToString();
     else
       openXmlElement.RsidRunAddition = null;
   }
@@ -94,7 +94,10 @@ public static class RunConverter
   /// </summary>
   private static DMW.RunProperties? GetRunProperties(DXW.Run openXmlElement)
   {
-    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunProperties>();
+    if (element != null)
+      return DMXW.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXW.Run openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
@@ -117,7 +120,10 @@ public static class RunConverter
   
   private static DMW.Break? GetBreak(DXW.Run openXmlElement)
   {
-    return DMXW.BreakConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Break>());
+    var element = openXmlElement?.GetFirstChild<DXW.Break>();
+    if (element != null)
+      return DMXW.BreakConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBreak(DXW.Run openXmlElement, DMW.Break? value, DiffList? diffs, string? objName)
@@ -140,7 +146,10 @@ public static class RunConverter
   
   private static DMW.TextType? GetText(DXW.Run openXmlElement)
   {
-    return DMXW.TextTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Text>());
+    var element = openXmlElement?.GetFirstChild<DXW.Text>();
+    if (element != null)
+      return DMXW.TextTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpText(DXW.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
@@ -163,7 +172,10 @@ public static class RunConverter
   
   private static DMW.TextType? GetDeletedText(DXW.Run openXmlElement)
   {
-    return DMXW.TextTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedText>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedText>();
+    if (element != null)
+      return DMXW.TextTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedText(DXW.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
@@ -186,7 +198,10 @@ public static class RunConverter
   
   private static DMW.TextType? GetFieldCode(DXW.Run openXmlElement)
   {
-    return DMXW.TextTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FieldCode>());
+    var element = openXmlElement?.GetFirstChild<DXW.FieldCode>();
+    if (element != null)
+      return DMXW.TextTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFieldCode(DXW.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
@@ -209,7 +224,10 @@ public static class RunConverter
   
   private static DMW.TextType? GetDeletedFieldCode(DXW.Run openXmlElement)
   {
-    return DMXW.TextTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedFieldCode>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedFieldCode>();
+    if (element != null)
+      return DMXW.TextTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedFieldCode(DXW.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
@@ -596,7 +614,10 @@ public static class RunConverter
   
   private static DMW.SymbolChar? GetSymbolChar(DXW.Run openXmlElement)
   {
-    return DMXW.SymbolCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SymbolChar>());
+    var element = openXmlElement?.GetFirstChild<DXW.SymbolChar>();
+    if (element != null)
+      return DMXW.SymbolCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSymbolChar(DXW.Run openXmlElement, DMW.SymbolChar? value, DiffList? diffs, string? objName)
@@ -703,7 +724,10 @@ public static class RunConverter
   
   private static DMW.EmbeddedObject? GetEmbeddedObject(DXW.Run openXmlElement)
   {
-    return DMXW.EmbeddedObjectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EmbeddedObject>());
+    var element = openXmlElement?.GetFirstChild<DXW.EmbeddedObject>();
+    if (element != null)
+      return DMXW.EmbeddedObjectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEmbeddedObject(DXW.Run openXmlElement, DMW.EmbeddedObject? value, DiffList? diffs, string? objName)
@@ -726,7 +750,10 @@ public static class RunConverter
   
   private static DMW.Picture? GetPicture(DXW.Run openXmlElement)
   {
-    return DMXW.PictureConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Picture>());
+    var element = openXmlElement?.GetFirstChild<DXW.Picture>();
+    if (element != null)
+      return DMXW.PictureConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPicture(DXW.Run openXmlElement, DMW.Picture? value, DiffList? diffs, string? objName)
@@ -749,7 +776,10 @@ public static class RunConverter
   
   private static DMW.FieldChar? GetFieldChar(DXW.Run openXmlElement)
   {
-    return DMXW.FieldCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FieldChar>());
+    var element = openXmlElement?.GetFirstChild<DXW.FieldChar>();
+    if (element != null)
+      return DMXW.FieldCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFieldChar(DXW.Run openXmlElement, DMW.FieldChar? value, DiffList? diffs, string? objName)
@@ -772,7 +802,10 @@ public static class RunConverter
   
   private static DMW.Ruby? GetRuby(DXW.Run openXmlElement)
   {
-    return DMXW.RubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Ruby>());
+    var element = openXmlElement?.GetFirstChild<DXW.Ruby>();
+    if (element != null)
+      return DMXW.RubyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRuby(DXW.Run openXmlElement, DMW.Ruby? value, DiffList? diffs, string? objName)
@@ -795,7 +828,10 @@ public static class RunConverter
   
   private static DMW.FootnoteEndnoteReferenceType? GetFootnoteReference(DXW.Run openXmlElement)
   {
-    return DMXW.FootnoteEndnoteReferenceTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FootnoteReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.FootnoteReference>();
+    if (element != null)
+      return DMXW.FootnoteEndnoteReferenceTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFootnoteReference(DXW.Run openXmlElement, DMW.FootnoteEndnoteReferenceType? value, DiffList? diffs, string? objName)
@@ -818,7 +854,10 @@ public static class RunConverter
   
   private static DMW.FootnoteEndnoteReferenceType? GetEndnoteReference(DXW.Run openXmlElement)
   {
-    return DMXW.FootnoteEndnoteReferenceTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EndnoteReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.EndnoteReference>();
+    if (element != null)
+      return DMXW.FootnoteEndnoteReferenceTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEndnoteReference(DXW.Run openXmlElement, DMW.FootnoteEndnoteReferenceType? value, DiffList? diffs, string? objName)
@@ -841,7 +880,10 @@ public static class RunConverter
   
   private static DMW.MarkupType? GetCommentReference(DXW.Run openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentReference>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentReference(DXW.Run openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -864,7 +906,10 @@ public static class RunConverter
   
   private static DMW.Drawing? GetDrawing(DXW.Run openXmlElement)
   {
-    return DMXW.DrawingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Drawing>());
+    var element = openXmlElement?.GetFirstChild<DXW.Drawing>();
+    if (element != null)
+      return DMXW.DrawingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDrawing(DXW.Run openXmlElement, DMW.Drawing? value, DiffList? diffs, string? objName)
@@ -887,7 +932,10 @@ public static class RunConverter
   
   private static DMW.PositionalTab? GetPositionalTab(DXW.Run openXmlElement)
   {
-    return DMXW.PositionalTabConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PositionalTab>());
+    var element = openXmlElement?.GetFirstChild<DXW.PositionalTab>();
+    if (element != null)
+      return DMXW.PositionalTabConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPositionalTab(DXW.Run openXmlElement, DMW.PositionalTab? value, DiffList? diffs, string? objName)
@@ -936,11 +984,11 @@ public static class RunConverter
     }
   }
   
-  public static DMW.Run? CreateModelElement(DXW.Run? openXmlElement)
+  public static DocumentModel.Wordprocessing.Run? CreateModelElement(DXW.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Run();
+      var value = new DocumentModel.Wordprocessing.Run();
       value.RsidRunProperties = GetRsidRunProperties(openXmlElement);
       value.RsidRunDeletion = GetRsidRunDeletion(openXmlElement);
       value.RsidRunAddition = GetRsidRunAddition(openXmlElement);

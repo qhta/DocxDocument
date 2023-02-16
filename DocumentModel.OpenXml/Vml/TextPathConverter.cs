@@ -189,11 +189,11 @@ public static class TextPathConverter
       openXmlElement.String = null;
   }
   
-  public static DMVml.TextPath? CreateModelElement(DXVml.TextPath? openXmlElement)
+  public static DocumentModel.Vml.TextPath? CreateModelElement(DXVml.TextPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.TextPath();
+      var value = new DocumentModel.Vml.TextPath();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.On = GetOn(openXmlElement);

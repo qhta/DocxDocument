@@ -10,7 +10,10 @@ public static class SubscriptPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.SubscriptProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.SubscriptProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class SubscriptPropertiesConverter
     }
   }
   
-  public static DMMath.SubscriptProperties? CreateModelElement(DXMath.SubscriptProperties? openXmlElement)
+  public static DocumentModel.Math.SubscriptProperties? CreateModelElement(DXMath.SubscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.SubscriptProperties();
+      var value = new DocumentModel.Math.SubscriptProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

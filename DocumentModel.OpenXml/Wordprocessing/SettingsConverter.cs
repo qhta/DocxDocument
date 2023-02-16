@@ -2605,8 +2605,7 @@ public static class SettingsConverter
   
   private static Boolean? GetForceUpgrade(DXW.Settings openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.ForceUpgrade>();
-    return (element!=null) ? true : null;
+    return openXmlElement.GetFirstChild<DXW.ForceUpgrade>() != null;
   }
   
   private static bool CmpForceUpgrade(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -2774,24 +2773,24 @@ public static class SettingsConverter
     }
   }
   
-  private static HexInt? GetDocumentId(DXW.Settings openXmlElement)
+  private static DM.HexBinary? GetDocumentId(DXW.Settings openXmlElement)
   {
-    return DMX.HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
+    return DMX.HexBinaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>());
   }
   
-  private static bool CmpDocumentId(DXW.Settings openXmlElement, HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentId(DXW.Settings openXmlElement, DM.HexBinary? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexIntConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexBinaryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.DocumentId>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetDocumentId(DXW.Settings openXmlElement, HexInt? value)
+  private static void SetDocumentId(DXW.Settings openXmlElement, DM.HexBinary? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.DocumentId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.HexIntConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
+      itemElement = DMX.HexBinaryConverter.CreateOpenXmlElement<DXO2010W.DocumentId>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -2896,39 +2895,33 @@ public static class SettingsConverter
     }
   }
   
-  private static Guid? GetPersistentDocumentId(DXW.Settings openXmlElement)
+  private static String? GetPersistentDocumentId(DXW.Settings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
-    if (element?.Val?.Value!=null)
-      return Guid.Parse(element.Val.Value);
-    return null;
+      return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value;
   }
   
-  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, Guid? value, DiffList? diffs, string? objName)
+  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    var val =  GetPersistentDocumentId(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXO2013W.PersistentDocumentId", val, value);
-    return false;
+      return openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>()?.Val?.Value == value;
   }
   
-  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, Guid? value)
+  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, String? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2013W.PersistentDocumentId>();
     if (itemElement != null)
       itemElement.Remove();
-    if (value is Guid val)
+    if (value != null)
     {
-      itemElement = new DXO2013W.PersistentDocumentId { Val = val.ToString("B") };
+      itemElement = new DXO2013W.PersistentDocumentId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMProps.DocumentSettings? CreateModelElement(DXW.Settings? openXmlElement)
+  public static DocumentModel.Wordprocessing.Settings? CreateModelElement(DXW.Settings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMProps.DocumentSettings();
+      var value = new DocumentModel.Wordprocessing.Settings();
       value.WriteProtection = GetWriteProtection(openXmlElement);
       value.View = GetView(openXmlElement);
       value.Zoom = GetZoom(openXmlElement);
@@ -3035,7 +3028,7 @@ public static class SettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Settings? openXmlElement, DMProps.DocumentSettings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Settings? openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -3249,7 +3242,7 @@ public static class SettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMProps.DocumentSettings? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Settings? value)
     where OpenXmlElementType: DXW.Settings, new()
   {
     if (value != null)

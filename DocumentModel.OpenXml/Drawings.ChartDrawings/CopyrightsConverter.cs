@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class CopyrightsConverter
 {
-  private static Collection<String> GetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement)
+  private static Collection<String>? GetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement)
   {
     var collection = new Collection<String>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.CopyrightXsdstring>())
@@ -14,7 +14,9 @@ public static class CopyrightsConverter
       if (newItem != null)
         collection.Add((string)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CopyrightsConverter
     }
   }
   
-  public static DMDrawsChartDraws.Copyrights? CreateModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Copyrights();
+      var value = new DocumentModel.Drawings.ChartDrawings.Copyrights();
       value.CopyrightXsdstrings = GetCopyrightXsdstrings(openXmlElement);
       return value;
     }

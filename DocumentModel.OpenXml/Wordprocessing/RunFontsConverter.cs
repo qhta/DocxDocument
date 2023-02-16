@@ -187,11 +187,11 @@ public static class RunFontsConverter
     openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
   
-  public static DMW.RunFonts? CreateModelElement(DXW.RunFonts? openXmlElement)
+  public static DocumentModel.Wordprocessing.RunFonts? CreateModelElement(DXW.RunFonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunFonts();
+      var value = new DocumentModel.Wordprocessing.RunFonts();
       value.Hint = GetHint(openXmlElement);
       value.Ascii = GetAscii(openXmlElement);
       value.HighAnsi = GetHighAnsi(openXmlElement);

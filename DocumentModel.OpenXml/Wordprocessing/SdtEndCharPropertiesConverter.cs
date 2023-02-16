@@ -7,7 +7,10 @@ public static class SdtEndCharPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXW.SdtEndCharProperties openXmlElement)
   {
-    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunProperties>();
+    if (element != null)
+      return DMXW.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXW.SdtEndCharProperties openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class SdtEndCharPropertiesConverter
     }
   }
   
-  public static DMW.SdtEndCharProperties? CreateModelElement(DXW.SdtEndCharProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(DXW.SdtEndCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtEndCharProperties();
+      var value = new DocumentModel.Wordprocessing.SdtEndCharProperties();
       value.RunProperties = GetRunProperties(openXmlElement);
       return value;
     }

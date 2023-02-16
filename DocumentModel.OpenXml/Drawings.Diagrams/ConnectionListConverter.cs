@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ConnectionListConverter
 {
-  private static Collection<DMDrawsDgms.Connection> GetConnections(DXDrawDgms.ConnectionList openXmlElement)
+  private static Collection<DMDrawsDgms.Connection>? GetConnections(DXDrawDgms.ConnectionList openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Connection>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Connection>())
@@ -14,7 +14,9 @@ public static class ConnectionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ConnectionListConverter
     }
   }
   
-  public static DMDrawsDgms.ConnectionList? CreateModelElement(DXDrawDgms.ConnectionList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DXDrawDgms.ConnectionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ConnectionList();
+      var value = new DocumentModel.Drawings.Diagrams.ConnectionList();
       value.Connections = GetConnections(openXmlElement);
       return value;
     }

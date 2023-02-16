@@ -203,7 +203,10 @@ public static class DivConverter
   /// </summary>
   private static DMW.DivBorder? GetDivBorder(DXW.Div openXmlElement)
   {
-    return DMXW.DivBorderConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DivBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.DivBorder>();
+    if (element != null)
+      return DMXW.DivBorderConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDivBorder(DXW.Div openXmlElement, DMW.DivBorder? value, DiffList? diffs, string? objName)
@@ -224,7 +227,7 @@ public static class DivConverter
     }
   }
   
-  private static Collection<DMW.DivsChild> GetDivsChilds(DXW.Div openXmlElement)
+  private static Collection<DMW.DivsChild>? GetDivsChilds(DXW.Div openXmlElement)
   {
     var collection = new Collection<DMW.DivsChild>();
     foreach (var item in openXmlElement.Elements<DXW.DivsChild>())
@@ -233,7 +236,9 @@ public static class DivConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDivsChilds(DXW.Div openXmlElement, Collection<DMW.DivsChild>? value, DiffList? diffs, string? objName)
@@ -278,11 +283,11 @@ public static class DivConverter
     }
   }
   
-  public static DMW.Div? CreateModelElement(DXW.Div? openXmlElement)
+  public static DocumentModel.Wordprocessing.Div? CreateModelElement(DXW.Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Div();
+      var value = new DocumentModel.Wordprocessing.Div();
       value.Id = GetId(openXmlElement);
       value.BlockQuote = GetBlockQuote(openXmlElement);
       value.BodyDiv = GetBodyDiv(openXmlElement);

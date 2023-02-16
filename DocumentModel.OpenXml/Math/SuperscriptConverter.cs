@@ -10,7 +10,10 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.SuperscriptProperties? GetSuperscriptProperties(DXMath.Superscript openXmlElement)
   {
-    return DMXMath.SuperscriptPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SuperscriptProperties>();
+    if (element != null)
+      return DMXMath.SuperscriptPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperscriptProperties(DXMath.Superscript openXmlElement, DMMath.SuperscriptProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Superscript openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.Superscript openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class SuperscriptConverter
   /// </summary>
   private static DMMath.SuperArgument? GetSuperArgument(DXMath.Superscript openXmlElement)
   {
-    return DMXMath.SuperArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SuperArgument>();
+    if (element != null)
+      return DMXMath.SuperArgumentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperArgument(DXMath.Superscript openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class SuperscriptConverter
     }
   }
   
-  public static DMMath.Superscript? CreateModelElement(DXMath.Superscript? openXmlElement)
+  public static DocumentModel.Math.Superscript? CreateModelElement(DXMath.Superscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Superscript();
+      var value = new DocumentModel.Math.Superscript();
       value.SuperscriptProperties = GetSuperscriptProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

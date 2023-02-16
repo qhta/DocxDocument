@@ -45,11 +45,11 @@ public static class NormalAutoFitConverter
     openXmlElement.LineSpaceReduction = value;
   }
   
-  public static DMDraws.NormalAutoFit? CreateModelElement(DXDraw.NormalAutoFit? openXmlElement)
+  public static DocumentModel.Drawings.NormalAutoFit? CreateModelElement(DXDraw.NormalAutoFit? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.NormalAutoFit();
+      var value = new DocumentModel.Drawings.NormalAutoFit();
       value.FontScale = GetFontScale(openXmlElement);
       value.LineSpaceReduction = GetLineSpaceReduction(openXmlElement);
       return value;

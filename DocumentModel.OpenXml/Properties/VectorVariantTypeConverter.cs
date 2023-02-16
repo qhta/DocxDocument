@@ -10,7 +10,10 @@ public static class VectorVariantTypeConverter
   /// </summary>
   private static DM.VectorVariant? GetVTVector(DXExtProps.VectorVariantType openXmlElement)
   {
-    return DMX.VectorVariantConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVT.VTVector>());
+    var element = openXmlElement?.GetFirstChild<DXVT.VTVector>();
+    if (element != null)
+      return DMX.VectorVariantConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVTVector(DXExtProps.VectorVariantType openXmlElement, DM.VectorVariant? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class VectorVariantTypeConverter
     }
   }
   
-  public static DMProps.VectorVariantType? CreateModelElement(DXExtProps.VectorVariantType? openXmlElement)
+  public static DocumentModel.Properties.VectorVariantType? CreateModelElement(DXExtProps.VectorVariantType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMProps.VectorVariantType();
+      var value = new DocumentModel.Properties.VectorVariantType();
       value.VTVector = GetVTVector(openXmlElement);
       return value;
     }

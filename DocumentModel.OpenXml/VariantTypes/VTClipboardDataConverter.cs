@@ -45,11 +45,11 @@ public static class VTClipboardDataConverter
     openXmlElement.Size = value;
   }
   
-  public static DMVT.VTClipboardData? CreateModelElement(DXVT.VTClipboardData? openXmlElement)
+  public static DocumentModel.VariantTypes.VTClipboardData? CreateModelElement(DXVT.VTClipboardData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVT.VTClipboardData();
+      var value = new DocumentModel.VariantTypes.VTClipboardData();
       value.Format = GetFormat(openXmlElement);
       value.Size = GetSize(openXmlElement);
       return value;

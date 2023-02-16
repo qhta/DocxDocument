@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class AdjustListConverter
 {
-  private static Collection<DMDrawsDgms.Adjust> GetAdjusts(DXDrawDgms.AdjustList openXmlElement)
+  private static Collection<DMDrawsDgms.Adjust>? GetAdjusts(DXDrawDgms.AdjustList openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Adjust>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Adjust>())
@@ -14,7 +14,9 @@ public static class AdjustListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AdjustListConverter
     }
   }
   
-  public static DMDrawsDgms.AdjustList? CreateModelElement(DXDrawDgms.AdjustList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DXDrawDgms.AdjustList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.AdjustList();
+      var value = new DocumentModel.Drawings.Diagrams.AdjustList();
       value.Adjusts = GetAdjusts(openXmlElement);
       return value;
     }

@@ -43,11 +43,11 @@ public static class FootnoteEndnoteTypeConverter
     openXmlElement.Id = value;
   }
   
-  public static DMW.FootnoteEndnoteType? CreateModelElement(DXW.FootnoteEndnoteType? openXmlElement)
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteType? CreateModelElement(DXW.FootnoteEndnoteType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteEndnoteType();
+      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

@@ -10,7 +10,10 @@ public static class ExtraColorSchemeConverter
   /// </summary>
   private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ExtraColorScheme openXmlElement)
   {
-    return DMXDraws.ColorSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
+    if (element != null)
+      return DMXDraws.ColorSchemeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ExtraColorSchemeConverter
   /// </summary>
   private static DMDraws.ColorMap? GetColorMap(DXDraw.ExtraColorScheme openXmlElement)
   {
-    return DMXDraws.ColorMapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorMap>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorMap>();
+    if (element != null)
+      return DMXDraws.ColorMapConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class ExtraColorSchemeConverter
     }
   }
   
-  public static DMDraws.ExtraColorScheme? CreateModelElement(DXDraw.ExtraColorScheme? openXmlElement)
+  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DXDraw.ExtraColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ExtraColorScheme();
+      var value = new DocumentModel.Drawings.ExtraColorScheme();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.ColorMap = GetColorMap(openXmlElement);
       return value;

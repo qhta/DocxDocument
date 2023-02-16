@@ -603,11 +603,11 @@ public static class UnsizedControlCloneConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.UnsizedControlClone? CreateModelElement(DXOCustUI.UnsizedControlClone? openXmlElement)
+  public static DocumentModel.UI.UnsizedControlClone? CreateModelElement(DXOCustUI.UnsizedControlClone? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedControlClone();
+      var value = new DocumentModel.UI.UnsizedControlClone();
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);
       value.Tag = GetTag(openXmlElement);

@@ -73,7 +73,7 @@ public static class NumberingInstanceConverter
     }
   }
   
-  private static Collection<DMW.LevelOverride> GetLevelOverrides(DXW.NumberingInstance openXmlElement)
+  private static Collection<DMW.LevelOverride>? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
   {
     var collection = new Collection<DMW.LevelOverride>();
     foreach (var item in openXmlElement.Elements<DXW.LevelOverride>())
@@ -82,7 +82,9 @@ public static class NumberingInstanceConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value, DiffList? diffs, string? objName)
@@ -127,11 +129,11 @@ public static class NumberingInstanceConverter
     }
   }
   
-  public static DMW.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
+  public static DocumentModel.Wordprocessing.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingInstance();
+      var value = new DocumentModel.Wordprocessing.NumberingInstance();
       value.NumberID = GetNumberID(openXmlElement);
       value.DurableId = GetDurableId(openXmlElement);
       value.AbstractNumId = GetAbstractNumId(openXmlElement);

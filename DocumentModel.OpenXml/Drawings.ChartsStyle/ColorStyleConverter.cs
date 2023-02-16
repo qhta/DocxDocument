@@ -50,7 +50,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -73,7 +76,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -96,7 +102,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.HslColor? GetHslColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -119,7 +128,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -142,7 +154,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.SchemeColor? GetSchemeColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -165,7 +180,10 @@ public static class ColorStyleConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -186,7 +204,7 @@ public static class ColorStyleConverter
     }
   }
   
-  private static Collection<DMDrawsChartsStyle.ColorStyleVariation> GetColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static Collection<DMDrawsChartsStyle.ColorStyleVariation>? GetColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
     var collection = new Collection<DMDrawsChartsStyle.ColorStyleVariation>();
     foreach (var item in openXmlElement.Elements<DXO2013DrawChartStyle.ColorStyleVariation>())
@@ -195,7 +213,9 @@ public static class ColorStyleConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement, Collection<DMDrawsChartsStyle.ColorStyleVariation>? value, DiffList? diffs, string? objName)
@@ -242,7 +262,10 @@ public static class ColorStyleConverter
   
   private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -263,11 +286,11 @@ public static class ColorStyleConverter
     }
   }
   
-  public static DMDrawsChartsStyle.ColorStyle? CreateModelElement(DXO2013DrawChartStyle.ColorStyle? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.ColorStyle? CreateModelElement(DXO2013DrawChartStyle.ColorStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.ColorStyle();
+      var value = new DocumentModel.Drawings.ChartsStyle.ColorStyle();
       value.Method = GetMethod(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);

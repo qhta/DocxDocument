@@ -902,7 +902,7 @@ public static class DropDownConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DMUI.Item> GetItems(DXOCustUI.DropDown openXmlElement)
+  private static Collection<DMUI.Item>? GetItems(DXOCustUI.DropDown openXmlElement)
   {
     var collection = new Collection<DMUI.Item>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
@@ -911,7 +911,9 @@ public static class DropDownConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.DropDown openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
@@ -956,7 +958,7 @@ public static class DropDownConverter
     }
   }
   
-  private static Collection<DMUI.UnsizedButton> GetUnsizedButtons(DXOCustUI.DropDown openXmlElement)
+  private static Collection<DMUI.UnsizedButton>? GetUnsizedButtons(DXOCustUI.DropDown openXmlElement)
   {
     var collection = new Collection<DMUI.UnsizedButton>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.UnsizedButton>())
@@ -965,7 +967,9 @@ public static class DropDownConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpUnsizedButtons(DXOCustUI.DropDown openXmlElement, Collection<DMUI.UnsizedButton>? value, DiffList? diffs, string? objName)
@@ -1010,11 +1014,11 @@ public static class DropDownConverter
     }
   }
   
-  public static DMUI.DropDown? CreateModelElement(DXOCustUI.DropDown? openXmlElement)
+  public static DocumentModel.UI.DropDown? CreateModelElement(DXOCustUI.DropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.DropDown();
+      var value = new DocumentModel.UI.DropDown();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

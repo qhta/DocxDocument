@@ -29,11 +29,11 @@ public static class WorksheetSortMapPartConverter
     return false;
   }
   
-  public static DMPack.WorksheetSortMapPart? CreateModelElement(DXPack.WorksheetSortMapPart? openXmlElement)
+  public static DocumentModel.Packaging.WorksheetSortMapPart? CreateModelElement(DXPack.WorksheetSortMapPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WorksheetSortMapPart();
+      var value = new DocumentModel.Packaging.WorksheetSortMapPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

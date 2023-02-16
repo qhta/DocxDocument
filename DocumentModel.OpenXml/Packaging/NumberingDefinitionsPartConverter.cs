@@ -20,7 +20,7 @@ public static class NumberingDefinitionsPartConverter
   /// <summary>
   /// Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.NumberingDefinitionsPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.NumberingDefinitionsPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class NumberingDefinitionsPartConverter
     return false;
   }
   
-  public static DMPack.NumberingDefinitionsPart? CreateModelElement(DXPack.NumberingDefinitionsPart? openXmlElement)
+  public static DocumentModel.Packaging.NumberingDefinitionsPart? CreateModelElement(DXPack.NumberingDefinitionsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.NumberingDefinitionsPart();
+      var value = new DocumentModel.Packaging.NumberingDefinitionsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.Numbering = GetNumbering(openXmlElement);

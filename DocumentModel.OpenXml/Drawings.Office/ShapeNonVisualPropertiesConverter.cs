@@ -10,7 +10,10 @@ public static class ShapeNonVisualPropertiesConverter
   /// </summary>
   private static DMDrawsO.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement)
   {
-    return DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>();
+    if (element != null)
+      return DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ShapeNonVisualPropertiesConverter
   /// </summary>
   private static DMDrawsO.NonVisualDrawingShapeProperties? GetNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement)
   {
-    return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>();
+    if (element != null)
+      return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingShapeProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class ShapeNonVisualPropertiesConverter
     }
   }
   
-  public static DMDrawsO.ShapeNonVisualProperties? CreateModelElement(DXODraw.ShapeNonVisualProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(DXODraw.ShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.ShapeNonVisualProperties();
+      var value = new DocumentModel.Drawings.Office.ShapeNonVisualProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualDrawingShapeProperties = GetNonVisualDrawingShapeProperties(openXmlElement);
       return value;

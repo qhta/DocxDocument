@@ -138,11 +138,11 @@ public static class SkewConverter
       openXmlElement.Matrix = null;
   }
   
-  public static DMVml.Skew? CreateModelElement(DXVmlO.Skew? openXmlElement)
+  public static DocumentModel.Vml.Skew? CreateModelElement(DXVmlO.Skew? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Skew();
+      var value = new DocumentModel.Vml.Skew();
       value.Extension = GetExtension(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.On = GetOn(openXmlElement);

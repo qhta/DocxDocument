@@ -28,7 +28,10 @@ public static class BlendConverter
   /// </summary>
   private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.Blend openXmlElement)
   {
-    return DMXDraws.EffectContainerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectContainer>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
+    if (element != null)
+      return DMXDraws.EffectContainerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
@@ -49,11 +52,11 @@ public static class BlendConverter
     }
   }
   
-  public static DMDraws.Blend? CreateModelElement(DXDraw.Blend? openXmlElement)
+  public static DocumentModel.Drawings.Blend? CreateModelElement(DXDraw.Blend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Blend();
+      var value = new DocumentModel.Drawings.Blend();
       value.BlendMode = GetBlendMode(openXmlElement);
       value.EffectContainer = GetEffectContainer(openXmlElement);
       return value;

@@ -7,7 +7,10 @@ public static class MinorGridlinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.MinorGridlines openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.MinorGridlines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class MinorGridlinesConverter
     }
   }
   
-  public static DMDrawsCharts.MinorGridlines? CreateModelElement(DXDrawCharts.MinorGridlines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.MinorGridlines? CreateModelElement(DXDrawCharts.MinorGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.MinorGridlines();
+      var value = new DocumentModel.Drawings.Charts.MinorGridlines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

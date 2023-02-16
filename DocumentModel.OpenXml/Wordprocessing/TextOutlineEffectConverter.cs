@@ -109,7 +109,10 @@ public static class TextOutlineEffectConverter
   
   private static DMW.SolidColorFillProperties? GetSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>();
+    if (element != null)
+      return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
@@ -132,7 +135,10 @@ public static class TextOutlineEffectConverter
   
   private static DMW.GradientFillProperties? GetGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    return DMXW.GradientFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>();
+    if (element != null)
+      return DMXW.GradientFillPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
@@ -234,7 +240,10 @@ public static class TextOutlineEffectConverter
   
   private static DMW.LineJoinMiterProperties? GetLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement)
   {
-    return DMXW.LineJoinMiterPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.LineJoinMiterProperties>();
+    if (element != null)
+      return DMXW.LineJoinMiterPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
@@ -255,11 +264,11 @@ public static class TextOutlineEffectConverter
     }
   }
   
-  public static DMW.TextOutlineEffect? CreateModelElement(DXO2010W.TextOutlineEffect? openXmlElement)
+  public static DocumentModel.Wordprocessing.TextOutlineEffect? CreateModelElement(DXO2010W.TextOutlineEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TextOutlineEffect();
+      var value = new DocumentModel.Wordprocessing.TextOutlineEffect();
       value.LineWidth = GetLineWidth(openXmlElement);
       value.CapType = GetCapType(openXmlElement);
       value.Compound = GetCompound(openXmlElement);

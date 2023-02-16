@@ -28,7 +28,10 @@ public static class PresetGeometryConverter
   /// </summary>
   private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetGeometry openXmlElement)
   {
-    return DMXDraws.AdjustValueListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
+    if (element != null)
+      return DMXDraws.AdjustValueListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
@@ -49,11 +52,11 @@ public static class PresetGeometryConverter
     }
   }
   
-  public static DMDraws.PresetGeometry? CreateModelElement(DXDraw.PresetGeometry? openXmlElement)
+  public static DocumentModel.Drawings.PresetGeometry? CreateModelElement(DXDraw.PresetGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PresetGeometry();
+      var value = new DocumentModel.Drawings.PresetGeometry();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;

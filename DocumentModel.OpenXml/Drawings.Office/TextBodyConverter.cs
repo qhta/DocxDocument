@@ -10,7 +10,10 @@ public static class TextBodyConverter
   /// </summary>
   private static DMDraws.BodyProperties? GetBodyProperties(DXODraw.TextBody openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXODraw.TextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TextBodyConverter
   /// </summary>
   private static DMDraws.ListStyle? GetListStyle(DXODraw.TextBody openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXODraw.TextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -59,7 +65,10 @@ public static class TextBodyConverter
   
   private static DMDraws.Paragraph? GetParagraph(DXODraw.TextBody openXmlElement)
   {
-    return DMXDraws.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
+    if (element != null)
+      return DMXDraws.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXODraw.TextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
@@ -80,11 +89,11 @@ public static class TextBodyConverter
     }
   }
   
-  public static DMDrawsO.TextBody? CreateModelElement(DXODraw.TextBody? openXmlElement)
+  public static DocumentModel.Drawings.Office.TextBody? CreateModelElement(DXODraw.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.TextBody();
+      var value = new DocumentModel.Drawings.Office.TextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

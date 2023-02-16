@@ -20,7 +20,7 @@ public static class WebExtensionPartConverter
   /// <summary>
   /// Gets the ImageParts of the WebExtensionPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.WebExtensionPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.WebExtensionPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class WebExtensionPartConverter
     }
   }
   
-  public static DMPack.WebExtensionPart? CreateModelElement(DXPack.WebExtensionPart? openXmlElement)
+  public static DocumentModel.Packaging.WebExtensionPart? CreateModelElement(DXPack.WebExtensionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WebExtensionPart();
+      var value = new DocumentModel.Packaging.WebExtensionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

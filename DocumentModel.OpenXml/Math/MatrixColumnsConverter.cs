@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Math;
 /// </summary>
 public static class MatrixColumnsConverter
 {
-  private static Collection<DMMath.MatrixColumn> GetItems(DXMath.MatrixColumns openXmlElement)
+  private static Collection<DMMath.MatrixColumn>? GetItems(DXMath.MatrixColumns openXmlElement)
   {
     var collection = new Collection<DMMath.MatrixColumn>();
     foreach (var item in openXmlElement.Elements<DXMath.MatrixColumn>())
@@ -14,7 +14,9 @@ public static class MatrixColumnsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXMath.MatrixColumns openXmlElement, Collection<DMMath.MatrixColumn>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class MatrixColumnsConverter
     }
   }
   
-  public static DMMath.MatrixColumns? CreateModelElement(DXMath.MatrixColumns? openXmlElement)
+  public static DocumentModel.Math.MatrixColumns? CreateModelElement(DXMath.MatrixColumns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixColumns();
+      var value = new DocumentModel.Math.MatrixColumns();
       value.Items = GetItems(openXmlElement);
       return value;
     }

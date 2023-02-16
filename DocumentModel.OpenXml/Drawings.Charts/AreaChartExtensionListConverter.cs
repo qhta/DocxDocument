@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class AreaChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.AreaChartExtension> GetAreaChartExtensions(DXDrawCharts.AreaChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.AreaChartExtension>? GetAreaChartExtensions(DXDrawCharts.AreaChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.AreaChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaChartExtension>())
@@ -14,7 +14,9 @@ public static class AreaChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAreaChartExtensions(DXDrawCharts.AreaChartExtensionList openXmlElement, Collection<DMDrawsCharts.AreaChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AreaChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.AreaChartExtensionList? CreateModelElement(DXDrawCharts.AreaChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaChartExtensionList? CreateModelElement(DXDrawCharts.AreaChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.AreaChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.AreaChartExtensionList();
       value.AreaChartExtensions = GetAreaChartExtensions(openXmlElement);
       return value;
     }

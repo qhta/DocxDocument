@@ -30,7 +30,10 @@ public static class ValAxExtensionConverter
   
   private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.ValAxExtension openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.ValAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class ValAxExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.ValAxExtension? CreateModelElement(DXDrawCharts.ValAxExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ValAxExtension? CreateModelElement(DXDrawCharts.ValAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ValAxExtension();
+      var value = new DocumentModel.Drawings.Charts.ValAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

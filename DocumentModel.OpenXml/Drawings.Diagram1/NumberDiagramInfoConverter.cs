@@ -48,7 +48,10 @@ public static class NumberDiagramInfoConverter
   /// </summary>
   private static DMDrawsDgm1.DiagramAutoBullet? GetDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement)
   {
-    return DMXDrawsDgm1.DiagramAutoBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>());
+    var element = openXmlElement?.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>();
+    if (element != null)
+      return DMXDrawsDgm1.DiagramAutoBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
@@ -69,11 +72,11 @@ public static class NumberDiagramInfoConverter
     }
   }
   
-  public static DMDrawsDgm1.NumberDiagramInfo? CreateModelElement(DXO2019DrawDgm11.NumberDiagramInfo? openXmlElement)
+  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfo? CreateModelElement(DXO2019DrawDgm11.NumberDiagramInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgm1.NumberDiagramInfo();
+      var value = new DocumentModel.Drawings.Diagram1.NumberDiagramInfo();
       value.Lvl = GetLvl(openXmlElement);
       value.PtType = GetPtType(openXmlElement);
       value.DiagramAutoBullet = GetDiagramAutoBullet(openXmlElement);

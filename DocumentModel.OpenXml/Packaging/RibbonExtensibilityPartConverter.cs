@@ -20,7 +20,7 @@ public static class RibbonExtensibilityPartConverter
   /// <summary>
   /// Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.RibbonExtensibilityPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.RibbonExtensibilityPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -49,11 +49,11 @@ public static class RibbonExtensibilityPartConverter
     return false;
   }
   
-  public static DMPack.RibbonExtensibilityPart? CreateModelElement(DXPack.RibbonExtensibilityPart? openXmlElement)
+  public static DocumentModel.Packaging.RibbonExtensibilityPart? CreateModelElement(DXPack.RibbonExtensibilityPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.RibbonExtensibilityPart();
+      var value = new DocumentModel.Packaging.RibbonExtensibilityPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

@@ -10,7 +10,10 @@ public static class QuickAccessToolbarConverter
   /// </summary>
   private static DM.SharedControlsQatItems? GetSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement)
   {
-    return DMX.SharedControlsQatItemsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>();
+    if (element != null)
+      return DMX.SharedControlsQatItemsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class QuickAccessToolbarConverter
   /// </summary>
   private static DM.DocumentControlsQatItems? GetDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement)
   {
-    return DMX.DocumentControlsQatItemsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>();
+    if (element != null)
+      return DMX.DocumentControlsQatItemsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class QuickAccessToolbarConverter
     }
   }
   
-  public static DM.QuickAccessToolbar? CreateModelElement(DXO2010CustUI.QuickAccessToolbar? openXmlElement)
+  public static DocumentModel.QuickAccessToolbar? CreateModelElement(DXO2010CustUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.QuickAccessToolbar();
+      var value = new DocumentModel.QuickAccessToolbar();
       value.SharedControlsQatItems = GetSharedControlsQatItems(openXmlElement);
       value.DocumentControlsQatItems = GetDocumentControlsQatItems(openXmlElement);
       return value;

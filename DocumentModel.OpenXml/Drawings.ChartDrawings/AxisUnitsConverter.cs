@@ -28,7 +28,10 @@ public static class AxisUnitsConverter
   /// </summary>
   private static DMDrawsChartDraws.AxisUnitsLabel? GetAxisUnitsLabel(DXO2016DrawChartDraw.AxisUnits openXmlElement)
   {
-    return DMXDrawsChartDraws.AxisUnitsLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.AxisUnitsLabel>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.AxisUnitsLabel>();
+    if (element != null)
+      return DMXDrawsChartDraws.AxisUnitsLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAxisUnitsLabel(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnitsLabel? value, DiffList? diffs, string? objName)
@@ -54,7 +57,10 @@ public static class AxisUnitsConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.AxisUnits openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -75,11 +81,11 @@ public static class AxisUnitsConverter
     }
   }
   
-  public static DMDrawsChartDraws.AxisUnits? CreateModelElement(DXO2016DrawChartDraw.AxisUnits? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.AxisUnits? CreateModelElement(DXO2016DrawChartDraw.AxisUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.AxisUnits();
+      var value = new DocumentModel.Drawings.ChartDrawings.AxisUnits();
       value.Unit = GetUnit(openXmlElement);
       value.AxisUnitsLabel = GetAxisUnitsLabel(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

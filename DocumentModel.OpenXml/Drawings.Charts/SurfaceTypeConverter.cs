@@ -38,7 +38,10 @@ public static class SurfaceTypeConverter
   /// </summary>
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.SurfaceType openXmlElement)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.SurfaceType openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -64,7 +67,10 @@ public static class SurfaceTypeConverter
   /// </summary>
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.SurfaceType openXmlElement)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureOptions(DXDrawCharts.SurfaceType openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
@@ -90,7 +96,10 @@ public static class SurfaceTypeConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.SurfaceType openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.SurfaceType openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -111,11 +120,11 @@ public static class SurfaceTypeConverter
     }
   }
   
-  public static DMDrawsCharts.SurfaceType? CreateModelElement(DXDrawCharts.SurfaceType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceType? CreateModelElement(DXDrawCharts.SurfaceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SurfaceType();
+      var value = new DocumentModel.Drawings.Charts.SurfaceType();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

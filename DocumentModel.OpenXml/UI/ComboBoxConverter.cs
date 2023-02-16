@@ -899,7 +899,7 @@ public static class ComboBoxConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DMUI.Item> GetItems(DXOCustUI.ComboBox openXmlElement)
+  private static Collection<DMUI.Item>? GetItems(DXOCustUI.ComboBox openXmlElement)
   {
     var collection = new Collection<DMUI.Item>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
@@ -908,7 +908,9 @@ public static class ComboBoxConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.ComboBox openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
@@ -953,11 +955,11 @@ public static class ComboBoxConverter
     }
   }
   
-  public static DMUI.ComboBox? CreateModelElement(DXOCustUI.ComboBox? openXmlElement)
+  public static DocumentModel.UI.ComboBox? CreateModelElement(DXOCustUI.ComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.ComboBox();
+      var value = new DocumentModel.UI.ComboBox();
       value.ShowItemImage = GetShowItemImage(openXmlElement);
       value.GetItemCount = GetGetItemCount(openXmlElement);
       value.GetItemLabel = GetGetItemLabel(openXmlElement);

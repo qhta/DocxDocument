@@ -29,11 +29,11 @@ public static class StyleDefinitionsPartConverter
     return false;
   }
   
-  public static DMPack.StyleDefinitionsPart? CreateModelElement(DXPack.StyleDefinitionsPart? openXmlElement)
+  public static DocumentModel.Packaging.StyleDefinitionsPart? CreateModelElement(DXPack.StyleDefinitionsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.StyleDefinitionsPart();
+      var value = new DocumentModel.Packaging.StyleDefinitionsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

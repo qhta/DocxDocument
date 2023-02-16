@@ -7,7 +7,10 @@ public static class HyperlinkConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Hyperlink openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.Hyperlink openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class HyperlinkConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.Hyperlink openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.Hyperlink openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class HyperlinkConverter
   
   private static DMDraws.HslColor? GetHslColor(DXDraw.Hyperlink openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.Hyperlink openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class HyperlinkConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.Hyperlink openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.Hyperlink openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class HyperlinkConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.Hyperlink openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.Hyperlink openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class HyperlinkConverter
     }
   }
   
-  public static DMDraws.Hyperlink? CreateModelElement(DXDraw.Hyperlink? openXmlElement)
+  public static DocumentModel.Drawings.Hyperlink? CreateModelElement(DXDraw.Hyperlink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Hyperlink();
+      var value = new DocumentModel.Drawings.Hyperlink();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

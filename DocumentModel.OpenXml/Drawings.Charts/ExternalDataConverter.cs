@@ -59,11 +59,11 @@ public static class ExternalDataConverter
     }
   }
   
-  public static DMDrawsCharts.ExternalData? CreateModelElement(DXDrawCharts.ExternalData? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ExternalData? CreateModelElement(DXDrawCharts.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ExternalData();
+      var value = new DocumentModel.Drawings.Charts.ExternalData();
       value.Id = GetId(openXmlElement);
       value.AutoUpdate = GetAutoUpdate(openXmlElement);
       return value;

@@ -488,11 +488,11 @@ public static class BackstageFastCommandButtonConverter
       openXmlElement.GetImage = null;
   }
   
-  public static DM.BackstageFastCommandButton? CreateModelElement(DXO2010CustUI.BackstageFastCommandButton? openXmlElement)
+  public static DocumentModel.BackstageFastCommandButton? CreateModelElement(DXO2010CustUI.BackstageFastCommandButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageFastCommandButton();
+      var value = new DocumentModel.BackstageFastCommandButton();
       value.IdMso = GetIdMso(openXmlElement);
       value.InsertAfterMso = GetInsertAfterMso(openXmlElement);
       value.InsertBeforeMso = GetInsertBeforeMso(openXmlElement);

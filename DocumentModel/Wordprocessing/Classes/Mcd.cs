@@ -23,10 +23,10 @@ public class Mcd
   /// <summary>
   ///   bEncrypt
   /// </summary>
-  public Byte? BEncrypt { get; set; }
+  public HexInt? BEncrypt { get; set; }
 
   /// <summary>
   ///   cmg
   /// </summary>
-  public Byte? Cmg { get; set; }
+  public HexBinary? Cmg { get; set; }
 }

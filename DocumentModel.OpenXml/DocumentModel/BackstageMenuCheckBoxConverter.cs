@@ -350,11 +350,11 @@ public static class BackstageMenuCheckBoxConverter
       openXmlElement.GetKeytip = null;
   }
   
-  public static DM.BackstageMenuCheckBox? CreateModelElement(DXO2010CustUI.BackstageMenuCheckBox? openXmlElement)
+  public static DocumentModel.BackstageMenuCheckBox? CreateModelElement(DXO2010CustUI.BackstageMenuCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageMenuCheckBox();
+      var value = new DocumentModel.BackstageMenuCheckBox();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);

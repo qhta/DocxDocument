@@ -10,7 +10,10 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.RadicalProperties? GetRadicalProperties(DXMath.Radical openXmlElement)
   {
-    return DMXMath.RadicalPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.RadicalProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.RadicalProperties>();
+    if (element != null)
+      return DMXMath.RadicalPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadicalProperties(DXMath.Radical openXmlElement, DMMath.RadicalProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.Degree? GetDegree(DXMath.Radical openXmlElement)
   {
-    return DMXMath.DegreeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Degree>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Degree>();
+    if (element != null)
+      return DMXMath.DegreeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDegree(DXMath.Radical openXmlElement, DMMath.Degree? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class RadicalConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Radical openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.Radical openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class RadicalConverter
     }
   }
   
-  public static DMMath.Radical? CreateModelElement(DXMath.Radical? openXmlElement)
+  public static DocumentModel.Math.Radical? CreateModelElement(DXMath.Radical? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Radical();
+      var value = new DocumentModel.Math.Radical();
       value.RadicalProperties = GetRadicalProperties(openXmlElement);
       value.Degree = GetDegree(openXmlElement);
       value.Base = GetBase(openXmlElement);

@@ -86,11 +86,11 @@ public static class LineNumberTypeConverter
     openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(value);
   }
   
-  public static DMW.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)
+  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LineNumberType();
+      var value = new DocumentModel.Wordprocessing.LineNumberType();
       value.CountBy = GetCountBy(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.Distance = GetDistance(openXmlElement);

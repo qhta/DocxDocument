@@ -7,7 +7,10 @@ public static class LineColorListConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDrawDgms.LineColorList openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class LineColorListConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDrawDgms.LineColorList openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class LineColorListConverter
   
   private static DMDraws.HslColor? GetHslColor(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDrawDgms.LineColorList openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class LineColorListConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDrawDgms.LineColorList openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class LineColorListConverter
   
   private static DMDraws.SchemeColor? GetSchemeColor(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXDrawDgms.LineColorList openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -122,7 +137,10 @@ public static class LineColorListConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXDrawDgms.LineColorList openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDrawDgms.LineColorList openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -143,11 +161,11 @@ public static class LineColorListConverter
     }
   }
   
-  public static DMDrawsDgms.LineColorList? CreateModelElement(DXDrawDgms.LineColorList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.LineColorList? CreateModelElement(DXDrawDgms.LineColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.LineColorList();
+      var value = new DocumentModel.Drawings.Diagrams.LineColorList();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

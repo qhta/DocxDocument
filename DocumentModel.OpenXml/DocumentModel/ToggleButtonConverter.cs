@@ -759,11 +759,11 @@ public static class ToggleButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.ToggleButton? CreateModelElement(DXO2010CustUI.ToggleButton? openXmlElement)
+  public static DocumentModel.ToggleButton? CreateModelElement(DXO2010CustUI.ToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ToggleButton();
+      var value = new DocumentModel.ToggleButton();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.GetPressed = GetGetPressed(openXmlElement);

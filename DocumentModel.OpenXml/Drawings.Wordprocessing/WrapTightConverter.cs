@@ -68,7 +68,10 @@ public static class WrapTightConverter
   /// </summary>
   private static DMDrawsW.WrapPolygon? GetWrapPolygon(DXDrawW.WrapTight openXmlElement)
   {
-    return DMXDrawsW.WrapPolygonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.WrapPolygon>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.WrapPolygon>();
+    if (element != null)
+      return DMXDrawsW.WrapPolygonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWrapPolygon(DXDrawW.WrapTight openXmlElement, DMDrawsW.WrapPolygon? value, DiffList? diffs, string? objName)
@@ -89,11 +92,11 @@ public static class WrapTightConverter
     }
   }
   
-  public static DMDrawsW.WrapTight? CreateModelElement(DXDrawW.WrapTight? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WrapTight? CreateModelElement(DXDrawW.WrapTight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.WrapTight();
+      var value = new DocumentModel.Drawings.Wordprocessing.WrapTight();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
       value.DistanceFromRight = GetDistanceFromRight(openXmlElement);

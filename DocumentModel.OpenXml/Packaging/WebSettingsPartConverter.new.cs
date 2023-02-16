@@ -34,7 +34,7 @@ public static class WebSettingsPartConverter
   /// </summary>
   private static DM.WebSettings? GetWebSettings(DXPack.WebSettingsPart openXmlElement)
   {
-      return DMXW.WebSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.WebSettings);
+      return DMX.WebSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.WebSettings);
   }
   
   private static bool CmpWebSettings(DXPack.WebSettingsPart openXmlElement, DM.WebSettings? value, DiffList? diffs, string? objName)
@@ -46,7 +46,7 @@ public static class WebSettingsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.WebSettingsConverter.CreateOpenXmlElement<DXW.WebSettings>(value);
+       var rootElement = DMX.WebSettingsConverter.CreateOpenXmlElement<DXW.WebSettings>(value);
        if (rootElement != null)
          openXmlElement.WebSettings = rootElement;
     }

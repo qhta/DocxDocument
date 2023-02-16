@@ -10,7 +10,10 @@ public static class NonVisualGraphicFramePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGraphicFrameProperties openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGraphicFrameProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NonVisualGraphicFramePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DXDrawChartDraw.NonVisualGraphicFrameProperties openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameDrawingProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGraphicFrameDrawingProperties(DXDrawChartDraw.NonVisualGraphicFrameProperties openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class NonVisualGraphicFramePropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraw.NonVisualGraphicFrameProperties? CreateModelElement(DXDrawChartDraw.NonVisualGraphicFrameProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties? CreateModelElement(DXDrawChartDraw.NonVisualGraphicFrameProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.NonVisualGraphicFrameProperties();
+      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualGraphicFrameDrawingProperties = GetNonVisualGraphicFrameDrawingProperties(openXmlElement);
       return value;

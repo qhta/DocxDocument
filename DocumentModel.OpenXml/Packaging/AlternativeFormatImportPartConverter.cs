@@ -17,11 +17,11 @@ public static class AlternativeFormatImportPartConverter
     return false;
   }
   
-  public static DMPack.AlternativeFormatImportPart? CreateModelElement(DXPack.AlternativeFormatImportPart? openXmlElement)
+  public static DocumentModel.Packaging.AlternativeFormatImportPart? CreateModelElement(DXPack.AlternativeFormatImportPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.AlternativeFormatImportPart();
+      var value = new DocumentModel.Packaging.AlternativeFormatImportPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

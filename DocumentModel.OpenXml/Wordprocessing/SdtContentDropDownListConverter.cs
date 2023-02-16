@@ -28,7 +28,7 @@ public static class SdtContentDropDownListConverter
       openXmlElement.LastValue = null;
   }
   
-  private static Collection<DMW.ListItem> GetListItems(DXW.SdtContentDropDownList openXmlElement)
+  private static Collection<DMW.ListItem>? GetListItems(DXW.SdtContentDropDownList openXmlElement)
   {
     var collection = new Collection<DMW.ListItem>();
     foreach (var item in openXmlElement.Elements<DXW.ListItem>())
@@ -37,7 +37,9 @@ public static class SdtContentDropDownListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpListItems(DXW.SdtContentDropDownList openXmlElement, Collection<DMW.ListItem>? value, DiffList? diffs, string? objName)
@@ -82,11 +84,11 @@ public static class SdtContentDropDownListConverter
     }
   }
   
-  public static DMW.SdtContentDropDownList? CreateModelElement(DXW.SdtContentDropDownList? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtContentDropDownList? CreateModelElement(DXW.SdtContentDropDownList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtContentDropDownList();
+      var value = new DocumentModel.Wordprocessing.SdtContentDropDownList();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;

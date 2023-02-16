@@ -52,7 +52,7 @@ public static class NumberingCacheConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.NumericPoint> GetNumericPoints(DXDrawCharts.NumberingCache openXmlElement)
+  private static Collection<DMDrawsCharts.NumericPoint>? GetNumericPoints(DXDrawCharts.NumberingCache openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.NumericPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.NumericPoint>())
@@ -61,7 +61,9 @@ public static class NumberingCacheConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpNumericPoints(DXDrawCharts.NumberingCache openXmlElement, Collection<DMDrawsCharts.NumericPoint>? value, DiffList? diffs, string? objName)
@@ -108,7 +110,10 @@ public static class NumberingCacheConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.NumberingCache openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.NumberingCache openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -129,11 +134,11 @@ public static class NumberingCacheConverter
     }
   }
   
-  public static DMDrawsCharts.NumberingCache? CreateModelElement(DXDrawCharts.NumberingCache? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberingCache? CreateModelElement(DXDrawCharts.NumberingCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.NumberingCache();
+      var value = new DocumentModel.Drawings.Charts.NumberingCache();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       value.NumericPoints = GetNumericPoints(openXmlElement);

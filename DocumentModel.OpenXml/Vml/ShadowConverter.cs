@@ -253,11 +253,11 @@ public static class ShadowConverter
       openXmlElement.Matrix = null;
   }
   
-  public static DMVml.Shadow? CreateModelElement(DXVml.Shadow? openXmlElement)
+  public static DocumentModel.Vml.Shadow? CreateModelElement(DXVml.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Shadow();
+      var value = new DocumentModel.Vml.Shadow();
       value.Id = GetId(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Type = GetType(openXmlElement);

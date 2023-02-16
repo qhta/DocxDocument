@@ -66,11 +66,11 @@ public static class BorderTypeConverter
       openXmlElement.Shadow = null;
   }
   
-  public static DMWVml.BorderType? CreateModelElement(DXVmlW.BorderType? openXmlElement)
+  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DXVmlW.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWVml.BorderType();
+      var value = new DocumentModel.Wordprocessing.Vml.BorderType();
       value.Type = GetType(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Shadow = GetShadow(openXmlElement);

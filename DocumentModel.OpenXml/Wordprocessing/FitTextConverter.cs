@@ -45,11 +45,11 @@ public static class FitTextConverter
     openXmlElement.Id = value;
   }
   
-  public static DMW.FitText? CreateModelElement(DXW.FitText? openXmlElement)
+  public static DocumentModel.Wordprocessing.FitText? CreateModelElement(DXW.FitText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FitText();
+      var value = new DocumentModel.Wordprocessing.FitText();
       value.Val = GetVal(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

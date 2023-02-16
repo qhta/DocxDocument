@@ -61,11 +61,11 @@ public static class ValueColorMiddlePositionConverter
     }
   }
   
-  public static DMDrawsChartDraws.ValueColorMiddlePosition? CreateModelElement(DXO2016DrawChartDraw.ValueColorMiddlePosition? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition? CreateModelElement(DXO2016DrawChartDraw.ValueColorMiddlePosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ValueColorMiddlePosition();
+      var value = new DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition();
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);
       return value;

@@ -212,11 +212,11 @@ public static class SeparatorConverter
       openXmlElement.InsertBeforeQulifiedId = null;
   }
   
-  public static DM.Separator? CreateModelElement(DXO2010CustUI.Separator? openXmlElement)
+  public static DocumentModel.Separator? CreateModelElement(DXO2010CustUI.Separator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Separator();
+      var value = new DocumentModel.Separator();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

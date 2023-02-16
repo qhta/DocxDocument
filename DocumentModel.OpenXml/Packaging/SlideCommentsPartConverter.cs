@@ -29,11 +29,11 @@ public static class SlideCommentsPartConverter
     return false;
   }
   
-  public static DMPack.SlideCommentsPart? CreateModelElement(DXPack.SlideCommentsPart? openXmlElement)
+  public static DocumentModel.Packaging.SlideCommentsPart? CreateModelElement(DXPack.SlideCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SlideCommentsPart();
+      var value = new DocumentModel.Packaging.SlideCommentsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

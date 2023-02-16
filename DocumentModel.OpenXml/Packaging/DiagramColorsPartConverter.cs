@@ -52,11 +52,11 @@ public static class DiagramColorsPartConverter
     return false;
   }
   
-  public static DMPack.DiagramColorsPart? CreateModelElement(DXPack.DiagramColorsPart? openXmlElement)
+  public static DocumentModel.Packaging.DiagramColorsPart? CreateModelElement(DXPack.DiagramColorsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DiagramColorsPart();
+      var value = new DocumentModel.Packaging.DiagramColorsPart();
       value.ColorsDefinition = GetColorsDefinition(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

@@ -329,7 +329,10 @@ public static class TabConverter
   
   private static DM.Group? GetGroup(DXO2010CustUI.Tab openXmlElement)
   {
-    return DMX.GroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Group>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Group>();
+    if (element != null)
+      return DMX.GroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroup(DXO2010CustUI.Tab openXmlElement, DM.Group? value, DiffList? diffs, string? objName)
@@ -350,11 +353,11 @@ public static class TabConverter
     }
   }
   
-  public static DM.Tab? CreateModelElement(DXO2010CustUI.Tab? openXmlElement)
+  public static DocumentModel.Tab? CreateModelElement(DXO2010CustUI.Tab? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Tab();
+      var value = new DocumentModel.Tab();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

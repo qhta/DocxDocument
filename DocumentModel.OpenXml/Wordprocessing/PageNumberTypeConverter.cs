@@ -81,11 +81,11 @@ public static class PageNumberTypeConverter
     openXmlElement.ChapterSeparator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
-  public static DMW.PageNumberType? CreateModelElement(DXW.PageNumberType? openXmlElement)
+  public static DocumentModel.Wordprocessing.PageNumberType? CreateModelElement(DXW.PageNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PageNumberType();
+      var value = new DocumentModel.Wordprocessing.PageNumberType();
       value.Format = GetFormat(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.ChapterStyle = GetChapterStyle(openXmlElement);

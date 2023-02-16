@@ -51,11 +51,11 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
       openXmlElement.Published = null;
   }
   
-  public static DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? CreateModelElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? CreateModelElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ApplicationNonVisualDrawingProperties();
+      var value = new DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       return value;

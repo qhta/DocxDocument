@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CustomSplitConverter
 {
-  private static Collection<UInt32> GetSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement)
+  private static Collection<UInt32>? GetSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SecondPiePoint>())
@@ -14,7 +14,9 @@ public static class CustomSplitConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CustomSplitConverter
     }
   }
   
-  public static DMDrawsCharts.CustomSplit? CreateModelElement(DXDrawCharts.CustomSplit? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CustomSplit? CreateModelElement(DXDrawCharts.CustomSplit? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.CustomSplit();
+      var value = new DocumentModel.Drawings.Charts.CustomSplit();
       value.SecondPiePoints = GetSecondPiePoints(openXmlElement);
       return value;
     }

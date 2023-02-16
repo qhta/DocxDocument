@@ -74,11 +74,11 @@ public static class OpenXmlTaskUserElementConverter
       openXmlElement.UserProvider = null;
   }
   
-  public static DM.OpenXmlTaskUserElement? CreateModelElement(DXO2021DocTasks.OpenXmlTaskUserElement? openXmlElement)
+  public static DocumentModel.OpenXmlTaskUserElement? CreateModelElement(DXO2021DocTasks.OpenXmlTaskUserElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.OpenXmlTaskUserElement();
+      var value = new DocumentModel.OpenXmlTaskUserElement();
       value.UserId = GetUserId(openXmlElement);
       value.UserName = GetUserName(openXmlElement);
       value.UserProvider = GetUserProvider(openXmlElement);

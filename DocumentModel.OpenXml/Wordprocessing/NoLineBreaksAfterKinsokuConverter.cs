@@ -51,11 +51,11 @@ public static class NoLineBreaksAfterKinsokuConverter
       openXmlElement.Val = null;
   }
   
-  public static DMW.NoLineBreaksAfterKinsoku? CreateModelElement(DXW.NoLineBreaksAfterKinsoku? openXmlElement)
+  public static DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? CreateModelElement(DXW.NoLineBreaksAfterKinsoku? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NoLineBreaksAfterKinsoku();
+      var value = new DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

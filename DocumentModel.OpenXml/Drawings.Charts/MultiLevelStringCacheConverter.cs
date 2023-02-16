@@ -33,7 +33,7 @@ public static class MultiLevelStringCacheConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.Level> GetLevels(DXDrawCharts.MultiLevelStringCache openXmlElement)
+  private static Collection<DMDrawsCharts.Level>? GetLevels(DXDrawCharts.MultiLevelStringCache openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Level>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Level>())
@@ -42,7 +42,9 @@ public static class MultiLevelStringCacheConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLevels(DXDrawCharts.MultiLevelStringCache openXmlElement, Collection<DMDrawsCharts.Level>? value, DiffList? diffs, string? objName)
@@ -89,7 +91,10 @@ public static class MultiLevelStringCacheConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.MultiLevelStringCache openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.MultiLevelStringCache openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -110,11 +115,11 @@ public static class MultiLevelStringCacheConverter
     }
   }
   
-  public static DMDrawsCharts.MultiLevelStringCache? CreateModelElement(DXDrawCharts.MultiLevelStringCache? openXmlElement)
+  public static DocumentModel.Drawings.Charts.MultiLevelStringCache? CreateModelElement(DXDrawCharts.MultiLevelStringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.MultiLevelStringCache();
+      var value = new DocumentModel.Drawings.Charts.MultiLevelStringCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.Levels = GetLevels(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

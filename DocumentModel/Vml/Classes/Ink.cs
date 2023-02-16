@@ -8,7 +8,7 @@ public class Ink
   /// <summary>
   ///   Ink Data
   /// </summary>
-  public Byte[]? InkData { get; set; }
+  public Base64Binary? InkData { get; set; }
 
   /// <summary>
   ///   Annotation Flag

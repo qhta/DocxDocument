@@ -46,11 +46,11 @@ public static class StyleReferenceConverter
       openXmlElement.Modifiers = null;
   }
   
-  public static DMDrawsChartsStyle.StyleReference? CreateModelElement(DXO2013DrawChartStyle.StyleReference? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DXO2013DrawChartStyle.StyleReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.StyleReference();
+      var value = new DocumentModel.Drawings.ChartsStyle.StyleReference();
       value.Index = GetIndex(openXmlElement);
       value.Modifiers = GetModifiers(openXmlElement);
       return value;

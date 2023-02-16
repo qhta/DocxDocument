@@ -30,7 +30,10 @@ public static class OfficeStyleSheetExtensionConverter
   
   private static DM.ThemeFamily? GetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement)
   {
-    return DMX.ThemeFamilyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013Theme.ThemeFamily>());
+    var element = openXmlElement?.GetFirstChild<DXO2013Theme.ThemeFamily>();
+    if (element != null)
+      return DMX.ThemeFamilyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class OfficeStyleSheetExtensionConverter
     }
   }
   
-  public static DMDraws.OfficeStyleSheetExtension? CreateModelElement(DXDraw.OfficeStyleSheetExtension? openXmlElement)
+  public static DocumentModel.Drawings.OfficeStyleSheetExtension? CreateModelElement(DXDraw.OfficeStyleSheetExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.OfficeStyleSheetExtension();
+      var value = new DocumentModel.Drawings.OfficeStyleSheetExtension();
       value.Uri = GetUri(openXmlElement);
       value.ThemeFamily = GetThemeFamily(openXmlElement);
       return value;

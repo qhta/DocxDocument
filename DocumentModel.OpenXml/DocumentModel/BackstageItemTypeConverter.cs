@@ -74,11 +74,11 @@ public static class BackstageItemTypeConverter
       openXmlElement.GetLabel = null;
   }
   
-  public static DM.BackstageItemType? CreateModelElement(DXO2010CustUI.BackstageItemType? openXmlElement)
+  public static DocumentModel.BackstageItemType? CreateModelElement(DXO2010CustUI.BackstageItemType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageItemType();
+      var value = new DocumentModel.BackstageItemType();
       value.Id = GetId(openXmlElement);
       value.Label = GetLabel(openXmlElement);
       value.GetLabel = GetGetLabel(openXmlElement);

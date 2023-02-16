@@ -7,7 +7,10 @@ public static class TxPrTextBodyConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXO2016DrawChartDraw.TxPrTextBody openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXO2016DrawChartDraw.TxPrTextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class TxPrTextBodyConverter
   
   private static DMDraws.ListStyle? GetListStyle(DXO2016DrawChartDraw.TxPrTextBody openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXO2016DrawChartDraw.TxPrTextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class TxPrTextBodyConverter
   
   private static DMDraws.Paragraph? GetParagraph(DXO2016DrawChartDraw.TxPrTextBody openXmlElement)
   {
-    return DMXDraws.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
+    if (element != null)
+      return DMXDraws.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXO2016DrawChartDraw.TxPrTextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class TxPrTextBodyConverter
     }
   }
   
-  public static DMDrawsChartDraws.TxPrTextBody? CreateModelElement(DXO2016DrawChartDraw.TxPrTextBody? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? CreateModelElement(DXO2016DrawChartDraw.TxPrTextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.TxPrTextBody();
+      var value = new DocumentModel.Drawings.ChartDrawings.TxPrTextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

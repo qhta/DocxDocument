@@ -7,7 +7,10 @@ public static class LineStyleListConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.LineStyleList openXmlElement)
   {
-    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    if (element != null)
+      return DMXDraws.OutlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOutline(DXDraw.LineStyleList openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class LineStyleListConverter
     }
   }
   
-  public static DMDraws.LineStyleList? CreateModelElement(DXDraw.LineStyleList? openXmlElement)
+  public static DocumentModel.Drawings.LineStyleList? CreateModelElement(DXDraw.LineStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LineStyleList();
+      var value = new DocumentModel.Drawings.LineStyleList();
       value.Outline = GetOutline(openXmlElement);
       return value;
     }

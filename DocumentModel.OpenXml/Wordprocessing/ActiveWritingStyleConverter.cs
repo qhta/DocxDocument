@@ -137,11 +137,11 @@ public static class ActiveWritingStyleConverter
       openXmlElement.ApplicationName = null;
   }
   
-  public static DMW.ActiveWritingStyle? CreateModelElement(DXW.ActiveWritingStyle? openXmlElement)
+  public static DocumentModel.Wordprocessing.ActiveWritingStyle? CreateModelElement(DXW.ActiveWritingStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ActiveWritingStyle();
+      var value = new DocumentModel.Wordprocessing.ActiveWritingStyle();
       value.Language = GetLanguage(openXmlElement);
       value.VendorID = GetVendorID(openXmlElement);
       value.DllVersion = GetDllVersion(openXmlElement);

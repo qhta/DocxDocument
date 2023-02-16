@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LinePropertiesExtensionListConverter
 {
-  private static Collection<DMDraws.LinePropertiesExtension> GetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement)
+  private static Collection<DMDraws.LinePropertiesExtension>? GetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.LinePropertiesExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.LinePropertiesExtension>())
@@ -14,7 +14,9 @@ public static class LinePropertiesExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class LinePropertiesExtensionListConverter
     }
   }
   
-  public static DMDraws.LinePropertiesExtensionList? CreateModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LinePropertiesExtensionList();
+      var value = new DocumentModel.Drawings.LinePropertiesExtensionList();
       value.LinePropertiesExtensions = GetLinePropertiesExtensions(openXmlElement);
       return value;
     }

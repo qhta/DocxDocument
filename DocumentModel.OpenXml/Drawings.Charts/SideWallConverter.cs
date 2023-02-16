@@ -32,7 +32,10 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.SideWall openXmlElement)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -55,7 +58,10 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.SideWall openXmlElement)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureOptions(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
@@ -78,7 +84,10 @@ public static class SideWallConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.SideWall openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -99,11 +108,11 @@ public static class SideWallConverter
     }
   }
   
-  public static DMDrawsCharts.SideWall? CreateModelElement(DXDrawCharts.SideWall? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SideWall? CreateModelElement(DXDrawCharts.SideWall? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SideWall();
+      var value = new DocumentModel.Drawings.Charts.SideWall();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

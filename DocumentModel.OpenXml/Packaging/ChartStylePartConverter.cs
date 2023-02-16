@@ -52,11 +52,11 @@ public static class ChartStylePartConverter
     return false;
   }
   
-  public static DMPack.ChartStylePart? CreateModelElement(DXPack.ChartStylePart? openXmlElement)
+  public static DocumentModel.Packaging.ChartStylePart? CreateModelElement(DXPack.ChartStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ChartStylePart();
+      var value = new DocumentModel.Packaging.ChartStylePart();
       value.ChartStyle = GetChartStyle(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

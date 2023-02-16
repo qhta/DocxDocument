@@ -25,11 +25,11 @@ public static class TaskProgressEventInfoConverter
     openXmlElement.PercentComplete = value;
   }
   
-  public static DM.TaskProgressEventInfo? CreateModelElement(DXO2021DocTasks.TaskProgressEventInfo? openXmlElement)
+  public static DocumentModel.TaskProgressEventInfo? CreateModelElement(DXO2021DocTasks.TaskProgressEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskProgressEventInfo();
+      var value = new DocumentModel.TaskProgressEventInfo();
       value.PercentComplete = GetPercentComplete(openXmlElement);
       return value;
     }

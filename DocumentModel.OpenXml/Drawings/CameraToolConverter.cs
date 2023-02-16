@@ -51,11 +51,11 @@ public static class CameraToolConverter
       openXmlElement.ShapeId = null;
   }
   
-  public static DMDraws.CameraTool? CreateModelElement(DXO2010Draw.CameraTool? openXmlElement)
+  public static DocumentModel.Drawings.CameraTool? CreateModelElement(DXO2010Draw.CameraTool? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.CameraTool();
+      var value = new DocumentModel.Drawings.CameraTool();
       value.CellRange = GetCellRange(openXmlElement);
       value.ShapeId = GetShapeId(openXmlElement);
       return value;

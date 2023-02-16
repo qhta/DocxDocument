@@ -33,7 +33,10 @@ public static class FormatSchemeConverter
   /// </summary>
   private static DMDraws.FillStyleList? GetFillStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    return DMXDraws.FillStyleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FillStyleList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FillStyleList>();
+    if (element != null)
+      return DMXDraws.FillStyleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class FormatSchemeConverter
   /// </summary>
   private static DMDraws.LineStyleList? GetLineStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    return DMXDraws.LineStyleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LineStyleList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LineStyleList>();
+    if (element != null)
+      return DMXDraws.LineStyleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value, DiffList? diffs, string? objName)
@@ -85,7 +91,10 @@ public static class FormatSchemeConverter
   /// </summary>
   private static DMDraws.EffectStyleList? GetEffectStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    return DMXDraws.EffectStyleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectStyleList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectStyleList>();
+    if (element != null)
+      return DMXDraws.EffectStyleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value, DiffList? diffs, string? objName)
@@ -111,7 +120,10 @@ public static class FormatSchemeConverter
   /// </summary>
   private static DMDraws.BackgroundFillStyleList? GetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement)
   {
-    return DMXDraws.BackgroundFillStyleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BackgroundFillStyleList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BackgroundFillStyleList>();
+    if (element != null)
+      return DMXDraws.BackgroundFillStyleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
@@ -132,11 +144,11 @@ public static class FormatSchemeConverter
     }
   }
   
-  public static DMDraws.FormatScheme? CreateModelElement(DXDraw.FormatScheme? openXmlElement)
+  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DXDraw.FormatScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.FormatScheme();
+      var value = new DocumentModel.Drawings.FormatScheme();
       value.Name = GetName(openXmlElement);
       value.FillStyleList = GetFillStyleList(openXmlElement);
       value.LineStyleList = GetLineStyleList(openXmlElement);

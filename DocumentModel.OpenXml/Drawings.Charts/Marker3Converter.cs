@@ -64,7 +64,10 @@ public static class Marker3Converter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.Marker openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -90,7 +93,10 @@ public static class Marker3Converter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXO2013DrawChart.Marker openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -111,11 +117,11 @@ public static class Marker3Converter
     }
   }
   
-  public static DMDrawsCharts.Marker3? CreateModelElement(DXO2013DrawChart.Marker? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Marker3? CreateModelElement(DXO2013DrawChart.Marker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Marker3();
+      var value = new DocumentModel.Drawings.Charts.Marker3();
       value.Symbol = GetSymbol(openXmlElement);
       value.Size = GetSize(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);

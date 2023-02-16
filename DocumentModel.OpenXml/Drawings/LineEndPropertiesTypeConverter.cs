@@ -59,11 +59,11 @@ public static class LineEndPropertiesTypeConverter
     openXmlElement.Length = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMDraws.LineEndLengthKind>(value);
   }
   
-  public static DMDraws.LineEndPropertiesType? CreateModelElement(DXDraw.LineEndPropertiesType? openXmlElement)
+  public static DocumentModel.Drawings.LineEndPropertiesType? CreateModelElement(DXDraw.LineEndPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LineEndPropertiesType();
+      var value = new DocumentModel.Drawings.LineEndPropertiesType();
       value.Type = GetType(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Length = GetLength(openXmlElement);

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Vml;
 /// </summary>
 public static class ShapeHandlesConverter
 {
-  private static Collection<DMVml.ShapeHandle> GetItems(DXVml.ShapeHandles openXmlElement)
+  private static Collection<DMVml.ShapeHandle>? GetItems(DXVml.ShapeHandles openXmlElement)
   {
     var collection = new Collection<DMVml.ShapeHandle>();
     foreach (var item in openXmlElement.Elements<DXVml.ShapeHandle>())
@@ -14,7 +14,9 @@ public static class ShapeHandlesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ShapeHandlesConverter
     }
   }
   
-  public static DMVml.ShapeHandles? CreateModelElement(DXVml.ShapeHandles? openXmlElement)
+  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(DXVml.ShapeHandles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ShapeHandles();
+      var value = new DocumentModel.Vml.ShapeHandles();
       value.Items = GetItems(openXmlElement);
       return value;
     }

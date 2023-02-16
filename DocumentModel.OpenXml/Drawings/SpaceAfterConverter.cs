@@ -55,11 +55,11 @@ public static class SpaceAfterConverter
     }
   }
   
-  public static DMDraws.SpaceAfter? CreateModelElement(DXDraw.SpaceAfter? openXmlElement)
+  public static DocumentModel.Drawings.SpaceAfter? CreateModelElement(DXDraw.SpaceAfter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.SpaceAfter();
+      var value = new DocumentModel.Drawings.SpaceAfter();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

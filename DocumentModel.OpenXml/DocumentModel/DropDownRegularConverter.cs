@@ -902,7 +902,7 @@ public static class DropDownRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DM.Item> GetItems(DXO2010CustUI.DropDownRegular openXmlElement)
+  private static Collection<DM.Item>? GetItems(DXO2010CustUI.DropDownRegular openXmlElement)
   {
     var collection = new Collection<DM.Item>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.Item>())
@@ -911,7 +911,9 @@ public static class DropDownRegularConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2010CustUI.DropDownRegular openXmlElement, Collection<DM.Item>? value, DiffList? diffs, string? objName)
@@ -956,7 +958,7 @@ public static class DropDownRegularConverter
     }
   }
   
-  private static Collection<DM.ButtonRegular> GetButtonRegulars(DXO2010CustUI.DropDownRegular openXmlElement)
+  private static Collection<DM.ButtonRegular>? GetButtonRegulars(DXO2010CustUI.DropDownRegular openXmlElement)
   {
     var collection = new Collection<DM.ButtonRegular>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.ButtonRegular>())
@@ -965,7 +967,9 @@ public static class DropDownRegularConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpButtonRegulars(DXO2010CustUI.DropDownRegular openXmlElement, Collection<DM.ButtonRegular>? value, DiffList? diffs, string? objName)
@@ -1010,11 +1014,11 @@ public static class DropDownRegularConverter
     }
   }
   
-  public static DM.DropDownRegular? CreateModelElement(DXO2010CustUI.DropDownRegular? openXmlElement)
+  public static DocumentModel.DropDownRegular? CreateModelElement(DXO2010CustUI.DropDownRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.DropDownRegular();
+      var value = new DocumentModel.DropDownRegular();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

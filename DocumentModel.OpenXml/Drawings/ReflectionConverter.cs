@@ -286,11 +286,11 @@ public static class ReflectionConverter
       openXmlElement.RotateWithShape = null;
   }
   
-  public static DMDraws.Reflection? CreateModelElement(DXDraw.Reflection? openXmlElement)
+  public static DocumentModel.Drawings.Reflection? CreateModelElement(DXDraw.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Reflection();
+      var value = new DocumentModel.Drawings.Reflection();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.StartOpacity = GetStartOpacity(openXmlElement);
       value.StartPosition = GetStartPosition(openXmlElement);

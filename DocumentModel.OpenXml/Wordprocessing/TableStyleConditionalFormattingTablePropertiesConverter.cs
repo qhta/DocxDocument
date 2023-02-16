@@ -36,7 +36,10 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// </summary>
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -62,7 +65,10 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// </summary>
   private static DMW.TableIndentation? GetTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    return DMXW.TableIndentationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableIndentation>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
+    if (element != null)
+      return DMXW.TableIndentationConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
@@ -88,7 +94,10 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// </summary>
   private static DMW.TableBorders? GetTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    return DMXW.TableBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableBorders>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableBorders>();
+    if (element != null)
+      return DMXW.TableBordersConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
@@ -114,7 +123,10 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -140,7 +152,10 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// </summary>
   private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    return DMXW.TableCellMarginDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
+    if (element != null)
+      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
@@ -161,11 +176,11 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     }
   }
   
-  public static DMW.TableStyleConditionalFormattingTableProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalFormattingTableProperties();
+      var value = new DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties();
       value.TableJustification = GetTableJustification(openXmlElement);
       value.TableCellSpacing = GetTableCellSpacing(openXmlElement);
       value.TableIndentation = GetTableIndentation(openXmlElement);

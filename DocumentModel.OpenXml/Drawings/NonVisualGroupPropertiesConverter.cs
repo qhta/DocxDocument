@@ -28,11 +28,11 @@ public static class NonVisualGroupPropertiesConverter
       openXmlElement.IsLegacyGroup = null;
   }
   
-  public static DMDraws.NonVisualGroupProperties? CreateModelElement(DXO2013Draw.NonVisualGroupProperties? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualGroupProperties? CreateModelElement(DXO2013Draw.NonVisualGroupProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.NonVisualGroupProperties();
+      var value = new DocumentModel.Drawings.NonVisualGroupProperties();
       value.IsLegacyGroup = GetIsLegacyGroup(openXmlElement);
       return value;
     }

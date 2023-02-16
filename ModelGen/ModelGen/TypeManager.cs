@@ -207,6 +207,12 @@ public static class TypeManager
       return typeInfo.OutgoingRelationships.Where(item => item.Semantics == semantics).Select(item => item.Target).ToArray();
   }
 
+  public static TypeInfo[] GetRevRelatedTypes(this TypeInfo typeInfo, Semantics semantics)
+  {
+    lock (RelationshipsLock)
+      return typeInfo.IncomingRelationships.Where(item => item.Semantics == semantics).Select(item => item.Source).ToArray();
+  }
+
   public static TypeDictionary GetNamespaceDictionary(string nspace)
   {
     lock (KnownTypesLock)

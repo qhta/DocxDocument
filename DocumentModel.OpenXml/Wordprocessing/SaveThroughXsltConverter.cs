@@ -51,11 +51,11 @@ public static class SaveThroughXsltConverter
       openXmlElement.SolutionId = null;
   }
   
-  public static DMW.SaveThroughXslt? CreateModelElement(DXW.SaveThroughXslt? openXmlElement)
+  public static DocumentModel.Wordprocessing.SaveThroughXslt? CreateModelElement(DXW.SaveThroughXslt? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SaveThroughXslt();
+      var value = new DocumentModel.Wordprocessing.SaveThroughXslt();
       value.Id = GetId(openXmlElement);
       value.SolutionId = GetSolutionId(openXmlElement);
       return value;

@@ -10,7 +10,10 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   /// </summary>
   private static DMDraws.GroupShapeLocks? GetGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement)
   {
-    return DMXDraws.GroupShapeLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GroupShapeLocks>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GroupShapeLocks>();
+    if (element != null)
+      return DMXDraws.GroupShapeLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.GroupShapeLocks? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   /// </summary>
   private static DMDraws.NonVisualGroupDrawingShapePropsExtensionList? GetNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement)
   {
-    return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>();
+    if (element != null)
+      return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
     }
   }
   
-  public static DMDrawsO.NonVisualGroupDrawingShapeProperties? CreateModelElement(DXODraw.NonVisualGroupDrawingShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? CreateModelElement(DXODraw.NonVisualGroupDrawingShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.NonVisualGroupDrawingShapeProperties();
+      var value = new DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties();
       value.GroupShapeLocks = GetGroupShapeLocks(openXmlElement);
       value.NonVisualGroupDrawingShapePropsExtensionList = GetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement);
       return value;

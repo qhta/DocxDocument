@@ -79,7 +79,10 @@ public static class WebExtensionBindingConverter
   /// </summary>
   private static DMWebExt.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
-    return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement, DMWebExt.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -100,11 +103,11 @@ public static class WebExtensionBindingConverter
     }
   }
   
-  public static DMWebExt.WebExtensionBinding? CreateModelElement(DXO2013WebExt.WebExtensionBinding? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionBinding? CreateModelElement(DXO2013WebExt.WebExtensionBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExt.WebExtensionBinding();
+      var value = new DocumentModel.WebExtensions.WebExtensionBinding();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.AppReference = GetAppReference(openXmlElement);

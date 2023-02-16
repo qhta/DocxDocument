@@ -29,11 +29,11 @@ public static class WorksheetThreadedCommentsPartConverter
     return false;
   }
   
-  public static DMPack.WorksheetThreadedCommentsPart? CreateModelElement(DXPack.WorksheetThreadedCommentsPart? openXmlElement)
+  public static DocumentModel.Packaging.WorksheetThreadedCommentsPart? CreateModelElement(DXPack.WorksheetThreadedCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WorksheetThreadedCommentsPart();
+      var value = new DocumentModel.Packaging.WorksheetThreadedCommentsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

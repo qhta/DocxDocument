@@ -51,11 +51,11 @@ public static class ColorTransformDescriptionConverter
       openXmlElement.Val = null;
   }
   
-  public static DMDrawsDgms.ColorTransformDescription? CreateModelElement(DXDrawDgms.ColorTransformDescription? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorTransformDescription? CreateModelElement(DXDrawDgms.ColorTransformDescription? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ColorTransformDescription();
+      var value = new DocumentModel.Drawings.Diagrams.ColorTransformDescription();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

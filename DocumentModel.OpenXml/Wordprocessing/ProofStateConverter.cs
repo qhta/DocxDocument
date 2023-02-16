@@ -41,11 +41,11 @@ public static class ProofStateConverter
     openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(value);
   }
   
-  public static DMW.ProofState? CreateModelElement(DXW.ProofState? openXmlElement)
+  public static DocumentModel.Wordprocessing.ProofState? CreateModelElement(DXW.ProofState? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ProofState();
+      var value = new DocumentModel.Wordprocessing.ProofState();
       value.Spelling = GetSpelling(openXmlElement);
       value.Grammar = GetGrammar(openXmlElement);
       return value;

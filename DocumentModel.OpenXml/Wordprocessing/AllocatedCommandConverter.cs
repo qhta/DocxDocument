@@ -54,27 +54,27 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  private static UInt16? GetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement)
+  private static DM.HexChar? GetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement)
   {
     if (openXmlElement?.CommandIndexBasedOn?.Value != null)
-      return UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.CommandIndexBasedOn.Value);
     return null;
   }
   
-  private static bool CmpCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CommandIndexBasedOn?.Value != null)
-      if (UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.CommandIndexBasedOn.Value) == value)
         return true;
-    if (openXmlElement?.CommandIndexBasedOn?.Value == null && value == null) return true;
-    diffs?.Add(objName, "CommandIndexBasedOn", openXmlElement?.CommandIndexBasedOn?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.CommandIndexBasedOn?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CommandIndexBasedOn", openXmlElement?.CommandIndexBasedOn?.Value, value);
     return false;
   }
   
-  private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value)
+  private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.CommandIndexBasedOn = ((UInt16)value).ToString("X4");
+      openXmlElement.CommandIndexBasedOn = value.ToString();
     else
       openXmlElement.CommandIndexBasedOn = null;
   }
@@ -102,11 +102,11 @@ public static class AllocatedCommandConverter
       openXmlElement.AcceleratorName = null;
   }
   
-  public static DMW.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
+  public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AllocatedCommand();
+      var value = new DocumentModel.Wordprocessing.AllocatedCommand();
       value.ArgumentValue = GetArgumentValue(openXmlElement);
       value.CommandBasedOn = GetCommandBasedOn(openXmlElement);
       value.CommandIndexBasedOn = GetCommandIndexBasedOn(openXmlElement);

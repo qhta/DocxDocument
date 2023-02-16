@@ -8,7 +8,7 @@ public static class EmbeddedControlPersistencePartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DXPack.EmbeddedControlPersistencePart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(DXPack.EmbeddedControlPersistencePart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistenceBinaryDataPart>())
@@ -37,11 +37,11 @@ public static class EmbeddedControlPersistencePartConverter
     return false;
   }
   
-  public static DMPack.EmbeddedControlPersistencePart? CreateModelElement(DXPack.EmbeddedControlPersistencePart? openXmlElement)
+  public static DocumentModel.Packaging.EmbeddedControlPersistencePart? CreateModelElement(DXPack.EmbeddedControlPersistencePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.EmbeddedControlPersistencePart();
+      var value = new DocumentModel.Packaging.EmbeddedControlPersistencePart();
       value.EmbeddedControlPersistenceBinaryDataParts = GetEmbeddedControlPersistenceBinaryDataParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

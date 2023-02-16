@@ -92,11 +92,11 @@ public static class OpenXmlValueColorEndPositionElementConverter
     }
   }
   
-  public static DMDrawsChartDraws.OpenXmlValueColorEndPositionElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlValueColorEndPositionElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.OpenXmlValueColorEndPositionElement();
+      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlValueColorEndPositionElement();
       value.ExtremeValueColorPosition = GetExtremeValueColorPosition(openXmlElement);
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);

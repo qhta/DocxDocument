@@ -7,7 +7,10 @@ public static class MoveFromRunConverter
 {
   private static DMW.SdtRun? GetSdtRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.SdtRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtRun>();
+    if (element != null)
+      return DMXW.SdtRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtRun(DXW.MoveFromRun openXmlElement, DMW.SdtRun? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class MoveFromRunConverter
   
   private static DMW.ProofError? GetProofError(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+    var element = openXmlElement?.GetFirstChild<DXW.ProofError>();
+    if (element != null)
+      return DMXW.ProofErrorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProofError(DXW.MoveFromRun openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class MoveFromRunConverter
   
   private static DMW.PermStart? GetPermStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermStart>();
+    if (element != null)
+      return DMXW.PermStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermStart(DXW.MoveFromRun openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class MoveFromRunConverter
   
   private static DMW.PermEnd? GetPermEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermEnd>();
+    if (element != null)
+      return DMXW.PermEndConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermEnd(DXW.MoveFromRun openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class MoveFromRunConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
+    if (element != null)
+      return DMXW.BookmarkStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkStart(DXW.MoveFromRun openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
@@ -122,7 +137,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -145,7 +163,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeStart(DXW.MoveFromRun openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -168,7 +189,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -191,7 +215,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeStart(DXW.MoveFromRun openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -214,7 +241,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -237,7 +267,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeStart(DXW.MoveFromRun openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -260,7 +293,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -283,7 +319,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -306,7 +345,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -329,7 +371,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -352,7 +397,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -375,7 +423,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -398,7 +449,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -421,7 +475,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -444,7 +501,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -467,7 +527,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -490,7 +553,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -513,7 +579,10 @@ public static class MoveFromRunConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.MoveFromRun openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -536,7 +605,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.MoveFromRun openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -559,7 +631,10 @@ public static class MoveFromRunConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
+    if (element != null)
+      return DMXW.InsertedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInsertedRun(DXW.MoveFromRun openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
@@ -582,7 +657,10 @@ public static class MoveFromRunConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
+    if (element != null)
+      return DMXW.DeletedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedRun(DXW.MoveFromRun openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
@@ -605,7 +683,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MoveFromRun? GetChildMoveFromRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
+    if (element != null)
+      return DMXW.MoveFromRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildMoveFromRun(DXW.MoveFromRun openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
@@ -628,7 +709,10 @@ public static class MoveFromRunConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
+    if (element != null)
+      return DMXW.MoveToRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRun(DXW.MoveFromRun openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
@@ -651,7 +735,10 @@ public static class MoveFromRunConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
+    if (element != null)
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictInsertion(DXW.MoveFromRun openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
@@ -674,7 +761,10 @@ public static class MoveFromRunConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
+    if (element != null)
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictDeletion(DXW.MoveFromRun openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
@@ -697,7 +787,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Paragraph? GetParagraph(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
+    if (element != null)
+      return DMXMath.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXW.MoveFromRun openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
@@ -720,7 +813,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+    var element = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
+    if (element != null)
+      return DMXMath.OfficeMathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeMath(DXW.MoveFromRun openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
@@ -743,7 +839,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Accent? GetAccent(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.AccentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Accent>();
+    if (element != null)
+      return DMXMath.AccentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAccent(DXW.MoveFromRun openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
@@ -766,7 +865,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Bar? GetBar(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.BarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Bar>();
+    if (element != null)
+      return DMXMath.BarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBar(DXW.MoveFromRun openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
@@ -789,7 +891,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Box? GetBox(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Box>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Box>();
+    if (element != null)
+      return DMXMath.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBox(DXW.MoveFromRun openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
@@ -812,7 +917,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.BorderBox? GetBorderBox(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.BorderBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
+    if (element != null)
+      return DMXMath.BorderBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBorderBox(DXW.MoveFromRun openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
@@ -835,7 +943,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Delimiter? GetDelimiter(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.DelimiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
+    if (element != null)
+      return DMXMath.DelimiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDelimiter(DXW.MoveFromRun openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
@@ -858,7 +969,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.EquationArray? GetEquationArray(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.EquationArrayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>());
+    var element = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
+    if (element != null)
+      return DMXMath.EquationArrayConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEquationArray(DXW.MoveFromRun openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
@@ -881,7 +995,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Fraction? GetFraction(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.FractionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Fraction>();
+    if (element != null)
+      return DMXMath.FractionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFraction(DXW.MoveFromRun openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
@@ -904,7 +1021,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.MathFunction? GetMathFunction(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.MathFunctionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
+    if (element != null)
+      return DMXMath.MathFunctionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMathFunction(DXW.MoveFromRun openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
@@ -927,7 +1047,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.GroupChar? GetGroupChar(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.GroupCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
+    if (element != null)
+      return DMXMath.GroupCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupChar(DXW.MoveFromRun openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
@@ -950,7 +1073,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.LimitLower? GetLimitLower(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.LimitLowerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
+    if (element != null)
+      return DMXMath.LimitLowerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitLower(DXW.MoveFromRun openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
@@ -973,7 +1099,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.LimitUpper? GetLimitUpper(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.LimitUpperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
+    if (element != null)
+      return DMXMath.LimitUpperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitUpper(DXW.MoveFromRun openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
@@ -996,7 +1125,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Matrix? GetMatrix(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.MatrixConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Matrix>();
+    if (element != null)
+      return DMXMath.MatrixConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrix(DXW.MoveFromRun openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
@@ -1019,7 +1151,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Nary? GetNary(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.NaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Nary>();
+    if (element != null)
+      return DMXMath.NaryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNary(DXW.MoveFromRun openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
@@ -1042,7 +1177,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Phantom? GetPhantom(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.PhantomConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Phantom>();
+    if (element != null)
+      return DMXMath.PhantomConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPhantom(DXW.MoveFromRun openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
@@ -1065,7 +1203,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Radical? GetRadical(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.RadicalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Radical>();
+    if (element != null)
+      return DMXMath.RadicalConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadical(DXW.MoveFromRun openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
@@ -1088,7 +1229,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.PreSubSuper? GetPreSubSuper(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.PreSubSuperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
+    if (element != null)
+      return DMXMath.PreSubSuperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreSubSuper(DXW.MoveFromRun openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
@@ -1111,7 +1255,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Subscript? GetSubscript(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.SubscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Subscript>();
+    if (element != null)
+      return DMXMath.SubscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubscript(DXW.MoveFromRun openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
@@ -1134,7 +1281,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.SubSuperscript? GetSubSuperscript(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.SubSuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
+    if (element != null)
+      return DMXMath.SubSuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubSuperscript(DXW.MoveFromRun openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
@@ -1157,7 +1307,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Superscript? GetSuperscript(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.SuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Superscript>();
+    if (element != null)
+      return DMXMath.SuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperscript(DXW.MoveFromRun openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
@@ -1180,7 +1333,10 @@ public static class MoveFromRunConverter
   
   private static DMMath.Run? GetRun(DXW.MoveFromRun openXmlElement)
   {
-    return DMXMath.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Run>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Run>();
+    if (element != null)
+      return DMXMath.RunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRun(DXW.MoveFromRun openXmlElement, DMMath.Run? value, DiffList? diffs, string? objName)
@@ -1203,7 +1359,10 @@ public static class MoveFromRunConverter
   
   private static DMW.BidirectionalOverride? GetBidirectionalOverride(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.BidirectionalOverrideConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>();
+    if (element != null)
+      return DMXW.BidirectionalOverrideConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBidirectionalOverride(DXW.MoveFromRun openXmlElement, DMW.BidirectionalOverride? value, DiffList? diffs, string? objName)
@@ -1226,7 +1385,10 @@ public static class MoveFromRunConverter
   
   private static DMW.BidirectionalEmbedding? GetBidirectionalEmbedding(DXW.MoveFromRun openXmlElement)
   {
-    return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>();
+    if (element != null)
+      return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBidirectionalEmbedding(DXW.MoveFromRun openXmlElement, DMW.BidirectionalEmbedding? value, DiffList? diffs, string? objName)
@@ -1247,11 +1409,11 @@ public static class MoveFromRunConverter
     }
   }
   
-  public static DMW.MoveFromRun? CreateModelElement(DXW.MoveFromRun? openXmlElement)
+  public static DocumentModel.Wordprocessing.MoveFromRun? CreateModelElement(DXW.MoveFromRun? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MoveFromRun();
+      var value = new DocumentModel.Wordprocessing.MoveFromRun();
       value.SdtRun = GetSdtRun(openXmlElement);
       value.ProofError = GetProofError(openXmlElement);
       value.PermStart = GetPermStart(openXmlElement);

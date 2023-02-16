@@ -238,7 +238,10 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return DMXDraws.LineSpacingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LineSpacing>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LineSpacing>();
+    if (element != null)
+      return DMXDraws.LineSpacingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
@@ -264,7 +267,10 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static DMDraws.SpaceBefore? GetSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return DMXDraws.SpaceBeforeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>();
+    if (element != null)
+      return DMXDraws.SpaceBeforeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
@@ -290,7 +296,10 @@ public static class TextParagraphPropertiesTypeConverter
   /// </summary>
   private static DMDraws.SpaceAfter? GetSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement)
   {
-    return DMXDraws.SpaceAfterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>();
+    if (element != null)
+      return DMXDraws.SpaceAfterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
@@ -311,11 +320,11 @@ public static class TextParagraphPropertiesTypeConverter
     }
   }
   
-  public static DMDraws.TextParagraphPropertiesType? CreateModelElement(DXDraw.TextParagraphPropertiesType? openXmlElement)
+  public static DocumentModel.Drawings.TextParagraphPropertiesType? CreateModelElement(DXDraw.TextParagraphPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TextParagraphPropertiesType();
+      var value = new DocumentModel.Drawings.TextParagraphPropertiesType();
       value.LeftMargin = GetLeftMargin(openXmlElement);
       value.RightMargin = GetRightMargin(openXmlElement);
       value.Level = GetLevel(openXmlElement);

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 /// </summary>
 public static class OfficeArtExtensionListConverter
 {
-  private static Collection<DMDraws.Extension> GetExtensions(DXO2013DrawChartStyle.OfficeArtExtensionList openXmlElement)
+  private static Collection<DMDraws.Extension>? GetExtensions(DXO2013DrawChartStyle.OfficeArtExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.Extension>();
     foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
@@ -14,7 +14,9 @@ public static class OfficeArtExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtensions(DXO2013DrawChartStyle.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class OfficeArtExtensionListConverter
     }
   }
   
-  public static DMDrawsChartsStyle.OfficeArtExtensionList? CreateModelElement(DXO2013DrawChartStyle.OfficeArtExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? CreateModelElement(DXO2013DrawChartStyle.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.OfficeArtExtensionList();
+      var value = new DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

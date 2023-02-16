@@ -2280,7 +2280,7 @@ public static class CompatibilityConverter
     }
   }
   
-  private static Collection<DMW.CompatibilitySetting> GetCompatibilitySettings(DXW.Compatibility openXmlElement)
+  private static Collection<DMW.CompatibilitySetting>? GetCompatibilitySettings(DXW.Compatibility openXmlElement)
   {
     var collection = new Collection<DMW.CompatibilitySetting>();
     foreach (var item in openXmlElement.Elements<DXW.CompatibilitySetting>())
@@ -2289,7 +2289,9 @@ public static class CompatibilityConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCompatibilitySettings(DXW.Compatibility openXmlElement, Collection<DMW.CompatibilitySetting>? value, DiffList? diffs, string? objName)
@@ -2334,11 +2336,11 @@ public static class CompatibilityConverter
     }
   }
   
-  public static DMW.Compatibility? CreateModelElement(DXW.Compatibility? openXmlElement)
+  public static DocumentModel.Wordprocessing.Compatibility? CreateModelElement(DXW.Compatibility? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Compatibility();
+      var value = new DocumentModel.Wordprocessing.Compatibility();
       value.UseSingleBorderForContiguousCells = GetUseSingleBorderForContiguousCells(openXmlElement);
       value.WordPerfectJustification = GetWordPerfectJustification(openXmlElement);
       value.NoTabHangIndent = GetNoTabHangIndent(openXmlElement);

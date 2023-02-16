@@ -107,11 +107,11 @@ public static class CellMergeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.CellMerge? CreateModelElement(DXW.CellMerge? openXmlElement)
+  public static DocumentModel.Wordprocessing.CellMerge? CreateModelElement(DXW.CellMerge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CellMerge();
+      var value = new DocumentModel.Wordprocessing.CellMerge();
       value.VerticalMerge = GetVerticalMerge(openXmlElement);
       value.VerticalMergeOriginal = GetVerticalMergeOriginal(openXmlElement);
       value.Author = GetAuthor(openXmlElement);

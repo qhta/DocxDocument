@@ -71,11 +71,11 @@ public static class TrackChangeTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.TrackChangeType? CreateModelElement(DXW.TrackChangeType? openXmlElement)
+  public static DocumentModel.Wordprocessing.TrackChangeType? CreateModelElement(DXW.TrackChangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TrackChangeType();
+      var value = new DocumentModel.Wordprocessing.TrackChangeType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

@@ -30,7 +30,10 @@ public static class PtExtensionConverter
   
   private static DMDrawsDgms.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement)
   {
-    return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>();
+    if (element != null)
+      return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class PtExtensionConverter
     }
   }
   
-  public static DMDraws.PtExtension? CreateModelElement(DXDraw.PtExtension? openXmlElement)
+  public static DocumentModel.Drawings.PtExtension? CreateModelElement(DXDraw.PtExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PtExtension();
+      var value = new DocumentModel.Drawings.PtExtension();
       value.Uri = GetUri(openXmlElement);
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       return value;

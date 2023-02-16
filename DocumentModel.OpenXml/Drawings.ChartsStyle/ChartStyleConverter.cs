@@ -30,7 +30,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.AxisTitle? GetAxisTitle(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.AxisTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.AxisTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.AxisTitle>();
+    if (element != null)
+      return DMXDrawsChartsStyle.AxisTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAxisTitle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.AxisTitle? value, DiffList? diffs, string? objName)
@@ -56,7 +59,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.CategoryAxis? GetCategoryAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.CategoryAxisConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.CategoryAxis>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.CategoryAxis>();
+    if (element != null)
+      return DMXDrawsChartsStyle.CategoryAxisConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.CategoryAxis? value, DiffList? diffs, string? objName)
@@ -82,7 +88,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.ChartArea? GetChartArea(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.ChartAreaConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ChartArea>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ChartArea>();
+    if (element != null)
+      return DMXDrawsChartsStyle.ChartAreaConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ChartArea? value, DiffList? diffs, string? objName)
@@ -108,7 +117,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataLabel? GetDataLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabel>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabel>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabel? value, DiffList? diffs, string? objName)
@@ -134,7 +146,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataLabelCallout? GetDataLabelCallout(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataLabelCalloutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabelCallout>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataLabelCallout>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataLabelCalloutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelCallout(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataLabelCallout? value, DiffList? diffs, string? objName)
@@ -160,7 +175,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataPoint? GetDataPoint(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataPointConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataPointConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataPoint(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint? value, DiffList? diffs, string? objName)
@@ -186,7 +204,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataPoint3D? GetDataPoint3D(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataPoint3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint3D>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPoint3D>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataPoint3DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataPoint3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPoint3D? value, DiffList? diffs, string? objName)
@@ -212,7 +233,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataPointLine? GetDataPointLine(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataPointLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointLine>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataPointLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataPointLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointLine? value, DiffList? diffs, string? objName)
@@ -238,7 +262,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataPointMarker? GetDataPointMarker(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataPointMarkerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointMarker>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointMarker>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataPointMarkerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataPointMarker(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointMarker? value, DiffList? diffs, string? objName)
@@ -264,7 +291,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.MarkerLayoutProperties? GetMarkerLayoutProperties(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.MarkerLayoutPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.MarkerLayoutProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.MarkerLayoutProperties>();
+    if (element != null)
+      return DMXDrawsChartsStyle.MarkerLayoutPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMarkerLayoutProperties(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
@@ -290,7 +320,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataPointWireframe? GetDataPointWireframe(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataPointWireframeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointWireframe>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataPointWireframe>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataPointWireframeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataPointWireframe(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataPointWireframe? value, DiffList? diffs, string? objName)
@@ -316,7 +349,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DataTableStyle? GetDataTableStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DataTableStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataTableStyle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DataTableStyle>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DataTableStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataTableStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DataTableStyle? value, DiffList? diffs, string? objName)
@@ -342,7 +378,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DownBar? GetDownBar(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DownBarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DownBar>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DownBar>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DownBarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDownBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DownBar? value, DiffList? diffs, string? objName)
@@ -368,7 +407,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.DropLine? GetDropLine(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.DropLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DropLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.DropLine>();
+    if (element != null)
+      return DMXDrawsChartsStyle.DropLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.DropLine? value, DiffList? diffs, string? objName)
@@ -394,7 +436,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.ErrorBar? GetErrorBar(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.ErrorBarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ErrorBar>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ErrorBar>();
+    if (element != null)
+      return DMXDrawsChartsStyle.ErrorBarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpErrorBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ErrorBar? value, DiffList? diffs, string? objName)
@@ -420,7 +465,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.Floor? GetFloor(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.FloorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Floor>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Floor>();
+    if (element != null)
+      return DMXDrawsChartsStyle.FloorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFloor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Floor? value, DiffList? diffs, string? objName)
@@ -446,7 +494,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.GridlineMajor? GetGridlineMajor(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.GridlineMajorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMajor>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMajor>();
+    if (element != null)
+      return DMXDrawsChartsStyle.GridlineMajorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGridlineMajor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMajor? value, DiffList? diffs, string? objName)
@@ -472,7 +523,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.GridlineMinor? GetGridlineMinor(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.GridlineMinorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMinor>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.GridlineMinor>();
+    if (element != null)
+      return DMXDrawsChartsStyle.GridlineMinorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGridlineMinor(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.GridlineMinor? value, DiffList? diffs, string? objName)
@@ -498,7 +552,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.HiLoLine? GetHiLoLine(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.HiLoLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.HiLoLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.HiLoLine>();
+    if (element != null)
+      return DMXDrawsChartsStyle.HiLoLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiLoLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.HiLoLine? value, DiffList? diffs, string? objName)
@@ -524,7 +581,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.LeaderLine? GetLeaderLine(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.LeaderLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LeaderLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LeaderLine>();
+    if (element != null)
+      return DMXDrawsChartsStyle.LeaderLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLeaderLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LeaderLine? value, DiffList? diffs, string? objName)
@@ -550,7 +610,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.LegendStyle? GetLegendStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.LegendStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LegendStyle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LegendStyle>();
+    if (element != null)
+      return DMXDrawsChartsStyle.LegendStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLegendStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.LegendStyle? value, DiffList? diffs, string? objName)
@@ -576,7 +639,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.PlotArea? GetPlotArea(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.PlotAreaConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea>();
+    if (element != null)
+      return DMXDrawsChartsStyle.PlotAreaConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPlotArea(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea? value, DiffList? diffs, string? objName)
@@ -602,7 +668,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.PlotArea3D? GetPlotArea3D(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.PlotArea3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea3D>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.PlotArea3D>();
+    if (element != null)
+      return DMXDrawsChartsStyle.PlotArea3DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPlotArea3D(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.PlotArea3D? value, DiffList? diffs, string? objName)
@@ -628,7 +697,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.SeriesAxis? GetSeriesAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.SeriesAxisConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesAxis>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesAxis>();
+    if (element != null)
+      return DMXDrawsChartsStyle.SeriesAxisConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesAxis? value, DiffList? diffs, string? objName)
@@ -654,7 +726,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.SeriesLine? GetSeriesLine(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.SeriesLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesLine>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.SeriesLine>();
+    if (element != null)
+      return DMXDrawsChartsStyle.SeriesLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesLine(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.SeriesLine? value, DiffList? diffs, string? objName)
@@ -680,7 +755,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.TitleStyle? GetTitleStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.TitleStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TitleStyle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TitleStyle>();
+    if (element != null)
+      return DMXDrawsChartsStyle.TitleStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTitleStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TitleStyle? value, DiffList? diffs, string? objName)
@@ -706,7 +784,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.TrendlineStyle? GetTrendlineStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.TrendlineStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineStyle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineStyle>();
+    if (element != null)
+      return DMXDrawsChartsStyle.TrendlineStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTrendlineStyle(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineStyle? value, DiffList? diffs, string? objName)
@@ -732,7 +813,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.TrendlineLabel? GetTrendlineLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.TrendlineLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineLabel>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TrendlineLabel>();
+    if (element != null)
+      return DMXDrawsChartsStyle.TrendlineLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTrendlineLabel(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.TrendlineLabel? value, DiffList? diffs, string? objName)
@@ -758,7 +842,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.UpBar? GetUpBar(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.UpBarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.UpBar>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.UpBar>();
+    if (element != null)
+      return DMXDrawsChartsStyle.UpBarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUpBar(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.UpBar? value, DiffList? diffs, string? objName)
@@ -784,7 +871,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.ValueAxis? GetValueAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.ValueAxisConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ValueAxis>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ValueAxis>();
+    if (element != null)
+      return DMXDrawsChartsStyle.ValueAxisConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValueAxis(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ValueAxis? value, DiffList? diffs, string? objName)
@@ -810,7 +900,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.Wall? GetWall(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.WallConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Wall>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.Wall>();
+    if (element != null)
+      return DMXDrawsChartsStyle.WallConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWall(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.Wall? value, DiffList? diffs, string? objName)
@@ -836,7 +929,10 @@ public static class ChartStyleConverter
   /// </summary>
   private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.ChartStyle openXmlElement)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -857,11 +953,11 @@ public static class ChartStyleConverter
     }
   }
   
-  public static DMDrawsChartsStyle.ChartStyle? CreateModelElement(DXO2013DrawChartStyle.ChartStyle? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.ChartStyle? CreateModelElement(DXO2013DrawChartStyle.ChartStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.ChartStyle();
+      var value = new DocumentModel.Drawings.ChartsStyle.ChartStyle();
       value.Id = GetId(openXmlElement);
       value.AxisTitle = GetAxisTitle(openXmlElement);
       value.CategoryAxis = GetCategoryAxis(openXmlElement);

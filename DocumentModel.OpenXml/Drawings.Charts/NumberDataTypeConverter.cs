@@ -58,11 +58,11 @@ public static class NumberDataTypeConverter
     }
   }
   
-  public static DMDrawsCharts.NumberDataType? CreateModelElement(DXDrawCharts.NumberDataType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(DXDrawCharts.NumberDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.NumberDataType();
+      var value = new DocumentModel.Drawings.Charts.NumberDataType();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       return value;

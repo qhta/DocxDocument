@@ -23,11 +23,11 @@ public static class StatisticsConverter
     openXmlElement.QuartileMethod = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(value);
   }
   
-  public static DMDrawsChartDraws.Statistics? CreateModelElement(DXO2016DrawChartDraw.Statistics? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Statistics? CreateModelElement(DXO2016DrawChartDraw.Statistics? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Statistics();
+      var value = new DocumentModel.Drawings.ChartDrawings.Statistics();
       value.QuartileMethod = GetQuartileMethod(openXmlElement);
       return value;
     }

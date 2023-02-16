@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class CategoryListConverter
 {
-  private static Collection<DMDrawsDgms.Category> GetCategories(DXDrawDgms.CategoryList openXmlElement)
+  private static Collection<DMDrawsDgms.Category>? GetCategories(DXDrawDgms.CategoryList openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Category>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Category>())
@@ -14,7 +14,9 @@ public static class CategoryListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CategoryListConverter
     }
   }
   
-  public static DMDrawsDgms.CategoryList? CreateModelElement(DXDrawDgms.CategoryList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DXDrawDgms.CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.CategoryList();
+      var value = new DocumentModel.Drawings.Diagrams.CategoryList();
       value.Categories = GetCategories(openXmlElement);
       return value;
     }

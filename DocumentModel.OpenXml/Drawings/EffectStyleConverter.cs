@@ -7,7 +7,10 @@ public static class EffectStyleConverter
 {
   private static DMDraws.EffectList? GetEffectList(DXDraw.EffectStyle openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXDraw.EffectStyle openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class EffectStyleConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXDraw.EffectStyle openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXDraw.EffectStyle openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class EffectStyleConverter
   
   private static DMDraws.Scene3DType? GetScene3DType(DXDraw.EffectStyle openXmlElement)
   {
-    return DMXDraws.Scene3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
+    if (element != null)
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScene3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class EffectStyleConverter
   
   private static DMDraws.Shape3DType? GetShape3DType(DXDraw.EffectStyle openXmlElement)
   {
-    return DMXDraws.Shape3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
+    if (element != null)
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
@@ -97,11 +109,11 @@ public static class EffectStyleConverter
     }
   }
   
-  public static DMDraws.EffectStyle? CreateModelElement(DXDraw.EffectStyle? openXmlElement)
+  public static DocumentModel.Drawings.EffectStyle? CreateModelElement(DXDraw.EffectStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.EffectStyle();
+      var value = new DocumentModel.Drawings.EffectStyle();
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
       value.Scene3DType = GetScene3DType(openXmlElement);

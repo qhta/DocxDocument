@@ -140,7 +140,10 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuButton? GetBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    return DMX.BackstageMenuButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuButton>();
+    if (element != null)
+      return DMX.BackstageMenuButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuButton? value, DiffList? diffs, string? objName)
@@ -163,7 +166,10 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuCheckBox? GetBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    return DMX.BackstageMenuCheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>();
+    if (element != null)
+      return DMX.BackstageMenuCheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuCheckBox? value, DiffList? diffs, string? objName)
@@ -186,7 +192,10 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageSubMenu? GetBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    return DMX.BackstageSubMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageSubMenu>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageSubMenu>();
+    if (element != null)
+      return DMX.BackstageSubMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageSubMenu? value, DiffList? diffs, string? objName)
@@ -209,7 +218,10 @@ public static class BackstageMenuGroupConverter
   
   private static DM.BackstageMenuToggleButton? GetBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement)
   {
-    return DMX.BackstageMenuToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>();
+    if (element != null)
+      return DMX.BackstageMenuToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuToggleButton? value, DiffList? diffs, string? objName)
@@ -230,11 +242,11 @@ public static class BackstageMenuGroupConverter
     }
   }
   
-  public static DM.BackstageMenuGroup? CreateModelElement(DXO2010CustUI.BackstageMenuGroup? openXmlElement)
+  public static DocumentModel.BackstageMenuGroup? CreateModelElement(DXO2010CustUI.BackstageMenuGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageMenuGroup();
+      var value = new DocumentModel.BackstageMenuGroup();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

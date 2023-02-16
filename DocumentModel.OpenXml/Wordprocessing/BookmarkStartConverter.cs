@@ -109,11 +109,11 @@ public static class BookmarkStartConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
+  public static DocumentModel.Wordprocessing.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.BookmarkStart();
+      var value = new DocumentModel.Wordprocessing.BookmarkStart();
       value.Name = GetName(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);
       value.ColumnLast = GetColumnLast(openXmlElement);

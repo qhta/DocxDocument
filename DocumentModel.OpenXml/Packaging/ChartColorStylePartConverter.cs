@@ -52,11 +52,11 @@ public static class ChartColorStylePartConverter
     return false;
   }
   
-  public static DMPack.ChartColorStylePart? CreateModelElement(DXPack.ChartColorStylePart? openXmlElement)
+  public static DocumentModel.Packaging.ChartColorStylePart? CreateModelElement(DXPack.ChartColorStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ChartColorStylePart();
+      var value = new DocumentModel.Packaging.ChartColorStylePart();
       value.ColorStyle = GetColorStyle(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

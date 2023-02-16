@@ -465,11 +465,11 @@ public static class LabelControlConverter
       openXmlElement.GetShowLabel = null;
   }
   
-  public static DM.LabelControl? CreateModelElement(DXO2010CustUI.LabelControl? openXmlElement)
+  public static DocumentModel.LabelControl? CreateModelElement(DXO2010CustUI.LabelControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.LabelControl();
+      var value = new DocumentModel.LabelControl();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

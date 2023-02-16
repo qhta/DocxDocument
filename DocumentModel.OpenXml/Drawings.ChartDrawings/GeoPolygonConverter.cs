@@ -71,11 +71,11 @@ public static class GeoPolygonConverter
       openXmlElement.PcaRings = null;
   }
   
-  public static DMDrawsChartDraws.GeoPolygon? CreateModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoPolygon();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoPolygon();
       value.PolygonId = GetPolygonId(openXmlElement);
       value.NumPoints = GetNumPoints(openXmlElement);
       value.PcaRings = GetPcaRings(openXmlElement);

@@ -94,11 +94,11 @@ public static class ProxyConverter
     openXmlElement.ConnectionLocation = value;
   }
   
-  public static DMVml.Proxy? CreateModelElement(DXVmlO.Proxy? openXmlElement)
+  public static DocumentModel.Vml.Proxy? CreateModelElement(DXVmlO.Proxy? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Proxy();
+      var value = new DocumentModel.Vml.Proxy();
       value.Start = GetStart(openXmlElement);
       value.End = GetEnd(openXmlElement);
       value.ShapeReference = GetShapeReference(openXmlElement);

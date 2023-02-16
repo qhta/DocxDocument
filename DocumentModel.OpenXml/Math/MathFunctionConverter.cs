@@ -10,7 +10,10 @@ public static class MathFunctionConverter
   /// </summary>
   private static DMMath.FunctionProperties? GetFunctionProperties(DXMath.MathFunction openXmlElement)
   {
-    return DMXMath.FunctionPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.FunctionProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.FunctionProperties>();
+    if (element != null)
+      return DMXMath.FunctionPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class MathFunctionConverter
   /// </summary>
   private static DMMath.FunctionName? GetFunctionName(DXMath.MathFunction openXmlElement)
   {
-    return DMXMath.FunctionNameConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.FunctionName>());
+    var element = openXmlElement?.GetFirstChild<DXMath.FunctionName>();
+    if (element != null)
+      return DMXMath.FunctionNameConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class MathFunctionConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.MathFunction openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.MathFunction openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class MathFunctionConverter
     }
   }
   
-  public static DMMath.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
+  public static DocumentModel.Math.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MathFunction();
+      var value = new DocumentModel.Math.MathFunction();
       value.FunctionProperties = GetFunctionProperties(openXmlElement);
       value.FunctionName = GetFunctionName(openXmlElement);
       value.Base = GetBase(openXmlElement);

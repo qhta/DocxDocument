@@ -191,7 +191,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>();
+    if (element != null)
+      return DMXUI.UnsizedControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedControlClone(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
@@ -214,7 +217,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -237,7 +243,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedToggleButton? GetUnsizedToggleButton(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>();
+    if (element != null)
+      return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedToggleButton(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
@@ -260,7 +269,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedGallery? GetUnsizedGallery(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedGalleryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>();
+    if (element != null)
+      return DMXUI.UnsizedGalleryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedGallery(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
@@ -283,7 +295,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedMenu? GetUnsizedMenu(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>();
+    if (element != null)
+      return DMXUI.UnsizedMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedMenu(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
@@ -306,7 +321,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>();
+    if (element != null)
+      return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedDynamicMenu(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
@@ -329,7 +347,10 @@ public static class ButtonGroupConverter
   
   private static DMUI.UnsizedSplitButton? GetUnsizedSplitButton(DXOCustUI.ButtonGroup openXmlElement)
   {
-    return DMXUI.UnsizedSplitButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedSplitButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedSplitButton>();
+    if (element != null)
+      return DMXUI.UnsizedSplitButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedSplitButton(DXOCustUI.ButtonGroup openXmlElement, DMUI.UnsizedSplitButton? value, DiffList? diffs, string? objName)
@@ -350,11 +371,11 @@ public static class ButtonGroupConverter
     }
   }
   
-  public static DMUI.ButtonGroup? CreateModelElement(DXOCustUI.ButtonGroup? openXmlElement)
+  public static DocumentModel.UI.ButtonGroup? CreateModelElement(DXOCustUI.ButtonGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.ButtonGroup();
+      var value = new DocumentModel.UI.ButtonGroup();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.Visible = GetVisible(openXmlElement);

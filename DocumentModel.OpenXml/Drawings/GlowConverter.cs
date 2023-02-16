@@ -30,7 +30,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.Glow openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -56,7 +59,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.Glow openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -82,7 +88,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.HslColor? GetHslColor(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.Glow openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -108,7 +117,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.Glow openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -134,7 +146,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXDraw.Glow openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -160,7 +175,10 @@ public static class GlowConverter
   /// </summary>
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.Glow openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.Glow openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -181,11 +199,11 @@ public static class GlowConverter
     }
   }
   
-  public static DMDraws.Glow? CreateModelElement(DXDraw.Glow? openXmlElement)
+  public static DocumentModel.Drawings.Glow? CreateModelElement(DXDraw.Glow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Glow();
+      var value = new DocumentModel.Drawings.Glow();
       value.Radius = GetRadius(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

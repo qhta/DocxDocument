@@ -76,7 +76,10 @@ public static class TransformGroupConverter
   /// </summary>
   private static DMDraws.Point2DType? GetOffset(DXDraw.TransformGroup openXmlElement)
   {
-    return DMXDraws.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Offset>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Offset>();
+    if (element != null)
+      return DMXDraws.Point2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
@@ -102,7 +105,10 @@ public static class TransformGroupConverter
   /// </summary>
   private static DMDraws.PositiveSize2DType? GetExtents(DXDraw.TransformGroup openXmlElement)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Extents>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Extents>();
+    if (element != null)
+      return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
@@ -128,7 +134,10 @@ public static class TransformGroupConverter
   /// </summary>
   private static DMDraws.Point2DType? GetChildOffset(DXDraw.TransformGroup openXmlElement)
   {
-    return DMXDraws.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ChildOffset>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ChildOffset>();
+    if (element != null)
+      return DMXDraws.Point2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
@@ -154,7 +163,10 @@ public static class TransformGroupConverter
   /// </summary>
   private static DMDraws.PositiveSize2DType? GetChildExtents(DXDraw.TransformGroup openXmlElement)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ChildExtents>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ChildExtents>();
+    if (element != null)
+      return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
@@ -175,11 +187,11 @@ public static class TransformGroupConverter
     }
   }
   
-  public static DMDraws.TransformGroup? CreateModelElement(DXDraw.TransformGroup? openXmlElement)
+  public static DocumentModel.Drawings.TransformGroup? CreateModelElement(DXDraw.TransformGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TransformGroup();
+      var value = new DocumentModel.Drawings.TransformGroup();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);

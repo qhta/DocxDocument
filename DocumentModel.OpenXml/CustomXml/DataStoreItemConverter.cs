@@ -33,7 +33,10 @@ public static class DataStoreItemConverter
   /// </summary>
   private static DMCustXml.SchemaReferences? GetSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement)
   {
-    return DMXCustXml.SchemaReferencesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>());
+    var element = openXmlElement?.GetFirstChild<DXCustXmlDataProps.SchemaReferences>();
+    if (element != null)
+      return DMXCustXml.SchemaReferencesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemaReferences(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.SchemaReferences? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class DataStoreItemConverter
     }
   }
   
-  public static DMCustXml.DataStoreItem? CreateModelElement(DXCustXmlDataProps.DataStoreItem? openXmlElement)
+  public static DocumentModel.CustomXml.DataStoreItem? CreateModelElement(DXCustXmlDataProps.DataStoreItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMCustXml.DataStoreItem();
+      var value = new DocumentModel.CustomXml.DataStoreItem();
       value.ItemId = GetItemId(openXmlElement);
       value.SchemaReferences = GetSchemaReferences(openXmlElement);
       return value;

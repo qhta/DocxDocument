@@ -143,11 +143,11 @@ public static class ItemConverter
       openXmlElement.Supertip = null;
   }
   
-  public static DMUI.Item? CreateModelElement(DXOCustUI.Item? openXmlElement)
+  public static DocumentModel.UI.Item? CreateModelElement(DXOCustUI.Item? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.Item();
+      var value = new DocumentModel.UI.Item();
       value.Id = GetId(openXmlElement);
       value.Label = GetLabel(openXmlElement);
       value.Image = GetImage(openXmlElement);

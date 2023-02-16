@@ -29,11 +29,11 @@ public static class UserDefinedTagsPartConverter
     return false;
   }
   
-  public static DMPack.UserDefinedTagsPart? CreateModelElement(DXPack.UserDefinedTagsPart? openXmlElement)
+  public static DocumentModel.Packaging.UserDefinedTagsPart? CreateModelElement(DXPack.UserDefinedTagsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.UserDefinedTagsPart();
+      var value = new DocumentModel.Packaging.UserDefinedTagsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

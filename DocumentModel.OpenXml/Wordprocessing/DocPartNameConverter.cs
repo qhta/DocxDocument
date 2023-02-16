@@ -51,11 +51,11 @@ public static class DocPartNameConverter
       openXmlElement.Decorated = null;
   }
   
-  public static DMW.DocPartName? CreateModelElement(DXW.DocPartName? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocPartName? CreateModelElement(DXW.DocPartName? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocPartName();
+      var value = new DocumentModel.Wordprocessing.DocPartName();
       value.Val = GetVal(openXmlElement);
       value.Decorated = GetDecorated(openXmlElement);
       return value;

@@ -66,7 +66,10 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.SeriesText? GetSeriesText(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>();
+    if (element != null)
+      return DMXDrawsCharts.SeriesTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesText(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
@@ -92,7 +95,10 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -118,7 +124,10 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureOptions(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
@@ -144,7 +153,10 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static DMDrawsCharts.Marker? GetMarker(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.MarkerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Marker>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Marker>();
+    if (element != null)
+      return DMXDrawsCharts.MarkerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMarker(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
@@ -165,7 +177,7 @@ public static class RadarChartSeries3Converter
     }
   }
   
-  private static Collection<DMDrawsCharts.DataPoint> GetDataPoints(DXO2013DrawChart.RadarChartSeries openXmlElement)
+  private static Collection<DMDrawsCharts.DataPoint>? GetDataPoints(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.DataPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.DataPoint>())
@@ -174,7 +186,9 @@ public static class RadarChartSeries3Converter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDataPoints(DXO2013DrawChart.RadarChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value, DiffList? diffs, string? objName)
@@ -221,7 +235,10 @@ public static class RadarChartSeries3Converter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -244,7 +261,10 @@ public static class RadarChartSeries3Converter
   
   private static DMDrawsCharts.CategoryAxisData? GetCategoryAxisData(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.CategoryAxisDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.CategoryAxisData>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.CategoryAxisData>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryAxisDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryAxisData(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
@@ -267,7 +287,10 @@ public static class RadarChartSeries3Converter
   
   private static DMDrawsCharts.Values? GetValues(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.ValuesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Values>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Values>();
+    if (element != null)
+      return DMXDrawsCharts.ValuesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValues(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.Values? value, DiffList? diffs, string? objName)
@@ -290,7 +313,10 @@ public static class RadarChartSeries3Converter
   
   private static DMDrawsCharts.RadarSerExtensionList? GetRadarSerExtensionList(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return DMXDrawsCharts.RadarSerExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.RadarSerExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.RadarSerExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.RadarSerExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadarSerExtensionList(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.RadarSerExtensionList? value, DiffList? diffs, string? objName)
@@ -311,11 +337,11 @@ public static class RadarChartSeries3Converter
     }
   }
   
-  public static DMDrawsCharts.RadarChartSeries3? CreateModelElement(DXO2013DrawChart.RadarChartSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.RadarChartSeries3? CreateModelElement(DXO2013DrawChart.RadarChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.RadarChartSeries3();
+      var value = new DocumentModel.Drawings.Charts.RadarChartSeries3();
       value.Index = GetIndex(openXmlElement);
       value.Order = GetOrder(openXmlElement);
       value.SeriesText = GetSeriesText(openXmlElement);

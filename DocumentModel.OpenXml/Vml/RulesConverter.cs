@@ -23,7 +23,7 @@ public static class RulesConverter
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
-  private static Collection<DMVml.Rule> GetItems(DXVmlO.Rules openXmlElement)
+  private static Collection<DMVml.Rule>? GetItems(DXVmlO.Rules openXmlElement)
   {
     var collection = new Collection<DMVml.Rule>();
     foreach (var item in openXmlElement.Elements<DXVmlO.Rule>())
@@ -32,7 +32,9 @@ public static class RulesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXVmlO.Rules openXmlElement, Collection<DMVml.Rule>? value, DiffList? diffs, string? objName)
@@ -77,11 +79,11 @@ public static class RulesConverter
     }
   }
   
-  public static DMVml.Rules? CreateModelElement(DXVmlO.Rules? openXmlElement)
+  public static DocumentModel.Vml.Rules? CreateModelElement(DXVmlO.Rules? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Rules();
+      var value = new DocumentModel.Vml.Rules();
       value.Extension = GetExtension(openXmlElement);
       value.Items = GetItems(openXmlElement);
       return value;

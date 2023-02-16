@@ -281,11 +281,11 @@ public static class SignatureLineConverter
       openXmlElement.SignatureProviderUrl = null;
   }
   
-  public static DMDraws.SignatureLine? CreateModelElement(DXO2013Draw.SignatureLine? openXmlElement)
+  public static DocumentModel.Drawings.SignatureLine? CreateModelElement(DXO2013Draw.SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.SignatureLine();
+      var value = new DocumentModel.Drawings.SignatureLine();
       value.IsSignatureLine = GetIsSignatureLine(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.ProviderId = GetProviderId(openXmlElement);

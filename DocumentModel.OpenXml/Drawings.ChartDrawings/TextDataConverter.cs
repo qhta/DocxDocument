@@ -7,7 +7,10 @@ public static class TextDataConverter
 {
   private static DMDrawsChartDraws.OpenXmlFormulaElement? GetFormula(DXO2016DrawChartDraw.TextData openXmlElement)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>();
+    if (element != null)
+      return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
@@ -50,11 +53,11 @@ public static class TextDataConverter
     }
   }
   
-  public static DMDrawsChartDraws.TextData? CreateModelElement(DXO2016DrawChartDraw.TextData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DXO2016DrawChartDraw.TextData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.TextData();
+      var value = new DocumentModel.Drawings.ChartDrawings.TextData();
       value.Formula = GetFormula(openXmlElement);
       value.VXsdstring = GetVXsdstring(openXmlElement);
       return value;

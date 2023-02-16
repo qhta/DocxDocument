@@ -52,11 +52,11 @@ public static class DocumentTasksPartConverter
     }
   }
   
-  public static DMPack.DocumentTasksPart? CreateModelElement(DXPack.DocumentTasksPart? openXmlElement)
+  public static DocumentModel.Packaging.DocumentTasksPart? CreateModelElement(DXPack.DocumentTasksPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DocumentTasksPart();
+      var value = new DocumentModel.Packaging.DocumentTasksPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.Tasks = GetTasks(openXmlElement);

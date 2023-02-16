@@ -29,11 +29,11 @@ public static class PivotTableCacheRecordsPartConverter
     return false;
   }
   
-  public static DMPack.PivotTableCacheRecordsPart? CreateModelElement(DXPack.PivotTableCacheRecordsPart? openXmlElement)
+  public static DocumentModel.Packaging.PivotTableCacheRecordsPart? CreateModelElement(DXPack.PivotTableCacheRecordsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.PivotTableCacheRecordsPart();
+      var value = new DocumentModel.Packaging.PivotTableCacheRecordsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

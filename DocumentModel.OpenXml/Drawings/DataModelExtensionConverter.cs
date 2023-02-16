@@ -30,7 +30,10 @@ public static class DataModelExtensionConverter
   
   private static DMDrawsO.DataModelExtensionBlock? GetDataModelExtensionBlock(DXDraw.DataModelExtension openXmlElement)
   {
-    return DMXDrawsO.DataModelExtensionBlockConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.DataModelExtensionBlock>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.DataModelExtensionBlock>();
+    if (element != null)
+      return DMXDrawsO.DataModelExtensionBlockConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataModelExtensionBlock(DXDraw.DataModelExtension openXmlElement, DMDrawsO.DataModelExtensionBlock? value, DiffList? diffs, string? objName)
@@ -79,11 +82,11 @@ public static class DataModelExtensionConverter
     }
   }
   
-  public static DMDraws.DataModelExtension? CreateModelElement(DXDraw.DataModelExtension? openXmlElement)
+  public static DocumentModel.Drawings.DataModelExtension? CreateModelElement(DXDraw.DataModelExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.DataModelExtension();
+      var value = new DocumentModel.Drawings.DataModelExtension();
       value.Uri = GetUri(openXmlElement);
       value.DataModelExtensionBlock = GetDataModelExtensionBlock(openXmlElement);
       value.RecolorImages = GetRecolorImages(openXmlElement);

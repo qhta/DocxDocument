@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class SerAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.SerAxExtension> GetSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.SerAxExtension>? GetSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SerAxExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SerAxExtension>())
@@ -14,7 +14,9 @@ public static class SerAxExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class SerAxExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.SerAxExtensionList? CreateModelElement(DXDrawCharts.SerAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(DXDrawCharts.SerAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SerAxExtensionList();
+      var value = new DocumentModel.Drawings.Charts.SerAxExtensionList();
       value.SerAxExtensions = GetSerAxExtensions(openXmlElement);
       return value;
     }

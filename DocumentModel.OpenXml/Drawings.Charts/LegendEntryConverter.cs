@@ -63,7 +63,10 @@ public static class LegendEntryConverter
   
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.LegendEntry openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -86,7 +89,10 @@ public static class LegendEntryConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.LegendEntry openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -107,11 +113,11 @@ public static class LegendEntryConverter
     }
   }
   
-  public static DMDrawsCharts.LegendEntry? CreateModelElement(DXDrawCharts.LegendEntry? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LegendEntry? CreateModelElement(DXDrawCharts.LegendEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LegendEntry();
+      var value = new DocumentModel.Drawings.Charts.LegendEntry();
       value.Index = GetIndex(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.TextProperties = GetTextProperties(openXmlElement);

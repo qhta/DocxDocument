@@ -1,6 +1,10 @@
 ﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.EMMA;
+
 using DocumentModel;
-using Qhta.TypeUtils;
+
+using Qhta.Xml.Reflection;
+
 using Task = System.Threading.Tasks.Task;
 
 namespace ModelGen;
@@ -33,12 +37,21 @@ public static class ModelManager
   {
     if (typeInfo.IsConverted)
       return false;
-    if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var targetType))
+    if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var target))
     {
-      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-      targetTypeInfo.IsConvertedTo = true;
-      typeInfo.IsConverted = true;
-      return true;
+      if (target.Rename)
+      {
+        var targetType = target.Type;
+        typeInfo.NewName = new QualifiedName(targetType.Name, targetType.Namespace ?? "");
+        return true;
+      }
+      else
+      {
+        var targetTypeInfo = TypeManager.RegisterType(target.Type, typeInfo, Semantics.TypeChange);
+        targetTypeInfo.IsConvertedTo = true;
+        typeInfo.IsConverted = true;
+        return true;
+      }
     }
     return false;
   }
@@ -185,38 +198,86 @@ public static class ModelManager
     return false;
   }
 
-  public static TypeInfo GetTargetType(this PropInfo propInfo)
+  public static TypeInfo GetTargetType(this TypeInfo typeInfo)
   {
+    var result = GetConversionTarget(typeInfo);
+    return result;
+  }
+
+  public static TypeInfo GetTargetType(this PropInfo propInfo, bool getFromDeclaringType = true)
+  {
+    if (propInfo.Name=="DocumentId")
+      TestTools.Stop();
+    if (propInfo.TargetType != null)
+      return propInfo.TargetType;
     var typeInfo = propInfo.PropertyType;
+    //if (typeInfo.TargetType != null)
+    //  return typeInfo.TargetType;
     if (typeInfo.Name == "HexBinaryValue")
     {
-      Type targetType = typeof(Byte[]);
+      Type? targetType = null;
       if (propInfo.Validators != null)
       {
         var validator = (DocumentFormat.OpenXml.Framework.StringValidator?)
           propInfo.Validators.FirstOrDefault(item => item.GetType() == typeof(DocumentFormat.OpenXml.Framework.StringValidator));
         if (validator != null)
         {
-          if (validator.Length == 1)
-            targetType = typeof(Byte);
-          else
           if (validator.Length == 2)
-            targetType = typeof(UInt16);
+            targetType = typeof(HexChar);
           else
           if (validator.Length == 3)
             targetType = typeof(RGB);
           else
           if (validator.Length == 4)
-            targetType = typeof(UInt32);
-          else
-          if (validator.Length == 8)
-            targetType = typeof(UInt64);
+            targetType = typeof(HexInt);
+          //else
+          //if (validator.Length == 8)
+          //  targetType = typeof(UInt64);
         }
       }
-      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-      return targetTypeInfo;
+      if (targetType == null)
+      {
+        if (getFromDeclaringType && propInfo.DeclaringType != null)
+        {
+          Type? modelType = null;
+          if (propInfo.DeclaringType.TargetType == null)
+          {
+            var targetTypeName = propInfo.DeclaringType.Namespace+"."+propInfo.DeclaringType.Name;
+            modelType = Type.GetType(targetTypeName);
+            if (modelType == null)
+            {
+              var assembly = Assembly.Load("DocumentModel");
+              modelType = assembly?.GetType(targetTypeName);
+            }
+            if (modelType == null)
+              TestTools.Stop();
+            propInfo.DeclaringType.TargetType = modelType;
+          }
+          targetType = modelType?.GetProperty(propInfo.Name)?.PropertyType;
+          if (targetType!=null && targetType.Name.StartsWith("Nullable`"))
+            targetType = targetType.GenericTypeArguments.FirstOrDefault();
+        }
+        if (targetType==null)
+          targetType = typeof(HexBinary);
+      }
+      if (targetType != null)
+      {
+        var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+        propInfo.TargetType = targetTypeInfo;
+        return targetTypeInfo;
+      }
     }
-    return GetConversionTarget(typeInfo);
+    var result = GetConversionTarget(typeInfo);
+    propInfo.TargetType = result;
+    return result;
+  }
+
+  public static TypeInfo GetOriginType(this TypeInfo typeInfo)
+  {
+    if (typeInfo.Name == "Settings")
+      TestTools.Stop();
+    var result = GetConversionSource(typeInfo);
+    return result;
   }
 
   public static FullTypeName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
@@ -259,8 +320,6 @@ public static class ModelManager
 
   public static TypeInfo GetConversionTarget(this TypeInfo typeInfo)
   {
-    //if (!typeInfo.IsConverted)
-    //  return typeInfo;
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     if (result == null && typeInfo.IsConstructedGenericType)
       if (TryAddGenericTypeConversion(typeInfo, out var targetType))
@@ -273,6 +332,21 @@ public static class ModelManager
     }
     return result ?? typeInfo;
   }
+
+  public static TypeInfo GetConversionSource(this TypeInfo typeInfo)
+  {
+    if (typeInfo.IsConvertedTo)
+      return typeInfo;
+    var result = TypeManager.GetRevRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
+    return result ?? typeInfo;
+  }
+
+  public static TypeInfo GetRenameTarget(this TypeInfo typeInfo)
+  {
+    var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.Rename).FirstOrDefault();
+    return result ?? typeInfo;
+  }
+
   #endregion
 
   #region Checking types
@@ -510,6 +584,14 @@ public static class ModelManager
 
   public static bool RenameType(TypeInfo typeInfo)
   {
+    var typeName = typeInfo.Type.FullName ?? "";
+    if (ModelData.TypeNameConversion.TryGetValue(typeName, out var newName))
+    {
+      var k = newName.LastIndexOf(".");
+      typeInfo.Name = newName.Substring(k + 1);
+      typeInfo.Namespace = newName.Substring(0, k);
+      return true;
+    }
     var aNamespace = TypeManager.TranslateNamespace(typeInfo.Namespace);
     if (aNamespace != typeInfo.Namespace)
     {
@@ -526,21 +608,21 @@ public static class ModelManager
     }
     if (typeInfo.TypeKind == TypeKind.Enum)
     {
-      var newName = NewEnumTypeName(typeInfo.Type);
+      newName = NewEnumTypeName(typeInfo.Type);
       if (newName != typeInfo.Name)
       {
         typeInfo.Name = newName;
         return true;
       }
     }
-    else
-    {
-      if (ModelData.TypeNameConversion.TryGetValue(typeInfo.GetFullName(true), out var newName))
-      {
-        var qualifiedName = new FullTypeName(newName);
-        typeInfo.Name = qualifiedName.Name;
-      }
-    }
+    //else
+    //{
+    //  if (ModelData.TypeNameConversion.TryGetValue(typeInfo.GetFullName(false), out var newName))
+    //  {
+    //    var qualifiedName = new FullTypeName(newName);
+    //    typeInfo.Name = qualifiedName.Name;
+    //  }
+    //}
     return false;
   }
 

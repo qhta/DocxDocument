@@ -35,11 +35,11 @@ public static class DataPartConverter
     return false;
   }
   
-  public static DMPack.DataPart? CreateModelElement(DXPack.DataPart? openXmlElement)
+  public static DocumentModel.Packaging.DataPart? CreateModelElement(DXPack.DataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DataPart();
+      var value = new DocumentModel.Packaging.DataPart();
       value.Uri = GetUri(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       return value;

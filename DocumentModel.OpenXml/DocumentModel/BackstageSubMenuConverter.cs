@@ -375,7 +375,10 @@ public static class BackstageSubMenuConverter
   
   private static DM.BackstageMenuGroup? GetBackstageMenuGroup(DXO2010CustUI.BackstageSubMenu openXmlElement)
   {
-    return DMX.BackstageMenuGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>();
+    if (element != null)
+      return DMX.BackstageMenuGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstageMenuGroup(DXO2010CustUI.BackstageSubMenu openXmlElement, DM.BackstageMenuGroup? value, DiffList? diffs, string? objName)
@@ -396,11 +399,11 @@ public static class BackstageSubMenuConverter
     }
   }
   
-  public static DM.BackstageSubMenu? CreateModelElement(DXO2010CustUI.BackstageSubMenu? openXmlElement)
+  public static DocumentModel.BackstageSubMenu? CreateModelElement(DXO2010CustUI.BackstageSubMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageSubMenu();
+      var value = new DocumentModel.BackstageSubMenu();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);

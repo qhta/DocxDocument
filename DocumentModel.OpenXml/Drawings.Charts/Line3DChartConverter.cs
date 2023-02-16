@@ -62,7 +62,7 @@ public static class Line3DChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.LineChartSeries> GetLineChartSeries(DXDrawCharts.Line3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.LineChartSeries>? GetLineChartSeries(DXDrawCharts.Line3DChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.LineChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartSeries>())
@@ -71,7 +71,9 @@ public static class Line3DChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLineChartSeries(DXDrawCharts.Line3DChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value, DiffList? diffs, string? objName)
@@ -118,7 +120,10 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Line3DChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -141,7 +146,10 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.Line3DChart openXmlElement)
   {
-    return DMXDrawsCharts.DropLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
+    if (element != null)
+      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropLines(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
@@ -187,7 +195,7 @@ public static class Line3DChartConverter
     }
   }
   
-  private static Collection<UInt32> GetAxisIds(DXDrawCharts.Line3DChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.Line3DChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
@@ -196,7 +204,9 @@ public static class Line3DChartConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXDrawCharts.Line3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -243,7 +253,10 @@ public static class Line3DChartConverter
   
   private static DMDrawsCharts.Line3DChartExtensionList? GetLine3DChartExtensionList(DXDrawCharts.Line3DChart openXmlElement)
   {
-    return DMXDrawsCharts.Line3DChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Line3DChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Line3DChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.Line3DChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLine3DChartExtensionList(DXDrawCharts.Line3DChart openXmlElement, DMDrawsCharts.Line3DChartExtensionList? value, DiffList? diffs, string? objName)
@@ -264,11 +277,11 @@ public static class Line3DChartConverter
     }
   }
   
-  public static DMDrawsCharts.Line3DChart? CreateModelElement(DXDrawCharts.Line3DChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Line3DChart? CreateModelElement(DXDrawCharts.Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Line3DChart();
+      var value = new DocumentModel.Drawings.Charts.Line3DChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.LineChartSeries = GetLineChartSeries(openXmlElement);

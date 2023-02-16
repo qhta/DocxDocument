@@ -74,11 +74,11 @@ public static class DataBindingConverter
       openXmlElement.StoreItemId = null;
   }
   
-  public static DMW.DataBinding? CreateModelElement(DXW.DataBinding? openXmlElement)
+  public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DXW.DataBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DataBinding();
+      var value = new DocumentModel.Wordprocessing.DataBinding();
       value.PrefixMappings = GetPrefixMappings(openXmlElement);
       value.XPath = GetXPath(openXmlElement);
       value.StoreItemId = GetStoreItemId(openXmlElement);

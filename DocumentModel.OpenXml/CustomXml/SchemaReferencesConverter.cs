@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.CustomXml;
 /// </summary>
 public static class SchemaReferencesConverter
 {
-  private static Collection<DMCustXml.SchemaReference> GetItems(DXCustXmlDataProps.SchemaReferences openXmlElement)
+  private static Collection<DMCustXml.SchemaReference>? GetItems(DXCustXmlDataProps.SchemaReferences openXmlElement)
   {
     var collection = new Collection<DMCustXml.SchemaReference>();
     foreach (var item in openXmlElement.Elements<DXCustXmlDataProps.SchemaReference>())
@@ -14,7 +14,9 @@ public static class SchemaReferencesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXCustXmlDataProps.SchemaReferences openXmlElement, Collection<DMCustXml.SchemaReference>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class SchemaReferencesConverter
     }
   }
   
-  public static DMCustXml.SchemaReferences? CreateModelElement(DXCustXmlDataProps.SchemaReferences? openXmlElement)
+  public static DocumentModel.CustomXml.SchemaReferences? CreateModelElement(DXCustXmlDataProps.SchemaReferences? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMCustXml.SchemaReferences();
+      var value = new DocumentModel.CustomXml.SchemaReferences();
       value.Items = GetItems(openXmlElement);
       return value;
     }

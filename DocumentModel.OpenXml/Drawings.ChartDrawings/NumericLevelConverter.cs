@@ -71,7 +71,7 @@ public static class NumericLevelConverter
       openXmlElement.Name = null;
   }
   
-  private static Collection<DMDrawsChartDraws.NumericValue> GetNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement)
+  private static Collection<DMDrawsChartDraws.NumericValue>? GetNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.NumericValue>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.NumericValue>())
@@ -80,7 +80,9 @@ public static class NumericLevelConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpNumericValues(DXO2016DrawChartDraw.NumericLevel openXmlElement, Collection<DMDrawsChartDraws.NumericValue>? value, DiffList? diffs, string? objName)
@@ -125,11 +127,11 @@ public static class NumericLevelConverter
     }
   }
   
-  public static DMDrawsChartDraws.NumericLevel? CreateModelElement(DXO2016DrawChartDraw.NumericLevel? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.NumericLevel? CreateModelElement(DXO2016DrawChartDraw.NumericLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.NumericLevel();
+      var value = new DocumentModel.Drawings.ChartDrawings.NumericLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.FormatCode = GetFormatCode(openXmlElement);
       value.Name = GetName(openXmlElement);

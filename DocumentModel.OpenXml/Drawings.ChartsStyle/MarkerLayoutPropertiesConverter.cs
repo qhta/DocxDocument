@@ -43,11 +43,11 @@ public static class MarkerLayoutPropertiesConverter
     openXmlElement.Size = value;
   }
   
-  public static DMDrawsChartsStyle.MarkerLayoutProperties? CreateModelElement(DXO2013DrawChartStyle.MarkerLayoutProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(DXO2013DrawChartStyle.MarkerLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartsStyle.MarkerLayoutProperties();
+      var value = new DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties();
       value.Symbol = GetSymbol(openXmlElement);
       value.Size = GetSize(openXmlElement);
       return value;

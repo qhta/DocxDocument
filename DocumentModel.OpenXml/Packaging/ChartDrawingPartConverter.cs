@@ -20,7 +20,7 @@ public static class ChartDrawingPartConverter
   /// <summary>
   /// Gets the ImageParts of the ChartDrawingPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ChartDrawingPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.ChartDrawingPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class ChartDrawingPartConverter
     }
   }
   
-  public static DMPack.ChartDrawingPart? CreateModelElement(DXPack.ChartDrawingPart? openXmlElement)
+  public static DocumentModel.Packaging.ChartDrawingPart? CreateModelElement(DXPack.ChartDrawingPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ChartDrawingPart();
+      var value = new DocumentModel.Packaging.ChartDrawingPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

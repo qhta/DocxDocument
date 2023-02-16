@@ -10,7 +10,10 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   private static DMDraws.EffectList? GetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class HiddenEffectsPropertiesConverter
   /// </summary>
   private static DMDraws.EffectDag? GetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class HiddenEffectsPropertiesConverter
     }
   }
   
-  public static DMDraws.HiddenEffectsProperties? CreateModelElement(DXO2010Draw.HiddenEffectsProperties? openXmlElement)
+  public static DocumentModel.Drawings.HiddenEffectsProperties? CreateModelElement(DXO2010Draw.HiddenEffectsProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HiddenEffectsProperties();
+      var value = new DocumentModel.Drawings.HiddenEffectsProperties();
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
       return value;

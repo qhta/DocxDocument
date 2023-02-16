@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BubbleSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.BubbleSerExtension> GetBubbleSerExtensions(DXDrawCharts.BubbleSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.BubbleSerExtension>? GetBubbleSerExtensions(DXDrawCharts.BubbleSerExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.BubbleSerExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.BubbleSerExtension>())
@@ -14,7 +14,9 @@ public static class BubbleSerExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBubbleSerExtensions(DXDrawCharts.BubbleSerExtensionList openXmlElement, Collection<DMDrawsCharts.BubbleSerExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class BubbleSerExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.BubbleSerExtensionList? CreateModelElement(DXDrawCharts.BubbleSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleSerExtensionList? CreateModelElement(DXDrawCharts.BubbleSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BubbleSerExtensionList();
+      var value = new DocumentModel.Drawings.Charts.BubbleSerExtensionList();
       value.BubbleSerExtensions = GetBubbleSerExtensions(openXmlElement);
       return value;
     }

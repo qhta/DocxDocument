@@ -33,7 +33,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.ShapeNonVisualProperties? GetShapeNonVisualProperties(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.ShapeNonVisualPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeNonVisualProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.ShapeNonVisualProperties>();
+    if (element != null)
+      return DMXDrawsO.ShapeNonVisualPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeNonVisualProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeNonVisualProperties? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.ShapeProperties? GetShapeProperties(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsO.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXODraw.Shape openXmlElement, DMDrawsO.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -85,7 +91,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.ShapeStyle? GetShapeStyle(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.ShapeStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.ShapeStyle>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.ShapeStyle>();
+    if (element != null)
+      return DMXDrawsO.ShapeStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeStyle(DXODraw.Shape openXmlElement, DMDrawsO.ShapeStyle? value, DiffList? diffs, string? objName)
@@ -111,7 +120,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.TextBody? GetTextBody(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.TextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.TextBody>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.TextBody>();
+    if (element != null)
+      return DMXDrawsO.TextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBody(DXODraw.Shape openXmlElement, DMDrawsO.TextBody? value, DiffList? diffs, string? objName)
@@ -137,7 +149,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.Transform2D? GetTransform2D(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.Transform2DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.Transform2D>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.Transform2D>();
+    if (element != null)
+      return DMXDrawsO.Transform2DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTransform2D(DXODraw.Shape openXmlElement, DMDrawsO.Transform2D? value, DiffList? diffs, string? objName)
@@ -163,7 +178,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsO.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODraw.Shape openXmlElement)
   {
-    return DMXDrawsO.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsO.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXODraw.Shape openXmlElement, DMDrawsO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -184,11 +202,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DMDrawsO.Shape? CreateModelElement(DXODraw.Shape? openXmlElement)
+  public static DocumentModel.Drawings.Office.Shape? CreateModelElement(DXODraw.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.Shape();
+      var value = new DocumentModel.Drawings.Office.Shape();
       value.ModelId = GetModelId(openXmlElement);
       value.ShapeNonVisualProperties = GetShapeNonVisualProperties(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

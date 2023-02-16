@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ExtraColorSchemeListConverter
 {
-  private static Collection<DMDraws.ExtraColorScheme> GetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement)
+  private static Collection<DMDraws.ExtraColorScheme>? GetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement)
   {
     var collection = new Collection<DMDraws.ExtraColorScheme>();
     foreach (var item in openXmlElement.Elements<DXDraw.ExtraColorScheme>())
@@ -14,7 +14,9 @@ public static class ExtraColorSchemeListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement, Collection<DMDraws.ExtraColorScheme>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ExtraColorSchemeListConverter
     }
   }
   
-  public static DMDraws.ExtraColorSchemeList? CreateModelElement(DXDraw.ExtraColorSchemeList? openXmlElement)
+  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(DXDraw.ExtraColorSchemeList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ExtraColorSchemeList();
+      var value = new DocumentModel.Drawings.ExtraColorSchemeList();
       value.ExtraColorSchemes = GetExtraColorSchemes(openXmlElement);
       return value;
     }

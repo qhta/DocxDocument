@@ -152,11 +152,11 @@ public static class MoveBookmarkTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.MoveBookmarkType? CreateModelElement(DXW.MoveBookmarkType? openXmlElement)
+  public static DocumentModel.Wordprocessing.MoveBookmarkType? CreateModelElement(DXW.MoveBookmarkType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MoveBookmarkType();
+      var value = new DocumentModel.Wordprocessing.MoveBookmarkType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Name = GetName(openXmlElement);

@@ -30,7 +30,7 @@ public static class StringCacheConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXDrawCharts.StringCache openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.StringCache openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.StringPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
@@ -39,7 +39,9 @@ public static class StringCacheConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStringPoints(DXDrawCharts.StringCache openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
@@ -86,7 +88,10 @@ public static class StringCacheConverter
   
   private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXDrawCharts.StringCache openXmlElement)
   {
-    return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStrDataExtensionList(DXDrawCharts.StringCache openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
@@ -107,11 +112,11 @@ public static class StringCacheConverter
     }
   }
   
-  public static DMDrawsCharts.StringCache? CreateModelElement(DXDrawCharts.StringCache? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringCache? CreateModelElement(DXDrawCharts.StringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StringCache();
+      var value = new DocumentModel.Drawings.Charts.StringCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

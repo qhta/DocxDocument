@@ -29,11 +29,11 @@ public static class QuickAccessToolbarCustomizationsPartConverter
     return false;
   }
   
-  public static DMPack.QuickAccessToolbarCustomizationsPart? CreateModelElement(DXPack.QuickAccessToolbarCustomizationsPart? openXmlElement)
+  public static DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart? CreateModelElement(DXPack.QuickAccessToolbarCustomizationsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.QuickAccessToolbarCustomizationsPart();
+      var value = new DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

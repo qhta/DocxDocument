@@ -148,7 +148,10 @@ public static class GraphicFrameLocksConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.GraphicFrameLocks openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.GraphicFrameLocks openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -169,11 +172,11 @@ public static class GraphicFrameLocksConverter
     }
   }
   
-  public static DMDraws.GraphicFrameLocks? CreateModelElement(DXDraw.GraphicFrameLocks? openXmlElement)
+  public static DocumentModel.Drawings.GraphicFrameLocks? CreateModelElement(DXDraw.GraphicFrameLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.GraphicFrameLocks();
+      var value = new DocumentModel.Drawings.GraphicFrameLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoDrilldown = GetNoDrilldown(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);

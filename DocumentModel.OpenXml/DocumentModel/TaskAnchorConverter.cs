@@ -10,7 +10,10 @@ public static class TaskAnchorConverter
   /// </summary>
   private static DM.CommentAnchor? GetCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement)
   {
-    return DMX.CommentAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.CommentAnchor>();
+    if (element != null)
+      return DMX.CommentAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentAnchor(DXO2021DocTasks.TaskAnchor openXmlElement, DM.CommentAnchor? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TaskAnchorConverter
   /// </summary>
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement)
   {
-    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    if (element != null)
+      return DMX.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021DocTasks.TaskAnchor openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class TaskAnchorConverter
     }
   }
   
-  public static DM.TaskAnchor? CreateModelElement(DXO2021DocTasks.TaskAnchor? openXmlElement)
+  public static DocumentModel.TaskAnchor? CreateModelElement(DXO2021DocTasks.TaskAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskAnchor();
+      var value = new DocumentModel.TaskAnchor();
       value.CommentAnchor = GetCommentAnchor(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

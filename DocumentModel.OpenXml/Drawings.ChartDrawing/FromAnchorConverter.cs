@@ -49,11 +49,11 @@ public static class FromAnchorConverter
     }
   }
   
-  public static DMDrawsChartDraw.FromAnchor? CreateModelElement(DXDrawChartDraw.FromAnchor? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.FromAnchor? CreateModelElement(DXDrawChartDraw.FromAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.FromAnchor();
+      var value = new DocumentModel.Drawings.ChartDrawing.FromAnchor();
       value.XPosition = GetXPosition(openXmlElement);
       value.YPosition = GetYPosition(openXmlElement);
       return value;

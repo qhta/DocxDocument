@@ -139,7 +139,10 @@ public static class NaryPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.NaryProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.NaryProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -160,11 +163,11 @@ public static class NaryPropertiesConverter
     }
   }
   
-  public static DMMath.NaryProperties? CreateModelElement(DXMath.NaryProperties? openXmlElement)
+  public static DocumentModel.Math.NaryProperties? CreateModelElement(DXMath.NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.NaryProperties();
+      var value = new DocumentModel.Math.NaryProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.LimitLocation = GetLimitLocation(openXmlElement);
       value.GrowOperators = GetGrowOperators(openXmlElement);

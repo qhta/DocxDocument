@@ -10,7 +10,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetTopBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TopBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.TopBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetLeftBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.LeftBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetBottomBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BottomBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetRightBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RightBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.RightBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetBetweenBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BetweenBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.BetweenBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -140,7 +155,10 @@ public static class ParagraphBordersConverter
   /// </summary>
   private static DMW.BorderType? GetBarBorder(DXW.ParagraphBorders openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BarBorder>());
+    var element = openXmlElement?.GetFirstChild<DXW.BarBorder>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -161,11 +179,11 @@ public static class ParagraphBordersConverter
     }
   }
   
-  public static DMW.ParagraphBorders? CreateModelElement(DXW.ParagraphBorders? openXmlElement)
+  public static DocumentModel.Wordprocessing.ParagraphBorders? CreateModelElement(DXW.ParagraphBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphBorders();
+      var value = new DocumentModel.Wordprocessing.ParagraphBorders();
       value.TopBorder = GetTopBorder(openXmlElement);
       value.LeftBorder = GetLeftBorder(openXmlElement);
       value.BottomBorder = GetBottomBorder(openXmlElement);

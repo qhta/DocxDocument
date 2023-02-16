@@ -30,7 +30,7 @@ public static class DataLabelsRangeChacheConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXO2013DrawChart.DataLabelsRangeChache openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXO2013DrawChart.DataLabelsRangeChache openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.StringPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
@@ -39,7 +39,9 @@ public static class DataLabelsRangeChacheConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStringPoints(DXO2013DrawChart.DataLabelsRangeChache openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
@@ -86,7 +88,10 @@ public static class DataLabelsRangeChacheConverter
   
   private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXO2013DrawChart.DataLabelsRangeChache openXmlElement)
   {
-    return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStrDataExtensionList(DXO2013DrawChart.DataLabelsRangeChache openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
@@ -107,11 +112,11 @@ public static class DataLabelsRangeChacheConverter
     }
   }
   
-  public static DMDrawsCharts.DataLabelsRangeChache? CreateModelElement(DXO2013DrawChart.DataLabelsRangeChache? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelsRangeChache? CreateModelElement(DXO2013DrawChart.DataLabelsRangeChache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DataLabelsRangeChache();
+      var value = new DocumentModel.Drawings.Charts.DataLabelsRangeChache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

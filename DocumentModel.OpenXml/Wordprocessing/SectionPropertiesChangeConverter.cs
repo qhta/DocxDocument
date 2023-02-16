@@ -76,7 +76,10 @@ public static class SectionPropertiesChangeConverter
   /// </summary>
   private static DMW.PreviousSectionProperties? GetPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement)
   {
-    return DMXW.PreviousSectionPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousSectionProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.PreviousSectionProperties>();
+    if (element != null)
+      return DMXW.PreviousSectionPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement, DMW.PreviousSectionProperties? value, DiffList? diffs, string? objName)
@@ -97,11 +100,11 @@ public static class SectionPropertiesChangeConverter
     }
   }
   
-  public static DMW.SectionPropertiesChange? CreateModelElement(DXW.SectionPropertiesChange? openXmlElement)
+  public static DocumentModel.Wordprocessing.SectionPropertiesChange? CreateModelElement(DXW.SectionPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SectionPropertiesChange();
+      var value = new DocumentModel.Wordprocessing.SectionPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

@@ -71,7 +71,10 @@ public static class BlipConverter
   
   private static DMDraws.AlphaBiLevel? GetAlphaBiLevel(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.AlphaBiLevelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AlphaBiLevel>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaBiLevel>();
+    if (element != null)
+      return DMXDraws.AlphaBiLevelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlphaBiLevel(DXDraw.Blip openXmlElement, DMDraws.AlphaBiLevel? value, DiffList? diffs, string? objName)
@@ -150,7 +153,10 @@ public static class BlipConverter
   
   private static DMDraws.AlphaInverse? GetAlphaInverse(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.AlphaInverseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AlphaInverse>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaInverse>();
+    if (element != null)
+      return DMXDraws.AlphaInverseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlphaInverse(DXDraw.Blip openXmlElement, DMDraws.AlphaInverse? value, DiffList? diffs, string? objName)
@@ -173,7 +179,10 @@ public static class BlipConverter
   
   private static DMDraws.AlphaModulationEffect? GetAlphaModulationEffect(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.AlphaModulationEffectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AlphaModulationEffect>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationEffect>();
+    if (element != null)
+      return DMXDraws.AlphaModulationEffectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlphaModulationEffect(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationEffect? value, DiffList? diffs, string? objName)
@@ -196,7 +205,10 @@ public static class BlipConverter
   
   private static DMDraws.AlphaModulationFixed? GetAlphaModulationFixed(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.AlphaModulationFixedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AlphaModulationFixed>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationFixed>();
+    if (element != null)
+      return DMXDraws.AlphaModulationFixedConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlphaModulationFixed(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationFixed? value, DiffList? diffs, string? objName)
@@ -219,7 +231,10 @@ public static class BlipConverter
   
   private static DMDraws.AlphaReplace? GetAlphaReplace(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.AlphaReplaceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AlphaReplace>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaReplace>();
+    if (element != null)
+      return DMXDraws.AlphaReplaceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlphaReplace(DXDraw.Blip openXmlElement, DMDraws.AlphaReplace? value, DiffList? diffs, string? objName)
@@ -242,7 +257,10 @@ public static class BlipConverter
   
   private static DMDraws.BiLevel? GetBiLevel(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.BiLevelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BiLevel>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BiLevel>();
+    if (element != null)
+      return DMXDraws.BiLevelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBiLevel(DXDraw.Blip openXmlElement, DMDraws.BiLevel? value, DiffList? diffs, string? objName)
@@ -265,7 +283,10 @@ public static class BlipConverter
   
   private static DMDraws.Blur? GetBlur(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.BlurConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Blur>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Blur>();
+    if (element != null)
+      return DMXDraws.BlurConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlur(DXDraw.Blip openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
@@ -288,7 +309,10 @@ public static class BlipConverter
   
   private static DMDraws.ColorChange? GetColorChange(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.ColorChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorChange>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorChange>();
+    if (element != null)
+      return DMXDraws.ColorChangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorChange(DXDraw.Blip openXmlElement, DMDraws.ColorChange? value, DiffList? diffs, string? objName)
@@ -311,7 +335,10 @@ public static class BlipConverter
   
   private static DMDraws.ColorReplacement? GetColorReplacement(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.ColorReplacementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorReplacement>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorReplacement>();
+    if (element != null)
+      return DMXDraws.ColorReplacementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorReplacement(DXDraw.Blip openXmlElement, DMDraws.ColorReplacement? value, DiffList? diffs, string? objName)
@@ -334,7 +361,10 @@ public static class BlipConverter
   
   private static DMDraws.Duotone? GetDuotone(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.DuotoneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Duotone>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Duotone>();
+    if (element != null)
+      return DMXDraws.DuotoneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDuotone(DXDraw.Blip openXmlElement, DMDraws.Duotone? value, DiffList? diffs, string? objName)
@@ -357,7 +387,10 @@ public static class BlipConverter
   
   private static DMDraws.FillOverlay? GetFillOverlay(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.FillOverlayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FillOverlay>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FillOverlay>();
+    if (element != null)
+      return DMXDraws.FillOverlayConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFillOverlay(DXDraw.Blip openXmlElement, DMDraws.FillOverlay? value, DiffList? diffs, string? objName)
@@ -408,7 +441,10 @@ public static class BlipConverter
   
   private static DMDraws.Hsl? GetHsl(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.HslConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Hsl>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Hsl>();
+    if (element != null)
+      return DMXDraws.HslConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHsl(DXDraw.Blip openXmlElement, DMDraws.Hsl? value, DiffList? diffs, string? objName)
@@ -431,7 +467,10 @@ public static class BlipConverter
   
   private static DMDraws.LuminanceEffect? GetLuminanceEffect(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.LuminanceEffectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LuminanceEffect>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LuminanceEffect>();
+    if (element != null)
+      return DMXDraws.LuminanceEffectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLuminanceEffect(DXDraw.Blip openXmlElement, DMDraws.LuminanceEffect? value, DiffList? diffs, string? objName)
@@ -454,7 +493,10 @@ public static class BlipConverter
   
   private static DMDraws.TintEffect? GetTintEffect(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.TintEffectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TintEffect>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TintEffect>();
+    if (element != null)
+      return DMXDraws.TintEffectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTintEffect(DXDraw.Blip openXmlElement, DMDraws.TintEffect? value, DiffList? diffs, string? objName)
@@ -477,7 +519,10 @@ public static class BlipConverter
   
   private static DMDraws.BlipExtensionList? GetBlipExtensionList(DXDraw.Blip openXmlElement)
   {
-    return DMXDraws.BlipExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipExtensionList>();
+    if (element != null)
+      return DMXDraws.BlipExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipExtensionList(DXDraw.Blip openXmlElement, DMDraws.BlipExtensionList? value, DiffList? diffs, string? objName)
@@ -498,11 +543,11 @@ public static class BlipConverter
     }
   }
   
-  public static DMDraws.Blip? CreateModelElement(DXDraw.Blip? openXmlElement)
+  public static DocumentModel.Drawings.Blip? CreateModelElement(DXDraw.Blip? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Blip();
+      var value = new DocumentModel.Drawings.Blip();
       value.Embed = GetEmbed(openXmlElement);
       value.Link = GetLink(openXmlElement);
       value.CompressionState = GetCompressionState(openXmlElement);

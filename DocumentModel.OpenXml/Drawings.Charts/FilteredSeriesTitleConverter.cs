@@ -10,7 +10,10 @@ public static class FilteredSeriesTitleConverter
   /// </summary>
   private static DMDrawsCharts.ChartText3? GetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement)
   {
-    return DMXDrawsCharts.ChartText3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>();
+    if (element != null)
+      return DMXDrawsCharts.ChartText3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class FilteredSeriesTitleConverter
     }
   }
   
-  public static DMDrawsCharts.FilteredSeriesTitle? CreateModelElement(DXO2013DrawChart.FilteredSeriesTitle? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(DXO2013DrawChart.FilteredSeriesTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.FilteredSeriesTitle();
+      var value = new DocumentModel.Drawings.Charts.FilteredSeriesTitle();
       value.ChartText = GetChartText(openXmlElement);
       return value;
     }

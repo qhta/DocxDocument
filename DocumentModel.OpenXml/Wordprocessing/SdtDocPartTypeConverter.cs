@@ -96,11 +96,11 @@ public static class SdtDocPartTypeConverter
     }
   }
   
-  public static DMW.SdtDocPartType? CreateModelElement(DXW.SdtDocPartType? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtDocPartType? CreateModelElement(DXW.SdtDocPartType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtDocPartType();
+      var value = new DocumentModel.Wordprocessing.SdtDocPartType();
       value.DocPartGallery = GetDocPartGallery(openXmlElement);
       value.DocPartCategory = GetDocPartCategory(openXmlElement);
       value.DocPartUnique = GetDocPartUnique(openXmlElement);

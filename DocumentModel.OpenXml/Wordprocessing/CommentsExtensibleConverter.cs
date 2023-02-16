@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentsExtensibleConverter
 {
-  private static Collection<DMW.CommentExtensible> GetCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement)
+  private static Collection<DMW.CommentExtensible>? GetCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement)
   {
     var collection = new Collection<DMW.CommentExtensible>();
     foreach (var item in openXmlElement.Elements<DXO2021WComtExt.CommentExtensible>())
@@ -14,7 +14,9 @@ public static class CommentsExtensibleConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement, Collection<DMW.CommentExtensible>? value, DiffList? diffs, string? objName)
@@ -61,7 +63,10 @@ public static class CommentsExtensibleConverter
   
   private static DMW.ExtensionList? GetExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement)
   {
-    return DMXW.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>();
+    if (element != null)
+      return DMXW.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +87,11 @@ public static class CommentsExtensibleConverter
     }
   }
   
-  public static DMW.CommentsExtensible? CreateModelElement(DXO2021WComtExt.CommentsExtensible? openXmlElement)
+  public static DocumentModel.Wordprocessing.CommentsExtensible? CreateModelElement(DXO2021WComtExt.CommentsExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentsExtensible();
+      var value = new DocumentModel.Wordprocessing.CommentsExtensible();
       value.CommentExtensibles = GetCommentExtensibles(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

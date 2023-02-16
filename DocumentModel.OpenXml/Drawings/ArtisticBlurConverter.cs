@@ -25,11 +25,11 @@ public static class ArtisticBlurConverter
     openXmlElement.Radius = value;
   }
   
-  public static DMDraws.ArtisticBlur? CreateModelElement(DXO2010Draw.ArtisticBlur? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticBlur? CreateModelElement(DXO2010Draw.ArtisticBlur? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticBlur();
+      var value = new DocumentModel.Drawings.ArtisticBlur();
       value.Radius = GetRadius(openXmlElement);
       return value;
     }

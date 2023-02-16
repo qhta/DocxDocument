@@ -76,7 +76,10 @@ public static class ParagraphPropertiesChangeConverter
   /// </summary>
   private static DMW.ParagraphPropertiesExtended? GetParagraphPropertiesExtended(DXW.ParagraphPropertiesChange openXmlElement)
   {
-    return DMXW.ParagraphPropertiesExtendedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesExtended>());
+    var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesExtended>();
+    if (element != null)
+      return DMXW.ParagraphPropertiesExtendedConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphPropertiesExtended(DXW.ParagraphPropertiesChange openXmlElement, DMW.ParagraphPropertiesExtended? value, DiffList? diffs, string? objName)
@@ -97,11 +100,11 @@ public static class ParagraphPropertiesChangeConverter
     }
   }
   
-  public static DMW.ParagraphPropertiesChange? CreateModelElement(DXW.ParagraphPropertiesChange? openXmlElement)
+  public static DocumentModel.Wordprocessing.ParagraphPropertiesChange? CreateModelElement(DXW.ParagraphPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphPropertiesChange();
+      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

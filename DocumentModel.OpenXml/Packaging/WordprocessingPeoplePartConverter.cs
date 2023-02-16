@@ -52,11 +52,11 @@ public static class WordprocessingPeoplePartConverter
     return false;
   }
   
-  public static DMPack.WordprocessingPeoplePart? CreateModelElement(DXPack.WordprocessingPeoplePart? openXmlElement)
+  public static DocumentModel.Packaging.WordprocessingPeoplePart? CreateModelElement(DXPack.WordprocessingPeoplePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordprocessingPeoplePart();
+      var value = new DocumentModel.Packaging.WordprocessingPeoplePart();
       value.ContentType = GetContentType(openXmlElement);
       value.People = GetPeople(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

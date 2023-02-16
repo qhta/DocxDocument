@@ -85,7 +85,7 @@ public static class BackgroundRemovalConverter
     openXmlElement.MarqueeRight = value;
   }
   
-  private static Collection<DMDraws.ForegroundMark> GetForegroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement)
+  private static Collection<DMDraws.ForegroundMark>? GetForegroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
     var collection = new Collection<DMDraws.ForegroundMark>();
     foreach (var item in openXmlElement.Elements<DXO2010Draw.ForegroundMark>())
@@ -94,7 +94,9 @@ public static class BackgroundRemovalConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpForegroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement, Collection<DMDraws.ForegroundMark>? value, DiffList? diffs, string? objName)
@@ -139,7 +141,7 @@ public static class BackgroundRemovalConverter
     }
   }
   
-  private static Collection<DMDraws.BackgroundMark> GetBackgroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement)
+  private static Collection<DMDraws.BackgroundMark>? GetBackgroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement)
   {
     var collection = new Collection<DMDraws.BackgroundMark>();
     foreach (var item in openXmlElement.Elements<DXO2010Draw.BackgroundMark>())
@@ -148,7 +150,9 @@ public static class BackgroundRemovalConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBackgroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement, Collection<DMDraws.BackgroundMark>? value, DiffList? diffs, string? objName)
@@ -193,11 +197,11 @@ public static class BackgroundRemovalConverter
     }
   }
   
-  public static DMDraws.BackgroundRemoval? CreateModelElement(DXO2010Draw.BackgroundRemoval? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundRemoval? CreateModelElement(DXO2010Draw.BackgroundRemoval? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BackgroundRemoval();
+      var value = new DocumentModel.Drawings.BackgroundRemoval();
       value.MarqueeTop = GetMarqueeTop(openXmlElement);
       value.MarqueeBottom = GetMarqueeBottom(openXmlElement);
       value.MarqueeLeft = GetMarqueeLeft(openXmlElement);

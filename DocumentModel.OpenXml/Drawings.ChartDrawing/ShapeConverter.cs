@@ -102,7 +102,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualShapeProperties? GetNonVisualShapeProperties(DXDrawChartDraw.Shape openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualShapeProperties(DXDrawChartDraw.Shape openXmlElement, DMDrawsChartDraw.NonVisualShapeProperties? value, DiffList? diffs, string? objName)
@@ -128,7 +131,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsChartDraw.ShapeProperties? GetShapeProperties(DXDrawChartDraw.Shape openXmlElement)
   {
-    return DMXDrawsChartDraw.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawChartDraw.Shape openXmlElement, DMDrawsChartDraw.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -154,7 +160,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsChartDraw.Style? GetStyle(DXDrawChartDraw.Shape openXmlElement)
   {
-    return DMXDrawsChartDraw.StyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>();
+    if (element != null)
+      return DMXDrawsChartDraw.StyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStyle(DXDrawChartDraw.Shape openXmlElement, DMDrawsChartDraw.Style? value, DiffList? diffs, string? objName)
@@ -180,7 +189,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsChartDraw.TextBody? GetTextBody(DXDrawChartDraw.Shape openXmlElement)
   {
-    return DMXDrawsChartDraw.TextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.TextBody>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.TextBody>();
+    if (element != null)
+      return DMXDrawsChartDraw.TextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBody(DXDrawChartDraw.Shape openXmlElement, DMDrawsChartDraw.TextBody? value, DiffList? diffs, string? objName)
@@ -201,11 +213,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DMDrawsChartDraw.Shape? CreateModelElement(DXDrawChartDraw.Shape? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.Shape? CreateModelElement(DXDrawChartDraw.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.Shape();
+      var value = new DocumentModel.Drawings.ChartDrawing.Shape();
       value.Macro = GetMacro(openXmlElement);
       value.TextLink = GetTextLink(openXmlElement);
       value.LockText = GetLockText(openXmlElement);

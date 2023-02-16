@@ -25,11 +25,11 @@ public static class TaskPriorityEventInfoConverter
     openXmlElement.Value = value;
   }
   
-  public static DM.TaskPriorityEventInfo? CreateModelElement(DXO2021DocTasks.TaskPriorityEventInfo? openXmlElement)
+  public static DocumentModel.TaskPriorityEventInfo? CreateModelElement(DXO2021DocTasks.TaskPriorityEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskPriorityEventInfo();
+      var value = new DocumentModel.TaskPriorityEventInfo();
       value.Value = GetValue(openXmlElement);
       return value;
     }

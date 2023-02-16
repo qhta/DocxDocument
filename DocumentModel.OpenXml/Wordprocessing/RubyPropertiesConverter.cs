@@ -169,11 +169,11 @@ public static class RubyPropertiesConverter
     }
   }
   
-  public static DMW.RubyProperties? CreateModelElement(DXW.RubyProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.RubyProperties? CreateModelElement(DXW.RubyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RubyProperties();
+      var value = new DocumentModel.Wordprocessing.RubyProperties();
       value.RubyAlign = GetRubyAlign(openXmlElement);
       value.PhoneticGuideTextFontSize = GetPhoneticGuideTextFontSize(openXmlElement);
       value.PhoneticGuideRaise = GetPhoneticGuideRaise(openXmlElement);

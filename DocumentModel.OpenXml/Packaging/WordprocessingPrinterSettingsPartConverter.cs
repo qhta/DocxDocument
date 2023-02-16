@@ -29,11 +29,11 @@ public static class WordprocessingPrinterSettingsPartConverter
     return false;
   }
   
-  public static DMPack.WordprocessingPrinterSettingsPart? CreateModelElement(DXPack.WordprocessingPrinterSettingsPart? openXmlElement)
+  public static DocumentModel.Packaging.WordprocessingPrinterSettingsPart? CreateModelElement(DXPack.WordprocessingPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordprocessingPrinterSettingsPart();
+      var value = new DocumentModel.Packaging.WordprocessingPrinterSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

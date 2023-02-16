@@ -10,7 +10,10 @@ public static class AlphaModulationEffectConverter
   /// </summary>
   private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.AlphaModulationEffect openXmlElement)
   {
-    return DMXDraws.EffectContainerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectContainer>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
+    if (element != null)
+      return DMXDraws.EffectContainerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectContainer(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class AlphaModulationEffectConverter
     }
   }
   
-  public static DMDraws.AlphaModulationEffect? CreateModelElement(DXDraw.AlphaModulationEffect? openXmlElement)
+  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(DXDraw.AlphaModulationEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AlphaModulationEffect();
+      var value = new DocumentModel.Drawings.AlphaModulationEffect();
       value.EffectContainer = GetEffectContainer(openXmlElement);
       return value;
     }

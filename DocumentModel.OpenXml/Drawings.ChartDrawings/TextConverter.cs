@@ -10,7 +10,10 @@ public static class TextConverter
   /// </summary>
   private static DMDrawsChartDraws.TextData? GetTextData(DXO2016DrawChartDraw.Text openXmlElement)
   {
-    return DMXDrawsChartDraws.TextDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TextData>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TextData>();
+    if (element != null)
+      return DMXDrawsChartDraws.TextDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextData(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.TextData? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TextConverter
   /// </summary>
   private static DMDrawsChartDraws.RichTextBody? GetRichTextBody(DXO2016DrawChartDraw.Text openXmlElement)
   {
-    return DMXDrawsChartDraws.RichTextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>();
+    if (element != null)
+      return DMXDrawsChartDraws.RichTextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRichTextBody(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.RichTextBody? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class TextConverter
     }
   }
   
-  public static DMDrawsChartDraws.Text? CreateModelElement(DXO2016DrawChartDraw.Text? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Text? CreateModelElement(DXO2016DrawChartDraw.Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Text();
+      var value = new DocumentModel.Drawings.ChartDrawings.Text();
       value.TextData = GetTextData(openXmlElement);
       value.RichTextBody = GetRichTextBody(openXmlElement);
       return value;

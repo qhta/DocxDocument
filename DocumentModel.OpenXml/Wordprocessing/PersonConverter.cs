@@ -56,7 +56,10 @@ public static class PersonConverter
   /// </summary>
   private static DMW.PresenceInfo? GetPresenceInfo(DXO2013W.Person openXmlElement)
   {
-    return DMXW.PresenceInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>());
+    var element = openXmlElement?.GetFirstChild<DXO2013W.PresenceInfo>();
+    if (element != null)
+      return DMXW.PresenceInfoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresenceInfo(DXO2013W.Person openXmlElement, DMW.PresenceInfo? value, DiffList? diffs, string? objName)
@@ -77,11 +80,11 @@ public static class PersonConverter
     }
   }
   
-  public static DMW.Person? CreateModelElement(DXO2013W.Person? openXmlElement)
+  public static DocumentModel.Wordprocessing.Person? CreateModelElement(DXO2013W.Person? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Person();
+      var value = new DocumentModel.Wordprocessing.Person();
       value.Contact = GetContact(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
       value.PresenceInfo = GetPresenceInfo(openXmlElement);

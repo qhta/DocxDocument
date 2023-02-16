@@ -375,7 +375,10 @@ public static class SplitButtonWithTitleConverter
   
   private static DMUI.VisibleButton? GetVisibleButton(DXOCustUI.SplitButtonWithTitle openXmlElement)
   {
-    return DMXUI.VisibleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>();
+    if (element != null)
+      return DMXUI.VisibleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
@@ -398,7 +401,10 @@ public static class SplitButtonWithTitleConverter
   
   private static DMUI.VisibleToggleButton? GetVisibleToggleButton(DXOCustUI.SplitButtonWithTitle openXmlElement)
   {
-    return DMXUI.VisibleToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>();
+    if (element != null)
+      return DMXUI.VisibleToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleToggleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
@@ -421,7 +427,10 @@ public static class SplitButtonWithTitleConverter
   
   private static DMUI.MenuWithTitle? GetMenuWithTitle(DXOCustUI.SplitButtonWithTitle openXmlElement)
   {
-    return DMXUI.MenuWithTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>();
+    if (element != null)
+      return DMXUI.MenuWithTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuWithTitle(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs, string? objName)
@@ -442,11 +451,11 @@ public static class SplitButtonWithTitleConverter
     }
   }
   
-  public static DMUI.SplitButtonWithTitle? CreateModelElement(DXOCustUI.SplitButtonWithTitle? openXmlElement)
+  public static DocumentModel.UI.SplitButtonWithTitle? CreateModelElement(DXOCustUI.SplitButtonWithTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.SplitButtonWithTitle();
+      var value = new DocumentModel.UI.SplitButtonWithTitle();
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
       value.Id = GetId(openXmlElement);

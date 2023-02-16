@@ -115,11 +115,11 @@ public static class ObjectEmbedConverter
       openXmlElement.FieldCodes = null;
   }
   
-  public static DMW.ObjectEmbed? CreateModelElement(DXW.ObjectEmbed? openXmlElement)
+  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DXW.ObjectEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ObjectEmbed();
+      var value = new DocumentModel.Wordprocessing.ObjectEmbed();
       value.drawAspect = GetdrawAspect(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.ProgId = GetProgId(openXmlElement);

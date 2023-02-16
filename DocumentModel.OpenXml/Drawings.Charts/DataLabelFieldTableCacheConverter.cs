@@ -30,7 +30,7 @@ public static class DataLabelFieldTableCacheConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.StringPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
@@ -39,7 +39,9 @@ public static class DataLabelFieldTableCacheConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStringPoints(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
@@ -86,7 +88,10 @@ public static class DataLabelFieldTableCacheConverter
   
   private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
   {
-    return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStrDataExtensionList(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
@@ -107,11 +112,11 @@ public static class DataLabelFieldTableCacheConverter
     }
   }
   
-  public static DMDrawsCharts.DataLabelFieldTableCache? CreateModelElement(DXO2013DrawChart.DataLabelFieldTableCache? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelFieldTableCache? CreateModelElement(DXO2013DrawChart.DataLabelFieldTableCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DataLabelFieldTableCache();
+      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

@@ -30,7 +30,10 @@ public static class BlipExtensionConverter
   
   private static DMDraws.ImageProperties? GetImageProperties(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXDraws.ImagePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ImageProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ImageProperties>();
+    if (element != null)
+      return DMXDraws.ImagePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value, DiffList? diffs, string? objName)
@@ -81,7 +84,10 @@ public static class BlipExtensionConverter
   
   private static DMDrawsW.WebVideoProperty? GetWebVideoProperty(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXDrawsW.WebVideoPropertyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WDraw.WebVideoProperty>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WDraw.WebVideoProperty>();
+    if (element != null)
+      return DMXDrawsW.WebVideoPropertyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value, DiffList? diffs, string? objName)
@@ -104,7 +110,10 @@ public static class BlipExtensionConverter
   
   private static DMDrawsSVG.SVGBlip? GetSVGBlip(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXDrawsSVG.SVGBlipConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2019DrawSVG.SVGBlip>());
+    var element = openXmlElement?.GetFirstChild<DXO2019DrawSVG.SVGBlip>();
+    if (element != null)
+      return DMXDrawsSVG.SVGBlipConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value, DiffList? diffs, string? objName)
@@ -127,7 +136,10 @@ public static class BlipExtensionConverter
   
   private static DMDraws.PictureAttributionSourceURL? GetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXDraws.PictureAttributionSourceURLConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>());
+    var element = openXmlElement?.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>();
+    if (element != null)
+      return DMXDraws.PictureAttributionSourceURLConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value, DiffList? diffs, string? objName)
@@ -150,7 +162,10 @@ public static class BlipExtensionConverter
   
   private static DMWOEmb.OEmbed? GetOEmbed(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXWOEmb.OEmbedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOWY2020OEmb.OEmbed>());
+    var element = openXmlElement?.GetFirstChild<DXOWY2020OEmb.OEmbed>();
+    if (element != null)
+      return DMXWOEmb.OEmbedConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value, DiffList? diffs, string? objName)
@@ -173,7 +188,10 @@ public static class BlipExtensionConverter
   
   private static DMDrawsOOEmb.OEmbedShared? GetOEmbedShared(DXDraw.BlipExtension openXmlElement)
   {
-    return DMXDrawsOOEmb.OEmbedSharedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>());
+    var element = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>();
+    if (element != null)
+      return DMXDrawsOOEmb.OEmbedSharedConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value, DiffList? diffs, string? objName)
@@ -194,11 +212,11 @@ public static class BlipExtensionConverter
     }
   }
   
-  public static DMDraws.BlipExtension? CreateModelElement(DXDraw.BlipExtension? openXmlElement)
+  public static DocumentModel.Drawings.BlipExtension? CreateModelElement(DXDraw.BlipExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BlipExtension();
+      var value = new DocumentModel.Drawings.BlipExtension();
       value.Uri = GetUri(openXmlElement);
       value.ImageProperties = GetImageProperties(openXmlElement);
       value.UseLocalDpi = GetUseLocalDpi(openXmlElement);

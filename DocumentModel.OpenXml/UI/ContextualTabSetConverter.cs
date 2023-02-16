@@ -74,7 +74,7 @@ public static class ContextualTabSetConverter
       openXmlElement.GetVisible = null;
   }
   
-  private static Collection<DMUI.Tab> GetTabs(DXOCustUI.ContextualTabSet openXmlElement)
+  private static Collection<DMUI.Tab>? GetTabs(DXOCustUI.ContextualTabSet openXmlElement)
   {
     var collection = new Collection<DMUI.Tab>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.Tab>())
@@ -83,7 +83,9 @@ public static class ContextualTabSetConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTabs(DXOCustUI.ContextualTabSet openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
@@ -128,11 +130,11 @@ public static class ContextualTabSetConverter
     }
   }
   
-  public static DMUI.ContextualTabSet? CreateModelElement(DXOCustUI.ContextualTabSet? openXmlElement)
+  public static DocumentModel.UI.ContextualTabSet? CreateModelElement(DXOCustUI.ContextualTabSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.ContextualTabSet();
+      var value = new DocumentModel.UI.ContextualTabSet();
       value.IdMso = GetIdMso(openXmlElement);
       value.Visible = GetVisible(openXmlElement);
       value.GetVisible = GetGetVisible(openXmlElement);

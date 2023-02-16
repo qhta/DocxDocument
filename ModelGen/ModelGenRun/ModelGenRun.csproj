@@ -28,11 +28,14 @@
     <Reference Include="Qhta.Collections">
       <HintPath>..\..\..\MyLib\bin\Qhta.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Qhta.TestHelper">
+      <HintPath>..\..\..\MyLib\bin\Debug\net6.0\Qhta.TestHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Qhta.TextUtils">
-      <HintPath>..\..\..\MyLib\bin\Qhta.TextUtils.dll</HintPath>
+      <HintPath>..\..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.TypeUtils">
-      <HintPath>..\..\..\MyLib\bin\Qhta.TypeUtils.dll</HintPath>
+      <HintPath>..\..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
 

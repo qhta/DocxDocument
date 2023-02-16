@@ -29,11 +29,11 @@ public static class SpreadsheetPrinterSettingsPartConverter
     return false;
   }
   
-  public static DMPack.SpreadsheetPrinterSettingsPart? CreateModelElement(DXPack.SpreadsheetPrinterSettingsPart? openXmlElement)
+  public static DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? CreateModelElement(DXPack.SpreadsheetPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SpreadsheetPrinterSettingsPart();
+      var value = new DocumentModel.Packaging.SpreadsheetPrinterSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
