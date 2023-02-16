@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ToolbarsConverter
 {
-  private static Collection<DMW.AllocatedCommandManifest> GetAllocatedCommandManifests(DXOW.Toolbars openXmlElement)
+  private static Collection<DMW.AllocatedCommandManifest>? GetAllocatedCommandManifests(DXOW.Toolbars openXmlElement)
   {
     var collection = new Collection<DMW.AllocatedCommandManifest>();
     foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommandManifest>())
@@ -14,7 +14,9 @@ public static class ToolbarsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAllocatedCommandManifests(DXOW.Toolbars openXmlElement, Collection<DMW.AllocatedCommandManifest>? value, DiffList? diffs, string? objName)
@@ -59,7 +61,7 @@ public static class ToolbarsConverter
     }
   }
   
-  private static Collection<DMW.ToolbarData> GetToolbarDatas(DXOW.Toolbars openXmlElement)
+  private static Collection<DMW.ToolbarData>? GetToolbarDatas(DXOW.Toolbars openXmlElement)
   {
     var collection = new Collection<DMW.ToolbarData>();
     foreach (var item in openXmlElement.Elements<DXOW.ToolbarData>())
@@ -68,7 +70,9 @@ public static class ToolbarsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpToolbarDatas(DXOW.Toolbars openXmlElement, Collection<DMW.ToolbarData>? value, DiffList? diffs, string? objName)
@@ -113,11 +117,11 @@ public static class ToolbarsConverter
     }
   }
   
-  public static DMW.Toolbars? CreateModelElement(DXOW.Toolbars? openXmlElement)
+  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(DXOW.Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Toolbars();
+      var value = new DocumentModel.Wordprocessing.Toolbars();
       value.AllocatedCommandManifests = GetAllocatedCommandManifests(openXmlElement);
       value.ToolbarDatas = GetToolbarDatas(openXmlElement);
       return value;

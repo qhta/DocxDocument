@@ -23,11 +23,11 @@ public static class ProofErrorConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(value);
   }
   
-  public static DMW.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)
+  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ProofError();
+      var value = new DocumentModel.Wordprocessing.ProofError();
       value.Type = GetType(openXmlElement);
       return value;
     }

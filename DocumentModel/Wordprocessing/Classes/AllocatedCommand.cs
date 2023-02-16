@@ -18,7 +18,7 @@ public class AllocatedCommand
   /// <summary>
   ///   fciIndexBasedOn
   /// </summary>
-  public UInt16? CommandIndexBasedOn { get; set; }
+  public HexChar? CommandIndexBasedOn { get; set; }
 
   /// <summary>
   ///   acdName

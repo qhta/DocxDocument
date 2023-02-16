@@ -74,11 +74,11 @@ public static class ControlConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.Control? CreateModelElement(DXW.Control? openXmlElement)
+  public static DocumentModel.Wordprocessing.Control? CreateModelElement(DXW.Control? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Control();
+      var value = new DocumentModel.Wordprocessing.Control();
       value.Name = GetName(openXmlElement);
       value.ShapeId = GetShapeId(openXmlElement);
       value.Id = GetId(openXmlElement);

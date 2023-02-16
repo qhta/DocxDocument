@@ -74,11 +74,11 @@ public static class SchemaConverter
       openXmlElement.SchemaLocation = null;
   }
   
-  public static DMCustXml.Schema? CreateModelElement(DXCustXmlSchRefs.Schema? openXmlElement)
+  public static DocumentModel.CustomXml.Schema? CreateModelElement(DXCustXmlSchRefs.Schema? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMCustXml.Schema();
+      var value = new DocumentModel.CustomXml.Schema();
       value.Uri = GetUri(openXmlElement);
       value.ManifestLocation = GetManifestLocation(openXmlElement);
       value.SchemaLocation = GetSchemaLocation(openXmlElement);

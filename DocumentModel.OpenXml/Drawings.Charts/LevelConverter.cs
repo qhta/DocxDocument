@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LevelConverter
 {
-  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXDrawCharts.Level openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.Level openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.StringPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
@@ -14,7 +14,9 @@ public static class LevelConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStringPoints(DXDrawCharts.Level openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class LevelConverter
     }
   }
   
-  public static DMDrawsCharts.Level? CreateModelElement(DXDrawCharts.Level? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DXDrawCharts.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Level();
+      var value = new DocumentModel.Drawings.Charts.Level();
       value.StringPoints = GetStringPoints(openXmlElement);
       return value;
     }

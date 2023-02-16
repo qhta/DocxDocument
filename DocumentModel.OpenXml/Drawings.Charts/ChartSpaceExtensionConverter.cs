@@ -30,7 +30,10 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.PivotOptions? GetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    return DMXDrawsCharts.PivotOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>());
+    var element = openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PivotOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.SketchOptions? GetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    return DMXDrawsCharts.SketchOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>());
+    var element = openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>();
+    if (element != null)
+      return DMXDrawsCharts.SketchOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class ChartSpaceExtensionConverter
   
   private static DMDrawsCharts.PivotSource3? GetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    return DMXDrawsCharts.PivotSource3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>();
+    if (element != null)
+      return DMXDrawsCharts.PivotSource3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value, DiffList? diffs, string? objName)
@@ -97,11 +106,11 @@ public static class ChartSpaceExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.ChartSpaceExtension? CreateModelElement(DXDrawCharts.ChartSpaceExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartSpaceExtension? CreateModelElement(DXDrawCharts.ChartSpaceExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ChartSpaceExtension();
+      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtension();
       value.Uri = GetUri(openXmlElement);
       value.PivotOptions = GetPivotOptions(openXmlElement);
       value.SketchOptions = GetSketchOptions(openXmlElement);

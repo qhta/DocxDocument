@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PeopleConverter
 {
-  private static Collection<DMW.Person> GetPersons(DXO2013W.People openXmlElement)
+  private static Collection<DMW.Person>? GetPersons(DXO2013W.People openXmlElement)
   {
     var collection = new Collection<DMW.Person>();
     foreach (var item in openXmlElement.Elements<DXO2013W.Person>())
@@ -14,7 +14,9 @@ public static class PeopleConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PeopleConverter
     }
   }
   
-  public static DMW.People? CreateModelElement(DXO2013W.People? openXmlElement)
+  public static DocumentModel.Wordprocessing.People? CreateModelElement(DXO2013W.People? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.People();
+      var value = new DocumentModel.Wordprocessing.People();
       value.Persons = GetPersons(openXmlElement);
       return value;
     }

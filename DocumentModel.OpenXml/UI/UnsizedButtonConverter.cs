@@ -695,11 +695,11 @@ public static class UnsizedButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.UnsizedButton? CreateModelElement(DXOCustUI.UnsizedButton? openXmlElement)
+  public static DocumentModel.UI.UnsizedButton? CreateModelElement(DXOCustUI.UnsizedButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedButton();
+      var value = new DocumentModel.UI.UnsizedButton();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

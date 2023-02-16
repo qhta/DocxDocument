@@ -110,11 +110,11 @@ public static class UnderlineConverter
       openXmlElement.ThemeShade = null;
   }
   
-  public static DMW.Underline? CreateModelElement(DXW.Underline? openXmlElement)
+  public static DocumentModel.Wordprocessing.Underline? CreateModelElement(DXW.Underline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Underline();
+      var value = new DocumentModel.Wordprocessing.Underline();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);

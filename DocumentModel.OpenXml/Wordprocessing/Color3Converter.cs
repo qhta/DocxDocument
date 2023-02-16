@@ -92,11 +92,11 @@ public static class Color3Converter
       openXmlElement.ThemeShade = null;
   }
   
-  public static DMW.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
+  public static DocumentModel.Wordprocessing.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Color3();
+      var value = new DocumentModel.Wordprocessing.Color3();
       value.Val = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);

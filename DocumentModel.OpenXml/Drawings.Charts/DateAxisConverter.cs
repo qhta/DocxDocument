@@ -38,7 +38,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.Scaling? GetScaling(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.ScalingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>();
+    if (element != null)
+      return DMXDrawsCharts.ScalingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScaling(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.Scaling? value, DiffList? diffs, string? objName)
@@ -121,7 +124,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.MajorGridlines? GetMajorGridlines(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMajorGridlines(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.MajorGridlines? value, DiffList? diffs, string? objName)
@@ -147,7 +153,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.MinorGridlines? GetMinorGridlines(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMinorGridlines(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.MinorGridlines? value, DiffList? diffs, string? objName)
@@ -173,7 +182,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.TitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Title>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    if (element != null)
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTitle(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
@@ -199,7 +211,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -303,7 +318,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -329,7 +347,10 @@ public static class DateAxisConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -600,7 +621,10 @@ public static class DateAxisConverter
   
   private static DMDrawsCharts.DateAxExtensionList? GetDateAxExtensionList(DXDrawCharts.DateAxis openXmlElement)
   {
-    return DMXDrawsCharts.DateAxExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DateAxExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DateAxExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.DateAxExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDateAxExtensionList(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.DateAxExtensionList? value, DiffList? diffs, string? objName)
@@ -621,11 +645,11 @@ public static class DateAxisConverter
     }
   }
   
-  public static DMDrawsCharts.DateAxis? CreateModelElement(DXDrawCharts.DateAxis? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DateAxis? CreateModelElement(DXDrawCharts.DateAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DateAxis();
+      var value = new DocumentModel.Drawings.Charts.DateAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

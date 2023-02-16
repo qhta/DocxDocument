@@ -43,7 +43,7 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.DiagramDataPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -75,7 +75,7 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  private static Collection<DMPack.SlidePart> GetSlideParts(DXPack.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.SlidePart>? GetSlideParts(DXPack.DiagramDataPart openXmlElement)
   {
     var collection = new Collection<DMPack.SlidePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.SlidePart>())
@@ -95,7 +95,7 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  private static Collection<DMPack.WorksheetPart> GetWorksheetParts(DXPack.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.WorksheetPart>? GetWorksheetParts(DXPack.DiagramDataPart openXmlElement)
   {
     var collection = new Collection<DMPack.WorksheetPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.WorksheetPart>())
@@ -112,11 +112,11 @@ public static class DiagramDataPartConverter
     return true;
   }
   
-  public static DMPack.DiagramDataPart? CreateModelElement(DXPack.DiagramDataPart? openXmlElement)
+  public static DocumentModel.Packaging.DiagramDataPart? CreateModelElement(DXPack.DiagramDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DiagramDataPart();
+      var value = new DocumentModel.Packaging.DiagramDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.DataModelRoot = GetDataModelRoot(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);

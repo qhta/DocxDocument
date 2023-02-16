@@ -33,7 +33,10 @@ public static class NonVisualShapeDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.ShapeLocks? GetShapeLocks(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement)
   {
-    return DMXDraws.ShapeLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeLocks>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeLocks>();
+    if (element != null)
+      return DMXDraws.ShapeLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeLocks(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ShapeLocks? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class NonVisualShapeDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -80,11 +86,11 @@ public static class NonVisualShapeDrawingPropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraw.NonVisualShapeDrawingProperties? CreateModelElement(DXDrawChartDraw.NonVisualShapeDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties? CreateModelElement(DXDrawChartDraw.NonVisualShapeDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.NonVisualShapeDrawingProperties();
+      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties();
       value.TextBox = GetTextBox(openXmlElement);
       value.ShapeLocks = GetShapeLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

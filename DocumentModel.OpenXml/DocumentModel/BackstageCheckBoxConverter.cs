@@ -460,11 +460,11 @@ public static class BackstageCheckBoxConverter
       openXmlElement.GetKeytip = null;
   }
   
-  public static DM.BackstageCheckBox? CreateModelElement(DXO2010CustUI.BackstageCheckBox? openXmlElement)
+  public static DocumentModel.BackstageCheckBox? CreateModelElement(DXO2010CustUI.BackstageCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageCheckBox();
+      var value = new DocumentModel.BackstageCheckBox();
       value.Expand = GetExpand(openXmlElement);
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);

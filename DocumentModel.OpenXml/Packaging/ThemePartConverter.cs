@@ -20,7 +20,7 @@ public static class ThemePartConverter
   /// <summary>
   /// Gets the ImageParts of the ThemePart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ThemePart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.ThemePart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class ThemePartConverter
     }
   }
   
-  public static DMPack.ThemePart? CreateModelElement(DXPack.ThemePart? openXmlElement)
+  public static DocumentModel.Packaging.ThemePart? CreateModelElement(DXPack.ThemePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ThemePart();
+      var value = new DocumentModel.Packaging.ThemePart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

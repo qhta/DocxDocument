@@ -63,7 +63,10 @@ public static class PivotSource3Converter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXO2013DrawChart.PivotSource openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2013DrawChart.PivotSource openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -84,11 +87,11 @@ public static class PivotSource3Converter
     }
   }
   
-  public static DMDrawsCharts.PivotSource3? CreateModelElement(DXO2013DrawChart.PivotSource? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PivotSource3? CreateModelElement(DXO2013DrawChart.PivotSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PivotSource3();
+      var value = new DocumentModel.Drawings.Charts.PivotSource3();
       value.PivotTableName = GetPivotTableName(openXmlElement);
       value.FormatId = GetFormatId(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

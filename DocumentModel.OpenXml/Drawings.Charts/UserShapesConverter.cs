@@ -7,7 +7,10 @@ public static class UserShapesConverter
 {
   private static DMDrawsChartDraw.RelativeAnchorSize? GetRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement)
   {
-    return DMXDrawsChartDraw.RelativeAnchorSizeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>();
+    if (element != null)
+      return DMXDrawsChartDraw.RelativeAnchorSizeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.RelativeAnchorSize? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class UserShapesConverter
   
   private static DMDrawsChartDraw.AbsoluteAnchorSize? GetAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement)
   {
-    return DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>();
+    if (element != null)
+      return DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.AbsoluteAnchorSize? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class UserShapesConverter
     }
   }
   
-  public static DMDrawsCharts.UserShapes? CreateModelElement(DXDrawCharts.UserShapes? openXmlElement)
+  public static DocumentModel.Drawings.Charts.UserShapes? CreateModelElement(DXDrawCharts.UserShapes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.UserShapes();
+      var value = new DocumentModel.Drawings.Charts.UserShapes();
       value.RelativeAnchorSize = GetRelativeAnchorSize(openXmlElement);
       value.AbsoluteAnchorSize = GetAbsoluteAnchorSize(openXmlElement);
       return value;

@@ -8,27 +8,27 @@ public static class CommentIdConverter
   /// <summary>
   /// paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  private static UInt32? GetParaId(DXO2019WCid.CommentId openXmlElement)
+  private static DM.HexInt? GetParaId(DXO2019WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.ParaId.Value);
     return null;
   }
   
-  private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ParaId?.Value != null)
-      if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.ParaId.Value) == value)
         return true;
-    if (openXmlElement?.ParaId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.ParaId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value);
     return false;
   }
   
-  private static void SetParaId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
+  private static void SetParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.ParaId = ((UInt32)value).ToString("X8");
+      openXmlElement.ParaId = value.ToString();
     else
       openXmlElement.ParaId = null;
   }
@@ -36,36 +36,36 @@ public static class CommentIdConverter
   /// <summary>
   /// durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  private static UInt32? GetDurableId(DXO2019WCid.CommentId openXmlElement)
+  private static DM.HexInt? GetDurableId(DXO2019WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
-      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.DurableId.Value);
     return null;
   }
   
-  private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DurableId?.Value != null)
-      if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.DurableId.Value) == value)
         return true;
-    if (openXmlElement?.DurableId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.DurableId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
     return false;
   }
   
-  private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, UInt32? value)
+  private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.DurableId = ((UInt32)value).ToString("X8");
+      openXmlElement.DurableId = value.ToString();
     else
       openXmlElement.DurableId = null;
   }
   
-  public static DMW.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
+  public static DocumentModel.Wordprocessing.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentId();
+      var value = new DocumentModel.Wordprocessing.CommentId();
       value.ParaId = GetParaId(openXmlElement);
       value.DurableId = GetDurableId(openXmlElement);
       return value;

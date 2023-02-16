@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ScatterChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.ScatterChartExtension> GetScatterChartExtensions(DXDrawCharts.ScatterChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.ScatterChartExtension>? GetScatterChartExtensions(DXDrawCharts.ScatterChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.ScatterChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.ScatterChartExtension>())
@@ -14,7 +14,9 @@ public static class ScatterChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpScatterChartExtensions(DXDrawCharts.ScatterChartExtensionList openXmlElement, Collection<DMDrawsCharts.ScatterChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ScatterChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.ScatterChartExtensionList? CreateModelElement(DXDrawCharts.ScatterChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ScatterChartExtensionList? CreateModelElement(DXDrawCharts.ScatterChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ScatterChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.ScatterChartExtensionList();
       value.ScatterChartExtensions = GetScatterChartExtensions(openXmlElement);
       return value;
     }

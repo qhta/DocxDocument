@@ -736,11 +736,11 @@ public static class ButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.Button? CreateModelElement(DXOCustUI.Button? openXmlElement)
+  public static DocumentModel.UI.Button? CreateModelElement(DXOCustUI.Button? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.Button();
+      var value = new DocumentModel.UI.Button();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);

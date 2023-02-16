@@ -29,11 +29,11 @@ public static class WordAttachedToolbarsPartConverter
     return false;
   }
   
-  public static DMPack.WordAttachedToolbarsPart? CreateModelElement(DXPack.WordAttachedToolbarsPart? openXmlElement)
+  public static DocumentModel.Packaging.WordAttachedToolbarsPart? CreateModelElement(DXPack.WordAttachedToolbarsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordAttachedToolbarsPart();
+      var value = new DocumentModel.Packaging.WordAttachedToolbarsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

@@ -45,11 +45,11 @@ public static class ArtisticMarkerConverter
     openXmlElement.Size = value;
   }
   
-  public static DMDraws.ArtisticMarker? CreateModelElement(DXO2010Draw.ArtisticMarker? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticMarker? CreateModelElement(DXO2010Draw.ArtisticMarker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticMarker();
+      var value = new DocumentModel.Drawings.ArtisticMarker();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Size = GetSize(openXmlElement);
       return value;

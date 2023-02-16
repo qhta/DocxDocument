@@ -77,11 +77,11 @@ public static class TextWrapConverter
     openXmlElement.AnchorY = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWVml.VerticalAnchorKind>(value);
   }
   
-  public static DMWVml.TextWrap? CreateModelElement(DXVmlW.TextWrap? openXmlElement)
+  public static DocumentModel.Wordprocessing.Vml.TextWrap? CreateModelElement(DXVmlW.TextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWVml.TextWrap();
+      var value = new DocumentModel.Wordprocessing.Vml.TextWrap();
       value.Type = GetType(openXmlElement);
       value.Side = GetSide(openXmlElement);
       value.AnchorX = GetAnchorX(openXmlElement);

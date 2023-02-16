@@ -465,11 +465,11 @@ public static class BackstageRegularButtonConverter
       openXmlElement.GetImage = null;
   }
   
-  public static DM.BackstageRegularButton? CreateModelElement(DXO2010CustUI.BackstageRegularButton? openXmlElement)
+  public static DocumentModel.BackstageRegularButton? CreateModelElement(DXO2010CustUI.BackstageRegularButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageRegularButton();
+      var value = new DocumentModel.BackstageRegularButton();
       value.Screentip = GetScreentip(openXmlElement);
       value.GetScreentip = GetGetScreentip(openXmlElement);
       value.Supertip = GetSupertip(openXmlElement);

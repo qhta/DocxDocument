@@ -62,7 +62,7 @@ public static class AreaChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.AreaChartSeries> GetAreaChartSeries(DXDrawCharts.AreaChart openXmlElement)
+  private static Collection<DMDrawsCharts.AreaChartSeries>? GetAreaChartSeries(DXDrawCharts.AreaChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.AreaChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaChartSeries>())
@@ -71,7 +71,9 @@ public static class AreaChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAreaChartSeries(DXDrawCharts.AreaChart openXmlElement, Collection<DMDrawsCharts.AreaChartSeries>? value, DiffList? diffs, string? objName)
@@ -118,7 +120,10 @@ public static class AreaChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.AreaChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -141,7 +146,10 @@ public static class AreaChartConverter
   
   private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.AreaChart openXmlElement)
   {
-    return DMXDrawsCharts.DropLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
+    if (element != null)
+      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropLines(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
@@ -162,7 +170,7 @@ public static class AreaChartConverter
     }
   }
   
-  private static Collection<UInt32> GetAxisIds(DXDrawCharts.AreaChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.AreaChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
@@ -171,7 +179,9 @@ public static class AreaChartConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXDrawCharts.AreaChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -218,7 +228,10 @@ public static class AreaChartConverter
   
   private static DMDrawsCharts.AreaChartExtensionList? GetAreaChartExtensionList(DXDrawCharts.AreaChart openXmlElement)
   {
-    return DMXDrawsCharts.AreaChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.AreaChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.AreaChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.AreaChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAreaChartExtensionList(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.AreaChartExtensionList? value, DiffList? diffs, string? objName)
@@ -239,11 +252,11 @@ public static class AreaChartConverter
     }
   }
   
-  public static DMDrawsCharts.AreaChart? CreateModelElement(DXDrawCharts.AreaChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaChart? CreateModelElement(DXDrawCharts.AreaChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.AreaChart();
+      var value = new DocumentModel.Drawings.Charts.AreaChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);

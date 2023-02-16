@@ -87,7 +87,10 @@ public static class GroupCharPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.GroupCharProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -108,11 +111,11 @@ public static class GroupCharPropertiesConverter
     }
   }
   
-  public static DMMath.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
+  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.GroupCharProperties();
+      var value = new DocumentModel.Math.GroupCharProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.VerticalJustification = GetVerticalJustification(openXmlElement);

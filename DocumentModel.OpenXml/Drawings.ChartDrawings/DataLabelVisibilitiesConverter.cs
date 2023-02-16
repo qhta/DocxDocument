@@ -74,11 +74,11 @@ public static class DataLabelVisibilitiesConverter
       openXmlElement.Value = null;
   }
   
-  public static DMDrawsChartDraws.DataLabelVisibilities? CreateModelElement(DXO2016DrawChartDraw.DataLabelVisibilities? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? CreateModelElement(DXO2016DrawChartDraw.DataLabelVisibilities? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.DataLabelVisibilities();
+      var value = new DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities();
       value.SeriesName = GetSeriesName(openXmlElement);
       value.CategoryName = GetCategoryName(openXmlElement);
       value.Value = GetValue(openXmlElement);

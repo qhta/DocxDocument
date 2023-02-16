@@ -28,11 +28,11 @@ public static class MacroWllTypeConverter
       openXmlElement.MacroName = null;
   }
   
-  public static DMW.MacroWllType? CreateModelElement(DXOW.MacroWllType? openXmlElement)
+  public static DocumentModel.Wordprocessing.MacroWllType? CreateModelElement(DXOW.MacroWllType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MacroWllType();
+      var value = new DocumentModel.Wordprocessing.MacroWllType();
       value.MacroName = GetMacroName(openXmlElement);
       return value;
     }

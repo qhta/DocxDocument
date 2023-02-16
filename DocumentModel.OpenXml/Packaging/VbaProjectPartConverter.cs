@@ -29,11 +29,11 @@ public static class VbaProjectPartConverter
     return false;
   }
   
-  public static DMPack.VbaProjectPart? CreateModelElement(DXPack.VbaProjectPart? openXmlElement)
+  public static DocumentModel.Packaging.VbaProjectPart? CreateModelElement(DXPack.VbaProjectPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.VbaProjectPart();
+      var value = new DocumentModel.Packaging.VbaProjectPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

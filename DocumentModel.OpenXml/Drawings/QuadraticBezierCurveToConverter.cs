@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class QuadraticBezierCurveToConverter
 {
-  private static Collection<DMDraws.AdjustPoint2DType> GetPoints(DXDraw.QuadraticBezierCurveTo openXmlElement)
+  private static Collection<DMDraws.AdjustPoint2DType>? GetPoints(DXDraw.QuadraticBezierCurveTo openXmlElement)
   {
     var collection = new Collection<DMDraws.AdjustPoint2DType>();
     foreach (var item in openXmlElement.Elements<DXDraw.Point>())
@@ -14,7 +14,9 @@ public static class QuadraticBezierCurveToConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPoints(DXDraw.QuadraticBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class QuadraticBezierCurveToConverter
     }
   }
   
-  public static DMDraws.QuadraticBezierCurveTo? CreateModelElement(DXDraw.QuadraticBezierCurveTo? openXmlElement)
+  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(DXDraw.QuadraticBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.QuadraticBezierCurveTo();
+      var value = new DocumentModel.Drawings.QuadraticBezierCurveTo();
       value.Points = GetPoints(openXmlElement);
       return value;
     }

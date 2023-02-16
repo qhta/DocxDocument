@@ -29,11 +29,11 @@ public static class SlideSyncDataPartConverter
     return false;
   }
   
-  public static DMPack.SlideSyncDataPart? CreateModelElement(DXPack.SlideSyncDataPart? openXmlElement)
+  public static DocumentModel.Packaging.SlideSyncDataPart? CreateModelElement(DXPack.SlideSyncDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SlideSyncDataPart();
+      var value = new DocumentModel.Packaging.SlideSyncDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

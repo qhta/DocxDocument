@@ -52,11 +52,11 @@ public static class LabelInfoPartConverter
     return false;
   }
   
-  public static DMPack.LabelInfoPart? CreateModelElement(DXPack.LabelInfoPart? openXmlElement)
+  public static DocumentModel.Packaging.LabelInfoPart? CreateModelElement(DXPack.LabelInfoPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.LabelInfoPart();
+      var value = new DocumentModel.Packaging.LabelInfoPart();
       value.ClassificationLabelList = GetClassificationLabelList(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

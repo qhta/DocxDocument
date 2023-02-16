@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class TabStopListConverter
 {
-  private static Collection<DMDraws.TabStop> GetTabStops(DXDraw.TabStopList openXmlElement)
+  private static Collection<DMDraws.TabStop>? GetTabStops(DXDraw.TabStopList openXmlElement)
   {
     var collection = new Collection<DMDraws.TabStop>();
     foreach (var item in openXmlElement.Elements<DXDraw.TabStop>())
@@ -14,7 +14,9 @@ public static class TabStopListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTabStops(DXDraw.TabStopList openXmlElement, Collection<DMDraws.TabStop>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class TabStopListConverter
     }
   }
   
-  public static DMDraws.TabStopList? CreateModelElement(DXDraw.TabStopList? openXmlElement)
+  public static DocumentModel.Drawings.TabStopList? CreateModelElement(DXDraw.TabStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TabStopList();
+      var value = new DocumentModel.Drawings.TabStopList();
       value.TabStops = GetTabStops(openXmlElement);
       return value;
     }

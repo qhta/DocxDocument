@@ -85,11 +85,11 @@ public static class RelativeRectangleTypeConverter
     openXmlElement.Bottom = value;
   }
   
-  public static DMDraws.RelativeRectangleType? CreateModelElement(DXDraw.RelativeRectangleType? openXmlElement)
+  public static DocumentModel.Drawings.RelativeRectangleType? CreateModelElement(DXDraw.RelativeRectangleType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.RelativeRectangleType();
+      var value = new DocumentModel.Drawings.RelativeRectangleType();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);

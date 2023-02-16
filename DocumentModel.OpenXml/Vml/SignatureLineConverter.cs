@@ -299,11 +299,11 @@ public static class SignatureLineConverter
       openXmlElement.SignatureProviderUrl = null;
   }
   
-  public static DMVml.SignatureLine? CreateModelElement(DXVmlO.SignatureLine? openXmlElement)
+  public static DocumentModel.Vml.SignatureLine? CreateModelElement(DXVmlO.SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.SignatureLine();
+      var value = new DocumentModel.Vml.SignatureLine();
       value.Extension = GetExtension(openXmlElement);
       value.IsSignatureLine = GetIsSignatureLine(openXmlElement);
       value.Id = GetId(openXmlElement);

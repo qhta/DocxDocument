@@ -10,7 +10,10 @@ public static class GeoDataEntityQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoDataEntityQuery? GetGeoDataEntityQuery(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoDataEntityQueryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQuery>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQuery>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoDataEntityQueryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoDataEntityQuery(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GeoDataEntityQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoData? GetGeoData(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoData>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoData>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoData(DXO2016DrawChartDraw.GeoDataEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoData? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class GeoDataEntityQueryResultConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoDataEntityQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoDataEntityQueryResult? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoDataEntityQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoDataEntityQueryResult();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult();
       value.GeoDataEntityQuery = GetGeoDataEntityQuery(openXmlElement);
       value.GeoData = GetGeoData(openXmlElement);
       return value;

@@ -137,7 +137,10 @@ public static class FormFieldDataConverter
   
   private static DMW.HelpText? GetHelpText(DXW.FormFieldData openXmlElement)
   {
-    return DMXW.HelpTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.HelpText>());
+    var element = openXmlElement?.GetFirstChild<DXW.HelpText>();
+    if (element != null)
+      return DMXW.HelpTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHelpText(DXW.FormFieldData openXmlElement, DMW.HelpText? value, DiffList? diffs, string? objName)
@@ -160,7 +163,10 @@ public static class FormFieldDataConverter
   
   private static DMW.StatusText? GetStatusText(DXW.FormFieldData openXmlElement)
   {
-    return DMXW.StatusTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.StatusText>());
+    var element = openXmlElement?.GetFirstChild<DXW.StatusText>();
+    if (element != null)
+      return DMXW.StatusTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStatusText(DXW.FormFieldData openXmlElement, DMW.StatusText? value, DiffList? diffs, string? objName)
@@ -183,7 +189,10 @@ public static class FormFieldDataConverter
   
   private static DMW.CheckBox? GetCheckBox(DXW.FormFieldData openXmlElement)
   {
-    return DMXW.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXW.CheckBox>();
+    if (element != null)
+      return DMXW.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXW.FormFieldData openXmlElement, DMW.CheckBox? value, DiffList? diffs, string? objName)
@@ -206,7 +215,10 @@ public static class FormFieldDataConverter
   
   private static DMW.DropDownListFormField? GetDropDownListFormField(DXW.FormFieldData openXmlElement)
   {
-    return DMXW.DropDownListFormFieldConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DropDownListFormField>());
+    var element = openXmlElement?.GetFirstChild<DXW.DropDownListFormField>();
+    if (element != null)
+      return DMXW.DropDownListFormFieldConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropDownListFormField(DXW.FormFieldData openXmlElement, DMW.DropDownListFormField? value, DiffList? diffs, string? objName)
@@ -229,7 +241,10 @@ public static class FormFieldDataConverter
   
   private static DMW.TextInput? GetTextInput(DXW.FormFieldData openXmlElement)
   {
-    return DMXW.TextInputConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TextInput>());
+    var element = openXmlElement?.GetFirstChild<DXW.TextInput>();
+    if (element != null)
+      return DMXW.TextInputConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextInput(DXW.FormFieldData openXmlElement, DMW.TextInput? value, DiffList? diffs, string? objName)
@@ -250,11 +265,11 @@ public static class FormFieldDataConverter
     }
   }
   
-  public static DMW.FormFieldData? CreateModelElement(DXW.FormFieldData? openXmlElement)
+  public static DocumentModel.Wordprocessing.FormFieldData? CreateModelElement(DXW.FormFieldData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FormFieldData();
+      var value = new DocumentModel.Wordprocessing.FormFieldData();
       value.FormFieldName = GetFormFieldName(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.CalculateOnExit = GetCalculateOnExit(openXmlElement);

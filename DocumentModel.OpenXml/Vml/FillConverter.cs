@@ -590,7 +590,10 @@ public static class FillConverter
   /// </summary>
   private static DMVml.FillExtendedProperties? GetFillExtendedProperties(DXVml.Fill openXmlElement)
   {
-    return DMXVml.FillExtendedPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.FillExtendedProperties>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.FillExtendedProperties>();
+    if (element != null)
+      return DMXVml.FillExtendedPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value, DiffList? diffs, string? objName)
@@ -611,11 +614,11 @@ public static class FillConverter
     }
   }
   
-  public static DMVml.Fill? CreateModelElement(DXVml.Fill? openXmlElement)
+  public static DocumentModel.Vml.Fill? CreateModelElement(DXVml.Fill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Fill();
+      var value = new DocumentModel.Vml.Fill();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.On = GetOn(openXmlElement);

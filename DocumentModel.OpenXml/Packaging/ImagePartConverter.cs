@@ -17,11 +17,11 @@ public static class ImagePartConverter
     return false;
   }
   
-  public static DMPack.ImagePart? CreateModelElement(DXPack.ImagePart? openXmlElement)
+  public static DocumentModel.Packaging.ImagePart? CreateModelElement(DXPack.ImagePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ImagePart();
+      var value = new DocumentModel.Packaging.ImagePart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

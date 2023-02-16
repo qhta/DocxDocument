@@ -87,7 +87,10 @@ public static class DiagramAutoBulletConverter
   /// </summary>
   private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    if (element != null)
+      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
@@ -113,7 +116,10 @@ public static class DiagramAutoBulletConverter
   /// </summary>
   private static DMDraws.CharacterBullet? GetCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    return DMXDraws.CharacterBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
+    if (element != null)
+      return DMXDraws.CharacterBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
@@ -139,7 +145,10 @@ public static class DiagramAutoBulletConverter
   /// </summary>
   private static DMDraws.PictureBullet? GetPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    return DMXDraws.PictureBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PictureBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
+    if (element != null)
+      return DMXDraws.PictureBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
@@ -160,11 +169,11 @@ public static class DiagramAutoBulletConverter
     }
   }
   
-  public static DMDrawsDgm1.DiagramAutoBullet? CreateModelElement(DXO2019DrawDgm11.DiagramAutoBullet? openXmlElement)
+  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? CreateModelElement(DXO2019DrawDgm11.DiagramAutoBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgm1.DiagramAutoBullet();
+      var value = new DocumentModel.Drawings.Diagram1.DiagramAutoBullet();
       value.AutoBulletPrefix = GetAutoBulletPrefix(openXmlElement);
       value.LeadZeros = GetLeadZeros(openXmlElement);
       value.NoBullet = GetNoBullet(openXmlElement);

@@ -10,7 +10,10 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.HeaderFooter? GetHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    return DMXDrawsChartDraws.HeaderFooterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>();
+    if (element != null)
+      return DMXDrawsChartDraws.HeaderFooterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.HeaderFooter? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.PageMargins? GetPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    return DMXDrawsChartDraws.PageMarginsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageMargins>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageMargins>();
+    if (element != null)
+      return DMXDrawsChartDraws.PageMarginsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageMargins? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class PrintSettingsConverter
   /// </summary>
   private static DMDrawsChartDraws.PageSetup? GetPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement)
   {
-    return DMXDrawsChartDraws.PageSetupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageSetup>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PageSetup>();
+    if (element != null)
+      return DMXDrawsChartDraws.PageSetupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageSetup? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class PrintSettingsConverter
     }
   }
   
-  public static DMDrawsChartDraws.PrintSettings? CreateModelElement(DXO2016DrawChartDraw.PrintSettings? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.PrintSettings? CreateModelElement(DXO2016DrawChartDraw.PrintSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.PrintSettings();
+      var value = new DocumentModel.Drawings.ChartDrawings.PrintSettings();
       value.HeaderFooter = GetHeaderFooter(openXmlElement);
       value.PageMargins = GetPageMargins(openXmlElement);
       value.PageSetup = GetPageSetup(openXmlElement);

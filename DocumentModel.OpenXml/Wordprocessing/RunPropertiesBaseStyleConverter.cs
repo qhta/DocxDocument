@@ -10,7 +10,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.RunFonts? GetRunFonts(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.RunFontsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunFonts>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunFonts>();
+    if (element != null)
+      return DMXW.RunFontsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunFonts(DXW.RunPropertiesBaseStyle openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
@@ -596,7 +599,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Color? GetColor(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.ColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Color>());
+    var element = openXmlElement?.GetFirstChild<DXW.Color>();
+    if (element != null)
+      return DMXW.ColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColor(DXW.RunPropertiesBaseStyle openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
@@ -781,7 +787,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Underline? GetUnderline(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.UnderlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Underline>());
+    var element = openXmlElement?.GetFirstChild<DXW.Underline>();
+    if (element != null)
+      return DMXW.UnderlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnderline(DXW.RunPropertiesBaseStyle openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
@@ -833,7 +842,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.BorderType? GetBorder(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Border>());
+    var element = openXmlElement?.GetFirstChild<DXW.Border>();
+    if (element != null)
+      return DMXW.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBorder(DXW.RunPropertiesBaseStyle openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
@@ -859,7 +871,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.RunPropertiesBaseStyle openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -885,7 +900,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.FitText? GetFitText(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.FitTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FitText>());
+    var element = openXmlElement?.GetFirstChild<DXW.FitText>();
+    if (element != null)
+      return DMXW.FitTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFitText(DXW.RunPropertiesBaseStyle openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
@@ -963,7 +981,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.LanguageType? GetLanguages(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.LanguageTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Languages>());
+    var element = openXmlElement?.GetFirstChild<DXW.Languages>();
+    if (element != null)
+      return DMXW.LanguageTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLanguages(DXW.RunPropertiesBaseStyle openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
@@ -989,7 +1010,10 @@ public static class RunPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.EastAsianLayout? GetEastAsianLayout(DXW.RunPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.EastAsianLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EastAsianLayout>());
+    var element = openXmlElement?.GetFirstChild<DXW.EastAsianLayout>();
+    if (element != null)
+      return DMXW.EastAsianLayoutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEastAsianLayout(DXW.RunPropertiesBaseStyle openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
@@ -1045,11 +1069,11 @@ public static class RunPropertiesBaseStyleConverter
     }
   }
   
-  public static DMW.RunPropertiesBaseStyle? CreateModelElement(DXW.RunPropertiesBaseStyle? openXmlElement)
+  public static DocumentModel.Wordprocessing.RunPropertiesBaseStyle? CreateModelElement(DXW.RunPropertiesBaseStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunPropertiesBaseStyle();
+      var value = new DocumentModel.Wordprocessing.RunPropertiesBaseStyle();
       value.RunFonts = GetRunFonts(openXmlElement);
       value.Bold = GetBold(openXmlElement);
       value.BoldComplexScript = GetBoldComplexScript(openXmlElement);

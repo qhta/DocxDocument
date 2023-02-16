@@ -145,11 +145,11 @@ public static class PageMarginConverter
     openXmlElement.Gutter = value;
   }
   
-  public static DMW.PageMargin? CreateModelElement(DXW.PageMargin? openXmlElement)
+  public static DocumentModel.Wordprocessing.PageMargin? CreateModelElement(DXW.PageMargin? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PageMargin();
+      var value = new DocumentModel.Wordprocessing.PageMargin();
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);
       value.Bottom = GetBottom(openXmlElement);

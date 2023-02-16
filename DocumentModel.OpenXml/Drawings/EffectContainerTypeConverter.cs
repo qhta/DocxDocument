@@ -46,11 +46,11 @@ public static class EffectContainerTypeConverter
       openXmlElement.Name = null;
   }
   
-  public static DMDraws.EffectContainerType? CreateModelElement(DXDraw.EffectContainerType? openXmlElement)
+  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DXDraw.EffectContainerType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.EffectContainerType();
+      var value = new DocumentModel.Drawings.EffectContainerType();
       value.Type = GetType(openXmlElement);
       value.Name = GetName(openXmlElement);
       return value;

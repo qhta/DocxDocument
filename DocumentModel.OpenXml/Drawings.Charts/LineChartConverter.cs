@@ -62,7 +62,7 @@ public static class LineChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.LineChartSeries> GetLineChartSeries(DXDrawCharts.LineChart openXmlElement)
+  private static Collection<DMDrawsCharts.LineChartSeries>? GetLineChartSeries(DXDrawCharts.LineChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.LineChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartSeries>())
@@ -71,7 +71,9 @@ public static class LineChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLineChartSeries(DXDrawCharts.LineChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value, DiffList? diffs, string? objName)
@@ -118,7 +120,10 @@ public static class LineChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.LineChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.LineChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -141,7 +146,10 @@ public static class LineChartConverter
   
   private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.LineChart openXmlElement)
   {
-    return DMXDrawsCharts.DropLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
+    if (element != null)
+      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropLines(DXDrawCharts.LineChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
@@ -164,7 +172,10 @@ public static class LineChartConverter
   
   private static DMDrawsCharts.HighLowLines? GetHighLowLines(DXDrawCharts.LineChart openXmlElement)
   {
-    return DMXDrawsCharts.HighLowLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.HighLowLines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.HighLowLines>();
+    if (element != null)
+      return DMXDrawsCharts.HighLowLinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHighLowLines(DXDrawCharts.LineChart openXmlElement, DMDrawsCharts.HighLowLines? value, DiffList? diffs, string? objName)
@@ -187,7 +198,10 @@ public static class LineChartConverter
   
   private static DMDrawsCharts.UpDownBars? GetUpDownBars(DXDrawCharts.LineChart openXmlElement)
   {
-    return DMXDrawsCharts.UpDownBarsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UpDownBars>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.UpDownBars>();
+    if (element != null)
+      return DMXDrawsCharts.UpDownBarsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUpDownBars(DXDrawCharts.LineChart openXmlElement, DMDrawsCharts.UpDownBars? value, DiffList? diffs, string? objName)
@@ -264,7 +278,7 @@ public static class LineChartConverter
     }
   }
   
-  private static Collection<UInt32> GetAxisIds(DXDrawCharts.LineChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.LineChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
@@ -273,7 +287,9 @@ public static class LineChartConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXDrawCharts.LineChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -320,7 +336,10 @@ public static class LineChartConverter
   
   private static DMDrawsCharts.LineChartExtensionList? GetLineChartExtensionList(DXDrawCharts.LineChart openXmlElement)
   {
-    return DMXDrawsCharts.LineChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.LineChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.LineChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.LineChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineChartExtensionList(DXDrawCharts.LineChart openXmlElement, DMDrawsCharts.LineChartExtensionList? value, DiffList? diffs, string? objName)
@@ -341,11 +360,11 @@ public static class LineChartConverter
     }
   }
   
-  public static DMDrawsCharts.LineChart? CreateModelElement(DXDrawCharts.LineChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineChart? CreateModelElement(DXDrawCharts.LineChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LineChart();
+      var value = new DocumentModel.Drawings.Charts.LineChart();
       value.Grouping = GetGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.LineChartSeries = GetLineChartSeries(openXmlElement);

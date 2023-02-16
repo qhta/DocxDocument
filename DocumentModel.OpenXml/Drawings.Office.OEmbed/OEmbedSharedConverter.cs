@@ -56,7 +56,10 @@ public static class OEmbedSharedConverter
   /// </summary>
   private static DMDrawsOOEmb.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
-    return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -77,11 +80,11 @@ public static class OEmbedSharedConverter
     }
   }
   
-  public static DMDrawsOOEmb.OEmbedShared? CreateModelElement(DXODrawY2021OEmb.OEmbedShared? openXmlElement)
+  public static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? CreateModelElement(DXODrawY2021OEmb.OEmbedShared? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsOOEmb.OEmbedShared();
+      var value = new DocumentModel.Drawings.Office.OEmbed.OEmbedShared();
       value.SrcUrl = GetSrcUrl(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);

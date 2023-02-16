@@ -212,11 +212,11 @@ public static class ShapeHandleConverter
       openXmlElement.RadiusRange = null;
   }
   
-  public static DMVml.ShapeHandle? CreateModelElement(DXVml.ShapeHandle? openXmlElement)
+  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DXVml.ShapeHandle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ShapeHandle();
+      var value = new DocumentModel.Vml.ShapeHandle();
       value.Position = GetPosition(openXmlElement);
       value.Polar = GetPolar(openXmlElement);
       value.Map = GetMap(openXmlElement);

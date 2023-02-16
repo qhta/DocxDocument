@@ -8,7 +8,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.AlternativeFormatImportPart> GetAlternativeFormatImportParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.AlternativeFormatImportPart>? GetAlternativeFormatImportParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.AlternativeFormatImportPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.AlternativeFormatImportPart>())
@@ -28,7 +28,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the ChartParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.ChartPart> GetChartParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.ChartPart>? GetChartParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartPart>())
@@ -83,7 +83,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the DiagramColorsParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.DiagramColorsPart> GetDiagramColorsParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.DiagramColorsPart>? GetDiagramColorsParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramColorsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramColorsPart>())
@@ -103,7 +103,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the DiagramDataParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.DiagramDataPart> GetDiagramDataParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.DiagramDataPart>? GetDiagramDataParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramDataPart>())
@@ -123,7 +123,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramLayoutDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramLayoutDefinitionPart>())
@@ -143,7 +143,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramPersistLayoutPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramPersistLayoutPart>())
@@ -163,7 +163,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the DiagramStyleParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.DiagramStylePart> GetDiagramStyleParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.DiagramStylePart>? GetDiagramStyleParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramStylePart>())
@@ -183,7 +183,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
@@ -203,7 +203,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -223,7 +223,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -243,7 +243,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the ExtendedChartParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.ExtendedChartPart> GetExtendedChartParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.ExtendedChartPart>? GetExtendedChartParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.ExtendedChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ExtendedChartPart>())
@@ -263,7 +263,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the ImageParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -283,7 +283,7 @@ public static class WordprocessingCommentsExPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WordprocessingCommentsExPart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.WordprocessingCommentsExPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.WordprocessingCommentsExPart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -312,11 +312,11 @@ public static class WordprocessingCommentsExPartConverter
     return false;
   }
   
-  public static DMPack.WordprocessingCommentsExPart? CreateModelElement(DXPack.WordprocessingCommentsExPart? openXmlElement)
+  public static DocumentModel.Packaging.WordprocessingCommentsExPart? CreateModelElement(DXPack.WordprocessingCommentsExPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordprocessingCommentsExPart();
+      var value = new DocumentModel.Packaging.WordprocessingCommentsExPart();
       value.AlternativeFormatImportParts = GetAlternativeFormatImportParts(openXmlElement);
       value.ChartParts = GetChartParts(openXmlElement);
       value.CommentsEx = GetCommentsEx(openXmlElement);

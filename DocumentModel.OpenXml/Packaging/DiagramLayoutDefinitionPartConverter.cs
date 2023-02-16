@@ -20,7 +20,7 @@ public static class DiagramLayoutDefinitionPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramLayoutDefinitionPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class DiagramLayoutDefinitionPartConverter
     return false;
   }
   
-  public static DMPack.DiagramLayoutDefinitionPart? CreateModelElement(DXPack.DiagramLayoutDefinitionPart? openXmlElement)
+  public static DocumentModel.Packaging.DiagramLayoutDefinitionPart? CreateModelElement(DXPack.DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DiagramLayoutDefinitionPart();
+      var value = new DocumentModel.Packaging.DiagramLayoutDefinitionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.LayoutDefinition = GetLayoutDefinition(openXmlElement);

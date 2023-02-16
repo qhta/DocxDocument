@@ -68,7 +68,10 @@ public static class Properties3DConverter
   /// </summary>
   private static DMW.BevelType? GetBevelTop(DXO2010W.Properties3D openXmlElement)
   {
-    return DMXW.BevelTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.BevelTop>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.BevelTop>();
+    if (element != null)
+      return DMXW.BevelTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBevelTop(DXO2010W.Properties3D openXmlElement, DMW.BevelType? value, DiffList? diffs, string? objName)
@@ -94,7 +97,10 @@ public static class Properties3DConverter
   /// </summary>
   private static DMW.BevelType? GetBevelBottom(DXO2010W.Properties3D openXmlElement)
   {
-    return DMXW.BevelTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.BevelBottom>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.BevelBottom>();
+    if (element != null)
+      return DMXW.BevelTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBevelBottom(DXO2010W.Properties3D openXmlElement, DMW.BevelType? value, DiffList? diffs, string? objName)
@@ -120,7 +126,10 @@ public static class Properties3DConverter
   /// </summary>
   private static DMW.ExtrusionColor? GetExtrusionColor(DXO2010W.Properties3D openXmlElement)
   {
-    return DMXW.ExtrusionColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ExtrusionColor>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.ExtrusionColor>();
+    if (element != null)
+      return DMXW.ExtrusionColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtrusionColor(DXO2010W.Properties3D openXmlElement, DMW.ExtrusionColor? value, DiffList? diffs, string? objName)
@@ -146,7 +155,10 @@ public static class Properties3DConverter
   /// </summary>
   private static DMW.ContourColor? GetContourColor(DXO2010W.Properties3D openXmlElement)
   {
-    return DMXW.ContourColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.ContourColor>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.ContourColor>();
+    if (element != null)
+      return DMXW.ContourColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpContourColor(DXO2010W.Properties3D openXmlElement, DMW.ContourColor? value, DiffList? diffs, string? objName)
@@ -167,11 +179,11 @@ public static class Properties3DConverter
     }
   }
   
-  public static DMW.Properties3D? CreateModelElement(DXO2010W.Properties3D? openXmlElement)
+  public static DocumentModel.Wordprocessing.Properties3D? CreateModelElement(DXO2010W.Properties3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Properties3D();
+      var value = new DocumentModel.Wordprocessing.Properties3D();
       value.ExtrusionHeight = GetExtrusionHeight(openXmlElement);
       value.ContourWidth = GetContourWidth(openXmlElement);
       value.PresetMaterialType = GetPresetMaterialType(openXmlElement);

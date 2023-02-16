@@ -94,7 +94,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>();
+    if (element != null)
+      return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlgorithm(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
@@ -117,7 +120,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.Shape? GetShape(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Shape>();
+    if (element != null)
+      return DMXDrawsDgms.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
@@ -140,7 +146,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.PresentationOf? GetPresentationOf(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>();
+    if (element != null)
+      return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresentationOf(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
@@ -163,7 +172,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.Constraints? GetConstraints(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>();
+    if (element != null)
+      return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConstraints(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
@@ -186,7 +198,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.RuleList? GetRuleList(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.RuleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>();
+    if (element != null)
+      return DMXDrawsDgms.RuleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRuleList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
@@ -209,7 +224,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.VariableList? GetVariableList(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.VariableListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.VariableList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.VariableList>();
+    if (element != null)
+      return DMXDrawsDgms.VariableListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVariableList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.VariableList? value, DiffList? diffs, string? objName)
@@ -232,7 +250,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.ForEach? GetForEach(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.ForEachConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>();
+    if (element != null)
+      return DMXDrawsDgms.ForEachConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpForEach(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ForEach? value, DiffList? diffs, string? objName)
@@ -255,7 +276,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.LayoutNode? GetChildLayoutNode(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>();
+    if (element != null)
+      return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildLayoutNode(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
@@ -278,7 +302,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.Choose? GetChoose(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.ChooseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Choose>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Choose>();
+    if (element != null)
+      return DMXDrawsDgms.ChooseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChoose(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
@@ -301,7 +328,10 @@ public static class LayoutNodeConverter
   
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -322,11 +352,11 @@ public static class LayoutNodeConverter
     }
   }
   
-  public static DMDrawsDgms.LayoutNode? CreateModelElement(DXDrawDgms.LayoutNode? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.LayoutNode? CreateModelElement(DXDrawDgms.LayoutNode? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.LayoutNode();
+      var value = new DocumentModel.Drawings.Diagrams.LayoutNode();
       value.Name = GetName(openXmlElement);
       value.StyleLabel = GetStyleLabel(openXmlElement);
       value.ChildOrder = GetChildOrder(openXmlElement);

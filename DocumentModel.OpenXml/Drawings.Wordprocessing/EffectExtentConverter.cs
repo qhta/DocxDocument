@@ -85,11 +85,11 @@ public static class EffectExtentConverter
     openXmlElement.BottomEdge = value;
   }
   
-  public static DMDrawsW.EffectExtent? CreateModelElement(DXDrawW.EffectExtent? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.EffectExtent? CreateModelElement(DXDrawW.EffectExtent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.EffectExtent();
+      var value = new DocumentModel.Drawings.Wordprocessing.EffectExtent();
       value.LeftEdge = GetLeftEdge(openXmlElement);
       value.TopEdge = GetTopEdge(openXmlElement);
       value.RightEdge = GetRightEdge(openXmlElement);

@@ -51,11 +51,11 @@ public static class PresenceInfoConverter
       openXmlElement.UserId = null;
   }
   
-  public static DMW.PresenceInfo? CreateModelElement(DXO2013W.PresenceInfo? openXmlElement)
+  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DXO2013W.PresenceInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PresenceInfo();
+      var value = new DocumentModel.Wordprocessing.PresenceInfo();
       value.ProviderId = GetProviderId(openXmlElement);
       value.UserId = GetUserId(openXmlElement);
       return value;

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CatAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.CatAxExtension> GetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.CatAxExtension>? GetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.CatAxExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.CatAxExtension>())
@@ -14,7 +14,9 @@ public static class CatAxExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CatAxExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.CatAxExtensionList? CreateModelElement(DXDrawCharts.CatAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CatAxExtensionList? CreateModelElement(DXDrawCharts.CatAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.CatAxExtensionList();
+      var value = new DocumentModel.Drawings.Charts.CatAxExtensionList();
       value.CatAxExtensions = GetCatAxExtensions(openXmlElement);
       return value;
     }

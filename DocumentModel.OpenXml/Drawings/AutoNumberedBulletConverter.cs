@@ -43,11 +43,11 @@ public static class AutoNumberedBulletConverter
     openXmlElement.StartAt = value;
   }
   
-  public static DMDraws.AutoNumberedBullet? CreateModelElement(DXDraw.AutoNumberedBullet? openXmlElement)
+  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(DXDraw.AutoNumberedBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AutoNumberedBullet();
+      var value = new DocumentModel.Drawings.AutoNumberedBullet();
       value.Type = GetType(openXmlElement);
       value.StartAt = GetStartAt(openXmlElement);
       return value;

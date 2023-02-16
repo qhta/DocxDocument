@@ -24,11 +24,11 @@ public static class WordprocessingDocumentConverter
     return false;
   }
   
-  public static DMPack.WordprocessingDocument? CreateModelElement(DXPack.WordprocessingDocument? openXmlElement)
+  public static DocumentModel.Packaging.WordprocessingDocument? CreateModelElement(DXPack.WordprocessingDocument? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordprocessingDocument();
+      var value = new DocumentModel.Packaging.WordprocessingDocument();
       value.DocumentType = GetDocumentType(openXmlElement);
       return value;
     }

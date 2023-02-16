@@ -29,11 +29,11 @@ public static class PivotTablePartConverter
     return false;
   }
   
-  public static DMPack.PivotTablePart? CreateModelElement(DXPack.PivotTablePart? openXmlElement)
+  public static DocumentModel.Packaging.PivotTablePart? CreateModelElement(DXPack.PivotTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.PivotTablePart();
+      var value = new DocumentModel.Packaging.PivotTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

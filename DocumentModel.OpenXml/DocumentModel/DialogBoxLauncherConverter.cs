@@ -10,7 +10,10 @@ public static class DialogBoxLauncherConverter
   /// </summary>
   private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement)
   {
-    return DMX.ButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    if (element != null)
+      return DMX.ButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class DialogBoxLauncherConverter
     }
   }
   
-  public static DM.DialogBoxLauncher? CreateModelElement(DXO2010CustUI.DialogBoxLauncher? openXmlElement)
+  public static DocumentModel.DialogBoxLauncher? CreateModelElement(DXO2010CustUI.DialogBoxLauncher? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.DialogBoxLauncher();
+      var value = new DocumentModel.DialogBoxLauncher();
       value.ButtonRegular = GetButtonRegular(openXmlElement);
       return value;
     }

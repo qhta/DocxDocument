@@ -52,11 +52,11 @@ public static class WordCommentsExtensiblePartConverter
     return false;
   }
   
-  public static DMPack.WordCommentsExtensiblePart? CreateModelElement(DXPack.WordCommentsExtensiblePart? openXmlElement)
+  public static DocumentModel.Packaging.WordCommentsExtensiblePart? CreateModelElement(DXPack.WordCommentsExtensiblePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WordCommentsExtensiblePart();
+      var value = new DocumentModel.Packaging.WordCommentsExtensiblePart();
       value.CommentsExtensible = GetCommentsExtensible(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

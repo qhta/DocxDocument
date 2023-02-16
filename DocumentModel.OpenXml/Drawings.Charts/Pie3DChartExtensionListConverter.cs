@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Pie3DChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.Pie3DChartExtension> GetPie3DChartExtensions(DXDrawCharts.Pie3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Pie3DChartExtension>? GetPie3DChartExtensions(DXDrawCharts.Pie3DChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Pie3DChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Pie3DChartExtension>())
@@ -14,7 +14,9 @@ public static class Pie3DChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPie3DChartExtensions(DXDrawCharts.Pie3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Pie3DChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class Pie3DChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.Pie3DChartExtensionList? CreateModelElement(DXDrawCharts.Pie3DChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Pie3DChartExtensionList? CreateModelElement(DXDrawCharts.Pie3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Pie3DChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.Pie3DChartExtensionList();
       value.Pie3DChartExtensions = GetPie3DChartExtensions(openXmlElement);
       return value;
     }

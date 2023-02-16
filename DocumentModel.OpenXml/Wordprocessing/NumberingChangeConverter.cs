@@ -94,11 +94,11 @@ public static class NumberingChangeConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.NumberingChange? CreateModelElement(DXW.NumberingChange? openXmlElement)
+  public static DocumentModel.Wordprocessing.NumberingChange? CreateModelElement(DXW.NumberingChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingChange();
+      var value = new DocumentModel.Wordprocessing.NumberingChange();
       value.Original = GetOriginal(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);

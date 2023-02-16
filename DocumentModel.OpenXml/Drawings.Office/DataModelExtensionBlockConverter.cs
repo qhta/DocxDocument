@@ -51,11 +51,11 @@ public static class DataModelExtensionBlockConverter
       openXmlElement.MinVer = null;
   }
   
-  public static DMDrawsO.DataModelExtensionBlock? CreateModelElement(DXODraw.DataModelExtensionBlock? openXmlElement)
+  public static DocumentModel.Drawings.Office.DataModelExtensionBlock? CreateModelElement(DXODraw.DataModelExtensionBlock? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.DataModelExtensionBlock();
+      var value = new DocumentModel.Drawings.Office.DataModelExtensionBlock();
       value.RelId = GetRelId(openXmlElement);
       value.MinVer = GetMinVer(openXmlElement);
       return value;

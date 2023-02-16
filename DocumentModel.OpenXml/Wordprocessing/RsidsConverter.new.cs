@@ -94,7 +94,7 @@ public static class RsidsConverter
       var value = new DMW.Rsids();
       var rsidRoot = GetRsidRoot(openXmlElement);
       if (rsidRoot!=null)
-        value.Add(rsidRoot);
+        value.Add((uint)rsidRoot);
       var rsIdItems = GetItems(openXmlElement);
       foreach (var item in rsIdItems)
         value.Add(item);

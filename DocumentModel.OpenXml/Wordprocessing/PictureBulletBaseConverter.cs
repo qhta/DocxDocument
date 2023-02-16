@@ -7,7 +7,10 @@ public static class PictureBulletBaseConverter
 {
   private static DMVml.Group? GetGroup(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.GroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Group>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Group>();
+    if (element != null)
+      return DMXVml.GroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroup(DXW.PictureBulletBase openXmlElement, DMVml.Group? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.ImageFile? GetImageFile(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.ImageFileConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.ImageFile>());
+    var element = openXmlElement?.GetFirstChild<DXVml.ImageFile>();
+    if (element != null)
+      return DMXVml.ImageFileConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpImageFile(DXW.PictureBulletBase openXmlElement, DMVml.ImageFile? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.Line? GetLine(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.LineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Line>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Line>();
+    if (element != null)
+      return DMXVml.LineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLine(DXW.PictureBulletBase openXmlElement, DMVml.Line? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.Oval? GetOval(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.OvalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Oval>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Oval>();
+    if (element != null)
+      return DMXVml.OvalConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOval(DXW.PictureBulletBase openXmlElement, DMVml.Oval? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.PolyLine? GetPolyLine(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.PolyLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.PolyLine>());
+    var element = openXmlElement?.GetFirstChild<DXVml.PolyLine>();
+    if (element != null)
+      return DMXVml.PolyLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPolyLine(DXW.PictureBulletBase openXmlElement, DMVml.PolyLine? value, DiffList? diffs, string? objName)
@@ -122,7 +137,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.Rectangle? GetRectangle(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.RectangleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Rectangle>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Rectangle>();
+    if (element != null)
+      return DMXVml.RectangleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRectangle(DXW.PictureBulletBase openXmlElement, DMVml.Rectangle? value, DiffList? diffs, string? objName)
@@ -145,7 +163,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.RoundRectangle? GetRoundRectangle(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.RoundRectangleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.RoundRectangle>());
+    var element = openXmlElement?.GetFirstChild<DXVml.RoundRectangle>();
+    if (element != null)
+      return DMXVml.RoundRectangleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRoundRectangle(DXW.PictureBulletBase openXmlElement, DMVml.RoundRectangle? value, DiffList? diffs, string? objName)
@@ -168,7 +189,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.Shape? GetShape(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Shape>();
+    if (element != null)
+      return DMXVml.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXW.PictureBulletBase openXmlElement, DMVml.Shape? value, DiffList? diffs, string? objName)
@@ -191,7 +215,10 @@ public static class PictureBulletBaseConverter
   
   private static DMVml.Shapetype? GetShapetype(DXW.PictureBulletBase openXmlElement)
   {
-    return DMXVml.ShapetypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shapetype>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Shapetype>();
+    if (element != null)
+      return DMXVml.ShapetypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapetype(DXW.PictureBulletBase openXmlElement, DMVml.Shapetype? value, DiffList? diffs, string? objName)
@@ -212,11 +239,11 @@ public static class PictureBulletBaseConverter
     }
   }
   
-  public static DMW.PictureBulletBase? CreateModelElement(DXW.PictureBulletBase? openXmlElement)
+  public static DocumentModel.Wordprocessing.PictureBulletBase? CreateModelElement(DXW.PictureBulletBase? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PictureBulletBase();
+      var value = new DocumentModel.Wordprocessing.PictureBulletBase();
       value.Group = GetGroup(openXmlElement);
       value.ImageFile = GetImageFile(openXmlElement);
       value.Line = GetLine(openXmlElement);

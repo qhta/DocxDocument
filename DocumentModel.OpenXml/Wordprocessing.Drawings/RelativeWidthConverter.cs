@@ -48,11 +48,11 @@ public static class RelativeWidthConverter
     }
   }
   
-  public static DMWDraws.RelativeWidth? CreateModelElement(DXO2010WDraw.RelativeWidth? openXmlElement)
+  public static DocumentModel.Wordprocessing.Drawings.RelativeWidth? CreateModelElement(DXO2010WDraw.RelativeWidth? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWDraws.RelativeWidth();
+      var value = new DocumentModel.Wordprocessing.Drawings.RelativeWidth();
       value.ObjectId = GetObjectId(openXmlElement);
       value.PercentageWidth = GetPercentageWidth(openXmlElement);
       return value;

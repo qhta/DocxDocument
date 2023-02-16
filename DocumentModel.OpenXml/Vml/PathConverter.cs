@@ -345,11 +345,11 @@ public static class PathConverter
       openXmlElement.AllowExtrusion = null;
   }
   
-  public static DMVml.Path? CreateModelElement(DXVml.Path? openXmlElement)
+  public static DocumentModel.Vml.Path? CreateModelElement(DXVml.Path? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Path();
+      var value = new DocumentModel.Vml.Path();
       value.Id = GetId(openXmlElement);
       value.Value = GetValue(openXmlElement);
       value.Limo = GetLimo(openXmlElement);

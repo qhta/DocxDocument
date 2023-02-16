@@ -17,11 +17,11 @@ public static class EmbeddedObjectPartConverter
     return false;
   }
   
-  public static DMPack.EmbeddedObjectPart? CreateModelElement(DXPack.EmbeddedObjectPart? openXmlElement)
+  public static DocumentModel.Packaging.EmbeddedObjectPart? CreateModelElement(DXPack.EmbeddedObjectPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.EmbeddedObjectPart();
+      var value = new DocumentModel.Packaging.EmbeddedObjectPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

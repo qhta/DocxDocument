@@ -8,7 +8,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the AlternativeFormatImportParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.AlternativeFormatImportPart> GetAlternativeFormatImportParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.AlternativeFormatImportPart>? GetAlternativeFormatImportParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.AlternativeFormatImportPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.AlternativeFormatImportPart>())
@@ -28,7 +28,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the ChartParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.ChartPart> GetChartParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.ChartPart>? GetChartParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartPart>())
@@ -60,7 +60,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the DiagramColorsParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.DiagramColorsPart> GetDiagramColorsParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.DiagramColorsPart>? GetDiagramColorsParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramColorsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramColorsPart>())
@@ -80,7 +80,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the DiagramDataParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.DiagramDataPart> GetDiagramDataParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.DiagramDataPart>? GetDiagramDataParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramDataPart>())
@@ -100,7 +100,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramLayoutDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramLayoutDefinitionPart>())
@@ -120,7 +120,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramPersistLayoutPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramPersistLayoutPart>())
@@ -140,7 +140,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the DiagramStyleParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.DiagramStylePart> GetDiagramStyleParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.DiagramStylePart>? GetDiagramStyleParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramStylePart>())
@@ -160,7 +160,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
@@ -180,7 +180,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -200,7 +200,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -220,7 +220,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the ExtendedChartParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.ExtendedChartPart> GetExtendedChartParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.ExtendedChartPart>? GetExtendedChartParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.ExtendedChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ExtendedChartPart>())
@@ -263,7 +263,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the ImageParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -283,7 +283,7 @@ public static class FootnotesPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the FootnotesPart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.FootnotesPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.FootnotesPart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -312,11 +312,11 @@ public static class FootnotesPartConverter
     return false;
   }
   
-  public static DMPack.FootnotesPart? CreateModelElement(DXPack.FootnotesPart? openXmlElement)
+  public static DocumentModel.Packaging.FootnotesPart? CreateModelElement(DXPack.FootnotesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.FootnotesPart();
+      var value = new DocumentModel.Packaging.FootnotesPart();
       value.AlternativeFormatImportParts = GetAlternativeFormatImportParts(openXmlElement);
       value.ChartParts = GetChartParts(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);

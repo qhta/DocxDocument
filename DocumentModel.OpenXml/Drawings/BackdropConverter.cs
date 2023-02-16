@@ -10,7 +10,10 @@ public static class BackdropConverter
   /// </summary>
   private static DMDraws.Anchor? GetAnchor(DXDraw.Backdrop openXmlElement)
   {
-    return DMXDraws.AnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Anchor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Anchor>();
+    if (element != null)
+      return DMXDraws.AnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAnchor(DXDraw.Backdrop openXmlElement, DMDraws.Anchor? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class BackdropConverter
   /// </summary>
   private static DMDraws.Vector3DType? GetNormal(DXDraw.Backdrop openXmlElement)
   {
-    return DMXDraws.Vector3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Normal>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Normal>();
+    if (element != null)
+      return DMXDraws.Vector3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNormal(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class BackdropConverter
   /// </summary>
   private static DMDraws.Vector3DType? GetUpVector(DXDraw.Backdrop openXmlElement)
   {
-    return DMXDraws.Vector3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.UpVector>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.UpVector>();
+    if (element != null)
+      return DMXDraws.Vector3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUpVector(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class BackdropConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Backdrop openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.Backdrop openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class BackdropConverter
     }
   }
   
-  public static DMDraws.Backdrop? CreateModelElement(DXDraw.Backdrop? openXmlElement)
+  public static DocumentModel.Drawings.Backdrop? CreateModelElement(DXDraw.Backdrop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Backdrop();
+      var value = new DocumentModel.Drawings.Backdrop();
       value.Anchor = GetAnchor(openXmlElement);
       value.Normal = GetNormal(openXmlElement);
       value.UpVector = GetUpVector(openXmlElement);

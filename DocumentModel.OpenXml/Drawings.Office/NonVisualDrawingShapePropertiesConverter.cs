@@ -33,7 +33,10 @@ public static class NonVisualDrawingShapePropertiesConverter
   /// </summary>
   private static DMDraws.ShapeLocks? GetShapeLocks(DXODraw.NonVisualDrawingShapeProperties openXmlElement)
   {
-    return DMXDraws.ShapeLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeLocks>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeLocks>();
+    if (element != null)
+      return DMXDraws.ShapeLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeLocks(DXODraw.NonVisualDrawingShapeProperties openXmlElement, DMDraws.ShapeLocks? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class NonVisualDrawingShapePropertiesConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXODraw.NonVisualDrawingShapeProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXODraw.NonVisualDrawingShapeProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -80,11 +86,11 @@ public static class NonVisualDrawingShapePropertiesConverter
     }
   }
   
-  public static DMDrawsO.NonVisualDrawingShapeProperties? CreateModelElement(DXODraw.NonVisualDrawingShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties? CreateModelElement(DXODraw.NonVisualDrawingShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.NonVisualDrawingShapeProperties();
+      var value = new DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties();
       value.TextBox = GetTextBox(openXmlElement);
       value.ShapeLocks = GetShapeLocks(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

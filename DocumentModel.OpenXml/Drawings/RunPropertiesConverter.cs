@@ -7,7 +7,10 @@ public static class RunPropertiesConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    if (element != null)
+      return DMXDraws.OutlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOutline(DXDraw.RunProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
@@ -58,7 +61,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDraw.RunProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -81,7 +87,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDraw.RunProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -104,7 +113,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.BlipFill? GetBlipFill(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXDraw.RunProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -127,7 +139,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDraw.RunProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -178,7 +193,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.EffectList? GetEffectList(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXDraw.RunProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -201,7 +219,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXDraw.RunProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -224,7 +245,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.Highlight? GetHighlight(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.HighlightConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Highlight>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Highlight>();
+    if (element != null)
+      return DMXDraws.HighlightConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHighlight(DXDraw.RunProperties openXmlElement, DMDraws.Highlight? value, DiffList? diffs, string? objName)
@@ -275,7 +299,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.Underline? GetUnderline(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.UnderlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Underline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Underline>();
+    if (element != null)
+      return DMXDraws.UnderlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnderline(DXDraw.RunProperties openXmlElement, DMDraws.Underline? value, DiffList? diffs, string? objName)
@@ -326,7 +353,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.UnderlineFill? GetUnderlineFill(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.UnderlineFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.UnderlineFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.UnderlineFill>();
+    if (element != null)
+      return DMXDraws.UnderlineFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnderlineFill(DXDraw.RunProperties openXmlElement, DMDraws.UnderlineFill? value, DiffList? diffs, string? objName)
@@ -349,7 +379,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.TextFontType? GetLatinFont(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LatinFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LatinFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLatinFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -372,7 +405,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.TextFontType? GetEastAsianFont(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEastAsianFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -395,7 +431,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.TextFontType? GetComplexScriptFont(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpComplexScriptFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -418,7 +457,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.TextFontType? GetSymbolFont(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SymbolFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SymbolFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSymbolFont(DXDraw.RunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -441,7 +483,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    if (element != null)
+      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkOnClick(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
@@ -464,7 +509,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.HyperlinkOnMouseOverConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnMouseOver>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnMouseOver>();
+    if (element != null)
+      return DMXDraws.HyperlinkOnMouseOverConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkOnMouseOver(DXDraw.RunProperties openXmlElement, DMDraws.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
@@ -515,7 +563,10 @@ public static class RunPropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.RunProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.RunProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -536,11 +587,11 @@ public static class RunPropertiesConverter
     }
   }
   
-  public static DMDraws.RunProperties? CreateModelElement(DXDraw.RunProperties? openXmlElement)
+  public static DocumentModel.Drawings.RunProperties? CreateModelElement(DXDraw.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.RunProperties();
+      var value = new DocumentModel.Drawings.RunProperties();
       value.Outline = GetOutline(openXmlElement);
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);

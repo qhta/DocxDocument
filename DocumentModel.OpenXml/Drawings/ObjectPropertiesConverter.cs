@@ -74,11 +74,11 @@ public static class ObjectPropertiesConverter
       openXmlElement.LinkType = null;
   }
   
-  public static DMDraws.ObjectProperties? CreateModelElement(DXO2013Draw.ObjectProperties? openXmlElement)
+  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DXO2013Draw.ObjectProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ObjectProperties();
+      var value = new DocumentModel.Drawings.ObjectProperties();
       value.Id = GetId(openXmlElement);
       value.IsActiveX = GetIsActiveX(openXmlElement);
       value.LinkType = GetLinkType(openXmlElement);

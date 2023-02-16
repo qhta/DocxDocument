@@ -197,11 +197,11 @@ public static class TablePositionPropertiesConverter
     openXmlElement.TablePositionY = value;
   }
   
-  public static DMW.TablePositionProperties? CreateModelElement(DXW.TablePositionProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TablePositionProperties? CreateModelElement(DXW.TablePositionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TablePositionProperties();
+      var value = new DocumentModel.Wordprocessing.TablePositionProperties();
       value.LeftFromText = GetLeftFromText(openXmlElement);
       value.RightFromText = GetRightFromText(openXmlElement);
       value.TopFromText = GetTopFromText(openXmlElement);

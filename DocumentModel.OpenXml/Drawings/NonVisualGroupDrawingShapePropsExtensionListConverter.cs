@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class NonVisualGroupDrawingShapePropsExtensionListConverter
 {
-  private static Collection<DMDraws.NonVisualGroupDrawingShapePropsExtension> GetNonVisualGroupDrawingShapePropsExtensions(DXDraw.NonVisualGroupDrawingShapePropsExtensionList openXmlElement)
+  private static Collection<DMDraws.NonVisualGroupDrawingShapePropsExtension>? GetNonVisualGroupDrawingShapePropsExtensions(DXDraw.NonVisualGroupDrawingShapePropsExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.NonVisualGroupDrawingShapePropsExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.NonVisualGroupDrawingShapePropsExtension>())
@@ -14,7 +14,9 @@ public static class NonVisualGroupDrawingShapePropsExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpNonVisualGroupDrawingShapePropsExtensions(DXDraw.NonVisualGroupDrawingShapePropsExtensionList openXmlElement, Collection<DMDraws.NonVisualGroupDrawingShapePropsExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class NonVisualGroupDrawingShapePropsExtensionListConverter
     }
   }
   
-  public static DMDraws.NonVisualGroupDrawingShapePropsExtensionList? CreateModelElement(DXDraw.NonVisualGroupDrawingShapePropsExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList? CreateModelElement(DXDraw.NonVisualGroupDrawingShapePropsExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.NonVisualGroupDrawingShapePropsExtensionList();
+      var value = new DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList();
       value.NonVisualGroupDrawingShapePropsExtensions = GetNonVisualGroupDrawingShapePropsExtensions(openXmlElement);
       return value;
     }

@@ -27,7 +27,10 @@ public static class DataConverter
   
   private static DMDrawsChartDraws.NumericDimension? GetNumericDimension(DXO2016DrawChartDraw.Data openXmlElement)
   {
-    return DMXDrawsChartDraws.NumericDimensionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>();
+    if (element != null)
+      return DMXDrawsChartDraws.NumericDimensionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumericDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.NumericDimension? value, DiffList? diffs, string? objName)
@@ -50,7 +53,10 @@ public static class DataConverter
   
   private static DMDrawsChartDraws.StringDimension? GetStringDimension(DXO2016DrawChartDraw.Data openXmlElement)
   {
-    return DMXDrawsChartDraws.StringDimensionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.StringDimension>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.StringDimension>();
+    if (element != null)
+      return DMXDrawsChartDraws.StringDimensionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.StringDimension? value, DiffList? diffs, string? objName)
@@ -73,7 +79,10 @@ public static class DataConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.Data openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -94,11 +103,11 @@ public static class DataConverter
     }
   }
   
-  public static DMDrawsChartDraws.Data? CreateModelElement(DXO2016DrawChartDraw.Data? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Data? CreateModelElement(DXO2016DrawChartDraw.Data? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Data();
+      var value = new DocumentModel.Drawings.ChartDrawings.Data();
       value.Id = GetId(openXmlElement);
       value.NumericDimension = GetNumericDimension(openXmlElement);
       value.StringDimension = GetStringDimension(openXmlElement);

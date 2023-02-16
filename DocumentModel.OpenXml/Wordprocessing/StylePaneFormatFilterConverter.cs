@@ -8,27 +8,27 @@ public static class StylePaneFormatFilterConverter
   /// <summary>
   /// val
   /// </summary>
-  private static UInt16? GetVal(DXW.StylePaneFormatFilter openXmlElement)
+  private static DM.HexChar? GetVal(DXW.StylePaneFormatFilter openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
-      return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.Val.Value);
     return null;
   }
   
-  private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Val.Value) == value)
         return true;
-    if (openXmlElement?.Val?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetVal(DXW.StylePaneFormatFilter openXmlElement, UInt16? value)
+  private static void SetVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.Val = ((UInt16)value).ToString("X4");
+      openXmlElement.Val = value.ToString();
     else
       openXmlElement.Val = null;
   }
@@ -378,11 +378,11 @@ public static class StylePaneFormatFilterConverter
       openXmlElement.AlternateStyleNames = null;
   }
   
-  public static DMW.StylePaneFormatFilter? CreateModelElement(DXW.StylePaneFormatFilter? openXmlElement)
+  public static DocumentModel.Wordprocessing.StylePaneFormatFilter? CreateModelElement(DXW.StylePaneFormatFilter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StylePaneFormatFilter();
+      var value = new DocumentModel.Wordprocessing.StylePaneFormatFilter();
       value.Val = GetVal(openXmlElement);
       value.AllStyles = GetAllStyles(openXmlElement);
       value.CustomStyles = GetCustomStyles(openXmlElement);

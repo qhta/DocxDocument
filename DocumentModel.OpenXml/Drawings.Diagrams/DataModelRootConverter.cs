@@ -10,7 +10,10 @@ public static class DataModelRootConverter
   /// </summary>
   private static DMDrawsDgms.PointList? GetPointList(DXDrawDgms.DataModelRoot openXmlElement)
   {
-    return DMXDrawsDgms.PointListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PointList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PointList>();
+    if (element != null)
+      return DMXDrawsDgms.PointListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPointList(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.PointList? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class DataModelRootConverter
   /// </summary>
   private static DMDrawsDgms.ConnectionList? GetConnectionList(DXDrawDgms.DataModelRoot openXmlElement)
   {
-    return DMXDrawsDgms.ConnectionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ConnectionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ConnectionList>();
+    if (element != null)
+      return DMXDrawsDgms.ConnectionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConnectionList(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.ConnectionList? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class DataModelRootConverter
   /// </summary>
   private static DMDrawsDgms.Background? GetBackground(DXDrawDgms.DataModelRoot openXmlElement)
   {
-    return DMXDrawsDgms.BackgroundConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Background>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Background>();
+    if (element != null)
+      return DMXDrawsDgms.BackgroundConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackground(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.Background? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class DataModelRootConverter
   /// </summary>
   private static DMDrawsDgms.Whole? GetWhole(DXDrawDgms.DataModelRoot openXmlElement)
   {
-    return DMXDrawsDgms.WholeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Whole>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Whole>();
+    if (element != null)
+      return DMXDrawsDgms.WholeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWhole(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.Whole? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class DataModelRootConverter
   /// </summary>
   private static DMDrawsDgms.DataModelExtensionList? GetDataModelExtensionList(DXDrawDgms.DataModelRoot openXmlElement)
   {
-    return DMXDrawsDgms.DataModelExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.DataModelExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModelExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.DataModelExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataModelExtensionList(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.DataModelExtensionList? value, DiffList? diffs, string? objName)
@@ -135,11 +150,11 @@ public static class DataModelRootConverter
     }
   }
   
-  public static DMDrawsDgms.DataModelRoot? CreateModelElement(DXDrawDgms.DataModelRoot? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DataModelRoot? CreateModelElement(DXDrawDgms.DataModelRoot? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.DataModelRoot();
+      var value = new DocumentModel.Drawings.Diagrams.DataModelRoot();
       value.PointList = GetPointList(openXmlElement);
       value.ConnectionList = GetConnectionList(openXmlElement);
       value.Background = GetBackground(openXmlElement);

@@ -63,11 +63,11 @@ public static class BevelTypeConverter
     openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMDraws.BevelPresetKind>(value);
   }
   
-  public static DMDraws.BevelType? CreateModelElement(DXDraw.BevelType? openXmlElement)
+  public static DocumentModel.Drawings.BevelType? CreateModelElement(DXDraw.BevelType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BevelType();
+      var value = new DocumentModel.Drawings.BevelType();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Preset = GetPreset(openXmlElement);

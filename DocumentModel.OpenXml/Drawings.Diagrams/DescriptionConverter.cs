@@ -51,11 +51,11 @@ public static class DescriptionConverter
       openXmlElement.Val = null;
   }
   
-  public static DMDrawsDgms.Description? CreateModelElement(DXDrawDgms.Description? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Description? CreateModelElement(DXDrawDgms.Description? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Description();
+      var value = new DocumentModel.Drawings.Diagrams.Description();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

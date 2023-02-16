@@ -28,11 +28,11 @@ public static class FormulaConverter
       openXmlElement.Equation = null;
   }
   
-  public static DMVml.Formula? CreateModelElement(DXVml.Formula? openXmlElement)
+  public static DocumentModel.Vml.Formula? CreateModelElement(DXVml.Formula? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Formula();
+      var value = new DocumentModel.Vml.Formula();
       value.Equation = GetEquation(openXmlElement);
       return value;
     }

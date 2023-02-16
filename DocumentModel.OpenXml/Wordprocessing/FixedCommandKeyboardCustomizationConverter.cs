@@ -31,27 +31,27 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// fciIndex
   /// </summary>
-  private static UInt16? GetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement)
+  private static DM.HexChar? GetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
     if (openXmlElement?.CommandIndex?.Value != null)
-      return UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.CommandIndex.Value);
     return null;
   }
   
-  private static bool CmpCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CommandIndex?.Value != null)
-      if (UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.CommandIndex.Value) == value)
         return true;
-    if (openXmlElement?.CommandIndex?.Value == null && value == null) return true;
-    diffs?.Add(objName, "CommandIndex", openXmlElement?.CommandIndex?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.CommandIndex?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CommandIndex", openXmlElement?.CommandIndex?.Value, value);
     return false;
   }
   
-  private static void SetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
+  private static void SetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.CommandIndex = ((UInt16)value).ToString("X4");
+      openXmlElement.CommandIndex = value.ToString();
     else
       openXmlElement.CommandIndex = null;
   }
@@ -59,36 +59,36 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// swArg
   /// </summary>
-  private static UInt16? GetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement)
+  private static DM.HexChar? GetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
     if (openXmlElement?.Argument?.Value != null)
-      return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.Argument.Value);
     return null;
   }
   
-  private static bool CmpArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Argument?.Value != null)
-      if (UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Argument.Value) == value)
         return true;
-    if (openXmlElement?.Argument?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Argument", openXmlElement?.Argument?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.Argument?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Argument", openXmlElement?.Argument?.Value, value);
     return false;
   }
   
-  private static void SetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
+  private static void SetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.Argument = ((UInt16)value).ToString("X4");
+      openXmlElement.Argument = value.ToString();
     else
       openXmlElement.Argument = null;
   }
   
-  public static DMW.FixedCommandKeyboardCustomization? CreateModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement)
+  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FixedCommandKeyboardCustomization();
+      var value = new DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization();
       value.CommandName = GetCommandName(openXmlElement);
       value.CommandIndex = GetCommandIndex(openXmlElement);
       value.Argument = GetArgument(openXmlElement);

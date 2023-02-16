@@ -28,11 +28,11 @@ public static class SchemaReferenceConverter
       openXmlElement.Uri = null;
   }
   
-  public static DMCustXml.SchemaReference? CreateModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement)
+  public static DocumentModel.CustomXml.SchemaReference? CreateModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMCustXml.SchemaReference();
+      var value = new DocumentModel.CustomXml.SchemaReference();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

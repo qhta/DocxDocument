@@ -4,7 +4,7 @@ using DocumentModel;
 namespace DocumentModel;
 
 [TypeConverter(typeof(HexIntTypeXmlConverter))]
-public record HexInt : IConvertible
+public struct HexInt : IConvertible
 {
   private readonly int Value;
 
@@ -144,10 +144,10 @@ public record HexInt : IConvertible
     return new HexInt(val);
   }
 
-  public static implicit operator string?(HexInt? val)
-  {
-    return val?.ToString();
-  }
+  //public static implicit operator string?(HexInt? val)
+  //{
+  //  return val?.ToString();
+  //}
 
   public static implicit operator ushort(HexInt val)
   {
@@ -159,10 +159,10 @@ public record HexInt : IConvertible
     return (uint)val.Value;
   }
 
-  public static implicit operator uint?(HexInt? val)
-  {
-    return (val != null) ? (uint)val.Value : null;
-  }
+  //public static implicit operator uint?(HexInt? val)
+  //{
+  //  return (val != null) ? (uint)val.Value : null;
+  //}
 
   public static implicit operator ulong(HexInt val)
   {
@@ -184,6 +184,11 @@ public record HexInt : IConvertible
     return new HexInt(val);
   }
 
+  public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString());
+  public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
+
+  //public static implicit operator HexBinary?(HexInt? value) => (value == null) ? (HexBinary?)null : new HexBinary(value.ToString());
+  //public static implicit operator HexInt?(HexBinary? value) => (value == null) ? (HexInt?)null : new HexInt(value.ToString());
   public override string ToString()
   {
     //if (Value > uint.MaxValue)

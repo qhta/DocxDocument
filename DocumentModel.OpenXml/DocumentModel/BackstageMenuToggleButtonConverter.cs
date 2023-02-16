@@ -419,11 +419,11 @@ public static class BackstageMenuToggleButtonConverter
       openXmlElement.GetKeytip = null;
   }
   
-  public static DM.BackstageMenuToggleButton? CreateModelElement(DXO2010CustUI.BackstageMenuToggleButton? openXmlElement)
+  public static DocumentModel.BackstageMenuToggleButton? CreateModelElement(DXO2010CustUI.BackstageMenuToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageMenuToggleButton();
+      var value = new DocumentModel.BackstageMenuToggleButton();
       value.Image = GetImage(openXmlElement);
       value.ImageMso = GetImageMso(openXmlElement);
       value.GetImage = GetGetImage(openXmlElement);

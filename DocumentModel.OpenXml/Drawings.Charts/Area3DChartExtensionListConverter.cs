@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Area3DChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.Area3DChartExtension> GetArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Area3DChartExtension>? GetArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Area3DChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Area3DChartExtension>())
@@ -14,7 +14,9 @@ public static class Area3DChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Area3DChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class Area3DChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.Area3DChartExtensionList? CreateModelElement(DXDrawCharts.Area3DChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Area3DChartExtensionList? CreateModelElement(DXDrawCharts.Area3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Area3DChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.Area3DChartExtensionList();
       value.Area3DChartExtensions = GetArea3DChartExtensions(openXmlElement);
       return value;
     }

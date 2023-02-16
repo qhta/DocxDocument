@@ -28,7 +28,10 @@ public static class PresetTextWrapConverter
   /// </summary>
   private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetTextWrap openXmlElement)
   {
-    return DMXDraws.AdjustValueListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
+    if (element != null)
+      return DMXDraws.AdjustValueListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
@@ -49,11 +52,11 @@ public static class PresetTextWrapConverter
     }
   }
   
-  public static DMDraws.PresetTextWrap? CreateModelElement(DXDraw.PresetTextWrap? openXmlElement)
+  public static DocumentModel.Drawings.PresetTextWrap? CreateModelElement(DXDraw.PresetTextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PresetTextWrap();
+      var value = new DocumentModel.Drawings.PresetTextWrap();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;

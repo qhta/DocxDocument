@@ -226,7 +226,10 @@ public static class ColorMappingTypeConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.ColorMappingType openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.ColorMappingType openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -247,11 +250,11 @@ public static class ColorMappingTypeConverter
     }
   }
   
-  public static DMDrawsChartDraws.ColorMappingType? CreateModelElement(DXO2016DrawChartDraw.ColorMappingType? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ColorMappingType? CreateModelElement(DXO2016DrawChartDraw.ColorMappingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ColorMappingType();
+      var value = new DocumentModel.Drawings.ChartDrawings.ColorMappingType();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

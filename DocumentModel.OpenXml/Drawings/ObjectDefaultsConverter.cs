@@ -10,7 +10,10 @@ public static class ObjectDefaultsConverter
   /// </summary>
   private static DMDraws.ShapeDefault? GetShapeDefault(DXDraw.ObjectDefaults openXmlElement)
   {
-    return DMXDraws.ShapeDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeDefault>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeDefault>();
+    if (element != null)
+      return DMXDraws.ShapeDefaultConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.ShapeDefault? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ObjectDefaultsConverter
   /// </summary>
   private static DMDraws.LineDefault? GetLineDefault(DXDraw.ObjectDefaults openXmlElement)
   {
-    return DMXDraws.LineDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LineDefault>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LineDefault>();
+    if (element != null)
+      return DMXDraws.LineDefaultConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.LineDefault? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class ObjectDefaultsConverter
   /// </summary>
   private static DMDraws.TextDefault? GetTextDefault(DXDraw.ObjectDefaults openXmlElement)
   {
-    return DMXDraws.TextDefaultConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TextDefault>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TextDefault>();
+    if (element != null)
+      return DMXDraws.TextDefaultConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.TextDefault? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class ObjectDefaultsConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ObjectDefaults openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.ObjectDefaults openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class ObjectDefaultsConverter
     }
   }
   
-  public static DMDraws.ObjectDefaults? CreateModelElement(DXDraw.ObjectDefaults? openXmlElement)
+  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(DXDraw.ObjectDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ObjectDefaults();
+      var value = new DocumentModel.Drawings.ObjectDefaults();
       value.ShapeDefault = GetShapeDefault(openXmlElement);
       value.LineDefault = GetLineDefault(openXmlElement);
       value.TextDefault = GetTextDefault(openXmlElement);

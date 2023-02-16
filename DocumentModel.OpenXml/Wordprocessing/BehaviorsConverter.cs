@@ -28,11 +28,11 @@ public static class BehaviorsConverter
     }
   }
   
-  public static DMW.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
+  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Behaviors();
+      var value = new DocumentModel.Wordprocessing.Behaviors();
       value.Behavior = GetBehavior(openXmlElement);
       return value;
     }

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomColorListConverter
 {
-  private static Collection<DMDraws.CustomColor> GetCustomColors(DXDraw.CustomColorList openXmlElement)
+  private static Collection<DMDraws.CustomColor>? GetCustomColors(DXDraw.CustomColorList openXmlElement)
   {
     var collection = new Collection<DMDraws.CustomColor>();
     foreach (var item in openXmlElement.Elements<DXDraw.CustomColor>())
@@ -14,7 +14,9 @@ public static class CustomColorListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CustomColorListConverter
     }
   }
   
-  public static DMDraws.CustomColorList? CreateModelElement(DXDraw.CustomColorList? openXmlElement)
+  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DXDraw.CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.CustomColorList();
+      var value = new DocumentModel.Drawings.CustomColorList();
       value.CustomColors = GetCustomColors(openXmlElement);
       return value;
     }

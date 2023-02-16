@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ConnectorLockingExtensionListConverter
 {
-  private static Collection<DMDraws.ConnectorLockingExtension> GetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement)
+  private static Collection<DMDraws.ConnectorLockingExtension>? GetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.ConnectorLockingExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.ConnectorLockingExtension>())
@@ -14,7 +14,9 @@ public static class ConnectorLockingExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement, Collection<DMDraws.ConnectorLockingExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ConnectorLockingExtensionListConverter
     }
   }
   
-  public static DMDraws.ConnectorLockingExtensionList? CreateModelElement(DXDraw.ConnectorLockingExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.ConnectorLockingExtensionList? CreateModelElement(DXDraw.ConnectorLockingExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ConnectorLockingExtensionList();
+      var value = new DocumentModel.Drawings.ConnectorLockingExtensionList();
       value.ConnectorLockingExtensions = GetConnectorLockingExtensions(openXmlElement);
       return value;
     }

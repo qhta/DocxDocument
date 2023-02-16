@@ -263,7 +263,10 @@ public static class ShapeLocksConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ShapeLocks openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.ShapeLocks openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -284,11 +287,11 @@ public static class ShapeLocksConverter
     }
   }
   
-  public static DMDraws.ShapeLocks? CreateModelElement(DXDraw.ShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.ShapeLocks? CreateModelElement(DXDraw.ShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ShapeLocks();
+      var value = new DocumentModel.Drawings.ShapeLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

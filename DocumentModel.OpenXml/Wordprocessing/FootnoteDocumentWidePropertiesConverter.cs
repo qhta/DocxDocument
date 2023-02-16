@@ -36,7 +36,10 @@ public static class FootnoteDocumentWidePropertiesConverter
   /// </summary>
   private static DMW.NumberingFormat? GetNumberingFormat(DXW.FootnoteDocumentWideProperties openXmlElement)
   {
-    return DMXW.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
+    if (element != null)
+      return DMXW.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -111,7 +114,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
   }
   
-  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType> GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
+  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
   {
     var collection = new Collection<DMW.FootnoteEndnoteSeparatorReferenceType>();
     foreach (var item in openXmlElement.Elements<DXW.FootnoteSpecialReference>())
@@ -120,7 +123,9 @@ public static class FootnoteDocumentWidePropertiesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value, DiffList? diffs, string? objName)
@@ -165,11 +170,11 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
   }
   
-  public static DMW.FootnoteDocumentWideProperties? CreateModelElement(DXW.FootnoteDocumentWideProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.FootnoteDocumentWideProperties? CreateModelElement(DXW.FootnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteDocumentWideProperties();
+      var value = new DocumentModel.Wordprocessing.FootnoteDocumentWideProperties();
       value.FootnotePosition = GetFootnotePosition(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);

@@ -45,11 +45,11 @@ public static class ArtisticWatercolorSpongeConverter
     openXmlElement.BrushSize = value;
   }
   
-  public static DMDraws.ArtisticWatercolorSponge? CreateModelElement(DXO2010Draw.ArtisticWatercolorSponge? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticWatercolorSponge? CreateModelElement(DXO2010Draw.ArtisticWatercolorSponge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticWatercolorSponge();
+      var value = new DocumentModel.Drawings.ArtisticWatercolorSponge();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.BrushSize = GetBrushSize(openXmlElement);
       return value;

@@ -33,7 +33,10 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   private static DMDraws.ContentPartLocks? GetContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement)
   {
-    return DMXDraws.ContentPartLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ContentPartLocks>();
+    if (element != null)
+      return DMXDraws.ContentPartLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpContentPartLocks(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.ContentPartLocks? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class NonVisualInkContentPartPropertiesConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList2? GetOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement)
   {
-    return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDraws.OfficeArtExtensionList2? value, DiffList? diffs, string? objName)
@@ -80,11 +86,11 @@ public static class NonVisualInkContentPartPropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraws.NonVisualInkContentPartProperties? CreateModelElement(DXO2010DrawChartDraw.NonVisualInkContentPartProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? CreateModelElement(DXO2010DrawChartDraw.NonVisualInkContentPartProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.NonVisualInkContentPartProperties();
+      var value = new DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties();
       value.IsComment = GetIsComment(openXmlElement);
       value.ContentPartLocks = GetContentPartLocks(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);

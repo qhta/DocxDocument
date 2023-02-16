@@ -30,7 +30,10 @@ public static class BubbleChartExtensionConverter
   
   private static DMDrawsCharts.FilteredBubbleSeries? GetFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredBubbleSeriesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBubbleSeries>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredBubbleSeriesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement, DMDrawsCharts.FilteredBubbleSeries? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class BubbleChartExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.BubbleChartExtension? CreateModelElement(DXDrawCharts.BubbleChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleChartExtension? CreateModelElement(DXDrawCharts.BubbleChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BubbleChartExtension();
+      var value = new DocumentModel.Drawings.Charts.BubbleChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredBubbleSeries = GetFilteredBubbleSeries(openXmlElement);
       return value;

@@ -79,11 +79,11 @@ public static class LinePropertiesTypeConverter
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(value);
   }
   
-  public static DMDraws.LinePropertiesType? CreateModelElement(DXDraw.LinePropertiesType? openXmlElement)
+  public static DocumentModel.Drawings.LinePropertiesType? CreateModelElement(DXDraw.LinePropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LinePropertiesType();
+      var value = new DocumentModel.Drawings.LinePropertiesType();
       value.Width = GetWidth(openXmlElement);
       value.CapType = GetCapType(openXmlElement);
       value.CompoundLineType = GetCompoundLineType(openXmlElement);

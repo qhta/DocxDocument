@@ -690,11 +690,11 @@ public static class ControlCloneQatConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.ControlCloneQat? CreateModelElement(DXO2010CustUI.ControlCloneQat? openXmlElement)
+  public static DocumentModel.ControlCloneQat? CreateModelElement(DXO2010CustUI.ControlCloneQat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ControlCloneQat();
+      var value = new DocumentModel.ControlCloneQat();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

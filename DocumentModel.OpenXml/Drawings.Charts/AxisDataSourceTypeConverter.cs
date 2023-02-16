@@ -10,7 +10,10 @@ public static class AxisDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.AxisDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
+    if (element != null)
+      return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMultiLevelStringReference(DXDrawCharts.AxisDataSourceType openXmlElement, DMDrawsCharts.MultiLevelStringReference? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class AxisDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.AxisDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    if (element != null)
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberReference(DXDrawCharts.AxisDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class AxisDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.AxisDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberLiteral(DXDrawCharts.AxisDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class AxisDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.AxisDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
+    if (element != null)
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringReference(DXDrawCharts.AxisDataSourceType openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class AxisDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.AxisDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringLiteral(DXDrawCharts.AxisDataSourceType openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
@@ -135,11 +150,11 @@ public static class AxisDataSourceTypeConverter
     }
   }
   
-  public static DMDrawsCharts.AxisDataSourceType? CreateModelElement(DXDrawCharts.AxisDataSourceType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AxisDataSourceType? CreateModelElement(DXDrawCharts.AxisDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.AxisDataSourceType();
+      var value = new DocumentModel.Drawings.Charts.AxisDataSourceType();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);

@@ -43,11 +43,11 @@ public static class TableWidthDxaNilTypeConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(value);
   }
   
-  public static DMW.TableWidthDxaNilType? CreateModelElement(DXW.TableWidthDxaNilType? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableWidthDxaNilType? CreateModelElement(DXW.TableWidthDxaNilType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableWidthDxaNilType();
+      var value = new DocumentModel.Wordprocessing.TableWidthDxaNilType();
       value.Width = GetWidth(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;

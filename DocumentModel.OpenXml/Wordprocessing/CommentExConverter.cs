@@ -8,27 +8,27 @@ public static class CommentExConverter
   /// <summary>
   /// paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetParaId(DXO2013W.CommentEx openXmlElement)
+  private static DM.HexInt? GetParaId(DXO2013W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.ParaId.Value);
     return null;
   }
   
-  private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ParaId?.Value != null)
-      if (UInt32.Parse(openXmlElement.ParaId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.ParaId.Value) == value)
         return true;
-    if (openXmlElement?.ParaId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.ParaId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value);
     return false;
   }
   
-  private static void SetParaId(DXO2013W.CommentEx openXmlElement, UInt32? value)
+  private static void SetParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.ParaId = ((UInt32)value).ToString("X8");
+      openXmlElement.ParaId = value.ToString();
     else
       openXmlElement.ParaId = null;
   }
@@ -36,27 +36,27 @@ public static class CommentExConverter
   /// <summary>
   /// paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetParaIdParent(DXO2013W.CommentEx openXmlElement)
+  private static DM.HexInt? GetParaIdParent(DXO2013W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaIdParent?.Value != null)
-      return UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.ParaIdParent.Value);
     return null;
   }
   
-  private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ParaIdParent?.Value != null)
-      if (UInt32.Parse(openXmlElement.ParaIdParent.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.ParaIdParent.Value) == value)
         return true;
-    if (openXmlElement?.ParaIdParent?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaIdParent", openXmlElement?.ParaIdParent?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.ParaIdParent?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParaIdParent", openXmlElement?.ParaIdParent?.Value, value);
     return false;
   }
   
-  private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, UInt32? value)
+  private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.ParaIdParent = ((UInt32)value).ToString("X8");
+      openXmlElement.ParaIdParent = value.ToString();
     else
       openXmlElement.ParaIdParent = null;
   }
@@ -84,11 +84,11 @@ public static class CommentExConverter
       openXmlElement.Done = null;
   }
   
-  public static DMW.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
+  public static DocumentModel.Wordprocessing.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentEx();
+      var value = new DocumentModel.Wordprocessing.CommentEx();
       value.ParaId = GetParaId(openXmlElement);
       value.ParaIdParent = GetParaIdParent(openXmlElement);
       value.Done = GetDone(openXmlElement);

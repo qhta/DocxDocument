@@ -52,11 +52,11 @@ public static class ExtendedFilePropertiesPartConverter
     return false;
   }
   
-  public static DMPack.ExtendedFilePropertiesPart? CreateModelElement(DXPack.ExtendedFilePropertiesPart? openXmlElement)
+  public static DocumentModel.Packaging.ExtendedFilePropertiesPart? CreateModelElement(DXPack.ExtendedFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ExtendedFilePropertiesPart();
+      var value = new DocumentModel.Packaging.ExtendedFilePropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.Properties = GetProperties(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

@@ -10,7 +10,10 @@ public static class Color2TypeConverter
   /// </summary>
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Color2Type openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class Color2TypeConverter
   /// </summary>
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.Color2Type openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class Color2TypeConverter
   /// </summary>
   private static DMDraws.HslColor? GetHslColor(DXDraw.Color2Type openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.Color2Type openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class Color2TypeConverter
   /// </summary>
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.Color2Type openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.Color2Type openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class Color2TypeConverter
   /// </summary>
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.Color2Type openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.Color2Type openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -135,11 +150,11 @@ public static class Color2TypeConverter
     }
   }
   
-  public static DMDraws.Color2Type? CreateModelElement(DXDraw.Color2Type? openXmlElement)
+  public static DocumentModel.Drawings.Color2Type? CreateModelElement(DXDraw.Color2Type? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Color2Type();
+      var value = new DocumentModel.Drawings.Color2Type();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

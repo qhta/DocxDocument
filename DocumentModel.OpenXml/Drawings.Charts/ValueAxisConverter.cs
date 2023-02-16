@@ -38,7 +38,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.Scaling? GetScaling(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.ScalingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>();
+    if (element != null)
+      return DMXDrawsCharts.ScalingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScaling(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Scaling? value, DiffList? diffs, string? objName)
@@ -121,7 +124,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.MajorGridlines? GetMajorGridlines(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMajorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MajorGridlines? value, DiffList? diffs, string? objName)
@@ -147,7 +153,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.MinorGridlines? GetMinorGridlines(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>();
+    if (element != null)
+      return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMinorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MinorGridlines? value, DiffList? diffs, string? objName)
@@ -173,7 +182,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.TitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Title>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    if (element != null)
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTitle(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
@@ -199,7 +211,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -303,7 +318,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -329,7 +347,10 @@ public static class ValueAxisConverter
   /// </summary>
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -501,7 +522,10 @@ public static class ValueAxisConverter
   
   private static DMDrawsCharts.DisplayUnits? GetDisplayUnits(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.DisplayUnitsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnits>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnits>();
+    if (element != null)
+      return DMXDrawsCharts.DisplayUnitsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDisplayUnits(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.DisplayUnits? value, DiffList? diffs, string? objName)
@@ -524,7 +548,10 @@ public static class ValueAxisConverter
   
   private static DMDrawsCharts.ValAxExtensionList? GetValAxExtensionList(DXDrawCharts.ValueAxis openXmlElement)
   {
-    return DMXDrawsCharts.ValAxExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ValAxExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ValAxExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ValAxExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValAxExtensionList(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ValAxExtensionList? value, DiffList? diffs, string? objName)
@@ -545,11 +572,11 @@ public static class ValueAxisConverter
     }
   }
   
-  public static DMDrawsCharts.ValueAxis? CreateModelElement(DXDrawCharts.ValueAxis? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ValueAxis? CreateModelElement(DXDrawCharts.ValueAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ValueAxis();
+      var value = new DocumentModel.Drawings.Charts.ValueAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);

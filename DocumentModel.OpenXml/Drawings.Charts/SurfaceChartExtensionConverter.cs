@@ -30,7 +30,10 @@ public static class SurfaceChartExtensionConverter
   
   private static DMDrawsCharts.FilteredSurfaceSeries? GetFilteredSurfaceSeries(DXDrawCharts.SurfaceChartExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredSurfaceSeriesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredSurfaceSeriesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredSurfaceSeries(DXDrawCharts.SurfaceChartExtension openXmlElement, DMDrawsCharts.FilteredSurfaceSeries? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class SurfaceChartExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.SurfaceChartExtension? CreateModelElement(DXDrawCharts.SurfaceChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceChartExtension? CreateModelElement(DXDrawCharts.SurfaceChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SurfaceChartExtension();
+      var value = new DocumentModel.Drawings.Charts.SurfaceChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSurfaceSeries = GetFilteredSurfaceSeries(openXmlElement);
       return value;

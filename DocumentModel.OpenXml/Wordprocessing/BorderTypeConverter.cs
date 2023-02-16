@@ -196,11 +196,11 @@ public static class BorderTypeConverter
       openXmlElement.Frame = null;
   }
   
-  public static DMW.BorderType? CreateModelElement(DXW.BorderType? openXmlElement)
+  public static DocumentModel.Wordprocessing.BorderType? CreateModelElement(DXW.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.BorderType();
+      var value = new DocumentModel.Wordprocessing.BorderType();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);

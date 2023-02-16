@@ -56,7 +56,10 @@ public static class GraphicFrameConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualGraphicFrameProperties? GetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value, DiffList? diffs, string? objName)
@@ -82,7 +85,10 @@ public static class GraphicFrameConverter
   /// </summary>
   private static DMDrawsChartDraw.Transform? GetTransform(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    return DMXDrawsChartDraw.TransformConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Transform>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Transform>();
+    if (element != null)
+      return DMXDrawsChartDraw.TransformConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value, DiffList? diffs, string? objName)
@@ -108,7 +114,10 @@ public static class GraphicFrameConverter
   /// </summary>
   private static DMDraws.Graphic? GetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    return DMXDraws.GraphicConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Graphic>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
+    if (element != null)
+      return DMXDraws.GraphicConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
@@ -129,11 +138,11 @@ public static class GraphicFrameConverter
     }
   }
   
-  public static DMDrawsChartDraw.GraphicFrame? CreateModelElement(DXDrawChartDraw.GraphicFrame? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.GraphicFrame? CreateModelElement(DXDrawChartDraw.GraphicFrame? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.GraphicFrame();
+      var value = new DocumentModel.Drawings.ChartDrawing.GraphicFrame();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualGraphicFrameProperties = GetNonVisualGraphicFrameProperties(openXmlElement);

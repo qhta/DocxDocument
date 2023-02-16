@@ -226,11 +226,11 @@ public static class VariableListConverter
     }
   }
   
-  public static DMDrawsDgms.VariableList? CreateModelElement(DXDrawDgms.VariableList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.VariableList? CreateModelElement(DXDrawDgms.VariableList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.VariableList();
+      var value = new DocumentModel.Drawings.Diagrams.VariableList();
       value.OrganizationChart = GetOrganizationChart(openXmlElement);
       value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
       value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);

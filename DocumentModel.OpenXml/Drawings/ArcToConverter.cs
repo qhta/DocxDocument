@@ -97,11 +97,11 @@ public static class ArcToConverter
       openXmlElement.SwingAngle = null;
   }
   
-  public static DMDraws.ArcTo? CreateModelElement(DXDraw.ArcTo? openXmlElement)
+  public static DocumentModel.Drawings.ArcTo? CreateModelElement(DXDraw.ArcTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArcTo();
+      var value = new DocumentModel.Drawings.ArcTo();
       value.WidthRadius = GetWidthRadius(openXmlElement);
       value.HeightRadius = GetHeightRadius(openXmlElement);
       value.StartAngle = GetStartAngle(openXmlElement);

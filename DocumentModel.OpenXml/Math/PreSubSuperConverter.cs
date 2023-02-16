@@ -10,7 +10,10 @@ public static class PreSubSuperConverter
   /// </summary>
   private static DMMath.PreSubSuperProperties? GetPreSubSuperProperties(DXMath.PreSubSuper openXmlElement)
   {
-    return DMXMath.PreSubSuperPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuperProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.PreSubSuperProperties>();
+    if (element != null)
+      return DMXMath.PreSubSuperPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreSubSuperProperties(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuperProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class PreSubSuperConverter
   /// </summary>
   private static DMMath.SubArgument? GetSubArgument(DXMath.PreSubSuper openXmlElement)
   {
-    return DMXMath.SubArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubArgument>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubArgument>();
+    if (element != null)
+      return DMXMath.SubArgumentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubArgument(DXMath.PreSubSuper openXmlElement, DMMath.SubArgument? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class PreSubSuperConverter
   /// </summary>
   private static DMMath.SuperArgument? GetSuperArgument(DXMath.PreSubSuper openXmlElement)
   {
-    return DMXMath.SuperArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SuperArgument>();
+    if (element != null)
+      return DMXMath.SuperArgumentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperArgument(DXMath.PreSubSuper openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class PreSubSuperConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.PreSubSuper openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.PreSubSuper openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class PreSubSuperConverter
     }
   }
   
-  public static DMMath.PreSubSuper? CreateModelElement(DXMath.PreSubSuper? openXmlElement)
+  public static DocumentModel.Math.PreSubSuper? CreateModelElement(DXMath.PreSubSuper? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.PreSubSuper();
+      var value = new DocumentModel.Math.PreSubSuper();
       value.PreSubSuperProperties = GetPreSubSuperProperties(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

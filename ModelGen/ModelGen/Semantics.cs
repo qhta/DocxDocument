@@ -12,4 +12,5 @@ public enum Semantics
   GenericTypeParam,
   GenericTypeParamConstraint,
   TypeChange,
+  Rename,
 }

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ColorTransformCategoriesConverter
 {
-  private static Collection<DMDrawsDgms.ColorTransformCategory> GetItems(DXDrawDgms.ColorTransformCategories openXmlElement)
+  private static Collection<DMDrawsDgms.ColorTransformCategory>? GetItems(DXDrawDgms.ColorTransformCategories openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.ColorTransformCategory>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.ColorTransformCategory>())
@@ -14,7 +14,9 @@ public static class ColorTransformCategoriesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXDrawDgms.ColorTransformCategories openXmlElement, Collection<DMDrawsDgms.ColorTransformCategory>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ColorTransformCategoriesConverter
     }
   }
   
-  public static DMDrawsDgms.ColorTransformCategories? CreateModelElement(DXDrawDgms.ColorTransformCategories? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorTransformCategories? CreateModelElement(DXDrawDgms.ColorTransformCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ColorTransformCategories();
+      var value = new DocumentModel.Drawings.Diagrams.ColorTransformCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }

@@ -7,7 +7,10 @@ public static class OfficeMenuConverter
 {
   private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.UnsizedControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>();
+    if (element != null)
+      return DMXUI.UnsizedControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedControlClone(DXOCustUI.OfficeMenu openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.OfficeMenu openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.CheckBox? GetCheckBox(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>();
+    if (element != null)
+      return DMXUI.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXOCustUI.OfficeMenu openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.UnsizedGallery? GetUnsizedGallery(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.UnsizedGalleryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>();
+    if (element != null)
+      return DMXUI.UnsizedGalleryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedGallery(DXOCustUI.OfficeMenu openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.UnsizedToggleButton? GetUnsizedToggleButton(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>();
+    if (element != null)
+      return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedToggleButton(DXOCustUI.OfficeMenu openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
@@ -122,7 +137,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.MenuSeparator? GetMenuSeparator(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.MenuSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.MenuSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuSeparator>();
+    if (element != null)
+      return DMXUI.MenuSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuSeparator(DXOCustUI.OfficeMenu openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
@@ -145,7 +163,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.SplitButtonWithTitle? GetSplitButtonWithTitle(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.SplitButtonWithTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.SplitButtonWithTitle>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.SplitButtonWithTitle>();
+    if (element != null)
+      return DMXUI.SplitButtonWithTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButtonWithTitle(DXOCustUI.OfficeMenu openXmlElement, DMUI.SplitButtonWithTitle? value, DiffList? diffs, string? objName)
@@ -168,7 +189,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.MenuWithTitle? GetMenuWithTitle(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.MenuWithTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuWithTitle>();
+    if (element != null)
+      return DMXUI.MenuWithTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuWithTitle(DXOCustUI.OfficeMenu openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs, string? objName)
@@ -191,7 +215,10 @@ public static class OfficeMenuConverter
   
   private static DMUI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DXOCustUI.OfficeMenu openXmlElement)
   {
-    return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>();
+    if (element != null)
+      return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedDynamicMenu(DXOCustUI.OfficeMenu openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
@@ -212,11 +239,11 @@ public static class OfficeMenuConverter
     }
   }
   
-  public static DMUI.OfficeMenu? CreateModelElement(DXOCustUI.OfficeMenu? openXmlElement)
+  public static DocumentModel.UI.OfficeMenu? CreateModelElement(DXOCustUI.OfficeMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.OfficeMenu();
+      var value = new DocumentModel.UI.OfficeMenu();
       value.UnsizedControlClone = GetUnsizedControlClone(openXmlElement);
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       value.CheckBox = GetCheckBox(openXmlElement);

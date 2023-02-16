@@ -46,11 +46,11 @@ public static class FontCharSetConverter
     openXmlElement.StrictCharacterSet = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet, DMW.StrictCharacterSet>(value);
   }
   
-  public static DMW.FontCharSet? CreateModelElement(DXW.FontCharSet? openXmlElement)
+  public static DocumentModel.Wordprocessing.FontCharSet? CreateModelElement(DXW.FontCharSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FontCharSet();
+      var value = new DocumentModel.Wordprocessing.FontCharSet();
       value.Val = GetVal(openXmlElement);
       value.StrictCharacterSet = GetStrictCharacterSet(openXmlElement);
       return value;

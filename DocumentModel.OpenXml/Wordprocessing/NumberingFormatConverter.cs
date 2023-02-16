@@ -46,11 +46,11 @@ public static class NumberingFormatConverter
       openXmlElement.Format = null;
   }
   
-  public static DMW.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
+  public static DocumentModel.Wordprocessing.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingFormat();
+      var value = new DocumentModel.Wordprocessing.NumberingFormat();
       value.Val = GetVal(openXmlElement);
       value.Format = GetFormat(openXmlElement);
       return value;

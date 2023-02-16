@@ -263,11 +263,11 @@ public static class ReflectionConverter
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(value);
   }
   
-  public static DMW.Reflection? CreateModelElement(DXO2010W.Reflection? openXmlElement)
+  public static DocumentModel.Wordprocessing.Reflection? CreateModelElement(DXO2010W.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Reflection();
+      var value = new DocumentModel.Wordprocessing.Reflection();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.StartingOpacity = GetStartingOpacity(openXmlElement);
       value.StartPosition = GetStartPosition(openXmlElement);

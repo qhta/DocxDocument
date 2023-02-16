@@ -119,7 +119,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.ColorMapOverride? GetColorMapOverride(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ColorMapOverrideConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ColorMapOverride>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ColorMapOverride>();
+    if (element != null)
+      return DMXDrawsCharts.ColorMapOverrideConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorMapOverride(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ColorMapOverride? value, DiffList? diffs, string? objName)
@@ -142,7 +145,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.PivotSource? GetPivotSource(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.PivotSourceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PivotSource>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PivotSource>();
+    if (element != null)
+      return DMXDrawsCharts.PivotSourceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPivotSource(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PivotSource? value, DiffList? diffs, string? objName)
@@ -165,7 +171,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.Protection? GetProtection(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ProtectionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Protection>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Protection>();
+    if (element != null)
+      return DMXDrawsCharts.ProtectionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProtection(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Protection? value, DiffList? diffs, string? objName)
@@ -188,7 +197,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.Chart? GetChart(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ChartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Chart>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Chart>();
+    if (element != null)
+      return DMXDrawsCharts.ChartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChart(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.Chart? value, DiffList? diffs, string? objName)
@@ -211,7 +223,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -234,7 +249,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -257,7 +275,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.ExternalData? GetExternalData(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ExternalDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExternalData>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExternalData>();
+    if (element != null)
+      return DMXDrawsCharts.ExternalDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExternalData(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ExternalData? value, DiffList? diffs, string? objName)
@@ -280,7 +301,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.PrintSettings? GetPrintSettings(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.PrintSettingsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PrintSettings>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PrintSettings>();
+    if (element != null)
+      return DMXDrawsCharts.PrintSettingsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPrintSettings(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.PrintSettings? value, DiffList? diffs, string? objName)
@@ -303,7 +327,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.RelationshipIdType? GetUserShapesReference(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.RelationshipIdTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.UserShapesReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.UserShapesReference>();
+    if (element != null)
+      return DMXDrawsCharts.RelationshipIdTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUserShapesReference(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.RelationshipIdType? value, DiffList? diffs, string? objName)
@@ -326,7 +353,10 @@ public static class ChartSpaceConverter
   
   private static DMDrawsCharts.ChartSpaceExtensionList? GetChartSpaceExtensionList(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return DMXDrawsCharts.ChartSpaceExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartSpaceExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartSpaceExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ChartSpaceExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartSpaceExtensionList(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ChartSpaceExtensionList? value, DiffList? diffs, string? objName)
@@ -347,11 +377,11 @@ public static class ChartSpaceConverter
     }
   }
   
-  public static DMDrawsCharts.ChartSpace? CreateModelElement(DXDrawCharts.ChartSpace? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartSpace? CreateModelElement(DXDrawCharts.ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ChartSpace();
+      var value = new DocumentModel.Drawings.Charts.ChartSpace();
       value.Date1904 = GetDate1904(openXmlElement);
       value.EditingLanguage = GetEditingLanguage(openXmlElement);
       value.RoundedCorners = GetRoundedCorners(openXmlElement);

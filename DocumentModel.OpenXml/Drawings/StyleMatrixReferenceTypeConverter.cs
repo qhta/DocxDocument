@@ -30,7 +30,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -56,7 +59,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -82,7 +88,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.HslColor? GetHslColor(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -108,7 +117,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -134,7 +146,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -160,7 +175,10 @@ public static class StyleMatrixReferenceTypeConverter
   /// </summary>
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.StyleMatrixReferenceType openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.StyleMatrixReferenceType openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -181,11 +199,11 @@ public static class StyleMatrixReferenceTypeConverter
     }
   }
   
-  public static DMDraws.StyleMatrixReferenceType? CreateModelElement(DXDraw.StyleMatrixReferenceType? openXmlElement)
+  public static DocumentModel.Drawings.StyleMatrixReferenceType? CreateModelElement(DXDraw.StyleMatrixReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.StyleMatrixReferenceType();
+      var value = new DocumentModel.Drawings.StyleMatrixReferenceType();
       value.Index = GetIndex(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

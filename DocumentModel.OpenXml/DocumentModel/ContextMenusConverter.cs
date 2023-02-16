@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ContextMenusConverter
 {
-  private static Collection<DM.ContextMenu> GetItems(DXO2010CustUI.ContextMenus openXmlElement)
+  private static Collection<DM.ContextMenu>? GetItems(DXO2010CustUI.ContextMenus openXmlElement)
   {
     var collection = new Collection<DM.ContextMenu>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.ContextMenu>())
@@ -14,7 +14,9 @@ public static class ContextMenusConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2010CustUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ContextMenusConverter
     }
   }
   
-  public static DM.ContextMenus? CreateModelElement(DXO2010CustUI.ContextMenus? openXmlElement)
+  public static DocumentModel.ContextMenus? CreateModelElement(DXO2010CustUI.ContextMenus? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ContextMenus();
+      var value = new DocumentModel.ContextMenus();
       value.Items = GetItems(openXmlElement);
       return value;
     }

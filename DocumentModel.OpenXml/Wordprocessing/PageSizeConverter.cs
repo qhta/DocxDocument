@@ -83,11 +83,11 @@ public static class PageSizeConverter
     openXmlElement.Code = value;
   }
   
-  public static DMW.PageSize? CreateModelElement(DXW.PageSize? openXmlElement)
+  public static DocumentModel.Wordprocessing.PageSize? CreateModelElement(DXW.PageSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PageSize();
+      var value = new DocumentModel.Wordprocessing.PageSize();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Orient = GetOrient(openXmlElement);

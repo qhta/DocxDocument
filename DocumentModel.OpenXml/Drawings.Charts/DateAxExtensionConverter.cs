@@ -30,7 +30,10 @@ public static class DateAxExtensionConverter
   
   private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class DateAxExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.DateAxExtension? CreateModelElement(DXDrawCharts.DateAxExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DateAxExtension? CreateModelElement(DXDrawCharts.DateAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DateAxExtension();
+      var value = new DocumentModel.Drawings.Charts.DateAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;

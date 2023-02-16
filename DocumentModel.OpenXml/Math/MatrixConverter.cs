@@ -10,7 +10,10 @@ public static class MatrixConverter
   /// </summary>
   private static DMMath.MatrixProperties? GetMatrixProperties(DXMath.Matrix openXmlElement)
   {
-    return DMXMath.MatrixPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MatrixProperties>();
+    if (element != null)
+      return DMXMath.MatrixPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrixProperties(DXMath.Matrix openXmlElement, DMMath.MatrixProperties? value, DiffList? diffs, string? objName)
@@ -31,7 +34,7 @@ public static class MatrixConverter
     }
   }
   
-  private static Collection<DMMath.MatrixRow> GetMatrixRows(DXMath.Matrix openXmlElement)
+  private static Collection<DMMath.MatrixRow>? GetMatrixRows(DXMath.Matrix openXmlElement)
   {
     var collection = new Collection<DMMath.MatrixRow>();
     foreach (var item in openXmlElement.Elements<DXMath.MatrixRow>())
@@ -40,7 +43,9 @@ public static class MatrixConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpMatrixRows(DXMath.Matrix openXmlElement, Collection<DMMath.MatrixRow>? value, DiffList? diffs, string? objName)
@@ -85,11 +90,11 @@ public static class MatrixConverter
     }
   }
   
-  public static DMMath.Matrix? CreateModelElement(DXMath.Matrix? openXmlElement)
+  public static DocumentModel.Math.Matrix? CreateModelElement(DXMath.Matrix? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Matrix();
+      var value = new DocumentModel.Math.Matrix();
       value.MatrixProperties = GetMatrixProperties(openXmlElement);
       value.MatrixRows = GetMatrixRows(openXmlElement);
       return value;

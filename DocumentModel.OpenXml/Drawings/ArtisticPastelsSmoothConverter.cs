@@ -45,11 +45,11 @@ public static class ArtisticPastelsSmoothConverter
     openXmlElement.BrushSize = value;
   }
   
-  public static DMDraws.ArtisticPastelsSmooth? CreateModelElement(DXO2010Draw.ArtisticPastelsSmooth? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPastelsSmooth? CreateModelElement(DXO2010Draw.ArtisticPastelsSmooth? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticPastelsSmooth();
+      var value = new DocumentModel.Drawings.ArtisticPastelsSmooth();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.BrushSize = GetBrushSize(openXmlElement);
       return value;

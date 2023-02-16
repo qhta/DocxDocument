@@ -10,7 +10,10 @@ public static class DialogBoxLauncherConverter
   /// </summary>
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.DialogBoxLauncher openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.DialogBoxLauncher openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class DialogBoxLauncherConverter
     }
   }
   
-  public static DMUI.DialogBoxLauncher? CreateModelElement(DXOCustUI.DialogBoxLauncher? openXmlElement)
+  public static DocumentModel.UI.DialogBoxLauncher? CreateModelElement(DXOCustUI.DialogBoxLauncher? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.DialogBoxLauncher();
+      var value = new DocumentModel.UI.DialogBoxLauncher();
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       return value;
     }

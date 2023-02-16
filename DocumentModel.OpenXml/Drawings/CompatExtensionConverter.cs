@@ -28,11 +28,11 @@ public static class CompatExtensionConverter
       openXmlElement.ShapeId = null;
   }
   
-  public static DMDraws.CompatExtension? CreateModelElement(DXO2010Draw.CompatExtension? openXmlElement)
+  public static DocumentModel.Drawings.CompatExtension? CreateModelElement(DXO2010Draw.CompatExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.CompatExtension();
+      var value = new DocumentModel.Drawings.CompatExtension();
       value.ShapeId = GetShapeId(openXmlElement);
       return value;
     }

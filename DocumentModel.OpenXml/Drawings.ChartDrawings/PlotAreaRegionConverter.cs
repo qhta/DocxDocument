@@ -10,7 +10,10 @@ public static class PlotAreaRegionConverter
   /// </summary>
   private static DMDrawsChartDraws.PlotSurface? GetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
-    return DMXDrawsChartDraws.PlotSurfaceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>();
+    if (element != null)
+      return DMXDrawsChartDraws.PlotSurfaceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value, DiffList? diffs, string? objName)
@@ -31,7 +34,7 @@ public static class PlotAreaRegionConverter
     }
   }
   
-  private static Collection<DMDrawsChartDraws.Series> GetSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
+  private static Collection<DMDrawsChartDraws.Series>? GetSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.Series>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.Series>())
@@ -40,7 +43,9 @@ public static class PlotAreaRegionConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, Collection<DMDrawsChartDraws.Series>? value, DiffList? diffs, string? objName)
@@ -87,7 +92,10 @@ public static class PlotAreaRegionConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -108,11 +116,11 @@ public static class PlotAreaRegionConverter
     }
   }
   
-  public static DMDrawsChartDraws.PlotAreaRegion? CreateModelElement(DXO2016DrawChartDraw.PlotAreaRegion? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? CreateModelElement(DXO2016DrawChartDraw.PlotAreaRegion? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.PlotAreaRegion();
+      var value = new DocumentModel.Drawings.ChartDrawings.PlotAreaRegion();
       value.PlotSurface = GetPlotSurface(openXmlElement);
       value.Series = GetSeries(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

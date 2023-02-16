@@ -276,11 +276,11 @@ public static class LockConverter
       openXmlElement.ShapeType = null;
   }
   
-  public static DMVml.Lock? CreateModelElement(DXVmlO.Lock? openXmlElement)
+  public static DocumentModel.Vml.Lock? CreateModelElement(DXVmlO.Lock? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Lock();
+      var value = new DocumentModel.Vml.Lock();
       value.Extension = GetExtension(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.Selection = GetSelection(openXmlElement);

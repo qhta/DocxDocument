@@ -7,7 +7,10 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
 {
   private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
+    if (element != null)
+      return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
   
   private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    return DMXUI.UnsizedButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    if (element != null)
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedButton(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
   
   private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    return DMXUI.VerticalSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>();
+    if (element != null)
+      return DMXUI.VerticalSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVerticalSeparator(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
     }
   }
   
-  public static DMUI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.DocumentSpecificQuickAccessToolbarControls();
+      var value = new DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls();
       value.QuickAccessToolbarControlClone = GetQuickAccessToolbarControlClone(openXmlElement);
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       value.VerticalSeparator = GetVerticalSeparator(openXmlElement);

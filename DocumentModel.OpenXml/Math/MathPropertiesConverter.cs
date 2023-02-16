@@ -422,11 +422,11 @@ public static class MathPropertiesConverter
     }
   }
   
-  public static DMMath.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
+  public static DocumentModel.Math.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MathProperties();
+      var value = new DocumentModel.Math.MathProperties();
       value.MathFont = GetMathFont(openXmlElement);
       value.BreakBinary = GetBreakBinary(openXmlElement);
       value.BreakBinarySubtraction = GetBreakBinarySubtraction(openXmlElement);

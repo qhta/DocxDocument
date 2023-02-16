@@ -36,7 +36,10 @@ public static class EndnoteDocumentWidePropertiesConverter
   /// </summary>
   private static DMW.NumberingFormat? GetNumberingFormat(DXW.EndnoteDocumentWideProperties openXmlElement)
   {
-    return DMXW.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
+    if (element != null)
+      return DMXW.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -111,7 +114,7 @@ public static class EndnoteDocumentWidePropertiesConverter
     }
   }
   
-  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType> GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement)
+  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement)
   {
     var collection = new Collection<DMW.FootnoteEndnoteSeparatorReferenceType>();
     foreach (var item in openXmlElement.Elements<DXW.EndnoteSpecialReference>())
@@ -120,7 +123,9 @@ public static class EndnoteDocumentWidePropertiesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value, DiffList? diffs, string? objName)
@@ -165,11 +170,11 @@ public static class EndnoteDocumentWidePropertiesConverter
     }
   }
   
-  public static DMW.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.EndnoteDocumentWideProperties();
+      var value = new DocumentModel.Wordprocessing.EndnoteDocumentWideProperties();
       value.EndnotePosition = GetEndnotePosition(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);

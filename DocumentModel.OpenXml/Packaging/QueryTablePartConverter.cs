@@ -29,11 +29,11 @@ public static class QueryTablePartConverter
     return false;
   }
   
-  public static DMPack.QueryTablePart? CreateModelElement(DXPack.QueryTablePart? openXmlElement)
+  public static DocumentModel.Packaging.QueryTablePart? CreateModelElement(DXPack.QueryTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.QueryTablePart();
+      var value = new DocumentModel.Packaging.QueryTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

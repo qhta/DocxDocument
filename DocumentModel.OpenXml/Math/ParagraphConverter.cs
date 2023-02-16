@@ -10,7 +10,10 @@ public static class ParagraphConverter
   /// </summary>
   private static DMMath.ParagraphProperties? GetParagraphProperties(DXMath.Paragraph openXmlElement)
   {
-    return DMXMath.ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ParagraphProperties>();
+    if (element != null)
+      return DMXMath.ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphProperties(DXMath.Paragraph openXmlElement, DMMath.ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -33,7 +36,10 @@ public static class ParagraphConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXMath.Paragraph openXmlElement)
   {
-    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+    var element = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
+    if (element != null)
+      return DMXMath.OfficeMathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeMath(DXMath.Paragraph openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
@@ -56,7 +62,10 @@ public static class ParagraphConverter
   
   private static DMMath.Run? GetRun(DXMath.Paragraph openXmlElement)
   {
-    return DMXMath.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Run>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Run>();
+    if (element != null)
+      return DMXMath.RunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRun(DXMath.Paragraph openXmlElement, DMMath.Run? value, DiffList? diffs, string? objName)
@@ -79,7 +88,10 @@ public static class ParagraphConverter
   
   private static DMW.ProofError? GetProofError(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+    var element = openXmlElement?.GetFirstChild<DXW.ProofError>();
+    if (element != null)
+      return DMXW.ProofErrorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProofError(DXMath.Paragraph openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
@@ -102,7 +114,10 @@ public static class ParagraphConverter
   
   private static DMW.PermStart? GetPermStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermStart>();
+    if (element != null)
+      return DMXW.PermStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermStart(DXMath.Paragraph openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
@@ -125,7 +140,10 @@ public static class ParagraphConverter
   
   private static DMW.PermEnd? GetPermEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermEnd>();
+    if (element != null)
+      return DMXW.PermEndConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermEnd(DXMath.Paragraph openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
@@ -148,7 +166,10 @@ public static class ParagraphConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
+    if (element != null)
+      return DMXW.BookmarkStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkStart(DXMath.Paragraph openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
@@ -171,7 +192,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkEnd(DXMath.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -194,7 +218,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeStart(DXMath.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -217,7 +244,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -240,7 +270,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeStart(DXMath.Paragraph openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -263,7 +296,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -286,7 +322,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeStart(DXMath.Paragraph openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -309,7 +348,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -332,7 +374,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -355,7 +400,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -378,7 +426,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -401,7 +452,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -424,7 +478,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -447,7 +504,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -470,7 +530,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -493,7 +556,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -516,7 +582,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -539,7 +608,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -562,7 +634,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXMath.Paragraph openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -585,7 +660,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXMath.Paragraph openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -608,7 +686,10 @@ public static class ParagraphConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
+    if (element != null)
+      return DMXW.InsertedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInsertedRun(DXMath.Paragraph openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
@@ -631,7 +712,10 @@ public static class ParagraphConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
+    if (element != null)
+      return DMXW.DeletedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedRun(DXMath.Paragraph openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
@@ -654,7 +738,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveFromRun? GetMoveFromRun(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
+    if (element != null)
+      return DMXW.MoveFromRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRun(DXMath.Paragraph openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
@@ -677,7 +764,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
+    if (element != null)
+      return DMXW.MoveToRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRun(DXMath.Paragraph openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
@@ -700,7 +790,10 @@ public static class ParagraphConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
+    if (element != null)
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictInsertion(DXMath.Paragraph openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
@@ -723,7 +816,10 @@ public static class ParagraphConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXMath.Paragraph openXmlElement)
   {
-    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
+    if (element != null)
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictDeletion(DXMath.Paragraph openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
@@ -744,11 +840,11 @@ public static class ParagraphConverter
     }
   }
   
-  public static DMMath.Paragraph? CreateModelElement(DXMath.Paragraph? openXmlElement)
+  public static DocumentModel.Math.Paragraph? CreateModelElement(DXMath.Paragraph? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Paragraph();
+      var value = new DocumentModel.Math.Paragraph();
       value.ParagraphProperties = GetParagraphProperties(openXmlElement);
       value.OfficeMath = GetOfficeMath(openXmlElement);
       value.Run = GetRun(openXmlElement);

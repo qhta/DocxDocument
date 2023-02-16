@@ -218,7 +218,10 @@ public static class BorderBoxPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.BorderBoxProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.BorderBoxProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -239,11 +242,11 @@ public static class BorderBoxPropertiesConverter
     }
   }
   
-  public static DMMath.BorderBoxProperties? CreateModelElement(DXMath.BorderBoxProperties? openXmlElement)
+  public static DocumentModel.Math.BorderBoxProperties? CreateModelElement(DXMath.BorderBoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BorderBoxProperties();
+      var value = new DocumentModel.Math.BorderBoxProperties();
       value.HideTop = GetHideTop(openXmlElement);
       value.HideBottom = GetHideBottom(openXmlElement);
       value.HideLeft = GetHideLeft(openXmlElement);

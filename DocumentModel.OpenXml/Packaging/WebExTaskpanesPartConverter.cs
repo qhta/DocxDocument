@@ -55,7 +55,7 @@ public static class WebExTaskpanesPartConverter
   /// <summary>
   /// Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  private static Collection<DMPack.WebExtensionPart> GetWebExtensionParts(DXPack.WebExTaskpanesPart openXmlElement)
+  private static Collection<DMPack.WebExtensionPart>? GetWebExtensionParts(DXPack.WebExTaskpanesPart openXmlElement)
   {
     var collection = new Collection<DMPack.WebExtensionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.WebExtensionPart>())
@@ -72,11 +72,11 @@ public static class WebExTaskpanesPartConverter
     return true;
   }
   
-  public static DMPack.WebExTaskpanesPart? CreateModelElement(DXPack.WebExTaskpanesPart? openXmlElement)
+  public static DocumentModel.Packaging.WebExTaskpanesPart? CreateModelElement(DXPack.WebExTaskpanesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WebExTaskpanesPart();
+      var value = new DocumentModel.Packaging.WebExTaskpanesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.Taskpanes = GetTaskpanes(openXmlElement);

@@ -28,11 +28,11 @@ public static class GraphicDataConverter
       openXmlElement.Uri = null;
   }
   
-  public static DMDraws.GraphicData? CreateModelElement(DXDraw.GraphicData? openXmlElement)
+  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DXDraw.GraphicData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.GraphicData();
+      var value = new DocumentModel.Drawings.GraphicData();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

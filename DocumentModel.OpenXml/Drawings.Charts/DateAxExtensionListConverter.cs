@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DateAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.DateAxExtension> GetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.DateAxExtension>? GetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.DateAxExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.DateAxExtension>())
@@ -14,7 +14,9 @@ public static class DateAxExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class DateAxExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.DateAxExtensionList? CreateModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DateAxExtensionList? CreateModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DateAxExtensionList();
+      var value = new DocumentModel.Drawings.Charts.DateAxExtensionList();
       value.DateAxExtensions = GetDateAxExtensions(openXmlElement);
       return value;
     }

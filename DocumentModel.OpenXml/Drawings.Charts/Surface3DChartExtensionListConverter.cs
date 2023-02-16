@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Surface3DChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.Surface3DChartExtension> GetSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Surface3DChartExtension>? GetSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Surface3DChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Surface3DChartExtension>())
@@ -14,7 +14,9 @@ public static class Surface3DChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Surface3DChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class Surface3DChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.Surface3DChartExtensionList? CreateModelElement(DXDrawCharts.Surface3DChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Surface3DChartExtensionList? CreateModelElement(DXDrawCharts.Surface3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Surface3DChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.Surface3DChartExtensionList();
       value.Surface3DChartExtensions = GetSurface3DChartExtensions(openXmlElement);
       return value;
     }

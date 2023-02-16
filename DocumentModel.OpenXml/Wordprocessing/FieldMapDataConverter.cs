@@ -175,11 +175,11 @@ public static class FieldMapDataConverter
     }
   }
   
-  public static DMW.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)
+  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FieldMapData();
+      var value = new DocumentModel.Wordprocessing.FieldMapData();
       value.MailMergeFieldType = GetMailMergeFieldType(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.MappedName = GetMappedName(openXmlElement);

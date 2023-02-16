@@ -25,11 +25,11 @@ public static class AlphaBiLevelConverter
     openXmlElement.Threshold = value;
   }
   
-  public static DMDraws.AlphaBiLevel? CreateModelElement(DXDraw.AlphaBiLevel? openXmlElement)
+  public static DocumentModel.Drawings.AlphaBiLevel? CreateModelElement(DXDraw.AlphaBiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AlphaBiLevel();
+      var value = new DocumentModel.Drawings.AlphaBiLevel();
       value.Threshold = GetThreshold(openXmlElement);
       return value;
     }

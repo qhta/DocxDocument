@@ -238,7 +238,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>();
+    if (element != null)
+      return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAlgorithm(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
@@ -261,7 +264,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.Shape? GetShape(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Shape>();
+    if (element != null)
+      return DMXDrawsDgms.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
@@ -284,7 +290,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.PresentationOf? GetPresentationOf(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>();
+    if (element != null)
+      return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresentationOf(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
@@ -307,7 +316,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.Constraints? GetConstraints(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>();
+    if (element != null)
+      return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConstraints(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
@@ -330,7 +342,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.RuleList? GetRuleList(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.RuleListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>();
+    if (element != null)
+      return DMXDrawsDgms.RuleListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRuleList(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
@@ -353,7 +368,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.ForEach? GetForEach(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.ForEachConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>();
+    if (element != null)
+      return DMXDrawsDgms.ForEachConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpForEach(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.ForEach? value, DiffList? diffs, string? objName)
@@ -376,7 +394,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.LayoutNode? GetLayoutNode(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>();
+    if (element != null)
+      return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLayoutNode(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
@@ -399,7 +420,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.Choose? GetChoose(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.ChooseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.Choose>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Choose>();
+    if (element != null)
+      return DMXDrawsDgms.ChooseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChoose(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
@@ -422,7 +446,10 @@ public static class DiagramChooseIfConverter
   
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.DiagramChooseIf openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.DiagramChooseIf openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -443,11 +470,11 @@ public static class DiagramChooseIfConverter
     }
   }
   
-  public static DMDrawsDgms.DiagramChooseIf? CreateModelElement(DXDrawDgms.DiagramChooseIf? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? CreateModelElement(DXDrawDgms.DiagramChooseIf? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.DiagramChooseIf();
+      var value = new DocumentModel.Drawings.Diagrams.DiagramChooseIf();
       value.Name = GetName(openXmlElement);
       value.Axis = GetAxis(openXmlElement);
       value.PointType = GetPointType(openXmlElement);

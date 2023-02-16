@@ -10,7 +10,10 @@ public static class QuickAccessToolbarConverter
   /// </summary>
   private static DMUI.SharedQatControls? GetSharedQatControls(DXOCustUI.QuickAccessToolbar openXmlElement)
   {
-    return DMXUI.SharedQatControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.SharedQatControls>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.SharedQatControls>();
+    if (element != null)
+      return DMXUI.SharedQatControlsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSharedQatControls(DXOCustUI.QuickAccessToolbar openXmlElement, DMUI.SharedQatControls? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class QuickAccessToolbarConverter
   /// </summary>
   private static DMUI.DocumentSpecificQuickAccessToolbarControls? GetDocumentSpecificQuickAccessToolbarControls(DXOCustUI.QuickAccessToolbar openXmlElement)
   {
-    return DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.DocumentSpecificQuickAccessToolbarControls>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.DocumentSpecificQuickAccessToolbarControls>();
+    if (element != null)
+      return DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocumentSpecificQuickAccessToolbarControls(DXOCustUI.QuickAccessToolbar openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class QuickAccessToolbarConverter
     }
   }
   
-  public static DMUI.QuickAccessToolbar? CreateModelElement(DXOCustUI.QuickAccessToolbar? openXmlElement)
+  public static DocumentModel.UI.QuickAccessToolbar? CreateModelElement(DXOCustUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.QuickAccessToolbar();
+      var value = new DocumentModel.UI.QuickAccessToolbar();
       value.SharedQatControls = GetSharedQatControls(openXmlElement);
       value.DocumentSpecificQuickAccessToolbarControls = GetDocumentSpecificQuickAccessToolbarControls(openXmlElement);
       return value;

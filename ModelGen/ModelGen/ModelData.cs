@@ -598,19 +598,40 @@ public static class ModelData
     "DebuggerDisplay", "DebuggerNonUserCode", "CLSCompliant", "EditorBrowsable",
   };
 
-  public static Dictionary<string, string> TypeNameConversion { get; } = new Dictionary<string, string>
+  public static Dictionary<string, string> TypeNameConversion { get; } = new()
   {
-    //{ "DocumentFormat.OpenXml.ExtendedProperties.Properties", "DocumentModel.ExtendedProperties"},
-    //{ "DocumentFormat.OpenXml.CustomProperties.Properties", "DocumentModel.CustomProperties"},
-    //{ "DocumentFormat.OpenXml.Drawing.ChartDrawingNonVisualDrawingProperties", "DocumentModel.Drawings.DrawingNonVisualDrawingProperties" },
-    //{ "DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties", "DocumentModel.Presentation.PresentationNonVisualDrawingProperties" },
-    //{ "DocumentFormat.OpenXml.Drawing.ShapeProperties", "DocumentModel.Drawings.ShapeProperties"},
-    //{ "DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType", "DocumentModel.Wordprocessing.RunTrackChangeType2"},
-    //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType", "DocumentModel.Drawings.AxisDataSourceType2"},
-    //{ "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType", "DocumentModel.Drawings.TextBodyType2"},
-    //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType", "DocumentModel.Drawings.StringDataType2"},
+    { "DocumentFormat.OpenXml.Wordprocessing.Settings", "DocumentModel.DocumentSettings"},
+    { "DocumentFormat.OpenXml.Wordprocessing.WebSettings", "DocumentModel.WebSettings"},
+  //  //{ "DocumentFormat.OpenXml.ExtendedProperties.Properties", "DocumentModel.ExtendedProperties"},
+  //  //{ "DocumentFormat.OpenXml.CustomProperties.Properties", "DocumentModel.CustomProperties"},
+  //  //{ "DocumentFormat.OpenXml.Drawing.ChartDrawingNonVisualDrawingProperties", "DocumentModel.Drawings.DrawingNonVisualDrawingProperties" },
+  //  //{ "DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties", "DocumentModel.Presentation.PresentationNonVisualDrawingProperties" },
+  //  //{ "DocumentFormat.OpenXml.Drawing.ShapeProperties", "DocumentModel.Drawings.ShapeProperties"},
+  //  //{ "DocumentFormat.OpenXml.Office2010.Word.RunTrackChangeType", "DocumentModel.Wordprocessing.RunTrackChangeType2"},
+  //  //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType", "DocumentModel.Drawings.AxisDataSourceType2"},
+  //  //{ "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType", "DocumentModel.Drawings.TextBodyType2"},
+  //  //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType", "DocumentModel.Drawings.StringDataType2"},
   };
-  public static Dictionary<Type, Type> TypeConversionTable { get; } = new Dictionary<Type, Type>
+
+  public record TypeConversionTarget
+  {
+    public Type Type {get; set; }= null!;
+    public bool Rename {get; set;}
+
+    public TypeConversionTarget(Type type)
+    {
+      Type = type;
+    }
+    public TypeConversionTarget(Type type, bool rename)
+    {
+      Type = type;
+      Rename = rename;
+    }
+
+    public static implicit operator TypeConversionTarget (Type type) => new TypeConversionTarget(type);
+    public static implicit operator TypeConversionTarget (TypeInfo typeInfo) => new TypeConversionTarget(typeInfo.Type);
+  }
+  public static Dictionary<Type, TypeConversionTarget> TypeConversionTable { get; } = new ()
   {
     { typeof(DocumentFormat.OpenXml.StringValue), typeof(System.String)},
     { typeof(DocumentFormat.OpenXml.BooleanValue), typeof(System.Boolean)},
@@ -636,55 +657,16 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
     { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(UInt32)},
     { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.ThreadSafeAttribute), typeof(DocumentModel.Attributes.ThreadSafeAttribute) },
     { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.KnownFeatureAttribute), typeof(DocumentModel.Attributes.KnownFeatureAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.DelegatedFeatureAttribute), typeof(DocumentModel.Attributes.DelegatedFeatureAttribute) },
     { typeof(DocumentFormat.OpenXml.ChildElementInfoAttribute), typeof(DocumentModel.Attributes.ChildElementInfoAttribute) },
     { typeof(DocumentFormat.OpenXml.SchemaAttrAttribute), typeof(DocumentModel.Attributes.SchemaAttrAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.Framework.ContentTypeAttribute), typeof(DocumentModel.Attributes.ContentMimeAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.Framework.RelationshipTypeAttribute), typeof(DocumentModel.Attributes.RelationshipUriAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.Framework.PartConstraintAttribute), typeof(DocumentModel.Attributes.PartConstraintAttribute) },
-    //{ typeof(DocumentFormat.OpenXml.Framework.DataPartConstraintAttribute), typeof(DocumentModel.Attributes.DataPartConstraintAttribute) },
-
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.ArrayBaseValues), typeof(DocumentModel.ArrayBaseType)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues), typeof(DocumentModel.VariantTypes.VectorBaseType)},
     { typeof(DocumentFormat.OpenXml.VariantTypes.Variant), typeof(DocumentModel.Variant)},
     { typeof(DocumentFormat.OpenXml.VariantTypes.VTArray), typeof(DocumentModel.ArrayVariant)},
     { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VectorVariant)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTBlob), typeof(DocumentModel.VariantTypes.VTBlob)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTBString), typeof(DocumentModel.VariantTypes.VTString)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTByte), typeof(DocumentModel.VariantTypes.VTSignedByte)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTClassId), typeof(DocumentModel.VariantTypes.VTClassId)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTClipboardData), typeof(DocumentModel.VariantTypes.VTClipboardData)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTCurrency), typeof(DocumentModel.VariantTypes.VTCurrency)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTDate), typeof(DocumentModel.VariantTypes.VTDate)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTDecimal), typeof(DocumentModel.VariantTypes.VTDecimal)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTDouble), typeof(DocumentModel.VariantTypes.VTDouble)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTEmpty), typeof(DocumentModel.VariantTypes.VTEmpty)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTError), typeof(DocumentModel.VariantTypes.VTError)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTFileTime), typeof(DocumentModel.VariantTypes.VTDateTime)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTFloat), typeof(DocumentModel.VariantTypes.VTFloat)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTInt32), typeof(DocumentModel.VariantTypes.VTInt32)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTInt64), typeof(DocumentModel.VariantTypes.VTInt64)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTInteger), typeof(DocumentModel.VariantTypes.VTInt64)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTLPSTR), typeof(DocumentModel.VariantTypes.VTString)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTLPWSTR), typeof(DocumentModel.VariantTypes.VTString)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTNull), typeof(DocumentModel.VariantTypes.VTNull)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTOBlob), typeof(DocumentModel.VariantTypes.VTBlob)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTOStorage), typeof(DocumentModel.VariantTypes.VTStorage)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTOStreamData), typeof(DocumentModel.VariantTypes.VTStream)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTShort), typeof(DocumentModel.VariantTypes.VTShort)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTStorage), typeof(DocumentModel.VariantTypes.VTStorage)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTStreamData), typeof(DocumentModel.VariantTypes.VTStream)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedByte), typeof(DocumentModel.VariantTypes.VTByte)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt32), typeof(DocumentModel.VariantTypes.VTUnsignedInt32)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt64), typeof(DocumentModel.VariantTypes.VTUnsignedInt64)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedInteger), typeof(DocumentModel.VariantTypes.VTUnsignedInt64)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTUnsignedShort), typeof(DocumentModel.VariantTypes.VTUnsignedShort)},
-    //{ typeof(DocumentFormat.OpenXml.VariantTypes.VTVStreamData), typeof(DocumentModel.VariantTypes.VTVStream)},
-    { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(byte[])},
-    { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(byte[])},
+    { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
+    { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
+    //{ typeof(DocumentFormat.OpenXml.Wordprocessing.Settings), new TypeConversionTarget(typeof(DocumentModel.DocumentSettings), true)},
+    //{ typeof(DocumentFormat.OpenXml.Wordprocessing.WebSettings), new TypeConversionTarget(typeof(DocumentModel.WebSettings), true)},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

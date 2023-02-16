@@ -51,11 +51,11 @@ public static class NumberFormatConverter
       openXmlElement.SourceLinked = null;
   }
   
-  public static DMDrawsChartDraws.NumberFormat? CreateModelElement(DXO2016DrawChartDraw.NumberFormat? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.NumberFormat? CreateModelElement(DXO2016DrawChartDraw.NumberFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.NumberFormat();
+      var value = new DocumentModel.Drawings.ChartDrawings.NumberFormat();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.SourceLinked = GetSourceLinked(openXmlElement);
       return value;

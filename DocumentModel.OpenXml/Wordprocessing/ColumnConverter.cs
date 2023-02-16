@@ -51,11 +51,11 @@ public static class ColumnConverter
       openXmlElement.Space = null;
   }
   
-  public static DMW.Column? CreateModelElement(DXW.Column? openXmlElement)
+  public static DocumentModel.Wordprocessing.Column? CreateModelElement(DXW.Column? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Column();
+      var value = new DocumentModel.Wordprocessing.Column();
       value.Width = GetWidth(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       return value;

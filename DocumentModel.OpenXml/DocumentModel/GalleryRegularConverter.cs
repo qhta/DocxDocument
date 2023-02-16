@@ -1115,7 +1115,7 @@ public static class GalleryRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DM.Item> GetItems(DXO2010CustUI.GalleryRegular openXmlElement)
+  private static Collection<DM.Item>? GetItems(DXO2010CustUI.GalleryRegular openXmlElement)
   {
     var collection = new Collection<DM.Item>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.Item>())
@@ -1124,7 +1124,9 @@ public static class GalleryRegularConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.Item>? value, DiffList? diffs, string? objName)
@@ -1169,7 +1171,7 @@ public static class GalleryRegularConverter
     }
   }
   
-  private static Collection<DM.ButtonRegular> GetButtonRegulars(DXO2010CustUI.GalleryRegular openXmlElement)
+  private static Collection<DM.ButtonRegular>? GetButtonRegulars(DXO2010CustUI.GalleryRegular openXmlElement)
   {
     var collection = new Collection<DM.ButtonRegular>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.ButtonRegular>())
@@ -1178,7 +1180,9 @@ public static class GalleryRegularConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpButtonRegulars(DXO2010CustUI.GalleryRegular openXmlElement, Collection<DM.ButtonRegular>? value, DiffList? diffs, string? objName)
@@ -1223,11 +1227,11 @@ public static class GalleryRegularConverter
     }
   }
   
-  public static DM.GalleryRegular? CreateModelElement(DXO2010CustUI.GalleryRegular? openXmlElement)
+  public static DocumentModel.GalleryRegular? CreateModelElement(DXO2010CustUI.GalleryRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.GalleryRegular();
+      var value = new DocumentModel.GalleryRegular();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.InvalidateContentOnDrop = GetInvalidateContentOnDrop(openXmlElement);

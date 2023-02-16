@@ -28,7 +28,10 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.ShapeIdMap? GetShapeIdMap(DXVmlO.ShapeLayout openXmlElement)
   {
-    return DMXVml.ShapeIdMapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ShapeIdMap>();
+    if (element != null)
+      return DMXVml.ShapeIdMapConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeIdMap(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeIdMap? value, DiffList? diffs, string? objName)
@@ -54,7 +57,10 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.RegroupTable? GetRegroupTable(DXVmlO.ShapeLayout openXmlElement)
   {
-    return DMXVml.RegroupTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.RegroupTable>();
+    if (element != null)
+      return DMXVml.RegroupTableConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRegroupTable(DXVmlO.ShapeLayout openXmlElement, DMVml.RegroupTable? value, DiffList? diffs, string? objName)
@@ -80,7 +86,10 @@ public static class ShapeLayoutConverter
   /// </summary>
   private static DMVml.Rules? GetRules(DXVmlO.ShapeLayout openXmlElement)
   {
-    return DMXVml.RulesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Rules>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Rules>();
+    if (element != null)
+      return DMXVml.RulesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRules(DXVmlO.ShapeLayout openXmlElement, DMVml.Rules? value, DiffList? diffs, string? objName)
@@ -101,11 +110,11 @@ public static class ShapeLayoutConverter
     }
   }
   
-  public static DMVml.ShapeLayout? CreateModelElement(DXVmlO.ShapeLayout? openXmlElement)
+  public static DocumentModel.Vml.ShapeLayout? CreateModelElement(DXVmlO.ShapeLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ShapeLayout();
+      var value = new DocumentModel.Vml.ShapeLayout();
       value.Extension = GetExtension(openXmlElement);
       value.ShapeIdMap = GetShapeIdMap(openXmlElement);
       value.RegroupTable = GetRegroupTable(openXmlElement);

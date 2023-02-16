@@ -10,7 +10,10 @@ public static class FontCollectionTypeConverter
   /// </summary>
   private static DMDraws.TextFontType? GetLatinFont(DXDraw.FontCollectionType openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LatinFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LatinFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLatinFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class FontCollectionTypeConverter
   /// </summary>
   private static DMDraws.TextFontType? GetEastAsianFont(DXDraw.FontCollectionType openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEastAsianFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class FontCollectionTypeConverter
   /// </summary>
   private static DMDraws.TextFontType? GetComplexScriptFont(DXDraw.FontCollectionType openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpComplexScriptFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class FontCollectionTypeConverter
     }
   }
   
-  public static DMDraws.FontCollectionType? CreateModelElement(DXDraw.FontCollectionType? openXmlElement)
+  public static DocumentModel.Drawings.FontCollectionType? CreateModelElement(DXDraw.FontCollectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.FontCollectionType();
+      var value = new DocumentModel.Drawings.FontCollectionType();
       value.LatinFont = GetLatinFont(openXmlElement);
       value.EastAsianFont = GetEastAsianFont(openXmlElement);
       value.ComplexScriptFont = GetComplexScriptFont(openXmlElement);

@@ -52,7 +52,10 @@ public static class GeoCacheConverter
   
   private static DMDrawsChartDraws.Clear? GetClear(DXO2016DrawChartDraw.GeoCache openXmlElement)
   {
-    return DMXDrawsChartDraws.ClearConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Clear>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Clear>();
+    if (element != null)
+      return DMXDrawsChartDraws.ClearConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpClear(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.Clear? value, DiffList? diffs, string? objName)
@@ -73,11 +76,11 @@ public static class GeoCacheConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoCache? CreateModelElement(DXO2016DrawChartDraw.GeoCache? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(DXO2016DrawChartDraw.GeoCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoCache();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoCache();
       value.Provider = GetProvider(openXmlElement);
       value.Xsdbase64Binary = GetXsdbase64Binary(openXmlElement);
       value.Clear = GetClear(openXmlElement);

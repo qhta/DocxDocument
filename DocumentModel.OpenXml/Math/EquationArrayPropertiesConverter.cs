@@ -144,7 +144,10 @@ public static class EquationArrayPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.EquationArrayProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -165,11 +168,11 @@ public static class EquationArrayPropertiesConverter
     }
   }
   
-  public static DMMath.EquationArrayProperties? CreateModelElement(DXMath.EquationArrayProperties? openXmlElement)
+  public static DocumentModel.Math.EquationArrayProperties? CreateModelElement(DXMath.EquationArrayProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.EquationArrayProperties();
+      var value = new DocumentModel.Math.EquationArrayProperties();
       value.BaseJustification = GetBaseJustification(openXmlElement);
       value.MaxDistribution = GetMaxDistribution(openXmlElement);
       value.ObjectDistribution = GetObjectDistribution(openXmlElement);

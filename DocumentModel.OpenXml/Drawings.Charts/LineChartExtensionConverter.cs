@@ -30,7 +30,10 @@ public static class LineChartExtensionConverter
   
   private static DMDrawsCharts.FilteredLineSeriesExtension? GetFilteredLineSeriesExtension(DXDrawCharts.LineChartExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredLineSeriesExtension(DXDrawCharts.LineChartExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class LineChartExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.LineChartExtension? CreateModelElement(DXDrawCharts.LineChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineChartExtension? CreateModelElement(DXDrawCharts.LineChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LineChartExtension();
+      var value = new DocumentModel.Drawings.Charts.LineChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredLineSeriesExtension = GetFilteredLineSeriesExtension(openXmlElement);
       return value;

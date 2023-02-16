@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class KeyMapCustomizationsConverter
 {
-  private static Collection<DMW.KeyMapEntry> GetKeyMapEntries(DXOW.KeyMapCustomizations openXmlElement)
+  private static Collection<DMW.KeyMapEntry>? GetKeyMapEntries(DXOW.KeyMapCustomizations openXmlElement)
   {
     var collection = new Collection<DMW.KeyMapEntry>();
     foreach (var item in openXmlElement.Elements<DXOW.KeyMapEntry>())
@@ -14,7 +14,9 @@ public static class KeyMapCustomizationsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpKeyMapEntries(DXOW.KeyMapCustomizations openXmlElement, Collection<DMW.KeyMapEntry>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class KeyMapCustomizationsConverter
     }
   }
   
-  public static DMW.KeyMapCustomizations? CreateModelElement(DXOW.KeyMapCustomizations? openXmlElement)
+  public static DocumentModel.Wordprocessing.KeyMapCustomizations? CreateModelElement(DXOW.KeyMapCustomizations? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.KeyMapCustomizations();
+      var value = new DocumentModel.Wordprocessing.KeyMapCustomizations();
       value.KeyMapEntries = GetKeyMapEntries(openXmlElement);
       return value;
     }

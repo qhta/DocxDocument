@@ -45,11 +45,11 @@ public static class EntryConverter
     openXmlElement.Old = value;
   }
   
-  public static DMVml.Entry? CreateModelElement(DXVmlO.Entry? openXmlElement)
+  public static DocumentModel.Vml.Entry? CreateModelElement(DXVmlO.Entry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Entry();
+      var value = new DocumentModel.Vml.Entry();
       value.New = GetNew(openXmlElement);
       value.Old = GetOld(openXmlElement);
       return value;

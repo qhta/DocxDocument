@@ -10,7 +10,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.TitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Title>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    if (element != null)
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTitle(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
@@ -67,7 +70,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.PivotFormats? GetPivotFormats(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.PivotFormatsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PivotFormats>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PivotFormats>();
+    if (element != null)
+      return DMXDrawsCharts.PivotFormatsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPivotFormats(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PivotFormats? value, DiffList? diffs, string? objName)
@@ -93,7 +99,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.View3D? GetView3D(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.View3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.View3D>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.View3D>();
+    if (element != null)
+      return DMXDrawsCharts.View3DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpView3D(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.View3D? value, DiffList? diffs, string? objName)
@@ -119,7 +128,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.Floor? GetFloor(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.FloorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Floor>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Floor>();
+    if (element != null)
+      return DMXDrawsCharts.FloorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFloor(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Floor? value, DiffList? diffs, string? objName)
@@ -145,7 +157,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.SideWall? GetSideWall(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.SideWallConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SideWall>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SideWall>();
+    if (element != null)
+      return DMXDrawsCharts.SideWallConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSideWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.SideWall? value, DiffList? diffs, string? objName)
@@ -171,7 +186,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.BackWall? GetBackWall(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.BackWallConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BackWall>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BackWall>();
+    if (element != null)
+      return DMXDrawsCharts.BackWallConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.BackWall? value, DiffList? diffs, string? objName)
@@ -197,7 +215,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.PlotArea? GetPlotArea(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.PlotAreaConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PlotArea>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PlotArea>();
+    if (element != null)
+      return DMXDrawsCharts.PlotAreaConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPlotArea(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PlotArea? value, DiffList? diffs, string? objName)
@@ -223,7 +244,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.Legend? GetLegend(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.LegendConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Legend>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Legend>();
+    if (element != null)
+      return DMXDrawsCharts.LegendConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLegend(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Legend? value, DiffList? diffs, string? objName)
@@ -337,7 +361,10 @@ public static class ChartConverter
   /// </summary>
   private static DMDrawsCharts.ChartExtensionList? GetChartExtensionList(DXDrawCharts.Chart openXmlElement)
   {
-    return DMXDrawsCharts.ChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartExtensionList(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.ChartExtensionList? value, DiffList? diffs, string? objName)
@@ -358,11 +385,11 @@ public static class ChartConverter
     }
   }
   
-  public static DMDrawsCharts.Chart? CreateModelElement(DXDrawCharts.Chart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Chart? CreateModelElement(DXDrawCharts.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Chart();
+      var value = new DocumentModel.Drawings.Charts.Chart();
       value.Title = GetTitle(openXmlElement);
       value.AutoTitleDeleted = GetAutoTitleDeleted(openXmlElement);
       value.PivotFormats = GetPivotFormats(openXmlElement);

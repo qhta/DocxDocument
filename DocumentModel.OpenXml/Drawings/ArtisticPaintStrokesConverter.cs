@@ -45,11 +45,11 @@ public static class ArtisticPaintStrokesConverter
     openXmlElement.Intensity = value;
   }
   
-  public static DMDraws.ArtisticPaintStrokes? CreateModelElement(DXO2010Draw.ArtisticPaintStrokes? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPaintStrokes? CreateModelElement(DXO2010Draw.ArtisticPaintStrokes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticPaintStrokes();
+      var value = new DocumentModel.Drawings.ArtisticPaintStrokes();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Intensity = GetIntensity(openXmlElement);
       return value;

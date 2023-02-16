@@ -692,7 +692,10 @@ public static class MenuRegularConverter
   
   private static DM.ControlCloneRegular? GetControlCloneRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.ControlCloneRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneRegular>();
+    if (element != null)
+      return DMX.ControlCloneRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlCloneRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
@@ -715,7 +718,10 @@ public static class MenuRegularConverter
   
   private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.ButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    if (element != null)
+      return DMX.ButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
@@ -738,7 +744,10 @@ public static class MenuRegularConverter
   
   private static DM.CheckBox? GetCheckBox(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.CheckBox>();
+    if (element != null)
+      return DMX.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXO2010CustUI.MenuRegular openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
@@ -761,7 +770,10 @@ public static class MenuRegularConverter
   
   private static DM.GalleryRegular? GetGalleryRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.GalleryRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.GalleryRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.GalleryRegular>();
+    if (element != null)
+      return DMX.GalleryRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGalleryRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.GalleryRegular? value, DiffList? diffs, string? objName)
@@ -784,7 +796,10 @@ public static class MenuRegularConverter
   
   private static DM.ToggleButtonRegular? GetToggleButtonRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.ToggleButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>();
+    if (element != null)
+      return DMX.ToggleButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpToggleButtonRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.ToggleButtonRegular? value, DiffList? diffs, string? objName)
@@ -807,7 +822,10 @@ public static class MenuRegularConverter
   
   private static DM.MenuSeparator? GetMenuSeparator(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.MenuSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.MenuSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuSeparator>();
+    if (element != null)
+      return DMX.MenuSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuSeparator(DXO2010CustUI.MenuRegular openXmlElement, DM.MenuSeparator? value, DiffList? diffs, string? objName)
@@ -830,7 +848,10 @@ public static class MenuRegularConverter
   
   private static DM.SplitButtonRegular? GetSplitButtonRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.SplitButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButtonRegular>();
+    if (element != null)
+      return DMX.SplitButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButtonRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.SplitButtonRegular? value, DiffList? diffs, string? objName)
@@ -853,7 +874,10 @@ public static class MenuRegularConverter
   
   private static DM.MenuRegular? GetChildMenuRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.MenuRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>();
+    if (element != null)
+      return DMX.MenuRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildMenuRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
@@ -876,7 +900,10 @@ public static class MenuRegularConverter
   
   private static DM.DynamicMenuRegular? GetDynamicMenuRegular(DXO2010CustUI.MenuRegular openXmlElement)
   {
-    return DMX.DynamicMenuRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>();
+    if (element != null)
+      return DMX.DynamicMenuRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDynamicMenuRegular(DXO2010CustUI.MenuRegular openXmlElement, DM.DynamicMenuRegular? value, DiffList? diffs, string? objName)
@@ -897,11 +924,11 @@ public static class MenuRegularConverter
     }
   }
   
-  public static DM.MenuRegular? CreateModelElement(DXO2010CustUI.MenuRegular? openXmlElement)
+  public static DocumentModel.MenuRegular? CreateModelElement(DXO2010CustUI.MenuRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.MenuRegular();
+      var value = new DocumentModel.MenuRegular();
       value.ItemSize = GetItemSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);

@@ -10,7 +10,10 @@ public static class ThemeElementsConverter
   /// </summary>
   private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ThemeElements openXmlElement)
   {
-    return DMXDraws.ColorSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ColorScheme>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
+    if (element != null)
+      return DMXDraws.ColorSchemeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorScheme(DXDraw.ThemeElements openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ThemeElementsConverter
   /// </summary>
   private static DMDraws.FontScheme? GetFontScheme(DXDraw.ThemeElements openXmlElement)
   {
-    return DMXDraws.FontSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FontScheme>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FontScheme>();
+    if (element != null)
+      return DMXDraws.FontSchemeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFontScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FontScheme? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class ThemeElementsConverter
   /// </summary>
   private static DMDraws.FormatScheme? GetFormatScheme(DXDraw.ThemeElements openXmlElement)
   {
-    return DMXDraws.FormatSchemeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FormatScheme>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FormatScheme>();
+    if (element != null)
+      return DMXDraws.FormatSchemeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormatScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FormatScheme? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class ThemeElementsConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ThemeElements openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.ThemeElements openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class ThemeElementsConverter
     }
   }
   
-  public static DMDraws.ThemeElements? CreateModelElement(DXDraw.ThemeElements? openXmlElement)
+  public static DocumentModel.Drawings.ThemeElements? CreateModelElement(DXDraw.ThemeElements? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ThemeElements();
+      var value = new DocumentModel.Drawings.ThemeElements();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.FontScheme = GetFontScheme(openXmlElement);
       value.FormatScheme = GetFormatScheme(openXmlElement);

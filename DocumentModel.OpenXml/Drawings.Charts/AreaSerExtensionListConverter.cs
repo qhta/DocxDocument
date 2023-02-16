@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class AreaSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.AreaSerExtension> GetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.AreaSerExtension>? GetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.AreaSerExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaSerExtension>())
@@ -14,7 +14,9 @@ public static class AreaSerExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement, Collection<DMDrawsCharts.AreaSerExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AreaSerExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.AreaSerExtensionList? CreateModelElement(DXDrawCharts.AreaSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(DXDrawCharts.AreaSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.AreaSerExtensionList();
+      var value = new DocumentModel.Drawings.Charts.AreaSerExtensionList();
       value.AreaSerExtensions = GetAreaSerExtensions(openXmlElement);
       return value;
     }

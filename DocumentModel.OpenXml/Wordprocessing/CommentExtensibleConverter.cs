@@ -8,27 +8,27 @@ public static class CommentExtensibleConverter
   /// <summary>
   /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static UInt32? GetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement)
+  private static DM.HexInt? GetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
-      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.DurableId.Value);
     return null;
   }
   
-  private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DurableId?.Value != null)
-      if (UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.DurableId.Value) == value)
         return true;
-    if (openXmlElement?.DurableId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.DurableId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
     return false;
   }
   
-  private static void SetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, UInt32? value)
+  private static void SetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.DurableId = ((UInt32)value).ToString("X8");
+      openXmlElement.DurableId = value.ToString();
     else
       openXmlElement.DurableId = null;
   }
@@ -81,7 +81,10 @@ public static class CommentExtensibleConverter
   /// </summary>
   private static DMW.ExtensionList? GetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
-    return DMXW.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>();
+    if (element != null)
+      return DMXW.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
@@ -102,11 +105,11 @@ public static class CommentExtensibleConverter
     }
   }
   
-  public static DMW.CommentExtensible? CreateModelElement(DXO2021WComtExt.CommentExtensible? openXmlElement)
+  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(DXO2021WComtExt.CommentExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentExtensible();
+      var value = new DocumentModel.Wordprocessing.CommentExtensible();
       value.DurableId = GetDurableId(openXmlElement);
       value.DateUtc = GetDateUtc(openXmlElement);
       value.IntelligentPlaceholder = GetIntelligentPlaceholder(openXmlElement);

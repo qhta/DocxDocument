@@ -10,7 +10,10 @@ public static class GeoChildEntitiesQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoChildEntitiesQuery? GetGeoChildEntitiesQuery(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoChildEntitiesQueryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQuery>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQuery>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoChildEntitiesQueryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoChildEntitiesQuery(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQuery? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GeoChildEntitiesQueryResultConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoChildEntities? GetGeoChildEntities(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoChildEntitiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntities>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntities>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoChildEntitiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoChildEntities(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoChildEntities? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class GeoChildEntitiesQueryResultConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoChildEntitiesQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoChildEntitiesQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoChildEntitiesQueryResult();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResult();
       value.GeoChildEntitiesQuery = GetGeoChildEntitiesQuery(openXmlElement);
       value.GeoChildEntities = GetGeoChildEntities(openXmlElement);
       return value;

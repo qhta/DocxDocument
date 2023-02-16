@@ -10,7 +10,10 @@ public static class PreSubSuperPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.PreSubSuperProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.PreSubSuperProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class PreSubSuperPropertiesConverter
     }
   }
   
-  public static DMMath.PreSubSuperProperties? CreateModelElement(DXMath.PreSubSuperProperties? openXmlElement)
+  public static DocumentModel.Math.PreSubSuperProperties? CreateModelElement(DXMath.PreSubSuperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.PreSubSuperProperties();
+      var value = new DocumentModel.Math.PreSubSuperProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

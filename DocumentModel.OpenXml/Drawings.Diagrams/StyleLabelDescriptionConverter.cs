@@ -51,11 +51,11 @@ public static class StyleLabelDescriptionConverter
       openXmlElement.Val = null;
   }
   
-  public static DMDrawsDgms.StyleLabelDescription? CreateModelElement(DXDrawDgms.StyleLabelDescription? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleLabelDescription? CreateModelElement(DXDrawDgms.StyleLabelDescription? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.StyleLabelDescription();
+      var value = new DocumentModel.Drawings.Diagrams.StyleLabelDescription();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

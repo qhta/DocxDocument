@@ -59,11 +59,11 @@ public static class PositionalTabConverter
     openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabLeaderCharValues, DMW.AbsolutePositionTabLeaderCharKind>(value);
   }
   
-  public static DMW.PositionalTab? CreateModelElement(DXW.PositionalTab? openXmlElement)
+  public static DocumentModel.Wordprocessing.PositionalTab? CreateModelElement(DXW.PositionalTab? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PositionalTab();
+      var value = new DocumentModel.Wordprocessing.PositionalTab();
       value.Alignment = GetAlignment(openXmlElement);
       value.RelativeTo = GetRelativeTo(openXmlElement);
       value.Leader = GetLeader(openXmlElement);

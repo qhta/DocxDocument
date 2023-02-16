@@ -43,11 +43,11 @@ public static class PermEndConverter
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
-  public static DMW.PermEnd? CreateModelElement(DXW.PermEnd? openXmlElement)
+  public static DocumentModel.Wordprocessing.PermEnd? CreateModelElement(DXW.PermEnd? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PermEnd();
+      var value = new DocumentModel.Wordprocessing.PermEnd();
       value.Id = GetId(openXmlElement);
       value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
       return value;

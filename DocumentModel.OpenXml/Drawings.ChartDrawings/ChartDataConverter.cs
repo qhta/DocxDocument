@@ -10,7 +10,10 @@ public static class ChartDataConverter
   /// </summary>
   private static DMDrawsChartDraws.ExternalData? GetExternalData(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    return DMXDrawsChartDraws.ExternalDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExternalData>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExternalData>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExternalDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExternalData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExternalData? value, DiffList? diffs, string? objName)
@@ -33,7 +36,10 @@ public static class ChartDataConverter
   
   private static DMDrawsChartDraws.Data? GetData(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    return DMXDrawsChartDraws.DataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Data>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Data>();
+    if (element != null)
+      return DMXDrawsChartDraws.DataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.Data? value, DiffList? diffs, string? objName)
@@ -56,7 +62,10 @@ public static class ChartDataConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -77,11 +86,11 @@ public static class ChartDataConverter
     }
   }
   
-  public static DMDrawsChartDraws.ChartData? CreateModelElement(DXO2016DrawChartDraw.ChartData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ChartData? CreateModelElement(DXO2016DrawChartDraw.ChartData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ChartData();
+      var value = new DocumentModel.Drawings.ChartDrawings.ChartData();
       value.ExternalData = GetExternalData(openXmlElement);
       value.Data = GetData(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);

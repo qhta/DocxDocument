@@ -501,11 +501,11 @@ public static class BackstageGroupButtonConverter
       openXmlElement.GetImage = null;
   }
   
-  public static DM.BackstageGroupButton? CreateModelElement(DXO2010CustUI.BackstageGroupButton? openXmlElement)
+  public static DocumentModel.BackstageGroupButton? CreateModelElement(DXO2010CustUI.BackstageGroupButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageGroupButton();
+      var value = new DocumentModel.BackstageGroupButton();
       value.Expand = GetExpand(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Screentip = GetScreentip(openXmlElement);

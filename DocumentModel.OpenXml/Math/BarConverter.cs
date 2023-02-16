@@ -10,7 +10,10 @@ public static class BarConverter
   /// </summary>
   private static DMMath.BarProperties? GetBarProperties(DXMath.Bar openXmlElement)
   {
-    return DMXMath.BarPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BarProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BarProperties>();
+    if (element != null)
+      return DMXMath.BarPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBarProperties(DXMath.Bar openXmlElement, DMMath.BarProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class BarConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Bar openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.Bar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class BarConverter
     }
   }
   
-  public static DMMath.Bar? CreateModelElement(DXMath.Bar? openXmlElement)
+  public static DocumentModel.Math.Bar? CreateModelElement(DXMath.Bar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Bar();
+      var value = new DocumentModel.Math.Bar();
       value.BarProperties = GetBarProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

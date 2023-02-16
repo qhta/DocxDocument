@@ -28,11 +28,11 @@ public static class Extension2Converter
       openXmlElement.Uri = null;
   }
   
-  public static DMDrawsChartDraws.Extension2? CreateModelElement(DXO2016DrawChartDraw.Extension2? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Extension2? CreateModelElement(DXO2016DrawChartDraw.Extension2? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Extension2();
+      var value = new DocumentModel.Drawings.ChartDrawings.Extension2();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

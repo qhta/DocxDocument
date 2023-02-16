@@ -59,11 +59,11 @@ public static class CategoryConverter
     }
   }
   
-  public static DMW.Category? CreateModelElement(DXW.Category? openXmlElement)
+  public static DocumentModel.Wordprocessing.Category? CreateModelElement(DXW.Category? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Category();
+      var value = new DocumentModel.Wordprocessing.Category();
       value.Name = GetName(openXmlElement);
       value.Gallery = GetGallery(openXmlElement);
       return value;

@@ -33,7 +33,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.CustomColor openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.CustomColor openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -85,7 +91,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.HslColor? GetHslColor(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.CustomColor openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -111,7 +120,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.CustomColor openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -137,7 +149,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXDraw.CustomColor openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -163,7 +178,10 @@ public static class CustomColorConverter
   /// </summary>
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.CustomColor openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.CustomColor openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -184,11 +202,11 @@ public static class CustomColorConverter
     }
   }
   
-  public static DMDraws.CustomColor? CreateModelElement(DXDraw.CustomColor? openXmlElement)
+  public static DocumentModel.Drawings.CustomColor? CreateModelElement(DXDraw.CustomColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.CustomColor();
+      var value = new DocumentModel.Drawings.CustomColor();
       value.Name = GetName(openXmlElement);
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);

@@ -61,7 +61,7 @@ public static class DropDownListFormFieldConverter
     }
   }
   
-  private static Collection<String> GetListEntryFormFields(DXW.DropDownListFormField openXmlElement)
+  private static Collection<String>? GetListEntryFormFields(DXW.DropDownListFormField openXmlElement)
   {
     var collection = new Collection<String>();
     foreach (var item in openXmlElement.Elements<DXW.ListEntryFormField>())
@@ -70,7 +70,9 @@ public static class DropDownListFormFieldConverter
       if (newItem != null)
         collection.Add((string)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpListEntryFormFields(DXW.DropDownListFormField openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
@@ -115,11 +117,11 @@ public static class DropDownListFormFieldConverter
     }
   }
   
-  public static DMW.DropDownListFormField? CreateModelElement(DXW.DropDownListFormField? openXmlElement)
+  public static DocumentModel.Wordprocessing.DropDownListFormField? CreateModelElement(DXW.DropDownListFormField? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DropDownListFormField();
+      var value = new DocumentModel.Wordprocessing.DropDownListFormField();
       value.DropDownListSelection = GetDropDownListSelection(openXmlElement);
       value.DefaultDropDownListItemIndex = GetDefaultDropDownListItemIndex(openXmlElement);
       value.ListEntryFormFields = GetListEntryFormFields(openXmlElement);

@@ -25,11 +25,11 @@ public static class DataLabelHiddenConverter
     openXmlElement.Idx = value;
   }
   
-  public static DMDrawsChartDraws.DataLabelHidden? CreateModelElement(DXO2016DrawChartDraw.DataLabelHidden? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.DataLabelHidden? CreateModelElement(DXO2016DrawChartDraw.DataLabelHidden? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.DataLabelHidden();
+      var value = new DocumentModel.Drawings.ChartDrawings.DataLabelHidden();
       value.Idx = GetIdx(openXmlElement);
       return value;
     }

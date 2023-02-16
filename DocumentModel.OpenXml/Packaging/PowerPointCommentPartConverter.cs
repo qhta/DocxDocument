@@ -29,11 +29,11 @@ public static class PowerPointCommentPartConverter
     return false;
   }
   
-  public static DMPack.PowerPointCommentPart? CreateModelElement(DXPack.PowerPointCommentPart? openXmlElement)
+  public static DocumentModel.Packaging.PowerPointCommentPart? CreateModelElement(DXPack.PowerPointCommentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.PowerPointCommentPart();
+      var value = new DocumentModel.Packaging.PowerPointCommentPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

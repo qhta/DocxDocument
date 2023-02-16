@@ -28,7 +28,7 @@ public static class SdtContentComboBoxConverter
       openXmlElement.LastValue = null;
   }
   
-  private static Collection<DMW.ListItem> GetListItems(DXW.SdtContentComboBox openXmlElement)
+  private static Collection<DMW.ListItem>? GetListItems(DXW.SdtContentComboBox openXmlElement)
   {
     var collection = new Collection<DMW.ListItem>();
     foreach (var item in openXmlElement.Elements<DXW.ListItem>())
@@ -37,7 +37,9 @@ public static class SdtContentComboBoxConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpListItems(DXW.SdtContentComboBox openXmlElement, Collection<DMW.ListItem>? value, DiffList? diffs, string? objName)
@@ -82,11 +84,11 @@ public static class SdtContentComboBoxConverter
     }
   }
   
-  public static DMW.SdtContentComboBox? CreateModelElement(DXW.SdtContentComboBox? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtContentComboBox? CreateModelElement(DXW.SdtContentComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtContentComboBox();
+      var value = new DocumentModel.Wordprocessing.SdtContentComboBox();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;

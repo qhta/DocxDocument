@@ -52,11 +52,11 @@ public static class DiagramStylePartConverter
     }
   }
   
-  public static DMPack.DiagramStylePart? CreateModelElement(DXPack.DiagramStylePart? openXmlElement)
+  public static DocumentModel.Packaging.DiagramStylePart? CreateModelElement(DXPack.DiagramStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DiagramStylePart();
+      var value = new DocumentModel.Packaging.DiagramStylePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.StyleDefinition = GetStyleDefinition(openXmlElement);

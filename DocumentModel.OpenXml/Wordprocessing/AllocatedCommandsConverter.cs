@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class AllocatedCommandsConverter
 {
-  private static Collection<DMW.AllocatedCommand> GetItems(DXOW.AllocatedCommands openXmlElement)
+  private static Collection<DMW.AllocatedCommand>? GetItems(DXOW.AllocatedCommands openXmlElement)
   {
     var collection = new Collection<DMW.AllocatedCommand>();
     foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommand>())
@@ -14,7 +14,9 @@ public static class AllocatedCommandsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOW.AllocatedCommands openXmlElement, Collection<DMW.AllocatedCommand>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AllocatedCommandsConverter
     }
   }
   
-  public static DMW.AllocatedCommands? CreateModelElement(DXOW.AllocatedCommands? openXmlElement)
+  public static DocumentModel.Wordprocessing.AllocatedCommands? CreateModelElement(DXOW.AllocatedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AllocatedCommands();
+      var value = new DocumentModel.Wordprocessing.AllocatedCommands();
       value.Items = GetItems(openXmlElement);
       return value;
     }

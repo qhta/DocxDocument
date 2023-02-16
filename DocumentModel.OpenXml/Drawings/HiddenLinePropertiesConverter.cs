@@ -109,7 +109,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -132,7 +135,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -155,7 +161,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -201,7 +210,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.CustomDash? GetCustomDash(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.CustomDashConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.CustomDash>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.CustomDash>();
+    if (element != null)
+      return DMXDraws.CustomDashConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomDash(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.CustomDash? value, DiffList? diffs, string? objName)
@@ -280,7 +292,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.Miter? GetMiter(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.MiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Miter>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Miter>();
+    if (element != null)
+      return DMXDraws.MiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMiter(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.Miter? value, DiffList? diffs, string? objName)
@@ -303,7 +318,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.LineEndPropertiesType? GetHeadEnd(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HeadEnd>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HeadEnd>();
+    if (element != null)
+      return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHeadEnd(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
@@ -326,7 +344,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.LineEndPropertiesType? GetTailEnd(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TailEnd>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TailEnd>();
+    if (element != null)
+      return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTailEnd(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
@@ -349,7 +370,10 @@ public static class HiddenLinePropertiesConverter
   
   private static DMDraws.LinePropertiesExtensionList? GetLinePropertiesExtensionList(DXO2010Draw.HiddenLineProperties openXmlElement)
   {
-    return DMXDraws.LinePropertiesExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LinePropertiesExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LinePropertiesExtensionList>();
+    if (element != null)
+      return DMXDraws.LinePropertiesExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLinePropertiesExtensionList(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
@@ -370,11 +394,11 @@ public static class HiddenLinePropertiesConverter
     }
   }
   
-  public static DMDraws.HiddenLineProperties? CreateModelElement(DXO2010Draw.HiddenLineProperties? openXmlElement)
+  public static DocumentModel.Drawings.HiddenLineProperties? CreateModelElement(DXO2010Draw.HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HiddenLineProperties();
+      var value = new DocumentModel.Drawings.HiddenLineProperties();
       value.Width = GetWidth(openXmlElement);
       value.CapType = GetCapType(openXmlElement);
       value.CompoundLineType = GetCompoundLineType(openXmlElement);

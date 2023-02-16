@@ -38,7 +38,10 @@ public static class BandFormatConverter
   /// </summary>
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.BandFormat openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.BandFormat openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -59,11 +62,11 @@ public static class BandFormatConverter
     }
   }
   
-  public static DMDrawsCharts.BandFormat? CreateModelElement(DXDrawCharts.BandFormat? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BandFormat? CreateModelElement(DXDrawCharts.BandFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BandFormat();
+      var value = new DocumentModel.Drawings.Charts.BandFormat();
       value.Index = GetIndex(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;

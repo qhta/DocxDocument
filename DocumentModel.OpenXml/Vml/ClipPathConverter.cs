@@ -28,11 +28,11 @@ public static class ClipPathConverter
       openXmlElement.Value = null;
   }
   
-  public static DMVml.ClipPath? CreateModelElement(DXVmlO.ClipPath? openXmlElement)
+  public static DocumentModel.Vml.ClipPath? CreateModelElement(DXVmlO.ClipPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ClipPath();
+      var value = new DocumentModel.Vml.ClipPath();
       value.Value = GetValue(openXmlElement);
       return value;
     }

@@ -88,27 +88,27 @@ public static class InlineConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetAnchorId(DXDrawW.Inline openXmlElement)
+  private static DM.HexInt? GetAnchorId(DXDrawW.Inline openXmlElement)
   {
     if (openXmlElement?.AnchorId?.Value != null)
-      return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.AnchorId.Value);
     return null;
   }
   
-  private static bool CmpAnchorId(DXDrawW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorId(DXDrawW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AnchorId?.Value != null)
-      if (UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.AnchorId.Value) == value)
         return true;
-    if (openXmlElement?.AnchorId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "AnchorId", openXmlElement?.AnchorId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.AnchorId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "AnchorId", openXmlElement?.AnchorId?.Value, value);
     return false;
   }
   
-  private static void SetAnchorId(DXDrawW.Inline openXmlElement, UInt32? value)
+  private static void SetAnchorId(DXDrawW.Inline openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
+      openXmlElement.AnchorId = value.ToString();
     else
       openXmlElement.AnchorId = null;
   }
@@ -116,27 +116,27 @@ public static class InlineConverter
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetEditId(DXDrawW.Inline openXmlElement)
+  private static DM.HexInt? GetEditId(DXDrawW.Inline openXmlElement)
   {
     if (openXmlElement?.EditId?.Value != null)
-      return UInt32.Parse(openXmlElement.EditId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.EditId.Value);
     return null;
   }
   
-  private static bool CmpEditId(DXDrawW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpEditId(DXDrawW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.EditId?.Value != null)
-      if (UInt32.Parse(openXmlElement.EditId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.EditId.Value) == value)
         return true;
-    if (openXmlElement?.EditId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "EditId", openXmlElement?.EditId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.EditId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "EditId", openXmlElement?.EditId?.Value, value);
     return false;
   }
   
-  private static void SetEditId(DXDrawW.Inline openXmlElement, UInt32? value)
+  private static void SetEditId(DXDrawW.Inline openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.EditId = ((UInt32)value).ToString("X8");
+      openXmlElement.EditId = value.ToString();
     else
       openXmlElement.EditId = null;
   }
@@ -146,7 +146,10 @@ public static class InlineConverter
   /// </summary>
   private static DMDrawsW.Extent? GetExtent(DXDrawW.Inline openXmlElement)
   {
-    return DMXDrawsW.ExtentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.Extent>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.Extent>();
+    if (element != null)
+      return DMXDrawsW.ExtentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtent(DXDrawW.Inline openXmlElement, DMDrawsW.Extent? value, DiffList? diffs, string? objName)
@@ -172,7 +175,10 @@ public static class InlineConverter
   /// </summary>
   private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.Inline openXmlElement)
   {
-    return DMXDrawsW.EffectExtentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
+    if (element != null)
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectExtent(DXDrawW.Inline openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
@@ -198,7 +204,10 @@ public static class InlineConverter
   /// </summary>
   private static DMDrawsW.DocProperties? GetDocProperties(DXDrawW.Inline openXmlElement)
   {
-    return DMXDrawsW.DocPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.DocProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.DocProperties>();
+    if (element != null)
+      return DMXDrawsW.DocPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocProperties(DXDrawW.Inline openXmlElement, DMDrawsW.DocProperties? value, DiffList? diffs, string? objName)
@@ -224,7 +233,10 @@ public static class InlineConverter
   /// </summary>
   private static DMDrawsW.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement)
   {
-    return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>();
+    if (element != null)
+      return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs, string? objName)
@@ -250,7 +262,10 @@ public static class InlineConverter
   /// </summary>
   private static DMDraws.Graphic? GetGraphic(DXDrawW.Inline openXmlElement)
   {
-    return DMXDraws.GraphicConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Graphic>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
+    if (element != null)
+      return DMXDraws.GraphicConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphic(DXDrawW.Inline openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
@@ -271,11 +286,11 @@ public static class InlineConverter
     }
   }
   
-  public static DMDrawsW.Inline? CreateModelElement(DXDrawW.Inline? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.Inline? CreateModelElement(DXDrawW.Inline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.Inline();
+      var value = new DocumentModel.Drawings.Wordprocessing.Inline();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);

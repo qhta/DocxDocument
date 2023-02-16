@@ -68,11 +68,11 @@ public static class WebVideoPropertyConverter
     openXmlElement.Width = value;
   }
   
-  public static DMDrawsW.WebVideoProperty? CreateModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WebVideoProperty? CreateModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.WebVideoProperty();
+      var value = new DocumentModel.Drawings.Wordprocessing.WebVideoProperty();
       value.EmbeddedHtml = GetEmbeddedHtml(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Width = GetWidth(openXmlElement);

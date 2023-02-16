@@ -212,11 +212,11 @@ public static class MenuSeparatorConverter
       openXmlElement.GetTitle = null;
   }
   
-  public static DM.MenuSeparator? CreateModelElement(DXO2010CustUI.MenuSeparator? openXmlElement)
+  public static DocumentModel.MenuSeparator? CreateModelElement(DXO2010CustUI.MenuSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.MenuSeparator();
+      var value = new DocumentModel.MenuSeparator();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

@@ -83,11 +83,11 @@ public static class MaxValueColorEndPositionConverter
     }
   }
   
-  public static DMDrawsChartDraws.MaxValueColorEndPosition? CreateModelElement(DXO2016DrawChartDraw.MaxValueColorEndPosition? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? CreateModelElement(DXO2016DrawChartDraw.MaxValueColorEndPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.MaxValueColorEndPosition();
+      var value = new DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition();
       value.ExtremeValueColorPosition = GetExtremeValueColorPosition(openXmlElement);
       value.NumberColorPosition = GetNumberColorPosition(openXmlElement);
       value.PercentageColorPosition = GetPercentageColorPosition(openXmlElement);

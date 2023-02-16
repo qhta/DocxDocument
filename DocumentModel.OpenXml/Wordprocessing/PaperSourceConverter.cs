@@ -45,11 +45,11 @@ public static class PaperSourceConverter
     openXmlElement.Other = value;
   }
   
-  public static DMW.PaperSource? CreateModelElement(DXW.PaperSource? openXmlElement)
+  public static DocumentModel.Wordprocessing.PaperSource? CreateModelElement(DXW.PaperSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PaperSource();
+      var value = new DocumentModel.Wordprocessing.PaperSource();
       value.First = GetFirst(openXmlElement);
       value.Other = GetOther(openXmlElement);
       return value;

@@ -1133,24 +1133,24 @@ public static class OvalConverter
   /// <summary>
   /// Encoded Package
   /// </summary>
-  private static Byte[]? GetGfxdata(DXVml.Oval openXmlElement)
+  private static DM.Base64Binary? GetGfxdata(DXVml.Oval openXmlElement)
   {
     if (openXmlElement?.Gfxdata?.Value != null)
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
   
-  private static bool CmpGfxdata(DXVml.Oval openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpGfxdata(DXVml.Oval openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Gfxdata?.Value != null)
-      if (Convert.FromBase64String(openXmlElement.Gfxdata.Value) == value)
+    if (openXmlElement?.Gfxdata?.Value != null && value != null)
+      if (Convert.FromBase64String(openXmlElement.Gfxdata.Value).SequenceEqual((byte[])value))
         return true;
     if (openXmlElement?.Gfxdata?.Value == null && value == null) return true;
     diffs?.Add(objName, "Gfxdata", openXmlElement?.Gfxdata?.Value, value);
     return false;
   }
   
-  private static void SetGfxdata(DXVml.Oval openXmlElement, Byte[]? value)
+  private static void SetGfxdata(DXVml.Oval openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.Gfxdata = Convert.ToBase64String(value);
@@ -1160,7 +1160,10 @@ public static class OvalConverter
   
   private static DMVml.Path? GetPath(DXVml.Oval openXmlElement)
   {
-    return DMXVml.PathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Path>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Path>();
+    if (element != null)
+      return DMXVml.PathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPath(DXVml.Oval openXmlElement, DMVml.Path? value, DiffList? diffs, string? objName)
@@ -1183,7 +1186,10 @@ public static class OvalConverter
   
   private static DMVml.Formulas? GetFormulas(DXVml.Oval openXmlElement)
   {
-    return DMXVml.FormulasConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Formulas>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Formulas>();
+    if (element != null)
+      return DMXVml.FormulasConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormulas(DXVml.Oval openXmlElement, DMVml.Formulas? value, DiffList? diffs, string? objName)
@@ -1206,7 +1212,10 @@ public static class OvalConverter
   
   private static DMVml.ShapeHandles? GetShapeHandles(DXVml.Oval openXmlElement)
   {
-    return DMXVml.ShapeHandlesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.ShapeHandles>());
+    var element = openXmlElement?.GetFirstChild<DXVml.ShapeHandles>();
+    if (element != null)
+      return DMXVml.ShapeHandlesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeHandles(DXVml.Oval openXmlElement, DMVml.ShapeHandles? value, DiffList? diffs, string? objName)
@@ -1229,7 +1238,10 @@ public static class OvalConverter
   
   private static DMVml.Fill? GetFill(DXVml.Oval openXmlElement)
   {
-    return DMXVml.FillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Fill>();
+    if (element != null)
+      return DMXVml.FillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFill(DXVml.Oval openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
@@ -1252,7 +1264,10 @@ public static class OvalConverter
   
   private static DMVml.Stroke? GetStroke(DXVml.Oval openXmlElement)
   {
-    return DMXVml.StrokeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Stroke>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Stroke>();
+    if (element != null)
+      return DMXVml.StrokeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStroke(DXVml.Oval openXmlElement, DMVml.Stroke? value, DiffList? diffs, string? objName)
@@ -1275,7 +1290,10 @@ public static class OvalConverter
   
   private static DMVml.Shadow? GetShadow(DXVml.Oval openXmlElement)
   {
-    return DMXVml.ShadowConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shadow>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Shadow>();
+    if (element != null)
+      return DMXVml.ShadowConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShadow(DXVml.Oval openXmlElement, DMVml.Shadow? value, DiffList? diffs, string? objName)
@@ -1298,7 +1316,10 @@ public static class OvalConverter
   
   private static DMVml.TextBox? GetTextBox(DXVml.Oval openXmlElement)
   {
-    return DMXVml.TextBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.TextBox>());
+    var element = openXmlElement?.GetFirstChild<DXVml.TextBox>();
+    if (element != null)
+      return DMXVml.TextBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBox(DXVml.Oval openXmlElement, DMVml.TextBox? value, DiffList? diffs, string? objName)
@@ -1321,7 +1342,10 @@ public static class OvalConverter
   
   private static DMVml.TextPath? GetTextPath(DXVml.Oval openXmlElement)
   {
-    return DMXVml.TextPathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.TextPath>());
+    var element = openXmlElement?.GetFirstChild<DXVml.TextPath>();
+    if (element != null)
+      return DMXVml.TextPathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextPath(DXVml.Oval openXmlElement, DMVml.TextPath? value, DiffList? diffs, string? objName)
@@ -1344,7 +1368,10 @@ public static class OvalConverter
   
   private static DMVml.ImageData? GetImageData(DXVml.Oval openXmlElement)
   {
-    return DMXVml.ImageDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.ImageData>());
+    var element = openXmlElement?.GetFirstChild<DXVml.ImageData>();
+    if (element != null)
+      return DMXVml.ImageDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpImageData(DXVml.Oval openXmlElement, DMVml.ImageData? value, DiffList? diffs, string? objName)
@@ -1367,7 +1394,10 @@ public static class OvalConverter
   
   private static DMVml.Skew? GetSkew(DXVml.Oval openXmlElement)
   {
-    return DMXVml.SkewConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Skew>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
+    if (element != null)
+      return DMXVml.SkewConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSkew(DXVml.Oval openXmlElement, DMVml.Skew? value, DiffList? diffs, string? objName)
@@ -1390,7 +1420,10 @@ public static class OvalConverter
   
   private static DMVml.Extrusion? GetExtrusion(DXVml.Oval openXmlElement)
   {
-    return DMXVml.ExtrusionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Extrusion>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
+    if (element != null)
+      return DMXVml.ExtrusionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtrusion(DXVml.Oval openXmlElement, DMVml.Extrusion? value, DiffList? diffs, string? objName)
@@ -1413,7 +1446,10 @@ public static class OvalConverter
   
   private static DMVml.Callout? GetCallout(DXVml.Oval openXmlElement)
   {
-    return DMXVml.CalloutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Callout>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
+    if (element != null)
+      return DMXVml.CalloutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCallout(DXVml.Oval openXmlElement, DMVml.Callout? value, DiffList? diffs, string? objName)
@@ -1436,7 +1472,10 @@ public static class OvalConverter
   
   private static DMVml.Lock? GetLock(DXVml.Oval openXmlElement)
   {
-    return DMXVml.LockConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Lock>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
+    if (element != null)
+      return DMXVml.LockConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLock(DXVml.Oval openXmlElement, DMVml.Lock? value, DiffList? diffs, string? objName)
@@ -1459,7 +1498,10 @@ public static class OvalConverter
   
   private static DMVml.ClipPath? GetClipPath(DXVml.Oval openXmlElement)
   {
-    return DMXVml.ClipPathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ClipPath>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ClipPath>();
+    if (element != null)
+      return DMXVml.ClipPathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpClipPath(DXVml.Oval openXmlElement, DMVml.ClipPath? value, DiffList? diffs, string? objName)
@@ -1482,7 +1524,10 @@ public static class OvalConverter
   
   private static DMVml.SignatureLine? GetSignatureLine(DXVml.Oval openXmlElement)
   {
-    return DMXVml.SignatureLineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.SignatureLine>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.SignatureLine>();
+    if (element != null)
+      return DMXVml.SignatureLineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSignatureLine(DXVml.Oval openXmlElement, DMVml.SignatureLine? value, DiffList? diffs, string? objName)
@@ -1505,7 +1550,10 @@ public static class OvalConverter
   
   private static DMWVml.TextWrap? GetTextWrap(DXVml.Oval openXmlElement)
   {
-    return DMXWVml.TextWrapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlW.TextWrap>());
+    var element = openXmlElement?.GetFirstChild<DXVmlW.TextWrap>();
+    if (element != null)
+      return DMXWVml.TextWrapConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextWrap(DXVml.Oval openXmlElement, DMWVml.TextWrap? value, DiffList? diffs, string? objName)
@@ -1556,7 +1604,10 @@ public static class OvalConverter
   
   private static DMWVml.BorderType? GetTopBorder(DXVml.Oval openXmlElement)
   {
-    return DMXWVml.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlW.TopBorder>());
+    var element = openXmlElement?.GetFirstChild<DXVmlW.TopBorder>();
+    if (element != null)
+      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTopBorder(DXVml.Oval openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
@@ -1579,7 +1630,10 @@ public static class OvalConverter
   
   private static DMWVml.BorderType? GetBottomBorder(DXVml.Oval openXmlElement)
   {
-    return DMXWVml.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlW.BottomBorder>());
+    var element = openXmlElement?.GetFirstChild<DXVmlW.BottomBorder>();
+    if (element != null)
+      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBottomBorder(DXVml.Oval openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
@@ -1602,7 +1656,10 @@ public static class OvalConverter
   
   private static DMWVml.BorderType? GetLeftBorder(DXVml.Oval openXmlElement)
   {
-    return DMXWVml.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlW.LeftBorder>());
+    var element = openXmlElement?.GetFirstChild<DXVmlW.LeftBorder>();
+    if (element != null)
+      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLeftBorder(DXVml.Oval openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
@@ -1625,7 +1682,10 @@ public static class OvalConverter
   
   private static DMWVml.BorderType? GetRightBorder(DXVml.Oval openXmlElement)
   {
-    return DMXWVml.BorderTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlW.RightBorder>());
+    var element = openXmlElement?.GetFirstChild<DXVmlW.RightBorder>();
+    if (element != null)
+      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRightBorder(DXVml.Oval openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
@@ -1646,11 +1706,11 @@ public static class OvalConverter
     }
   }
   
-  public static DMVml.Oval? CreateModelElement(DXVml.Oval? openXmlElement)
+  public static DocumentModel.Vml.Oval? CreateModelElement(DXVml.Oval? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Oval();
+      var value = new DocumentModel.Vml.Oval();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Href = GetHref(openXmlElement);

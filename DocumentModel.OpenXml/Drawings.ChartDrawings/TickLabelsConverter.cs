@@ -10,7 +10,10 @@ public static class TickLabelsConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.TickLabels openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.TickLabels openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class TickLabelsConverter
     }
   }
   
-  public static DMDrawsChartDraws.TickLabels? CreateModelElement(DXO2016DrawChartDraw.TickLabels? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.TickLabels? CreateModelElement(DXO2016DrawChartDraw.TickLabels? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.TickLabels();
+      var value = new DocumentModel.Drawings.ChartDrawings.TickLabels();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

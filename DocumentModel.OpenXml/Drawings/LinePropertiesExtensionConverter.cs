@@ -30,7 +30,10 @@ public static class LinePropertiesExtensionConverter
   
   private static DMDraws.LineSketchStyleProperties? GetLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement)
   {
-    return DMXDraws.LineSketchStylePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>();
+    if (element != null)
+      return DMXDraws.LineSketchStylePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement, DMDraws.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class LinePropertiesExtensionConverter
     }
   }
   
-  public static DMDraws.LinePropertiesExtension? CreateModelElement(DXDraw.LinePropertiesExtension? openXmlElement)
+  public static DocumentModel.Drawings.LinePropertiesExtension? CreateModelElement(DXDraw.LinePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LinePropertiesExtension();
+      var value = new DocumentModel.Drawings.LinePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.LineSketchStyleProperties = GetLineSketchStyleProperties(openXmlElement);
       return value;

@@ -28,11 +28,11 @@ public static class TaskUndoConverter
       openXmlElement.Id = null;
   }
   
-  public static DM.TaskUndo? CreateModelElement(DXO2021DocTasks.TaskUndo? openXmlElement)
+  public static DocumentModel.TaskUndo? CreateModelElement(DXO2021DocTasks.TaskUndo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskUndo();
+      var value = new DocumentModel.TaskUndo();
       value.Id = GetId(openXmlElement);
       return value;
     }

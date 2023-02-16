@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DMW.Extension> GetExtensions(DXO2021WComtExt.ExtensionList openXmlElement)
+  private static Collection<DMW.Extension>? GetExtensions(DXO2021WComtExt.ExtensionList openXmlElement)
   {
     var collection = new Collection<DMW.Extension>();
     foreach (var item in openXmlElement.Elements<DXO2021WExtList.Extension>())
@@ -14,7 +14,9 @@ public static class ExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtensions(DXO2021WComtExt.ExtensionList openXmlElement, Collection<DMW.Extension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ExtensionListConverter
     }
   }
   
-  public static DMW.ExtensionList? CreateModelElement(DXO2021WComtExt.ExtensionList? openXmlElement)
+  public static DocumentModel.Wordprocessing.ExtensionList? CreateModelElement(DXO2021WComtExt.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ExtensionList();
+      var value = new DocumentModel.Wordprocessing.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

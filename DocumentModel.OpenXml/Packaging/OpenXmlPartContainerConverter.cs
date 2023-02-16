@@ -8,7 +8,7 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all external relationships.
   /// </summary>
-  private static Collection<DMPack.ExternalRelationship> GetExternalRelationships(DXPack.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.ExternalRelationship>? GetExternalRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
     var collection = new Collection<DMPack.ExternalRelationship>();
     foreach (var item in openXmlElement.ExternalRelationships)
@@ -28,7 +28,7 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all hyperlink relationships.
   /// </summary>
-  private static Collection<DMPack.HyperlinkRelationship> GetHyperlinkRelationships(DXPack.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.HyperlinkRelationship>? GetHyperlinkRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
     var collection = new Collection<DMPack.HyperlinkRelationship>();
     foreach (var item in openXmlElement.HyperlinkRelationships)
@@ -48,7 +48,7 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all  relationships.
   /// </summary>
-  private static Collection<DMPack.DataPartReferenceRelationship> GetDataPartReferenceRelationships(DXPack.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.DataPartReferenceRelationship>? GetDataPartReferenceRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
     var collection = new Collection<DMPack.DataPartReferenceRelationship>();
     foreach (var item in openXmlElement.DataPartReferenceRelationships)
@@ -68,7 +68,7 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all parts which are relationship targets of this part.
   /// </summary>
-  private static Collection<DMPack.IdPartPair> GetParts(DXPack.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.IdPartPair>? GetParts(DXPack.OpenXmlPartContainer openXmlElement)
   {
     var collection = new Collection<DMPack.IdPartPair>();
     foreach (var item in openXmlElement.Parts)
@@ -85,11 +85,11 @@ public static class OpenXmlPartContainerConverter
     return true;
   }
   
-  public static DMPack.OpenXmlPartContainer? CreateModelElement(DXPack.OpenXmlPartContainer? openXmlElement)
+  public static DocumentModel.Packaging.OpenXmlPartContainer? CreateModelElement(DXPack.OpenXmlPartContainer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.OpenXmlPartContainer();
+      var value = new DocumentModel.Packaging.OpenXmlPartContainer();
       value.ExternalRelationships = GetExternalRelationships(openXmlElement);
       value.HyperlinkRelationships = GetHyperlinkRelationships(openXmlElement);
       value.DataPartReferenceRelationships = GetDataPartReferenceRelationships(openXmlElement);

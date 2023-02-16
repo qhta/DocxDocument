@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class SurfaceChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.SurfaceChartExtension> GetSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.SurfaceChartExtension>? GetSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SurfaceChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SurfaceChartExtension>())
@@ -14,7 +14,9 @@ public static class SurfaceChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class SurfaceChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.SurfaceChartExtensionList? CreateModelElement(DXDrawCharts.SurfaceChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceChartExtensionList? CreateModelElement(DXDrawCharts.SurfaceChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SurfaceChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.SurfaceChartExtensionList();
       value.SurfaceChartExtensions = GetSurfaceChartExtensions(openXmlElement);
       return value;
     }

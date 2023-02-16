@@ -28,7 +28,10 @@ public static class OpenXmlTickMarksElementConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -49,11 +52,11 @@ public static class OpenXmlTickMarksElementConverter
     }
   }
   
-  public static DMDrawsChartDraws.OpenXmlTickMarksElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlTickMarksElement? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlTickMarksElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.OpenXmlTickMarksElement();
+      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlTickMarksElement();
       value.Type = GetType(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

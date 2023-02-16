@@ -76,7 +76,10 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   /// </summary>
   private static DMW.PreviousParagraphMarkRunProperties? GetPreviousParagraphMarkRunProperties(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
-    return DMXW.PreviousParagraphMarkRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>();
+    if (element != null)
+      return DMXW.PreviousParagraphMarkRunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreviousParagraphMarkRunProperties(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DMW.PreviousParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
@@ -97,11 +100,11 @@ public static class ParagraphMarkRunPropertiesChangeConverter
     }
   }
   
-  public static DMW.ParagraphMarkRunPropertiesChange? CreateModelElement(DXW.ParagraphMarkRunPropertiesChange? openXmlElement)
+  public static DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? CreateModelElement(DXW.ParagraphMarkRunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphMarkRunPropertiesChange();
+      var value = new DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

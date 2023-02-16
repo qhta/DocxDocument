@@ -1,29 +1,12 @@
-﻿using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Reflection.Metadata.Ecma335;
-using DocumentFormat.OpenXml.Framework.Metadata;
-using System.Runtime.CompilerServices;
-using DocumentFormat.OpenXml.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Framework.Metadata;
+
 using DocumentModel;
-using Qhta.TypeUtils;
 
 namespace ModelGen;
 
 public class TypeInfo : ModelElement
 {
   public string Namespace { get; set; } = String.Empty;
-  //{
-  //  get => _Namespace;
-  //  set
-  //  {
-  //    if (value != _Namespace)
-  //    {
-  //      TypeManager.RegisterNamespace(value);
-  //      _Namespace = value;
-  //    }
-  //  }
-  //}
 
   private string _Namespace = string.Empty;
 
@@ -63,6 +46,8 @@ public class TypeInfo : ModelElement
   public TypeInfo? BaseTypeInfo { get; set; }
 
   public Type Type { get; set; }
+
+  public Type? TargetType { get; set; }
 
   public bool IsSimple()
   {

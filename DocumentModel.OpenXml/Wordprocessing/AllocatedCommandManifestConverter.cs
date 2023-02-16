@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class AllocatedCommandManifestConverter
 {
-  private static Collection<DMW.AcceleratorKeymapType> GetAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement)
+  private static Collection<DMW.AcceleratorKeymapType>? GetAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement)
   {
     var collection = new Collection<DMW.AcceleratorKeymapType>();
     foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommandManifestEntry>())
@@ -14,7 +14,9 @@ public static class AllocatedCommandManifestConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement, Collection<DMW.AcceleratorKeymapType>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class AllocatedCommandManifestConverter
     }
   }
   
-  public static DMW.AllocatedCommandManifest? CreateModelElement(DXOW.AllocatedCommandManifest? openXmlElement)
+  public static DocumentModel.Wordprocessing.AllocatedCommandManifest? CreateModelElement(DXOW.AllocatedCommandManifest? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AllocatedCommandManifest();
+      var value = new DocumentModel.Wordprocessing.AllocatedCommandManifest();
       value.AllocatedCommandManifestEntries = GetAllocatedCommandManifestEntries(openXmlElement);
       return value;
     }

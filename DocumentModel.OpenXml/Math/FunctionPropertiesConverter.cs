@@ -10,7 +10,10 @@ public static class FunctionPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.FunctionProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.FunctionProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class FunctionPropertiesConverter
     }
   }
   
-  public static DMMath.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
+  public static DocumentModel.Math.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.FunctionProperties();
+      var value = new DocumentModel.Math.FunctionProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

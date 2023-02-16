@@ -221,11 +221,11 @@ public static class ColorSchemeMappingConverter
     openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(value);
   }
   
-  public static DMW.ColorSchemeMapping? CreateModelElement(DXW.ColorSchemeMapping? openXmlElement)
+  public static DocumentModel.Wordprocessing.ColorSchemeMapping? CreateModelElement(DXW.ColorSchemeMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ColorSchemeMapping();
+      var value = new DocumentModel.Wordprocessing.ColorSchemeMapping();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

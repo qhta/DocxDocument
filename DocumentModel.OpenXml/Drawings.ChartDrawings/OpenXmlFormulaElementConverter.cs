@@ -23,11 +23,11 @@ public static class OpenXmlFormulaElementConverter
     openXmlElement.Dir = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(value);
   }
   
-  public static DMDrawsChartDraws.OpenXmlFormulaElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlFormulaElement? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlFormulaElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.OpenXmlFormulaElement();
+      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement();
       value.Dir = GetDir(openXmlElement);
       return value;
     }

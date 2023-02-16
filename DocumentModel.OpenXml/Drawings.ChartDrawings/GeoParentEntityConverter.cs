@@ -28,11 +28,11 @@ public static class GeoParentEntityConverter
       openXmlElement.EntityId = null;
   }
   
-  public static DMDrawsChartDraws.GeoParentEntity? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntity? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoParentEntity();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntity();
       value.EntityId = GetEntityId(openXmlElement);
       return value;
     }

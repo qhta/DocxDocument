@@ -50,11 +50,11 @@ public static class StringPointConverter
     }
   }
   
-  public static DMDrawsCharts.StringPoint? CreateModelElement(DXDrawCharts.StringPoint? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringPoint? CreateModelElement(DXDrawCharts.StringPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StringPoint();
+      var value = new DocumentModel.Drawings.Charts.StringPoint();
       value.Index = GetIndex(openXmlElement);
       value.NumericValue = GetNumericValue(openXmlElement);
       return value;

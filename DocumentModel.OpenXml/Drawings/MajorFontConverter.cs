@@ -7,7 +7,10 @@ public static class MajorFontConverter
 {
   private static DMDraws.TextFontType? GetLatinFont(DXDraw.MajorFont openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LatinFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LatinFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLatinFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class MajorFontConverter
   
   private static DMDraws.TextFontType? GetEastAsianFont(DXDraw.MajorFont openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEastAsianFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class MajorFontConverter
   
   private static DMDraws.TextFontType? GetComplexScriptFont(DXDraw.MajorFont openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpComplexScriptFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -74,7 +83,7 @@ public static class MajorFontConverter
     }
   }
   
-  private static Collection<DMDraws.SupplementalFont> GetSupplementalFonts(DXDraw.MajorFont openXmlElement)
+  private static Collection<DMDraws.SupplementalFont>? GetSupplementalFonts(DXDraw.MajorFont openXmlElement)
   {
     var collection = new Collection<DMDraws.SupplementalFont>();
     foreach (var item in openXmlElement.Elements<DXDraw.SupplementalFont>())
@@ -83,7 +92,9 @@ public static class MajorFontConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSupplementalFonts(DXDraw.MajorFont openXmlElement, Collection<DMDraws.SupplementalFont>? value, DiffList? diffs, string? objName)
@@ -130,7 +141,10 @@ public static class MajorFontConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.MajorFont openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.MajorFont openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -151,11 +165,11 @@ public static class MajorFontConverter
     }
   }
   
-  public static DMDraws.MajorFont? CreateModelElement(DXDraw.MajorFont? openXmlElement)
+  public static DocumentModel.Drawings.MajorFont? CreateModelElement(DXDraw.MajorFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.MajorFont();
+      var value = new DocumentModel.Drawings.MajorFont();
       value.LatinFont = GetLatinFont(openXmlElement);
       value.EastAsianFont = GetEastAsianFont(openXmlElement);
       value.ComplexScriptFont = GetComplexScriptFont(openXmlElement);

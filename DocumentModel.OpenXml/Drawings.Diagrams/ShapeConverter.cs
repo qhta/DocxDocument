@@ -165,7 +165,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsDgms.AdjustList? GetAdjustList(DXDrawDgms.Shape openXmlElement)
   {
-    return DMXDrawsDgms.AdjustListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.AdjustList>();
+    if (element != null)
+      return DMXDrawsDgms.AdjustListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
@@ -191,7 +194,10 @@ public static class ShapeConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Shape openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -212,11 +218,11 @@ public static class ShapeConverter
     }
   }
   
-  public static DMDrawsDgms.Shape? CreateModelElement(DXDrawDgms.Shape? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Shape? CreateModelElement(DXDrawDgms.Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Shape();
+      var value = new DocumentModel.Drawings.Diagrams.Shape();
       value.Rotation = GetRotation(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.Blip = GetBlip(openXmlElement);

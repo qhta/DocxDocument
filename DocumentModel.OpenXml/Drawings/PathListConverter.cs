@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class PathListConverter
 {
-  private static Collection<DMDraws.Path> GetPaths(DXDraw.PathList openXmlElement)
+  private static Collection<DMDraws.Path>? GetPaths(DXDraw.PathList openXmlElement)
   {
     var collection = new Collection<DMDraws.Path>();
     foreach (var item in openXmlElement.Elements<DXDraw.Path>())
@@ -14,7 +14,9 @@ public static class PathListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPaths(DXDraw.PathList openXmlElement, Collection<DMDraws.Path>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PathListConverter
     }
   }
   
-  public static DMDraws.PathList? CreateModelElement(DXDraw.PathList? openXmlElement)
+  public static DocumentModel.Drawings.PathList? CreateModelElement(DXDraw.PathList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PathList();
+      var value = new DocumentModel.Drawings.PathList();
       value.Paths = GetPaths(openXmlElement);
       return value;
     }

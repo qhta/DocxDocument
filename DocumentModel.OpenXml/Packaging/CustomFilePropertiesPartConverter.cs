@@ -52,11 +52,11 @@ public static class CustomFilePropertiesPartConverter
     return false;
   }
   
-  public static DMPack.CustomFilePropertiesPart? CreateModelElement(DXPack.CustomFilePropertiesPart? openXmlElement)
+  public static DocumentModel.Packaging.CustomFilePropertiesPart? CreateModelElement(DXPack.CustomFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.CustomFilePropertiesPart();
+      var value = new DocumentModel.Packaging.CustomFilePropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.Properties = GetProperties(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

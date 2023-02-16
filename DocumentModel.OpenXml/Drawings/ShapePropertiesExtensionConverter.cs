@@ -30,7 +30,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static DMDraws.HiddenFillProperties? GetHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return DMXDraws.HiddenFillPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.HiddenFillProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenFillProperties>();
+    if (element != null)
+      return DMXDraws.HiddenFillPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenFillProperties? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static DMDraws.HiddenLineProperties? GetHiddenLineProperties(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return DMXDraws.HiddenLinePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.HiddenLineProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenLineProperties>();
+    if (element != null)
+      return DMXDraws.HiddenLinePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiddenLineProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenLineProperties? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static DMDraws.HiddenEffectsProperties? GetHiddenEffectsProperties(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return DMXDraws.HiddenEffectsPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.HiddenEffectsProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenEffectsProperties>();
+    if (element != null)
+      return DMXDraws.HiddenEffectsPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiddenEffectsProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
@@ -99,7 +108,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static DMDraws.HiddenScene3D? GetHiddenScene3D(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return DMXDraws.HiddenScene3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.HiddenScene3D>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenScene3D>();
+    if (element != null)
+      return DMXDraws.HiddenScene3DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiddenScene3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenScene3D? value, DiffList? diffs, string? objName)
@@ -122,7 +134,10 @@ public static class ShapePropertiesExtensionConverter
   
   private static DMDraws.HiddenShape3D? GetHiddenShape3D(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return DMXDraws.HiddenShape3DConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.HiddenShape3D>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenShape3D>();
+    if (element != null)
+      return DMXDraws.HiddenShape3DConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHiddenShape3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenShape3D? value, DiffList? diffs, string? objName)
@@ -171,11 +186,11 @@ public static class ShapePropertiesExtensionConverter
     }
   }
   
-  public static DMDraws.ShapePropertiesExtension? CreateModelElement(DXDraw.ShapePropertiesExtension? openXmlElement)
+  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(DXDraw.ShapePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ShapePropertiesExtension();
+      var value = new DocumentModel.Drawings.ShapePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.HiddenFillProperties = GetHiddenFillProperties(openXmlElement);
       value.HiddenLineProperties = GetHiddenLineProperties(openXmlElement);

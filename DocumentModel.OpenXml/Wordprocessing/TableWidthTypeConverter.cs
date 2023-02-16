@@ -46,11 +46,11 @@ public static class TableWidthTypeConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
   }
   
-  public static DMW.TableWidthType? CreateModelElement(DXW.TableWidthType? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableWidthType? CreateModelElement(DXW.TableWidthType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableWidthType();
+      var value = new DocumentModel.Wordprocessing.TableWidthType();
       value.Width = GetWidth(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;

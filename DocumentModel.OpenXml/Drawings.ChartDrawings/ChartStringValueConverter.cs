@@ -25,11 +25,11 @@ public static class ChartStringValueConverter
     openXmlElement.Index = value;
   }
   
-  public static DMDrawsChartDraws.ChartStringValue? CreateModelElement(DXO2016DrawChartDraw.ChartStringValue? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ChartStringValue? CreateModelElement(DXO2016DrawChartDraw.ChartStringValue? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ChartStringValue();
+      var value = new DocumentModel.Drawings.ChartDrawings.ChartStringValue();
       value.Index = GetIndex(openXmlElement);
       return value;
     }

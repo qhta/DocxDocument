@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class PtExtensionListConverter
 {
-  private static Collection<DMDraws.PtExtension> GetPtExtensions(DXDrawDgms.PtExtensionList openXmlElement)
+  private static Collection<DMDraws.PtExtension>? GetPtExtensions(DXDrawDgms.PtExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.PtExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.PtExtension>())
@@ -14,7 +14,9 @@ public static class PtExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPtExtensions(DXDrawDgms.PtExtensionList openXmlElement, Collection<DMDraws.PtExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class PtExtensionListConverter
     }
   }
   
-  public static DMDrawsDgms.PtExtensionList? CreateModelElement(DXDrawDgms.PtExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(DXDrawDgms.PtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.PtExtensionList();
+      var value = new DocumentModel.Drawings.Diagrams.PtExtensionList();
       value.PtExtensions = GetPtExtensions(openXmlElement);
       return value;
     }

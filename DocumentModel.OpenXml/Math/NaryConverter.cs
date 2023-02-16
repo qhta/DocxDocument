@@ -10,7 +10,10 @@ public static class NaryConverter
   /// </summary>
   private static DMMath.NaryProperties? GetNaryProperties(DXMath.Nary openXmlElement)
   {
-    return DMXMath.NaryPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.NaryProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.NaryProperties>();
+    if (element != null)
+      return DMXMath.NaryPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNaryProperties(DXMath.Nary openXmlElement, DMMath.NaryProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NaryConverter
   /// </summary>
   private static DMMath.SubArgument? GetSubArgument(DXMath.Nary openXmlElement)
   {
-    return DMXMath.SubArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubArgument>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubArgument>();
+    if (element != null)
+      return DMXMath.SubArgumentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubArgument(DXMath.Nary openXmlElement, DMMath.SubArgument? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class NaryConverter
   /// </summary>
   private static DMMath.SuperArgument? GetSuperArgument(DXMath.Nary openXmlElement)
   {
-    return DMXMath.SuperArgumentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SuperArgument>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SuperArgument>();
+    if (element != null)
+      return DMXMath.SuperArgumentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperArgument(DXMath.Nary openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class NaryConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Nary openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.Nary openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class NaryConverter
     }
   }
   
-  public static DMMath.Nary? CreateModelElement(DXMath.Nary? openXmlElement)
+  public static DocumentModel.Math.Nary? CreateModelElement(DXMath.Nary? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Nary();
+      var value = new DocumentModel.Math.Nary();
       value.NaryProperties = GetNaryProperties(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

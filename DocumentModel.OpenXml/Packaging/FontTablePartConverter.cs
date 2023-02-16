@@ -20,7 +20,7 @@ public static class FontTablePartConverter
   /// <summary>
   /// Gets the FontParts of the FontTablePart
   /// </summary>
-  private static Collection<DMPack.FontPart> GetFontParts(DXPack.FontTablePart openXmlElement)
+  private static Collection<DMPack.FontPart>? GetFontParts(DXPack.FontTablePart openXmlElement)
   {
     var collection = new Collection<DMPack.FontPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.FontPart>())
@@ -72,11 +72,11 @@ public static class FontTablePartConverter
     return false;
   }
   
-  public static DMPack.FontTablePart? CreateModelElement(DXPack.FontTablePart? openXmlElement)
+  public static DocumentModel.Packaging.FontTablePart? CreateModelElement(DXPack.FontTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.FontTablePart();
+      var value = new DocumentModel.Packaging.FontTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.FontParts = GetFontParts(openXmlElement);
       value.Fonts = GetFonts(openXmlElement);

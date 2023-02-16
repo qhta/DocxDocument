@@ -7,7 +7,10 @@ public static class RubyContentConverter
 {
   private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.RubyContent openXmlElement)
   {
-    return DMXW.CustomXmlRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlRuby>();
+    if (element != null)
+      return DMXW.CustomXmlRubyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlRuby(DXW.RubyContent openXmlElement, DMW.CustomXmlRuby? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class RubyContentConverter
   
   private static DMW.SimpleFieldRuby? GetSimpleFieldRuby(DXW.RubyContent openXmlElement)
   {
-    return DMXW.SimpleFieldRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>());
+    var element = openXmlElement?.GetFirstChild<DXW.SimpleFieldRuby>();
+    if (element != null)
+      return DMXW.SimpleFieldRubyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSimpleFieldRuby(DXW.RubyContent openXmlElement, DMW.SimpleFieldRuby? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class RubyContentConverter
   
   private static DMW.HyperlinkRuby? GetHyperlinkRuby(DXW.RubyContent openXmlElement)
   {
-    return DMXW.HyperlinkRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>());
+    var element = openXmlElement?.GetFirstChild<DXW.HyperlinkRuby>();
+    if (element != null)
+      return DMXW.HyperlinkRubyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkRuby(DXW.RubyContent openXmlElement, DMW.HyperlinkRuby? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class RubyContentConverter
   
   private static DMW.Run? GetRun(DXW.RubyContent openXmlElement)
   {
-    return DMXW.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Run>());
+    var element = openXmlElement?.GetFirstChild<DXW.Run>();
+    if (element != null)
+      return DMXW.RunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRun(DXW.RubyContent openXmlElement, DMW.Run? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class RubyContentConverter
   
   private static DMW.SdtRunRuby? GetSdtRunRuby(DXW.RubyContent openXmlElement)
   {
-    return DMXW.SdtRunRubyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtRunRuby>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtRunRuby>();
+    if (element != null)
+      return DMXW.SdtRunRubyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtRunRuby(DXW.RubyContent openXmlElement, DMW.SdtRunRuby? value, DiffList? diffs, string? objName)
@@ -122,7 +137,10 @@ public static class RubyContentConverter
   
   private static DMW.ProofError? GetProofError(DXW.RubyContent openXmlElement)
   {
-    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+    var element = openXmlElement?.GetFirstChild<DXW.ProofError>();
+    if (element != null)
+      return DMXW.ProofErrorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProofError(DXW.RubyContent openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
@@ -145,7 +163,10 @@ public static class RubyContentConverter
   
   private static DMW.PermStart? GetPermStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermStart>();
+    if (element != null)
+      return DMXW.PermStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermStart(DXW.RubyContent openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
@@ -168,7 +189,10 @@ public static class RubyContentConverter
   
   private static DMW.PermEnd? GetPermEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermEnd>();
+    if (element != null)
+      return DMXW.PermEndConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermEnd(DXW.RubyContent openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
@@ -191,7 +215,10 @@ public static class RubyContentConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
+    if (element != null)
+      return DMXW.BookmarkStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkStart(DXW.RubyContent openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
@@ -214,7 +241,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkEnd(DXW.RubyContent openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -237,7 +267,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeStart(DXW.RubyContent openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -260,7 +293,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -283,7 +319,10 @@ public static class RubyContentConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeStart(DXW.RubyContent openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -306,7 +345,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -329,7 +371,10 @@ public static class RubyContentConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeStart(DXW.RubyContent openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -352,7 +397,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -375,7 +423,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -398,7 +449,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -421,7 +475,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -444,7 +501,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -467,7 +527,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -490,7 +553,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -513,7 +579,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -536,7 +605,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -559,7 +631,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -582,7 +657,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -605,7 +683,10 @@ public static class RubyContentConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.RubyContent openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.RubyContent openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -628,7 +709,10 @@ public static class RubyContentConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.RubyContent openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -651,7 +735,10 @@ public static class RubyContentConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXW.RubyContent openXmlElement)
   {
-    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
+    if (element != null)
+      return DMXW.InsertedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInsertedRun(DXW.RubyContent openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
@@ -674,7 +761,10 @@ public static class RubyContentConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXW.RubyContent openXmlElement)
   {
-    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
+    if (element != null)
+      return DMXW.DeletedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedRun(DXW.RubyContent openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
@@ -697,7 +787,10 @@ public static class RubyContentConverter
   
   private static DMW.MoveFromRun? GetMoveFromRun(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
+    if (element != null)
+      return DMXW.MoveFromRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRun(DXW.RubyContent openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
@@ -720,7 +813,10 @@ public static class RubyContentConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXW.RubyContent openXmlElement)
   {
-    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
+    if (element != null)
+      return DMXW.MoveToRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRun(DXW.RubyContent openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
@@ -743,7 +839,10 @@ public static class RubyContentConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.RubyContent openXmlElement)
   {
-    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
+    if (element != null)
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictInsertion(DXW.RubyContent openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
@@ -766,7 +865,10 @@ public static class RubyContentConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.RubyContent openXmlElement)
   {
-    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
+    if (element != null)
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictDeletion(DXW.RubyContent openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
@@ -789,7 +891,10 @@ public static class RubyContentConverter
   
   private static DMMath.Paragraph? GetParagraph(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
+    if (element != null)
+      return DMXMath.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXW.RubyContent openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
@@ -812,7 +917,10 @@ public static class RubyContentConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+    var element = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
+    if (element != null)
+      return DMXMath.OfficeMathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeMath(DXW.RubyContent openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
@@ -835,7 +943,10 @@ public static class RubyContentConverter
   
   private static DMMath.Accent? GetAccent(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.AccentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Accent>();
+    if (element != null)
+      return DMXMath.AccentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAccent(DXW.RubyContent openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
@@ -858,7 +969,10 @@ public static class RubyContentConverter
   
   private static DMMath.Bar? GetBar(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.BarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Bar>();
+    if (element != null)
+      return DMXMath.BarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBar(DXW.RubyContent openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
@@ -881,7 +995,10 @@ public static class RubyContentConverter
   
   private static DMMath.Box? GetBox(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Box>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Box>();
+    if (element != null)
+      return DMXMath.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBox(DXW.RubyContent openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
@@ -904,7 +1021,10 @@ public static class RubyContentConverter
   
   private static DMMath.BorderBox? GetBorderBox(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.BorderBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
+    if (element != null)
+      return DMXMath.BorderBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBorderBox(DXW.RubyContent openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
@@ -927,7 +1047,10 @@ public static class RubyContentConverter
   
   private static DMMath.Delimiter? GetDelimiter(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.DelimiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
+    if (element != null)
+      return DMXMath.DelimiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDelimiter(DXW.RubyContent openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
@@ -950,7 +1073,10 @@ public static class RubyContentConverter
   
   private static DMMath.EquationArray? GetEquationArray(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.EquationArrayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>());
+    var element = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
+    if (element != null)
+      return DMXMath.EquationArrayConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEquationArray(DXW.RubyContent openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
@@ -973,7 +1099,10 @@ public static class RubyContentConverter
   
   private static DMMath.Fraction? GetFraction(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.FractionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Fraction>();
+    if (element != null)
+      return DMXMath.FractionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFraction(DXW.RubyContent openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
@@ -996,7 +1125,10 @@ public static class RubyContentConverter
   
   private static DMMath.MathFunction? GetMathFunction(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.MathFunctionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
+    if (element != null)
+      return DMXMath.MathFunctionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMathFunction(DXW.RubyContent openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
@@ -1019,7 +1151,10 @@ public static class RubyContentConverter
   
   private static DMMath.GroupChar? GetGroupChar(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.GroupCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
+    if (element != null)
+      return DMXMath.GroupCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupChar(DXW.RubyContent openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
@@ -1042,7 +1177,10 @@ public static class RubyContentConverter
   
   private static DMMath.LimitLower? GetLimitLower(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.LimitLowerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
+    if (element != null)
+      return DMXMath.LimitLowerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitLower(DXW.RubyContent openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
@@ -1065,7 +1203,10 @@ public static class RubyContentConverter
   
   private static DMMath.LimitUpper? GetLimitUpper(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.LimitUpperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
+    if (element != null)
+      return DMXMath.LimitUpperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitUpper(DXW.RubyContent openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
@@ -1088,7 +1229,10 @@ public static class RubyContentConverter
   
   private static DMMath.Matrix? GetMatrix(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.MatrixConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Matrix>();
+    if (element != null)
+      return DMXMath.MatrixConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrix(DXW.RubyContent openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
@@ -1111,7 +1255,10 @@ public static class RubyContentConverter
   
   private static DMMath.Nary? GetNary(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.NaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Nary>();
+    if (element != null)
+      return DMXMath.NaryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNary(DXW.RubyContent openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
@@ -1134,7 +1281,10 @@ public static class RubyContentConverter
   
   private static DMMath.Phantom? GetPhantom(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.PhantomConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Phantom>();
+    if (element != null)
+      return DMXMath.PhantomConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPhantom(DXW.RubyContent openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
@@ -1157,7 +1307,10 @@ public static class RubyContentConverter
   
   private static DMMath.Radical? GetRadical(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.RadicalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Radical>();
+    if (element != null)
+      return DMXMath.RadicalConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadical(DXW.RubyContent openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
@@ -1180,7 +1333,10 @@ public static class RubyContentConverter
   
   private static DMMath.PreSubSuper? GetPreSubSuper(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.PreSubSuperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
+    if (element != null)
+      return DMXMath.PreSubSuperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreSubSuper(DXW.RubyContent openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
@@ -1203,7 +1359,10 @@ public static class RubyContentConverter
   
   private static DMMath.Subscript? GetSubscript(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.SubscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Subscript>();
+    if (element != null)
+      return DMXMath.SubscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubscript(DXW.RubyContent openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
@@ -1226,7 +1385,10 @@ public static class RubyContentConverter
   
   private static DMMath.SubSuperscript? GetSubSuperscript(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.SubSuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
+    if (element != null)
+      return DMXMath.SubSuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubSuperscript(DXW.RubyContent openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
@@ -1249,7 +1411,10 @@ public static class RubyContentConverter
   
   private static DMMath.Superscript? GetSuperscript(DXW.RubyContent openXmlElement)
   {
-    return DMXMath.SuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Superscript>();
+    if (element != null)
+      return DMXMath.SuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperscript(DXW.RubyContent openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
@@ -1270,11 +1435,11 @@ public static class RubyContentConverter
     }
   }
   
-  public static DMW.RubyContent? CreateModelElement(DXW.RubyContent? openXmlElement)
+  public static DocumentModel.Wordprocessing.RubyContent? CreateModelElement(DXW.RubyContent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RubyContent();
+      var value = new DocumentModel.Wordprocessing.RubyContent();
       value.CustomXmlRuby = GetCustomXmlRuby(openXmlElement);
       value.SimpleFieldRuby = GetSimpleFieldRuby(openXmlElement);
       value.HyperlinkRuby = GetHyperlinkRuby(openXmlElement);

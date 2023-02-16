@@ -649,11 +649,11 @@ public static class VisibleButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.VisibleButton? CreateModelElement(DXOCustUI.VisibleButton? openXmlElement)
+  public static DocumentModel.UI.VisibleButton? CreateModelElement(DXOCustUI.VisibleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.VisibleButton();
+      var value = new DocumentModel.UI.VisibleButton();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

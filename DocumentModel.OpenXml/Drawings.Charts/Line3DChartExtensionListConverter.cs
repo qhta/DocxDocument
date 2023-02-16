@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Line3DChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.Line3DChartExtension> GetLine3DChartExtensions(DXDrawCharts.Line3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Line3DChartExtension>? GetLine3DChartExtensions(DXDrawCharts.Line3DChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.Line3DChartExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.Line3DChartExtension>())
@@ -14,7 +14,9 @@ public static class Line3DChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpLine3DChartExtensions(DXDrawCharts.Line3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Line3DChartExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class Line3DChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.Line3DChartExtensionList? CreateModelElement(DXDrawCharts.Line3DChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Line3DChartExtensionList? CreateModelElement(DXDrawCharts.Line3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Line3DChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.Line3DChartExtensionList();
       value.Line3DChartExtensions = GetLine3DChartExtensions(openXmlElement);
       return value;
     }

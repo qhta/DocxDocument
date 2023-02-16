@@ -7,7 +7,10 @@ public static class XValuesConverter
 {
   private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement)
   {
-    return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
+    if (element != null)
+      return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMultiLevelStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.MultiLevelStringReference? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class XValuesConverter
   
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.XValues openXmlElement)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    if (element != null)
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class XValuesConverter
   
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.XValues openXmlElement)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class XValuesConverter
   
   private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.XValues openXmlElement)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
+    if (element != null)
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class XValuesConverter
   
   private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.XValues openXmlElement)
   {
-    return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class XValuesConverter
     }
   }
   
-  public static DMDrawsCharts.XValues? CreateModelElement(DXDrawCharts.XValues? openXmlElement)
+  public static DocumentModel.Drawings.Charts.XValues? CreateModelElement(DXDrawCharts.XValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.XValues();
+      var value = new DocumentModel.Drawings.Charts.XValues();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);

@@ -53,7 +53,10 @@ public static class TaskHistoryEventConverter
   /// </summary>
   private static DM.OpenXmlTaskUserElement? GetAttributionTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.AttributionTaskUser>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.AttributionTaskUser>();
+    if (element != null)
+      return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAttributionTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
@@ -79,7 +82,10 @@ public static class TaskHistoryEventConverter
   /// </summary>
   private static DM.TaskAnchor? GetTaskAnchor(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>();
+    if (element != null)
+      return DMX.TaskAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskAnchor(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
@@ -102,7 +108,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.OpenXmlTaskUserElement? GetAssignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.AssignTaskUser>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.AssignTaskUser>();
+    if (element != null)
+      return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAssignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
@@ -125,7 +134,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.OpenXmlTaskUserElement? GetUnassignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.UnassignTaskUser>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.UnassignTaskUser>();
+    if (element != null)
+      return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnassignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
@@ -176,7 +188,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.TaskTitleEventInfo? GetTaskTitleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskTitleEventInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskTitleEventInfo>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskTitleEventInfo>();
+    if (element != null)
+      return DMX.TaskTitleEventInfoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskTitleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
@@ -199,7 +214,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.TaskScheduleEventInfo? GetTaskScheduleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskScheduleEventInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskScheduleEventInfo>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskScheduleEventInfo>();
+    if (element != null)
+      return DMX.TaskScheduleEventInfoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskScheduleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
@@ -222,7 +240,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.TaskProgressEventInfo? GetTaskProgressEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskProgressEventInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskProgressEventInfo>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskProgressEventInfo>();
+    if (element != null)
+      return DMX.TaskProgressEventInfoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskProgressEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
@@ -245,7 +266,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.TaskPriorityEventInfo? GetTaskPriorityEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskPriorityEventInfoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskPriorityEventInfo>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskPriorityEventInfo>();
+    if (element != null)
+      return DMX.TaskPriorityEventInfoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskPriorityEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
@@ -352,7 +376,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.TaskUndo? GetTaskUndo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.TaskUndoConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskUndo>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskUndo>();
+    if (element != null)
+      return DMX.TaskUndoConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTaskUndo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskUndo? value, DiffList? diffs, string? objName)
@@ -375,7 +402,10 @@ public static class TaskHistoryEventConverter
   
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    if (element != null)
+      return DMX.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
@@ -396,11 +426,11 @@ public static class TaskHistoryEventConverter
     }
   }
   
-  public static DM.TaskHistoryEvent? CreateModelElement(DXO2021DocTasks.TaskHistoryEvent? openXmlElement)
+  public static DocumentModel.TaskHistoryEvent? CreateModelElement(DXO2021DocTasks.TaskHistoryEvent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskHistoryEvent();
+      var value = new DocumentModel.TaskHistoryEvent();
       value.Time = GetTime(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.AttributionTaskUser = GetAttributionTaskUser(openXmlElement);

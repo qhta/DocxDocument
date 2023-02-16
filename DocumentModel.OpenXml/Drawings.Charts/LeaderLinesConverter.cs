@@ -7,7 +7,10 @@ public static class LeaderLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.LeaderLines openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.LeaderLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class LeaderLinesConverter
     }
   }
   
-  public static DMDrawsCharts.LeaderLines? CreateModelElement(DXDrawCharts.LeaderLines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LeaderLines? CreateModelElement(DXDrawCharts.LeaderLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.LeaderLines();
+      var value = new DocumentModel.Drawings.Charts.LeaderLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

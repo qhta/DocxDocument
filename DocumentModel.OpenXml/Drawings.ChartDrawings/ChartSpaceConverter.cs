@@ -10,7 +10,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.ChartData? GetChartData(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.ChartDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ChartData>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ChartData>();
+    if (element != null)
+      return DMXDrawsChartDraws.ChartDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartData(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.ChartData? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.Chart? GetChart(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.ChartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Chart>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Chart>();
+    if (element != null)
+      return DMXDrawsChartDraws.ChartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChart(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.Chart? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.TxPrTextBody? GetTxPrTextBody(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
+    if (element != null)
+      return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTxPrTextBody(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.TxPrTextBody? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.ColorMappingType? GetColorMappingType(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.ColorMappingTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ColorMappingType>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ColorMappingType>();
+    if (element != null)
+      return DMXDrawsChartDraws.ColorMappingTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorMappingType(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.ColorMappingType? value, DiffList? diffs, string? objName)
@@ -140,7 +155,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.FormatOverrides? GetFormatOverrides(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.FormatOverridesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FormatOverrides>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FormatOverrides>();
+    if (element != null)
+      return DMXDrawsChartDraws.FormatOverridesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormatOverrides(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.FormatOverrides? value, DiffList? diffs, string? objName)
@@ -166,7 +184,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.PrintSettings? GetPrintSettings(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.PrintSettingsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PrintSettings>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PrintSettings>();
+    if (element != null)
+      return DMXDrawsChartDraws.PrintSettingsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPrintSettings(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.PrintSettings? value, DiffList? diffs, string? objName)
@@ -192,7 +213,10 @@ public static class ChartSpaceConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.ChartSpace openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -213,11 +237,11 @@ public static class ChartSpaceConverter
     }
   }
   
-  public static DMDrawsChartDraws.ChartSpace? CreateModelElement(DXO2016DrawChartDraw.ChartSpace? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ChartSpace? CreateModelElement(DXO2016DrawChartDraw.ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.ChartSpace();
+      var value = new DocumentModel.Drawings.ChartDrawings.ChartSpace();
       value.ChartData = GetChartData(openXmlElement);
       value.Chart = GetChart(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);

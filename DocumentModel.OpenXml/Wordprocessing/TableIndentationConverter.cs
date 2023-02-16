@@ -43,11 +43,11 @@ public static class TableIndentationConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
   }
   
-  public static DMW.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableIndentation();
+      var value = new DocumentModel.Wordprocessing.TableIndentation();
       value.Width = GetWidth(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;

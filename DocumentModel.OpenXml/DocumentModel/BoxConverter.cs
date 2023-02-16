@@ -232,7 +232,10 @@ public static class BoxConverter
   
   private static DM.ControlClone? GetControlClone(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.ControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlClone>();
+    if (element != null)
+      return DMX.ControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlClone(DXO2010CustUI.Box openXmlElement, DM.ControlClone? value, DiffList? diffs, string? objName)
@@ -255,7 +258,10 @@ public static class BoxConverter
   
   private static DM.LabelControl? GetLabelControl(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.LabelControlConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.LabelControl>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.LabelControl>();
+    if (element != null)
+      return DMX.LabelControlConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLabelControl(DXO2010CustUI.Box openXmlElement, DM.LabelControl? value, DiffList? diffs, string? objName)
@@ -278,7 +284,10 @@ public static class BoxConverter
   
   private static DM.Button? GetButton(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.ButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Button>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Button>();
+    if (element != null)
+      return DMX.ButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButton(DXO2010CustUI.Box openXmlElement, DM.Button? value, DiffList? diffs, string? objName)
@@ -301,7 +310,10 @@ public static class BoxConverter
   
   private static DM.ToggleButton? GetToggleButton(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.ToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButton>();
+    if (element != null)
+      return DMX.ToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpToggleButton(DXO2010CustUI.Box openXmlElement, DM.ToggleButton? value, DiffList? diffs, string? objName)
@@ -324,7 +336,10 @@ public static class BoxConverter
   
   private static DM.CheckBox? GetCheckBox(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.CheckBox>();
+    if (element != null)
+      return DMX.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXO2010CustUI.Box openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
@@ -347,7 +362,10 @@ public static class BoxConverter
   
   private static DM.EditBox? GetEditBox(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.EditBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.EditBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.EditBox>();
+    if (element != null)
+      return DMX.EditBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEditBox(DXO2010CustUI.Box openXmlElement, DM.EditBox? value, DiffList? diffs, string? objName)
@@ -370,7 +388,10 @@ public static class BoxConverter
   
   private static DM.ComboBox? GetComboBox(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.ComboBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ComboBox>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ComboBox>();
+    if (element != null)
+      return DMX.ComboBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpComboBox(DXO2010CustUI.Box openXmlElement, DM.ComboBox? value, DiffList? diffs, string? objName)
@@ -393,7 +414,10 @@ public static class BoxConverter
   
   private static DM.DropDownRegular? GetDropDownRegular(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.DropDownRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.DropDownRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DropDownRegular>();
+    if (element != null)
+      return DMX.DropDownRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropDownRegular(DXO2010CustUI.Box openXmlElement, DM.DropDownRegular? value, DiffList? diffs, string? objName)
@@ -416,7 +440,10 @@ public static class BoxConverter
   
   private static DM.Gallery? GetGallery(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.GalleryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Gallery>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Gallery>();
+    if (element != null)
+      return DMX.GalleryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGallery(DXO2010CustUI.Box openXmlElement, DM.Gallery? value, DiffList? diffs, string? objName)
@@ -439,7 +466,10 @@ public static class BoxConverter
   
   private static DM.Menu? GetMenu(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.MenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Menu>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Menu>();
+    if (element != null)
+      return DMX.MenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenu(DXO2010CustUI.Box openXmlElement, DM.Menu? value, DiffList? diffs, string? objName)
@@ -462,7 +492,10 @@ public static class BoxConverter
   
   private static DM.DynamicMenu? GetDynamicMenu(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.DynamicMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenu>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenu>();
+    if (element != null)
+      return DMX.DynamicMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDynamicMenu(DXO2010CustUI.Box openXmlElement, DM.DynamicMenu? value, DiffList? diffs, string? objName)
@@ -485,7 +518,10 @@ public static class BoxConverter
   
   private static DM.SplitButton? GetSplitButton(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.SplitButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButton>();
+    if (element != null)
+      return DMX.SplitButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButton(DXO2010CustUI.Box openXmlElement, DM.SplitButton? value, DiffList? diffs, string? objName)
@@ -508,7 +544,10 @@ public static class BoxConverter
   
   private static DM.Box? GetChildBox(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Box>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Box>();
+    if (element != null)
+      return DMX.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildBox(DXO2010CustUI.Box openXmlElement, DM.Box? value, DiffList? diffs, string? objName)
@@ -531,7 +570,10 @@ public static class BoxConverter
   
   private static DM.ButtonGroup? GetButtonGroup(DXO2010CustUI.Box openXmlElement)
   {
-    return DMX.ButtonGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonGroup>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonGroup>();
+    if (element != null)
+      return DMX.ButtonGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonGroup(DXO2010CustUI.Box openXmlElement, DM.ButtonGroup? value, DiffList? diffs, string? objName)
@@ -552,11 +594,11 @@ public static class BoxConverter
     }
   }
   
-  public static DM.Box? CreateModelElement(DXO2010CustUI.Box? openXmlElement)
+  public static DocumentModel.Box? CreateModelElement(DXO2010CustUI.Box? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Box();
+      var value = new DocumentModel.Box();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

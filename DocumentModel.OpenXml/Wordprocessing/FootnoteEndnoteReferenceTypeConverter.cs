@@ -48,11 +48,11 @@ public static class FootnoteEndnoteReferenceTypeConverter
     openXmlElement.Id = value;
   }
   
-  public static DMW.FootnoteEndnoteReferenceType? CreateModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement)
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? CreateModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteEndnoteReferenceType();
+      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType();
       value.CustomMarkFollows = GetCustomMarkFollows(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

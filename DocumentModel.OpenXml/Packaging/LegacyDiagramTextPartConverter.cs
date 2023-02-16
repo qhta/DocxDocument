@@ -29,11 +29,11 @@ public static class LegacyDiagramTextPartConverter
     return false;
   }
   
-  public static DMPack.LegacyDiagramTextPart? CreateModelElement(DXPack.LegacyDiagramTextPart? openXmlElement)
+  public static DocumentModel.Packaging.LegacyDiagramTextPart? CreateModelElement(DXPack.LegacyDiagramTextPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.LegacyDiagramTextPart();
+      var value = new DocumentModel.Packaging.LegacyDiagramTextPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

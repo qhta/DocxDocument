@@ -10,7 +10,10 @@ public static class VbaSuppDataConverter
   /// </summary>
   private static DMW.DocEvents? GetDocEvents(DXOW.VbaSuppData openXmlElement)
   {
-    return DMXW.DocEventsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOW.DocEvents>());
+    var element = openXmlElement?.GetFirstChild<DXOW.DocEvents>();
+    if (element != null)
+      return DMXW.DocEventsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class VbaSuppDataConverter
   /// </summary>
   private static DMW.Mcds? GetMcds(DXOW.VbaSuppData openXmlElement)
   {
-    return DMXW.McdsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOW.Mcds>());
+    var element = openXmlElement?.GetFirstChild<DXOW.Mcds>();
+    if (element != null)
+      return DMXW.McdsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class VbaSuppDataConverter
     }
   }
   
-  public static DMW.VbaSuppData? CreateModelElement(DXOW.VbaSuppData? openXmlElement)
+  public static DocumentModel.Wordprocessing.VbaSuppData? CreateModelElement(DXOW.VbaSuppData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.VbaSuppData();
+      var value = new DocumentModel.Wordprocessing.VbaSuppData();
       value.DocEvents = GetDocEvents(openXmlElement);
       value.Mcds = GetMcds(openXmlElement);
       return value;

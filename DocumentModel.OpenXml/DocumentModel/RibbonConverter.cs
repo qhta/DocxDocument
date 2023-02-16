@@ -33,7 +33,10 @@ public static class RibbonConverter
   /// </summary>
   private static DM.QuickAccessToolbar? GetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement)
   {
-    return DMX.QuickAccessToolbarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
+    if (element != null)
+      return DMX.QuickAccessToolbarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
@@ -59,7 +62,10 @@ public static class RibbonConverter
   /// </summary>
   private static DM.Tabs? GetTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    return DMX.TabsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>();
+    if (element != null)
+      return DMX.TabsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
@@ -85,7 +91,10 @@ public static class RibbonConverter
   /// </summary>
   private static DM.ContextualTabs? GetContextualTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    return DMX.ContextualTabsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>();
+    if (element != null)
+      return DMX.ContextualTabsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
@@ -106,11 +115,11 @@ public static class RibbonConverter
     }
   }
   
-  public static DM.Ribbon? CreateModelElement(DXO2010CustUI.Ribbon? openXmlElement)
+  public static DocumentModel.Ribbon? CreateModelElement(DXO2010CustUI.Ribbon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Ribbon();
+      var value = new DocumentModel.Ribbon();
       value.StartFromScratch = GetStartFromScratch(openXmlElement);
       value.QuickAccessToolbar = GetQuickAccessToolbar(openXmlElement);
       value.Tabs = GetTabs(openXmlElement);

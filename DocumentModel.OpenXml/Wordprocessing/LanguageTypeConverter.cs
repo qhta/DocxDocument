@@ -74,11 +74,11 @@ public static class LanguageTypeConverter
       openXmlElement.Bidi = null;
   }
   
-  public static DMW.LanguageType? CreateModelElement(DXW.LanguageType? openXmlElement)
+  public static DocumentModel.Wordprocessing.LanguageType? CreateModelElement(DXW.LanguageType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LanguageType();
+      var value = new DocumentModel.Wordprocessing.LanguageType();
       value.Val = GetVal(openXmlElement);
       value.EastAsia = GetEastAsia(openXmlElement);
       value.Bidi = GetBidi(openXmlElement);

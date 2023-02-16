@@ -10,7 +10,10 @@ public static class LineToConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPoint(DXDraw.LineTo openXmlElement)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Point>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Point>();
+    if (element != null)
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPoint(DXDraw.LineTo openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class LineToConverter
     }
   }
   
-  public static DMDraws.LineTo? CreateModelElement(DXDraw.LineTo? openXmlElement)
+  public static DocumentModel.Drawings.LineTo? CreateModelElement(DXDraw.LineTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LineTo();
+      var value = new DocumentModel.Drawings.LineTo();
       value.Point = GetPoint(openXmlElement);
       return value;
     }
