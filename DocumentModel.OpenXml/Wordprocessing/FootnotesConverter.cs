@@ -7,7 +7,10 @@ public static class FootnotesConverter
 {
   private static DMW.Footnote? GetFootnote(DXW.Footnotes openXmlElement)
   {
-    return DMXW.FootnoteConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Footnote>());
+    var element = openXmlElement?.GetFirstChild<DXW.Footnote>();
+    if (element != null)
+      return DMXW.FootnoteConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class FootnotesConverter
     }
   }
   
-  public static DMW.Footnotes? CreateModelElement(DXW.Footnotes? openXmlElement)
+  public static DocumentModel.Wordprocessing.Footnotes? CreateModelElement(DXW.Footnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Footnotes();
+      var value = new DocumentModel.Wordprocessing.Footnotes();
       value.Footnote = GetFootnote(openXmlElement);
       return value;
     }

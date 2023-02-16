@@ -48,11 +48,11 @@ public static class RelativeHeightConverter
     }
   }
   
-  public static DMWDraws.RelativeHeight? CreateModelElement(DXO2010WDraw.RelativeHeight? openXmlElement)
+  public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(DXO2010WDraw.RelativeHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWDraws.RelativeHeight();
+      var value = new DocumentModel.Wordprocessing.Drawings.RelativeHeight();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.PercentageHeight = GetPercentageHeight(openXmlElement);
       return value;

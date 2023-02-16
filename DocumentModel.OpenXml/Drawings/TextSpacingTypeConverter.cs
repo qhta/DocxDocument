@@ -61,11 +61,11 @@ public static class TextSpacingTypeConverter
     }
   }
   
-  public static DMDraws.TextSpacingType? CreateModelElement(DXDraw.TextSpacingType? openXmlElement)
+  public static DocumentModel.Drawings.TextSpacingType? CreateModelElement(DXDraw.TextSpacingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TextSpacingType();
+      var value = new DocumentModel.Drawings.TextSpacingType();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;

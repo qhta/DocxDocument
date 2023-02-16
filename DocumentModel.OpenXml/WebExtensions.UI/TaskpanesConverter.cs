@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.WebExtensions.UI;
 /// </summary>
 public static class TaskpanesConverter
 {
-  private static Collection<DMWebExtUI.WebExtensionTaskpane> GetWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement)
+  private static Collection<DMWebExtUI.WebExtensionTaskpane>? GetWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement)
   {
     var collection = new Collection<DMWebExtUI.WebExtensionTaskpane>();
     foreach (var item in openXmlElement.Elements<DXO2013WebExtPane.WebExtensionTaskpane>())
@@ -14,7 +14,9 @@ public static class TaskpanesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement, Collection<DMWebExtUI.WebExtensionTaskpane>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class TaskpanesConverter
     }
   }
   
-  public static DMWebExtUI.Taskpanes? CreateModelElement(DXO2013WebExtPane.Taskpanes? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.Taskpanes? CreateModelElement(DXO2013WebExtPane.Taskpanes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExtUI.Taskpanes();
+      var value = new DocumentModel.WebExtensions.UI.Taskpanes();
       value.WebExtensionTaskpanes = GetWebExtensionTaskpanes(openXmlElement);
       return value;
     }

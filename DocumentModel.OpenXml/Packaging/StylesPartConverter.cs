@@ -28,11 +28,11 @@ public static class StylesPartConverter
     }
   }
   
-  public static DMPack.StylesPart? CreateModelElement(DXPack.StylesPart? openXmlElement)
+  public static DocumentModel.Packaging.StylesPart? CreateModelElement(DXPack.StylesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.StylesPart();
+      var value = new DocumentModel.Packaging.StylesPart();
       value.Styles = GetStyles(openXmlElement);
       return value;
     }

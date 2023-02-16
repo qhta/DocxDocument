@@ -281,7 +281,7 @@ public static class TaskFormGroupCategoryConverter
       openXmlElement.GetLabel = null;
   }
   
-  private static Collection<DM.TaskFormGroupTask> GetTaskFormGroupTasks(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
+  private static Collection<DM.TaskFormGroupTask>? GetTaskFormGroupTasks(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     var collection = new Collection<DM.TaskFormGroupTask>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.TaskFormGroupTask>())
@@ -290,7 +290,9 @@ public static class TaskFormGroupCategoryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpTaskFormGroupTasks(DXO2010CustUI.TaskFormGroupCategory openXmlElement, Collection<DM.TaskFormGroupTask>? value, DiffList? diffs, string? objName)
@@ -335,11 +337,11 @@ public static class TaskFormGroupCategoryConverter
     }
   }
   
-  public static DM.TaskFormGroupCategory? CreateModelElement(DXO2010CustUI.TaskFormGroupCategory? openXmlElement)
+  public static DocumentModel.TaskFormGroupCategory? CreateModelElement(DXO2010CustUI.TaskFormGroupCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskFormGroupCategory();
+      var value = new DocumentModel.TaskFormGroupCategory();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

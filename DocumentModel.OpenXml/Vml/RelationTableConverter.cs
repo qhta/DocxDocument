@@ -23,7 +23,7 @@ public static class RelationTableConverter
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
-  private static Collection<DMVml.Relation> GetRelations(DXVmlO.RelationTable openXmlElement)
+  private static Collection<DMVml.Relation>? GetRelations(DXVmlO.RelationTable openXmlElement)
   {
     var collection = new Collection<DMVml.Relation>();
     foreach (var item in openXmlElement.Elements<DXVmlO.Relation>())
@@ -32,7 +32,9 @@ public static class RelationTableConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpRelations(DXVmlO.RelationTable openXmlElement, Collection<DMVml.Relation>? value, DiffList? diffs, string? objName)
@@ -77,11 +79,11 @@ public static class RelationTableConverter
     }
   }
   
-  public static DMVml.RelationTable? CreateModelElement(DXVmlO.RelationTable? openXmlElement)
+  public static DocumentModel.Vml.RelationTable? CreateModelElement(DXVmlO.RelationTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.RelationTable();
+      var value = new DocumentModel.Vml.RelationTable();
       value.Extension = GetExtension(openXmlElement);
       value.Relations = GetRelations(openXmlElement);
       return value;

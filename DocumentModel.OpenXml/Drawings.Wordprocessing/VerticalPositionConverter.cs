@@ -98,11 +98,11 @@ public static class VerticalPositionConverter
     }
   }
   
-  public static DMDrawsW.VerticalPosition? CreateModelElement(DXDrawW.VerticalPosition? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.VerticalPosition? CreateModelElement(DXDrawW.VerticalPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.VerticalPosition();
+      var value = new DocumentModel.Drawings.Wordprocessing.VerticalPosition();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.VerticalAlignment = GetVerticalAlignment(openXmlElement);
       value.PositionOffset = GetPositionOffset(openXmlElement);

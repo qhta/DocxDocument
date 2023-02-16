@@ -51,11 +51,11 @@ public static class LevelTextConverter
       openXmlElement.Null = null;
   }
   
-  public static DMW.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
+  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LevelText();
+      var value = new DocumentModel.Wordprocessing.LevelText();
       value.Val = GetVal(openXmlElement);
       value.Null = GetNull(openXmlElement);
       return value;

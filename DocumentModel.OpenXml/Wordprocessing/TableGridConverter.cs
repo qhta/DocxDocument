@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableGridConverter
 {
-  private static Collection<DMW.GridColumn> GetGridColumns(DXW.TableGrid openXmlElement)
+  private static Collection<DMW.GridColumn>? GetGridColumns(DXW.TableGrid openXmlElement)
   {
     var collection = new Collection<DMW.GridColumn>();
     foreach (var item in openXmlElement.Elements<DXW.GridColumn>())
@@ -14,7 +14,9 @@ public static class TableGridConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpGridColumns(DXW.TableGrid openXmlElement, Collection<DMW.GridColumn>? value, DiffList? diffs, string? objName)
@@ -61,7 +63,10 @@ public static class TableGridConverter
   
   private static DMW.TableGridChange? GetTableGridChange(DXW.TableGrid openXmlElement)
   {
-    return DMXW.TableGridChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableGridChange>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableGridChange>();
+    if (element != null)
+      return DMXW.TableGridChangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value, DiffList? diffs, string? objName)
@@ -82,11 +87,11 @@ public static class TableGridConverter
     }
   }
   
-  public static DMW.TableGrid? CreateModelElement(DXW.TableGrid? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableGrid? CreateModelElement(DXW.TableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableGrid();
+      var value = new DocumentModel.Wordprocessing.TableGrid();
       value.GridColumns = GetGridColumns(openXmlElement);
       value.TableGridChange = GetTableGridChange(openXmlElement);
       return value;

@@ -88,7 +88,10 @@ public static class BoxPropertiesConverter
   /// </summary>
   private static DMMath.Break? GetBreak(DXMath.BoxProperties openXmlElement)
   {
-    return DMXMath.BreakConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Break>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Break>();
+    if (element != null)
+      return DMXMath.BreakConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
@@ -140,7 +143,10 @@ public static class BoxPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.BoxProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -161,11 +167,11 @@ public static class BoxPropertiesConverter
     }
   }
   
-  public static DMMath.BoxProperties? CreateModelElement(DXMath.BoxProperties? openXmlElement)
+  public static DocumentModel.Math.BoxProperties? CreateModelElement(DXMath.BoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BoxProperties();
+      var value = new DocumentModel.Math.BoxProperties();
       value.OperatorEmulator = GetOperatorEmulator(openXmlElement);
       value.NoBreak = GetNoBreak(openXmlElement);
       value.Differential = GetDifferential(openXmlElement);

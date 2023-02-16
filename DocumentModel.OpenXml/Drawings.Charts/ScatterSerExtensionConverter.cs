@@ -30,7 +30,10 @@ public static class ScatterSerExtensionConverter
   
   private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.ScatterSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredSeriesTitle(DXDrawCharts.ScatterSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class ScatterSerExtensionConverter
   
   private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.ScatterSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredCategoryTitle(DXDrawCharts.ScatterSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class ScatterSerExtensionConverter
   
   private static DMDrawsCharts.DataLabelsRange? GetDataLabelsRange(DXDrawCharts.ScatterSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelsRange(DXDrawCharts.ScatterSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
@@ -99,7 +108,10 @@ public static class ScatterSerExtensionConverter
   
   private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.ScatterSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryFilterExceptions(DXDrawCharts.ScatterSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
@@ -120,11 +132,11 @@ public static class ScatterSerExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.ScatterSerExtension? CreateModelElement(DXDrawCharts.ScatterSerExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ScatterSerExtension? CreateModelElement(DXDrawCharts.ScatterSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ScatterSerExtension();
+      var value = new DocumentModel.Drawings.Charts.ScatterSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

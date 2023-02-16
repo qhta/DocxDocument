@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BarSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.BarSerExtension> GetBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.BarSerExtension>? GetBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.BarSerExtension>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.BarSerExtension>())
@@ -14,7 +14,9 @@ public static class BarSerExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement, Collection<DMDrawsCharts.BarSerExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class BarSerExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.BarSerExtensionList? CreateModelElement(DXDrawCharts.BarSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(DXDrawCharts.BarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BarSerExtensionList();
+      var value = new DocumentModel.Drawings.Charts.BarSerExtensionList();
       value.BarSerExtensions = GetBarSerExtensions(openXmlElement);
       return value;
     }

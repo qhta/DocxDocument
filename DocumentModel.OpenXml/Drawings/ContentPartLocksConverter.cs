@@ -240,7 +240,10 @@ public static class ContentPartLocksConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList2? GetOfficeArtExtensionList(DXO2010Draw.ContentPartLocks openXmlElement)
   {
-    return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDraws.OfficeArtExtensionList2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2010Draw.ContentPartLocks openXmlElement, DMDraws.OfficeArtExtensionList2? value, DiffList? diffs, string? objName)
@@ -261,11 +264,11 @@ public static class ContentPartLocksConverter
     }
   }
   
-  public static DMDraws.ContentPartLocks? CreateModelElement(DXO2010Draw.ContentPartLocks? openXmlElement)
+  public static DocumentModel.Drawings.ContentPartLocks? CreateModelElement(DXO2010Draw.ContentPartLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ContentPartLocks();
+      var value = new DocumentModel.Drawings.ContentPartLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

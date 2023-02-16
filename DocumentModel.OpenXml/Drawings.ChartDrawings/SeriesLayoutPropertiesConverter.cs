@@ -10,7 +10,10 @@ public static class SeriesLayoutPropertiesConverter
   /// </summary>
   private static DMDrawsChartDraws.ParentLabelLayout? GetParentLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.ParentLabelLayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ParentLabelLayout>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ParentLabelLayout>();
+    if (element != null)
+      return DMXDrawsChartDraws.ParentLabelLayoutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParentLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.ParentLabelLayout? value, DiffList? diffs, string? objName)
@@ -62,7 +65,10 @@ public static class SeriesLayoutPropertiesConverter
   /// </summary>
   private static DMDrawsChartDraws.SeriesElementVisibilities? GetSeriesElementVisibilities(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.SeriesElementVisibilitiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeriesElementVisibilities>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeriesElementVisibilities>();
+    if (element != null)
+      return DMXDrawsChartDraws.SeriesElementVisibilitiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesElementVisibilities(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.SeriesElementVisibilities? value, DiffList? diffs, string? objName)
@@ -113,7 +119,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static DMDrawsChartDraws.Binning? GetBinning(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.BinningConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Binning>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Binning>();
+    if (element != null)
+      return DMXDrawsChartDraws.BinningConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBinning(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Binning? value, DiffList? diffs, string? objName)
@@ -136,7 +145,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static DMDrawsChartDraws.Geography? GetGeography(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.GeographyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Geography>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Geography>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeographyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeography(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Geography? value, DiffList? diffs, string? objName)
@@ -159,7 +171,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static DMDrawsChartDraws.Statistics? GetStatistics(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.StatisticsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Statistics>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Statistics>();
+    if (element != null)
+      return DMXDrawsChartDraws.StatisticsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStatistics(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Statistics? value, DiffList? diffs, string? objName)
@@ -182,7 +197,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static DMDrawsChartDraws.Subtotals? GetSubtotals(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.SubtotalsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Subtotals>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Subtotals>();
+    if (element != null)
+      return DMXDrawsChartDraws.SubtotalsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubtotals(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Subtotals? value, DiffList? diffs, string? objName)
@@ -205,7 +223,10 @@ public static class SeriesLayoutPropertiesConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -226,11 +247,11 @@ public static class SeriesLayoutPropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraws.SeriesLayoutProperties? CreateModelElement(DXO2016DrawChartDraw.SeriesLayoutProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? CreateModelElement(DXO2016DrawChartDraw.SeriesLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.SeriesLayoutProperties();
+      var value = new DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties();
       value.ParentLabelLayout = GetParentLabelLayout(openXmlElement);
       value.RegionLabelLayout = GetRegionLabelLayout(openXmlElement);
       value.SeriesElementVisibilities = GetSeriesElementVisibilities(openXmlElement);

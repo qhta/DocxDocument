@@ -33,7 +33,10 @@ public static class AudioFromFileConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.AudioFromFile openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.AudioFromFile openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class AudioFromFileConverter
     }
   }
   
-  public static DMDraws.AudioFromFile? CreateModelElement(DXDraw.AudioFromFile? openXmlElement)
+  public static DocumentModel.Drawings.AudioFromFile? CreateModelElement(DXDraw.AudioFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AudioFromFile();
+      var value = new DocumentModel.Drawings.AudioFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

@@ -7,7 +7,10 @@ public static class CaptionsConverter
 {
   private static DMW.Caption? GetCaption(DXW.Captions openXmlElement)
   {
-    return DMXW.CaptionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Caption>());
+    var element = openXmlElement?.GetFirstChild<DXW.Caption>();
+    if (element != null)
+      return DMXW.CaptionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCaption(DXW.Captions openXmlElement, DMW.Caption? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class CaptionsConverter
   
   private static DMW.AutoCaptions? GetAutoCaptions(DXW.Captions openXmlElement)
   {
-    return DMXW.AutoCaptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.AutoCaptions>());
+    var element = openXmlElement?.GetFirstChild<DXW.AutoCaptions>();
+    if (element != null)
+      return DMXW.AutoCaptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAutoCaptions(DXW.Captions openXmlElement, DMW.AutoCaptions? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class CaptionsConverter
     }
   }
   
-  public static DMW.Captions? CreateModelElement(DXW.Captions? openXmlElement)
+  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(DXW.Captions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Captions();
+      var value = new DocumentModel.Wordprocessing.Captions();
       value.Caption = GetCaption(openXmlElement);
       value.AutoCaptions = GetAutoCaptions(openXmlElement);
       return value;

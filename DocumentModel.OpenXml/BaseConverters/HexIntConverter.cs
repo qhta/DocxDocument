@@ -48,7 +48,7 @@ public static class HexIntConverter
 
   public static DX.HexBinaryValue? CreateHexBinaryValue(HexInt? value)
   {
-    if (value != null) return new DX.HexBinaryValue(value);
+    if (value != null) return new DX.HexBinaryValue(value.ToString());
     return null;
   }
 
@@ -58,7 +58,7 @@ public static class HexIntConverter
     if (value != null)
     {
       var element = new HexBinaryType();
-      element.Val = new DX.HexBinaryValue(value);
+      element.Val = new DX.HexBinaryValue(value.ToString());
       return element;
     }
     return null;
@@ -67,7 +67,7 @@ public static class HexIntConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(HexInt? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
-    var newValue = new DX.HexBinaryValue(value);
+    var newValue = new DX.HexBinaryValue(value.ToString());
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
     if (valProperty != null)

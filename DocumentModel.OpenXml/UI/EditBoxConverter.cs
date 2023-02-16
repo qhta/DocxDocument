@@ -715,11 +715,11 @@ public static class EditBoxConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.EditBox? CreateModelElement(DXOCustUI.EditBox? openXmlElement)
+  public static DocumentModel.UI.EditBox? CreateModelElement(DXOCustUI.EditBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.EditBox();
+      var value = new DocumentModel.UI.EditBox();
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
       value.Image = GetImage(openXmlElement);

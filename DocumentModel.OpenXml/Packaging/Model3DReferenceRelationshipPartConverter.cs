@@ -29,11 +29,11 @@ public static class Model3DReferenceRelationshipPartConverter
     return false;
   }
   
-  public static DMPack.Model3DReferenceRelationshipPart? CreateModelElement(DXPack.Model3DReferenceRelationshipPart? openXmlElement)
+  public static DocumentModel.Packaging.Model3DReferenceRelationshipPart? CreateModelElement(DXPack.Model3DReferenceRelationshipPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.Model3DReferenceRelationshipPart();
+      var value = new DocumentModel.Packaging.Model3DReferenceRelationshipPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

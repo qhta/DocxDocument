@@ -59,7 +59,10 @@ public static class FillOverlayConverter
   /// </summary>
   private static DMDraws.SolidFill? GetSolidFill(DXDraw.FillOverlay openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDraw.FillOverlay openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -85,7 +88,10 @@ public static class FillOverlayConverter
   /// </summary>
   private static DMDraws.GradientFill? GetGradientFill(DXDraw.FillOverlay openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDraw.FillOverlay openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -111,7 +117,10 @@ public static class FillOverlayConverter
   /// </summary>
   private static DMDraws.BlipFill? GetBlipFill(DXDraw.FillOverlay openXmlElement)
   {
-    return DMXDraws.BlipFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BlipFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    if (element != null)
+      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBlipFill(DXDraw.FillOverlay openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
@@ -137,7 +146,10 @@ public static class FillOverlayConverter
   /// </summary>
   private static DMDraws.PatternFill? GetPatternFill(DXDraw.FillOverlay openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDraw.FillOverlay openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -189,11 +201,11 @@ public static class FillOverlayConverter
     }
   }
   
-  public static DMDraws.FillOverlay? CreateModelElement(DXDraw.FillOverlay? openXmlElement)
+  public static DocumentModel.Drawings.FillOverlay? CreateModelElement(DXDraw.FillOverlay? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.FillOverlay();
+      var value = new DocumentModel.Drawings.FillOverlay();
       value.Blend = GetBlend(openXmlElement);
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);

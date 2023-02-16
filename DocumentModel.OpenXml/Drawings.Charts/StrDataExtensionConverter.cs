@@ -56,11 +56,11 @@ public static class StrDataExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.StrDataExtension? CreateModelElement(DXDrawCharts.StrDataExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StrDataExtension? CreateModelElement(DXDrawCharts.StrDataExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StrDataExtension();
+      var value = new DocumentModel.Drawings.Charts.StrDataExtension();
       value.Uri = GetUri(openXmlElement);
       value.AutoGeneneratedCategories = GetAutoGeneneratedCategories(openXmlElement);
       return value;

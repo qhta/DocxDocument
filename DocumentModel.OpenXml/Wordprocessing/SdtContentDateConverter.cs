@@ -130,11 +130,11 @@ public static class SdtContentDateConverter
     }
   }
   
-  public static DMW.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtContentDate();
+      var value = new DocumentModel.Wordprocessing.SdtContentDate();
       value.FullDate = GetFullDate(openXmlElement);
       value.DateFormat = GetDateFormat(openXmlElement);
       value.LanguageId = GetLanguageId(openXmlElement);

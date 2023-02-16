@@ -156,11 +156,11 @@ public static class ObjectLinkConverter
       openXmlElement.FieldCodes = null;
   }
   
-  public static DMW.ObjectLink? CreateModelElement(DXW.ObjectLink? openXmlElement)
+  public static DocumentModel.Wordprocessing.ObjectLink? CreateModelElement(DXW.ObjectLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ObjectLink();
+      var value = new DocumentModel.Wordprocessing.ObjectLink();
       value.UpdateMode = GetUpdateMode(openXmlElement);
       value.LockedField = GetLockedField(openXmlElement);
       value.drawAspect = GetdrawAspect(openXmlElement);

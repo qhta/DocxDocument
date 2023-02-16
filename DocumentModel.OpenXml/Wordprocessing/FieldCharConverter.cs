@@ -99,7 +99,10 @@ public static class FieldCharConverter
   /// </summary>
   private static DMW.FormFieldData? GetFormFieldData(DXW.FieldChar openXmlElement)
   {
-    return DMXW.FormFieldDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FormFieldData>());
+    var element = openXmlElement?.GetFirstChild<DXW.FormFieldData>();
+    if (element != null)
+      return DMXW.FormFieldDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs, string? objName)
@@ -125,7 +128,10 @@ public static class FieldCharConverter
   /// </summary>
   private static DMW.NumberingChange? GetNumberingChange(DXW.FieldChar openXmlElement)
   {
-    return DMXW.NumberingChangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingChange>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
+    if (element != null)
+      return DMXW.NumberingChangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
@@ -146,11 +152,11 @@ public static class FieldCharConverter
     }
   }
   
-  public static DMW.FieldChar? CreateModelElement(DXW.FieldChar? openXmlElement)
+  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(DXW.FieldChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FieldChar();
+      var value = new DocumentModel.Wordprocessing.FieldChar();
       value.FieldCharType = GetFieldCharType(openXmlElement);
       value.FieldLock = GetFieldLock(openXmlElement);
       value.Dirty = GetDirty(openXmlElement);

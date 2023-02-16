@@ -603,11 +603,11 @@ public static class ControlCloneRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.ControlCloneRegular? CreateModelElement(DXO2010CustUI.ControlCloneRegular? openXmlElement)
+  public static DocumentModel.ControlCloneRegular? CreateModelElement(DXO2010CustUI.ControlCloneRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ControlCloneRegular();
+      var value = new DocumentModel.ControlCloneRegular();
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

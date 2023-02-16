@@ -718,11 +718,11 @@ public static class UnsizedToggleButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.UnsizedToggleButton? CreateModelElement(DXOCustUI.UnsizedToggleButton? openXmlElement)
+  public static DocumentModel.UI.UnsizedToggleButton? CreateModelElement(DXOCustUI.UnsizedToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedToggleButton();
+      var value = new DocumentModel.UI.UnsizedToggleButton();
       value.GetPressed = GetGetPressed(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);

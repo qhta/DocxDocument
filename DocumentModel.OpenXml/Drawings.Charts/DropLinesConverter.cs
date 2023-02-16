@@ -7,7 +7,10 @@ public static class DropLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DropLines openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DropLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class DropLinesConverter
     }
   }
   
-  public static DMDrawsCharts.DropLines? CreateModelElement(DXDrawCharts.DropLines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DXDrawCharts.DropLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DropLines();
+      var value = new DocumentModel.Drawings.Charts.DropLines();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

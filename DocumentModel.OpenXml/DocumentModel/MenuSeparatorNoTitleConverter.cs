@@ -166,11 +166,11 @@ public static class MenuSeparatorNoTitleConverter
       openXmlElement.InsertBeforeQulifiedId = null;
   }
   
-  public static DM.MenuSeparatorNoTitle? CreateModelElement(DXO2010CustUI.MenuSeparatorNoTitle? openXmlElement)
+  public static DocumentModel.MenuSeparatorNoTitle? CreateModelElement(DXO2010CustUI.MenuSeparatorNoTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.MenuSeparatorNoTitle();
+      var value = new DocumentModel.MenuSeparatorNoTitle();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

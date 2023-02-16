@@ -153,7 +153,10 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.RelationshipType? GetDataSourceReference(DXW.MailMerge openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DataSourceReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.DataSourceReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataSourceReference(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -179,7 +182,10 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.RelationshipType? GetHeaderSource(DXW.MailMerge openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.HeaderSource>());
+    var element = openXmlElement?.GetFirstChild<DXW.HeaderSource>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHeaderSource(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -448,7 +454,10 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.DataSourceObject? GetDataSourceObject(DXW.MailMerge openXmlElement)
   {
-    return DMXW.DataSourceObjectConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DataSourceObject>());
+    var element = openXmlElement?.GetFirstChild<DXW.DataSourceObject>();
+    if (element != null)
+      return DMXW.DataSourceObjectConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataSourceObject(DXW.MailMerge openXmlElement, DMW.DataSourceObject? value, DiffList? diffs, string? objName)
@@ -469,11 +478,11 @@ public static class MailMergeConverter
     }
   }
   
-  public static DMW.MailMerge? CreateModelElement(DXW.MailMerge? openXmlElement)
+  public static DocumentModel.Wordprocessing.MailMerge? CreateModelElement(DXW.MailMerge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MailMerge();
+      var value = new DocumentModel.Wordprocessing.MailMerge();
       value.MainDocumentType = GetMainDocumentType(openXmlElement);
       value.LinkToQuery = GetLinkToQuery(openXmlElement);
       value.DataType = GetDataType(openXmlElement);

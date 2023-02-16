@@ -30,7 +30,10 @@ public static class ScatterChartExtensionConverter
   
   private static DMDrawsCharts.FilteredScatterSeries? GetFilteredScatterSeries(DXDrawCharts.ScatterChartExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredScatterSeriesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredScatterSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredScatterSeries>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredScatterSeriesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredScatterSeries(DXDrawCharts.ScatterChartExtension openXmlElement, DMDrawsCharts.FilteredScatterSeries? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class ScatterChartExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.ScatterChartExtension? CreateModelElement(DXDrawCharts.ScatterChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ScatterChartExtension? CreateModelElement(DXDrawCharts.ScatterChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ScatterChartExtension();
+      var value = new DocumentModel.Drawings.Charts.ScatterChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredScatterSeries = GetFilteredScatterSeries(openXmlElement);
       return value;

@@ -79,7 +79,10 @@ public static class ThemeFamilyConverter
   /// </summary>
   private static DM.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement)
   {
-    return DMX.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>();
+    if (element != null)
+      return DMX.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -100,11 +103,11 @@ public static class ThemeFamilyConverter
     }
   }
   
-  public static DM.ThemeFamily? CreateModelElement(DXO2013Theme.ThemeFamily? openXmlElement)
+  public static DocumentModel.ThemeFamily? CreateModelElement(DXO2013Theme.ThemeFamily? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ThemeFamily();
+      var value = new DocumentModel.ThemeFamily();
       value.Name = GetName(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.Vid = GetVid(openXmlElement);

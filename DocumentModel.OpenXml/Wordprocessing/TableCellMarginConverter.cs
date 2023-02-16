@@ -10,7 +10,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetTopMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TopMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.TopMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTopMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetLeftMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.LeftMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.LeftMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLeftMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetStartMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.StartMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.StartMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStartMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetBottomMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BottomMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.BottomMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBottomMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetRightMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RightMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.RightMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRightMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -140,7 +155,10 @@ public static class TableCellMarginConverter
   /// </summary>
   private static DMW.TableWidthType? GetEndMargin(DXW.TableCellMargin openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.EndMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.EndMargin>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEndMargin(DXW.TableCellMargin openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -161,11 +179,11 @@ public static class TableCellMarginConverter
     }
   }
   
-  public static DMW.TableCellMargin? CreateModelElement(DXW.TableCellMargin? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableCellMargin? CreateModelElement(DXW.TableCellMargin? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableCellMargin();
+      var value = new DocumentModel.Wordprocessing.TableCellMargin();
       value.TopMargin = GetTopMargin(openXmlElement);
       value.LeftMargin = GetLeftMargin(openXmlElement);
       value.StartMargin = GetStartMargin(openXmlElement);

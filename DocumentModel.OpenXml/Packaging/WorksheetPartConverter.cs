@@ -20,7 +20,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.ControlPropertiesPart> GetControlPropertiesParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.ControlPropertiesPart>? GetControlPropertiesParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.ControlPropertiesPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ControlPropertiesPart>())
@@ -40,7 +40,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the CustomPropertyParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.CustomPropertyPart> GetCustomPropertyParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.CustomPropertyPart>? GetCustomPropertyParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.CustomPropertyPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.CustomPropertyPart>())
@@ -60,7 +60,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistenceBinaryDataPart>())
@@ -80,7 +80,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
@@ -100,7 +100,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -120,7 +120,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -140,7 +140,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -160,7 +160,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -180,7 +180,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.NamedSheetViewsPart> GetNamedSheetViewsParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.NamedSheetViewsPart>? GetNamedSheetViewsParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.NamedSheetViewsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.NamedSheetViewsPart>())
@@ -200,7 +200,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the PivotTableParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.PivotTablePart> GetPivotTableParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.PivotTablePart>? GetPivotTableParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.PivotTablePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.PivotTablePart>())
@@ -220,7 +220,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the QueryTableParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.QueryTablePart> GetQueryTableParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.QueryTablePart>? GetQueryTableParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.QueryTablePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.QueryTablePart>())
@@ -252,7 +252,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the SlicersParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.SlicersPart> GetSlicersParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.SlicersPart>? GetSlicersParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.SlicersPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.SlicersPart>())
@@ -272,7 +272,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.SpreadsheetPrinterSettingsPart> GetSpreadsheetPrinterSettingsParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.SpreadsheetPrinterSettingsPart>? GetSpreadsheetPrinterSettingsParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.SpreadsheetPrinterSettingsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.SpreadsheetPrinterSettingsPart>())
@@ -292,7 +292,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the TableDefinitionParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.TableDefinitionPart> GetTableDefinitionParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.TableDefinitionPart>? GetTableDefinitionParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.TableDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.TableDefinitionPart>())
@@ -312,7 +312,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the TimeLineParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.TimeLinePart> GetTimeLineParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.TimeLinePart>? GetTimeLineParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.TimeLinePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.TimeLinePart>())
@@ -332,7 +332,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the VmlDrawingParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.VmlDrawingPart> GetVmlDrawingParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.VmlDrawingPart>? GetVmlDrawingParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.VmlDrawingPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.VmlDrawingPart>())
@@ -352,7 +352,7 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the WorksheetThreadedCommentsParts of the WorksheetPart
   /// </summary>
-  private static Collection<DMPack.WorksheetThreadedCommentsPart> GetWorksheetThreadedCommentsParts(DXPack.WorksheetPart openXmlElement)
+  private static Collection<DMPack.WorksheetThreadedCommentsPart>? GetWorksheetThreadedCommentsParts(DXPack.WorksheetPart openXmlElement)
   {
     var collection = new Collection<DMPack.WorksheetThreadedCommentsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.WorksheetThreadedCommentsPart>())
@@ -369,11 +369,11 @@ public static class WorksheetPartConverter
     return true;
   }
   
-  public static DMPack.WorksheetPart? CreateModelElement(DXPack.WorksheetPart? openXmlElement)
+  public static DocumentModel.Packaging.WorksheetPart? CreateModelElement(DXPack.WorksheetPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WorksheetPart();
+      var value = new DocumentModel.Packaging.WorksheetPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ControlPropertiesParts = GetControlPropertiesParts(openXmlElement);
       value.CustomPropertyParts = GetCustomPropertyParts(openXmlElement);

@@ -10,7 +10,10 @@ public static class BackgroundCustomPropertiesConverter
   /// </summary>
   private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class BackgroundCustomPropertiesConverter
     }
   }
   
-  public static DMDraws.BackgroundCustomProperties? CreateModelElement(DXO2021DrawLivefeed.BackgroundCustomProperties? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundCustomProperties? CreateModelElement(DXO2021DrawLivefeed.BackgroundCustomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BackgroundCustomProperties();
+      var value = new DocumentModel.Drawings.BackgroundCustomProperties();
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;
     }

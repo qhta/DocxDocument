@@ -29,11 +29,11 @@ public static class SingleCellTablePartConverter
     return false;
   }
   
-  public static DMPack.SingleCellTablePart? CreateModelElement(DXPack.SingleCellTablePart? openXmlElement)
+  public static DocumentModel.Packaging.SingleCellTablePart? CreateModelElement(DXPack.SingleCellTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SingleCellTablePart();
+      var value = new DocumentModel.Packaging.SingleCellTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

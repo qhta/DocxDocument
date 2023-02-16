@@ -51,11 +51,11 @@ public static class DocPartTypesConverter
     }
   }
   
-  public static DMW.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocPartTypes();
+      var value = new DocumentModel.Wordprocessing.DocPartTypes();
       value.All = GetAll(openXmlElement);
       value.DocPartType = GetDocPartType(openXmlElement);
       return value;

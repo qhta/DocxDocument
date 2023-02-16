@@ -7,7 +7,10 @@ public static class DocumentControlsQatItemsConverter
 {
   private static DM.ControlCloneQat? GetControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    return DMX.ControlCloneQatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneQat>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneQat>();
+    if (element != null)
+      return DMX.ControlCloneQatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ControlCloneQat? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class DocumentControlsQatItemsConverter
   
   private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    return DMX.ButtonRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    if (element != null)
+      return DMX.ButtonRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class DocumentControlsQatItemsConverter
   
   private static DM.Separator? GetSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    return DMX.SeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Separator>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Separator>();
+    if (element != null)
+      return DMX.SeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class DocumentControlsQatItemsConverter
     }
   }
   
-  public static DM.DocumentControlsQatItems? CreateModelElement(DXO2010CustUI.DocumentControlsQatItems? openXmlElement)
+  public static DocumentModel.DocumentControlsQatItems? CreateModelElement(DXO2010CustUI.DocumentControlsQatItems? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.DocumentControlsQatItems();
+      var value = new DocumentModel.DocumentControlsQatItems();
       value.ControlCloneQat = GetControlCloneQat(openXmlElement);
       value.ButtonRegular = GetButtonRegular(openXmlElement);
       value.Separator = GetSeparator(openXmlElement);

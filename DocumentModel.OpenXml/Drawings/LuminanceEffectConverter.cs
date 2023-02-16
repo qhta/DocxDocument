@@ -45,11 +45,11 @@ public static class LuminanceEffectConverter
     openXmlElement.Contrast = value;
   }
   
-  public static DMDraws.LuminanceEffect? CreateModelElement(DXDraw.LuminanceEffect? openXmlElement)
+  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(DXDraw.LuminanceEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LuminanceEffect();
+      var value = new DocumentModel.Drawings.LuminanceEffect();
       value.Brightness = GetBrightness(openXmlElement);
       value.Contrast = GetContrast(openXmlElement);
       return value;

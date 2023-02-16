@@ -7,7 +7,10 @@ public static class HyperlinkOnHoverConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement)
   {
-    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
+    if (element != null)
+      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class HyperlinkOnHoverConverter
   
   private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement)
   {
-    return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
+    if (element != null)
+      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class HyperlinkOnHoverConverter
     }
   }
   
-  public static DMDraws.HyperlinkOnHover? CreateModelElement(DXDraw.HyperlinkOnHover? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkOnHover? CreateModelElement(DXDraw.HyperlinkOnHover? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HyperlinkOnHover();
+      var value = new DocumentModel.Drawings.HyperlinkOnHover();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;

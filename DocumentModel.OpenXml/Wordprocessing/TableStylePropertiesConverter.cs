@@ -28,7 +28,10 @@ public static class TableStylePropertiesConverter
   /// </summary>
   private static DMW.StyleParagraphProperties? GetStyleParagraphProperties(DXW.TableStyleProperties openXmlElement)
   {
-    return DMXW.StyleParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.StyleParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.StyleParagraphProperties>();
+    if (element != null)
+      return DMXW.StyleParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStyleParagraphProperties(DXW.TableStyleProperties openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs, string? objName)
@@ -54,7 +57,10 @@ public static class TableStylePropertiesConverter
   /// </summary>
   private static DMW.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DXW.TableStyleProperties openXmlElement)
   {
-    return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
+    if (element != null)
+      return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunPropertiesBaseStyle(DXW.TableStyleProperties openXmlElement, DMW.RunPropertiesBaseStyle? value, DiffList? diffs, string? objName)
@@ -80,7 +86,10 @@ public static class TableStylePropertiesConverter
   /// </summary>
   private static DMW.TableStyleConditionalFormattingTableProperties? GetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement)
   {
-    return DMXW.TableStyleConditionalFormattingTablePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
+    if (element != null)
+      return DMXW.TableStyleConditionalFormattingTablePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableProperties? value, DiffList? diffs, string? objName)
@@ -106,7 +115,10 @@ public static class TableStylePropertiesConverter
   /// </summary>
   private static DMW.TableStyleConditionalFormattingTableRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement)
   {
-    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
+    if (element != null)
+      return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
@@ -132,7 +144,10 @@ public static class TableStylePropertiesConverter
   /// </summary>
   private static DMW.TableStyleConditionalFormattingTableCellProperties? GetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement)
   {
-    return DMXW.TableStyleConditionalFormattingTableCellPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
+    if (element != null)
+      return DMXW.TableStyleConditionalFormattingTableCellPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableCellProperties? value, DiffList? diffs, string? objName)
@@ -153,11 +168,11 @@ public static class TableStylePropertiesConverter
     }
   }
   
-  public static DMW.TableStyleProperties? CreateModelElement(DXW.TableStyleProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableStyleProperties? CreateModelElement(DXW.TableStyleProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleProperties();
+      var value = new DocumentModel.Wordprocessing.TableStyleProperties();
       value.Type = GetType(openXmlElement);
       value.StyleParagraphProperties = GetStyleParagraphProperties(openXmlElement);
       value.RunPropertiesBaseStyle = GetRunPropertiesBaseStyle(openXmlElement);

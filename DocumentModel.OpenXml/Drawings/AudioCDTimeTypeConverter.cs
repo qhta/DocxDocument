@@ -45,11 +45,11 @@ public static class AudioCDTimeTypeConverter
     openXmlElement.Time = value;
   }
   
-  public static DMDraws.AudioCDTimeType? CreateModelElement(DXDraw.AudioCDTimeType? openXmlElement)
+  public static DocumentModel.Drawings.AudioCDTimeType? CreateModelElement(DXDraw.AudioCDTimeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AudioCDTimeType();
+      var value = new DocumentModel.Drawings.AudioCDTimeType();
       value.Track = GetTrack(openXmlElement);
       value.Time = GetTime(openXmlElement);
       return value;

@@ -119,7 +119,10 @@ public static class WebExtensionTaskpaneConverter
   /// </summary>
   private static DMWebExtUI.WebExtensionPartReference? GetWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
   {
-    return DMXWebExtUI.WebExtensionPartReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>();
+    if (element != null)
+      return DMXWebExtUI.WebExtensionPartReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionPartReference? value, DiffList? diffs, string? objName)
@@ -145,7 +148,10 @@ public static class WebExtensionTaskpaneConverter
   /// </summary>
   private static DMWebExtUI.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
   {
-    return DMXWebExtUI.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXWebExtUI.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -166,11 +172,11 @@ public static class WebExtensionTaskpaneConverter
     }
   }
   
-  public static DMWebExtUI.WebExtensionTaskpane? CreateModelElement(DXO2013WebExtPane.WebExtensionTaskpane? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.WebExtensionTaskpane? CreateModelElement(DXO2013WebExtPane.WebExtensionTaskpane? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExtUI.WebExtensionTaskpane();
+      var value = new DocumentModel.WebExtensions.UI.WebExtensionTaskpane();
       value.DockState = GetDockState(openXmlElement);
       value.Visibility = GetVisibility(openXmlElement);
       value.Width = GetWidth(openXmlElement);

@@ -1156,7 +1156,7 @@ public static class GalleryConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static Collection<DM.Item> GetItems(DXO2010CustUI.Gallery openXmlElement)
+  private static Collection<DM.Item>? GetItems(DXO2010CustUI.Gallery openXmlElement)
   {
     var collection = new Collection<DM.Item>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.Item>())
@@ -1165,7 +1165,9 @@ public static class GalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2010CustUI.Gallery openXmlElement, Collection<DM.Item>? value, DiffList? diffs, string? objName)
@@ -1210,7 +1212,7 @@ public static class GalleryConverter
     }
   }
   
-  private static Collection<DM.ButtonRegular> GetButtonRegulars(DXO2010CustUI.Gallery openXmlElement)
+  private static Collection<DM.ButtonRegular>? GetButtonRegulars(DXO2010CustUI.Gallery openXmlElement)
   {
     var collection = new Collection<DM.ButtonRegular>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.ButtonRegular>())
@@ -1219,7 +1221,9 @@ public static class GalleryConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpButtonRegulars(DXO2010CustUI.Gallery openXmlElement, Collection<DM.ButtonRegular>? value, DiffList? diffs, string? objName)
@@ -1264,11 +1268,11 @@ public static class GalleryConverter
     }
   }
   
-  public static DM.Gallery? CreateModelElement(DXO2010CustUI.Gallery? openXmlElement)
+  public static DocumentModel.Gallery? CreateModelElement(DXO2010CustUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Gallery();
+      var value = new DocumentModel.Gallery();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);

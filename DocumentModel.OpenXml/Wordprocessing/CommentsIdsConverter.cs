@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentsIdsConverter
 {
-  private static Collection<DMW.CommentId> GetCommentIds(DXO2019WCid.CommentsIds openXmlElement)
+  private static Collection<DMW.CommentId>? GetCommentIds(DXO2019WCid.CommentsIds openXmlElement)
   {
     var collection = new Collection<DMW.CommentId>();
     foreach (var item in openXmlElement.Elements<DXO2019WCid.CommentId>())
@@ -14,7 +14,9 @@ public static class CommentsIdsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpCommentIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class CommentsIdsConverter
     }
   }
   
-  public static DMW.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
+  public static DocumentModel.Wordprocessing.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentsIds();
+      var value = new DocumentModel.Wordprocessing.CommentsIds();
       value.CommentIds = GetCommentIds(openXmlElement);
       return value;
     }

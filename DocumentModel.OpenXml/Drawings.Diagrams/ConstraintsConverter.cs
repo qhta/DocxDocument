@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ConstraintsConverter
 {
-  private static Collection<DMDrawsDgms.Constraint> GetItems(DXDrawDgms.Constraints openXmlElement)
+  private static Collection<DMDrawsDgms.Constraint>? GetItems(DXDrawDgms.Constraints openXmlElement)
   {
     var collection = new Collection<DMDrawsDgms.Constraint>();
     foreach (var item in openXmlElement.Elements<DXDrawDgms.Constraint>())
@@ -14,7 +14,9 @@ public static class ConstraintsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXDrawDgms.Constraints openXmlElement, Collection<DMDrawsDgms.Constraint>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ConstraintsConverter
     }
   }
   
-  public static DMDrawsDgms.Constraints? CreateModelElement(DXDrawDgms.Constraints? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(DXDrawDgms.Constraints? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Constraints();
+      var value = new DocumentModel.Drawings.Diagrams.Constraints();
       value.Items = GetItems(openXmlElement);
       return value;
     }

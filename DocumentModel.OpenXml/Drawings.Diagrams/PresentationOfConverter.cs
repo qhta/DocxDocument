@@ -136,7 +136,10 @@ public static class PresentationOfConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.PresentationOf openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -157,11 +160,11 @@ public static class PresentationOfConverter
     }
   }
   
-  public static DMDrawsDgms.PresentationOf? CreateModelElement(DXDrawDgms.PresentationOf? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(DXDrawDgms.PresentationOf? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.PresentationOf();
+      var value = new DocumentModel.Drawings.Diagrams.PresentationOf();
       value.Axis = GetAxis(openXmlElement);
       value.PointType = GetPointType(openXmlElement);
       value.HideLastTrans = GetHideLastTrans(openXmlElement);

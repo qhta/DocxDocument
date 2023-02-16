@@ -30,7 +30,10 @@ public static class SurfaceSerExtensionConverter
   
   private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.SurfaceSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredSeriesTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class SurfaceSerExtensionConverter
   
   private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.SurfaceSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredCategoryTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class SurfaceSerExtensionConverter
   
   private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.SurfaceSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryFilterExceptions(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
@@ -97,11 +106,11 @@ public static class SurfaceSerExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.SurfaceSerExtension? CreateModelElement(DXDrawCharts.SurfaceSerExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(DXDrawCharts.SurfaceSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SurfaceSerExtension();
+      var value = new DocumentModel.Drawings.Charts.SurfaceSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredSeriesTitle = GetFilteredSeriesTitle(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

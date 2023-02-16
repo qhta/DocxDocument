@@ -10,7 +10,10 @@ public static class LimitLowerConverter
   /// </summary>
   private static DMMath.LimitLowerProperties? GetLimitLowerProperties(DXMath.LimitLower openXmlElement)
   {
-    return DMXMath.LimitLowerPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLowerProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitLowerProperties>();
+    if (element != null)
+      return DMXMath.LimitLowerPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitLowerProperties(DXMath.LimitLower openXmlElement, DMMath.LimitLowerProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class LimitLowerConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.LimitLower openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.LimitLower openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class LimitLowerConverter
   /// </summary>
   private static DMMath.Limit? GetLimit(DXMath.LimitLower openXmlElement)
   {
-    return DMXMath.LimitConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Limit>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Limit>();
+    if (element != null)
+      return DMXMath.LimitConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimit(DXMath.LimitLower openXmlElement, DMMath.Limit? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class LimitLowerConverter
     }
   }
   
-  public static DMMath.LimitLower? CreateModelElement(DXMath.LimitLower? openXmlElement)
+  public static DocumentModel.Math.LimitLower? CreateModelElement(DXMath.LimitLower? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.LimitLower();
+      var value = new DocumentModel.Math.LimitLower();
       value.LimitLowerProperties = GetLimitLowerProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.Limit = GetLimit(openXmlElement);

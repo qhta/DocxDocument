@@ -490,7 +490,10 @@ public static class GroupConverter
   
   private static DMUI.ControlClone? GetControlClone(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.ControlCloneConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.ControlClone>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.ControlClone>();
+    if (element != null)
+      return DMXUI.ControlCloneConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlClone(DXOCustUI.Group openXmlElement, DMUI.ControlClone? value, DiffList? diffs, string? objName)
@@ -513,7 +516,10 @@ public static class GroupConverter
   
   private static DMUI.TextLabel? GetTextLabel(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.TextLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.TextLabel>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.TextLabel>();
+    if (element != null)
+      return DMXUI.TextLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextLabel(DXOCustUI.Group openXmlElement, DMUI.TextLabel? value, DiffList? diffs, string? objName)
@@ -536,7 +542,10 @@ public static class GroupConverter
   
   private static DMUI.Button? GetButton(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.ButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Button>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.Button>();
+    if (element != null)
+      return DMXUI.ButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButton(DXOCustUI.Group openXmlElement, DMUI.Button? value, DiffList? diffs, string? objName)
@@ -559,7 +568,10 @@ public static class GroupConverter
   
   private static DMUI.ToggleButton? GetToggleButton(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.ToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.ToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.ToggleButton>();
+    if (element != null)
+      return DMXUI.ToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpToggleButton(DXOCustUI.Group openXmlElement, DMUI.ToggleButton? value, DiffList? diffs, string? objName)
@@ -582,7 +594,10 @@ public static class GroupConverter
   
   private static DMUI.CheckBox? GetCheckBox(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.CheckBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>();
+    if (element != null)
+      return DMXUI.CheckBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCheckBox(DXOCustUI.Group openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
@@ -605,7 +620,10 @@ public static class GroupConverter
   
   private static DMUI.EditBox? GetEditBox(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.EditBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.EditBox>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.EditBox>();
+    if (element != null)
+      return DMXUI.EditBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEditBox(DXOCustUI.Group openXmlElement, DMUI.EditBox? value, DiffList? diffs, string? objName)
@@ -628,7 +646,10 @@ public static class GroupConverter
   
   private static DMUI.ComboBox? GetComboBox(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.ComboBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.ComboBox>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.ComboBox>();
+    if (element != null)
+      return DMXUI.ComboBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpComboBox(DXOCustUI.Group openXmlElement, DMUI.ComboBox? value, DiffList? diffs, string? objName)
@@ -651,7 +672,10 @@ public static class GroupConverter
   
   private static DMUI.DropDown? GetDropDown(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.DropDownConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.DropDown>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.DropDown>();
+    if (element != null)
+      return DMXUI.DropDownConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDropDown(DXOCustUI.Group openXmlElement, DMUI.DropDown? value, DiffList? diffs, string? objName)
@@ -674,7 +698,10 @@ public static class GroupConverter
   
   private static DMUI.Gallery? GetGallery(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.GalleryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Gallery>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.Gallery>();
+    if (element != null)
+      return DMXUI.GalleryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGallery(DXOCustUI.Group openXmlElement, DMUI.Gallery? value, DiffList? diffs, string? objName)
@@ -697,7 +724,10 @@ public static class GroupConverter
   
   private static DMUI.Menu? GetMenu(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.MenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Menu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.Menu>();
+    if (element != null)
+      return DMXUI.MenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenu(DXOCustUI.Group openXmlElement, DMUI.Menu? value, DiffList? diffs, string? objName)
@@ -720,7 +750,10 @@ public static class GroupConverter
   
   private static DMUI.DynamicMenu? GetDynamicMenu(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.DynamicMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.DynamicMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.DynamicMenu>();
+    if (element != null)
+      return DMXUI.DynamicMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDynamicMenu(DXOCustUI.Group openXmlElement, DMUI.DynamicMenu? value, DiffList? diffs, string? objName)
@@ -743,7 +776,10 @@ public static class GroupConverter
   
   private static DMUI.SplitButton? GetSplitButton(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.SplitButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.SplitButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.SplitButton>();
+    if (element != null)
+      return DMXUI.SplitButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSplitButton(DXOCustUI.Group openXmlElement, DMUI.SplitButton? value, DiffList? diffs, string? objName)
@@ -766,7 +802,10 @@ public static class GroupConverter
   
   private static DMUI.Box? GetBox(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Box>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.Box>();
+    if (element != null)
+      return DMXUI.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBox(DXOCustUI.Group openXmlElement, DMUI.Box? value, DiffList? diffs, string? objName)
@@ -789,7 +828,10 @@ public static class GroupConverter
   
   private static DMUI.ButtonGroup? GetButtonGroup(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.ButtonGroupConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.ButtonGroup>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.ButtonGroup>();
+    if (element != null)
+      return DMXUI.ButtonGroupConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpButtonGroup(DXOCustUI.Group openXmlElement, DMUI.ButtonGroup? value, DiffList? diffs, string? objName)
@@ -812,7 +854,10 @@ public static class GroupConverter
   
   private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.VerticalSeparatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>();
+    if (element != null)
+      return DMXUI.VerticalSeparatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVerticalSeparator(DXOCustUI.Group openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
@@ -835,7 +880,10 @@ public static class GroupConverter
   
   private static DMUI.DialogBoxLauncher? GetDialogBoxLauncher(DXOCustUI.Group openXmlElement)
   {
-    return DMXUI.DialogBoxLauncherConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.DialogBoxLauncher>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.DialogBoxLauncher>();
+    if (element != null)
+      return DMXUI.DialogBoxLauncherConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDialogBoxLauncher(DXOCustUI.Group openXmlElement, DMUI.DialogBoxLauncher? value, DiffList? diffs, string? objName)
@@ -856,11 +904,11 @@ public static class GroupConverter
     }
   }
   
-  public static DMUI.Group? CreateModelElement(DXOCustUI.Group? openXmlElement)
+  public static DocumentModel.UI.Group? CreateModelElement(DXOCustUI.Group? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.Group();
+      var value = new DocumentModel.UI.Group();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

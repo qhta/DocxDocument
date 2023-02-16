@@ -375,7 +375,10 @@ public static class SplitButtonRegularConverter
   
   private static DM.VisibleButton? GetVisibleButton(DXO2010CustUI.SplitButtonRegular openXmlElement)
   {
-    return DMX.VisibleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleButton>();
+    if (element != null)
+      return DMX.VisibleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleButton? value, DiffList? diffs, string? objName)
@@ -398,7 +401,10 @@ public static class SplitButtonRegularConverter
   
   private static DM.VisibleToggleButton? GetVisibleToggleButton(DXO2010CustUI.SplitButtonRegular openXmlElement)
   {
-    return DMX.VisibleToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.VisibleToggleButton>();
+    if (element != null)
+      return DMX.VisibleToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleToggleButton(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.VisibleToggleButton? value, DiffList? diffs, string? objName)
@@ -421,7 +427,10 @@ public static class SplitButtonRegularConverter
   
   private static DM.MenuRegular? GetMenuRegular(DXO2010CustUI.SplitButtonRegular openXmlElement)
   {
-    return DMX.MenuRegularConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>();
+    if (element != null)
+      return DMX.MenuRegularConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMenuRegular(DXO2010CustUI.SplitButtonRegular openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
@@ -442,11 +451,11 @@ public static class SplitButtonRegularConverter
     }
   }
   
-  public static DM.SplitButtonRegular? CreateModelElement(DXO2010CustUI.SplitButtonRegular? openXmlElement)
+  public static DocumentModel.SplitButtonRegular? CreateModelElement(DXO2010CustUI.SplitButtonRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.SplitButtonRegular();
+      var value = new DocumentModel.SplitButtonRegular();
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
       value.Id = GetId(openXmlElement);

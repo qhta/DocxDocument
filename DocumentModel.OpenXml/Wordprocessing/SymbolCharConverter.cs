@@ -31,36 +31,36 @@ public static class SymbolCharConverter
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  private static UInt16? GetChar(DXW.SymbolChar openXmlElement)
+  private static DM.HexChar? GetChar(DXW.SymbolChar openXmlElement)
   {
     if (openXmlElement?.Char?.Value != null)
-      return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber);
+      return HexCharConverter.GetValue(openXmlElement.Char.Value);
     return null;
   }
   
-  private static bool CmpChar(DXW.SymbolChar openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpChar(DXW.SymbolChar openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Char?.Value != null)
-      if (UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Char.Value) == value)
         return true;
-    if (openXmlElement?.Char?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value?.ToString("x4"));
+    if (openXmlElement == null && openXmlElement?.Char?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value);
     return false;
   }
   
-  private static void SetChar(DXW.SymbolChar openXmlElement, UInt16? value)
+  private static void SetChar(DXW.SymbolChar openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.Char = ((UInt16)value).ToString("X4");
+      openXmlElement.Char = value.ToString();
     else
       openXmlElement.Char = null;
   }
   
-  public static DMW.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
+  public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SymbolChar();
+      var value = new DocumentModel.Wordprocessing.SymbolChar();
       value.Font = GetFont(openXmlElement);
       value.Char = GetChar(openXmlElement);
       return value;

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class BlipExtensionListConverter
 {
-  private static Collection<DMDraws.BlipExtension> GetBlipExtensions(DXDraw.BlipExtensionList openXmlElement)
+  private static Collection<DMDraws.BlipExtension>? GetBlipExtensions(DXDraw.BlipExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.BlipExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.BlipExtension>())
@@ -14,7 +14,9 @@ public static class BlipExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBlipExtensions(DXDraw.BlipExtensionList openXmlElement, Collection<DMDraws.BlipExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class BlipExtensionListConverter
     }
   }
   
-  public static DMDraws.BlipExtensionList? CreateModelElement(DXDraw.BlipExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.BlipExtensionList? CreateModelElement(DXDraw.BlipExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BlipExtensionList();
+      var value = new DocumentModel.Drawings.BlipExtensionList();
       value.BlipExtensions = GetBlipExtensions(openXmlElement);
       return value;
     }

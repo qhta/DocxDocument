@@ -148,7 +148,10 @@ public static class AdjustHandlePolarConverter
   /// </summary>
   private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.AdjustHandlePolar openXmlElement)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Position>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Position>();
+    if (element != null)
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPosition(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
@@ -169,11 +172,11 @@ public static class AdjustHandlePolarConverter
     }
   }
   
-  public static DMDraws.AdjustHandlePolar? CreateModelElement(DXDraw.AdjustHandlePolar? openXmlElement)
+  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DXDraw.AdjustHandlePolar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AdjustHandlePolar();
+      var value = new DocumentModel.Drawings.AdjustHandlePolar();
       value.RadialAdjustmentGuide = GetRadialAdjustmentGuide(openXmlElement);
       value.MinRadial = GetMinRadial(openXmlElement);
       value.MaxRadial = GetMaxRadial(openXmlElement);

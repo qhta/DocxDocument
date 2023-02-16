@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DMDraws.Extension> GetExtensions(DXDrawDgms.ExtensionList openXmlElement)
+  private static Collection<DMDraws.Extension>? GetExtensions(DXDrawDgms.ExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.Extension>();
     foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
@@ -14,7 +14,9 @@ public static class ExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtensions(DXDrawDgms.ExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ExtensionListConverter
     }
   }
   
-  public static DMDrawsDgms.ExtensionList? CreateModelElement(DXDrawDgms.ExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ExtensionList? CreateModelElement(DXDrawDgms.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.ExtensionList();
+      var value = new DocumentModel.Drawings.Diagrams.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

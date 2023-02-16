@@ -124,11 +124,11 @@ public static class PermStartConverter
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
-  public static DMW.PermStart? CreateModelElement(DXW.PermStart? openXmlElement)
+  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DXW.PermStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PermStart();
+      var value = new DocumentModel.Wordprocessing.PermStart();
       value.EditorGroup = GetEditorGroup(openXmlElement);
       value.Ed = GetEd(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);

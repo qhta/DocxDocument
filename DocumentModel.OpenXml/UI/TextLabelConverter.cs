@@ -465,11 +465,11 @@ public static class TextLabelConverter
       openXmlElement.GetShowLabel = null;
   }
   
-  public static DMUI.TextLabel? CreateModelElement(DXOCustUI.TextLabel? openXmlElement)
+  public static DocumentModel.UI.TextLabel? CreateModelElement(DXOCustUI.TextLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.TextLabel();
+      var value = new DocumentModel.UI.TextLabel();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

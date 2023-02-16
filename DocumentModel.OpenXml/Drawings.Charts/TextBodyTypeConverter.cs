@@ -10,7 +10,10 @@ public static class TextBodyTypeConverter
   /// </summary>
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.TextBodyType openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXDrawCharts.TextBodyType openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TextBodyTypeConverter
   /// </summary>
   private static DMDraws.ListStyle? GetListStyle(DXDrawCharts.TextBodyType openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXDrawCharts.TextBodyType openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class TextBodyTypeConverter
     }
   }
   
-  public static DMDrawsCharts.TextBodyType? CreateModelElement(DXDrawCharts.TextBodyType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.TextBodyType? CreateModelElement(DXDrawCharts.TextBodyType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.TextBodyType();
+      var value = new DocumentModel.Drawings.Charts.TextBodyType();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       return value;

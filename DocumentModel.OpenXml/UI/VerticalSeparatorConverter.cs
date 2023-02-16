@@ -189,11 +189,11 @@ public static class VerticalSeparatorConverter
       openXmlElement.InsertBeforeQ = null;
   }
   
-  public static DMUI.VerticalSeparator? CreateModelElement(DXOCustUI.VerticalSeparator? openXmlElement)
+  public static DocumentModel.UI.VerticalSeparator? CreateModelElement(DXOCustUI.VerticalSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.VerticalSeparator();
+      var value = new DocumentModel.UI.VerticalSeparator();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.Visible = GetVisible(openXmlElement);

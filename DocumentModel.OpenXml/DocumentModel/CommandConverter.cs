@@ -97,11 +97,11 @@ public static class CommandConverter
       openXmlElement.IdMso = null;
   }
   
-  public static DM.Command? CreateModelElement(DXO2010CustUI.Command? openXmlElement)
+  public static DocumentModel.Command? CreateModelElement(DXO2010CustUI.Command? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Command();
+      var value = new DocumentModel.Command();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

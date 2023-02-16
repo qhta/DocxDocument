@@ -309,11 +309,11 @@ public static class FramePropertiesConverter
       openXmlElement.AnchorLock = null;
   }
   
-  public static DMW.FrameProperties? CreateModelElement(DXW.FrameProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.FrameProperties? CreateModelElement(DXW.FrameProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FrameProperties();
+      var value = new DocumentModel.Wordprocessing.FrameProperties();
       value.DropCap = GetDropCap(openXmlElement);
       value.Lines = GetLines(openXmlElement);
       value.Width = GetWidth(openXmlElement);

@@ -7,7 +7,10 @@ public static class ColorMapConverter
 {
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ColorMap openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.ColorMap openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class ColorMapConverter
     }
   }
   
-  public static DMDraws.ColorMap? CreateModelElement(DXDraw.ColorMap? openXmlElement)
+  public static DocumentModel.Drawings.ColorMap? CreateModelElement(DXDraw.ColorMap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ColorMap();
+      var value = new DocumentModel.Drawings.ColorMap();
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

@@ -10,7 +10,10 @@ public static class BreakConverter
   /// </summary>
   private static DMDraws.RunProperties? GetRunProperties(DXDraw.Break openXmlElement)
   {
-    return DMXDraws.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
+    if (element != null)
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXDraw.Break openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class BreakConverter
     }
   }
   
-  public static DMDraws.Break? CreateModelElement(DXDraw.Break? openXmlElement)
+  public static DocumentModel.Drawings.Break? CreateModelElement(DXDraw.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Break();
+      var value = new DocumentModel.Drawings.Break();
       value.RunProperties = GetRunProperties(openXmlElement);
       return value;
     }

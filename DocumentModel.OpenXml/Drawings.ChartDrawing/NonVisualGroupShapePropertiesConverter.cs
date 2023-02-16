@@ -10,7 +10,10 @@ public static class NonVisualGroupShapePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NonVisualGroupShapePropertiesConverter
   /// </summary>
   private static DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? GetNonVisualGroupShapeDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement)
   {
-    return DMXDrawsChartDraw.NonVisualGroupShapeDrawingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeDrawingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeDrawingProperties>();
+    if (element != null)
+      return DMXDrawsChartDraw.NonVisualGroupShapeDrawingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualGroupShapeDrawingProperties(DXDrawChartDraw.NonVisualGroupShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class NonVisualGroupShapePropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraw.NonVisualGroupShapeProperties? CreateModelElement(DXDrawChartDraw.NonVisualGroupShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties? CreateModelElement(DXDrawChartDraw.NonVisualGroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.NonVisualGroupShapeProperties();
+      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties();
       value.NonVisualDrawingProperties = GetNonVisualDrawingProperties(openXmlElement);
       value.NonVisualGroupShapeDrawingProperties = GetNonVisualGroupShapeDrawingProperties(openXmlElement);
       return value;

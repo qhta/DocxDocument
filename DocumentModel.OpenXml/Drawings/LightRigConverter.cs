@@ -46,7 +46,10 @@ public static class LightRigConverter
   /// </summary>
   private static DMDraws.Rotation? GetRotation(DXDraw.LightRig openXmlElement)
   {
-    return DMXDraws.RotationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Rotation>();
+    if (element != null)
+      return DMXDraws.RotationConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRotation(DXDraw.LightRig openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
@@ -67,11 +70,11 @@ public static class LightRigConverter
     }
   }
   
-  public static DMDraws.LightRig? CreateModelElement(DXDraw.LightRig? openXmlElement)
+  public static DocumentModel.Drawings.LightRig? CreateModelElement(DXDraw.LightRig? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.LightRig();
+      var value = new DocumentModel.Drawings.LightRig();
       value.Rig = GetRig(openXmlElement);
       value.Direction = GetDirection(openXmlElement);
       value.Rotation = GetRotation(openXmlElement);

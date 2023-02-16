@@ -23,8 +23,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   public bool GenerateConverterFile(TypeInfo typeInfo)
   {
-    //if (typeInfo.Name == "FontSignature")
-    //  Debug.Assert(true);
+    if (typeInfo.Name.EndsWith("Settings"))
+      Debug.Assert(true);
     if (!typeInfo.IsConverted && !typeInfo.IsConvertedTo)
     {
       if (!typeInfo.IsGenericTypeParameter)
@@ -65,7 +65,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   protected static Type? GetOpenXmlLeafEnumValueType(Type type)
   {
-    //if (type.Name == "StyleSet")
+    //if (type.Name == "Settings")
     //  Debug.Assert(true);
     if (type.IsEqualOrSubclassOf(typeof(OpenXmlLeafElement)))
     {
@@ -123,6 +123,8 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateConverterClass(TypeInfo type)
   {
     var typeName = type.Name;
+    if (typeName=="Settings")
+      TestTools.Stop();
     var aNamespace = type.Namespace;
     aNamespace = aNamespace.Replace("DocumentModel.", "");
     var implOutputPath = Path.Combine(OutputPath, aNamespace);
@@ -185,14 +187,16 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateCreateModelElementMethod(TypeInfo typeInfo)
   {
     var origTypeName = typeInfo.GetFullName(true);
-    var targetTypeName = typeInfo.GetConversionTarget().GetFullName();
-    Writer.WriteLine($"public static {targetTypeName}? CreateModelElement({origTypeName}? openXmlElement)");
+    var targetType = typeInfo.GetTargetType();
+    var targetTypeName = targetType.GetFullName();
+
+    Writer.WriteLine($"public static {targetType}? CreateModelElement({origTypeName}? openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
     Writer.WriteLine($"if (openXmlElement != null)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
-    Writer.WriteLine($"var value = new {targetTypeName}();");
+    Writer.WriteLine($"var value = new {targetType}();");
     if (typeInfo.Properties != null)
       foreach (var prop in typeInfo.Properties.Where(item => item.IsAccepted != false))
       {
@@ -309,7 +313,7 @@ public class ConverterGenerator : BaseCodeGenerator
     if (prop.PropertyType?.Type == null)
       return false;
     var ok = true;
-    var targetPropType = prop.GetTargetType();
+    //var targetPropType = prop.GetTargetType();
     GenerateDocumentationComments(prop);
     GenerateCustomAttributes(prop.CustomAttributes);
     if (!GeneratePropertyAccessors(prop))
@@ -346,7 +350,8 @@ public class ConverterGenerator : BaseCodeGenerator
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var qm = "?";
     if (targetPropType.Type.Name.StartsWith("Collection`"))
-      qm = "";
+      if (prop.DeclaringType?.Type.IsEqualOrSubclassOf(typeof(OpenXmlPart)) == true && prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(OpenXmlPartRootElement)))
+        qm = "";
     Writer.WriteLine($"private static {targetPropTypeName}{qm} Get{targetPropName}({origTypeName} openXmlElement)");
     Writer.WriteLine($"{{");
     Writer.Indent++;
@@ -498,6 +503,12 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateValUInt32PropertyGetCode(prop);
     if (targetPropType.Type == typeof(UInt64) && origPropType == typeof(HexBinaryValue))
       return GenerateHexBinaryUInt64PropertyGetCode(prop);
+    if (targetPropType.Type == typeof(HexInt))
+      return GenerateHexIntPropertyGetCode(prop);
+    if (targetPropType.Type == typeof(RGB))
+      return GenerateHexRGBPropertyGetCode(prop);
+    if (targetPropType.Type == typeof(HexChar))
+      return GenerateHexCharPropertyGetCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(HexBinaryValue)))
       return GenerateHexBinaryPropertyGetCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(Base64BinaryValue)))
@@ -540,6 +551,12 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateValUInt32PropertyCmpCode(prop);
     if (targetPropType.Type == typeof(UInt64) && origPropType == typeof(HexBinaryValue))
       return GenerateHexBinaryUInt64PropertyCmpCode(prop);
+    if (targetPropType.Type == typeof(HexInt))
+      return GenerateHexIntPropertyCmpCode(prop);
+    if (targetPropType.Type == typeof(RGB))
+      return GenerateHexRGBPropertyCmpCode(prop);
+    if (targetPropType.Type == typeof(HexChar))
+      return GenerateHexCharPropertyCmpCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(HexBinaryValue)))
       return GenerateHexBinaryPropertyCmpCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(Base64BinaryValue)))
@@ -580,6 +597,12 @@ public class ConverterGenerator : BaseCodeGenerator
       return GenerateValUInt32PropertySetCode(prop);
     if (targetPropType.Type == typeof(UInt64) && origPropType == typeof(HexBinaryValue))
       return GenerateHexBinaryUInt64PropertySetCode(prop);
+    if (targetPropType.Type == typeof(HexInt))
+      return GenerateHexIntPropertySetCode(prop);
+    if (targetPropType.Type == typeof(RGB))
+      return GenerateHexRGBPropertySetCode(prop);
+    if (targetPropType.Type == typeof(HexChar))
+      return GenerateHexCharPropertySetCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(HexBinaryValue)))
       return GenerateHexBinaryPropertySetCode(prop);
     if (origPropType.IsEqualOrSubclassOf(typeof(Base64BinaryValue)))
@@ -853,6 +876,106 @@ public class ConverterGenerator : BaseCodeGenerator
 
   #endregion 
 
+  
+  #region GenerateHexIntProperty code
+  private bool GenerateHexIntPropertyGetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  return HexIntConverter.GetValue(openXmlElement.{origPropName}.Value);");
+    Writer.WriteLine($"return null;");
+    return true;
+  }
+
+  private bool GenerateHexIntPropertyCmpCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  if (HexIntConverter.GetValue(openXmlElement.{origPropName}.Value) == value)");
+    Writer.WriteLine($"    return true;");
+    Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
+    Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
+    Writer.WriteLine($"return false;");
+    return true;
+  }
+
+  private bool GenerateHexIntPropertySetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (value != null)");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = value.ToString();");
+    Writer.WriteLine($"else");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = null;");
+    return true;
+  }
+  #endregion
+
+  #region GenerateHexCharProperty code
+  private bool GenerateHexCharPropertyGetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  return HexCharConverter.GetValue(openXmlElement.{origPropName}.Value);");
+    Writer.WriteLine($"return null;");
+    return true;
+  }
+
+  private bool GenerateHexCharPropertyCmpCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  if (HexCharConverter.GetValue(openXmlElement.{origPropName}.Value) == value)");
+    Writer.WriteLine($"    return true;");
+    Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
+    Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
+    Writer.WriteLine($"return false;");
+    return true;
+  }
+
+  private bool GenerateHexCharPropertySetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (value != null)");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = value.ToString();");
+    Writer.WriteLine($"else");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = null;");
+    return true;
+  }
+  #endregion
+
+  #region GenerateHexRGBProperty code
+  private bool GenerateHexRGBPropertyGetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  return HexRGBConverter.GetValue(openXmlElement.{origPropName}.Value);");
+    Writer.WriteLine($"return null;");
+    return true;
+  }
+
+  private bool GenerateHexRGBPropertyCmpCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+    Writer.WriteLine($"  if (HexRGBConverter.GetValue(openXmlElement.{origPropName}.Value) == value)");
+    Writer.WriteLine($"    return true;");
+    Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
+    Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
+    Writer.WriteLine($"return false;");
+    return true;
+  }
+
+  private bool GenerateHexRGBPropertySetCode(PropInfo prop)
+  {
+    var origPropName = prop.Name;
+    Writer.WriteLine($"if (value != null)");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = value.ToString();");
+    Writer.WriteLine($"else");
+    Writer.WriteLine($"  openXmlElement.{origPropName} = null;");
+    return true;
+  }
+  #endregion
+  
   #region Byte[] property access code generation
   
   #region GenerateHexBinaryProperty code
@@ -868,8 +991,8 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateHexBinaryPropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
-    Writer.WriteLine($"  if (Convert.FromHexString(openXmlElement.{origPropName}.Value) == value)");
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null && value != null)");
+    Writer.WriteLine($"  if (Convert.FromHexString(openXmlElement.{origPropName}.Value).SequenceEqual((byte[])value))");
     Writer.WriteLine($"    return true;");
     Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
@@ -901,8 +1024,8 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateBase64BinaryPropertyCmpCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
-    Writer.WriteLine($"  if (Convert.FromBase64String(openXmlElement.{origPropName}.Value) == value)");
+    Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null && value != null)");
+    Writer.WriteLine($"  if (Convert.FromBase64String(openXmlElement.{origPropName}.Value).SequenceEqual((byte[])value))");
     Writer.WriteLine($"    return true;");
     Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
     Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
@@ -1720,7 +1843,10 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var targetPropTypeName = prop.GetTargetType().GetFullName();
     var origPropElementTypeName = prop.PropertyType.GetFullName(true);
-    Writer.WriteLine($"return {ConverterGetMethodName(prop)}(openXmlElement?.GetFirstChild<{origPropElementTypeName}>());");
+    Writer.WriteLine($"var element = openXmlElement?.GetFirstChild<{origPropElementTypeName}>();");
+    Writer.WriteLine($"if (element != null)");
+    Writer.WriteLine($"  return {ConverterGetMethodName(prop)}(element);");
+    Writer.WriteLine($"return null;");
     return true;
   }
 
@@ -1895,6 +2021,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var origPropType = prop.PropertyType;
     var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
+    origItemType = origItemType?.GetOriginType();
     var targetPropType = prop.GetTargetType();
     var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     var origItemTypeName = origItemType?.GetFullName(true);
@@ -1906,7 +2033,9 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"  if (newItem != null)");
     Writer.WriteLine($"    collection.Add({ConverterTypeCast(prop)}newItem);");
     Writer.WriteLine($"}}");
-    Writer.WriteLine($"return collection;");
+    Writer.WriteLine($"if (collection.Count>0)");
+    Writer.WriteLine($"  return collection;");
+    Writer.WriteLine($"return null;");
     return true;
   }
 
@@ -2167,7 +2296,7 @@ public class ConverterGenerator : BaseCodeGenerator
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
         TypeInfo.NamespaceShortcut(targetItemType.Namespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
-    else if (targetPropTypeName.Name == "Byte[]")
+    else if (targetPropTypeName.Name == "Byte[]" || targetPropTypeName.Name == "HexBinary")
     {
       convPropName = new FullTypeName("HexBinaryConverter", "DMX");
       return $"{convPropName}.GetValue";

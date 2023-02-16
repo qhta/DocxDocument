@@ -114,7 +114,10 @@ public static class SeriesConverter
   /// </summary>
   private static DMDrawsChartDraws.Text? GetText(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.TextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Text>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Text>();
+    if (element != null)
+      return DMXDrawsChartDraws.TextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpText(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.Text? value, DiffList? diffs, string? objName)
@@ -140,7 +143,10 @@ public static class SeriesConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -166,7 +172,10 @@ public static class SeriesConverter
   /// </summary>
   private static DMDrawsChartDraws.ValueColors? GetValueColors(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.ValueColorsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ValueColors>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ValueColors>();
+    if (element != null)
+      return DMXDrawsChartDraws.ValueColorsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValueColors(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.ValueColors? value, DiffList? diffs, string? objName)
@@ -192,7 +201,10 @@ public static class SeriesConverter
   /// </summary>
   private static DMDrawsChartDraws.ValueColorPositions? GetValueColorPositions(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.ValueColorPositionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ValueColorPositions>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ValueColorPositions>();
+    if (element != null)
+      return DMXDrawsChartDraws.ValueColorPositionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpValueColorPositions(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.ValueColorPositions? value, DiffList? diffs, string? objName)
@@ -213,7 +225,7 @@ public static class SeriesConverter
     }
   }
   
-  private static Collection<DMDrawsChartDraws.DataPoint> GetDataPoints(DXO2016DrawChartDraw.Series openXmlElement)
+  private static Collection<DMDrawsChartDraws.DataPoint>? GetDataPoints(DXO2016DrawChartDraw.Series openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.DataPoint>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.DataPoint>())
@@ -222,7 +234,9 @@ public static class SeriesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDataPoints(DXO2016DrawChartDraw.Series openXmlElement, Collection<DMDrawsChartDraws.DataPoint>? value, DiffList? diffs, string? objName)
@@ -269,7 +283,10 @@ public static class SeriesConverter
   
   private static DMDrawsChartDraws.DataLabels? GetDataLabels(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataLabels>();
+    if (element != null)
+      return DMXDrawsChartDraws.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.DataLabels? value, DiffList? diffs, string? objName)
@@ -317,7 +334,10 @@ public static class SeriesConverter
   
   private static DMDrawsChartDraws.SeriesLayoutProperties? GetSeriesLayoutProperties(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.SeriesLayoutPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeriesLayoutProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeriesLayoutProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.SeriesLayoutPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSeriesLayoutProperties(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.SeriesLayoutProperties? value, DiffList? diffs, string? objName)
@@ -338,7 +358,7 @@ public static class SeriesConverter
     }
   }
   
-  private static Collection<String> GetAxisIds(DXO2016DrawChartDraw.Series openXmlElement)
+  private static Collection<String>? GetAxisIds(DXO2016DrawChartDraw.Series openXmlElement)
   {
     var collection = new Collection<String>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.AxisId>())
@@ -347,7 +367,9 @@ public static class SeriesConverter
       if (newItem != null)
         collection.Add((string)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXO2016DrawChartDraw.Series openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
@@ -394,7 +416,10 @@ public static class SeriesConverter
   
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -415,11 +440,11 @@ public static class SeriesConverter
     }
   }
   
-  public static DMDrawsChartDraws.Series? CreateModelElement(DXO2016DrawChartDraw.Series? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Series? CreateModelElement(DXO2016DrawChartDraw.Series? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Series();
+      var value = new DocumentModel.Drawings.ChartDrawings.Series();
       value.LayoutId = GetLayoutId(openXmlElement);
       value.Hidden = GetHidden(openXmlElement);
       value.OwnerIdx = GetOwnerIdx(openXmlElement);

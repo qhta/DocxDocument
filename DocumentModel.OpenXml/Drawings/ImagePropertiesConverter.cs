@@ -10,7 +10,10 @@ public static class ImagePropertiesConverter
   /// </summary>
   private static DMDraws.ImageLayer? GetImageLayer(DXO2010Draw.ImageProperties openXmlElement)
   {
-    return DMXDraws.ImageLayerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010Draw.ImageLayer>());
+    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ImageLayer>();
+    if (element != null)
+      return DMXDraws.ImageLayerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class ImagePropertiesConverter
     }
   }
   
-  public static DMDraws.ImageProperties? CreateModelElement(DXO2010Draw.ImageProperties? openXmlElement)
+  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DXO2010Draw.ImageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ImageProperties();
+      var value = new DocumentModel.Drawings.ImageProperties();
       value.ImageLayer = GetImageLayer(openXmlElement);
       return value;
     }

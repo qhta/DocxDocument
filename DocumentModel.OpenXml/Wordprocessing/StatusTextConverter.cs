@@ -46,11 +46,11 @@ public static class StatusTextConverter
       openXmlElement.Val = null;
   }
   
-  public static DMW.StatusText? CreateModelElement(DXW.StatusText? openXmlElement)
+  public static DocumentModel.Wordprocessing.StatusText? CreateModelElement(DXW.StatusText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StatusText();
+      var value = new DocumentModel.Wordprocessing.StatusText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

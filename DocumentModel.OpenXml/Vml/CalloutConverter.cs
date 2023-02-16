@@ -317,11 +317,11 @@ public static class CalloutConverter
       openXmlElement.MinusY = null;
   }
   
-  public static DMVml.Callout? CreateModelElement(DXVmlO.Callout? openXmlElement)
+  public static DocumentModel.Vml.Callout? CreateModelElement(DXVmlO.Callout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Callout();
+      var value = new DocumentModel.Vml.Callout();
       value.Extension = GetExtension(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Type = GetType(openXmlElement);

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Xml;
-using System.Xml.Linq;
+﻿
 
 namespace ModelGen;
 
@@ -14,6 +12,8 @@ public class ModelElement: IOwnedElement
   public bool IsUsed { get; set;}
 
   public bool IsConverted { get; set; }
+
+  public QualifiedName? NewName { get; set; }
 
   public bool IsConvertedTo { get; set; }
 

@@ -23,11 +23,11 @@ public static class ComplexConverter
     openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
-  public static DMVml.Complex? CreateModelElement(DXVmlO.Complex? openXmlElement)
+  public static DocumentModel.Vml.Complex? CreateModelElement(DXVmlO.Complex? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Complex();
+      var value = new DocumentModel.Vml.Complex();
       value.Extension = GetExtension(openXmlElement);
       return value;
     }

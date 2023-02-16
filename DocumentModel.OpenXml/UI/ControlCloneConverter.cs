@@ -690,11 +690,11 @@ public static class ControlCloneConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.ControlClone? CreateModelElement(DXOCustUI.ControlClone? openXmlElement)
+  public static DocumentModel.UI.ControlClone? CreateModelElement(DXOCustUI.ControlClone? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.ControlClone();
+      var value = new DocumentModel.UI.ControlClone();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);

@@ -147,7 +147,10 @@ public static class RuleConverter
   /// </summary>
   private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Rule openXmlElement)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Rule openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
@@ -168,11 +171,11 @@ public static class RuleConverter
     }
   }
   
-  public static DMDrawsDgms.Rule? CreateModelElement(DXDrawDgms.Rule? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Rule? CreateModelElement(DXDrawDgms.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Rule();
+      var value = new DocumentModel.Drawings.Diagrams.Rule();
       value.Type = GetType(openXmlElement);
       value.For = GetFor(openXmlElement);
       value.ForName = GetForName(openXmlElement);

@@ -10,7 +10,10 @@ public static class BoxConverter
   /// </summary>
   private static DMMath.BoxProperties? GetBoxProperties(DXMath.Box openXmlElement)
   {
-    return DMXMath.BoxPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BoxProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BoxProperties>();
+    if (element != null)
+      return DMXMath.BoxPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBoxProperties(DXMath.Box openXmlElement, DMMath.BoxProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class BoxConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.Box openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.Box openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class BoxConverter
     }
   }
   
-  public static DMMath.Box? CreateModelElement(DXMath.Box? openXmlElement)
+  public static DocumentModel.Math.Box? CreateModelElement(DXMath.Box? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Box();
+      var value = new DocumentModel.Math.Box();
       value.BoxProperties = GetBoxProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

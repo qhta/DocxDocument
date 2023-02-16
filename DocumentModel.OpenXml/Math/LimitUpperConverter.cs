@@ -10,7 +10,10 @@ public static class LimitUpperConverter
   /// </summary>
   private static DMMath.LimitUpperProperties? GetLimitUpperProperties(DXMath.LimitUpper openXmlElement)
   {
-    return DMXMath.LimitUpperPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpperProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitUpperProperties>();
+    if (element != null)
+      return DMXMath.LimitUpperPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitUpperProperties(DXMath.LimitUpper openXmlElement, DMMath.LimitUpperProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class LimitUpperConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.LimitUpper openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.LimitUpper openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class LimitUpperConverter
   /// </summary>
   private static DMMath.Limit? GetLimit(DXMath.LimitUpper openXmlElement)
   {
-    return DMXMath.LimitConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Limit>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Limit>();
+    if (element != null)
+      return DMXMath.LimitConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimit(DXMath.LimitUpper openXmlElement, DMMath.Limit? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class LimitUpperConverter
     }
   }
   
-  public static DMMath.LimitUpper? CreateModelElement(DXMath.LimitUpper? openXmlElement)
+  public static DocumentModel.Math.LimitUpper? CreateModelElement(DXMath.LimitUpper? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.LimitUpper();
+      var value = new DocumentModel.Math.LimitUpper();
       value.LimitUpperProperties = GetLimitUpperProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.Limit = GetLimit(openXmlElement);

@@ -70,7 +70,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.InnerShadow openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -96,7 +99,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.InnerShadow openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -122,7 +128,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.HslColor? GetHslColor(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.InnerShadow openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -148,7 +157,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.InnerShadow openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -174,7 +186,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.SchemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SchemeColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    if (element != null)
+      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSchemeColor(DXDraw.InnerShadow openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
@@ -200,7 +215,10 @@ public static class InnerShadowConverter
   /// </summary>
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.InnerShadow openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.InnerShadow openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -221,11 +239,11 @@ public static class InnerShadowConverter
     }
   }
   
-  public static DMDraws.InnerShadow? CreateModelElement(DXDraw.InnerShadow? openXmlElement)
+  public static DocumentModel.Drawings.InnerShadow? CreateModelElement(DXDraw.InnerShadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.InnerShadow();
+      var value = new DocumentModel.Drawings.InnerShadow();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.Distance = GetDistance(openXmlElement);
       value.Direction = GetDirection(openXmlElement);

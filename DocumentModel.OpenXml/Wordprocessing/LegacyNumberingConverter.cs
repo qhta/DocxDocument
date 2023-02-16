@@ -74,11 +74,11 @@ public static class LegacyNumberingConverter
       openXmlElement.LegacyIndent = null;
   }
   
-  public static DMW.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
+  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LegacyNumbering();
+      var value = new DocumentModel.Wordprocessing.LegacyNumbering();
       value.Legacy = GetLegacy(openXmlElement);
       value.LegacySpace = GetLegacySpace(openXmlElement);
       value.LegacyIndent = GetLegacyIndent(openXmlElement);

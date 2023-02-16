@@ -30,7 +30,10 @@ public static class ConnectorLockingExtensionConverter
   
   private static DMDraws.Graphic? GetGraphic(DXDraw.ConnectorLockingExtension openXmlElement)
   {
-    return DMXDraws.GraphicConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Graphic>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
+    if (element != null)
+      return DMXDraws.GraphicConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphic(DXDraw.ConnectorLockingExtension openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class ConnectorLockingExtensionConverter
     }
   }
   
-  public static DMDraws.ConnectorLockingExtension? CreateModelElement(DXDraw.ConnectorLockingExtension? openXmlElement)
+  public static DocumentModel.Drawings.ConnectorLockingExtension? CreateModelElement(DXDraw.ConnectorLockingExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ConnectorLockingExtension();
+      var value = new DocumentModel.Drawings.ConnectorLockingExtension();
       value.Uri = GetUri(openXmlElement);
       value.Graphic = GetGraphic(openXmlElement);
       return value;

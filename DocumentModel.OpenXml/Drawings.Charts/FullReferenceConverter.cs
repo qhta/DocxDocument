@@ -30,11 +30,11 @@ public static class FullReferenceConverter
     }
   }
   
-  public static DMDrawsCharts.FullReference? CreateModelElement(DXO2013DrawChart.FullReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FullReference? CreateModelElement(DXO2013DrawChart.FullReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.FullReference();
+      var value = new DocumentModel.Drawings.Charts.FullReference();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       return value;
     }

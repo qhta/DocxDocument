@@ -35,7 +35,10 @@ public static class StringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.StringCache? GetStringCache(DXDrawCharts.StringReference openXmlElement)
   {
-    return DMXDrawsCharts.StringCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringCache>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringCache>();
+    if (element != null)
+      return DMXDrawsCharts.StringCacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringCache(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StringCache? value, DiffList? diffs, string? objName)
@@ -61,7 +64,10 @@ public static class StringReferenceConverter
   /// </summary>
   private static DMDrawsCharts.StrRefExtensionList? GetStrRefExtensionList(DXDrawCharts.StringReference openXmlElement)
   {
-    return DMXDrawsCharts.StrRefExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrRefExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StrRefExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.StrRefExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStrRefExtensionList(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StrRefExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +88,11 @@ public static class StringReferenceConverter
     }
   }
   
-  public static DMDrawsCharts.StringReference? CreateModelElement(DXDrawCharts.StringReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringReference? CreateModelElement(DXDrawCharts.StringReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StringReference();
+      var value = new DocumentModel.Drawings.Charts.StringReference();
       value.Formula = GetFormula(openXmlElement);
       value.StringCache = GetStringCache(openXmlElement);
       value.StrRefExtensionList = GetStrRefExtensionList(openXmlElement);

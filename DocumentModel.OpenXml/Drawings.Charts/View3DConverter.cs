@@ -181,7 +181,10 @@ public static class View3DConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.View3D openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -202,11 +205,11 @@ public static class View3DConverter
     }
   }
   
-  public static DMDrawsCharts.View3D? CreateModelElement(DXDrawCharts.View3D? openXmlElement)
+  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(DXDrawCharts.View3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.View3D();
+      var value = new DocumentModel.Drawings.Charts.View3D();
       value.RotateX = GetRotateX(openXmlElement);
       value.HeightPercent = GetHeightPercent(openXmlElement);
       value.RotateY = GetRotateY(openXmlElement);

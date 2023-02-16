@@ -33,7 +33,10 @@ public static class WrapPolygonConverter
   /// </summary>
   private static DMDrawsW.Point2DType? GetStartPoint(DXDrawW.WrapPolygon openXmlElement)
   {
-    return DMXDrawsW.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.StartPoint>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.StartPoint>();
+    if (element != null)
+      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStartPoint(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value, DiffList? diffs, string? objName)
@@ -56,7 +59,10 @@ public static class WrapPolygonConverter
   
   private static DMDrawsW.Point2DType? GetLineTo(DXDrawW.WrapPolygon openXmlElement)
   {
-    return DMXDrawsW.Point2DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawW.LineTo>());
+    var element = openXmlElement?.GetFirstChild<DXDrawW.LineTo>();
+    if (element != null)
+      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineTo(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value, DiffList? diffs, string? objName)
@@ -77,11 +83,11 @@ public static class WrapPolygonConverter
     }
   }
   
-  public static DMDrawsW.WrapPolygon? CreateModelElement(DXDrawW.WrapPolygon? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DXDrawW.WrapPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.WrapPolygon();
+      var value = new DocumentModel.Drawings.Wordprocessing.WrapPolygon();
       value.Edited = GetEdited(openXmlElement);
       value.StartPoint = GetStartPoint(openXmlElement);
       value.LineTo = GetLineTo(openXmlElement);

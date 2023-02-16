@@ -10,7 +10,10 @@ public static class EquationArrayConverter
   /// </summary>
   private static DMMath.EquationArrayProperties? GetEquationArrayProperties(DXMath.EquationArray openXmlElement)
   {
-    return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>();
+    if (element != null)
+      return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value, DiffList? diffs, string? objName)
@@ -31,7 +34,7 @@ public static class EquationArrayConverter
     }
   }
   
-  private static Collection<DMMath.Base> GetBases(DXMath.EquationArray openXmlElement)
+  private static Collection<DMMath.Base>? GetBases(DXMath.EquationArray openXmlElement)
   {
     var collection = new Collection<DMMath.Base>();
     foreach (var item in openXmlElement.Elements<DXMath.Base>())
@@ -40,7 +43,9 @@ public static class EquationArrayConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
@@ -85,11 +90,11 @@ public static class EquationArrayConverter
     }
   }
   
-  public static DMMath.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
+  public static DocumentModel.Math.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.EquationArray();
+      var value = new DocumentModel.Math.EquationArray();
       value.EquationArrayProperties = GetEquationArrayProperties(openXmlElement);
       value.Bases = GetBases(openXmlElement);
       return value;

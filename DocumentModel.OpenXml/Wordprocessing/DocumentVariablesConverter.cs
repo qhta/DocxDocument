@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DocumentVariablesConverter
 {
-  private static Collection<DMW.DocumentVariable> GetItems(DXW.DocumentVariables openXmlElement)
+  private static Collection<DMW.DocumentVariable>? GetItems(DXW.DocumentVariables openXmlElement)
   {
     var collection = new Collection<DMW.DocumentVariable>();
     foreach (var item in openXmlElement.Elements<DXW.DocumentVariable>())
@@ -14,7 +14,9 @@ public static class DocumentVariablesConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXW.DocumentVariables openXmlElement, Collection<DMW.DocumentVariable>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class DocumentVariablesConverter
     }
   }
   
-  public static DMW.DocumentVariables? CreateModelElement(DXW.DocumentVariables? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocumentVariables? CreateModelElement(DXW.DocumentVariables? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocumentVariables();
+      var value = new DocumentModel.Wordprocessing.DocumentVariables();
       value.Items = GetItems(openXmlElement);
       return value;
     }

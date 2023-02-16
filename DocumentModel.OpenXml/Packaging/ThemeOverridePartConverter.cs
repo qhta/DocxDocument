@@ -20,7 +20,7 @@ public static class ThemeOverridePartConverter
   /// <summary>
   /// Gets the ImageParts of the ThemeOverridePart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ThemeOverridePart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.ThemeOverridePart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class ThemeOverridePartConverter
     }
   }
   
-  public static DMPack.ThemeOverridePart? CreateModelElement(DXPack.ThemeOverridePart? openXmlElement)
+  public static DocumentModel.Packaging.ThemeOverridePart? CreateModelElement(DXPack.ThemeOverridePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ThemeOverridePart();
+      var value = new DocumentModel.Packaging.ThemeOverridePart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

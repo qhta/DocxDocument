@@ -115,7 +115,10 @@ public static class GeographyConverter
   /// </summary>
   private static DMDrawsChartDraws.GeoCache? GetGeoCache(DXO2016DrawChartDraw.Geography openXmlElement)
   {
-    return DMXDrawsChartDraws.GeoCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoCache>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoCache>();
+    if (element != null)
+      return DMXDrawsChartDraws.GeoCacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGeoCache(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoCache? value, DiffList? diffs, string? objName)
@@ -136,11 +139,11 @@ public static class GeographyConverter
     }
   }
   
-  public static DMDrawsChartDraws.Geography? CreateModelElement(DXO2016DrawChartDraw.Geography? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(DXO2016DrawChartDraw.Geography? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Geography();
+      var value = new DocumentModel.Drawings.ChartDrawings.Geography();
       value.ProjectionType = GetProjectionType(openXmlElement);
       value.ViewedRegionType = GetViewedRegionType(openXmlElement);
       value.CultureLanguage = GetCultureLanguage(openXmlElement);

@@ -79,7 +79,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.WebExtensionStoreReference? GetWebExtensionStoreReference(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.WebExtensionStoreReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionStoreReference>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionStoreReference>();
+    if (element != null)
+      return DMXWebExt.WebExtensionStoreReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebExtensionStoreReference(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.WebExtensionStoreReference? value, DiffList? diffs, string? objName)
@@ -105,7 +108,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.WebExtensionReferenceList? GetWebExtensionReferenceList(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.WebExtensionReferenceListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionReferenceList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionReferenceList>();
+    if (element != null)
+      return DMXWebExt.WebExtensionReferenceListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebExtensionReferenceList(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.WebExtensionReferenceList? value, DiffList? diffs, string? objName)
@@ -131,7 +137,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.WebExtensionPropertyBag? GetWebExtensionPropertyBag(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.WebExtensionPropertyBagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionPropertyBag>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionPropertyBag>();
+    if (element != null)
+      return DMXWebExt.WebExtensionPropertyBagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebExtensionPropertyBag(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.WebExtensionPropertyBag? value, DiffList? diffs, string? objName)
@@ -157,7 +166,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.WebExtensionBindingList? GetWebExtensionBindingList(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.WebExtensionBindingListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionBindingList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.WebExtensionBindingList>();
+    if (element != null)
+      return DMXWebExt.WebExtensionBindingListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpWebExtensionBindingList(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.WebExtensionBindingList? value, DiffList? diffs, string? objName)
@@ -183,7 +195,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.Snapshot? GetSnapshot(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.SnapshotConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.Snapshot>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.Snapshot>();
+    if (element != null)
+      return DMXWebExt.SnapshotConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSnapshot(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.Snapshot? value, DiffList? diffs, string? objName)
@@ -209,7 +224,10 @@ public static class WebExtensionConverter
   /// </summary>
   private static DMWebExt.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -230,11 +248,11 @@ public static class WebExtensionConverter
     }
   }
   
-  public static DMWebExt.WebExtension? CreateModelElement(DXO2013WebExt.WebExtension? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtension? CreateModelElement(DXO2013WebExt.WebExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExt.WebExtension();
+      var value = new DocumentModel.WebExtensions.WebExtension();
       value.Fronzen = GetFronzen(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.Frozen = GetFrozen(openXmlElement);

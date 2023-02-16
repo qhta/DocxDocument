@@ -23,11 +23,11 @@ public static class CameraConverter
     openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(value);
   }
   
-  public static DMW.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
+  public static DocumentModel.Wordprocessing.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Camera();
+      var value = new DocumentModel.Wordprocessing.Camera();
       value.PresetCameraType = GetPresetCameraType(openXmlElement);
       return value;
     }

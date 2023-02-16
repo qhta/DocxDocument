@@ -60,7 +60,10 @@ public static class DataLabelFieldTableEntryConverter
   /// </summary>
   private static DMDrawsCharts.DataLabelFieldTableCache? GetDataLabelFieldTableCache(DXO2013DrawChart.DataLabelFieldTableEntry openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelFieldTableCacheConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTableCache>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTableCache>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelFieldTableCacheConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelFieldTableCache(DXO2013DrawChart.DataLabelFieldTableEntry openXmlElement, DMDrawsCharts.DataLabelFieldTableCache? value, DiffList? diffs, string? objName)
@@ -81,11 +84,11 @@ public static class DataLabelFieldTableEntryConverter
     }
   }
   
-  public static DMDrawsCharts.DataLabelFieldTableEntry? CreateModelElement(DXO2013DrawChart.DataLabelFieldTableEntry? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? CreateModelElement(DXO2013DrawChart.DataLabelFieldTableEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DataLabelFieldTableEntry();
+      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableEntry();
       value.TextFieldGuid = GetTextFieldGuid(openXmlElement);
       value.Formula = GetFormula(openXmlElement);
       value.DataLabelFieldTableCache = GetDataLabelFieldTableCache(openXmlElement);

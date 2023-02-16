@@ -74,7 +74,10 @@ public static class PointConverter
   /// </summary>
   private static DMDrawsDgms.PropertySet? GetPropertySet(DXDrawDgms.Point openXmlElement)
   {
-    return DMXDrawsDgms.PropertySetConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PropertySet>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PropertySet>();
+    if (element != null)
+      return DMXDrawsDgms.PropertySetConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPropertySet(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PropertySet? value, DiffList? diffs, string? objName)
@@ -100,7 +103,10 @@ public static class PointConverter
   /// </summary>
   private static DMDrawsDgms.ShapeProperties? GetShapeProperties(DXDrawDgms.Point openXmlElement)
   {
-    return DMXDrawsDgms.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsDgms.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawDgms.Point openXmlElement, DMDrawsDgms.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -126,7 +132,10 @@ public static class PointConverter
   /// </summary>
   private static DMDrawsDgms.TextBody? GetTextBody(DXDrawDgms.Point openXmlElement)
   {
-    return DMXDrawsDgms.TextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.TextBody>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.TextBody>();
+    if (element != null)
+      return DMXDrawsDgms.TextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBody(DXDrawDgms.Point openXmlElement, DMDrawsDgms.TextBody? value, DiffList? diffs, string? objName)
@@ -152,7 +161,10 @@ public static class PointConverter
   /// </summary>
   private static DMDrawsDgms.PtExtensionList? GetPtExtensionList(DXDrawDgms.Point openXmlElement)
   {
-    return DMXDrawsDgms.PtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawDgms.PtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PtExtensionList>();
+    if (element != null)
+      return DMXDrawsDgms.PtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPtExtensionList(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PtExtensionList? value, DiffList? diffs, string? objName)
@@ -173,11 +185,11 @@ public static class PointConverter
     }
   }
   
-  public static DMDrawsDgms.Point? CreateModelElement(DXDrawDgms.Point? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(DXDrawDgms.Point? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Point();
+      var value = new DocumentModel.Drawings.Diagrams.Point();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.ConnectionId = GetConnectionId(openXmlElement);

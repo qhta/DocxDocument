@@ -122,7 +122,10 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    if (element != null)
+      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkOnClick(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
@@ -148,7 +151,10 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.HyperlinkOnHover? GetHyperlinkOnHover(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement)
   {
-    return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>();
+    if (element != null)
+      return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkOnHover(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnHover? value, DiffList? diffs, string? objName)
@@ -174,7 +180,10 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static DMDraws.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement)
   {
-    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
+    if (element != null)
+      return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNonVisualDrawingPropertiesExtensionList(DXO2010DrawDgm.NonVisualDrawingProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
@@ -195,11 +204,11 @@ public static class NonVisualDrawingPropertiesConverter
     }
   }
   
-  public static DMDrawsDgms.NonVisualDrawingProperties? CreateModelElement(DXO2010DrawDgm.NonVisualDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? CreateModelElement(DXO2010DrawDgm.NonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.NonVisualDrawingProperties();
+      var value = new DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties();
       value.Id = GetId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.Description = GetDescription(openXmlElement);

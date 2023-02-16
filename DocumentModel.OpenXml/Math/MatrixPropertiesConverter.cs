@@ -202,7 +202,10 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.MatrixColumns? GetMatrixColumns(DXMath.MatrixProperties openXmlElement)
   {
-    return DMXMath.MatrixColumnsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MatrixColumns>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MatrixColumns>();
+    if (element != null)
+      return DMXMath.MatrixColumnsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrixColumns(DXMath.MatrixProperties openXmlElement, DMMath.MatrixColumns? value, DiffList? diffs, string? objName)
@@ -228,7 +231,10 @@ public static class MatrixPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.MatrixProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.MatrixProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -249,11 +255,11 @@ public static class MatrixPropertiesConverter
     }
   }
   
-  public static DMMath.MatrixProperties? CreateModelElement(DXMath.MatrixProperties? openXmlElement)
+  public static DocumentModel.Math.MatrixProperties? CreateModelElement(DXMath.MatrixProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixProperties();
+      var value = new DocumentModel.Math.MatrixProperties();
       value.BaseJustification = GetBaseJustification(openXmlElement);
       value.HidePlaceholder = GetHidePlaceholder(openXmlElement);
       value.RowSpacingRule = GetRowSpacingRule(openXmlElement);

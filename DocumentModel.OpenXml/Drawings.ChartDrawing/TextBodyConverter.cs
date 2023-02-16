@@ -10,7 +10,10 @@ public static class TextBodyConverter
   /// </summary>
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawChartDraw.TextBody openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TextBodyConverter
   /// </summary>
   private static DMDraws.ListStyle? GetListStyle(DXDrawChartDraw.TextBody openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -59,7 +65,10 @@ public static class TextBodyConverter
   
   private static DMDraws.Paragraph? GetParagraph(DXDrawChartDraw.TextBody openXmlElement)
   {
-    return DMXDraws.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
+    if (element != null)
+      return DMXDraws.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
@@ -80,11 +89,11 @@ public static class TextBodyConverter
     }
   }
   
-  public static DMDrawsChartDraw.TextBody? CreateModelElement(DXDrawChartDraw.TextBody? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.TextBody? CreateModelElement(DXDrawChartDraw.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.TextBody();
+      var value = new DocumentModel.Drawings.ChartDrawing.TextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

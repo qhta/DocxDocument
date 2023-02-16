@@ -51,11 +51,11 @@ public static class DocumentVariableConverter
       openXmlElement.Val = null;
   }
   
-  public static DMW.DocumentVariable? CreateModelElement(DXW.DocumentVariable? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocumentVariable? CreateModelElement(DXW.DocumentVariable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocumentVariable();
+      var value = new DocumentModel.Wordprocessing.DocumentVariable();
       value.Name = GetName(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

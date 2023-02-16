@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class StylisticSetsConverter
 {
-  private static Collection<DMW.StyleSet> GetStyleSets(DXO2010W.StylisticSets openXmlElement)
+  private static Collection<DMW.StyleSet>? GetStyleSets(DXO2010W.StylisticSets openXmlElement)
   {
     var collection = new Collection<DMW.StyleSet>();
     foreach (var item in openXmlElement.Elements<DXO2010W.StyleSet>())
@@ -14,7 +14,9 @@ public static class StylisticSetsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStyleSets(DXO2010W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class StylisticSetsConverter
     }
   }
   
-  public static DMW.StylisticSets? CreateModelElement(DXO2010W.StylisticSets? openXmlElement)
+  public static DocumentModel.Wordprocessing.StylisticSets? CreateModelElement(DXO2010W.StylisticSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StylisticSets();
+      var value = new DocumentModel.Wordprocessing.StylisticSets();
       value.StyleSets = GetStyleSets(openXmlElement);
       return value;
     }

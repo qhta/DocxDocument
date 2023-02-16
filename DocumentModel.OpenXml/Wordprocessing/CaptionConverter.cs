@@ -148,11 +148,11 @@ public static class CaptionConverter
     openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
-  public static DMW.Caption? CreateModelElement(DXW.Caption? openXmlElement)
+  public static DocumentModel.Wordprocessing.Caption? CreateModelElement(DXW.Caption? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Caption();
+      var value = new DocumentModel.Wordprocessing.Caption();
       value.Name = GetName(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.ChapterNumber = GetChapterNumber(openXmlElement);

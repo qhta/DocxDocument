@@ -29,11 +29,11 @@ public static class NamedSheetViewsPartConverter
     return false;
   }
   
-  public static DMPack.NamedSheetViewsPart? CreateModelElement(DXPack.NamedSheetViewsPart? openXmlElement)
+  public static DocumentModel.Packaging.NamedSheetViewsPart? CreateModelElement(DXPack.NamedSheetViewsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.NamedSheetViewsPart();
+      var value = new DocumentModel.Packaging.NamedSheetViewsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

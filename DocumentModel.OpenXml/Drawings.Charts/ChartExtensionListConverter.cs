@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.DataDisplayOptions16> GetDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.DataDisplayOptions16>? GetDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.DataDisplayOptions16>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.DataDisplayOptions16>())
@@ -14,7 +14,9 @@ public static class ChartExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement, Collection<DMDrawsCharts.DataDisplayOptions16>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ChartExtensionListConverter
     }
   }
   
-  public static DMDrawsCharts.ChartExtensionList? CreateModelElement(DXDrawCharts.ChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartExtensionList? CreateModelElement(DXDrawCharts.ChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ChartExtensionList();
+      var value = new DocumentModel.Drawings.Charts.ChartExtensionList();
       value.DataDisplayOptions16s = GetDataDisplayOptions16s(openXmlElement);
       return value;
     }

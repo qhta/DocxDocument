@@ -10,7 +10,10 @@ public static class FilteredAreaSeriesConverter
   /// </summary>
   private static DMDrawsCharts.AreaChartSeries3? GetAreaChartSeries(DXO2013DrawChart.FilteredAreaSeries openXmlElement)
   {
-    return DMXDrawsCharts.AreaChartSeries3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.AreaChartSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.AreaChartSeries>();
+    if (element != null)
+      return DMXDrawsCharts.AreaChartSeries3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAreaChartSeries(DXO2013DrawChart.FilteredAreaSeries openXmlElement, DMDrawsCharts.AreaChartSeries3? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class FilteredAreaSeriesConverter
     }
   }
   
-  public static DMDrawsCharts.FilteredAreaSeries? CreateModelElement(DXO2013DrawChart.FilteredAreaSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredAreaSeries? CreateModelElement(DXO2013DrawChart.FilteredAreaSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.FilteredAreaSeries();
+      var value = new DocumentModel.Drawings.Charts.FilteredAreaSeries();
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);
       return value;
     }

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class TasksConverter
 {
-  private static Collection<DM.Task> GetItems(DXO2021DocTasks.Tasks openXmlElement)
+  private static Collection<DM.Task>? GetItems(DXO2021DocTasks.Tasks openXmlElement)
   {
     var collection = new Collection<DM.Task>();
     foreach (var item in openXmlElement.Elements<DXO2021DocTasks.Task>())
@@ -14,7 +14,9 @@ public static class TasksConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2021DocTasks.Tasks openXmlElement, Collection<DM.Task>? value, DiffList? diffs, string? objName)
@@ -61,7 +63,10 @@ public static class TasksConverter
   
   private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.Tasks openXmlElement)
   {
-    return DMX.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    if (element != null)
+      return DMX.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +87,11 @@ public static class TasksConverter
     }
   }
   
-  public static DM.Tasks? CreateModelElement(DXO2021DocTasks.Tasks? openXmlElement)
+  public static DocumentModel.Tasks? CreateModelElement(DXO2021DocTasks.Tasks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Tasks();
+      var value = new DocumentModel.Tasks();
       value.Items = GetItems(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

@@ -56,7 +56,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DM.Commands? GetCommands(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return DMX.CommandsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Commands>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Commands>();
+    if (element != null)
+      return DMX.CommandsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommands(DXO2010CustUI.CustomUI openXmlElement, DM.Commands? value, DiffList? diffs, string? objName)
@@ -82,7 +85,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DM.Ribbon? GetRibbon(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return DMX.RibbonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Ribbon>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Ribbon>();
+    if (element != null)
+      return DMX.RibbonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRibbon(DXO2010CustUI.CustomUI openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
@@ -108,7 +114,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DM.Backstage? GetBackstage(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return DMX.BackstageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.Backstage>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Backstage>();
+    if (element != null)
+      return DMX.BackstageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackstage(DXO2010CustUI.CustomUI openXmlElement, DM.Backstage? value, DiffList? diffs, string? objName)
@@ -134,7 +143,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DM.ContextMenus? GetContextMenus(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return DMX.ContextMenusConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010CustUI.ContextMenus>());
+    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ContextMenus>();
+    if (element != null)
+      return DMX.ContextMenusConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpContextMenus(DXO2010CustUI.CustomUI openXmlElement, DM.ContextMenus? value, DiffList? diffs, string? objName)
@@ -155,11 +167,11 @@ public static class CustomUIConverter
     }
   }
   
-  public static DM.CustomUI? CreateModelElement(DXO2010CustUI.CustomUI? openXmlElement)
+  public static DocumentModel.CustomUI? CreateModelElement(DXO2010CustUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.CustomUI();
+      var value = new DocumentModel.CustomUI();
       value.OnLoad = GetOnLoad(openXmlElement);
       value.LoadImage = GetLoadImage(openXmlElement);
       value.Commands = GetCommands(openXmlElement);

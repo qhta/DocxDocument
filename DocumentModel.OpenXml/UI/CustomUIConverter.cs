@@ -56,7 +56,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DMUI.RepurposedCommands? GetRepurposedCommands(DXOCustUI.CustomUI openXmlElement)
   {
-    return DMXUI.RepurposedCommandsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>();
+    if (element != null)
+      return DMXUI.RepurposedCommandsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value, DiffList? diffs, string? objName)
@@ -82,7 +85,10 @@ public static class CustomUIConverter
   /// </summary>
   private static DMUI.Ribbon? GetRibbon(DXOCustUI.CustomUI openXmlElement)
   {
-    return DMXUI.RibbonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>();
+    if (element != null)
+      return DMXUI.RibbonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value, DiffList? diffs, string? objName)
@@ -103,11 +109,11 @@ public static class CustomUIConverter
     }
   }
   
-  public static DMUI.CustomUI? CreateModelElement(DXOCustUI.CustomUI? openXmlElement)
+  public static DocumentModel.UI.CustomUI? CreateModelElement(DXOCustUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.CustomUI();
+      var value = new DocumentModel.UI.CustomUI();
       value.OnLoad = GetOnLoad(openXmlElement);
       value.LoadImage = GetLoadImage(openXmlElement);
       value.RepurposedCommands = GetRepurposedCommands(openXmlElement);

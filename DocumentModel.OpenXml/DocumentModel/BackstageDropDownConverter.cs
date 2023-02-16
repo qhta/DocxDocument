@@ -524,7 +524,7 @@ public static class BackstageDropDownConverter
       openXmlElement.GetItemID = null;
   }
   
-  private static Collection<DM.BackstageItemType> GetItemBackstageItems(DXO2010CustUI.BackstageDropDown openXmlElement)
+  private static Collection<DM.BackstageItemType>? GetItemBackstageItems(DXO2010CustUI.BackstageDropDown openXmlElement)
   {
     var collection = new Collection<DM.BackstageItemType>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.ItemBackstageItem>())
@@ -533,7 +533,9 @@ public static class BackstageDropDownConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItemBackstageItems(DXO2010CustUI.BackstageDropDown openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs, string? objName)
@@ -578,11 +580,11 @@ public static class BackstageDropDownConverter
     }
   }
   
-  public static DM.BackstageDropDown? CreateModelElement(DXO2010CustUI.BackstageDropDown? openXmlElement)
+  public static DocumentModel.BackstageDropDown? CreateModelElement(DXO2010CustUI.BackstageDropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageDropDown();
+      var value = new DocumentModel.BackstageDropDown();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

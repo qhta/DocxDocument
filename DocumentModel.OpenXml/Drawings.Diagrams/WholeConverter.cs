@@ -10,7 +10,10 @@ public static class WholeConverter
   /// </summary>
   private static DMDraws.Outline? GetOutline(DXDrawDgms.Whole openXmlElement)
   {
-    return DMXDraws.OutlineConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Outline>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    if (element != null)
+      return DMXDraws.OutlineConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOutline(DXDrawDgms.Whole openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
@@ -33,7 +36,10 @@ public static class WholeConverter
   
   private static DMDraws.EffectList? GetEffectList(DXDrawDgms.Whole openXmlElement)
   {
-    return DMXDraws.EffectListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    if (element != null)
+      return DMXDraws.EffectListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectList(DXDrawDgms.Whole openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
@@ -56,7 +62,10 @@ public static class WholeConverter
   
   private static DMDraws.EffectDag? GetEffectDag(DXDrawDgms.Whole openXmlElement)
   {
-    return DMXDraws.EffectDagConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectDag>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    if (element != null)
+      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectDag(DXDrawDgms.Whole openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
@@ -77,11 +86,11 @@ public static class WholeConverter
     }
   }
   
-  public static DMDrawsDgms.Whole? CreateModelElement(DXDrawDgms.Whole? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Whole? CreateModelElement(DXDrawDgms.Whole? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Whole();
+      var value = new DocumentModel.Drawings.Diagrams.Whole();
       value.Outline = GetOutline(openXmlElement);
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);

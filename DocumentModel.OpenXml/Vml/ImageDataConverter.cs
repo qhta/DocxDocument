@@ -442,11 +442,11 @@ public static class ImageDataConverter
       openXmlElement.RelHref = null;
   }
   
-  public static DMVml.ImageData? CreateModelElement(DXVml.ImageData? openXmlElement)
+  public static DocumentModel.Vml.ImageData? CreateModelElement(DXVml.ImageData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ImageData();
+      var value = new DocumentModel.Vml.ImageData();
       value.Id = GetId(openXmlElement);
       value.ChromAKey = GetChromAKey(openXmlElement);
       value.CropLeft = GetCropLeft(openXmlElement);

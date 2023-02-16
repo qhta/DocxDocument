@@ -48,11 +48,11 @@ public static class BlurConverter
       openXmlElement.Grow = null;
   }
   
-  public static DMDraws.Blur? CreateModelElement(DXDraw.Blur? openXmlElement)
+  public static DocumentModel.Drawings.Blur? CreateModelElement(DXDraw.Blur? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Blur();
+      var value = new DocumentModel.Drawings.Blur();
       value.Radius = GetRadius(openXmlElement);
       value.Grow = GetGrow(openXmlElement);
       return value;

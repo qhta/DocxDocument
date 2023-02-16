@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.WebExtensions.UI;
 /// </summary>
 public static class OfficeArtExtensionListConverter
 {
-  private static Collection<DMDraws.Extension> GetExtensions(DXO2013WebExtPane.OfficeArtExtensionList openXmlElement)
+  private static Collection<DMDraws.Extension>? GetExtensions(DXO2013WebExtPane.OfficeArtExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.Extension>();
     foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
@@ -14,7 +14,9 @@ public static class OfficeArtExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtensions(DXO2013WebExtPane.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class OfficeArtExtensionListConverter
     }
   }
   
-  public static DMWebExtUI.OfficeArtExtensionList? CreateModelElement(DXO2013WebExtPane.OfficeArtExtensionList? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.OfficeArtExtensionList? CreateModelElement(DXO2013WebExtPane.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExtUI.OfficeArtExtensionList();
+      var value = new DocumentModel.WebExtensions.UI.OfficeArtExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

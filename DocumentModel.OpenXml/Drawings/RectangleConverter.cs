@@ -97,11 +97,11 @@ public static class RectangleConverter
       openXmlElement.Bottom = null;
   }
   
-  public static DMDraws.Rectangle? CreateModelElement(DXDraw.Rectangle? openXmlElement)
+  public static DocumentModel.Drawings.Rectangle? CreateModelElement(DXDraw.Rectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Rectangle();
+      var value = new DocumentModel.Drawings.Rectangle();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);

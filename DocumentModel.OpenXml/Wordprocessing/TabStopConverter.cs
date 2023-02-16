@@ -61,11 +61,11 @@ public static class TabStopConverter
     openXmlElement.Position = value;
   }
   
-  public static DMW.TabStop? CreateModelElement(DXW.TabStop? openXmlElement)
+  public static DocumentModel.Wordprocessing.TabStop? CreateModelElement(DXW.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TabStop();
+      var value = new DocumentModel.Wordprocessing.TabStop();
       value.Val = GetVal(openXmlElement);
       value.Leader = GetLeader(openXmlElement);
       value.Position = GetPosition(openXmlElement);

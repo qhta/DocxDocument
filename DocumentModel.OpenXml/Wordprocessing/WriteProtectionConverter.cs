@@ -148,27 +148,27 @@ public static class WriteProtectionConverter
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  private static UInt32? GetAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement)
+  private static DM.HexInt? GetAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
-      return UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.AlgorithmIdExtensibility.Value);
     return null;
   }
   
-  private static bool CmpAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
-      if (UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.AlgorithmIdExtensibility.Value) == value)
         return true;
-    if (openXmlElement?.AlgorithmIdExtensibility?.Value == null && value == null) return true;
-    diffs?.Add(objName, "AlgorithmIdExtensibility", openXmlElement?.AlgorithmIdExtensibility?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.AlgorithmIdExtensibility?.Value == null && value == null) return true;
+    diffs?.Add(objName, "AlgorithmIdExtensibility", openXmlElement?.AlgorithmIdExtensibility?.Value, value);
     return false;
   }
   
-  private static void SetAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, UInt32? value)
+  private static void SetAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.AlgorithmIdExtensibility = ((UInt32)value).ToString("X8");
+      openXmlElement.AlgorithmIdExtensibility = value.ToString();
     else
       openXmlElement.AlgorithmIdExtensibility = null;
   }
@@ -199,27 +199,27 @@ public static class WriteProtectionConverter
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  private static UInt32? GetCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement)
+  private static DM.HexInt? GetCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
-      return UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.CryptographicProviderTypeExtensibility.Value);
     return null;
   }
   
-  private static bool CmpCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
-      if (UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.CryptographicProviderTypeExtensibility.Value) == value)
         return true;
-    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
-    diffs?.Add(objName, "CryptographicProviderTypeExtensibility", openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
+    diffs?.Add(objName, "CryptographicProviderTypeExtensibility", openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value);
     return false;
   }
   
-  private static void SetCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, UInt32? value)
+  private static void SetCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.CryptographicProviderTypeExtensibility = ((UInt32)value).ToString("X8");
+      openXmlElement.CryptographicProviderTypeExtensibility = value.ToString();
     else
       openXmlElement.CryptographicProviderTypeExtensibility = null;
   }
@@ -250,24 +250,24 @@ public static class WriteProtectionConverter
   /// <summary>
   /// Password Hash
   /// </summary>
-  private static Byte[]? GetHash(DXW.WriteProtection openXmlElement)
+  private static DM.Base64Binary? GetHash(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.Hash?.Value != null)
       return Convert.FromBase64String(openXmlElement.Hash.Value);
     return null;
   }
   
-  private static bool CmpHash(DXW.WriteProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpHash(DXW.WriteProtection openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Hash?.Value != null)
-      if (Convert.FromBase64String(openXmlElement.Hash.Value) == value)
+    if (openXmlElement?.Hash?.Value != null && value != null)
+      if (Convert.FromBase64String(openXmlElement.Hash.Value).SequenceEqual((byte[])value))
         return true;
     if (openXmlElement?.Hash?.Value == null && value == null) return true;
     diffs?.Add(objName, "Hash", openXmlElement?.Hash?.Value, value);
     return false;
   }
   
-  private static void SetHash(DXW.WriteProtection openXmlElement, Byte[]? value)
+  private static void SetHash(DXW.WriteProtection openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.Hash = Convert.ToBase64String(value);
@@ -278,24 +278,24 @@ public static class WriteProtectionConverter
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  private static Byte[]? GetSalt(DXW.WriteProtection openXmlElement)
+  private static DM.Base64Binary? GetSalt(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.Salt?.Value != null)
       return Convert.FromBase64String(openXmlElement.Salt.Value);
     return null;
   }
   
-  private static bool CmpSalt(DXW.WriteProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpSalt(DXW.WriteProtection openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Salt?.Value != null)
-      if (Convert.FromBase64String(openXmlElement.Salt.Value) == value)
+    if (openXmlElement?.Salt?.Value != null && value != null)
+      if (Convert.FromBase64String(openXmlElement.Salt.Value).SequenceEqual((byte[])value))
         return true;
     if (openXmlElement?.Salt?.Value == null && value == null) return true;
     diffs?.Add(objName, "Salt", openXmlElement?.Salt?.Value, value);
     return false;
   }
   
-  private static void SetSalt(DXW.WriteProtection openXmlElement, Byte[]? value)
+  private static void SetSalt(DXW.WriteProtection openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.Salt = Convert.ToBase64String(value);
@@ -329,24 +329,24 @@ public static class WriteProtectionConverter
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetHashValue(DXW.WriteProtection openXmlElement)
+  private static DM.Base64Binary? GetHashValue(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.HashValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.HashValue.Value);
     return null;
   }
   
-  private static bool CmpHashValue(DXW.WriteProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpHashValue(DXW.WriteProtection openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.HashValue?.Value != null)
-      if (Convert.FromBase64String(openXmlElement.HashValue.Value) == value)
+    if (openXmlElement?.HashValue?.Value != null && value != null)
+      if (Convert.FromBase64String(openXmlElement.HashValue.Value).SequenceEqual((byte[])value))
         return true;
     if (openXmlElement?.HashValue?.Value == null && value == null) return true;
     diffs?.Add(objName, "HashValue", openXmlElement?.HashValue?.Value, value);
     return false;
   }
   
-  private static void SetHashValue(DXW.WriteProtection openXmlElement, Byte[]? value)
+  private static void SetHashValue(DXW.WriteProtection openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.HashValue = Convert.ToBase64String(value);
@@ -357,24 +357,24 @@ public static class WriteProtectionConverter
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetSaltValue(DXW.WriteProtection openXmlElement)
+  private static DM.Base64Binary? GetSaltValue(DXW.WriteProtection openXmlElement)
   {
     if (openXmlElement?.SaltValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.SaltValue.Value);
     return null;
   }
   
-  private static bool CmpSaltValue(DXW.WriteProtection openXmlElement, Byte[]? value, DiffList? diffs, string? objName)
+  private static bool CmpSaltValue(DXW.WriteProtection openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SaltValue?.Value != null)
-      if (Convert.FromBase64String(openXmlElement.SaltValue.Value) == value)
+    if (openXmlElement?.SaltValue?.Value != null && value != null)
+      if (Convert.FromBase64String(openXmlElement.SaltValue.Value).SequenceEqual((byte[])value))
         return true;
     if (openXmlElement?.SaltValue?.Value == null && value == null) return true;
     diffs?.Add(objName, "SaltValue", openXmlElement?.SaltValue?.Value, value);
     return false;
   }
   
-  private static void SetSaltValue(DXW.WriteProtection openXmlElement, Byte[]? value)
+  private static void SetSaltValue(DXW.WriteProtection openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.SaltValue = Convert.ToBase64String(value);
@@ -402,11 +402,11 @@ public static class WriteProtectionConverter
     openXmlElement.SpinCount = value;
   }
   
-  public static DMW.WriteProtection? CreateModelElement(DXW.WriteProtection? openXmlElement)
+  public static DocumentModel.Wordprocessing.WriteProtection? CreateModelElement(DXW.WriteProtection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.WriteProtection();
+      var value = new DocumentModel.Wordprocessing.WriteProtection();
       value.Recommended = GetRecommended(openXmlElement);
       value.CryptographicProviderType = GetCryptographicProviderType(openXmlElement);
       value.CryptographicAlgorithmClass = GetCryptographicAlgorithmClass(openXmlElement);

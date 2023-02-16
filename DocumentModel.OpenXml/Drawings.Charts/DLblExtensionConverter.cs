@@ -30,7 +30,10 @@ public static class DLblExtensionConverter
   
   private static DMDrawsCharts.DataLabelFieldTable? GetDataLabelFieldTable(DXDrawCharts.DLblExtension openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelFieldTableConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelFieldTableConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelFieldTable(DXDrawCharts.DLblExtension openXmlElement, DMDrawsCharts.DataLabelFieldTable? value, DiffList? diffs, string? objName)
@@ -109,7 +112,10 @@ public static class DLblExtensionConverter
   
   private static DMDrawsCharts.ShapeProperties3? GetShapeProperties(DXDrawCharts.DLblExtension openXmlElement)
   {
-    return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.DLblExtension openXmlElement, DMDrawsCharts.ShapeProperties3? value, DiffList? diffs, string? objName)
@@ -132,7 +138,10 @@ public static class DLblExtensionConverter
   
   private static DMDrawsCharts.Layout3? GetLayout(DXDrawCharts.DLblExtension openXmlElement)
   {
-    return DMXDrawsCharts.Layout3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>();
+    if (element != null)
+      return DMXDrawsCharts.Layout3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLayout(DXDrawCharts.DLblExtension openXmlElement, DMDrawsCharts.Layout3? value, DiffList? diffs, string? objName)
@@ -153,11 +162,11 @@ public static class DLblExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.DLblExtension? CreateModelElement(DXDrawCharts.DLblExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DLblExtension? CreateModelElement(DXDrawCharts.DLblExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DLblExtension();
+      var value = new DocumentModel.Drawings.Charts.DLblExtension();
       value.Uri = GetUri(openXmlElement);
       value.DataLabelFieldTable = GetDataLabelFieldTable(openXmlElement);
       value.ExceptionForSave = GetExceptionForSave(openXmlElement);

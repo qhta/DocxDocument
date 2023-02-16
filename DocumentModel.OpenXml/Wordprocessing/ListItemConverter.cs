@@ -51,11 +51,11 @@ public static class ListItemConverter
       openXmlElement.Value = null;
   }
   
-  public static DMW.ListItem? CreateModelElement(DXW.ListItem? openXmlElement)
+  public static DocumentModel.Wordprocessing.ListItem? CreateModelElement(DXW.ListItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ListItem();
+      var value = new DocumentModel.Wordprocessing.ListItem();
       value.DisplayText = GetDisplayText(openXmlElement);
       value.Value = GetValue(openXmlElement);
       return value;

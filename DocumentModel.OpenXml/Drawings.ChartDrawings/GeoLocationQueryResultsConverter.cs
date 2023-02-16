@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoLocationQueryResultsConverter
 {
-  private static Collection<DMDrawsChartDraws.GeoLocationQueryResult> GetItems(DXO2016DrawChartDraw.GeoLocationQueryResults openXmlElement)
+  private static Collection<DMDrawsChartDraws.GeoLocationQueryResult>? GetItems(DXO2016DrawChartDraw.GeoLocationQueryResults openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.GeoLocationQueryResult>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.GeoLocationQueryResult>())
@@ -14,7 +14,9 @@ public static class GeoLocationQueryResultsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2016DrawChartDraw.GeoLocationQueryResults openXmlElement, Collection<DMDrawsChartDraws.GeoLocationQueryResult>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class GeoLocationQueryResultsConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoLocationQueryResults? CreateModelElement(DXO2016DrawChartDraw.GeoLocationQueryResults? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResults? CreateModelElement(DXO2016DrawChartDraw.GeoLocationQueryResults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoLocationQueryResults();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResults();
       value.Items = GetItems(openXmlElement);
       return value;
     }

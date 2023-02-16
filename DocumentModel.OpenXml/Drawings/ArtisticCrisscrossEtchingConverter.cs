@@ -45,11 +45,11 @@ public static class ArtisticCrisscrossEtchingConverter
     openXmlElement.Pressure = value;
   }
   
-  public static DMDraws.ArtisticCrisscrossEtching? CreateModelElement(DXO2010Draw.ArtisticCrisscrossEtching? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticCrisscrossEtching? CreateModelElement(DXO2010Draw.ArtisticCrisscrossEtching? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticCrisscrossEtching();
+      var value = new DocumentModel.Drawings.ArtisticCrisscrossEtching();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;

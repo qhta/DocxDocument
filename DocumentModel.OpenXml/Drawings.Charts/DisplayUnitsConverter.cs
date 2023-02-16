@@ -55,7 +55,10 @@ public static class DisplayUnitsConverter
   
   private static DMDrawsCharts.DisplayUnitsLabel? GetDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement)
   {
-    return DMXDrawsCharts.DisplayUnitsLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>();
+    if (element != null)
+      return DMXDrawsCharts.DisplayUnitsLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
@@ -78,7 +81,10 @@ public static class DisplayUnitsConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DisplayUnits openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -99,11 +105,11 @@ public static class DisplayUnitsConverter
     }
   }
   
-  public static DMDrawsCharts.DisplayUnits? CreateModelElement(DXDrawCharts.DisplayUnits? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DXDrawCharts.DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DisplayUnits();
+      var value = new DocumentModel.Drawings.Charts.DisplayUnits();
       value.CustomDisplayUnit = GetCustomDisplayUnit(openXmlElement);
       value.BuiltInUnit = GetBuiltInUnit(openXmlElement);
       value.DisplayUnitsLabel = GetDisplayUnitsLabel(openXmlElement);

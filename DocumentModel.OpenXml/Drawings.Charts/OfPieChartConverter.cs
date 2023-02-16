@@ -62,7 +62,7 @@ public static class OfPieChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.OfPieChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries>? GetPieChartSeries(DXDrawCharts.OfPieChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -71,7 +71,9 @@ public static class OfPieChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieChartSeries(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
@@ -118,7 +120,10 @@ public static class OfPieChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -214,7 +219,10 @@ public static class OfPieChartConverter
   
   private static DMDrawsCharts.CustomSplit? GetCustomSplit(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return DMXDrawsCharts.CustomSplitConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.CustomSplit>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.CustomSplit>();
+    if (element != null)
+      return DMXDrawsCharts.CustomSplitConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomSplit(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.CustomSplit? value, DiffList? diffs, string? objName)
@@ -260,7 +268,7 @@ public static class OfPieChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.SeriesLines> GetSeriesLines(DXDrawCharts.OfPieChart openXmlElement)
+  private static Collection<DMDrawsCharts.SeriesLines>? GetSeriesLines(DXDrawCharts.OfPieChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SeriesLines>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SeriesLines>())
@@ -269,7 +277,9 @@ public static class OfPieChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSeriesLines(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value, DiffList? diffs, string? objName)
@@ -316,7 +326,10 @@ public static class OfPieChartConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -337,11 +350,11 @@ public static class OfPieChartConverter
     }
   }
   
-  public static DMDrawsCharts.OfPieChart? CreateModelElement(DXDrawCharts.OfPieChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(DXDrawCharts.OfPieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.OfPieChart();
+      var value = new DocumentModel.Drawings.Charts.OfPieChart();
       value.OfPieType = GetOfPieType(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);

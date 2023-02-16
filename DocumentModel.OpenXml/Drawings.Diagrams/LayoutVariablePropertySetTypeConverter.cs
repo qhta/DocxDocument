@@ -253,11 +253,11 @@ public static class LayoutVariablePropertySetTypeConverter
     }
   }
   
-  public static DMDrawsDgms.LayoutVariablePropertySetType? CreateModelElement(DXDrawDgms.LayoutVariablePropertySetType? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType? CreateModelElement(DXDrawDgms.LayoutVariablePropertySetType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.LayoutVariablePropertySetType();
+      var value = new DocumentModel.Drawings.Diagrams.LayoutVariablePropertySetType();
       value.OrganizationChart = GetOrganizationChart(openXmlElement);
       value.MaxNumberOfChildren = GetMaxNumberOfChildren(openXmlElement);
       value.PreferredNumberOfChildren = GetPreferredNumberOfChildren(openXmlElement);

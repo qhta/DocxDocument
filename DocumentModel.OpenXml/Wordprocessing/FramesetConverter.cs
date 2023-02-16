@@ -38,7 +38,10 @@ public static class FramesetConverter
   /// </summary>
   private static DMW.FramesetSplitbar? GetFramesetSplitbar(DXW.Frameset openXmlElement)
   {
-    return DMXW.FramesetSplitbarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FramesetSplitbar>());
+    var element = openXmlElement?.GetFirstChild<DXW.FramesetSplitbar>();
+    if (element != null)
+      return DMXW.FramesetSplitbarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFramesetSplitbar(DXW.Frameset openXmlElement, DMW.FramesetSplitbar? value, DiffList? diffs, string? objName)
@@ -87,7 +90,10 @@ public static class FramesetConverter
   
   private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)
   {
-    return DMXW.FramesetConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Frameset>());
+    var element = openXmlElement?.GetFirstChild<DXW.Frameset>();
+    if (element != null)
+      return DMXW.FramesetConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
@@ -110,7 +116,10 @@ public static class FramesetConverter
   
   private static DMW.Frame? GetFrame(DXW.Frameset openXmlElement)
   {
-    return DMXW.FrameConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Frame>());
+    var element = openXmlElement?.GetFirstChild<DXW.Frame>();
+    if (element != null)
+      return DMXW.FrameConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFrame(DXW.Frameset openXmlElement, DMW.Frame? value, DiffList? diffs, string? objName)
@@ -131,11 +140,11 @@ public static class FramesetConverter
     }
   }
   
-  public static DMW.Frameset? CreateModelElement(DXW.Frameset? openXmlElement)
+  public static DocumentModel.Wordprocessing.Frameset? CreateModelElement(DXW.Frameset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Frameset();
+      var value = new DocumentModel.Wordprocessing.Frameset();
       value.FrameSize = GetFrameSize(openXmlElement);
       value.FramesetSplitbar = GetFramesetSplitbar(openXmlElement);
       value.FrameLayout = GetFrameLayout(openXmlElement);

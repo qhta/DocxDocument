@@ -718,11 +718,11 @@ public static class UnsizedDynamicMenuConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.UnsizedDynamicMenu? CreateModelElement(DXOCustUI.UnsizedDynamicMenu? openXmlElement)
+  public static DocumentModel.UI.UnsizedDynamicMenu? CreateModelElement(DXOCustUI.UnsizedDynamicMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedDynamicMenu();
+      var value = new DocumentModel.UI.UnsizedDynamicMenu();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);

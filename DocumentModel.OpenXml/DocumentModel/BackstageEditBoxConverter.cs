@@ -383,11 +383,11 @@ public static class BackstageEditBoxConverter
       openXmlElement.SizeString = null;
   }
   
-  public static DM.BackstageEditBox? CreateModelElement(DXO2010CustUI.BackstageEditBox? openXmlElement)
+  public static DocumentModel.BackstageEditBox? CreateModelElement(DXO2010CustUI.BackstageEditBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageEditBox();
+      var value = new DocumentModel.BackstageEditBox();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

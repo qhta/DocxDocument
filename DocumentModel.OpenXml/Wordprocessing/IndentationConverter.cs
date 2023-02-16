@@ -263,11 +263,11 @@ public static class IndentationConverter
     openXmlElement.FirstLineChars = value;
   }
   
-  public static DMW.Indentation? CreateModelElement(DXW.Indentation? openXmlElement)
+  public static DocumentModel.Wordprocessing.Indentation? CreateModelElement(DXW.Indentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Indentation();
+      var value = new DocumentModel.Wordprocessing.Indentation();
       value.Left = GetLeft(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.LeftChars = GetLeftChars(openXmlElement);

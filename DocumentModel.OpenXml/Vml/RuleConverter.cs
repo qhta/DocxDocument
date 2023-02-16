@@ -87,7 +87,7 @@ public static class RuleConverter
       openXmlElement.ShapeReference = null;
   }
   
-  private static Collection<DMVml.Proxy> GetProxies(DXVmlO.Rule openXmlElement)
+  private static Collection<DMVml.Proxy>? GetProxies(DXVmlO.Rule openXmlElement)
   {
     var collection = new Collection<DMVml.Proxy>();
     foreach (var item in openXmlElement.Elements<DXVmlO.Proxy>())
@@ -96,7 +96,9 @@ public static class RuleConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpProxies(DXVmlO.Rule openXmlElement, Collection<DMVml.Proxy>? value, DiffList? diffs, string? objName)
@@ -141,11 +143,11 @@ public static class RuleConverter
     }
   }
   
-  public static DMVml.Rule? CreateModelElement(DXVmlO.Rule? openXmlElement)
+  public static DocumentModel.Vml.Rule? CreateModelElement(DXVmlO.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.Rule();
+      var value = new DocumentModel.Vml.Rule();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.How = GetHow(openXmlElement);

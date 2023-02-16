@@ -63,11 +63,11 @@ public static class MailMergeRecipientDataPartConverter
     return false;
   }
   
-  public static DMPack.MailMergeRecipientDataPart? CreateModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement)
+  public static DocumentModel.Packaging.MailMergeRecipientDataPart? CreateModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.MailMergeRecipientDataPart();
+      var value = new DocumentModel.Packaging.MailMergeRecipientDataPart();
       value.Recipients = GetRecipients(openXmlElement);
       value.MailMergeRecipients = GetMailMergeRecipients(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

@@ -33,11 +33,11 @@ public static class ArgumentPropertiesConverter
     }
   }
   
-  public static DMMath.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
+  public static DocumentModel.Math.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.ArgumentProperties();
+      var value = new DocumentModel.Math.ArgumentProperties();
       value.ArgumentSize = GetArgumentSize(openXmlElement);
       return value;
     }

@@ -28,11 +28,11 @@ public static class ExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  public static DM.Extension? CreateModelElement(DXO2021OExtLst.Extension? openXmlElement)
+  public static DocumentModel.Extension? CreateModelElement(DXO2021OExtLst.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Extension();
+      var value = new DocumentModel.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

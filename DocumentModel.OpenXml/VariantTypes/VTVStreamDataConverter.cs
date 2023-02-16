@@ -28,11 +28,11 @@ public static class VTVStreamDataConverter
       openXmlElement.Version = null;
   }
   
-  public static DMVT.VTVStreamData? CreateModelElement(DXVT.VTVStreamData? openXmlElement)
+  public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(DXVT.VTVStreamData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVT.VTVStreamData();
+      var value = new DocumentModel.VariantTypes.VTVStreamData();
       value.Version = GetVersion(openXmlElement);
       return value;
     }

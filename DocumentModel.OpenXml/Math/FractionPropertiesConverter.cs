@@ -36,7 +36,10 @@ public static class FractionPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.FractionProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.FractionProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +60,11 @@ public static class FractionPropertiesConverter
     }
   }
   
-  public static DMMath.FractionProperties? CreateModelElement(DXMath.FractionProperties? openXmlElement)
+  public static DocumentModel.Math.FractionProperties? CreateModelElement(DXMath.FractionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.FractionProperties();
+      var value = new DocumentModel.Math.FractionProperties();
       value.FractionType = GetFractionType(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

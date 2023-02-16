@@ -28,11 +28,11 @@ public static class ContentPartConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.ContentPart? CreateModelElement(DXW.ContentPart? openXmlElement)
+  public static DocumentModel.Wordprocessing.ContentPart? CreateModelElement(DXW.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ContentPart();
+      var value = new DocumentModel.Wordprocessing.ContentPart();
       value.Id = GetId(openXmlElement);
       return value;
     }

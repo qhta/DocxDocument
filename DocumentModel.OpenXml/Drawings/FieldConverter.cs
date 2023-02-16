@@ -56,7 +56,10 @@ public static class FieldConverter
   /// </summary>
   private static DMDraws.RunProperties? GetRunProperties(DXDraw.Field openXmlElement)
   {
-    return DMXDraws.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
+    if (element != null)
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXDraw.Field openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
@@ -82,7 +85,10 @@ public static class FieldConverter
   /// </summary>
   private static DMDraws.ParagraphProperties? GetParagraphProperties(DXDraw.Field openXmlElement)
   {
-    return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>();
+    if (element != null)
+      return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphProperties(DXDraw.Field openXmlElement, DMDraws.ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -126,11 +132,11 @@ public static class FieldConverter
       openXmlElement.Text = null;
   }
   
-  public static DMDraws.Field? CreateModelElement(DXDraw.Field? openXmlElement)
+  public static DocumentModel.Drawings.Field? CreateModelElement(DXDraw.Field? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Field();
+      var value = new DocumentModel.Drawings.Field();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.RunProperties = GetRunProperties(openXmlElement);

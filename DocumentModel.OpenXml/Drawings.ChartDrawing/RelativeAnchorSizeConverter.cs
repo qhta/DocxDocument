@@ -10,7 +10,10 @@ public static class RelativeAnchorSizeConverter
   /// </summary>
   private static DMDrawsChartDraw.FromAnchor? GetFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>();
+    if (element != null)
+      return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class RelativeAnchorSizeConverter
   /// </summary>
   private static DMDrawsChartDraw.ToAnchor? GetToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ToAnchorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ToAnchor>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ToAnchor>();
+    if (element != null)
+      return DMXDrawsChartDraw.ToAnchorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ToAnchor? value, DiffList? diffs, string? objName)
@@ -59,7 +65,10 @@ public static class RelativeAnchorSizeConverter
   
   private static DMDrawsChartDraw.Shape? GetShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>();
+    if (element != null)
+      return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value, DiffList? diffs, string? objName)
@@ -82,7 +91,10 @@ public static class RelativeAnchorSizeConverter
   
   private static DMDrawsChartDraw.GroupShape? GetGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    if (element != null)
+      return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
@@ -105,7 +117,10 @@ public static class RelativeAnchorSizeConverter
   
   private static DMDrawsChartDraw.GraphicFrame? GetGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    if (element != null)
+      return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
@@ -128,7 +143,10 @@ public static class RelativeAnchorSizeConverter
   
   private static DMDrawsChartDraw.ConnectionShape? GetConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    if (element != null)
+      return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value, DiffList? diffs, string? objName)
@@ -151,7 +169,10 @@ public static class RelativeAnchorSizeConverter
   
   private static DMDrawsChartDraw.Picture? GetPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
   {
-    return DMXDrawsChartDraw.PictureConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>());
+    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>();
+    if (element != null)
+      return DMXDrawsChartDraw.PictureConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
@@ -172,11 +193,11 @@ public static class RelativeAnchorSizeConverter
     }
   }
   
-  public static DMDrawsChartDraw.RelativeAnchorSize? CreateModelElement(DXDrawChartDraw.RelativeAnchorSize? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? CreateModelElement(DXDrawChartDraw.RelativeAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.RelativeAnchorSize();
+      var value = new DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize();
       value.FromAnchor = GetFromAnchor(openXmlElement);
       value.ToAnchor = GetToAnchor(openXmlElement);
       value.Shape = GetShape(openXmlElement);

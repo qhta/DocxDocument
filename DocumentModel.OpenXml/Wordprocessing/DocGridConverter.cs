@@ -63,11 +63,11 @@ public static class DocGridConverter
     openXmlElement.CharacterSpace = value;
   }
   
-  public static DMW.DocGrid? CreateModelElement(DXW.DocGrid? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocGrid? CreateModelElement(DXW.DocGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocGrid();
+      var value = new DocumentModel.Wordprocessing.DocGrid();
       value.Type = GetType(openXmlElement);
       value.LinePitch = GetLinePitch(openXmlElement);
       value.CharacterSpace = GetCharacterSpace(openXmlElement);

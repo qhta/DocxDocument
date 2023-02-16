@@ -10,7 +10,10 @@ public static class SeriesTextConverter
   /// </summary>
   private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.SeriesText openXmlElement)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
+    if (element != null)
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
@@ -56,11 +59,11 @@ public static class SeriesTextConverter
     }
   }
   
-  public static DMDrawsCharts.SeriesText? CreateModelElement(DXDrawCharts.SeriesText? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SeriesText? CreateModelElement(DXDrawCharts.SeriesText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SeriesText();
+      var value = new DocumentModel.Drawings.Charts.SeriesText();
       value.StringReference = GetStringReference(openXmlElement);
       value.NumericValue = GetNumericValue(openXmlElement);
       return value;

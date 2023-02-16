@@ -30,7 +30,10 @@ public static class BubbleSerExtensionConverter
   
   private static DMDrawsCharts.InvertSolidFillFormat? GetInvertSolidFillFormat(DXDrawCharts.BubbleSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.InvertSolidFillFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>());
+    var element = openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>();
+    if (element != null)
+      return DMXDrawsCharts.InvertSolidFillFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInvertSolidFillFormat(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
@@ -53,7 +56,10 @@ public static class BubbleSerExtensionConverter
   
   private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.BubbleSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredCategoryTitle(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
@@ -76,7 +82,10 @@ public static class BubbleSerExtensionConverter
   
   private static DMDrawsCharts.DataLabelsRange? GetDataLabelsRange(DXDrawCharts.BubbleSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabelsRange(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
@@ -99,7 +108,10 @@ public static class BubbleSerExtensionConverter
   
   private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.BubbleSerExtension openXmlElement)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryFilterExceptions(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
@@ -120,11 +132,11 @@ public static class BubbleSerExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.BubbleSerExtension? CreateModelElement(DXDrawCharts.BubbleSerExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(DXDrawCharts.BubbleSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BubbleSerExtension();
+      var value = new DocumentModel.Drawings.Charts.BubbleSerExtension();
       value.Uri = GetUri(openXmlElement);
       value.InvertSolidFillFormat = GetInvertSolidFillFormat(openXmlElement);
       value.FilteredCategoryTitle = GetFilteredCategoryTitle(openXmlElement);

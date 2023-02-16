@@ -10,7 +10,10 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// </summary>
   private static DMDraws.ConnectionShapeLocks? GetConnectionShapeLocks(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    return DMXDraws.ConnectionShapeLocksConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ConnectionShapeLocks>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ConnectionShapeLocks>();
+    if (element != null)
+      return DMXDraws.ConnectionShapeLocksConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConnectionShapeLocks(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionShapeLocks? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// </summary>
   private static DMDraws.ConnectionType? GetStartConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    return DMXDraws.ConnectionTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.StartConnection>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.StartConnection>();
+    if (element != null)
+      return DMXDraws.ConnectionTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStartConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionType? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// </summary>
   private static DMDraws.ConnectionType? GetEndConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    return DMXDraws.ConnectionTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EndConnection>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EndConnection>();
+    if (element != null)
+      return DMXDraws.ConnectionTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEndConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionType? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -109,11 +121,11 @@ public static class NonVisualConnectionShapePropertiesConverter
     }
   }
   
-  public static DMDrawsChartDraw.NonVisualConnectionShapeProperties? CreateModelElement(DXDrawChartDraw.NonVisualConnectionShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(DXDrawChartDraw.NonVisualConnectionShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraw.NonVisualConnectionShapeProperties();
+      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties();
       value.ConnectionShapeLocks = GetConnectionShapeLocks(openXmlElement);
       value.StartConnection = GetStartConnection(openXmlElement);
       value.EndConnection = GetEndConnection(openXmlElement);

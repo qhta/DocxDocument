@@ -10,7 +10,10 @@ public static class GroupShapeTypeConverter
   /// </summary>
   private static DMDrawsO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXODraw.GroupShapeType openXmlElement)
   {
-    return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>();
+    if (element != null)
+      return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShapeNonVisualProperties(DXODraw.GroupShapeType openXmlElement, DMDrawsO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GroupShapeTypeConverter
   /// </summary>
   private static DMDrawsO.GroupShapeProperties? GetGroupShapeProperties(DXODraw.GroupShapeType openXmlElement)
   {
-    return DMXDrawsO.GroupShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.GroupShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeProperties>();
+    if (element != null)
+      return DMXDrawsO.GroupShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShapeProperties(DXODraw.GroupShapeType openXmlElement, DMDrawsO.GroupShapeProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class GroupShapeTypeConverter
     }
   }
   
-  public static DMDrawsO.GroupShapeType? CreateModelElement(DXODraw.GroupShapeType? openXmlElement)
+  public static DocumentModel.Drawings.Office.GroupShapeType? CreateModelElement(DXODraw.GroupShapeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.GroupShapeType();
+      var value = new DocumentModel.Drawings.Office.GroupShapeType();
       value.GroupShapeNonVisualProperties = GetGroupShapeNonVisualProperties(openXmlElement);
       value.GroupShapeProperties = GetGroupShapeProperties(openXmlElement);
       return value;

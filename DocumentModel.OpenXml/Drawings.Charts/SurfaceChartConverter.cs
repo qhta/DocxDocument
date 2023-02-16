@@ -36,7 +36,7 @@ public static class SurfaceChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.SurfaceChartSeries> GetSurfaceChartSeries(DXDrawCharts.SurfaceChart openXmlElement)
+  private static Collection<DMDrawsCharts.SurfaceChartSeries>? GetSurfaceChartSeries(DXDrawCharts.SurfaceChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SurfaceChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SurfaceChartSeries>())
@@ -45,7 +45,9 @@ public static class SurfaceChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSurfaceChartSeries(DXDrawCharts.SurfaceChart openXmlElement, Collection<DMDrawsCharts.SurfaceChartSeries>? value, DiffList? diffs, string? objName)
@@ -92,7 +94,10 @@ public static class SurfaceChartConverter
   
   private static DMDrawsCharts.BandFormats? GetBandFormats(DXDrawCharts.SurfaceChart openXmlElement)
   {
-    return DMXDrawsCharts.BandFormatsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BandFormats>();
+    if (element != null)
+      return DMXDrawsCharts.BandFormatsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBandFormats(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.BandFormats? value, DiffList? diffs, string? objName)
@@ -113,7 +118,7 @@ public static class SurfaceChartConverter
     }
   }
   
-  private static Collection<UInt32> GetAxisIds(DXDrawCharts.SurfaceChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.SurfaceChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
@@ -122,7 +127,9 @@ public static class SurfaceChartConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXDrawCharts.SurfaceChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -169,7 +176,10 @@ public static class SurfaceChartConverter
   
   private static DMDrawsCharts.SurfaceChartExtensionList? GetSurfaceChartExtensionList(DXDrawCharts.SurfaceChart openXmlElement)
   {
-    return DMXDrawsCharts.SurfaceChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.SurfaceChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SurfaceChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.SurfaceChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSurfaceChartExtensionList(DXDrawCharts.SurfaceChart openXmlElement, DMDrawsCharts.SurfaceChartExtensionList? value, DiffList? diffs, string? objName)
@@ -190,11 +200,11 @@ public static class SurfaceChartConverter
     }
   }
   
-  public static DMDrawsCharts.SurfaceChart? CreateModelElement(DXDrawCharts.SurfaceChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceChart? CreateModelElement(DXDrawCharts.SurfaceChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SurfaceChart();
+      var value = new DocumentModel.Drawings.Charts.SurfaceChart();
       value.Wireframe = GetWireframe(openXmlElement);
       value.SurfaceChartSeries = GetSurfaceChartSeries(openXmlElement);
       value.BandFormats = GetBandFormats(openXmlElement);

@@ -10,7 +10,10 @@ public static class Scene3DConverter
   /// </summary>
   private static DMW.Camera? GetCamera(DXO2010W.Scene3D openXmlElement)
   {
-    return DMXW.CameraConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.Camera>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.Camera>();
+    if (element != null)
+      return DMXW.CameraConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class Scene3DConverter
   /// </summary>
   private static DMW.LightRig? GetLightRig(DXO2010W.Scene3D openXmlElement)
   {
-    return DMXW.LightRigConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.LightRig>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.LightRig>();
+    if (element != null)
+      return DMXW.LightRigConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class Scene3DConverter
     }
   }
   
-  public static DMW.Scene3D? CreateModelElement(DXO2010W.Scene3D? openXmlElement)
+  public static DocumentModel.Wordprocessing.Scene3D? CreateModelElement(DXO2010W.Scene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Scene3D();
+      var value = new DocumentModel.Wordprocessing.Scene3D();
       value.Camera = GetCamera(openXmlElement);
       value.LightRig = GetLightRig(openXmlElement);
       return value;

@@ -409,7 +409,7 @@ public static class RadioGroupConverter
       openXmlElement.GetItemID = null;
   }
   
-  private static Collection<DM.BackstageItemType> GetRadioButtonBackstageItems(DXO2010CustUI.RadioGroup openXmlElement)
+  private static Collection<DM.BackstageItemType>? GetRadioButtonBackstageItems(DXO2010CustUI.RadioGroup openXmlElement)
   {
     var collection = new Collection<DM.BackstageItemType>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.RadioButtonBackstageItem>())
@@ -418,7 +418,9 @@ public static class RadioGroupConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpRadioButtonBackstageItems(DXO2010CustUI.RadioGroup openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs, string? objName)
@@ -463,11 +465,11 @@ public static class RadioGroupConverter
     }
   }
   
-  public static DM.RadioGroup? CreateModelElement(DXO2010CustUI.RadioGroup? openXmlElement)
+  public static DocumentModel.RadioGroup? CreateModelElement(DXO2010CustUI.RadioGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.RadioGroup();
+      var value = new DocumentModel.RadioGroup();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

@@ -35,7 +35,10 @@ public static class AccentPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.AccentProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.AccentProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -56,11 +59,11 @@ public static class AccentPropertiesConverter
     }
   }
   
-  public static DMMath.AccentProperties? CreateModelElement(DXMath.AccentProperties? openXmlElement)
+  public static DocumentModel.Math.AccentProperties? CreateModelElement(DXMath.AccentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.AccentProperties();
+      var value = new DocumentModel.Math.AccentProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

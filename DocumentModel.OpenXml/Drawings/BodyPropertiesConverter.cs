@@ -401,7 +401,10 @@ public static class BodyPropertiesConverter
   /// </summary>
   private static DMDraws.PresetTextWrap? GetPresetTextWrap(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.PresetTextWrapConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>();
+    if (element != null)
+      return DMXDraws.PresetTextWrapConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
@@ -452,7 +455,10 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.NormalAutoFit? GetNormalAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.NormalAutoFitConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>();
+    if (element != null)
+      return DMXDraws.NormalAutoFitConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value, DiffList? diffs, string? objName)
@@ -503,7 +509,10 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.Scene3DType? GetScene3DType(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.Scene3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Scene3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
+    if (element != null)
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
@@ -526,7 +535,10 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.Shape3DType? GetShape3DType(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.Shape3DTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Shape3DType>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
+    if (element != null)
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
@@ -549,7 +561,10 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.FlatText? GetFlatText(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.FlatTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FlatText>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FlatText>();
+    if (element != null)
+      return DMXDraws.FlatTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
@@ -572,7 +587,10 @@ public static class BodyPropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.BodyProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -593,11 +611,11 @@ public static class BodyPropertiesConverter
     }
   }
   
-  public static DMDraws.BodyProperties? CreateModelElement(DXDraw.BodyProperties? openXmlElement)
+  public static DocumentModel.Drawings.BodyProperties? CreateModelElement(DXDraw.BodyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.BodyProperties();
+      var value = new DocumentModel.Drawings.BodyProperties();
       value.Rotation = GetRotation(openXmlElement);
       value.UseParagraphSpacing = GetUseParagraphSpacing(openXmlElement);
       value.VerticalOverflow = GetVerticalOverflow(openXmlElement);

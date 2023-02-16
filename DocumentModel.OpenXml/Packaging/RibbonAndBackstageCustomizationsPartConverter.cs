@@ -43,7 +43,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// <summary>
   /// Gets the ImageParts of the RibbonAndBackstageCustomizationsPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -72,11 +72,11 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     return false;
   }
   
-  public static DMPack.RibbonAndBackstageCustomizationsPart? CreateModelElement(DXPack.RibbonAndBackstageCustomizationsPart? openXmlElement)
+  public static DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart? CreateModelElement(DXPack.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.RibbonAndBackstageCustomizationsPart();
+      var value = new DocumentModel.Packaging.RibbonAndBackstageCustomizationsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.CustomUI = GetCustomUI(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);

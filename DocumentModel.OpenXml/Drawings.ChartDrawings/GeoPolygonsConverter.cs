@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoPolygonsConverter
 {
-  private static Collection<DMDrawsChartDraws.GeoPolygon> GetItems(DXO2016DrawChartDraw.GeoPolygons openXmlElement)
+  private static Collection<DMDrawsChartDraws.GeoPolygon>? GetItems(DXO2016DrawChartDraw.GeoPolygons openXmlElement)
   {
     var collection = new Collection<DMDrawsChartDraws.GeoPolygon>();
     foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.GeoPolygon>())
@@ -14,7 +14,9 @@ public static class GeoPolygonsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXO2016DrawChartDraw.GeoPolygons openXmlElement, Collection<DMDrawsChartDraws.GeoPolygon>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class GeoPolygonsConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoPolygons? CreateModelElement(DXO2016DrawChartDraw.GeoPolygons? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoPolygons? CreateModelElement(DXO2016DrawChartDraw.GeoPolygons? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoPolygons();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoPolygons();
       value.Items = GetItems(openXmlElement);
       return value;
     }

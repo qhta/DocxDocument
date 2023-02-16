@@ -7,7 +7,10 @@ public static class EffectStyleListConverter
 {
   private static DMDraws.EffectStyle? GetEffectStyle(DXDraw.EffectStyleList openXmlElement)
   {
-    return DMXDraws.EffectStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.EffectStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.EffectStyle>();
+    if (element != null)
+      return DMXDraws.EffectStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class EffectStyleListConverter
     }
   }
   
-  public static DMDraws.EffectStyleList? CreateModelElement(DXDraw.EffectStyleList? openXmlElement)
+  public static DocumentModel.Drawings.EffectStyleList? CreateModelElement(DXDraw.EffectStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.EffectStyleList();
+      var value = new DocumentModel.Drawings.EffectStyleList();
       value.EffectStyle = GetEffectStyle(openXmlElement);
       return value;
     }

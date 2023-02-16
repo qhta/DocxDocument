@@ -63,7 +63,10 @@ public static class FrameConverter
   /// </summary>
   private static DMW.RelationshipType? GetSourceFileReference(DXW.Frame openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SourceFileReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.SourceFileReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSourceFileReference(DXW.Frame openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -228,11 +231,11 @@ public static class FrameConverter
     }
   }
   
-  public static DMW.Frame? CreateModelElement(DXW.Frame? openXmlElement)
+  public static DocumentModel.Wordprocessing.Frame? CreateModelElement(DXW.Frame? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Frame();
+      var value = new DocumentModel.Wordprocessing.Frame();
       value.FrameSize = GetFrameSize(openXmlElement);
       value.FrameName = GetFrameName(openXmlElement);
       value.SourceFileReference = GetSourceFileReference(openXmlElement);

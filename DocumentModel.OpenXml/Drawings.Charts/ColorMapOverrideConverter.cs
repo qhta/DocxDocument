@@ -226,7 +226,10 @@ public static class ColorMapOverrideConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawCharts.ColorMapOverride openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.ColorMapOverride openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -247,11 +250,11 @@ public static class ColorMapOverrideConverter
     }
   }
   
-  public static DMDrawsCharts.ColorMapOverride? CreateModelElement(DXDrawCharts.ColorMapOverride? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ColorMapOverride? CreateModelElement(DXDrawCharts.ColorMapOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.ColorMapOverride();
+      var value = new DocumentModel.Drawings.Charts.ColorMapOverride();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

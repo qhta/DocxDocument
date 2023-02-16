@@ -45,11 +45,11 @@ public static class Point2DTypeConverter
     openXmlElement.Y = value;
   }
   
-  public static DMDrawsW.Point2DType? CreateModelElement(DXDrawW.Point2DType? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(DXDrawW.Point2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsW.Point2DType();
+      var value = new DocumentModel.Drawings.Wordprocessing.Point2DType();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       return value;

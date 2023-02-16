@@ -10,7 +10,10 @@ public static class DefaultShapeDefinitionTypeConverter
   /// </summary>
   private static DMDraws.ShapeProperties? GetShapeProperties(DXDraw.DefaultShapeDefinitionType openXmlElement)
   {
-    return DMXDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDraw.DefaultShapeDefinitionType openXmlElement, DMDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class DefaultShapeDefinitionTypeConverter
   /// </summary>
   private static DMDraws.BodyProperties? GetBodyProperties(DXDraw.DefaultShapeDefinitionType openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXDraw.DefaultShapeDefinitionType openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class DefaultShapeDefinitionTypeConverter
   /// </summary>
   private static DMDraws.ListStyle? GetListStyle(DXDraw.DefaultShapeDefinitionType openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXDraw.DefaultShapeDefinitionType openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -88,7 +97,10 @@ public static class DefaultShapeDefinitionTypeConverter
   /// </summary>
   private static DMDraws.ShapeStyle? GetShapeStyle(DXDraw.DefaultShapeDefinitionType openXmlElement)
   {
-    return DMXDraws.ShapeStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>();
+    if (element != null)
+      return DMXDraws.ShapeStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeStyle(DXDraw.DefaultShapeDefinitionType openXmlElement, DMDraws.ShapeStyle? value, DiffList? diffs, string? objName)
@@ -114,7 +126,10 @@ public static class DefaultShapeDefinitionTypeConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.DefaultShapeDefinitionType openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.DefaultShapeDefinitionType openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -135,11 +150,11 @@ public static class DefaultShapeDefinitionTypeConverter
     }
   }
   
-  public static DMDraws.DefaultShapeDefinitionType? CreateModelElement(DXDraw.DefaultShapeDefinitionType? openXmlElement)
+  public static DocumentModel.Drawings.DefaultShapeDefinitionType? CreateModelElement(DXDraw.DefaultShapeDefinitionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.DefaultShapeDefinitionType();
+      var value = new DocumentModel.Drawings.DefaultShapeDefinitionType();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);

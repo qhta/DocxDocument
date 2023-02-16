@@ -759,11 +759,11 @@ public static class DynamicMenuConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.DynamicMenu? CreateModelElement(DXO2010CustUI.DynamicMenu? openXmlElement)
+  public static DocumentModel.DynamicMenu? CreateModelElement(DXO2010CustUI.DynamicMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.DynamicMenu();
+      var value = new DocumentModel.DynamicMenu();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);

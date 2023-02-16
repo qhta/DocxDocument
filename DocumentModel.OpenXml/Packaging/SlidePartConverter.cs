@@ -8,7 +8,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the ChartParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.ChartPart> GetChartParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.ChartPart>? GetChartParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.ChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ChartPart>())
@@ -28,7 +28,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the commentParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.PowerPointCommentPart> GetcommentParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.PowerPointCommentPart>? GetcommentParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.PowerPointCommentPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.PowerPointCommentPart>())
@@ -60,7 +60,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the CustomXmlParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.CustomXmlPart> GetCustomXmlParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.CustomXmlPart>? GetCustomXmlParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.CustomXmlPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.CustomXmlPart>())
@@ -80,7 +80,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the DiagramColorsParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.DiagramColorsPart> GetDiagramColorsParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.DiagramColorsPart>? GetDiagramColorsParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramColorsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramColorsPart>())
@@ -100,7 +100,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the DiagramDataParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.DiagramDataPart> GetDiagramDataParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.DiagramDataPart>? GetDiagramDataParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramDataPart>())
@@ -120,7 +120,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the DiagramLayoutDefinitionParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramLayoutDefinitionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramLayoutDefinitionPart>())
@@ -140,7 +140,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the DiagramPersistLayoutParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramPersistLayoutPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramPersistLayoutPart>())
@@ -160,7 +160,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the DiagramStyleParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.DiagramStylePart> GetDiagramStyleParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.DiagramStylePart>? GetDiagramStyleParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.DiagramStylePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.DiagramStylePart>())
@@ -180,7 +180,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistenceBinaryDataPart>())
@@ -200,7 +200,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
@@ -220,7 +220,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart>? GetEmbeddedObjectParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedObjectPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
@@ -240,7 +240,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart>? GetEmbeddedPackageParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.EmbeddedPackagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
@@ -260,7 +260,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the ExtendedChartParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.ExtendedChartPart> GetExtendedChartParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.ExtendedChartPart>? GetExtendedChartParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.ExtendedChartPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ExtendedChartPart>())
@@ -280,7 +280,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the ImageParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -300,7 +300,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
@@ -332,7 +332,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the SlideParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.SlidePart> GetSlideParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.SlidePart>? GetSlideParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.SlidePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.SlidePart>())
@@ -352,7 +352,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the UserDefinedTagsParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.UserDefinedTagsPart> GetUserDefinedTagsParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.UserDefinedTagsPart>? GetUserDefinedTagsParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.UserDefinedTagsPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.UserDefinedTagsPart>())
@@ -372,7 +372,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the VmlDrawingParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.VmlDrawingPart> GetVmlDrawingParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.VmlDrawingPart>? GetVmlDrawingParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.VmlDrawingPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.VmlDrawingPart>())
@@ -392,7 +392,7 @@ public static class SlidePartConverter
   /// <summary>
   /// Gets the WebExtensionParts of the SlidePart
   /// </summary>
-  private static Collection<DMPack.WebExtensionPart> GetWebExtensionParts(DXPack.SlidePart openXmlElement)
+  private static Collection<DMPack.WebExtensionPart>? GetWebExtensionParts(DXPack.SlidePart openXmlElement)
   {
     var collection = new Collection<DMPack.WebExtensionPart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.WebExtensionPart>())
@@ -409,11 +409,11 @@ public static class SlidePartConverter
     return true;
   }
   
-  public static DMPack.SlidePart? CreateModelElement(DXPack.SlidePart? openXmlElement)
+  public static DocumentModel.Packaging.SlidePart? CreateModelElement(DXPack.SlidePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.SlidePart();
+      var value = new DocumentModel.Packaging.SlidePart();
       value.ChartParts = GetChartParts(openXmlElement);
       value.commentParts = GetcommentParts(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);

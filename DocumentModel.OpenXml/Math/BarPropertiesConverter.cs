@@ -36,7 +36,10 @@ public static class BarPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.BarProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.BarProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -57,11 +60,11 @@ public static class BarPropertiesConverter
     }
   }
   
-  public static DMMath.BarProperties? CreateModelElement(DXMath.BarProperties? openXmlElement)
+  public static DocumentModel.Math.BarProperties? CreateModelElement(DXMath.BarProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BarProperties();
+      var value = new DocumentModel.Math.BarProperties();
       value.Position = GetPosition(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

@@ -63,7 +63,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.LayoutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Layout>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
+    if (element != null)
+      return DMXDrawsCharts.LayoutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLayout(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.Layout? value, DiffList? diffs, string? objName)
@@ -86,7 +89,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.ChartTextConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
+    if (element != null)
+      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartText(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.ChartText? value, DiffList? diffs, string? objName)
@@ -109,7 +115,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    if (element != null)
+      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingFormat(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
@@ -132,7 +141,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -155,7 +167,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    if (element != null)
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextProperties(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
@@ -391,7 +406,10 @@ public static class DataLabelConverter
   
   private static DMDrawsCharts.DLblExtensionList? GetDLblExtensionList(DXDrawCharts.DataLabel openXmlElement)
   {
-    return DMXDrawsCharts.DLblExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DLblExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DLblExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.DLblExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDLblExtensionList(DXDrawCharts.DataLabel openXmlElement, DMDrawsCharts.DLblExtensionList? value, DiffList? diffs, string? objName)
@@ -412,11 +430,11 @@ public static class DataLabelConverter
     }
   }
   
-  public static DMDrawsCharts.DataLabel? CreateModelElement(DXDrawCharts.DataLabel? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabel? CreateModelElement(DXDrawCharts.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DataLabel();
+      var value = new DocumentModel.Drawings.Charts.DataLabel();
       value.Index = GetIndex(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
       value.Layout = GetLayout(openXmlElement);

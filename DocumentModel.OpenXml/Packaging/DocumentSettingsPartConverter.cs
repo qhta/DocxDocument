@@ -20,7 +20,7 @@ public static class DocumentSettingsPartConverter
   /// <summary>
   /// Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DocumentSettingsPart openXmlElement)
+  private static Collection<DMPack.ImagePart>? GetImageParts(DXPack.DocumentSettingsPart openXmlElement)
   {
     var collection = new Collection<DMPack.ImagePart>();
     foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
@@ -52,31 +52,31 @@ public static class DocumentSettingsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMW.Settings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
+  private static DM.DocumentSettings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
   {
-      return DMXW.SettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
+      return DMX.DocumentSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
   }
   
-  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value, DiffList? diffs, string? objName)
+  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DM.DocumentSettings? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value)
+  private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DM.DocumentSettings? value)
   {
     if (value != null)
     {
-       var rootElement = DMXW.SettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
+       var rootElement = DMX.DocumentSettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
        if (rootElement != null)
          openXmlElement.Settings = rootElement;
     }
   }
   
-  public static DMPack.DocumentSettingsPart? CreateModelElement(DXPack.DocumentSettingsPart? openXmlElement)
+  public static DocumentModel.Packaging.DocumentSettingsPart? CreateModelElement(DXPack.DocumentSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.DocumentSettingsPart();
+      var value = new DocumentModel.Packaging.DocumentSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);

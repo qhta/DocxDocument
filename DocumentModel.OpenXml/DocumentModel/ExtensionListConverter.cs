@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DM.Extension> GetExtensions(DXO2021DocTasks.ExtensionList openXmlElement)
+  private static Collection<DM.Extension>? GetExtensions(DXO2021DocTasks.ExtensionList openXmlElement)
   {
     var collection = new Collection<DM.Extension>();
     foreach (var item in openXmlElement.Elements<DXO2021OExtLst.Extension>())
@@ -14,7 +14,9 @@ public static class ExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpExtensions(DXO2021DocTasks.ExtensionList openXmlElement, Collection<DM.Extension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ExtensionListConverter
     }
   }
   
-  public static DM.ExtensionList? CreateModelElement(DXO2021DocTasks.ExtensionList? openXmlElement)
+  public static DocumentModel.ExtensionList? CreateModelElement(DXO2021DocTasks.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ExtensionList();
+      var value = new DocumentModel.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

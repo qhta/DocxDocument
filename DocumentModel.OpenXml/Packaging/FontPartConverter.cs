@@ -17,11 +17,11 @@ public static class FontPartConverter
     return false;
   }
   
-  public static DMPack.FontPart? CreateModelElement(DXPack.FontPart? openXmlElement)
+  public static DocumentModel.Packaging.FontPart? CreateModelElement(DXPack.FontPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.FontPart();
+      var value = new DocumentModel.Packaging.FontPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }

@@ -166,11 +166,11 @@ public static class AddressConverter
       openXmlElement.IsoCountryCode = null;
   }
   
-  public static DMDrawsChartDraws.Address? CreateModelElement(DXO2016DrawChartDraw.Address? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Address? CreateModelElement(DXO2016DrawChartDraw.Address? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Address();
+      var value = new DocumentModel.Drawings.ChartDrawings.Address();
       value.Address1 = GetAddress1(openXmlElement);
       value.CountryRegion = GetCountryRegion(openXmlElement);
       value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);

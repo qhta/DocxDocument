@@ -10,7 +10,10 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   /// </summary>
   private static DMW.TableCellBorders? GetTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
-    return DMXW.TableCellBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellBorders>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellBorders>();
+    if (element != null)
+      return DMXW.TableCellBordersConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -93,7 +99,10 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   /// </summary>
   private static DMW.TableCellMargin? GetTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
-    return DMXW.TableCellMarginConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellMargin>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
+    if (element != null)
+      return DMXW.TableCellMarginConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
@@ -140,11 +149,11 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     }
   }
   
-  public static DMW.TableStyleConditionalFormattingTableCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalFormattingTableCellProperties();
+      var value = new DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties();
       value.TableCellBorders = GetTableCellBorders(openXmlElement);
       value.Shading = GetShading(openXmlElement);
       value.NoWrap = GetNoWrap(openXmlElement);

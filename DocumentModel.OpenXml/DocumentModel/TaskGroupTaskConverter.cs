@@ -534,11 +534,11 @@ public static class TaskGroupTaskConverter
       openXmlElement.GetKeytip = null;
   }
   
-  public static DM.TaskGroupTask? CreateModelElement(DXO2010CustUI.TaskGroupTask? openXmlElement)
+  public static DocumentModel.TaskGroupTask? CreateModelElement(DXO2010CustUI.TaskGroupTask? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskGroupTask();
+      var value = new DocumentModel.TaskGroupTask();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

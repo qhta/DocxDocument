@@ -73,7 +73,10 @@ public static class DeletedMathControlConverter
   
   private static DMW.RunProperties? GetRunProperties(DXW.DeletedMathControl openXmlElement)
   {
-    return DMXW.RunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.RunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.RunProperties>();
+    if (element != null)
+      return DMXW.RunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunProperties(DXW.DeletedMathControl openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
@@ -94,11 +97,11 @@ public static class DeletedMathControlConverter
     }
   }
   
-  public static DMW.DeletedMathControl? CreateModelElement(DXW.DeletedMathControl? openXmlElement)
+  public static DocumentModel.Wordprocessing.DeletedMathControl? CreateModelElement(DXW.DeletedMathControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DeletedMathControl();
+      var value = new DocumentModel.Wordprocessing.DeletedMathControl();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

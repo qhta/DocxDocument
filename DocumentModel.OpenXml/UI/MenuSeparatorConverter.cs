@@ -189,11 +189,11 @@ public static class MenuSeparatorConverter
       openXmlElement.GetTitle = null;
   }
   
-  public static DMUI.MenuSeparator? CreateModelElement(DXOCustUI.MenuSeparator? openXmlElement)
+  public static DocumentModel.UI.MenuSeparator? CreateModelElement(DXOCustUI.MenuSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.MenuSeparator();
+      var value = new DocumentModel.UI.MenuSeparator();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.InsertAfterMso = GetInsertAfterMso(openXmlElement);

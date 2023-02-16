@@ -7,7 +7,10 @@ public static class AdjustHandleListConverter
 {
   private static DMDraws.AdjustHandleXY? GetAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement)
   {
-    return DMXDraws.AdjustHandleXYConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>();
+    if (element != null)
+      return DMXDraws.AdjustHandleXYConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandleXY? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class AdjustHandleListConverter
   
   private static DMDraws.AdjustHandlePolar? GetAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement)
   {
-    return DMXDraws.AdjustHandlePolarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>();
+    if (element != null)
+      return DMXDraws.AdjustHandlePolarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandlePolar? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class AdjustHandleListConverter
     }
   }
   
-  public static DMDraws.AdjustHandleList? CreateModelElement(DXDraw.AdjustHandleList? openXmlElement)
+  public static DocumentModel.Drawings.AdjustHandleList? CreateModelElement(DXDraw.AdjustHandleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.AdjustHandleList();
+      var value = new DocumentModel.Drawings.AdjustHandleList();
       value.AdjustHandleXY = GetAdjustHandleXY(openXmlElement);
       value.AdjustHandlePolar = GetAdjustHandlePolar(openXmlElement);
       return value;

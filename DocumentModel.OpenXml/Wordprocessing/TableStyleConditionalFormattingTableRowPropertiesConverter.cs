@@ -95,7 +95,10 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
   
   private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
-    return DMXW.TableWidthTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.TableCellSpacing>());
+    var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
+    if (element != null)
+      return DMXW.TableWidthTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
@@ -139,11 +142,11 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     }
   }
   
-  public static DMW.TableStyleConditionalFormattingTableRowProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
+  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalFormattingTableRowProperties();
+      var value = new DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableRowProperties();
       value.Hidden = GetHidden(openXmlElement);
       value.CantSplit = GetCantSplit(openXmlElement);
       value.TableHeader = GetTableHeader(openXmlElement);

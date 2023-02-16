@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class ContextualTabSetsConverter
 {
-  private static Collection<DMUI.ContextualTabSet> GetItems(DXOCustUI.ContextualTabSets openXmlElement)
+  private static Collection<DMUI.ContextualTabSet>? GetItems(DXOCustUI.ContextualTabSets openXmlElement)
   {
     var collection = new Collection<DMUI.ContextualTabSet>();
     foreach (var item in openXmlElement.Elements<DXOCustUI.ContextualTabSet>())
@@ -14,7 +14,9 @@ public static class ContextualTabSetsConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpItems(DXOCustUI.ContextualTabSets openXmlElement, Collection<DMUI.ContextualTabSet>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ContextualTabSetsConverter
     }
   }
   
-  public static DMUI.ContextualTabSets? CreateModelElement(DXOCustUI.ContextualTabSets? openXmlElement)
+  public static DocumentModel.UI.ContextualTabSets? CreateModelElement(DXOCustUI.ContextualTabSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.ContextualTabSets();
+      var value = new DocumentModel.UI.ContextualTabSets();
       value.Items = GetItems(openXmlElement);
       return value;
     }

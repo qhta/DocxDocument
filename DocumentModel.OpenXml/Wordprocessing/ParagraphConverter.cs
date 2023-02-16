@@ -8,27 +8,27 @@ public static class ParagraphConverter
   /// <summary>
   /// Revision Identifier for Paragraph Glyph Formatting
   /// </summary>
-  private static UInt32? GetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphMarkRevision?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidParagraphMarkRevision.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidParagraphMarkRevision.Value);
     return null;
   }
   
-  private static bool CmpRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidParagraphMarkRevision?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidParagraphMarkRevision.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphMarkRevision.Value) == value)
         return true;
-    if (openXmlElement?.RsidParagraphMarkRevision?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphMarkRevision", openXmlElement?.RsidParagraphMarkRevision?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidParagraphMarkRevision?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidParagraphMarkRevision", openXmlElement?.RsidParagraphMarkRevision?.Value, value);
     return false;
   }
   
-  private static void SetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidParagraphMarkRevision = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidParagraphMarkRevision = value.ToString();
     else
       openXmlElement.RsidParagraphMarkRevision = null;
   }
@@ -36,27 +36,27 @@ public static class ParagraphConverter
   /// <summary>
   /// Revision Identifier for Paragraph
   /// </summary>
-  private static UInt32? GetRsidParagraphAddition(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetRsidParagraphAddition(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphAddition?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidParagraphAddition.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidParagraphAddition.Value);
     return null;
   }
   
-  private static bool CmpRsidParagraphAddition(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidParagraphAddition?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidParagraphAddition.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphAddition.Value) == value)
         return true;
-    if (openXmlElement?.RsidParagraphAddition?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphAddition", openXmlElement?.RsidParagraphAddition?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidParagraphAddition?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidParagraphAddition", openXmlElement?.RsidParagraphAddition?.Value, value);
     return false;
   }
   
-  private static void SetRsidParagraphAddition(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidParagraphAddition = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidParagraphAddition = value.ToString();
     else
       openXmlElement.RsidParagraphAddition = null;
   }
@@ -64,27 +64,27 @@ public static class ParagraphConverter
   /// <summary>
   /// Revision Identifier for Paragraph Deletion
   /// </summary>
-  private static UInt32? GetRsidParagraphDeletion(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetRsidParagraphDeletion(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphDeletion?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidParagraphDeletion.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidParagraphDeletion.Value);
     return null;
   }
   
-  private static bool CmpRsidParagraphDeletion(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidParagraphDeletion?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidParagraphDeletion.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphDeletion.Value) == value)
         return true;
-    if (openXmlElement?.RsidParagraphDeletion?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphDeletion", openXmlElement?.RsidParagraphDeletion?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidParagraphDeletion?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidParagraphDeletion", openXmlElement?.RsidParagraphDeletion?.Value, value);
     return false;
   }
   
-  private static void SetRsidParagraphDeletion(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidParagraphDeletion = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidParagraphDeletion = value.ToString();
     else
       openXmlElement.RsidParagraphDeletion = null;
   }
@@ -92,27 +92,27 @@ public static class ParagraphConverter
   /// <summary>
   /// Revision Identifier for Paragraph Properties
   /// </summary>
-  private static UInt32? GetRsidParagraphProperties(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetRsidParagraphProperties(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphProperties?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidParagraphProperties.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidParagraphProperties.Value);
     return null;
   }
   
-  private static bool CmpRsidParagraphProperties(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidParagraphProperties?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidParagraphProperties.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphProperties.Value) == value)
         return true;
-    if (openXmlElement?.RsidParagraphProperties?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphProperties", openXmlElement?.RsidParagraphProperties?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidParagraphProperties?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidParagraphProperties", openXmlElement?.RsidParagraphProperties?.Value, value);
     return false;
   }
   
-  private static void SetRsidParagraphProperties(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidParagraphProperties = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidParagraphProperties = value.ToString();
     else
       openXmlElement.RsidParagraphProperties = null;
   }
@@ -120,27 +120,27 @@ public static class ParagraphConverter
   /// <summary>
   /// Default Revision Identifier for Runs
   /// </summary>
-  private static UInt32? GetRsidRunAdditionDefault(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetRsidRunAdditionDefault(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidRunAdditionDefault?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRunAdditionDefault.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.RsidRunAdditionDefault.Value);
     return null;
   }
   
-  private static bool CmpRsidRunAdditionDefault(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RsidRunAdditionDefault?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidRunAdditionDefault.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.RsidRunAdditionDefault.Value) == value)
         return true;
-    if (openXmlElement?.RsidRunAdditionDefault?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunAdditionDefault", openXmlElement?.RsidRunAdditionDefault?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.RsidRunAdditionDefault?.Value == null && value == null) return true;
+    diffs?.Add(objName, "RsidRunAdditionDefault", openXmlElement?.RsidRunAdditionDefault?.Value, value);
     return false;
   }
   
-  private static void SetRsidRunAdditionDefault(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.RsidRunAdditionDefault = ((UInt32)value).ToString("X8");
+      openXmlElement.RsidRunAdditionDefault = value.ToString();
     else
       openXmlElement.RsidRunAdditionDefault = null;
   }
@@ -148,27 +148,27 @@ public static class ParagraphConverter
   /// <summary>
   /// paraId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetParagraphId(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetParagraphId(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.ParagraphId?.Value != null)
-      return UInt32.Parse(openXmlElement.ParagraphId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.ParagraphId.Value);
     return null;
   }
   
-  private static bool CmpParagraphId(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ParagraphId?.Value != null)
-      if (UInt32.Parse(openXmlElement.ParagraphId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.ParagraphId.Value) == value)
         return true;
-    if (openXmlElement?.ParagraphId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParagraphId", openXmlElement?.ParagraphId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.ParagraphId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "ParagraphId", openXmlElement?.ParagraphId?.Value, value);
     return false;
   }
   
-  private static void SetParagraphId(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.ParagraphId = ((UInt32)value).ToString("X8");
+      openXmlElement.ParagraphId = value.ToString();
     else
       openXmlElement.ParagraphId = null;
   }
@@ -176,27 +176,27 @@ public static class ParagraphConverter
   /// <summary>
   /// textId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetTextId(DXW.Paragraph openXmlElement)
+  private static DM.HexInt? GetTextId(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.TextId?.Value != null)
-      return UInt32.Parse(openXmlElement.TextId.Value, NumberStyles.HexNumber);
+      return HexIntConverter.GetValue(openXmlElement.TextId.Value);
     return null;
   }
   
-  private static bool CmpTextId(DXW.Paragraph openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpTextId(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.TextId?.Value != null)
-      if (UInt32.Parse(openXmlElement.TextId.Value, NumberStyles.HexNumber) == value)
+      if (HexIntConverter.GetValue(openXmlElement.TextId.Value) == value)
         return true;
-    if (openXmlElement?.TextId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "TextId", openXmlElement?.TextId?.Value, value?.ToString("x8"));
+    if (openXmlElement == null && openXmlElement?.TextId?.Value == null && value == null) return true;
+    diffs?.Add(objName, "TextId", openXmlElement?.TextId?.Value, value);
     return false;
   }
   
-  private static void SetTextId(DXW.Paragraph openXmlElement, UInt32? value)
+  private static void SetTextId(DXW.Paragraph openXmlElement, DM.HexInt? value)
   {
     if (value != null)
-      openXmlElement.TextId = ((UInt32)value).ToString("X8");
+      openXmlElement.TextId = value.ToString();
     else
       openXmlElement.TextId = null;
   }
@@ -229,7 +229,10 @@ public static class ParagraphConverter
   /// </summary>
   private static DMW.ParagraphProperties? GetParagraphProperties(DXW.Paragraph openXmlElement)
   {
-    return DMXW.ParagraphPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.ParagraphProperties>();
+    if (element != null)
+      return DMXW.ParagraphPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphProperties(DXW.Paragraph openXmlElement, DMW.ParagraphProperties? value, DiffList? diffs, string? objName)
@@ -252,7 +255,10 @@ public static class ParagraphConverter
   
   private static DMW.CustomXmlRun? GetCustomXmlRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.CustomXmlRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlRun>();
+    if (element != null)
+      return DMXW.CustomXmlRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlRun(DXW.Paragraph openXmlElement, DMW.CustomXmlRun? value, DiffList? diffs, string? objName)
@@ -273,7 +279,7 @@ public static class ParagraphConverter
     }
   }
   
-  private static Collection<DMW.SimpleField> GetSimpleFields(DXW.Paragraph openXmlElement)
+  private static Collection<DMW.SimpleField>? GetSimpleFields(DXW.Paragraph openXmlElement)
   {
     var collection = new Collection<DMW.SimpleField>();
     foreach (var item in openXmlElement.Elements<DXW.SimpleField>())
@@ -282,7 +288,9 @@ public static class ParagraphConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSimpleFields(DXW.Paragraph openXmlElement, Collection<DMW.SimpleField>? value, DiffList? diffs, string? objName)
@@ -329,7 +337,10 @@ public static class ParagraphConverter
   
   private static DMW.Hyperlink? GetHyperlink(DXW.Paragraph openXmlElement)
   {
-    return DMXW.HyperlinkConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Hyperlink>());
+    var element = openXmlElement?.GetFirstChild<DXW.Hyperlink>();
+    if (element != null)
+      return DMXW.HyperlinkConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlink(DXW.Paragraph openXmlElement, DMW.Hyperlink? value, DiffList? diffs, string? objName)
@@ -352,7 +363,10 @@ public static class ParagraphConverter
   
   private static DMW.SdtRun? GetSdtRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.SdtRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SdtRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.SdtRun>();
+    if (element != null)
+      return DMXW.SdtRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSdtRun(DXW.Paragraph openXmlElement, DMW.SdtRun? value, DiffList? diffs, string? objName)
@@ -375,7 +389,10 @@ public static class ParagraphConverter
   
   private static DMW.ProofError? GetProofError(DXW.Paragraph openXmlElement)
   {
-    return DMXW.ProofErrorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ProofError>());
+    var element = openXmlElement?.GetFirstChild<DXW.ProofError>();
+    if (element != null)
+      return DMXW.ProofErrorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpProofError(DXW.Paragraph openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
@@ -398,7 +415,10 @@ public static class ParagraphConverter
   
   private static DMW.PermStart? GetPermStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.PermStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermStart>();
+    if (element != null)
+      return DMXW.PermStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermStart(DXW.Paragraph openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
@@ -421,7 +441,10 @@ public static class ParagraphConverter
   
   private static DMW.PermEnd? GetPermEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.PermEndConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.PermEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.PermEnd>();
+    if (element != null)
+      return DMXW.PermEndConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPermEnd(DXW.Paragraph openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
@@ -444,7 +467,10 @@ public static class ParagraphConverter
   
   private static DMW.BookmarkStart? GetBookmarkStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.BookmarkStartConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
+    if (element != null)
+      return DMXW.BookmarkStartConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkStart(DXW.Paragraph openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
@@ -467,7 +493,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BookmarkEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBookmarkEnd(DXW.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -490,7 +519,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeStart(DXW.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -513,7 +545,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCommentRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -536,7 +571,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeStart(DXW.Paragraph openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -559,7 +597,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -582,7 +623,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MoveBookmarkTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
+    if (element != null)
+      return DMXW.MoveBookmarkTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeStart(DXW.Paragraph openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
@@ -605,7 +649,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupRangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
@@ -628,7 +675,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -651,7 +701,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -674,7 +727,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -697,7 +753,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -720,7 +779,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -743,7 +805,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -766,7 +831,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
@@ -789,7 +857,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
@@ -812,7 +883,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -835,7 +909,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -858,7 +935,10 @@ public static class ParagraphConverter
   
   private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.Paragraph openXmlElement)
   {
-    return DMXW.TrackChangeType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    if (element != null)
+      return DMXW.TrackChangeType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.Paragraph openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
@@ -881,7 +961,10 @@ public static class ParagraphConverter
   
   private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MarkupType2Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    if (element != null)
+      return DMXW.MarkupType2Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.Paragraph openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
@@ -904,7 +987,10 @@ public static class ParagraphConverter
   
   private static DMW.InsertedRun? GetInsertedRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.InsertedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.InsertedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.InsertedRun>();
+    if (element != null)
+      return DMXW.InsertedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpInsertedRun(DXW.Paragraph openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
@@ -927,7 +1013,10 @@ public static class ParagraphConverter
   
   private static DMW.DeletedRun? GetDeletedRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.DeletedRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DeletedRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.DeletedRun>();
+    if (element != null)
+      return DMXW.DeletedRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDeletedRun(DXW.Paragraph openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
@@ -950,7 +1039,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveFromRun? GetMoveFromRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MoveFromRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveFromRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveFromRun>();
+    if (element != null)
+      return DMXW.MoveFromRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveFromRun(DXW.Paragraph openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
@@ -973,7 +1065,10 @@ public static class ParagraphConverter
   
   private static DMW.MoveToRun? GetMoveToRun(DXW.Paragraph openXmlElement)
   {
-    return DMXW.MoveToRunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.MoveToRun>());
+    var element = openXmlElement?.GetFirstChild<DXW.MoveToRun>();
+    if (element != null)
+      return DMXW.MoveToRunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMoveToRun(DXW.Paragraph openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
@@ -996,7 +1091,10 @@ public static class ParagraphConverter
   
   private static DMW.RunConflictInsertion? GetRunConflictInsertion(DXW.Paragraph openXmlElement)
   {
-    return DMXW.RunConflictInsertionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictInsertion>();
+    if (element != null)
+      return DMXW.RunConflictInsertionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictInsertion(DXW.Paragraph openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
@@ -1019,7 +1117,10 @@ public static class ParagraphConverter
   
   private static DMW.RunConflictDeletion? GetRunConflictDeletion(DXW.Paragraph openXmlElement)
   {
-    return DMXW.RunConflictDeletionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>());
+    var element = openXmlElement?.GetFirstChild<DXO2010W.RunConflictDeletion>();
+    if (element != null)
+      return DMXW.RunConflictDeletionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRunConflictDeletion(DXW.Paragraph openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
@@ -1042,7 +1143,10 @@ public static class ParagraphConverter
   
   private static DMMath.Paragraph? GetChildParagraph(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Paragraph>();
+    if (element != null)
+      return DMXMath.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChildParagraph(DXW.Paragraph openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
@@ -1065,7 +1169,10 @@ public static class ParagraphConverter
   
   private static DMMath.OfficeMath? GetOfficeMath(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.OfficeMathConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.OfficeMath>());
+    var element = openXmlElement?.GetFirstChild<DXMath.OfficeMath>();
+    if (element != null)
+      return DMXMath.OfficeMathConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeMath(DXW.Paragraph openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
@@ -1088,7 +1195,10 @@ public static class ParagraphConverter
   
   private static DMMath.Accent? GetAccent(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.AccentConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Accent>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Accent>();
+    if (element != null)
+      return DMXMath.AccentConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAccent(DXW.Paragraph openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
@@ -1111,7 +1221,10 @@ public static class ParagraphConverter
   
   private static DMMath.Bar? GetBar(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.BarConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Bar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Bar>();
+    if (element != null)
+      return DMXMath.BarConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBar(DXW.Paragraph openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
@@ -1134,7 +1247,10 @@ public static class ParagraphConverter
   
   private static DMMath.Box? GetBox(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.BoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Box>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Box>();
+    if (element != null)
+      return DMXMath.BoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBox(DXW.Paragraph openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
@@ -1157,7 +1273,10 @@ public static class ParagraphConverter
   
   private static DMMath.BorderBox? GetBorderBox(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.BorderBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.BorderBox>());
+    var element = openXmlElement?.GetFirstChild<DXMath.BorderBox>();
+    if (element != null)
+      return DMXMath.BorderBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBorderBox(DXW.Paragraph openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
@@ -1180,7 +1299,10 @@ public static class ParagraphConverter
   
   private static DMMath.Delimiter? GetDelimiter(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.DelimiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Delimiter>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Delimiter>();
+    if (element != null)
+      return DMXMath.DelimiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDelimiter(DXW.Paragraph openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
@@ -1203,7 +1325,10 @@ public static class ParagraphConverter
   
   private static DMMath.EquationArray? GetEquationArray(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.EquationArrayConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.EquationArray>());
+    var element = openXmlElement?.GetFirstChild<DXMath.EquationArray>();
+    if (element != null)
+      return DMXMath.EquationArrayConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpEquationArray(DXW.Paragraph openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
@@ -1226,7 +1351,10 @@ public static class ParagraphConverter
   
   private static DMMath.Fraction? GetFraction(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.FractionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Fraction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Fraction>();
+    if (element != null)
+      return DMXMath.FractionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFraction(DXW.Paragraph openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
@@ -1249,7 +1377,10 @@ public static class ParagraphConverter
   
   private static DMMath.MathFunction? GetMathFunction(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.MathFunctionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.MathFunction>());
+    var element = openXmlElement?.GetFirstChild<DXMath.MathFunction>();
+    if (element != null)
+      return DMXMath.MathFunctionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMathFunction(DXW.Paragraph openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
@@ -1272,7 +1403,10 @@ public static class ParagraphConverter
   
   private static DMMath.GroupChar? GetGroupChar(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.GroupCharConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupChar>());
+    var element = openXmlElement?.GetFirstChild<DXMath.GroupChar>();
+    if (element != null)
+      return DMXMath.GroupCharConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupChar(DXW.Paragraph openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
@@ -1295,7 +1429,10 @@ public static class ParagraphConverter
   
   private static DMMath.LimitLower? GetLimitLower(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.LimitLowerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitLower>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitLower>();
+    if (element != null)
+      return DMXMath.LimitLowerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitLower(DXW.Paragraph openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
@@ -1318,7 +1455,10 @@ public static class ParagraphConverter
   
   private static DMMath.LimitUpper? GetLimitUpper(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.LimitUpperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.LimitUpper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.LimitUpper>();
+    if (element != null)
+      return DMXMath.LimitUpperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLimitUpper(DXW.Paragraph openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
@@ -1341,7 +1481,10 @@ public static class ParagraphConverter
   
   private static DMMath.Matrix? GetMatrix(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.MatrixConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Matrix>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Matrix>();
+    if (element != null)
+      return DMXMath.MatrixConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMatrix(DXW.Paragraph openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
@@ -1364,7 +1507,10 @@ public static class ParagraphConverter
   
   private static DMMath.Nary? GetNary(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.NaryConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Nary>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Nary>();
+    if (element != null)
+      return DMXMath.NaryConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNary(DXW.Paragraph openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
@@ -1387,7 +1533,10 @@ public static class ParagraphConverter
   
   private static DMMath.Phantom? GetPhantom(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.PhantomConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Phantom>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Phantom>();
+    if (element != null)
+      return DMXMath.PhantomConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPhantom(DXW.Paragraph openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
@@ -1410,7 +1559,10 @@ public static class ParagraphConverter
   
   private static DMMath.Radical? GetRadical(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.RadicalConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Radical>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Radical>();
+    if (element != null)
+      return DMXMath.RadicalConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadical(DXW.Paragraph openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
@@ -1433,7 +1585,10 @@ public static class ParagraphConverter
   
   private static DMMath.PreSubSuper? GetPreSubSuper(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.PreSubSuperConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.PreSubSuper>());
+    var element = openXmlElement?.GetFirstChild<DXMath.PreSubSuper>();
+    if (element != null)
+      return DMXMath.PreSubSuperConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPreSubSuper(DXW.Paragraph openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
@@ -1456,7 +1611,10 @@ public static class ParagraphConverter
   
   private static DMMath.Subscript? GetSubscript(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.SubscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Subscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Subscript>();
+    if (element != null)
+      return DMXMath.SubscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubscript(DXW.Paragraph openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
@@ -1479,7 +1637,10 @@ public static class ParagraphConverter
   
   private static DMMath.SubSuperscript? GetSubSuperscript(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.SubSuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.SubSuperscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.SubSuperscript>();
+    if (element != null)
+      return DMXMath.SubSuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubSuperscript(DXW.Paragraph openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
@@ -1502,7 +1663,10 @@ public static class ParagraphConverter
   
   private static DMMath.Superscript? GetSuperscript(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.SuperscriptConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Superscript>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Superscript>();
+    if (element != null)
+      return DMXMath.SuperscriptConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSuperscript(DXW.Paragraph openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
@@ -1525,7 +1689,10 @@ public static class ParagraphConverter
   
   private static DMMath.Run? GetRun(DXW.Paragraph openXmlElement)
   {
-    return DMXMath.RunConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Run>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Run>();
+    if (element != null)
+      return DMXMath.RunConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRun(DXW.Paragraph openXmlElement, DMMath.Run? value, DiffList? diffs, string? objName)
@@ -1548,7 +1715,10 @@ public static class ParagraphConverter
   
   private static DMW.BidirectionalOverride? GetBidirectionalOverride(DXW.Paragraph openXmlElement)
   {
-    return DMXW.BidirectionalOverrideConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalOverride>();
+    if (element != null)
+      return DMXW.BidirectionalOverrideConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBidirectionalOverride(DXW.Paragraph openXmlElement, DMW.BidirectionalOverride? value, DiffList? diffs, string? objName)
@@ -1571,7 +1741,10 @@ public static class ParagraphConverter
   
   private static DMW.BidirectionalEmbedding? GetBidirectionalEmbedding(DXW.Paragraph openXmlElement)
   {
-    return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>());
+    var element = openXmlElement?.GetFirstChild<DXW.BidirectionalEmbedding>();
+    if (element != null)
+      return DMXW.BidirectionalEmbeddingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBidirectionalEmbedding(DXW.Paragraph openXmlElement, DMW.BidirectionalEmbedding? value, DiffList? diffs, string? objName)
@@ -1594,7 +1767,10 @@ public static class ParagraphConverter
   
   private static DMW.RelationshipType? GetSubDocumentReference(DXW.Paragraph openXmlElement)
   {
-    return DMXW.RelationshipTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SubDocumentReference>());
+    var element = openXmlElement?.GetFirstChild<DXW.SubDocumentReference>();
+    if (element != null)
+      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSubDocumentReference(DXW.Paragraph openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
@@ -1615,11 +1791,11 @@ public static class ParagraphConverter
     }
   }
   
-  public static DMW.Paragraph? CreateModelElement(DXW.Paragraph? openXmlElement)
+  public static DocumentModel.Wordprocessing.Paragraph? CreateModelElement(DXW.Paragraph? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Paragraph();
+      var value = new DocumentModel.Wordprocessing.Paragraph();
       value.RsidParagraphMarkRevision = GetRsidParagraphMarkRevision(openXmlElement);
       value.RsidParagraphAddition = GetRsidParagraphAddition(openXmlElement);
       value.RsidParagraphDeletion = GetRsidParagraphDeletion(openXmlElement);

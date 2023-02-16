@@ -375,7 +375,10 @@ public static class UnsizedSplitButtonConverter
   
   private static DMUI.VisibleButton? GetVisibleButton(DXOCustUI.UnsizedSplitButton openXmlElement)
   {
-    return DMXUI.VisibleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VisibleButton>();
+    if (element != null)
+      return DMXUI.VisibleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
@@ -398,7 +401,10 @@ public static class UnsizedSplitButtonConverter
   
   private static DMUI.VisibleToggleButton? GetVisibleToggleButton(DXOCustUI.UnsizedSplitButton openXmlElement)
   {
-    return DMXUI.VisibleToggleButtonConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.VisibleToggleButton>();
+    if (element != null)
+      return DMXUI.VisibleToggleButtonConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpVisibleToggleButton(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
@@ -421,7 +427,10 @@ public static class UnsizedSplitButtonConverter
   
   private static DMUI.UnsizedMenu? GetUnsizedMenu(DXOCustUI.UnsizedSplitButton openXmlElement)
   {
-    return DMXUI.UnsizedMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>());
+    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>();
+    if (element != null)
+      return DMXUI.UnsizedMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpUnsizedMenu(DXOCustUI.UnsizedSplitButton openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
@@ -442,11 +451,11 @@ public static class UnsizedSplitButtonConverter
     }
   }
   
-  public static DMUI.UnsizedSplitButton? CreateModelElement(DXOCustUI.UnsizedSplitButton? openXmlElement)
+  public static DocumentModel.UI.UnsizedSplitButton? CreateModelElement(DXOCustUI.UnsizedSplitButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.UnsizedSplitButton();
+      var value = new DocumentModel.UI.UnsizedSplitButton();
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
       value.Id = GetId(openXmlElement);

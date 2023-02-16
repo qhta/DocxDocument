@@ -29,11 +29,11 @@ public static class TimeLinePartConverter
     return false;
   }
   
-  public static DMPack.TimeLinePart? CreateModelElement(DXPack.TimeLinePart? openXmlElement)
+  public static DocumentModel.Packaging.TimeLinePart? CreateModelElement(DXPack.TimeLinePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.TimeLinePart();
+      var value = new DocumentModel.Packaging.TimeLinePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

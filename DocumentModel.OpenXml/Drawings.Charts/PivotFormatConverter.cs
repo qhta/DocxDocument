@@ -38,7 +38,10 @@ public static class PivotFormatConverter
   /// </summary>
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.PivotFormat openXmlElement)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -64,7 +67,10 @@ public static class PivotFormatConverter
   /// </summary>
   private static DMDrawsCharts.Marker? GetMarker(DXDrawCharts.PivotFormat openXmlElement)
   {
-    return DMXDrawsCharts.MarkerConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Marker>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Marker>();
+    if (element != null)
+      return DMXDrawsCharts.MarkerConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMarker(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
@@ -90,7 +96,10 @@ public static class PivotFormatConverter
   /// </summary>
   private static DMDrawsCharts.DataLabel? GetDataLabel(DXDrawCharts.PivotFormat openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabel>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabel>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabel(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.DataLabel? value, DiffList? diffs, string? objName)
@@ -116,7 +125,10 @@ public static class PivotFormatConverter
   /// </summary>
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.PivotFormat openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -137,11 +149,11 @@ public static class PivotFormatConverter
     }
   }
   
-  public static DMDrawsCharts.PivotFormat? CreateModelElement(DXDrawCharts.PivotFormat? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PivotFormat? CreateModelElement(DXDrawCharts.PivotFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.PivotFormat();
+      var value = new DocumentModel.Drawings.Charts.PivotFormat();
       value.Index = GetIndex(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.Marker = GetMarker(openXmlElement);

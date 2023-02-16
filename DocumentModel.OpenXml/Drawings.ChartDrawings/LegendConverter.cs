@@ -69,7 +69,10 @@ public static class LegendConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -95,7 +98,10 @@ public static class LegendConverter
   /// </summary>
   private static DMDrawsChartDraws.TxPrTextBody? GetTxPrTextBody(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
+    if (element != null)
+      return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTxPrTextBody(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.TxPrTextBody? value, DiffList? diffs, string? objName)
@@ -121,7 +127,10 @@ public static class LegendConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -142,11 +151,11 @@ public static class LegendConverter
     }
   }
   
-  public static DMDrawsChartDraws.Legend? CreateModelElement(DXO2016DrawChartDraw.Legend? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Legend? CreateModelElement(DXO2016DrawChartDraw.Legend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.Legend();
+      var value = new DocumentModel.Drawings.ChartDrawings.Legend();
       value.Pos = GetPos(openXmlElement);
       value.Align = GetAlign(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);

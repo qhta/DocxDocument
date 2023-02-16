@@ -690,11 +690,11 @@ public static class QuickAccessToolbarControlCloneConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DMUI.QuickAccessToolbarControlClone? CreateModelElement(DXOCustUI.QuickAccessToolbarControlClone? openXmlElement)
+  public static DocumentModel.UI.QuickAccessToolbarControlClone? CreateModelElement(DXOCustUI.QuickAccessToolbarControlClone? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMUI.QuickAccessToolbarControlClone();
+      var value = new DocumentModel.UI.QuickAccessToolbarControlClone();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);

@@ -563,11 +563,11 @@ public static class StrokeChildTypeConverter
       openXmlElement.ForceDash = null;
   }
   
-  public static DMVml.StrokeChildType? CreateModelElement(DXVmlO.StrokeChildType? openXmlElement)
+  public static DocumentModel.Vml.StrokeChildType? CreateModelElement(DXVmlO.StrokeChildType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.StrokeChildType();
+      var value = new DocumentModel.Vml.StrokeChildType();
       value.Extension = GetExtension(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Weight = GetWeight(openXmlElement);

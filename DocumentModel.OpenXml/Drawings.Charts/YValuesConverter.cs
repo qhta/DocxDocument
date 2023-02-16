@@ -7,7 +7,10 @@ public static class YValuesConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.YValues openXmlElement)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    if (element != null)
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberReference(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class YValuesConverter
   
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.YValues openXmlElement)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberLiteral(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class YValuesConverter
     }
   }
   
-  public static DMDrawsCharts.YValues? CreateModelElement(DXDrawCharts.YValues? openXmlElement)
+  public static DocumentModel.Drawings.Charts.YValues? CreateModelElement(DXDrawCharts.YValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.YValues();
+      var value = new DocumentModel.Drawings.Charts.YValues();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

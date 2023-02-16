@@ -160,11 +160,11 @@ public static class ProtectionConverter
     }
   }
   
-  public static DMDrawsCharts.Protection? CreateModelElement(DXDrawCharts.Protection? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Protection? CreateModelElement(DXDrawCharts.Protection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Protection();
+      var value = new DocumentModel.Drawings.Charts.Protection();
       value.ChartObject = GetChartObject(openXmlElement);
       value.Data = GetData(openXmlElement);
       value.Formatting = GetFormatting(openXmlElement);

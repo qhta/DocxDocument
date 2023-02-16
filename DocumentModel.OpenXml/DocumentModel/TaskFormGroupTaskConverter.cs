@@ -488,7 +488,7 @@ public static class TaskFormGroupTaskConverter
       openXmlElement.GetKeytip = null;
   }
   
-  private static Collection<DM.BackstageGroup> GetBackstageGroups(DXO2010CustUI.TaskFormGroupTask openXmlElement)
+  private static Collection<DM.BackstageGroup>? GetBackstageGroups(DXO2010CustUI.TaskFormGroupTask openXmlElement)
   {
     var collection = new Collection<DM.BackstageGroup>();
     foreach (var item in openXmlElement.Elements<DXO2010CustUI.BackstageGroup>())
@@ -497,7 +497,9 @@ public static class TaskFormGroupTaskConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBackstageGroups(DXO2010CustUI.TaskFormGroupTask openXmlElement, Collection<DM.BackstageGroup>? value, DiffList? diffs, string? objName)
@@ -542,11 +544,11 @@ public static class TaskFormGroupTaskConverter
     }
   }
   
-  public static DM.TaskFormGroupTask? CreateModelElement(DXO2010CustUI.TaskFormGroupTask? openXmlElement)
+  public static DocumentModel.TaskFormGroupTask? CreateModelElement(DXO2010CustUI.TaskFormGroupTask? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.TaskFormGroupTask();
+      var value = new DocumentModel.TaskFormGroupTask();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

@@ -97,7 +97,10 @@ public static class DocumentBackgroundConverter
   /// </summary>
   private static DMVml.Background? GetBackground(DXW.DocumentBackground openXmlElement)
   {
-    return DMXVml.BackgroundConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Background>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Background>();
+    if (element != null)
+      return DMXVml.BackgroundConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value, DiffList? diffs, string? objName)
@@ -118,11 +121,11 @@ public static class DocumentBackgroundConverter
     }
   }
   
-  public static DMW.DocumentBackground? CreateModelElement(DXW.DocumentBackground? openXmlElement)
+  public static DocumentModel.Wordprocessing.DocumentBackground? CreateModelElement(DXW.DocumentBackground? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DocumentBackground();
+      var value = new DocumentModel.Wordprocessing.DocumentBackground();
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);

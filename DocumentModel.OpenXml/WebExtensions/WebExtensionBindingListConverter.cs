@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.WebExtensions;
 /// </summary>
 public static class WebExtensionBindingListConverter
 {
-  private static Collection<DMWebExt.WebExtensionBinding> GetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement)
+  private static Collection<DMWebExt.WebExtensionBinding>? GetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement)
   {
     var collection = new Collection<DMWebExt.WebExtensionBinding>();
     foreach (var item in openXmlElement.Elements<DXO2013WebExt.WebExtensionBinding>())
@@ -14,7 +14,9 @@ public static class WebExtensionBindingListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class WebExtensionBindingListConverter
     }
   }
   
-  public static DMWebExt.WebExtensionBindingList? CreateModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionBindingList? CreateModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExt.WebExtensionBindingList();
+      var value = new DocumentModel.WebExtensions.WebExtensionBindingList();
       value.WebExtensionBindings = GetWebExtensionBindings(openXmlElement);
       return value;
     }

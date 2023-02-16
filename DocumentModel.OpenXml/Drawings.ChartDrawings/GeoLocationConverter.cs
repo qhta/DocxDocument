@@ -91,7 +91,10 @@ public static class GeoLocationConverter
   /// </summary>
   private static DMDrawsChartDraws.Address? GetAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
-    return DMXDrawsChartDraws.AddressConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Address>();
+    if (element != null)
+      return DMXDrawsChartDraws.AddressConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAddress(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.Address? value, DiffList? diffs, string? objName)
@@ -112,11 +115,11 @@ public static class GeoLocationConverter
     }
   }
   
-  public static DMDrawsChartDraws.GeoLocation? CreateModelElement(DXO2016DrawChartDraw.GeoLocation? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? CreateModelElement(DXO2016DrawChartDraw.GeoLocation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.GeoLocation();
+      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocation();
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
       value.EntityName = GetEntityName(openXmlElement);

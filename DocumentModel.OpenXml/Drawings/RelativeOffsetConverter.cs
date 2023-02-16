@@ -45,11 +45,11 @@ public static class RelativeOffsetConverter
     openXmlElement.OffsetY = value;
   }
   
-  public static DMDraws.RelativeOffset? CreateModelElement(DXDraw.RelativeOffset? openXmlElement)
+  public static DocumentModel.Drawings.RelativeOffset? CreateModelElement(DXDraw.RelativeOffset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.RelativeOffset();
+      var value = new DocumentModel.Drawings.RelativeOffset();
       value.OffsetX = GetOffsetX(openXmlElement);
       value.OffsetY = GetOffsetY(openXmlElement);
       return value;

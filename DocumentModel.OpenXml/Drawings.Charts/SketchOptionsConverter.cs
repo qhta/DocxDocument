@@ -67,11 +67,11 @@ public static class SketchOptionsConverter
     }
   }
   
-  public static DMDrawsCharts.SketchOptions? CreateModelElement(DXO2010DrawCharts.SketchOptions? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SketchOptions? CreateModelElement(DXO2010DrawCharts.SketchOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.SketchOptions();
+      var value = new DocumentModel.Drawings.Charts.SketchOptions();
       value.InSketchMode = GetInSketchMode(openXmlElement);
       value.ShowSketchButton = GetShowSketchButton(openXmlElement);
       return value;

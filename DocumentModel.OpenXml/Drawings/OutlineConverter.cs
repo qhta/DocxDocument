@@ -35,7 +35,10 @@ public static class OutlineConverter
   
   private static DMDraws.SolidFill? GetSolidFill(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.SolidFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SolidFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    if (element != null)
+      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSolidFill(DXDraw.Outline openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
@@ -58,7 +61,10 @@ public static class OutlineConverter
   
   private static DMDraws.GradientFill? GetGradientFill(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.GradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    if (element != null)
+      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientFill(DXDraw.Outline openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
@@ -81,7 +87,10 @@ public static class OutlineConverter
   
   private static DMDraws.PatternFill? GetPatternFill(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.PatternFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PatternFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    if (element != null)
+      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPatternFill(DXDraw.Outline openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
@@ -127,7 +136,10 @@ public static class OutlineConverter
   
   private static DMDraws.CustomDash? GetCustomDash(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.CustomDashConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.CustomDash>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.CustomDash>();
+    if (element != null)
+      return DMXDraws.CustomDashConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCustomDash(DXDraw.Outline openXmlElement, DMDraws.CustomDash? value, DiffList? diffs, string? objName)
@@ -206,7 +218,10 @@ public static class OutlineConverter
   
   private static DMDraws.Miter? GetMiter(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.MiterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Miter>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Miter>();
+    if (element != null)
+      return DMXDraws.MiterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpMiter(DXDraw.Outline openXmlElement, DMDraws.Miter? value, DiffList? diffs, string? objName)
@@ -229,7 +244,10 @@ public static class OutlineConverter
   
   private static DMDraws.LineEndPropertiesType? GetHeadEnd(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HeadEnd>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HeadEnd>();
+    if (element != null)
+      return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHeadEnd(DXDraw.Outline openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
@@ -252,7 +270,10 @@ public static class OutlineConverter
   
   private static DMDraws.LineEndPropertiesType? GetTailEnd(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TailEnd>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TailEnd>();
+    if (element != null)
+      return DMXDraws.LineEndPropertiesTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTailEnd(DXDraw.Outline openXmlElement, DMDraws.LineEndPropertiesType? value, DiffList? diffs, string? objName)
@@ -275,7 +296,10 @@ public static class OutlineConverter
   
   private static DMDraws.LinePropertiesExtensionList? GetLinePropertiesExtensionList(DXDraw.Outline openXmlElement)
   {
-    return DMXDraws.LinePropertiesExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LinePropertiesExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LinePropertiesExtensionList>();
+    if (element != null)
+      return DMXDraws.LinePropertiesExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLinePropertiesExtensionList(DXDraw.Outline openXmlElement, DMDraws.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
@@ -296,11 +320,11 @@ public static class OutlineConverter
     }
   }
   
-  public static DMDraws.Outline? CreateModelElement(DXDraw.Outline? openXmlElement)
+  public static DocumentModel.Drawings.Outline? CreateModelElement(DXDraw.Outline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Outline();
+      var value = new DocumentModel.Drawings.Outline();
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);
       value.GradientFill = GetGradientFill(openXmlElement);

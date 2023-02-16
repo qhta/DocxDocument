@@ -65,11 +65,11 @@ public static class RotationConverter
     openXmlElement.Revolution = value;
   }
   
-  public static DMDraws.Rotation? CreateModelElement(DXDraw.Rotation? openXmlElement)
+  public static DocumentModel.Drawings.Rotation? CreateModelElement(DXDraw.Rotation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Rotation();
+      var value = new DocumentModel.Drawings.Rotation();
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
       value.Revolution = GetRevolution(openXmlElement);

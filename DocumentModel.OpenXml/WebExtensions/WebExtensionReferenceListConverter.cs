@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.WebExtensions;
 /// </summary>
 public static class WebExtensionReferenceListConverter
 {
-  private static Collection<DMWebExt.WebExtensionStoreReference> GetWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement)
+  private static Collection<DMWebExt.WebExtensionStoreReference>? GetWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement)
   {
     var collection = new Collection<DMWebExt.WebExtensionStoreReference>();
     foreach (var item in openXmlElement.Elements<DXO2013WebExt.WebExtensionStoreReference>())
@@ -14,7 +14,9 @@ public static class WebExtensionReferenceListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement, Collection<DMWebExt.WebExtensionStoreReference>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class WebExtensionReferenceListConverter
     }
   }
   
-  public static DMWebExt.WebExtensionReferenceList? CreateModelElement(DXO2013WebExt.WebExtensionReferenceList? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionReferenceList? CreateModelElement(DXO2013WebExt.WebExtensionReferenceList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMWebExt.WebExtensionReferenceList();
+      var value = new DocumentModel.WebExtensions.WebExtensionReferenceList();
       value.WebExtensionStoreReferences = GetWebExtensionStoreReferences(openXmlElement);
       return value;
     }

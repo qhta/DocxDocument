@@ -36,7 +36,7 @@ public static class Pie3DChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.Pie3DChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries>? GetPieChartSeries(DXDrawCharts.Pie3DChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -45,7 +45,9 @@ public static class Pie3DChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieChartSeries(DXDrawCharts.Pie3DChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
@@ -92,7 +94,10 @@ public static class Pie3DChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.Pie3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -115,7 +120,10 @@ public static class Pie3DChartConverter
   
   private static DMDrawsCharts.Pie3DChartExtensionList? GetPie3DChartExtensionList(DXDrawCharts.Pie3DChart openXmlElement)
   {
-    return DMXDrawsCharts.Pie3DChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.Pie3DChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Pie3DChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.Pie3DChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPie3DChartExtensionList(DXDrawCharts.Pie3DChart openXmlElement, DMDrawsCharts.Pie3DChartExtensionList? value, DiffList? diffs, string? objName)
@@ -136,11 +144,11 @@ public static class Pie3DChartConverter
     }
   }
   
-  public static DMDrawsCharts.Pie3DChart? CreateModelElement(DXDrawCharts.Pie3DChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Pie3DChart? CreateModelElement(DXDrawCharts.Pie3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Pie3DChart();
+      var value = new DocumentModel.Drawings.Charts.Pie3DChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

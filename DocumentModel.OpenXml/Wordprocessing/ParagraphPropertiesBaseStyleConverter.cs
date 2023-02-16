@@ -115,7 +115,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.FrameProperties? GetFrameProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.FramePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.FrameProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.FrameProperties>();
+    if (element != null)
+      return DMXW.FramePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFrameProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.FrameProperties? value, DiffList? diffs, string? objName)
@@ -176,7 +179,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.NumberingProperties? GetNumberingProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.NumberingPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.NumberingProperties>());
+    var element = openXmlElement?.GetFirstChild<DXW.NumberingProperties>();
+    if (element != null)
+      return DMXW.NumberingPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberingProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.NumberingProperties? value, DiffList? diffs, string? objName)
@@ -237,7 +243,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.ParagraphBorders? GetParagraphBorders(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.ParagraphBordersConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.ParagraphBorders>());
+    var element = openXmlElement?.GetFirstChild<DXW.ParagraphBorders>();
+    if (element != null)
+      return DMXW.ParagraphBordersConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraphBorders(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.ParagraphBorders? value, DiffList? diffs, string? objName)
@@ -263,7 +272,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Shading? GetShading(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.ShadingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Shading>());
+    var element = openXmlElement?.GetFirstChild<DXW.Shading>();
+    if (element != null)
+      return DMXW.ShadingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShading(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
@@ -289,7 +301,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Tabs? GetTabs(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.TabsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Tabs>());
+    var element = openXmlElement?.GetFirstChild<DXW.Tabs>();
+    if (element != null)
+      return DMXW.TabsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTabs(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Tabs? value, DiffList? diffs, string? objName)
@@ -665,7 +680,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.SpacingBetweenLines? GetSpacingBetweenLines(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.SpacingBetweenLinesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.SpacingBetweenLines>());
+    var element = openXmlElement?.GetFirstChild<DXW.SpacingBetweenLines>();
+    if (element != null)
+      return DMXW.SpacingBetweenLinesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSpacingBetweenLines(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.SpacingBetweenLines? value, DiffList? diffs, string? objName)
@@ -691,7 +709,10 @@ public static class ParagraphPropertiesBaseStyleConverter
   /// </summary>
   private static DMW.Indentation? GetIndentation(DXW.ParagraphPropertiesBaseStyle openXmlElement)
   {
-    return DMXW.IndentationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.Indentation>());
+    var element = openXmlElement?.GetFirstChild<DXW.Indentation>();
+    if (element != null)
+      return DMXW.IndentationConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpIndentation(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Indentation? value, DiffList? diffs, string? objName)
@@ -949,11 +970,11 @@ public static class ParagraphPropertiesBaseStyleConverter
     }
   }
   
-  public static DMW.ParagraphPropertiesBaseStyle? CreateModelElement(DXW.ParagraphPropertiesBaseStyle? openXmlElement)
+  public static DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? CreateModelElement(DXW.ParagraphPropertiesBaseStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphPropertiesBaseStyle();
+      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle();
       value.KeepNext = GetKeepNext(openXmlElement);
       value.KeepLines = GetKeepLines(openXmlElement);
       value.PageBreakBefore = GetPageBreakBefore(openXmlElement);

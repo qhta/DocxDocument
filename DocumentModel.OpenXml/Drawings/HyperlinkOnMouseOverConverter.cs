@@ -7,7 +7,10 @@ public static class HyperlinkOnMouseOverConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement)
   {
-    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
+    if (element != null)
+      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class HyperlinkOnMouseOverConverter
   
   private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkOnMouseOver openXmlElement)
   {
-    return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
+    if (element != null)
+      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHyperlinkExtensionList(DXDraw.HyperlinkOnMouseOver openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
@@ -51,11 +57,11 @@ public static class HyperlinkOnMouseOverConverter
     }
   }
   
-  public static DMDraws.HyperlinkOnMouseOver? CreateModelElement(DXDraw.HyperlinkOnMouseOver? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkOnMouseOver? CreateModelElement(DXDraw.HyperlinkOnMouseOver? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.HyperlinkOnMouseOver();
+      var value = new DocumentModel.Drawings.HyperlinkOnMouseOver();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;

@@ -7,7 +7,10 @@ public static class ShapeTreeConverter
 {
   private static DMDrawsO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXODraw.ShapeTree openXmlElement)
   {
-    return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>();
+    if (element != null)
+      return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShapeNonVisualProperties(DXODraw.ShapeTree openXmlElement, DMDrawsO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class ShapeTreeConverter
   
   private static DMDrawsO.GroupShapeProperties? GetGroupShapeProperties(DXODraw.ShapeTree openXmlElement)
   {
-    return DMXDrawsO.GroupShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.GroupShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeProperties>();
+    if (element != null)
+      return DMXDrawsO.GroupShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShapeProperties(DXODraw.ShapeTree openXmlElement, DMDrawsO.GroupShapeProperties? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class ShapeTreeConverter
   
   private static DMDrawsO.Shape? GetShape(DXODraw.ShapeTree openXmlElement)
   {
-    return DMXDrawsO.ShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.Shape>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.Shape>();
+    if (element != null)
+      return DMXDrawsO.ShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShape(DXODraw.ShapeTree openXmlElement, DMDrawsO.Shape? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class ShapeTreeConverter
   
   private static DMDrawsO.GroupShape? GetGroupShape(DXODraw.ShapeTree openXmlElement)
   {
-    return DMXDrawsO.GroupShapeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.GroupShape>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShape>();
+    if (element != null)
+      return DMXDrawsO.GroupShapeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupShape(DXODraw.ShapeTree openXmlElement, DMDrawsO.GroupShape? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class ShapeTreeConverter
   
   private static DMDrawsO.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODraw.ShapeTree openXmlElement)
   {
-    return DMXDrawsO.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsO.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXODraw.ShapeTree openXmlElement, DMDrawsO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class ShapeTreeConverter
     }
   }
   
-  public static DMDrawsO.ShapeTree? CreateModelElement(DXODraw.ShapeTree? openXmlElement)
+  public static DocumentModel.Drawings.Office.ShapeTree? CreateModelElement(DXODraw.ShapeTree? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsO.ShapeTree();
+      var value = new DocumentModel.Drawings.Office.ShapeTree();
       value.GroupShapeNonVisualProperties = GetGroupShapeNonVisualProperties(openXmlElement);
       value.GroupShapeProperties = GetGroupShapeProperties(openXmlElement);
       value.Shape = GetShape(openXmlElement);

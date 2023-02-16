@@ -68,7 +68,10 @@ public static class CameraConverter
   /// </summary>
   private static DMDraws.Rotation? GetRotation(DXDraw.Camera openXmlElement)
   {
-    return DMXDraws.RotationConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Rotation>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Rotation>();
+    if (element != null)
+      return DMXDraws.RotationConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
@@ -89,11 +92,11 @@ public static class CameraConverter
     }
   }
   
-  public static DMDraws.Camera? CreateModelElement(DXDraw.Camera? openXmlElement)
+  public static DocumentModel.Drawings.Camera? CreateModelElement(DXDraw.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Camera();
+      var value = new DocumentModel.Drawings.Camera();
       value.Preset = GetPreset(openXmlElement);
       value.FieldOfView = GetFieldOfView(openXmlElement);
       value.Zoom = GetZoom(openXmlElement);

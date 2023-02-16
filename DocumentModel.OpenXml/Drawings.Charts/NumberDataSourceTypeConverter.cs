@@ -10,7 +10,10 @@ public static class NumberDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    if (element != null)
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class NumberDataSourceTypeConverter
   /// </summary>
   private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    if (element != null)
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class NumberDataSourceTypeConverter
     }
   }
   
-  public static DMDrawsCharts.NumberDataSourceType? CreateModelElement(DXDrawCharts.NumberDataSourceType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberDataSourceType? CreateModelElement(DXDrawCharts.NumberDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.NumberDataSourceType();
+      var value = new DocumentModel.Drawings.Charts.NumberDataSourceType();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;

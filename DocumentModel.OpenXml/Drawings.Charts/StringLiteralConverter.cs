@@ -30,7 +30,7 @@ public static class StringLiteralConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXDrawCharts.StringLiteral openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.StringLiteral openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.StringPoint>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
@@ -39,7 +39,9 @@ public static class StringLiteralConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpStringPoints(DXDrawCharts.StringLiteral openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
@@ -86,7 +88,10 @@ public static class StringLiteralConverter
   
   private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXDrawCharts.StringLiteral openXmlElement)
   {
-    return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStrDataExtensionList(DXDrawCharts.StringLiteral openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
@@ -107,11 +112,11 @@ public static class StringLiteralConverter
     }
   }
   
-  public static DMDrawsCharts.StringLiteral? CreateModelElement(DXDrawCharts.StringLiteral? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringLiteral? CreateModelElement(DXDrawCharts.StringLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.StringLiteral();
+      var value = new DocumentModel.Drawings.Charts.StringLiteral();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);

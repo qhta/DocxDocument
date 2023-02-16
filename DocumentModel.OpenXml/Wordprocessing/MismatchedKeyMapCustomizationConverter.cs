@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class MismatchedKeyMapCustomizationConverter
 {
-  private static Collection<DMW.KeyMapEntry> GetKeyMapEntries(DXOW.MismatchedKeyMapCustomization openXmlElement)
+  private static Collection<DMW.KeyMapEntry>? GetKeyMapEntries(DXOW.MismatchedKeyMapCustomization openXmlElement)
   {
     var collection = new Collection<DMW.KeyMapEntry>();
     foreach (var item in openXmlElement.Elements<DXOW.KeyMapEntry>())
@@ -14,7 +14,9 @@ public static class MismatchedKeyMapCustomizationConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpKeyMapEntries(DXOW.MismatchedKeyMapCustomization openXmlElement, Collection<DMW.KeyMapEntry>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class MismatchedKeyMapCustomizationConverter
     }
   }
   
-  public static DMW.MismatchedKeyMapCustomization? CreateModelElement(DXOW.MismatchedKeyMapCustomization? openXmlElement)
+  public static DocumentModel.Wordprocessing.MismatchedKeyMapCustomization? CreateModelElement(DXOW.MismatchedKeyMapCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.MismatchedKeyMapCustomization();
+      var value = new DocumentModel.Wordprocessing.MismatchedKeyMapCustomization();
       value.KeyMapEntries = GetKeyMapEntries(openXmlElement);
       return value;
     }

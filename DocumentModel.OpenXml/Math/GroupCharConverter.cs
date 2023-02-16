@@ -10,7 +10,10 @@ public static class GroupCharConverter
   /// </summary>
   private static DMMath.GroupCharProperties? GetGroupCharProperties(DXMath.GroupChar openXmlElement)
   {
-    return DMXMath.GroupCharPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>();
+    if (element != null)
+      return DMXMath.GroupCharPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class GroupCharConverter
   /// </summary>
   private static DMMath.Base? GetBase(DXMath.GroupChar openXmlElement)
   {
-    return DMXMath.BaseConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Base>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    if (element != null)
+      return DMXMath.BaseConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBase(DXMath.GroupChar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class GroupCharConverter
     }
   }
   
-  public static DMMath.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
+  public static DocumentModel.Math.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.GroupChar();
+      var value = new DocumentModel.Math.GroupChar();
       value.GroupCharProperties = GetGroupCharProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

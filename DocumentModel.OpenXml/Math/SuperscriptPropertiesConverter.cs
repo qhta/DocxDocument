@@ -10,7 +10,10 @@ public static class SuperscriptPropertiesConverter
   /// </summary>
   private static DMMath.ControlProperties? GetControlProperties(DXMath.SuperscriptProperties openXmlElement)
   {
-    return DMXMath.ControlPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.ControlProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    if (element != null)
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpControlProperties(DXMath.SuperscriptProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class SuperscriptPropertiesConverter
     }
   }
   
-  public static DMMath.SuperscriptProperties? CreateModelElement(DXMath.SuperscriptProperties? openXmlElement)
+  public static DocumentModel.Math.SuperscriptProperties? CreateModelElement(DXMath.SuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.SuperscriptProperties();
+      var value = new DocumentModel.Math.SuperscriptProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

@@ -36,7 +36,7 @@ public static class DoughnutChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries> GetPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement)
+  private static Collection<DMDrawsCharts.PieChartSeries>? GetPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.PieChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
@@ -45,7 +45,9 @@ public static class DoughnutChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
@@ -92,7 +94,10 @@ public static class DoughnutChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -165,7 +170,10 @@ public static class DoughnutChartConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -186,11 +194,11 @@ public static class DoughnutChartConverter
     }
   }
   
-  public static DMDrawsCharts.DoughnutChart? CreateModelElement(DXDrawCharts.DoughnutChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DoughnutChart? CreateModelElement(DXDrawCharts.DoughnutChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DoughnutChart();
+      var value = new DocumentModel.Drawings.Charts.DoughnutChart();
       value.VaryColors = GetVaryColors(openXmlElement);
       value.PieChartSeries = GetPieChartSeries(openXmlElement);
       value.DataLabels = GetDataLabels(openXmlElement);

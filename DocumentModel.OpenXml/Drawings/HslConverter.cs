@@ -65,11 +65,11 @@ public static class HslConverter
     openXmlElement.Luminance = value;
   }
   
-  public static DMDraws.Hsl? CreateModelElement(DXDraw.Hsl? openXmlElement)
+  public static DocumentModel.Drawings.Hsl? CreateModelElement(DXDraw.Hsl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Hsl();
+      var value = new DocumentModel.Drawings.Hsl();
       value.Hue = GetHue(openXmlElement);
       value.Saturation = GetSaturation(openXmlElement);
       value.Luminance = GetLuminance(openXmlElement);

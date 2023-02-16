@@ -32,7 +32,10 @@ public static class FloorConverter
   
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.Floor openXmlElement)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -55,7 +58,10 @@ public static class FloorConverter
   
   private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.Floor openXmlElement)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    if (element != null)
+      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureOptions(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
@@ -78,7 +84,10 @@ public static class FloorConverter
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.Floor openXmlElement)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
@@ -99,11 +108,11 @@ public static class FloorConverter
     }
   }
   
-  public static DMDrawsCharts.Floor? CreateModelElement(DXDrawCharts.Floor? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(DXDrawCharts.Floor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.Floor();
+      var value = new DocumentModel.Drawings.Charts.Floor();
       value.Thickness = GetThickness(openXmlElement);
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.PictureOptions = GetPictureOptions(openXmlElement);

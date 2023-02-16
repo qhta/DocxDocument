@@ -28,11 +28,11 @@ public static class ToolbarDataConverter
       openXmlElement.Id = null;
   }
   
-  public static DMW.ToolbarData? CreateModelElement(DXOW.ToolbarData? openXmlElement)
+  public static DocumentModel.Wordprocessing.ToolbarData? CreateModelElement(DXOW.ToolbarData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ToolbarData();
+      var value = new DocumentModel.Wordprocessing.ToolbarData();
       value.Id = GetId(openXmlElement);
       return value;
     }

@@ -45,11 +45,11 @@ public static class ArtisticPencilGrayscaleConverter
     openXmlElement.BrushSize = value;
   }
   
-  public static DMDraws.ArtisticPencilGrayscale? CreateModelElement(DXO2010Draw.ArtisticPencilGrayscale? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPencilGrayscale? CreateModelElement(DXO2010Draw.ArtisticPencilGrayscale? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ArtisticPencilGrayscale();
+      var value = new DocumentModel.Drawings.ArtisticPencilGrayscale();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.BrushSize = GetBrushSize(openXmlElement);
       return value;

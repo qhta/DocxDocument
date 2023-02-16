@@ -43,11 +43,11 @@ public static class TabStopConverter
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(value);
   }
   
-  public static DMDraws.TabStop? CreateModelElement(DXDraw.TabStop? openXmlElement)
+  public static DocumentModel.Drawings.TabStop? CreateModelElement(DXDraw.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TabStop();
+      var value = new DocumentModel.Drawings.TabStop();
       value.Position = GetPosition(openXmlElement);
       value.Alignment = GetAlignment(openXmlElement);
       return value;

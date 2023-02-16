@@ -10,7 +10,10 @@ public static class FilteredRadarSeriesConverter
   /// </summary>
   private static DMDrawsCharts.RadarChartSeries3? GetRadarChartSeries(DXO2013DrawChart.FilteredRadarSeries openXmlElement)
   {
-    return DMXDrawsCharts.RadarChartSeries3Converter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.RadarChartSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.RadarChartSeries>();
+    if (element != null)
+      return DMXDrawsCharts.RadarChartSeries3Converter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRadarChartSeries(DXO2013DrawChart.FilteredRadarSeries openXmlElement, DMDrawsCharts.RadarChartSeries3? value, DiffList? diffs, string? objName)
@@ -31,11 +34,11 @@ public static class FilteredRadarSeriesConverter
     }
   }
   
-  public static DMDrawsCharts.FilteredRadarSeries? CreateModelElement(DXO2013DrawChart.FilteredRadarSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredRadarSeries? CreateModelElement(DXO2013DrawChart.FilteredRadarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.FilteredRadarSeries();
+      var value = new DocumentModel.Drawings.Charts.FilteredRadarSeries();
       value.RadarChartSeries = GetRadarChartSeries(openXmlElement);
       return value;
     }

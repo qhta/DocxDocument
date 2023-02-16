@@ -88,7 +88,7 @@ public static class BarChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.BarChartSeries> GetBarChartSeries(DXDrawCharts.BarChart openXmlElement)
+  private static Collection<DMDrawsCharts.BarChartSeries>? GetBarChartSeries(DXDrawCharts.BarChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.BarChartSeries>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.BarChartSeries>())
@@ -97,7 +97,9 @@ public static class BarChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpBarChartSeries(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value, DiffList? diffs, string? objName)
@@ -144,7 +146,10 @@ public static class BarChartConverter
   
   private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.BarChart openXmlElement)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    if (element != null)
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDataLabels(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
@@ -215,7 +220,7 @@ public static class BarChartConverter
     }
   }
   
-  private static Collection<DMDrawsCharts.SeriesLines> GetSeriesLines(DXDrawCharts.BarChart openXmlElement)
+  private static Collection<DMDrawsCharts.SeriesLines>? GetSeriesLines(DXDrawCharts.BarChart openXmlElement)
   {
     var collection = new Collection<DMDrawsCharts.SeriesLines>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.SeriesLines>())
@@ -224,7 +229,9 @@ public static class BarChartConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpSeriesLines(DXDrawCharts.BarChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value, DiffList? diffs, string? objName)
@@ -269,7 +276,7 @@ public static class BarChartConverter
     }
   }
   
-  private static Collection<UInt32> GetAxisIds(DXDrawCharts.BarChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.BarChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
     foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
@@ -278,7 +285,9 @@ public static class BarChartConverter
       if (newItem != null)
         collection.Add((UInt32)newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpAxisIds(DXDrawCharts.BarChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
@@ -325,7 +334,10 @@ public static class BarChartConverter
   
   private static DMDrawsCharts.BarChartExtensionList? GetBarChartExtensionList(DXDrawCharts.BarChart openXmlElement)
   {
-    return DMXDrawsCharts.BarChartExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.BarChartExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BarChartExtensionList>();
+    if (element != null)
+      return DMXDrawsCharts.BarChartExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBarChartExtensionList(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarChartExtensionList? value, DiffList? diffs, string? objName)
@@ -346,11 +358,11 @@ public static class BarChartConverter
     }
   }
   
-  public static DMDrawsCharts.BarChart? CreateModelElement(DXDrawCharts.BarChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BarChart? CreateModelElement(DXDrawCharts.BarChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BarChart();
+      var value = new DocumentModel.Drawings.Charts.BarChart();
       value.BarDirection = GetBarDirection(openXmlElement);
       value.BarGrouping = GetBarGrouping(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);

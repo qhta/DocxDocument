@@ -29,11 +29,11 @@ public static class WorksheetCommentsPartConverter
     return false;
   }
   
-  public static DMPack.WorksheetCommentsPart? CreateModelElement(DXPack.WorksheetCommentsPart? openXmlElement)
+  public static DocumentModel.Packaging.WorksheetCommentsPart? CreateModelElement(DXPack.WorksheetCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.WorksheetCommentsPart();
+      var value = new DocumentModel.Packaging.WorksheetCommentsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;

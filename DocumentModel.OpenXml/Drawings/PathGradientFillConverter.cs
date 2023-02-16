@@ -28,7 +28,10 @@ public static class PathGradientFillConverter
   /// </summary>
   private static DMDraws.RelativeRectangleType? GetFillToRectangle(DXDraw.PathGradientFill openXmlElement)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FillToRectangle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.FillToRectangle>();
+    if (element != null)
+      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFillToRectangle(DXDraw.PathGradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
@@ -49,11 +52,11 @@ public static class PathGradientFillConverter
     }
   }
   
-  public static DMDraws.PathGradientFill? CreateModelElement(DXDraw.PathGradientFill? openXmlElement)
+  public static DocumentModel.Drawings.PathGradientFill? CreateModelElement(DXDraw.PathGradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.PathGradientFill();
+      var value = new DocumentModel.Drawings.PathGradientFill();
       value.Path = GetPath(openXmlElement);
       value.FillToRectangle = GetFillToRectangle(openXmlElement);
       return value;

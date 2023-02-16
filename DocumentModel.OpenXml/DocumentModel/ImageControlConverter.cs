@@ -281,11 +281,11 @@ public static class ImageControlConverter
       openXmlElement.GetAltText = null;
   }
   
-  public static DM.ImageControl? CreateModelElement(DXO2010CustUI.ImageControl? openXmlElement)
+  public static DocumentModel.ImageControl? CreateModelElement(DXO2010CustUI.ImageControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ImageControl();
+      var value = new DocumentModel.ImageControl();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

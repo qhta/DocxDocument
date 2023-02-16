@@ -51,7 +51,10 @@ public static class GradientFillConverter
   /// </summary>
   private static DMDraws.GradientStopList? GetGradientStopList(DXDraw.GradientFill openXmlElement)
   {
-    return DMXDraws.GradientStopListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.GradientStopList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.GradientStopList>();
+    if (element != null)
+      return DMXDraws.GradientStopListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpGradientStopList(DXDraw.GradientFill openXmlElement, DMDraws.GradientStopList? value, DiffList? diffs, string? objName)
@@ -74,7 +77,10 @@ public static class GradientFillConverter
   
   private static DMDraws.LinearGradientFill? GetLinearGradientFill(DXDraw.GradientFill openXmlElement)
   {
-    return DMXDraws.LinearGradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LinearGradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LinearGradientFill>();
+    if (element != null)
+      return DMXDraws.LinearGradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLinearGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.LinearGradientFill? value, DiffList? diffs, string? objName)
@@ -97,7 +103,10 @@ public static class GradientFillConverter
   
   private static DMDraws.PathGradientFill? GetPathGradientFill(DXDraw.GradientFill openXmlElement)
   {
-    return DMXDraws.PathGradientFillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PathGradientFill>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PathGradientFill>();
+    if (element != null)
+      return DMXDraws.PathGradientFillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPathGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.PathGradientFill? value, DiffList? diffs, string? objName)
@@ -120,7 +129,10 @@ public static class GradientFillConverter
   
   private static DMDraws.RelativeRectangleType? GetTileRectangle(DXDraw.GradientFill openXmlElement)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TileRectangle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TileRectangle>();
+    if (element != null)
+      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTileRectangle(DXDraw.GradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
@@ -141,11 +153,11 @@ public static class GradientFillConverter
     }
   }
   
-  public static DMDraws.GradientFill? CreateModelElement(DXDraw.GradientFill? openXmlElement)
+  public static DocumentModel.Drawings.GradientFill? CreateModelElement(DXDraw.GradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.GradientFill();
+      var value = new DocumentModel.Drawings.GradientFill();
       value.Flip = GetFlip(openXmlElement);
       value.RotateWithShape = GetRotateWithShape(openXmlElement);
       value.GradientStopList = GetGradientStopList(openXmlElement);

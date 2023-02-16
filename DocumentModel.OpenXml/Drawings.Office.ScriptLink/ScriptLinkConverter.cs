@@ -33,7 +33,10 @@ public static class ScriptLinkConverter
   /// </summary>
   private static DMDrawsOScptLnk.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement)
   {
-    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>();
+    if (element != null)
+      return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
@@ -54,11 +57,11 @@ public static class ScriptLinkConverter
     }
   }
   
-  public static DMDrawsOScptLnk.ScriptLink? CreateModelElement(DXODrawY2021ScptLnk.ScriptLink? openXmlElement)
+  public static DocumentModel.Drawings.Office.ScriptLink.ScriptLink? CreateModelElement(DXODrawY2021ScptLnk.ScriptLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsOScptLnk.ScriptLink();
+      var value = new DocumentModel.Drawings.Office.ScriptLink.ScriptLink();
       value.Val = GetVal(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
       return value;

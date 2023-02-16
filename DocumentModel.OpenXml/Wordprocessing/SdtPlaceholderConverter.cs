@@ -33,11 +33,11 @@ public static class SdtPlaceholderConverter
     }
   }
   
-  public static DMW.SdtPlaceholder? CreateModelElement(DXW.SdtPlaceholder? openXmlElement)
+  public static DocumentModel.Wordprocessing.SdtPlaceholder? CreateModelElement(DXW.SdtPlaceholder? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtPlaceholder();
+      var value = new DocumentModel.Wordprocessing.SdtPlaceholder();
       value.DocPartReference = GetDocPartReference(openXmlElement);
       return value;
     }

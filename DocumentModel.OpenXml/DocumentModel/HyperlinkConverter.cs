@@ -524,11 +524,11 @@ public static class HyperlinkConverter
       openXmlElement.GetTarget = null;
   }
   
-  public static DM.Hyperlink? CreateModelElement(DXO2010CustUI.Hyperlink? openXmlElement)
+  public static DocumentModel.Hyperlink? CreateModelElement(DXO2010CustUI.Hyperlink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.Hyperlink();
+      var value = new DocumentModel.Hyperlink();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);

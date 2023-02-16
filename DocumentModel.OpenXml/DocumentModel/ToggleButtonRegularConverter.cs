@@ -718,11 +718,11 @@ public static class ToggleButtonRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.ToggleButtonRegular? CreateModelElement(DXO2010CustUI.ToggleButtonRegular? openXmlElement)
+  public static DocumentModel.ToggleButtonRegular? CreateModelElement(DXO2010CustUI.ToggleButtonRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ToggleButtonRegular();
+      var value = new DocumentModel.ToggleButtonRegular();
       value.GetPressed = GetGetPressed(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);

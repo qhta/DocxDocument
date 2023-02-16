@@ -7,7 +7,10 @@ public static class ShapeDefaultConverter
 {
   private static DMDraws.ShapeProperties? GetShapeProperties(DXDraw.ShapeDefault openXmlElement)
   {
-    return DMXDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXDraw.ShapeDefault openXmlElement, DMDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class ShapeDefaultConverter
   
   private static DMDraws.BodyProperties? GetBodyProperties(DXDraw.ShapeDefault openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXDraw.ShapeDefault openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class ShapeDefaultConverter
   
   private static DMDraws.ListStyle? GetListStyle(DXDraw.ShapeDefault openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXDraw.ShapeDefault openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class ShapeDefaultConverter
   
   private static DMDraws.ShapeStyle? GetShapeStyle(DXDraw.ShapeDefault openXmlElement)
   {
-    return DMXDraws.ShapeStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>();
+    if (element != null)
+      return DMXDraws.ShapeStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeStyle(DXDraw.ShapeDefault openXmlElement, DMDraws.ShapeStyle? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class ShapeDefaultConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ShapeDefault openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.ShapeDefault openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class ShapeDefaultConverter
     }
   }
   
-  public static DMDraws.ShapeDefault? CreateModelElement(DXDraw.ShapeDefault? openXmlElement)
+  public static DocumentModel.Drawings.ShapeDefault? CreateModelElement(DXDraw.ShapeDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ShapeDefault();
+      var value = new DocumentModel.Drawings.ShapeDefault();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);

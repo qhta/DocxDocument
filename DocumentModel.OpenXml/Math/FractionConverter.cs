@@ -10,7 +10,10 @@ public static class FractionConverter
   /// </summary>
   private static DMMath.FractionProperties? GetFractionProperties(DXMath.Fraction openXmlElement)
   {
-    return DMXMath.FractionPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.FractionProperties>());
+    var element = openXmlElement?.GetFirstChild<DXMath.FractionProperties>();
+    if (element != null)
+      return DMXMath.FractionPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class FractionConverter
   /// </summary>
   private static DMMath.Numerator? GetNumerator(DXMath.Fraction openXmlElement)
   {
-    return DMXMath.NumeratorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Numerator>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Numerator>();
+    if (element != null)
+      return DMXMath.NumeratorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value, DiffList? diffs, string? objName)
@@ -62,7 +68,10 @@ public static class FractionConverter
   /// </summary>
   private static DMMath.Denominator? GetDenominator(DXMath.Fraction openXmlElement)
   {
-    return DMXMath.DenominatorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Denominator>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Denominator>();
+    if (element != null)
+      return DMXMath.DenominatorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value, DiffList? diffs, string? objName)
@@ -83,11 +92,11 @@ public static class FractionConverter
     }
   }
   
-  public static DMMath.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
+  public static DocumentModel.Math.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Fraction();
+      var value = new DocumentModel.Math.Fraction();
       value.FractionProperties = GetFractionProperties(openXmlElement);
       value.Numerator = GetNumerator(openXmlElement);
       value.Denominator = GetDenominator(openXmlElement);

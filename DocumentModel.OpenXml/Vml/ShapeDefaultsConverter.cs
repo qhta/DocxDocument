@@ -227,7 +227,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Fill? GetFill(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.FillConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Fill>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Fill>();
+    if (element != null)
+      return DMXVml.FillConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFill(DXVmlO.ShapeDefaults openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
@@ -253,7 +256,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.ImageData? GetImageData(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ImageDataConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.ImageData>());
+    var element = openXmlElement?.GetFirstChild<DXVml.ImageData>();
+    if (element != null)
+      return DMXVml.ImageDataConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpImageData(DXVmlO.ShapeDefaults openXmlElement, DMVml.ImageData? value, DiffList? diffs, string? objName)
@@ -279,7 +285,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Stroke? GetStroke(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.StrokeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Stroke>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Stroke>();
+    if (element != null)
+      return DMXVml.StrokeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpStroke(DXVmlO.ShapeDefaults openXmlElement, DMVml.Stroke? value, DiffList? diffs, string? objName)
@@ -305,7 +314,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.TextBox? GetTextBox(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.TextBoxConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.TextBox>());
+    var element = openXmlElement?.GetFirstChild<DXVml.TextBox>();
+    if (element != null)
+      return DMXVml.TextBoxConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTextBox(DXVmlO.ShapeDefaults openXmlElement, DMVml.TextBox? value, DiffList? diffs, string? objName)
@@ -331,7 +343,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Shadow? GetShadow(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ShadowConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVml.Shadow>());
+    var element = openXmlElement?.GetFirstChild<DXVml.Shadow>();
+    if (element != null)
+      return DMXVml.ShadowConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShadow(DXVmlO.ShapeDefaults openXmlElement, DMVml.Shadow? value, DiffList? diffs, string? objName)
@@ -357,7 +372,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Skew? GetSkew(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.SkewConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Skew>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
+    if (element != null)
+      return DMXVml.SkewConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSkew(DXVmlO.ShapeDefaults openXmlElement, DMVml.Skew? value, DiffList? diffs, string? objName)
@@ -383,7 +401,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Extrusion? GetExtrusion(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ExtrusionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Extrusion>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
+    if (element != null)
+      return DMXVml.ExtrusionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtrusion(DXVmlO.ShapeDefaults openXmlElement, DMVml.Extrusion? value, DiffList? diffs, string? objName)
@@ -409,7 +430,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Callout? GetCallout(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.CalloutConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Callout>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
+    if (element != null)
+      return DMXVml.CalloutConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCallout(DXVmlO.ShapeDefaults openXmlElement, DMVml.Callout? value, DiffList? diffs, string? objName)
@@ -435,7 +459,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.Lock? GetLock(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.LockConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.Lock>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
+    if (element != null)
+      return DMXVml.LockConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLock(DXVmlO.ShapeDefaults openXmlElement, DMVml.Lock? value, DiffList? diffs, string? objName)
@@ -461,7 +488,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.ColorMostRecentlyUsed? GetColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ColorMostRecentlyUsedConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>();
+    if (element != null)
+      return DMXVml.ColorMostRecentlyUsedConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMostRecentlyUsed? value, DiffList? diffs, string? objName)
@@ -487,7 +517,10 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static DMVml.ColorMenu? GetColorMenu(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return DMXVml.ColorMenuConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXVmlO.ColorMenu>());
+    var element = openXmlElement?.GetFirstChild<DXVmlO.ColorMenu>();
+    if (element != null)
+      return DMXVml.ColorMenuConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpColorMenu(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMenu? value, DiffList? diffs, string? objName)
@@ -508,11 +541,11 @@ public static class ShapeDefaultsConverter
     }
   }
   
-  public static DMVml.ShapeDefaults? CreateModelElement(DXVmlO.ShapeDefaults? openXmlElement)
+  public static DocumentModel.Vml.ShapeDefaults? CreateModelElement(DXVmlO.ShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.ShapeDefaults();
+      var value = new DocumentModel.Vml.ShapeDefaults();
       value.Extension = GetExtension(openXmlElement);
       value.MaxShapeId = GetMaxShapeId(openXmlElement);
       value.Style = GetStyle(openXmlElement);

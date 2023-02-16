@@ -30,7 +30,10 @@ public static class BarChartExtensionConverter
   
   private static DMDrawsCharts.FilteredBarSeries? GetFilteredBarSeries(DXDrawCharts.BarChartExtension openXmlElement)
   {
-    return DMXDrawsCharts.FilteredBarSeriesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>();
+    if (element != null)
+      return DMXDrawsCharts.FilteredBarSeriesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpFilteredBarSeries(DXDrawCharts.BarChartExtension openXmlElement, DMDrawsCharts.FilteredBarSeries? value, DiffList? diffs, string? objName)
@@ -51,11 +54,11 @@ public static class BarChartExtensionConverter
     }
   }
   
-  public static DMDrawsCharts.BarChartExtension? CreateModelElement(DXDrawCharts.BarChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BarChartExtension? CreateModelElement(DXDrawCharts.BarChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.BarChartExtension();
+      var value = new DocumentModel.Drawings.Charts.BarChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredBarSeries = GetFilteredBarSeries(openXmlElement);
       return value;

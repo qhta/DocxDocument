@@ -8,7 +8,7 @@ public record StylePaneFormatFilter
   /// <summary>
   ///   val
   /// </summary>
-  public UInt16? Val { get; set; }
+  public HexChar? Val { get; set; }
 
   /// <summary>
   ///   allStyles, this property is only available in Office 2010 and later.

@@ -265,7 +265,7 @@ public class PolyLine
   /// <summary>
   ///   Encoded Package
   /// </summary>
-  public Byte[]? Gfxdata { get; set; }
+  public Base64Binary? Gfxdata { get; set; }
 
   /// <summary>
   ///   Points for Compound Line

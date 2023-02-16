@@ -672,11 +672,11 @@ public static class VisibleToggleButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.VisibleToggleButton? CreateModelElement(DXO2010CustUI.VisibleToggleButton? openXmlElement)
+  public static DocumentModel.VisibleToggleButton? CreateModelElement(DXO2010CustUI.VisibleToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.VisibleToggleButton();
+      var value = new DocumentModel.VisibleToggleButton();
       value.GetPressed = GetGetPressed(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);

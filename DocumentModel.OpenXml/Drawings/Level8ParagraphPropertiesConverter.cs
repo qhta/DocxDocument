@@ -7,7 +7,10 @@ public static class Level8ParagraphPropertiesConverter
 {
   private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.LineSpacingConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.LineSpacing>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.LineSpacing>();
+    if (element != null)
+      return DMXDraws.LineSpacingConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpLineSpacing(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.SpaceBefore? GetSpaceBefore(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.SpaceBeforeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>();
+    if (element != null)
+      return DMXDraws.SpaceBeforeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSpaceBefore(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.SpaceAfter? GetSpaceAfter(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.SpaceAfterConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>();
+    if (element != null)
+      return DMXDraws.SpaceAfterConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSpaceAfter(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
@@ -104,7 +113,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.BulletColor? GetBulletColor(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.BulletColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BulletColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BulletColor>();
+    if (element != null)
+      return DMXDraws.BulletColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBulletColor(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.BulletColor? value, DiffList? diffs, string? objName)
@@ -233,7 +245,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.TextFontType? GetBulletFont(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.TextFontTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BulletFont>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BulletFont>();
+    if (element != null)
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBulletFont(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
@@ -284,7 +299,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    if (element != null)
+      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpAutoNumberedBullet(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
@@ -307,7 +325,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.CharacterBullet? GetCharacterBullet(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.CharacterBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
+    if (element != null)
+      return DMXDraws.CharacterBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCharacterBullet(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
@@ -330,7 +351,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.PictureBullet? GetPictureBullet(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.PictureBulletConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PictureBullet>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
+    if (element != null)
+      return DMXDraws.PictureBulletConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPictureBullet(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
@@ -353,7 +377,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.TabStopList? GetTabStopList(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.TabStopListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.TabStopList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.TabStopList>();
+    if (element != null)
+      return DMXDraws.TabStopListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpTabStopList(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.TabStopList? value, DiffList? diffs, string? objName)
@@ -376,7 +403,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.DefaultRunProperties? GetDefaultRunProperties(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.DefaultRunPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.DefaultRunProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.DefaultRunProperties>();
+    if (element != null)
+      return DMXDraws.DefaultRunPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpDefaultRunProperties(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value, DiffList? diffs, string? objName)
@@ -399,7 +429,10 @@ public static class Level8ParagraphPropertiesConverter
   
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Level8ParagraphProperties openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDraw.Level8ParagraphProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -420,11 +453,11 @@ public static class Level8ParagraphPropertiesConverter
     }
   }
   
-  public static DMDraws.Level8ParagraphProperties? CreateModelElement(DXDraw.Level8ParagraphProperties? openXmlElement)
+  public static DocumentModel.Drawings.Level8ParagraphProperties? CreateModelElement(DXDraw.Level8ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.Level8ParagraphProperties();
+      var value = new DocumentModel.Drawings.Level8ParagraphProperties();
       value.LineSpacing = GetLineSpacing(openXmlElement);
       value.SpaceBefore = GetSpaceBefore(openXmlElement);
       value.SpaceAfter = GetSpaceAfter(openXmlElement);

@@ -7,7 +7,10 @@ public static class DownBarsConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DownBars openXmlElement)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    if (element != null)
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class DownBarsConverter
     }
   }
   
-  public static DMDrawsCharts.DownBars? CreateModelElement(DXDrawCharts.DownBars? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DXDrawCharts.DownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.DownBars();
+      var value = new DocumentModel.Drawings.Charts.DownBars();
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
       return value;
     }

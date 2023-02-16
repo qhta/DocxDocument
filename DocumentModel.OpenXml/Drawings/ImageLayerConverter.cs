@@ -28,7 +28,7 @@ public static class ImageLayerConverter
       openXmlElement.Embed = null;
   }
   
-  private static Collection<DMDraws.ImageEffect> GetImageEffects(DXO2010Draw.ImageLayer openXmlElement)
+  private static Collection<DMDraws.ImageEffect>? GetImageEffects(DXO2010Draw.ImageLayer openXmlElement)
   {
     var collection = new Collection<DMDraws.ImageEffect>();
     foreach (var item in openXmlElement.Elements<DXO2010Draw.ImageEffect>())
@@ -37,7 +37,9 @@ public static class ImageLayerConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpImageEffects(DXO2010Draw.ImageLayer openXmlElement, Collection<DMDraws.ImageEffect>? value, DiffList? diffs, string? objName)
@@ -82,11 +84,11 @@ public static class ImageLayerConverter
     }
   }
   
-  public static DMDraws.ImageLayer? CreateModelElement(DXO2010Draw.ImageLayer? openXmlElement)
+  public static DocumentModel.Drawings.ImageLayer? CreateModelElement(DXO2010Draw.ImageLayer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ImageLayer();
+      var value = new DocumentModel.Drawings.ImageLayer();
       value.Embed = GetEmbed(openXmlElement);
       value.ImageEffects = GetImageEffects(openXmlElement);
       return value;

@@ -28,11 +28,11 @@ public static class CommentAnchorConverter
       openXmlElement.Id = null;
   }
   
-  public static DM.CommentAnchor? CreateModelElement(DXO2021DocTasks.CommentAnchor? openXmlElement)
+  public static DocumentModel.CommentAnchor? CreateModelElement(DXO2021DocTasks.CommentAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.CommentAnchor();
+      var value = new DocumentModel.CommentAnchor();
       value.Id = GetId(openXmlElement);
       return value;
     }

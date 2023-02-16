@@ -102,7 +102,10 @@ public static class RunPropertiesConverter
   
   private static DMMath.Break? GetBreak(DXMath.RunProperties openXmlElement)
   {
-    return DMXMath.BreakConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXMath.Break>());
+    var element = openXmlElement?.GetFirstChild<DXMath.Break>();
+    if (element != null)
+      return DMXMath.BreakConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
@@ -146,11 +149,11 @@ public static class RunPropertiesConverter
     }
   }
   
-  public static DMMath.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
+  public static DocumentModel.Math.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.RunProperties();
+      var value = new DocumentModel.Math.RunProperties();
       value.Literal = GetLiteral(openXmlElement);
       value.NormalText = GetNormalText(openXmlElement);
       value.Script = GetScript(openXmlElement);

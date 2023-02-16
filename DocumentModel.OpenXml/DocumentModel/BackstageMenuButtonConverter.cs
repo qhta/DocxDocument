@@ -419,11 +419,11 @@ public static class BackstageMenuButtonConverter
       openXmlElement.GetImage = null;
   }
   
-  public static DM.BackstageMenuButton? CreateModelElement(DXO2010CustUI.BackstageMenuButton? openXmlElement)
+  public static DocumentModel.BackstageMenuButton? CreateModelElement(DXO2010CustUI.BackstageMenuButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.BackstageMenuButton();
+      var value = new DocumentModel.BackstageMenuButton();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);

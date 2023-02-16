@@ -88,7 +88,10 @@ public static class Shape3DConverter
   /// </summary>
   private static DMDraws.BevelType? GetBevelTop(DXDrawDgms.Shape3D openXmlElement)
   {
-    return DMXDraws.BevelTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BevelTop>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BevelTop>();
+    if (element != null)
+      return DMXDraws.BevelTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBevelTop(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
@@ -114,7 +117,10 @@ public static class Shape3DConverter
   /// </summary>
   private static DMDraws.BevelType? GetBevelBottom(DXDrawDgms.Shape3D openXmlElement)
   {
-    return DMXDraws.BevelTypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BevelBottom>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BevelBottom>();
+    if (element != null)
+      return DMXDraws.BevelTypeConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBevelBottom(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
@@ -140,7 +146,10 @@ public static class Shape3DConverter
   /// </summary>
   private static DMDraws.ExtrusionColor? GetExtrusionColor(DXDrawDgms.Shape3D openXmlElement)
   {
-    return DMXDraws.ExtrusionColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtrusionColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtrusionColor>();
+    if (element != null)
+      return DMXDraws.ExtrusionColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtrusionColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtrusionColor? value, DiffList? diffs, string? objName)
@@ -166,7 +175,10 @@ public static class Shape3DConverter
   /// </summary>
   private static DMDraws.ContourColor? GetContourColor(DXDrawDgms.Shape3D openXmlElement)
   {
-    return DMXDraws.ContourColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ContourColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ContourColor>();
+    if (element != null)
+      return DMXDraws.ContourColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpContourColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ContourColor? value, DiffList? diffs, string? objName)
@@ -192,7 +204,10 @@ public static class Shape3DConverter
   /// </summary>
   private static DMDraws.ExtensionList? GetExtensionList(DXDrawDgms.Shape3D openXmlElement)
   {
-    return DMXDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    if (element != null)
+      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -213,11 +228,11 @@ public static class Shape3DConverter
     }
   }
   
-  public static DMDrawsDgms.Shape3D? CreateModelElement(DXDrawDgms.Shape3D? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Shape3D? CreateModelElement(DXDrawDgms.Shape3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsDgms.Shape3D();
+      var value = new DocumentModel.Drawings.Diagrams.Shape3D();
       value.Z = GetZ(openXmlElement);
       value.ExtrusionHeight = GetExtrusionHeight(openXmlElement);
       value.ContourWidth = GetContourWidth(openXmlElement);

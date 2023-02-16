@@ -10,7 +10,10 @@ public static class OpenXmlGridlinesElementConverter
   /// </summary>
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    if (element != null)
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
@@ -36,7 +39,10 @@ public static class OpenXmlGridlinesElementConverter
   /// </summary>
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    if (element != null)
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
@@ -57,11 +63,11 @@ public static class OpenXmlGridlinesElementConverter
     }
   }
   
-  public static DMDrawsChartDraws.OpenXmlGridlinesElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlGridlinesElement? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.OpenXmlGridlinesElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlGridlinesElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsChartDraws.OpenXmlGridlinesElement();
+      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlGridlinesElement();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

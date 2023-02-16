@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ClassificationExtensionListConverter
 {
-  private static Collection<DM.ClassificationExtension> GetClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement)
+  private static Collection<DM.ClassificationExtension>? GetClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement)
   {
     var collection = new Collection<DM.ClassificationExtension>();
     foreach (var item in openXmlElement.Elements<DXO2021MipLabelMeta.ClassificationExtension>())
@@ -14,7 +14,9 @@ public static class ClassificationExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement, Collection<DM.ClassificationExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ClassificationExtensionListConverter
     }
   }
   
-  public static DM.ClassificationExtensionList? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtensionList? openXmlElement)
+  public static DocumentModel.ClassificationExtensionList? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ClassificationExtensionList();
+      var value = new DocumentModel.ClassificationExtensionList();
       value.ClassificationExtensions = GetClassificationExtensions(openXmlElement);
       return value;
     }

@@ -7,7 +7,10 @@ public static class RichTextConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.RichText openXmlElement)
   {
-    return DMXDraws.BodyPropertiesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.BodyProperties>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    if (element != null)
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpBodyProperties(DXDrawCharts.RichText openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class RichTextConverter
   
   private static DMDraws.ListStyle? GetListStyle(DXDrawCharts.RichText openXmlElement)
   {
-    return DMXDraws.ListStyleConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ListStyle>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    if (element != null)
+      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpListStyle(DXDrawCharts.RichText openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class RichTextConverter
   
   private static DMDraws.Paragraph? GetParagraph(DXDrawCharts.RichText openXmlElement)
   {
-    return DMXDraws.ParagraphConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Paragraph>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
+    if (element != null)
+      return DMXDraws.ParagraphConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpParagraph(DXDrawCharts.RichText openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
@@ -74,11 +83,11 @@ public static class RichTextConverter
     }
   }
   
-  public static DMDrawsCharts.RichText? CreateModelElement(DXDrawCharts.RichText? openXmlElement)
+  public static DocumentModel.Drawings.Charts.RichText? CreateModelElement(DXDrawCharts.RichText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.RichText();
+      var value = new DocumentModel.Drawings.Charts.RichText();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);

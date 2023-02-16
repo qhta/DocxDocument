@@ -240,7 +240,10 @@ public static class ConnectionShapeLocksConverter
   /// </summary>
   private static DMDraws.ConnectorLockingExtensionList? GetConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement)
   {
-    return DMXDraws.ConnectorLockingExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.ConnectorLockingExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.ConnectorLockingExtensionList>();
+    if (element != null)
+      return DMXDraws.ConnectorLockingExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
@@ -261,11 +264,11 @@ public static class ConnectionShapeLocksConverter
     }
   }
   
-  public static DMDraws.ConnectionShapeLocks? CreateModelElement(DXDraw.ConnectionShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(DXDraw.ConnectionShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ConnectionShapeLocks();
+      var value = new DocumentModel.Drawings.ConnectionShapeLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
       value.NoRotation = GetNoRotation(openXmlElement);

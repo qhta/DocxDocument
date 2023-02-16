@@ -226,11 +226,11 @@ public static class OleObjectConverter
     }
   }
   
-  public static DMVml.OleObject? CreateModelElement(DXVmlO.OleObject? openXmlElement)
+  public static DocumentModel.Vml.OleObject? CreateModelElement(DXVmlO.OleObject? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMVml.OleObject();
+      var value = new DocumentModel.Vml.OleObject();
       value.Type = GetType(openXmlElement);
       value.ProgId = GetProgId(openXmlElement);
       value.ShapeId = GetShapeId(openXmlElement);

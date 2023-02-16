@@ -5,11 +5,11 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ExternalRelationshipConverter
 {
-  public static DMPack.ExternalRelationship? CreateModelElement(DXPack.ExternalRelationship? openXmlElement)
+  public static DocumentModel.Packaging.ExternalRelationship? CreateModelElement(DXPack.ExternalRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMPack.ExternalRelationship();
+      var value = new DocumentModel.Packaging.ExternalRelationship();
       return value;
     }
     return null;

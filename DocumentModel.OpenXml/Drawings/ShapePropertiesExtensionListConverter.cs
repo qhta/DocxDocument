@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ShapePropertiesExtensionListConverter
 {
-  private static Collection<DMDraws.ShapePropertiesExtension> GetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement)
+  private static Collection<DMDraws.ShapePropertiesExtension>? GetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement)
   {
     var collection = new Collection<DMDraws.ShapePropertiesExtension>();
     foreach (var item in openXmlElement.Elements<DXDraw.ShapePropertiesExtension>())
@@ -14,7 +14,9 @@ public static class ShapePropertiesExtensionListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement, Collection<DMDraws.ShapePropertiesExtension>? value, DiffList? diffs, string? objName)
@@ -59,11 +61,11 @@ public static class ShapePropertiesExtensionListConverter
     }
   }
   
-  public static DMDraws.ShapePropertiesExtensionList? CreateModelElement(DXDraw.ShapePropertiesExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.ShapePropertiesExtensionList? CreateModelElement(DXDraw.ShapePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.ShapePropertiesExtensionList();
+      var value = new DocumentModel.Drawings.ShapePropertiesExtensionList();
       value.ShapePropertiesExtensions = GetShapePropertiesExtensions(openXmlElement);
       return value;
     }

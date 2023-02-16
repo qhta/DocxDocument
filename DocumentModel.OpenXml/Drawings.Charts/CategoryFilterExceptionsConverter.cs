@@ -7,7 +7,10 @@ public static class CategoryFilterExceptionsConverter
 {
   private static DMDrawsCharts.CategoryFilterException? GetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterException>());
+    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterException>();
+    if (element != null)
+      return DMXDrawsCharts.CategoryFilterExceptionConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value, DiffList? diffs, string? objName)
@@ -28,11 +31,11 @@ public static class CategoryFilterExceptionsConverter
     }
   }
   
-  public static DMDrawsCharts.CategoryFilterExceptions? CreateModelElement(DXO2013DrawChart.CategoryFilterExceptions? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? CreateModelElement(DXO2013DrawChart.CategoryFilterExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDrawsCharts.CategoryFilterExceptions();
+      var value = new DocumentModel.Drawings.Charts.CategoryFilterExceptions();
       value.CategoryFilterException = GetCategoryFilterException(openXmlElement);
       return value;
     }

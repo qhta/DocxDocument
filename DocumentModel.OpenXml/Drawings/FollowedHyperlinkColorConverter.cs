@@ -7,7 +7,10 @@ public static class FollowedHyperlinkColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.FollowedHyperlinkColor openXmlElement)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    if (element != null)
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelPercentage(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
@@ -30,7 +33,10 @@ public static class FollowedHyperlinkColorConverter
   
   private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.FollowedHyperlinkColor openXmlElement)
   {
-    return DMXDraws.RgbColorModelHexConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    if (element != null)
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpRgbColorModelHex(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
@@ -53,7 +59,10 @@ public static class FollowedHyperlinkColorConverter
   
   private static DMDraws.HslColor? GetHslColor(DXDraw.FollowedHyperlinkColor openXmlElement)
   {
-    return DMXDraws.HslColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.HslColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    if (element != null)
+      return DMXDraws.HslColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpHslColor(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
@@ -76,7 +85,10 @@ public static class FollowedHyperlinkColorConverter
   
   private static DMDraws.SystemColor? GetSystemColor(DXDraw.FollowedHyperlinkColor openXmlElement)
   {
-    return DMXDraws.SystemColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.SystemColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    if (element != null)
+      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpSystemColor(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
@@ -99,7 +111,10 @@ public static class FollowedHyperlinkColorConverter
   
   private static DMDraws.PresetColor? GetPresetColor(DXDraw.FollowedHyperlinkColor openXmlElement)
   {
-    return DMXDraws.PresetColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.PresetColor>());
+    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    if (element != null)
+      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpPresetColor(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
@@ -120,11 +135,11 @@ public static class FollowedHyperlinkColorConverter
     }
   }
   
-  public static DMDraws.FollowedHyperlinkColor? CreateModelElement(DXDraw.FollowedHyperlinkColor? openXmlElement)
+  public static DocumentModel.Drawings.FollowedHyperlinkColor? CreateModelElement(DXDraw.FollowedHyperlinkColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.FollowedHyperlinkColor();
+      var value = new DocumentModel.Drawings.FollowedHyperlinkColor();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);

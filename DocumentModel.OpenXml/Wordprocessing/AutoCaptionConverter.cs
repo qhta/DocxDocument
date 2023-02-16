@@ -51,11 +51,11 @@ public static class AutoCaptionConverter
       openXmlElement.Caption = null;
   }
   
-  public static DMW.AutoCaption? CreateModelElement(DXW.AutoCaption? openXmlElement)
+  public static DocumentModel.Wordprocessing.AutoCaption? CreateModelElement(DXW.AutoCaption? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AutoCaption();
+      var value = new DocumentModel.Wordprocessing.AutoCaption();
       value.Name = GetName(openXmlElement);
       value.Caption = GetCaption(openXmlElement);
       return value;

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ClassificationLabelListConverter
 {
-  private static Collection<DM.ClassificationLabel> GetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
+  private static Collection<DM.ClassificationLabel>? GetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
   {
     var collection = new Collection<DM.ClassificationLabel>();
     foreach (var item in openXmlElement.Elements<DXO2021MipLabelMeta.ClassificationLabel>())
@@ -14,7 +14,9 @@ public static class ClassificationLabelListConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    return collection;
+    if (collection.Count>0)
+      return collection;
+    return null;
   }
   
   private static bool CmpClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs, string? objName)
@@ -61,7 +63,10 @@ public static class ClassificationLabelListConverter
   
   private static DM.ClassificationExtensionList? GetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
   {
-    return DMX.ClassificationExtensionListConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>());
+    var element = openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
+    if (element != null)
+      return DMX.ClassificationExtensionListConverter.CreateModelElement(element);
+    return null;
   }
   
   private static bool CmpClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
@@ -82,11 +87,11 @@ public static class ClassificationLabelListConverter
     }
   }
   
-  public static DM.ClassificationLabelList? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement)
+  public static DocumentModel.ClassificationLabelList? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ClassificationLabelList();
+      var value = new DocumentModel.ClassificationLabelList();
       value.ClassificationLabels = GetClassificationLabels(openXmlElement);
       value.ClassificationExtensionList = GetClassificationExtensionList(openXmlElement);
       return value;

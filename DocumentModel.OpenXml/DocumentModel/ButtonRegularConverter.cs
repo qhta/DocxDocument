@@ -695,11 +695,11 @@ public static class ButtonRegularConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DM.ButtonRegular? CreateModelElement(DXO2010CustUI.ButtonRegular? openXmlElement)
+  public static DocumentModel.ButtonRegular? CreateModelElement(DXO2010CustUI.ButtonRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DM.ButtonRegular();
+      var value = new DocumentModel.ButtonRegular();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);

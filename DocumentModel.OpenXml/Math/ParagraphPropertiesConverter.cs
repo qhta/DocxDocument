@@ -31,11 +31,11 @@ public static class ParagraphPropertiesConverter
     }
   }
   
-  public static DMMath.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
+  public static DocumentModel.Math.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.ParagraphProperties();
+      var value = new DocumentModel.Math.ParagraphProperties();
       value.Justification = GetJustification(openXmlElement);
       return value;
     }
