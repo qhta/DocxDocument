@@ -352,12 +352,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentEquation(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentEquation>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentEquation>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentEquation(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentEquation>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentEquation>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentEquation", val, value);
     return false;
@@ -510,12 +512,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentPicture(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentPicture>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentPicture>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentPicture(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentPicture>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentPicture>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentPicture", val, value);
     return false;
@@ -538,12 +542,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentRichText(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentRichText>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentRichText>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentRichText(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentRichText>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentRichText>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentRichText", val, value);
     return false;
@@ -592,12 +598,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentCitation(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentCitation>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentCitation>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentCitation(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentCitation>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentCitation>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentCitation", val, value);
     return false;
@@ -620,12 +628,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentGroup(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentGroup>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentGroup>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentGroup(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentGroup>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentGroup>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentGroup", val, value);
     return false;
@@ -648,12 +658,14 @@ public static class SdtPropertiesConverter
   
   private static Boolean? GetSdtContentBibliography(DXW.SdtProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.SdtContentBibliography>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentBibliography>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpSdtContentBibliography(DXW.SdtProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.SdtContentBibliography>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.SdtContentBibliography>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.SdtContentBibliography", val, value);
     return false;
