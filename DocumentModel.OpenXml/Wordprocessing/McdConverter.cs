@@ -77,24 +77,24 @@ public static class McdConverter
   /// <summary>
   /// bEncrypt
   /// </summary>
-  private static DM.HexInt? GetBEncrypt(DXOW.Mcd openXmlElement)
+  private static DM.HexChar? GetBEncrypt(DXOW.Mcd openXmlElement)
   {
     if (openXmlElement?.BEncrypt?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.BEncrypt.Value);
+      return HexCharConverter.GetValue(openXmlElement.BEncrypt.Value);
     return null;
   }
   
-  private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.BEncrypt?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.BEncrypt.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.BEncrypt.Value) == value)
         return true;
     if (openXmlElement == null && openXmlElement?.BEncrypt?.Value == null && value == null) return true;
     diffs?.Add(objName, "BEncrypt", openXmlElement?.BEncrypt?.Value, value);
     return false;
   }
   
-  private static void SetBEncrypt(DXOW.Mcd openXmlElement, DM.HexInt? value)
+  private static void SetBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value)
   {
     if (value != null)
       openXmlElement.BEncrypt = value.ToString();
@@ -105,27 +105,27 @@ public static class McdConverter
   /// <summary>
   /// cmg
   /// </summary>
-  private static DM.HexBinary? GetCmg(DXOW.Mcd openXmlElement)
+  private static DM.HexChar? GetCmg(DXOW.Mcd openXmlElement)
   {
     if (openXmlElement?.Cmg?.Value != null)
-      return Convert.FromHexString(openXmlElement.Cmg.Value);
+      return HexCharConverter.GetValue(openXmlElement.Cmg.Value);
     return null;
   }
   
-  private static bool CmpCmg(DXOW.Mcd openXmlElement, DM.HexBinary? value, DiffList? diffs, string? objName)
+  private static bool CmpCmg(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Cmg?.Value != null && value != null)
-      if (Convert.FromHexString(openXmlElement.Cmg.Value).SequenceEqual((byte[])value))
+    if (openXmlElement?.Cmg?.Value != null)
+      if (HexCharConverter.GetValue(openXmlElement.Cmg.Value) == value)
         return true;
     if (openXmlElement == null && openXmlElement?.Cmg?.Value == null && value == null) return true;
     diffs?.Add(objName, "Cmg", openXmlElement?.Cmg?.Value, value);
     return false;
   }
   
-  private static void SetCmg(DXOW.Mcd openXmlElement, DM.HexBinary? value)
+  private static void SetCmg(DXOW.Mcd openXmlElement, DM.HexChar? value)
   {
     if (value != null)
-      openXmlElement.Cmg = Convert.ToHexString(value);
+      openXmlElement.Cmg = value.ToString();
     else
       openXmlElement.Cmg = null;
   }
