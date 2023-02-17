@@ -2665,12 +2665,14 @@ public static class DocumentSettingsConverter
   
   private static Boolean? GetForceUpgrade(DXW.Settings openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXW.ForceUpgrade>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.ForceUpgrade>();
+    return (element != null) ? true : null;
   }
   
   private static bool CmpForceUpgrade(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXW.ForceUpgrade>() != null;
+    var element = openXmlElement.GetFirstChild<DXW.ForceUpgrade>();
+    bool? val = (element != null) ? true : null;
     if (val == value) return true;
     diffs?.Add(objName, "DXW.ForceUpgrade", val, value);
     return false;
@@ -2753,3 +2755,697 @@ public static class DocumentSettingsConverter
   
   private static bool CmpSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value, DiffList? diffs, string? objName)
   {
+    return DMXCustXml.SchemaLibraryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DMXCustXml.SchemaLibraryConverter.CreateOpenXmlElement<DXCustXmlSchRefs.SchemaLibrary>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DMW.ShapeDefaults? GetShapeDefaults(DXW.Settings openXmlElement)
+  {
+    var element = openXmlElement?.GetFirstChild<DXW.ShapeDefaults>();
+    if (element != null)
+      return DMXW.ShapeDefaultsConverter.CreateModelElement(element);
+    return null;
+  }
+  
+  private static bool CmpShapeDefaults(DXW.Settings openXmlElement, DMW.ShapeDefaults? value, DiffList? diffs, string? objName)
+  {
+    return DMXW.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ShapeDefaults>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetShapeDefaults(DXW.Settings openXmlElement, DMW.ShapeDefaults? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXW.ShapeDefaults>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DMXW.ShapeDefaultsConverter.CreateOpenXmlElement<DXW.ShapeDefaults>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static String? GetDecimalSymbol(DXW.Settings openXmlElement)
+  {
+    return openXmlElement.GetFirstChild<DXW.DecimalSymbol>()?.Val?.Value;
+  }
+  
+  private static bool CmpDecimalSymbol(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXW.DecimalSymbol>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DecimalSymbol", itemElement?.Val?.Value, value);
+    return false;
+  }
+  
+  private static void SetDecimalSymbol(DXW.Settings openXmlElement, String? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXW.DecimalSymbol>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DXW.DecimalSymbol { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static String? GetListSeparator(DXW.Settings openXmlElement)
+  {
+    return openXmlElement.GetFirstChild<DXW.ListSeparator>()?.Val?.Value;
+  }
+  
+  private static bool CmpListSeparator(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXW.ListSeparator>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "ListSeparator", itemElement?.Val?.Value, value);
+    return false;
+  }
+  
+  private static void SetListSeparator(DXW.Settings openXmlElement, String? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXW.ListSeparator>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DXW.ListSeparator { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DM.HexInt? GetDocumentId(DXW.Settings openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.DocumentId>();
+    if (itemElement?.Val?.Value != null)
+       return HexIntConverter.GetValue(itemElement?.Val?.Value);
+    return null;
+  }
+  
+  private static bool CmpDocumentId(DXW.Settings openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.DocumentId>();
+    if (itemElement?.Val?.Value != null)
+    {
+      var val = HexIntConverter.GetValue(itemElement.Val.Value);
+      if (val == value) return true;
+    }
+    if (itemElement == null && itemElement?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "DocumentId", itemElement?.Val?.Value, value);
+    return false;
+  }
+  
+  private static void SetDocumentId(DXW.Settings openXmlElement, DM.HexInt? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.DocumentId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DXO2010W.DocumentId{ Val = HexIntConverter.CreateHexBinaryValue(value) };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DMW.OnOffKind? GetDiscardImageEditingData(DXW.Settings openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value);
+  }
+  
+  private static bool CmpDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2010W.DiscardImageEditingData, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Int32? GetDefaultImageDpi(DXW.Settings openXmlElement)
+  {
+    return openXmlElement?.GetFirstChild<DXO2010W.DefaultImageDpi>()?.Val?.Value;
+  }
+  
+  private static bool CmpDefaultImageDpi(DXW.Settings openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.DefaultImageDpi>();
+    if (itemElement?.Val?.Value == value) return true;
+    diffs?.Add(objName, "DXO2010W.DefaultImageDpi", itemElement?.Val?.Value, value);
+    return false;
+  }
+  
+  private static void SetDefaultImageDpi(DXW.Settings openXmlElement, Int32? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.DefaultImageDpi>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DXO2010W.DefaultImageDpi{ Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DMW.OnOffKind? GetConflictMode(DXW.Settings openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value);
+  }
+  
+  private static bool CmpConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  {
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+  }
+  
+  private static void SetConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.ConflictMode>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2010W.ConflictMode, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetChartTrackingRefBased(DXW.Settings openXmlElement)
+  {
+    return openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>() != null;
+  }
+  
+  private static bool CmpChartTrackingRefBased(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  {
+    var val = openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>() != null;
+    if (val == value) return true;
+    diffs?.Add(objName, "DXO2013W.ChartTrackingRefBased", val, value);
+    return false;
+  }
+  
+  private static void SetChartTrackingRefBased(DXW.Settings openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DXO2013W.ChartTrackingRefBased();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Guid? GetPersistentDocumentId(DXW.Settings openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (itemElement?.Val?.Value != null)
+      return Guid.Parse(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, Guid? value, DiffList? diffs, string? objName)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (itemElement?.Val?.Value != null)
+    {
+      var val = Guid.Parse(itemElement.Val.Value);
+      if (val == value) return true;
+    }
+    if (itemElement == null && itemElement?.Val?.Value == null && value == null) return true;
+    diffs?.Add(objName, "PersistentDocumentId", itemElement?.Val?.Value, value);
+    return false;
+  }
+  
+  private static void SetPersistentDocumentId(DXW.Settings openXmlElement, Guid? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DXO2013W.PersistentDocumentId{ Val = ((Guid)value).ToString("B") };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  public static DocumentModel.DocumentSettings? CreateModelElement(DXW.Settings? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DocumentModel.DocumentSettings();
+      value.WriteProtection = GetWriteProtection(openXmlElement);
+      value.View = GetView(openXmlElement);
+      value.Zoom = GetZoom(openXmlElement);
+      value.RemovePersonalInformation = GetRemovePersonalInformation(openXmlElement);
+      value.RemoveDateAndTime = GetRemoveDateAndTime(openXmlElement);
+      value.DoNotDisplayPageBoundaries = GetDoNotDisplayPageBoundaries(openXmlElement);
+      value.DisplayBackgroundShape = GetDisplayBackgroundShape(openXmlElement);
+      value.PrintPostScriptOverText = GetPrintPostScriptOverText(openXmlElement);
+      value.PrintFractionalCharacterWidth = GetPrintFractionalCharacterWidth(openXmlElement);
+      value.PrintFormsData = GetPrintFormsData(openXmlElement);
+      value.EmbedTrueTypeFonts = GetEmbedTrueTypeFonts(openXmlElement);
+      value.EmbedSystemFonts = GetEmbedSystemFonts(openXmlElement);
+      value.SaveSubsetFonts = GetSaveSubsetFonts(openXmlElement);
+      value.SaveFormsData = GetSaveFormsData(openXmlElement);
+      value.MirrorMargins = GetMirrorMargins(openXmlElement);
+      value.AlignBorderAndEdges = GetAlignBorderAndEdges(openXmlElement);
+      value.BordersDoNotSurroundHeader = GetBordersDoNotSurroundHeader(openXmlElement);
+      value.BordersDoNotSurroundFooter = GetBordersDoNotSurroundFooter(openXmlElement);
+      value.GutterAtTop = GetGutterAtTop(openXmlElement);
+      value.HideSpellingErrors = GetHideSpellingErrors(openXmlElement);
+      value.HideGrammaticalErrors = GetHideGrammaticalErrors(openXmlElement);
+      value.ActiveWritingStyles = GetActiveWritingStyles(openXmlElement);
+      value.ProofState = GetProofState(openXmlElement);
+      value.FormsDesign = GetFormsDesign(openXmlElement);
+      value.AttachedTemplate = GetAttachedTemplate(openXmlElement);
+      value.LinkStyles = GetLinkStyles(openXmlElement);
+      value.StylePaneFormatFilter = GetStylePaneFormatFilter(openXmlElement);
+      value.StylePaneSortMethods = GetStylePaneSortMethods(openXmlElement);
+      value.DocumentType = GetDocumentType(openXmlElement);
+      value.MailMerge = GetMailMerge(openXmlElement);
+      value.RevisionView = GetRevisionView(openXmlElement);
+      value.TrackRevisions = GetTrackRevisions(openXmlElement);
+      value.DoNotTrackMoves = GetDoNotTrackMoves(openXmlElement);
+      value.DoNotTrackFormatting = GetDoNotTrackFormatting(openXmlElement);
+      value.DocumentProtection = GetDocumentProtection(openXmlElement);
+      value.AutoFormatOverride = GetAutoFormatOverride(openXmlElement);
+      value.DefaultTabStop = GetDefaultTabStop(openXmlElement);
+      value.AutoHyphenation = GetAutoHyphenation(openXmlElement);
+      value.ConsecutiveHyphenLimit = GetConsecutiveHyphenLimit(openXmlElement);
+      value.HyphenationZone = GetHyphenationZone(openXmlElement);
+      value.DoNotHyphenateCaps = GetDoNotHyphenateCaps(openXmlElement);
+      value.ShowEnvelope = GetShowEnvelope(openXmlElement);
+      value.SummaryLength = GetSummaryLength(openXmlElement);
+      value.ClickAndTypeStyle = GetClickAndTypeStyle(openXmlElement);
+      value.DefaultTableStyle = GetDefaultTableStyle(openXmlElement);
+      value.EvenAndOddHeaders = GetEvenAndOddHeaders(openXmlElement);
+      value.BookFoldReversePrinting = GetBookFoldReversePrinting(openXmlElement);
+      value.BookFoldPrinting = GetBookFoldPrinting(openXmlElement);
+      value.BookFoldPrintingSheets = GetBookFoldPrintingSheets(openXmlElement);
+      value.DrawingGridHorizontalSpacing = GetDrawingGridHorizontalSpacing(openXmlElement);
+      value.DrawingGridVerticalSpacing = GetDrawingGridVerticalSpacing(openXmlElement);
+      value.DisplayHorizontalDrawingGrid = GetDisplayHorizontalDrawingGrid(openXmlElement);
+      value.DisplayVerticalDrawingGrid = GetDisplayVerticalDrawingGrid(openXmlElement);
+      value.DoNotUseMarginsForDrawingGridOrigin = GetDoNotUseMarginsForDrawingGridOrigin(openXmlElement);
+      value.DrawingGridHorizontalOrigin = GetDrawingGridHorizontalOrigin(openXmlElement);
+      value.DrawingGridVerticalOrigin = GetDrawingGridVerticalOrigin(openXmlElement);
+      value.DoNotShadeFormData = GetDoNotShadeFormData(openXmlElement);
+      value.NoPunctuationKerning = GetNoPunctuationKerning(openXmlElement);
+      value.CharacterSpacingControl = GetCharacterSpacingControl(openXmlElement);
+      value.PrintTwoOnOne = GetPrintTwoOnOne(openXmlElement);
+      value.StrictFirstAndLastChars = GetStrictFirstAndLastChars(openXmlElement);
+      value.NoLineBreaksAfterKinsoku = GetNoLineBreaksAfterKinsoku(openXmlElement);
+      value.NoLineBreaksBeforeKinsoku = GetNoLineBreaksBeforeKinsoku(openXmlElement);
+      value.SavePreviewPicture = GetSavePreviewPicture(openXmlElement);
+      value.DoNotValidateAgainstSchema = GetDoNotValidateAgainstSchema(openXmlElement);
+      value.SaveInvalidXml = GetSaveInvalidXml(openXmlElement);
+      value.IgnoreMixedContent = GetIgnoreMixedContent(openXmlElement);
+      value.AlwaysShowPlaceholderText = GetAlwaysShowPlaceholderText(openXmlElement);
+      value.DoNotDemarcateInvalidXml = GetDoNotDemarcateInvalidXml(openXmlElement);
+      value.SaveXmlDataOnly = GetSaveXmlDataOnly(openXmlElement);
+      value.UseXsltWhenSaving = GetUseXsltWhenSaving(openXmlElement);
+      value.SaveThroughXslt = GetSaveThroughXslt(openXmlElement);
+      value.ShowXmlTags = GetShowXmlTags(openXmlElement);
+      value.AlwaysMergeEmptyNamespace = GetAlwaysMergeEmptyNamespace(openXmlElement);
+      value.UpdateFieldsOnOpen = GetUpdateFieldsOnOpen(openXmlElement);
+      value.HeaderShapeDefaults = GetHeaderShapeDefaults(openXmlElement);
+      value.FootnoteDocumentWideProperties = GetFootnoteDocumentWideProperties(openXmlElement);
+      value.EndnoteDocumentWideProperties = GetEndnoteDocumentWideProperties(openXmlElement);
+      value.Compatibility = GetCompatibility(openXmlElement);
+      value.DocumentVariables = GetDocumentVariables(openXmlElement);
+      value.Rsids = GetRsids(openXmlElement);
+      value.MathProperties = GetMathProperties(openXmlElement);
+      value.UICompatibleWith97To2003 = GetUICompatibleWith97To2003(openXmlElement);
+      value.AttachedSchemas = GetAttachedSchemas(openXmlElement);
+      value.ThemeFontLanguages = GetThemeFontLanguages(openXmlElement);
+      value.ColorSchemeMapping = GetColorSchemeMapping(openXmlElement);
+      value.DoNotIncludeSubdocsInStats = GetDoNotIncludeSubdocsInStats(openXmlElement);
+      value.DoNotAutoCompressPictures = GetDoNotAutoCompressPictures(openXmlElement);
+      value.ForceUpgrade = GetForceUpgrade(openXmlElement);
+      value.Captions = GetCaptions(openXmlElement);
+      value.ReadModeInkLockDown = GetReadModeInkLockDown(openXmlElement);
+      value.SchemaLibrary = GetSchemaLibrary(openXmlElement);
+      value.ShapeDefaults = GetShapeDefaults(openXmlElement);
+      value.DecimalSymbol = GetDecimalSymbol(openXmlElement);
+      value.ListSeparator = GetListSeparator(openXmlElement);
+      value.DocumentId = GetDocumentId(openXmlElement);
+      value.DiscardImageEditingData = GetDiscardImageEditingData(openXmlElement);
+      value.DefaultImageDpi = GetDefaultImageDpi(openXmlElement);
+      value.ConflictMode = GetConflictMode(openXmlElement);
+      value.ChartTrackingRefBased = GetChartTrackingRefBased(openXmlElement);
+      value.PersistentDocumentId = GetPersistentDocumentId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static bool CompareModelElement(DXW.Settings? openXmlElement, DM.DocumentSettings? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpWriteProtection(openXmlElement, value.WriteProtection, diffs, objName))
+        ok = false;
+      if (!CmpView(openXmlElement, value.View, diffs, objName))
+        ok = false;
+      if (!CmpZoom(openXmlElement, value.Zoom, diffs, objName))
+        ok = false;
+      if (!CmpRemovePersonalInformation(openXmlElement, value.RemovePersonalInformation, diffs, objName))
+        ok = false;
+      if (!CmpRemoveDateAndTime(openXmlElement, value.RemoveDateAndTime, diffs, objName))
+        ok = false;
+      if (!CmpDoNotDisplayPageBoundaries(openXmlElement, value.DoNotDisplayPageBoundaries, diffs, objName))
+        ok = false;
+      if (!CmpDisplayBackgroundShape(openXmlElement, value.DisplayBackgroundShape, diffs, objName))
+        ok = false;
+      if (!CmpPrintPostScriptOverText(openXmlElement, value.PrintPostScriptOverText, diffs, objName))
+        ok = false;
+      if (!CmpPrintFractionalCharacterWidth(openXmlElement, value.PrintFractionalCharacterWidth, diffs, objName))
+        ok = false;
+      if (!CmpPrintFormsData(openXmlElement, value.PrintFormsData, diffs, objName))
+        ok = false;
+      if (!CmpEmbedTrueTypeFonts(openXmlElement, value.EmbedTrueTypeFonts, diffs, objName))
+        ok = false;
+      if (!CmpEmbedSystemFonts(openXmlElement, value.EmbedSystemFonts, diffs, objName))
+        ok = false;
+      if (!CmpSaveSubsetFonts(openXmlElement, value.SaveSubsetFonts, diffs, objName))
+        ok = false;
+      if (!CmpSaveFormsData(openXmlElement, value.SaveFormsData, diffs, objName))
+        ok = false;
+      if (!CmpMirrorMargins(openXmlElement, value.MirrorMargins, diffs, objName))
+        ok = false;
+      if (!CmpAlignBorderAndEdges(openXmlElement, value.AlignBorderAndEdges, diffs, objName))
+        ok = false;
+      if (!CmpBordersDoNotSurroundHeader(openXmlElement, value.BordersDoNotSurroundHeader, diffs, objName))
+        ok = false;
+      if (!CmpBordersDoNotSurroundFooter(openXmlElement, value.BordersDoNotSurroundFooter, diffs, objName))
+        ok = false;
+      if (!CmpGutterAtTop(openXmlElement, value.GutterAtTop, diffs, objName))
+        ok = false;
+      if (!CmpHideSpellingErrors(openXmlElement, value.HideSpellingErrors, diffs, objName))
+        ok = false;
+      if (!CmpHideGrammaticalErrors(openXmlElement, value.HideGrammaticalErrors, diffs, objName))
+        ok = false;
+      if (!CmpActiveWritingStyles(openXmlElement, value.ActiveWritingStyles, diffs, objName))
+        ok = false;
+      if (!CmpProofState(openXmlElement, value.ProofState, diffs, objName))
+        ok = false;
+      if (!CmpFormsDesign(openXmlElement, value.FormsDesign, diffs, objName))
+        ok = false;
+      if (!CmpAttachedTemplate(openXmlElement, value.AttachedTemplate, diffs, objName))
+        ok = false;
+      if (!CmpLinkStyles(openXmlElement, value.LinkStyles, diffs, objName))
+        ok = false;
+      if (!CmpStylePaneFormatFilter(openXmlElement, value.StylePaneFormatFilter, diffs, objName))
+        ok = false;
+      if (!CmpStylePaneSortMethods(openXmlElement, value.StylePaneSortMethods, diffs, objName))
+        ok = false;
+      if (!CmpDocumentType(openXmlElement, value.DocumentType, diffs, objName))
+        ok = false;
+      if (!CmpMailMerge(openXmlElement, value.MailMerge, diffs, objName))
+        ok = false;
+      if (!CmpRevisionView(openXmlElement, value.RevisionView, diffs, objName))
+        ok = false;
+      if (!CmpTrackRevisions(openXmlElement, value.TrackRevisions, diffs, objName))
+        ok = false;
+      if (!CmpDoNotTrackMoves(openXmlElement, value.DoNotTrackMoves, diffs, objName))
+        ok = false;
+      if (!CmpDoNotTrackFormatting(openXmlElement, value.DoNotTrackFormatting, diffs, objName))
+        ok = false;
+      if (!CmpDocumentProtection(openXmlElement, value.DocumentProtection, diffs, objName))
+        ok = false;
+      if (!CmpAutoFormatOverride(openXmlElement, value.AutoFormatOverride, diffs, objName))
+        ok = false;
+      if (!CmpDefaultTabStop(openXmlElement, value.DefaultTabStop, diffs, objName))
+        ok = false;
+      if (!CmpAutoHyphenation(openXmlElement, value.AutoHyphenation, diffs, objName))
+        ok = false;
+      if (!CmpConsecutiveHyphenLimit(openXmlElement, value.ConsecutiveHyphenLimit, diffs, objName))
+        ok = false;
+      if (!CmpHyphenationZone(openXmlElement, value.HyphenationZone, diffs, objName))
+        ok = false;
+      if (!CmpDoNotHyphenateCaps(openXmlElement, value.DoNotHyphenateCaps, diffs, objName))
+        ok = false;
+      if (!CmpShowEnvelope(openXmlElement, value.ShowEnvelope, diffs, objName))
+        ok = false;
+      if (!CmpSummaryLength(openXmlElement, value.SummaryLength, diffs, objName))
+        ok = false;
+      if (!CmpClickAndTypeStyle(openXmlElement, value.ClickAndTypeStyle, diffs, objName))
+        ok = false;
+      if (!CmpDefaultTableStyle(openXmlElement, value.DefaultTableStyle, diffs, objName))
+        ok = false;
+      if (!CmpEvenAndOddHeaders(openXmlElement, value.EvenAndOddHeaders, diffs, objName))
+        ok = false;
+      if (!CmpBookFoldReversePrinting(openXmlElement, value.BookFoldReversePrinting, diffs, objName))
+        ok = false;
+      if (!CmpBookFoldPrinting(openXmlElement, value.BookFoldPrinting, diffs, objName))
+        ok = false;
+      if (!CmpBookFoldPrintingSheets(openXmlElement, value.BookFoldPrintingSheets, diffs, objName))
+        ok = false;
+      if (!CmpDrawingGridHorizontalSpacing(openXmlElement, value.DrawingGridHorizontalSpacing, diffs, objName))
+        ok = false;
+      if (!CmpDrawingGridVerticalSpacing(openXmlElement, value.DrawingGridVerticalSpacing, diffs, objName))
+        ok = false;
+      if (!CmpDisplayHorizontalDrawingGrid(openXmlElement, value.DisplayHorizontalDrawingGrid, diffs, objName))
+        ok = false;
+      if (!CmpDisplayVerticalDrawingGrid(openXmlElement, value.DisplayVerticalDrawingGrid, diffs, objName))
+        ok = false;
+      if (!CmpDoNotUseMarginsForDrawingGridOrigin(openXmlElement, value.DoNotUseMarginsForDrawingGridOrigin, diffs, objName))
+        ok = false;
+      if (!CmpDrawingGridHorizontalOrigin(openXmlElement, value.DrawingGridHorizontalOrigin, diffs, objName))
+        ok = false;
+      if (!CmpDrawingGridVerticalOrigin(openXmlElement, value.DrawingGridVerticalOrigin, diffs, objName))
+        ok = false;
+      if (!CmpDoNotShadeFormData(openXmlElement, value.DoNotShadeFormData, diffs, objName))
+        ok = false;
+      if (!CmpNoPunctuationKerning(openXmlElement, value.NoPunctuationKerning, diffs, objName))
+        ok = false;
+      if (!CmpCharacterSpacingControl(openXmlElement, value.CharacterSpacingControl, diffs, objName))
+        ok = false;
+      if (!CmpPrintTwoOnOne(openXmlElement, value.PrintTwoOnOne, diffs, objName))
+        ok = false;
+      if (!CmpStrictFirstAndLastChars(openXmlElement, value.StrictFirstAndLastChars, diffs, objName))
+        ok = false;
+      if (!CmpNoLineBreaksAfterKinsoku(openXmlElement, value.NoLineBreaksAfterKinsoku, diffs, objName))
+        ok = false;
+      if (!CmpNoLineBreaksBeforeKinsoku(openXmlElement, value.NoLineBreaksBeforeKinsoku, diffs, objName))
+        ok = false;
+      if (!CmpSavePreviewPicture(openXmlElement, value.SavePreviewPicture, diffs, objName))
+        ok = false;
+      if (!CmpDoNotValidateAgainstSchema(openXmlElement, value.DoNotValidateAgainstSchema, diffs, objName))
+        ok = false;
+      if (!CmpSaveInvalidXml(openXmlElement, value.SaveInvalidXml, diffs, objName))
+        ok = false;
+      if (!CmpIgnoreMixedContent(openXmlElement, value.IgnoreMixedContent, diffs, objName))
+        ok = false;
+      if (!CmpAlwaysShowPlaceholderText(openXmlElement, value.AlwaysShowPlaceholderText, diffs, objName))
+        ok = false;
+      if (!CmpDoNotDemarcateInvalidXml(openXmlElement, value.DoNotDemarcateInvalidXml, diffs, objName))
+        ok = false;
+      if (!CmpSaveXmlDataOnly(openXmlElement, value.SaveXmlDataOnly, diffs, objName))
+        ok = false;
+      if (!CmpUseXsltWhenSaving(openXmlElement, value.UseXsltWhenSaving, diffs, objName))
+        ok = false;
+      if (!CmpSaveThroughXslt(openXmlElement, value.SaveThroughXslt, diffs, objName))
+        ok = false;
+      if (!CmpShowXmlTags(openXmlElement, value.ShowXmlTags, diffs, objName))
+        ok = false;
+      if (!CmpAlwaysMergeEmptyNamespace(openXmlElement, value.AlwaysMergeEmptyNamespace, diffs, objName))
+        ok = false;
+      if (!CmpUpdateFieldsOnOpen(openXmlElement, value.UpdateFieldsOnOpen, diffs, objName))
+        ok = false;
+      if (!CmpHeaderShapeDefaults(openXmlElement, value.HeaderShapeDefaults, diffs, objName))
+        ok = false;
+      if (!CmpFootnoteDocumentWideProperties(openXmlElement, value.FootnoteDocumentWideProperties, diffs, objName))
+        ok = false;
+      if (!CmpEndnoteDocumentWideProperties(openXmlElement, value.EndnoteDocumentWideProperties, diffs, objName))
+        ok = false;
+      if (!CmpCompatibility(openXmlElement, value.Compatibility, diffs, objName))
+        ok = false;
+      if (!CmpDocumentVariables(openXmlElement, value.DocumentVariables, diffs, objName))
+        ok = false;
+      if (!CmpRsids(openXmlElement, value.Rsids, diffs, objName))
+        ok = false;
+      if (!CmpMathProperties(openXmlElement, value.MathProperties, diffs, objName))
+        ok = false;
+      if (!CmpUICompatibleWith97To2003(openXmlElement, value.UICompatibleWith97To2003, diffs, objName))
+        ok = false;
+      if (!CmpAttachedSchemas(openXmlElement, value.AttachedSchemas, diffs, objName))
+        ok = false;
+      if (!CmpThemeFontLanguages(openXmlElement, value.ThemeFontLanguages, diffs, objName))
+        ok = false;
+      if (!CmpColorSchemeMapping(openXmlElement, value.ColorSchemeMapping, diffs, objName))
+        ok = false;
+      if (!CmpDoNotIncludeSubdocsInStats(openXmlElement, value.DoNotIncludeSubdocsInStats, diffs, objName))
+        ok = false;
+      if (!CmpDoNotAutoCompressPictures(openXmlElement, value.DoNotAutoCompressPictures, diffs, objName))
+        ok = false;
+      if (!CmpForceUpgrade(openXmlElement, value.ForceUpgrade, diffs, objName))
+        ok = false;
+      if (!CmpCaptions(openXmlElement, value.Captions, diffs, objName))
+        ok = false;
+      if (!CmpReadModeInkLockDown(openXmlElement, value.ReadModeInkLockDown, diffs, objName))
+        ok = false;
+      if (!CmpSchemaLibrary(openXmlElement, value.SchemaLibrary, diffs, objName))
+        ok = false;
+      if (!CmpShapeDefaults(openXmlElement, value.ShapeDefaults, diffs, objName))
+        ok = false;
+      if (!CmpDecimalSymbol(openXmlElement, value.DecimalSymbol, diffs, objName))
+        ok = false;
+      if (!CmpListSeparator(openXmlElement, value.ListSeparator, diffs, objName))
+        ok = false;
+      if (!CmpDocumentId(openXmlElement, value.DocumentId, diffs, objName))
+        ok = false;
+      if (!CmpDiscardImageEditingData(openXmlElement, value.DiscardImageEditingData, diffs, objName))
+        ok = false;
+      if (!CmpDefaultImageDpi(openXmlElement, value.DefaultImageDpi, diffs, objName))
+        ok = false;
+      if (!CmpConflictMode(openXmlElement, value.ConflictMode, diffs, objName))
+        ok = false;
+      if (!CmpChartTrackingRefBased(openXmlElement, value.ChartTrackingRefBased, diffs, objName))
+        ok = false;
+      if (!CmpPersistentDocumentId(openXmlElement, value.PersistentDocumentId, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    return false;
+  }
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.DocumentSettings? value)
+    where OpenXmlElementType: DXW.Settings, new()
+  {
+    if (value != null)
+    {
+      var openXmlElement = new OpenXmlElementType();
+      SetWriteProtection(openXmlElement, value?.WriteProtection);
+      SetView(openXmlElement, value?.View);
+      SetZoom(openXmlElement, value?.Zoom);
+      SetRemovePersonalInformation(openXmlElement, value?.RemovePersonalInformation);
+      SetRemoveDateAndTime(openXmlElement, value?.RemoveDateAndTime);
+      SetDoNotDisplayPageBoundaries(openXmlElement, value?.DoNotDisplayPageBoundaries);
+      SetDisplayBackgroundShape(openXmlElement, value?.DisplayBackgroundShape);
+      SetPrintPostScriptOverText(openXmlElement, value?.PrintPostScriptOverText);
+      SetPrintFractionalCharacterWidth(openXmlElement, value?.PrintFractionalCharacterWidth);
+      SetPrintFormsData(openXmlElement, value?.PrintFormsData);
+      SetEmbedTrueTypeFonts(openXmlElement, value?.EmbedTrueTypeFonts);
+      SetEmbedSystemFonts(openXmlElement, value?.EmbedSystemFonts);
+      SetSaveSubsetFonts(openXmlElement, value?.SaveSubsetFonts);
+      SetSaveFormsData(openXmlElement, value?.SaveFormsData);
+      SetMirrorMargins(openXmlElement, value?.MirrorMargins);
+      SetAlignBorderAndEdges(openXmlElement, value?.AlignBorderAndEdges);
+      SetBordersDoNotSurroundHeader(openXmlElement, value?.BordersDoNotSurroundHeader);
+      SetBordersDoNotSurroundFooter(openXmlElement, value?.BordersDoNotSurroundFooter);
+      SetGutterAtTop(openXmlElement, value?.GutterAtTop);
+      SetHideSpellingErrors(openXmlElement, value?.HideSpellingErrors);
+      SetHideGrammaticalErrors(openXmlElement, value?.HideGrammaticalErrors);
+      SetActiveWritingStyles(openXmlElement, value?.ActiveWritingStyles);
+      SetProofState(openXmlElement, value?.ProofState);
+      SetFormsDesign(openXmlElement, value?.FormsDesign);
+      SetAttachedTemplate(openXmlElement, value?.AttachedTemplate);
+      SetLinkStyles(openXmlElement, value?.LinkStyles);
+      SetStylePaneFormatFilter(openXmlElement, value?.StylePaneFormatFilter);
+      SetStylePaneSortMethods(openXmlElement, value?.StylePaneSortMethods);
+      SetDocumentType(openXmlElement, value?.DocumentType);
+      SetMailMerge(openXmlElement, value?.MailMerge);
+      SetRevisionView(openXmlElement, value?.RevisionView);
+      SetTrackRevisions(openXmlElement, value?.TrackRevisions);
+      SetDoNotTrackMoves(openXmlElement, value?.DoNotTrackMoves);
+      SetDoNotTrackFormatting(openXmlElement, value?.DoNotTrackFormatting);
+      SetDocumentProtection(openXmlElement, value?.DocumentProtection);
+      SetAutoFormatOverride(openXmlElement, value?.AutoFormatOverride);
+      SetDefaultTabStop(openXmlElement, value?.DefaultTabStop);
+      SetAutoHyphenation(openXmlElement, value?.AutoHyphenation);
+      SetConsecutiveHyphenLimit(openXmlElement, value?.ConsecutiveHyphenLimit);
+      SetHyphenationZone(openXmlElement, value?.HyphenationZone);
+      SetDoNotHyphenateCaps(openXmlElement, value?.DoNotHyphenateCaps);
+      SetShowEnvelope(openXmlElement, value?.ShowEnvelope);
+      SetSummaryLength(openXmlElement, value?.SummaryLength);
+      SetClickAndTypeStyle(openXmlElement, value?.ClickAndTypeStyle);
+      SetDefaultTableStyle(openXmlElement, value?.DefaultTableStyle);
+      SetEvenAndOddHeaders(openXmlElement, value?.EvenAndOddHeaders);
+      SetBookFoldReversePrinting(openXmlElement, value?.BookFoldReversePrinting);
+      SetBookFoldPrinting(openXmlElement, value?.BookFoldPrinting);
+      SetBookFoldPrintingSheets(openXmlElement, value?.BookFoldPrintingSheets);
+      SetDrawingGridHorizontalSpacing(openXmlElement, value?.DrawingGridHorizontalSpacing);
+      SetDrawingGridVerticalSpacing(openXmlElement, value?.DrawingGridVerticalSpacing);
+      SetDisplayHorizontalDrawingGrid(openXmlElement, value?.DisplayHorizontalDrawingGrid);
+      SetDisplayVerticalDrawingGrid(openXmlElement, value?.DisplayVerticalDrawingGrid);
+      SetDoNotUseMarginsForDrawingGridOrigin(openXmlElement, value?.DoNotUseMarginsForDrawingGridOrigin);
+      SetDrawingGridHorizontalOrigin(openXmlElement, value?.DrawingGridHorizontalOrigin);
+      SetDrawingGridVerticalOrigin(openXmlElement, value?.DrawingGridVerticalOrigin);
+      SetDoNotShadeFormData(openXmlElement, value?.DoNotShadeFormData);
+      SetNoPunctuationKerning(openXmlElement, value?.NoPunctuationKerning);
+      SetCharacterSpacingControl(openXmlElement, value?.CharacterSpacingControl);
+      SetPrintTwoOnOne(openXmlElement, value?.PrintTwoOnOne);
+      SetStrictFirstAndLastChars(openXmlElement, value?.StrictFirstAndLastChars);
+      SetNoLineBreaksAfterKinsoku(openXmlElement, value?.NoLineBreaksAfterKinsoku);
+      SetNoLineBreaksBeforeKinsoku(openXmlElement, value?.NoLineBreaksBeforeKinsoku);
+      SetSavePreviewPicture(openXmlElement, value?.SavePreviewPicture);
+      SetDoNotValidateAgainstSchema(openXmlElement, value?.DoNotValidateAgainstSchema);
+      SetSaveInvalidXml(openXmlElement, value?.SaveInvalidXml);
+      SetIgnoreMixedContent(openXmlElement, value?.IgnoreMixedContent);
+      SetAlwaysShowPlaceholderText(openXmlElement, value?.AlwaysShowPlaceholderText);
+      SetDoNotDemarcateInvalidXml(openXmlElement, value?.DoNotDemarcateInvalidXml);
+      SetSaveXmlDataOnly(openXmlElement, value?.SaveXmlDataOnly);
+      SetUseXsltWhenSaving(openXmlElement, value?.UseXsltWhenSaving);
+      SetSaveThroughXslt(openXmlElement, value?.SaveThroughXslt);
+      SetShowXmlTags(openXmlElement, value?.ShowXmlTags);
+      SetAlwaysMergeEmptyNamespace(openXmlElement, value?.AlwaysMergeEmptyNamespace);
+      SetUpdateFieldsOnOpen(openXmlElement, value?.UpdateFieldsOnOpen);
+      SetHeaderShapeDefaults(openXmlElement, value?.HeaderShapeDefaults);
+      SetFootnoteDocumentWideProperties(openXmlElement, value?.FootnoteDocumentWideProperties);
+      SetEndnoteDocumentWideProperties(openXmlElement, value?.EndnoteDocumentWideProperties);
+      SetCompatibility(openXmlElement, value?.Compatibility);
+      SetDocumentVariables(openXmlElement, value?.DocumentVariables);
+      SetRsids(openXmlElement, value?.Rsids);
+      SetMathProperties(openXmlElement, value?.MathProperties);
+      SetUICompatibleWith97To2003(openXmlElement, value?.UICompatibleWith97To2003);
+      SetAttachedSchemas(openXmlElement, value?.AttachedSchemas);
+      SetThemeFontLanguages(openXmlElement, value?.ThemeFontLanguages);
+      SetColorSchemeMapping(openXmlElement, value?.ColorSchemeMapping);
+      SetDoNotIncludeSubdocsInStats(openXmlElement, value?.DoNotIncludeSubdocsInStats);
+      SetDoNotAutoCompressPictures(openXmlElement, value?.DoNotAutoCompressPictures);
+      SetForceUpgrade(openXmlElement, value?.ForceUpgrade);
+      SetCaptions(openXmlElement, value?.Captions);
+      SetReadModeInkLockDown(openXmlElement, value?.ReadModeInkLockDown);
+      SetSchemaLibrary(openXmlElement, value?.SchemaLibrary);
+      SetShapeDefaults(openXmlElement, value?.ShapeDefaults);
+      SetDecimalSymbol(openXmlElement, value?.DecimalSymbol);
+      SetListSeparator(openXmlElement, value?.ListSeparator);
+      SetDocumentId(openXmlElement, value?.DocumentId);
+      SetDiscardImageEditingData(openXmlElement, value?.DiscardImageEditingData);
+      SetDefaultImageDpi(openXmlElement, value?.DefaultImageDpi);
+      SetConflictMode(openXmlElement, value?.ConflictMode);
+      SetChartTrackingRefBased(openXmlElement, value?.ChartTrackingRefBased);
+      SetPersistentDocumentId(openXmlElement, value?.PersistentDocumentId);
+      return openXmlElement;
+    }
+    return default;
+  }
+}

@@ -6,11 +6,11 @@ namespace DocumentModel;
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
 public record HexChar : IConvertible
 {
-  private readonly int Value;
+  private readonly ushort Value;
 
   public HexChar(string val)
   {
-    Value = Byte.Parse(val, NumberStyles.HexNumber);
+    Value = ushort.Parse(val, NumberStyles.HexNumber);
   }
 
   public HexChar(Byte value)
@@ -23,9 +23,14 @@ public record HexChar : IConvertible
     Value = value;
   }
 
-  public HexChar(int value)
+  public HexChar(ushort value)
   {
     Value = value;
+  }
+
+  public HexChar(int value)
+  {
+    Value = (ushort)value;
   }
 
   public TypeCode GetTypeCode()

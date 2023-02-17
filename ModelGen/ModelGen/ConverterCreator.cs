@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace ModelGen;
+﻿namespace ModelGen;
 
 public class ConverterCreator
 {

@@ -556,6 +556,16 @@ public static class ModelData
   {
     { "DXW.LatentStyles.Count", "TotalCount" },
   };
+
+  public static Dictionary<string, Type> PropertyTypes { get; } = new()
+  {
+    { "DocumentModel.DocumentSettings.DocumentId", typeof(HexInt) },
+    { "DocumentModel.DocumentSettings.PersistentDocumentId", typeof(Guid) },
+    { "DocumentModel.Wordprocessing.CheckBoxSymbolType.Val", typeof(HexChar) },
+    { "DocumentModel.Wordprocessing.Mcd.BEncrypt", typeof(HexChar) },
+    { "DocumentModel.Wordprocessing.Mcd.Cmg", typeof(HexChar) },
+  };
+
   #endregion
 
   #region Types

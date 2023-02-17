@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml;
+﻿using System.Reflection;
+
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.EMMA;
 
 using DocumentModel;
@@ -204,72 +206,94 @@ public static class ModelManager
     return result;
   }
 
-  public static TypeInfo GetTargetType(this PropInfo propInfo, bool getFromDeclaringType = true)
+  //public static TypeInfo GetTargetType(this PropInfo propInfo, bool getFromDeclaringType = true)
+  //{
+  //  if (propInfo.Name == "DocumentId")
+  //    TestTools.Stop();
+  //  if (propInfo.TargetType != null)
+  //    return propInfo.TargetType;
+  //  if (getFromDeclaringType)
+  //    propInfo.TargetType = GetTargetTypeFromDeclaringType(propInfo);
+  //  if (propInfo.TargetType !=null)
+  //    return propInfo.TargetType;
+  //  else
+  //    return propInfo.TargetType = GetTargetTypeFromMetadata(propInfo);
+  //}
+
+  //public static TypeInfo? GetTargetTypeFromDeclaringType(this PropInfo propInfo)
+  //{
+  //  if (propInfo.DeclaringType != null)
+  //  {
+  //    Type? modelType = null;
+  //    if (propInfo.DeclaringType.TargetType == null)
+  //    {
+  //      var targetTypeName = propInfo.DeclaringType.Namespace + "." + propInfo.DeclaringType.Name;
+  //      modelType = Type.GetType(targetTypeName);
+  //      if (modelType == null)
+  //      {
+  //        var assembly = Assembly.Load("DocumentModel");
+  //        modelType = assembly?.GetType(targetTypeName);
+  //      }
+  //      if (modelType == null)
+  //        TestTools.Stop();
+  //      propInfo.DeclaringType.TargetType = modelType;
+  //    }
+  //    var targetType = modelType?.GetProperty(propInfo.Name)?.PropertyType;
+  //    if (targetType != null && targetType.Name.StartsWith("Nullable`"))
+  //      targetType = targetType.GenericTypeArguments.FirstOrDefault();
+  //    if (targetType != null)
+  //    {
+  //      if (TypeManager.TryGetTypeInfo(targetType, out var targetTypeInfo))
+  //        return targetTypeInfo;
+  //    }
+  //  }
+  //  return null;
+  //}
+
+  public static TypeInfo GetTargetType(this PropInfo propInfo)
   {
-    if (propInfo.Name=="DocumentId")
+    if (propInfo.Name == "DocumentId")
       TestTools.Stop();
     if (propInfo.TargetType != null)
       return propInfo.TargetType;
     var typeInfo = propInfo.PropertyType;
-    //if (typeInfo.TargetType != null)
-    //  return typeInfo.TargetType;
-    if (typeInfo.Name == "HexBinaryValue")
+    TypeInfo targetTypeInfo = null!;
+    Type? targetType = null;
+    var propName = propInfo.DeclaringType?.Namespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
+    if (ModelData.PropertyTypes.TryGetValue(propName, out targetType))
+      targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+    else
     {
-      Type? targetType = null;
-      if (propInfo.Validators != null)
+      if (typeInfo.Name == "HexBinaryValue")
       {
-        var validator = (DocumentFormat.OpenXml.Framework.StringValidator?)
-          propInfo.Validators.FirstOrDefault(item => item.GetType() == typeof(DocumentFormat.OpenXml.Framework.StringValidator));
-        if (validator != null)
+        if (propInfo.Validators != null)
         {
-          if (validator.Length == 2)
-            targetType = typeof(HexChar);
-          else
-          if (validator.Length == 3)
-            targetType = typeof(RGB);
-          else
-          if (validator.Length == 4)
-            targetType = typeof(HexInt);
-          //else
-          //if (validator.Length == 8)
-          //  targetType = typeof(UInt64);
-        }
-      }
-      if (targetType == null)
-      {
-        if (getFromDeclaringType && propInfo.DeclaringType != null)
-        {
-          Type? modelType = null;
-          if (propInfo.DeclaringType.TargetType == null)
+          var validator = (DocumentFormat.OpenXml.Framework.StringValidator?)
+            propInfo.Validators.FirstOrDefault(item => item.GetType() == typeof(DocumentFormat.OpenXml.Framework.StringValidator));
+          if (validator != null)
           {
-            var targetTypeName = propInfo.DeclaringType.Namespace+"."+propInfo.DeclaringType.Name;
-            modelType = Type.GetType(targetTypeName);
-            if (modelType == null)
-            {
-              var assembly = Assembly.Load("DocumentModel");
-              modelType = assembly?.GetType(targetTypeName);
-            }
-            if (modelType == null)
-              TestTools.Stop();
-            propInfo.DeclaringType.TargetType = modelType;
+            if (validator.Length == 2)
+              targetType = typeof(HexChar);
+            else
+            if (validator.Length == 3)
+              targetType = typeof(RGB);
+            else
+            if (validator.Length == 4)
+              targetType = typeof(HexInt);
           }
-          targetType = modelType?.GetProperty(propInfo.Name)?.PropertyType;
-          if (targetType!=null && targetType.Name.StartsWith("Nullable`"))
-            targetType = targetType.GenericTypeArguments.FirstOrDefault();
         }
-        if (targetType==null)
+        if (targetType == null)
           targetType = typeof(HexBinary);
-      }
-      if (targetType != null)
-      {
-        var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
-        propInfo.TargetType = targetTypeInfo;
-        return targetTypeInfo;
+        if (targetType != null)
+        {
+          targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+        }
       }
     }
-    var result = GetConversionTarget(typeInfo);
-    propInfo.TargetType = result;
-    return result;
+    if (targetTypeInfo == null)
+      targetTypeInfo = GetConversionTarget(typeInfo);
+    propInfo.TargetType = targetTypeInfo;
+    return targetTypeInfo;
   }
 
   public static TypeInfo GetOriginType(this TypeInfo typeInfo)

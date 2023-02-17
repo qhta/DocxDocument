@@ -31,24 +31,24 @@ public static class CheckBoxSymbolTypeConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DM.HexInt? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
+  private static DM.HexChar? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.Val.Value);
+      return HexCharConverter.GetValue(openXmlElement.Val.Value);
     return null;
   }
   
-  private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.Val.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Val.Value) == value)
         return true;
     if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexInt? value)
+  private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, DM.HexChar? value)
   {
     if (value != null)
       openXmlElement.Val = value.ToString();
