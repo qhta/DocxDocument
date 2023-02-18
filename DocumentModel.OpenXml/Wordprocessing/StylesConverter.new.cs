@@ -82,7 +82,7 @@ public static class StylesConverter
         return false;
       }
       var ok = true;
-      var modelStyles = value.AllStyles.ToArray();
+      var modelStyles = value.ToArray();
       var origStyles = origElements.ToArray();
       for (int i = 0; i<System.Math.Min(modelStyles.Length, origStyles.Length); i++)
       {

@@ -1,76 +1,22 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
+using Qhta.Xml;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-[XmlContentProperty("LatentStyleExceptions")]
-public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDictionary<string, LatentStyleExceptionInfo>
+//[XmlContentProperty("LatentStyleExceptions")]
+public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInfo>//, IDictionary<string, LatentStyleExceptionInfo>
 {
-  private readonly ObservableCollection<LatentStyleExceptionInfo> _Items = null!;
   public Dictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
 
   public LatentStyles()
   {
     StyleIndex = new();
-    _Items = new ObservableCollection<LatentStyleExceptionInfo>();
-    _Items.CollectionChanged += Styles_CollectionChanged;
-  }
-
-  public Collection<LatentStyleExceptionInfo> LatentStyleExceptions
-  {
-    get => _Items;
-    set
-    {
-      if (_Items != value)
-      {
-        _Items.Clear();
-        foreach (var item in value)
-          _Items.Add(item);
-      }
-    }
-  }
-
-
-  public void Add(LatentStyleExceptionInfo item)
-  {
-    _Items.Add(item);
-  }
-
-  public void Clear()
-  {
-    _Items.Clear();
-  }
-
-  public bool Contains(LatentStyleExceptionInfo item)
-  {
-    return _Items.Contains(item);
-  }
-
-  public void CopyTo(LatentStyleExceptionInfo[] array, int arrayIndex)
-  {
-    _Items.CopyTo(array, arrayIndex);
-  }
-
-  public bool Remove(LatentStyleExceptionInfo item)
-  {
-    return _Items.Remove(item);
-  }
-
-  public int Count => _Items.Count;
-
-  public bool IsReadOnly => false;
-
-  public IEnumerator<LatentStyleExceptionInfo> GetEnumerator()
-  {
-    return _Items.GetEnumerator();
-  }
-
-  IEnumerator IEnumerable.GetEnumerator()
-  {
-    return GetEnumerator();
+    CollectionChanged += Styles_CollectionChanged;
   }
 
   public void Add(string key, LatentStyleExceptionInfo value)
@@ -123,10 +69,10 @@ public partial class LatentStyles : ICollection<LatentStyleExceptionInfo>, IDict
     return ((ICollection<KeyValuePair<string, LatentStyleExceptionInfo>>)StyleIndex).Remove(item);
   }
 
-  IEnumerator<KeyValuePair<string, LatentStyleExceptionInfo>> IEnumerable<KeyValuePair<string, LatentStyleExceptionInfo>>.GetEnumerator()
-  {
-    return (StyleIndex).GetEnumerator();
-  }
+  //IEnumerator<KeyValuePair<string, LatentStyleExceptionInfo>> IEnumerable<KeyValuePair<string, LatentStyleExceptionInfo>>.GetEnumerator()
+  //{
+  //  return (StyleIndex).GetEnumerator();
+  //}
 
   private void Styles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
