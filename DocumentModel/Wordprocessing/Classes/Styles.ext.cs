@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -12,11 +7,11 @@ public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
 {
   [XmlIgnore]
   public IDictionary<string, Style> StyleIndex => DefinedStyles.StyleIndex;
-  public IEnumerable<Style> AllStyles => DefinedStyles.AllStyles;
-  public IEnumerable<Style> ParagraphStyles => DefinedStyles.AllStyles.Where(item => item.Type==StyleKind.Paragraph);
-  public IEnumerable<Style> CharacterStyles => DefinedStyles.AllStyles.Where(item => item.Type==StyleKind.Character);
-  public IEnumerable<Style> TableStyles => DefinedStyles.AllStyles.Where(item => item.Type==StyleKind.Table);
-  public IEnumerable<Style> NumberingStyles => DefinedStyles.AllStyles.Where(item => item.Type==StyleKind.Numbering);
+  public IEnumerable<Style> AllStyles => DefinedStyles;
+  public IEnumerable<Style> ParagraphStyles => DefinedStyles.Where(item => item.Type==StyleKind.Paragraph);
+  public IEnumerable<Style> CharacterStyles => DefinedStyles.Where(item => item.Type==StyleKind.Character);
+  public IEnumerable<Style> TableStyles => DefinedStyles.Where(item => item.Type==StyleKind.Table);
+  public IEnumerable<Style> NumberingStyles => DefinedStyles.Where(item => item.Type==StyleKind.Numbering);
 
 
   public static List<(string name, StyleKind kind, string? alias)> BuiltInStyleStubs = new()

@@ -13,4 +13,6 @@ public partial class Document
 
   public Fonts? Fonts { get; set; }
 
+  public Numbering? Numbering { get; set; }
+
 }

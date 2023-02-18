@@ -1,9 +1,11 @@
+using System;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public partial class Style
+public partial class Style: IEquatable<Style>
 {
   /// <summary>
   ///   Style Type
@@ -23,12 +25,12 @@ public partial class Style
   /// <summary>
   ///   Default Style
   /// </summary>
-  public Boolean? Default { get; set; }
+  public Boolean? IsDefault { get; set; }
 
   /// <summary>
   ///   User-Defined Style
   /// </summary>
-  public Boolean? CustomStyle { get; set; }
+  public Boolean IsCustom { get; set; }
 
   /// <summary>
   ///   Parent Style ID.
@@ -127,4 +129,14 @@ public partial class Style
   public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
   public Collection<TableStyleProperties>? TableStyleProperties { get; set; }
+
+  public bool Equals(Style? other)
+  {
+    if (other == null)
+      return false;
+    if (this.Type!=other.Type) return false;
+    if (this.StyleId!=other.StyleId) return false;
+    if (this.StyleName!=other.StyleName) return false;
+    return true;
+  }
 }

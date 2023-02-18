@@ -8,9 +8,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Default Style Locking Setting
   /// </summary>
-  private static Boolean? GetDefaultLockedState(DXW.LatentStyles openXmlElement)
+  private static Boolean GetDefaultLockedState(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultLockedState?.Value;
+    return openXmlElement?.DefaultLockedState?.Value ?? false;
   }
   
   private static bool CmpDefaultLockedState(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -31,9 +31,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Default User Interface Priority Setting
   /// </summary>
-  private static Int32? GetDefaultUiPriority(DXW.LatentStyles openXmlElement)
+  private static Int32 GetDefaultUiPriority(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultUiPriority?.Value;
+    return openXmlElement?.DefaultUiPriority?.Value ?? 0;
   }
   
   private static bool CmpDefaultUiPriority(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
@@ -51,9 +51,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Default Semi-Hidden Setting
   /// </summary>
-  private static Boolean? GetDefaultSemiHidden(DXW.LatentStyles openXmlElement)
+  private static Boolean GetDefaultSemiHidden(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultSemiHidden?.Value;
+    return openXmlElement?.DefaultSemiHidden?.Value ?? false;
   }
   
   private static bool CmpDefaultSemiHidden(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -74,9 +74,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Default Hidden Until Used Setting
   /// </summary>
-  private static Boolean? GetDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement)
+  private static Boolean GetDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultUnhideWhenUsed?.Value;
+    return openXmlElement?.DefaultUnhideWhenUsed?.Value ?? false;
   }
   
   private static bool CmpDefaultUnhideWhenUsed(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -97,9 +97,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Default Primary Style Setting
   /// </summary>
-  private static Boolean? GetDefaultPrimaryStyle(DXW.LatentStyles openXmlElement)
+  private static Boolean GetDefaultPrimaryStyle(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultPrimaryStyle?.Value;
+    return openXmlElement?.DefaultPrimaryStyle?.Value ?? false;
   }
   
   private static bool CmpDefaultPrimaryStyle(DXW.LatentStyles openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -120,9 +120,9 @@ public static class LatentStylesConverter
   /// <summary>
   /// Latent Style Count
   /// </summary>
-  private static Int32? GetTotalCount(DXW.LatentStyles openXmlElement)
+  private static Int32 GetTotalCount(DXW.LatentStyles openXmlElement)
   {
-    return openXmlElement?.Count?.Value;
+    return openXmlElement?.Count?.Value ?? 0;
   }
   
   private static bool CmpTotalCount(DXW.LatentStyles openXmlElement, Int32? value, DiffList? diffs, string? objName)
@@ -202,7 +202,9 @@ public static class LatentStylesConverter
       value.DefaultUnhideWhenUsed = GetDefaultUnhideWhenUsed(openXmlElement);
       value.DefaultPrimaryStyle = GetDefaultPrimaryStyle(openXmlElement);
       value.TotalCount = GetTotalCount(openXmlElement);
-      value.LatentStyleExceptions = GetLatentStyleExceptionInfos(openXmlElement);
+      var latentStyleExceptions = GetLatentStyleExceptionInfos(openXmlElement);
+      foreach (var item in latentStyleExceptions)
+        value.Add(item);
       return value;
     }
     return null;
@@ -225,7 +227,7 @@ public static class LatentStylesConverter
         ok = false;
       if (!CmpTotalCount(openXmlElement, value.TotalCount, diffs, objName))
         ok = false;
-      if (!CmpLatentStyleExceptionInfos(openXmlElement, value.LatentStyleExceptions, diffs, objName))
+      if (!CmpLatentStyleExceptionInfos(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -246,7 +248,7 @@ public static class LatentStylesConverter
       SetDefaultUnhideWhenUsed(openXmlElement, value?.DefaultUnhideWhenUsed);
       SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
       SetTotalCount(openXmlElement, value?.TotalCount);
-      SetLatentStyleExceptionInfos(openXmlElement, value?.LatentStyleExceptions);
+      SetLatentStyleExceptionInfos(openXmlElement, value);
       return openXmlElement;
     }
     return default;

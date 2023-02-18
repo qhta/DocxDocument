@@ -72,14 +72,20 @@ public static class StyleConverter
   /// <summary>
   /// User-Defined Style
   /// </summary>
-  private static Boolean? GetCustomStyle(DXW.Style openXmlElement)
+  private static Boolean GetCustomStyle(DXW.Style openXmlElement)
   {
-    return openXmlElement?.CustomStyle?.Value;
+    var element = openXmlElement?.CustomStyle;
+    if (element is null)
+      return false;
+    if (element?.Value != null) return element.Value;
+    return true;
   }
   
   private static bool CmpCustomStyle(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CustomStyle?.Value == value) return true;
+    var val = GetCustomStyle(openXmlElement);
+    if (val == value)
+      return true;
     diffs?.Add(objName, "CustomStyle", openXmlElement?.CustomStyle?.Value, value);
     return false;
   }
@@ -745,8 +751,8 @@ public static class StyleConverter
       var value = new DMW.Style();
       value.Type = GetType(openXmlElement);
       value.StyleId = GetStyleId(openXmlElement);
-      value.Default = GetDefault(openXmlElement);
-      value.CustomStyle = GetCustomStyle(openXmlElement);
+      value.IsDefault = GetDefault(openXmlElement);
+      value.IsCustom = GetCustomStyle(openXmlElement);
       value.StyleName = GetStyleName(openXmlElement);
       value.Aliases = GetAliases(openXmlElement);
       value.BasedOn = GetBasedOn(openXmlElement);
@@ -783,9 +789,9 @@ public static class StyleConverter
         ok = false;
       if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName))
         ok = false;
-      if (!CmpDefault(openXmlElement, value.Default, diffs, objName))
+      if (!CmpDefault(openXmlElement, value.IsDefault, diffs, objName))
         ok = false;
-      if (!CmpCustomStyle(openXmlElement, value.CustomStyle, diffs, objName))
+      if (!CmpCustomStyle(openXmlElement, value.IsCustom, diffs, objName))
         ok = false;
       if (!CmpStyleName(openXmlElement, value.StyleName, diffs, objName))
         ok = false;
@@ -846,8 +852,8 @@ public static class StyleConverter
       var openXmlElement = new OpenXmlElementType();
       SetType(openXmlElement, value?.Type);
       SetStyleId(openXmlElement, value?.StyleId);
-      SetDefault(openXmlElement, value?.Default);
-      SetCustomStyle(openXmlElement, value?.CustomStyle);
+      SetDefault(openXmlElement, value?.IsDefault);
+      SetCustomStyle(openXmlElement, value?.IsCustom);
       SetStyleName(openXmlElement, value?.StyleName);
       SetAliases(openXmlElement, value?.Aliases);
       SetBasedOn(openXmlElement, value?.BasedOn);

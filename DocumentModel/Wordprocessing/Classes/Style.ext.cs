@@ -62,18 +62,12 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     TableStyleProperties != null ||
     (this.Type == StyleKind.Numbering) && IsCustom && BasedOn != null;
 
-  public bool IsCustom
-  {
-    get => CustomStyle == true;
-    set => CustomStyle = value;
-  }
-
   public bool IsValid {
     get
     {
       if (IsCustom && BasedOn != null)
         return true;
-      if (Default == true)
+      if (IsDefault == true)
         return true;
       return  (this.Type == StyleKind.Paragraph) ? StyleParagraphProperties != null || StyleRunProperties != null :
               (this.Type == StyleKind.Character) ? StyleRunProperties != null :
