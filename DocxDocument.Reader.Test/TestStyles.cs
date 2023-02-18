@@ -159,8 +159,23 @@ public class TestStyles : TestBase
     Assert.That(totalStyleIds, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid style Ids count");
 
     TestDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);
+    TestLatentStyleDefaults(document.Styles.LatentStyles, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles);
 
     return document.Styles;
+  }
+
+  private void TestLatentStyleDefaults(DMW.LatentStyles? modelLatentStyles, DXW.LatentStyles? origLatentStyles)
+  {
+    if (origLatentStyles != null)
+    {
+      Assert.IsNotNull(modelLatentStyles, "LatentStyles is null");
+      Assert.That(modelLatentStyles.DefaultLockedState, Is.EqualTo(origLatentStyles?.DefaultLockedState), "Invalid DefaultLockedState");
+      Assert.That(modelLatentStyles.DefaultPrimaryStyle, Is.EqualTo(origLatentStyles?.DefaultPrimaryStyle), "Invalid DefaultPrimaryStyle");
+      Assert.That(modelLatentStyles.DefaultSemiHidden, Is.EqualTo(origLatentStyles?.DefaultSemiHidden), "Invalid DefaultSemiHidden");
+      Assert.That(modelLatentStyles.DefaultUiPriority, Is.EqualTo(origLatentStyles?.DefaultUiPriority), "Invalid DefaultUiPriority");
+      Assert.That(modelLatentStyles.DefaultUnhideWhenUsed, Is.EqualTo(origLatentStyles?.DefaultUnhideWhenUsed), "Invalid DefaultUiPriority");
+      Assert.That(modelLatentStyles.TotalCount, Is.EqualTo(origLatentStyles?.Count), "Invalid TotalCount");
+    }
   }
 
   private void TestDocDefaults(DMW.DocDefaults? modelDocDefaults, DXW.DocDefaults? origDocDefaults)
@@ -219,20 +234,35 @@ public class TestStyles : TestBase
     WriteLine(str);
     WriteLine();
 
-    //var textReader = new StringReader(str);
-    //var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-    //Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-    //var oldPropertiesCount = oldStyles.Count;
-    //var newPropertiesCount = newProperties.Count();
-    //var newPropArray = newProperties.ToArray();
-    //var oldPropArray = oldStyles.ToArray();
-    //for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
-    //{
-    //  if (newPropArray[i].Name == "HeadingPairs")
-    //    Debug.Assert(true);
-    //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-    //}
-    //Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+    var textReader = new StringReader(str);
+    var newStyles = (DMW.Styles?)serializer.Deserialize(textReader);
+    Assert.IsNotNull(newStyles, $"Deserialized styles are null");
+
+    var newStylesArray = newStyles.DefinedStyles.ToArray();
+    var newStylesCount = newStylesArray.Count();
+    var oldStylesArray = oldStyles.DefinedStyles.ToArray();
+    var oldStylesCount = oldStylesArray.Count();
+    for (int i = 0; i < Math.Min(oldStylesCount, newStylesCount); i++)
+    {
+      var oldStyle = oldStylesArray[i];
+      var newStyle = newStylesArray[i];
+      Assert.That(newStyle, Is.EqualTo(oldStyle), $"Deserialized style \"{newStyle.Name}\" different for original");
+    }
+    Assert.That(newStylesCount, Is.EqualTo(oldStylesCount), $"Deserialized styles count different for original");
+    CheckLatentStyleDefaults(newStyles.LatentStyles, oldStyles.LatentStyles);
   }
 
+  private void CheckLatentStyleDefaults(DMW.LatentStyles? modelLatentStyles, DMW.LatentStyles? origLatentStyles)
+  {
+    if (origLatentStyles != null)
+    {
+      Assert.IsNotNull(modelLatentStyles, "LatentStyles is null");
+      Assert.That(modelLatentStyles.DefaultLockedState, Is.EqualTo(origLatentStyles?.DefaultLockedState), "Invalid DefaultLockedState");
+      Assert.That(modelLatentStyles.DefaultPrimaryStyle, Is.EqualTo(origLatentStyles?.DefaultPrimaryStyle), "Invalid DefaultPrimaryStyle");
+      Assert.That(modelLatentStyles.DefaultSemiHidden, Is.EqualTo(origLatentStyles?.DefaultSemiHidden), "Invalid DefaultSemiHidden");
+      Assert.That(modelLatentStyles.DefaultUiPriority, Is.EqualTo(origLatentStyles?.DefaultUiPriority), "Invalid DefaultUiPriority");
+      Assert.That(modelLatentStyles.DefaultUnhideWhenUsed, Is.EqualTo(origLatentStyles?.DefaultUnhideWhenUsed), "Invalid DefaultUiPriority");
+      Assert.That(modelLatentStyles.TotalCount, Is.EqualTo(origLatentStyles?.TotalCount), "Invalid TotalCount");
+    }
+  }
 }

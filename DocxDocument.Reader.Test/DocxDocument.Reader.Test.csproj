@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestNumberlingDefinitions.cs" />
     <Compile Remove="TestPropertiesWrite.cs" />
     <Compile Remove="TestReader - Copy.cs" />
     <Compile Remove="TestReader.cs" />
