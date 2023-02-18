@@ -1,14 +1,6 @@
 using System.Reflection;
 
-using DocumentFormat.OpenXml.Wordprocessing;
-
-using DocumentModel;
-using DocumentModel.OpenXml;
-using DocumentModel.OpenXml.Wordprocessing;
-
 using Qhta.Xml.Serialization;
-
-using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocxDocument.Reader.Test;
 
@@ -178,8 +170,8 @@ public class TestTheme : TestBase
     if (origParPropsDefaults != null)
     {
       Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
-      var diffs = new DiffList();
-      if (!ParagraphPropertiesDefaultConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
+      var diffs = new DMX.DiffList();
+      if (!DMXW.ParagraphPropertiesDefaultConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
@@ -190,8 +182,8 @@ public class TestTheme : TestBase
     if (origRunPropsDefaults != null)
     {
       Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
-      var diffs = new DiffList();
-      if (!RunPropertiesDefaultConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
+      var diffs = new DMX.DiffList();
+      if (!DMXW.RunPropertiesDefaultConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }

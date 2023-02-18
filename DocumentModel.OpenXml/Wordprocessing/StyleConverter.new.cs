@@ -698,11 +698,11 @@ public static class StyleConverter
   
   private static bool CmpTableStyleProperties(DXW.Style openXmlElement, Collection<DMW.TableStyleProperties>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.TableStyleProperties>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.TableStyleProperties>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -719,7 +719,7 @@ public static class StyleConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }

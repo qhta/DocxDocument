@@ -3,6 +3,8 @@ global using System.Globalization;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Collections.ObjectModel;
 global using System.Collections.Specialized;
+global using System.Reflection;
+global using System.Runtime.CompilerServices;
 global using System.Xml;
 global using System.Xml.Serialization;
 global using DocumentFormat.OpenXml;
@@ -10,7 +12,7 @@ global using DocumentFormat.OpenXml.VariantTypes;
 global using Qhta.Collections;
 global using Qhta.TypeUtils;
 global using Qhta.TextUtils;
-global using System.Runtime.CompilerServices;
+global using Qhta.Xml.Serialization;
 
 global using DX = DocumentFormat.OpenXml;
 //global using DXAddCht = DocumentFormat.OpenXml.AdditionalCharacteristics;
