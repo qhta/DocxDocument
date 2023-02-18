@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -49,14 +51,20 @@ public static class StyleConverter
   /// <summary>
   /// Default Style
   /// </summary>
-  private static Boolean? GetDefault(DXW.Style openXmlElement)
+  private static Boolean GetDefault(DXW.Style openXmlElement)
   {
-    return openXmlElement?.Default?.Value;
+    var element = openXmlElement?.Default;
+    if (element is null)
+      return false;
+    if (element?.Value != null) return element.Value;
+    return true;
   }
   
   private static bool CmpDefault(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Default?.Value == value) return true;
+    var val = GetDefault(openXmlElement);
+    if (val == value)
+      return true;
     diffs?.Add(objName, "Default", openXmlElement?.Default?.Value, value);
     return false;
   }
@@ -103,7 +111,7 @@ public static class StyleConverter
   /// </summary>
   private static String? GetStyleName(DXW.Style openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXW.StyleName>()?.Val?.Value;
   }
   
   private static bool CmpStyleName(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
@@ -128,12 +136,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetAliases(DXW.Style openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value;
   }
   
   private static bool CmpAliases(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value == value;
+    return openXmlElement?.GetFirstChild<DXW.Aliases>()?.Val?.Value == value;
   }
   
   private static void SetAliases(DXW.Style openXmlElement, String? value)
@@ -153,12 +161,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetBasedOn(DXW.Style openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value;
   }
   
   private static bool CmpBasedOn(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value == value;
+    return openXmlElement?.GetFirstChild<DXW.BasedOn>()?.Val?.Value == value;
   }
   
   private static void SetBasedOn(DXW.Style openXmlElement, String? value)
@@ -178,12 +186,12 @@ public static class StyleConverter
   /// </summary>
   private static String? GetNextParagraphStyle(DXW.Style openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value;
   }
   
   private static bool CmpNextParagraphStyle(DXW.Style openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value == value;
+    return openXmlElement?.GetFirstChild<DXW.NextParagraphStyle>()?.Val?.Value == value;
   }
   
   private static void SetNextParagraphStyle(DXW.Style openXmlElement, String? value)
@@ -226,17 +234,17 @@ public static class StyleConverter
   /// <summary>
   /// Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  private static Boolean? GetAutoRedefine(DXW.Style openXmlElement)
+  private static Boolean GetAutoRedefine(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.AutoRedefine>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpAutoRedefine(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutoRedefine>(), value, diffs, "Style.AutoRedefine");
   }
   
   private static void SetAutoRedefine(DXW.Style openXmlElement, Boolean? value)
@@ -257,17 +265,17 @@ public static class StyleConverter
   /// <summary>
   /// Hide Style From User Interface.
   /// </summary>
-  private static Boolean? GetStyleHidden(DXW.Style openXmlElement)
+  private static Boolean GetStyleHidden(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.StyleHidden>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpStyleHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.StyleHidden>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.StyleHidden>(), value, diffs, "Style.StyleHidden");
   }
   
   private static void SetStyleHidden(DXW.Style openXmlElement, Boolean? value)
@@ -316,17 +324,17 @@ public static class StyleConverter
   /// <summary>
   /// Hide Style From Main User Interface.
   /// </summary>
-  private static Boolean? GetSemiHidden(DXW.Style openXmlElement)
+  private static Boolean GetSemiHidden(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.SemiHidden>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpSemiHidden(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SemiHidden>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SemiHidden>(), value, diffs, "Style.SemiHidden");
   }
   
   private static void SetSemiHidden(DXW.Style openXmlElement, Boolean? value)
@@ -347,17 +355,17 @@ public static class StyleConverter
   /// <summary>
   /// Remove Semi-Hidden Property When Style Is Used.
   /// </summary>
-  private static Boolean? GetUnhideWhenUsed(DXW.Style openXmlElement)
+  private static Boolean GetUnhideWhenUsed(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpUnhideWhenUsed(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UnhideWhenUsed>(), value, diffs, "Style.UnhideWhenUsed");
   }
   
   private static void SetUnhideWhenUsed(DXW.Style openXmlElement, Boolean? value)
@@ -378,17 +386,17 @@ public static class StyleConverter
   /// <summary>
   /// Primary Style.
   /// </summary>
-  private static Boolean? GetPrimaryStyle(DXW.Style openXmlElement)
+  private static Boolean GetPrimaryStyle(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PrimaryStyle>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpPrimaryStyle(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PrimaryStyle>(), value, diffs, "Style.PrimaryStyle");
   }
   
   private static void SetPrimaryStyle(DXW.Style openXmlElement, Boolean? value)
@@ -409,17 +417,17 @@ public static class StyleConverter
   /// <summary>
   /// Style Cannot Be Applied.
   /// </summary>
-  private static Boolean? GetLocked(DXW.Style openXmlElement)
+  private static Boolean GetLocked(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Locked>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement != null;
   }
   
   private static bool CmpLocked(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Locked>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Locked>(), value, diffs, "Style.Locked");
   }
   
   private static void SetLocked(DXW.Style openXmlElement, Boolean? value)
@@ -440,17 +448,17 @@ public static class StyleConverter
   /// <summary>
   /// E-Mail Message Text Style.
   /// </summary>
-  private static Boolean? GetPersonal(DXW.Style openXmlElement)
+  private static Boolean GetPersonal(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Personal>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement != null;
   }
   
   private static bool CmpPersonal(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Personal>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Personal>(), value, diffs, "Style.Personal");
   }
   
   private static void SetPersonal(DXW.Style openXmlElement, Boolean? value)
@@ -471,17 +479,17 @@ public static class StyleConverter
   /// <summary>
   /// E-Mail Message Composition Style.
   /// </summary>
-  private static Boolean? GetPersonalCompose(DXW.Style openXmlElement)
+  private static Boolean GetPersonalCompose(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PersonalCompose>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement != null;
   }
   
   private static bool CmpPersonalCompose(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalCompose>(), value, diffs, "Style.PersonalCompose");
   }
   
   private static void SetPersonalCompose(DXW.Style openXmlElement, Boolean? value)
@@ -502,17 +510,17 @@ public static class StyleConverter
   /// <summary>
   /// E-Mail Message Reply Style.
   /// </summary>
-  private static Boolean? GetPersonalReply(DXW.Style openXmlElement)
+  private static Boolean GetPersonalReply(DXW.Style openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.PersonalReply>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return itemElement!=null;
   }
   
   private static bool CmpPersonalReply(DXW.Style openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalReply>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.PersonalReply>(), value, diffs, "Style.PersonalReply");
   }
   
   private static void SetPersonalReply(DXW.Style openXmlElement, Boolean? value)
@@ -758,16 +766,16 @@ public static class StyleConverter
       value.BasedOn = GetBasedOn(openXmlElement);
       value.NextParagraphStyle = GetNextParagraphStyle(openXmlElement);
       value.LinkedStyle = GetLinkedStyle(openXmlElement);
-      value.AutoRedefine = GetAutoRedefine(openXmlElement);
-      value.StyleHidden = GetStyleHidden(openXmlElement);
+      value.IsAutoRedefined = GetAutoRedefine(openXmlElement);
+      value.IsHidden = GetStyleHidden(openXmlElement);
       value.UIPriority = GetUIPriority(openXmlElement);
-      value.SemiHidden = GetSemiHidden(openXmlElement);
-      value.UnhideWhenUsed = GetUnhideWhenUsed(openXmlElement);
-      value.PrimaryStyle = GetPrimaryStyle(openXmlElement);
-      value.Locked = GetLocked(openXmlElement);
-      value.Personal = GetPersonal(openXmlElement);
-      value.PersonalCompose = GetPersonalCompose(openXmlElement);
-      value.PersonalReply = GetPersonalReply(openXmlElement);
+      value.IsSemiHidden = GetSemiHidden(openXmlElement);
+      value.IsUnhiddenWhenUsed = GetUnhideWhenUsed(openXmlElement);
+      value.IsPrimary = GetPrimaryStyle(openXmlElement);
+      value.IsLocked = GetLocked(openXmlElement);
+      value.IsPersonal = GetPersonal(openXmlElement);
+      value.IsPersonalCompose = GetPersonalCompose(openXmlElement);
+      value.IsPersonalReply = GetPersonalReply(openXmlElement);
       value.Rsid = GetRsid(openXmlElement);
       value.StyleParagraphProperties = GetStyleParagraphProperties(openXmlElement);
       value.StyleRunProperties = GetStyleRunProperties(openXmlElement);
@@ -803,25 +811,25 @@ public static class StyleConverter
         ok = false;
       if (!CmpLinkedStyle(openXmlElement, value.LinkedStyle, diffs, objName))
         ok = false;
-      if (!CmpAutoRedefine(openXmlElement, value.AutoRedefine, diffs, objName))
+      if (!CmpAutoRedefine(openXmlElement, value.IsAutoRedefined, diffs, objName))
         ok = false;
-      if (!CmpStyleHidden(openXmlElement, value.StyleHidden, diffs, objName))
+      if (!CmpStyleHidden(openXmlElement, value.IsHidden, diffs, objName))
         ok = false;
       if (!CmpUIPriority(openXmlElement, value.UIPriority, diffs, objName))
         ok = false;
-      if (!CmpSemiHidden(openXmlElement, value.SemiHidden, diffs, objName))
+      if (!CmpSemiHidden(openXmlElement, value.IsSemiHidden, diffs, objName))
         ok = false;
-      if (!CmpUnhideWhenUsed(openXmlElement, value.UnhideWhenUsed, diffs, objName))
+      if (!CmpUnhideWhenUsed(openXmlElement, value.IsUnhiddenWhenUsed, diffs, objName))
         ok = false;
-      if (!CmpPrimaryStyle(openXmlElement, value.PrimaryStyle, diffs, objName))
+      if (!CmpPrimaryStyle(openXmlElement, value.IsPrimary, diffs, objName))
         ok = false;
-      if (!CmpLocked(openXmlElement, value.Locked, diffs, objName))
+      if (!CmpLocked(openXmlElement, value.IsLocked, diffs, objName))
         ok = false;
-      if (!CmpPersonal(openXmlElement, value.Personal, diffs, objName))
+      if (!CmpPersonal(openXmlElement, value.IsPersonal, diffs, objName))
         ok = false;
-      if (!CmpPersonalCompose(openXmlElement, value.PersonalCompose, diffs, objName))
+      if (!CmpPersonalCompose(openXmlElement, value.IsPersonalCompose, diffs, objName))
         ok = false;
-      if (!CmpPersonalReply(openXmlElement, value.PersonalReply, diffs, objName))
+      if (!CmpPersonalReply(openXmlElement, value.IsPersonalReply, diffs, objName))
         ok = false;
       if (!CmpRsid(openXmlElement, value.Rsid, diffs, objName))
         ok = false;
@@ -859,16 +867,16 @@ public static class StyleConverter
       SetBasedOn(openXmlElement, value?.BasedOn);
       SetNextParagraphStyle(openXmlElement, value?.NextParagraphStyle);
       SetLinkedStyle(openXmlElement, value?.LinkedStyle);
-      SetAutoRedefine(openXmlElement, value?.AutoRedefine);
-      SetStyleHidden(openXmlElement, value?.StyleHidden);
+      SetAutoRedefine(openXmlElement, value?.IsAutoRedefined);
+      SetStyleHidden(openXmlElement, value?.IsHidden);
       SetUIPriority(openXmlElement, value?.UIPriority);
-      SetSemiHidden(openXmlElement, value?.SemiHidden);
-      SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
-      SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
-      SetLocked(openXmlElement, value?.Locked);
-      SetPersonal(openXmlElement, value?.Personal);
-      SetPersonalCompose(openXmlElement, value?.PersonalCompose);
-      SetPersonalReply(openXmlElement, value?.PersonalReply);
+      SetSemiHidden(openXmlElement, value?.IsSemiHidden);
+      SetUnhideWhenUsed(openXmlElement, value?.IsUnhiddenWhenUsed);
+      SetPrimaryStyle(openXmlElement, value?.IsPrimary);
+      SetLocked(openXmlElement, value?.IsLocked);
+      SetPersonal(openXmlElement, value?.IsPersonal);
+      SetPersonalCompose(openXmlElement, value?.IsPersonalCompose);
+      SetPersonalReply(openXmlElement, value?.IsPersonalReply);
       SetRsid(openXmlElement, value?.Rsid);
       SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
       SetStyleRunProperties(openXmlElement, value?.StyleRunProperties);

@@ -25,11 +25,13 @@ public partial class Style: IEquatable<Style>
   /// <summary>
   ///   Default Style
   /// </summary>
-  public Boolean? IsDefault { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsDefault { get; set; }
 
   /// <summary>
   ///   User-Defined Style
   /// </summary>
+  [DefaultValue(false)]
   public Boolean IsCustom { get; set; }
 
   /// <summary>
@@ -50,12 +52,26 @@ public partial class Style: IEquatable<Style>
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.
   /// </summary>
-  public Boolean? AutoRedefine { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsAutoRedefined { get; set; }
 
   /// <summary>
   ///   Hide Style From User Interface.
   /// </summary>
-  public Boolean? StyleHidden { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsHidden { get; set; }
+
+  /// <summary>
+  ///   Hide Style From Main User Interface.
+  /// </summary>
+  [DefaultValue(false)]
+  public Boolean IsSemiHidden { get; set; }
+
+  /// <summary>
+  ///   Remove Semi-Hidden Property When Style Is Used.
+  /// </summary>
+  [DefaultValue(false)]
+  public Boolean IsUnhiddenWhenUsed { get; set; }
 
   /// <summary>
   ///   Optional User Interface Sorting Order.
@@ -63,39 +79,34 @@ public partial class Style: IEquatable<Style>
   public Int32? UIPriority { get; set; }
 
   /// <summary>
-  ///   Hide Style From Main User Interface.
-  /// </summary>
-  public Boolean? SemiHidden { get; set; }
-
-  /// <summary>
-  ///   Remove Semi-Hidden Property When Style Is Used.
-  /// </summary>
-  public Boolean? UnhideWhenUsed { get; set; }
-
-  /// <summary>
   ///   Primary Style.
   /// </summary>
-  public Boolean? PrimaryStyle { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsPrimary { get; set; }
 
   /// <summary>
   ///   Style Cannot Be Applied.
   /// </summary>
-  public Boolean? Locked { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsLocked { get; set; }
 
   /// <summary>
   ///   E-Mail Message Text Style.
   /// </summary>
-  public Boolean? Personal { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsPersonal { get; set; }
 
   /// <summary>
   ///   E-Mail Message Composition Style.
   /// </summary>
-  public Boolean? PersonalCompose { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsPersonalCompose { get; set; }
 
   /// <summary>
   ///   E-Mail Message Reply Style.
   /// </summary>
-  public Boolean? PersonalReply { get; set; }
+  [DefaultValue(false)]
+  public Boolean IsPersonalReply { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Style Definition.
