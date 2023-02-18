@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.VariantTypes;
+﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.VariantTypes;
 
 namespace DocumentModel.OpenXml;
 
@@ -9,28 +10,33 @@ public static class HexBinaryConverter
     var valProperty = openXmlElement?.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      var value = valProperty.GetValue(openXmlElement);
-      if (value is string valStr)
+      var valPropertyValue = valProperty.GetValue(openXmlElement);
+      if (valPropertyValue is string valStr)
         return Convert.FromHexString(valStr);
-      if (value is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+      if (valPropertyValue is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
         return Convert.FromHexString(hexBinaryValue.Value);
     }
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexBinary? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafElement? openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    var valProperty = element?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Val");
     if (valProperty != null && value != null)
     {
-      var valStr = (string?)valProperty.GetValue(element);
-      var valueStr = Convert.ToHexString(value);
-      if (valStr == valueStr) return true;
-      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
+      var valPropertyValue = valProperty.GetValue(openXmlElement);
+      string? origStr = null;
+      if (valPropertyValue is string valStr)
+        origStr = valStr;
+      if (valPropertyValue is HexBinaryValue hexBinaryValue && hexBinaryValue.Value != null)
+        origStr = hexBinaryValue.Value;
+      var valueStr = value.ToString();
+      if (origStr!=null && origStr.Equals(valueStr)) return true;
+      diffs?.Add(objName, openXmlElement?.GetType().ToString(), origStr, valueStr);
       return false;
     }
     if (valProperty == null && value == null) return true;
-    diffs?.Add(objName, element?.GetType().ToString(), element, value);
+    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
     return false;
   }
 

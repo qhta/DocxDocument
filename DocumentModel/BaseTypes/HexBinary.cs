@@ -25,7 +25,7 @@ public record HexBinary: IEquatable<HexBinary>
 
   public int Length => value.Length;
 
-  //public static implicit operator string(HexBinary val) => val.ToString();
+  public static implicit operator string(HexBinary val) => val.ToString();
 
   public static implicit operator HexBinary(string val)
   {
