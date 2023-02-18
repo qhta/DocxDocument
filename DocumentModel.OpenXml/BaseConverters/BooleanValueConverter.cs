@@ -1,8 +1,4 @@
-﻿using System.Xml.Linq;
-
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.ExtendedProperties;
-using DocumentFormat.OpenXml.Math;
+﻿using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml;
@@ -37,7 +33,7 @@ public static class BooleanValueConverter
     return null;
   }
 
-  public static Boolean CmpValue(OnOffOnlyType? element, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
+  public static Boolean CmpValue(OnOffOnlyType? element, Boolean? value, DiffList? diffs, string? objName = null)
   {
     if (element?.Val?.Value != null && value != null)
     {
@@ -45,12 +41,16 @@ public static class BooleanValueConverter
         return true;
       if (element.Val.Value == OnOffOnlyValues.Off && value == false)
         return true;
-      diffs?.Add(callerName, element.GetType().Name, element.Val.Value == OnOffOnlyValues.On, value);
+      diffs?.Add(objName, element.GetType().Name, element.Val.Value == OnOffOnlyValues.On, value);
       return false;
     }
     if (element?.Val?.Value == null && value == null)
       return true;
-    diffs?.Add(callerName, element?.GetType().Name, element?.Val?.Value == OnOffOnlyValues.On, value);
+    if (element!=null && value == true)
+      return true;
+    if (element==null && value == false)
+      return true;
+    diffs?.Add(objName, element?.GetType().Name, element?.Val?.Value == OnOffOnlyValues.On, value);
     return false;
   }
 
