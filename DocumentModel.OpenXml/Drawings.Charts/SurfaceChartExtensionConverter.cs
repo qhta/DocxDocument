@@ -89,5 +89,5 @@ public static class SurfaceChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredSurfaceSeries(openXmlElement, value?.FilteredSurfaceSeries);
-    }
   }
+}

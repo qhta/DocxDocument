@@ -85,5 +85,5 @@ public static class ArtisticPaintStrokesConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetIntensity(openXmlElement, value?.Intensity);
-    }
   }
+}

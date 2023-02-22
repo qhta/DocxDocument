@@ -329,5 +329,5 @@ public static class ContextMenuConverter
     SetMenuRegular(openXmlElement, value?.MenuRegular);
     SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
     SetMenuSeparatorNoTitle(openXmlElement, value?.MenuSeparatorNoTitle);
-    }
   }
+}

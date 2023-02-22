@@ -97,5 +97,5 @@ public static class CatAxExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.CatAxExtensionList openXmlElement, DMDrawsCharts.CatAxExtensionList value)
   {
     SetCatAxExtensions(openXmlElement, value?.CatAxExtensions);
-    }
   }
+}

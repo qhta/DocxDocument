@@ -448,5 +448,5 @@ public static class BackstageMenuButtonConverter
     SetImage(openXmlElement, value?.Image);
     SetImageMso(openXmlElement, value?.ImageMso);
     SetGetImage(openXmlElement, value?.GetImage);
-    }
   }
+}

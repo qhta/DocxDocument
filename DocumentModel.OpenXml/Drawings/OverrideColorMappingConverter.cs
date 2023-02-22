@@ -67,5 +67,5 @@ public static class OverrideColorMappingConverter
   public static void UpdateOpenXmlElement(DXDraw.OverrideColorMapping openXmlElement, DMDraws.OverrideColorMapping value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

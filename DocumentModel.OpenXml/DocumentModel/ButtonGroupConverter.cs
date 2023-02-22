@@ -480,5 +480,5 @@ public static class ButtonGroupConverter
     SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
     SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
     SetSeparator(openXmlElement, value?.Separator);
-    }
   }
+}

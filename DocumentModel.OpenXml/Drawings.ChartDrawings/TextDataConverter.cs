@@ -93,5 +93,5 @@ public static class TextDataConverter
   {
     SetFormula(openXmlElement, value?.Formula);
     SetVXsdstring(openXmlElement, value?.VXsdstring);
-    }
   }
+}

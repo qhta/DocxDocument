@@ -70,5 +70,5 @@ public static class FilteredSeriesTitleConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.FilteredSeriesTitle value)
   {
     SetChartText(openXmlElement, value?.ChartText);
-    }
   }
+}

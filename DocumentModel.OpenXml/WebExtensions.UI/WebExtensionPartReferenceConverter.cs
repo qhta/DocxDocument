@@ -59,5 +59,5 @@ public static class WebExtensionPartReferenceConverter
   public static void UpdateOpenXmlElement(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, DMWebExtUI.WebExtensionPartReference value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

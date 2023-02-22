@@ -284,5 +284,5 @@ public static class RadarChartConverter
     SetDataLabels(openXmlElement, value?.DataLabels);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetRadarChartExtensionList(openXmlElement, value?.RadarChartExtensionList);
-    }
   }
+}

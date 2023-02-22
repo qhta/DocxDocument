@@ -85,5 +85,5 @@ public static class TintEffectConverter
   {
     SetHue(openXmlElement, value?.Hue);
     SetAmount(openXmlElement, value?.Amount);
-    }
   }
+}

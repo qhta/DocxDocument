@@ -85,5 +85,5 @@ public static class ArtisticPhotocopyConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetDetail(openXmlElement, value?.Detail);
-    }
   }
+}

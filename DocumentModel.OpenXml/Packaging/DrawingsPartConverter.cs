@@ -309,5 +309,5 @@ public static class DrawingsPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
-    }
   }
+}

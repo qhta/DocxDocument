@@ -103,5 +103,5 @@ public static class CompatibilitySettingConverter
     SetName(openXmlElement, value?.Name);
     SetUri(openXmlElement, value?.Uri);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

@@ -61,5 +61,5 @@ public static class ChartStringValueConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ChartStringValue openXmlElement, DMDrawsChartDraws.ChartStringValue value)
   {
     SetIndex(openXmlElement, value?.Index);
-    }
   }
+}

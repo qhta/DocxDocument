@@ -67,5 +67,5 @@ public static class SeriesLinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.SeriesLines openXmlElement, DMDrawsCharts.SeriesLines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

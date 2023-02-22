@@ -517,5 +517,5 @@ public static class SeriesConverter
     SetSeriesLayoutProperties(openXmlElement, value?.SeriesLayoutProperties);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

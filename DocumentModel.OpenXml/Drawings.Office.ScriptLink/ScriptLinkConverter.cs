@@ -92,5 +92,5 @@ public static class ScriptLinkConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

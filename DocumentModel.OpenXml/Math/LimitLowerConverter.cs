@@ -136,5 +136,5 @@ public static class LimitLowerConverter
     SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
     SetBase(openXmlElement, value?.Base);
     SetLimit(openXmlElement, value?.Limit);
-    }
   }
+}

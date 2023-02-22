@@ -85,5 +85,5 @@ public static class ConnectionTypeConverter
   {
     SetId(openXmlElement, value?.Id);
     SetIndex(openXmlElement, value?.Index);
-    }
   }
+}

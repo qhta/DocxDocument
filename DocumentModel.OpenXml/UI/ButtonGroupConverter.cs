@@ -428,5 +428,5 @@ public static class ButtonGroupConverter
     SetUnsizedMenu(openXmlElement, value?.UnsizedMenu);
     SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
     SetUnsizedSplitButton(openXmlElement, value?.UnsizedSplitButton);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class AdjustPoint2DTypeConverter
   {
     SetX(openXmlElement, value?.X);
     SetY(openXmlElement, value?.Y);
-    }
   }
+}

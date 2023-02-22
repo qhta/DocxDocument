@@ -179,5 +179,5 @@ public static class SdtContentDateConverter
     SetLanguageId(openXmlElement, value?.LanguageId);
     SetSdtDateMappingType(openXmlElement, value?.SdtDateMappingType);
     SetCalendar(openXmlElement, value?.Calendar);
-    }
   }
+}

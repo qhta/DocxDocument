@@ -83,5 +83,5 @@ public static class ColorTransformCategoryConverter
   {
     SetType(openXmlElement, value?.Type);
     SetPriority(openXmlElement, value?.Priority);
-    }
   }
+}

@@ -191,5 +191,5 @@ public static class MenuSeparatorNoTitleConverter
     SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
     SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
     SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
-    }
   }
+}

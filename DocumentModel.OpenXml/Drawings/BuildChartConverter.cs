@@ -86,5 +86,5 @@ public static class BuildChartConverter
   {
     SetBuild(openXmlElement, value?.Build);
     SetAnimateBackground(openXmlElement, value?.AnimateBackground);
-    }
   }
+}

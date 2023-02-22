@@ -760,5 +760,5 @@ public static class ExtrusionConverter
     SetLightPosition2(openXmlElement, value?.LightPosition2);
     SetLightLevel2(openXmlElement, value?.LightLevel2);
     SetLightHarsh2(openXmlElement, value?.LightHarsh2);
-    }
   }
+}

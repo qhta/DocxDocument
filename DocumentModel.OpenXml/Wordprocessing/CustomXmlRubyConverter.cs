@@ -1717,5 +1717,5 @@ public static class CustomXmlRubyConverter
     SetSubscript(openXmlElement, value?.Subscript);
     SetSubSuperscript(openXmlElement, value?.SubSuperscript);
     SetSuperscript(openXmlElement, value?.Superscript);
-    }
   }
+}

@@ -307,5 +307,5 @@ public static class PictureBulletBaseConverter
     SetRoundRectangle(openXmlElement, value?.RoundRectangle);
     SetShape(openXmlElement, value?.Shape);
     SetShapetype(openXmlElement, value?.Shapetype);
-    }
   }
+}

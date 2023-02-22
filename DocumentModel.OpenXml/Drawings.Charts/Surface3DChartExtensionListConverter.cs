@@ -97,5 +97,5 @@ public static class Surface3DChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.Surface3DChartExtensionList openXmlElement, DMDrawsCharts.Surface3DChartExtensionList value)
   {
     SetSurface3DChartExtensions(openXmlElement, value?.Surface3DChartExtensions);
-    }
   }
+}

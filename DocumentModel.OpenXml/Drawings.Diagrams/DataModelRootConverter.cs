@@ -202,5 +202,5 @@ public static class DataModelRootConverter
     SetBackground(openXmlElement, value?.Background);
     SetWhole(openXmlElement, value?.Whole);
     SetDataModelExtensionList(openXmlElement, value?.DataModelExtensionList);
-    }
   }
+}

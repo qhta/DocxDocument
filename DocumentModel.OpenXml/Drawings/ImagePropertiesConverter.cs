@@ -70,5 +70,5 @@ public static class ImagePropertiesConverter
   public static void UpdateOpenXmlElement(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageProperties value)
   {
     SetImageLayer(openXmlElement, value?.ImageLayer);
-    }
   }
+}

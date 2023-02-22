@@ -235,5 +235,5 @@ public static class TrendlineLabelConverter
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetTextProperties(openXmlElement, value?.TextProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

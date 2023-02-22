@@ -1657,5 +1657,5 @@ public static class RunConflictDeletionConverter
     SetRun(openXmlElement, value?.Run);
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
-    }
   }
+}

@@ -252,5 +252,5 @@ public static class SurfaceChartConverter
     SetBandFormats(openXmlElement, value?.BandFormats);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetSurfaceChartExtensionList(openXmlElement, value?.SurfaceChartExtensionList);
-    }
   }
+}

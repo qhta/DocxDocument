@@ -217,5 +217,5 @@ public static class BulletColorConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

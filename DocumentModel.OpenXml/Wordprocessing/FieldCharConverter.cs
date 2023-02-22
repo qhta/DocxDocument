@@ -198,5 +198,5 @@ public static class FieldCharConverter
     SetFieldData(openXmlElement, value?.FieldData);
     SetFormFieldData(openXmlElement, value?.FormFieldData);
     SetNumberingChange(openXmlElement, value?.NumberingChange);
-    }
   }
+}

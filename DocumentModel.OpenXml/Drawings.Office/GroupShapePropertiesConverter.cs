@@ -396,5 +396,5 @@ public static class GroupShapePropertiesConverter
     SetEffectDag(openXmlElement, value?.EffectDag);
     SetScene3DType(openXmlElement, value?.Scene3DType);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -238,5 +238,5 @@ public static class TextPathConverter
     SetTrim(openXmlElement, value?.Trim);
     SetXScale(openXmlElement, value?.XScale);
     SetString(openXmlElement, value?.String);
-    }
   }
+}

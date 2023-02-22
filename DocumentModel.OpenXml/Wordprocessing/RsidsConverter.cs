@@ -8,29 +8,19 @@ public static class RsidsConverter
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
-  private static UInt32? GetRsidRoot(DXW.Rsids openXmlElement)
+  private static HexInt? GetRsidRoot(DXW.Rsids openXmlElement)
   {
-    if (openXmlElement?.RsidRoot?.Val?.Value != null)
-      return UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber);
-    return null;
+    return HexIntConverter.GetValue(openXmlElement?.RsidRoot?.Val?.Value);
   }
   
-  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRoot?.Val?.Value != null)
-      if (UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber) == value)
-        return true;
-    if (openXmlElement?.RsidRoot?.Val?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRoot", openXmlElement?.RsidRoot?.Val?.Value, value?.ToString("x8"));
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRoot?.Val?.Value, value, diffs, objName, "RsidRoot");
   }
   
-  private static void SetRsidRoot(DXW.Rsids openXmlElement, UInt32? value)
+  private static void SetRsidRoot(DXW.Rsids openXmlElement, HexInt? value)
   {
-    if (value != null)
-      openXmlElement.RsidRoot = new DXW.RsidRoot { Val = ((UInt32)value).ToString("X8") };
-    else
-      openXmlElement.RsidRoot = null;
+    openXmlElement.RsidRoot = HexIntConverter.CreateValue<DXW.RsidRoot>(value);
   }
   
   private static Collection<HexInt> GetItems(DXW.Rsids openXmlElement)
@@ -38,7 +28,7 @@ public static class RsidsConverter
     var collection = new Collection<HexInt>();
     foreach (var item in openXmlElement.Elements<DXW.Rsid>())
     {
-      var newItem = UInt32ValueConverter.GetValue(item);
+      var newItem = HexIntConverter.GetValue(item);
       if (newItem != null)
         collection.Add((HexInt)newItem);
     }
@@ -63,7 +53,7 @@ public static class RsidsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+        if (!HexIntConverter.CmpValue(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;

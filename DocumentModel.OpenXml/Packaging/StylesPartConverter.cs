@@ -64,5 +64,5 @@ public static class StylesPartConverter
   public static void UpdateOpenXmlElement(DXPack.StylesPart openXmlElement, DMPack.StylesPart value)
   {
     SetStyles(openXmlElement, value?.Styles);
-    }
   }
+}

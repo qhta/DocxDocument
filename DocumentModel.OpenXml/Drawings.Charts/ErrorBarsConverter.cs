@@ -322,5 +322,5 @@ public static class ErrorBarsConverter
     SetErrorBarValue(openXmlElement, value?.ErrorBarValue);
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

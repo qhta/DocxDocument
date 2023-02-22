@@ -202,5 +202,5 @@ public static class AxisDataSourceTypeConverter
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);
     SetStringReference(openXmlElement, value?.StringReference);
     SetStringLiteral(openXmlElement, value?.StringLiteral);
-    }
   }
+}

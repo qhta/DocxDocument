@@ -196,5 +196,5 @@ public static class PictureOptionsConverter
     SetApplyToEnd(openXmlElement, value?.ApplyToEnd);
     SetPictureFormat(openXmlElement, value?.PictureFormat);
     SetPictureStackUnit(openXmlElement, value?.PictureStackUnit);
-    }
   }
+}

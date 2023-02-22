@@ -97,5 +97,5 @@ public static class ConnectorLockingExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.ConnectorLockingExtensionList openXmlElement, DMDraws.ConnectorLockingExtensionList value)
   {
     SetConnectorLockingExtensions(openXmlElement, value?.ConnectorLockingExtensions);
-    }
   }
+}

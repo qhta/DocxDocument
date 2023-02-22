@@ -157,5 +157,5 @@ public static class ToolbarsConverter
   {
     SetAllocatedCommandManifests(openXmlElement, value?.AllocatedCommandManifests);
     SetToolbarDatas(openXmlElement, value?.ToolbarDatas);
-    }
   }
+}

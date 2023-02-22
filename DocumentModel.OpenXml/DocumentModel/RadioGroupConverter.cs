@@ -503,5 +503,5 @@ public static class RadioGroupConverter
     SetGetItemLabel(openXmlElement, value?.GetItemLabel);
     SetGetItemID(openXmlElement, value?.GetItemID);
     SetRadioButtonBackstageItems(openXmlElement, value?.RadioButtonBackstageItems);
-    }
   }
+}

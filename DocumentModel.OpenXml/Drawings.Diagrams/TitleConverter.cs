@@ -81,5 +81,5 @@ public static class TitleConverter
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

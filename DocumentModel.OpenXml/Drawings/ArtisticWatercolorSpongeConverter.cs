@@ -85,5 +85,5 @@ public static class ArtisticWatercolorSpongeConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetBrushSize(openXmlElement, value?.BrushSize);
-    }
   }
+}

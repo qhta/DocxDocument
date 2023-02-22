@@ -97,5 +97,5 @@ public static class AreaChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.AreaChartExtensionList openXmlElement, DMDrawsCharts.AreaChartExtensionList value)
   {
     SetAreaChartExtensions(openXmlElement, value?.AreaChartExtensions);
-    }
   }
+}

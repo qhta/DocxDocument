@@ -97,5 +97,5 @@ public static class SerAxExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.SerAxExtensionList openXmlElement, DMDrawsCharts.SerAxExtensionList value)
   {
     SetSerAxExtensions(openXmlElement, value?.SerAxExtensions);
-    }
   }
+}

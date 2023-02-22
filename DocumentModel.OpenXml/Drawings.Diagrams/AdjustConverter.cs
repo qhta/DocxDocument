@@ -85,5 +85,5 @@ public static class AdjustConverter
   {
     SetIndex(openXmlElement, value?.Index);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

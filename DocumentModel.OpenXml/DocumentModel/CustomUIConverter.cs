@@ -213,5 +213,5 @@ public static class CustomUIConverter
     SetRibbon(openXmlElement, value?.Ribbon);
     SetBackstage(openXmlElement, value?.Backstage);
     SetContextMenus(openXmlElement, value?.ContextMenus);
-    }
   }
+}

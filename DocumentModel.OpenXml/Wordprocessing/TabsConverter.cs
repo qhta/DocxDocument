@@ -67,5 +67,5 @@ public static class TabsConverter
   public static void UpdateOpenXmlElement(DXW.Tabs openXmlElement, DMW.Tabs value)
   {
     SetTabStop(openXmlElement, value?.TabStop);
-    }
   }
+}

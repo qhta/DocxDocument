@@ -399,5 +399,5 @@ public static class StylePaneFormatFilterConverter
     SetTop3HeadingStyles(openXmlElement, value?.Top3HeadingStyles);
     SetVisibleStyles(openXmlElement, value?.VisibleStyles);
     SetAlternateStyleNames(openXmlElement, value?.AlternateStyleNames);
-    }
   }
+}

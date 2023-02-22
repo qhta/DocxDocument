@@ -1837,5 +1837,5 @@ public static class CustomXmlRunConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-    }
   }
+}

@@ -160,5 +160,5 @@ public static class PlotAreaRegionConverter
     SetPlotSurface(openXmlElement, value?.PlotSurface);
     SetSeries(openXmlElement, value?.Series);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

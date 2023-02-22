@@ -69,5 +69,5 @@ public static class VbaProjectPartConverter
   {
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

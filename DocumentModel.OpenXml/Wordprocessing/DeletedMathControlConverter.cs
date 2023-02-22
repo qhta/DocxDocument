@@ -135,5 +135,5 @@ public static class DeletedMathControlConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetRunProperties(openXmlElement, value?.RunProperties);
-    }
   }
+}

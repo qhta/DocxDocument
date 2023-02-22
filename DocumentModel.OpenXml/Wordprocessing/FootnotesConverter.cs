@@ -67,5 +67,5 @@ public static class FootnotesConverter
   public static void UpdateOpenXmlElement(DXW.Footnotes openXmlElement, DMW.Footnotes value)
   {
     SetFootnote(openXmlElement, value?.Footnote);
-    }
   }
+}

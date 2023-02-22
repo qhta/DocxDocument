@@ -97,5 +97,5 @@ public static class NonVisualGroupDrawingShapePropsExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.NonVisualGroupDrawingShapePropsExtensionList openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList value)
   {
     SetNonVisualGroupDrawingShapePropsExtensions(openXmlElement, value?.NonVisualGroupDrawingShapePropsExtensions);
-    }
   }
+}

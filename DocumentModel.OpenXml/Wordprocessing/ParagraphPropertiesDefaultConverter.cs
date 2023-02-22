@@ -70,5 +70,5 @@ public static class ParagraphPropertiesDefaultConverter
   public static void UpdateOpenXmlElement(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesDefault value)
   {
     SetParagraphPropertiesBaseStyle(openXmlElement, value?.ParagraphPropertiesBaseStyle);
-    }
   }
+}

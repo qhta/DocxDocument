@@ -83,5 +83,5 @@ public static class MarkerLayoutPropertiesConverter
   {
     SetSymbol(openXmlElement, value?.Symbol);
     SetSize(openXmlElement, value?.Size);
-    }
   }
+}

@@ -67,5 +67,5 @@ public static class CategoryFilterExceptionsConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterExceptions value)
   {
     SetCategoryFilterException(openXmlElement, value?.CategoryFilterException);
-    }
   }
+}

@@ -1117,5 +1117,5 @@ public static class CustomXmlBlockConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-    }
   }
+}

@@ -132,5 +132,5 @@ public static class MultiLevelStringReferenceConverter
     SetFormula(openXmlElement, value?.Formula);
     SetMultiLevelStringCache(openXmlElement, value?.MultiLevelStringCache);
     SetMultiLvlStrRefExtensionList(openXmlElement, value?.MultiLvlStrRefExtensionList);
-    }
   }
+}

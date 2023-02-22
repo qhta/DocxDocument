@@ -97,5 +97,5 @@ public static class ShapeHandlesConverter
   public static void UpdateOpenXmlElement(DXVml.ShapeHandles openXmlElement, DMVml.ShapeHandles value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

@@ -119,5 +119,5 @@ public static class SdtContentComboBoxConverter
   {
     SetLastValue(openXmlElement, value?.LastValue);
     SetListItems(openXmlElement, value?.ListItems);
-    }
   }
+}

@@ -169,5 +169,5 @@ public static class ItemConverter
     SetImageMso(openXmlElement, value?.ImageMso);
     SetScreentip(openXmlElement, value?.Screentip);
     SetSupertip(openXmlElement, value?.Supertip);
-    }
   }
+}

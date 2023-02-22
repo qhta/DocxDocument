@@ -89,5 +89,5 @@ public static class StockChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
-    }
   }
+}

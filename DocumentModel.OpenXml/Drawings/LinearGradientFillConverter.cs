@@ -88,5 +88,5 @@ public static class LinearGradientFillConverter
   {
     SetAngle(openXmlElement, value?.Angle);
     SetScaled(openXmlElement, value?.Scaled);
-    }
   }
+}

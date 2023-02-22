@@ -235,5 +235,5 @@ public static class SolidFillConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

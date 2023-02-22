@@ -97,5 +97,5 @@ public static class CustomColorListConverter
   public static void UpdateOpenXmlElement(DXDraw.CustomColorList openXmlElement, DMDraws.CustomColorList value)
   {
     SetCustomColors(openXmlElement, value?.CustomColors);
-    }
   }
+}

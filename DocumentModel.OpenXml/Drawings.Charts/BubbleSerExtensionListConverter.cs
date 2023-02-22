@@ -97,5 +97,5 @@ public static class BubbleSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.BubbleSerExtensionList openXmlElement, DMDrawsCharts.BubbleSerExtensionList value)
   {
     SetBubbleSerExtensions(openXmlElement, value?.BubbleSerExtensions);
-    }
   }
+}

@@ -214,5 +214,5 @@ public static class BlipFillConverter
     SetSourceRectangle(openXmlElement, value?.SourceRectangle);
     SetTile(openXmlElement, value?.Tile);
     SetStretch(openXmlElement, value?.Stretch);
-    }
   }
+}

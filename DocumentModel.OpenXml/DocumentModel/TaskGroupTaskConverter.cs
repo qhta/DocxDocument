@@ -558,5 +558,5 @@ public static class TaskGroupTaskConverter
     SetGetDescription(openXmlElement, value?.GetDescription);
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
-    }
   }
+}

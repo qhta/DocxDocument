@@ -1057,5 +1057,5 @@ public static class CustomXmlCellConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-    }
   }
+}

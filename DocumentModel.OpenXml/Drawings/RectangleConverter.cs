@@ -125,5 +125,5 @@ public static class RectangleConverter
     SetTop(openXmlElement, value?.Top);
     SetRight(openXmlElement, value?.Right);
     SetBottom(openXmlElement, value?.Bottom);
-    }
   }
+}

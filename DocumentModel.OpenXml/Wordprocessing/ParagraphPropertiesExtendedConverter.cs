@@ -901,5 +901,5 @@ public static class ParagraphPropertiesExtendedConverter
     SetOutlineLevel(openXmlElement, value?.OutlineLevel);
     SetDivId(openXmlElement, value?.DivId);
     SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
-    }
   }
+}

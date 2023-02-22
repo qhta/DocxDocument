@@ -67,5 +67,5 @@ public static class ColorMapConverter
   public static void UpdateOpenXmlElement(DXDraw.ColorMap openXmlElement, DMDraws.ColorMap value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

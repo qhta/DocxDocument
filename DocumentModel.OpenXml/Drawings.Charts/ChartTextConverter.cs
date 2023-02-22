@@ -136,5 +136,5 @@ public static class ChartTextConverter
     SetStringReference(openXmlElement, value?.StringReference);
     SetRichText(openXmlElement, value?.RichText);
     SetStringLiteral(openXmlElement, value?.StringLiteral);
-    }
   }
+}

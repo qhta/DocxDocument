@@ -101,5 +101,5 @@ public static class CategoryConverter
   {
     SetName(openXmlElement, value?.Name);
     SetGallery(openXmlElement, value?.Gallery);
-    }
   }
+}

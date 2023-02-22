@@ -247,5 +247,5 @@ public static class FillReferenceConverter
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
     SetStyleColor(openXmlElement, value?.StyleColor);
-    }
   }
+}

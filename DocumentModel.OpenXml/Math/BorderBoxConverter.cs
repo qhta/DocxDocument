@@ -103,5 +103,5 @@ public static class BorderBoxConverter
   {
     SetBorderBoxProperties(openXmlElement, value?.BorderBoxProperties);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

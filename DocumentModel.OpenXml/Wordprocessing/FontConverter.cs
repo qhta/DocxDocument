@@ -408,5 +408,5 @@ public static class FontConverter
     SetEmbedBoldFont(openXmlElement, value?.EmbedBoldFont);
     SetEmbedItalicFont(openXmlElement, value?.EmbedItalicFont);
     SetEmbedBoldItalicFont(openXmlElement, value?.EmbedBoldItalicFont);
-    }
   }
+}

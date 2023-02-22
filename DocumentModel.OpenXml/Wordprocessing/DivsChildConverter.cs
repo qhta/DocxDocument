@@ -67,5 +67,5 @@ public static class DivsChildConverter
   public static void UpdateOpenXmlElement(DXW.DivsChild openXmlElement, DMW.DivsChild value)
   {
     SetDiv(openXmlElement, value?.Div);
-    }
   }
+}

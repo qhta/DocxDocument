@@ -37,5 +37,5 @@ public static class DocPartsConverter
   
   public static void UpdateOpenXmlElement(DXW.DocParts openXmlElement, DMW.DocParts value)
   {
-    }
   }
+}

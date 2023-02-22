@@ -210,5 +210,5 @@ public static class EquationArrayPropertiesConverter
     SetRowSpacingRule(openXmlElement, value?.RowSpacingRule);
     SetRowSpacing(openXmlElement, value?.RowSpacing);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

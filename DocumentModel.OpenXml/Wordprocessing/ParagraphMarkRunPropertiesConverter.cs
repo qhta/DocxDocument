@@ -1454,5 +1454,5 @@ public static class ParagraphMarkRunPropertiesConverter
     SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
     SetOfficeMath(openXmlElement, value?.OfficeMath);
     SetParagraphMarkRunPropertiesChange(openXmlElement, value?.ParagraphMarkRunPropertiesChange);
-    }
   }
+}

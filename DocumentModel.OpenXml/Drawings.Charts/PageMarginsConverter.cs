@@ -181,5 +181,5 @@ public static class PageMarginsConverter
     SetBottom(openXmlElement, value?.Bottom);
     SetHeader(openXmlElement, value?.Header);
     SetFooter(openXmlElement, value?.Footer);
-    }
   }
+}

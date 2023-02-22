@@ -179,5 +179,5 @@ public static class RubyPropertiesConverter
     SetPhoneticGuideBaseTextSize(openXmlElement, value?.PhoneticGuideBaseTextSize);
     SetLanguageId(openXmlElement, value?.LanguageId);
     SetDirty(openXmlElement, value?.Dirty);
-    }
   }
+}

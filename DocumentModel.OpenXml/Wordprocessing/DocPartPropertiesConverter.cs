@@ -255,5 +255,5 @@ public static class DocPartPropertiesConverter
     SetBehaviors(openXmlElement, value?.Behaviors);
     SetDescription(openXmlElement, value?.Description);
     SetDocPartId(openXmlElement, value?.DocPartId);
-    }
   }
+}

@@ -67,5 +67,5 @@ public static class UpBarsConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.UpBars openXmlElement, DMDrawsCharts.UpBars value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

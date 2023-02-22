@@ -59,5 +59,5 @@ public static class TextConverter
   public static void UpdateOpenXmlElement(DXMath.Text openXmlElement, DMMath.Text value)
   {
     SetSpace(openXmlElement, value?.Space);
-    }
   }
+}

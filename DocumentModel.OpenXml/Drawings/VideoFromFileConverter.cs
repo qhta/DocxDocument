@@ -92,5 +92,5 @@ public static class VideoFromFileConverter
   {
     SetLink(openXmlElement, value?.Link);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

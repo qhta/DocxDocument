@@ -222,5 +222,5 @@ public static class ParagraphConverter
     SetField(openXmlElement, value?.Field);
     SetTextMath(openXmlElement, value?.TextMath);
     SetEndParagraphRunProperties(openXmlElement, value?.EndParagraphRunProperties);
-    }
   }
+}

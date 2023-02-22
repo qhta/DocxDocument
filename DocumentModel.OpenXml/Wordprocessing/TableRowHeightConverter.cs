@@ -83,5 +83,5 @@ public static class TableRowHeightConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetHeightType(openXmlElement, value?.HeightType);
-    }
   }
+}

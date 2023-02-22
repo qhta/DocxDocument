@@ -53,5 +53,5 @@ public static class FontPartConverter
   public static void UpdateOpenXmlElement(DXPack.FontPart openXmlElement, DMPack.FontPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

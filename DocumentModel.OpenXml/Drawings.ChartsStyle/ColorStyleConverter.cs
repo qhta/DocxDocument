@@ -353,5 +353,5 @@ public static class ColorStyleConverter
     SetPresetColor(openXmlElement, value?.PresetColor);
     SetColorStyleVariations(openXmlElement, value?.ColorStyleVariations);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

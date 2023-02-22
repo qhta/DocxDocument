@@ -107,5 +107,5 @@ public static class ChartConverter
     SetSeriesIndex(openXmlElement, value?.SeriesIndex);
     SetCategoryIndex(openXmlElement, value?.CategoryIndex);
     SetBuildStep(openXmlElement, value?.BuildStep);
-    }
   }
+}

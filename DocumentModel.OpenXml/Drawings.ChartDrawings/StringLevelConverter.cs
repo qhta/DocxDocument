@@ -143,5 +143,5 @@ public static class StringLevelConverter
     SetPtCount(openXmlElement, value?.PtCount);
     SetName(openXmlElement, value?.Name);
     SetChartStringValues(openXmlElement, value?.ChartStringValues);
-    }
   }
+}

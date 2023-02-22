@@ -136,5 +136,5 @@ public static class GeoParentEntitiesQueryResultConverter
     SetGeoParentEntitiesQuery(openXmlElement, value?.GeoParentEntitiesQuery);
     SetGeoEntity(openXmlElement, value?.GeoEntity);
     SetGeoParentEntity(openXmlElement, value?.GeoParentEntity);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class GeoDataPointToEntityQueryResultsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQueryResults value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class DocPartConverter
   {
     SetDocPartProperties(openXmlElement, value?.DocPartProperties);
     SetDocPartBody(openXmlElement, value?.DocPartBody);
-    }
   }
+}

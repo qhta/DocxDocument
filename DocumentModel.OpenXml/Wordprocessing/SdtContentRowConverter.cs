@@ -1027,5 +1027,5 @@ public static class SdtContentRowConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-    }
   }
+}

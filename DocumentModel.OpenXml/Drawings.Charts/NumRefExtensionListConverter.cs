@@ -97,5 +97,5 @@ public static class NumRefExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.NumRefExtensionList openXmlElement, DMDrawsCharts.NumRefExtensionList value)
   {
     SetNumRefExtensions(openXmlElement, value?.NumRefExtensions);
-    }
   }
+}

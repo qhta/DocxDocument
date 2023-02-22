@@ -247,5 +247,5 @@ public static class ClassificationLabelConverter
     SetActionId(openXmlElement, value?.ActionId);
     SetContentBits(openXmlElement, value?.ContentBits);
     SetRemoved(openXmlElement, value?.Removed);
-    }
   }
+}

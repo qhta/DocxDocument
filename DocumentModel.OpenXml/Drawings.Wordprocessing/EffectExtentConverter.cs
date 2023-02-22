@@ -133,5 +133,5 @@ public static class EffectExtentConverter
     SetTopEdge(openXmlElement, value?.TopEdge);
     SetRightEdge(openXmlElement, value?.RightEdge);
     SetBottomEdge(openXmlElement, value?.BottomEdge);
-    }
   }
+}

@@ -67,5 +67,5 @@ public static class MinorGridlinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.MinorGridlines openXmlElement, DMDrawsCharts.MinorGridlines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

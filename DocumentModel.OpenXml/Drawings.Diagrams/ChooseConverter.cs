@@ -119,5 +119,5 @@ public static class ChooseConverter
     SetName(openXmlElement, value?.Name);
     SetDiagramChooseIf(openXmlElement, value?.DiagramChooseIf);
     SetDiagramChooseElse(openXmlElement, value?.DiagramChooseElse);
-    }
   }
+}

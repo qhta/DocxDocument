@@ -70,5 +70,5 @@ public static class BackgroundBlurPropertiesConverter
   public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.BackgroundBlurProperties value)
   {
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

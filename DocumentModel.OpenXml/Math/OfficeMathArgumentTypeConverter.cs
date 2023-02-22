@@ -70,5 +70,5 @@ public static class OfficeMathArgumentTypeConverter
   public static void UpdateOpenXmlElement(DXMath.OfficeMathArgumentType openXmlElement, DMMath.OfficeMathArgumentType value)
   {
     SetArgumentProperties(openXmlElement, value?.ArgumentProperties);
-    }
   }
+}

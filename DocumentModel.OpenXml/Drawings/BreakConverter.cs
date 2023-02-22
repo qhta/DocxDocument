@@ -70,5 +70,5 @@ public static class BreakConverter
   public static void UpdateOpenXmlElement(DXDraw.Break openXmlElement, DMDraws.Break value)
   {
     SetRunProperties(openXmlElement, value?.RunProperties);
-    }
   }
+}

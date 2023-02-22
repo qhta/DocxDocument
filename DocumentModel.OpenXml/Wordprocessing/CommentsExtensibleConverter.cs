@@ -127,5 +127,5 @@ public static class CommentsExtensibleConverter
   {
     SetCommentExtensibles(openXmlElement, value?.CommentExtensibles);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

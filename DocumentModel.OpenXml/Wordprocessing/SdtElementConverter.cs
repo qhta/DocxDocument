@@ -103,5 +103,5 @@ public static class SdtElementConverter
   {
     SetSdtProperties(openXmlElement, value?.SdtProperties);
     SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
-    }
   }
+}

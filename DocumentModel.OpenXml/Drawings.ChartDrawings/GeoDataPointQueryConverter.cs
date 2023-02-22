@@ -107,5 +107,5 @@ public static class GeoDataPointQueryConverter
     SetEntityType(openXmlElement, value?.EntityType);
     SetLatitude(openXmlElement, value?.Latitude);
     SetLongitude(openXmlElement, value?.Longitude);
-    }
   }
+}

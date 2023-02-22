@@ -157,5 +157,5 @@ public static class Marker3Converter
     SetSize(openXmlElement, value?.Size);
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

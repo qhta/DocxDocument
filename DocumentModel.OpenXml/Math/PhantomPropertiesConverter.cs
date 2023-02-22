@@ -230,5 +230,5 @@ public static class PhantomPropertiesConverter
     SetZeroDescent(openXmlElement, value?.ZeroDescent);
     SetTransparent(openXmlElement, value?.Transparent);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

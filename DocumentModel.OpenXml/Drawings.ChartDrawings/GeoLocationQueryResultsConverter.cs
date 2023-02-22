@@ -97,5 +97,5 @@ public static class GeoLocationQueryResultsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoLocationQueryResults openXmlElement, DMDrawsChartDraws.GeoLocationQueryResults value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class KeyMapCustomizationsConverter
   public static void UpdateOpenXmlElement(DXOW.KeyMapCustomizations openXmlElement, DMW.KeyMapCustomizations value)
   {
     SetKeyMapEntries(openXmlElement, value?.KeyMapEntries);
-    }
   }
+}

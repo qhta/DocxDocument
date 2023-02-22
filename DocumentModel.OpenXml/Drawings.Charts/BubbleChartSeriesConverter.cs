@@ -577,5 +577,5 @@ public static class BubbleChartSeriesConverter
     SetBubbleSize(openXmlElement, value?.BubbleSize);
     SetBubble3D(openXmlElement, value?.Bubble3D);
     SetBubbleSerExtensionList(openXmlElement, value?.BubbleSerExtensionList);
-    }
   }
+}

@@ -443,5 +443,5 @@ public static class BackstageMenuToggleButtonConverter
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
-    }
   }
+}

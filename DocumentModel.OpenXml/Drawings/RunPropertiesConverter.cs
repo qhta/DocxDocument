@@ -707,5 +707,5 @@ public static class RunPropertiesConverter
     SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
     SetRightToLeft(openXmlElement, value?.RightToLeft);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

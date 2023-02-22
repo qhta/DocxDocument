@@ -86,5 +86,5 @@ public static class StyleReferenceConverter
   {
     SetIndex(openXmlElement, value?.Index);
     SetModifiers(openXmlElement, value?.Modifiers);
-    }
   }
+}

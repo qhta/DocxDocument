@@ -89,5 +89,5 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetNonVisualGroupProperties(openXmlElement, value?.NonVisualGroupProperties);
-    }
   }
+}

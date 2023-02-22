@@ -127,5 +127,5 @@ public static class DocumentControlsQatItemsConverter
     SetControlCloneQat(openXmlElement, value?.ControlCloneQat);
     SetButtonRegular(openXmlElement, value?.ButtonRegular);
     SetSeparator(openXmlElement, value?.Separator);
-    }
   }
+}

@@ -130,5 +130,5 @@ public static class EquationArrayConverter
   {
     SetEquationArrayProperties(openXmlElement, value?.EquationArrayProperties);
     SetBases(openXmlElement, value?.Bases);
-    }
   }
+}

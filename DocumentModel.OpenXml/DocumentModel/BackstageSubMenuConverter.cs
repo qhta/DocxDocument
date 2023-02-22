@@ -429,5 +429,5 @@ public static class BackstageSubMenuConverter
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
     SetBackstageMenuGroup(openXmlElement, value?.BackstageMenuGroup);
-    }
   }
+}

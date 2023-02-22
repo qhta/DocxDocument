@@ -253,5 +253,5 @@ public static class RelativeAnchorSizeConverter
     SetGraphicFrame(openXmlElement, value?.GraphicFrame);
     SetConnectionShape(openXmlElement, value?.ConnectionShape);
     SetPicture(openXmlElement, value?.Picture);
-    }
   }
+}

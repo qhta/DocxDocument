@@ -94,5 +94,5 @@ public static class SingleDataSourceRecordConverter
   {
     SetRecordIncluded(openXmlElement, value?.RecordIncluded);
     SetRecordHashCode(openXmlElement, value?.RecordHashCode);
-    }
   }
+}

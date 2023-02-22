@@ -86,5 +86,5 @@ public static class NumberingFormatConverter
   {
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetSourceLinked(openXmlElement, value?.SourceLinked);
-    }
   }
+}

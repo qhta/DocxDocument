@@ -83,5 +83,5 @@ public static class FootnoteEndnoteReferenceTypeConverter
   {
     SetCustomMarkFollows(openXmlElement, value?.CustomMarkFollows);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

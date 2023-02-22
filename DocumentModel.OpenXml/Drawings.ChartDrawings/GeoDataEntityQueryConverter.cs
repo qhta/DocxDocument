@@ -81,5 +81,5 @@ public static class GeoDataEntityQueryConverter
   {
     SetEntityType(openXmlElement, value?.EntityType);
     SetEntityId(openXmlElement, value?.EntityId);
-    }
   }
+}

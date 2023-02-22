@@ -59,5 +59,5 @@ public static class GridColumnConverter
   public static void UpdateOpenXmlElement(DXW.GridColumn openXmlElement, DMW.GridColumn value)
   {
     SetWidth(openXmlElement, value?.Width);
-    }
   }
+}

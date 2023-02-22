@@ -97,5 +97,5 @@ public static class FormatOverridesConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.FormatOverrides openXmlElement, DMDrawsChartDraws.FormatOverrides value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

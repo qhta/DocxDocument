@@ -97,5 +97,5 @@ public static class ShapeDefaultsConverter
   {
     SetChildShapeDefaults(openXmlElement, value?.ChildShapeDefaults);
     SetShapeLayout(openXmlElement, value?.ShapeLayout);
-    }
   }
+}

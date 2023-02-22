@@ -70,5 +70,5 @@ public static class AlphaModulationEffectConverter
   public static void UpdateOpenXmlElement(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.AlphaModulationEffect value)
   {
     SetEffectContainer(openXmlElement, value?.EffectContainer);
-    }
   }
+}

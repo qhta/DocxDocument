@@ -99,5 +99,5 @@ public static class DataLabelsRangeConverter
   {
     SetFormula(openXmlElement, value?.Formula);
     SetDataLabelsRangeChache(openXmlElement, value?.DataLabelsRangeChache);
-    }
   }
+}

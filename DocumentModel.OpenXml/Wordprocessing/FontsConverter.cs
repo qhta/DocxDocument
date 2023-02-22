@@ -97,5 +97,5 @@ public static class FontsConverter
   public static void UpdateOpenXmlElement(DXW.Fonts openXmlElement, DMW.Fonts value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

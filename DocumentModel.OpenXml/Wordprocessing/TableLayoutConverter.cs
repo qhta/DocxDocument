@@ -59,5 +59,5 @@ public static class TableLayoutConverter
   public static void UpdateOpenXmlElement(DXW.TableLayout openXmlElement, DMW.TableLayout value)
   {
     SetType(openXmlElement, value?.Type);
-    }
   }
+}

@@ -281,5 +281,5 @@ public static class LegendConverter
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetTextProperties(openXmlElement, value?.TextProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

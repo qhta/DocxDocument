@@ -93,5 +93,5 @@ public static class DigitalSignatureOriginPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     //SetXmlSignatureParts(openXmlElement, value?.XmlSignatureParts);
-    }
   }
+}

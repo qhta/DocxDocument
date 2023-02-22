@@ -97,5 +97,5 @@ public static class SampleDataTypeConverter
   {
     SetUseDefault(openXmlElement, value?.UseDefault);
     SetDataModel(openXmlElement, value?.DataModel);
-    }
   }
+}

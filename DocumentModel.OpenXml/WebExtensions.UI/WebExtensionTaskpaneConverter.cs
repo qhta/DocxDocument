@@ -227,5 +227,5 @@ public static class WebExtensionTaskpaneConverter
     SetLocked(openXmlElement, value?.Locked);
     SetWebExtensionPartReference(openXmlElement, value?.WebExtensionPartReference);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

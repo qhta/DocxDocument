@@ -634,5 +634,5 @@ public static class ColorStyleVariationConverter
     SetBlueModulation(openXmlElement, value?.BlueModulation);
     SetGamma(openXmlElement, value?.Gamma);
     SetInverseGamma(openXmlElement, value?.InverseGamma);
-    }
   }
+}

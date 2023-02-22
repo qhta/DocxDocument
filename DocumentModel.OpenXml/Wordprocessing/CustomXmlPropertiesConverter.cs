@@ -129,5 +129,5 @@ public static class CustomXmlPropertiesConverter
   {
     SetCustomXmlPlaceholder(openXmlElement, value?.CustomXmlPlaceholder);
     SetCustomXmlAttributes(openXmlElement, value?.CustomXmlAttributes);
-    }
   }
+}

@@ -96,5 +96,5 @@ public static class WordprocessingPeoplePartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     SetPeople(openXmlElement, value?.People);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

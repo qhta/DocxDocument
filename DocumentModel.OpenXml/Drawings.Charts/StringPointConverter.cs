@@ -90,5 +90,5 @@ public static class StringPointConverter
   {
     SetIndex(openXmlElement, value?.Index);
     SetNumericValue(openXmlElement, value?.NumericValue);
-    }
   }
+}

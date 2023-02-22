@@ -85,5 +85,5 @@ public static class VTClipboardDataConverter
   {
     SetFormat(openXmlElement, value?.Format);
     SetSize(openXmlElement, value?.Size);
-    }
   }
+}

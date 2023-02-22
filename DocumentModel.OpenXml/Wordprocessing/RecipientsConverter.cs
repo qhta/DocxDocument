@@ -67,5 +67,5 @@ public static class RecipientsConverter
   public static void UpdateOpenXmlElement(DXW.Recipients openXmlElement, DMW.Recipients value)
   {
     SetRecipientData(openXmlElement, value?.RecipientData);
-    }
   }
+}

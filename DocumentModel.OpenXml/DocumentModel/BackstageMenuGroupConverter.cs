@@ -289,5 +289,5 @@ public static class BackstageMenuGroupConverter
     SetBackstageMenuCheckBox(openXmlElement, value?.BackstageMenuCheckBox);
     SetBackstageSubMenu(openXmlElement, value?.BackstageSubMenu);
     SetBackstageMenuToggleButton(openXmlElement, value?.BackstageMenuToggleButton);
-    }
   }
+}

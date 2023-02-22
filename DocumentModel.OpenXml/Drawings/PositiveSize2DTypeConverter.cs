@@ -85,5 +85,5 @@ public static class PositiveSize2DTypeConverter
   {
     SetCx(openXmlElement, value?.Cx);
     SetCy(openXmlElement, value?.Cy);
-    }
   }
+}

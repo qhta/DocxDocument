@@ -81,5 +81,5 @@ public static class ColumnConverter
   {
     SetWidth(openXmlElement, value?.Width);
     SetSpace(openXmlElement, value?.Space);
-    }
   }
+}

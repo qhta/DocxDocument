@@ -682,5 +682,5 @@ public static class BoxConverter
     SetSplitButton(openXmlElement, value?.SplitButton);
     SetChildBox(openXmlElement, value?.ChildBox);
     SetButtonGroup(openXmlElement, value?.ButtonGroup);
-    }
   }
+}

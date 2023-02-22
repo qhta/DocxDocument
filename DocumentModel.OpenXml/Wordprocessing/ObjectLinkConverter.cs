@@ -191,5 +191,5 @@ public static class ObjectLinkConverter
     SetProgId(openXmlElement, value?.ProgId);
     SetShapeId(openXmlElement, value?.ShapeId);
     SetFieldCodes(openXmlElement, value?.FieldCodes);
-    }
   }
+}

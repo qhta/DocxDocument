@@ -61,5 +61,5 @@ public static class AlphaModulationFixedConverter
   public static void UpdateOpenXmlElement(DXDraw.AlphaModulationFixed openXmlElement, DMDraws.AlphaModulationFixed value)
   {
     SetAmount(openXmlElement, value?.Amount);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class GeoHierarchyEntityConverter
     SetEntityName(openXmlElement, value?.EntityName);
     SetEntityId(openXmlElement, value?.EntityId);
     SetEntityType(openXmlElement, value?.EntityType);
-    }
   }
+}

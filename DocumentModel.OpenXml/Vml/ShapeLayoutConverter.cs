@@ -158,5 +158,5 @@ public static class ShapeLayoutConverter
     SetShapeIdMap(openXmlElement, value?.ShapeIdMap);
     SetRegroupTable(openXmlElement, value?.RegroupTable);
     SetRules(openXmlElement, value?.Rules);
-    }
   }
+}

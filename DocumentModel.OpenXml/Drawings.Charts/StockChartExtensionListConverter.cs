@@ -97,5 +97,5 @@ public static class StockChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.StockChartExtensionList openXmlElement, DMDrawsCharts.StockChartExtensionList value)
   {
     SetStockChartExtensions(openXmlElement, value?.StockChartExtensions);
-    }
   }
+}

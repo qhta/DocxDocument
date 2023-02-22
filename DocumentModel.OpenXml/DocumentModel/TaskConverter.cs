@@ -158,5 +158,5 @@ public static class TaskConverter
     SetTaskAnchor(openXmlElement, value?.TaskAnchor);
     SetTaskHistory(openXmlElement, value?.TaskHistory);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

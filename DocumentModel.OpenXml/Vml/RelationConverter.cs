@@ -125,5 +125,5 @@ public static class RelationConverter
     SetSourceId(openXmlElement, value?.SourceId);
     SetDestinationId(openXmlElement, value?.DestinationId);
     SetCenterShapeId(openXmlElement, value?.CenterShapeId);
-    }
   }
+}

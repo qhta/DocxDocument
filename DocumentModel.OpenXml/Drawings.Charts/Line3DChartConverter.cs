@@ -333,5 +333,5 @@ public static class Line3DChartConverter
     SetGapDepth(openXmlElement, value?.GapDepth);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetLine3DChartExtensionList(openXmlElement, value?.Line3DChartExtensionList);
-    }
   }
+}

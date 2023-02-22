@@ -97,5 +97,5 @@ public static class WebExtensionPropertyBagConverter
   public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionPropertyBag openXmlElement, DMWebExt.WebExtensionPropertyBag value)
   {
     SetWebExtensionProperties(openXmlElement, value?.WebExtensionProperties);
-    }
   }
+}

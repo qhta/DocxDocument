@@ -191,5 +191,5 @@ public static class AddressConverter
     SetPostalCode(openXmlElement, value?.PostalCode);
     SetLocality(openXmlElement, value?.Locality);
     SetIsoCountryCode(openXmlElement, value?.IsoCountryCode);
-    }
   }
+}

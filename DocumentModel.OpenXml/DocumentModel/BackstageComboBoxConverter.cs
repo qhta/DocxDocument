@@ -525,5 +525,5 @@ public static class BackstageComboBoxConverter
     SetGetItemLabel(openXmlElement, value?.GetItemLabel);
     SetGetItemID(openXmlElement, value?.GetItemID);
     SetItemBackstageItems(openXmlElement, value?.ItemBackstageItems);
-    }
   }
+}

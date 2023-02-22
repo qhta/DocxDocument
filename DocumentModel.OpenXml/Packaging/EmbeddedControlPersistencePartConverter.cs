@@ -77,5 +77,5 @@ public static class EmbeddedControlPersistencePartConverter
   {
     //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

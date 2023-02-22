@@ -37,5 +37,5 @@ public static class DataPartReferenceRelationshipConverter
   
   public static void UpdateOpenXmlElement(DXPack.DataPartReferenceRelationship openXmlElement, DMPack.DataPartReferenceRelationship value)
   {
-    }
   }
+}

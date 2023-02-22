@@ -94,5 +94,5 @@ public static class SdtRepeatedSectionConverter
   {
     SetSectionTitle(openXmlElement, value?.SectionTitle);
     SetDoNotAllowInsertDeleteSection(openXmlElement, value?.DoNotAllowInsertDeleteSection);
-    }
   }
+}

@@ -330,5 +330,5 @@ public static class PreviousTableRowPropertiesConverter
     SetTableHeader(openXmlElement, value?.TableHeader);
     SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
     SetTableJustification(openXmlElement, value?.TableJustification);
-    }
   }
+}

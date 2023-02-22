@@ -97,5 +97,5 @@ public static class RepurposedCommandsConverter
   public static void UpdateOpenXmlElement(DXOCustUI.RepurposedCommands openXmlElement, DMUI.RepurposedCommands value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

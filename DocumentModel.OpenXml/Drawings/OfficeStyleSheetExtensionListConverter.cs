@@ -97,5 +97,5 @@ public static class OfficeStyleSheetExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.OfficeStyleSheetExtensionList openXmlElement, DMDraws.OfficeStyleSheetExtensionList value)
   {
     SetOfficeStyleSheetExtensions(openXmlElement, value?.OfficeStyleSheetExtensions);
-    }
   }
+}

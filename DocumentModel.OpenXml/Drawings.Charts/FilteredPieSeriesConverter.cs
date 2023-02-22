@@ -70,5 +70,5 @@ public static class FilteredPieSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredPieSeries openXmlElement, DMDrawsCharts.FilteredPieSeries value)
   {
     SetPieChartSeries(openXmlElement, value?.PieChartSeries);
-    }
   }
+}

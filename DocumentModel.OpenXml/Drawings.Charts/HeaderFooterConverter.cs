@@ -292,5 +292,5 @@ public static class HeaderFooterConverter
     SetEvenFooter(openXmlElement, value?.EvenFooter);
     SetFirstHeader(openXmlElement, value?.FirstHeader);
     SetFirstFooter(openXmlElement, value?.FirstFooter);
-    }
   }
+}

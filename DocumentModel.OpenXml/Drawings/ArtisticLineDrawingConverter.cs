@@ -85,5 +85,5 @@ public static class ArtisticLineDrawingConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetPencilSize(openXmlElement, value?.PencilSize);
-    }
   }
+}

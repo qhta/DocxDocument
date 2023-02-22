@@ -120,5 +120,5 @@ public static class ThemePartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetTheme(openXmlElement, value?.Theme);
-    }
   }
+}

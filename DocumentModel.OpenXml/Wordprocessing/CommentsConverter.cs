@@ -97,5 +97,5 @@ public static class CommentsConverter
   public static void UpdateOpenXmlElement(DXW.Comments openXmlElement, DMW.Comments value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

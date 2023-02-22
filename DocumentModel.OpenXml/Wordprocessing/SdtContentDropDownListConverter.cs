@@ -119,5 +119,5 @@ public static class SdtContentDropDownListConverter
   {
     SetLastValue(openXmlElement, value?.LastValue);
     SetListItems(openXmlElement, value?.ListItems);
-    }
   }
+}

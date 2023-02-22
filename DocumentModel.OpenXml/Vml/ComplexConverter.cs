@@ -59,5 +59,5 @@ public static class ComplexConverter
   public static void UpdateOpenXmlElement(DXVmlO.Complex openXmlElement, DMVml.Complex value)
   {
     SetExtension(openXmlElement, value?.Extension);
-    }
   }
+}

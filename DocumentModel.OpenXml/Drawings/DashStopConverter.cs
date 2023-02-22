@@ -85,5 +85,5 @@ public static class DashStopConverter
   {
     SetDashLength(openXmlElement, value?.DashLength);
     SetSpaceLength(openXmlElement, value?.SpaceLength);
-    }
   }
+}

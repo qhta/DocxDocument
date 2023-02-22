@@ -85,5 +85,5 @@ public static class ArtisticPastelsSmoothConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetBrushSize(openXmlElement, value?.BrushSize);
-    }
   }
+}

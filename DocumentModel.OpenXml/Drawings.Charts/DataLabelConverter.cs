@@ -518,5 +518,5 @@ public static class DataLabelConverter
     SetShowBubbleSize(openXmlElement, value?.ShowBubbleSize);
     SetSeparator(openXmlElement, value?.Separator);
     SetDLblExtensionList(openXmlElement, value?.DLblExtensionList);
-    }
   }
+}

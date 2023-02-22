@@ -97,5 +97,5 @@ public static class CategoryListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.CategoryList openXmlElement, DMDrawsDgms.CategoryList value)
   {
     SetCategories(openXmlElement, value?.Categories);
-    }
   }
+}

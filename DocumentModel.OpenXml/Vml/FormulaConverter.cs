@@ -59,5 +59,5 @@ public static class FormulaConverter
   public static void UpdateOpenXmlElement(DXVml.Formula openXmlElement, DMVml.Formula value)
   {
     SetEquation(openXmlElement, value?.Equation);
-    }
   }
+}

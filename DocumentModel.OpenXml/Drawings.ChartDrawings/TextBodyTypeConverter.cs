@@ -103,5 +103,5 @@ public static class TextBodyTypeConverter
   {
     SetBodyProperties(openXmlElement, value?.BodyProperties);
     SetListStyle(openXmlElement, value?.ListStyle);
-    }
   }
+}

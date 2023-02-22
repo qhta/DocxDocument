@@ -224,5 +224,5 @@ public static class TableStylePropertiesConverter
     SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalFormattingTableProperties);
     SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
     SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalFormattingTableCellProperties);
-    }
   }
+}

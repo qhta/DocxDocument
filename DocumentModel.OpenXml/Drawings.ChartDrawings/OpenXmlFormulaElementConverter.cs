@@ -59,5 +59,5 @@ public static class OpenXmlFormulaElementConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement value)
   {
     SetDir(openXmlElement, value?.Dir);
-    }
   }
+}

@@ -67,5 +67,5 @@ public static class GradientStopListConverter
   public static void UpdateOpenXmlElement(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStopList value)
   {
     SetGradientStop(openXmlElement, value?.GradientStop);
-    }
   }
+}

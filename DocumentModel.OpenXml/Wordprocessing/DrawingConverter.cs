@@ -103,5 +103,5 @@ public static class DrawingConverter
   {
     SetAnchor(openXmlElement, value?.Anchor);
     SetInline(openXmlElement, value?.Inline);
-    }
   }
+}

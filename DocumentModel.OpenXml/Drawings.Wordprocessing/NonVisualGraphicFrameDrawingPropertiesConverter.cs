@@ -103,5 +103,5 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
   {
     SetGraphicFrameLocks(openXmlElement, value?.GraphicFrameLocks);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

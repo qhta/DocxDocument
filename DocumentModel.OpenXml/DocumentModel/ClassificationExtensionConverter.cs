@@ -59,5 +59,5 @@ public static class ClassificationExtensionConverter
   public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, DM.ClassificationExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

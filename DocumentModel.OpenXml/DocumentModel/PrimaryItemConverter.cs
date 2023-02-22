@@ -103,5 +103,5 @@ public static class PrimaryItemConverter
   {
     SetBackstageRegularButton(openXmlElement, value?.BackstageRegularButton);
     SetBackstagePrimaryMenu(openXmlElement, value?.BackstagePrimaryMenu);
-    }
   }
+}

@@ -61,5 +61,5 @@ public static class TaskPriorityEventInfoConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, DM.TaskPriorityEventInfo value)
   {
     SetValue(openXmlElement, value?.Value);
-    }
   }
+}

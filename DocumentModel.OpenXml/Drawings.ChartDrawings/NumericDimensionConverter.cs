@@ -209,5 +209,5 @@ public static class NumericDimensionConverter
     SetNfFormula(openXmlElement, value?.NfFormula);
     SetNumericLevels(openXmlElement, value?.NumericLevels);
     SetNumericLevel(openXmlElement, value?.NumericLevel);
-    }
   }
+}

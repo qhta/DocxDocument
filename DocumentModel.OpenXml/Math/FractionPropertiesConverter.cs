@@ -102,5 +102,5 @@ public static class FractionPropertiesConverter
   {
     SetFractionType(openXmlElement, value?.FractionType);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

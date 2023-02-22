@@ -114,5 +114,5 @@ public static class PersonConverter
     SetContact(openXmlElement, value?.Contact);
     SetAuthor(openXmlElement, value?.Author);
     SetPresenceInfo(openXmlElement, value?.PresenceInfo);
-    }
   }
+}

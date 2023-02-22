@@ -14,7 +14,7 @@ public static class HexIntConverter
     return null;
   }
 
-  public static bool CmpValue(DX.HexBinaryValue? element, HexInt? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.HexBinaryValue? element, HexInt? value, DiffList? diffs, string? objName, string? propName)
   {
     if (element?.Value != null)
     {
@@ -22,7 +22,7 @@ public static class HexIntConverter
       if (val == value) return true;
     }
     if (element == null && element?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Rsid", element?.Value, value);
+    diffs?.Add(objName, propName, element?.Value, value);
     return false;
   }
 

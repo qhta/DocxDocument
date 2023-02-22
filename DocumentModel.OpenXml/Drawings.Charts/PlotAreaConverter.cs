@@ -760,5 +760,5 @@ public static class PlotAreaConverter
     SetDataTable(openXmlElement, value?.DataTable);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class HeaderFooterReferenceTypeConverter
   {
     SetType(openXmlElement, value?.Type);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

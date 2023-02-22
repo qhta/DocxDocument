@@ -70,5 +70,5 @@ public static class FilteredSurfaceSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.FilteredSurfaceSeries value)
   {
     SetSurfaceChartSeries(openXmlElement, value?.SurfaceChartSeries);
-    }
   }
+}

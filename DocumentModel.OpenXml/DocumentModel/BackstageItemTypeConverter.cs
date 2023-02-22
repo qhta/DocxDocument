@@ -103,5 +103,5 @@ public static class BackstageItemTypeConverter
     SetId(openXmlElement, value?.Id);
     SetLabel(openXmlElement, value?.Label);
     SetGetLabel(openXmlElement, value?.GetLabel);
-    }
   }
+}

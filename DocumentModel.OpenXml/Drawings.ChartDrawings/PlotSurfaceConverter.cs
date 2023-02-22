@@ -103,5 +103,5 @@ public static class PlotSurfaceConverter
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

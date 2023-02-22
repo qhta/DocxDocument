@@ -97,5 +97,5 @@ public static class TaskHistoryConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskHistory openXmlElement, DM.TaskHistory value)
   {
     SetTaskHistoryEvents(openXmlElement, value?.TaskHistoryEvents);
-    }
   }
+}

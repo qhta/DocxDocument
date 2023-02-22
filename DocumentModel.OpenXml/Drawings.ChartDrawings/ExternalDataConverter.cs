@@ -86,5 +86,5 @@ public static class ExternalDataConverter
   {
     SetId(openXmlElement, value?.Id);
     SetAutoUpdate(openXmlElement, value?.AutoUpdate);
-    }
   }
+}

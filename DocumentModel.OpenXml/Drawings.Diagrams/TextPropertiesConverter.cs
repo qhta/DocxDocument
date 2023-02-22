@@ -103,5 +103,5 @@ public static class TextPropertiesConverter
   {
     SetShape3DType(openXmlElement, value?.Shape3DType);
     SetFlatText(openXmlElement, value?.FlatText);
-    }
   }
+}

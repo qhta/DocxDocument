@@ -1278,5 +1278,5 @@ public static class GalleryRegularConverter
     SetGetShowImage(openXmlElement, value?.GetShowImage);
     SetItems(openXmlElement, value?.Items);
     SetButtonRegulars(openXmlElement, value?.ButtonRegulars);
-    }
   }
+}

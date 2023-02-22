@@ -136,5 +136,5 @@ public static class ThemeFamilyConverter
     SetId(openXmlElement, value?.Id);
     SetVid(openXmlElement, value?.Vid);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

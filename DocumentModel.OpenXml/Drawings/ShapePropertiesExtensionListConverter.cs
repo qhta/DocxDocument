@@ -97,5 +97,5 @@ public static class ShapePropertiesExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.ShapePropertiesExtensionList openXmlElement, DMDraws.ShapePropertiesExtensionList value)
   {
     SetShapePropertiesExtensions(openXmlElement, value?.ShapePropertiesExtensions);
-    }
   }
+}

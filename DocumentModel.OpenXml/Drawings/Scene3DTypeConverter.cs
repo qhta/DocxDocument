@@ -169,5 +169,5 @@ public static class Scene3DTypeConverter
     SetLightRig(openXmlElement, value?.LightRig);
     SetBackdrop(openXmlElement, value?.Backdrop);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

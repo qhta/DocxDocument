@@ -83,5 +83,5 @@ public static class PermEndConverter
   {
     SetId(openXmlElement, value?.Id);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
-    }
   }
+}

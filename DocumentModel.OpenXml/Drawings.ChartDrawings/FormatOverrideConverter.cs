@@ -127,5 +127,5 @@ public static class FormatOverrideConverter
     SetIdx(openXmlElement, value?.Idx);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

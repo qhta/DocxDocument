@@ -1902,5 +1902,5 @@ public static class SimpleFieldConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-    }
   }
+}

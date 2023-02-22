@@ -478,5 +478,5 @@ public static class AxisConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

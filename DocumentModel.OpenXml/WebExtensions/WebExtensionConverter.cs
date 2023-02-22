@@ -311,5 +311,5 @@ public static class WebExtensionConverter
     SetWebExtensionBindingList(openXmlElement, value?.WebExtensionBindingList);
     SetSnapshot(openXmlElement, value?.Snapshot);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

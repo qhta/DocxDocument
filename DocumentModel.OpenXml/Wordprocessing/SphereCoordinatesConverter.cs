@@ -109,5 +109,5 @@ public static class SphereCoordinatesConverter
     SetLattitude(openXmlElement, value?.Lattitude);
     SetLongitude(openXmlElement, value?.Longitude);
     SetRevolution(openXmlElement, value?.Revolution);
-    }
   }
+}

@@ -59,5 +59,5 @@ public static class TaskUndoConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskUndo openXmlElement, DM.TaskUndo value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

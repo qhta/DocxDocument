@@ -61,5 +61,5 @@ public static class MiterConverter
   public static void UpdateOpenXmlElement(DXDraw.Miter openXmlElement, DMDraws.Miter value)
   {
     SetLimit(openXmlElement, value?.Limit);
-    }
   }
+}

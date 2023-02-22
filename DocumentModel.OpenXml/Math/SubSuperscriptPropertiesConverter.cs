@@ -102,5 +102,5 @@ public static class SubSuperscriptPropertiesConverter
   {
     SetAlignScripts(openXmlElement, value?.AlignScripts);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

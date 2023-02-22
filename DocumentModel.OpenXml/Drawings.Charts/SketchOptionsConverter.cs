@@ -107,5 +107,5 @@ public static class SketchOptionsConverter
   {
     SetInSketchMode(openXmlElement, value?.InSketchMode);
     SetShowSketchButton(openXmlElement, value?.ShowSketchButton);
-    }
   }
+}

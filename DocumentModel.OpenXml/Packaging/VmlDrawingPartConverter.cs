@@ -117,5 +117,5 @@ public static class VmlDrawingPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetLegacyDiagramTextParts(openXmlElement, value?.LegacyDiagramTextParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

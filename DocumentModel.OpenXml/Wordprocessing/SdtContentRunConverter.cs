@@ -1807,5 +1807,5 @@ public static class SdtContentRunConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-    }
   }
+}

@@ -168,5 +168,5 @@ public static class DiagramDataPartConverter
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     //SetSlideParts(openXmlElement, value?.SlideParts);
     //SetWorksheetParts(openXmlElement, value?.WorksheetParts);
-    }
   }
+}

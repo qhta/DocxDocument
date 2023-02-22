@@ -88,5 +88,5 @@ public static class NumberDataTypeConverter
   {
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetPointCount(openXmlElement, value?.PointCount);
-    }
   }
+}

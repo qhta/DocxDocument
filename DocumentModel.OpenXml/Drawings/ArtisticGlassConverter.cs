@@ -85,5 +85,5 @@ public static class ArtisticGlassConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetScaling(openXmlElement, value?.Scaling);
-    }
   }
+}

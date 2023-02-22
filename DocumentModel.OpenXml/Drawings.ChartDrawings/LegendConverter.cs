@@ -207,5 +207,5 @@ public static class LegendConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

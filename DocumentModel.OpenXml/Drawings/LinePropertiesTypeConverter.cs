@@ -127,5 +127,5 @@ public static class LinePropertiesTypeConverter
     SetCapType(openXmlElement, value?.CapType);
     SetCompoundLineType(openXmlElement, value?.CompoundLineType);
     SetAlignment(openXmlElement, value?.Alignment);
-    }
   }
+}

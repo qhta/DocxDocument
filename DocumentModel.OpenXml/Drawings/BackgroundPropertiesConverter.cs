@@ -125,5 +125,5 @@ public static class BackgroundPropertiesConverter
     SetPure(openXmlElement, value?.Pure);
     SetNormal(openXmlElement, value?.Normal);
     SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
-    }
   }
+}

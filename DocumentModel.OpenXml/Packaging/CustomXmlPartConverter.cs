@@ -53,5 +53,5 @@ public static class CustomXmlPartConverter
   public static void UpdateOpenXmlElement(DXPack.CustomXmlPart openXmlElement, DMPack.CustomXmlPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

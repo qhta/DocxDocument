@@ -116,5 +116,5 @@ public static class LevelOverrideConverter
     SetLevelIndex(openXmlElement, value?.LevelIndex);
     SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
     SetLevel(openXmlElement, value?.Level);
-    }
   }
+}

@@ -257,5 +257,5 @@ public static class ShapeConverter
     SetTextBody(openXmlElement, value?.TextBody);
     SetTransform2D(openXmlElement, value?.Transform2D);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class OfficeArtExtensionList6Converter
   public static void UpdateOpenXmlElement(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement, DMDraws.OfficeArtExtensionList6 value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

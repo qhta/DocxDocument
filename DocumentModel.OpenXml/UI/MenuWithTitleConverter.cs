@@ -987,5 +987,5 @@ public static class MenuWithTitleConverter
     SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
     SetChildMenuWithTitle(openXmlElement, value?.ChildMenuWithTitle);
     SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
-    }
   }
+}

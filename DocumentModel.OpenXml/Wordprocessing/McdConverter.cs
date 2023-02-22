@@ -167,5 +167,5 @@ public static class McdConverter
     SetMenuHelp(openXmlElement, value?.MenuHelp);
     SetBEncrypt(openXmlElement, value?.BEncrypt);
     SetCmg(openXmlElement, value?.Cmg);
-    }
   }
+}

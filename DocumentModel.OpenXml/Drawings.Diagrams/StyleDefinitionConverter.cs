@@ -321,5 +321,5 @@ public static class StyleDefinitionConverter
     SetScene3D(openXmlElement, value?.Scene3D);
     SetStyleLabel(openXmlElement, value?.StyleLabel);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -59,5 +59,5 @@ public static class ExtensionConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.Extension openXmlElement, DMDrawsCharts.Extension value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class GeoChildEntitiesQueryResultsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildEntitiesQueryResults openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQueryResults value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

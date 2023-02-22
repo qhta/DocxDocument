@@ -103,5 +103,5 @@ public static class SchemaConverter
     SetUri(openXmlElement, value?.Uri);
     SetManifestLocation(openXmlElement, value?.ManifestLocation);
     SetSchemaLocation(openXmlElement, value?.SchemaLocation);
-    }
   }
+}

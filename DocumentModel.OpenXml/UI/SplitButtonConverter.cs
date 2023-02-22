@@ -538,5 +538,5 @@ public static class SplitButtonConverter
     SetVisibleButton(openXmlElement, value?.VisibleButton);
     SetVisibleToggleButton(openXmlElement, value?.VisibleToggleButton);
     SetUnsizedMenu(openXmlElement, value?.UnsizedMenu);
-    }
   }
+}

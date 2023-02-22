@@ -114,5 +114,5 @@ public static class LightRigConverter
     SetRig(openXmlElement, value?.Rig);
     SetDirection(openXmlElement, value?.Direction);
     SetRotation(openXmlElement, value?.Rotation);
-    }
   }
+}

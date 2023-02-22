@@ -81,5 +81,5 @@ public static class StyleDefinitionTitleConverter
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

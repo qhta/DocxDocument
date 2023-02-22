@@ -136,5 +136,5 @@ public static class WebExtensionBindingConverter
     SetType(openXmlElement, value?.Type);
     SetAppReference(openXmlElement, value?.AppReference);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

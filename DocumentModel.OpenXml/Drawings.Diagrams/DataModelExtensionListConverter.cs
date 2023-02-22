@@ -97,5 +97,5 @@ public static class DataModelExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.DataModelExtensionList openXmlElement, DMDrawsDgms.DataModelExtensionList value)
   {
     SetDataModelExtensions(openXmlElement, value?.DataModelExtensions);
-    }
   }
+}

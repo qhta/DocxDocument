@@ -296,5 +296,5 @@ public static class HiddenShape3DConverter
     SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
     SetContourColor(openXmlElement, value?.ContourColor);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

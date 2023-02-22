@@ -356,5 +356,5 @@ public static class LockConverter
     SetTextLock(openXmlElement, value?.TextLock);
     SetAspectRatio(openXmlElement, value?.AspectRatio);
     SetShapeType(openXmlElement, value?.ShapeType);
-    }
   }
+}

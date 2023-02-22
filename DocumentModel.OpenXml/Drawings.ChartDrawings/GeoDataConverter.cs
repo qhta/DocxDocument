@@ -243,5 +243,5 @@ public static class GeoDataConverter
     SetSouth(openXmlElement, value?.South);
     SetGeoPolygons(openXmlElement, value?.GeoPolygons);
     SetCopyrights(openXmlElement, value?.Copyrights);
-    }
   }
+}

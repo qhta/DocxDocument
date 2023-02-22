@@ -158,5 +158,5 @@ public static class DocumentBackgroundConverter
     SetThemeTint(openXmlElement, value?.ThemeTint);
     SetThemeShade(openXmlElement, value?.ThemeShade);
     SetBackground(openXmlElement, value?.Background);
-    }
   }
+}

@@ -69,5 +69,5 @@ public static class SpreadsheetPrinterSettingsPartConverter
   {
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

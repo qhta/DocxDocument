@@ -97,5 +97,5 @@ public static class CustomDashConverter
   public static void UpdateOpenXmlElement(DXDraw.CustomDash openXmlElement, DMDraws.CustomDash value)
   {
     SetDashStops(openXmlElement, value?.DashStops);
-    }
   }
+}

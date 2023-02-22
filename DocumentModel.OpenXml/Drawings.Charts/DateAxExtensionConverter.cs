@@ -89,5 +89,5 @@ public static class DateAxExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-    }
   }
+}

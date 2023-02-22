@@ -140,5 +140,5 @@ public static class WrapTightConverter
     SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
     SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
     SetWrapPolygon(openXmlElement, value?.WrapPolygon);
-    }
   }
+}

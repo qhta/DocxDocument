@@ -67,5 +67,5 @@ public static class LeaderLinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.LeaderLines openXmlElement, DMDrawsCharts.LeaderLines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

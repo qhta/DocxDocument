@@ -61,5 +61,5 @@ public static class LineJoinMiterPropertiesConverter
   public static void UpdateOpenXmlElement(DXO2010W.LineJoinMiterProperties openXmlElement, DMW.LineJoinMiterProperties value)
   {
     SetLimit(openXmlElement, value?.Limit);
-    }
   }
+}

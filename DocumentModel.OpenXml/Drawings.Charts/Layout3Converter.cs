@@ -103,5 +103,5 @@ public static class Layout3Converter
   {
     SetManualLayout(openXmlElement, value?.ManualLayout);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

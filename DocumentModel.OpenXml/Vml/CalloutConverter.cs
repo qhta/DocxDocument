@@ -380,5 +380,5 @@ public static class CalloutConverter
     SetTextBorder(openXmlElement, value?.TextBorder);
     SetMinusX(openXmlElement, value?.MinusX);
     SetMinusY(openXmlElement, value?.MinusY);
-    }
   }
+}

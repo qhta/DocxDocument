@@ -669,5 +669,5 @@ public static class FillConverter
     SetRotate(openXmlElement, value?.Rotate);
     SetRelationshipId(openXmlElement, value?.RelationshipId);
     SetFillExtendedProperties(openXmlElement, value?.FillExtendedProperties);
-    }
   }
+}

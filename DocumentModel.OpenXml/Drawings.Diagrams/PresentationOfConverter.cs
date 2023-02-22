@@ -220,5 +220,5 @@ public static class PresentationOfConverter
     SetCount(openXmlElement, value?.Count);
     SetStep(openXmlElement, value?.Step);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

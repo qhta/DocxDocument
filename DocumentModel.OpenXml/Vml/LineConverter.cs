@@ -1984,5 +1984,5 @@ public static class LineConverter
     SetBottomBorder(openXmlElement, value?.BottomBorder);
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
-    }
   }
+}

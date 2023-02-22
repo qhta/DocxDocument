@@ -168,5 +168,5 @@ public static class TabSetConverter
     SetVisible(openXmlElement, value?.Visible);
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetTabs(openXmlElement, value?.Tabs);
-    }
   }
+}

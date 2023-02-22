@@ -536,5 +536,5 @@ public static class BackstageGroupButtonConverter
     SetImage(openXmlElement, value?.Image);
     SetImageMso(openXmlElement, value?.ImageMso);
     SetGetImage(openXmlElement, value?.GetImage);
-    }
   }
+}

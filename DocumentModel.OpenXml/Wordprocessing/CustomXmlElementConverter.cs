@@ -114,5 +114,5 @@ public static class CustomXmlElementConverter
     SetUri(openXmlElement, value?.Uri);
     SetElement(openXmlElement, value?.Element);
     SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
-    }
   }
+}

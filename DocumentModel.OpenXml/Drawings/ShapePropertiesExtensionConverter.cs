@@ -241,5 +241,5 @@ public static class ShapePropertiesExtensionConverter
     SetHiddenScene3D(openXmlElement, value?.HiddenScene3D);
     SetHiddenShape3D(openXmlElement, value?.HiddenShape3D);
     SetShadowObscured(openXmlElement, value?.ShadowObscured);
-    }
   }
+}

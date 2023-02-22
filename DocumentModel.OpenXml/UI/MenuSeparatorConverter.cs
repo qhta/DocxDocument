@@ -213,5 +213,5 @@ public static class MenuSeparatorConverter
     SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
     SetTitle(openXmlElement, value?.Title);
     SetGetTitle(openXmlElement, value?.GetTitle);
-    }
   }
+}

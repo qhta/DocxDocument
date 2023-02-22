@@ -257,5 +257,5 @@ public static class CategoryFilterExceptionConverter
     SetBubble3D(openXmlElement, value?.Bubble3D);
     SetMarker(openXmlElement, value?.Marker);
     SetDataLabel(openXmlElement, value?.DataLabel);
-    }
   }
+}

@@ -86,5 +86,5 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   {
     SetMacro(openXmlElement, value?.Macro);
     SetPublished(openXmlElement, value?.Published);
-    }
   }
+}

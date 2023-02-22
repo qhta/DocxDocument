@@ -59,5 +59,5 @@ public static class TextTypeConverter
   public static void UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
   {
     SetSpace(openXmlElement, value?.Space);
-    }
   }
+}

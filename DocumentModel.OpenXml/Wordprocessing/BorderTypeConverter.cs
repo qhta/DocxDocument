@@ -239,5 +239,5 @@ public static class BorderTypeConverter
     SetSpace(openXmlElement, value?.Space);
     SetShadow(openXmlElement, value?.Shadow);
     SetFrame(openXmlElement, value?.Frame);
-    }
   }
+}

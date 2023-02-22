@@ -97,5 +97,5 @@ public static class CopyrightsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Copyrights openXmlElement, DMDrawsChartDraws.Copyrights value)
   {
     SetCopyrightXsdstrings(openXmlElement, value?.CopyrightXsdstrings);
-    }
   }
+}

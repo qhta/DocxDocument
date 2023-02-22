@@ -67,5 +67,5 @@ public static class EndnotesConverter
   public static void UpdateOpenXmlElement(DXW.Endnotes openXmlElement, DMW.Endnotes value)
   {
     SetEndnote(openXmlElement, value?.Endnote);
-    }
   }
+}

@@ -66,5 +66,5 @@ public static class FullReferenceConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FullReference openXmlElement, DMDrawsCharts.FullReference value)
   {
     SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-    }
   }
+}

@@ -89,5 +89,5 @@ public static class ScatterChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredScatterSeries(openXmlElement, value?.FilteredScatterSeries);
-    }
   }
+}

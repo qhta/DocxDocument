@@ -103,5 +103,5 @@ public static class ExtraColorSchemeConverter
   {
     SetColorScheme(openXmlElement, value?.ColorScheme);
     SetColorMap(openXmlElement, value?.ColorMap);
-    }
   }
+}

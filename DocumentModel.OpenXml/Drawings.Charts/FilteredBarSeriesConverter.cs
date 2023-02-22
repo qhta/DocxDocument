@@ -70,5 +70,5 @@ public static class FilteredBarSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.FilteredBarSeries value)
   {
     SetBarChartSeries(openXmlElement, value?.BarChartSeries);
-    }
   }
+}

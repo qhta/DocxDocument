@@ -81,5 +81,5 @@ public static class SaveThroughXsltConverter
   {
     SetId(openXmlElement, value?.Id);
     SetSolutionId(openXmlElement, value?.SolutionId);
-    }
   }
+}

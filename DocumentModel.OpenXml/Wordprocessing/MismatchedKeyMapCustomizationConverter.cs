@@ -97,5 +97,5 @@ public static class MismatchedKeyMapCustomizationConverter
   public static void UpdateOpenXmlElement(DXOW.MismatchedKeyMapCustomization openXmlElement, DMW.MismatchedKeyMapCustomization value)
   {
     SetKeyMapEntries(openXmlElement, value?.KeyMapEntries);
-    }
   }
+}

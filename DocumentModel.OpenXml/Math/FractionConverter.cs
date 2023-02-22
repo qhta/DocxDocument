@@ -136,5 +136,5 @@ public static class FractionConverter
     SetFractionProperties(openXmlElement, value?.FractionProperties);
     SetNumerator(openXmlElement, value?.Numerator);
     SetDenominator(openXmlElement, value?.Denominator);
-    }
   }
+}

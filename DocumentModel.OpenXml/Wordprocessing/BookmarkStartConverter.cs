@@ -151,5 +151,5 @@ public static class BookmarkStartConverter
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

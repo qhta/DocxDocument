@@ -239,5 +239,5 @@ public static class Properties3DConverter
     SetBevelBottom(openXmlElement, value?.BevelBottom);
     SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
     SetContourColor(openXmlElement, value?.ContourColor);
-    }
   }
+}

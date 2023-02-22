@@ -357,7 +357,7 @@ public static class StyleConverter
   
   private static bool CmpRsid(DXW.Style openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Rsid>()?.Val, value, diffs, objName);
+    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Rsid>()?.Val, value, diffs, objName, "Rsid");
   }
   
   private static void SetRsid(DXW.Style openXmlElement, DM.HexInt? value)
@@ -702,5 +702,5 @@ public static class StyleConverter
     SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
     SetStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties);
     SetTableStyleProperties(openXmlElement, value?.TableStyleProperties);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class VbaSuppDataConverter
   {
     SetDocEvents(openXmlElement, value?.DocEvents);
     SetMcds(openXmlElement, value?.Mcds);
-    }
   }
+}

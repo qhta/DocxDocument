@@ -577,5 +577,5 @@ public static class CommentConverter
     SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
     SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
     SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-    }
   }
+}

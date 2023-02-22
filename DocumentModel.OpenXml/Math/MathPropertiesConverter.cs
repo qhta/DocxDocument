@@ -457,5 +457,5 @@ public static class MathPropertiesConverter
     SetWrapRight(openXmlElement, value?.WrapRight);
     SetIntegralLimitLocation(openXmlElement, value?.IntegralLimitLocation);
     SetNaryLimitLocation(openXmlElement, value?.NaryLimitLocation);
-    }
   }
+}

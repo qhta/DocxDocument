@@ -169,5 +169,5 @@ public static class DisplayUnitsLabelConverter
     SetChartText(openXmlElement, value?.ChartText);
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetTextProperties(openXmlElement, value?.TextProperties);
-    }
   }
+}

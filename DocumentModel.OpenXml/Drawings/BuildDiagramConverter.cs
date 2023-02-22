@@ -86,5 +86,5 @@ public static class BuildDiagramConverter
   {
     SetBuild(openXmlElement, value?.Build);
     SetReverseAnimation(openXmlElement, value?.ReverseAnimation);
-    }
   }
+}

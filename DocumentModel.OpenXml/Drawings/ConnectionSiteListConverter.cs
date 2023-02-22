@@ -97,5 +97,5 @@ public static class ConnectionSiteListConverter
   public static void UpdateOpenXmlElement(DXDraw.ConnectionSiteList openXmlElement, DMDraws.ConnectionSiteList value)
   {
     SetConnectionSites(openXmlElement, value?.ConnectionSites);
-    }
   }
+}

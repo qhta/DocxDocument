@@ -235,5 +235,5 @@ public static class ShadingConverter
     SetThemeFill(openXmlElement, value?.ThemeFill);
     SetThemeFillTint(openXmlElement, value?.ThemeFillTint);
     SetThemeFillShade(openXmlElement, value?.ThemeFillShade);
-    }
   }
+}

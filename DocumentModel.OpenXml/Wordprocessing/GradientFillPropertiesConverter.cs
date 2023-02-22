@@ -130,5 +130,5 @@ public static class GradientFillPropertiesConverter
     SetGradientStopList(openXmlElement, value?.GradientStopList);
     SetLinearShadeProperties(openXmlElement, value?.LinearShadeProperties);
     SetPathShadeProperties(openXmlElement, value?.PathShadeProperties);
-    }
   }
+}

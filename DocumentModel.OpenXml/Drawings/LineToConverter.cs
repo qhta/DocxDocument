@@ -70,5 +70,5 @@ public static class LineToConverter
   public static void UpdateOpenXmlElement(DXDraw.LineTo openXmlElement, DMDraws.LineTo value)
   {
     SetPoint(openXmlElement, value?.Point);
-    }
   }
+}

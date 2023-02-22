@@ -83,5 +83,5 @@ public static class TabStopConverter
   {
     SetPosition(openXmlElement, value?.Position);
     SetAlignment(openXmlElement, value?.Alignment);
-    }
   }
+}

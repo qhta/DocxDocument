@@ -514,5 +514,5 @@ public static class BackstageFastCommandButtonConverter
     SetImage(openXmlElement, value?.Image);
     SetImageMso(openXmlElement, value?.ImageMso);
     SetGetImage(openXmlElement, value?.GetImage);
-    }
   }
+}

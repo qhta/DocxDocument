@@ -103,5 +103,5 @@ public static class GroupCharConverter
   {
     SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

@@ -315,5 +315,5 @@ public static class DiagramConverter
     SetConstrainBounds(openXmlElement, value?.ConstrainBounds);
     SetBaseTextScale(openXmlElement, value?.BaseTextScale);
     SetRelationTable(openXmlElement, value?.RelationTable);
-    }
   }
+}

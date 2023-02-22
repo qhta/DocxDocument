@@ -69,5 +69,5 @@ public static class WordprocessingPrinterSettingsPartConverter
   {
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

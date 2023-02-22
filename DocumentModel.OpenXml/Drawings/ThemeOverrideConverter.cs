@@ -136,5 +136,5 @@ public static class ThemeOverrideConverter
     SetColorScheme(openXmlElement, value?.ColorScheme);
     SetFontScheme(openXmlElement, value?.FontScheme);
     SetFormatScheme(openXmlElement, value?.FormatScheme);
-    }
   }
+}

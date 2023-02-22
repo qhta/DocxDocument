@@ -281,5 +281,5 @@ public static class BackgroundConverter
     SetGroupFill(openXmlElement, value?.GroupFill);
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);
-    }
   }
+}

@@ -102,5 +102,5 @@ public static class RadicalPropertiesConverter
   {
     SetHideDegree(openXmlElement, value?.HideDegree);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

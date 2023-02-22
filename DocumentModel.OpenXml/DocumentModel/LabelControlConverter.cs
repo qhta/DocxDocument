@@ -492,5 +492,5 @@ public static class LabelControlConverter
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetShowLabel(openXmlElement, value?.ShowLabel);
     SetGetShowLabel(openXmlElement, value?.GetShowLabel);
-    }
   }
+}

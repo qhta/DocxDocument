@@ -187,5 +187,5 @@ public static class LiveFeedBackgroundPropertiesConverter
     SetBackgroundBlurProperties(openXmlElement, value?.BackgroundBlurProperties);
     SetBackgroundCustomProperties(openXmlElement, value?.BackgroundCustomProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

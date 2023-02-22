@@ -169,5 +169,5 @@ public static class DivBorderConverter
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetBottomBorder(openXmlElement, value?.BottomBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
-    }
   }
+}

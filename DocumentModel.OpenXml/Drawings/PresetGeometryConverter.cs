@@ -92,5 +92,5 @@ public static class PresetGeometryConverter
   {
     SetPreset(openXmlElement, value?.Preset);
     SetAdjustValueList(openXmlElement, value?.AdjustValueList);
-    }
   }
+}

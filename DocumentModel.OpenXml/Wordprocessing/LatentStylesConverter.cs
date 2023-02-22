@@ -233,5 +233,5 @@ public static class LatentStylesConverter
     SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
     SetTotalCount(openXmlElement, value?.TotalCount);
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

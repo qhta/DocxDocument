@@ -1992,5 +1992,5 @@ public static class PolyLineConverter
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
     SetInk(openXmlElement, value?.Ink);
-    }
   }
+}

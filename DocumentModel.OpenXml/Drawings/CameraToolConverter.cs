@@ -81,5 +81,5 @@ public static class CameraToolConverter
   {
     SetCellRange(openXmlElement, value?.CellRange);
     SetShapeId(openXmlElement, value?.ShapeId);
-    }
   }
+}

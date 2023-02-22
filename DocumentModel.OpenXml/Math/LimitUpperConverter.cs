@@ -136,5 +136,5 @@ public static class LimitUpperConverter
     SetLimitUpperProperties(openXmlElement, value?.LimitUpperProperties);
     SetBase(openXmlElement, value?.Base);
     SetLimit(openXmlElement, value?.Limit);
-    }
   }
+}

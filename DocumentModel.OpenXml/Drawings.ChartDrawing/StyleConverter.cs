@@ -169,5 +169,5 @@ public static class StyleConverter
     SetFillReference(openXmlElement, value?.FillReference);
     SetEffectReference(openXmlElement, value?.EffectReference);
     SetFontReference(openXmlElement, value?.FontReference);
-    }
   }
+}

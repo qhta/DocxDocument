@@ -97,5 +97,5 @@ public static class SchemaLibraryConverter
   public static void UpdateOpenXmlElement(DXCustXmlSchRefs.SchemaLibrary openXmlElement, DMCustXml.SchemaLibrary value)
   {
     SetSchemas(openXmlElement, value?.Schemas);
-    }
   }
+}

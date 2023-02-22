@@ -103,5 +103,5 @@ public static class GeoChildEntitiesQueryResultConverter
   {
     SetGeoChildEntitiesQuery(openXmlElement, value?.GeoChildEntitiesQuery);
     SetGeoChildEntities(openXmlElement, value?.GeoChildEntities);
-    }
   }
+}

@@ -109,5 +109,5 @@ public static class RotationConverter
     SetLatitude(openXmlElement, value?.Latitude);
     SetLongitude(openXmlElement, value?.Longitude);
     SetRevolution(openXmlElement, value?.Revolution);
-    }
   }
+}

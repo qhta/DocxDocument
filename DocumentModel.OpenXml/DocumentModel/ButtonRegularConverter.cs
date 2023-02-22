@@ -717,5 +717,5 @@ public static class ButtonRegularConverter
     SetGetShowLabel(openXmlElement, value?.GetShowLabel);
     SetShowImage(openXmlElement, value?.ShowImage);
     SetGetShowImage(openXmlElement, value?.GetShowImage);
-    }
   }
+}

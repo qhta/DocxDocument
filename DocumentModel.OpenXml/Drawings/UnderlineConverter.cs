@@ -402,5 +402,5 @@ public static class UnderlineConverter
     SetHeadEnd(openXmlElement, value?.HeadEnd);
     SetTailEnd(openXmlElement, value?.TailEnd);
     SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
-    }
   }
+}

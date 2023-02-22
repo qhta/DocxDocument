@@ -59,5 +59,5 @@ public static class CreationIdConverter
   public static void UpdateOpenXmlElement(DXO2016Draw.CreationId openXmlElement, DMDraws.CreationId value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

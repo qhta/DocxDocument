@@ -67,5 +67,5 @@ public static class MajorTickMarksTickMarksConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MajorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.MajorTickMarksTickMarks value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

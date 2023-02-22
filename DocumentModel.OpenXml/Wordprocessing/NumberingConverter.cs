@@ -236,5 +236,5 @@ public static class NumberingConverter
     SetAbstractNums(openXmlElement, value?.AbstractNums);
     SetNumberingInstances(openXmlElement, value?.NumberingInstances);
     SetNumberingIdMacAtCleanup(openXmlElement, value?.NumberingIdMacAtCleanup);
-    }
   }
+}

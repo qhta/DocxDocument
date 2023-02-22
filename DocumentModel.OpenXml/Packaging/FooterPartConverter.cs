@@ -408,5 +408,5 @@ public static class FooterPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

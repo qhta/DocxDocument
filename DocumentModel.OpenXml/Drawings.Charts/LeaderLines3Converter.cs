@@ -70,5 +70,5 @@ public static class LeaderLines3Converter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.LeaderLines openXmlElement, DMDrawsCharts.LeaderLines3 value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

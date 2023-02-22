@@ -59,5 +59,5 @@ public static class ToolbarDataConverter
   public static void UpdateOpenXmlElement(DXOW.ToolbarData openXmlElement, DMW.ToolbarData value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

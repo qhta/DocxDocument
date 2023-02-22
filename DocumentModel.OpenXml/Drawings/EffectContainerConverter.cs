@@ -943,5 +943,5 @@ public static class EffectContainerConverter
     SetSoftEdge(openXmlElement, value?.SoftEdge);
     SetTintEffect(openXmlElement, value?.TintEffect);
     SetTransformEffect(openXmlElement, value?.TransformEffect);
-    }
   }
+}

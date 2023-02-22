@@ -1038,5 +1038,5 @@ public static class GroupConverter
     SetButtonGroup(openXmlElement, value?.ButtonGroup);
     SetSeparator(openXmlElement, value?.Separator);
     SetDialogBoxLauncher(openXmlElement, value?.DialogBoxLauncher);
-    }
   }
+}

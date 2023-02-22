@@ -165,5 +165,5 @@ public static class InsertedMathControlConverter
     SetId(openXmlElement, value?.Id);
     SetRunProperties(openXmlElement, value?.RunProperties);
     SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
-    }
   }
+}

@@ -235,5 +235,5 @@ public static class PageBordersConverter
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetBottomBorder(openXmlElement, value?.BottomBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
-    }
   }
+}

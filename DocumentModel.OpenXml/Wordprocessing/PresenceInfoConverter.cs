@@ -81,5 +81,5 @@ public static class PresenceInfoConverter
   {
     SetProviderId(openXmlElement, value?.ProviderId);
     SetUserId(openXmlElement, value?.UserId);
-    }
   }
+}

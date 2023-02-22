@@ -1424,5 +1424,5 @@ public static class PreviousParagraphMarkRunPropertiesConverter
     SetStylisticSets(openXmlElement, value?.StylisticSets);
     SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
     SetOfficeMath(openXmlElement, value?.OfficeMath);
-    }
   }
+}

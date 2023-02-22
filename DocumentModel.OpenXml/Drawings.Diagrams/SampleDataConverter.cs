@@ -67,5 +67,5 @@ public static class SampleDataConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.SampleData value)
   {
     SetDataModel(openXmlElement, value?.DataModel);
-    }
   }
+}

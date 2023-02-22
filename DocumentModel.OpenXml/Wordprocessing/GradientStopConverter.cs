@@ -127,5 +127,5 @@ public static class GradientStopConverter
     SetStopPosition(openXmlElement, value?.StopPosition);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

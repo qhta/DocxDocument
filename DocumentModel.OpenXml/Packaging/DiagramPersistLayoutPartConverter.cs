@@ -120,5 +120,5 @@ public static class DiagramPersistLayoutPartConverter
     SetDrawing(openXmlElement, value?.Drawing);
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

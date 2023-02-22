@@ -452,5 +452,5 @@ public static class OuterShadowConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

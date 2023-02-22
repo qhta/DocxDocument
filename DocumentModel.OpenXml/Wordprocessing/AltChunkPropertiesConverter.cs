@@ -59,5 +59,5 @@ public static class AltChunkPropertiesConverter
   public static void UpdateOpenXmlElement(DXW.AltChunkProperties openXmlElement, DMW.AltChunkProperties value)
   {
     SetMatchSource(openXmlElement, value?.MatchSource);
-    }
   }
+}

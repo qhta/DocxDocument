@@ -494,5 +494,5 @@ public static class SplitButtonRegularConverter
     SetVisibleButton(openXmlElement, value?.VisibleButton);
     SetVisibleToggleButton(openXmlElement, value?.VisibleToggleButton);
     SetMenuRegular(openXmlElement, value?.MenuRegular);
-    }
   }
+}

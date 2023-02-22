@@ -642,5 +642,5 @@ public static class ShapeDefaultsConverter
     SetLock(openXmlElement, value?.Lock);
     SetColorMostRecentlyUsed(openXmlElement, value?.ColorMostRecentlyUsed);
     SetColorMenu(openXmlElement, value?.ColorMenu);
-    }
   }
+}

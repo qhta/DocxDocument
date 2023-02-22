@@ -149,5 +149,5 @@ public static class MultiLevelStringCacheConverter
     SetPointCount(openXmlElement, value?.PointCount);
     SetLevels(openXmlElement, value?.Levels);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

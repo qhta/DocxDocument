@@ -181,5 +181,5 @@ public static class TransformEffectConverter
     SetVerticalSkew(openXmlElement, value?.VerticalSkew);
     SetHorizontalShift(openXmlElement, value?.HorizontalShift);
     SetVerticalShift(openXmlElement, value?.VerticalShift);
-    }
   }
+}

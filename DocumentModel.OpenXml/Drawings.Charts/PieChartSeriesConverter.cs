@@ -382,5 +382,5 @@ public static class PieChartSeriesConverter
     SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
     SetValues(openXmlElement, value?.Values);
     SetPieSerExtensionList(openXmlElement, value?.PieSerExtensionList);
-    }
   }
+}

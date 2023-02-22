@@ -113,5 +113,5 @@ public static class CheckBoxConverter
     SetAutomaticallySizeFormField(openXmlElement, value?.AutomaticallySizeFormField);
     SetDefaultCheckBoxFormFieldState(openXmlElement, value?.DefaultCheckBoxFormFieldState);
     SetChecked(openXmlElement, value?.Checked);
-    }
   }
+}

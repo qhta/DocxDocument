@@ -1717,5 +1717,5 @@ public static class OfficeMathConverter
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
     SetParagraph(openXmlElement, value?.Paragraph);
     SetChildOfficeMath(openXmlElement, value?.ChildOfficeMath);
-    }
   }
+}

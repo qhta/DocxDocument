@@ -97,5 +97,5 @@ public static class MatrixColumnsConverter
   public static void UpdateOpenXmlElement(DXMath.MatrixColumns openXmlElement, DMMath.MatrixColumns value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

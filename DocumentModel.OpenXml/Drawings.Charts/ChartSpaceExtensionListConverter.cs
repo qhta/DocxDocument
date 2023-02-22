@@ -97,5 +97,5 @@ public static class ChartSpaceExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ChartSpaceExtensionList openXmlElement, DMDrawsCharts.ChartSpaceExtensionList value)
   {
     SetChartSpaceExtensions(openXmlElement, value?.ChartSpaceExtensions);
-    }
   }
+}

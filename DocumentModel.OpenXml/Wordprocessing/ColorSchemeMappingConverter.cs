@@ -301,5 +301,5 @@ public static class ColorSchemeMappingConverter
     SetAccent6(openXmlElement, value?.Accent6);
     SetHyperlink(openXmlElement, value?.Hyperlink);
     SetFollowedHyperlink(openXmlElement, value?.FollowedHyperlink);
-    }
   }
+}

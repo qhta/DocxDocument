@@ -97,5 +97,5 @@ public static class ContextMenusConverter
   public static void UpdateOpenXmlElement(DXO2010CustUI.ContextMenus openXmlElement, DM.ContextMenus value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

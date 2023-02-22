@@ -311,5 +311,5 @@ public static class ImageControlConverter
     SetGetImage(openXmlElement, value?.GetImage);
     SetAltText(openXmlElement, value?.AltText);
     SetGetAltText(openXmlElement, value?.GetAltText);
-    }
   }
+}

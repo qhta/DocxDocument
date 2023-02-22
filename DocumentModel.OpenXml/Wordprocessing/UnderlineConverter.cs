@@ -147,5 +147,5 @@ public static class UnderlineConverter
     SetThemeColor(openXmlElement, value?.ThemeColor);
     SetThemeTint(openXmlElement, value?.ThemeTint);
     SetThemeShade(openXmlElement, value?.ThemeShade);
-    }
   }
+}

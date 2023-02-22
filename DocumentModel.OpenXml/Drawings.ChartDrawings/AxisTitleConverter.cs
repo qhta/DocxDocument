@@ -169,5 +169,5 @@ public static class AxisTitleConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

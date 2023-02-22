@@ -103,5 +103,5 @@ public static class TaskAnchorConverter
   {
     SetCommentAnchor(openXmlElement, value?.CommentAnchor);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

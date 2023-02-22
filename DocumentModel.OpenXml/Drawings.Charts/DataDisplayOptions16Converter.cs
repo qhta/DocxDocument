@@ -72,5 +72,5 @@ public static class DataDisplayOptions16Converter
   public static void UpdateOpenXmlElement(DXDrawCharts.DataDisplayOptions16 openXmlElement, DMDrawsCharts.DataDisplayOptions16 value)
   {
     SetBooleanFalse(openXmlElement, value?.BooleanFalse);
-    }
   }
+}

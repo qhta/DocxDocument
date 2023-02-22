@@ -414,5 +414,5 @@ public static class BarChartConverter
     SetSeriesLines(openXmlElement, value?.SeriesLines);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetBarChartExtensionList(openXmlElement, value?.BarChartExtensionList);
-    }
   }
+}

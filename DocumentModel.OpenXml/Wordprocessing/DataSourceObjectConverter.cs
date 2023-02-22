@@ -300,5 +300,5 @@ public static class DataSourceObjectConverter
     SetFirstRowHeader(openXmlElement, value?.FirstRowHeader);
     SetFieldMapDatas(openXmlElement, value?.FieldMapDatas);
     SetRecipientDataReference(openXmlElement, value?.RecipientDataReference);
-    }
   }
+}

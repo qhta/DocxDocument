@@ -283,5 +283,5 @@ public static class DataPointConverter
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetPictureOptions(openXmlElement, value?.PictureOptions);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

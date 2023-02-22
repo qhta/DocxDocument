@@ -96,5 +96,5 @@ public static class CustomFilePropertiesPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     SetProperties(openXmlElement, value?.Properties);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

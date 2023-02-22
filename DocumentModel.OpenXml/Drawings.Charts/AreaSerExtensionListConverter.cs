@@ -97,5 +97,5 @@ public static class AreaSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.AreaSerExtensionList openXmlElement, DMDrawsCharts.AreaSerExtensionList value)
   {
     SetAreaSerExtensions(openXmlElement, value?.AreaSerExtensions);
-    }
   }
+}

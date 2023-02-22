@@ -471,5 +471,5 @@ public static class ChartConverter
     SetDisplayBlanksAs(openXmlElement, value?.DisplayBlanksAs);
     SetShowDataLabelsOverMaximum(openXmlElement, value?.ShowDataLabelsOverMaximum);
     SetChartExtensionList(openXmlElement, value?.ChartExtensionList);
-    }
   }
+}

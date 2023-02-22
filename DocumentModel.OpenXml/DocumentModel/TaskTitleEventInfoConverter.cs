@@ -59,5 +59,5 @@ public static class TaskTitleEventInfoConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, DM.TaskTitleEventInfo value)
   {
     SetTitle(openXmlElement, value?.Title);
-    }
   }
+}

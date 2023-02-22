@@ -136,5 +136,5 @@ public static class RubyConverter
     SetRubyProperties(openXmlElement, value?.RubyProperties);
     SetRubyContent(openXmlElement, value?.RubyContent);
     SetRubyBase(openXmlElement, value?.RubyBase);
-    }
   }
+}

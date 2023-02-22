@@ -103,5 +103,5 @@ public static class GroupShapeNonVisualPropertiesConverter
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualGroupDrawingShapeProperties(openXmlElement, value?.NonVisualGroupDrawingShapeProperties);
-    }
   }
+}

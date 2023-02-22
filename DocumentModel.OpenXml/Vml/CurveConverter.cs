@@ -2028,5 +2028,5 @@ public static class CurveConverter
     SetBottomBorder(openXmlElement, value?.BottomBorder);
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
-    }
   }
+}

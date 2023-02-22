@@ -70,5 +70,5 @@ public static class FilteredLineSeriesExtensionConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension value)
   {
     SetLineChartSeries(openXmlElement, value?.LineChartSeries);
-    }
   }
+}

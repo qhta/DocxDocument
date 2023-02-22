@@ -138,5 +138,5 @@ public static class FillTextEffectConverter
     SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
     SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
     SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class NumberingFormatConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetFormat(openXmlElement, value?.Format);
-    }
   }
+}

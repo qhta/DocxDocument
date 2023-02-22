@@ -2086,5 +2086,5 @@ public static class ParagraphConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-    }
   }
+}

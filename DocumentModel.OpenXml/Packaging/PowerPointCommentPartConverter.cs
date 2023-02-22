@@ -69,5 +69,5 @@ public static class PowerPointCommentPartConverter
   {
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

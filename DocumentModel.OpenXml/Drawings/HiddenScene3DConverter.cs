@@ -169,5 +169,5 @@ public static class HiddenScene3DConverter
     SetLightRig(openXmlElement, value?.LightRig);
     SetBackdrop(openXmlElement, value?.Backdrop);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

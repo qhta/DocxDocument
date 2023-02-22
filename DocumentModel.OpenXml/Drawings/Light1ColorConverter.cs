@@ -187,5 +187,5 @@ public static class Light1ColorConverter
     SetHslColor(openXmlElement, value?.HslColor);
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

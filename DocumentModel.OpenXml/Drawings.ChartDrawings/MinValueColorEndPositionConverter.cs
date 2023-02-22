@@ -107,5 +107,5 @@ public static class MinValueColorEndPositionConverter
     SetExtremeValueColorPosition(openXmlElement, value?.ExtremeValueColorPosition);
     SetNumberColorPosition(openXmlElement, value?.NumberColorPosition);
     SetPercentageColorPosition(openXmlElement, value?.PercentageColorPosition);
-    }
   }
+}

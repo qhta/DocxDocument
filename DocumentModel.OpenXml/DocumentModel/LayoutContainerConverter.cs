@@ -499,5 +499,5 @@ public static class LayoutContainerConverter
     SetGroupBox(openXmlElement, value?.GroupBox);
     SetChildLayoutContainer(openXmlElement, value?.ChildLayoutContainer);
     SetImageControl(openXmlElement, value?.ImageControl);
-    }
   }
+}

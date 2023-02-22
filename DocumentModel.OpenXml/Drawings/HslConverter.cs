@@ -109,5 +109,5 @@ public static class HslConverter
     SetHue(openXmlElement, value?.Hue);
     SetSaturation(openXmlElement, value?.Saturation);
     SetLuminance(openXmlElement, value?.Luminance);
-    }
   }
+}

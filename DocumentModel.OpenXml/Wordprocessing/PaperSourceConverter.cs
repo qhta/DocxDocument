@@ -85,5 +85,5 @@ public static class PaperSourceConverter
   {
     SetFirst(openXmlElement, value?.First);
     SetOther(openXmlElement, value?.Other);
-    }
   }
+}

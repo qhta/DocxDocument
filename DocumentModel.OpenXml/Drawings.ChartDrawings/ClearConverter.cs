@@ -202,5 +202,5 @@ public static class ClearConverter
     SetGeoDataPointToEntityQueryResults(openXmlElement, value?.GeoDataPointToEntityQueryResults);
     SetGeoChildEntitiesQueryResults(openXmlElement, value?.GeoChildEntitiesQueryResults);
     SetGeoParentEntitiesQueryResults(openXmlElement, value?.GeoParentEntitiesQueryResults);
-    }
   }
+}

@@ -202,5 +202,5 @@ public static class AdjustHandleXYConverter
     SetMinY(openXmlElement, value?.MinY);
     SetMaxY(openXmlElement, value?.MaxY);
     SetPosition(openXmlElement, value?.Position);
-    }
   }
+}

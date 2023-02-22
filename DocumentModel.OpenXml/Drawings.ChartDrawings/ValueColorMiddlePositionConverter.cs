@@ -81,5 +81,5 @@ public static class ValueColorMiddlePositionConverter
   {
     SetNumberColorPosition(openXmlElement, value?.NumberColorPosition);
     SetPercentageColorPosition(openXmlElement, value?.PercentageColorPosition);
-    }
   }
+}

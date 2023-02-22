@@ -127,5 +127,5 @@ public static class TextPropertiesConverter
     SetBodyProperties(openXmlElement, value?.BodyProperties);
     SetListStyle(openXmlElement, value?.ListStyle);
     SetParagraph(openXmlElement, value?.Paragraph);
-    }
   }
+}

@@ -105,5 +105,5 @@ public static class TabStopConverter
     SetVal(openXmlElement, value?.Val);
     SetLeader(openXmlElement, value?.Leader);
     SetPosition(openXmlElement, value?.Position);
-    }
   }
+}

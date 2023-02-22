@@ -97,5 +97,5 @@ public static class GeoChildEntitiesConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, DMDrawsChartDraws.GeoChildEntities value)
   {
     SetGeoHierarchyEntities(openXmlElement, value?.GeoHierarchyEntities);
-    }
   }
+}

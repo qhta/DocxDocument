@@ -729,5 +729,5 @@ public static class DateAxisConverter
     SetMinorUnit(openXmlElement, value?.MinorUnit);
     SetMinorTimeUnit(openXmlElement, value?.MinorTimeUnit);
     SetDateAxExtensionList(openXmlElement, value?.DateAxExtensionList);
-    }
   }
+}

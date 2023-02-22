@@ -81,5 +81,5 @@ public static class SupplementalFontConverter
   {
     SetScript(openXmlElement, value?.Script);
     SetTypeface(openXmlElement, value?.Typeface);
-    }
   }
+}

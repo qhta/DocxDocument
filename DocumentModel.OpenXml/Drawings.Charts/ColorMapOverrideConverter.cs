@@ -334,5 +334,5 @@ public static class ColorMapOverrideConverter
     SetHyperlink(openXmlElement, value?.Hyperlink);
     SetFollowedHyperlink(openXmlElement, value?.FollowedHyperlink);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

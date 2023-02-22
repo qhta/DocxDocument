@@ -59,5 +59,5 @@ public static class MacroWllTypeConverter
   public static void UpdateOpenXmlElement(DXOW.MacroWllType openXmlElement, DMW.MacroWllType value)
   {
     SetMacroName(openXmlElement, value?.MacroName);
-    }
   }
+}

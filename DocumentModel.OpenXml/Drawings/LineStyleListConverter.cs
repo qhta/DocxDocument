@@ -67,5 +67,5 @@ public static class LineStyleListConverter
   public static void UpdateOpenXmlElement(DXDraw.LineStyleList openXmlElement, DMDraws.LineStyleList value)
   {
     SetOutline(openXmlElement, value?.Outline);
-    }
   }
+}

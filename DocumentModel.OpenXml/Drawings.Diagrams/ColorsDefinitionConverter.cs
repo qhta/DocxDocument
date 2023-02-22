@@ -321,5 +321,5 @@ public static class ColorsDefinitionConverter
     SetColorTransformCategories(openXmlElement, value?.ColorTransformCategories);
     SetColorTransformStyleLabels(openXmlElement, value?.ColorTransformStyleLabels);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

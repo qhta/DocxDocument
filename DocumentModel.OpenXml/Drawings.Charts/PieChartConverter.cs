@@ -211,5 +211,5 @@ public static class PieChartConverter
     SetDataLabels(openXmlElement, value?.DataLabels);
     SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
     SetPieChartExtensionList(openXmlElement, value?.PieChartExtensionList);
-    }
   }
+}

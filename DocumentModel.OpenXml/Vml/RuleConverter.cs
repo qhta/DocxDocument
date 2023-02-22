@@ -185,5 +185,5 @@ public static class RuleConverter
     SetHow(openXmlElement, value?.How);
     SetShapeReference(openXmlElement, value?.ShapeReference);
     SetProxies(openXmlElement, value?.Proxies);
-    }
   }
+}

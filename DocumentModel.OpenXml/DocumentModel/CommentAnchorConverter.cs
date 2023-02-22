@@ -59,5 +59,5 @@ public static class CommentAnchorConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.CommentAnchor openXmlElement, DM.CommentAnchor value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

@@ -321,5 +321,5 @@ public static class SignatureLineConverter
     SetSigningInstructions(openXmlElement, value?.SigningInstructions);
     SetAdditionalXml(openXmlElement, value?.AdditionalXml);
     SetSignatureProviderUrl(openXmlElement, value?.SignatureProviderUrl);
-    }
   }
+}

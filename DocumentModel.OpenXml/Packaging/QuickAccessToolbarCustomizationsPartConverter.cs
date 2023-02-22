@@ -69,5 +69,5 @@ public static class QuickAccessToolbarCustomizationsPartConverter
   {
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

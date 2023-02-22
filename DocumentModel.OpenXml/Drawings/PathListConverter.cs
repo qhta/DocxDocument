@@ -97,5 +97,5 @@ public static class PathListConverter
   public static void UpdateOpenXmlElement(DXDraw.PathList openXmlElement, DMDraws.PathList value)
   {
     SetPaths(openXmlElement, value?.Paths);
-    }
   }
+}

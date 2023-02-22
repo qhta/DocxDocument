@@ -1940,5 +1940,5 @@ public static class OvalConverter
     SetBottomBorder(openXmlElement, value?.BottomBorder);
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
-    }
   }
+}

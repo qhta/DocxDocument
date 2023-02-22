@@ -1426,5 +1426,5 @@ public static class RunPropertiesConverter
     SetStylisticSets(openXmlElement, value?.StylisticSets);
     SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
     SetRunPropertiesChange(openXmlElement, value?.RunPropertiesChange);
-    }
   }
+}

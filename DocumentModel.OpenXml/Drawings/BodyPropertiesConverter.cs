@@ -751,5 +751,5 @@ public static class BodyPropertiesConverter
     SetShape3DType(openXmlElement, value?.Shape3DType);
     SetFlatText(openXmlElement, value?.FlatText);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

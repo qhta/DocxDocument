@@ -1300,5 +1300,5 @@ public static class GalleryConverter
     SetGetShowImage(openXmlElement, value?.GetShowImage);
     SetItems(openXmlElement, value?.Items);
     SetUnsizedButtons(openXmlElement, value?.UnsizedButtons);
-    }
   }
+}

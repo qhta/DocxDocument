@@ -506,5 +506,5 @@ public static class PreviousTablePropertiesConverter
     SetTableLook(openXmlElement, value?.TableLook);
     SetTableCaption(openXmlElement, value?.TableCaption);
     SetTableDescription(openXmlElement, value?.TableDescription);
-    }
   }
+}

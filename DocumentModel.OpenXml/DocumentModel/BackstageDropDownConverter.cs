@@ -613,5 +613,5 @@ public static class BackstageDropDownConverter
     SetGetItemLabel(openXmlElement, value?.GetItemLabel);
     SetGetItemID(openXmlElement, value?.GetItemID);
     SetItemBackstageItems(openXmlElement, value?.ItemBackstageItems);
-    }
   }
+}

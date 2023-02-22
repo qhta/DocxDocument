@@ -181,5 +181,5 @@ public static class Transform2DConverter
     SetVerticalFlip(openXmlElement, value?.VerticalFlip);
     SetOffset(openXmlElement, value?.Offset);
     SetExtents(openXmlElement, value?.Extents);
-    }
   }
+}

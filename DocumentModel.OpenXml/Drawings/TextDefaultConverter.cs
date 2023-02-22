@@ -187,5 +187,5 @@ public static class TextDefaultConverter
     SetListStyle(openXmlElement, value?.ListStyle);
     SetShapeStyle(openXmlElement, value?.ShapeStyle);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

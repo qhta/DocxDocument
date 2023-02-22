@@ -92,5 +92,5 @@ public static class TableGridChangeConverter
   {
     SetId(openXmlElement, value?.Id);
     SetPreviousTableGrid(openXmlElement, value?.PreviousTableGrid);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class ArtisticFilmGrainConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetGrainSize(openXmlElement, value?.GrainSize);
-    }
   }
+}

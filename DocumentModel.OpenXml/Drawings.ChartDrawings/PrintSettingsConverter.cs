@@ -136,5 +136,5 @@ public static class PrintSettingsConverter
     SetHeaderFooter(openXmlElement, value?.HeaderFooter);
     SetPageMargins(openXmlElement, value?.PageMargins);
     SetPageSetup(openXmlElement, value?.PageSetup);
-    }
   }
+}

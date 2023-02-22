@@ -367,5 +367,5 @@ public static class TableCellBordersConverter
     SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
     SetTopLeftToBottomRightCellBorder(openXmlElement, value?.TopLeftToBottomRightCellBorder);
     SetTopRightToBottomLeftCellBorder(openXmlElement, value?.TopRightToBottomLeftCellBorder);
-    }
   }
+}

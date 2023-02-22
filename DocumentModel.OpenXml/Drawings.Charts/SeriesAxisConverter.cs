@@ -591,5 +591,5 @@ public static class SeriesAxisConverter
     SetTickLabelSkip(openXmlElement, value?.TickLabelSkip);
     SetTickMarkSkip(openXmlElement, value?.TickMarkSkip);
     SetSerAxExtensionList(openXmlElement, value?.SerAxExtensionList);
-    }
   }
+}

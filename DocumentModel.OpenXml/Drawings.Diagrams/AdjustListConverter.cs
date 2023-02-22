@@ -97,5 +97,5 @@ public static class AdjustListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.AdjustList openXmlElement, DMDrawsDgms.AdjustList value)
   {
     SetAdjusts(openXmlElement, value?.Adjusts);
-    }
   }
+}

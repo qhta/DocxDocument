@@ -85,5 +85,5 @@ public static class NormalAutoFitConverter
   {
     SetFontScale(openXmlElement, value?.FontScale);
     SetLineSpaceReduction(openXmlElement, value?.LineSpaceReduction);
-    }
   }
+}

@@ -149,5 +149,5 @@ public static class ChartSpaceExtensionConverter
     SetPivotOptions(openXmlElement, value?.PivotOptions);
     SetSketchOptions(openXmlElement, value?.SketchOptions);
     SetPivotSource(openXmlElement, value?.PivotSource);
-    }
   }
+}

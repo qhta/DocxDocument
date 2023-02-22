@@ -92,5 +92,5 @@ public static class GeoChildEntitiesQueryConverter
   {
     SetEntityId(openXmlElement, value?.EntityId);
     SetGeoChildTypes(openXmlElement, value?.GeoChildTypes);
-    }
   }
+}

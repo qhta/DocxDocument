@@ -169,5 +169,5 @@ public static class BackdropConverter
     SetNormal(openXmlElement, value?.Normal);
     SetUpVector(openXmlElement, value?.UpVector);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

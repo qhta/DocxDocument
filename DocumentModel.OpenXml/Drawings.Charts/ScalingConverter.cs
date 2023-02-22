@@ -168,5 +168,5 @@ public static class ScalingConverter
     SetMaxAxisValue(openXmlElement, value?.MaxAxisValue);
     SetMinAxisValue(openXmlElement, value?.MinAxisValue);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

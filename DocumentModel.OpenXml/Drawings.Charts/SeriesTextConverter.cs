@@ -99,5 +99,5 @@ public static class SeriesTextConverter
   {
     SetStringReference(openXmlElement, value?.StringReference);
     SetNumericValue(openXmlElement, value?.NumericValue);
-    }
   }
+}

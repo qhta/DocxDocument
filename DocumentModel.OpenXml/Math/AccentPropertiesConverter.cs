@@ -92,5 +92,5 @@ public static class AccentPropertiesConverter
   {
     SetAccentChar(openXmlElement, value?.AccentChar);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

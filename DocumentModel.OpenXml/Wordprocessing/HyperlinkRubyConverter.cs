@@ -1819,5 +1819,5 @@ public static class HyperlinkRubyConverter
     SetSubscript(openXmlElement, value?.Subscript);
     SetSubSuperscript(openXmlElement, value?.SubSuperscript);
     SetSuperscript(openXmlElement, value?.Superscript);
-    }
   }
+}

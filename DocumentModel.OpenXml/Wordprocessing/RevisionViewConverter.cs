@@ -147,5 +147,5 @@ public static class RevisionViewConverter
     SetDisplayRevision(openXmlElement, value?.DisplayRevision);
     SetFormatting(openXmlElement, value?.Formatting);
     SetInkAnnotations(openXmlElement, value?.InkAnnotations);
-    }
   }
+}

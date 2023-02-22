@@ -130,5 +130,5 @@ public static class NonVisualDrawingShapePropertiesConverter
     SetTextBox(openXmlElement, value?.TextBox);
     SetShapeLocks(openXmlElement, value?.ShapeLocks);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

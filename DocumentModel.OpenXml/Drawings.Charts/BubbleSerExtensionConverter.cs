@@ -179,5 +179,5 @@ public static class BubbleSerExtensionConverter
     SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
     SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
     SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-    }
   }
+}

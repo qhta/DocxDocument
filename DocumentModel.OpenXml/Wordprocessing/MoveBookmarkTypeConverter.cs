@@ -197,5 +197,5 @@ public static class MoveBookmarkTypeConverter
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

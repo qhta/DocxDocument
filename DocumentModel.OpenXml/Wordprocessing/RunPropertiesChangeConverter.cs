@@ -138,5 +138,5 @@ public static class RunPropertiesChangeConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetPreviousRunProperties(openXmlElement, value?.PreviousRunProperties);
-    }
   }
+}

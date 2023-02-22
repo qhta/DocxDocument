@@ -127,5 +127,5 @@ public static class WrapPolygonConverter
     SetEdited(openXmlElement, value?.Edited);
     SetStartPoint(openXmlElement, value?.StartPoint);
     SetLineTo(openXmlElement, value?.LineTo);
-    }
   }
+}

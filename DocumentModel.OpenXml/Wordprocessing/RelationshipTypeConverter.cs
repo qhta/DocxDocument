@@ -59,5 +59,5 @@ public static class RelationshipTypeConverter
   public static void UpdateOpenXmlElement(DXW.RelationshipType openXmlElement, DMW.RelationshipType value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

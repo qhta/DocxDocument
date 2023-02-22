@@ -64,5 +64,5 @@ public static class NonVisualGroupPropertiesConverter
   public static void UpdateOpenXmlElement(DXO2013Draw.NonVisualGroupProperties openXmlElement, DMDraws.NonVisualGroupProperties value)
   {
     SetIsLegacyGroup(openXmlElement, value?.IsLegacyGroup);
-    }
   }
+}

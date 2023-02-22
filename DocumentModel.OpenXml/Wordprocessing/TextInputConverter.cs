@@ -135,5 +135,5 @@ public static class TextInputConverter
     SetDefaultTextBoxFormFieldString(openXmlElement, value?.DefaultTextBoxFormFieldString);
     SetMaxLength(openXmlElement, value?.MaxLength);
     SetFormat(openXmlElement, value?.Format);
-    }
   }
+}

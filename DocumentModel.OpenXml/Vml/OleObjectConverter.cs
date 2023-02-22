@@ -278,5 +278,5 @@ public static class OleObjectConverter
     SetLinkType(openXmlElement, value?.LinkType);
     SetLockedField(openXmlElement, value?.LockedField);
     SetFieldCodes(openXmlElement, value?.FieldCodes);
-    }
   }
+}

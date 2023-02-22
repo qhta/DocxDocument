@@ -70,5 +70,5 @@ public static class LimitUpperPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.LimitUpperProperties openXmlElement, DMMath.LimitUpperProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

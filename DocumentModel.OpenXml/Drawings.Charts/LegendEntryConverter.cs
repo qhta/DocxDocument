@@ -151,5 +151,5 @@ public static class LegendEntryConverter
     SetDelete(openXmlElement, value?.Delete);
     SetTextProperties(openXmlElement, value?.TextProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

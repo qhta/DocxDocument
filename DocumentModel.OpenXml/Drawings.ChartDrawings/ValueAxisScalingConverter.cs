@@ -125,5 +125,5 @@ public static class ValueAxisScalingConverter
     SetMin(openXmlElement, value?.Min);
     SetMajorUnit(openXmlElement, value?.MajorUnit);
     SetMinorUnit(openXmlElement, value?.MinorUnit);
-    }
   }
+}

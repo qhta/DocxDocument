@@ -119,5 +119,5 @@ public static class DiagramDefinitionExtensionConverter
     SetUri(openXmlElement, value?.Uri);
     SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);
     SetTextListStyleType(openXmlElement, value?.TextListStyleType);
-    }
   }
+}

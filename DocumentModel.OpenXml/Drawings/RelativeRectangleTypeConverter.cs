@@ -133,5 +133,5 @@ public static class RelativeRectangleTypeConverter
     SetTop(openXmlElement, value?.Top);
     SetRight(openXmlElement, value?.Right);
     SetBottom(openXmlElement, value?.Bottom);
-    }
   }
+}

@@ -123,5 +123,5 @@ public static class CommentExConverter
     SetParaId(openXmlElement, value?.ParaId);
     SetParaIdParent(openXmlElement, value?.ParaIdParent);
     SetDone(openXmlElement, value?.Done);
-    }
   }
+}

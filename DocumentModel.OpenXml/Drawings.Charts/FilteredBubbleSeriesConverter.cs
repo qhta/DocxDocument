@@ -70,5 +70,5 @@ public static class FilteredBubbleSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredBubbleSeries openXmlElement, DMDrawsCharts.FilteredBubbleSeries value)
   {
     SetBubbleChartSeries(openXmlElement, value?.BubbleChartSeries);
-    }
   }
+}

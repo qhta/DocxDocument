@@ -59,5 +59,5 @@ public static class MarkupType2Converter
   public static void UpdateOpenXmlElement(DXO2010W.MarkupType openXmlElement, DMW.MarkupType2 value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

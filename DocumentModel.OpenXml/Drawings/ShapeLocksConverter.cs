@@ -367,5 +367,5 @@ public static class ShapeLocksConverter
     SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
     SetNoTextEdit(openXmlElement, value?.NoTextEdit);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

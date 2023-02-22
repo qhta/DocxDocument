@@ -89,5 +89,5 @@ public static class RadarChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredRadarSeries(openXmlElement, value?.FilteredRadarSeries);
-    }
   }
+}

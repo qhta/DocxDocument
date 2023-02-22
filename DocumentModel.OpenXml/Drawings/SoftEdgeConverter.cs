@@ -61,5 +61,5 @@ public static class SoftEdgeConverter
   public static void UpdateOpenXmlElement(DXDraw.SoftEdge openXmlElement, DMDraws.SoftEdge value)
   {
     SetRadius(openXmlElement, value?.Radius);
-    }
   }
+}

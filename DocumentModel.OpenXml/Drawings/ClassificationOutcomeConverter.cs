@@ -59,5 +59,5 @@ public static class ClassificationOutcomeConverter
   public static void UpdateOpenXmlElement(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcome value)
   {
     SetClassificationOutcomeType(openXmlElement, value?.ClassificationOutcomeType);
-    }
   }
+}

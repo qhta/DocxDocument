@@ -59,5 +59,5 @@ public static class SdtContentTextConverter
   public static void UpdateOpenXmlElement(DXW.SdtContentText openXmlElement, DMW.SdtContentText value)
   {
     SetMultiLine(openXmlElement, value?.MultiLine);
-    }
   }
+}

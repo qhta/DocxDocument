@@ -215,5 +215,5 @@ public static class View3DConverter
     SetRightAngleAxes(openXmlElement, value?.RightAngleAxes);
     SetPerspective(openXmlElement, value?.Perspective);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

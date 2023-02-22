@@ -138,5 +138,5 @@ public static class ParagraphPropertiesChangeConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetParagraphPropertiesExtended(openXmlElement, value?.ParagraphPropertiesExtended);
-    }
   }
+}

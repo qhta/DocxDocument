@@ -261,5 +261,5 @@ public static class FillOverlayConverter
     SetBlipFill(openXmlElement, value?.BlipFill);
     SetPatternFill(openXmlElement, value?.PatternFill);
     SetGroupFill(openXmlElement, value?.GroupFill);
-    }
   }
+}

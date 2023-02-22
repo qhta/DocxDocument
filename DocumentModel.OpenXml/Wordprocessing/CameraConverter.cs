@@ -59,5 +59,5 @@ public static class CameraConverter
   public static void UpdateOpenXmlElement(DXO2010W.Camera openXmlElement, DMW.Camera value)
   {
     SetPresetCameraType(openXmlElement, value?.PresetCameraType);
-    }
   }
+}

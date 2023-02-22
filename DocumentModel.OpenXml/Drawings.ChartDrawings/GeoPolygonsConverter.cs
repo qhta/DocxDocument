@@ -97,5 +97,5 @@ public static class GeoPolygonsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoPolygons openXmlElement, DMDrawsChartDraws.GeoPolygons value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

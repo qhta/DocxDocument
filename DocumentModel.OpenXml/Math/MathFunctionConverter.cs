@@ -136,5 +136,5 @@ public static class MathFunctionConverter
     SetFunctionProperties(openXmlElement, value?.FunctionProperties);
     SetFunctionName(openXmlElement, value?.FunctionName);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

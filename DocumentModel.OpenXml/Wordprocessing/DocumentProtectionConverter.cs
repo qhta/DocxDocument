@@ -521,5 +521,5 @@ public static class DocumentProtectionConverter
     SetHashValue(openXmlElement, value?.HashValue);
     SetSaltValue(openXmlElement, value?.SaltValue);
     SetSpinCount(openXmlElement, value?.SpinCount);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class OfficeArtExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.OfficeArtExtensionList openXmlElement, DMDraws.OfficeArtExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

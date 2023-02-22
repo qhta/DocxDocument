@@ -216,5 +216,5 @@ public static class FootnoteDocumentWidePropertiesConverter
     SetNumberingStart(openXmlElement, value?.NumberingStart);
     SetNumberingRestart(openXmlElement, value?.NumberingRestart);
     SetFootnoteSpecialReferences(openXmlElement, value?.FootnoteSpecialReferences);
-    }
   }
+}

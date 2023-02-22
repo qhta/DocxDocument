@@ -70,5 +70,5 @@ public static class SuperscriptPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.SuperscriptProperties openXmlElement, DMMath.SuperscriptProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

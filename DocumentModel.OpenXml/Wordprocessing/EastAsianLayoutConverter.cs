@@ -149,5 +149,5 @@ public static class EastAsianLayoutConverter
     SetCombineBrackets(openXmlElement, value?.CombineBrackets);
     SetVertical(openXmlElement, value?.Vertical);
     SetVerticalCompress(openXmlElement, value?.VerticalCompress);
-    }
   }
+}

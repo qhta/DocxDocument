@@ -89,5 +89,5 @@ public static class PtExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
-    }
   }
+}

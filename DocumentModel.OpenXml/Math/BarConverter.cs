@@ -103,5 +103,5 @@ public static class BarConverter
   {
     SetBarProperties(openXmlElement, value?.BarProperties);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

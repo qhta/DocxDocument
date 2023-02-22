@@ -67,5 +67,5 @@ public static class DownBarsConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.DownBars value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

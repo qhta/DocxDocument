@@ -120,5 +120,5 @@ public static class FontTablePartConverter
     //SetFontParts(openXmlElement, value?.FontParts);
     SetFonts(openXmlElement, value?.Fonts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

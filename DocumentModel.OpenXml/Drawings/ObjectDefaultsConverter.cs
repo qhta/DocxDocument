@@ -169,5 +169,5 @@ public static class ObjectDefaultsConverter
     SetLineDefault(openXmlElement, value?.LineDefault);
     SetTextDefault(openXmlElement, value?.TextDefault);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class HelpTextConverter
   {
     SetType(openXmlElement, value?.Type);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

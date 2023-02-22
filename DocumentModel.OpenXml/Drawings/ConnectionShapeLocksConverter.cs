@@ -340,5 +340,5 @@ public static class ConnectionShapeLocksConverter
     SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
     SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
     SetConnectorLockingExtensionList(openXmlElement, value?.ConnectorLockingExtensionList);
-    }
   }
+}

@@ -120,5 +120,5 @@ public static class DiagramLayoutDefinitionPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     SetLayoutDefinition(openXmlElement, value?.LayoutDefinition);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

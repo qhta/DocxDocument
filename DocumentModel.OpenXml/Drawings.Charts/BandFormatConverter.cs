@@ -92,5 +92,5 @@ public static class BandFormatConverter
   {
     SetIndex(openXmlElement, value?.Index);
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

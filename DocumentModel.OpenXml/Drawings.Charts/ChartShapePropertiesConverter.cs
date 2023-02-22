@@ -484,5 +484,5 @@ public static class ChartShapePropertiesConverter
     SetScene3DType(openXmlElement, value?.Scene3DType);
     SetShape3DType(openXmlElement, value?.Shape3DType);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

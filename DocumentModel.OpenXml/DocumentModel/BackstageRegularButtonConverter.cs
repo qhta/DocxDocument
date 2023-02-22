@@ -492,5 +492,5 @@ public static class BackstageRegularButtonConverter
     SetImage(openXmlElement, value?.Image);
     SetImageMso(openXmlElement, value?.ImageMso);
     SetGetImage(openXmlElement, value?.GetImage);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class DateAxExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.DateAxExtensionList openXmlElement, DMDrawsCharts.DateAxExtensionList value)
   {
     SetDateAxExtensions(openXmlElement, value?.DateAxExtensions);
-    }
   }
+}

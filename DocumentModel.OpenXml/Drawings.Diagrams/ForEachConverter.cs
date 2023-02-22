@@ -501,5 +501,5 @@ public static class ForEachConverter
     SetLayoutNode(openXmlElement, value?.LayoutNode);
     SetChoose(openXmlElement, value?.Choose);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

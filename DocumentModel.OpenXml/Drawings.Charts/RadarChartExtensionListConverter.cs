@@ -97,5 +97,5 @@ public static class RadarChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.RadarChartExtensionList openXmlElement, DMDrawsCharts.RadarChartExtensionList value)
   {
     SetRadarChartExtensions(openXmlElement, value?.RadarChartExtensions);
-    }
   }
+}

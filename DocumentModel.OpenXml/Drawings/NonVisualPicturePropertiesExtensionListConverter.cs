@@ -97,5 +97,5 @@ public static class NonVisualPicturePropertiesExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.NonVisualPicturePropertiesExtensionList openXmlElement, DMDraws.NonVisualPicturePropertiesExtensionList value)
   {
     SetNonVisualPicturePropertiesExtensions(openXmlElement, value?.NonVisualPicturePropertiesExtensions);
-    }
   }
+}

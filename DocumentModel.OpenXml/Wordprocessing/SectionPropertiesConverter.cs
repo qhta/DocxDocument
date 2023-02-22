@@ -786,5 +786,5 @@ public static class SectionPropertiesConverter
     SetPrinterSettingsReference(openXmlElement, value?.PrinterSettingsReference);
     SetFootnoteColumns(openXmlElement, value?.FootnoteColumns);
     SetSectionPropertiesChange(openXmlElement, value?.SectionPropertiesChange);
-    }
   }
+}

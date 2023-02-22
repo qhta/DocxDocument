@@ -59,5 +59,5 @@ public static class ArgumentPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.ArgumentProperties openXmlElement, DMMath.ArgumentProperties value)
   {
     SetArgumentSize(openXmlElement, value?.ArgumentSize);
-    }
   }
+}

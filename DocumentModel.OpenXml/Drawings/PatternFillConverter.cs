@@ -125,5 +125,5 @@ public static class PatternFillConverter
     SetPreset(openXmlElement, value?.Preset);
     SetForegroundColor(openXmlElement, value?.ForegroundColor);
     SetBackgroundColor(openXmlElement, value?.BackgroundColor);
-    }
   }
+}

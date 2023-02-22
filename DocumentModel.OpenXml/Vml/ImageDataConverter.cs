@@ -470,5 +470,5 @@ public static class ImageDataConverter
     SetRelationshipId(openXmlElement, value?.RelationshipId);
     SetPicture(openXmlElement, value?.Picture);
     SetRelHref(openXmlElement, value?.RelHref);
-    }
   }
+}

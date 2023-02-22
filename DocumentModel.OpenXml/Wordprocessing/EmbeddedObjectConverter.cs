@@ -593,5 +593,5 @@ public static class EmbeddedObjectConverter
     SetControl(openXmlElement, value?.Control);
     SetObjectEmbed(openXmlElement, value?.ObjectEmbed);
     SetObjectLink(openXmlElement, value?.ObjectLink);
-    }
   }
+}

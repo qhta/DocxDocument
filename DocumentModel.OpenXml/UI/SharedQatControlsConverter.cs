@@ -127,5 +127,5 @@ public static class SharedQatControlsConverter
     SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
     SetUnsizedButton(openXmlElement, value?.UnsizedButton);
     SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
-    }
   }
+}

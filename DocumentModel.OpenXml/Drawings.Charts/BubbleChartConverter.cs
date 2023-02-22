@@ -364,5 +364,5 @@ public static class BubbleChartConverter
     SetSizeRepresents(openXmlElement, value?.SizeRepresents);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetBubbleChartExtensionList(openXmlElement, value?.BubbleChartExtensionList);
-    }
   }
+}

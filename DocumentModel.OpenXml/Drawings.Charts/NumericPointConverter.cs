@@ -112,5 +112,5 @@ public static class NumericPointConverter
     SetIndex(openXmlElement, value?.Index);
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetNumericValue(openXmlElement, value?.NumericValue);
-    }
   }
+}

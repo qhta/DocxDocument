@@ -96,5 +96,5 @@ public static class InkConverter
   {
     SetInkData(openXmlElement, value?.InkData);
     SetAnnotationFlag(openXmlElement, value?.AnnotationFlag);
-    }
   }
+}

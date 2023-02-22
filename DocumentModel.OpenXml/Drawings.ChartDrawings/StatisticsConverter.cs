@@ -59,5 +59,5 @@ public static class StatisticsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.Statistics value)
   {
     SetQuartileMethod(openXmlElement, value?.QuartileMethod);
-    }
   }
+}

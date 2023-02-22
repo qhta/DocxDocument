@@ -311,5 +311,5 @@ public static class LayoutVariablePropertySetTypeConverter
     SetAnimateOneByOne(openXmlElement, value?.AnimateOneByOne);
     SetAnimationLevel(openXmlElement, value?.AnimationLevel);
     SetResizeHandles(openXmlElement, value?.ResizeHandles);
-    }
   }
+}

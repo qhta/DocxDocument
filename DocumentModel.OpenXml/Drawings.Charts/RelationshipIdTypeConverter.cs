@@ -59,5 +59,5 @@ public static class RelationshipIdTypeConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.RelationshipIdType openXmlElement, DMDrawsCharts.RelationshipIdType value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

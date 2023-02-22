@@ -514,5 +514,5 @@ public static class BarChartSeriesConverter
     SetValues(openXmlElement, value?.Values);
     SetShape(openXmlElement, value?.Shape);
     SetBarSerExtensionList(openXmlElement, value?.BarSerExtensionList);
-    }
   }
+}

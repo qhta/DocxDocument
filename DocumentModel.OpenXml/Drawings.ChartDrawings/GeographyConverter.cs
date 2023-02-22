@@ -180,5 +180,5 @@ public static class GeographyConverter
     SetCultureRegion(openXmlElement, value?.CultureRegion);
     SetAttribution(openXmlElement, value?.Attribution);
     SetGeoCache(openXmlElement, value?.GeoCache);
-    }
   }
+}

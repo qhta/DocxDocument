@@ -129,5 +129,5 @@ public static class ReadModeInkLockDownConverter
     SetWidth(openXmlElement, value?.Width);
     SetHeight(openXmlElement, value?.Height);
     SetFontSize(openXmlElement, value?.FontSize);
-    }
   }
+}

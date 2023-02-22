@@ -92,5 +92,5 @@ public static class PresetTextWrapConverter
   {
     SetPreset(openXmlElement, value?.Preset);
     SetAdjustValueList(openXmlElement, value?.AdjustValueList);
-    }
   }
+}

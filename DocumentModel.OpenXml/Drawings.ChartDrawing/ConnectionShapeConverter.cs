@@ -185,5 +185,5 @@ public static class ConnectionShapeConverter
     SetNonVisualConnectorShapeDrawingProperties(openXmlElement, value?.NonVisualConnectorShapeDrawingProperties);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetStyle(openXmlElement, value?.Style);
-    }
   }
+}

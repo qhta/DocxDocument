@@ -187,5 +187,5 @@ public static class GroupShapeConverter
     SetShape(openXmlElement, value?.Shape);
     SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

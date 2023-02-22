@@ -307,5 +307,5 @@ public static class StockChartConverter
     SetUpDownBars(openXmlElement, value?.UpDownBars);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetStockChartExtensionList(openXmlElement, value?.StockChartExtensionList);
-    }
   }
+}

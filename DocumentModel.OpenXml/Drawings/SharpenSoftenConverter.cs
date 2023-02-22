@@ -61,5 +61,5 @@ public static class SharpenSoftenConverter
   public static void UpdateOpenXmlElement(DXO2010Draw.SharpenSoften openXmlElement, DMDraws.SharpenSoften value)
   {
     SetAmount(openXmlElement, value?.Amount);
-    }
   }
+}

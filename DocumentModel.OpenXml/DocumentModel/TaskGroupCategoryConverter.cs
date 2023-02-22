@@ -366,5 +366,5 @@ public static class TaskGroupCategoryConverter
     SetLabel(openXmlElement, value?.Label);
     SetGetLabel(openXmlElement, value?.GetLabel);
     SetTaskGroupTasks(openXmlElement, value?.TaskGroupTasks);
-    }
   }
+}

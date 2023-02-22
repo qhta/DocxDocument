@@ -59,5 +59,5 @@ public static class EffectConverter
   public static void UpdateOpenXmlElement(DXDraw.Effect openXmlElement, DMDraws.Effect value)
   {
     SetReference(openXmlElement, value?.Reference);
-    }
   }
+}

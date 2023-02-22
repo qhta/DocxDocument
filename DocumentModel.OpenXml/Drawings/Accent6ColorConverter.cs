@@ -187,5 +187,5 @@ public static class Accent6ColorConverter
     SetHslColor(openXmlElement, value?.HslColor);
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

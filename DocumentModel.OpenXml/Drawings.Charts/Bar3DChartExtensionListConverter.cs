@@ -97,5 +97,5 @@ public static class Bar3DChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.Bar3DChartExtensionList openXmlElement, DMDrawsCharts.Bar3DChartExtensionList value)
   {
     SetBar3DChartExtensions(openXmlElement, value?.Bar3DChartExtensions);
-    }
   }
+}

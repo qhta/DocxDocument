@@ -127,5 +127,5 @@ public static class MoveToMathControlConverter
     SetRunProperties(openXmlElement, value?.RunProperties);
     SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
     SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
-    }
   }
+}

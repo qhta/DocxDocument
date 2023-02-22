@@ -97,5 +97,5 @@ public static class RadarSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.RadarSerExtensionList openXmlElement, DMDrawsCharts.RadarSerExtensionList value)
   {
     SetRadarSerExtensions(openXmlElement, value?.RadarSerExtensions);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class ArtisticPencilSketchConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetPressure(openXmlElement, value?.Pressure);
-    }
   }
+}

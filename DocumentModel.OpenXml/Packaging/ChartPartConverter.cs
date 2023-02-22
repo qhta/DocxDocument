@@ -168,5 +168,5 @@ public static class ChartPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

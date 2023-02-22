@@ -340,5 +340,5 @@ public static class ContentPartLocksConverter
     SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
     SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

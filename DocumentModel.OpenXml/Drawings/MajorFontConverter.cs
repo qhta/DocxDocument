@@ -217,5 +217,5 @@ public static class MajorFontConverter
     SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
     SetSupplementalFonts(openXmlElement, value?.SupplementalFonts);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

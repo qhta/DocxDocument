@@ -158,5 +158,5 @@ public static class WebExtensionStoreReferenceConverter
     SetStore(openXmlElement, value?.Store);
     SetStoreType(openXmlElement, value?.StoreType);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

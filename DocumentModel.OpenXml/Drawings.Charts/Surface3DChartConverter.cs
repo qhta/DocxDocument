@@ -287,5 +287,5 @@ public static class Surface3DChartConverter
     SetBandFormats(openXmlElement, value?.BandFormats);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetSurface3DChartExtensionList(openXmlElement, value?.Surface3DChartExtensionList);
-    }
   }
+}

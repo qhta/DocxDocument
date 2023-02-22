@@ -277,5 +277,5 @@ public static class MatrixPropertiesConverter
     SetColumnGap(openXmlElement, value?.ColumnGap);
     SetMatrixColumns(openXmlElement, value?.MatrixColumns);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

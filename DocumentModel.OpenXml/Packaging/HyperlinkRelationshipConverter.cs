@@ -56,5 +56,5 @@ public static class HyperlinkRelationshipConverter
   public static void UpdateOpenXmlElement(DXPack.HyperlinkRelationship openXmlElement, DMPack.HyperlinkRelationship value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

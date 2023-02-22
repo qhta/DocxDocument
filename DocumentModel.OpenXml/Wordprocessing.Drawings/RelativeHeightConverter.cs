@@ -88,5 +88,5 @@ public static class RelativeHeightConverter
   {
     SetRelativeFrom(openXmlElement, value?.RelativeFrom);
     SetPercentageHeight(openXmlElement, value?.PercentageHeight);
-    }
   }
+}

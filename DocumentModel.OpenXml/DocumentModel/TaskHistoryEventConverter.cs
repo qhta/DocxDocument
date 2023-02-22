@@ -517,5 +517,5 @@ public static class TaskHistoryEventConverter
     SetTaskUnassignAll(openXmlElement, value?.TaskUnassignAll);
     SetTaskUndo(openXmlElement, value?.TaskUndo);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

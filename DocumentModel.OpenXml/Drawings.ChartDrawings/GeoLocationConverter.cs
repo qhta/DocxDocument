@@ -162,5 +162,5 @@ public static class GeoLocationConverter
     SetEntityName(openXmlElement, value?.EntityName);
     SetEntityType(openXmlElement, value?.EntityType);
     SetAddress(openXmlElement, value?.Address);
-    }
   }
+}

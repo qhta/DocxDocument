@@ -987,5 +987,5 @@ public static class UnsizedMenuConverter
     SetUnsizedSplitButton(openXmlElement, value?.UnsizedSplitButton);
     SetChildUnsizedMenu(openXmlElement, value?.ChildUnsizedMenu);
     SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
-    }
   }
+}

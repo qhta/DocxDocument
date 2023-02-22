@@ -83,5 +83,5 @@ public static class StyleDisplayCategoryConverter
   {
     SetType(openXmlElement, value?.Type);
     SetPriority(openXmlElement, value?.Priority);
-    }
   }
+}

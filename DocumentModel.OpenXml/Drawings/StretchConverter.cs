@@ -70,5 +70,5 @@ public static class StretchConverter
   public static void UpdateOpenXmlElement(DXDraw.Stretch openXmlElement, DMDraws.Stretch value)
   {
     SetFillRectangle(openXmlElement, value?.FillRectangle);
-    }
   }
+}

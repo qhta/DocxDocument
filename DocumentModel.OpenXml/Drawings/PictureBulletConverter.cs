@@ -70,5 +70,5 @@ public static class PictureBulletConverter
   public static void UpdateOpenXmlElement(DXDraw.PictureBullet openXmlElement, DMDraws.PictureBullet value)
   {
     SetBlip(openXmlElement, value?.Blip);
-    }
   }
+}

@@ -127,5 +127,5 @@ public static class NumberingPictureBulletConverter
     SetNumberingPictureBulletId(openXmlElement, value?.NumberingPictureBulletId);
     SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
     SetDrawing(openXmlElement, value?.Drawing);
-    }
   }
+}

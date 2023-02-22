@@ -67,5 +67,5 @@ public static class EffectStyleListConverter
   public static void UpdateOpenXmlElement(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyleList value)
   {
     SetEffectStyle(openXmlElement, value?.EffectStyle);
-    }
   }
+}

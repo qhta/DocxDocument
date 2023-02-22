@@ -367,5 +367,5 @@ public static class TopItemsGroupControlsConverter
     SetGroupBox(openXmlElement, value?.GroupBox);
     SetLayoutContainer(openXmlElement, value?.LayoutContainer);
     SetImageControl(openXmlElement, value?.ImageControl);
-    }
   }
+}

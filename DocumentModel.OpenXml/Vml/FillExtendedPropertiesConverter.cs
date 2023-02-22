@@ -81,5 +81,5 @@ public static class FillExtendedPropertiesConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetType(openXmlElement, value?.Type);
-    }
   }
+}

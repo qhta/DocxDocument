@@ -61,5 +61,5 @@ public static class AlphaReplaceConverter
   public static void UpdateOpenXmlElement(DXDraw.AlphaReplace openXmlElement, DMDraws.AlphaReplace value)
   {
     SetAlpha(openXmlElement, value?.Alpha);
-    }
   }
+}

@@ -53,5 +53,5 @@ public static class ImagePartConverter
   public static void UpdateOpenXmlElement(DXPack.ImagePart openXmlElement, DMPack.ImagePart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

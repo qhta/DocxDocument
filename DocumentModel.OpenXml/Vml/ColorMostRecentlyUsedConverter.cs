@@ -81,5 +81,5 @@ public static class ColorMostRecentlyUsedConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetColors(openXmlElement, value?.Colors);
-    }
   }
+}

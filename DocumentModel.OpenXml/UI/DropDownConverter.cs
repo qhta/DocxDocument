@@ -1045,5 +1045,5 @@ public static class DropDownConverter
     SetGetShowImage(openXmlElement, value?.GetShowImage);
     SetItems(openXmlElement, value?.Items);
     SetUnsizedButtons(openXmlElement, value?.UnsizedButtons);
-    }
   }
+}

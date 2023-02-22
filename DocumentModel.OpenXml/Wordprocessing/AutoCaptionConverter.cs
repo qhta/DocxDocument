@@ -81,5 +81,5 @@ public static class AutoCaptionConverter
   {
     SetName(openXmlElement, value?.Name);
     SetCaption(openXmlElement, value?.Caption);
-    }
   }
+}

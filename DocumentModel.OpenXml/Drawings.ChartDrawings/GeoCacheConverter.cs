@@ -115,5 +115,5 @@ public static class GeoCacheConverter
     SetProvider(openXmlElement, value?.Provider);
     SetXsdbase64Binary(openXmlElement, value?.Xsdbase64Binary);
     SetClear(openXmlElement, value?.Clear);
-    }
   }
+}

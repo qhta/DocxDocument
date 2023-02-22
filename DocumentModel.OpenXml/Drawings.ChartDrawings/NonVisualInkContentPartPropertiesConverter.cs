@@ -130,5 +130,5 @@ public static class NonVisualInkContentPartPropertiesConverter
     SetIsComment(openXmlElement, value?.IsComment);
     SetContentPartLocks(openXmlElement, value?.ContentPartLocks);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

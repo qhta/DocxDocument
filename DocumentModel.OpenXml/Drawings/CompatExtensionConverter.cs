@@ -59,5 +59,5 @@ public static class CompatExtensionConverter
   public static void UpdateOpenXmlElement(DXO2010Draw.CompatExtension openXmlElement, DMDraws.CompatExtension value)
   {
     SetShapeId(openXmlElement, value?.ShapeId);
-    }
   }
+}

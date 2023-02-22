@@ -97,5 +97,5 @@ public static class GradientStopListConverter
   public static void UpdateOpenXmlElement(DXO2010W.GradientStopList openXmlElement, DMW.GradientStopList value)
   {
     SetGradientStops(openXmlElement, value?.GradientStops);
-    }
   }
+}

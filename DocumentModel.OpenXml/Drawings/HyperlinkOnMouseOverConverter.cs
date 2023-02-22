@@ -97,5 +97,5 @@ public static class HyperlinkOnMouseOverConverter
   {
     SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
     SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
-    }
   }
+}

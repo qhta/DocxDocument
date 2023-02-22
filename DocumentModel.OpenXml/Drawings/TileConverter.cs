@@ -177,5 +177,5 @@ public static class TileConverter
     SetVerticalRatio(openXmlElement, value?.VerticalRatio);
     SetFlip(openXmlElement, value?.Flip);
     SetAlignment(openXmlElement, value?.Alignment);
-    }
   }
+}

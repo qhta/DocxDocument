@@ -121,5 +121,5 @@ public static class DataModelExtensionConverter
     SetUri(openXmlElement, value?.Uri);
     SetDataModelExtensionBlock(openXmlElement, value?.DataModelExtensionBlock);
     SetRecolorImages(openXmlElement, value?.RecolorImages);
-    }
   }
+}

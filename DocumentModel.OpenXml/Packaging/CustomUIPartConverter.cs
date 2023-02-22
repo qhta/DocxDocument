@@ -64,5 +64,5 @@ public static class CustomUIPartConverter
   public static void UpdateOpenXmlElement(DXPack.CustomUIPart openXmlElement, DMPack.CustomUIPart value)
   {
     SetCustomUI(openXmlElement, value?.CustomUI);
-    }
   }
+}

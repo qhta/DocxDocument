@@ -190,5 +190,5 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     SetNoWrap(openXmlElement, value?.NoWrap);
     SetTableCellMargin(openXmlElement, value?.TableCellMargin);
     SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
-    }
   }
+}

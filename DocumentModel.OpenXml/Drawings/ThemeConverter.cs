@@ -246,5 +246,5 @@ public static class ThemeConverter
     SetExtraColorSchemeList(openXmlElement, value?.ExtraColorSchemeList);
     SetCustomColorList(openXmlElement, value?.CustomColorList);
     SetOfficeStyleSheetExtensionList(openXmlElement, value?.OfficeStyleSheetExtensionList);
-    }
   }
+}

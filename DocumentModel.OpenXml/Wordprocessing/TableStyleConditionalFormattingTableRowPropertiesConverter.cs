@@ -153,5 +153,5 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     SetTableHeader(openXmlElement, value?.TableHeader);
     SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
     SetTableJustification(openXmlElement, value?.TableJustification);
-    }
   }
+}

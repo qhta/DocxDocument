@@ -59,5 +59,5 @@ public static class ClipPathConverter
   public static void UpdateOpenXmlElement(DXVmlO.ClipPath openXmlElement, DMVml.ClipPath value)
   {
     SetValue(openXmlElement, value?.Value);
-    }
   }
+}

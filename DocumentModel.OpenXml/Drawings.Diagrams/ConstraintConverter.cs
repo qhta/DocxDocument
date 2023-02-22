@@ -316,5 +316,5 @@ public static class ConstraintConverter
     SetVal(openXmlElement, value?.Val);
     SetFact(openXmlElement, value?.Fact);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

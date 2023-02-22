@@ -371,5 +371,5 @@ public static class FramePropertiesConverter
     SetYAlign(openXmlElement, value?.YAlign);
     SetHeightType(openXmlElement, value?.HeightType);
     SetAnchorLock(openXmlElement, value?.AnchorLock);
-    }
   }
+}

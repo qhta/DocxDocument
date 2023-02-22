@@ -196,5 +196,5 @@ public static class RibbonConverter
     SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
     SetTabs(openXmlElement, value?.Tabs);
     SetContextualTabSets(openXmlElement, value?.ContextualTabSets);
-    }
   }
+}

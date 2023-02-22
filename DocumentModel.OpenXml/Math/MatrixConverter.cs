@@ -130,5 +130,5 @@ public static class MatrixConverter
   {
     SetMatrixProperties(openXmlElement, value?.MatrixProperties);
     SetMatrixRows(openXmlElement, value?.MatrixRows);
-    }
   }
+}

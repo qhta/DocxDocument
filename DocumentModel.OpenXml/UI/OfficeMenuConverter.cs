@@ -307,5 +307,5 @@ public static class OfficeMenuConverter
     SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
     SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
     SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
-    }
   }
+}

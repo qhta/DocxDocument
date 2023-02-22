@@ -70,5 +70,5 @@ public static class MoveToConverter
   public static void UpdateOpenXmlElement(DXDraw.MoveTo openXmlElement, DMDraws.MoveTo value)
   {
     SetPoint(openXmlElement, value?.Point);
-    }
   }
+}

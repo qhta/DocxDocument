@@ -169,5 +169,5 @@ public static class ThemeElementsConverter
     SetFontScheme(openXmlElement, value?.FontScheme);
     SetFormatScheme(openXmlElement, value?.FormatScheme);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -987,5 +987,5 @@ public static class ComboBoxConverter
     SetShowImage(openXmlElement, value?.ShowImage);
     SetGetShowImage(openXmlElement, value?.GetShowImage);
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

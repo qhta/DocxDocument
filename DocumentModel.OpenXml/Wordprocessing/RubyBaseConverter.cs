@@ -1687,5 +1687,5 @@ public static class RubyBaseConverter
     SetSubscript(openXmlElement, value?.Subscript);
     SetSubSuperscript(openXmlElement, value?.SubSuperscript);
     SetSuperscript(openXmlElement, value?.Superscript);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class StyleDisplayCategoriesConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.StyleDisplayCategories openXmlElement, DMDrawsDgms.StyleDisplayCategories value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

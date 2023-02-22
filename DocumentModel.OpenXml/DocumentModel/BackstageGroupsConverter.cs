@@ -127,5 +127,5 @@ public static class BackstageGroupsConverter
     SetTaskFormGroup(openXmlElement, value?.TaskFormGroup);
     SetBackstageGroup(openXmlElement, value?.BackstageGroup);
     SetTaskGroup(openXmlElement, value?.TaskGroup);
-    }
   }
+}

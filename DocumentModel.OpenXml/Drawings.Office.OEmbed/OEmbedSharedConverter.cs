@@ -114,5 +114,5 @@ public static class OEmbedSharedConverter
     SetSrcUrl(openXmlElement, value?.SrcUrl);
     SetType(openXmlElement, value?.Type);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

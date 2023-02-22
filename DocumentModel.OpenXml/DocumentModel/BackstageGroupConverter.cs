@@ -533,5 +533,5 @@ public static class BackstageGroupConverter
     SetPrimaryItem(openXmlElement, value?.PrimaryItem);
     SetTopItemsGroupControls(openXmlElement, value?.TopItemsGroupControls);
     SetBottomItemsGroupControls(openXmlElement, value?.BottomItemsGroupControls);
-    }
   }
+}

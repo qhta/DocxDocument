@@ -318,5 +318,5 @@ public static class ManualLayoutConverter
     SetWidth(openXmlElement, value?.Width);
     SetHeight(openXmlElement, value?.Height);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

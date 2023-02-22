@@ -59,5 +59,5 @@ public static class PredecessorDrawingElementReferenceConverter
   public static void UpdateOpenXmlElement(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, DMDraws.PredecessorDrawingElementReference value)
   {
     SetPred(openXmlElement, value?.Pred);
-    }
   }
+}

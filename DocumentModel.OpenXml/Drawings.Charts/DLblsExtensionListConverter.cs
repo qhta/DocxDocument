@@ -97,5 +97,5 @@ public static class DLblsExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.DLblsExtensionList openXmlElement, DMDrawsCharts.DLblsExtensionList value)
   {
     SetDLblsExtensions(openXmlElement, value?.DLblsExtensions);
-    }
   }
+}

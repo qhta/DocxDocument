@@ -987,5 +987,5 @@ public static class MenuRegularConverter
     SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
     SetChildMenuRegular(openXmlElement, value?.ChildMenuRegular);
     SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
-    }
   }
+}

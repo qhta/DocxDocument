@@ -53,5 +53,5 @@ public static class EmbeddedObjectPartConverter
   public static void UpdateOpenXmlElement(DXPack.EmbeddedObjectPart openXmlElement, DMPack.EmbeddedObjectPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

@@ -70,5 +70,5 @@ public static class RunPropertiesDefaultConverter
   public static void UpdateOpenXmlElement(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesDefault value)
   {
     SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class StylisticSetsConverter
   public static void UpdateOpenXmlElement(DXO2010W.StylisticSets openXmlElement, DMW.StylisticSets value)
   {
     SetStyleSets(openXmlElement, value?.StyleSets);
-    }
   }
+}

@@ -494,5 +494,5 @@ public static class SplitButtonWithTitleConverter
     SetVisibleButton(openXmlElement, value?.VisibleButton);
     SetVisibleToggleButton(openXmlElement, value?.VisibleToggleButton);
     SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
-    }
   }
+}

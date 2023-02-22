@@ -103,5 +103,5 @@ public static class ControlConverter
     SetName(openXmlElement, value?.Name);
     SetShapeId(openXmlElement, value?.ShapeId);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

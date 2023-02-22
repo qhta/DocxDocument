@@ -61,5 +61,5 @@ public static class AlphaBiLevelConverter
   public static void UpdateOpenXmlElement(DXDraw.AlphaBiLevel openXmlElement, DMDraws.AlphaBiLevel value)
   {
     SetThreshold(openXmlElement, value?.Threshold);
-    }
   }
+}

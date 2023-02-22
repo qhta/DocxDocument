@@ -247,5 +247,5 @@ public static class EffectReferenceConverter
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
     SetStyleColor(openXmlElement, value?.StyleColor);
-    }
   }
+}

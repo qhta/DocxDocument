@@ -271,5 +271,5 @@ public static class BlipExtensionConverter
     SetPictureAttributionSourceURL(openXmlElement, value?.PictureAttributionSourceURL);
     SetOEmbed(openXmlElement, value?.OEmbed);
     SetOEmbedShared(openXmlElement, value?.OEmbedShared);
-    }
   }
+}

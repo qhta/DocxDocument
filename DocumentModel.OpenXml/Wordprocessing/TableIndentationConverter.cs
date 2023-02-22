@@ -83,5 +83,5 @@ public static class TableIndentationConverter
   {
     SetWidth(openXmlElement, value?.Width);
     SetType(openXmlElement, value?.Type);
-    }
   }
+}

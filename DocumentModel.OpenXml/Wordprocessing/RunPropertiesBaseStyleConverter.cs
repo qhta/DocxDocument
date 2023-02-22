@@ -903,5 +903,5 @@ public static class RunPropertiesBaseStyleConverter
     SetLanguages(openXmlElement, value?.Languages);
     SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
     SetSpecVanish(openXmlElement, value?.SpecVanish);
-    }
   }
+}

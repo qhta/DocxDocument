@@ -96,5 +96,5 @@ public static class LabelInfoPartConverter
     SetClassificationLabelList(openXmlElement, value?.ClassificationLabelList);
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}
