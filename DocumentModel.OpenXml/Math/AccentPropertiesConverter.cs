@@ -10,24 +10,17 @@ public static class AccentPropertiesConverter
   /// </summary>
   private static String? GetAccentChar(DXMath.AccentProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val);
   }
   
   private static bool CmpAccentChar(DXMath.AccentProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val, value, diffs, objName, "AccentChar");
   }
   
   private static void SetAccentChar(DXMath.AccentProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.AccentChar>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.AccentChar { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXMath.AccentChar>(openXmlElement, value);
   }
   
   /// <summary>
@@ -87,16 +80,17 @@ public static class AccentPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.AccentProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.AccentProperties value)
     where OpenXmlElementType: DXMath.AccentProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAccentChar(openXmlElement, value?.AccentChar);
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.AccentProperties openXmlElement, DMMath.AccentProperties value)
+  {
+    SetAccentChar(openXmlElement, value?.AccentChar);
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

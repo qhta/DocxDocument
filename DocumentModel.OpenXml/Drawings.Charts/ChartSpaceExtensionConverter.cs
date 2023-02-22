@@ -10,22 +10,17 @@ public static class ChartSpaceExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.ChartSpaceExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.ChartSpaceExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.PivotOptions? GetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
@@ -140,18 +135,19 @@ public static class ChartSpaceExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtension value)
     where OpenXmlElementType: DXDrawCharts.ChartSpaceExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetPivotOptions(openXmlElement, value?.PivotOptions);
-      SetSketchOptions(openXmlElement, value?.SketchOptions);
-      SetPivotSource(openXmlElement, value?.PivotSource);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.ChartSpaceExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetPivotOptions(openXmlElement, value?.PivotOptions);
+    SetSketchOptions(openXmlElement, value?.SketchOptions);
+    SetPivotSource(openXmlElement, value?.PivotSource);
+    }
+  }

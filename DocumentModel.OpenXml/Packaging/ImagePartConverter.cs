@@ -42,15 +42,16 @@ public static class ImagePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ImagePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ImagePart value)
     where OpenXmlElementType: DXPack.ImagePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ImagePart openXmlElement, DMPack.ImagePart value)
+  {
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

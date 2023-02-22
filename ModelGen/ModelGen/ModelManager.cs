@@ -129,7 +129,7 @@ public static class ModelManager
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
-            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
@@ -147,7 +147,7 @@ public static class ModelManager
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
           {
-            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
             sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
             targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
             typeInfo.IsConverted = true;
@@ -165,7 +165,7 @@ public static class ModelManager
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
-            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTargetOrSelf().Type;
           sourceArgType = typeof(DocumentModel.ListOf<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
@@ -202,7 +202,27 @@ public static class ModelManager
 
   public static TypeInfo GetTargetType(this TypeInfo typeInfo)
   {
-    var result = GetConversionTarget(typeInfo);
+    if (typeInfo.TargetType != null)
+      return typeInfo.TargetType;
+    var result = GetConversionTargetOrSelf(typeInfo);
+    if (result.TargetType!=null)
+    {
+      typeInfo.TargetType = result.TargetType;
+      return typeInfo.TargetType;
+    }
+    //var targetTypeName = result.GetFullName(false, false);
+    //var type = Type.GetType(targetTypeName);
+    //if (type==null)
+    //{
+    //  if (ModelData.ModelTypes.Count==0)
+    //    ModelData.LoadModelTypes(Assembly.Load("DocumentModel"));
+    //  ModelData.ModelTypes.TryGetValue(targetTypeName, out type);
+    //}
+    //if (type != null)
+    //{
+    //  result = TypeManager.RegisterTargetType(type);
+    //}
+    typeInfo.TargetType = result;
     return result;
   }
 
@@ -260,7 +280,7 @@ public static class ModelManager
     TypeInfo targetTypeInfo = null!;
     Type? targetType = null;
     var propName = propInfo.DeclaringType?.Namespace+"."+propInfo.DeclaringType?.Name+"."+propInfo.Name; 
-    if (ModelData.PropertyTypes.TryGetValue(propName, out targetType))
+    if (ModelData.TryGetPropertyType(propName, out targetType))
       targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
     else
     {
@@ -291,7 +311,7 @@ public static class ModelManager
       }
     }
     if (targetTypeInfo == null)
-      targetTypeInfo = GetConversionTarget(typeInfo);
+      targetTypeInfo = GetConversionTargetOrSelf(typeInfo);
     propInfo.TargetType = targetTypeInfo;
     return targetTypeInfo;
   }
@@ -307,7 +327,7 @@ public static class ModelManager
   public static FullTypeName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
   {
     if (typeInfo.IsConverted)
-      typeInfo = typeInfo.GetConversionTarget();
+      typeInfo = typeInfo.GetConversionTargetOrSelf();
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
       return new FullTypeName(aName, null);
@@ -342,7 +362,7 @@ public static class ModelManager
     return result;
   }
 
-  public static TypeInfo GetConversionTarget(this TypeInfo typeInfo)
+  public static TypeInfo GetConversionTargetOrSelf(this TypeInfo typeInfo)
   {
     var result = TypeManager.GetRelatedTypes(typeInfo, Semantics.TypeChange).FirstOrDefault();
     if (result == null && typeInfo.IsConstructedGenericType)
@@ -352,7 +372,7 @@ public static class ModelManager
     {
       result.TryAddTypeConversion();
       if (result.IsConverted)
-        result = GetConversionTarget(result);
+        result = GetConversionTargetOrSelf(result);
     }
     return result ?? typeInfo;
   }
@@ -414,7 +434,7 @@ public static class ModelManager
 
     if (typeInfo.BaseTypeInfo != null)
     {
-      var baseType = typeInfo.BaseTypeInfo.GetConversionTarget();
+      var baseType = typeInfo.BaseTypeInfo.GetConversionTargetOrSelf();
       CheckTypeUsage(baseType, OnStartChecking);
     }
 
@@ -427,7 +447,7 @@ public static class ModelManager
         {
           if (prop.Name == "NotesMaster")
             Debug.Assert(true);
-          var propType = prop.PropertyType.GetConversionTarget();
+          var propType = prop.PropertyType.GetConversionTargetOrSelf();
           if (propType.HasExcludedNamespace())
             prop.IsAccepted = false;
           else if (propType.IsAccepted is null or true)
@@ -538,7 +558,7 @@ public static class ModelManager
   public static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
   {
     var result = new List<TypeInfo>();
-    var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTarget();
+    var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTargetOrSelf();
     if (baseTypeInfo != null)
     {
       result.Add(baseTypeInfo);

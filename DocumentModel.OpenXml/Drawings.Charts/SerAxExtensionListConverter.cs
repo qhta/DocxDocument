@@ -21,11 +21,11 @@ public static class SerAxExtensionListConverter
   
   private static bool CmpSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.SerAxExtension>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.SerAxExtension>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class SerAxExtensionListConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class SerAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SerAxExtensionList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SerAxExtensionList value)
     where OpenXmlElementType: DXDrawCharts.SerAxExtensionList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSerAxExtensions(openXmlElement, value?.SerAxExtensions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.SerAxExtensionList openXmlElement, DMDrawsCharts.SerAxExtensionList value)
+  {
+    SetSerAxExtensions(openXmlElement, value?.SerAxExtensions);
+    }
+  }

@@ -10,22 +10,17 @@ public static class MathControlMoveTypeConverter
   /// </summary>
   private static String? GetAuthor(DXW.MathControlMoveType openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXW.MathControlMoveType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXW.MathControlMoveType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class MathControlMoveTypeConverter
   /// </summary>
   private static String? GetId(DXW.MathControlMoveType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.MathControlMoveType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.MathControlMoveType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(DXW.MathControlMoveType? openXmlElement)
@@ -102,17 +92,18 @@ public static class MathControlMoveTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MathControlMoveType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MathControlMoveType value)
     where OpenXmlElementType: DXW.MathControlMoveType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAuthor(openXmlElement, value?.Author);
-      SetDate(openXmlElement, value?.Date);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.MathControlMoveType openXmlElement, DMW.MathControlMoveType value)
+  {
+    SetAuthor(openXmlElement, value?.Author);
+    SetDate(openXmlElement, value?.Date);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

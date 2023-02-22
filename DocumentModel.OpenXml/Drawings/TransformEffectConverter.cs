@@ -165,20 +165,21 @@ public static class TransformEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TransformEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TransformEffect value)
     where OpenXmlElementType: DXDraw.TransformEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
-      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
-      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
-      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
-      SetHorizontalShift(openXmlElement, value?.HorizontalShift);
-      SetVerticalShift(openXmlElement, value?.VerticalShift);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.TransformEffect openXmlElement, DMDraws.TransformEffect value)
+  {
+    SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+    SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+    SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+    SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+    SetHorizontalShift(openXmlElement, value?.HorizontalShift);
+    SetVerticalShift(openXmlElement, value?.VerticalShift);
+    }
+  }

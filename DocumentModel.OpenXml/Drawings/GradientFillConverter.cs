@@ -193,20 +193,21 @@ public static class GradientFillConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientFill? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientFill value)
     where OpenXmlElementType: DXDraw.GradientFill, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFlip(openXmlElement, value?.Flip);
-      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
-      SetGradientStopList(openXmlElement, value?.GradientStopList);
-      SetLinearGradientFill(openXmlElement, value?.LinearGradientFill);
-      SetPathGradientFill(openXmlElement, value?.PathGradientFill);
-      SetTileRectangle(openXmlElement, value?.TileRectangle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.GradientFill openXmlElement, DMDraws.GradientFill value)
+  {
+    SetFlip(openXmlElement, value?.Flip);
+    SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+    SetGradientStopList(openXmlElement, value?.GradientStopList);
+    SetLinearGradientFill(openXmlElement, value?.LinearGradientFill);
+    SetPathGradientFill(openXmlElement, value?.PathGradientFill);
+    SetTileRectangle(openXmlElement, value?.TileRectangle);
+    }
+  }

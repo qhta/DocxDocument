@@ -137,18 +137,19 @@ public static class DataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Data? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Data value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Data, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetNumericDimension(openXmlElement, value?.NumericDimension);
-      SetStringDimension(openXmlElement, value?.StringDimension);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.Data value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetNumericDimension(openXmlElement, value?.NumericDimension);
+    SetStringDimension(openXmlElement, value?.StringDimension);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

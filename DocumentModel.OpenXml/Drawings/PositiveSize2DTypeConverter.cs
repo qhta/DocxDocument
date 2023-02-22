@@ -73,16 +73,17 @@ public static class PositiveSize2DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PositiveSize2DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PositiveSize2DType value)
     where OpenXmlElementType: DXDraw.PositiveSize2DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCx(openXmlElement, value?.Cx);
-      SetCy(openXmlElement, value?.Cy);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PositiveSize2DType openXmlElement, DMDraws.PositiveSize2DType value)
+  {
+    SetCx(openXmlElement, value?.Cx);
+    SetCy(openXmlElement, value?.Cy);
+    }
+  }

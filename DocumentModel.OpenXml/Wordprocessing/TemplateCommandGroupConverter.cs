@@ -21,11 +21,11 @@ public static class TemplateCommandGroupConverter
   
   private static bool CmpKeyMapCustomizations(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.KeyMapCustomizations>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXOW.KeyMapCustomizations>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXOW.KeyMapCustomizations>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class TemplateCommandGroupConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -77,11 +77,11 @@ public static class TemplateCommandGroupConverter
   
   private static bool CmpMismatchedKeyMapCustomizations(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.MismatchedKeyMapCustomization>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXOW.MismatchedKeyMapCustomization>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXOW.MismatchedKeyMapCustomization>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -98,7 +98,7 @@ public static class TemplateCommandGroupConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -159,11 +159,11 @@ public static class TemplateCommandGroupConverter
   
   private static bool CmpAllocatedCommands(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.AllocatedCommands>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXOW.AllocatedCommands>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXOW.AllocatedCommands>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -180,7 +180,7 @@ public static class TemplateCommandGroupConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -233,18 +233,19 @@ public static class TemplateCommandGroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TemplateCommandGroup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TemplateCommandGroup value)
     where OpenXmlElementType: DXOW.TemplateCommandGroup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetKeyMapCustomizations(openXmlElement, value?.KeyMapCustomizations);
-      SetMismatchedKeyMapCustomizations(openXmlElement, value?.MismatchedKeyMapCustomizations);
-      SetToolbars(openXmlElement, value?.Toolbars);
-      SetAllocatedCommands(openXmlElement, value?.AllocatedCommands);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.TemplateCommandGroup openXmlElement, DMW.TemplateCommandGroup value)
+  {
+    SetKeyMapCustomizations(openXmlElement, value?.KeyMapCustomizations);
+    SetMismatchedKeyMapCustomizations(openXmlElement, value?.MismatchedKeyMapCustomizations);
+    SetToolbars(openXmlElement, value?.Toolbars);
+    SetAllocatedCommands(openXmlElement, value?.AllocatedCommands);
+    }
+  }

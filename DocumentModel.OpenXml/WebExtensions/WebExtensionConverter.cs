@@ -33,22 +33,17 @@ public static class WebExtensionConverter
   /// </summary>
   private static String? GetId(DXO2013WebExt.WebExtension openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013WebExt.WebExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013WebExt.WebExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -297,23 +292,24 @@ public static class WebExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtension value)
     where OpenXmlElementType: DXO2013WebExt.WebExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFronzen(openXmlElement, value?.Fronzen);
-      SetId(openXmlElement, value?.Id);
-      SetFrozen(openXmlElement, value?.Frozen);
-      SetWebExtensionStoreReference(openXmlElement, value?.WebExtensionStoreReference);
-      SetWebExtensionReferenceList(openXmlElement, value?.WebExtensionReferenceList);
-      SetWebExtensionPropertyBag(openXmlElement, value?.WebExtensionPropertyBag);
-      SetWebExtensionBindingList(openXmlElement, value?.WebExtensionBindingList);
-      SetSnapshot(openXmlElement, value?.Snapshot);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtension openXmlElement, DMWebExt.WebExtension value)
+  {
+    SetFronzen(openXmlElement, value?.Fronzen);
+    SetId(openXmlElement, value?.Id);
+    SetFrozen(openXmlElement, value?.Frozen);
+    SetWebExtensionStoreReference(openXmlElement, value?.WebExtensionStoreReference);
+    SetWebExtensionReferenceList(openXmlElement, value?.WebExtensionReferenceList);
+    SetWebExtensionPropertyBag(openXmlElement, value?.WebExtensionPropertyBag);
+    SetWebExtensionBindingList(openXmlElement, value?.WebExtensionBindingList);
+    SetSnapshot(openXmlElement, value?.Snapshot);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

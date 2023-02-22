@@ -52,11 +52,11 @@ public static class DoughnutChartConverter
   
   private static bool CmpPieChartSeries(DXDrawCharts.DoughnutChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -73,7 +73,7 @@ public static class DoughnutChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -120,52 +120,32 @@ public static class DoughnutChartConverter
   
   private static UInt16? GetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val);
   }
   
   private static bool CmpFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.FirstSliceAngle", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val, value, diffs, objName, "FirstSliceAngle");
   }
   
   private static void SetFirstSliceAngle(DXDrawCharts.DoughnutChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.FirstSliceAngle{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.FirstSliceAngle,System.UInt16>(openXmlElement, value);
   }
   
   private static Byte? GetHoleSize(DXDrawCharts.DoughnutChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>()?.Val);
   }
   
   private static bool CmpHoleSize(DXDrawCharts.DoughnutChart openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.HoleSize", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.HoleSize>()?.Val, value, diffs, objName, "HoleSize");
   }
   
   private static void SetHoleSize(DXDrawCharts.DoughnutChart openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HoleSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.HoleSize{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.HoleSize,System.Byte>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DoughnutChart openXmlElement)
@@ -234,20 +214,21 @@ public static class DoughnutChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DoughnutChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DoughnutChart value)
     where OpenXmlElementType: DXDrawCharts.DoughnutChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
-      SetHoleSize(openXmlElement, value?.HoleSize);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DoughnutChart openXmlElement, DMDrawsCharts.DoughnutChart value)
+  {
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetPieChartSeries(openXmlElement, value?.PieChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
+    SetHoleSize(openXmlElement, value?.HoleSize);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

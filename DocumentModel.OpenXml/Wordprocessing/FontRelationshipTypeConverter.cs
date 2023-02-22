@@ -10,22 +10,17 @@ public static class FontRelationshipTypeConverter
   /// </summary>
   private static String? GetFontKey(DXW.FontRelationshipType openXmlElement)
   {
-    return openXmlElement?.FontKey?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FontKey);
   }
   
   private static bool CmpFontKey(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FontKey?.Value == value) return true;
-    diffs?.Add(objName, "FontKey", openXmlElement?.FontKey?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FontKey, value, diffs, objName, "FontKey");
   }
   
   private static void SetFontKey(DXW.FontRelationshipType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FontKey = new StringValue { Value = value };
-    else
-      openXmlElement.FontKey = null;
+    openXmlElement.FontKey = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class FontRelationshipTypeConverter
   /// </summary>
   private static Boolean? GetSubsetted(DXW.FontRelationshipType openXmlElement)
   {
-    return openXmlElement?.Subsetted?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Subsetted);
   }
   
   private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Subsetted?.Value == value) return true;
-    diffs?.Add(objName, "Subsetted", openXmlElement?.Subsetted?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Subsetted, value, diffs, objName, "Subsetted");
   }
   
   private static void SetSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Subsetted = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Subsetted = null;
+    openXmlElement.Subsetted = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class FontRelationshipTypeConverter
   /// </summary>
   private static String? GetId(DXW.FontRelationshipType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.FontRelationshipType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.FontRelationshipType? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
@@ -105,17 +90,18 @@ public static class FontRelationshipTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FontRelationshipType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FontRelationshipType value)
     where OpenXmlElementType: DXW.FontRelationshipType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFontKey(openXmlElement, value?.FontKey);
-      SetSubsetted(openXmlElement, value?.Subsetted);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FontRelationshipType openXmlElement, DMW.FontRelationshipType value)
+  {
+    SetFontKey(openXmlElement, value?.FontKey);
+    SetSubsetted(openXmlElement, value?.Subsetted);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

@@ -188,21 +188,22 @@ public static class PageMarginConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageMargin? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PageMargin value)
     where OpenXmlElementType: DXW.PageMargin, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTop(openXmlElement, value?.Top);
-      SetRight(openXmlElement, value?.Right);
-      SetBottom(openXmlElement, value?.Bottom);
-      SetLeft(openXmlElement, value?.Left);
-      SetHeader(openXmlElement, value?.Header);
-      SetFooter(openXmlElement, value?.Footer);
-      SetGutter(openXmlElement, value?.Gutter);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PageMargin openXmlElement, DMW.PageMargin value)
+  {
+    SetTop(openXmlElement, value?.Top);
+    SetRight(openXmlElement, value?.Right);
+    SetBottom(openXmlElement, value?.Bottom);
+    SetLeft(openXmlElement, value?.Left);
+    SetHeader(openXmlElement, value?.Header);
+    SetFooter(openXmlElement, value?.Footer);
+    SetGutter(openXmlElement, value?.Gutter);
+    }
+  }

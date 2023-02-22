@@ -77,16 +77,17 @@ public static class ToAnchorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.ToAnchor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.ToAnchor value)
     where OpenXmlElementType: DXDrawChartDraw.ToAnchor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetXPosition(openXmlElement, value?.XPosition);
-      SetYPosition(openXmlElement, value?.YPosition);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.ToAnchor openXmlElement, DMDrawsChartDraw.ToAnchor value)
+  {
+    SetXPosition(openXmlElement, value?.XPosition);
+    SetYPosition(openXmlElement, value?.YPosition);
+    }
+  }

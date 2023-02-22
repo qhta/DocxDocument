@@ -123,17 +123,18 @@ public static class LimitUpperConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpper? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpper value)
     where OpenXmlElementType: DXMath.LimitUpper, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLimitUpperProperties(openXmlElement, value?.LimitUpperProperties);
-      SetBase(openXmlElement, value?.Base);
-      SetLimit(openXmlElement, value?.Limit);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.LimitUpper openXmlElement, DMMath.LimitUpper value)
+  {
+    SetLimitUpperProperties(openXmlElement, value?.LimitUpperProperties);
+    SetBase(openXmlElement, value?.Base);
+    SetLimit(openXmlElement, value?.Limit);
+    }
+  }

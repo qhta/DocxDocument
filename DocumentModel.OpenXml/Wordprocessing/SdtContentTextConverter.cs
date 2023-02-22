@@ -10,22 +10,17 @@ public static class SdtContentTextConverter
   /// </summary>
   private static Boolean? GetMultiLine(DXW.SdtContentText openXmlElement)
   {
-    return openXmlElement?.MultiLine?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.MultiLine);
   }
   
   private static bool CmpMultiLine(DXW.SdtContentText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MultiLine?.Value == value) return true;
-    diffs?.Add(objName, "MultiLine", openXmlElement?.MultiLine?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.MultiLine, value, diffs, objName, "MultiLine");
   }
   
   private static void SetMultiLine(DXW.SdtContentText openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.MultiLine = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.MultiLine = null;
+    openXmlElement.MultiLine = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.SdtContentText? CreateModelElement(DXW.SdtContentText? openXmlElement)
@@ -53,15 +48,16 @@ public static class SdtContentTextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentText? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentText value)
     where OpenXmlElementType: DXW.SdtContentText, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMultiLine(openXmlElement, value?.MultiLine);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtContentText openXmlElement, DMW.SdtContentText value)
+  {
+    SetMultiLine(openXmlElement, value?.MultiLine);
+    }
+  }

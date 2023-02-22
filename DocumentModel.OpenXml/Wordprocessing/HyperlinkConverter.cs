@@ -10,22 +10,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static String? GetTargetFrame(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.TargetFrame?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
   }
   
   private static bool CmpTargetFrame(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TargetFrame?.Value == value) return true;
-    diffs?.Add(objName, "TargetFrame", openXmlElement?.TargetFrame?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TargetFrame, value, diffs, objName, "TargetFrame");
   }
   
   private static void SetTargetFrame(DXW.Hyperlink openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TargetFrame = new StringValue { Value = value };
-    else
-      openXmlElement.TargetFrame = null;
+    openXmlElement.TargetFrame = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static String? GetTooltip(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.Tooltip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tooltip);
   }
   
   private static bool CmpTooltip(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tooltip?.Value == value) return true;
-    diffs?.Add(objName, "Tooltip", openXmlElement?.Tooltip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tooltip, value, diffs, objName, "Tooltip");
   }
   
   private static void SetTooltip(DXW.Hyperlink openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tooltip = new StringValue { Value = value };
-    else
-      openXmlElement.Tooltip = null;
+    openXmlElement.Tooltip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static String? GetDocLocation(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.DocLocation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DocLocation);
   }
   
   private static bool CmpDocLocation(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DocLocation?.Value == value) return true;
-    diffs?.Add(objName, "DocLocation", openXmlElement?.DocLocation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DocLocation, value, diffs, objName, "DocLocation");
   }
   
   private static void SetDocLocation(DXW.Hyperlink openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DocLocation = new StringValue { Value = value };
-    else
-      openXmlElement.DocLocation = null;
+    openXmlElement.DocLocation = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static Boolean? GetHistory(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.History?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.History);
   }
   
   private static bool CmpHistory(DXW.Hyperlink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.History?.Value == value) return true;
-    diffs?.Add(objName, "History", openXmlElement?.History?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.History, value, diffs, objName, "History");
   }
   
   private static void SetHistory(DXW.Hyperlink openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.History = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.History = null;
+    openXmlElement.History = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static String? GetAnchor(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.Anchor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Anchor);
   }
   
   private static bool CmpAnchor(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Anchor?.Value == value) return true;
-    diffs?.Add(objName, "Anchor", openXmlElement?.Anchor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Anchor, value, diffs, objName, "Anchor");
   }
   
   private static void SetAnchor(DXW.Hyperlink openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Anchor = new StringValue { Value = value };
-    else
-      openXmlElement.Anchor = null;
+    openXmlElement.Anchor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class HyperlinkConverter
   /// </summary>
   private static String? GetId(DXW.Hyperlink openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.Hyperlink openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMW.CustomXmlRun? GetCustomXmlRun(DXW.Hyperlink openXmlElement)
@@ -185,11 +155,11 @@ public static class HyperlinkConverter
   
   private static bool CmpSimpleFields(DXW.Hyperlink openXmlElement, Collection<DMW.SimpleField>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.SimpleField>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.SimpleField>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -206,7 +176,7 @@ public static class HyperlinkConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -1895,78 +1865,79 @@ public static class HyperlinkConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Hyperlink? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Hyperlink value)
     where OpenXmlElementType: DXW.Hyperlink, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTargetFrame(openXmlElement, value?.TargetFrame);
-      SetTooltip(openXmlElement, value?.Tooltip);
-      SetDocLocation(openXmlElement, value?.DocLocation);
-      SetHistory(openXmlElement, value?.History);
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetId(openXmlElement, value?.Id);
-      SetCustomXmlRun(openXmlElement, value?.CustomXmlRun);
-      SetSimpleFields(openXmlElement, value?.SimpleFields);
-      SetChildHyperlink(openXmlElement, value?.ChildHyperlink);
-      SetSdtRun(openXmlElement, value?.SdtRun);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      SetInsertedRun(openXmlElement, value?.InsertedRun);
-      SetDeletedRun(openXmlElement, value?.DeletedRun);
-      SetMoveFromRun(openXmlElement, value?.MoveFromRun);
-      SetMoveToRun(openXmlElement, value?.MoveToRun);
-      SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
-      SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      SetOfficeMath(openXmlElement, value?.OfficeMath);
-      SetAccent(openXmlElement, value?.Accent);
-      SetBar(openXmlElement, value?.Bar);
-      SetBox(openXmlElement, value?.Box);
-      SetBorderBox(openXmlElement, value?.BorderBox);
-      SetDelimiter(openXmlElement, value?.Delimiter);
-      SetEquationArray(openXmlElement, value?.EquationArray);
-      SetFraction(openXmlElement, value?.Fraction);
-      SetMathFunction(openXmlElement, value?.MathFunction);
-      SetGroupChar(openXmlElement, value?.GroupChar);
-      SetLimitLower(openXmlElement, value?.LimitLower);
-      SetLimitUpper(openXmlElement, value?.LimitUpper);
-      SetMatrix(openXmlElement, value?.Matrix);
-      SetNary(openXmlElement, value?.Nary);
-      SetPhantom(openXmlElement, value?.Phantom);
-      SetRadical(openXmlElement, value?.Radical);
-      SetPreSubSuper(openXmlElement, value?.PreSubSuper);
-      SetSubscript(openXmlElement, value?.Subscript);
-      SetSubSuperscript(openXmlElement, value?.SubSuperscript);
-      SetSuperscript(openXmlElement, value?.Superscript);
-      SetRun(openXmlElement, value?.Run);
-      SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
-      SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
-      SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Hyperlink openXmlElement, DMW.Hyperlink value)
+  {
+    SetTargetFrame(openXmlElement, value?.TargetFrame);
+    SetTooltip(openXmlElement, value?.Tooltip);
+    SetDocLocation(openXmlElement, value?.DocLocation);
+    SetHistory(openXmlElement, value?.History);
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetId(openXmlElement, value?.Id);
+    SetCustomXmlRun(openXmlElement, value?.CustomXmlRun);
+    SetSimpleFields(openXmlElement, value?.SimpleFields);
+    SetChildHyperlink(openXmlElement, value?.ChildHyperlink);
+    SetSdtRun(openXmlElement, value?.SdtRun);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    SetInsertedRun(openXmlElement, value?.InsertedRun);
+    SetDeletedRun(openXmlElement, value?.DeletedRun);
+    SetMoveFromRun(openXmlElement, value?.MoveFromRun);
+    SetMoveToRun(openXmlElement, value?.MoveToRun);
+    SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
+    SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    SetOfficeMath(openXmlElement, value?.OfficeMath);
+    SetAccent(openXmlElement, value?.Accent);
+    SetBar(openXmlElement, value?.Bar);
+    SetBox(openXmlElement, value?.Box);
+    SetBorderBox(openXmlElement, value?.BorderBox);
+    SetDelimiter(openXmlElement, value?.Delimiter);
+    SetEquationArray(openXmlElement, value?.EquationArray);
+    SetFraction(openXmlElement, value?.Fraction);
+    SetMathFunction(openXmlElement, value?.MathFunction);
+    SetGroupChar(openXmlElement, value?.GroupChar);
+    SetLimitLower(openXmlElement, value?.LimitLower);
+    SetLimitUpper(openXmlElement, value?.LimitUpper);
+    SetMatrix(openXmlElement, value?.Matrix);
+    SetNary(openXmlElement, value?.Nary);
+    SetPhantom(openXmlElement, value?.Phantom);
+    SetRadical(openXmlElement, value?.Radical);
+    SetPreSubSuper(openXmlElement, value?.PreSubSuper);
+    SetSubscript(openXmlElement, value?.Subscript);
+    SetSubSuperscript(openXmlElement, value?.SubSuperscript);
+    SetSuperscript(openXmlElement, value?.Superscript);
+    SetRun(openXmlElement, value?.Run);
+    SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
+    SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    }
+  }

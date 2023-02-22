@@ -21,11 +21,11 @@ public static class CatAxExtensionListConverter
   
   private static bool CmpCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.CatAxExtension>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.CatAxExtension>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class CatAxExtensionListConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class CatAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CatAxExtensionList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CatAxExtensionList value)
     where OpenXmlElementType: DXDrawCharts.CatAxExtensionList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCatAxExtensions(openXmlElement, value?.CatAxExtensions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.CatAxExtensionList openXmlElement, DMDrawsCharts.CatAxExtensionList value)
+  {
+    SetCatAxExtensions(openXmlElement, value?.CatAxExtensions);
+    }
+  }

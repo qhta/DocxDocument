@@ -7,27 +7,17 @@ public static class StringCacheConverter
 {
   private static UInt32? GetPointCount(DXDrawCharts.StringCache openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
   }
   
   private static bool CmpPointCount(DXDrawCharts.StringCache openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PointCount", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
   private static void SetPointCount(DXDrawCharts.StringCache openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.PointCount{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
   }
   
   private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.StringCache openXmlElement)
@@ -46,11 +36,11 @@ public static class StringCacheConverter
   
   private static bool CmpStringPoints(DXDrawCharts.StringCache openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.StringPoint>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.StringPoint>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -67,7 +57,7 @@ public static class StringCacheConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -143,17 +133,18 @@ public static class StringCacheConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringCache? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringCache value)
     where OpenXmlElementType: DXDrawCharts.StringCache, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPointCount(openXmlElement, value?.PointCount);
-      SetStringPoints(openXmlElement, value?.StringPoints);
-      SetStrDataExtensionList(openXmlElement, value?.StrDataExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StringCache openXmlElement, DMDrawsCharts.StringCache value)
+  {
+    SetPointCount(openXmlElement, value?.PointCount);
+    SetStringPoints(openXmlElement, value?.StringPoints);
+    SetStrDataExtensionList(openXmlElement, value?.StrDataExtensionList);
+    }
+  }

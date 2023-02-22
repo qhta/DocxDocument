@@ -219,20 +219,21 @@ public static class TableCellMarginDefaultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellMarginDefault? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellMarginDefault value)
     where OpenXmlElementType: DXW.TableCellMarginDefault, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopMargin(openXmlElement, value?.TopMargin);
-      SetTableCellLeftMargin(openXmlElement, value?.TableCellLeftMargin);
-      SetStartMargin(openXmlElement, value?.StartMargin);
-      SetBottomMargin(openXmlElement, value?.BottomMargin);
-      SetTableCellRightMargin(openXmlElement, value?.TableCellRightMargin);
-      SetEndMargin(openXmlElement, value?.EndMargin);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableCellMarginDefault openXmlElement, DMW.TableCellMarginDefault value)
+  {
+    SetTopMargin(openXmlElement, value?.TopMargin);
+    SetTableCellLeftMargin(openXmlElement, value?.TableCellLeftMargin);
+    SetStartMargin(openXmlElement, value?.StartMargin);
+    SetBottomMargin(openXmlElement, value?.BottomMargin);
+    SetTableCellRightMargin(openXmlElement, value?.TableCellRightMargin);
+    SetEndMargin(openXmlElement, value?.EndMargin);
+    }
+  }

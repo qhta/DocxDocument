@@ -10,22 +10,17 @@ public static class BubbleChartExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.BubbleChartExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.BubbleChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.BubbleChartExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FilteredBubbleSeries? GetFilteredBubbleSeries(DXDrawCharts.BubbleChartExtension openXmlElement)
@@ -82,16 +77,17 @@ public static class BubbleChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartExtension value)
     where OpenXmlElementType: DXDrawCharts.BubbleChartExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFilteredBubbleSeries(openXmlElement, value?.FilteredBubbleSeries);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleChartExtension openXmlElement, DMDrawsCharts.BubbleChartExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFilteredBubbleSeries(openXmlElement, value?.FilteredBubbleSeries);
+    }
+  }

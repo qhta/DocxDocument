@@ -427,29 +427,30 @@ public static class OuterShadowConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OuterShadow? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OuterShadow value)
     where OpenXmlElementType: DXDraw.OuterShadow, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlurRadius(openXmlElement, value?.BlurRadius);
-      SetDistance(openXmlElement, value?.Distance);
-      SetDirection(openXmlElement, value?.Direction);
-      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
-      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
-      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
-      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.OuterShadow openXmlElement, DMDraws.OuterShadow value)
+  {
+    SetBlurRadius(openXmlElement, value?.BlurRadius);
+    SetDistance(openXmlElement, value?.Distance);
+    SetDirection(openXmlElement, value?.Direction);
+    SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+    SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+    SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+    SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    }
+  }

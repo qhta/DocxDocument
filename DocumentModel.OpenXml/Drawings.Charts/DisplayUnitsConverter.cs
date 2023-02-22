@@ -7,27 +7,17 @@ public static class DisplayUnitsConverter
 {
   private static Double? GetCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>()?.Val);
   }
   
   private static bool CmpCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.CustomDisplayUnit", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>()?.Val, value, diffs, objName, "CustomDisplayUnit");
   }
   
   private static void SetCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.CustomDisplayUnit>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.CustomDisplayUnit{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.CustomDisplayUnit,System.Double>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.BuiltInUnitKind? GetBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement)
@@ -44,13 +34,15 @@ public static class DisplayUnitsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(itemElement, (DMDrawsCharts.BuiltInUnitKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>((DMDrawsCharts.BuiltInUnitKind)value));
   }
   
   private static DMDrawsCharts.DisplayUnitsLabel? GetDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement)
@@ -139,18 +131,19 @@ public static class DisplayUnitsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnits? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnits value)
     where OpenXmlElementType: DXDrawCharts.DisplayUnits, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCustomDisplayUnit(openXmlElement, value?.CustomDisplayUnit);
-      SetBuiltInUnit(openXmlElement, value?.BuiltInUnit);
-      SetDisplayUnitsLabel(openXmlElement, value?.DisplayUnitsLabel);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnits value)
+  {
+    SetCustomDisplayUnit(openXmlElement, value?.CustomDisplayUnit);
+    SetBuiltInUnit(openXmlElement, value?.BuiltInUnit);
+    SetDisplayUnitsLabel(openXmlElement, value?.DisplayUnitsLabel);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -213,20 +213,21 @@ public static class FontSignatureConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FontSignature? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FontSignature value)
     where OpenXmlElementType: DXW.FontSignature, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUnicodeSignature0(openXmlElement, value?.UnicodeSignature0);
-      SetUnicodeSignature1(openXmlElement, value?.UnicodeSignature1);
-      SetUnicodeSignature2(openXmlElement, value?.UnicodeSignature2);
-      SetUnicodeSignature3(openXmlElement, value?.UnicodeSignature3);
-      SetCodePageSignature0(openXmlElement, value?.CodePageSignature0);
-      SetCodePageSignature1(openXmlElement, value?.CodePageSignature1);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FontSignature openXmlElement, DMW.FontSignature value)
+  {
+    SetUnicodeSignature0(openXmlElement, value?.UnicodeSignature0);
+    SetUnicodeSignature1(openXmlElement, value?.UnicodeSignature1);
+    SetUnicodeSignature2(openXmlElement, value?.UnicodeSignature2);
+    SetUnicodeSignature3(openXmlElement, value?.UnicodeSignature3);
+    SetCodePageSignature0(openXmlElement, value?.CodePageSignature0);
+    SetCodePageSignature1(openXmlElement, value?.CodePageSignature1);
+    }
+  }

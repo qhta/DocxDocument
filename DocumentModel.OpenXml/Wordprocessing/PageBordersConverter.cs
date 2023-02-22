@@ -218,21 +218,22 @@ public static class PageBordersConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageBorders? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PageBorders value)
     where OpenXmlElementType: DXW.PageBorders, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetZOrder(openXmlElement, value?.ZOrder);
-      SetDisplay(openXmlElement, value?.Display);
-      SetOffsetFrom(openXmlElement, value?.OffsetFrom);
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PageBorders openXmlElement, DMW.PageBorders value)
+  {
+    SetZOrder(openXmlElement, value?.ZOrder);
+    SetDisplay(openXmlElement, value?.Display);
+    SetOffsetFrom(openXmlElement, value?.OffsetFrom);
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    }
+  }

@@ -172,19 +172,20 @@ public static class ControlPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ControlProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.ControlProperties value)
     where OpenXmlElementType: DXMath.ControlProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
-      SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
-      SetMoveFromMathControl(openXmlElement, value?.MoveFromMathControl);
-      SetMoveToMathControl(openXmlElement, value?.MoveToMathControl);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.ControlProperties openXmlElement, DMMath.ControlProperties value)
+  {
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
+    SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
+    SetMoveFromMathControl(openXmlElement, value?.MoveFromMathControl);
+    SetMoveToMathControl(openXmlElement, value?.MoveToMathControl);
+    }
+  }

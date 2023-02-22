@@ -59,15 +59,16 @@ public static class AlphaModulationEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationEffect value)
     where OpenXmlElementType: DXDraw.AlphaModulationEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEffectContainer(openXmlElement, value?.EffectContainer);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.AlphaModulationEffect value)
+  {
+    SetEffectContainer(openXmlElement, value?.EffectContainer);
+    }
+  }

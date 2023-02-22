@@ -10,22 +10,17 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   private static String? GetId(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   private static String? GetVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
-    return openXmlElement?.Version?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Version);
   }
   
   private static bool CmpVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Version?.Value == value) return true;
-    diffs?.Add(objName, "Version", openXmlElement?.Version?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Version, value, diffs, objName, "Version");
   }
   
   private static void SetVersion(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Version = new StringValue { Value = value };
-    else
-      openXmlElement.Version = null;
+    openXmlElement.Version = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   private static String? GetStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
-    return openXmlElement?.Store?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Store);
   }
   
   private static bool CmpStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Store?.Value == value) return true;
-    diffs?.Add(objName, "Store", openXmlElement?.Store?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Store, value, diffs, objName, "Store");
   }
   
   private static void SetStore(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Store = new StringValue { Value = value };
-    else
-      openXmlElement.Store = null;
+    openXmlElement.Store = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class WebExtensionStoreReferenceConverter
   /// </summary>
   private static String? GetStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement)
   {
-    return openXmlElement?.StoreType?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StoreType);
   }
   
   private static bool CmpStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StoreType?.Value == value) return true;
-    diffs?.Add(objName, "StoreType", openXmlElement?.StoreType?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StoreType, value, diffs, objName, "StoreType");
   }
   
   private static void SetStoreType(DXO2013WebExt.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StoreType = new StringValue { Value = value };
-    else
-      openXmlElement.StoreType = null;
+    openXmlElement.StoreType = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -163,19 +143,20 @@ public static class WebExtensionStoreReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionStoreReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionStoreReference value)
     where OpenXmlElementType: DXO2013WebExt.WebExtensionStoreReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetVersion(openXmlElement, value?.Version);
-      SetStore(openXmlElement, value?.Store);
-      SetStoreType(openXmlElement, value?.StoreType);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionStoreReference openXmlElement, DMWebExt.WebExtensionStoreReference value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetVersion(openXmlElement, value?.Version);
+    SetStore(openXmlElement, value?.Store);
+    SetStoreType(openXmlElement, value?.StoreType);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

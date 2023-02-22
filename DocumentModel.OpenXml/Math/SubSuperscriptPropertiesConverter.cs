@@ -22,13 +22,15 @@ public static class SubSuperscriptPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.AlignScripts>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.AlignScripts, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.AlignScripts, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -88,16 +90,17 @@ public static class SubSuperscriptPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscriptProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscriptProperties value)
     where OpenXmlElementType: DXMath.SubSuperscriptProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAlignScripts(openXmlElement, value?.AlignScripts);
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.SubSuperscriptProperties openXmlElement, DMMath.SubSuperscriptProperties value)
+  {
+    SetAlignScripts(openXmlElement, value?.AlignScripts);
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

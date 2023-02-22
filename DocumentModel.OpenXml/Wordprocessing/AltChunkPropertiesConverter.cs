@@ -10,34 +10,17 @@ public static class AltChunkPropertiesConverter
   /// </summary>
   private static Boolean? GetMatchSource(DXW.AltChunkProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.MatchSource>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.MatchSource>());
   }
   
   private static bool CmpMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetMatchSource(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.MatchSource", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.MatchSource>(), value, diffs, objName);
   }
   
   private static void SetMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.MatchSource>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.MatchSource();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.MatchSource>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)
@@ -65,15 +48,16 @@ public static class AltChunkPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AltChunkProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AltChunkProperties value)
     where OpenXmlElementType: DXW.AltChunkProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMatchSource(openXmlElement, value?.MatchSource);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.AltChunkProperties openXmlElement, DMW.AltChunkProperties value)
+  {
+    SetMatchSource(openXmlElement, value?.MatchSource);
+    }
+  }

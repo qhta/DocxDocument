@@ -155,18 +155,19 @@ public static class HiddenScene3DConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenScene3D? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenScene3D value)
     where OpenXmlElementType: DXO2010Draw.HiddenScene3D, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCamera(openXmlElement, value?.Camera);
-      SetLightRig(openXmlElement, value?.LightRig);
-      SetBackdrop(openXmlElement, value?.Backdrop);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenScene3D openXmlElement, DMDraws.HiddenScene3D value)
+  {
+    SetCamera(openXmlElement, value?.Camera);
+    SetLightRig(openXmlElement, value?.LightRig);
+    SetBackdrop(openXmlElement, value?.Backdrop);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

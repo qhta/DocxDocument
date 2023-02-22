@@ -10,22 +10,17 @@ public static class BackstageItemTypeConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.BackstageItemType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.BackstageItemType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BackstageItemTypeConverter
   /// </summary>
   private static String? GetLabel(DXO2010CustUI.BackstageItemType openXmlElement)
   {
-    return openXmlElement?.Label?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
   private static bool CmpLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Label?.Value == value) return true;
-    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Label = new StringValue { Value = value };
-    else
-      openXmlElement.Label = null;
+    openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class BackstageItemTypeConverter
   /// </summary>
   private static String? GetGetLabel(DXO2010CustUI.BackstageItemType openXmlElement)
   {
-    return openXmlElement?.GetLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageItemType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetLabel = null;
+    openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.BackstageItemType? CreateModelElement(DXO2010CustUI.BackstageItemType? openXmlElement)
@@ -105,17 +90,18 @@ public static class BackstageItemTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageItemType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageItemType value)
     where OpenXmlElementType: DXO2010CustUI.BackstageItemType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetLabel(openXmlElement, value?.Label);
-      SetGetLabel(openXmlElement, value?.GetLabel);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstageItemType openXmlElement, DM.BackstageItemType value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetLabel(openXmlElement, value?.Label);
+    SetGetLabel(openXmlElement, value?.GetLabel);
+    }
+  }

@@ -117,17 +117,18 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualPictureDrawingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualPictureDrawingProperties value)
     where OpenXmlElementType: DXDrawChartDraw.NonVisualPictureDrawingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPreferRelativeResize(openXmlElement, value?.PreferRelativeResize);
-      SetPictureLocks(openXmlElement, value?.PictureLocks);
-      SetNonVisualPicturePropertiesExtensionList(openXmlElement, value?.NonVisualPicturePropertiesExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualPictureDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties value)
+  {
+    SetPreferRelativeResize(openXmlElement, value?.PreferRelativeResize);
+    SetPictureLocks(openXmlElement, value?.PictureLocks);
+    SetNonVisualPicturePropertiesExtensionList(openXmlElement, value?.NonVisualPicturePropertiesExtensionList);
+    }
+  }

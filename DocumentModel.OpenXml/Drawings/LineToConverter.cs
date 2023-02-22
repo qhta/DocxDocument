@@ -59,15 +59,16 @@ public static class LineToConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineTo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineTo value)
     where OpenXmlElementType: DXDraw.LineTo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPoint(openXmlElement, value?.Point);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LineTo openXmlElement, DMDraws.LineTo value)
+  {
+    SetPoint(openXmlElement, value?.Point);
+    }
+  }

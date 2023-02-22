@@ -10,27 +10,17 @@ public static class MatrixColumnPropertiesConverter
   /// </summary>
   private static Int64? GetMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val);
   }
   
   private static bool CmpMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.MatrixColumnCount", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val, value, diffs, objName, "MatrixColumnCount");
   }
   
   private static void SetMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.MatrixColumnCount>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.MatrixColumnCount{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.MatrixColumnCount,System.Int64>(openXmlElement, value);
   }
   
   /// <summary>
@@ -50,13 +40,15 @@ public static class MatrixColumnPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(itemElement, (DMMath.HorizontalAlignmentKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>((DMMath.HorizontalAlignmentKind)value));
   }
   
   public static DocumentModel.Math.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
@@ -87,16 +79,17 @@ public static class MatrixColumnPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumnProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumnProperties value)
     where OpenXmlElementType: DXMath.MatrixColumnProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMatrixColumnCount(openXmlElement, value?.MatrixColumnCount);
-      SetMatrixColumnJustification(openXmlElement, value?.MatrixColumnJustification);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.MatrixColumnProperties openXmlElement, DMMath.MatrixColumnProperties value)
+  {
+    SetMatrixColumnCount(openXmlElement, value?.MatrixColumnCount);
+    SetMatrixColumnJustification(openXmlElement, value?.MatrixColumnJustification);
+    }
+  }

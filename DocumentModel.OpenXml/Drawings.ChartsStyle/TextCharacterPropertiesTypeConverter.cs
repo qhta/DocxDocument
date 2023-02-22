@@ -76,22 +76,17 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static String? GetLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.Language?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
   private static bool CmpLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Language?.Value == value) return true;
-    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
   }
   
   private static void SetLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Language = new StringValue { Value = value };
-    else
-      openXmlElement.Language = null;
+    openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -99,22 +94,17 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static String? GetAlternativeLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.AlternativeLanguage?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AlternativeLanguage);
   }
   
   private static bool CmpAlternativeLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AlternativeLanguage?.Value == value) return true;
-    diffs?.Add(objName, "AlternativeLanguage", openXmlElement?.AlternativeLanguage?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AlternativeLanguage, value, diffs, objName, "AlternativeLanguage");
   }
   
   private static void SetAlternativeLanguage(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AlternativeLanguage = new StringValue { Value = value };
-    else
-      openXmlElement.AlternativeLanguage = null;
+    openXmlElement.AlternativeLanguage = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -437,22 +427,17 @@ public static class TextCharacterPropertiesTypeConverter
   /// </summary>
   private static String? GetBookmark(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.Bookmark?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Bookmark);
   }
   
   private static bool CmpBookmark(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Bookmark?.Value == value) return true;
-    diffs?.Add(objName, "Bookmark", openXmlElement?.Bookmark?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Bookmark, value, diffs, objName, "Bookmark");
   }
   
   private static void SetBookmark(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Bookmark = new StringValue { Value = value };
-    else
-      openXmlElement.Bookmark = null;
+    openXmlElement.Bookmark = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -1162,56 +1147,57 @@ public static class TextCharacterPropertiesTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.TextCharacterPropertiesType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.TextCharacterPropertiesType value)
     where OpenXmlElementType: DXO2013DrawChartStyle.TextCharacterPropertiesType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSmtClean(openXmlElement, value?.SmtClean);
-      SetSmtId(openXmlElement, value?.SmtId);
-      SetKumimoji(openXmlElement, value?.Kumimoji);
-      SetLanguage(openXmlElement, value?.Language);
-      SetAlternativeLanguage(openXmlElement, value?.AlternativeLanguage);
-      SetFontSize(openXmlElement, value?.FontSize);
-      SetBold(openXmlElement, value?.Bold);
-      SetItalic(openXmlElement, value?.Italic);
-      SetUnderline(openXmlElement, value?.Underline);
-      SetStrike(openXmlElement, value?.Strike);
-      SetKerning(openXmlElement, value?.Kerning);
-      SetCapital(openXmlElement, value?.Capital);
-      SetSpacing(openXmlElement, value?.Spacing);
-      SetNormalizeHeight(openXmlElement, value?.NormalizeHeight);
-      SetBaseline(openXmlElement, value?.Baseline);
-      SetNoProof(openXmlElement, value?.NoProof);
-      SetDirty(openXmlElement, value?.Dirty);
-      SetSpellingError(openXmlElement, value?.SpellingError);
-      SetSmartTagClean(openXmlElement, value?.SmartTagClean);
-      SetSmartTagId(openXmlElement, value?.SmartTagId);
-      SetBookmark(openXmlElement, value?.Bookmark);
-      SetOutline(openXmlElement, value?.Outline);
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetGroupFill(openXmlElement, value?.GroupFill);
-      SetEffectList(openXmlElement, value?.EffectList);
-      SetEffectDag(openXmlElement, value?.EffectDag);
-      SetHighlight(openXmlElement, value?.Highlight);
-      SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
-      SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
-      SetUnderlineFill(openXmlElement, value?.UnderlineFill);
-      SetLatinFont(openXmlElement, value?.LatinFont);
-      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
-      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-      SetSymbolFont(openXmlElement, value?.SymbolFont);
-      SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
-      SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
-      SetRightToLeft(openXmlElement, value?.RightToLeft);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.TextCharacterPropertiesType openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType value)
+  {
+    SetSmtClean(openXmlElement, value?.SmtClean);
+    SetSmtId(openXmlElement, value?.SmtId);
+    SetKumimoji(openXmlElement, value?.Kumimoji);
+    SetLanguage(openXmlElement, value?.Language);
+    SetAlternativeLanguage(openXmlElement, value?.AlternativeLanguage);
+    SetFontSize(openXmlElement, value?.FontSize);
+    SetBold(openXmlElement, value?.Bold);
+    SetItalic(openXmlElement, value?.Italic);
+    SetUnderline(openXmlElement, value?.Underline);
+    SetStrike(openXmlElement, value?.Strike);
+    SetKerning(openXmlElement, value?.Kerning);
+    SetCapital(openXmlElement, value?.Capital);
+    SetSpacing(openXmlElement, value?.Spacing);
+    SetNormalizeHeight(openXmlElement, value?.NormalizeHeight);
+    SetBaseline(openXmlElement, value?.Baseline);
+    SetNoProof(openXmlElement, value?.NoProof);
+    SetDirty(openXmlElement, value?.Dirty);
+    SetSpellingError(openXmlElement, value?.SpellingError);
+    SetSmartTagClean(openXmlElement, value?.SmartTagClean);
+    SetSmartTagId(openXmlElement, value?.SmartTagId);
+    SetBookmark(openXmlElement, value?.Bookmark);
+    SetOutline(openXmlElement, value?.Outline);
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetGroupFill(openXmlElement, value?.GroupFill);
+    SetEffectList(openXmlElement, value?.EffectList);
+    SetEffectDag(openXmlElement, value?.EffectDag);
+    SetHighlight(openXmlElement, value?.Highlight);
+    SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
+    SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
+    SetUnderlineFill(openXmlElement, value?.UnderlineFill);
+    SetLatinFont(openXmlElement, value?.LatinFont);
+    SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+    SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+    SetSymbolFont(openXmlElement, value?.SymbolFont);
+    SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
+    SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
+    SetRightToLeft(openXmlElement, value?.RightToLeft);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

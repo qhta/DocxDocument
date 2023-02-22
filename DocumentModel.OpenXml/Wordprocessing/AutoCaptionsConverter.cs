@@ -56,15 +56,16 @@ public static class AutoCaptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaptions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaptions value)
     where OpenXmlElementType: DXW.AutoCaptions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAutoCaption(openXmlElement, value?.AutoCaption);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.AutoCaptions openXmlElement, DMW.AutoCaptions value)
+  {
+    SetAutoCaption(openXmlElement, value?.AutoCaption);
+    }
+  }

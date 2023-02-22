@@ -73,16 +73,17 @@ public static class ArtisticPhotocopyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPhotocopy? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPhotocopy value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPhotocopy, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetDetail(openXmlElement, value?.Detail);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPhotocopy openXmlElement, DMDraws.ArtisticPhotocopy value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetDetail(openXmlElement, value?.Detail);
+    }
+  }

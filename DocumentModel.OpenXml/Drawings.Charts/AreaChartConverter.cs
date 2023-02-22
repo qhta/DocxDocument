@@ -22,13 +22,15 @@ public static class AreaChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Grouping>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(itemElement, (DMDrawsCharts.GroupingKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>((DMDrawsCharts.GroupingKind)value));
   }
   
   /// <summary>
@@ -78,11 +80,11 @@ public static class AreaChartConverter
   
   private static bool CmpAreaChartSeries(DXDrawCharts.AreaChart openXmlElement, Collection<DMDrawsCharts.AreaChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AreaChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AreaChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -99,7 +101,7 @@ public static class AreaChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -186,11 +188,11 @@ public static class AreaChartConverter
   
   private static bool CmpAxisIds(DXDrawCharts.AreaChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -207,7 +209,7 @@ public static class AreaChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -295,21 +297,22 @@ public static class AreaChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaChart value)
     where OpenXmlElementType: DXDrawCharts.AreaChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGrouping(openXmlElement, value?.Grouping);
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetDropLines(openXmlElement, value?.DropLines);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetAreaChartExtensionList(openXmlElement, value?.AreaChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.AreaChart value)
+  {
+    SetGrouping(openXmlElement, value?.Grouping);
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetDropLines(openXmlElement, value?.DropLines);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetAreaChartExtensionList(openXmlElement, value?.AreaChartExtensionList);
+    }
+  }

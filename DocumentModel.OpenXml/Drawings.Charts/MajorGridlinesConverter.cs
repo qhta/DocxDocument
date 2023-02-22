@@ -56,15 +56,16 @@ public static class MajorGridlinesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MajorGridlines? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MajorGridlines value)
     where OpenXmlElementType: DXDrawCharts.MajorGridlines, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.MajorGridlines openXmlElement, DMDrawsCharts.MajorGridlines value)
+  {
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    }
+  }

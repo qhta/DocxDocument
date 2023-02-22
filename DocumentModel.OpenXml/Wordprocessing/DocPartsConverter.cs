@@ -27,14 +27,15 @@ public static class DocPartsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocParts? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocParts value)
     where OpenXmlElementType: DXW.DocParts, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocParts openXmlElement, DMW.DocParts value)
+  {
+    }
+  }

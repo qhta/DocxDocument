@@ -42,15 +42,16 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.EmbeddedControlPersistenceBinaryDataPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.EmbeddedControlPersistenceBinaryDataPart value)
     where OpenXmlElementType: DXPack.EmbeddedControlPersistenceBinaryDataPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.EmbeddedControlPersistenceBinaryDataPart openXmlElement, DMPack.EmbeddedControlPersistenceBinaryDataPart value)
+  {
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

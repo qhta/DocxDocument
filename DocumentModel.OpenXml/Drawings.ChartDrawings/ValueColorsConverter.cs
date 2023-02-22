@@ -123,17 +123,18 @@ public static class ValueColorsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueColors? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueColors value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ValueColors, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMinColorSolidColorFillProperties(openXmlElement, value?.MinColorSolidColorFillProperties);
-      SetMidColorSolidColorFillProperties(openXmlElement, value?.MidColorSolidColorFillProperties);
-      SetMaxColorSolidColorFillProperties(openXmlElement, value?.MaxColorSolidColorFillProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.ValueColors value)
+  {
+    SetMinColorSolidColorFillProperties(openXmlElement, value?.MinColorSolidColorFillProperties);
+    SetMidColorSolidColorFillProperties(openXmlElement, value?.MidColorSolidColorFillProperties);
+    SetMaxColorSolidColorFillProperties(openXmlElement, value?.MaxColorSolidColorFillProperties);
+    }
+  }

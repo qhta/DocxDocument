@@ -59,15 +59,16 @@ public static class UpDownBarTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBarType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBarType value)
     where OpenXmlElementType: DXDrawCharts.UpDownBarType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.UpDownBarType openXmlElement, DMDrawsCharts.UpDownBarType value)
+  {
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    }
+  }

@@ -10,22 +10,17 @@ public static class PictureConverter
   /// </summary>
   private static String? GetMacro(DXDrawChartDraw.Picture openXmlElement)
   {
-    return openXmlElement?.Macro?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
   private static bool CmpMacro(DXDrawChartDraw.Picture openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Macro?.Value == value) return true;
-    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
   
   private static void SetMacro(DXDrawChartDraw.Picture openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Macro = new StringValue { Value = value };
-    else
-      openXmlElement.Macro = null;
+    openXmlElement.Macro = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -207,20 +202,21 @@ public static class PictureConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Picture? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Picture value)
     where OpenXmlElementType: DXDrawChartDraw.Picture, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMacro(openXmlElement, value?.Macro);
-      SetPublished(openXmlElement, value?.Published);
-      SetNonVisualPictureProperties(openXmlElement, value?.NonVisualPictureProperties);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetStyle(openXmlElement, value?.Style);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.Picture value)
+  {
+    SetMacro(openXmlElement, value?.Macro);
+    SetPublished(openXmlElement, value?.Published);
+    SetNonVisualPictureProperties(openXmlElement, value?.NonVisualPictureProperties);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetStyle(openXmlElement, value?.Style);
+    }
+  }

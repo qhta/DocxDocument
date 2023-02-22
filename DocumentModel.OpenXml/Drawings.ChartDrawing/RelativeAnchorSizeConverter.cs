@@ -236,21 +236,22 @@ public static class RelativeAnchorSizeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.RelativeAnchorSize? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.RelativeAnchorSize value)
     where OpenXmlElementType: DXDrawChartDraw.RelativeAnchorSize, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFromAnchor(openXmlElement, value?.FromAnchor);
-      SetToAnchor(openXmlElement, value?.ToAnchor);
-      SetShape(openXmlElement, value?.Shape);
-      SetGroupShape(openXmlElement, value?.GroupShape);
-      SetGraphicFrame(openXmlElement, value?.GraphicFrame);
-      SetConnectionShape(openXmlElement, value?.ConnectionShape);
-      SetPicture(openXmlElement, value?.Picture);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.RelativeAnchorSize value)
+  {
+    SetFromAnchor(openXmlElement, value?.FromAnchor);
+    SetToAnchor(openXmlElement, value?.ToAnchor);
+    SetShape(openXmlElement, value?.Shape);
+    SetGroupShape(openXmlElement, value?.GroupShape);
+    SetGraphicFrame(openXmlElement, value?.GraphicFrame);
+    SetConnectionShape(openXmlElement, value?.ConnectionShape);
+    SetPicture(openXmlElement, value?.Picture);
+    }
+  }

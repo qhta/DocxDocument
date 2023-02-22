@@ -91,16 +91,17 @@ public static class OpenXmlGridlinesElementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlGridlinesElement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlGridlinesElement value)
     where OpenXmlElementType: DXO2016DrawChartDraw.OpenXmlGridlinesElement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.OpenXmlGridlinesElement openXmlElement, DMDrawsChartDraws.OpenXmlGridlinesElement value)
+  {
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

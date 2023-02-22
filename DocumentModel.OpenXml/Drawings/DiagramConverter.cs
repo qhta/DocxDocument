@@ -10,22 +10,17 @@ public static class DiagramConverter
   /// </summary>
   private static String? GetId(DXDraw.Diagram openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXDraw.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXDraw.Diagram openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,16 +69,17 @@ public static class DiagramConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Diagram? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Diagram value)
     where OpenXmlElementType: DXDraw.Diagram, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetBuildStep(openXmlElement, value?.BuildStep);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Diagram openXmlElement, DMDraws.Diagram value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetBuildStep(openXmlElement, value?.BuildStep);
+    }
+  }

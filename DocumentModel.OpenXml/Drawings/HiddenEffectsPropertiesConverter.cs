@@ -91,16 +91,17 @@ public static class HiddenEffectsPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenEffectsProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenEffectsProperties value)
     where OpenXmlElementType: DXO2010Draw.HiddenEffectsProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEffectList(openXmlElement, value?.EffectList);
-      SetEffectDag(openXmlElement, value?.EffectDag);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.HiddenEffectsProperties value)
+  {
+    SetEffectList(openXmlElement, value?.EffectList);
+    SetEffectDag(openXmlElement, value?.EffectDag);
+    }
+  }

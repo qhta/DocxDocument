@@ -71,16 +71,17 @@ public static class FootnoteEndnoteTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteType value)
     where OpenXmlElementType: DXW.FootnoteEndnoteType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteType value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

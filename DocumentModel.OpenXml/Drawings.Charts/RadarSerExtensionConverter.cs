@@ -10,22 +10,17 @@ public static class RadarSerExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.RadarSerExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.RadarSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.RadarSerExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.RadarSerExtension openXmlElement)
@@ -169,19 +164,20 @@ public static class RadarSerExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarSerExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarSerExtension value)
     where OpenXmlElementType: DXDrawCharts.RadarSerExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
-      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
-      SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
-      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.RadarSerExtension openXmlElement, DMDrawsCharts.RadarSerExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
+    SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+    SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
+    SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
+    }
+  }

@@ -73,16 +73,17 @@ public static class PaperSourceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PaperSource? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PaperSource value)
     where OpenXmlElementType: DXW.PaperSource, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFirst(openXmlElement, value?.First);
-      SetOther(openXmlElement, value?.Other);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PaperSource openXmlElement, DMW.PaperSource value)
+  {
+    SetFirst(openXmlElement, value?.First);
+    SetOther(openXmlElement, value?.Other);
+    }
+  }

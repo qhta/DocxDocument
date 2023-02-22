@@ -52,11 +52,11 @@ public static class BubbleChartConverter
   
   private static bool CmpBubbleChartSeries(DXDrawCharts.BubbleChart openXmlElement, Collection<DMDrawsCharts.BubbleChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.BubbleChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.BubbleChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -73,7 +73,7 @@ public static class BubbleChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -148,27 +148,17 @@ public static class BubbleChartConverter
   
   private static UInt32? GetBubbleScale(DXDrawCharts.BubbleChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>()?.Val);
   }
   
   private static bool CmpBubbleScale(DXDrawCharts.BubbleChart openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.BubbleScale", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.BubbleScale>()?.Val, value, diffs, objName, "BubbleScale");
   }
   
   private static void SetBubbleScale(DXDrawCharts.BubbleChart openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BubbleScale>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.BubbleScale{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.BubbleScale,System.UInt32>(openXmlElement, value);
   }
   
   private static Boolean? GetShowNegativeBubbles(DXDrawCharts.BubbleChart openXmlElement)
@@ -213,13 +203,15 @@ public static class BubbleChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SizeRepresents>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.SizeRepresents, DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDrawsCharts.SizeRepresentsKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDrawsCharts.SizeRepresentsKind>(itemElement, (DMDrawsCharts.SizeRepresentsKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.SizeRepresents, DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDrawsCharts.SizeRepresentsKind>((DMDrawsCharts.SizeRepresentsKind)value));
   }
   
   private static Collection<UInt32>? GetAxisIds(DXDrawCharts.BubbleChart openXmlElement)
@@ -238,11 +230,11 @@ public static class BubbleChartConverter
   
   private static bool CmpAxisIds(DXDrawCharts.BubbleChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -259,7 +251,7 @@ public static class BubbleChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -353,23 +345,24 @@ public static class BubbleChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChart value)
     where OpenXmlElementType: DXDrawCharts.BubbleChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetBubbleChartSeries(openXmlElement, value?.BubbleChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetBubble3D(openXmlElement, value?.Bubble3D);
-      SetBubbleScale(openXmlElement, value?.BubbleScale);
-      SetShowNegativeBubbles(openXmlElement, value?.ShowNegativeBubbles);
-      SetSizeRepresents(openXmlElement, value?.SizeRepresents);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetBubbleChartExtensionList(openXmlElement, value?.BubbleChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.BubbleChart value)
+  {
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetBubbleChartSeries(openXmlElement, value?.BubbleChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetBubble3D(openXmlElement, value?.Bubble3D);
+    SetBubbleScale(openXmlElement, value?.BubbleScale);
+    SetShowNegativeBubbles(openXmlElement, value?.ShowNegativeBubbles);
+    SetSizeRepresents(openXmlElement, value?.SizeRepresents);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetBubbleChartExtensionList(openXmlElement, value?.BubbleChartExtensionList);
+    }
+  }

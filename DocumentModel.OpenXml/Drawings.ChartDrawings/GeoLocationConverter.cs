@@ -50,22 +50,17 @@ public static class GeoLocationConverter
   /// </summary>
   private static String? GetEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement)
   {
-    return openXmlElement?.EntityName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityName);
   }
   
   private static bool CmpEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityName?.Value == value) return true;
-    diffs?.Add(objName, "EntityName", openXmlElement?.EntityName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityName, value, diffs, objName, "EntityName");
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoLocation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityName = new StringValue { Value = value };
-    else
-      openXmlElement.EntityName = null;
+    openXmlElement.EntityName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -152,19 +147,20 @@ public static class GeoLocationConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocation? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocation value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoLocation, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLatitude(openXmlElement, value?.Latitude);
-      SetLongitude(openXmlElement, value?.Longitude);
-      SetEntityName(openXmlElement, value?.EntityName);
-      SetEntityType(openXmlElement, value?.EntityType);
-      SetAddress(openXmlElement, value?.Address);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoLocation openXmlElement, DMDrawsChartDraws.GeoLocation value)
+  {
+    SetLatitude(openXmlElement, value?.Latitude);
+    SetLongitude(openXmlElement, value?.Longitude);
+    SetEntityName(openXmlElement, value?.EntityName);
+    SetEntityType(openXmlElement, value?.EntityType);
+    SetAddress(openXmlElement, value?.Address);
+    }
+  }

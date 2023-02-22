@@ -106,18 +106,19 @@ public static class FontTablePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.FontTablePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.FontTablePart value)
     where OpenXmlElementType: DXPack.FontTablePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetFontParts(openXmlElement, value?.FontParts);
-      SetFonts(openXmlElement, value?.Fonts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.FontTablePart openXmlElement, DMPack.FontTablePart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetFontParts(openXmlElement, value?.FontParts);
+    SetFonts(openXmlElement, value?.Fonts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

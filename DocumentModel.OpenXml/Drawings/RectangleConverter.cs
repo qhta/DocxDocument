@@ -10,22 +10,17 @@ public static class RectangleConverter
   /// </summary>
   private static String? GetLeft(DXDraw.Rectangle openXmlElement)
   {
-    return openXmlElement?.Left?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Left);
   }
   
   private static bool CmpLeft(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Left?.Value == value) return true;
-    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Left, value, diffs, objName, "Left");
   }
   
   private static void SetLeft(DXDraw.Rectangle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Left = new StringValue { Value = value };
-    else
-      openXmlElement.Left = null;
+    openXmlElement.Left = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class RectangleConverter
   /// </summary>
   private static String? GetTop(DXDraw.Rectangle openXmlElement)
   {
-    return openXmlElement?.Top?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Top);
   }
   
   private static bool CmpTop(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Top?.Value == value) return true;
-    diffs?.Add(objName, "Top", openXmlElement?.Top?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Top, value, diffs, objName, "Top");
   }
   
   private static void SetTop(DXDraw.Rectangle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Top = new StringValue { Value = value };
-    else
-      openXmlElement.Top = null;
+    openXmlElement.Top = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class RectangleConverter
   /// </summary>
   private static String? GetRight(DXDraw.Rectangle openXmlElement)
   {
-    return openXmlElement?.Right?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Right);
   }
   
   private static bool CmpRight(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Right?.Value == value) return true;
-    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Right, value, diffs, objName, "Right");
   }
   
   private static void SetRight(DXDraw.Rectangle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Right = new StringValue { Value = value };
-    else
-      openXmlElement.Right = null;
+    openXmlElement.Right = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class RectangleConverter
   /// </summary>
   private static String? GetBottom(DXDraw.Rectangle openXmlElement)
   {
-    return openXmlElement?.Bottom?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Bottom);
   }
   
   private static bool CmpBottom(DXDraw.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Bottom?.Value == value) return true;
-    diffs?.Add(objName, "Bottom", openXmlElement?.Bottom?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Bottom, value, diffs, objName, "Bottom");
   }
   
   private static void SetBottom(DXDraw.Rectangle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Bottom = new StringValue { Value = value };
-    else
-      openXmlElement.Bottom = null;
+    openXmlElement.Bottom = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.Rectangle? CreateModelElement(DXDraw.Rectangle? openXmlElement)
@@ -131,18 +111,19 @@ public static class RectangleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rectangle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rectangle value)
     where OpenXmlElementType: DXDraw.Rectangle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeft(openXmlElement, value?.Left);
-      SetTop(openXmlElement, value?.Top);
-      SetRight(openXmlElement, value?.Right);
-      SetBottom(openXmlElement, value?.Bottom);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Rectangle openXmlElement, DMDraws.Rectangle value)
+  {
+    SetLeft(openXmlElement, value?.Left);
+    SetTop(openXmlElement, value?.Top);
+    SetRight(openXmlElement, value?.Right);
+    SetBottom(openXmlElement, value?.Bottom);
+    }
+  }

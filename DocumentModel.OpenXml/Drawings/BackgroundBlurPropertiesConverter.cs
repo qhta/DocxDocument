@@ -59,15 +59,16 @@ public static class BackgroundBlurPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundBlurProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundBlurProperties value)
     where OpenXmlElementType: DXO2021DrawLivefeed.BackgroundBlurProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.BackgroundBlurProperties value)
+  {
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

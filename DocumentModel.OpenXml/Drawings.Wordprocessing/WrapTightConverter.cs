@@ -126,18 +126,19 @@ public static class WrapTightConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTight? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTight value)
     where OpenXmlElementType: DXDrawW.WrapTight, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWrapText(openXmlElement, value?.WrapText);
-      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
-      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
-      SetWrapPolygon(openXmlElement, value?.WrapPolygon);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.WrapTight openXmlElement, DMDrawsW.WrapTight value)
+  {
+    SetWrapText(openXmlElement, value?.WrapText);
+    SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+    SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+    SetWrapPolygon(openXmlElement, value?.WrapPolygon);
+    }
+  }

@@ -346,25 +346,26 @@ public static class TopItemsGroupControlsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TopItemsGroupControls? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TopItemsGroupControls value)
     where OpenXmlElementType: DXO2010CustUI.TopItemsGroupControls, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBackstageGroupButton(openXmlElement, value?.BackstageGroupButton);
-      SetBackstageCheckBox(openXmlElement, value?.BackstageCheckBox);
-      SetBackstageEditBox(openXmlElement, value?.BackstageEditBox);
-      SetBackstageDropDown(openXmlElement, value?.BackstageDropDown);
-      SetRadioGroup(openXmlElement, value?.RadioGroup);
-      SetBackstageComboBox(openXmlElement, value?.BackstageComboBox);
-      SetHyperlink(openXmlElement, value?.Hyperlink);
-      SetBackstageLabelControl(openXmlElement, value?.BackstageLabelControl);
-      SetGroupBox(openXmlElement, value?.GroupBox);
-      SetLayoutContainer(openXmlElement, value?.LayoutContainer);
-      SetImageControl(openXmlElement, value?.ImageControl);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.TopItemsGroupControls openXmlElement, DM.TopItemsGroupControls value)
+  {
+    SetBackstageGroupButton(openXmlElement, value?.BackstageGroupButton);
+    SetBackstageCheckBox(openXmlElement, value?.BackstageCheckBox);
+    SetBackstageEditBox(openXmlElement, value?.BackstageEditBox);
+    SetBackstageDropDown(openXmlElement, value?.BackstageDropDown);
+    SetRadioGroup(openXmlElement, value?.RadioGroup);
+    SetBackstageComboBox(openXmlElement, value?.BackstageComboBox);
+    SetHyperlink(openXmlElement, value?.Hyperlink);
+    SetBackstageLabelControl(openXmlElement, value?.BackstageLabelControl);
+    SetGroupBox(openXmlElement, value?.GroupBox);
+    SetLayoutContainer(openXmlElement, value?.LayoutContainer);
+    SetImageControl(openXmlElement, value?.ImageControl);
+    }
+  }

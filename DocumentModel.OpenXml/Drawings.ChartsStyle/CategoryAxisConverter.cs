@@ -284,23 +284,24 @@ public static class CategoryAxisConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.CategoryAxis? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.CategoryAxis value)
     where OpenXmlElementType: DXO2013DrawChartStyle.CategoryAxis, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineReference(openXmlElement, value?.LineReference);
-      SetLineWidthScale(openXmlElement, value?.LineWidthScale);
-      SetFillReference(openXmlElement, value?.FillReference);
-      SetEffectReference(openXmlElement, value?.EffectReference);
-      SetFontReference(openXmlElement, value?.FontReference);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
-      SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.CategoryAxis openXmlElement, DMDrawsChartsStyle.CategoryAxis value)
+  {
+    SetLineReference(openXmlElement, value?.LineReference);
+    SetLineWidthScale(openXmlElement, value?.LineWidthScale);
+    SetFillReference(openXmlElement, value?.FillReference);
+    SetEffectReference(openXmlElement, value?.EffectReference);
+    SetFontReference(openXmlElement, value?.FontReference);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
+    SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

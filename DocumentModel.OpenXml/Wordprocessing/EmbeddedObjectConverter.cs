@@ -10,22 +10,17 @@ public static class EmbeddedObjectConverter
   /// </summary>
   private static String? GetDxaOriginal(DXW.EmbeddedObject openXmlElement)
   {
-    return openXmlElement?.DxaOriginal?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DxaOriginal);
   }
   
   private static bool CmpDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DxaOriginal?.Value == value) return true;
-    diffs?.Add(objName, "DxaOriginal", openXmlElement?.DxaOriginal?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DxaOriginal, value, diffs, objName, "DxaOriginal");
   }
   
   private static void SetDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DxaOriginal = new StringValue { Value = value };
-    else
-      openXmlElement.DxaOriginal = null;
+    openXmlElement.DxaOriginal = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class EmbeddedObjectConverter
   /// </summary>
   private static String? GetDyaOriginal(DXW.EmbeddedObject openXmlElement)
   {
-    return openXmlElement?.DyaOriginal?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DyaOriginal);
   }
   
   private static bool CmpDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DyaOriginal?.Value == value) return true;
-    diffs?.Add(objName, "DyaOriginal", openXmlElement?.DyaOriginal?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DyaOriginal, value, diffs, objName, "DyaOriginal");
   }
   
   private static void SetDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DyaOriginal = new StringValue { Value = value };
-    else
-      openXmlElement.DyaOriginal = null;
+    openXmlElement.DyaOriginal = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -574,33 +564,34 @@ public static class EmbeddedObjectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedObject? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedObject value)
     where OpenXmlElementType: DXW.EmbeddedObject, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDxaOriginal(openXmlElement, value?.DxaOriginal);
-      SetDyaOriginal(openXmlElement, value?.DyaOriginal);
-      SetAnchorId(openXmlElement, value?.AnchorId);
-      SetGroup(openXmlElement, value?.Group);
-      SetImageFile(openXmlElement, value?.ImageFile);
-      SetLine(openXmlElement, value?.Line);
-      SetOval(openXmlElement, value?.Oval);
-      SetPolyLine(openXmlElement, value?.PolyLine);
-      SetRectangle(openXmlElement, value?.Rectangle);
-      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
-      SetShape(openXmlElement, value?.Shape);
-      SetShapetype(openXmlElement, value?.Shapetype);
-      SetArc(openXmlElement, value?.Arc);
-      SetCurve(openXmlElement, value?.Curve);
-      SetOleObject(openXmlElement, value?.OleObject);
-      SetDrawing(openXmlElement, value?.Drawing);
-      SetControl(openXmlElement, value?.Control);
-      SetObjectEmbed(openXmlElement, value?.ObjectEmbed);
-      SetObjectLink(openXmlElement, value?.ObjectLink);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.EmbeddedObject openXmlElement, DMW.EmbeddedObject value)
+  {
+    SetDxaOriginal(openXmlElement, value?.DxaOriginal);
+    SetDyaOriginal(openXmlElement, value?.DyaOriginal);
+    SetAnchorId(openXmlElement, value?.AnchorId);
+    SetGroup(openXmlElement, value?.Group);
+    SetImageFile(openXmlElement, value?.ImageFile);
+    SetLine(openXmlElement, value?.Line);
+    SetOval(openXmlElement, value?.Oval);
+    SetPolyLine(openXmlElement, value?.PolyLine);
+    SetRectangle(openXmlElement, value?.Rectangle);
+    SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+    SetShape(openXmlElement, value?.Shape);
+    SetShapetype(openXmlElement, value?.Shapetype);
+    SetArc(openXmlElement, value?.Arc);
+    SetCurve(openXmlElement, value?.Curve);
+    SetOleObject(openXmlElement, value?.OleObject);
+    SetDrawing(openXmlElement, value?.Drawing);
+    SetControl(openXmlElement, value?.Control);
+    SetObjectEmbed(openXmlElement, value?.ObjectEmbed);
+    SetObjectLink(openXmlElement, value?.ObjectLink);
+    }
+  }

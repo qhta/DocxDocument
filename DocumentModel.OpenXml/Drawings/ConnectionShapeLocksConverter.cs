@@ -319,25 +319,26 @@ public static class ConnectionShapeLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionShapeLocks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionShapeLocks value)
     where OpenXmlElementType: DXDraw.ConnectionShapeLocks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoGrouping(openXmlElement, value?.NoGrouping);
-      SetNoSelection(openXmlElement, value?.NoSelection);
-      SetNoRotation(openXmlElement, value?.NoRotation);
-      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
-      SetNoMove(openXmlElement, value?.NoMove);
-      SetNoResize(openXmlElement, value?.NoResize);
-      SetNoEditPoints(openXmlElement, value?.NoEditPoints);
-      SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
-      SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
-      SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
-      SetConnectorLockingExtensionList(openXmlElement, value?.ConnectorLockingExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectionShapeLocks value)
+  {
+    SetNoGrouping(openXmlElement, value?.NoGrouping);
+    SetNoSelection(openXmlElement, value?.NoSelection);
+    SetNoRotation(openXmlElement, value?.NoRotation);
+    SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+    SetNoMove(openXmlElement, value?.NoMove);
+    SetNoResize(openXmlElement, value?.NoResize);
+    SetNoEditPoints(openXmlElement, value?.NoEditPoints);
+    SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
+    SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
+    SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
+    SetConnectorLockingExtensionList(openXmlElement, value?.ConnectorLockingExtensionList);
+    }
+  }

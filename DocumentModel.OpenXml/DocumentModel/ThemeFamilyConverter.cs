@@ -10,22 +10,17 @@ public static class ThemeFamilyConverter
   /// </summary>
   private static String? GetName(DXO2013Theme.ThemeFamily openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXO2013Theme.ThemeFamily openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ThemeFamilyConverter
   /// </summary>
   private static String? GetId(DXO2013Theme.ThemeFamily openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013Theme.ThemeFamily openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class ThemeFamilyConverter
   /// </summary>
   private static String? GetVid(DXO2013Theme.ThemeFamily openXmlElement)
   {
-    return openXmlElement?.Vid?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Vid);
   }
   
   private static bool CmpVid(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Vid?.Value == value) return true;
-    diffs?.Add(objName, "Vid", openXmlElement?.Vid?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Vid, value, diffs, objName, "Vid");
   }
   
   private static void SetVid(DXO2013Theme.ThemeFamily openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Vid = new StringValue { Value = value };
-    else
-      openXmlElement.Vid = null;
+    openXmlElement.Vid = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -137,18 +122,19 @@ public static class ThemeFamilyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ThemeFamily? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ThemeFamily value)
     where OpenXmlElementType: DXO2013Theme.ThemeFamily, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetId(openXmlElement, value?.Id);
-      SetVid(openXmlElement, value?.Vid);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013Theme.ThemeFamily openXmlElement, DM.ThemeFamily value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetId(openXmlElement, value?.Id);
+    SetVid(openXmlElement, value?.Vid);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -30,22 +30,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static String? GetName(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static String? GetDescription(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement)
   {
-    return openXmlElement?.Description?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
   private static bool CmpDescription(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Description?.Value == value) return true;
-    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
   private static void SetDescription(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Description = new StringValue { Value = value };
-    else
-      openXmlElement.Description = null;
+    openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -99,22 +89,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// </summary>
   private static String? GetTitle(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement)
   {
-    return openXmlElement?.Title?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
   private static bool CmpTitle(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Title?.Value == value) return true;
-    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
   private static void SetTitle(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Title = new StringValue { Value = value };
-    else
-      openXmlElement.Title = null;
+    openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -250,22 +235,23 @@ public static class NonVisualDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NonVisualDrawingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NonVisualDrawingProperties value)
     where OpenXmlElementType: DXO2010DrawChartDraw.NonVisualDrawingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetName(openXmlElement, value?.Name);
-      SetDescription(openXmlElement, value?.Description);
-      SetHidden(openXmlElement, value?.Hidden);
-      SetTitle(openXmlElement, value?.Title);
-      SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
-      SetHyperlinkOnHover(openXmlElement, value?.HyperlinkOnHover);
-      SetNonVisualDrawingPropertiesExtensionList(openXmlElement, value?.NonVisualDrawingPropertiesExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010DrawChartDraw.NonVisualDrawingProperties openXmlElement, DMDrawsChartDraws.NonVisualDrawingProperties value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetName(openXmlElement, value?.Name);
+    SetDescription(openXmlElement, value?.Description);
+    SetHidden(openXmlElement, value?.Hidden);
+    SetTitle(openXmlElement, value?.Title);
+    SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
+    SetHyperlinkOnHover(openXmlElement, value?.HyperlinkOnHover);
+    SetNonVisualDrawingPropertiesExtensionList(openXmlElement, value?.NonVisualDrawingPropertiesExtensionList);
+    }
+  }

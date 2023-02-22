@@ -114,17 +114,18 @@ public static class FormatOverrideConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.FormatOverride? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.FormatOverride value)
     where OpenXmlElementType: DXO2016DrawChartDraw.FormatOverride, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdx(openXmlElement, value?.Idx);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.FormatOverride openXmlElement, DMDrawsChartDraws.FormatOverride value)
+  {
+    SetIdx(openXmlElement, value?.Idx);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

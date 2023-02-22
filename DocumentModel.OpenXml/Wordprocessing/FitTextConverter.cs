@@ -73,16 +73,17 @@ public static class FitTextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FitText? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FitText value)
     where OpenXmlElementType: DXW.FitText, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FitText openXmlElement, DMW.FitText value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

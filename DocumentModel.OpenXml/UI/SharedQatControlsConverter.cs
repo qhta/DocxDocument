@@ -114,17 +114,18 @@ public static class SharedQatControlsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.SharedQatControls? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.SharedQatControls value)
     where OpenXmlElementType: DXOCustUI.SharedQatControls, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
-      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
-      SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.SharedQatControls openXmlElement, DMUI.SharedQatControls value)
+  {
+    SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
+    SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+    SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
+    }
+  }

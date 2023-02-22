@@ -59,15 +59,16 @@ public static class DialogBoxLauncherConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.DialogBoxLauncher? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.DialogBoxLauncher value)
     where OpenXmlElementType: DXO2010CustUI.DialogBoxLauncher, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetButtonRegular(openXmlElement, value?.ButtonRegular);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.DialogBoxLauncher value)
+  {
+    SetButtonRegular(openXmlElement, value?.ButtonRegular);
+    }
+  }

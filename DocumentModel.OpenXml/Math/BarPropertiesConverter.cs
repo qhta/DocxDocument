@@ -22,13 +22,15 @@ public static class BarPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Position>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement, (DMMath.VerticalJustificationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>((DMMath.VerticalJustificationKind)value));
   }
   
   /// <summary>
@@ -88,16 +90,17 @@ public static class BarPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.BarProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.BarProperties value)
     where OpenXmlElementType: DXMath.BarProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPosition(openXmlElement, value?.Position);
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.BarProperties openXmlElement, DMMath.BarProperties value)
+  {
+    SetPosition(openXmlElement, value?.Position);
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

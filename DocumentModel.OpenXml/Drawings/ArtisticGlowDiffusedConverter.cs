@@ -73,16 +73,17 @@ public static class ArtisticGlowDiffusedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlowDiffused? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlowDiffused value)
     where OpenXmlElementType: DXO2010Draw.ArtisticGlowDiffused, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetIntensity(openXmlElement, value?.Intensity);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticGlowDiffused openXmlElement, DMDraws.ArtisticGlowDiffused value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetIntensity(openXmlElement, value?.Intensity);
+    }
+  }

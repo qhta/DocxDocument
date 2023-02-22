@@ -10,22 +10,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetId(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetStyle(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
   private static bool CmpStyle(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Style?.Value == value) return true;
-    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
   private static void SetStyle(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Style = new StringValue { Value = value };
-    else
-      openXmlElement.Style = null;
+    openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetHref(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Href?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Href);
   }
   
   private static bool CmpHref(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Href?.Value == value) return true;
-    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Href, value, diffs, objName, "Href");
   }
   
   private static void SetHref(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Href = new StringValue { Value = value };
-    else
-      openXmlElement.Href = null;
+    openXmlElement.Href = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetTarget(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Target?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Target);
   }
   
   private static bool CmpTarget(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Target?.Value == value) return true;
-    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Target, value, diffs, objName, "Target");
   }
   
   private static void SetTarget(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Target = new StringValue { Value = value };
-    else
-      openXmlElement.Target = null;
+    openXmlElement.Target = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetClass(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Class?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Class);
   }
   
   private static bool CmpClass(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Class?.Value == value) return true;
-    diffs?.Add(objName, "Class", openXmlElement?.Class?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Class, value, diffs, objName, "Class");
   }
   
   private static void SetClass(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Class = new StringValue { Value = value };
-    else
-      openXmlElement.Class = null;
+    openXmlElement.Class = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetTitle(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Title?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
   private static bool CmpTitle(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Title?.Value == value) return true;
-    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
   private static void SetTitle(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Title = new StringValue { Value = value };
-    else
-      openXmlElement.Title = null;
+    openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +118,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetAlternate(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.Alternate?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Alternate);
   }
   
   private static bool CmpAlternate(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Alternate?.Value == value) return true;
-    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Alternate, value, diffs, objName, "Alternate");
   }
   
   private static void SetAlternate(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Alternate = new StringValue { Value = value };
-    else
-      openXmlElement.Alternate = null;
+    openXmlElement.Alternate = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +136,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetCoordinateSize(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.CoordinateSize?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CoordinateSize);
   }
   
   private static bool CmpCoordinateSize(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CoordinateSize?.Value == value) return true;
-    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CoordinateSize, value, diffs, objName, "CoordinateSize");
   }
   
   private static void SetCoordinateSize(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CoordinateSize = new StringValue { Value = value };
-    else
-      openXmlElement.CoordinateSize = null;
+    openXmlElement.CoordinateSize = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +154,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetCoordinateOrigin(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.CoordinateOrigin?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CoordinateOrigin);
   }
   
   private static bool CmpCoordinateOrigin(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CoordinateOrigin?.Value == value) return true;
-    diffs?.Add(objName, "CoordinateOrigin", openXmlElement?.CoordinateOrigin?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CoordinateOrigin, value, diffs, objName, "CoordinateOrigin");
   }
   
   private static void SetCoordinateOrigin(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CoordinateOrigin = new StringValue { Value = value };
-    else
-      openXmlElement.CoordinateOrigin = null;
+    openXmlElement.CoordinateOrigin = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +172,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetWrapCoordinates(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.WrapCoordinates?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.WrapCoordinates);
   }
   
   private static bool CmpWrapCoordinates(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.WrapCoordinates?.Value == value) return true;
-    diffs?.Add(objName, "WrapCoordinates", openXmlElement?.WrapCoordinates?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.WrapCoordinates, value, diffs, objName, "WrapCoordinates");
   }
   
   private static void SetWrapCoordinates(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.WrapCoordinates = new StringValue { Value = value };
-    else
-      openXmlElement.WrapCoordinates = null;
+    openXmlElement.WrapCoordinates = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -263,22 +213,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetOptionalString(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.OptionalString?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OptionalString);
   }
   
   private static bool CmpOptionalString(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OptionalString?.Value == value) return true;
-    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OptionalString, value, diffs, objName, "OptionalString");
   }
   
   private static void SetOptionalString(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OptionalString = new StringValue { Value = value };
-    else
-      openXmlElement.OptionalString = null;
+    openXmlElement.OptionalString = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -721,22 +666,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetTableProperties(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.TableProperties?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TableProperties);
   }
   
   private static bool CmpTableProperties(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TableProperties?.Value == value) return true;
-    diffs?.Add(objName, "TableProperties", openXmlElement?.TableProperties?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TableProperties, value, diffs, objName, "TableProperties");
   }
   
   private static void SetTableProperties(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TableProperties = new StringValue { Value = value };
-    else
-      openXmlElement.TableProperties = null;
+    openXmlElement.TableProperties = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -744,22 +684,17 @@ public static class GroupConverter
   /// </summary>
   private static String? GetTableLimits(DXVml.Group openXmlElement)
   {
-    return openXmlElement?.TableLimits?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TableLimits);
   }
   
   private static bool CmpTableLimits(DXVml.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TableLimits?.Value == value) return true;
-    diffs?.Add(objName, "TableLimits", openXmlElement?.TableLimits?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TableLimits, value, diffs, objName, "TableLimits");
   }
   
   private static void SetTableLimits(DXVml.Group openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TableLimits = new StringValue { Value = value };
-    else
-      openXmlElement.TableLimits = null;
+    openXmlElement.TableLimits = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMVml.Group? GetChildGroup(DXVml.Group openXmlElement)
@@ -1352,64 +1287,65 @@ public static class GroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Group? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Group value)
     where OpenXmlElementType: DXVml.Group, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetStyle(openXmlElement, value?.Style);
-      SetHref(openXmlElement, value?.Href);
-      SetTarget(openXmlElement, value?.Target);
-      SetClass(openXmlElement, value?.Class);
-      SetTitle(openXmlElement, value?.Title);
-      SetAlternate(openXmlElement, value?.Alternate);
-      SetCoordinateSize(openXmlElement, value?.CoordinateSize);
-      SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
-      SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
-      SetPrint(openXmlElement, value?.Print);
-      SetOptionalString(openXmlElement, value?.OptionalString);
-      SetOned(openXmlElement, value?.Oned);
-      SetRegroupId(openXmlElement, value?.RegroupId);
-      SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
-      SetButton(openXmlElement, value?.Button);
-      SetUserHidden(openXmlElement, value?.UserHidden);
-      SetBullet(openXmlElement, value?.Bullet);
-      SetHorizontal(openXmlElement, value?.Horizontal);
-      SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
-      SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
-      SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
-      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
-      SetAllowInCell(openXmlElement, value?.AllowInCell);
-      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
-      SetUserDrawn(openXmlElement, value?.UserDrawn);
-      SetDiagramLayout(openXmlElement, value?.DiagramLayout);
-      SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
-      SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
-      SetInsetMode(openXmlElement, value?.InsetMode);
-      SetGfxdata(openXmlElement, value?.Gfxdata);
-      SetEditAs(openXmlElement, value?.EditAs);
-      SetTableProperties(openXmlElement, value?.TableProperties);
-      SetTableLimits(openXmlElement, value?.TableLimits);
-      SetChildGroup(openXmlElement, value?.ChildGroup);
-      SetShape(openXmlElement, value?.Shape);
-      SetShapetype(openXmlElement, value?.Shapetype);
-      SetArc(openXmlElement, value?.Arc);
-      SetCurve(openXmlElement, value?.Curve);
-      SetImageFile(openXmlElement, value?.ImageFile);
-      SetLine(openXmlElement, value?.Line);
-      SetOval(openXmlElement, value?.Oval);
-      SetPolyLine(openXmlElement, value?.PolyLine);
-      SetRectangle(openXmlElement, value?.Rectangle);
-      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
-      SetDiagram(openXmlElement, value?.Diagram);
-      SetLock(openXmlElement, value?.Lock);
-      SetClipPath(openXmlElement, value?.ClipPath);
-      SetTextWrap(openXmlElement, value?.TextWrap);
-      SetAnchorLock(openXmlElement, value?.AnchorLock);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.Group openXmlElement, DMVml.Group value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetStyle(openXmlElement, value?.Style);
+    SetHref(openXmlElement, value?.Href);
+    SetTarget(openXmlElement, value?.Target);
+    SetClass(openXmlElement, value?.Class);
+    SetTitle(openXmlElement, value?.Title);
+    SetAlternate(openXmlElement, value?.Alternate);
+    SetCoordinateSize(openXmlElement, value?.CoordinateSize);
+    SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
+    SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
+    SetPrint(openXmlElement, value?.Print);
+    SetOptionalString(openXmlElement, value?.OptionalString);
+    SetOned(openXmlElement, value?.Oned);
+    SetRegroupId(openXmlElement, value?.RegroupId);
+    SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
+    SetButton(openXmlElement, value?.Button);
+    SetUserHidden(openXmlElement, value?.UserHidden);
+    SetBullet(openXmlElement, value?.Bullet);
+    SetHorizontal(openXmlElement, value?.Horizontal);
+    SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
+    SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
+    SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
+    SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+    SetAllowInCell(openXmlElement, value?.AllowInCell);
+    SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+    SetUserDrawn(openXmlElement, value?.UserDrawn);
+    SetDiagramLayout(openXmlElement, value?.DiagramLayout);
+    SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
+    SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
+    SetInsetMode(openXmlElement, value?.InsetMode);
+    SetGfxdata(openXmlElement, value?.Gfxdata);
+    SetEditAs(openXmlElement, value?.EditAs);
+    SetTableProperties(openXmlElement, value?.TableProperties);
+    SetTableLimits(openXmlElement, value?.TableLimits);
+    SetChildGroup(openXmlElement, value?.ChildGroup);
+    SetShape(openXmlElement, value?.Shape);
+    SetShapetype(openXmlElement, value?.Shapetype);
+    SetArc(openXmlElement, value?.Arc);
+    SetCurve(openXmlElement, value?.Curve);
+    SetImageFile(openXmlElement, value?.ImageFile);
+    SetLine(openXmlElement, value?.Line);
+    SetOval(openXmlElement, value?.Oval);
+    SetPolyLine(openXmlElement, value?.PolyLine);
+    SetRectangle(openXmlElement, value?.Rectangle);
+    SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+    SetDiagram(openXmlElement, value?.Diagram);
+    SetLock(openXmlElement, value?.Lock);
+    SetClipPath(openXmlElement, value?.ClipPath);
+    SetTextWrap(openXmlElement, value?.TextWrap);
+    SetAnchorLock(openXmlElement, value?.AnchorLock);
+    }
+  }

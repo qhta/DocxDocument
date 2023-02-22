@@ -219,20 +219,21 @@ public static class CustomGeometryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomGeometry? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomGeometry value)
     where OpenXmlElementType: DXDraw.CustomGeometry, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAdjustValueList(openXmlElement, value?.AdjustValueList);
-      SetShapeGuideList(openXmlElement, value?.ShapeGuideList);
-      SetAdjustHandleList(openXmlElement, value?.AdjustHandleList);
-      SetConnectionSiteList(openXmlElement, value?.ConnectionSiteList);
-      SetRectangle(openXmlElement, value?.Rectangle);
-      SetPathList(openXmlElement, value?.PathList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.CustomGeometry openXmlElement, DMDraws.CustomGeometry value)
+  {
+    SetAdjustValueList(openXmlElement, value?.AdjustValueList);
+    SetShapeGuideList(openXmlElement, value?.ShapeGuideList);
+    SetAdjustHandleList(openXmlElement, value?.AdjustHandleList);
+    SetConnectionSiteList(openXmlElement, value?.ConnectionSiteList);
+    SetRectangle(openXmlElement, value?.Rectangle);
+    SetPathList(openXmlElement, value?.PathList);
+    }
+  }

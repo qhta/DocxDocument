@@ -244,21 +244,22 @@ public static class FillOverlayConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FillOverlay? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FillOverlay value)
     where OpenXmlElementType: DXDraw.FillOverlay, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlend(openXmlElement, value?.Blend);
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetGroupFill(openXmlElement, value?.GroupFill);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FillOverlay openXmlElement, DMDraws.FillOverlay value)
+  {
+    SetBlend(openXmlElement, value?.Blend);
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetGroupFill(openXmlElement, value?.GroupFill);
+    }
+  }

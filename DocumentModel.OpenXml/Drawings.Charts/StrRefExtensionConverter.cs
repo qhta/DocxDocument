@@ -10,22 +10,17 @@ public static class StrRefExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.StrRefExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.StrRefExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.StrRefExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FullReference? GetFullReference(DXDrawCharts.StrRefExtension openXmlElement)
@@ -140,18 +135,19 @@ public static class StrRefExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrRefExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrRefExtension value)
     where OpenXmlElementType: DXDrawCharts.StrRefExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFullReference(openXmlElement, value?.FullReference);
-      SetLevelReference(openXmlElement, value?.LevelReference);
-      SetFormulaReference(openXmlElement, value?.FormulaReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.StrRefExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFullReference(openXmlElement, value?.FullReference);
+    SetLevelReference(openXmlElement, value?.LevelReference);
+    SetFormulaReference(openXmlElement, value?.FormulaReference);
+    }
+  }

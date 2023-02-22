@@ -28,22 +28,17 @@ public static class ColorMostRecentlyUsedConverter
   /// </summary>
   private static String? GetColors(DXVmlO.ColorMostRecentlyUsed openXmlElement)
   {
-    return openXmlElement?.Colors?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Colors);
   }
   
   private static bool CmpColors(DXVmlO.ColorMostRecentlyUsed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Colors?.Value == value) return true;
-    diffs?.Add(objName, "Colors", openXmlElement?.Colors?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Colors, value, diffs, objName, "Colors");
   }
   
   private static void SetColors(DXVmlO.ColorMostRecentlyUsed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Colors = new StringValue { Value = value };
-    else
-      openXmlElement.Colors = null;
+    openXmlElement.Colors = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.ColorMostRecentlyUsed? CreateModelElement(DXVmlO.ColorMostRecentlyUsed? openXmlElement)
@@ -74,16 +69,17 @@ public static class ColorMostRecentlyUsedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ColorMostRecentlyUsed? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ColorMostRecentlyUsed value)
     where OpenXmlElementType: DXVmlO.ColorMostRecentlyUsed, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetColors(openXmlElement, value?.Colors);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.ColorMostRecentlyUsed openXmlElement, DMVml.ColorMostRecentlyUsed value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetColors(openXmlElement, value?.Colors);
+    }
+  }

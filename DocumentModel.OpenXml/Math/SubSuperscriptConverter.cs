@@ -155,18 +155,19 @@ public static class SubSuperscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscript? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscript value)
     where OpenXmlElementType: DXMath.SubSuperscript, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSubSuperscriptProperties(openXmlElement, value?.SubSuperscriptProperties);
-      SetBase(openXmlElement, value?.Base);
-      SetSubArgument(openXmlElement, value?.SubArgument);
-      SetSuperArgument(openXmlElement, value?.SuperArgument);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.SubSuperscript openXmlElement, DMMath.SubSuperscript value)
+  {
+    SetSubSuperscriptProperties(openXmlElement, value?.SubSuperscriptProperties);
+    SetBase(openXmlElement, value?.Base);
+    SetSubArgument(openXmlElement, value?.SubArgument);
+    SetSuperArgument(openXmlElement, value?.SuperArgument);
+    }
+  }

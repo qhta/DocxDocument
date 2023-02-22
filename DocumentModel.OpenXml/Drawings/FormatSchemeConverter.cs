@@ -10,22 +10,17 @@ public static class FormatSchemeConverter
   /// </summary>
   private static String? GetName(DXDraw.FormatScheme openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDraw.FormatScheme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDraw.FormatScheme openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -181,19 +176,20 @@ public static class FormatSchemeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FormatScheme? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FormatScheme value)
     where OpenXmlElementType: DXDraw.FormatScheme, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetFillStyleList(openXmlElement, value?.FillStyleList);
-      SetLineStyleList(openXmlElement, value?.LineStyleList);
-      SetEffectStyleList(openXmlElement, value?.EffectStyleList);
-      SetBackgroundFillStyleList(openXmlElement, value?.BackgroundFillStyleList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FormatScheme openXmlElement, DMDraws.FormatScheme value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetFillStyleList(openXmlElement, value?.FillStyleList);
+    SetLineStyleList(openXmlElement, value?.LineStyleList);
+    SetEffectStyleList(openXmlElement, value?.EffectStyleList);
+    SetBackgroundFillStyleList(openXmlElement, value?.BackgroundFillStyleList);
+    }
+  }

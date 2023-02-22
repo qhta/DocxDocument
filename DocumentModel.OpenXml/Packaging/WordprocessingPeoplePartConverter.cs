@@ -83,17 +83,18 @@ public static class WordprocessingPeoplePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingPeoplePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingPeoplePart value)
     where OpenXmlElementType: DXPack.WordprocessingPeoplePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      SetPeople(openXmlElement, value?.People);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WordprocessingPeoplePart openXmlElement, DMPack.WordprocessingPeoplePart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    SetPeople(openXmlElement, value?.People);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

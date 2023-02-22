@@ -172,20 +172,21 @@ public static class WrapSquareConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapSquare? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapSquare value)
     where OpenXmlElementType: DXDrawW.WrapSquare, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWrapText(openXmlElement, value?.WrapText);
-      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
-      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
-      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
-      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
-      SetEffectExtent(openXmlElement, value?.EffectExtent);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.WrapSquare openXmlElement, DMDrawsW.WrapSquare value)
+  {
+    SetWrapText(openXmlElement, value?.WrapText);
+    SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+    SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+    SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+    SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+    SetEffectExtent(openXmlElement, value?.EffectExtent);
+    }
+  }

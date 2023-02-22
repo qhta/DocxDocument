@@ -50,15 +50,16 @@ public static class TaskPriorityEventInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskPriorityEventInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskPriorityEventInfo value)
     where OpenXmlElementType: DXO2021DocTasks.TaskPriorityEventInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetValue(openXmlElement, value?.Value);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, DM.TaskPriorityEventInfo value)
+  {
+    SetValue(openXmlElement, value?.Value);
+    }
+  }

@@ -117,17 +117,18 @@ public static class ColorChangeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorChange? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorChange value)
     where OpenXmlElementType: DXDraw.ColorChange, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUseAlpha(openXmlElement, value?.UseAlpha);
-      SetColorFrom(openXmlElement, value?.ColorFrom);
-      SetColorTo(openXmlElement, value?.ColorTo);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ColorChange openXmlElement, DMDraws.ColorChange value)
+  {
+    SetUseAlpha(openXmlElement, value?.UseAlpha);
+    SetColorFrom(openXmlElement, value?.ColorFrom);
+    SetColorTo(openXmlElement, value?.ColorTo);
+    }
+  }

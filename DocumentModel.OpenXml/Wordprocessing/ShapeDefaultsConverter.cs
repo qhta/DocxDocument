@@ -85,16 +85,17 @@ public static class ShapeDefaultsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ShapeDefaults? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ShapeDefaults value)
     where OpenXmlElementType: DXW.ShapeDefaults, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChildShapeDefaults(openXmlElement, value?.ChildShapeDefaults);
-      SetShapeLayout(openXmlElement, value?.ShapeLayout);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ShapeDefaults openXmlElement, DMW.ShapeDefaults value)
+  {
+    SetChildShapeDefaults(openXmlElement, value?.ChildShapeDefaults);
+    SetShapeLayout(openXmlElement, value?.ShapeLayout);
+    }
+  }

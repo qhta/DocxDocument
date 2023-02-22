@@ -117,17 +117,18 @@ public static class GradientFillPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientFillProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientFillProperties value)
     where OpenXmlElementType: DXO2010W.GradientFillProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGradientStopList(openXmlElement, value?.GradientStopList);
-      SetLinearShadeProperties(openXmlElement, value?.LinearShadeProperties);
-      SetPathShadeProperties(openXmlElement, value?.PathShadeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.GradientFillProperties openXmlElement, DMW.GradientFillProperties value)
+  {
+    SetGradientStopList(openXmlElement, value?.GradientStopList);
+    SetLinearShadeProperties(openXmlElement, value?.LinearShadeProperties);
+    SetPathShadeProperties(openXmlElement, value?.PathShadeProperties);
+    }
+  }

@@ -10,22 +10,17 @@ public static class GeoCacheConverter
   /// </summary>
   private static String? GetProvider(DXO2016DrawChartDraw.GeoCache openXmlElement)
   {
-    return openXmlElement?.Provider?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Provider);
   }
   
   private static bool CmpProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Provider?.Value == value) return true;
-    diffs?.Add(objName, "Provider", openXmlElement?.Provider?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Provider, value, diffs, objName, "Provider");
   }
   
   private static void SetProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Provider = new StringValue { Value = value };
-    else
-      openXmlElement.Provider = null;
+    openXmlElement.Provider = StringValueConverter.CreateStringValue(value);
   }
   
   private static String? GetXsdbase64Binary(DXO2016DrawChartDraw.GeoCache openXmlElement)
@@ -107,17 +102,18 @@ public static class GeoCacheConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoCache? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoCache value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoCache, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetProvider(openXmlElement, value?.Provider);
-      SetXsdbase64Binary(openXmlElement, value?.Xsdbase64Binary);
-      SetClear(openXmlElement, value?.Clear);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.GeoCache value)
+  {
+    SetProvider(openXmlElement, value?.Provider);
+    SetXsdbase64Binary(openXmlElement, value?.Xsdbase64Binary);
+    SetClear(openXmlElement, value?.Clear);
+    }
+  }

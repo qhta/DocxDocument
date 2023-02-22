@@ -155,18 +155,19 @@ public static class StyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Style? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Style value)
     where OpenXmlElementType: DXDrawChartDraw.Style, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineReference(openXmlElement, value?.LineReference);
-      SetFillReference(openXmlElement, value?.FillReference);
-      SetEffectReference(openXmlElement, value?.EffectReference);
-      SetFontReference(openXmlElement, value?.FontReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.Style openXmlElement, DMDrawsChartDraw.Style value)
+  {
+    SetLineReference(openXmlElement, value?.LineReference);
+    SetFillReference(openXmlElement, value?.FillReference);
+    SetEffectReference(openXmlElement, value?.EffectReference);
+    SetFontReference(openXmlElement, value?.FontReference);
+    }
+  }

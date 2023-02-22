@@ -91,16 +91,17 @@ public static class TaskAnchorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskAnchor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskAnchor value)
     where OpenXmlElementType: DXO2021DocTasks.TaskAnchor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCommentAnchor(openXmlElement, value?.CommentAnchor);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskAnchor openXmlElement, DM.TaskAnchor value)
+  {
+    SetCommentAnchor(openXmlElement, value?.CommentAnchor);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class StockChartExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.StockChartExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.StockChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.StockChartExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FilteredLineSeriesExtension? GetFilteredLineSeriesExtension(DXDrawCharts.StockChartExtension openXmlElement)
@@ -82,16 +77,17 @@ public static class StockChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChartExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChartExtension value)
     where OpenXmlElementType: DXDrawCharts.StockChartExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StockChartExtension openXmlElement, DMDrawsCharts.StockChartExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
+    }
+  }

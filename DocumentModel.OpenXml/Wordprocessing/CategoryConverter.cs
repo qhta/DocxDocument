@@ -50,13 +50,15 @@ public static class CategoryConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Gallery>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(itemElement, (DMW.DocPartGalleryKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
   }
   
   public static DocumentModel.Wordprocessing.Category? CreateModelElement(DXW.Category? openXmlElement)
@@ -87,16 +89,17 @@ public static class CategoryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Category? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Category value)
     where OpenXmlElementType: DXW.Category, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetGallery(openXmlElement, value?.Gallery);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Category openXmlElement, DMW.Category value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetGallery(openXmlElement, value?.Gallery);
+    }
+  }

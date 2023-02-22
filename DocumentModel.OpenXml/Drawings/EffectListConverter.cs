@@ -283,22 +283,23 @@ public static class EffectListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectList value)
     where OpenXmlElementType: DXDraw.EffectList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlur(openXmlElement, value?.Blur);
-      SetFillOverlay(openXmlElement, value?.FillOverlay);
-      SetGlow(openXmlElement, value?.Glow);
-      SetInnerShadow(openXmlElement, value?.InnerShadow);
-      SetOuterShadow(openXmlElement, value?.OuterShadow);
-      SetPresetShadow(openXmlElement, value?.PresetShadow);
-      SetReflection(openXmlElement, value?.Reflection);
-      SetSoftEdge(openXmlElement, value?.SoftEdge);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.EffectList openXmlElement, DMDraws.EffectList value)
+  {
+    SetBlur(openXmlElement, value?.Blur);
+    SetFillOverlay(openXmlElement, value?.FillOverlay);
+    SetGlow(openXmlElement, value?.Glow);
+    SetInnerShadow(openXmlElement, value?.InnerShadow);
+    SetOuterShadow(openXmlElement, value?.OuterShadow);
+    SetPresetShadow(openXmlElement, value?.PresetShadow);
+    SetReflection(openXmlElement, value?.Reflection);
+    SetSoftEdge(openXmlElement, value?.SoftEdge);
+    }
+  }

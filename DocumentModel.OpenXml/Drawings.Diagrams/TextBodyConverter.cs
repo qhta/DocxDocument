@@ -120,17 +120,18 @@ public static class TextBodyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextBody? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextBody value)
     where OpenXmlElementType: DXDrawDgms.TextBody, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBodyProperties(openXmlElement, value?.BodyProperties);
-      SetListStyle(openXmlElement, value?.ListStyle);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.TextBody openXmlElement, DMDrawsDgms.TextBody value)
+  {
+    SetBodyProperties(openXmlElement, value?.BodyProperties);
+    SetListStyle(openXmlElement, value?.ListStyle);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    }
+  }

@@ -13,7 +13,12 @@ public static class ListValueConverter
     if (element != null)
     {
       var result = new ListOf<String>();
-      foreach (var item in element) result.Add(StringValueConverter.GetValue(item));
+      foreach (var item in element)
+      {
+        var str = StringValueConverter.GetValue(item);
+        if (str!=null)
+          result.Add(str);
+      }
     }
     return null;
   }

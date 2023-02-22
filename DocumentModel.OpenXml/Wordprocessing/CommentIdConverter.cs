@@ -89,16 +89,17 @@ public static class CommentIdConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId value)
     where OpenXmlElementType: DXO2019WCid.CommentId, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetParaId(openXmlElement, value?.ParaId);
-      SetDurableId(openXmlElement, value?.DurableId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2019WCid.CommentId openXmlElement, DMW.CommentId value)
+  {
+    SetParaId(openXmlElement, value?.ParaId);
+    SetDurableId(openXmlElement, value?.DurableId);
+    }
+  }

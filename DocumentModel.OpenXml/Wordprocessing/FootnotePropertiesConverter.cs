@@ -22,13 +22,15 @@ public static class FootnotePropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FootnotePosition>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.FootnotePosition, DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DMW.FootnotePositionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DMW.FootnotePositionKind>(itemElement, (DMW.FootnotePositionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FootnotePosition, DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DMW.FootnotePositionKind>((DMW.FootnotePositionKind)value));
   }
   
   /// <summary>
@@ -65,27 +67,17 @@ public static class FootnotePropertiesConverter
   /// </summary>
   private static UInt16? GetNumberingStart(DXW.FootnoteProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val);
   }
   
   private static bool CmpNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingStart>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.NumberingStart", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingStart>()?.Val, value, diffs, objName, "NumberingStart");
   }
   
   private static void SetNumberingStart(DXW.FootnoteProperties openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingStart>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.NumberingStart{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.NumberingStart,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
@@ -105,13 +97,15 @@ public static class FootnotePropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.NumberingRestart>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(itemElement, (DMW.RestartNumberKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
   public static DocumentModel.Wordprocessing.FootnoteProperties? CreateModelElement(DXW.FootnoteProperties? openXmlElement)
@@ -148,18 +142,19 @@ public static class FootnotePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteProperties value)
     where OpenXmlElementType: DXW.FootnoteProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFootnotePosition(openXmlElement, value?.FootnotePosition);
-      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-      SetNumberingStart(openXmlElement, value?.NumberingStart);
-      SetNumberingRestart(openXmlElement, value?.NumberingRestart);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FootnoteProperties openXmlElement, DMW.FootnoteProperties value)
+  {
+    SetFootnotePosition(openXmlElement, value?.FootnotePosition);
+    SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+    SetNumberingStart(openXmlElement, value?.NumberingStart);
+    SetNumberingRestart(openXmlElement, value?.NumberingRestart);
+    }
+  }

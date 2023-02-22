@@ -10,22 +10,17 @@ public static class CheckBoxSymbolTypeConverter
   /// </summary>
   private static String? GetFont(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
-    return openXmlElement?.Font?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Font);
   }
   
   private static bool CmpFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Font?.Value == value) return true;
-    diffs?.Add(objName, "Font", openXmlElement?.Font?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Font, value, diffs, objName, "Font");
   }
   
   private static void SetFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Font = new StringValue { Value = value };
-    else
-      openXmlElement.Font = null;
+    openXmlElement.Font = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -84,16 +79,17 @@ public static class CheckBoxSymbolTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBoxSymbolType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBoxSymbolType value)
     where OpenXmlElementType: DXO2010W.CheckBoxSymbolType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFont(openXmlElement, value?.Font);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.CheckBoxSymbolType openXmlElement, DMW.CheckBoxSymbolType value)
+  {
+    SetFont(openXmlElement, value?.Font);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

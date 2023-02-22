@@ -28,22 +28,17 @@ public static class GeoDataPointToEntityQueryConverter
   /// </summary>
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement)
   {
-    return openXmlElement?.EntityId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityId?.Value == value) return true;
-    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityId = new StringValue { Value = value };
-    else
-      openXmlElement.EntityId = null;
+    openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointToEntityQuery? openXmlElement)
@@ -74,16 +69,17 @@ public static class GeoDataPointToEntityQueryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQuery? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQuery value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoDataPointToEntityQuery, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityType(openXmlElement, value?.EntityType);
-      SetEntityId(openXmlElement, value?.EntityId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoDataPointToEntityQuery openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQuery value)
+  {
+    SetEntityType(openXmlElement, value?.EntityType);
+    SetEntityId(openXmlElement, value?.EntityId);
+    }
+  }

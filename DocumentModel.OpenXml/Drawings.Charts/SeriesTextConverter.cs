@@ -87,16 +87,17 @@ public static class SeriesTextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SeriesText? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SeriesText value)
     where OpenXmlElementType: DXDrawCharts.SeriesText, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStringReference(openXmlElement, value?.StringReference);
-      SetNumericValue(openXmlElement, value?.NumericValue);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.SeriesText value)
+  {
+    SetStringReference(openXmlElement, value?.StringReference);
+    SetNumericValue(openXmlElement, value?.NumericValue);
+    }
+  }

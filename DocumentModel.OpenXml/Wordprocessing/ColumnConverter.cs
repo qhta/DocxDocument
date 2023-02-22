@@ -10,22 +10,17 @@ public static class ColumnConverter
   /// </summary>
   private static String? GetWidth(DXW.Column openXmlElement)
   {
-    return openXmlElement?.Width?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Width);
   }
   
   private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Width?.Value == value) return true;
-    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Width");
   }
   
   private static void SetWidth(DXW.Column openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Width = new StringValue { Value = value };
-    else
-      openXmlElement.Width = null;
+    openXmlElement.Width = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ColumnConverter
   /// </summary>
   private static String? GetSpace(DXW.Column openXmlElement)
   {
-    return openXmlElement?.Space?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Space);
   }
   
   private static bool CmpSpace(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Space?.Value == value) return true;
-    diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Space, value, diffs, objName, "Space");
   }
   
   private static void SetSpace(DXW.Column openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Space = new StringValue { Value = value };
-    else
-      openXmlElement.Space = null;
+    openXmlElement.Space = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.Column? CreateModelElement(DXW.Column? openXmlElement)
@@ -79,16 +69,17 @@ public static class ColumnConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Column? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Column value)
     where OpenXmlElementType: DXW.Column, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetSpace(openXmlElement, value?.Space);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Column openXmlElement, DMW.Column value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetSpace(openXmlElement, value?.Space);
+    }
+  }

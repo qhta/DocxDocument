@@ -10,22 +10,17 @@ public static class BackstageConverter
   /// </summary>
   private static String? GetOnShow(DXO2010CustUI.Backstage openXmlElement)
   {
-    return openXmlElement?.OnShow?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnShow);
   }
   
   private static bool CmpOnShow(DXO2010CustUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnShow?.Value == value) return true;
-    diffs?.Add(objName, "OnShow", openXmlElement?.OnShow?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnShow, value, diffs, objName, "OnShow");
   }
   
   private static void SetOnShow(DXO2010CustUI.Backstage openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnShow = new StringValue { Value = value };
-    else
-      openXmlElement.OnShow = null;
+    openXmlElement.OnShow = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BackstageConverter
   /// </summary>
   private static String? GetOnHide(DXO2010CustUI.Backstage openXmlElement)
   {
-    return openXmlElement?.OnHide?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnHide);
   }
   
   private static bool CmpOnHide(DXO2010CustUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnHide?.Value == value) return true;
-    diffs?.Add(objName, "OnHide", openXmlElement?.OnHide?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnHide, value, diffs, objName, "OnHide");
   }
   
   private static void SetOnHide(DXO2010CustUI.Backstage openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnHide = new StringValue { Value = value };
-    else
-      openXmlElement.OnHide = null;
+    openXmlElement.OnHide = StringValueConverter.CreateStringValue(value);
   }
   
   private static DM.BackstageTab? GetBackstageTab(DXO2010CustUI.Backstage openXmlElement)
@@ -137,18 +127,19 @@ public static class BackstageConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Backstage? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Backstage value)
     where OpenXmlElementType: DXO2010CustUI.Backstage, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOnShow(openXmlElement, value?.OnShow);
-      SetOnHide(openXmlElement, value?.OnHide);
-      SetBackstageTab(openXmlElement, value?.BackstageTab);
-      SetBackstageFastCommandButton(openXmlElement, value?.BackstageFastCommandButton);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.Backstage openXmlElement, DM.Backstage value)
+  {
+    SetOnShow(openXmlElement, value?.OnShow);
+    SetOnHide(openXmlElement, value?.OnHide);
+    SetBackstageTab(openXmlElement, value?.BackstageTab);
+    SetBackstageFastCommandButton(openXmlElement, value?.BackstageFastCommandButton);
+    }
+  }

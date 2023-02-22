@@ -94,17 +94,18 @@ public static class GeoDataPointQueryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointQuery? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointQuery value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoDataPointQuery, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityType(openXmlElement, value?.EntityType);
-      SetLatitude(openXmlElement, value?.Latitude);
-      SetLongitude(openXmlElement, value?.Longitude);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.GeoDataPointQuery value)
+  {
+    SetEntityType(openXmlElement, value?.EntityType);
+    SetLatitude(openXmlElement, value?.Latitude);
+    SetLongitude(openXmlElement, value?.Longitude);
+    }
+  }

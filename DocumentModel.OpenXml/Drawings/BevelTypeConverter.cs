@@ -94,17 +94,18 @@ public static class BevelTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BevelType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BevelType value)
     where OpenXmlElementType: DXDraw.BevelType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetHeight(openXmlElement, value?.Height);
-      SetPreset(openXmlElement, value?.Preset);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BevelType openXmlElement, DMDraws.BevelType value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetHeight(openXmlElement, value?.Height);
+    SetPreset(openXmlElement, value?.Preset);
+    }
+  }

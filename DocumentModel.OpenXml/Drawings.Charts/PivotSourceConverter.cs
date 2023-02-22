@@ -35,27 +35,17 @@ public static class PivotSourceConverter
   /// </summary>
   private static UInt32? GetFormatId(DXDrawCharts.PivotSource openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>()?.Val);
   }
   
   private static bool CmpFormatId(DXDrawCharts.PivotSource openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.FormatId", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.FormatId>()?.Val, value, diffs, objName, "FormatId");
   }
   
   private static void SetFormatId(DXDrawCharts.PivotSource openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FormatId>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.FormatId{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.FormatId,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -118,17 +108,18 @@ public static class PivotSourceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotSource? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotSource value)
     where OpenXmlElementType: DXDrawCharts.PivotSource, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPivotTableName(openXmlElement, value?.PivotTableName);
-      SetFormatId(openXmlElement, value?.FormatId);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PivotSource openXmlElement, DMDrawsCharts.PivotSource value)
+  {
+    SetPivotTableName(openXmlElement, value?.PivotTableName);
+    SetFormatId(openXmlElement, value?.FormatId);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

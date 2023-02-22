@@ -73,16 +73,17 @@ public static class ArtisticPencilGrayscaleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPencilGrayscale? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPencilGrayscale value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPencilGrayscale, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetBrushSize(openXmlElement, value?.BrushSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPencilGrayscale openXmlElement, DMDraws.ArtisticPencilGrayscale value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetBrushSize(openXmlElement, value?.BrushSize);
+    }
+  }

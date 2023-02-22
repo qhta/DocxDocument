@@ -85,16 +85,17 @@ public static class ExtrusionColorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtrusionColor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtrusionColor value)
     where OpenXmlElementType: DXO2010W.ExtrusionColor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.ExtrusionColor openXmlElement, DMW.ExtrusionColor value)
+  {
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

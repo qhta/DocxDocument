@@ -115,18 +115,19 @@ public static class PageNumberTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageNumberType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PageNumberType value)
     where OpenXmlElementType: DXW.PageNumberType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormat(openXmlElement, value?.Format);
-      SetStart(openXmlElement, value?.Start);
-      SetChapterStyle(openXmlElement, value?.ChapterStyle);
-      SetChapterSeparator(openXmlElement, value?.ChapterSeparator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PageNumberType openXmlElement, DMW.PageNumberType value)
+  {
+    SetFormat(openXmlElement, value?.Format);
+    SetStart(openXmlElement, value?.Start);
+    SetChapterStyle(openXmlElement, value?.ChapterStyle);
+    SetChapterSeparator(openXmlElement, value?.ChapterSeparator);
+    }
+  }

@@ -91,16 +91,17 @@ public static class GeoLocationQueryResultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocationQueryResult? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocationQueryResult value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoLocationQueryResult, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGeoLocationQuery(openXmlElement, value?.GeoLocationQuery);
-      SetGeoLocations(openXmlElement, value?.GeoLocations);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoLocationQueryResult openXmlElement, DMDrawsChartDraws.GeoLocationQueryResult value)
+  {
+    SetGeoLocationQuery(openXmlElement, value?.GeoLocationQuery);
+    SetGeoLocations(openXmlElement, value?.GeoLocations);
+    }
+  }

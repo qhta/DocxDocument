@@ -85,16 +85,17 @@ public static class MajorGridlinesGridlinesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MajorGridlinesGridlines? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MajorGridlinesGridlines value)
     where OpenXmlElementType: DXO2016DrawChartDraw.MajorGridlinesGridlines, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MajorGridlinesGridlines openXmlElement, DMDrawsChartDraws.MajorGridlinesGridlines value)
+  {
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

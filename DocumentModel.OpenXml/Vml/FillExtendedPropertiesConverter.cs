@@ -69,16 +69,17 @@ public static class FillExtendedPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.FillExtendedProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.FillExtendedProperties value)
     where OpenXmlElementType: DXVmlO.FillExtendedProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetType(openXmlElement, value?.Type);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.FillExtendedProperties openXmlElement, DMVml.FillExtendedProperties value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetType(openXmlElement, value?.Type);
+    }
+  }

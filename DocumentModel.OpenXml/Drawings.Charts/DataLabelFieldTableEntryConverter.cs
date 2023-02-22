@@ -115,17 +115,18 @@ public static class DataLabelFieldTableEntryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelFieldTableEntry? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelFieldTableEntry value)
     where OpenXmlElementType: DXO2013DrawChart.DataLabelFieldTableEntry, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTextFieldGuid(openXmlElement, value?.TextFieldGuid);
-      SetFormula(openXmlElement, value?.Formula);
-      SetDataLabelFieldTableCache(openXmlElement, value?.DataLabelFieldTableCache);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.DataLabelFieldTableEntry openXmlElement, DMDrawsCharts.DataLabelFieldTableEntry value)
+  {
+    SetTextFieldGuid(openXmlElement, value?.TextFieldGuid);
+    SetFormula(openXmlElement, value?.Formula);
+    SetDataLabelFieldTableCache(openXmlElement, value?.DataLabelFieldTableCache);
+    }
+  }

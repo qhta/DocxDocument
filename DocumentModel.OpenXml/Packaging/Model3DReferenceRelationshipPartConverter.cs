@@ -57,16 +57,17 @@ public static class Model3DReferenceRelationshipPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.Model3DReferenceRelationshipPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.Model3DReferenceRelationshipPart value)
     where OpenXmlElementType: DXPack.Model3DReferenceRelationshipPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.Model3DReferenceRelationshipPart openXmlElement, DMPack.Model3DReferenceRelationshipPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

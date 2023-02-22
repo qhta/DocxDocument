@@ -345,26 +345,27 @@ public static class PictureLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureLocks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureLocks value)
     where OpenXmlElementType: DXDraw.PictureLocks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoGrouping(openXmlElement, value?.NoGrouping);
-      SetNoSelection(openXmlElement, value?.NoSelection);
-      SetNoRotation(openXmlElement, value?.NoRotation);
-      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
-      SetNoMove(openXmlElement, value?.NoMove);
-      SetNoResize(openXmlElement, value?.NoResize);
-      SetNoEditPoints(openXmlElement, value?.NoEditPoints);
-      SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
-      SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
-      SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
-      SetNoCrop(openXmlElement, value?.NoCrop);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PictureLocks openXmlElement, DMDraws.PictureLocks value)
+  {
+    SetNoGrouping(openXmlElement, value?.NoGrouping);
+    SetNoSelection(openXmlElement, value?.NoSelection);
+    SetNoRotation(openXmlElement, value?.NoRotation);
+    SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+    SetNoMove(openXmlElement, value?.NoMove);
+    SetNoResize(openXmlElement, value?.NoResize);
+    SetNoEditPoints(openXmlElement, value?.NoEditPoints);
+    SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
+    SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
+    SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
+    SetNoCrop(openXmlElement, value?.NoCrop);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

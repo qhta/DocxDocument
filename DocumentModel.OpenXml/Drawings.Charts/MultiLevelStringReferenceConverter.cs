@@ -119,17 +119,18 @@ public static class MultiLevelStringReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MultiLevelStringReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MultiLevelStringReference value)
     where OpenXmlElementType: DXDrawCharts.MultiLevelStringReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormula(openXmlElement, value?.Formula);
-      SetMultiLevelStringCache(openXmlElement, value?.MultiLevelStringCache);
-      SetMultiLvlStrRefExtensionList(openXmlElement, value?.MultiLvlStrRefExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.MultiLevelStringReference openXmlElement, DMDrawsCharts.MultiLevelStringReference value)
+  {
+    SetFormula(openXmlElement, value?.Formula);
+    SetMultiLevelStringCache(openXmlElement, value?.MultiLevelStringCache);
+    SetMultiLvlStrRefExtensionList(openXmlElement, value?.MultiLvlStrRefExtensionList);
+    }
+  }

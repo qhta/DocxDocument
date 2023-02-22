@@ -28,22 +28,17 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetProgId(DXVmlO.OleObject openXmlElement)
   {
-    return openXmlElement?.ProgId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ProgId);
   }
   
   private static bool CmpProgId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ProgId?.Value == value) return true;
-    diffs?.Add(objName, "ProgId", openXmlElement?.ProgId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ProgId, value, diffs, objName, "ProgId");
   }
   
   private static void SetProgId(DXVmlO.OleObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ProgId = new StringValue { Value = value };
-    else
-      openXmlElement.ProgId = null;
+    openXmlElement.ProgId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetShapeId(DXVmlO.OleObject openXmlElement)
   {
-    return openXmlElement?.ShapeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
   private static bool CmpShapeId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeId?.Value == value) return true;
-    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
   
   private static void SetShapeId(DXVmlO.OleObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeId = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeId = null;
+    openXmlElement.ShapeId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -92,22 +82,17 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetObjectId(DXVmlO.OleObject openXmlElement)
   {
-    return openXmlElement?.ObjectId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ObjectId);
   }
   
   private static bool CmpObjectId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ObjectId?.Value == value) return true;
-    diffs?.Add(objName, "ObjectId", openXmlElement?.ObjectId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ObjectId, value, diffs, objName, "ObjectId");
   }
   
   private static void SetObjectId(DXVmlO.OleObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ObjectId = new StringValue { Value = value };
-    else
-      openXmlElement.ObjectId = null;
+    openXmlElement.ObjectId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -115,22 +100,17 @@ public static class OleObjectConverter
   /// </summary>
   private static String? GetId(DXVmlO.OleObject openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVmlO.OleObject openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVmlO.OleObject openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -278,24 +258,25 @@ public static class OleObjectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.OleObject? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.OleObject value)
     where OpenXmlElementType: DXVmlO.OleObject, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetProgId(openXmlElement, value?.ProgId);
-      SetShapeId(openXmlElement, value?.ShapeId);
-      SetDrawAspect(openXmlElement, value?.DrawAspect);
-      SetObjectId(openXmlElement, value?.ObjectId);
-      SetId(openXmlElement, value?.Id);
-      SetUpdateMode(openXmlElement, value?.UpdateMode);
-      SetLinkType(openXmlElement, value?.LinkType);
-      SetLockedField(openXmlElement, value?.LockedField);
-      SetFieldCodes(openXmlElement, value?.FieldCodes);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.OleObject openXmlElement, DMVml.OleObject value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetProgId(openXmlElement, value?.ProgId);
+    SetShapeId(openXmlElement, value?.ShapeId);
+    SetDrawAspect(openXmlElement, value?.DrawAspect);
+    SetObjectId(openXmlElement, value?.ObjectId);
+    SetId(openXmlElement, value?.Id);
+    SetUpdateMode(openXmlElement, value?.UpdateMode);
+    SetLinkType(openXmlElement, value?.LinkType);
+    SetLockedField(openXmlElement, value?.LockedField);
+    SetFieldCodes(openXmlElement, value?.FieldCodes);
+    }
+  }

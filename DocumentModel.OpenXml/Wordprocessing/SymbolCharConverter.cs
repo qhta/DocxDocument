@@ -10,22 +10,17 @@ public static class SymbolCharConverter
   /// </summary>
   private static String? GetFont(DXW.SymbolChar openXmlElement)
   {
-    return openXmlElement?.Font?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Font);
   }
   
   private static bool CmpFont(DXW.SymbolChar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Font?.Value == value) return true;
-    diffs?.Add(objName, "Font", openXmlElement?.Font?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Font, value, diffs, objName, "Font");
   }
   
   private static void SetFont(DXW.SymbolChar openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Font = new StringValue { Value = value };
-    else
-      openXmlElement.Font = null;
+    openXmlElement.Font = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -84,16 +79,17 @@ public static class SymbolCharConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar value)
     where OpenXmlElementType: DXW.SymbolChar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFont(openXmlElement, value?.Font);
-      SetChar(openXmlElement, value?.Char);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SymbolChar openXmlElement, DMW.SymbolChar value)
+  {
+    SetFont(openXmlElement, value?.Font);
+    SetChar(openXmlElement, value?.Char);
+    }
+  }

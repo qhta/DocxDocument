@@ -123,17 +123,18 @@ public static class FontCollectionTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontCollectionType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontCollectionType value)
     where OpenXmlElementType: DXDraw.FontCollectionType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLatinFont(openXmlElement, value?.LatinFont);
-      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
-      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FontCollectionType openXmlElement, DMDraws.FontCollectionType value)
+  {
+    SetLatinFont(openXmlElement, value?.LatinFont);
+    SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+    SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+    }
+  }

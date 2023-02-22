@@ -219,20 +219,21 @@ public static class ParagraphBordersConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphBorders? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphBorders value)
     where OpenXmlElementType: DXW.ParagraphBorders, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      SetBetweenBorder(openXmlElement, value?.BetweenBorder);
-      SetBarBorder(openXmlElement, value?.BarBorder);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ParagraphBorders openXmlElement, DMW.ParagraphBorders value)
+  {
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    SetBetweenBorder(openXmlElement, value?.BetweenBorder);
+    SetBarBorder(openXmlElement, value?.BarBorder);
+    }
+  }

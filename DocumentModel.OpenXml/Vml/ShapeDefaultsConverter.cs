@@ -48,22 +48,17 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static String? GetStyle(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
   private static bool CmpStyle(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Style?.Value == value) return true;
-    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
   private static void SetStyle(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Style = new StringValue { Value = value };
-    else
-      openXmlElement.Style = null;
+    openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -94,22 +89,17 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static String? GetFillColor(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return openXmlElement?.FillColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FillColor);
   }
   
   private static bool CmpFillColor(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FillColor?.Value == value) return true;
-    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FillColor, value, diffs, objName, "FillColor");
   }
   
   private static void SetFillColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FillColor = new StringValue { Value = value };
-    else
-      openXmlElement.FillColor = null;
+    openXmlElement.FillColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -140,22 +130,17 @@ public static class ShapeDefaultsConverter
   /// </summary>
   private static String? GetStrokeColor(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return openXmlElement?.StrokeColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StrokeColor);
   }
   
   private static bool CmpStrokeColor(DXVmlO.ShapeDefaults openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StrokeColor?.Value == value) return true;
-    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StrokeColor, value, diffs, objName, "StrokeColor");
   }
   
   private static void SetStrokeColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StrokeColor = new StringValue { Value = value };
-    else
-      openXmlElement.StrokeColor = null;
+    openXmlElement.StrokeColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -626,35 +611,36 @@ public static class ShapeDefaultsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeDefaults? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeDefaults value)
     where OpenXmlElementType: DXVmlO.ShapeDefaults, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetMaxShapeId(openXmlElement, value?.MaxShapeId);
-      SetStyle(openXmlElement, value?.Style);
-      SetBeFilled(openXmlElement, value?.BeFilled);
-      SetFillColor(openXmlElement, value?.FillColor);
-      SetIsStroke(openXmlElement, value?.IsStroke);
-      SetStrokeColor(openXmlElement, value?.StrokeColor);
-      SetAllowInCell(openXmlElement, value?.AllowInCell);
-      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
-      SetInsetMode(openXmlElement, value?.InsetMode);
-      SetFill(openXmlElement, value?.Fill);
-      SetImageData(openXmlElement, value?.ImageData);
-      SetStroke(openXmlElement, value?.Stroke);
-      SetTextBox(openXmlElement, value?.TextBox);
-      SetShadow(openXmlElement, value?.Shadow);
-      SetSkew(openXmlElement, value?.Skew);
-      SetExtrusion(openXmlElement, value?.Extrusion);
-      SetCallout(openXmlElement, value?.Callout);
-      SetLock(openXmlElement, value?.Lock);
-      SetColorMostRecentlyUsed(openXmlElement, value?.ColorMostRecentlyUsed);
-      SetColorMenu(openXmlElement, value?.ColorMenu);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.ShapeDefaults openXmlElement, DMVml.ShapeDefaults value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetMaxShapeId(openXmlElement, value?.MaxShapeId);
+    SetStyle(openXmlElement, value?.Style);
+    SetBeFilled(openXmlElement, value?.BeFilled);
+    SetFillColor(openXmlElement, value?.FillColor);
+    SetIsStroke(openXmlElement, value?.IsStroke);
+    SetStrokeColor(openXmlElement, value?.StrokeColor);
+    SetAllowInCell(openXmlElement, value?.AllowInCell);
+    SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+    SetInsetMode(openXmlElement, value?.InsetMode);
+    SetFill(openXmlElement, value?.Fill);
+    SetImageData(openXmlElement, value?.ImageData);
+    SetStroke(openXmlElement, value?.Stroke);
+    SetTextBox(openXmlElement, value?.TextBox);
+    SetShadow(openXmlElement, value?.Shadow);
+    SetSkew(openXmlElement, value?.Skew);
+    SetExtrusion(openXmlElement, value?.Extrusion);
+    SetCallout(openXmlElement, value?.Callout);
+    SetLock(openXmlElement, value?.Lock);
+    SetColorMostRecentlyUsed(openXmlElement, value?.ColorMostRecentlyUsed);
+    SetColorMenu(openXmlElement, value?.ColorMenu);
+    }
+  }

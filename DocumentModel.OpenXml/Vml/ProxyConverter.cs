@@ -56,22 +56,17 @@ public static class ProxyConverter
   /// </summary>
   private static String? GetShapeReference(DXVmlO.Proxy openXmlElement)
   {
-    return openXmlElement?.ShapeReference?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeReference);
   }
   
   private static bool CmpShapeReference(DXVmlO.Proxy openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeReference?.Value == value) return true;
-    diffs?.Add(objName, "ShapeReference", openXmlElement?.ShapeReference?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeReference, value, diffs, objName, "ShapeReference");
   }
   
   private static void SetShapeReference(DXVmlO.Proxy openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeReference = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeReference = null;
+    openXmlElement.ShapeReference = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -128,18 +123,19 @@ public static class ProxyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Proxy? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Proxy value)
     where OpenXmlElementType: DXVmlO.Proxy, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStart(openXmlElement, value?.Start);
-      SetEnd(openXmlElement, value?.End);
-      SetShapeReference(openXmlElement, value?.ShapeReference);
-      SetConnectionLocation(openXmlElement, value?.ConnectionLocation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Proxy openXmlElement, DMVml.Proxy value)
+  {
+    SetStart(openXmlElement, value?.Start);
+    SetEnd(openXmlElement, value?.End);
+    SetShapeReference(openXmlElement, value?.ShapeReference);
+    SetConnectionLocation(openXmlElement, value?.ConnectionLocation);
+    }
+  }

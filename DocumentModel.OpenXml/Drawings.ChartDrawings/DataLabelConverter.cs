@@ -259,22 +259,23 @@ public static class DataLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabel value)
     where OpenXmlElementType: DXO2016DrawChartDraw.DataLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdx(openXmlElement, value?.Idx);
-      SetPos(openXmlElement, value?.Pos);
-      SetNumberFormat(openXmlElement, value?.NumberFormat);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
-      SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabel value)
+  {
+    SetIdx(openXmlElement, value?.Idx);
+    SetPos(openXmlElement, value?.Pos);
+    SetNumberFormat(openXmlElement, value?.NumberFormat);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
+    SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

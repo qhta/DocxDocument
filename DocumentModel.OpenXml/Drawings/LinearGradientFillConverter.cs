@@ -76,16 +76,17 @@ public static class LinearGradientFillConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinearGradientFill? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinearGradientFill value)
     where OpenXmlElementType: DXDraw.LinearGradientFill, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAngle(openXmlElement, value?.Angle);
-      SetScaled(openXmlElement, value?.Scaled);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LinearGradientFill openXmlElement, DMDraws.LinearGradientFill value)
+  {
+    SetAngle(openXmlElement, value?.Angle);
+    SetScaled(openXmlElement, value?.Scaled);
+    }
+  }

@@ -30,22 +30,17 @@ public static class NumericPointConverter
   /// </summary>
   private static String? GetFormatCode(DXDrawCharts.NumericPoint openXmlElement)
   {
-    return openXmlElement?.FormatCode?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
   private static bool CmpFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FormatCode?.Value == value) return true;
-    diffs?.Add(objName, "FormatCode", openXmlElement?.FormatCode?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
   
   private static void SetFormatCode(DXDrawCharts.NumericPoint openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FormatCode = new StringValue { Value = value };
-    else
-      openXmlElement.FormatCode = null;
+    openXmlElement.FormatCode = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -104,17 +99,18 @@ public static class NumericPointConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumericPoint? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumericPoint value)
     where OpenXmlElementType: DXDrawCharts.NumericPoint, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetFormatCode(openXmlElement, value?.FormatCode);
-      SetNumericValue(openXmlElement, value?.NumericValue);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.NumericPoint openXmlElement, DMDrawsCharts.NumericPoint value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetFormatCode(openXmlElement, value?.FormatCode);
+    SetNumericValue(openXmlElement, value?.NumericValue);
+    }
+  }

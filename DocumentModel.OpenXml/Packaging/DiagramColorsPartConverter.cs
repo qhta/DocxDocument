@@ -83,17 +83,18 @@ public static class DiagramColorsPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramColorsPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramColorsPart value)
     where OpenXmlElementType: DXPack.DiagramColorsPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetColorsDefinition(openXmlElement, value?.ColorsDefinition);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DiagramColorsPart openXmlElement, DMPack.DiagramColorsPart value)
+  {
+    SetColorsDefinition(openXmlElement, value?.ColorsDefinition);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

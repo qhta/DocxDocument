@@ -10,22 +10,17 @@ public static class AudioFromFileConverter
   /// </summary>
   private static String? GetLink(DXDraw.AudioFromFile openXmlElement)
   {
-    return openXmlElement?.Link?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
   private static bool CmpLink(DXDraw.AudioFromFile openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Link?.Value == value) return true;
-    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
   
   private static void SetLink(DXDraw.AudioFromFile openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Link = new StringValue { Value = value };
-    else
-      openXmlElement.Link = null;
+    openXmlElement.Link = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -85,16 +80,17 @@ public static class AudioFromFileConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromFile? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromFile value)
     where OpenXmlElementType: DXDraw.AudioFromFile, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLink(openXmlElement, value?.Link);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AudioFromFile openXmlElement, DMDraws.AudioFromFile value)
+  {
+    SetLink(openXmlElement, value?.Link);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

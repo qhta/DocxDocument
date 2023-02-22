@@ -21,11 +21,11 @@ public static class StockChartConverter
   
   private static bool CmpLineChartSeries(DXDrawCharts.StockChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.LineChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.LineChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class StockChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -181,11 +181,11 @@ public static class StockChartConverter
   
   private static bool CmpAxisIds(DXDrawCharts.StockChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -202,7 +202,7 @@ public static class StockChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -290,21 +290,22 @@ public static class StockChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChart value)
     where OpenXmlElementType: DXDrawCharts.StockChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineChartSeries(openXmlElement, value?.LineChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetDropLines(openXmlElement, value?.DropLines);
-      SetHighLowLines(openXmlElement, value?.HighLowLines);
-      SetUpDownBars(openXmlElement, value?.UpDownBars);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetStockChartExtensionList(openXmlElement, value?.StockChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChart value)
+  {
+    SetLineChartSeries(openXmlElement, value?.LineChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetDropLines(openXmlElement, value?.DropLines);
+    SetHighLowLines(openXmlElement, value?.HighLowLines);
+    SetUpDownBars(openXmlElement, value?.UpDownBars);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetStockChartExtensionList(openXmlElement, value?.StockChartExtensionList);
+    }
+  }

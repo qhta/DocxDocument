@@ -73,16 +73,17 @@ public static class ArtisticPlasticWrapConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPlasticWrap? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPlasticWrap value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPlasticWrap, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetSmoothness(openXmlElement, value?.Smoothness);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPlasticWrap openXmlElement, DMDraws.ArtisticPlasticWrap value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetSmoothness(openXmlElement, value?.Smoothness);
+    }
+  }

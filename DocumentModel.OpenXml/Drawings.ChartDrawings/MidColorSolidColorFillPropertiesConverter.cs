@@ -201,20 +201,21 @@ public static class MidColorSolidColorFillPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MidColorSolidColorFillProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MidColorSolidColorFillProperties value)
     where OpenXmlElementType: DXO2016DrawChartDraw.MidColorSolidColorFillProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MidColorSolidColorFillProperties openXmlElement, DMDrawsChartDraws.MidColorSolidColorFillProperties value)
+  {
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    }
+  }

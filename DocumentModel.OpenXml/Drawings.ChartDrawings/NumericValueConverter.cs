@@ -50,15 +50,16 @@ public static class NumericValueConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumericValue? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumericValue value)
     where OpenXmlElementType: DXO2016DrawChartDraw.NumericValue, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdx(openXmlElement, value?.Idx);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.NumericValue openXmlElement, DMDrawsChartDraws.NumericValue value)
+  {
+    SetIdx(openXmlElement, value?.Idx);
+    }
+  }

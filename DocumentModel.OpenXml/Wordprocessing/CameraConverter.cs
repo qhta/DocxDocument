@@ -48,15 +48,16 @@ public static class CameraConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Camera? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Camera value)
     where OpenXmlElementType: DXO2010W.Camera, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPresetCameraType(openXmlElement, value?.PresetCameraType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Camera openXmlElement, DMW.Camera value)
+  {
+    SetPresetCameraType(openXmlElement, value?.PresetCameraType);
+    }
+  }

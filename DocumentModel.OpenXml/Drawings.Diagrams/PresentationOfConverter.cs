@@ -203,21 +203,22 @@ public static class PresentationOfConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PresentationOf? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PresentationOf value)
     where OpenXmlElementType: DXDrawDgms.PresentationOf, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAxis(openXmlElement, value?.Axis);
-      SetPointType(openXmlElement, value?.PointType);
-      SetHideLastTrans(openXmlElement, value?.HideLastTrans);
-      SetStart(openXmlElement, value?.Start);
-      SetCount(openXmlElement, value?.Count);
-      SetStep(openXmlElement, value?.Step);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.PresentationOf value)
+  {
+    SetAxis(openXmlElement, value?.Axis);
+    SetPointType(openXmlElement, value?.PointType);
+    SetHideLastTrans(openXmlElement, value?.HideLastTrans);
+    SetStart(openXmlElement, value?.Start);
+    SetCount(openXmlElement, value?.Count);
+    SetStep(openXmlElement, value?.Step);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

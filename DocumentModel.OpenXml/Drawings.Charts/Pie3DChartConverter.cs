@@ -52,11 +52,11 @@ public static class Pie3DChartConverter
   
   private static bool CmpPieChartSeries(DXDrawCharts.Pie3DChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -73,7 +73,7 @@ public static class Pie3DChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -178,18 +178,19 @@ public static class Pie3DChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChart value)
     where OpenXmlElementType: DXDrawCharts.Pie3DChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetPie3DChartExtensionList(openXmlElement, value?.Pie3DChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Pie3DChart openXmlElement, DMDrawsCharts.Pie3DChart value)
+  {
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetPieChartSeries(openXmlElement, value?.PieChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetPie3DChartExtensionList(openXmlElement, value?.Pie3DChartExtensionList);
+    }
+  }

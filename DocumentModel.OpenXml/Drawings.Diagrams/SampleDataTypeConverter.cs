@@ -85,16 +85,17 @@ public static class SampleDataTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.SampleDataType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.SampleDataType value)
     where OpenXmlElementType: DXDrawDgms.SampleDataType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUseDefault(openXmlElement, value?.UseDefault);
-      SetDataModel(openXmlElement, value?.DataModel);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.SampleDataType openXmlElement, DMDrawsDgms.SampleDataType value)
+  {
+    SetUseDefault(openXmlElement, value?.UseDefault);
+    SetDataModel(openXmlElement, value?.DataModel);
+    }
+  }

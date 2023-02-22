@@ -73,16 +73,17 @@ public static class ArtisticLineDrawingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticLineDrawing? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticLineDrawing value)
     where OpenXmlElementType: DXO2010Draw.ArtisticLineDrawing, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetPencilSize(openXmlElement, value?.PencilSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticLineDrawing openXmlElement, DMDraws.ArtisticLineDrawing value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetPencilSize(openXmlElement, value?.PencilSize);
+    }
+  }

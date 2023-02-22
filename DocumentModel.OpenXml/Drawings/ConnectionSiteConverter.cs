@@ -10,22 +10,17 @@ public static class ConnectionSiteConverter
   /// </summary>
   private static String? GetAngle(DXDraw.ConnectionSite openXmlElement)
   {
-    return openXmlElement?.Angle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Angle);
   }
   
   private static bool CmpAngle(DXDraw.ConnectionSite openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Angle?.Value == value) return true;
-    diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Angle, value, diffs, objName, "Angle");
   }
   
   private static void SetAngle(DXDraw.ConnectionSite openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Angle = new StringValue { Value = value };
-    else
-      openXmlElement.Angle = null;
+    openXmlElement.Angle = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -85,16 +80,17 @@ public static class ConnectionSiteConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSite? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSite value)
     where OpenXmlElementType: DXDraw.ConnectionSite, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAngle(openXmlElement, value?.Angle);
-      SetPosition(openXmlElement, value?.Position);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ConnectionSite openXmlElement, DMDraws.ConnectionSite value)
+  {
+    SetAngle(openXmlElement, value?.Angle);
+    SetPosition(openXmlElement, value?.Position);
+    }
+  }

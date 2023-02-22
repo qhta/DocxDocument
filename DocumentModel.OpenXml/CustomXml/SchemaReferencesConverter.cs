@@ -21,11 +21,11 @@ public static class SchemaReferencesConverter
   
   private static bool CmpItems(DXCustXmlDataProps.SchemaReferences openXmlElement, Collection<DMCustXml.SchemaReference>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXCustXmlDataProps.SchemaReference>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXCustXmlDataProps.SchemaReference>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class SchemaReferencesConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class SchemaReferencesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReferences? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReferences value)
     where OpenXmlElementType: DXCustXmlDataProps.SchemaReferences, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetItems(openXmlElement, value?.Items);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXCustXmlDataProps.SchemaReferences openXmlElement, DMCustXml.SchemaReferences value)
+  {
+    SetItems(openXmlElement, value?.Items);
+    }
+  }

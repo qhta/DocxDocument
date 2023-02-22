@@ -85,16 +85,17 @@ public static class PlusConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Plus? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Plus value)
     where OpenXmlElementType: DXDrawCharts.Plus, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Plus openXmlElement, DMDrawsCharts.Plus value)
+  {
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    }
+  }

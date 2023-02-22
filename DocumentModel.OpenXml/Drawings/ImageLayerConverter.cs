@@ -10,22 +10,17 @@ public static class ImageLayerConverter
   /// </summary>
   private static String? GetEmbed(DXO2010Draw.ImageLayer openXmlElement)
   {
-    return openXmlElement?.Embed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
   private static bool CmpEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Embed?.Value == value) return true;
-    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
   
   private static void SetEmbed(DXO2010Draw.ImageLayer openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Embed = new StringValue { Value = value };
-    else
-      openXmlElement.Embed = null;
+    openXmlElement.Embed = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMDraws.ImageEffect>? GetImageEffects(DXO2010Draw.ImageLayer openXmlElement)
@@ -44,11 +39,11 @@ public static class ImageLayerConverter
   
   private static bool CmpImageEffects(DXO2010Draw.ImageLayer openXmlElement, Collection<DMDraws.ImageEffect>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2010Draw.ImageEffect>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2010Draw.ImageEffect>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -65,7 +60,7 @@ public static class ImageLayerConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -112,16 +107,17 @@ public static class ImageLayerConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageLayer? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageLayer value)
     where OpenXmlElementType: DXO2010Draw.ImageLayer, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEmbed(openXmlElement, value?.Embed);
-      SetImageEffects(openXmlElement, value?.ImageEffects);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ImageLayer openXmlElement, DMDraws.ImageLayer value)
+  {
+    SetEmbed(openXmlElement, value?.Embed);
+    SetImageEffects(openXmlElement, value?.ImageEffects);
+    }
+  }

@@ -111,18 +111,19 @@ public static class TextWrapConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWVml.TextWrap? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWVml.TextWrap value)
     where OpenXmlElementType: DXVmlW.TextWrap, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetSide(openXmlElement, value?.Side);
-      SetAnchorX(openXmlElement, value?.AnchorX);
-      SetAnchorY(openXmlElement, value?.AnchorY);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlW.TextWrap openXmlElement, DMWVml.TextWrap value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetSide(openXmlElement, value?.Side);
+    SetAnchorX(openXmlElement, value?.AnchorX);
+    SetAnchorY(openXmlElement, value?.AnchorY);
+    }
+  }

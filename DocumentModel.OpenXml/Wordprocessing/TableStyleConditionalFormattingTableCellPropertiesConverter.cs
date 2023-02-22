@@ -66,32 +66,19 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   /// <summary>
   /// NoWrap.
   /// </summary>
-  private static Boolean? GetNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
+  private static Boolean GetNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoWrap>());
   }
   
   private static bool CmpNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoWrap>(), value, diffs, objName);
   }
   
   private static void SetNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.NoWrap();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffOnlyType<DXW.NoWrap>(openXmlElement, value);
   }
   
   /// <summary>
@@ -140,13 +127,15 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(itemElement, (DMW.TableVerticalAlignmentKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
   }
   
   public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
@@ -186,19 +175,20 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableCellProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableCellProperties value)
     where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableCellProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTableCellBorders(openXmlElement, value?.TableCellBorders);
-      SetShading(openXmlElement, value?.Shading);
-      SetNoWrap(openXmlElement, value?.NoWrap);
-      SetTableCellMargin(openXmlElement, value?.TableCellMargin);
-      SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableStyleConditionalFormattingTableCellProperties value)
+  {
+    SetTableCellBorders(openXmlElement, value?.TableCellBorders);
+    SetShading(openXmlElement, value?.Shading);
+    SetNoWrap(openXmlElement, value?.NoWrap);
+    SetTableCellMargin(openXmlElement, value?.TableCellMargin);
+    SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
+    }
+  }

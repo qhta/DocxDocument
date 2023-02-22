@@ -10,22 +10,17 @@ public static class ContextualTabSetConverter
   /// </summary>
   private static String? GetIdMso(DXOCustUI.ContextualTabSet openXmlElement)
   {
-    return openXmlElement?.IdMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
   private static bool CmpIdMso(DXOCustUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdMso?.Value == value) return true;
-    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
   private static void SetIdMso(DXOCustUI.ContextualTabSet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdMso = new StringValue { Value = value };
-    else
-      openXmlElement.IdMso = null;
+    openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class ContextualTabSetConverter
   /// </summary>
   private static String? GetGetVisible(DXOCustUI.ContextualTabSet openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXOCustUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXOCustUI.ContextualTabSet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMUI.Tab>? GetTabs(DXOCustUI.ContextualTabSet openXmlElement)
@@ -90,11 +80,11 @@ public static class ContextualTabSetConverter
   
   private static bool CmpTabs(DXOCustUI.ContextualTabSet openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXOCustUI.Tab>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXOCustUI.Tab>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -111,7 +101,7 @@ public static class ContextualTabSetConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -164,18 +154,19 @@ public static class ContextualTabSetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.ContextualTabSet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.ContextualTabSet value)
     where OpenXmlElementType: DXOCustUI.ContextualTabSet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdMso(openXmlElement, value?.IdMso);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetTabs(openXmlElement, value?.Tabs);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.ContextualTabSet openXmlElement, DMUI.ContextualTabSet value)
+  {
+    SetIdMso(openXmlElement, value?.IdMso);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetTabs(openXmlElement, value?.Tabs);
+    }
+  }

@@ -91,16 +91,17 @@ public static class ColorTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ColorType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ColorType value)
     where OpenXmlElementType: DXO2010W.ColorType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.ColorType openXmlElement, DMW.ColorType value)
+  {
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

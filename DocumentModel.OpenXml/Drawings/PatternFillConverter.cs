@@ -112,17 +112,18 @@ public static class PatternFillConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PatternFill? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PatternFill value)
     where OpenXmlElementType: DXDraw.PatternFill, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPreset(openXmlElement, value?.Preset);
-      SetForegroundColor(openXmlElement, value?.ForegroundColor);
-      SetBackgroundColor(openXmlElement, value?.BackgroundColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PatternFill openXmlElement, DMDraws.PatternFill value)
+  {
+    SetPreset(openXmlElement, value?.Preset);
+    SetForegroundColor(openXmlElement, value?.ForegroundColor);
+    SetBackgroundColor(openXmlElement, value?.BackgroundColor);
+    }
+  }

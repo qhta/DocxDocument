@@ -57,16 +57,17 @@ public static class QueryTablePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.QueryTablePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.QueryTablePart value)
     where OpenXmlElementType: DXPack.QueryTablePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.QueryTablePart openXmlElement, DMPack.QueryTablePart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

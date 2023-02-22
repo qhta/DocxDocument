@@ -114,17 +114,18 @@ public static class TxPrTextBodyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TxPrTextBody? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TxPrTextBody value)
     where OpenXmlElementType: DXO2016DrawChartDraw.TxPrTextBody, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBodyProperties(openXmlElement, value?.BodyProperties);
-      SetListStyle(openXmlElement, value?.ListStyle);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.TxPrTextBody openXmlElement, DMDrawsChartDraws.TxPrTextBody value)
+  {
+    SetBodyProperties(openXmlElement, value?.BodyProperties);
+    SetListStyle(openXmlElement, value?.ListStyle);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    }
+  }

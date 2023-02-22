@@ -10,22 +10,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetPresentationElementId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.PresentationElementId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PresentationElementId);
   }
   
   private static bool CmpPresentationElementId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PresentationElementId?.Value == value) return true;
-    diffs?.Add(objName, "PresentationElementId", openXmlElement?.PresentationElementId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PresentationElementId, value, diffs, objName, "PresentationElementId");
   }
   
   private static void SetPresentationElementId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PresentationElementId = new StringValue { Value = value };
-    else
-      openXmlElement.PresentationElementId = null;
+    openXmlElement.PresentationElementId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetPresentationName(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.PresentationName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PresentationName);
   }
   
   private static bool CmpPresentationName(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PresentationName?.Value == value) return true;
-    diffs?.Add(objName, "PresentationName", openXmlElement?.PresentationName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PresentationName, value, diffs, objName, "PresentationName");
   }
   
   private static void SetPresentationName(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PresentationName = new StringValue { Value = value };
-    else
-      openXmlElement.PresentationName = null;
+    openXmlElement.PresentationName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetPresentationStyleLabel(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.PresentationStyleLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PresentationStyleLabel);
   }
   
   private static bool CmpPresentationStyleLabel(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PresentationStyleLabel?.Value == value) return true;
-    diffs?.Add(objName, "PresentationStyleLabel", openXmlElement?.PresentationStyleLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PresentationStyleLabel, value, diffs, objName, "PresentationStyleLabel");
   }
   
   private static void SetPresentationStyleLabel(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PresentationStyleLabel = new StringValue { Value = value };
-    else
-      openXmlElement.PresentationStyleLabel = null;
+    openXmlElement.PresentationStyleLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -119,22 +104,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetLayoutTypeId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.LayoutTypeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LayoutTypeId);
   }
   
   private static bool CmpLayoutTypeId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LayoutTypeId?.Value == value) return true;
-    diffs?.Add(objName, "LayoutTypeId", openXmlElement?.LayoutTypeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LayoutTypeId, value, diffs, objName, "LayoutTypeId");
   }
   
   private static void SetLayoutTypeId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LayoutTypeId = new StringValue { Value = value };
-    else
-      openXmlElement.LayoutTypeId = null;
+    openXmlElement.LayoutTypeId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -142,22 +122,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetLayoutCategoryId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.LayoutCategoryId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LayoutCategoryId);
   }
   
   private static bool CmpLayoutCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LayoutCategoryId?.Value == value) return true;
-    diffs?.Add(objName, "LayoutCategoryId", openXmlElement?.LayoutCategoryId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LayoutCategoryId, value, diffs, objName, "LayoutCategoryId");
   }
   
   private static void SetLayoutCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LayoutCategoryId = new StringValue { Value = value };
-    else
-      openXmlElement.LayoutCategoryId = null;
+    openXmlElement.LayoutCategoryId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -165,22 +140,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetQuickStyleTypeId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.QuickStyleTypeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QuickStyleTypeId);
   }
   
   private static bool CmpQuickStyleTypeId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QuickStyleTypeId?.Value == value) return true;
-    diffs?.Add(objName, "QuickStyleTypeId", openXmlElement?.QuickStyleTypeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QuickStyleTypeId, value, diffs, objName, "QuickStyleTypeId");
   }
   
   private static void SetQuickStyleTypeId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QuickStyleTypeId = new StringValue { Value = value };
-    else
-      openXmlElement.QuickStyleTypeId = null;
+    openXmlElement.QuickStyleTypeId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -188,22 +158,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetQuickStyleCategoryId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.QuickStyleCategoryId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QuickStyleCategoryId);
   }
   
   private static bool CmpQuickStyleCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QuickStyleCategoryId?.Value == value) return true;
-    diffs?.Add(objName, "QuickStyleCategoryId", openXmlElement?.QuickStyleCategoryId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QuickStyleCategoryId, value, diffs, objName, "QuickStyleCategoryId");
   }
   
   private static void SetQuickStyleCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QuickStyleCategoryId = new StringValue { Value = value };
-    else
-      openXmlElement.QuickStyleCategoryId = null;
+    openXmlElement.QuickStyleCategoryId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -211,22 +176,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetColorType(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.ColorType?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ColorType);
   }
   
   private static bool CmpColorType(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ColorType?.Value == value) return true;
-    diffs?.Add(objName, "ColorType", openXmlElement?.ColorType?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ColorType, value, diffs, objName, "ColorType");
   }
   
   private static void SetColorType(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ColorType = new StringValue { Value = value };
-    else
-      openXmlElement.ColorType = null;
+    openXmlElement.ColorType = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -234,22 +194,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetColorCategoryId(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.ColorCategoryId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ColorCategoryId);
   }
   
   private static bool CmpColorCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ColorCategoryId?.Value == value) return true;
-    diffs?.Add(objName, "ColorCategoryId", openXmlElement?.ColorCategoryId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ColorCategoryId, value, diffs, objName, "ColorCategoryId");
   }
   
   private static void SetColorCategoryId(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ColorCategoryId = new StringValue { Value = value };
-    else
-      openXmlElement.ColorCategoryId = null;
+    openXmlElement.ColorCategoryId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -280,22 +235,17 @@ public static class PropertySetConverter
   /// </summary>
   private static String? GetPlaceholderText(DXDrawDgms.PropertySet openXmlElement)
   {
-    return openXmlElement?.PlaceholderText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PlaceholderText);
   }
   
   private static bool CmpPlaceholderText(DXDrawDgms.PropertySet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PlaceholderText?.Value == value) return true;
-    diffs?.Add(objName, "PlaceholderText", openXmlElement?.PlaceholderText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PlaceholderText, value, diffs, objName, "PlaceholderText");
   }
   
   private static void SetPlaceholderText(DXDrawDgms.PropertySet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PlaceholderText = new StringValue { Value = value };
-    else
-      openXmlElement.PlaceholderText = null;
+    openXmlElement.PlaceholderText = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -780,44 +730,45 @@ public static class PropertySetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PropertySet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PropertySet value)
     where OpenXmlElementType: DXDrawDgms.PropertySet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPresentationElementId(openXmlElement, value?.PresentationElementId);
-      SetPresentationName(openXmlElement, value?.PresentationName);
-      SetPresentationStyleLabel(openXmlElement, value?.PresentationStyleLabel);
-      SetPresentationStyleIndex(openXmlElement, value?.PresentationStyleIndex);
-      SetPresentationStyleCount(openXmlElement, value?.PresentationStyleCount);
-      SetLayoutTypeId(openXmlElement, value?.LayoutTypeId);
-      SetLayoutCategoryId(openXmlElement, value?.LayoutCategoryId);
-      SetQuickStyleTypeId(openXmlElement, value?.QuickStyleTypeId);
-      SetQuickStyleCategoryId(openXmlElement, value?.QuickStyleCategoryId);
-      SetColorType(openXmlElement, value?.ColorType);
-      SetColorCategoryId(openXmlElement, value?.ColorCategoryId);
-      SetCoherent3D(openXmlElement, value?.Coherent3D);
-      SetPlaceholderText(openXmlElement, value?.PlaceholderText);
-      SetPlaceholder(openXmlElement, value?.Placeholder);
-      SetRotation(openXmlElement, value?.Rotation);
-      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
-      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
-      SetFixedWidthOverride(openXmlElement, value?.FixedWidthOverride);
-      SetFixedHeightOverride(openXmlElement, value?.FixedHeightOverride);
-      SetWidthScale(openXmlElement, value?.WidthScale);
-      SetHightScale(openXmlElement, value?.HightScale);
-      SetTextChanged(openXmlElement, value?.TextChanged);
-      SetFactorWidth(openXmlElement, value?.FactorWidth);
-      SetFactorHeight(openXmlElement, value?.FactorHeight);
-      SetNeighborOffsetWidth(openXmlElement, value?.NeighborOffsetWidth);
-      SetNeighborOffsetHeight(openXmlElement, value?.NeighborOffsetHeight);
-      SetRadiusScale(openXmlElement, value?.RadiusScale);
-      SetIncludeAngleScale(openXmlElement, value?.IncludeAngleScale);
-      SetPresentationLayoutVariables(openXmlElement, value?.PresentationLayoutVariables);
-      SetStyle(openXmlElement, value?.Style);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PropertySet value)
+  {
+    SetPresentationElementId(openXmlElement, value?.PresentationElementId);
+    SetPresentationName(openXmlElement, value?.PresentationName);
+    SetPresentationStyleLabel(openXmlElement, value?.PresentationStyleLabel);
+    SetPresentationStyleIndex(openXmlElement, value?.PresentationStyleIndex);
+    SetPresentationStyleCount(openXmlElement, value?.PresentationStyleCount);
+    SetLayoutTypeId(openXmlElement, value?.LayoutTypeId);
+    SetLayoutCategoryId(openXmlElement, value?.LayoutCategoryId);
+    SetQuickStyleTypeId(openXmlElement, value?.QuickStyleTypeId);
+    SetQuickStyleCategoryId(openXmlElement, value?.QuickStyleCategoryId);
+    SetColorType(openXmlElement, value?.ColorType);
+    SetColorCategoryId(openXmlElement, value?.ColorCategoryId);
+    SetCoherent3D(openXmlElement, value?.Coherent3D);
+    SetPlaceholderText(openXmlElement, value?.PlaceholderText);
+    SetPlaceholder(openXmlElement, value?.Placeholder);
+    SetRotation(openXmlElement, value?.Rotation);
+    SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+    SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+    SetFixedWidthOverride(openXmlElement, value?.FixedWidthOverride);
+    SetFixedHeightOverride(openXmlElement, value?.FixedHeightOverride);
+    SetWidthScale(openXmlElement, value?.WidthScale);
+    SetHightScale(openXmlElement, value?.HightScale);
+    SetTextChanged(openXmlElement, value?.TextChanged);
+    SetFactorWidth(openXmlElement, value?.FactorWidth);
+    SetFactorHeight(openXmlElement, value?.FactorHeight);
+    SetNeighborOffsetWidth(openXmlElement, value?.NeighborOffsetWidth);
+    SetNeighborOffsetHeight(openXmlElement, value?.NeighborOffsetHeight);
+    SetRadiusScale(openXmlElement, value?.RadiusScale);
+    SetIncludeAngleScale(openXmlElement, value?.IncludeAngleScale);
+    SetPresentationLayoutVariables(openXmlElement, value?.PresentationLayoutVariables);
+    SetStyle(openXmlElement, value?.Style);
+    }
+  }

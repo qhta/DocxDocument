@@ -12,13 +12,13 @@ public static class VectorVariantTypeConverter
   {
     var element = openXmlElement?.GetFirstChild<DXVT.VTVector>();
     if (element != null)
-      return DMX.VectorVariantConverter.CreateModelElement(element);
+      return ObjectConverter.CreateModelElement(element);
     return null;
   }
   
   private static bool CmpVTVector(DXExtProps.VectorVariantType openXmlElement, DM.VectorVariant? value, DiffList? diffs, string? objName)
   {
-    return DMX.VectorVariantConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVT.VTVector>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return ObjectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVT.VTVector>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
   private static void SetVTVector(DXExtProps.VectorVariantType openXmlElement, DM.VectorVariant? value)
@@ -59,15 +59,16 @@ public static class VectorVariantTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMProps.VectorVariantType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMProps.VectorVariantType value)
     where OpenXmlElementType: DXExtProps.VectorVariantType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVTVector(openXmlElement, value?.VTVector);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXExtProps.VectorVariantType openXmlElement, DMProps.VectorVariantType value)
+  {
+    SetVTVector(openXmlElement, value?.VTVector);
+    }
+  }

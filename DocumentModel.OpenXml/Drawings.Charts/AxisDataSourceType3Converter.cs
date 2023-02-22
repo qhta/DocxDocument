@@ -187,19 +187,20 @@ public static class AxisDataSourceType3Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AxisDataSourceType3? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AxisDataSourceType3 value)
     where OpenXmlElementType: DXO2013DrawChart.AxisDataSourceType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      SetStringReference(openXmlElement, value?.StringReference);
-      SetStringLiteral(openXmlElement, value?.StringLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.AxisDataSourceType openXmlElement, DMDrawsCharts.AxisDataSourceType3 value)
+  {
+    SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    SetStringReference(openXmlElement, value?.StringReference);
+    SetStringLiteral(openXmlElement, value?.StringLiteral);
+    }
+  }

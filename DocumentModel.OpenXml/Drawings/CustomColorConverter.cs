@@ -10,22 +10,17 @@ public static class CustomColorConverter
   /// </summary>
   private static String? GetName(DXDraw.CustomColor openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDraw.CustomColor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDraw.CustomColor openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -245,21 +240,22 @@ public static class CustomColorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomColor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomColor value)
     where OpenXmlElementType: DXDraw.CustomColor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.CustomColor openXmlElement, DMDraws.CustomColor value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    }
+  }

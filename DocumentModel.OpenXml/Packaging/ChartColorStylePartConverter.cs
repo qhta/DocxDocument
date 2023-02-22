@@ -83,17 +83,18 @@ public static class ChartColorStylePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartColorStylePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartColorStylePart value)
     where OpenXmlElementType: DXPack.ChartColorStylePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetColorStyle(openXmlElement, value?.ColorStyle);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ChartColorStylePart openXmlElement, DMPack.ChartColorStylePart value)
+  {
+    SetColorStyle(openXmlElement, value?.ColorStyle);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

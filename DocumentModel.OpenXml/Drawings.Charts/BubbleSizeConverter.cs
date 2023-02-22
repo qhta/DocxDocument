@@ -85,16 +85,17 @@ public static class BubbleSizeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleSize? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleSize value)
     where OpenXmlElementType: DXDrawCharts.BubbleSize, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.BubbleSize value)
+  {
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    }
+  }

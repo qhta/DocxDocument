@@ -10,22 +10,17 @@ public static class ColorStyleConverter
   /// </summary>
   private static String? GetMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement)
   {
-    return openXmlElement?.Method?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
   private static bool CmpMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Method?.Value == value) return true;
-    diffs?.Add(objName, "Method", openXmlElement?.Method?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
   
   private static void SetMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Method = new StringValue { Value = value };
-    else
-      openXmlElement.Method = null;
+    openXmlElement.Method = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -220,11 +215,11 @@ public static class ColorStyleConverter
   
   private static bool CmpColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement, Collection<DMDrawsChartsStyle.ColorStyleVariation>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2013DrawChartStyle.ColorStyleVariation>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2013DrawChartStyle.ColorStyleVariation>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -241,7 +236,7 @@ public static class ColorStyleConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -338,24 +333,25 @@ public static class ColorStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.ColorStyle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.ColorStyle value)
     where OpenXmlElementType: DXO2013DrawChartStyle.ColorStyle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMethod(openXmlElement, value?.Method);
-      SetId(openXmlElement, value?.Id);
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      SetColorStyleVariations(openXmlElement, value?.ColorStyleVariations);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDrawsChartsStyle.ColorStyle value)
+  {
+    SetMethod(openXmlElement, value?.Method);
+    SetId(openXmlElement, value?.Id);
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    SetColorStyleVariations(openXmlElement, value?.ColorStyleVariations);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

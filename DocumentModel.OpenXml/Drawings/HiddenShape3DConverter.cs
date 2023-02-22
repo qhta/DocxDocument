@@ -277,23 +277,24 @@ public static class HiddenShape3DConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenShape3D? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenShape3D value)
     where OpenXmlElementType: DXO2010Draw.HiddenShape3D, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetZ(openXmlElement, value?.Z);
-      SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
-      SetContourWidth(openXmlElement, value?.ContourWidth);
-      SetPresetMaterial(openXmlElement, value?.PresetMaterial);
-      SetBevelTop(openXmlElement, value?.BevelTop);
-      SetBevelBottom(openXmlElement, value?.BevelBottom);
-      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
-      SetContourColor(openXmlElement, value?.ContourColor);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenShape3D openXmlElement, DMDraws.HiddenShape3D value)
+  {
+    SetZ(openXmlElement, value?.Z);
+    SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
+    SetContourWidth(openXmlElement, value?.ContourWidth);
+    SetPresetMaterial(openXmlElement, value?.PresetMaterial);
+    SetBevelTop(openXmlElement, value?.BevelTop);
+    SetBevelBottom(openXmlElement, value?.BevelBottom);
+    SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+    SetContourColor(openXmlElement, value?.ContourColor);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

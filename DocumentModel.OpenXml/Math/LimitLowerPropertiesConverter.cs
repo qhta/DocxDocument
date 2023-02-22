@@ -59,15 +59,16 @@ public static class LimitLowerPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitLowerProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitLowerProperties value)
     where OpenXmlElementType: DXMath.LimitLowerProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.LimitLowerProperties openXmlElement, DMMath.LimitLowerProperties value)
+  {
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

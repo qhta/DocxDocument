@@ -172,19 +172,20 @@ public static class FollowedHyperlinkColorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FollowedHyperlinkColor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FollowedHyperlinkColor value)
     where OpenXmlElementType: DXDraw.FollowedHyperlinkColor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FollowedHyperlinkColor openXmlElement, DMDraws.FollowedHyperlinkColor value)
+  {
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    }
+  }

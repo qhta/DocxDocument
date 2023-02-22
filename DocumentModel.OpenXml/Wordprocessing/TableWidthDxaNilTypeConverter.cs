@@ -71,16 +71,17 @@ public static class TableWidthDxaNilTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidthDxaNilType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidthDxaNilType value)
     where OpenXmlElementType: DXW.TableWidthDxaNilType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetType(openXmlElement, value?.Type);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthDxaNilType value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetType(openXmlElement, value?.Type);
+    }
+  }

@@ -10,22 +10,17 @@ public static class AutoCaptionConverter
   /// </summary>
   private static String? GetName(DXW.AutoCaption openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.AutoCaption openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class AutoCaptionConverter
   /// </summary>
   private static String? GetCaption(DXW.AutoCaption openXmlElement)
   {
-    return openXmlElement?.Caption?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Caption);
   }
   
   private static bool CmpCaption(DXW.AutoCaption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Caption?.Value == value) return true;
-    diffs?.Add(objName, "Caption", openXmlElement?.Caption?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Caption, value, diffs, objName, "Caption");
   }
   
   private static void SetCaption(DXW.AutoCaption openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Caption = new StringValue { Value = value };
-    else
-      openXmlElement.Caption = null;
+    openXmlElement.Caption = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.AutoCaption? CreateModelElement(DXW.AutoCaption? openXmlElement)
@@ -79,16 +69,17 @@ public static class AutoCaptionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaption? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AutoCaption value)
     where OpenXmlElementType: DXW.AutoCaption, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetCaption(openXmlElement, value?.Caption);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.AutoCaption openXmlElement, DMW.AutoCaption value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetCaption(openXmlElement, value?.Caption);
+    }
+  }

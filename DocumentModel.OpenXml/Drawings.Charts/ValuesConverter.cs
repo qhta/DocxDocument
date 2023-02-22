@@ -85,16 +85,17 @@ public static class ValuesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Values? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Values value)
     where OpenXmlElementType: DXDrawCharts.Values, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Values openXmlElement, DMDrawsCharts.Values value)
+  {
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    }
+  }

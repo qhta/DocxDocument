@@ -103,17 +103,18 @@ public static class NumberDiagramInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.NumberDiagramInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.NumberDiagramInfo value)
     where OpenXmlElementType: DXO2019DrawDgm11.NumberDiagramInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLvl(openXmlElement, value?.Lvl);
-      SetPtType(openXmlElement, value?.PtType);
-      SetDiagramAutoBullet(openXmlElement, value?.DiagramAutoBullet);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.NumberDiagramInfo value)
+  {
+    SetLvl(openXmlElement, value?.Lvl);
+    SetPtType(openXmlElement, value?.PtType);
+    SetDiagramAutoBullet(openXmlElement, value?.DiagramAutoBullet);
+    }
+  }

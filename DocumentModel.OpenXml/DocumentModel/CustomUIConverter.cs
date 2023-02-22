@@ -10,22 +10,17 @@ public static class CustomUIConverter
   /// </summary>
   private static String? GetOnLoad(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return openXmlElement?.OnLoad?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnLoad);
   }
   
   private static bool CmpOnLoad(DXO2010CustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnLoad?.Value == value) return true;
-    diffs?.Add(objName, "OnLoad", openXmlElement?.OnLoad?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnLoad, value, diffs, objName, "OnLoad");
   }
   
   private static void SetOnLoad(DXO2010CustUI.CustomUI openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnLoad = new StringValue { Value = value };
-    else
-      openXmlElement.OnLoad = null;
+    openXmlElement.OnLoad = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class CustomUIConverter
   /// </summary>
   private static String? GetLoadImage(DXO2010CustUI.CustomUI openXmlElement)
   {
-    return openXmlElement?.LoadImage?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LoadImage);
   }
   
   private static bool CmpLoadImage(DXO2010CustUI.CustomUI openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LoadImage?.Value == value) return true;
-    diffs?.Add(objName, "LoadImage", openXmlElement?.LoadImage?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LoadImage, value, diffs, objName, "LoadImage");
   }
   
   private static void SetLoadImage(DXO2010CustUI.CustomUI openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LoadImage = new StringValue { Value = value };
-    else
-      openXmlElement.LoadImage = null;
+    openXmlElement.LoadImage = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -207,20 +197,21 @@ public static class CustomUIConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.CustomUI? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.CustomUI value)
     where OpenXmlElementType: DXO2010CustUI.CustomUI, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOnLoad(openXmlElement, value?.OnLoad);
-      SetLoadImage(openXmlElement, value?.LoadImage);
-      SetCommands(openXmlElement, value?.Commands);
-      SetRibbon(openXmlElement, value?.Ribbon);
-      SetBackstage(openXmlElement, value?.Backstage);
-      SetContextMenus(openXmlElement, value?.ContextMenus);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.CustomUI openXmlElement, DM.CustomUI value)
+  {
+    SetOnLoad(openXmlElement, value?.OnLoad);
+    SetLoadImage(openXmlElement, value?.LoadImage);
+    SetCommands(openXmlElement, value?.Commands);
+    SetRibbon(openXmlElement, value?.Ribbon);
+    SetBackstage(openXmlElement, value?.Backstage);
+    SetContextMenus(openXmlElement, value?.ContextMenus);
+    }
+  }

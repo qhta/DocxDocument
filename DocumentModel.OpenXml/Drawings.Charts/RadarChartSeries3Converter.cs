@@ -10,27 +10,17 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static UInt32? GetIndex(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
   }
   
   private static bool CmpIndex(DXO2013DrawChart.RadarChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
   }
   
   private static void SetIndex(DXO2013DrawChart.RadarChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Index{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -38,27 +28,17 @@ public static class RadarChartSeries3Converter
   /// </summary>
   private static UInt32? GetOrder(DXO2013DrawChart.RadarChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val);
   }
   
   private static bool CmpOrder(DXO2013DrawChart.RadarChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val, value, diffs, objName, "Order");
   }
   
   private static void SetOrder(DXO2013DrawChart.RadarChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Order{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Order,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -193,11 +173,11 @@ public static class RadarChartSeries3Converter
   
   private static bool CmpDataPoints(DXO2013DrawChart.RadarChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.DataPoint>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.DataPoint>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -214,7 +194,7 @@ public static class RadarChartSeries3Converter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -392,25 +372,26 @@ public static class RadarChartSeries3Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarChartSeries3? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarChartSeries3 value)
     where OpenXmlElementType: DXO2013DrawChart.RadarChartSeries, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetOrder(openXmlElement, value?.Order);
-      SetSeriesText(openXmlElement, value?.SeriesText);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetPictureOptions(openXmlElement, value?.PictureOptions);
-      SetMarker(openXmlElement, value?.Marker);
-      SetDataPoints(openXmlElement, value?.DataPoints);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
-      SetValues(openXmlElement, value?.Values);
-      SetRadarSerExtensionList(openXmlElement, value?.RadarSerExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.RadarChartSeries openXmlElement, DMDrawsCharts.RadarChartSeries3 value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetOrder(openXmlElement, value?.Order);
+    SetSeriesText(openXmlElement, value?.SeriesText);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetPictureOptions(openXmlElement, value?.PictureOptions);
+    SetMarker(openXmlElement, value?.Marker);
+    SetDataPoints(openXmlElement, value?.DataPoints);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+    SetValues(openXmlElement, value?.Values);
+    SetRadarSerExtensionList(openXmlElement, value?.RadarSerExtensionList);
+    }
+  }

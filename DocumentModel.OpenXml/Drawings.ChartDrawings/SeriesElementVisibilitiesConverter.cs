@@ -157,19 +157,20 @@ public static class SeriesElementVisibilitiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesElementVisibilities? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesElementVisibilities value)
     where OpenXmlElementType: DXO2016DrawChartDraw.SeriesElementVisibilities, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetConnectorLines(openXmlElement, value?.ConnectorLines);
-      SetMeanLine(openXmlElement, value?.MeanLine);
-      SetMeanMarker(openXmlElement, value?.MeanMarker);
-      SetNonoutliers(openXmlElement, value?.Nonoutliers);
-      SetOutliers(openXmlElement, value?.Outliers);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, DMDrawsChartDraws.SeriesElementVisibilities value)
+  {
+    SetConnectorLines(openXmlElement, value?.ConnectorLines);
+    SetMeanLine(openXmlElement, value?.MeanLine);
+    SetMeanMarker(openXmlElement, value?.MeanMarker);
+    SetNonoutliers(openXmlElement, value?.Nonoutliers);
+    SetOutliers(openXmlElement, value?.Outliers);
+    }
+  }

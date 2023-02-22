@@ -10,22 +10,17 @@ public static class ClassificationExtensionConverter
   /// </summary>
   private static String? GetUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.ClassificationExtension? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtension? openXmlElement)
@@ -53,15 +48,16 @@ public static class ClassificationExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationExtension value)
     where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, DM.ClassificationExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    }
+  }

@@ -10,22 +10,17 @@ public static class WebExtensionBindingConverter
   /// </summary>
   private static String? GetId(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class WebExtensionBindingConverter
   /// </summary>
   private static String? GetType(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class WebExtensionBindingConverter
   /// </summary>
   private static String? GetAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
-    return openXmlElement?.AppReference?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AppReference);
   }
   
   private static bool CmpAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AppReference?.Value == value) return true;
-    diffs?.Add(objName, "AppReference", openXmlElement?.AppReference?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AppReference, value, diffs, objName, "AppReference");
   }
   
   private static void SetAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AppReference = new StringValue { Value = value };
-    else
-      openXmlElement.AppReference = null;
+    openXmlElement.AppReference = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -137,18 +122,19 @@ public static class WebExtensionBindingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBinding? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBinding value)
     where OpenXmlElementType: DXO2013WebExt.WebExtensionBinding, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetType(openXmlElement, value?.Type);
-      SetAppReference(openXmlElement, value?.AppReference);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionBinding openXmlElement, DMWebExt.WebExtensionBinding value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetType(openXmlElement, value?.Type);
+    SetAppReference(openXmlElement, value?.AppReference);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -125,17 +125,18 @@ public static class FillTextEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillTextEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FillTextEffect value)
     where OpenXmlElementType: DXO2010W.FillTextEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
-      SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
-      SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.FillTextEffect openXmlElement, DMW.FillTextEffect value)
+  {
+    SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
+    SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
+    SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
+    }
+  }

@@ -99,11 +99,11 @@ public static class MajorFontConverter
   
   private static bool CmpSupplementalFonts(DXDraw.MajorFont openXmlElement, Collection<DMDraws.SupplementalFont>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDraw.SupplementalFont>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDraw.SupplementalFont>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -120,7 +120,7 @@ public static class MajorFontConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -202,19 +202,20 @@ public static class MajorFontConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.MajorFont? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.MajorFont value)
     where OpenXmlElementType: DXDraw.MajorFont, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLatinFont(openXmlElement, value?.LatinFont);
-      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
-      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-      SetSupplementalFonts(openXmlElement, value?.SupplementalFonts);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.MajorFont openXmlElement, DMDraws.MajorFont value)
+  {
+    SetLatinFont(openXmlElement, value?.LatinFont);
+    SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+    SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+    SetSupplementalFonts(openXmlElement, value?.SupplementalFonts);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -28,22 +28,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetColor(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.Color?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
   private static bool CmpColor(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Color?.Value == value) return true;
-    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
   
   private static void SetColor(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Color = new StringValue { Value = value };
-    else
-      openXmlElement.Color = null;
+    openXmlElement.Color = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -69,22 +64,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetThemeTint(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.ThemeTint?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
   private static bool CmpThemeTint(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeTint?.Value == value) return true;
-    diffs?.Add(objName, "ThemeTint", openXmlElement?.ThemeTint?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
   private static void SetThemeTint(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeTint = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeTint = null;
+    openXmlElement.ThemeTint = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -92,22 +82,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetThemeShade(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.ThemeShade?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
   private static bool CmpThemeShade(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeShade?.Value == value) return true;
-    diffs?.Add(objName, "ThemeShade", openXmlElement?.ThemeShade?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
   private static void SetThemeShade(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeShade = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeShade = null;
+    openXmlElement.ThemeShade = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -115,22 +100,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetFill(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.Fill?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Fill);
   }
   
   private static bool CmpFill(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Fill?.Value == value) return true;
-    diffs?.Add(objName, "Fill", openXmlElement?.Fill?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Fill, value, diffs, objName, "Fill");
   }
   
   private static void SetFill(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Fill = new StringValue { Value = value };
-    else
-      openXmlElement.Fill = null;
+    openXmlElement.Fill = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -156,22 +136,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetThemeFillTint(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.ThemeFillTint?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeFillTint);
   }
   
   private static bool CmpThemeFillTint(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeFillTint?.Value == value) return true;
-    diffs?.Add(objName, "ThemeFillTint", openXmlElement?.ThemeFillTint?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeFillTint, value, diffs, objName, "ThemeFillTint");
   }
   
   private static void SetThemeFillTint(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeFillTint = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeFillTint = null;
+    openXmlElement.ThemeFillTint = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -179,22 +154,17 @@ public static class ShadingConverter
   /// </summary>
   private static String? GetThemeFillShade(DXW.Shading openXmlElement)
   {
-    return openXmlElement?.ThemeFillShade?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeFillShade);
   }
   
   private static bool CmpThemeFillShade(DXW.Shading openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeFillShade?.Value == value) return true;
-    diffs?.Add(objName, "ThemeFillShade", openXmlElement?.ThemeFillShade?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeFillShade, value, diffs, objName, "ThemeFillShade");
   }
   
   private static void SetThemeFillShade(DXW.Shading openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeFillShade = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeFillShade = null;
+    openXmlElement.ThemeFillShade = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.Shading? CreateModelElement(DXW.Shading? openXmlElement)
@@ -246,23 +216,24 @@ public static class ShadingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Shading? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Shading value)
     where OpenXmlElementType: DXW.Shading, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetColor(openXmlElement, value?.Color);
-      SetThemeColor(openXmlElement, value?.ThemeColor);
-      SetThemeTint(openXmlElement, value?.ThemeTint);
-      SetThemeShade(openXmlElement, value?.ThemeShade);
-      SetFill(openXmlElement, value?.Fill);
-      SetThemeFill(openXmlElement, value?.ThemeFill);
-      SetThemeFillTint(openXmlElement, value?.ThemeFillTint);
-      SetThemeFillShade(openXmlElement, value?.ThemeFillShade);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Shading openXmlElement, DMW.Shading value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetColor(openXmlElement, value?.Color);
+    SetThemeColor(openXmlElement, value?.ThemeColor);
+    SetThemeTint(openXmlElement, value?.ThemeTint);
+    SetThemeShade(openXmlElement, value?.ThemeShade);
+    SetFill(openXmlElement, value?.Fill);
+    SetThemeFill(openXmlElement, value?.ThemeFill);
+    SetThemeFillTint(openXmlElement, value?.ThemeFillTint);
+    SetThemeFillShade(openXmlElement, value?.ThemeFillShade);
+    }
+  }

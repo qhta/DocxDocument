@@ -155,18 +155,19 @@ public static class DisplayUnitsLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnitsLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnitsLabel value)
     where OpenXmlElementType: DXDrawCharts.DisplayUnitsLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLayout(openXmlElement, value?.Layout);
-      SetChartText(openXmlElement, value?.ChartText);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.DisplayUnitsLabel value)
+  {
+    SetLayout(openXmlElement, value?.Layout);
+    SetChartText(openXmlElement, value?.ChartText);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    }
+  }

@@ -42,15 +42,16 @@ public static class ThumbnailPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThumbnailPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThumbnailPart value)
     where OpenXmlElementType: DXPack.ThumbnailPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ThumbnailPart openXmlElement, DMPack.ThumbnailPart value)
+  {
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

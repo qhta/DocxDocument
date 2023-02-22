@@ -242,21 +242,22 @@ public static class GradientStopConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStop value)
     where OpenXmlElementType: DXDraw.GradientStop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPosition(openXmlElement, value?.Position);
-      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetHslColor(openXmlElement, value?.HslColor);
-      SetSystemColor(openXmlElement, value?.SystemColor);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      SetPresetColor(openXmlElement, value?.PresetColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.GradientStop openXmlElement, DMDraws.GradientStop value)
+  {
+    SetPosition(openXmlElement, value?.Position);
+    SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetHslColor(openXmlElement, value?.HslColor);
+    SetSystemColor(openXmlElement, value?.SystemColor);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    SetPresetColor(openXmlElement, value?.PresetColor);
+    }
+  }

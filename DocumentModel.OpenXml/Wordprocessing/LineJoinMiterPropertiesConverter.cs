@@ -50,15 +50,16 @@ public static class LineJoinMiterPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LineJoinMiterProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LineJoinMiterProperties value)
     where OpenXmlElementType: DXO2010W.LineJoinMiterProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLimit(openXmlElement, value?.Limit);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.LineJoinMiterProperties openXmlElement, DMW.LineJoinMiterProperties value)
+  {
+    SetLimit(openXmlElement, value?.Limit);
+    }
+  }

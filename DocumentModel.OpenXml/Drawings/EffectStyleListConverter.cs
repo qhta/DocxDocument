@@ -56,15 +56,16 @@ public static class EffectStyleListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectStyleList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectStyleList value)
     where OpenXmlElementType: DXDraw.EffectStyleList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEffectStyle(openXmlElement, value?.EffectStyle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyleList value)
+  {
+    SetEffectStyle(openXmlElement, value?.EffectStyle);
+    }
+  }

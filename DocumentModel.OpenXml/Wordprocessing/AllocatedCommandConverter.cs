@@ -10,22 +10,17 @@ public static class AllocatedCommandConverter
   /// </summary>
   private static String? GetArgumentValue(DXOW.AllocatedCommand openXmlElement)
   {
-    return openXmlElement?.ArgumentValue?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ArgumentValue);
   }
   
   private static bool CmpArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ArgumentValue?.Value == value) return true;
-    diffs?.Add(objName, "ArgumentValue", openXmlElement?.ArgumentValue?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ArgumentValue, value, diffs, objName, "ArgumentValue");
   }
   
   private static void SetArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ArgumentValue = new StringValue { Value = value };
-    else
-      openXmlElement.ArgumentValue = null;
+    openXmlElement.ArgumentValue = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class AllocatedCommandConverter
   /// </summary>
   private static String? GetCommandBasedOn(DXOW.AllocatedCommand openXmlElement)
   {
-    return openXmlElement?.CommandBasedOn?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CommandBasedOn);
   }
   
   private static bool CmpCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CommandBasedOn?.Value == value) return true;
-    diffs?.Add(objName, "CommandBasedOn", openXmlElement?.CommandBasedOn?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CommandBasedOn, value, diffs, objName, "CommandBasedOn");
   }
   
   private static void SetCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CommandBasedOn = new StringValue { Value = value };
-    else
-      openXmlElement.CommandBasedOn = null;
+    openXmlElement.CommandBasedOn = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -84,22 +74,17 @@ public static class AllocatedCommandConverter
   /// </summary>
   private static String? GetAcceleratorName(DXOW.AllocatedCommand openXmlElement)
   {
-    return openXmlElement?.AcceleratorName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AcceleratorName);
   }
   
   private static bool CmpAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AcceleratorName?.Value == value) return true;
-    diffs?.Add(objName, "AcceleratorName", openXmlElement?.AcceleratorName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AcceleratorName, value, diffs, objName, "AcceleratorName");
   }
   
   private static void SetAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AcceleratorName = new StringValue { Value = value };
-    else
-      openXmlElement.AcceleratorName = null;
+    openXmlElement.AcceleratorName = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
@@ -136,18 +121,19 @@ public static class AllocatedCommandConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommand? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommand value)
     where OpenXmlElementType: DXOW.AllocatedCommand, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetArgumentValue(openXmlElement, value?.ArgumentValue);
-      SetCommandBasedOn(openXmlElement, value?.CommandBasedOn);
-      SetCommandIndexBasedOn(openXmlElement, value?.CommandIndexBasedOn);
-      SetAcceleratorName(openXmlElement, value?.AcceleratorName);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.AllocatedCommand openXmlElement, DMW.AllocatedCommand value)
+  {
+    SetArgumentValue(openXmlElement, value?.ArgumentValue);
+    SetCommandBasedOn(openXmlElement, value?.CommandBasedOn);
+    SetCommandIndexBasedOn(openXmlElement, value?.CommandIndexBasedOn);
+    SetAcceleratorName(openXmlElement, value?.AcceleratorName);
+    }
+  }

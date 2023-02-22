@@ -56,15 +56,16 @@ public static class MinorGridlinesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MinorGridlines? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MinorGridlines value)
     where OpenXmlElementType: DXDrawCharts.MinorGridlines, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.MinorGridlines openXmlElement, DMDrawsCharts.MinorGridlines value)
+  {
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    }
+  }

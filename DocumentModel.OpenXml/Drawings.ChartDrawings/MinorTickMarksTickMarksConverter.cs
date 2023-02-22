@@ -56,15 +56,16 @@ public static class MinorTickMarksTickMarksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MinorTickMarksTickMarks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MinorTickMarksTickMarks value)
     where OpenXmlElementType: DXO2016DrawChartDraw.MinorTickMarksTickMarks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MinorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.MinorTickMarksTickMarks value)
+  {
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

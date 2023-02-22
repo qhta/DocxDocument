@@ -71,16 +71,17 @@ public static class TableRowHeightConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowHeight? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowHeight value)
     where OpenXmlElementType: DXW.TableRowHeight, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetHeightType(openXmlElement, value?.HeightType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableRowHeight openXmlElement, DMW.TableRowHeight value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetHeightType(openXmlElement, value?.HeightType);
+    }
+  }

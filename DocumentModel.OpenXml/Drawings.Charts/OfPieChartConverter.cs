@@ -22,13 +22,15 @@ public static class OfPieChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(itemElement, (DMDrawsCharts.OfPieKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>((DMDrawsCharts.OfPieKind)value));
   }
   
   /// <summary>
@@ -78,11 +80,11 @@ public static class OfPieChartConverter
   
   private static bool CmpPieChartSeries(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -99,7 +101,7 @@ public static class OfPieChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -146,27 +148,17 @@ public static class OfPieChartConverter
   
   private static UInt16? GetGapWidth(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
   }
   
   private static bool CmpGapWidth(DXDrawCharts.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.GapWidth", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
   private static void SetGapWidth(DXDrawCharts.OfPieChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.GapWidth{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.SplitKind? GetSplitType(DXDrawCharts.OfPieChart openXmlElement)
@@ -183,38 +175,30 @@ public static class OfPieChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SplitType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(itemElement, (DMDrawsCharts.SplitKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>((DMDrawsCharts.SplitKind)value));
   }
   
   private static Double? GetSplitPosition(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>()?.Val);
   }
   
   private static bool CmpSplitPosition(DXDrawCharts.OfPieChart openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.SplitPosition", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>()?.Val, value, diffs, objName, "SplitPosition");
   }
   
   private static void SetSplitPosition(DXDrawCharts.OfPieChart openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SplitPosition>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.SplitPosition{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.SplitPosition,System.Double>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.CustomSplit? GetCustomSplit(DXDrawCharts.OfPieChart openXmlElement)
@@ -245,27 +229,17 @@ public static class OfPieChartConverter
   
   private static UInt16? GetSecondPieSize(DXDrawCharts.OfPieChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>()?.Val);
   }
   
   private static bool CmpSecondPieSize(DXDrawCharts.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.SecondPieSize", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>()?.Val, value, diffs, objName, "SecondPieSize");
   }
   
   private static void SetSecondPieSize(DXDrawCharts.OfPieChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SecondPieSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.SecondPieSize{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.SecondPieSize,System.UInt16>(openXmlElement, value);
   }
   
   private static Collection<DMDrawsCharts.SeriesLines>? GetSeriesLines(DXDrawCharts.OfPieChart openXmlElement)
@@ -284,11 +258,11 @@ public static class OfPieChartConverter
   
   private static bool CmpSeriesLines(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.SeriesLines>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.SeriesLines>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -305,7 +279,7 @@ public static class OfPieChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -405,25 +379,26 @@ public static class OfPieChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.OfPieChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.OfPieChart value)
     where OpenXmlElementType: DXDrawCharts.OfPieChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOfPieType(openXmlElement, value?.OfPieType);
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetGapWidth(openXmlElement, value?.GapWidth);
-      SetSplitType(openXmlElement, value?.SplitType);
-      SetSplitPosition(openXmlElement, value?.SplitPosition);
-      SetCustomSplit(openXmlElement, value?.CustomSplit);
-      SetSecondPieSize(openXmlElement, value?.SecondPieSize);
-      SetSeriesLines(openXmlElement, value?.SeriesLines);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieChart value)
+  {
+    SetOfPieType(openXmlElement, value?.OfPieType);
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetPieChartSeries(openXmlElement, value?.PieChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetGapWidth(openXmlElement, value?.GapWidth);
+    SetSplitType(openXmlElement, value?.SplitType);
+    SetSplitPosition(openXmlElement, value?.SplitPosition);
+    SetCustomSplit(openXmlElement, value?.CustomSplit);
+    SetSecondPieSize(openXmlElement, value?.SecondPieSize);
+    SetSeriesLines(openXmlElement, value?.SeriesLines);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

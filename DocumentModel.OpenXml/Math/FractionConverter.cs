@@ -123,17 +123,18 @@ public static class FractionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Fraction? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Fraction value)
     where OpenXmlElementType: DXMath.Fraction, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFractionProperties(openXmlElement, value?.FractionProperties);
-      SetNumerator(openXmlElement, value?.Numerator);
-      SetDenominator(openXmlElement, value?.Denominator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Fraction openXmlElement, DMMath.Fraction value)
+  {
+    SetFractionProperties(openXmlElement, value?.FractionProperties);
+    SetNumerator(openXmlElement, value?.Numerator);
+    SetDenominator(openXmlElement, value?.Denominator);
+    }
+  }

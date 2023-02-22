@@ -172,19 +172,20 @@ public static class ShapeTreeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeTree? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeTree value)
     where OpenXmlElementType: DXODraw.ShapeTree, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
-      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
-      SetShape(openXmlElement, value?.Shape);
-      SetGroupShape(openXmlElement, value?.GroupShape);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.ShapeTree openXmlElement, DMDrawsO.ShapeTree value)
+  {
+    SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+    SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+    SetShape(openXmlElement, value?.Shape);
+    SetGroupShape(openXmlElement, value?.GroupShape);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

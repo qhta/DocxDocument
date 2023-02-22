@@ -74,16 +74,17 @@ public static class StyleReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleReference value)
     where OpenXmlElementType: DXO2013DrawChartStyle.StyleReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetModifiers(openXmlElement, value?.Modifiers);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.StyleReference openXmlElement, DMDrawsChartsStyle.StyleReference value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetModifiers(openXmlElement, value?.Modifiers);
+    }
+  }

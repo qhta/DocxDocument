@@ -10,22 +10,17 @@ public static class GeoEntityConverter
   /// </summary>
   private static String? GetEntityName(DXO2016DrawChartDraw.GeoEntity openXmlElement)
   {
-    return openXmlElement?.EntityName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityName);
   }
   
   private static bool CmpEntityName(DXO2016DrawChartDraw.GeoEntity openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityName?.Value == value) return true;
-    diffs?.Add(objName, "EntityName", openXmlElement?.EntityName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityName, value, diffs, objName, "EntityName");
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoEntity openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityName = new StringValue { Value = value };
-    else
-      openXmlElement.EntityName = null;
+    openXmlElement.EntityName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,16 +69,17 @@ public static class GeoEntityConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoEntity? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoEntity value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoEntity, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityName(openXmlElement, value?.EntityName);
-      SetEntityType(openXmlElement, value?.EntityType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoEntity openXmlElement, DMDrawsChartDraws.GeoEntity value)
+  {
+    SetEntityName(openXmlElement, value?.EntityName);
+    SetEntityType(openXmlElement, value?.EntityType);
+    }
+  }

@@ -249,24 +249,25 @@ public static class TablePositionPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TablePositionProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TablePositionProperties value)
     where OpenXmlElementType: DXW.TablePositionProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeftFromText(openXmlElement, value?.LeftFromText);
-      SetRightFromText(openXmlElement, value?.RightFromText);
-      SetTopFromText(openXmlElement, value?.TopFromText);
-      SetBottomFromText(openXmlElement, value?.BottomFromText);
-      SetVerticalAnchor(openXmlElement, value?.VerticalAnchor);
-      SetHorizontalAnchor(openXmlElement, value?.HorizontalAnchor);
-      SetTablePositionXAlignment(openXmlElement, value?.TablePositionXAlignment);
-      SetTablePositionX(openXmlElement, value?.TablePositionX);
-      SetTablePositionYAlignment(openXmlElement, value?.TablePositionYAlignment);
-      SetTablePositionY(openXmlElement, value?.TablePositionY);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TablePositionProperties openXmlElement, DMW.TablePositionProperties value)
+  {
+    SetLeftFromText(openXmlElement, value?.LeftFromText);
+    SetRightFromText(openXmlElement, value?.RightFromText);
+    SetTopFromText(openXmlElement, value?.TopFromText);
+    SetBottomFromText(openXmlElement, value?.BottomFromText);
+    SetVerticalAnchor(openXmlElement, value?.VerticalAnchor);
+    SetHorizontalAnchor(openXmlElement, value?.HorizontalAnchor);
+    SetTablePositionXAlignment(openXmlElement, value?.TablePositionXAlignment);
+    SetTablePositionX(openXmlElement, value?.TablePositionX);
+    SetTablePositionYAlignment(openXmlElement, value?.TablePositionYAlignment);
+    SetTablePositionY(openXmlElement, value?.TablePositionY);
+    }
+  }

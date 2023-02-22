@@ -28,22 +28,17 @@ public static class EffectContainerTypeConverter
   /// </summary>
   private static String? GetName(DXDraw.EffectContainerType openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDraw.EffectContainerType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDraw.EffectContainerType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DXDraw.EffectContainerType? openXmlElement)
@@ -74,16 +69,17 @@ public static class EffectContainerTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectContainerType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectContainerType value)
     where OpenXmlElementType: DXDraw.EffectContainerType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetName(openXmlElement, value?.Name);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerType value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetName(openXmlElement, value?.Name);
+    }
+  }

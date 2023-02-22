@@ -73,16 +73,17 @@ public static class ArtisticGlassConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlass? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlass value)
     where OpenXmlElementType: DXO2010Draw.ArtisticGlass, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetScaling(openXmlElement, value?.Scaling);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticGlass openXmlElement, DMDraws.ArtisticGlass value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetScaling(openXmlElement, value?.Scaling);
+    }
+  }

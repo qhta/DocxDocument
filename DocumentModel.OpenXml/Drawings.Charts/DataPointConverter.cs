@@ -10,27 +10,17 @@ public static class DataPointConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.DataPoint openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
   }
   
   private static bool CmpIndex(DXDrawCharts.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
   }
   
   private static void SetIndex(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Index{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -129,27 +119,17 @@ public static class DataPointConverter
   /// </summary>
   private static UInt32? GetExplosion(DXDrawCharts.DataPoint openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>()?.Val);
   }
   
   private static bool CmpExplosion(DXDrawCharts.DataPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Explosion", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Explosion>()?.Val, value, diffs, objName, "Explosion");
   }
   
   private static void SetExplosion(DXDrawCharts.DataPoint openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Explosion>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Explosion{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Explosion,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -285,22 +265,23 @@ public static class DataPointConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataPoint? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataPoint value)
     where OpenXmlElementType: DXDrawCharts.DataPoint, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
-      SetMarker(openXmlElement, value?.Marker);
-      SetBubble3D(openXmlElement, value?.Bubble3D);
-      SetExplosion(openXmlElement, value?.Explosion);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetPictureOptions(openXmlElement, value?.PictureOptions);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DataPoint openXmlElement, DMDrawsCharts.DataPoint value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
+    SetMarker(openXmlElement, value?.Marker);
+    SetBubble3D(openXmlElement, value?.Bubble3D);
+    SetExplosion(openXmlElement, value?.Explosion);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetPictureOptions(openXmlElement, value?.PictureOptions);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

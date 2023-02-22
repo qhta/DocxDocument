@@ -180,11 +180,11 @@ public static class DataLabelsConverter
   
   private static bool CmpItems(DXO2016DrawChartDraw.DataLabels openXmlElement, Collection<DMDrawsChartDraws.DataLabel>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataLabel>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataLabel>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -201,7 +201,7 @@ public static class DataLabelsConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -236,11 +236,11 @@ public static class DataLabelsConverter
   
   private static bool CmpDataLabelHiddens(DXO2016DrawChartDraw.DataLabels openXmlElement, Collection<DMDrawsChartDraws.DataLabelHidden>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataLabelHidden>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataLabelHidden>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -257,7 +257,7 @@ public static class DataLabelsConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -351,23 +351,24 @@ public static class DataLabelsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabels? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabels value)
     where OpenXmlElementType: DXO2016DrawChartDraw.DataLabels, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPos(openXmlElement, value?.Pos);
-      SetNumberFormat(openXmlElement, value?.NumberFormat);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
-      SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
-      SetItems(openXmlElement, value?.Items);
-      SetDataLabelHiddens(openXmlElement, value?.DataLabelHiddens);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabels openXmlElement, DMDrawsChartDraws.DataLabels value)
+  {
+    SetPos(openXmlElement, value?.Pos);
+    SetNumberFormat(openXmlElement, value?.NumberFormat);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
+    SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
+    SetItems(openXmlElement, value?.Items);
+    SetDataLabelHiddens(openXmlElement, value?.DataLabelHiddens);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

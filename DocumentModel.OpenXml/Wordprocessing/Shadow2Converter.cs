@@ -273,24 +273,25 @@ public static class Shadow2Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Shadow2? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Shadow2 value)
     where OpenXmlElementType: DXO2010W.Shadow, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlurRadius(openXmlElement, value?.BlurRadius);
-      SetDistanceFromText(openXmlElement, value?.DistanceFromText);
-      SetDirectionAngle(openXmlElement, value?.DirectionAngle);
-      SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
-      SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
-      SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
-      SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Shadow openXmlElement, DMW.Shadow2 value)
+  {
+    SetBlurRadius(openXmlElement, value?.BlurRadius);
+    SetDistanceFromText(openXmlElement, value?.DistanceFromText);
+    SetDirectionAngle(openXmlElement, value?.DirectionAngle);
+    SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
+    SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
+    SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
+    SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

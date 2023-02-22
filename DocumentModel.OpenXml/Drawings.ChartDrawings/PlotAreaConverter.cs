@@ -50,11 +50,11 @@ public static class PlotAreaConverter
   
   private static bool CmpAxis(DXO2016DrawChartDraw.PlotArea openXmlElement, Collection<DMDrawsChartDraws.Axis>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.Axis>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.Axis>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -71,7 +71,7 @@ public static class PlotAreaConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -176,18 +176,19 @@ public static class PlotAreaConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotArea? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotArea value)
     where OpenXmlElementType: DXO2016DrawChartDraw.PlotArea, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPlotAreaRegion(openXmlElement, value?.PlotAreaRegion);
-      SetAxis(openXmlElement, value?.Axis);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.PlotArea value)
+  {
+    SetPlotAreaRegion(openXmlElement, value?.PlotAreaRegion);
+    SetAxis(openXmlElement, value?.Axis);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -49,15 +49,16 @@ public static class WordprocessingDocumentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingDocument? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingDocument value)
     where OpenXmlElementType: DXPack.WordprocessingDocument, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetDocumentType(openXmlElement, value?.DocumentType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WordprocessingDocument openXmlElement, DMPack.WordprocessingDocument value)
+  {
+    //SetDocumentType(openXmlElement, value?.DocumentType);
+    }
+  }

@@ -10,27 +10,17 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static Int32? GetTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val);
   }
   
   private static bool CmpTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.TableStyleRowBandSize", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TableStyleRowBandSize>()?.Val, value, diffs, objName, "TableStyleRowBandSize");
   }
   
   private static void SetTableStyleRowBandSize(DXW.StyleTableProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableStyleRowBandSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.TableStyleRowBandSize{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.TableStyleRowBandSize,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -38,27 +28,17 @@ public static class StyleTablePropertiesConverter
   /// </summary>
   private static Int32? GetTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val);
   }
   
   private static bool CmpTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.TableStyleColumnBandSize", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TableStyleColumnBandSize>()?.Val, value, diffs, objName, "TableStyleColumnBandSize");
   }
   
   private static void SetTableStyleColumnBandSize(DXW.StyleTableProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TableStyleColumnBandSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.TableStyleColumnBandSize{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.TableStyleColumnBandSize,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -78,13 +58,15 @@ public static class StyleTablePropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement, (DMW.TableRowAlignmentKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
   
   /// <summary>
@@ -278,22 +260,23 @@ public static class StyleTablePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleTableProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleTableProperties value)
     where OpenXmlElementType: DXW.StyleTableProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTableStyleRowBandSize(openXmlElement, value?.TableStyleRowBandSize);
-      SetTableStyleColumnBandSize(openXmlElement, value?.TableStyleColumnBandSize);
-      SetTableJustification(openXmlElement, value?.TableJustification);
-      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
-      SetTableIndentation(openXmlElement, value?.TableIndentation);
-      SetTableBorders(openXmlElement, value?.TableBorders);
-      SetShading(openXmlElement, value?.Shading);
-      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.StyleTableProperties openXmlElement, DMW.StyleTableProperties value)
+  {
+    SetTableStyleRowBandSize(openXmlElement, value?.TableStyleRowBandSize);
+    SetTableStyleColumnBandSize(openXmlElement, value?.TableStyleColumnBandSize);
+    SetTableJustification(openXmlElement, value?.TableJustification);
+    SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+    SetTableIndentation(openXmlElement, value?.TableIndentation);
+    SetTableBorders(openXmlElement, value?.TableBorders);
+    SetShading(openXmlElement, value?.Shading);
+    SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+    }
+  }

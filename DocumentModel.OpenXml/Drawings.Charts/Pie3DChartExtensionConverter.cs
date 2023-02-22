@@ -10,22 +10,17 @@ public static class Pie3DChartExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.Pie3DChartExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.Pie3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.Pie3DChartExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FilteredPieSeries? GetFilteredPieSeries(DXDrawCharts.Pie3DChartExtension openXmlElement)
@@ -82,16 +77,17 @@ public static class Pie3DChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChartExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChartExtension value)
     where OpenXmlElementType: DXDrawCharts.Pie3DChartExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Pie3DChartExtension openXmlElement, DMDrawsCharts.Pie3DChartExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
+    }
+  }

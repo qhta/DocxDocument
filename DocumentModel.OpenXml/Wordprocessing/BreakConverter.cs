@@ -69,16 +69,17 @@ public static class BreakConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Break? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Break value)
     where OpenXmlElementType: DXW.Break, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetClear(openXmlElement, value?.Clear);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Break openXmlElement, DMW.Break value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetClear(openXmlElement, value?.Clear);
+    }
+  }

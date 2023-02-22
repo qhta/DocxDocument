@@ -56,15 +56,16 @@ public static class GradientStopListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStopList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStopList value)
     where OpenXmlElementType: DXDraw.GradientStopList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGradientStop(openXmlElement, value?.GradientStop);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStopList value)
+  {
+    SetGradientStop(openXmlElement, value?.GradientStop);
+    }
+  }

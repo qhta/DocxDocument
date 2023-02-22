@@ -10,22 +10,17 @@ public static class DocumentVariableConverter
   /// </summary>
   private static String? GetName(DXW.DocumentVariable openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.DocumentVariable openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.DocumentVariable openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class DocumentVariableConverter
   /// </summary>
   private static String? GetVal(DXW.DocumentVariable openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
   private static bool CmpVal(DXW.DocumentVariable openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
   }
   
   private static void SetVal(DXW.DocumentVariable openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Val = new StringValue { Value = value };
-    else
-      openXmlElement.Val = null;
+    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.DocumentVariable? CreateModelElement(DXW.DocumentVariable? openXmlElement)
@@ -79,16 +69,17 @@ public static class DocumentVariableConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentVariable? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentVariable value)
     where OpenXmlElementType: DXW.DocumentVariable, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocumentVariable openXmlElement, DMW.DocumentVariable value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

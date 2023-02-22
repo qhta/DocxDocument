@@ -10,22 +10,17 @@ public static class PredecessorDrawingElementReferenceConverter
   /// </summary>
   private static String? GetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement)
   {
-    return openXmlElement?.Pred?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Pred);
   }
   
   private static bool CmpPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Pred?.Value == value) return true;
-    diffs?.Add(objName, "Pred", openXmlElement?.Pred?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Pred, value, diffs, objName, "Pred");
   }
   
   private static void SetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Pred = new StringValue { Value = value };
-    else
-      openXmlElement.Pred = null;
+    openXmlElement.Pred = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement)
@@ -53,15 +48,16 @@ public static class PredecessorDrawingElementReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PredecessorDrawingElementReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PredecessorDrawingElementReference value)
     where OpenXmlElementType: DXO2016Draw.PredecessorDrawingElementReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPred(openXmlElement, value?.Pred);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, DMDraws.PredecessorDrawingElementReference value)
+  {
+    SetPred(openXmlElement, value?.Pred);
+    }
+  }

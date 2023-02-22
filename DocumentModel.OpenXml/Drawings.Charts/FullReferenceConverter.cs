@@ -55,15 +55,16 @@ public static class FullReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FullReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FullReference value)
     where OpenXmlElementType: DXO2013DrawChart.FullReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.FullReference openXmlElement, DMDrawsCharts.FullReference value)
+  {
+    SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+    }
+  }

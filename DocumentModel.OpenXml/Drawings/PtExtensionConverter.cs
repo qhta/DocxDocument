@@ -10,22 +10,17 @@ public static class PtExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.PtExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.PtExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.PtExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsDgms.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement)
@@ -82,16 +77,17 @@ public static class PtExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PtExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PtExtension value)
     where OpenXmlElementType: DXDraw.PtExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PtExtension openXmlElement, DMDraws.PtExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
+    }
+  }

@@ -87,22 +87,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetViewpointOrigin(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.ViewpointOrigin?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ViewpointOrigin);
   }
   
   private static bool CmpViewpointOrigin(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ViewpointOrigin?.Value == value) return true;
-    diffs?.Add(objName, "ViewpointOrigin", openXmlElement?.ViewpointOrigin?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ViewpointOrigin, value, diffs, objName, "ViewpointOrigin");
   }
   
   private static void SetViewpointOrigin(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ViewpointOrigin = new StringValue { Value = value };
-    else
-      openXmlElement.ViewpointOrigin = null;
+    openXmlElement.ViewpointOrigin = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -110,22 +105,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetViewpoint(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Viewpoint?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Viewpoint);
   }
   
   private static bool CmpViewpoint(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Viewpoint?.Value == value) return true;
-    diffs?.Add(objName, "Viewpoint", openXmlElement?.Viewpoint?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Viewpoint, value, diffs, objName, "Viewpoint");
   }
   
   private static void SetViewpoint(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Viewpoint = new StringValue { Value = value };
-    else
-      openXmlElement.Viewpoint = null;
+    openXmlElement.Viewpoint = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -153,22 +143,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetSkewAmount(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.SkewAmount?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SkewAmount);
   }
   
   private static bool CmpSkewAmount(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SkewAmount?.Value == value) return true;
-    diffs?.Add(objName, "SkewAmount", openXmlElement?.SkewAmount?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SkewAmount, value, diffs, objName, "SkewAmount");
   }
   
   private static void SetSkewAmount(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SkewAmount = new StringValue { Value = value };
-    else
-      openXmlElement.SkewAmount = null;
+    openXmlElement.SkewAmount = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -176,22 +161,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetForceDepth(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.ForceDepth?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ForceDepth);
   }
   
   private static bool CmpForceDepth(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ForceDepth?.Value == value) return true;
-    diffs?.Add(objName, "ForceDepth", openXmlElement?.ForceDepth?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ForceDepth, value, diffs, objName, "ForceDepth");
   }
   
   private static void SetForceDepth(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ForceDepth = new StringValue { Value = value };
-    else
-      openXmlElement.ForceDepth = null;
+    openXmlElement.ForceDepth = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -199,22 +179,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetBackDepth(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.BackDepth?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.BackDepth);
   }
   
   private static bool CmpBackDepth(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.BackDepth?.Value == value) return true;
-    diffs?.Add(objName, "BackDepth", openXmlElement?.BackDepth?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.BackDepth, value, diffs, objName, "BackDepth");
   }
   
   private static void SetBackDepth(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.BackDepth = new StringValue { Value = value };
-    else
-      openXmlElement.BackDepth = null;
+    openXmlElement.BackDepth = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -222,22 +197,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetOrientation(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Orientation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Orientation);
   }
   
   private static bool CmpOrientation(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Orientation?.Value == value) return true;
-    diffs?.Add(objName, "Orientation", openXmlElement?.Orientation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Orientation, value, diffs, objName, "Orientation");
   }
   
   private static void SetOrientation(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Orientation = new StringValue { Value = value };
-    else
-      openXmlElement.Orientation = null;
+    openXmlElement.Orientation = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -311,22 +281,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetRotationCenter(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.RotationCenter?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.RotationCenter);
   }
   
   private static bool CmpRotationCenter(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RotationCenter?.Value == value) return true;
-    diffs?.Add(objName, "RotationCenter", openXmlElement?.RotationCenter?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.RotationCenter, value, diffs, objName, "RotationCenter");
   }
   
   private static void SetRotationCenter(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.RotationCenter = new StringValue { Value = value };
-    else
-      openXmlElement.RotationCenter = null;
+    openXmlElement.RotationCenter = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -334,22 +299,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetRotationAngle(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.RotationAngle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.RotationAngle);
   }
   
   private static bool CmpRotationAngle(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RotationAngle?.Value == value) return true;
-    diffs?.Add(objName, "RotationAngle", openXmlElement?.RotationAngle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.RotationAngle, value, diffs, objName, "RotationAngle");
   }
   
   private static void SetRotationAngle(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.RotationAngle = new StringValue { Value = value };
-    else
-      openXmlElement.RotationAngle = null;
+    openXmlElement.RotationAngle = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -357,22 +317,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetColor(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Color?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
   private static bool CmpColor(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Color?.Value == value) return true;
-    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
   
   private static void SetColor(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Color = new StringValue { Value = value };
-    else
-      openXmlElement.Color = null;
+    openXmlElement.Color = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -400,22 +355,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetSpecularity(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Specularity?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Specularity);
   }
   
   private static bool CmpSpecularity(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Specularity?.Value == value) return true;
-    diffs?.Add(objName, "Specularity", openXmlElement?.Specularity?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Specularity, value, diffs, objName, "Specularity");
   }
   
   private static void SetSpecularity(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Specularity = new StringValue { Value = value };
-    else
-      openXmlElement.Specularity = null;
+    openXmlElement.Specularity = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -423,22 +373,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetDiffusity(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Diffusity?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Diffusity);
   }
   
   private static bool CmpDiffusity(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Diffusity?.Value == value) return true;
-    diffs?.Add(objName, "Diffusity", openXmlElement?.Diffusity?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Diffusity, value, diffs, objName, "Diffusity");
   }
   
   private static void SetDiffusity(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Diffusity = new StringValue { Value = value };
-    else
-      openXmlElement.Diffusity = null;
+    openXmlElement.Diffusity = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -469,22 +414,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetEdge(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Edge?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Edge);
   }
   
   private static bool CmpEdge(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Edge?.Value == value) return true;
-    diffs?.Add(objName, "Edge", openXmlElement?.Edge?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Edge, value, diffs, objName, "Edge");
   }
   
   private static void SetEdge(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Edge = new StringValue { Value = value };
-    else
-      openXmlElement.Edge = null;
+    openXmlElement.Edge = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -492,22 +432,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetFacet(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Facet?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Facet);
   }
   
   private static bool CmpFacet(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Facet?.Value == value) return true;
-    diffs?.Add(objName, "Facet", openXmlElement?.Facet?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Facet, value, diffs, objName, "Facet");
   }
   
   private static void SetFacet(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Facet = new StringValue { Value = value };
-    else
-      openXmlElement.Facet = null;
+    openXmlElement.Facet = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -538,22 +473,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetBrightness(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.Brightness?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Brightness);
   }
   
   private static bool CmpBrightness(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Brightness?.Value == value) return true;
-    diffs?.Add(objName, "Brightness", openXmlElement?.Brightness?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Brightness, value, diffs, objName, "Brightness");
   }
   
   private static void SetBrightness(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Brightness = new StringValue { Value = value };
-    else
-      openXmlElement.Brightness = null;
+    openXmlElement.Brightness = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -561,22 +491,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetLightPosition(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.LightPosition?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LightPosition);
   }
   
   private static bool CmpLightPosition(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LightPosition?.Value == value) return true;
-    diffs?.Add(objName, "LightPosition", openXmlElement?.LightPosition?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LightPosition, value, diffs, objName, "LightPosition");
   }
   
   private static void SetLightPosition(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LightPosition = new StringValue { Value = value };
-    else
-      openXmlElement.LightPosition = null;
+    openXmlElement.LightPosition = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -584,22 +509,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetLightLevel(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.LightLevel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LightLevel);
   }
   
   private static bool CmpLightLevel(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LightLevel?.Value == value) return true;
-    diffs?.Add(objName, "LightLevel", openXmlElement?.LightLevel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LightLevel, value, diffs, objName, "LightLevel");
   }
   
   private static void SetLightLevel(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LightLevel = new StringValue { Value = value };
-    else
-      openXmlElement.LightLevel = null;
+    openXmlElement.LightLevel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -630,22 +550,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetLightPosition2(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.LightPosition2?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LightPosition2);
   }
   
   private static bool CmpLightPosition2(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LightPosition2?.Value == value) return true;
-    diffs?.Add(objName, "LightPosition2", openXmlElement?.LightPosition2?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LightPosition2, value, diffs, objName, "LightPosition2");
   }
   
   private static void SetLightPosition2(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LightPosition2 = new StringValue { Value = value };
-    else
-      openXmlElement.LightPosition2 = null;
+    openXmlElement.LightPosition2 = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -653,22 +568,17 @@ public static class ExtrusionConverter
   /// </summary>
   private static String? GetLightLevel2(DXVmlO.Extrusion openXmlElement)
   {
-    return openXmlElement?.LightLevel2?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LightLevel2);
   }
   
   private static bool CmpLightLevel2(DXVmlO.Extrusion openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LightLevel2?.Value == value) return true;
-    diffs?.Add(objName, "LightLevel2", openXmlElement?.LightLevel2?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LightLevel2, value, diffs, objName, "LightLevel2");
   }
   
   private static void SetLightLevel2(DXVmlO.Extrusion openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LightLevel2 = new StringValue { Value = value };
-    else
-      openXmlElement.LightLevel2 = null;
+    openXmlElement.LightLevel2 = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -809,45 +719,46 @@ public static class ExtrusionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Extrusion? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Extrusion value)
     where OpenXmlElementType: DXVmlO.Extrusion, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetOn(openXmlElement, value?.On);
-      SetType(openXmlElement, value?.Type);
-      SetRender(openXmlElement, value?.Render);
-      SetViewpointOrigin(openXmlElement, value?.ViewpointOrigin);
-      SetViewpoint(openXmlElement, value?.Viewpoint);
-      SetSkewAngle(openXmlElement, value?.SkewAngle);
-      SetSkewAmount(openXmlElement, value?.SkewAmount);
-      SetForceDepth(openXmlElement, value?.ForceDepth);
-      SetBackDepth(openXmlElement, value?.BackDepth);
-      SetOrientation(openXmlElement, value?.Orientation);
-      SetOrientationAngle(openXmlElement, value?.OrientationAngle);
-      SetLockRotationCenter(openXmlElement, value?.LockRotationCenter);
-      SetAutoRotationCenter(openXmlElement, value?.AutoRotationCenter);
-      SetRotationCenter(openXmlElement, value?.RotationCenter);
-      SetRotationAngle(openXmlElement, value?.RotationAngle);
-      SetColor(openXmlElement, value?.Color);
-      SetShininess(openXmlElement, value?.Shininess);
-      SetSpecularity(openXmlElement, value?.Specularity);
-      SetDiffusity(openXmlElement, value?.Diffusity);
-      SetMetal(openXmlElement, value?.Metal);
-      SetEdge(openXmlElement, value?.Edge);
-      SetFacet(openXmlElement, value?.Facet);
-      SetLightFace(openXmlElement, value?.LightFace);
-      SetBrightness(openXmlElement, value?.Brightness);
-      SetLightPosition(openXmlElement, value?.LightPosition);
-      SetLightLevel(openXmlElement, value?.LightLevel);
-      SetLightHarsh(openXmlElement, value?.LightHarsh);
-      SetLightPosition2(openXmlElement, value?.LightPosition2);
-      SetLightLevel2(openXmlElement, value?.LightLevel2);
-      SetLightHarsh2(openXmlElement, value?.LightHarsh2);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Extrusion openXmlElement, DMVml.Extrusion value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetOn(openXmlElement, value?.On);
+    SetType(openXmlElement, value?.Type);
+    SetRender(openXmlElement, value?.Render);
+    SetViewpointOrigin(openXmlElement, value?.ViewpointOrigin);
+    SetViewpoint(openXmlElement, value?.Viewpoint);
+    SetSkewAngle(openXmlElement, value?.SkewAngle);
+    SetSkewAmount(openXmlElement, value?.SkewAmount);
+    SetForceDepth(openXmlElement, value?.ForceDepth);
+    SetBackDepth(openXmlElement, value?.BackDepth);
+    SetOrientation(openXmlElement, value?.Orientation);
+    SetOrientationAngle(openXmlElement, value?.OrientationAngle);
+    SetLockRotationCenter(openXmlElement, value?.LockRotationCenter);
+    SetAutoRotationCenter(openXmlElement, value?.AutoRotationCenter);
+    SetRotationCenter(openXmlElement, value?.RotationCenter);
+    SetRotationAngle(openXmlElement, value?.RotationAngle);
+    SetColor(openXmlElement, value?.Color);
+    SetShininess(openXmlElement, value?.Shininess);
+    SetSpecularity(openXmlElement, value?.Specularity);
+    SetDiffusity(openXmlElement, value?.Diffusity);
+    SetMetal(openXmlElement, value?.Metal);
+    SetEdge(openXmlElement, value?.Edge);
+    SetFacet(openXmlElement, value?.Facet);
+    SetLightFace(openXmlElement, value?.LightFace);
+    SetBrightness(openXmlElement, value?.Brightness);
+    SetLightPosition(openXmlElement, value?.LightPosition);
+    SetLightLevel(openXmlElement, value?.LightLevel);
+    SetLightHarsh(openXmlElement, value?.LightHarsh);
+    SetLightPosition2(openXmlElement, value?.LightPosition2);
+    SetLightLevel2(openXmlElement, value?.LightLevel2);
+    SetLightHarsh2(openXmlElement, value?.LightHarsh2);
+    }
+  }

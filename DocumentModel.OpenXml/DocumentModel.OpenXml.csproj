@@ -49,6 +49,7 @@
     <Compile Remove="Properties\HeadingPairs.cs" />
     <Compile Remove="Properties\VectorVariantTypeConverter.cs" />
     <Compile Remove="Wordprocessing\CategoryConverter - Copy.cs" />
+    <Compile Remove="Wordprocessing\FontsConverter.old.cs" />
     <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
     <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
     <Compile Remove="Wordprocessing\ParagraphConverter - Copy.cs" />

@@ -187,19 +187,20 @@ public static class DataModelRootConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DataModelRoot? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DataModelRoot value)
     where OpenXmlElementType: DXDrawDgms.DataModelRoot, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPointList(openXmlElement, value?.PointList);
-      SetConnectionList(openXmlElement, value?.ConnectionList);
-      SetBackground(openXmlElement, value?.Background);
-      SetWhole(openXmlElement, value?.Whole);
-      SetDataModelExtensionList(openXmlElement, value?.DataModelExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.DataModelRoot openXmlElement, DMDrawsDgms.DataModelRoot value)
+  {
+    SetPointList(openXmlElement, value?.PointList);
+    SetConnectionList(openXmlElement, value?.ConnectionList);
+    SetBackground(openXmlElement, value?.Background);
+    SetWhole(openXmlElement, value?.Whole);
+    SetDataModelExtensionList(openXmlElement, value?.DataModelExtensionList);
+    }
+  }

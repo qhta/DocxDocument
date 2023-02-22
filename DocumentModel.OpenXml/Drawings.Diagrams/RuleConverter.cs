@@ -46,22 +46,17 @@ public static class RuleConverter
   /// </summary>
   private static String? GetForName(DXDrawDgms.Rule openXmlElement)
   {
-    return openXmlElement?.ForName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ForName);
   }
   
   private static bool CmpForName(DXDrawDgms.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ForName?.Value == value) return true;
-    diffs?.Add(objName, "ForName", openXmlElement?.ForName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ForName, value, diffs, objName, "ForName");
   }
   
   private static void SetForName(DXDrawDgms.Rule openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ForName = new StringValue { Value = value };
-    else
-      openXmlElement.ForName = null;
+    openXmlElement.ForName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +212,23 @@ public static class RuleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Rule? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Rule value)
     where OpenXmlElementType: DXDrawDgms.Rule, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetFor(openXmlElement, value?.For);
-      SetForName(openXmlElement, value?.ForName);
-      SetPointType(openXmlElement, value?.PointType);
-      SetVal(openXmlElement, value?.Val);
-      SetFact(openXmlElement, value?.Fact);
-      SetMax(openXmlElement, value?.Max);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Rule openXmlElement, DMDrawsDgms.Rule value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetFor(openXmlElement, value?.For);
+    SetForName(openXmlElement, value?.ForName);
+    SetPointType(openXmlElement, value?.PointType);
+    SetVal(openXmlElement, value?.Val);
+    SetFact(openXmlElement, value?.Fact);
+    SetMax(openXmlElement, value?.Max);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

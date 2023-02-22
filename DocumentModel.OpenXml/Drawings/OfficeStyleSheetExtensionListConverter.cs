@@ -21,11 +21,11 @@ public static class OfficeStyleSheetExtensionListConverter
   
   private static bool CmpOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement, Collection<DMDraws.OfficeStyleSheetExtension>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDraw.OfficeStyleSheetExtension>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDraw.OfficeStyleSheetExtension>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class OfficeStyleSheetExtensionListConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class OfficeStyleSheetExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtensionList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtensionList value)
     where OpenXmlElementType: DXDraw.OfficeStyleSheetExtensionList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOfficeStyleSheetExtensions(openXmlElement, value?.OfficeStyleSheetExtensions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.OfficeStyleSheetExtensionList openXmlElement, DMDraws.OfficeStyleSheetExtensionList value)
+  {
+    SetOfficeStyleSheetExtensions(openXmlElement, value?.OfficeStyleSheetExtensions);
+    }
+  }

@@ -10,22 +10,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetLeft(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.Left?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Left);
   }
   
   private static bool CmpLeft(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Left?.Value == value) return true;
-    diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Left, value, diffs, objName, "Left");
   }
   
   private static void SetLeft(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Left = new StringValue { Value = value };
-    else
-      openXmlElement.Left = null;
+    openXmlElement.Left = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetStart(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.Start?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Start);
   }
   
   private static bool CmpStart(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Start?.Value == value) return true;
-    diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName, "Start");
   }
   
   private static void SetStart(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Start = new StringValue { Value = value };
-    else
-      openXmlElement.Start = null;
+    openXmlElement.Start = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -96,22 +86,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetRight(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.Right?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Right);
   }
   
   private static bool CmpRight(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Right?.Value == value) return true;
-    diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Right, value, diffs, objName, "Right");
   }
   
   private static void SetRight(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Right = new StringValue { Value = value };
-    else
-      openXmlElement.Right = null;
+    openXmlElement.Right = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -119,22 +104,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetEnd(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.End?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.End);
   }
   
   private static bool CmpEnd(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.End?.Value == value) return true;
-    diffs?.Add(objName, "End", openXmlElement?.End?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.End, value, diffs, objName, "End");
   }
   
   private static void SetEnd(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.End = new StringValue { Value = value };
-    else
-      openXmlElement.End = null;
+    openXmlElement.End = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -182,22 +162,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetHanging(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.Hanging?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Hanging);
   }
   
   private static bool CmpHanging(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Hanging?.Value == value) return true;
-    diffs?.Add(objName, "Hanging", openXmlElement?.Hanging?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Hanging, value, diffs, objName, "Hanging");
   }
   
   private static void SetHanging(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Hanging = new StringValue { Value = value };
-    else
-      openXmlElement.Hanging = null;
+    openXmlElement.Hanging = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -225,22 +200,17 @@ public static class IndentationConverter
   /// </summary>
   private static String? GetFirstLine(DXW.Indentation openXmlElement)
   {
-    return openXmlElement?.FirstLine?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FirstLine);
   }
   
   private static bool CmpFirstLine(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FirstLine?.Value == value) return true;
-    diffs?.Add(objName, "FirstLine", openXmlElement?.FirstLine?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FirstLine, value, diffs, objName, "FirstLine");
   }
   
   private static void SetFirstLine(DXW.Indentation openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FirstLine = new StringValue { Value = value };
-    else
-      openXmlElement.FirstLine = null;
+    openXmlElement.FirstLine = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -321,26 +291,27 @@ public static class IndentationConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Indentation? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Indentation value)
     where OpenXmlElementType: DXW.Indentation, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeft(openXmlElement, value?.Left);
-      SetStart(openXmlElement, value?.Start);
-      SetLeftChars(openXmlElement, value?.LeftChars);
-      SetStartCharacters(openXmlElement, value?.StartCharacters);
-      SetRight(openXmlElement, value?.Right);
-      SetEnd(openXmlElement, value?.End);
-      SetRightChars(openXmlElement, value?.RightChars);
-      SetEndCharacters(openXmlElement, value?.EndCharacters);
-      SetHanging(openXmlElement, value?.Hanging);
-      SetHangingChars(openXmlElement, value?.HangingChars);
-      SetFirstLine(openXmlElement, value?.FirstLine);
-      SetFirstLineChars(openXmlElement, value?.FirstLineChars);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Indentation openXmlElement, DMW.Indentation value)
+  {
+    SetLeft(openXmlElement, value?.Left);
+    SetStart(openXmlElement, value?.Start);
+    SetLeftChars(openXmlElement, value?.LeftChars);
+    SetStartCharacters(openXmlElement, value?.StartCharacters);
+    SetRight(openXmlElement, value?.Right);
+    SetEnd(openXmlElement, value?.End);
+    SetRightChars(openXmlElement, value?.RightChars);
+    SetEndCharacters(openXmlElement, value?.EndCharacters);
+    SetHanging(openXmlElement, value?.Hanging);
+    SetHangingChars(openXmlElement, value?.HangingChars);
+    SetFirstLine(openXmlElement, value?.FirstLine);
+    SetFirstLineChars(openXmlElement, value?.FirstLineChars);
+    }
+  }

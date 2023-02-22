@@ -70,13 +70,15 @@ public static class AbstractNumConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MultiLevelType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.MultiLevelType, DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>(itemElement, (DMW.MultiLevelKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MultiLevelType, DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>((DMW.MultiLevelKind)value));
   }
   
   /// <summary>
@@ -112,24 +114,17 @@ public static class AbstractNumConverter
   /// </summary>
   private static String? GetAbstractNumDefinitionName(DXW.AbstractNum openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val);
   }
   
   private static bool CmpAbstractNumDefinitionName(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val, value, diffs, objName, "AbstractNumDefinitionName");
   }
   
   private static void SetAbstractNumDefinitionName(DXW.AbstractNum openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.AbstractNumDefinitionName>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.AbstractNumDefinitionName { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.AbstractNumDefinitionName>(openXmlElement, value);
   }
   
   /// <summary>
@@ -137,24 +132,17 @@ public static class AbstractNumConverter
   /// </summary>
   private static String? GetStyleLink(DXW.AbstractNum openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val);
   }
   
   private static bool CmpStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val, value, diffs, objName, "StyleLink");
   }
   
   private static void SetStyleLink(DXW.AbstractNum openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.StyleLink>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.StyleLink { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.StyleLink>(openXmlElement, value);
   }
   
   /// <summary>
@@ -162,24 +150,17 @@ public static class AbstractNumConverter
   /// </summary>
   private static String? GetNumberingStyleLink(DXW.AbstractNum openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val);
   }
   
   private static bool CmpNumberingStyleLink(DXW.AbstractNum openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val, value, diffs, objName, "NumberingStyleLink");
   }
   
   private static void SetNumberingStyleLink(DXW.AbstractNum openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingStyleLink>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.NumberingStyleLink { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.NumberingStyleLink>(openXmlElement, value);
   }
   
   private static Collection<DMW.Level>? GetLevels(DXW.AbstractNum openXmlElement)
@@ -198,11 +179,11 @@ public static class AbstractNumConverter
   
   private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.Level>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.Level>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -219,7 +200,7 @@ public static class AbstractNumConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -284,22 +265,23 @@ public static class AbstractNumConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AbstractNum? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AbstractNum value)
     where OpenXmlElementType: DXW.AbstractNum, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAbstractNumberId(openXmlElement, value?.AbstractNumberId);
-      SetNsid(openXmlElement, value?.Nsid);
-      SetMultiLevelType(openXmlElement, value?.MultiLevelType);
-      SetTemplateCode(openXmlElement, value?.TemplateCode);
-      SetAbstractNumDefinitionName(openXmlElement, value?.AbstractNumDefinitionName);
-      SetStyleLink(openXmlElement, value?.StyleLink);
-      SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
-      SetLevels(openXmlElement, value?.Levels);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.AbstractNum openXmlElement, DMW.AbstractNum value)
+  {
+    SetAbstractNumberId(openXmlElement, value?.AbstractNumberId);
+    SetNsid(openXmlElement, value?.Nsid);
+    SetMultiLevelType(openXmlElement, value?.MultiLevelType);
+    SetTemplateCode(openXmlElement, value?.TemplateCode);
+    SetAbstractNumDefinitionName(openXmlElement, value?.AbstractNumDefinitionName);
+    SetStyleLink(openXmlElement, value?.StyleLink);
+    SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
+    SetLevels(openXmlElement, value?.Levels);
+    }
+  }

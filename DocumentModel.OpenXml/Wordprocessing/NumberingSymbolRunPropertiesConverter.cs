@@ -39,34 +39,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetBold(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Bold>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Bold>());
   }
   
   private static bool CmpBold(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetBold(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Bold", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Bold>(), value, diffs, objName);
   }
   
   private static void SetBold(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Bold>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Bold();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value);
   }
   
   /// <summary>
@@ -74,34 +57,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.BoldComplexScript>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>());
   }
   
   private static bool CmpBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetBoldComplexScript(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.BoldComplexScript", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>(), value, diffs, objName);
   }
   
   private static void SetBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.BoldComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.BoldComplexScript();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value);
   }
   
   /// <summary>
@@ -109,34 +75,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalic(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Italic>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Italic>());
   }
   
   private static bool CmpItalic(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetItalic(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Italic", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Italic>(), value, diffs, objName);
   }
   
   private static void SetItalic(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Italic>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Italic();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value);
   }
   
   /// <summary>
@@ -144,34 +93,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>());
   }
   
   private static bool CmpItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetItalicComplexScript(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.ItalicComplexScript", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>(), value, diffs, objName);
   }
   
   private static void SetItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.ItalicComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.ItalicComplexScript();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value);
   }
   
   /// <summary>
@@ -179,34 +111,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetCaps(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Caps>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Caps>());
   }
   
   private static bool CmpCaps(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetCaps(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Caps", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Caps>(), value, diffs, objName);
   }
   
   private static void SetCaps(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Caps>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Caps();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Caps>(openXmlElement, value);
   }
   
   /// <summary>
@@ -214,34 +129,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSmallCaps(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.SmallCaps>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.SmallCaps>());
   }
   
   private static bool CmpSmallCaps(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetSmallCaps(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.SmallCaps", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SmallCaps>(), value, diffs, objName);
   }
   
   private static void SetSmallCaps(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.SmallCaps>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.SmallCaps();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.SmallCaps>(openXmlElement, value);
   }
   
   /// <summary>
@@ -249,34 +147,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetStrike(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Strike>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Strike>());
   }
   
   private static bool CmpStrike(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetStrike(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Strike", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Strike>(), value, diffs, objName);
   }
   
   private static void SetStrike(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Strike>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Strike();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Strike>(openXmlElement, value);
   }
   
   /// <summary>
@@ -284,34 +165,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetDoubleStrike(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.DoubleStrike>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DoubleStrike>());
   }
   
   private static bool CmpDoubleStrike(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDoubleStrike(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.DoubleStrike", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DoubleStrike>(), value, diffs, objName);
   }
   
   private static void SetDoubleStrike(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.DoubleStrike>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.DoubleStrike();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.DoubleStrike>(openXmlElement, value);
   }
   
   /// <summary>
@@ -319,34 +183,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetOutline(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Outline>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Outline>());
   }
   
   private static bool CmpOutline(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetOutline(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Outline", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Outline>(), value, diffs, objName);
   }
   
   private static void SetOutline(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Outline>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Outline();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Outline>(openXmlElement, value);
   }
   
   /// <summary>
@@ -354,34 +201,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetShadow(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Shadow>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Shadow>());
   }
   
   private static bool CmpShadow(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetShadow(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Shadow", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Shadow>(), value, diffs, objName);
   }
   
   private static void SetShadow(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Shadow>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Shadow();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Shadow>(openXmlElement, value);
   }
   
   /// <summary>
@@ -389,34 +219,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetEmboss(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Emboss>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Emboss>());
   }
   
   private static bool CmpEmboss(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetEmboss(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Emboss", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Emboss>(), value, diffs, objName);
   }
   
   private static void SetEmboss(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Emboss>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Emboss();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Emboss>(openXmlElement, value);
   }
   
   /// <summary>
@@ -424,34 +237,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetImprint(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Imprint>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Imprint>());
   }
   
   private static bool CmpImprint(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetImprint(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Imprint", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Imprint>(), value, diffs, objName);
   }
   
   private static void SetImprint(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Imprint>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Imprint();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Imprint>(openXmlElement, value);
   }
   
   /// <summary>
@@ -459,34 +255,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetNoProof(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.NoProof>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoProof>());
   }
   
   private static bool CmpNoProof(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetNoProof(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.NoProof", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoProof>(), value, diffs, objName);
   }
   
   private static void SetNoProof(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.NoProof>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.NoProof();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.NoProof>(openXmlElement, value);
   }
   
   /// <summary>
@@ -494,34 +273,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSnapToGrid(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.SnapToGrid>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.SnapToGrid>());
   }
   
   private static bool CmpSnapToGrid(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetSnapToGrid(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.SnapToGrid", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SnapToGrid>(), value, diffs, objName);
   }
   
   private static void SetSnapToGrid(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.SnapToGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.SnapToGrid();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.SnapToGrid>(openXmlElement, value);
   }
   
   /// <summary>
@@ -529,34 +291,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetVanish(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Vanish>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Vanish>());
   }
   
   private static bool CmpVanish(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetVanish(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Vanish", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Vanish>(), value, diffs, objName);
   }
   
   private static void SetVanish(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Vanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Vanish();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Vanish>(openXmlElement, value);
   }
   
   /// <summary>
@@ -564,34 +309,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetWebHidden(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.WebHidden>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.WebHidden>());
   }
   
   private static bool CmpWebHidden(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetWebHidden(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.WebHidden", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.WebHidden>(), value, diffs, objName);
   }
   
   private static void SetWebHidden(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.WebHidden>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.WebHidden();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.WebHidden>(openXmlElement, value);
   }
   
   /// <summary>
@@ -628,27 +356,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Int32? GetSpacing(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val);
   }
   
   private static bool CmpSpacing(DXW.NumberingSymbolRunProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Spacing>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.Spacing", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Spacing>()?.Val, value, diffs, objName, "Spacing");
   }
   
   private static void SetSpacing(DXW.NumberingSymbolRunProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Spacing>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.Spacing{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.Spacing,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -656,27 +374,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Int64? GetCharacterScale(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val);
   }
   
   private static bool CmpCharacterScale(DXW.NumberingSymbolRunProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.CharacterScale>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.CharacterScale", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.CharacterScale>()?.Val, value, diffs, objName, "CharacterScale");
   }
   
   private static void SetCharacterScale(DXW.NumberingSymbolRunProperties openXmlElement, Int64? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.CharacterScale>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.CharacterScale{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.CharacterScale,System.Int64>(openXmlElement, value);
   }
   
   /// <summary>
@@ -684,27 +392,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static UInt32? GetKern(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.Kern>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val);
   }
   
   private static bool CmpKern(DXW.NumberingSymbolRunProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.Kern>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.Kern", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val, value, diffs, objName, "Kern");
   }
   
   private static void SetKern(DXW.NumberingSymbolRunProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Kern>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.Kern{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.Kern,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -712,24 +410,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static String? GetPosition(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val);
   }
   
   private static bool CmpPosition(DXW.NumberingSymbolRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.Position>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val, value, diffs, objName, "Position");
   }
   
   private static void SetPosition(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Position>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.Position { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.Position>(openXmlElement, value);
   }
   
   /// <summary>
@@ -737,24 +428,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static String? GetFontSize(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
   }
   
   private static bool CmpFontSize(DXW.NumberingSymbolRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val, value, diffs, objName, "FontSize");
   }
   
   private static void SetFontSize(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FontSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.FontSize { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.FontSize>(openXmlElement, value);
   }
   
   /// <summary>
@@ -762,24 +446,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static String? GetFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
   }
   
   private static bool CmpFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeComplexScript");
   }
   
   private static void SetFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FontSizeComplexScript>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.FontSizeComplexScript { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.FontSizeComplexScript>(openXmlElement, value);
   }
   
   /// <summary>
@@ -828,13 +505,15 @@ public static class NumberingSymbolRunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TextEffect>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(itemElement, (DMW.TextEffectKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
   }
   
   /// <summary>
@@ -941,13 +620,15 @@ public static class NumberingSymbolRunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement, (DMW.VerticalPositionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
   }
   
   /// <summary>
@@ -955,34 +636,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetRightToLeftText(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.RightToLeftText>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.RightToLeftText>());
   }
   
   private static bool CmpRightToLeftText(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetRightToLeftText(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.RightToLeftText", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.RightToLeftText>(), value, diffs, objName);
   }
   
   private static void SetRightToLeftText(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.RightToLeftText>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.RightToLeftText();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.RightToLeftText>(openXmlElement, value);
   }
   
   /// <summary>
@@ -990,34 +654,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.ComplexScript>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ComplexScript>());
   }
   
   private static bool CmpComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetComplexScript(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.ComplexScript", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ComplexScript>(), value, diffs, objName);
   }
   
   private static void SetComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.ComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.ComplexScript();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.ComplexScript>(openXmlElement, value);
   }
   
   /// <summary>
@@ -1037,13 +684,15 @@ public static class NumberingSymbolRunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Emphasis>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement, (DMW.EmphasisMarkKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
   }
   
   /// <summary>
@@ -1109,34 +758,17 @@ public static class NumberingSymbolRunPropertiesConverter
   /// </summary>
   private static Boolean? GetSpecVanish(DXW.NumberingSymbolRunProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.SpecVanish>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.SpecVanish>());
   }
   
   private static bool CmpSpecVanish(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetSpecVanish(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.SpecVanish", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.SpecVanish>(), value, diffs, objName);
   }
   
   private static void SetSpecVanish(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.SpecVanish>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.SpecVanish();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.SpecVanish>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.NumberingSymbolRunProperties? CreateModelElement(DXW.NumberingSymbolRunProperties? openXmlElement)
@@ -1269,50 +901,51 @@ public static class NumberingSymbolRunPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingSymbolRunProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingSymbolRunProperties value)
     where OpenXmlElementType: DXW.NumberingSymbolRunProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunFonts(openXmlElement, value?.RunFonts);
-      SetBold(openXmlElement, value?.Bold);
-      SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
-      SetItalic(openXmlElement, value?.Italic);
-      SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
-      SetCaps(openXmlElement, value?.Caps);
-      SetSmallCaps(openXmlElement, value?.SmallCaps);
-      SetStrike(openXmlElement, value?.Strike);
-      SetDoubleStrike(openXmlElement, value?.DoubleStrike);
-      SetOutline(openXmlElement, value?.Outline);
-      SetShadow(openXmlElement, value?.Shadow);
-      SetEmboss(openXmlElement, value?.Emboss);
-      SetImprint(openXmlElement, value?.Imprint);
-      SetNoProof(openXmlElement, value?.NoProof);
-      SetSnapToGrid(openXmlElement, value?.SnapToGrid);
-      SetVanish(openXmlElement, value?.Vanish);
-      SetWebHidden(openXmlElement, value?.WebHidden);
-      SetColor(openXmlElement, value?.Color);
-      SetSpacing(openXmlElement, value?.Spacing);
-      SetCharacterScale(openXmlElement, value?.CharacterScale);
-      SetKern(openXmlElement, value?.Kern);
-      SetPosition(openXmlElement, value?.Position);
-      SetFontSize(openXmlElement, value?.FontSize);
-      SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
-      SetUnderline(openXmlElement, value?.Underline);
-      SetTextEffect(openXmlElement, value?.TextEffect);
-      SetBorder(openXmlElement, value?.Border);
-      SetShading(openXmlElement, value?.Shading);
-      SetFitText(openXmlElement, value?.FitText);
-      SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
-      SetRightToLeftText(openXmlElement, value?.RightToLeftText);
-      SetComplexScript(openXmlElement, value?.ComplexScript);
-      SetEmphasis(openXmlElement, value?.Emphasis);
-      SetLanguages(openXmlElement, value?.Languages);
-      SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
-      SetSpecVanish(openXmlElement, value?.SpecVanish);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties value)
+  {
+    SetRunFonts(openXmlElement, value?.RunFonts);
+    SetBold(openXmlElement, value?.Bold);
+    SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
+    SetItalic(openXmlElement, value?.Italic);
+    SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
+    SetCaps(openXmlElement, value?.Caps);
+    SetSmallCaps(openXmlElement, value?.SmallCaps);
+    SetStrike(openXmlElement, value?.Strike);
+    SetDoubleStrike(openXmlElement, value?.DoubleStrike);
+    SetOutline(openXmlElement, value?.Outline);
+    SetShadow(openXmlElement, value?.Shadow);
+    SetEmboss(openXmlElement, value?.Emboss);
+    SetImprint(openXmlElement, value?.Imprint);
+    SetNoProof(openXmlElement, value?.NoProof);
+    SetSnapToGrid(openXmlElement, value?.SnapToGrid);
+    SetVanish(openXmlElement, value?.Vanish);
+    SetWebHidden(openXmlElement, value?.WebHidden);
+    SetColor(openXmlElement, value?.Color);
+    SetSpacing(openXmlElement, value?.Spacing);
+    SetCharacterScale(openXmlElement, value?.CharacterScale);
+    SetKern(openXmlElement, value?.Kern);
+    SetPosition(openXmlElement, value?.Position);
+    SetFontSize(openXmlElement, value?.FontSize);
+    SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
+    SetUnderline(openXmlElement, value?.Underline);
+    SetTextEffect(openXmlElement, value?.TextEffect);
+    SetBorder(openXmlElement, value?.Border);
+    SetShading(openXmlElement, value?.Shading);
+    SetFitText(openXmlElement, value?.FitText);
+    SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
+    SetRightToLeftText(openXmlElement, value?.RightToLeftText);
+    SetComplexScript(openXmlElement, value?.ComplexScript);
+    SetEmphasis(openXmlElement, value?.Emphasis);
+    SetLanguages(openXmlElement, value?.Languages);
+    SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
+    SetSpecVanish(openXmlElement, value?.SpecVanish);
+    }
+  }

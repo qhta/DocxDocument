@@ -10,22 +10,17 @@ public static class CategoryConverter
   /// </summary>
   private static String? GetType(DXDrawDgms.Category openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXDrawDgms.Category openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXDrawDgms.Category openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -76,16 +71,17 @@ public static class CategoryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Category? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Category value)
     where OpenXmlElementType: DXDrawDgms.Category, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetPriority(openXmlElement, value?.Priority);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Category openXmlElement, DMDrawsDgms.Category value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetPriority(openXmlElement, value?.Priority);
+    }
+  }

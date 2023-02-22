@@ -10,22 +10,17 @@ public static class PresenceInfoConverter
   /// </summary>
   private static String? GetProviderId(DXO2013W.PresenceInfo openXmlElement)
   {
-    return openXmlElement?.ProviderId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ProviderId);
   }
   
   private static bool CmpProviderId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ProviderId?.Value == value) return true;
-    diffs?.Add(objName, "ProviderId", openXmlElement?.ProviderId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ProviderId, value, diffs, objName, "ProviderId");
   }
   
   private static void SetProviderId(DXO2013W.PresenceInfo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ProviderId = new StringValue { Value = value };
-    else
-      openXmlElement.ProviderId = null;
+    openXmlElement.ProviderId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class PresenceInfoConverter
   /// </summary>
   private static String? GetUserId(DXO2013W.PresenceInfo openXmlElement)
   {
-    return openXmlElement?.UserId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.UserId);
   }
   
   private static bool CmpUserId(DXO2013W.PresenceInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.UserId?.Value == value) return true;
-    diffs?.Add(objName, "UserId", openXmlElement?.UserId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.UserId, value, diffs, objName, "UserId");
   }
   
   private static void SetUserId(DXO2013W.PresenceInfo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.UserId = new StringValue { Value = value };
-    else
-      openXmlElement.UserId = null;
+    openXmlElement.UserId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DXO2013W.PresenceInfo? openXmlElement)
@@ -79,16 +69,17 @@ public static class PresenceInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PresenceInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PresenceInfo value)
     where OpenXmlElementType: DXO2013W.PresenceInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetProviderId(openXmlElement, value?.ProviderId);
-      SetUserId(openXmlElement, value?.UserId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013W.PresenceInfo openXmlElement, DMW.PresenceInfo value)
+  {
+    SetProviderId(openXmlElement, value?.ProviderId);
+    SetUserId(openXmlElement, value?.UserId);
+    }
+  }

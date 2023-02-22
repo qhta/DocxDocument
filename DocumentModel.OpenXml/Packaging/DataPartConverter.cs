@@ -63,16 +63,17 @@ public static class DataPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPart value)
     where OpenXmlElementType: DXPack.DataPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetUri(openXmlElement, value?.Uri);
-      //SetContentType(openXmlElement, value?.ContentType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DataPart openXmlElement, DMPack.DataPart value)
+  {
+    //SetUri(openXmlElement, value?.Uri);
+    //SetContentType(openXmlElement, value?.ContentType);
+    }
+  }

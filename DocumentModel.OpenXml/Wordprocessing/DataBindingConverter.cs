@@ -10,22 +10,17 @@ public static class DataBindingConverter
   /// </summary>
   private static String? GetPrefixMappings(DXW.DataBinding openXmlElement)
   {
-    return openXmlElement?.PrefixMappings?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PrefixMappings);
   }
   
   private static bool CmpPrefixMappings(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PrefixMappings?.Value == value) return true;
-    diffs?.Add(objName, "PrefixMappings", openXmlElement?.PrefixMappings?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PrefixMappings, value, diffs, objName, "PrefixMappings");
   }
   
   private static void SetPrefixMappings(DXW.DataBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PrefixMappings = new StringValue { Value = value };
-    else
-      openXmlElement.PrefixMappings = null;
+    openXmlElement.PrefixMappings = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class DataBindingConverter
   /// </summary>
   private static String? GetXPath(DXW.DataBinding openXmlElement)
   {
-    return openXmlElement?.XPath?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.XPath);
   }
   
   private static bool CmpXPath(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.XPath?.Value == value) return true;
-    diffs?.Add(objName, "XPath", openXmlElement?.XPath?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.XPath, value, diffs, objName, "XPath");
   }
   
   private static void SetXPath(DXW.DataBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.XPath = new StringValue { Value = value };
-    else
-      openXmlElement.XPath = null;
+    openXmlElement.XPath = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class DataBindingConverter
   /// </summary>
   private static String? GetStoreItemId(DXW.DataBinding openXmlElement)
   {
-    return openXmlElement?.StoreItemId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StoreItemId);
   }
   
   private static bool CmpStoreItemId(DXW.DataBinding openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StoreItemId?.Value == value) return true;
-    diffs?.Add(objName, "StoreItemId", openXmlElement?.StoreItemId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StoreItemId, value, diffs, objName, "StoreItemId");
   }
   
   private static void SetStoreItemId(DXW.DataBinding openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StoreItemId = new StringValue { Value = value };
-    else
-      openXmlElement.StoreItemId = null;
+    openXmlElement.StoreItemId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DXW.DataBinding? openXmlElement)
@@ -105,17 +90,18 @@ public static class DataBindingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DataBinding? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DataBinding value)
     where OpenXmlElementType: DXW.DataBinding, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPrefixMappings(openXmlElement, value?.PrefixMappings);
-      SetXPath(openXmlElement, value?.XPath);
-      SetStoreItemId(openXmlElement, value?.StoreItemId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DataBinding openXmlElement, DMW.DataBinding value)
+  {
+    SetPrefixMappings(openXmlElement, value?.PrefixMappings);
+    SetXPath(openXmlElement, value?.XPath);
+    SetStoreItemId(openXmlElement, value?.StoreItemId);
+    }
+  }

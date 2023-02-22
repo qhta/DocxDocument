@@ -28,22 +28,17 @@ public static class RunFontsConverter
   /// </summary>
   private static String? GetAscii(DXW.RunFonts openXmlElement)
   {
-    return openXmlElement?.Ascii?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Ascii);
   }
   
   private static bool CmpAscii(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Ascii?.Value == value) return true;
-    diffs?.Add(objName, "Ascii", openXmlElement?.Ascii?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Ascii, value, diffs, objName, "Ascii");
   }
   
   private static void SetAscii(DXW.RunFonts openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Ascii = new StringValue { Value = value };
-    else
-      openXmlElement.Ascii = null;
+    openXmlElement.Ascii = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class RunFontsConverter
   /// </summary>
   private static String? GetHighAnsi(DXW.RunFonts openXmlElement)
   {
-    return openXmlElement?.HighAnsi?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.HighAnsi);
   }
   
   private static bool CmpHighAnsi(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.HighAnsi?.Value == value) return true;
-    diffs?.Add(objName, "HighAnsi", openXmlElement?.HighAnsi?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.HighAnsi, value, diffs, objName, "HighAnsi");
   }
   
   private static void SetHighAnsi(DXW.RunFonts openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.HighAnsi = new StringValue { Value = value };
-    else
-      openXmlElement.HighAnsi = null;
+    openXmlElement.HighAnsi = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +64,17 @@ public static class RunFontsConverter
   /// </summary>
   private static String? GetEastAsia(DXW.RunFonts openXmlElement)
   {
-    return openXmlElement?.EastAsia?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EastAsia);
   }
   
   private static bool CmpEastAsia(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EastAsia?.Value == value) return true;
-    diffs?.Add(objName, "EastAsia", openXmlElement?.EastAsia?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EastAsia, value, diffs, objName, "EastAsia");
   }
   
   private static void SetEastAsia(DXW.RunFonts openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EastAsia = new StringValue { Value = value };
-    else
-      openXmlElement.EastAsia = null;
+    openXmlElement.EastAsia = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -97,22 +82,17 @@ public static class RunFontsConverter
   /// </summary>
   private static String? GetComplexScript(DXW.RunFonts openXmlElement)
   {
-    return openXmlElement?.ComplexScript?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ComplexScript);
   }
   
   private static bool CmpComplexScript(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ComplexScript?.Value == value) return true;
-    diffs?.Add(objName, "ComplexScript", openXmlElement?.ComplexScript?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ComplexScript, value, diffs, objName, "ComplexScript");
   }
   
   private static void SetComplexScript(DXW.RunFonts openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ComplexScript = new StringValue { Value = value };
-    else
-      openXmlElement.ComplexScript = null;
+    openXmlElement.ComplexScript = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -236,23 +216,24 @@ public static class RunFontsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RunFonts? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunFonts value)
     where OpenXmlElementType: DXW.RunFonts, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHint(openXmlElement, value?.Hint);
-      SetAscii(openXmlElement, value?.Ascii);
-      SetHighAnsi(openXmlElement, value?.HighAnsi);
-      SetEastAsia(openXmlElement, value?.EastAsia);
-      SetComplexScript(openXmlElement, value?.ComplexScript);
-      SetAsciiTheme(openXmlElement, value?.AsciiTheme);
-      SetHighAnsiTheme(openXmlElement, value?.HighAnsiTheme);
-      SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
-      SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.RunFonts openXmlElement, DMW.RunFonts value)
+  {
+    SetHint(openXmlElement, value?.Hint);
+    SetAscii(openXmlElement, value?.Ascii);
+    SetHighAnsi(openXmlElement, value?.HighAnsi);
+    SetEastAsia(openXmlElement, value?.EastAsia);
+    SetComplexScript(openXmlElement, value?.ComplexScript);
+    SetAsciiTheme(openXmlElement, value?.AsciiTheme);
+    SetHighAnsiTheme(openXmlElement, value?.HighAnsiTheme);
+    SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
+    SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
+    }
+  }

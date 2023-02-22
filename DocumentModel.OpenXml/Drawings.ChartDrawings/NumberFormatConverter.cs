@@ -10,22 +10,17 @@ public static class NumberFormatConverter
   /// </summary>
   private static String? GetFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement)
   {
-    return openXmlElement?.FormatCode?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
   private static bool CmpFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FormatCode?.Value == value) return true;
-    diffs?.Add(objName, "FormatCode", openXmlElement?.FormatCode?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
   
   private static void SetFormatCode(DXO2016DrawChartDraw.NumberFormat openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FormatCode = new StringValue { Value = value };
-    else
-      openXmlElement.FormatCode = null;
+    openXmlElement.FormatCode = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,16 +74,17 @@ public static class NumberFormatConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumberFormat? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumberFormat value)
     where OpenXmlElementType: DXO2016DrawChartDraw.NumberFormat, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormatCode(openXmlElement, value?.FormatCode);
-      SetSourceLinked(openXmlElement, value?.SourceLinked);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.NumberFormat openXmlElement, DMDrawsChartDraws.NumberFormat value)
+  {
+    SetFormatCode(openXmlElement, value?.FormatCode);
+    SetSourceLinked(openXmlElement, value?.SourceLinked);
+    }
+  }

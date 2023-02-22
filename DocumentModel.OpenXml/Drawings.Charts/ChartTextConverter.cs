@@ -123,17 +123,18 @@ public static class ChartTextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartText? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartText value)
     where OpenXmlElementType: DXDrawCharts.ChartText, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStringReference(openXmlElement, value?.StringReference);
-      SetRichText(openXmlElement, value?.RichText);
-      SetStringLiteral(openXmlElement, value?.StringLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.ChartText openXmlElement, DMDrawsCharts.ChartText value)
+  {
+    SetStringReference(openXmlElement, value?.StringReference);
+    SetRichText(openXmlElement, value?.RichText);
+    SetStringLiteral(openXmlElement, value?.StringLiteral);
+    }
+  }

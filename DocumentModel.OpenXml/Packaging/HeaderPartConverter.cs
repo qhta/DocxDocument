@@ -382,30 +382,31 @@ public static class HeaderPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.HeaderPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.HeaderPart value)
     where OpenXmlElementType: DXPack.HeaderPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
-      //SetChartParts(openXmlElement, value?.ChartParts);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
-      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
-      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
-      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
-      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
-      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
-      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
-      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
-      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
-      SetHeader(openXmlElement, value?.Header);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.HeaderPart openXmlElement, DMPack.HeaderPart value)
+  {
+    //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
+    //SetChartParts(openXmlElement, value?.ChartParts);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+    //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+    //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+    //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+    //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+    //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+    //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+    //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+    //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+    SetHeader(openXmlElement, value?.Header);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

@@ -114,17 +114,18 @@ public static class SharedControlsQatItemsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.SharedControlsQatItems? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.SharedControlsQatItems value)
     where OpenXmlElementType: DXO2010CustUI.SharedControlsQatItems, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlCloneQat(openXmlElement, value?.ControlCloneQat);
-      SetButtonRegular(openXmlElement, value?.ButtonRegular);
-      SetSeparator(openXmlElement, value?.Separator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.SharedControlsQatItems openXmlElement, DM.SharedControlsQatItems value)
+  {
+    SetControlCloneQat(openXmlElement, value?.ControlCloneQat);
+    SetButtonRegular(openXmlElement, value?.ButtonRegular);
+    SetSeparator(openXmlElement, value?.Separator);
+    }
+  }

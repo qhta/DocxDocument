@@ -80,16 +80,17 @@ public static class PathShadePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PathShadeProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PathShadeProperties value)
     where OpenXmlElementType: DXO2010W.PathShadeProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPath(openXmlElement, value?.Path);
-      SetFillToRectangle(openXmlElement, value?.FillToRectangle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.PathShadeProperties openXmlElement, DMW.PathShadeProperties value)
+  {
+    SetPath(openXmlElement, value?.Path);
+    SetFillToRectangle(openXmlElement, value?.FillToRectangle);
+    }
+  }

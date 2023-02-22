@@ -73,16 +73,17 @@ public static class ArtisticCementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCement value)
     where OpenXmlElementType: DXO2010Draw.ArtisticCement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetCrackSpacing(openXmlElement, value?.CrackSpacing);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticCement openXmlElement, DMDraws.ArtisticCement value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetCrackSpacing(openXmlElement, value?.CrackSpacing);
+    }
+  }

@@ -85,16 +85,17 @@ public static class ContourColorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ContourColor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ContourColor value)
     where OpenXmlElementType: DXO2010W.ContourColor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.ContourColor openXmlElement, DMW.ContourColor value)
+  {
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

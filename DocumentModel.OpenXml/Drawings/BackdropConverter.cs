@@ -155,18 +155,19 @@ public static class BackdropConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Backdrop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Backdrop value)
     where OpenXmlElementType: DXDraw.Backdrop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetNormal(openXmlElement, value?.Normal);
-      SetUpVector(openXmlElement, value?.UpVector);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Backdrop openXmlElement, DMDraws.Backdrop value)
+  {
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetNormal(openXmlElement, value?.Normal);
+    SetUpVector(openXmlElement, value?.UpVector);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

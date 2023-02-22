@@ -161,20 +161,21 @@ public static class TileConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Tile? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Tile value)
     where OpenXmlElementType: DXDraw.Tile, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHorizontalOffset(openXmlElement, value?.HorizontalOffset);
-      SetVerticalOffset(openXmlElement, value?.VerticalOffset);
-      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
-      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
-      SetFlip(openXmlElement, value?.Flip);
-      SetAlignment(openXmlElement, value?.Alignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Tile openXmlElement, DMDraws.Tile value)
+  {
+    SetHorizontalOffset(openXmlElement, value?.HorizontalOffset);
+    SetVerticalOffset(openXmlElement, value?.VerticalOffset);
+    SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+    SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+    SetFlip(openXmlElement, value?.Flip);
+    SetAlignment(openXmlElement, value?.Alignment);
+    }
+  }

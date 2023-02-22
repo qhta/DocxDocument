@@ -347,24 +347,25 @@ public static class TableCellBordersConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellBorders? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellBorders value)
     where OpenXmlElementType: DXW.TableCellBorders, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetStartBorder(openXmlElement, value?.StartBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      SetEndBorder(openXmlElement, value?.EndBorder);
-      SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
-      SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
-      SetTopLeftToBottomRightCellBorder(openXmlElement, value?.TopLeftToBottomRightCellBorder);
-      SetTopRightToBottomLeftCellBorder(openXmlElement, value?.TopRightToBottomLeftCellBorder);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableCellBorders openXmlElement, DMW.TableCellBorders value)
+  {
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetStartBorder(openXmlElement, value?.StartBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    SetEndBorder(openXmlElement, value?.EndBorder);
+    SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
+    SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
+    SetTopLeftToBottomRightCellBorder(openXmlElement, value?.TopLeftToBottomRightCellBorder);
+    SetTopRightToBottomLeftCellBorder(openXmlElement, value?.TopRightToBottomLeftCellBorder);
+    }
+  }

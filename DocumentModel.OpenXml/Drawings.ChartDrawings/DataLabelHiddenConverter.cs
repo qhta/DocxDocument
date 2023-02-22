@@ -50,15 +50,16 @@ public static class DataLabelHiddenConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelHidden? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelHidden value)
     where OpenXmlElementType: DXO2016DrawChartDraw.DataLabelHidden, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdx(openXmlElement, value?.Idx);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabelHidden openXmlElement, DMDrawsChartDraws.DataLabelHidden value)
+  {
+    SetIdx(openXmlElement, value?.Idx);
+    }
+  }

@@ -59,15 +59,16 @@ public static class ImagePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageProperties value)
     where OpenXmlElementType: DXO2010Draw.ImageProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetImageLayer(openXmlElement, value?.ImageLayer);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageProperties value)
+  {
+    SetImageLayer(openXmlElement, value?.ImageLayer);
+    }
+  }

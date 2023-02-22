@@ -91,16 +91,17 @@ public static class Scene3DConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Scene3D? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Scene3D value)
     where OpenXmlElementType: DXO2010W.Scene3D, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCamera(openXmlElement, value?.Camera);
-      SetLightRig(openXmlElement, value?.LightRig);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Scene3D openXmlElement, DMW.Scene3D value)
+  {
+    SetCamera(openXmlElement, value?.Camera);
+    SetLightRig(openXmlElement, value?.LightRig);
+    }
+  }

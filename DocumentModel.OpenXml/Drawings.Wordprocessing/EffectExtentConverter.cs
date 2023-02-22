@@ -119,18 +119,19 @@ public static class EffectExtentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.EffectExtent? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.EffectExtent value)
     where OpenXmlElementType: DXDrawW.EffectExtent, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeftEdge(openXmlElement, value?.LeftEdge);
-      SetTopEdge(openXmlElement, value?.TopEdge);
-      SetRightEdge(openXmlElement, value?.RightEdge);
-      SetBottomEdge(openXmlElement, value?.BottomEdge);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.EffectExtent openXmlElement, DMDrawsW.EffectExtent value)
+  {
+    SetLeftEdge(openXmlElement, value?.LeftEdge);
+    SetTopEdge(openXmlElement, value?.TopEdge);
+    SetRightEdge(openXmlElement, value?.RightEdge);
+    SetBottomEdge(openXmlElement, value?.BottomEdge);
+    }
+  }

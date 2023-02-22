@@ -48,15 +48,16 @@ public static class OpenXmlFormulaElementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlFormulaElement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlFormulaElement value)
     where OpenXmlElementType: DXO2016DrawChartDraw.OpenXmlFormulaElement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDir(openXmlElement, value?.Dir);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement value)
+  {
+    SetDir(openXmlElement, value?.Dir);
+    }
+  }

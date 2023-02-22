@@ -94,17 +94,18 @@ public static class BevelTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BevelType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BevelType value)
     where OpenXmlElementType: DXO2010W.BevelType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetHeight(openXmlElement, value?.Height);
-      SetPresetProfileType(openXmlElement, value?.PresetProfileType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.BevelType openXmlElement, DMW.BevelType value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetHeight(openXmlElement, value?.Height);
+    SetPresetProfileType(openXmlElement, value?.PresetProfileType);
+    }
+  }

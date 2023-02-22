@@ -30,22 +30,17 @@ public static class StringLevelConverter
   /// </summary>
   private static String? GetName(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXO2016DrawChartDraw.StringLevel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXO2016DrawChartDraw.StringLevel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMDrawsChartDraws.ChartStringValue>? GetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement)
@@ -64,11 +59,11 @@ public static class StringLevelConverter
   
   private static bool CmpChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement, Collection<DMDrawsChartDraws.ChartStringValue>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.ChartStringValue>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.ChartStringValue>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -85,7 +80,7 @@ public static class StringLevelConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -135,17 +130,18 @@ public static class StringLevelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.StringLevel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.StringLevel value)
     where OpenXmlElementType: DXO2016DrawChartDraw.StringLevel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPtCount(openXmlElement, value?.PtCount);
-      SetName(openXmlElement, value?.Name);
-      SetChartStringValues(openXmlElement, value?.ChartStringValues);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.StringLevel openXmlElement, DMDrawsChartDraws.StringLevel value)
+  {
+    SetPtCount(openXmlElement, value?.PtCount);
+    SetName(openXmlElement, value?.Name);
+    SetChartStringValues(openXmlElement, value?.ChartStringValues);
+    }
+  }

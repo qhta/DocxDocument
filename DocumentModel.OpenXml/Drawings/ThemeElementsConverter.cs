@@ -155,18 +155,19 @@ public static class ThemeElementsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeElements? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeElements value)
     where OpenXmlElementType: DXDraw.ThemeElements, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetColorScheme(openXmlElement, value?.ColorScheme);
-      SetFontScheme(openXmlElement, value?.FontScheme);
-      SetFormatScheme(openXmlElement, value?.FormatScheme);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ThemeElements openXmlElement, DMDraws.ThemeElements value)
+  {
+    SetColorScheme(openXmlElement, value?.ColorScheme);
+    SetFontScheme(openXmlElement, value?.FontScheme);
+    SetFormatScheme(openXmlElement, value?.FormatScheme);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

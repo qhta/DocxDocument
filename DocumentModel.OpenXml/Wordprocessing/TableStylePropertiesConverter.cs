@@ -208,20 +208,21 @@ public static class TableStylePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleProperties value)
     where OpenXmlElementType: DXW.TableStyleProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
-      SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
-      SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalFormattingTableProperties);
-      SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
-      SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalFormattingTableCellProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableStyleProperties openXmlElement, DMW.TableStyleProperties value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
+    SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
+    SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalFormattingTableProperties);
+    SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
+    SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalFormattingTableCellProperties);
+    }
+  }

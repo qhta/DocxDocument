@@ -22,13 +22,15 @@ public static class Bar3DChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarDirection, DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(itemElement, (DMDrawsCharts.BarDirectionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarDirection, DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>((DMDrawsCharts.BarDirectionKind)value));
   }
   
   /// <summary>
@@ -48,13 +50,15 @@ public static class Bar3DChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarGrouping, DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(itemElement, (DMDrawsCharts.BarGroupingKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarGrouping, DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>((DMDrawsCharts.BarGroupingKind)value));
   }
   
   /// <summary>
@@ -104,11 +108,11 @@ public static class Bar3DChartConverter
   
   private static bool CmpBarChartSeries(DXDrawCharts.Bar3DChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.BarChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.BarChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -125,7 +129,7 @@ public static class Bar3DChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -172,52 +176,32 @@ public static class Bar3DChartConverter
   
   private static UInt16? GetGapWidth(DXDrawCharts.Bar3DChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
   }
   
   private static bool CmpGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.GapWidth", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
   private static void SetGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.GapWidth{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
   private static UInt16? GetGapDepth(DXDrawCharts.Bar3DChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val);
   }
   
   private static bool CmpGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.GapDepth", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val, value, diffs, objName, "GapDepth");
   }
   
   private static void SetGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.GapDepth>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.GapDepth{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.GapDepth,System.UInt16>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.ShapeKind? GetShape(DXDrawCharts.Bar3DChart openXmlElement)
@@ -234,13 +218,15 @@ public static class Bar3DChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Shape>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(itemElement, (DMDrawsCharts.ShapeKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>((DMDrawsCharts.ShapeKind)value));
   }
   
   private static Collection<UInt32>? GetAxisIds(DXDrawCharts.Bar3DChart openXmlElement)
@@ -259,11 +245,11 @@ public static class Bar3DChartConverter
   
   private static bool CmpAxisIds(DXDrawCharts.Bar3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -280,7 +266,7 @@ public static class Bar3DChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -377,24 +363,25 @@ public static class Bar3DChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Bar3DChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Bar3DChart value)
     where OpenXmlElementType: DXDrawCharts.Bar3DChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBarDirection(openXmlElement, value?.BarDirection);
-      SetBarGrouping(openXmlElement, value?.BarGrouping);
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetBarChartSeries(openXmlElement, value?.BarChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetGapWidth(openXmlElement, value?.GapWidth);
-      SetGapDepth(openXmlElement, value?.GapDepth);
-      SetShape(openXmlElement, value?.Shape);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetBar3DChartExtensionList(openXmlElement, value?.Bar3DChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChart value)
+  {
+    SetBarDirection(openXmlElement, value?.BarDirection);
+    SetBarGrouping(openXmlElement, value?.BarGrouping);
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetBarChartSeries(openXmlElement, value?.BarChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetGapWidth(openXmlElement, value?.GapWidth);
+    SetGapDepth(openXmlElement, value?.GapDepth);
+    SetShape(openXmlElement, value?.Shape);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetBar3DChartExtensionList(openXmlElement, value?.Bar3DChartExtensionList);
+    }
+  }

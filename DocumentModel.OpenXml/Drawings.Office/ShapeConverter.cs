@@ -10,22 +10,17 @@ public static class ShapeConverter
   /// </summary>
   private static String? GetModelId(DXODraw.Shape openXmlElement)
   {
-    return openXmlElement?.ModelId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
   private static bool CmpModelId(DXODraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ModelId?.Value == value) return true;
-    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
   
   private static void SetModelId(DXODraw.Shape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ModelId = new StringValue { Value = value };
-    else
-      openXmlElement.ModelId = null;
+    openXmlElement.ModelId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -245,21 +240,22 @@ public static class ShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Shape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Shape value)
     where OpenXmlElementType: DXODraw.Shape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetModelId(openXmlElement, value?.ModelId);
-      SetShapeNonVisualProperties(openXmlElement, value?.ShapeNonVisualProperties);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetShapeStyle(openXmlElement, value?.ShapeStyle);
-      SetTextBody(openXmlElement, value?.TextBody);
-      SetTransform2D(openXmlElement, value?.Transform2D);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.Shape openXmlElement, DMDrawsO.Shape value)
+  {
+    SetModelId(openXmlElement, value?.ModelId);
+    SetShapeNonVisualProperties(openXmlElement, value?.ShapeNonVisualProperties);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetShapeStyle(openXmlElement, value?.ShapeStyle);
+    SetTextBody(openXmlElement, value?.TextBody);
+    SetTransform2D(openXmlElement, value?.Transform2D);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

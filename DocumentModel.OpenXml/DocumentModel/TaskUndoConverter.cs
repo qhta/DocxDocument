@@ -10,22 +10,17 @@ public static class TaskUndoConverter
   /// </summary>
   private static String? GetId(DXO2021DocTasks.TaskUndo openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2021DocTasks.TaskUndo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2021DocTasks.TaskUndo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.TaskUndo? CreateModelElement(DXO2021DocTasks.TaskUndo? openXmlElement)
@@ -53,15 +48,16 @@ public static class TaskUndoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskUndo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskUndo value)
     where OpenXmlElementType: DXO2021DocTasks.TaskUndo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskUndo openXmlElement, DM.TaskUndo value)
+  {
+    SetId(openXmlElement, value?.Id);
+    }
+  }

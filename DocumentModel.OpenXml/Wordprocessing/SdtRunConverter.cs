@@ -697,37 +697,38 @@ public static class SdtRunConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtRun? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtRun value)
     where OpenXmlElementType: DXW.SdtRun, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSdtContentRun(openXmlElement, value?.SdtContentRun);
-      SetSdtProperties(openXmlElement, value?.SdtProperties);
-      SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtRun openXmlElement, DMW.SdtRun value)
+  {
+    SetSdtContentRun(openXmlElement, value?.SdtContentRun);
+    SetSdtProperties(openXmlElement, value?.SdtProperties);
+    SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    }
+  }

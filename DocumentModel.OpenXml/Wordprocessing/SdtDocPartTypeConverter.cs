@@ -66,34 +66,17 @@ public static class SdtDocPartTypeConverter
   /// </summary>
   private static Boolean? GetDocPartUnique(DXW.SdtDocPartType openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.DocPartUnique>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>());
   }
   
   private static bool CmpDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDocPartUnique(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.DocPartUnique", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>(), value, diffs, objName);
   }
   
   private static void SetDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.DocPartUnique>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.DocPartUnique();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.DocPartUnique>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.SdtDocPartType? CreateModelElement(DXW.SdtDocPartType? openXmlElement)
@@ -127,17 +110,18 @@ public static class SdtDocPartTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtDocPartType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtDocPartType value)
     where OpenXmlElementType: DXW.SdtDocPartType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDocPartGallery(openXmlElement, value?.DocPartGallery);
-      SetDocPartCategory(openXmlElement, value?.DocPartCategory);
-      SetDocPartUnique(openXmlElement, value?.DocPartUnique);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtDocPartType openXmlElement, DMW.SdtDocPartType value)
+  {
+    SetDocPartGallery(openXmlElement, value?.DocPartGallery);
+    SetDocPartCategory(openXmlElement, value?.DocPartCategory);
+    SetDocPartUnique(openXmlElement, value?.DocPartUnique);
+    }
+  }

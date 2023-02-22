@@ -119,17 +119,18 @@ public static class StringReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringReference value)
     where OpenXmlElementType: DXDrawCharts.StringReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormula(openXmlElement, value?.Formula);
-      SetStringCache(openXmlElement, value?.StringCache);
-      SetStrRefExtensionList(openXmlElement, value?.StrRefExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StringReference openXmlElement, DMDrawsCharts.StringReference value)
+  {
+    SetFormula(openXmlElement, value?.Formula);
+    SetStringCache(openXmlElement, value?.StringCache);
+    SetStrRefExtensionList(openXmlElement, value?.StrRefExtensionList);
+    }
+  }

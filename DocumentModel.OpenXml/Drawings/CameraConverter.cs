@@ -126,18 +126,19 @@ public static class CameraConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Camera? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Camera value)
     where OpenXmlElementType: DXDraw.Camera, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPreset(openXmlElement, value?.Preset);
-      SetFieldOfView(openXmlElement, value?.FieldOfView);
-      SetZoom(openXmlElement, value?.Zoom);
-      SetRotation(openXmlElement, value?.Rotation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Camera openXmlElement, DMDraws.Camera value)
+  {
+    SetPreset(openXmlElement, value?.Preset);
+    SetFieldOfView(openXmlElement, value?.FieldOfView);
+    SetZoom(openXmlElement, value?.Zoom);
+    SetRotation(openXmlElement, value?.Rotation);
+    }
+  }

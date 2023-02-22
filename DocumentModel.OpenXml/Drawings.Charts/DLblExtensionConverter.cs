@@ -10,22 +10,17 @@ public static class DLblExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.DLblExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.DLblExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.DLblExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.DataLabelFieldTable? GetDataLabelFieldTable(DXDrawCharts.DLblExtension openXmlElement)
@@ -202,20 +197,21 @@ public static class DLblExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblExtension value)
     where OpenXmlElementType: DXDrawCharts.DLblExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
-      SetExceptionForSave(openXmlElement, value?.ExceptionForSave);
-      SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetLayout(openXmlElement, value?.Layout);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DLblExtension openXmlElement, DMDrawsCharts.DLblExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
+    SetExceptionForSave(openXmlElement, value?.ExceptionForSave);
+    SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetLayout(openXmlElement, value?.Layout);
+    }
+  }

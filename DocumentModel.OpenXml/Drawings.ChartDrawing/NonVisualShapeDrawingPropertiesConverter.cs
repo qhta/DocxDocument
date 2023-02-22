@@ -117,17 +117,18 @@ public static class NonVisualShapeDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualShapeDrawingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualShapeDrawingProperties value)
     where OpenXmlElementType: DXDrawChartDraw.NonVisualShapeDrawingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTextBox(openXmlElement, value?.TextBox);
-      SetShapeLocks(openXmlElement, value?.ShapeLocks);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualShapeDrawingProperties value)
+  {
+    SetTextBox(openXmlElement, value?.TextBox);
+    SetShapeLocks(openXmlElement, value?.ShapeLocks);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

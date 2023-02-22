@@ -96,17 +96,18 @@ public static class AnchorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Anchor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Anchor value)
     where OpenXmlElementType: DXDraw.Anchor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetX(openXmlElement, value?.X);
-      SetY(openXmlElement, value?.Y);
-      SetZ(openXmlElement, value?.Z);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Anchor openXmlElement, DMDraws.Anchor value)
+  {
+    SetX(openXmlElement, value?.X);
+    SetY(openXmlElement, value?.Y);
+    SetZ(openXmlElement, value?.Z);
+    }
+  }

@@ -50,15 +50,16 @@ public static class ColorTemperatureConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorTemperature? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorTemperature value)
     where OpenXmlElementType: DXO2010Draw.ColorTemperature, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetColorTemperatureValue(openXmlElement, value?.ColorTemperatureValue);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ColorTemperature openXmlElement, DMDraws.ColorTemperature value)
+  {
+    SetColorTemperatureValue(openXmlElement, value?.ColorTemperatureValue);
+    }
+  }

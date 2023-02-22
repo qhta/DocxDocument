@@ -56,15 +56,16 @@ public static class DownBarsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DownBars? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DownBars value)
     where OpenXmlElementType: DXDrawCharts.DownBars, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.DownBars value)
+  {
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    }
+  }

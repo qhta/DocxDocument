@@ -26,13 +26,13 @@ public partial class Style: IEquatable<Style>
   ///   Default Style
   /// </summary>
   [DefaultValue(false)]
-  public Boolean IsDefault { get; set; }
+  public Boolean? IsDefault { get; set; }
 
   /// <summary>
   ///   User-Defined Style
   /// </summary>
   [DefaultValue(false)]
-  public Boolean IsCustom { get; set; }
+  public Boolean? IsCustom { get; set; }
 
   /// <summary>
   ///   Parent Style ID.

@@ -114,17 +114,18 @@ public static class MoveToMathControlConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MoveToMathControl? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MoveToMathControl value)
     where OpenXmlElementType: DXW.MoveToMathControl, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
-      SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.MoveToMathControl openXmlElement, DMW.MoveToMathControl value)
+  {
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
+    SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
+    }
+  }

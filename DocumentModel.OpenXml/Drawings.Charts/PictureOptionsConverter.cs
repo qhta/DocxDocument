@@ -115,13 +115,15 @@ public static class PictureOptionsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(itemElement, (DMDrawsCharts.PictureFormatKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>((DMDrawsCharts.PictureFormatKind)value));
   }
   
   /// <summary>
@@ -129,27 +131,17 @@ public static class PictureOptionsConverter
   /// </summary>
   private static Double? GetPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val);
   }
   
   private static bool CmpPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PictureStackUnit", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val, value, diffs, objName, "PictureStackUnit");
   }
   
   private static void SetPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureStackUnit>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.PictureStackUnit{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.PictureStackUnit,System.Double>(openXmlElement, value);
   }
   
   public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DXDrawCharts.PictureOptions? openXmlElement)
@@ -189,19 +181,20 @@ public static class PictureOptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PictureOptions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PictureOptions value)
     where OpenXmlElementType: DXDrawCharts.PictureOptions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetApplyToFront(openXmlElement, value?.ApplyToFront);
-      SetApplyToSides(openXmlElement, value?.ApplyToSides);
-      SetApplyToEnd(openXmlElement, value?.ApplyToEnd);
-      SetPictureFormat(openXmlElement, value?.PictureFormat);
-      SetPictureStackUnit(openXmlElement, value?.PictureStackUnit);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureOptions value)
+  {
+    SetApplyToFront(openXmlElement, value?.ApplyToFront);
+    SetApplyToSides(openXmlElement, value?.ApplyToSides);
+    SetApplyToEnd(openXmlElement, value?.ApplyToEnd);
+    SetPictureFormat(openXmlElement, value?.PictureFormat);
+    SetPictureStackUnit(openXmlElement, value?.PictureStackUnit);
+    }
+  }

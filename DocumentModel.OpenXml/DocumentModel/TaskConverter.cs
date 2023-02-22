@@ -10,22 +10,17 @@ public static class TaskConverter
   /// </summary>
   private static String? GetId(DXO2021DocTasks.Task openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2021DocTasks.Task openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2021DocTasks.Task openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -149,18 +144,19 @@ public static class TaskConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Task? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Task value)
     where OpenXmlElementType: DXO2021DocTasks.Task, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetTaskAnchor(openXmlElement, value?.TaskAnchor);
-      SetTaskHistory(openXmlElement, value?.TaskHistory);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.Task openXmlElement, DM.Task value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetTaskAnchor(openXmlElement, value?.TaskAnchor);
+    SetTaskHistory(openXmlElement, value?.TaskHistory);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

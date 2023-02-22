@@ -10,22 +10,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetId(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetIdQ(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.IdQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
   private static bool CmpIdQ(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdQ?.Value == value) return true;
-    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
   private static void SetIdQ(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdQ = new StringValue { Value = value };
-    else
-      openXmlElement.IdQ = null;
+    openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +69,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetGetVisible(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +87,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetInsertAfterMso(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.InsertAfterMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
   private static bool CmpInsertAfterMso(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
   private static void SetInsertAfterMso(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterMso = null;
+    openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +105,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetInsertBeforeMso(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.InsertBeforeMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
   private static bool CmpInsertBeforeMso(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeMso = null;
+    openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +123,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetInsertAfterQ(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.InsertAfterQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
   private static bool CmpInsertAfterQ(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
   private static void SetInsertAfterQ(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterQ = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterQ = null;
+    openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +141,17 @@ public static class BoxConverter
   /// </summary>
   private static String? GetInsertBeforeQ(DXOCustUI.Box openXmlElement)
   {
-    return openXmlElement?.InsertBeforeQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
   private static bool CmpInsertBeforeQ(DXOCustUI.Box openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.Box openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeQ = null;
+    openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -662,37 +627,38 @@ public static class BoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Box? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Box value)
     where OpenXmlElementType: DXOCustUI.Box, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetIdQ(openXmlElement, value?.IdQ);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
-      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
-      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
-      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
-      SetBoxStyle(openXmlElement, value?.BoxStyle);
-      SetControlClone(openXmlElement, value?.ControlClone);
-      SetTextLabel(openXmlElement, value?.TextLabel);
-      SetButton(openXmlElement, value?.Button);
-      SetToggleButton(openXmlElement, value?.ToggleButton);
-      SetCheckBox(openXmlElement, value?.CheckBox);
-      SetEditBox(openXmlElement, value?.EditBox);
-      SetComboBox(openXmlElement, value?.ComboBox);
-      SetDropDown(openXmlElement, value?.DropDown);
-      SetGallery(openXmlElement, value?.Gallery);
-      SetMenu(openXmlElement, value?.Menu);
-      SetDynamicMenu(openXmlElement, value?.DynamicMenu);
-      SetSplitButton(openXmlElement, value?.SplitButton);
-      SetChildBox(openXmlElement, value?.ChildBox);
-      SetButtonGroup(openXmlElement, value?.ButtonGroup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.Box openXmlElement, DMUI.Box value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetIdQ(openXmlElement, value?.IdQ);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+    SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+    SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+    SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+    SetBoxStyle(openXmlElement, value?.BoxStyle);
+    SetControlClone(openXmlElement, value?.ControlClone);
+    SetTextLabel(openXmlElement, value?.TextLabel);
+    SetButton(openXmlElement, value?.Button);
+    SetToggleButton(openXmlElement, value?.ToggleButton);
+    SetCheckBox(openXmlElement, value?.CheckBox);
+    SetEditBox(openXmlElement, value?.EditBox);
+    SetComboBox(openXmlElement, value?.ComboBox);
+    SetDropDown(openXmlElement, value?.DropDown);
+    SetGallery(openXmlElement, value?.Gallery);
+    SetMenu(openXmlElement, value?.Menu);
+    SetDynamicMenu(openXmlElement, value?.DynamicMenu);
+    SetSplitButton(openXmlElement, value?.SplitButton);
+    SetChildBox(openXmlElement, value?.ChildBox);
+    SetButtonGroup(openXmlElement, value?.ButtonGroup);
+    }
+  }

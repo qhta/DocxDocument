@@ -714,41 +714,42 @@ public static class TextBodyPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.TextBodyProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.TextBodyProperties value)
     where OpenXmlElementType: DXO2013DrawChartStyle.TextBodyProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetUseParagraphSpacing(openXmlElement, value?.UseParagraphSpacing);
-      SetVerticalOverflow(openXmlElement, value?.VerticalOverflow);
-      SetHorizontalOverflow(openXmlElement, value?.HorizontalOverflow);
-      SetVertical(openXmlElement, value?.Vertical);
-      SetWrap(openXmlElement, value?.Wrap);
-      SetLeftInset(openXmlElement, value?.LeftInset);
-      SetTopInset(openXmlElement, value?.TopInset);
-      SetRightInset(openXmlElement, value?.RightInset);
-      SetBottomInset(openXmlElement, value?.BottomInset);
-      SetColumnCount(openXmlElement, value?.ColumnCount);
-      SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
-      SetRightToLeftColumns(openXmlElement, value?.RightToLeftColumns);
-      SetFromWordArt(openXmlElement, value?.FromWordArt);
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetAnchorCenter(openXmlElement, value?.AnchorCenter);
-      SetForceAntiAlias(openXmlElement, value?.ForceAntiAlias);
-      SetUpRight(openXmlElement, value?.UpRight);
-      SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
-      SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
-      SetNoAutoFit(openXmlElement, value?.NoAutoFit);
-      SetNormalAutoFit(openXmlElement, value?.NormalAutoFit);
-      SetShapeAutoFit(openXmlElement, value?.ShapeAutoFit);
-      SetScene3DType(openXmlElement, value?.Scene3DType);
-      SetShape3DType(openXmlElement, value?.Shape3DType);
-      SetFlatText(openXmlElement, value?.FlatText);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.TextBodyProperties openXmlElement, DMDrawsChartsStyle.TextBodyProperties value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetUseParagraphSpacing(openXmlElement, value?.UseParagraphSpacing);
+    SetVerticalOverflow(openXmlElement, value?.VerticalOverflow);
+    SetHorizontalOverflow(openXmlElement, value?.HorizontalOverflow);
+    SetVertical(openXmlElement, value?.Vertical);
+    SetWrap(openXmlElement, value?.Wrap);
+    SetLeftInset(openXmlElement, value?.LeftInset);
+    SetTopInset(openXmlElement, value?.TopInset);
+    SetRightInset(openXmlElement, value?.RightInset);
+    SetBottomInset(openXmlElement, value?.BottomInset);
+    SetColumnCount(openXmlElement, value?.ColumnCount);
+    SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
+    SetRightToLeftColumns(openXmlElement, value?.RightToLeftColumns);
+    SetFromWordArt(openXmlElement, value?.FromWordArt);
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetAnchorCenter(openXmlElement, value?.AnchorCenter);
+    SetForceAntiAlias(openXmlElement, value?.ForceAntiAlias);
+    SetUpRight(openXmlElement, value?.UpRight);
+    SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
+    SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
+    SetNoAutoFit(openXmlElement, value?.NoAutoFit);
+    SetNormalAutoFit(openXmlElement, value?.NormalAutoFit);
+    SetShapeAutoFit(openXmlElement, value?.ShapeAutoFit);
+    SetScene3DType(openXmlElement, value?.Scene3DType);
+    SetShape3DType(openXmlElement, value?.Shape3DType);
+    SetFlatText(openXmlElement, value?.FlatText);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -123,17 +123,18 @@ public static class SubscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Subscript? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Subscript value)
     where OpenXmlElementType: DXMath.Subscript, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSubscriptProperties(openXmlElement, value?.SubscriptProperties);
-      SetBase(openXmlElement, value?.Base);
-      SetSubArgument(openXmlElement, value?.SubArgument);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Subscript openXmlElement, DMMath.Subscript value)
+  {
+    SetSubscriptProperties(openXmlElement, value?.SubscriptProperties);
+    SetBase(openXmlElement, value?.Base);
+    SetSubArgument(openXmlElement, value?.SubArgument);
+    }
+  }

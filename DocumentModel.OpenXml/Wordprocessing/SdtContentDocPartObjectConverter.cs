@@ -57,34 +57,17 @@ public static class SdtContentDocPartObjectConverter
   
   private static Boolean? GetDocPartUnique(DXW.SdtContentDocPartObject openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.DocPartUnique>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>());
   }
   
   private static bool CmpDocPartUnique(DXW.SdtContentDocPartObject openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDocPartUnique(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.DocPartUnique", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>(), value, diffs, objName);
   }
   
   private static void SetDocPartUnique(DXW.SdtContentDocPartObject openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.DocPartUnique>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.DocPartUnique();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.DocPartUnique>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.SdtContentDocPartObject? CreateModelElement(DXW.SdtContentDocPartObject? openXmlElement)
@@ -118,17 +101,18 @@ public static class SdtContentDocPartObjectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDocPartObject? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDocPartObject value)
     where OpenXmlElementType: DXW.SdtContentDocPartObject, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDocPartGallery(openXmlElement, value?.DocPartGallery);
-      SetDocPartCategory(openXmlElement, value?.DocPartCategory);
-      SetDocPartUnique(openXmlElement, value?.DocPartUnique);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtContentDocPartObject openXmlElement, DMW.SdtContentDocPartObject value)
+  {
+    SetDocPartGallery(openXmlElement, value?.DocPartGallery);
+    SetDocPartCategory(openXmlElement, value?.DocPartCategory);
+    SetDocPartUnique(openXmlElement, value?.DocPartUnique);
+    }
+  }

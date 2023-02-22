@@ -10,22 +10,17 @@ public static class ShapeConverter
   /// </summary>
   private static String? GetMacro(DXDrawChartDraw.Shape openXmlElement)
   {
-    return openXmlElement?.Macro?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
   private static bool CmpMacro(DXDrawChartDraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Macro?.Value == value) return true;
-    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
   
   private static void SetMacro(DXDrawChartDraw.Shape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Macro = new StringValue { Value = value };
-    else
-      openXmlElement.Macro = null;
+    openXmlElement.Macro = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ShapeConverter
   /// </summary>
   private static String? GetTextLink(DXDrawChartDraw.Shape openXmlElement)
   {
-    return openXmlElement?.TextLink?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TextLink);
   }
   
   private static bool CmpTextLink(DXDrawChartDraw.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TextLink?.Value == value) return true;
-    diffs?.Add(objName, "TextLink", openXmlElement?.TextLink?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TextLink, value, diffs, objName, "TextLink");
   }
   
   private static void SetTextLink(DXDrawChartDraw.Shape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TextLink = new StringValue { Value = value };
-    else
-      openXmlElement.TextLink = null;
+    openXmlElement.TextLink = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -259,22 +249,23 @@ public static class ShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Shape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Shape value)
     where OpenXmlElementType: DXDrawChartDraw.Shape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMacro(openXmlElement, value?.Macro);
-      SetTextLink(openXmlElement, value?.TextLink);
-      SetLockText(openXmlElement, value?.LockText);
-      SetPublished(openXmlElement, value?.Published);
-      SetNonVisualShapeProperties(openXmlElement, value?.NonVisualShapeProperties);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetStyle(openXmlElement, value?.Style);
-      SetTextBody(openXmlElement, value?.TextBody);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.Shape openXmlElement, DMDrawsChartDraw.Shape value)
+  {
+    SetMacro(openXmlElement, value?.Macro);
+    SetTextLink(openXmlElement, value?.TextLink);
+    SetLockText(openXmlElement, value?.LockText);
+    SetPublished(openXmlElement, value?.Published);
+    SetNonVisualShapeProperties(openXmlElement, value?.NonVisualShapeProperties);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetStyle(openXmlElement, value?.Style);
+    SetTextBody(openXmlElement, value?.TextBody);
+    }
+  }

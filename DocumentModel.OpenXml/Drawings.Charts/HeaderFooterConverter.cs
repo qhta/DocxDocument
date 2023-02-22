@@ -273,23 +273,24 @@ public static class HeaderFooterConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.HeaderFooter? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.HeaderFooter value)
     where OpenXmlElementType: DXDrawCharts.HeaderFooter, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
-      SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);
-      SetDifferentFirst(openXmlElement, value?.DifferentFirst);
-      SetOddHeader(openXmlElement, value?.OddHeader);
-      SetOddFooter(openXmlElement, value?.OddFooter);
-      SetEvenHeader(openXmlElement, value?.EvenHeader);
-      SetEvenFooter(openXmlElement, value?.EvenFooter);
-      SetFirstHeader(openXmlElement, value?.FirstHeader);
-      SetFirstFooter(openXmlElement, value?.FirstFooter);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.HeaderFooter openXmlElement, DMDrawsCharts.HeaderFooter value)
+  {
+    SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
+    SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);
+    SetDifferentFirst(openXmlElement, value?.DifferentFirst);
+    SetOddHeader(openXmlElement, value?.OddHeader);
+    SetOddFooter(openXmlElement, value?.OddFooter);
+    SetEvenHeader(openXmlElement, value?.EvenHeader);
+    SetEvenFooter(openXmlElement, value?.EvenFooter);
+    SetFirstHeader(openXmlElement, value?.FirstHeader);
+    SetFirstFooter(openXmlElement, value?.FirstFooter);
+    }
+  }

@@ -10,27 +10,17 @@ public static class UpDownBarsConverter
   /// </summary>
   private static UInt16? GetGapWidth(DXDrawCharts.UpDownBars openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
   }
   
   private static bool CmpGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.GapWidth", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
   private static void SetGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.GapWidth>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.GapWidth{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
@@ -154,18 +144,19 @@ public static class UpDownBarsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBars? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBars value)
     where OpenXmlElementType: DXDrawCharts.UpDownBars, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGapWidth(openXmlElement, value?.GapWidth);
-      SetUpBars(openXmlElement, value?.UpBars);
-      SetDownBars(openXmlElement, value?.DownBars);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpDownBars value)
+  {
+    SetGapWidth(openXmlElement, value?.GapWidth);
+    SetUpBars(openXmlElement, value?.UpBars);
+    SetDownBars(openXmlElement, value?.DownBars);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

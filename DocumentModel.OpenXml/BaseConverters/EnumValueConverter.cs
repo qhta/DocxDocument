@@ -49,27 +49,30 @@ public static class EnumValueConverter
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
-    where OpenXmlElementType : DX.OpenXmlLeafElement, new()
-    where OpenXmlEnumType : struct, IConvertible
-    where ModelEnumType : struct, IConvertible
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType, OpenXmlEnumType, ModelEnumType>(ModelEnumType value)
+  where OpenXmlElementType : DX.OpenXmlLeafElement, new()
+  where OpenXmlEnumType : struct, IConvertible
+  where ModelEnumType : struct, IConvertible
   {
-    if (value != null)
-    {
-      var element = new OpenXmlElementType();
-      var n = (int)Convert.ChangeType(value, typeof(int));
-      var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
-      var valueProperty = typeof(OpenXmlElementType).GetProperty("Value");
-      if (valueProperty == null)
-        valueProperty = typeof(OpenXmlElementType).GetProperty("Val");
-      if (valueProperty == null)
-        valueProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item => item.PropertyType == typeof(OpenXmlEnumType));
-      if (valueProperty == null || valueProperty.PropertyType != typeof(OpenXmlEnumType))
-        throw new InvalidOperationException($"Type \"{typeof(OpenXmlElementType)}\" does not have a property of \"{typeof(OpenXmlEnumType)}\" type");
-      if (valueProperty != null)
-        valueProperty.SetValue(element, val);
-      return element;
-    }
-    return null;
+    var element = new OpenXmlElementType();
+    UpdateOpenXmlElement<OpenXmlEnumType, ModelEnumType>(element, value);
+    return element;
+  }
+
+  public static void UpdateOpenXmlElement<OpenXmlEnumType, ModelEnumType>(DX.OpenXmlLeafElement element, ModelEnumType value)
+  where OpenXmlEnumType : struct, IConvertible
+  where ModelEnumType : struct, IConvertible
+  {
+    var n = (int)Convert.ChangeType(value, typeof(int));
+    var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
+    var valueProperty = element.GetType().GetProperty("Value");
+    if (valueProperty == null)
+      valueProperty = element.GetType().GetProperty("Val");
+    if (valueProperty == null)
+      valueProperty = element.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(OpenXmlEnumType));
+    if (valueProperty == null || valueProperty.PropertyType != typeof(OpenXmlEnumType))
+      throw new InvalidOperationException($"Type \"{element.GetType()}\" does not have a property of \"{typeof(OpenXmlEnumType)}\" type");
+    if (valueProperty != null)
+      valueProperty.SetValue(element, val);
   }
 }

@@ -91,16 +91,17 @@ public static class PhantomConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Phantom? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Phantom value)
     where OpenXmlElementType: DXMath.Phantom, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPhantomProperties(openXmlElement, value?.PhantomProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Phantom openXmlElement, DMMath.Phantom value)
+  {
+    SetPhantomProperties(openXmlElement, value?.PhantomProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

@@ -96,17 +96,18 @@ public static class RotationConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rotation? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rotation value)
     where OpenXmlElementType: DXDraw.Rotation, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLatitude(openXmlElement, value?.Latitude);
-      SetLongitude(openXmlElement, value?.Longitude);
-      SetRevolution(openXmlElement, value?.Revolution);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Rotation openXmlElement, DMDraws.Rotation value)
+  {
+    SetLatitude(openXmlElement, value?.Latitude);
+    SetLongitude(openXmlElement, value?.Longitude);
+    SetRevolution(openXmlElement, value?.Revolution);
+    }
+  }

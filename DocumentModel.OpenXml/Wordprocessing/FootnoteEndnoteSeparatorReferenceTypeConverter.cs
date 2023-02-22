@@ -50,15 +50,16 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteSeparatorReferenceType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteSeparatorReferenceType value)
     where OpenXmlElementType: DXW.FootnoteEndnoteSeparatorReferenceType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType value)
+  {
+    SetId(openXmlElement, value?.Id);
+    }
+  }

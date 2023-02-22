@@ -10,22 +10,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.Description?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
   private static bool CmpDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Description?.Value == value) return true;
-    diffs?.Add(objName, "Description", openXmlElement?.Description?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
   private static void SetDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Description = new StringValue { Value = value };
-    else
-      openXmlElement.Description = null;
+    openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetDescription?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
   private static bool CmpGetDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetDescription?.Value == value) return true;
-    diffs?.Add(objName, "GetDescription", openXmlElement?.GetDescription?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
   private static void SetGetDescription(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetDescription = new StringValue { Value = value };
-    else
-      openXmlElement.GetDescription = null;
+    openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetOnAction(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.OnAction?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
   private static bool CmpOnAction(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnAction?.Value == value) return true;
-    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
   private static void SetOnAction(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnAction = new StringValue { Value = value };
-    else
-      openXmlElement.OnAction = null;
+    openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +118,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetPressed(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetPressed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetPressed);
   }
   
   private static bool CmpGetPressed(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetPressed?.Value == value) return true;
-    diffs?.Add(objName, "GetPressed", openXmlElement?.GetPressed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetPressed, value, diffs, objName, "GetPressed");
   }
   
   private static void SetGetPressed(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetPressed = new StringValue { Value = value };
-    else
-      openXmlElement.GetPressed = null;
+    openXmlElement.GetPressed = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +159,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetEnabled(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetEnabled?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
   private static bool CmpGetEnabled(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetEnabled?.Value == value) return true;
-    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
   private static void SetGetEnabled(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetEnabled = new StringValue { Value = value };
-    else
-      openXmlElement.GetEnabled = null;
+    openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +177,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.Label?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
   private static bool CmpLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Label?.Value == value) return true;
-    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
   private static void SetLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Label = new StringValue { Value = value };
-    else
-      openXmlElement.Label = null;
+    openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -240,22 +195,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetLabel = null;
+    openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -286,22 +236,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -309,22 +254,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.Keytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
   private static bool CmpKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Keytip?.Value == value) return true;
-    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
   private static void SetKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Keytip = new StringValue { Value = value };
-    else
-      openXmlElement.Keytip = null;
+    openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -332,22 +272,17 @@ public static class BackstageMenuCheckBoxConverter
   /// </summary>
   private static String? GetGetKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement)
   {
-    return openXmlElement?.GetKeytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
   private static bool CmpGetKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetKeytip?.Value == value) return true;
-    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
   private static void SetGetKeytip(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetKeytip = new StringValue { Value = value };
-    else
-      openXmlElement.GetKeytip = null;
+    openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.BackstageMenuCheckBox? CreateModelElement(DXO2010CustUI.BackstageMenuCheckBox? openXmlElement)
@@ -417,29 +352,30 @@ public static class BackstageMenuCheckBoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageMenuCheckBox? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageMenuCheckBox value)
     where OpenXmlElementType: DXO2010CustUI.BackstageMenuCheckBox, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDescription(openXmlElement, value?.Description);
-      SetGetDescription(openXmlElement, value?.GetDescription);
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetOnAction(openXmlElement, value?.OnAction);
-      SetGetPressed(openXmlElement, value?.GetPressed);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetGetEnabled(openXmlElement, value?.GetEnabled);
-      SetLabel(openXmlElement, value?.Label);
-      SetGetLabel(openXmlElement, value?.GetLabel);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetKeytip(openXmlElement, value?.Keytip);
-      SetGetKeytip(openXmlElement, value?.GetKeytip);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstageMenuCheckBox openXmlElement, DM.BackstageMenuCheckBox value)
+  {
+    SetDescription(openXmlElement, value?.Description);
+    SetGetDescription(openXmlElement, value?.GetDescription);
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetOnAction(openXmlElement, value?.OnAction);
+    SetGetPressed(openXmlElement, value?.GetPressed);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetGetEnabled(openXmlElement, value?.GetEnabled);
+    SetLabel(openXmlElement, value?.Label);
+    SetGetLabel(openXmlElement, value?.GetLabel);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetKeytip(openXmlElement, value?.Keytip);
+    SetGetKeytip(openXmlElement, value?.GetKeytip);
+    }
+  }

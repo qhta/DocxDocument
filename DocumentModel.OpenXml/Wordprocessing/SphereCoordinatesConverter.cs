@@ -96,17 +96,18 @@ public static class SphereCoordinatesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SphereCoordinates? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SphereCoordinates value)
     where OpenXmlElementType: DXO2010W.SphereCoordinates, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLattitude(openXmlElement, value?.Lattitude);
-      SetLongitude(openXmlElement, value?.Longitude);
-      SetRevolution(openXmlElement, value?.Revolution);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.SphereCoordinates openXmlElement, DMW.SphereCoordinates value)
+  {
+    SetLattitude(openXmlElement, value?.Lattitude);
+    SetLongitude(openXmlElement, value?.Longitude);
+    SetRevolution(openXmlElement, value?.Revolution);
+    }
+  }

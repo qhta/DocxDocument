@@ -85,16 +85,17 @@ public static class MinusConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Minus? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Minus value)
     where OpenXmlElementType: DXDrawCharts.Minus, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Minus openXmlElement, DMDrawsCharts.Minus value)
+  {
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    }
+  }

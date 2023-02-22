@@ -56,15 +56,16 @@ public static class CategoryFilterExceptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterExceptions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterExceptions value)
     where OpenXmlElementType: DXO2013DrawChart.CategoryFilterExceptions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCategoryFilterException(openXmlElement, value?.CategoryFilterException);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterExceptions value)
+  {
+    SetCategoryFilterException(openXmlElement, value?.CategoryFilterException);
+    }
+  }

@@ -73,16 +73,17 @@ public static class ArtisticPastelsSmoothConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPastelsSmooth? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPastelsSmooth value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPastelsSmooth, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetBrushSize(openXmlElement, value?.BrushSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, DMDraws.ArtisticPastelsSmooth value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetBrushSize(openXmlElement, value?.BrushSize);
+    }
+  }

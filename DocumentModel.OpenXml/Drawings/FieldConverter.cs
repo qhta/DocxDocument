@@ -10,22 +10,17 @@ public static class FieldConverter
   /// </summary>
   private static String? GetId(DXDraw.Field openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXDraw.Field openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXDraw.Field openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class FieldConverter
   /// </summary>
   private static String? GetType(DXDraw.Field openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXDraw.Field openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXDraw.Field openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -169,19 +159,20 @@ public static class FieldConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Field? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Field value)
     where OpenXmlElementType: DXDraw.Field, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetType(openXmlElement, value?.Type);
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
-      SetText(openXmlElement, value?.Text);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Field openXmlElement, DMDraws.Field value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetType(openXmlElement, value?.Type);
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
+    SetText(openXmlElement, value?.Text);
+    }
+  }

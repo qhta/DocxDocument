@@ -4,7 +4,9 @@ namespace DocumentModel.OpenXml;
 
 public static class Int32ValueConverter
 {
-  public static Int32? GetValue(DX.TypedOpenXmlLeafTextElement? element)
+
+  #region OpenXmlLeafTextElement
+  public static Int32? GetValue(OpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
     {
@@ -14,7 +16,7 @@ public static class Int32ValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, Int32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(OpenXmlLeafTextElement element, Int32? value, DiffList? diffs = null, string? objName = null)
   {
     if (GetValue(element) == value)
       diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
@@ -28,10 +30,10 @@ public static class Int32ValueConverter
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
     if (valProperty != null)
       valProperty.SetValue(element, value);
-    else if (element is DX.TypedOpenXmlLeafTextElement textElement)
+    else if (element is OpenXmlLeafTextElement textElement)
       if (value!=null)
         textElement.Text = ((Int32)value).ToString();
     return element;
   }
-
+  #endregion
 }

@@ -163,18 +163,19 @@ public static class LineSketchTypePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineSketchTypeProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineSketchTypeProperties value)
     where OpenXmlElementType: DXO2021DrawSketchyShps.LineSketchTypeProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineSketchNoneEmpty(openXmlElement, value?.LineSketchNoneEmpty);
-      SetLineSketchCurvedEmpty(openXmlElement, value?.LineSketchCurvedEmpty);
-      SetLineSketchFreehandEmpty(openXmlElement, value?.LineSketchFreehandEmpty);
-      SetLineSketchScribbleEmpty(openXmlElement, value?.LineSketchScribbleEmpty);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DrawSketchyShps.LineSketchTypeProperties openXmlElement, DMDraws.LineSketchTypeProperties value)
+  {
+    SetLineSketchNoneEmpty(openXmlElement, value?.LineSketchNoneEmpty);
+    SetLineSketchCurvedEmpty(openXmlElement, value?.LineSketchCurvedEmpty);
+    SetLineSketchFreehandEmpty(openXmlElement, value?.LineSketchFreehandEmpty);
+    SetLineSketchScribbleEmpty(openXmlElement, value?.LineSketchScribbleEmpty);
+    }
+  }

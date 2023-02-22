@@ -73,16 +73,17 @@ public static class ArtisticPaintBrushConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintBrush? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintBrush value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPaintBrush, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetBrushSize(openXmlElement, value?.BrushSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPaintBrush openXmlElement, DMDraws.ArtisticPaintBrush value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetBrushSize(openXmlElement, value?.BrushSize);
+    }
+  }

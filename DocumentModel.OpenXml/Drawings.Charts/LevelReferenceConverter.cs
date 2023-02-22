@@ -55,15 +55,16 @@ public static class LevelReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LevelReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LevelReference value)
     where OpenXmlElementType: DXO2013DrawChart.LevelReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.LevelReference openXmlElement, DMDrawsCharts.LevelReference value)
+  {
+    SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+    }
+  }

@@ -71,16 +71,17 @@ public static class TableIndentationConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableIndentation? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableIndentation value)
     where OpenXmlElementType: DXW.TableIndentation, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetType(openXmlElement, value?.Type);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableIndentation openXmlElement, DMW.TableIndentation value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetType(openXmlElement, value?.Type);
+    }
+  }

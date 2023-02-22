@@ -10,22 +10,17 @@ public static class WebExtensionPartReferenceConverter
   /// </summary>
   private static String? GetId(DXO2013WebExtPane.WebExtensionPartReference openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(DXO2013WebExtPane.WebExtensionPartReference? openXmlElement)
@@ -53,15 +48,16 @@ public static class WebExtensionPartReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionPartReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionPartReference value)
     where OpenXmlElementType: DXO2013WebExtPane.WebExtensionPartReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExtPane.WebExtensionPartReference openXmlElement, DMWebExtUI.WebExtensionPartReference value)
+  {
+    SetId(openXmlElement, value?.Id);
+    }
+  }

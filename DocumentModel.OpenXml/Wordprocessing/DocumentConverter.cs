@@ -112,17 +112,18 @@ public static class DocumentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Document? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Document value)
     where OpenXmlElementType: DXW.Document, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetConformance(openXmlElement, value?.Conformance);
-      SetDocumentBackground(openXmlElement, value?.DocumentBackground);
-      SetBody(openXmlElement, value?.Body);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Document openXmlElement, DMW.Document value)
+  {
+    SetConformance(openXmlElement, value?.Conformance);
+    SetDocumentBackground(openXmlElement, value?.DocumentBackground);
+    SetBody(openXmlElement, value?.Body);
+    }
+  }

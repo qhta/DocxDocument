@@ -65,11 +65,11 @@ public static class BidirectionalOverrideConverter
   
   private static bool CmpSimpleFields(DXW.BidirectionalOverride openXmlElement, Collection<DMW.SimpleField>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.SimpleField>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.SimpleField>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -86,7 +86,7 @@ public static class BidirectionalOverrideConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -1760,73 +1760,74 @@ public static class BidirectionalOverrideConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BidirectionalOverride? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BidirectionalOverride value)
     where OpenXmlElementType: DXW.BidirectionalOverride, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetCustomXmlRun(openXmlElement, value?.CustomXmlRun);
-      SetSimpleFields(openXmlElement, value?.SimpleFields);
-      SetHyperlink(openXmlElement, value?.Hyperlink);
-      SetSdtRun(openXmlElement, value?.SdtRun);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      SetInsertedRun(openXmlElement, value?.InsertedRun);
-      SetDeletedRun(openXmlElement, value?.DeletedRun);
-      SetMoveFromRun(openXmlElement, value?.MoveFromRun);
-      SetMoveToRun(openXmlElement, value?.MoveToRun);
-      SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
-      SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      SetOfficeMath(openXmlElement, value?.OfficeMath);
-      SetAccent(openXmlElement, value?.Accent);
-      SetBar(openXmlElement, value?.Bar);
-      SetBox(openXmlElement, value?.Box);
-      SetBorderBox(openXmlElement, value?.BorderBox);
-      SetDelimiter(openXmlElement, value?.Delimiter);
-      SetEquationArray(openXmlElement, value?.EquationArray);
-      SetFraction(openXmlElement, value?.Fraction);
-      SetMathFunction(openXmlElement, value?.MathFunction);
-      SetGroupChar(openXmlElement, value?.GroupChar);
-      SetLimitLower(openXmlElement, value?.LimitLower);
-      SetLimitUpper(openXmlElement, value?.LimitUpper);
-      SetMatrix(openXmlElement, value?.Matrix);
-      SetNary(openXmlElement, value?.Nary);
-      SetPhantom(openXmlElement, value?.Phantom);
-      SetRadical(openXmlElement, value?.Radical);
-      SetPreSubSuper(openXmlElement, value?.PreSubSuper);
-      SetSubscript(openXmlElement, value?.Subscript);
-      SetSubSuperscript(openXmlElement, value?.SubSuperscript);
-      SetSuperscript(openXmlElement, value?.Superscript);
-      SetRun(openXmlElement, value?.Run);
-      SetChildBidirectionalOverride(openXmlElement, value?.ChildBidirectionalOverride);
-      SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
-      SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.BidirectionalOverride openXmlElement, DMW.BidirectionalOverride value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetCustomXmlRun(openXmlElement, value?.CustomXmlRun);
+    SetSimpleFields(openXmlElement, value?.SimpleFields);
+    SetHyperlink(openXmlElement, value?.Hyperlink);
+    SetSdtRun(openXmlElement, value?.SdtRun);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    SetInsertedRun(openXmlElement, value?.InsertedRun);
+    SetDeletedRun(openXmlElement, value?.DeletedRun);
+    SetMoveFromRun(openXmlElement, value?.MoveFromRun);
+    SetMoveToRun(openXmlElement, value?.MoveToRun);
+    SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
+    SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    SetOfficeMath(openXmlElement, value?.OfficeMath);
+    SetAccent(openXmlElement, value?.Accent);
+    SetBar(openXmlElement, value?.Bar);
+    SetBox(openXmlElement, value?.Box);
+    SetBorderBox(openXmlElement, value?.BorderBox);
+    SetDelimiter(openXmlElement, value?.Delimiter);
+    SetEquationArray(openXmlElement, value?.EquationArray);
+    SetFraction(openXmlElement, value?.Fraction);
+    SetMathFunction(openXmlElement, value?.MathFunction);
+    SetGroupChar(openXmlElement, value?.GroupChar);
+    SetLimitLower(openXmlElement, value?.LimitLower);
+    SetLimitUpper(openXmlElement, value?.LimitUpper);
+    SetMatrix(openXmlElement, value?.Matrix);
+    SetNary(openXmlElement, value?.Nary);
+    SetPhantom(openXmlElement, value?.Phantom);
+    SetRadical(openXmlElement, value?.Radical);
+    SetPreSubSuper(openXmlElement, value?.PreSubSuper);
+    SetSubscript(openXmlElement, value?.Subscript);
+    SetSubSuperscript(openXmlElement, value?.SubSuperscript);
+    SetSuperscript(openXmlElement, value?.Superscript);
+    SetRun(openXmlElement, value?.Run);
+    SetChildBidirectionalOverride(openXmlElement, value?.ChildBidirectionalOverride);
+    SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    }
+  }

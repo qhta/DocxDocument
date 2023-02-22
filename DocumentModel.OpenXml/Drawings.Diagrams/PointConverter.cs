@@ -10,22 +10,17 @@ public static class PointConverter
   /// </summary>
   private static String? GetModelId(DXDrawDgms.Point openXmlElement)
   {
-    return openXmlElement?.ModelId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
   private static bool CmpModelId(DXDrawDgms.Point openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ModelId?.Value == value) return true;
-    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
   
   private static void SetModelId(DXDrawDgms.Point openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ModelId = new StringValue { Value = value };
-    else
-      openXmlElement.ModelId = null;
+    openXmlElement.ModelId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class PointConverter
   /// </summary>
   private static String? GetConnectionId(DXDrawDgms.Point openXmlElement)
   {
-    return openXmlElement?.ConnectionId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ConnectionId);
   }
   
   private static bool CmpConnectionId(DXDrawDgms.Point openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ConnectionId?.Value == value) return true;
-    diffs?.Add(objName, "ConnectionId", openXmlElement?.ConnectionId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ConnectionId, value, diffs, objName, "ConnectionId");
   }
   
   private static void SetConnectionId(DXDrawDgms.Point openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ConnectionId = new StringValue { Value = value };
-    else
-      openXmlElement.ConnectionId = null;
+    openXmlElement.ConnectionId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -228,21 +218,22 @@ public static class PointConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Point? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Point value)
     where OpenXmlElementType: DXDrawDgms.Point, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetModelId(openXmlElement, value?.ModelId);
-      SetType(openXmlElement, value?.Type);
-      SetConnectionId(openXmlElement, value?.ConnectionId);
-      SetPropertySet(openXmlElement, value?.PropertySet);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTextBody(openXmlElement, value?.TextBody);
-      SetPtExtensionList(openXmlElement, value?.PtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Point openXmlElement, DMDrawsDgms.Point value)
+  {
+    SetModelId(openXmlElement, value?.ModelId);
+    SetType(openXmlElement, value?.Type);
+    SetConnectionId(openXmlElement, value?.ConnectionId);
+    SetPropertySet(openXmlElement, value?.PropertySet);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTextBody(openXmlElement, value?.TextBody);
+    SetPtExtensionList(openXmlElement, value?.PtExtensionList);
+    }
+  }

@@ -10,27 +10,17 @@ public static class StringDataTypeConverter
   /// </summary>
   private static UInt32? GetPointCount(DXDrawCharts.StringDataType openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
   }
   
   private static bool CmpPointCount(DXDrawCharts.StringDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PointCount", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
   private static void SetPointCount(DXDrawCharts.StringDataType openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.PointCount{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
   }
   
   public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DXDrawCharts.StringDataType? openXmlElement)
@@ -58,15 +48,16 @@ public static class StringDataTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringDataType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringDataType value)
     where OpenXmlElementType: DXDrawCharts.StringDataType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPointCount(openXmlElement, value?.PointCount);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StringDataType openXmlElement, DMDrawsCharts.StringDataType value)
+  {
+    SetPointCount(openXmlElement, value?.PointCount);
+    }
+  }

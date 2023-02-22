@@ -192,13 +192,15 @@ public static class PreviousSectionPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.SectionType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>(itemElement, (DMW.SectionMarkKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>((DMW.SectionMarkKind)value));
   }
   
   /// <summary>
@@ -409,34 +411,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetFormProtection(DXW.PreviousSectionProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.FormProtection>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FormProtection>());
   }
   
   private static bool CmpFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetFormProtection(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.FormProtection", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FormProtection>(), value, diffs, objName);
   }
   
   private static void SetFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.FormProtection>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.FormProtection();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value);
   }
   
   /// <summary>
@@ -456,13 +441,15 @@ public static class PreviousSectionPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>(itemElement, (DMW.VerticalJustificationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>((DMW.VerticalJustificationKind)value));
   }
   
   /// <summary>
@@ -470,34 +457,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetNoEndnote(DXW.PreviousSectionProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.NoEndnote>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoEndnote>());
   }
   
   private static bool CmpNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetNoEndnote(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.NoEndnote", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoEndnote>(), value, diffs, objName);
   }
   
   private static void SetNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.NoEndnote>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.NoEndnote();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value);
   }
   
   /// <summary>
@@ -505,34 +475,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetTitlePage(DXW.PreviousSectionProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.TitlePage>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TitlePage>());
   }
   
   private static bool CmpTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetTitlePage(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.TitlePage", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TitlePage>(), value, diffs, objName);
   }
   
   private static void SetTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.TitlePage>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.TitlePage();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value);
   }
   
   /// <summary>
@@ -552,13 +505,15 @@ public static class PreviousSectionPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TextDirection>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(itemElement, (DMW.TextDirectionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
   
   /// <summary>
@@ -566,34 +521,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetBiDi(DXW.PreviousSectionProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.BiDi>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BiDi>());
   }
   
   private static bool CmpBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetBiDi(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.BiDi", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BiDi>(), value, diffs, objName);
   }
   
   private static void SetBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.BiDi>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.BiDi();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value);
   }
   
   /// <summary>
@@ -601,34 +539,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Boolean? GetGutterOnRight(DXW.PreviousSectionProperties openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.GutterOnRight>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>());
   }
   
   private static bool CmpGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetGutterOnRight(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.GutterOnRight", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>(), value, diffs, objName);
   }
   
   private static void SetGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.GutterOnRight>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.GutterOnRight();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value);
   }
   
   /// <summary>
@@ -694,27 +615,17 @@ public static class PreviousSectionPropertiesConverter
   /// </summary>
   private static Int32? GetFootnoteColumns(DXW.PreviousSectionProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val);
   }
   
   private static bool CmpFootnoteColumns(DXW.PreviousSectionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXO2013W.FootnoteColumns", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val, value, diffs, objName, "FootnoteColumns");
   }
   
   private static void SetFootnoteColumns(DXW.PreviousSectionProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.FootnoteColumns>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXO2013W.FootnoteColumns{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXO2013W.FootnoteColumns,System.Int32>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.PreviousSectionProperties? CreateModelElement(DXW.PreviousSectionProperties? openXmlElement)
@@ -811,38 +722,39 @@ public static class PreviousSectionPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousSectionProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousSectionProperties value)
     where OpenXmlElementType: DXW.PreviousSectionProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRsidRPr(openXmlElement, value?.RsidRPr);
-      SetRsidDel(openXmlElement, value?.RsidDel);
-      SetRsidR(openXmlElement, value?.RsidR);
-      SetRsidSect(openXmlElement, value?.RsidSect);
-      SetFootnoteProperties(openXmlElement, value?.FootnoteProperties);
-      SetEndnoteProperties(openXmlElement, value?.EndnoteProperties);
-      SetSectionType(openXmlElement, value?.SectionType);
-      SetPageSize(openXmlElement, value?.PageSize);
-      SetPageMargin(openXmlElement, value?.PageMargin);
-      SetPaperSource(openXmlElement, value?.PaperSource);
-      SetPageBorders(openXmlElement, value?.PageBorders);
-      SetLineNumberType(openXmlElement, value?.LineNumberType);
-      SetPageNumberType(openXmlElement, value?.PageNumberType);
-      SetColumns(openXmlElement, value?.Columns);
-      SetFormProtection(openXmlElement, value?.FormProtection);
-      SetVerticalTextAlignmentOnPage(openXmlElement, value?.VerticalTextAlignmentOnPage);
-      SetNoEndnote(openXmlElement, value?.NoEndnote);
-      SetTitlePage(openXmlElement, value?.TitlePage);
-      SetTextDirection(openXmlElement, value?.TextDirection);
-      SetBiDi(openXmlElement, value?.BiDi);
-      SetGutterOnRight(openXmlElement, value?.GutterOnRight);
-      SetDocGrid(openXmlElement, value?.DocGrid);
-      SetPrinterSettingsReference(openXmlElement, value?.PrinterSettingsReference);
-      SetFootnoteColumns(openXmlElement, value?.FootnoteColumns);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PreviousSectionProperties openXmlElement, DMW.PreviousSectionProperties value)
+  {
+    SetRsidRPr(openXmlElement, value?.RsidRPr);
+    SetRsidDel(openXmlElement, value?.RsidDel);
+    SetRsidR(openXmlElement, value?.RsidR);
+    SetRsidSect(openXmlElement, value?.RsidSect);
+    SetFootnoteProperties(openXmlElement, value?.FootnoteProperties);
+    SetEndnoteProperties(openXmlElement, value?.EndnoteProperties);
+    SetSectionType(openXmlElement, value?.SectionType);
+    SetPageSize(openXmlElement, value?.PageSize);
+    SetPageMargin(openXmlElement, value?.PageMargin);
+    SetPaperSource(openXmlElement, value?.PaperSource);
+    SetPageBorders(openXmlElement, value?.PageBorders);
+    SetLineNumberType(openXmlElement, value?.LineNumberType);
+    SetPageNumberType(openXmlElement, value?.PageNumberType);
+    SetColumns(openXmlElement, value?.Columns);
+    SetFormProtection(openXmlElement, value?.FormProtection);
+    SetVerticalTextAlignmentOnPage(openXmlElement, value?.VerticalTextAlignmentOnPage);
+    SetNoEndnote(openXmlElement, value?.NoEndnote);
+    SetTitlePage(openXmlElement, value?.TitlePage);
+    SetTextDirection(openXmlElement, value?.TextDirection);
+    SetBiDi(openXmlElement, value?.BiDi);
+    SetGutterOnRight(openXmlElement, value?.GutterOnRight);
+    SetDocGrid(openXmlElement, value?.DocGrid);
+    SetPrinterSettingsReference(openXmlElement, value?.PrinterSettingsReference);
+    SetFootnoteColumns(openXmlElement, value?.FootnoteColumns);
+    }
+  }

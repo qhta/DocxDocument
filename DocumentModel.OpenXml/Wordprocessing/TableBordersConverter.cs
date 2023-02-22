@@ -283,22 +283,23 @@ public static class TableBordersConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableBorders? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableBorders value)
     where OpenXmlElementType: DXW.TableBorders, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetStartBorder(openXmlElement, value?.StartBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      SetEndBorder(openXmlElement, value?.EndBorder);
-      SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
-      SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableBorders openXmlElement, DMW.TableBorders value)
+  {
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetStartBorder(openXmlElement, value?.StartBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    SetEndBorder(openXmlElement, value?.EndBorder);
+    SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
+    SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
+    }
+  }

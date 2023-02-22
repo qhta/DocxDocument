@@ -10,22 +10,17 @@ public static class ExternalDataConverter
   /// </summary>
   private static String? GetId(DXO2016DrawChartDraw.ExternalData openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,16 +74,17 @@ public static class ExternalDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ExternalData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ExternalData value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ExternalData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetAutoUpdate(openXmlElement, value?.AutoUpdate);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ExternalData openXmlElement, DMDrawsChartDraws.ExternalData value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetAutoUpdate(openXmlElement, value?.AutoUpdate);
+    }
+  }

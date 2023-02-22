@@ -10,22 +10,17 @@ public static class PieSerExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.PieSerExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.PieSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.PieSerExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.PieSerExtension openXmlElement)
@@ -169,19 +164,20 @@ public static class PieSerExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieSerExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieSerExtension value)
     where OpenXmlElementType: DXDrawCharts.PieSerExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
-      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
-      SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
-      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PieSerExtension openXmlElement, DMDrawsCharts.PieSerExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
+    SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+    SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
+    SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
+    }
+  }

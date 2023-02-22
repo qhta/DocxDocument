@@ -8,7 +8,7 @@ public static class TypeManager
 
   public static int TotalTypesCount => KnownTypes.Count;
 
-  public static IEnumerable<TypeInfo> AllTypes 
+  public static IEnumerable<TypeInfo> AllTypes
   {
     get
     {
@@ -50,7 +50,6 @@ public static class TypeManager
       if (!KnownNamespaces.ContainsKey(nspace))
         KnownNamespaces.Add(nspace, new());
   }
-
 
   public static string TranslateNamespace(string nspace)
   {
@@ -163,6 +162,27 @@ public static class TypeManager
     var result = RegisterType(type);
     AddRelationship(source, result, semantics);
     return result;
+  }
+
+  public static TypeInfo RegisterTargetType(Type type)
+  {
+    lock (KnownTypesLock)
+    {
+      if (KnownTypes.TryGetValue(type, out var info))
+        return info;
+      //var nspace = type.Namespace ?? "";
+      //lock (NamespacesLock)
+      //{
+      //if (!KnownNamespaces.ContainsKey(nspace))
+      //  RegisterNamespace(nspace);
+      info = new TypeInfo(type);
+      KnownTypes.Add(type, info);
+      //var NamespaceDictionary = TypeManager.GetNamespaceDictionary(nspace);
+      //NamespaceDictionary.Add(info);
+      //}
+      //TypeReflector.ReflectTypeAsync(info);
+      return info;
+    }
   }
 
   public static TypeRelationship AddRelationship(this TypeInfo source, TypeInfo target, Semantics semantics, int order = 0)
@@ -343,4 +363,35 @@ public static class TypeManager
     return '<' + String.Join(", ", namesList) + '>';
   }
 
+  public static bool IsCollection(this TypeInfo aType, [NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? itemType)
+  {
+    if (aType.Name.StartsWith("Collection`1"))
+    {
+      itemType = aType.GetGenericTypeArguments()[0];
+      return true;
+    }
+
+    var type = aType.GetInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("ICollection`1"));
+    if (type != null)
+    {
+      itemType = type.GetGenericTypeArguments()[0];
+      return true;
+    }
+
+    itemType = null;
+    return false;
+  }
+
+  public static bool IsEnumerable(this TypeInfo aType, [NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? itemType)
+  {
+    var type = aType.GetInterfaces().FirstOrDefault((TypeInfo item) => item.Name.StartsWith("IEnumerable`1"));
+    if (type != null)
+    {
+      itemType = type.GetGenericTypeArguments()[0];
+      return true;
+    }
+
+    itemType = null;
+    return false;
+  }
 }

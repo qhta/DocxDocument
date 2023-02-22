@@ -155,18 +155,19 @@ public static class PrintSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PrintSettings? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PrintSettings value)
     where OpenXmlElementType: DXDrawCharts.PrintSettings, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHeaderFooter(openXmlElement, value?.HeaderFooter);
-      SetPageMargins(openXmlElement, value?.PageMargins);
-      SetPageSetup(openXmlElement, value?.PageSetup);
-      SetLegacyDrawingHeaderFooter(openXmlElement, value?.LegacyDrawingHeaderFooter);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PrintSettings value)
+  {
+    SetHeaderFooter(openXmlElement, value?.HeaderFooter);
+    SetPageMargins(openXmlElement, value?.PageMargins);
+    SetPageSetup(openXmlElement, value?.PageSetup);
+    SetLegacyDrawingHeaderFooter(openXmlElement, value?.LegacyDrawingHeaderFooter);
+    }
+  }

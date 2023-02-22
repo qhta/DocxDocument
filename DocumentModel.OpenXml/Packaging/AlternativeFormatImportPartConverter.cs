@@ -42,15 +42,16 @@ public static class AlternativeFormatImportPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.AlternativeFormatImportPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.AlternativeFormatImportPart value)
     where OpenXmlElementType: DXPack.AlternativeFormatImportPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.AlternativeFormatImportPart openXmlElement, DMPack.AlternativeFormatImportPart value)
+  {
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

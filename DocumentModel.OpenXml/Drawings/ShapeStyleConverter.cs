@@ -155,18 +155,19 @@ public static class ShapeStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeStyle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeStyle value)
     where OpenXmlElementType: DXDraw.ShapeStyle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineReference(openXmlElement, value?.LineReference);
-      SetFillReference(openXmlElement, value?.FillReference);
-      SetEffectReference(openXmlElement, value?.EffectReference);
-      SetFontReference(openXmlElement, value?.FontReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ShapeStyle openXmlElement, DMDraws.ShapeStyle value)
+  {
+    SetLineReference(openXmlElement, value?.LineReference);
+    SetFillReference(openXmlElement, value?.FillReference);
+    SetEffectReference(openXmlElement, value?.EffectReference);
+    SetFontReference(openXmlElement, value?.FontReference);
+    }
+  }

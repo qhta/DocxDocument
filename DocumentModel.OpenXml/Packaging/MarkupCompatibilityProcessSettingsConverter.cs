@@ -71,16 +71,17 @@ public static class MarkupCompatibilityProcessSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MarkupCompatibilityProcessSettings? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.MarkupCompatibilityProcessSettings value)
     where OpenXmlElementType: DXPack.MarkupCompatibilityProcessSettings, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetProcessMode(openXmlElement, value?.ProcessMode);
-      //SetTargetFileFormatVersions(openXmlElement, value?.TargetFileFormatVersions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.MarkupCompatibilityProcessSettings openXmlElement, DMPack.MarkupCompatibilityProcessSettings value)
+  {
+    //SetProcessMode(openXmlElement, value?.ProcessMode);
+    //SetTargetFileFormatVersions(openXmlElement, value?.TargetFileFormatVersions);
+    }
+  }

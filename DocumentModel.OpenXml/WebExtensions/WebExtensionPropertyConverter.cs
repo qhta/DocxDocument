@@ -10,22 +10,17 @@ public static class WebExtensionPropertyConverter
   /// </summary>
   private static String? GetName(DXO2013WebExt.WebExtensionProperty openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class WebExtensionPropertyConverter
   /// </summary>
   private static String? GetValue(DXO2013WebExt.WebExtensionProperty openXmlElement)
   {
-    return openXmlElement?.Value?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Value);
   }
   
   private static bool CmpValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Value?.Value == value) return true;
-    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Value");
   }
   
   private static void SetValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Value = new StringValue { Value = value };
-    else
-      openXmlElement.Value = null;
+    openXmlElement.Value = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.WebExtensions.WebExtensionProperty? CreateModelElement(DXO2013WebExt.WebExtensionProperty? openXmlElement)
@@ -79,16 +69,17 @@ public static class WebExtensionPropertyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionProperty? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionProperty value)
     where OpenXmlElementType: DXO2013WebExt.WebExtensionProperty, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetValue(openXmlElement, value?.Value);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionProperty openXmlElement, DMWebExt.WebExtensionProperty value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetValue(openXmlElement, value?.Value);
+    }
+  }

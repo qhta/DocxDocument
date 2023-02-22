@@ -319,25 +319,26 @@ public static class ContentPartLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ContentPartLocks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ContentPartLocks value)
     where OpenXmlElementType: DXO2010Draw.ContentPartLocks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoGrouping(openXmlElement, value?.NoGrouping);
-      SetNoSelection(openXmlElement, value?.NoSelection);
-      SetNoRotation(openXmlElement, value?.NoRotation);
-      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
-      SetNoMove(openXmlElement, value?.NoMove);
-      SetNoResize(openXmlElement, value?.NoResize);
-      SetNoEditPoints(openXmlElement, value?.NoEditPoints);
-      SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
-      SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
-      SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ContentPartLocks openXmlElement, DMDraws.ContentPartLocks value)
+  {
+    SetNoGrouping(openXmlElement, value?.NoGrouping);
+    SetNoSelection(openXmlElement, value?.NoSelection);
+    SetNoRotation(openXmlElement, value?.NoRotation);
+    SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+    SetNoMove(openXmlElement, value?.NoMove);
+    SetNoResize(openXmlElement, value?.NoResize);
+    SetNoEditPoints(openXmlElement, value?.NoEditPoints);
+    SetNoAdjustHandles(openXmlElement, value?.NoAdjustHandles);
+    SetNoChangeArrowheads(openXmlElement, value?.NoChangeArrowheads);
+    SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -73,16 +73,17 @@ public static class LuminanceEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LuminanceEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LuminanceEffect value)
     where OpenXmlElementType: DXDraw.LuminanceEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBrightness(openXmlElement, value?.Brightness);
-      SetContrast(openXmlElement, value?.Contrast);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LuminanceEffect openXmlElement, DMDraws.LuminanceEffect value)
+  {
+    SetBrightness(openXmlElement, value?.Brightness);
+    SetContrast(openXmlElement, value?.Contrast);
+    }
+  }

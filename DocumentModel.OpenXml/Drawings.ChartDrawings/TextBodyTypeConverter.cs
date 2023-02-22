@@ -91,16 +91,17 @@ public static class TextBodyTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextBodyType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextBodyType value)
     where OpenXmlElementType: DXO2016DrawChartDraw.TextBodyType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBodyProperties(openXmlElement, value?.BodyProperties);
-      SetListStyle(openXmlElement, value?.ListStyle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.TextBodyType openXmlElement, DMDrawsChartDraws.TextBodyType value)
+  {
+    SetBodyProperties(openXmlElement, value?.BodyProperties);
+    SetListStyle(openXmlElement, value?.ListStyle);
+    }
+  }

@@ -85,16 +85,17 @@ public static class HyperlinkOnHoverConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkOnHover? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkOnHover value)
     where OpenXmlElementType: DXDraw.HyperlinkOnHover, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
-      SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkOnHover value)
+  {
+    SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
+    SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
+    }
+  }

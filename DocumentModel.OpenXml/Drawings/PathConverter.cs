@@ -322,25 +322,26 @@ public static class PathConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Path? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Path value)
     where OpenXmlElementType: DXDraw.Path, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetHeight(openXmlElement, value?.Height);
-      SetFill(openXmlElement, value?.Fill);
-      SetStroke(openXmlElement, value?.Stroke);
-      SetExtrusionOk(openXmlElement, value?.ExtrusionOk);
-      SetCloseShapePath(openXmlElement, value?.CloseShapePath);
-      SetMoveTo(openXmlElement, value?.MoveTo);
-      SetLineTo(openXmlElement, value?.LineTo);
-      SetArcTo(openXmlElement, value?.ArcTo);
-      SetQuadraticBezierCurveTo(openXmlElement, value?.QuadraticBezierCurveTo);
-      SetCubicBezierCurveTo(openXmlElement, value?.CubicBezierCurveTo);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Path openXmlElement, DMDraws.Path value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetHeight(openXmlElement, value?.Height);
+    SetFill(openXmlElement, value?.Fill);
+    SetStroke(openXmlElement, value?.Stroke);
+    SetExtrusionOk(openXmlElement, value?.ExtrusionOk);
+    SetCloseShapePath(openXmlElement, value?.CloseShapePath);
+    SetMoveTo(openXmlElement, value?.MoveTo);
+    SetLineTo(openXmlElement, value?.LineTo);
+    SetArcTo(openXmlElement, value?.ArcTo);
+    SetQuadraticBezierCurveTo(openXmlElement, value?.QuadraticBezierCurveTo);
+    SetCubicBezierCurveTo(openXmlElement, value?.CubicBezierCurveTo);
+    }
+  }

@@ -21,11 +21,11 @@ public static class SurfaceChartExtensionListConverter
   
   private static bool CmpSurfaceChartExtensions(DXDrawCharts.SurfaceChartExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceChartExtension>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.SurfaceChartExtension>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.SurfaceChartExtension>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class SurfaceChartExtensionListConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class SurfaceChartExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceChartExtensionList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceChartExtensionList value)
     where OpenXmlElementType: DXDrawCharts.SurfaceChartExtensionList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSurfaceChartExtensions(openXmlElement, value?.SurfaceChartExtensions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.SurfaceChartExtensionList openXmlElement, DMDrawsCharts.SurfaceChartExtensionList value)
+  {
+    SetSurfaceChartExtensions(openXmlElement, value?.SurfaceChartExtensions);
+    }
+  }

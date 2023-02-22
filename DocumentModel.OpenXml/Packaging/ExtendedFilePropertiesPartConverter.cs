@@ -83,17 +83,18 @@ public static class ExtendedFilePropertiesPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedFilePropertiesPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedFilePropertiesPart value)
     where OpenXmlElementType: DXPack.ExtendedFilePropertiesPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      SetProperties(openXmlElement, value?.Properties);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ExtendedFilePropertiesPart openXmlElement, DMPack.ExtendedFilePropertiesPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    SetProperties(openXmlElement, value?.Properties);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

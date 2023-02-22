@@ -10,22 +10,17 @@ public static class SchemaConverter
   /// </summary>
   private static String? GetUri(DXCustXmlSchRefs.Schema openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class SchemaConverter
   /// </summary>
   private static String? GetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement)
   {
-    return openXmlElement?.ManifestLocation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ManifestLocation);
   }
   
   private static bool CmpManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ManifestLocation?.Value == value) return true;
-    diffs?.Add(objName, "ManifestLocation", openXmlElement?.ManifestLocation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ManifestLocation, value, diffs, objName, "ManifestLocation");
   }
   
   private static void SetManifestLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ManifestLocation = new StringValue { Value = value };
-    else
-      openXmlElement.ManifestLocation = null;
+    openXmlElement.ManifestLocation = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class SchemaConverter
   /// </summary>
   private static String? GetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement)
   {
-    return openXmlElement?.SchemaLocation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SchemaLocation);
   }
   
   private static bool CmpSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SchemaLocation?.Value == value) return true;
-    diffs?.Add(objName, "SchemaLocation", openXmlElement?.SchemaLocation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SchemaLocation, value, diffs, objName, "SchemaLocation");
   }
   
   private static void SetSchemaLocation(DXCustXmlSchRefs.Schema openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SchemaLocation = new StringValue { Value = value };
-    else
-      openXmlElement.SchemaLocation = null;
+    openXmlElement.SchemaLocation = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.CustomXml.Schema? CreateModelElement(DXCustXmlSchRefs.Schema? openXmlElement)
@@ -105,17 +90,18 @@ public static class SchemaConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.Schema? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.Schema value)
     where OpenXmlElementType: DXCustXmlSchRefs.Schema, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetManifestLocation(openXmlElement, value?.ManifestLocation);
-      SetSchemaLocation(openXmlElement, value?.SchemaLocation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXCustXmlSchRefs.Schema openXmlElement, DMCustXml.Schema value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetManifestLocation(openXmlElement, value?.ManifestLocation);
+    SetSchemaLocation(openXmlElement, value?.SchemaLocation);
+    }
+  }

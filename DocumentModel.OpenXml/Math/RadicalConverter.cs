@@ -123,17 +123,18 @@ public static class RadicalConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Radical? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Radical value)
     where OpenXmlElementType: DXMath.Radical, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRadicalProperties(openXmlElement, value?.RadicalProperties);
-      SetDegree(openXmlElement, value?.Degree);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Radical openXmlElement, DMMath.Radical value)
+  {
+    SetRadicalProperties(openXmlElement, value?.RadicalProperties);
+    SetDegree(openXmlElement, value?.Degree);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

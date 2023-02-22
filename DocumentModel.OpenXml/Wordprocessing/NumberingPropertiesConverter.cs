@@ -10,27 +10,17 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static Int32? GetNumberingLevelReference(DXW.NumberingProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val);
   }
   
   private static bool CmpNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.NumberingLevelReference", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val, value, diffs, objName, "NumberingLevelReference");
   }
   
   private static void SetNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingLevelReference>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.NumberingLevelReference{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -38,27 +28,17 @@ public static class NumberingPropertiesConverter
   /// </summary>
   private static Int32? GetNumberingId(DXW.NumberingProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val);
   }
   
   private static bool CmpNumberingId(DXW.NumberingProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingId>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.NumberingId", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val, value, diffs, objName, "NumberingId");
   }
   
   private static void SetNumberingId(DXW.NumberingProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingId>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.NumberingId{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.NumberingId,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -153,18 +133,19 @@ public static class NumberingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties value)
     where OpenXmlElementType: DXW.NumberingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberingLevelReference(openXmlElement, value?.NumberingLevelReference);
-      SetNumberingId(openXmlElement, value?.NumberingId);
-      SetNumberingChange(openXmlElement, value?.NumberingChange);
-      SetInserted(openXmlElement, value?.Inserted);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingProperties openXmlElement, DMW.NumberingProperties value)
+  {
+    SetNumberingLevelReference(openXmlElement, value?.NumberingLevelReference);
+    SetNumberingId(openXmlElement, value?.NumberingId);
+    SetNumberingChange(openXmlElement, value?.NumberingChange);
+    SetInserted(openXmlElement, value?.Inserted);
+    }
+  }

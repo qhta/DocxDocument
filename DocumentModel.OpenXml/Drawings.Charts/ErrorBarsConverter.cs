@@ -22,13 +22,15 @@ public static class ErrorBarsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ErrorDirection>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorDirection, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDrawsCharts.ErrorBarDirectionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDrawsCharts.ErrorBarDirectionKind>(itemElement, (DMDrawsCharts.ErrorBarDirectionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorDirection, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues, DMDrawsCharts.ErrorBarDirectionKind>((DMDrawsCharts.ErrorBarDirectionKind)value));
   }
   
   /// <summary>
@@ -48,13 +50,15 @@ public static class ErrorBarsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ErrorBarType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorBarType, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDrawsCharts.ErrorBarKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDrawsCharts.ErrorBarKind>(itemElement, (DMDrawsCharts.ErrorBarKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorBarType, DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues, DMDrawsCharts.ErrorBarKind>((DMDrawsCharts.ErrorBarKind)value));
   }
   
   /// <summary>
@@ -74,13 +78,15 @@ public static class ErrorBarsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ErrorBarValueType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorBarValueType, DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDrawsCharts.ErrorKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDrawsCharts.ErrorKind>(itemElement, (DMDrawsCharts.ErrorKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ErrorBarValueType, DocumentFormat.OpenXml.Drawing.Charts.ErrorValues, DMDrawsCharts.ErrorKind>((DMDrawsCharts.ErrorKind)value));
   }
   
   /// <summary>
@@ -177,27 +183,17 @@ public static class ErrorBarsConverter
   /// </summary>
   private static Double? GetErrorBarValue(DXDrawCharts.ErrorBars openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.ErrorBarValue>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.ErrorBarValue>()?.Val);
   }
   
   private static bool CmpErrorBarValue(DXDrawCharts.ErrorBars openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ErrorBarValue>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ErrorBarValue", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.ErrorBarValue>()?.Val, value, diffs, objName, "ErrorBarValue");
   }
   
   private static void SetErrorBarValue(DXDrawCharts.ErrorBars openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ErrorBarValue>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.ErrorBarValue{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.ErrorBarValue,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -307,23 +303,24 @@ public static class ErrorBarsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ErrorBars? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ErrorBars value)
     where OpenXmlElementType: DXDrawCharts.ErrorBars, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetErrorDirection(openXmlElement, value?.ErrorDirection);
-      SetErrorBarType(openXmlElement, value?.ErrorBarType);
-      SetErrorBarValueType(openXmlElement, value?.ErrorBarValueType);
-      SetNoEndCap(openXmlElement, value?.NoEndCap);
-      SetPlus(openXmlElement, value?.Plus);
-      SetMinus(openXmlElement, value?.Minus);
-      SetErrorBarValue(openXmlElement, value?.ErrorBarValue);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.ErrorBars openXmlElement, DMDrawsCharts.ErrorBars value)
+  {
+    SetErrorDirection(openXmlElement, value?.ErrorDirection);
+    SetErrorBarType(openXmlElement, value?.ErrorBarType);
+    SetErrorBarValueType(openXmlElement, value?.ErrorBarValueType);
+    SetNoEndCap(openXmlElement, value?.NoEndCap);
+    SetPlus(openXmlElement, value?.Plus);
+    SetMinus(openXmlElement, value?.Minus);
+    SetErrorBarValue(openXmlElement, value?.ErrorBarValue);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

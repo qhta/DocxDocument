@@ -55,15 +55,16 @@ public static class FormulaReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FormulaReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FormulaReference value)
     where OpenXmlElementType: DXO2013DrawChart.FormulaReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.FormulaReference openXmlElement, DMDrawsCharts.FormulaReference value)
+  {
+    SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+    }
+  }

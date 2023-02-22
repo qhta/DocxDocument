@@ -91,16 +91,17 @@ public static class GroupCharConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupChar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupChar value)
     where OpenXmlElementType: DXMath.GroupChar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.GroupChar openXmlElement, DMMath.GroupChar value)
+  {
+    SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

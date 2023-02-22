@@ -10,22 +10,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetId(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -97,22 +92,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetColor(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Color?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
   private static bool CmpColor(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Color?.Value == value) return true;
-    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
   
   private static void SetColor(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Color = new StringValue { Value = value };
-    else
-      openXmlElement.Color = null;
+    openXmlElement.Color = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -120,22 +110,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetOpacity(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Opacity?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Opacity);
   }
   
   private static bool CmpOpacity(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Opacity?.Value == value) return true;
-    diffs?.Add(objName, "Opacity", openXmlElement?.Opacity?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Opacity, value, diffs, objName, "Opacity");
   }
   
   private static void SetOpacity(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Opacity = new StringValue { Value = value };
-    else
-      openXmlElement.Opacity = null;
+    openXmlElement.Opacity = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -143,22 +128,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetOffset(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Offset?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Offset);
   }
   
   private static bool CmpOffset(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Offset?.Value == value) return true;
-    diffs?.Add(objName, "Offset", openXmlElement?.Offset?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Offset, value, diffs, objName, "Offset");
   }
   
   private static void SetOffset(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Offset = new StringValue { Value = value };
-    else
-      openXmlElement.Offset = null;
+    openXmlElement.Offset = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -166,22 +146,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetColor2(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Color2?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Color2);
   }
   
   private static bool CmpColor2(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Color2?.Value == value) return true;
-    diffs?.Add(objName, "Color2", openXmlElement?.Color2?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Color2, value, diffs, objName, "Color2");
   }
   
   private static void SetColor2(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Color2 = new StringValue { Value = value };
-    else
-      openXmlElement.Color2 = null;
+    openXmlElement.Color2 = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -189,22 +164,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetOffset2(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Offset2?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Offset2);
   }
   
   private static bool CmpOffset2(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Offset2?.Value == value) return true;
-    diffs?.Add(objName, "Offset2", openXmlElement?.Offset2?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Offset2, value, diffs, objName, "Offset2");
   }
   
   private static void SetOffset2(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Offset2 = new StringValue { Value = value };
-    else
-      openXmlElement.Offset2 = null;
+    openXmlElement.Offset2 = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -212,22 +182,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetOrigin(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Origin?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Origin);
   }
   
   private static bool CmpOrigin(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Origin?.Value == value) return true;
-    diffs?.Add(objName, "Origin", openXmlElement?.Origin?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Origin, value, diffs, objName, "Origin");
   }
   
   private static void SetOrigin(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Origin = new StringValue { Value = value };
-    else
-      openXmlElement.Origin = null;
+    openXmlElement.Origin = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -235,22 +200,17 @@ public static class ShadowConverter
   /// </summary>
   private static String? GetMatrix(DXVml.Shadow openXmlElement)
   {
-    return openXmlElement?.Matrix?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Matrix);
   }
   
   private static bool CmpMatrix(DXVml.Shadow openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Matrix?.Value == value) return true;
-    diffs?.Add(objName, "Matrix", openXmlElement?.Matrix?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Matrix, value, diffs, objName, "Matrix");
   }
   
   private static void SetMatrix(DXVml.Shadow openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Matrix = new StringValue { Value = value };
-    else
-      openXmlElement.Matrix = null;
+    openXmlElement.Matrix = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.Shadow? CreateModelElement(DXVml.Shadow? openXmlElement)
@@ -308,25 +268,26 @@ public static class ShadowConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Shadow? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Shadow value)
     where OpenXmlElementType: DXVml.Shadow, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetOn(openXmlElement, value?.On);
-      SetType(openXmlElement, value?.Type);
-      SetObscured(openXmlElement, value?.Obscured);
-      SetColor(openXmlElement, value?.Color);
-      SetOpacity(openXmlElement, value?.Opacity);
-      SetOffset(openXmlElement, value?.Offset);
-      SetColor2(openXmlElement, value?.Color2);
-      SetOffset2(openXmlElement, value?.Offset2);
-      SetOrigin(openXmlElement, value?.Origin);
-      SetMatrix(openXmlElement, value?.Matrix);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.Shadow openXmlElement, DMVml.Shadow value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetOn(openXmlElement, value?.On);
+    SetType(openXmlElement, value?.Type);
+    SetObscured(openXmlElement, value?.Obscured);
+    SetColor(openXmlElement, value?.Color);
+    SetOpacity(openXmlElement, value?.Opacity);
+    SetOffset(openXmlElement, value?.Offset);
+    SetColor2(openXmlElement, value?.Color2);
+    SetOffset2(openXmlElement, value?.Offset2);
+    SetOrigin(openXmlElement, value?.Origin);
+    SetMatrix(openXmlElement, value?.Matrix);
+    }
+  }

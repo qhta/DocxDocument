@@ -21,11 +21,11 @@ public static class DataLabelsConverter
   
   private static bool CmpItems(DXDrawCharts.DataLabels openXmlElement, Collection<DMDrawsCharts.DataLabel>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.DataLabel>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.DataLabel>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class DataLabelsConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -181,13 +181,15 @@ public static class DataLabelsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DataLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(itemElement, (DMDrawsCharts.DataLabelPositionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DataLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>((DMDrawsCharts.DataLabelPositionKind)value));
   }
   
   private static Boolean? GetShowLegendKey(DXDrawCharts.DataLabels openXmlElement)
@@ -530,30 +532,31 @@ public static class DataLabelsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabels? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabels value)
     where OpenXmlElementType: DXDrawCharts.DataLabels, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetItems(openXmlElement, value?.Items);
-      SetDelete(openXmlElement, value?.Delete);
-      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetDataLabelPosition(openXmlElement, value?.DataLabelPosition);
-      SetShowLegendKey(openXmlElement, value?.ShowLegendKey);
-      SetShowValue(openXmlElement, value?.ShowValue);
-      SetShowCategoryName(openXmlElement, value?.ShowCategoryName);
-      SetShowSeriesName(openXmlElement, value?.ShowSeriesName);
-      SetShowPercent(openXmlElement, value?.ShowPercent);
-      SetShowBubbleSize(openXmlElement, value?.ShowBubbleSize);
-      SetSeparator(openXmlElement, value?.Separator);
-      SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
-      SetLeaderLines(openXmlElement, value?.LeaderLines);
-      SetDLblsExtensionList(openXmlElement, value?.DLblsExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DataLabels value)
+  {
+    SetItems(openXmlElement, value?.Items);
+    SetDelete(openXmlElement, value?.Delete);
+    SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetDataLabelPosition(openXmlElement, value?.DataLabelPosition);
+    SetShowLegendKey(openXmlElement, value?.ShowLegendKey);
+    SetShowValue(openXmlElement, value?.ShowValue);
+    SetShowCategoryName(openXmlElement, value?.ShowCategoryName);
+    SetShowSeriesName(openXmlElement, value?.ShowSeriesName);
+    SetShowPercent(openXmlElement, value?.ShowPercent);
+    SetShowBubbleSize(openXmlElement, value?.ShowBubbleSize);
+    SetSeparator(openXmlElement, value?.Separator);
+    SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
+    SetLeaderLines(openXmlElement, value?.LeaderLines);
+    SetDLblsExtensionList(openXmlElement, value?.DLblsExtensionList);
+    }
+  }

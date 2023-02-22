@@ -48,15 +48,16 @@ public static class StatisticsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Statistics? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Statistics value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Statistics, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetQuartileMethod(openXmlElement, value?.QuartileMethod);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.Statistics value)
+  {
+    SetQuartileMethod(openXmlElement, value?.QuartileMethod);
+    }
+  }

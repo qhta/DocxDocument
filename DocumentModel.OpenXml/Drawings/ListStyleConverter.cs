@@ -379,25 +379,26 @@ public static class ListStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ListStyle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ListStyle value)
     where OpenXmlElementType: DXDraw.ListStyle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDefaultParagraphProperties(openXmlElement, value?.DefaultParagraphProperties);
-      SetLevel1ParagraphProperties(openXmlElement, value?.Level1ParagraphProperties);
-      SetLevel2ParagraphProperties(openXmlElement, value?.Level2ParagraphProperties);
-      SetLevel3ParagraphProperties(openXmlElement, value?.Level3ParagraphProperties);
-      SetLevel4ParagraphProperties(openXmlElement, value?.Level4ParagraphProperties);
-      SetLevel5ParagraphProperties(openXmlElement, value?.Level5ParagraphProperties);
-      SetLevel6ParagraphProperties(openXmlElement, value?.Level6ParagraphProperties);
-      SetLevel7ParagraphProperties(openXmlElement, value?.Level7ParagraphProperties);
-      SetLevel8ParagraphProperties(openXmlElement, value?.Level8ParagraphProperties);
-      SetLevel9ParagraphProperties(openXmlElement, value?.Level9ParagraphProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ListStyle openXmlElement, DMDraws.ListStyle value)
+  {
+    SetDefaultParagraphProperties(openXmlElement, value?.DefaultParagraphProperties);
+    SetLevel1ParagraphProperties(openXmlElement, value?.Level1ParagraphProperties);
+    SetLevel2ParagraphProperties(openXmlElement, value?.Level2ParagraphProperties);
+    SetLevel3ParagraphProperties(openXmlElement, value?.Level3ParagraphProperties);
+    SetLevel4ParagraphProperties(openXmlElement, value?.Level4ParagraphProperties);
+    SetLevel5ParagraphProperties(openXmlElement, value?.Level5ParagraphProperties);
+    SetLevel6ParagraphProperties(openXmlElement, value?.Level6ParagraphProperties);
+    SetLevel7ParagraphProperties(openXmlElement, value?.Level7ParagraphProperties);
+    SetLevel8ParagraphProperties(openXmlElement, value?.Level8ParagraphProperties);
+    SetLevel9ParagraphProperties(openXmlElement, value?.Level9ParagraphProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

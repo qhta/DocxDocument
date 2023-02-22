@@ -28,22 +28,17 @@ public static class BorderTypeConverter
   /// </summary>
   private static String? GetColor(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.Color?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
   private static bool CmpColor(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Color?.Value == value) return true;
-    diffs?.Add(objName, "Color", openXmlElement?.Color?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
   
   private static void SetColor(DXW.BorderType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Color = new StringValue { Value = value };
-    else
-      openXmlElement.Color = null;
+    openXmlElement.Color = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -69,22 +64,17 @@ public static class BorderTypeConverter
   /// </summary>
   private static String? GetThemeTint(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.ThemeTint?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
   private static bool CmpThemeTint(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeTint?.Value == value) return true;
-    diffs?.Add(objName, "ThemeTint", openXmlElement?.ThemeTint?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
   private static void SetThemeTint(DXW.BorderType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeTint = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeTint = null;
+    openXmlElement.ThemeTint = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -92,22 +82,17 @@ public static class BorderTypeConverter
   /// </summary>
   private static String? GetThemeShade(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.ThemeShade?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
   private static bool CmpThemeShade(DXW.BorderType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ThemeShade?.Value == value) return true;
-    diffs?.Add(objName, "ThemeShade", openXmlElement?.ThemeShade?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
   private static void SetThemeShade(DXW.BorderType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ThemeShade = new StringValue { Value = value };
-    else
-      openXmlElement.ThemeShade = null;
+    openXmlElement.ThemeShade = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -155,22 +140,17 @@ public static class BorderTypeConverter
   /// </summary>
   private static Boolean? GetShadow(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.Shadow?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Shadow);
   }
   
   private static bool CmpShadow(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Shadow?.Value == value) return true;
-    diffs?.Add(objName, "Shadow", openXmlElement?.Shadow?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Shadow, value, diffs, objName, "Shadow");
   }
   
   private static void SetShadow(DXW.BorderType openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Shadow = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Shadow = null;
+    openXmlElement.Shadow = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -178,22 +158,17 @@ public static class BorderTypeConverter
   /// </summary>
   private static Boolean? GetFrame(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.Frame?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Frame);
   }
   
   private static bool CmpFrame(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Frame?.Value == value) return true;
-    diffs?.Add(objName, "Frame", openXmlElement?.Frame?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Frame, value, diffs, objName, "Frame");
   }
   
   private static void SetFrame(DXW.BorderType openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Frame = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Frame = null;
+    openXmlElement.Frame = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.BorderType? CreateModelElement(DXW.BorderType? openXmlElement)
@@ -245,23 +220,24 @@ public static class BorderTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BorderType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BorderType value)
     where OpenXmlElementType: DXW.BorderType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetColor(openXmlElement, value?.Color);
-      SetThemeColor(openXmlElement, value?.ThemeColor);
-      SetThemeTint(openXmlElement, value?.ThemeTint);
-      SetThemeShade(openXmlElement, value?.ThemeShade);
-      SetSize(openXmlElement, value?.Size);
-      SetSpace(openXmlElement, value?.Space);
-      SetShadow(openXmlElement, value?.Shadow);
-      SetFrame(openXmlElement, value?.Frame);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.BorderType openXmlElement, DMW.BorderType value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetColor(openXmlElement, value?.Color);
+    SetThemeColor(openXmlElement, value?.ThemeColor);
+    SetThemeTint(openXmlElement, value?.ThemeTint);
+    SetThemeShade(openXmlElement, value?.ThemeShade);
+    SetSize(openXmlElement, value?.Size);
+    SetSpace(openXmlElement, value?.Space);
+    SetShadow(openXmlElement, value?.Shadow);
+    SetFrame(openXmlElement, value?.Frame);
+    }
+  }

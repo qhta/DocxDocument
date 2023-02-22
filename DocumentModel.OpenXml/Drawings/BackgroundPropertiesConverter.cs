@@ -111,18 +111,19 @@ public static class BackgroundPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundProperties value)
     where OpenXmlElementType: DXO2013Draw.BackgroundProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMode(openXmlElement, value?.Mode);
-      SetPure(openXmlElement, value?.Pure);
-      SetNormal(openXmlElement, value?.Normal);
-      SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BackgroundProperties value)
+  {
+    SetMode(openXmlElement, value?.Mode);
+    SetPure(openXmlElement, value?.Pure);
+    SetNormal(openXmlElement, value?.Normal);
+    SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
+    }
+  }

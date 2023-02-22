@@ -114,17 +114,18 @@ public static class NumberingPictureBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingPictureBullet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingPictureBullet value)
     where OpenXmlElementType: DXW.NumberingPictureBullet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberingPictureBulletId(openXmlElement, value?.NumberingPictureBulletId);
-      SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
-      SetDrawing(openXmlElement, value?.Drawing);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingPictureBullet openXmlElement, DMW.NumberingPictureBullet value)
+  {
+    SetNumberingPictureBulletId(openXmlElement, value?.NumberingPictureBulletId);
+    SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
+    SetDrawing(openXmlElement, value?.Drawing);
+    }
+  }

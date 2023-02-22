@@ -10,22 +10,17 @@ public static class TaskTitleEventInfoConverter
   /// </summary>
   private static String? GetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement)
   {
-    return openXmlElement?.Title?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
   private static bool CmpTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Title?.Value == value) return true;
-    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
   private static void SetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Title = new StringValue { Value = value };
-    else
-      openXmlElement.Title = null;
+    openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement)
@@ -53,15 +48,16 @@ public static class TaskTitleEventInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskTitleEventInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskTitleEventInfo value)
     where OpenXmlElementType: DXO2021DocTasks.TaskTitleEventInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTitle(openXmlElement, value?.Title);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, DM.TaskTitleEventInfo value)
+  {
+    SetTitle(openXmlElement, value?.Title);
+    }
+  }

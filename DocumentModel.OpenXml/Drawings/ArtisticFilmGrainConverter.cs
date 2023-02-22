@@ -73,16 +73,17 @@ public static class ArtisticFilmGrainConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticFilmGrain? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticFilmGrain value)
     where OpenXmlElementType: DXO2010Draw.ArtisticFilmGrain, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetGrainSize(openXmlElement, value?.GrainSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticFilmGrain openXmlElement, DMDraws.ArtisticFilmGrain value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetGrainSize(openXmlElement, value?.GrainSize);
+    }
+  }

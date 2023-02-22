@@ -83,17 +83,18 @@ public static class WordCommentsExtensiblePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordCommentsExtensiblePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordCommentsExtensiblePart value)
     where OpenXmlElementType: DXPack.WordCommentsExtensiblePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCommentsExtensible(openXmlElement, value?.CommentsExtensible);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WordCommentsExtensiblePart openXmlElement, DMPack.WordCommentsExtensiblePart value)
+  {
+    SetCommentsExtensible(openXmlElement, value?.CommentsExtensible);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

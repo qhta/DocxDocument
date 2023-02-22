@@ -10,22 +10,17 @@ public static class AdjustPoint2DTypeConverter
   /// </summary>
   private static String? GetX(DXDraw.AdjustPoint2DType openXmlElement)
   {
-    return openXmlElement?.X?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.X);
   }
   
   private static bool CmpX(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.X?.Value == value) return true;
-    diffs?.Add(objName, "X", openXmlElement?.X?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "X");
   }
   
   private static void SetX(DXDraw.AdjustPoint2DType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.X = new StringValue { Value = value };
-    else
-      openXmlElement.X = null;
+    openXmlElement.X = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class AdjustPoint2DTypeConverter
   /// </summary>
   private static String? GetY(DXDraw.AdjustPoint2DType openXmlElement)
   {
-    return openXmlElement?.Y?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Y);
   }
   
   private static bool CmpY(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Y?.Value == value) return true;
-    diffs?.Add(objName, "Y", openXmlElement?.Y?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Y");
   }
   
   private static void SetY(DXDraw.AdjustPoint2DType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Y = new StringValue { Value = value };
-    else
-      openXmlElement.Y = null;
+    openXmlElement.Y = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(DXDraw.AdjustPoint2DType? openXmlElement)
@@ -79,16 +69,17 @@ public static class AdjustPoint2DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustPoint2DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustPoint2DType value)
     where OpenXmlElementType: DXDraw.AdjustPoint2DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetX(openXmlElement, value?.X);
-      SetY(openXmlElement, value?.Y);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AdjustPoint2DType openXmlElement, DMDraws.AdjustPoint2DType value)
+  {
+    SetX(openXmlElement, value?.X);
+    SetY(openXmlElement, value?.Y);
+    }
+  }

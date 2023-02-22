@@ -10,22 +10,17 @@ public static class DataModelExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.DataModelExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.DataModelExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.DataModelExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsO.DataModelExtensionBlock? GetDataModelExtensionBlock(DXDraw.DataModelExtension openXmlElement)
@@ -113,17 +108,18 @@ public static class DataModelExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DataModelExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DataModelExtension value)
     where OpenXmlElementType: DXDraw.DataModelExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetDataModelExtensionBlock(openXmlElement, value?.DataModelExtensionBlock);
-      SetRecolorImages(openXmlElement, value?.RecolorImages);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.DataModelExtension openXmlElement, DMDraws.DataModelExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetDataModelExtensionBlock(openXmlElement, value?.DataModelExtensionBlock);
+    SetRecolorImages(openXmlElement, value?.RecolorImages);
+    }
+  }

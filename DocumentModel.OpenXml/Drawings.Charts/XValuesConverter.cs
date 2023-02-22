@@ -172,19 +172,20 @@ public static class XValuesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.XValues? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.XValues value)
     where OpenXmlElementType: DXDrawCharts.XValues, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
-      SetNumberReference(openXmlElement, value?.NumberReference);
-      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-      SetStringReference(openXmlElement, value?.StringReference);
-      SetStringLiteral(openXmlElement, value?.StringLiteral);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.XValues value)
+  {
+    SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
+    SetNumberReference(openXmlElement, value?.NumberReference);
+    SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+    SetStringReference(openXmlElement, value?.StringReference);
+    SetStringLiteral(openXmlElement, value?.StringLiteral);
+    }
+  }

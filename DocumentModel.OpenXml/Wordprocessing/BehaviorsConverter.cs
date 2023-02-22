@@ -19,13 +19,15 @@ public static class BehaviorsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Behavior>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(itemElement, (DMW.DocPartBehaviorKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>((DMW.DocPartBehaviorKind)value));
   }
   
   public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
@@ -53,15 +55,16 @@ public static class BehaviorsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Behaviors? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Behaviors value)
     where OpenXmlElementType: DXW.Behaviors, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBehavior(openXmlElement, value?.Behavior);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Behaviors openXmlElement, DMW.Behaviors value)
+  {
+    SetBehavior(openXmlElement, value?.Behavior);
+    }
+  }

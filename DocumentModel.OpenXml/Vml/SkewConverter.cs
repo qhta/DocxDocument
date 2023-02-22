@@ -28,22 +28,17 @@ public static class SkewConverter
   /// </summary>
   private static String? GetId(DXVmlO.Skew openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVmlO.Skew openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +69,17 @@ public static class SkewConverter
   /// </summary>
   private static String? GetOffset(DXVmlO.Skew openXmlElement)
   {
-    return openXmlElement?.Offset?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Offset);
   }
   
   private static bool CmpOffset(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Offset?.Value == value) return true;
-    diffs?.Add(objName, "Offset", openXmlElement?.Offset?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Offset, value, diffs, objName, "Offset");
   }
   
   private static void SetOffset(DXVmlO.Skew openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Offset = new StringValue { Value = value };
-    else
-      openXmlElement.Offset = null;
+    openXmlElement.Offset = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -97,22 +87,17 @@ public static class SkewConverter
   /// </summary>
   private static String? GetOrigin(DXVmlO.Skew openXmlElement)
   {
-    return openXmlElement?.Origin?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Origin);
   }
   
   private static bool CmpOrigin(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Origin?.Value == value) return true;
-    diffs?.Add(objName, "Origin", openXmlElement?.Origin?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Origin, value, diffs, objName, "Origin");
   }
   
   private static void SetOrigin(DXVmlO.Skew openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Origin = new StringValue { Value = value };
-    else
-      openXmlElement.Origin = null;
+    openXmlElement.Origin = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -120,22 +105,17 @@ public static class SkewConverter
   /// </summary>
   private static String? GetMatrix(DXVmlO.Skew openXmlElement)
   {
-    return openXmlElement?.Matrix?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Matrix);
   }
   
   private static bool CmpMatrix(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Matrix?.Value == value) return true;
-    diffs?.Add(objName, "Matrix", openXmlElement?.Matrix?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Matrix, value, diffs, objName, "Matrix");
   }
   
   private static void SetMatrix(DXVmlO.Skew openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Matrix = new StringValue { Value = value };
-    else
-      openXmlElement.Matrix = null;
+    openXmlElement.Matrix = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.Skew? CreateModelElement(DXVmlO.Skew? openXmlElement)
@@ -178,20 +158,21 @@ public static class SkewConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Skew? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Skew value)
     where OpenXmlElementType: DXVmlO.Skew, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetId(openXmlElement, value?.Id);
-      SetOn(openXmlElement, value?.On);
-      SetOffset(openXmlElement, value?.Offset);
-      SetOrigin(openXmlElement, value?.Origin);
-      SetMatrix(openXmlElement, value?.Matrix);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Skew openXmlElement, DMVml.Skew value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetId(openXmlElement, value?.Id);
+    SetOn(openXmlElement, value?.On);
+    SetOffset(openXmlElement, value?.Offset);
+    SetOrigin(openXmlElement, value?.Origin);
+    SetMatrix(openXmlElement, value?.Matrix);
+    }
+  }

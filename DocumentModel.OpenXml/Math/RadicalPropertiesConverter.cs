@@ -22,13 +22,15 @@ public static class RadicalPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.HideDegree>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideDegree, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideDegree, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -88,16 +90,17 @@ public static class RadicalPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.RadicalProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.RadicalProperties value)
     where OpenXmlElementType: DXMath.RadicalProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHideDegree(openXmlElement, value?.HideDegree);
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.RadicalProperties openXmlElement, DMMath.RadicalProperties value)
+  {
+    SetHideDegree(openXmlElement, value?.HideDegree);
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

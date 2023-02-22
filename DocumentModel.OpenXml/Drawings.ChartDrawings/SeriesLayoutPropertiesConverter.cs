@@ -51,13 +51,15 @@ public static class SeriesLayoutPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RegionLabelLayout>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDrawsChartDraws.RegionLabelLayoutEnum>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDrawsChartDraws.RegionLabelLayoutEnum>(itemElement, (DMDrawsChartDraws.RegionLabelLayoutEnum)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDrawsChartDraws.RegionLabelLayoutEnum>((DMDrawsChartDraws.RegionLabelLayoutEnum)value));
   }
   
   /// <summary>
@@ -296,23 +298,24 @@ public static class SeriesLayoutPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesLayoutProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesLayoutProperties value)
     where OpenXmlElementType: DXO2016DrawChartDraw.SeriesLayoutProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetParentLabelLayout(openXmlElement, value?.ParentLabelLayout);
-      SetRegionLabelLayout(openXmlElement, value?.RegionLabelLayout);
-      SetSeriesElementVisibilities(openXmlElement, value?.SeriesElementVisibilities);
-      SetAggregation(openXmlElement, value?.Aggregation);
-      SetBinning(openXmlElement, value?.Binning);
-      SetGeography(openXmlElement, value?.Geography);
-      SetStatistics(openXmlElement, value?.Statistics);
-      SetSubtotals(openXmlElement, value?.Subtotals);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.SeriesLayoutProperties value)
+  {
+    SetParentLabelLayout(openXmlElement, value?.ParentLabelLayout);
+    SetRegionLabelLayout(openXmlElement, value?.RegionLabelLayout);
+    SetSeriesElementVisibilities(openXmlElement, value?.SeriesElementVisibilities);
+    SetAggregation(openXmlElement, value?.Aggregation);
+    SetBinning(openXmlElement, value?.Binning);
+    SetGeography(openXmlElement, value?.Geography);
+    SetStatistics(openXmlElement, value?.Statistics);
+    SetSubtotals(openXmlElement, value?.Subtotals);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

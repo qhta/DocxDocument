@@ -69,16 +69,17 @@ public static class ColorsTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorsType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorsType value)
     where OpenXmlElementType: DXDrawDgms.ColorsType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMethod(openXmlElement, value?.Method);
-      SetHueDirection(openXmlElement, value?.HueDirection);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorsType value)
+  {
+    SetMethod(openXmlElement, value?.Method);
+    SetHueDirection(openXmlElement, value?.HueDirection);
+    }
+  }

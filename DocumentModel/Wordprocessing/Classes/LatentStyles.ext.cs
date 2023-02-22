@@ -19,6 +19,18 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
     CollectionChanged += Styles_CollectionChanged;
   }
 
+  [XmlIgnore]
+  public new Collection<LatentStyleExceptionInfo>? Items
+  {
+    get => this;
+    set
+    {
+      if (value!=null)
+        foreach (var item in value)
+          Add(item);
+    }
+  }
+
   public void Add(string key, LatentStyleExceptionInfo value)
   {
     (StyleIndex).Add(key, value);

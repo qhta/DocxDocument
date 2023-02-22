@@ -22,13 +22,15 @@ public static class ScatterChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ScatterStyle>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDrawsCharts.ScatterStyleKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDrawsCharts.ScatterStyleKind>(itemElement, (DMDrawsCharts.ScatterStyleKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDrawsCharts.ScatterStyleKind>((DMDrawsCharts.ScatterStyleKind)value));
   }
   
   /// <summary>
@@ -78,11 +80,11 @@ public static class ScatterChartConverter
   
   private static bool CmpScatterChartSeries(DXDrawCharts.ScatterChart openXmlElement, Collection<DMDrawsCharts.ScatterChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.ScatterChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.ScatterChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -99,7 +101,7 @@ public static class ScatterChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -160,11 +162,11 @@ public static class ScatterChartConverter
   
   private static bool CmpAxisIds(DXDrawCharts.ScatterChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -181,7 +183,7 @@ public static class ScatterChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -266,20 +268,21 @@ public static class ScatterChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ScatterChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ScatterChart value)
     where OpenXmlElementType: DXDrawCharts.ScatterChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetScatterStyle(openXmlElement, value?.ScatterStyle);
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetScatterChartSeries(openXmlElement, value?.ScatterChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetScatterChartExtensionList(openXmlElement, value?.ScatterChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.ScatterChart openXmlElement, DMDrawsCharts.ScatterChart value)
+  {
+    SetScatterStyle(openXmlElement, value?.ScatterStyle);
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetScatterChartSeries(openXmlElement, value?.ScatterChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetScatterChartExtensionList(openXmlElement, value?.ScatterChartExtensionList);
+    }
+  }

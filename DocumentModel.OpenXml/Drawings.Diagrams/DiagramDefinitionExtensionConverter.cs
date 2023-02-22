@@ -10,22 +10,17 @@ public static class DiagramDefinitionExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsDgm1.NumberDiagramInfoList? GetNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
@@ -111,17 +106,18 @@ public static class DiagramDefinitionExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramDefinitionExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramDefinitionExtension value)
     where OpenXmlElementType: DXDrawDgms.DiagramDefinitionExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);
-      SetTextListStyleType(openXmlElement, value?.TextListStyleType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgms.DiagramDefinitionExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);
+    SetTextListStyleType(openXmlElement, value?.TextListStyleType);
+    }
+  }

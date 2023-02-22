@@ -146,18 +146,19 @@ public static class ValueColorPositionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueColorPositions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueColorPositions value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ValueColorPositions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCount(openXmlElement, value?.Count);
-      SetMinValueColorEndPosition(openXmlElement, value?.MinValueColorEndPosition);
-      SetValueColorMiddlePosition(openXmlElement, value?.ValueColorMiddlePosition);
-      SetMaxValueColorEndPosition(openXmlElement, value?.MaxValueColorEndPosition);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ValueColorPositions openXmlElement, DMDrawsChartDraws.ValueColorPositions value)
+  {
+    SetCount(openXmlElement, value?.Count);
+    SetMinValueColorEndPosition(openXmlElement, value?.MinValueColorEndPosition);
+    SetValueColorMiddlePosition(openXmlElement, value?.ValueColorMiddlePosition);
+    SetMaxValueColorEndPosition(openXmlElement, value?.MaxValueColorEndPosition);
+    }
+  }

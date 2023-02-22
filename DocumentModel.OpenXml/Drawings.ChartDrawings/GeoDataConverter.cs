@@ -10,22 +10,17 @@ public static class GeoDataConverter
   /// </summary>
   private static String? GetEntityName(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement?.EntityName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityName);
   }
   
   private static bool CmpEntityName(DXO2016DrawChartDraw.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityName?.Value == value) return true;
-    diffs?.Add(objName, "EntityName", openXmlElement?.EntityName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityName, value, diffs, objName, "EntityName");
   }
   
   private static void SetEntityName(DXO2016DrawChartDraw.GeoData openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityName = new StringValue { Value = value };
-    else
-      openXmlElement.EntityName = null;
+    openXmlElement.EntityName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class GeoDataConverter
   /// </summary>
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoData openXmlElement)
   {
-    return openXmlElement?.EntityId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityId?.Value == value) return true;
-    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoData openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityId = new StringValue { Value = value };
-    else
-      openXmlElement.EntityId = null;
+    openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -235,22 +225,23 @@ public static class GeoDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoData value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityName(openXmlElement, value?.EntityName);
-      SetEntityId(openXmlElement, value?.EntityId);
-      SetEast(openXmlElement, value?.East);
-      SetWest(openXmlElement, value?.West);
-      SetNorth(openXmlElement, value?.North);
-      SetSouth(openXmlElement, value?.South);
-      SetGeoPolygons(openXmlElement, value?.GeoPolygons);
-      SetCopyrights(openXmlElement, value?.Copyrights);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoData value)
+  {
+    SetEntityName(openXmlElement, value?.EntityName);
+    SetEntityId(openXmlElement, value?.EntityId);
+    SetEast(openXmlElement, value?.East);
+    SetWest(openXmlElement, value?.West);
+    SetNorth(openXmlElement, value?.North);
+    SetSouth(openXmlElement, value?.South);
+    SetGeoPolygons(openXmlElement, value?.GeoPolygons);
+    SetCopyrights(openXmlElement, value?.Copyrights);
+    }
+  }

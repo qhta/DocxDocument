@@ -10,22 +10,17 @@ public static class DataModelExtensionBlockConverter
   /// </summary>
   private static String? GetRelId(DXODraw.DataModelExtensionBlock openXmlElement)
   {
-    return openXmlElement?.RelId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.RelId);
   }
   
   private static bool CmpRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RelId?.Value == value) return true;
-    diffs?.Add(objName, "RelId", openXmlElement?.RelId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.RelId, value, diffs, objName, "RelId");
   }
   
   private static void SetRelId(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.RelId = new StringValue { Value = value };
-    else
-      openXmlElement.RelId = null;
+    openXmlElement.RelId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class DataModelExtensionBlockConverter
   /// </summary>
   private static String? GetMinVer(DXODraw.DataModelExtensionBlock openXmlElement)
   {
-    return openXmlElement?.MinVer?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MinVer);
   }
   
   private static bool CmpMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MinVer?.Value == value) return true;
-    diffs?.Add(objName, "MinVer", openXmlElement?.MinVer?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MinVer, value, diffs, objName, "MinVer");
   }
   
   private static void SetMinVer(DXODraw.DataModelExtensionBlock openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MinVer = new StringValue { Value = value };
-    else
-      openXmlElement.MinVer = null;
+    openXmlElement.MinVer = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.Office.DataModelExtensionBlock? CreateModelElement(DXODraw.DataModelExtensionBlock? openXmlElement)
@@ -79,16 +69,17 @@ public static class DataModelExtensionBlockConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.DataModelExtensionBlock? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.DataModelExtensionBlock value)
     where OpenXmlElementType: DXODraw.DataModelExtensionBlock, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRelId(openXmlElement, value?.RelId);
-      SetMinVer(openXmlElement, value?.MinVer);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.DataModelExtensionBlock openXmlElement, DMDrawsO.DataModelExtensionBlock value)
+  {
+    SetRelId(openXmlElement, value?.RelId);
+    SetMinVer(openXmlElement, value?.MinVer);
+    }
+  }

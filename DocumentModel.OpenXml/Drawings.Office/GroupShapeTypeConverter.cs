@@ -91,16 +91,17 @@ public static class GroupShapeTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.GroupShapeType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.GroupShapeType value)
     where OpenXmlElementType: DXODraw.GroupShapeType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
-      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.GroupShapeType openXmlElement, DMDrawsO.GroupShapeType value)
+  {
+    SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+    SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+    }
+  }

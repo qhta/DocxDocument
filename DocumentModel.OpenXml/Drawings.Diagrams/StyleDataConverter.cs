@@ -56,15 +56,16 @@ public static class StyleDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleData value)
     where OpenXmlElementType: DXDrawDgms.StyleData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDataModel(openXmlElement, value?.DataModel);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.StyleData value)
+  {
+    SetDataModel(openXmlElement, value?.DataModel);
+    }
+  }

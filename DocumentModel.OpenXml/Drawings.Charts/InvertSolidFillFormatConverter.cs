@@ -59,15 +59,16 @@ public static class InvertSolidFillFormatConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.InvertSolidFillFormat? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.InvertSolidFillFormat value)
     where OpenXmlElementType: DXO2010DrawCharts.InvertSolidFillFormat, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.InvertSolidFillFormat value)
+  {
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    }
+  }

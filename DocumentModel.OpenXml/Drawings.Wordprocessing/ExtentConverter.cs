@@ -73,16 +73,17 @@ public static class ExtentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Extent? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Extent value)
     where OpenXmlElementType: DXDrawW.Extent, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCx(openXmlElement, value?.Cx);
-      SetCy(openXmlElement, value?.Cy);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.Extent openXmlElement, DMDrawsW.Extent value)
+  {
+    SetCx(openXmlElement, value?.Cx);
+    SetCy(openXmlElement, value?.Cy);
+    }
+  }

@@ -382,30 +382,31 @@ public static class WordprocessingCommentsExPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingCommentsExPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingCommentsExPart value)
     where OpenXmlElementType: DXPack.WordprocessingCommentsExPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
-      //SetChartParts(openXmlElement, value?.ChartParts);
-      SetCommentsEx(openXmlElement, value?.CommentsEx);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
-      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
-      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
-      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
-      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
-      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
-      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
-      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
-      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WordprocessingCommentsExPart openXmlElement, DMPack.WordprocessingCommentsExPart value)
+  {
+    //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
+    //SetChartParts(openXmlElement, value?.ChartParts);
+    SetCommentsEx(openXmlElement, value?.CommentsEx);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+    //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+    //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+    //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+    //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+    //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+    //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+    //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+    //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

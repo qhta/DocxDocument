@@ -10,22 +10,17 @@ public static class BookmarkStartConverter
   /// </summary>
   private static String? GetName(DXW.BookmarkStart openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.BookmarkStart openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -91,22 +86,17 @@ public static class BookmarkStartConverter
   /// </summary>
   private static String? GetId(DXW.BookmarkStart openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.BookmarkStart openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
@@ -146,19 +136,20 @@ public static class BookmarkStartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BookmarkStart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BookmarkStart value)
     where OpenXmlElementType: DXW.BookmarkStart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetColumnFirst(openXmlElement, value?.ColumnFirst);
-      SetColumnLast(openXmlElement, value?.ColumnLast);
-      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.BookmarkStart openXmlElement, DMW.BookmarkStart value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetColumnFirst(openXmlElement, value?.ColumnFirst);
+    SetColumnLast(openXmlElement, value?.ColumnLast);
+    SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

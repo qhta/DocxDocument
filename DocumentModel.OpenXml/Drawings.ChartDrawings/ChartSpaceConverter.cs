@@ -283,22 +283,23 @@ public static class ChartSpaceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartSpace? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartSpace value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ChartSpace, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartData(openXmlElement, value?.ChartData);
-      SetChart(openXmlElement, value?.Chart);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetColorMappingType(openXmlElement, value?.ColorMappingType);
-      SetFormatOverrides(openXmlElement, value?.FormatOverrides);
-      SetPrintSettings(openXmlElement, value?.PrintSettings);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ChartSpace openXmlElement, DMDrawsChartDraws.ChartSpace value)
+  {
+    SetChartData(openXmlElement, value?.ChartData);
+    SetChart(openXmlElement, value?.Chart);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetColorMappingType(openXmlElement, value?.ColorMappingType);
+    SetFormatOverrides(openXmlElement, value?.FormatOverrides);
+    SetPrintSettings(openXmlElement, value?.PrintSettings);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

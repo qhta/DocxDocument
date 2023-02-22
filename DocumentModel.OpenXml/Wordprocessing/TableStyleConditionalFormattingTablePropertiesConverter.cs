@@ -22,13 +22,15 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement, (DMW.TableRowAlignmentKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
   
   /// <summary>
@@ -216,20 +218,21 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableProperties value)
     where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTableJustification(openXmlElement, value?.TableJustification);
-      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
-      SetTableIndentation(openXmlElement, value?.TableIndentation);
-      SetTableBorders(openXmlElement, value?.TableBorders);
-      SetShading(openXmlElement, value?.Shading);
-      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableStyleConditionalFormattingTableProperties value)
+  {
+    SetTableJustification(openXmlElement, value?.TableJustification);
+    SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+    SetTableIndentation(openXmlElement, value?.TableIndentation);
+    SetTableBorders(openXmlElement, value?.TableBorders);
+    SetShading(openXmlElement, value?.Shading);
+    SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+    }
+  }

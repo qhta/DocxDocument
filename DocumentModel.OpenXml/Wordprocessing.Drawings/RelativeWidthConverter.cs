@@ -76,16 +76,17 @@ public static class RelativeWidthConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWDraws.RelativeWidth? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWDraws.RelativeWidth value)
     where OpenXmlElementType: DXO2010WDraw.RelativeWidth, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetObjectId(openXmlElement, value?.ObjectId);
-      SetPercentageWidth(openXmlElement, value?.PercentageWidth);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010WDraw.RelativeWidth openXmlElement, DMWDraws.RelativeWidth value)
+  {
+    SetObjectId(openXmlElement, value?.ObjectId);
+    SetPercentageWidth(openXmlElement, value?.PercentageWidth);
+    }
+  }

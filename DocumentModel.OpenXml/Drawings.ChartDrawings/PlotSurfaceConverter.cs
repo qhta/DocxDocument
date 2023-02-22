@@ -91,16 +91,17 @@ public static class PlotSurfaceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotSurface? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotSurface value)
     where OpenXmlElementType: DXO2016DrawChartDraw.PlotSurface, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PlotSurface openXmlElement, DMDrawsChartDraws.PlotSurface value)
+  {
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

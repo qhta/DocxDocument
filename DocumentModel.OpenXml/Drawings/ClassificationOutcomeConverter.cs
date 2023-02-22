@@ -48,15 +48,16 @@ public static class ClassificationOutcomeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ClassificationOutcome? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ClassificationOutcome value)
     where OpenXmlElementType: DXO2021DrawDocCls.ClassificationOutcome, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetClassificationOutcomeType(openXmlElement, value?.ClassificationOutcomeType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcome value)
+  {
+    SetClassificationOutcomeType(openXmlElement, value?.ClassificationOutcomeType);
+    }
+  }

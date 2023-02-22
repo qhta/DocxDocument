@@ -172,19 +172,20 @@ public static class GroupShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.GroupShape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.GroupShape value)
     where OpenXmlElementType: DXODraw.GroupShape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
-      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
-      SetShape(openXmlElement, value?.Shape);
-      SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShape value)
+  {
+    SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+    SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+    SetShape(openXmlElement, value?.Shape);
+    SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -71,16 +71,17 @@ public static class TabStopConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStop value)
     where OpenXmlElementType: DXDraw.TabStop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPosition(openXmlElement, value?.Position);
-      SetAlignment(openXmlElement, value?.Alignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.TabStop openXmlElement, DMDraws.TabStop value)
+  {
+    SetPosition(openXmlElement, value?.Position);
+    SetAlignment(openXmlElement, value?.Alignment);
+    }
+  }

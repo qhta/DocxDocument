@@ -10,22 +10,17 @@ public static class VTVStreamDataConverter
   /// </summary>
   private static String? GetVersion(DXVT.VTVStreamData openXmlElement)
   {
-    return openXmlElement?.Version?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Version);
   }
   
   private static bool CmpVersion(DXVT.VTVStreamData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Version?.Value == value) return true;
-    diffs?.Add(objName, "Version", openXmlElement?.Version?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Version, value, diffs, objName, "Version");
   }
   
   private static void SetVersion(DXVT.VTVStreamData openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Version = new StringValue { Value = value };
-    else
-      openXmlElement.Version = null;
+    openXmlElement.Version = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(DXVT.VTVStreamData? openXmlElement)
@@ -53,15 +48,16 @@ public static class VTVStreamDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTVStreamData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTVStreamData value)
     where OpenXmlElementType: DXVT.VTVStreamData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVersion(openXmlElement, value?.Version);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVT.VTVStreamData openXmlElement, DMVT.VTVStreamData value)
+  {
+    SetVersion(openXmlElement, value?.Version);
+    }
+  }

@@ -60,12 +60,12 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     StyleTableCellProperties != null ||
     TableStyleConditionalFormattingTableRowProperties != null ||
     TableStyleProperties != null ||
-    (this.Type == StyleKind.Numbering) && IsCustom && BasedOn != null;
+    (this.Type == StyleKind.Numbering) && IsCustom == true && BasedOn != null;
 
   public bool IsValid {
     get
     {
-      if (IsCustom && BasedOn != null)
+      if (IsCustom == true && BasedOn != null)
         return true;
       if (IsDefault == true)
         return true;

@@ -10,22 +10,17 @@ public static class SnapshotConverter
   /// </summary>
   private static String? GetEmbed(DXO2013WebExt.Snapshot openXmlElement)
   {
-    return openXmlElement?.Embed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
   private static bool CmpEmbed(DXO2013WebExt.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Embed?.Value == value) return true;
-    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
   
   private static void SetEmbed(DXO2013WebExt.Snapshot openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Embed = new StringValue { Value = value };
-    else
-      openXmlElement.Embed = null;
+    openXmlElement.Embed = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class SnapshotConverter
   /// </summary>
   private static String? GetLink(DXO2013WebExt.Snapshot openXmlElement)
   {
-    return openXmlElement?.Link?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
   private static bool CmpLink(DXO2013WebExt.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Link?.Value == value) return true;
-    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
   
   private static void SetLink(DXO2013WebExt.Snapshot openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Link = new StringValue { Value = value };
-    else
-      openXmlElement.Link = null;
+    openXmlElement.Link = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -628,35 +618,36 @@ public static class SnapshotConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.Snapshot? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.Snapshot value)
     where OpenXmlElementType: DXO2013WebExt.Snapshot, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEmbed(openXmlElement, value?.Embed);
-      SetLink(openXmlElement, value?.Link);
-      SetCompressionState(openXmlElement, value?.CompressionState);
-      SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
-      SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
-      SetAlphaFloor(openXmlElement, value?.AlphaFloor);
-      SetAlphaInverse(openXmlElement, value?.AlphaInverse);
-      SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
-      SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
-      SetAlphaReplace(openXmlElement, value?.AlphaReplace);
-      SetBiLevel(openXmlElement, value?.BiLevel);
-      SetBlur(openXmlElement, value?.Blur);
-      SetColorChange(openXmlElement, value?.ColorChange);
-      SetColorReplacement(openXmlElement, value?.ColorReplacement);
-      SetDuotone(openXmlElement, value?.Duotone);
-      SetFillOverlay(openXmlElement, value?.FillOverlay);
-      SetGrayscale(openXmlElement, value?.Grayscale);
-      SetHsl(openXmlElement, value?.Hsl);
-      SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
-      SetTintEffect(openXmlElement, value?.TintEffect);
-      SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.Snapshot openXmlElement, DMWebExt.Snapshot value)
+  {
+    SetEmbed(openXmlElement, value?.Embed);
+    SetLink(openXmlElement, value?.Link);
+    SetCompressionState(openXmlElement, value?.CompressionState);
+    SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
+    SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
+    SetAlphaFloor(openXmlElement, value?.AlphaFloor);
+    SetAlphaInverse(openXmlElement, value?.AlphaInverse);
+    SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
+    SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
+    SetAlphaReplace(openXmlElement, value?.AlphaReplace);
+    SetBiLevel(openXmlElement, value?.BiLevel);
+    SetBlur(openXmlElement, value?.Blur);
+    SetColorChange(openXmlElement, value?.ColorChange);
+    SetColorReplacement(openXmlElement, value?.ColorReplacement);
+    SetDuotone(openXmlElement, value?.Duotone);
+    SetFillOverlay(openXmlElement, value?.FillOverlay);
+    SetGrayscale(openXmlElement, value?.Grayscale);
+    SetHsl(openXmlElement, value?.Hsl);
+    SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
+    SetTintEffect(openXmlElement, value?.TintEffect);
+    SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
+    }
+  }

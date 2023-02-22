@@ -155,18 +155,19 @@ public static class PreSubSuperConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.PreSubSuper? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.PreSubSuper value)
     where OpenXmlElementType: DXMath.PreSubSuper, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPreSubSuperProperties(openXmlElement, value?.PreSubSuperProperties);
-      SetSubArgument(openXmlElement, value?.SubArgument);
-      SetSuperArgument(openXmlElement, value?.SuperArgument);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuper value)
+  {
+    SetPreSubSuperProperties(openXmlElement, value?.PreSubSuperProperties);
+    SetSubArgument(openXmlElement, value?.SubArgument);
+    SetSuperArgument(openXmlElement, value?.SuperArgument);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

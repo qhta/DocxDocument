@@ -10,22 +10,17 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// </summary>
   private static String? GetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
-    return openXmlElement?.CommandName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CommandName);
   }
   
   private static bool CmpCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CommandName?.Value == value) return true;
-    diffs?.Add(objName, "CommandName", openXmlElement?.CommandName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CommandName, value, diffs, objName, "CommandName");
   }
   
   private static void SetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CommandName = new StringValue { Value = value };
-    else
-      openXmlElement.CommandName = null;
+    openXmlElement.CommandName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -115,17 +110,18 @@ public static class FixedCommandKeyboardCustomizationConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FixedCommandKeyboardCustomization? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FixedCommandKeyboardCustomization value)
     where OpenXmlElementType: DXOW.FixedCommandKeyboardCustomization, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCommandName(openXmlElement, value?.CommandName);
-      SetCommandIndex(openXmlElement, value?.CommandIndex);
-      SetArgument(openXmlElement, value?.Argument);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.FixedCommandKeyboardCustomization openXmlElement, DMW.FixedCommandKeyboardCustomization value)
+  {
+    SetCommandName(openXmlElement, value?.CommandName);
+    SetCommandIndex(openXmlElement, value?.CommandIndex);
+    SetArgument(openXmlElement, value?.Argument);
+    }
+  }

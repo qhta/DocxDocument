@@ -59,15 +59,16 @@ public static class StretchConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Stretch? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Stretch value)
     where OpenXmlElementType: DXDraw.Stretch, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFillRectangle(openXmlElement, value?.FillRectangle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Stretch openXmlElement, DMDraws.Stretch value)
+  {
+    SetFillRectangle(openXmlElement, value?.FillRectangle);
+    }
+  }

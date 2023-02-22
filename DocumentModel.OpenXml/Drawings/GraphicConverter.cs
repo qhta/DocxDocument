@@ -59,15 +59,16 @@ public static class GraphicConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Graphic? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Graphic value)
     where OpenXmlElementType: DXDraw.Graphic, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGraphicData(openXmlElement, value?.GraphicData);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Graphic openXmlElement, DMDraws.Graphic value)
+  {
+    SetGraphicData(openXmlElement, value?.GraphicData);
+    }
+  }

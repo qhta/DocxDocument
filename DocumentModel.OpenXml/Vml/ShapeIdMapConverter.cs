@@ -28,22 +28,17 @@ public static class ShapeIdMapConverter
   /// </summary>
   private static String? GetData(DXVmlO.ShapeIdMap openXmlElement)
   {
-    return openXmlElement?.Data?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Data);
   }
   
   private static bool CmpData(DXVmlO.ShapeIdMap openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Data?.Value == value) return true;
-    diffs?.Add(objName, "Data", openXmlElement?.Data?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Data, value, diffs, objName, "Data");
   }
   
   private static void SetData(DXVmlO.ShapeIdMap openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Data = new StringValue { Value = value };
-    else
-      openXmlElement.Data = null;
+    openXmlElement.Data = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DXVmlO.ShapeIdMap? openXmlElement)
@@ -74,16 +69,17 @@ public static class ShapeIdMapConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeIdMap? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeIdMap value)
     where OpenXmlElementType: DXVmlO.ShapeIdMap, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetData(openXmlElement, value?.Data);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.ShapeIdMap openXmlElement, DMVml.ShapeIdMap value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetData(openXmlElement, value?.Data);
+    }
+  }

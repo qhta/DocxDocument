@@ -106,18 +106,19 @@ public static class WebExtensionPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExtensionPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExtensionPart value)
     where OpenXmlElementType: DXPack.WebExtensionPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      SetWebExtension(openXmlElement, value?.WebExtension);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WebExtensionPart openXmlElement, DMPack.WebExtensionPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    SetWebExtension(openXmlElement, value?.WebExtension);
+    }
+  }

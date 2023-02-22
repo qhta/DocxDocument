@@ -117,18 +117,19 @@ public static class PageSizeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageSize? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PageSize value)
     where OpenXmlElementType: DXW.PageSize, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetHeight(openXmlElement, value?.Height);
-      SetOrient(openXmlElement, value?.Orient);
-      SetCode(openXmlElement, value?.Code);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PageSize openXmlElement, DMW.PageSize value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetHeight(openXmlElement, value?.Height);
+    SetOrient(openXmlElement, value?.Orient);
+    SetCode(openXmlElement, value?.Code);
+    }
+  }

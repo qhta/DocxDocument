@@ -10,22 +10,17 @@ public static class OEmbedConverter
   /// </summary>
   private static String? GetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement)
   {
-    return openXmlElement?.OEmbedUrl?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OEmbedUrl);
   }
   
   private static bool CmpOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OEmbedUrl?.Value == value) return true;
-    diffs?.Add(objName, "OEmbedUrl", openXmlElement?.OEmbedUrl?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OEmbedUrl, value, diffs, objName, "OEmbedUrl");
   }
   
   private static void SetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OEmbedUrl = new StringValue { Value = value };
-    else
-      openXmlElement.OEmbedUrl = null;
+    openXmlElement.OEmbedUrl = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class OEmbedConverter
   /// </summary>
   private static String? GetMediaType(DXOWY2020OEmb.OEmbed openXmlElement)
   {
-    return openXmlElement?.MediaType?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MediaType);
   }
   
   private static bool CmpMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MediaType?.Value == value) return true;
-    diffs?.Add(objName, "MediaType", openXmlElement?.MediaType?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MediaType, value, diffs, objName, "MediaType");
   }
   
   private static void SetMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MediaType = new StringValue { Value = value };
-    else
-      openXmlElement.MediaType = null;
+    openXmlElement.MediaType = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -105,17 +95,18 @@ public static class OEmbedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWOEmb.OEmbed? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWOEmb.OEmbed value)
     where OpenXmlElementType: DXOWY2020OEmb.OEmbed, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOEmbedUrl(openXmlElement, value?.OEmbedUrl);
-      SetMediaType(openXmlElement, value?.MediaType);
-      SetPicLocksAutoForOEmbed(openXmlElement, value?.PicLocksAutoForOEmbed);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOWY2020OEmb.OEmbed openXmlElement, DMWOEmb.OEmbed value)
+  {
+    SetOEmbedUrl(openXmlElement, value?.OEmbedUrl);
+    SetMediaType(openXmlElement, value?.MediaType);
+    SetPicLocksAutoForOEmbed(openXmlElement, value?.PicLocksAutoForOEmbed);
+    }
+  }

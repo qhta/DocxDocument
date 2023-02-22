@@ -59,15 +59,16 @@ public static class FunctionPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.FunctionProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.FunctionProperties value)
     where OpenXmlElementType: DXMath.FunctionProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.FunctionProperties openXmlElement, DMMath.FunctionProperties value)
+  {
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

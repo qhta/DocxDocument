@@ -106,18 +106,19 @@ public static class ThemePartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThemePart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ThemePart value)
     where OpenXmlElementType: DXPack.ThemePart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      SetTheme(openXmlElement, value?.Theme);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ThemePart openXmlElement, DMPack.ThemePart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    SetTheme(openXmlElement, value?.Theme);
+    }
+  }

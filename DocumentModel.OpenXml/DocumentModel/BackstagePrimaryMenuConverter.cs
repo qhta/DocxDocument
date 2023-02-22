@@ -10,22 +10,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Screentip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
   private static bool CmpScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Screentip?.Value == value) return true;
-    diffs?.Add(objName, "Screentip", openXmlElement?.Screentip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
   private static void SetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Screentip = new StringValue { Value = value };
-    else
-      openXmlElement.Screentip = null;
+    openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetScreentip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
   private static bool CmpGetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetScreentip?.Value == value) return true;
-    diffs?.Add(objName, "GetScreentip", openXmlElement?.GetScreentip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
   private static void SetGetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetScreentip = new StringValue { Value = value };
-    else
-      openXmlElement.GetScreentip = null;
+    openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Supertip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
   private static bool CmpSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Supertip?.Value == value) return true;
-    diffs?.Add(objName, "Supertip", openXmlElement?.Supertip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
   private static void SetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Supertip = new StringValue { Value = value };
-    else
-      openXmlElement.Supertip = null;
+    openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetSupertip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
   private static bool CmpGetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetSupertip?.Value == value) return true;
-    diffs?.Add(objName, "GetSupertip", openXmlElement?.GetSupertip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
   private static void SetGetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetSupertip = new StringValue { Value = value };
-    else
-      openXmlElement.GetSupertip = null;
+    openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +118,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +159,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetEnabled?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
   private static bool CmpGetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetEnabled?.Value == value) return true;
-    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
   private static void SetGetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetEnabled = new StringValue { Value = value };
-    else
-      openXmlElement.GetEnabled = null;
+    openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +177,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Label?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
   private static bool CmpLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Label?.Value == value) return true;
-    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
   private static void SetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Label = new StringValue { Value = value };
-    else
-      openXmlElement.Label = null;
+    openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -240,22 +195,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
   private static bool CmpGetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
   private static void SetGetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetLabel = null;
+    openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -286,22 +236,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -309,22 +254,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Image?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
   private static bool CmpImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Image?.Value == value) return true;
-    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
   private static void SetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Image = new StringValue { Value = value };
-    else
-      openXmlElement.Image = null;
+    openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -332,22 +272,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetImageMso(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.ImageMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
   private static bool CmpImageMso(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ImageMso?.Value == value) return true;
-    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
   private static void SetImageMso(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ImageMso = new StringValue { Value = value };
-    else
-      openXmlElement.ImageMso = null;
+    openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -355,22 +290,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetImage?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
   private static bool CmpGetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetImage?.Value == value) return true;
-    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
   private static void SetGetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetImage = new StringValue { Value = value };
-    else
-      openXmlElement.GetImage = null;
+    openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -378,22 +308,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.Keytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
   private static bool CmpKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Keytip?.Value == value) return true;
-    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
   private static void SetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Keytip = new StringValue { Value = value };
-    else
-      openXmlElement.Keytip = null;
+    openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -401,22 +326,17 @@ public static class BackstagePrimaryMenuConverter
   /// </summary>
   private static String? GetGetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    return openXmlElement?.GetKeytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
   private static bool CmpGetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetKeytip?.Value == value) return true;
-    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
   private static void SetGetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetKeytip = new StringValue { Value = value };
-    else
-      openXmlElement.GetKeytip = null;
+    openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
   private static DM.BackstageMenuGroup? GetBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
@@ -524,33 +444,34 @@ public static class BackstagePrimaryMenuConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstagePrimaryMenu? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstagePrimaryMenu value)
     where OpenXmlElementType: DXO2010CustUI.BackstagePrimaryMenu, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetScreentip(openXmlElement, value?.Screentip);
-      SetGetScreentip(openXmlElement, value?.GetScreentip);
-      SetSupertip(openXmlElement, value?.Supertip);
-      SetGetSupertip(openXmlElement, value?.GetSupertip);
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetGetEnabled(openXmlElement, value?.GetEnabled);
-      SetLabel(openXmlElement, value?.Label);
-      SetGetLabel(openXmlElement, value?.GetLabel);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetImage(openXmlElement, value?.Image);
-      SetImageMso(openXmlElement, value?.ImageMso);
-      SetGetImage(openXmlElement, value?.GetImage);
-      SetKeytip(openXmlElement, value?.Keytip);
-      SetGetKeytip(openXmlElement, value?.GetKeytip);
-      SetBackstageMenuGroup(openXmlElement, value?.BackstageMenuGroup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, DM.BackstagePrimaryMenu value)
+  {
+    SetScreentip(openXmlElement, value?.Screentip);
+    SetGetScreentip(openXmlElement, value?.GetScreentip);
+    SetSupertip(openXmlElement, value?.Supertip);
+    SetGetSupertip(openXmlElement, value?.GetSupertip);
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetGetEnabled(openXmlElement, value?.GetEnabled);
+    SetLabel(openXmlElement, value?.Label);
+    SetGetLabel(openXmlElement, value?.GetLabel);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetImage(openXmlElement, value?.Image);
+    SetImageMso(openXmlElement, value?.ImageMso);
+    SetGetImage(openXmlElement, value?.GetImage);
+    SetKeytip(openXmlElement, value?.Keytip);
+    SetGetKeytip(openXmlElement, value?.GetKeytip);
+    SetBackstageMenuGroup(openXmlElement, value?.BackstageMenuGroup);
+    }
+  }

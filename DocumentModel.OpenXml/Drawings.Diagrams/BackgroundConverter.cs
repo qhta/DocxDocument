@@ -263,22 +263,23 @@ public static class BackgroundConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Background? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Background value)
     where OpenXmlElementType: DXDrawDgms.Background, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetGroupFill(openXmlElement, value?.GroupFill);
-      SetEffectList(openXmlElement, value?.EffectList);
-      SetEffectDag(openXmlElement, value?.EffectDag);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Background openXmlElement, DMDrawsDgms.Background value)
+  {
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetGroupFill(openXmlElement, value?.GroupFill);
+    SetEffectList(openXmlElement, value?.EffectList);
+    SetEffectDag(openXmlElement, value?.EffectDag);
+    }
+  }

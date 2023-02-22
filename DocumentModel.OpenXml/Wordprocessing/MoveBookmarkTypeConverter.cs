@@ -10,22 +10,17 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static String? GetAuthor(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXW.MoveBookmarkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static String? GetName(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.MoveBookmarkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -134,22 +124,17 @@ public static class MoveBookmarkTypeConverter
   /// </summary>
   private static String? GetId(DXW.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.MoveBookmarkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.MoveBookmarkType? CreateModelElement(DXW.MoveBookmarkType? openXmlElement)
@@ -195,21 +180,22 @@ public static class MoveBookmarkTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MoveBookmarkType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MoveBookmarkType value)
     where OpenXmlElementType: DXW.MoveBookmarkType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAuthor(openXmlElement, value?.Author);
-      SetDate(openXmlElement, value?.Date);
-      SetName(openXmlElement, value?.Name);
-      SetColumnFirst(openXmlElement, value?.ColumnFirst);
-      SetColumnLast(openXmlElement, value?.ColumnLast);
-      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.MoveBookmarkType openXmlElement, DMW.MoveBookmarkType value)
+  {
+    SetAuthor(openXmlElement, value?.Author);
+    SetDate(openXmlElement, value?.Date);
+    SetName(openXmlElement, value?.Name);
+    SetColumnFirst(openXmlElement, value?.ColumnFirst);
+    SetColumnLast(openXmlElement, value?.ColumnLast);
+    SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

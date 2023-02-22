@@ -172,19 +172,20 @@ public static class LineDefaultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineDefault? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineDefault value)
     where OpenXmlElementType: DXDraw.LineDefault, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetBodyProperties(openXmlElement, value?.BodyProperties);
-      SetListStyle(openXmlElement, value?.ListStyle);
-      SetShapeStyle(openXmlElement, value?.ShapeStyle);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LineDefault openXmlElement, DMDraws.LineDefault value)
+  {
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetBodyProperties(openXmlElement, value?.BodyProperties);
+    SetListStyle(openXmlElement, value?.ListStyle);
+    SetShapeStyle(openXmlElement, value?.ShapeStyle);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -91,16 +91,17 @@ public static class BarConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Bar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Bar value)
     where OpenXmlElementType: DXMath.Bar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBarProperties(openXmlElement, value?.BarProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Bar openXmlElement, DMMath.Bar value)
+  {
+    SetBarProperties(openXmlElement, value?.BarProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

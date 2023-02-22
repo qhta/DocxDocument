@@ -7,27 +7,17 @@ public static class SideWallConverter
 {
   private static Byte? GetThickness(DXDrawCharts.SideWall openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val);
   }
   
   private static bool CmpThickness(DXDrawCharts.SideWall openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Thickness", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val, value, diffs, objName, "Thickness");
   }
   
   private static void SetThickness(DXDrawCharts.SideWall openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Thickness>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Thickness{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Thickness,System.Byte>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.SideWall openXmlElement)
@@ -142,18 +132,19 @@ public static class SideWallConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SideWall? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SideWall value)
     where OpenXmlElementType: DXDrawCharts.SideWall, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetThickness(openXmlElement, value?.Thickness);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetPictureOptions(openXmlElement, value?.PictureOptions);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.SideWall value)
+  {
+    SetThickness(openXmlElement, value?.Thickness);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetPictureOptions(openXmlElement, value?.PictureOptions);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

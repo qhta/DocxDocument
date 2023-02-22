@@ -46,22 +46,17 @@ public static class ConstraintConverter
   /// </summary>
   private static String? GetForName(DXDrawDgms.Constraint openXmlElement)
   {
-    return openXmlElement?.ForName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ForName);
   }
   
   private static bool CmpForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ForName?.Value == value) return true;
-    diffs?.Add(objName, "ForName", openXmlElement?.ForName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ForName, value, diffs, objName, "ForName");
   }
   
   private static void SetForName(DXDrawDgms.Constraint openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ForName = new StringValue { Value = value };
-    else
-      openXmlElement.ForName = null;
+    openXmlElement.ForName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -123,22 +118,17 @@ public static class ConstraintConverter
   /// </summary>
   private static String? GetReferenceForName(DXDrawDgms.Constraint openXmlElement)
   {
-    return openXmlElement?.ReferenceForName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ReferenceForName);
   }
   
   private static bool CmpReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ReferenceForName?.Value == value) return true;
-    diffs?.Add(objName, "ReferenceForName", openXmlElement?.ReferenceForName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ReferenceForName, value, diffs, objName, "ReferenceForName");
   }
   
   private static void SetReferenceForName(DXDrawDgms.Constraint openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ReferenceForName = new StringValue { Value = value };
-    else
-      openXmlElement.ReferenceForName = null;
+    openXmlElement.ReferenceForName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -304,26 +294,27 @@ public static class ConstraintConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Constraint? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Constraint value)
     where OpenXmlElementType: DXDrawDgms.Constraint, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetFor(openXmlElement, value?.For);
-      SetForName(openXmlElement, value?.ForName);
-      SetPointType(openXmlElement, value?.PointType);
-      SetReferenceType(openXmlElement, value?.ReferenceType);
-      SetReferenceFor(openXmlElement, value?.ReferenceFor);
-      SetReferenceForName(openXmlElement, value?.ReferenceForName);
-      SetReferencePointType(openXmlElement, value?.ReferencePointType);
-      SetOperator(openXmlElement, value?.Operator);
-      SetVal(openXmlElement, value?.Val);
-      SetFact(openXmlElement, value?.Fact);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Constraint openXmlElement, DMDrawsDgms.Constraint value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetFor(openXmlElement, value?.For);
+    SetForName(openXmlElement, value?.ForName);
+    SetPointType(openXmlElement, value?.PointType);
+    SetReferenceType(openXmlElement, value?.ReferenceType);
+    SetReferenceFor(openXmlElement, value?.ReferenceFor);
+    SetReferenceForName(openXmlElement, value?.ReferenceForName);
+    SetReferencePointType(openXmlElement, value?.ReferencePointType);
+    SetOperator(openXmlElement, value?.Operator);
+    SetVal(openXmlElement, value?.Val);
+    SetFact(openXmlElement, value?.Fact);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

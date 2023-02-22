@@ -10,22 +10,17 @@ public static class LanguageTypeConverter
   /// </summary>
   private static String? GetVal(DXW.LanguageType openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
   private static bool CmpVal(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
   }
   
   private static void SetVal(DXW.LanguageType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Val = new StringValue { Value = value };
-    else
-      openXmlElement.Val = null;
+    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class LanguageTypeConverter
   /// </summary>
   private static String? GetEastAsia(DXW.LanguageType openXmlElement)
   {
-    return openXmlElement?.EastAsia?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EastAsia);
   }
   
   private static bool CmpEastAsia(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EastAsia?.Value == value) return true;
-    diffs?.Add(objName, "EastAsia", openXmlElement?.EastAsia?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EastAsia, value, diffs, objName, "EastAsia");
   }
   
   private static void SetEastAsia(DXW.LanguageType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EastAsia = new StringValue { Value = value };
-    else
-      openXmlElement.EastAsia = null;
+    openXmlElement.EastAsia = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class LanguageTypeConverter
   /// </summary>
   private static String? GetBidi(DXW.LanguageType openXmlElement)
   {
-    return openXmlElement?.Bidi?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Bidi);
   }
   
   private static bool CmpBidi(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Bidi?.Value == value) return true;
-    diffs?.Add(objName, "Bidi", openXmlElement?.Bidi?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Bidi, value, diffs, objName, "Bidi");
   }
   
   private static void SetBidi(DXW.LanguageType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Bidi = new StringValue { Value = value };
-    else
-      openXmlElement.Bidi = null;
+    openXmlElement.Bidi = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.LanguageType? CreateModelElement(DXW.LanguageType? openXmlElement)
@@ -105,17 +90,18 @@ public static class LanguageTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LanguageType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LanguageType value)
     where OpenXmlElementType: DXW.LanguageType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetEastAsia(openXmlElement, value?.EastAsia);
-      SetBidi(openXmlElement, value?.Bidi);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.LanguageType openXmlElement, DMW.LanguageType value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetEastAsia(openXmlElement, value?.EastAsia);
+    SetBidi(openXmlElement, value?.Bidi);
+    }
+  }

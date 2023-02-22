@@ -50,15 +50,16 @@ public static class FlatTextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FlatText? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FlatText value)
     where OpenXmlElementType: DXDraw.FlatText, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetZ(openXmlElement, value?.Z);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FlatText openXmlElement, DMDraws.FlatText value)
+  {
+    SetZ(openXmlElement, value?.Z);
+    }
+  }

@@ -35,52 +35,32 @@ public static class PresentationLayoutVariablesConverter
   
   private static Int32? GetMaxNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val);
   }
   
   private static bool CmpMaxNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawDgms.MaxNumberOfChildren", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>()?.Val, value, diffs, objName, "MaxNumberOfChildren");
   }
   
   private static void SetMaxNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.MaxNumberOfChildren>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawDgms.MaxNumberOfChildren{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawDgms.MaxNumberOfChildren,System.Int32>(openXmlElement, value);
   }
   
   private static Int32? GetPreferredNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val);
   }
   
   private static bool CmpPreferredNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawDgms.PreferredNumberOfChildren", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>()?.Val, value, diffs, objName, "PreferredNumberOfChildren");
   }
   
   private static void SetPreferredNumberOfChildren(DXDrawDgms.PresentationLayoutVariables openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PreferredNumberOfChildren>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawDgms.PreferredNumberOfChildren{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawDgms.PreferredNumberOfChildren,System.Int32>(openXmlElement, value);
   }
   
   private static Boolean? GetBulletEnabled(DXDrawDgms.PresentationLayoutVariables openXmlElement)
@@ -125,13 +105,15 @@ public static class PresentationLayoutVariablesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Direction>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.Direction, DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>(itemElement, (DMDrawsDgms.DirectionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.Direction, DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues, DMDrawsDgms.DirectionKind>((DMDrawsDgms.DirectionKind)value));
   }
   
   private static DMDrawsDgms.HierarchyBranchStyleKind? GetHierarchyBranch(DXDrawDgms.PresentationLayoutVariables openXmlElement)
@@ -148,13 +130,15 @@ public static class PresentationLayoutVariablesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.HierarchyBranch>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.HierarchyBranch, DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>(itemElement, (DMDrawsDgms.HierarchyBranchStyleKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.HierarchyBranch, DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues, DMDrawsDgms.HierarchyBranchStyleKind>((DMDrawsDgms.HierarchyBranchStyleKind)value));
   }
   
   private static DMDrawsDgms.AnimateOneByOneKind? GetAnimateOneByOne(DXDrawDgms.PresentationLayoutVariables openXmlElement)
@@ -171,13 +155,15 @@ public static class PresentationLayoutVariablesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.AnimateOneByOne>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.AnimateOneByOne, DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>(itemElement, (DMDrawsDgms.AnimateOneByOneKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.AnimateOneByOne, DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues, DMDrawsDgms.AnimateOneByOneKind>((DMDrawsDgms.AnimateOneByOneKind)value));
   }
   
   private static DMDrawsDgms.AnimationLevelStringKind? GetAnimationLevel(DXDrawDgms.PresentationLayoutVariables openXmlElement)
@@ -194,13 +180,15 @@ public static class PresentationLayoutVariablesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.AnimationLevel>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.AnimationLevel, DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>(itemElement, (DMDrawsDgms.AnimationLevelStringKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.AnimationLevel, DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues, DMDrawsDgms.AnimationLevelStringKind>((DMDrawsDgms.AnimationLevelStringKind)value));
   }
   
   private static DMDrawsDgms.ResizeHandlesStringKind? GetResizeHandles(DXDrawDgms.PresentationLayoutVariables openXmlElement)
@@ -217,13 +205,15 @@ public static class PresentationLayoutVariablesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ResizeHandles>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.ResizeHandles, DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>(itemElement, (DMDrawsDgms.ResizeHandlesStringKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawDgms.ResizeHandles, DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues, DMDrawsDgms.ResizeHandlesStringKind>((DMDrawsDgms.ResizeHandlesStringKind)value));
   }
   
   public static DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? CreateModelElement(DXDrawDgms.PresentationLayoutVariables? openXmlElement)
@@ -275,23 +265,24 @@ public static class PresentationLayoutVariablesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PresentationLayoutVariables? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PresentationLayoutVariables value)
     where OpenXmlElementType: DXDrawDgms.PresentationLayoutVariables, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOrganizationChart(openXmlElement, value?.OrganizationChart);
-      SetMaxNumberOfChildren(openXmlElement, value?.MaxNumberOfChildren);
-      SetPreferredNumberOfChildren(openXmlElement, value?.PreferredNumberOfChildren);
-      SetBulletEnabled(openXmlElement, value?.BulletEnabled);
-      SetDirection(openXmlElement, value?.Direction);
-      SetHierarchyBranch(openXmlElement, value?.HierarchyBranch);
-      SetAnimateOneByOne(openXmlElement, value?.AnimateOneByOne);
-      SetAnimationLevel(openXmlElement, value?.AnimationLevel);
-      SetResizeHandles(openXmlElement, value?.ResizeHandles);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.PresentationLayoutVariables openXmlElement, DMDrawsDgms.PresentationLayoutVariables value)
+  {
+    SetOrganizationChart(openXmlElement, value?.OrganizationChart);
+    SetMaxNumberOfChildren(openXmlElement, value?.MaxNumberOfChildren);
+    SetPreferredNumberOfChildren(openXmlElement, value?.PreferredNumberOfChildren);
+    SetBulletEnabled(openXmlElement, value?.BulletEnabled);
+    SetDirection(openXmlElement, value?.Direction);
+    SetHierarchyBranch(openXmlElement, value?.HierarchyBranch);
+    SetAnimateOneByOne(openXmlElement, value?.AnimateOneByOne);
+    SetAnimationLevel(openXmlElement, value?.AnimationLevel);
+    SetResizeHandles(openXmlElement, value?.ResizeHandles);
+    }
+  }

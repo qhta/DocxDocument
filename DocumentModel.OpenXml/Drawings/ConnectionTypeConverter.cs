@@ -73,16 +73,17 @@ public static class ConnectionTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionType value)
     where OpenXmlElementType: DXDraw.ConnectionType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetIndex(openXmlElement, value?.Index);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ConnectionType openXmlElement, DMDraws.ConnectionType value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetIndex(openXmlElement, value?.Index);
+    }
+  }
