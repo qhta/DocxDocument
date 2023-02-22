@@ -81,5 +81,5 @@ public static class ListItemConverter
   {
     SetDisplayText(openXmlElement, value?.DisplayText);
     SetValue(openXmlElement, value?.Value);
-    }
   }
+}

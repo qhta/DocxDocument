@@ -1347,5 +1347,5 @@ public static class GroupConverter
     SetClipPath(openXmlElement, value?.ClipPath);
     SetTextWrap(openXmlElement, value?.TextWrap);
     SetAnchorLock(openXmlElement, value?.AnchorLock);
-    }
   }
+}

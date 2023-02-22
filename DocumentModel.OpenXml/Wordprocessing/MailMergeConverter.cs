@@ -492,5 +492,5 @@ public static class MailMergeConverter
     SetActiveRecord(openXmlElement, value?.ActiveRecord);
     SetCheckErrors(openXmlElement, value?.CheckErrors);
     SetDataSourceObject(openXmlElement, value?.DataSourceObject);
-    }
   }
+}

@@ -259,5 +259,5 @@ public static class RgbColorModelHexConverter
     SetLuminance(openXmlElement, value?.Luminance);
     SetLuminanceOffset(openXmlElement, value?.LuminanceOffset);
     SetLuminanceModulation(openXmlElement, value?.LuminanceModulation);
-    }
   }
+}

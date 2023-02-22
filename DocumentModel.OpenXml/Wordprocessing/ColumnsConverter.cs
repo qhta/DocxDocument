@@ -187,5 +187,5 @@ public static class ColumnsConverter
     SetColumnCount(openXmlElement, value?.ColumnCount);
     SetSeparator(openXmlElement, value?.Separator);
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

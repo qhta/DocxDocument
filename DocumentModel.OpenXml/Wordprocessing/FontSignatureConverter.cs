@@ -229,5 +229,5 @@ public static class FontSignatureConverter
     SetUnicodeSignature3(openXmlElement, value?.UnicodeSignature3);
     SetCodePageSignature0(openXmlElement, value?.CodePageSignature0);
     SetCodePageSignature1(openXmlElement, value?.CodePageSignature1);
-    }
   }
+}

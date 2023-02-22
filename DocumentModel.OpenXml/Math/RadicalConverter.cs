@@ -136,5 +136,5 @@ public static class RadicalConverter
     SetRadicalProperties(openXmlElement, value?.RadicalProperties);
     SetDegree(openXmlElement, value?.Degree);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

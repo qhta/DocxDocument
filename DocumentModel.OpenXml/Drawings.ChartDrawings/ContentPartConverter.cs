@@ -213,5 +213,5 @@ public static class ContentPartConverter
     SetApplicationNonVisualDrawingProperties(openXmlElement, value?.ApplicationNonVisualDrawingProperties);
     SetTransform2D(openXmlElement, value?.Transform2D);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

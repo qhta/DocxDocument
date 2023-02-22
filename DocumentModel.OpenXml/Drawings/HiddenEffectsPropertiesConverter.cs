@@ -103,5 +103,5 @@ public static class HiddenEffectsPropertiesConverter
   {
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);
-    }
   }
+}

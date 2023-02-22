@@ -377,5 +377,5 @@ public static class BackstageMenuCheckBoxConverter
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
-    }
   }
+}

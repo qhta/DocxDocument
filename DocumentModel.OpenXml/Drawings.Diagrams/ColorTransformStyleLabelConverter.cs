@@ -290,5 +290,5 @@ public static class ColorTransformStyleLabelConverter
     SetTextFillColorList(openXmlElement, value?.TextFillColorList);
     SetTextEffectColorList(openXmlElement, value?.TextEffectColorList);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

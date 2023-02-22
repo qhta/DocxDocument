@@ -425,5 +425,5 @@ public static class LayoutNodeConverter
     SetChildLayoutNode(openXmlElement, value?.ChildLayoutNode);
     SetChoose(openXmlElement, value?.Choose);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

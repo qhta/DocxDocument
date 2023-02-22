@@ -220,5 +220,5 @@ public static class NaryPropertiesConverter
     SetHideSubArgument(openXmlElement, value?.HideSubArgument);
     SetHideSuperArgument(openXmlElement, value?.HideSuperArgument);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

@@ -260,5 +260,5 @@ public static class PageSetupConverter
     SetHorizontalDpi(openXmlElement, value?.HorizontalDpi);
     SetVerticalDpi(openXmlElement, value?.VerticalDpi);
     SetCopies(openXmlElement, value?.Copies);
-    }
   }
+}

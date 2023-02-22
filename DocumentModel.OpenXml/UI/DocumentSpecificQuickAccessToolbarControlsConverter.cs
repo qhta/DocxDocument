@@ -127,5 +127,5 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
     SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
     SetUnsizedButton(openXmlElement, value?.UnsizedButton);
     SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
-    }
   }
+}

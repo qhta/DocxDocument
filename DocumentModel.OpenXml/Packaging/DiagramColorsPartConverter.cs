@@ -96,5 +96,5 @@ public static class DiagramColorsPartConverter
     SetColorsDefinition(openXmlElement, value?.ColorsDefinition);
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

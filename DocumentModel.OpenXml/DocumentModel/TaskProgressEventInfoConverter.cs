@@ -61,5 +61,5 @@ public static class TaskProgressEventInfoConverter
   public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, DM.TaskProgressEventInfo value)
   {
     SetPercentComplete(openXmlElement, value?.PercentComplete);
-    }
   }
+}

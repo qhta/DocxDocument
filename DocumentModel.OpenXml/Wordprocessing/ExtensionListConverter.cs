@@ -97,5 +97,5 @@ public static class ExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2021WComtExt.ExtensionList openXmlElement, DMW.ExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

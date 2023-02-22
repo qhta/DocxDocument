@@ -235,5 +235,5 @@ public static class CustomGeometryConverter
     SetConnectionSiteList(openXmlElement, value?.ConnectionSiteList);
     SetRectangle(openXmlElement, value?.Rectangle);
     SetPathList(openXmlElement, value?.PathList);
-    }
   }
+}

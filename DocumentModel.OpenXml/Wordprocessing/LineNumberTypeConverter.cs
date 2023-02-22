@@ -129,5 +129,5 @@ public static class LineNumberTypeConverter
     SetStart(openXmlElement, value?.Start);
     SetDistance(openXmlElement, value?.Distance);
     SetRestart(openXmlElement, value?.Restart);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class PeopleConverter
   public static void UpdateOpenXmlElement(DXO2013W.People openXmlElement, DMW.People value)
   {
     SetPersons(openXmlElement, value?.Persons);
-    }
   }
+}

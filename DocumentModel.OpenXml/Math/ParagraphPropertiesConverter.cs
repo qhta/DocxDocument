@@ -69,5 +69,5 @@ public static class ParagraphPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.ParagraphProperties openXmlElement, DMMath.ParagraphProperties value)
   {
     SetJustification(openXmlElement, value?.Justification);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class ShapeGuideConverter
   {
     SetName(openXmlElement, value?.Name);
     SetFormula(openXmlElement, value?.Formula);
-    }
   }
+}

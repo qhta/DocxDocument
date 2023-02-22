@@ -61,5 +61,5 @@ public static class ColorTemperatureConverter
   public static void UpdateOpenXmlElement(DXO2010Draw.ColorTemperature openXmlElement, DMDraws.ColorTemperature value)
   {
     SetColorTemperatureValue(openXmlElement, value?.ColorTemperatureValue);
-    }
   }
+}

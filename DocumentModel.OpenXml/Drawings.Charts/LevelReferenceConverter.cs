@@ -66,5 +66,5 @@ public static class LevelReferenceConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.LevelReference openXmlElement, DMDrawsCharts.LevelReference value)
   {
     SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class NonVisualShapePropertiesConverter
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualShapeDrawingProperties(openXmlElement, value?.NonVisualShapeDrawingProperties);
-    }
   }
+}

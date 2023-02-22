@@ -103,5 +103,5 @@ public static class Scene3DConverter
   {
     SetCamera(openXmlElement, value?.Camera);
     SetLightRig(openXmlElement, value?.LightRig);
-    }
   }
+}

@@ -127,5 +127,5 @@ public static class GlowConverter
     SetGlowRadius(openXmlElement, value?.GlowRadius);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

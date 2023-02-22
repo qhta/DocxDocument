@@ -75,5 +75,5 @@ public static class DataPartConverter
   {
     //SetUri(openXmlElement, value?.Uri);
     //SetContentType(openXmlElement, value?.ContentType);
-    }
   }
+}

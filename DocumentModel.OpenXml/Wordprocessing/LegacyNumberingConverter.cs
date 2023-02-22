@@ -103,5 +103,5 @@ public static class LegacyNumberingConverter
     SetLegacy(openXmlElement, value?.Legacy);
     SetLegacySpace(openXmlElement, value?.LegacySpace);
     SetLegacyIndent(openXmlElement, value?.LegacyIndent);
-    }
   }
+}

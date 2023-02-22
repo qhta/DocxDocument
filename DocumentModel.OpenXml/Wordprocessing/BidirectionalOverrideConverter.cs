@@ -1829,5 +1829,5 @@ public static class BidirectionalOverrideConverter
     SetChildBidirectionalOverride(openXmlElement, value?.ChildBidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
-    }
   }
+}

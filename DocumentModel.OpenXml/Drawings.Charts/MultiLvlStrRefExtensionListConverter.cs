@@ -97,5 +97,5 @@ public static class MultiLvlStrRefExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.MultiLvlStrRefExtensionList openXmlElement, DMDrawsCharts.MultiLvlStrRefExtensionList value)
   {
     SetMultiLvlStrRefExtensions(openXmlElement, value?.MultiLvlStrRefExtensions);
-    }
   }
+}

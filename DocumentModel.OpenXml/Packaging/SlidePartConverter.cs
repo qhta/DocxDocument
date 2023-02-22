@@ -525,5 +525,5 @@ public static class SlidePartConverter
     //SetUserDefinedTagsParts(openXmlElement, value?.UserDefinedTagsParts);
     //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
     //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
-    }
   }
+}

@@ -59,5 +59,5 @@ public static class StringDataTypeConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.StringDataType openXmlElement, DMDrawsCharts.StringDataType value)
   {
     SetPointCount(openXmlElement, value?.PointCount);
-    }
   }
+}

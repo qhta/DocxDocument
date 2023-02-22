@@ -278,5 +278,5 @@ public static class StyleTablePropertiesConverter
     SetTableBorders(openXmlElement, value?.TableBorders);
     SetShading(openXmlElement, value?.Shading);
     SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
-    }
   }
+}

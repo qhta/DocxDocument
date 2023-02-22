@@ -294,5 +294,5 @@ public static class HyperlinkTypeConverter
     SetEndSound(openXmlElement, value?.EndSound);
     SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
     SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
-    }
   }
+}

@@ -213,5 +213,5 @@ public static class DLblExtensionConverter
     SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetLayout(openXmlElement, value?.Layout);
-    }
   }
+}

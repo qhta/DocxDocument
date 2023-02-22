@@ -130,5 +130,5 @@ public static class CommandConverter
     SetEnabled(openXmlElement, value?.Enabled);
     SetGetEnabled(openXmlElement, value?.GetEnabled);
     SetIdMso(openXmlElement, value?.IdMso);
-    }
   }
+}

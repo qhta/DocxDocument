@@ -217,5 +217,5 @@ public static class LineReferenceConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

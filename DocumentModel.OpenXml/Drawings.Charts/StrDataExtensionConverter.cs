@@ -91,5 +91,5 @@ public static class StrDataExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetAutoGeneneratedCategories(openXmlElement, value?.AutoGeneneratedCategories);
-    }
   }
+}

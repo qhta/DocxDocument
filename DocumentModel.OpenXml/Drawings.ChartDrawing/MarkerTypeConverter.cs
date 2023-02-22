@@ -95,5 +95,5 @@ public static class MarkerTypeConverter
   {
     SetXPosition(openXmlElement, value?.XPosition);
     SetYPosition(openXmlElement, value?.YPosition);
-    }
   }
+}

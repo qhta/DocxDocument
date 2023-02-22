@@ -955,5 +955,5 @@ public static class ImageEffectConverter
     SetColorTemperature(openXmlElement, value?.ColorTemperature);
     SetSaturation(openXmlElement, value?.Saturation);
     SetSharpenSoften(openXmlElement, value?.SharpenSoften);
-    }
   }
+}

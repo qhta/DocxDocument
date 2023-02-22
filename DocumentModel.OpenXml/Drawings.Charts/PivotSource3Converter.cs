@@ -121,5 +121,5 @@ public static class PivotSource3Converter
     SetPivotTableName(openXmlElement, value?.PivotTableName);
     SetFormatId(openXmlElement, value?.FormatId);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

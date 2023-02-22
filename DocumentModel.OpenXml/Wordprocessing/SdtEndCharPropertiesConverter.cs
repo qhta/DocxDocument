@@ -67,5 +67,5 @@ public static class SdtEndCharPropertiesConverter
   public static void UpdateOpenXmlElement(DXW.SdtEndCharProperties openXmlElement, DMW.SdtEndCharProperties value)
   {
     SetRunProperties(openXmlElement, value?.RunProperties);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class WebExtensionReferenceListConverter
   public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionReferenceList openXmlElement, DMWebExt.WebExtensionReferenceList value)
   {
     SetWebExtensionStoreReferences(openXmlElement, value?.WebExtensionStoreReferences);
-    }
   }
+}

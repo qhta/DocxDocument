@@ -202,5 +202,5 @@ public static class AdjustHandlePolarConverter
     SetMinAngle(openXmlElement, value?.MinAngle);
     SetMaxAngle(openXmlElement, value?.MaxAngle);
     SetPosition(openXmlElement, value?.Position);
-    }
   }
+}

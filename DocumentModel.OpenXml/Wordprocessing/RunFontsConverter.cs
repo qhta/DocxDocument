@@ -235,5 +235,5 @@ public static class RunFontsConverter
     SetHighAnsiTheme(openXmlElement, value?.HighAnsiTheme);
     SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
     SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
-    }
   }
+}

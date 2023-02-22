@@ -97,5 +97,5 @@ public static class AllocatedCommandManifestConverter
   public static void UpdateOpenXmlElement(DXOW.AllocatedCommandManifest openXmlElement, DMW.AllocatedCommandManifest value)
   {
     SetAllocatedCommandManifestEntries(openXmlElement, value?.AllocatedCommandManifestEntries);
-    }
   }
+}

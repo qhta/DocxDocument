@@ -70,5 +70,5 @@ public static class FunctionPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.FunctionProperties openXmlElement, DMMath.FunctionProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

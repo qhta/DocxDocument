@@ -67,5 +67,5 @@ public static class MailMergeRecipientsConverter
   public static void UpdateOpenXmlElement(DXOW.MailMergeRecipients openXmlElement, DMW.MailMergeRecipients value)
   {
     SetSingleDataSourceRecord(openXmlElement, value?.SingleDataSourceRecord);
-    }
   }
+}

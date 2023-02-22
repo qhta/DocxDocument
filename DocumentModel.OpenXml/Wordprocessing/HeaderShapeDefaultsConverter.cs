@@ -97,5 +97,5 @@ public static class HeaderShapeDefaultsConverter
   {
     SetShapeDefaults(openXmlElement, value?.ShapeDefaults);
     SetShapeLayout(openXmlElement, value?.ShapeLayout);
-    }
   }
+}

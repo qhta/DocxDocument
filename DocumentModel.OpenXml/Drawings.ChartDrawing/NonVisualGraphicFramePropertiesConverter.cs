@@ -103,5 +103,5 @@ public static class NonVisualGraphicFramePropertiesConverter
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
-    }
   }
+}

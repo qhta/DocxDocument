@@ -313,5 +313,5 @@ public static class IndentationConverter
     SetHangingChars(openXmlElement, value?.HangingChars);
     SetFirstLine(openXmlElement, value?.FirstLine);
     SetFirstLineChars(openXmlElement, value?.FirstLineChars);
-    }
   }
+}

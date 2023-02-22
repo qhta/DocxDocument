@@ -85,5 +85,5 @@ public static class ArtisticMosaicBubblesConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetPressure(openXmlElement, value?.Pressure);
-    }
   }
+}

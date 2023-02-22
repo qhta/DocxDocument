@@ -130,5 +130,5 @@ public static class WholeConverter
     SetOutline(openXmlElement, value?.Outline);
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);
-    }
   }
+}

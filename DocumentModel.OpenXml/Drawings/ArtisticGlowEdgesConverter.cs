@@ -85,5 +85,5 @@ public static class ArtisticGlowEdgesConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetSmoothness(openXmlElement, value?.Smoothness);
-    }
   }
+}

@@ -259,5 +259,5 @@ public static class GroupShapeLocksConverter
     SetNoMove(openXmlElement, value?.NoMove);
     SetNoResize(openXmlElement, value?.NoResize);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

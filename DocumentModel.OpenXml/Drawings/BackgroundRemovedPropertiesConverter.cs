@@ -70,5 +70,5 @@ public static class BackgroundRemovedPropertiesConverter
   public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundRemovedProperties openXmlElement, DMDraws.BackgroundRemovedProperties value)
   {
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

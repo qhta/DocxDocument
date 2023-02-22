@@ -138,5 +138,5 @@ public static class ParagraphMarkRunPropertiesChangeConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetPreviousParagraphMarkRunProperties(openXmlElement, value?.PreviousParagraphMarkRunProperties);
-    }
   }
+}

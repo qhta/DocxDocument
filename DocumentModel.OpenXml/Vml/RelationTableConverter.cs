@@ -119,5 +119,5 @@ public static class RelationTableConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetRelations(openXmlElement, value?.Relations);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class FitTextConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

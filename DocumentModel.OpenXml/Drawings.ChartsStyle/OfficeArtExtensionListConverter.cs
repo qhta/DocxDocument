@@ -97,5 +97,5 @@ public static class OfficeArtExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.OfficeArtExtensionList openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

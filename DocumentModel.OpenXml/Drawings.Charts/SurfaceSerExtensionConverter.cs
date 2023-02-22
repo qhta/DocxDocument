@@ -149,5 +149,5 @@ public static class SurfaceSerExtensionConverter
     SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
     SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
     SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-    }
   }
+}

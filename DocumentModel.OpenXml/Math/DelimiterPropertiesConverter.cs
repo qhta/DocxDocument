@@ -200,5 +200,5 @@ public static class DelimiterPropertiesConverter
     SetGrowOperators(openXmlElement, value?.GrowOperators);
     SetShape(openXmlElement, value?.Shape);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

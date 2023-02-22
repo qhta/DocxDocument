@@ -70,5 +70,5 @@ public static class SubscriptPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.SubscriptProperties openXmlElement, DMMath.SubscriptProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

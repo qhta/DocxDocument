@@ -96,5 +96,5 @@ public static class DiagramStylePartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetStyleDefinition(openXmlElement, value?.StyleDefinition);
-    }
   }
+}

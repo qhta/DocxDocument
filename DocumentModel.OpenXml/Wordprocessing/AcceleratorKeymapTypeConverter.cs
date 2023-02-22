@@ -59,5 +59,5 @@ public static class AcceleratorKeymapTypeConverter
   public static void UpdateOpenXmlElement(DXOW.AcceleratorKeymapType openXmlElement, DMW.AcceleratorKeymapType value)
   {
     SetAcceleratorName(openXmlElement, value?.AcceleratorName);
-    }
   }
+}

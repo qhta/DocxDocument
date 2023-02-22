@@ -85,5 +85,5 @@ public static class TaskScheduleEventInfoConverter
   {
     SetStartDate(openXmlElement, value?.StartDate);
     SetDueDate(openXmlElement, value?.DueDate);
-    }
   }
+}

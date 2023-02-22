@@ -85,5 +85,5 @@ public static class ArtisticLightScreenConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetGridSize(openXmlElement, value?.GridSize);
-    }
   }
+}

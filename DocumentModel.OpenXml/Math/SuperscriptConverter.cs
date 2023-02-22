@@ -136,5 +136,5 @@ public static class SuperscriptConverter
     SetSuperscriptProperties(openXmlElement, value?.SuperscriptProperties);
     SetBase(openXmlElement, value?.Base);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
-    }
   }
+}

@@ -303,5 +303,5 @@ public static class FloorConverter
     SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
     SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

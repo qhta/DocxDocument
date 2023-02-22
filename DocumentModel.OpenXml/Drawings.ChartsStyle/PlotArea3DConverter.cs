@@ -303,5 +303,5 @@ public static class PlotArea3DConverter
     SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
     SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

@@ -218,5 +218,5 @@ public static class PictureConverter
     SetBlipFill(openXmlElement, value?.BlipFill);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetStyle(openXmlElement, value?.Style);
-    }
   }
+}

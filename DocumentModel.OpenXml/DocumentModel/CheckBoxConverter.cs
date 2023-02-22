@@ -575,5 +575,5 @@ public static class CheckBoxConverter
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
-    }
   }
+}

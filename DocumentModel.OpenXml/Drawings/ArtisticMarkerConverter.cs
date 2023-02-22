@@ -85,5 +85,5 @@ public static class ArtisticMarkerConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetSize(openXmlElement, value?.Size);
-    }
   }
+}

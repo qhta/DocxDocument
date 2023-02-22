@@ -108,5 +108,5 @@ public static class ObjectPropertiesConverter
     SetId(openXmlElement, value?.Id);
     SetIsActiveX(openXmlElement, value?.IsActiveX);
     SetLinkType(openXmlElement, value?.LinkType);
-    }
   }
+}

@@ -120,5 +120,5 @@ public static class ThemeOverridePartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetThemeOverride(openXmlElement, value?.ThemeOverride);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class ShapeGuideListConverter
   public static void UpdateOpenXmlElement(DXDraw.ShapeGuideList openXmlElement, DMDraws.ShapeGuideList value)
   {
     SetShapeGuides(openXmlElement, value?.ShapeGuides);
-    }
   }
+}

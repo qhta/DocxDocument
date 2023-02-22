@@ -553,5 +553,5 @@ public static class HyperlinkConverter
     SetGetSupertip(openXmlElement, value?.GetSupertip);
     SetTarget(openXmlElement, value?.Target);
     SetGetTarget(openXmlElement, value?.GetTarget);
-    }
   }
+}

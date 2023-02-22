@@ -118,5 +118,5 @@ public static class DataLabelVisibilitiesConverter
     SetSeriesName(openXmlElement, value?.SeriesName);
     SetCategoryName(openXmlElement, value?.CategoryName);
     SetValue(openXmlElement, value?.Value);
-    }
   }
+}

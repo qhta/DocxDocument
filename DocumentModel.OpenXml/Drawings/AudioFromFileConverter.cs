@@ -92,5 +92,5 @@ public static class AudioFromFileConverter
   {
     SetLink(openXmlElement, value?.Link);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

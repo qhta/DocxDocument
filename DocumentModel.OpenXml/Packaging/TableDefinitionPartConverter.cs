@@ -93,5 +93,5 @@ public static class TableDefinitionPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

@@ -37,5 +37,5 @@ public static class IFixedContentTypePartConverter
   
   public static void UpdateOpenXmlElement(DXPack.IFixedContentTypePart openXmlElement, DMPack.IFixedContentTypePart value)
   {
-    }
   }
+}

@@ -137,5 +137,5 @@ public static class ProxyConverter
     SetEnd(openXmlElement, value?.End);
     SetShapeReference(openXmlElement, value?.ShapeReference);
     SetConnectionLocation(openXmlElement, value?.ConnectionLocation);
-    }
   }
+}

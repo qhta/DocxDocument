@@ -61,5 +61,5 @@ public static class AlphaOutsetConverter
   public static void UpdateOpenXmlElement(DXDraw.AlphaOutset openXmlElement, DMDraws.AlphaOutset value)
   {
     SetRadius(openXmlElement, value?.Radius);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class AdjustValueListConverter
   public static void UpdateOpenXmlElement(DXDraw.AdjustValueList openXmlElement, DMDraws.AdjustValueList value)
   {
     SetShapeGuides(openXmlElement, value?.ShapeGuides);
-    }
   }
+}

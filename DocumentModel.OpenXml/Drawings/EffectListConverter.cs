@@ -301,5 +301,5 @@ public static class EffectListConverter
     SetPresetShadow(openXmlElement, value?.PresetShadow);
     SetReflection(openXmlElement, value?.Reflection);
     SetSoftEdge(openXmlElement, value?.SoftEdge);
-    }
   }
+}

@@ -370,5 +370,5 @@ public static class DataLabelsConverter
     SetItems(openXmlElement, value?.Items);
     SetDataLabelHiddens(openXmlElement, value?.DataLabelHiddens);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -177,5 +177,5 @@ public static class LineSketchTypePropertiesConverter
     SetLineSketchCurvedEmpty(openXmlElement, value?.LineSketchCurvedEmpty);
     SetLineSketchFreehandEmpty(openXmlElement, value?.LineSketchFreehandEmpty);
     SetLineSketchScribbleEmpty(openXmlElement, value?.LineSketchScribbleEmpty);
-    }
   }
+}

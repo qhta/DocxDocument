@@ -81,5 +81,5 @@ public static class BreakConverter
   {
     SetType(openXmlElement, value?.Type);
     SetClear(openXmlElement, value?.Clear);
-    }
   }
+}

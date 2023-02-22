@@ -37,5 +37,5 @@ public static class ExternalRelationshipConverter
   
   public static void UpdateOpenXmlElement(DXPack.ExternalRelationship openXmlElement, DMPack.ExternalRelationship value)
   {
-    }
   }
+}

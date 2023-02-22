@@ -756,5 +756,5 @@ public static class PreviousSectionPropertiesConverter
     SetDocGrid(openXmlElement, value?.DocGrid);
     SetPrinterSettingsReference(openXmlElement, value?.PrinterSettingsReference);
     SetFootnoteColumns(openXmlElement, value?.FootnoteColumns);
-    }
   }
+}

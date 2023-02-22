@@ -232,5 +232,5 @@ public static class GraphicFrameLocksConverter
     SetNoMove(openXmlElement, value?.NoMove);
     SetNoResize(openXmlElement, value?.NoResize);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

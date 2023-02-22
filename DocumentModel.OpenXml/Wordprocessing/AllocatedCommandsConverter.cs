@@ -97,5 +97,5 @@ public static class AllocatedCommandsConverter
   public static void UpdateOpenXmlElement(DXOW.AllocatedCommands openXmlElement, DMW.AllocatedCommands value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class ClassificationExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement, DM.ClassificationExtensionList value)
   {
     SetClassificationExtensions(openXmlElement, value?.ClassificationExtensions);
-    }
   }
+}

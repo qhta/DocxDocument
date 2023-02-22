@@ -75,5 +75,5 @@ public static class SpaceBeforeConverter
   {
     SetSpacingPercent(openXmlElement, value?.SpacingPercent);
     SetSpacingPoints(openXmlElement, value?.SpacingPoints);
-    }
   }
+}

@@ -516,5 +516,5 @@ public static class ShapeProperties2Converter
     SetScene3DType(openXmlElement, value?.Scene3DType);
     SetShape3DType(openXmlElement, value?.Shape3DType);
     SetShapePropertiesExtensionList(openXmlElement, value?.ShapePropertiesExtensionList);
-    }
   }
+}

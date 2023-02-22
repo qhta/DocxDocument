@@ -207,5 +207,5 @@ public static class LineSketchStylePropertiesConverter
     SetLineSketchTypeProperties(openXmlElement, value?.LineSketchTypeProperties);
     SetLineSketchSeed(openXmlElement, value?.LineSketchSeed);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

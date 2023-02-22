@@ -533,5 +533,5 @@ public static class DefaultParagraphPropertiesConverter
     SetTabStopList(openXmlElement, value?.TabStopList);
     SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -333,5 +333,5 @@ public static class PreviousTablePropertyExceptionsConverter
     SetTableLayout(openXmlElement, value?.TableLayout);
     SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
     SetTableLook(openXmlElement, value?.TableLook);
-    }
   }
+}

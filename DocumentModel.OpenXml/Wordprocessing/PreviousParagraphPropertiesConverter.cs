@@ -846,5 +846,5 @@ public static class PreviousParagraphPropertiesConverter
     SetTextAlignment(openXmlElement, value?.TextAlignment);
     SetTextBoxTightWrap(openXmlElement, value?.TextBoxTightWrap);
     SetOutlineLevel(openXmlElement, value?.OutlineLevel);
-    }
   }
+}

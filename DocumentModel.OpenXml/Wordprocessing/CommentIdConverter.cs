@@ -101,5 +101,5 @@ public static class CommentIdConverter
   {
     SetParaId(openXmlElement, value?.ParaId);
     SetDurableId(openXmlElement, value?.DurableId);
-    }
   }
+}

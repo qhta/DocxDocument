@@ -97,5 +97,5 @@ public static class WebExtensionBindingListConverter
   public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionBindingList openXmlElement, DMWebExt.WebExtensionBindingList value)
   {
     SetWebExtensionBindings(openXmlElement, value?.WebExtensionBindings);
-    }
   }
+}

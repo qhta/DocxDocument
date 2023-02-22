@@ -220,5 +220,5 @@ public static class DiagramAutoBulletConverter
     SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
     SetCharacterBullet(openXmlElement, value?.CharacterBullet);
     SetPictureBullet(openXmlElement, value?.PictureBullet);
-    }
   }
+}

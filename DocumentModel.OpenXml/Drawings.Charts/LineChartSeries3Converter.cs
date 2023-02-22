@@ -515,5 +515,5 @@ public static class LineChartSeries3Converter
     SetValues(openXmlElement, value?.Values);
     SetSmooth(openXmlElement, value?.Smooth);
     SetLineSerExtensionList(openXmlElement, value?.LineSerExtensionList);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class PieSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.PieSerExtensionList openXmlElement, DMDrawsCharts.PieSerExtensionList value)
   {
     SetPieSerExtensions(openXmlElement, value?.PieSerExtensions);
-    }
   }
+}

@@ -118,5 +118,5 @@ public static class WrapTopBottomConverter
     SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
     SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
     SetEffectExtent(openXmlElement, value?.EffectExtent);
-    }
   }
+}

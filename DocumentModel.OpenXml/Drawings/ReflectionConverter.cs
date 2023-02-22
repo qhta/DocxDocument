@@ -374,5 +374,5 @@ public static class ReflectionConverter
     SetVerticalSkew(openXmlElement, value?.VerticalSkew);
     SetAlignment(openXmlElement, value?.Alignment);
     SetRotateWithShape(openXmlElement, value?.RotateWithShape);
-    }
   }
+}

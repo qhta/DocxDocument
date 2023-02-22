@@ -103,5 +103,5 @@ public static class GlossaryDocumentConverter
   {
     SetDocumentBackground(openXmlElement, value?.DocumentBackground);
     SetDocParts(openXmlElement, value?.DocParts);
-    }
   }
+}

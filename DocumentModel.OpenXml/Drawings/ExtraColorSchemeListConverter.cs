@@ -97,5 +97,5 @@ public static class ExtraColorSchemeListConverter
   public static void UpdateOpenXmlElement(DXDraw.ExtraColorSchemeList openXmlElement, DMDraws.ExtraColorSchemeList value)
   {
     SetExtraColorSchemes(openXmlElement, value?.ExtraColorSchemes);
-    }
   }
+}

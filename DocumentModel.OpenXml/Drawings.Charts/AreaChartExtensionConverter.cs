@@ -89,5 +89,5 @@ public static class AreaChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredAreaSeries(openXmlElement, value?.FilteredAreaSeries);
-    }
   }
+}

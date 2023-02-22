@@ -89,5 +89,5 @@ public static class Line3DChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
-    }
   }
+}

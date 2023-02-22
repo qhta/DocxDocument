@@ -91,5 +91,5 @@ public static class CheckBoxSymbolTypeConverter
   {
     SetFont(openXmlElement, value?.Font);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

@@ -169,5 +169,5 @@ public static class NonVisualConnectionShapePropertiesConverter
     SetStartConnection(openXmlElement, value?.StartConnection);
     SetEndConnection(openXmlElement, value?.EndConnection);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -307,5 +307,5 @@ public static class InnerShadowConverter
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

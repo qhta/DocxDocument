@@ -151,5 +151,5 @@ public static class DataConverter
     SetNumericDimension(openXmlElement, value?.NumericDimension);
     SetStringDimension(openXmlElement, value?.StringDimension);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

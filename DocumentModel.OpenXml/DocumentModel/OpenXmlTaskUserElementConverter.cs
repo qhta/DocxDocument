@@ -103,5 +103,5 @@ public static class OpenXmlTaskUserElementConverter
     SetUserId(openXmlElement, value?.UserId);
     SetUserName(openXmlElement, value?.UserName);
     SetUserProvider(openXmlElement, value?.UserProvider);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class LevelConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.Level openXmlElement, DMDrawsCharts.Level value)
   {
     SetStringPoints(openXmlElement, value?.StringPoints);
-    }
   }
+}

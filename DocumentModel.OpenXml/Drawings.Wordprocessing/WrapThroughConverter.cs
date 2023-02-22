@@ -140,5 +140,5 @@ public static class WrapThroughConverter
     SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
     SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
     SetWrapPolygon(openXmlElement, value?.WrapPolygon);
-    }
   }
+}

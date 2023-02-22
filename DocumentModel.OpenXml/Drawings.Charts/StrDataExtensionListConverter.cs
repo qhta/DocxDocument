@@ -97,5 +97,5 @@ public static class StrDataExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.StrDataExtensionList openXmlElement, DMDrawsCharts.StrDataExtensionList value)
   {
     SetStrDataExtensions(openXmlElement, value?.StrDataExtensions);
-    }
   }
+}

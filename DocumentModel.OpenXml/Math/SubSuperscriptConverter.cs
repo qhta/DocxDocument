@@ -169,5 +169,5 @@ public static class SubSuperscriptConverter
     SetBase(openXmlElement, value?.Base);
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
-    }
   }
+}

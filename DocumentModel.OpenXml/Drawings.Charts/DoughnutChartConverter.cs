@@ -230,5 +230,5 @@ public static class DoughnutChartConverter
     SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
     SetHoleSize(openXmlElement, value?.HoleSize);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

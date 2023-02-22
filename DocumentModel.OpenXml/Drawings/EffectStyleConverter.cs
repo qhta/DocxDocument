@@ -157,5 +157,5 @@ public static class EffectStyleConverter
     SetEffectDag(openXmlElement, value?.EffectDag);
     SetScene3DType(openXmlElement, value?.Scene3DType);
     SetShape3DType(openXmlElement, value?.Shape3DType);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class ExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.ExtensionList openXmlElement, DMDraws.ExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

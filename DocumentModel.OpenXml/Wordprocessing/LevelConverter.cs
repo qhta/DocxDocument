@@ -454,5 +454,5 @@ public static class LevelConverter
     SetLevelJustification(openXmlElement, value?.LevelJustification);
     SetPreviousParagraphProperties(openXmlElement, value?.PreviousParagraphProperties);
     SetNumberingSymbolRunProperties(openXmlElement, value?.NumberingSymbolRunProperties);
-    }
   }
+}

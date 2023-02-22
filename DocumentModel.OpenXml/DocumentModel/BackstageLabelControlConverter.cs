@@ -316,5 +316,5 @@ public static class BackstageLabelControlConverter
     SetVisible(openXmlElement, value?.Visible);
     SetGetVisible(openXmlElement, value?.GetVisible);
     SetNoWrap(openXmlElement, value?.NoWrap);
-    }
   }
+}

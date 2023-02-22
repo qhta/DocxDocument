@@ -97,5 +97,5 @@ public static class HyperlinkExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.HyperlinkExtensionList openXmlElement, DMDraws.HyperlinkExtensionList value)
   {
     SetHyperlinkExtensions(openXmlElement, value?.HyperlinkExtensions);
-    }
   }
+}

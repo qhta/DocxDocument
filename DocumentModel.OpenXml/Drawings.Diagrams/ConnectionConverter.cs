@@ -272,5 +272,5 @@ public static class ConnectionConverter
     SetSiblingTransitionId(openXmlElement, value?.SiblingTransitionId);
     SetPresentationId(openXmlElement, value?.PresentationId);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

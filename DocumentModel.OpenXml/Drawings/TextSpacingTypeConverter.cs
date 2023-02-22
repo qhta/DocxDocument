@@ -81,5 +81,5 @@ public static class TextSpacingTypeConverter
   {
     SetSpacingPercent(openXmlElement, value?.SpacingPercent);
     SetSpacingPoints(openXmlElement, value?.SpacingPoints);
-    }
   }
+}

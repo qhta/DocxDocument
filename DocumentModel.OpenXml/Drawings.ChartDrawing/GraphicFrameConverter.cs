@@ -185,5 +185,5 @@ public static class GraphicFrameConverter
     SetNonVisualGraphicFrameProperties(openXmlElement, value?.NonVisualGraphicFrameProperties);
     SetTransform(openXmlElement, value?.Transform);
     SetGraphic(openXmlElement, value?.Graphic);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class CommandsConverter
   public static void UpdateOpenXmlElement(DXO2010CustUI.Commands openXmlElement, DM.Commands value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

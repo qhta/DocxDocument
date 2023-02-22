@@ -81,5 +81,5 @@ public static class ProofStateConverter
   {
     SetSpelling(openXmlElement, value?.Spelling);
     SetGrammar(openXmlElement, value?.Grammar);
-    }
   }
+}

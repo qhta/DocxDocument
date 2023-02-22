@@ -97,5 +97,5 @@ public static class RuleListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.RuleList openXmlElement, DMDrawsDgms.RuleList value)
   {
     SetRules(openXmlElement, value?.Rules);
-    }
   }
+}

@@ -190,5 +190,5 @@ public static class PlotAreaConverter
     SetAxis(openXmlElement, value?.Axis);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

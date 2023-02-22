@@ -70,5 +70,5 @@ public static class FilteredRadarSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredRadarSeries openXmlElement, DMDrawsCharts.FilteredRadarSeries value)
   {
     SetRadarChartSeries(openXmlElement, value?.RadarChartSeries);
-    }
   }
+}

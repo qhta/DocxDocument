@@ -97,5 +97,5 @@ public static class DiagramDefinitionExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.DiagramDefinitionExtensionList openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList value)
   {
     SetDiagramDefinitionExtensions(openXmlElement, value?.DiagramDefinitionExtensions);
-    }
   }
+}

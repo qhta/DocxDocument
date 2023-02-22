@@ -629,5 +629,5 @@ public static class BackstageTabConverter
     SetSecondColumnMaxWidth(openXmlElement, value?.SecondColumnMaxWidth);
     SetBackstageGroups(openXmlElement, value?.BackstageGroups);
     SetSimpleGroups(openXmlElement, value?.SimpleGroups);
-    }
   }
+}

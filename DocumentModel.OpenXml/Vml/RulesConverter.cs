@@ -119,5 +119,5 @@ public static class RulesConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

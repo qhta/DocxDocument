@@ -103,5 +103,5 @@ public static class NonVisualContentPartPropertiesConverter
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualInkContentPartProperties(openXmlElement, value?.NonVisualInkContentPartProperties);
-    }
   }
+}

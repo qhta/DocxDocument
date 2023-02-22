@@ -629,5 +629,5 @@ public static class UnsizedControlCloneConverter
     SetGetShowLabel(openXmlElement, value?.GetShowLabel);
     SetShowImage(openXmlElement, value?.ShowImage);
     SetGetShowImage(openXmlElement, value?.GetShowImage);
-    }
   }
+}

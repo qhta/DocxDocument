@@ -133,5 +133,5 @@ public static class ForegroundMarkConverter
     SetFirstYCoordinate(openXmlElement, value?.FirstYCoordinate);
     SetSecondXCoordinate(openXmlElement, value?.SecondXCoordinate);
     SetSecondYCoordinate(openXmlElement, value?.SecondYCoordinate);
-    }
   }
+}

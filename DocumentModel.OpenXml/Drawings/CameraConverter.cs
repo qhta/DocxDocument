@@ -140,5 +140,5 @@ public static class CameraConverter
     SetFieldOfView(openXmlElement, value?.FieldOfView);
     SetZoom(openXmlElement, value?.Zoom);
     SetRotation(openXmlElement, value?.Rotation);
-    }
   }
+}

@@ -70,5 +70,5 @@ public static class FilteredAreaSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredAreaSeries openXmlElement, DMDrawsCharts.FilteredAreaSeries value)
   {
     SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
-    }
   }
+}

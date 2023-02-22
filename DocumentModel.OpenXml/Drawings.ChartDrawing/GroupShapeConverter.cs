@@ -253,5 +253,5 @@ public static class GroupShapeConverter
     SetGraphicFrame(openXmlElement, value?.GraphicFrame);
     SetConnectionShape(openXmlElement, value?.ConnectionShape);
     SetPicture(openXmlElement, value?.Picture);
-    }
   }
+}

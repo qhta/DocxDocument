@@ -97,5 +97,5 @@ public static class PointListConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.PointList openXmlElement, DMDrawsDgms.PointList value)
   {
     SetPoints(openXmlElement, value?.Points);
-    }
   }
+}

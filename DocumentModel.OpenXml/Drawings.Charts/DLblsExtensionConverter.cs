@@ -273,5 +273,5 @@ public static class DLblsExtensionConverter
     SetLayout(openXmlElement, value?.Layout);
     SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
     SetLeaderLines(openXmlElement, value?.LeaderLines);
-    }
   }
+}

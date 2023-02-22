@@ -96,5 +96,5 @@ public static class ChartColorStylePartConverter
     SetColorStyle(openXmlElement, value?.ColorStyle);
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

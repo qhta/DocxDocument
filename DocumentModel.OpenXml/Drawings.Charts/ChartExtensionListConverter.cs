@@ -97,5 +97,5 @@ public static class ChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ChartExtensionList openXmlElement, DMDrawsCharts.ChartExtensionList value)
   {
     SetDataDisplayOptions16s(openXmlElement, value?.DataDisplayOptions16s);
-    }
   }
+}

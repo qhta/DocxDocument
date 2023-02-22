@@ -105,5 +105,5 @@ public static class TrackChangeTypeConverter
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

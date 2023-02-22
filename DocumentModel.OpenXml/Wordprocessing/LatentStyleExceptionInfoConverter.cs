@@ -171,5 +171,5 @@ public static class LatentStyleExceptionInfoConverter
     SetSemiHidden(openXmlElement, value?.SemiHidden);
     SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
     SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
-    }
   }
+}

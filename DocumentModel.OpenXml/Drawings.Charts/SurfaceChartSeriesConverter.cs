@@ -314,5 +314,5 @@ public static class SurfaceChartSeriesConverter
     SetValues(openXmlElement, value?.Values);
     SetBubble3D(openXmlElement, value?.Bubble3D);
     SetSurfaceSerExtensionList(openXmlElement, value?.SurfaceSerExtensionList);
-    }
   }
+}

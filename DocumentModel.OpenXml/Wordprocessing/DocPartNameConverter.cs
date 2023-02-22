@@ -81,5 +81,5 @@ public static class DocPartNameConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetDecorated(openXmlElement, value?.Decorated);
-    }
   }
+}

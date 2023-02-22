@@ -240,5 +240,5 @@ public static class ChartTitleConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

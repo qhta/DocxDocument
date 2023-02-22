@@ -480,5 +480,5 @@ public static class AreaChartSeriesConverter
     SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
     SetValues(openXmlElement, value?.Values);
     SetAreaSerExtensionList(openXmlElement, value?.AreaSerExtensionList);
-    }
   }
+}

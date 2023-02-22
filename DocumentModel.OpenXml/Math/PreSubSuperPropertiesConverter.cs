@@ -70,5 +70,5 @@ public static class PreSubSuperPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.PreSubSuperProperties openXmlElement, DMMath.PreSubSuperProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

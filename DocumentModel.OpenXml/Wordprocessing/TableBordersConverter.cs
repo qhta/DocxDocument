@@ -301,5 +301,5 @@ public static class TableBordersConverter
     SetEndBorder(openXmlElement, value?.EndBorder);
     SetInsideHorizontalBorder(openXmlElement, value?.InsideHorizontalBorder);
     SetInsideVerticalBorder(openXmlElement, value?.InsideVerticalBorder);
-    }
   }
+}

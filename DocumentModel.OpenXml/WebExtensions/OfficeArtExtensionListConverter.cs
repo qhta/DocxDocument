@@ -97,5 +97,5 @@ public static class OfficeArtExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2013WebExt.OfficeArtExtensionList openXmlElement, DMWebExt.OfficeArtExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
-    }
   }
+}

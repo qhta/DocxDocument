@@ -173,5 +173,5 @@ public static class ActiveWritingStyleConverter
     SetNaturalLanguageGrammarCheck(openXmlElement, value?.NaturalLanguageGrammarCheck);
     SetCheckStyle(openXmlElement, value?.CheckStyle);
     SetApplicationName(openXmlElement, value?.ApplicationName);
-    }
   }
+}

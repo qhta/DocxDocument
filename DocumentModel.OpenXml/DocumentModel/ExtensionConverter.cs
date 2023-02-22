@@ -59,5 +59,5 @@ public static class ExtensionConverter
   public static void UpdateOpenXmlElement(DXO2021OExtLst.Extension openXmlElement, DM.Extension value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

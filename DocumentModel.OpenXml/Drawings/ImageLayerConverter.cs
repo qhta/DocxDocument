@@ -119,5 +119,5 @@ public static class ImageLayerConverter
   {
     SetEmbed(openXmlElement, value?.Embed);
     SetImageEffects(openXmlElement, value?.ImageEffects);
-    }
   }
+}

@@ -123,5 +123,5 @@ public static class SdtDocPartTypeConverter
     SetDocPartGallery(openXmlElement, value?.DocPartGallery);
     SetDocPartCategory(openXmlElement, value?.DocPartCategory);
     SetDocPartUnique(openXmlElement, value?.DocPartUnique);
-    }
   }
+}

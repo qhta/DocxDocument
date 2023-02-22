@@ -408,5 +408,5 @@ public static class TextParagraphPropertiesTypeConverter
     SetLineSpacing(openXmlElement, value?.LineSpacing);
     SetSpaceBefore(openXmlElement, value?.SpaceBefore);
     SetSpaceAfter(openXmlElement, value?.SpaceAfter);
-    }
   }
+}

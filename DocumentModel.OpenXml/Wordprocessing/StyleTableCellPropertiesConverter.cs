@@ -157,5 +157,5 @@ public static class StyleTableCellPropertiesConverter
     SetNoWrap(openXmlElement, value?.NoWrap);
     SetTableCellMargin(openXmlElement, value?.TableCellMargin);
     SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class CommentsIdsConverter
   public static void UpdateOpenXmlElement(DXO2019WCid.CommentsIds openXmlElement, DMW.CommentsIds value)
   {
     SetCommentIds(openXmlElement, value?.CommentIds);
-    }
   }
+}

@@ -269,5 +269,5 @@ public static class TablePositionPropertiesConverter
     SetTablePositionX(openXmlElement, value?.TablePositionX);
     SetTablePositionYAlignment(openXmlElement, value?.TablePositionYAlignment);
     SetTablePositionY(openXmlElement, value?.TablePositionY);
-    }
   }
+}

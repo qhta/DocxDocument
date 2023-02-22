@@ -538,5 +538,5 @@ public static class TableCellPropertiesConverter
     SetCellDeletion(openXmlElement, value?.CellDeletion);
     SetCellMerge(openXmlElement, value?.CellMerge);
     SetTableCellPropertiesChange(openXmlElement, value?.TableCellPropertiesChange);
-    }
   }
+}

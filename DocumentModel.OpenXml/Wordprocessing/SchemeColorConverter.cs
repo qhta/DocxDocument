@@ -249,5 +249,5 @@ public static class SchemeColorConverter
     SetLuminance(openXmlElement, value?.Luminance);
     SetLuminanceOffset(openXmlElement, value?.LuminanceOffset);
     SetLuminanceModulation(openXmlElement, value?.LuminanceModulation);
-    }
   }
+}

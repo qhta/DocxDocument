@@ -1911,7 +1911,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpDocumentId(DXW.Settings openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>()?.Val, value, diffs, objName);
+    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>()?.Val, value, diffs, objName, "DocumentId");
   }
   
   private static void SetDocumentId(DXW.Settings openXmlElement, DM.HexInt? value)
@@ -2481,5 +2481,5 @@ public static class DocumentSettingsConverter
     SetConflictMode(openXmlElement, value?.ConflictMode);
     SetChartTrackingRefBased(openXmlElement, value?.ChartTrackingRefBased);
     SetPersistentDocumentId(openXmlElement, value?.PersistentDocumentId);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class DocumentVariablesConverter
   public static void UpdateOpenXmlElement(DXW.DocumentVariables openXmlElement, DMW.DocumentVariables value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

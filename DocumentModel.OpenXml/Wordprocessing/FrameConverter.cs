@@ -244,5 +244,5 @@ public static class FrameConverter
     SetScrollbarVisibility(openXmlElement, value?.ScrollbarVisibility);
     SetNoResizeAllowed(openXmlElement, value?.NoResizeAllowed);
     SetLinkedToFile(openXmlElement, value?.LinkedToFile);
-    }
   }
+}

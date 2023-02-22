@@ -85,5 +85,5 @@ public static class ArtisticCutoutConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetNumberOfShades(openXmlElement, value?.NumberOfShades);
-    }
   }
+}

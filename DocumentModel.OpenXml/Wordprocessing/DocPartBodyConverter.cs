@@ -1177,5 +1177,5 @@ public static class DocPartBodyConverter
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
     SetSectionProperties(openXmlElement, value?.SectionProperties);
-    }
   }
+}

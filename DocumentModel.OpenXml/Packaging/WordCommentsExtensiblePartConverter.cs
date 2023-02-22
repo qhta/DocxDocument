@@ -96,5 +96,5 @@ public static class WordCommentsExtensiblePartConverter
     SetCommentsExtensible(openXmlElement, value?.CommentsExtensible);
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

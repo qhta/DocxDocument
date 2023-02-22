@@ -59,5 +59,5 @@ public static class CharacterBulletConverter
   public static void UpdateOpenXmlElement(DXDraw.CharacterBullet openXmlElement, DMDraws.CharacterBullet value)
   {
     SetChar(openXmlElement, value?.Char);
-    }
   }
+}

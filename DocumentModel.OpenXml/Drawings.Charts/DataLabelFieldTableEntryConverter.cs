@@ -128,5 +128,5 @@ public static class DataLabelFieldTableEntryConverter
     SetTextFieldGuid(openXmlElement, value?.TextFieldGuid);
     SetFormula(openXmlElement, value?.Formula);
     SetDataLabelFieldTableCache(openXmlElement, value?.DataLabelFieldTableCache);
-    }
   }
+}

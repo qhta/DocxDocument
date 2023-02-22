@@ -97,5 +97,5 @@ public static class MajorGridlinesGridlinesConverter
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

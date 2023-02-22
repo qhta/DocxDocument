@@ -235,5 +235,5 @@ public static class ParagraphBordersConverter
     SetRightBorder(openXmlElement, value?.RightBorder);
     SetBetweenBorder(openXmlElement, value?.BetweenBorder);
     SetBarBorder(openXmlElement, value?.BarBorder);
-    }
   }
+}

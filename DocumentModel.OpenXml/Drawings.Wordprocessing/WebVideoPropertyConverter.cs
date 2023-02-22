@@ -107,5 +107,5 @@ public static class WebVideoPropertyConverter
     SetEmbeddedHtml(openXmlElement, value?.EmbeddedHtml);
     SetHeight(openXmlElement, value?.Height);
     SetWidth(openXmlElement, value?.Width);
-    }
   }
+}

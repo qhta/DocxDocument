@@ -284,5 +284,5 @@ public static class DivConverter
     SetBottomMarginDiv(openXmlElement, value?.BottomMarginDiv);
     SetDivBorder(openXmlElement, value?.DivBorder);
     SetDivsChilds(openXmlElement, value?.DivsChilds);
-    }
   }
+}

@@ -179,5 +179,5 @@ public static class NonVisualPicturePropertiesExtensionConverter
     SetSignatureLine(openXmlElement, value?.SignatureLine);
     SetObjectProperties(openXmlElement, value?.ObjectProperties);
     SetLiveFeedProperties(openXmlElement, value?.LiveFeedProperties);
-    }
   }
+}

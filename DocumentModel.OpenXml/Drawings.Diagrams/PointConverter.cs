@@ -235,5 +235,5 @@ public static class PointConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTextBody(openXmlElement, value?.TextBody);
     SetPtExtensionList(openXmlElement, value?.PtExtensionList);
-    }
   }
+}

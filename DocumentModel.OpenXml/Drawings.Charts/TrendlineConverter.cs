@@ -377,5 +377,5 @@ public static class TrendlineConverter
     SetDisplayEquation(openXmlElement, value?.DisplayEquation);
     SetTrendlineLabel(openXmlElement, value?.TrendlineLabel);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

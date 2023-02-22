@@ -92,5 +92,5 @@ public static class QuickTimeFromFileConverter
   {
     SetLink(openXmlElement, value?.Link);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

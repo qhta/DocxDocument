@@ -650,5 +650,5 @@ public static class ValueAxisConverter
     SetMinorUnit(openXmlElement, value?.MinorUnit);
     SetDisplayUnits(openXmlElement, value?.DisplayUnits);
     SetValAxExtensionList(openXmlElement, value?.ValAxExtensionList);
-    }
   }
+}

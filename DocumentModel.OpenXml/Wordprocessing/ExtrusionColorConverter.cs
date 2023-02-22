@@ -97,5 +97,5 @@ public static class ExtrusionColorConverter
   {
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

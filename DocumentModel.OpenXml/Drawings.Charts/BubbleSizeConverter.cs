@@ -97,5 +97,5 @@ public static class BubbleSizeConverter
   {
     SetNumberReference(openXmlElement, value?.NumberReference);
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-    }
   }
+}

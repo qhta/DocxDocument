@@ -97,5 +97,5 @@ public static class NumberDiagramInfoListConverter
   public static void UpdateOpenXmlElement(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement, DMDrawsDgm1.NumberDiagramInfoList value)
   {
     SetNumberDiagramInfos(openXmlElement, value?.NumberDiagramInfos);
-    }
   }
+}

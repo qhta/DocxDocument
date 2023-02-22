@@ -124,7 +124,7 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateConverterClass(TypeInfo type)
   {
     var typeName = type.Name;
-    if (typeName == "Settings")
+    if (typeName == "Rsids")
       TestTools.Stop();
     var aNamespace = type.Namespace;
     aNamespace = aNamespace.Replace("DocumentModel.", "");
@@ -145,7 +145,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateConverterClass(TypeInfo typeInfo, string typeName)
   {
-    if (typeName == "Fonts")
+    if (typeName == "Rsids")
       TestTools.Stop();
     var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
@@ -190,7 +190,7 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GenerateCreateModelElementMethod(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "Fonts")
+    if (typeInfo.Name == "Rsids")
       TestTools.Stop();
     var origTypeName = typeInfo.GetFullName(true);
     var targetType = typeInfo.GetTargetType();
@@ -283,12 +283,15 @@ public class ConverterGenerator : BaseCodeGenerator
         else
           Writer.WriteLine($"Set{targetPropName}(openXmlElement, value?.{targetPropName});");
       }
+    Writer.Indent--;
     Writer.WriteLine($"}}");
     return true;
   }
 
   private bool GenerateAcceptedPropertiesConversion(TypeInfo typeInfo, string? inNamespace)
   {
+    if (typeInfo.Name=="Rsids")
+      TestTools.Stop();
     var ok = true;
     if (typeInfo.AcceptedProperties != null)
       foreach (var prop in typeInfo.AcceptedProperties)

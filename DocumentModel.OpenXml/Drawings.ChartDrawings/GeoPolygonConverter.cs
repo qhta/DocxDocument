@@ -105,5 +105,5 @@ public static class GeoPolygonConverter
     SetPolygonId(openXmlElement, value?.PolygonId);
     SetNumPoints(openXmlElement, value?.NumPoints);
     SetPcaRings(openXmlElement, value?.PcaRings);
-    }
   }
+}

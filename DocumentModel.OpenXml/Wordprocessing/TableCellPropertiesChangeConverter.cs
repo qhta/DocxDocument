@@ -138,5 +138,5 @@ public static class TableCellPropertiesChangeConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetPreviousTableCellProperties(openXmlElement, value?.PreviousTableCellProperties);
-    }
   }
+}

@@ -169,5 +169,5 @@ public static class PreSubSuperConverter
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

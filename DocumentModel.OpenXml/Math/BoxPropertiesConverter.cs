@@ -231,5 +231,5 @@ public static class BoxPropertiesConverter
     SetBreak(openXmlElement, value?.Break);
     SetAlignment(openXmlElement, value?.Alignment);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

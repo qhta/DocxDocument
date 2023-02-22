@@ -293,5 +293,5 @@ public static class Shadow2Converter
     SetAlignment(openXmlElement, value?.Alignment);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

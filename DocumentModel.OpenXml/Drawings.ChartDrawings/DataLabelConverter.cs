@@ -277,5 +277,5 @@ public static class DataLabelConverter
     SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
     SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

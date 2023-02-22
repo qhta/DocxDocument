@@ -492,5 +492,5 @@ public static class HiddenLinePropertiesConverter
     SetHeadEnd(openXmlElement, value?.HeadEnd);
     SetTailEnd(openXmlElement, value?.TailEnd);
     SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
-    }
   }
+}

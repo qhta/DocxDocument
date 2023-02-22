@@ -83,5 +83,5 @@ public static class TableWidthDxaNilTypeConverter
   {
     SetWidth(openXmlElement, value?.Width);
     SetType(openXmlElement, value?.Type);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class DocDefaultsConverter
   {
     SetRunPropertiesDefault(openXmlElement, value?.RunPropertiesDefault);
     SetParagraphPropertiesDefault(openXmlElement, value?.ParagraphPropertiesDefault);
-    }
   }
+}

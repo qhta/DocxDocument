@@ -147,5 +147,5 @@ public static class NumberingPropertiesConverter
     SetNumberingId(openXmlElement, value?.NumberingId);
     SetNumberingChange(openXmlElement, value?.NumberingChange);
     SetInserted(openXmlElement, value?.Inserted);
-    }
   }
+}

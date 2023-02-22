@@ -97,5 +97,5 @@ public static class BandFormatsConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.BandFormats openXmlElement, DMDrawsCharts.BandFormats value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

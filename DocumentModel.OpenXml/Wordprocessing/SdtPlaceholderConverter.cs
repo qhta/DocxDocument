@@ -69,5 +69,5 @@ public static class SdtPlaceholderConverter
   public static void UpdateOpenXmlElement(DXW.SdtPlaceholder openXmlElement, DMW.SdtPlaceholder value)
   {
     SetDocPartReference(openXmlElement, value?.DocPartReference);
-    }
   }
+}

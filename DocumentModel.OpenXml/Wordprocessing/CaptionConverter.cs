@@ -193,5 +193,5 @@ public static class CaptionConverter
     SetNoLabel(openXmlElement, value?.NoLabel);
     SetNumberFormat(openXmlElement, value?.NumberFormat);
     SetSeparator(openXmlElement, value?.Separator);
-    }
   }
+}

@@ -653,5 +653,5 @@ public static class StrokeChildTypeConverter
     SetAlternateImageReference(openXmlElement, value?.AlternateImageReference);
     SetTitle(openXmlElement, value?.Title);
     SetForceDash(openXmlElement, value?.ForceDash);
-    }
   }
+}

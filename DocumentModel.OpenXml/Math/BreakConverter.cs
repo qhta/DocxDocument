@@ -85,5 +85,5 @@ public static class BreakConverter
   {
     SetAlignAt(openXmlElement, value?.AlignAt);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

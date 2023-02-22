@@ -820,5 +820,5 @@ public static class AnchorConverter
     SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
     SetGraphic(openXmlElement, value?.Graphic);
     SetRelativeWidth(openXmlElement, value?.RelativeWidth);
-    }
   }
+}

@@ -235,5 +235,5 @@ public static class TableCellMarginDefaultConverter
     SetBottomMargin(openXmlElement, value?.BottomMargin);
     SetTableCellRightMargin(openXmlElement, value?.TableCellRightMargin);
     SetEndMargin(openXmlElement, value?.EndMargin);
-    }
   }
+}

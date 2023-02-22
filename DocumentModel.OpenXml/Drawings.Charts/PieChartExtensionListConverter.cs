@@ -97,5 +97,5 @@ public static class PieChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.PieChartExtensionList openXmlElement, DMDrawsCharts.PieChartExtensionList value)
   {
     SetPieChartExtensions(openXmlElement, value?.PieChartExtensions);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class HyperlinkOnClickConverter
   {
     SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
     SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
-    }
   }
+}

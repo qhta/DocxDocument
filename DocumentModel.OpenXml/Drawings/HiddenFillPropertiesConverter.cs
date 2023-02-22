@@ -239,5 +239,5 @@ public static class HiddenFillPropertiesConverter
     SetBlipFill(openXmlElement, value?.BlipFill);
     SetPatternFill(openXmlElement, value?.PatternFill);
     SetGroupFill(openXmlElement, value?.GroupFill);
-    }
   }
+}

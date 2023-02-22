@@ -271,5 +271,5 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     SetDecorative(openXmlElement, value?.Decorative);
     SetClassificationOutcome(openXmlElement, value?.ClassificationOutcome);
     SetScriptLink(openXmlElement, value?.ScriptLink);
-    }
   }
+}

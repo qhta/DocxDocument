@@ -2004,5 +2004,5 @@ public static class ShapetypeConverter
     SetLeftBorder(openXmlElement, value?.LeftBorder);
     SetRightBorder(openXmlElement, value?.RightBorder);
     SetComplex(openXmlElement, value?.Complex);
-    }
   }
+}

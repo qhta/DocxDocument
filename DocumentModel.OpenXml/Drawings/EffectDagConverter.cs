@@ -943,5 +943,5 @@ public static class EffectDagConverter
     SetSoftEdge(openXmlElement, value?.SoftEdge);
     SetTintEffect(openXmlElement, value?.TintEffect);
     SetTransformEffect(openXmlElement, value?.TransformEffect);
-    }
   }
+}

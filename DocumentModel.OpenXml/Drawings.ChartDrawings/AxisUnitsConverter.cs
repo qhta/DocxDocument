@@ -125,5 +125,5 @@ public static class AxisUnitsConverter
     SetUnit(openXmlElement, value?.Unit);
     SetAxisUnitsLabel(openXmlElement, value?.AxisUnitsLabel);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

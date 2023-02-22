@@ -60,5 +60,5 @@ public static class WordprocessingDocumentConverter
   public static void UpdateOpenXmlElement(DXPack.WordprocessingDocument openXmlElement, DMPack.WordprocessingDocument value)
   {
     //SetDocumentType(openXmlElement, value?.DocumentType);
-    }
   }
+}

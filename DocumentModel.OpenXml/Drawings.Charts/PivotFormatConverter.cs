@@ -191,5 +191,5 @@ public static class PivotFormatConverter
     SetMarker(openXmlElement, value?.Marker);
     SetDataLabel(openXmlElement, value?.DataLabel);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

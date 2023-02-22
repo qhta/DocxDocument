@@ -230,5 +230,5 @@ public static class RuleConverter
     SetFact(openXmlElement, value?.Fact);
     SetMax(openXmlElement, value?.Max);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

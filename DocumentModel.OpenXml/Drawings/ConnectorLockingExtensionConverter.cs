@@ -89,5 +89,5 @@ public static class ConnectorLockingExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetGraphic(openXmlElement, value?.Graphic);
-    }
   }
+}

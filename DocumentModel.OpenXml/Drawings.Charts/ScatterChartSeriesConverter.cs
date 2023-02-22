@@ -512,5 +512,5 @@ public static class ScatterChartSeriesConverter
     SetYValues(openXmlElement, value?.YValues);
     SetSmooth(openXmlElement, value?.Smooth);
     SetScatterSerExtensionList(openXmlElement, value?.ScatterSerExtensionList);
-    }
   }
+}

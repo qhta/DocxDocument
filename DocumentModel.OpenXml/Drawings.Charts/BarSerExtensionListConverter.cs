@@ -97,5 +97,5 @@ public static class BarSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.BarSerExtensionList openXmlElement, DMDrawsCharts.BarSerExtensionList value)
   {
     SetBarSerExtensions(openXmlElement, value?.BarSerExtensions);
-    }
   }
+}

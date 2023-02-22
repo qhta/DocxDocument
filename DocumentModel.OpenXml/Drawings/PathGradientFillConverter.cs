@@ -92,5 +92,5 @@ public static class PathGradientFillConverter
   {
     SetPath(openXmlElement, value?.Path);
     SetFillToRectangle(openXmlElement, value?.FillToRectangle);
-    }
   }
+}

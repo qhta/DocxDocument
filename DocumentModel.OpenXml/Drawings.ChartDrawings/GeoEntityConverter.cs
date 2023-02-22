@@ -81,5 +81,5 @@ public static class GeoEntityConverter
   {
     SetEntityName(openXmlElement, value?.EntityName);
     SetEntityType(openXmlElement, value?.EntityType);
-    }
   }
+}

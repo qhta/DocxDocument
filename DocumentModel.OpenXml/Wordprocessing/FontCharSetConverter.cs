@@ -81,5 +81,5 @@ public static class FontCharSetConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetStrictCharacterSet(openXmlElement, value?.StrictCharacterSet);
-    }
   }
+}

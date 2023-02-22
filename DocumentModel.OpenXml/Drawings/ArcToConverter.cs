@@ -125,5 +125,5 @@ public static class ArcToConverter
     SetHeightRadius(openXmlElement, value?.HeightRadius);
     SetStartAngle(openXmlElement, value?.StartAngle);
     SetSwingAngle(openXmlElement, value?.SwingAngle);
-    }
   }
+}

@@ -108,5 +108,5 @@ public static class OEmbedConverter
     SetOEmbedUrl(openXmlElement, value?.OEmbedUrl);
     SetMediaType(openXmlElement, value?.MediaType);
     SetPicLocksAutoForOEmbed(openXmlElement, value?.PicLocksAutoForOEmbed);
-    }
   }
+}

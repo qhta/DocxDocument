@@ -70,5 +70,5 @@ public static class UpDownBarTypeConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.UpDownBarType openXmlElement, DMDrawsCharts.UpDownBarType value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

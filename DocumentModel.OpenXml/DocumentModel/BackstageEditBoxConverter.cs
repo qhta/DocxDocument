@@ -423,5 +423,5 @@ public static class BackstageEditBoxConverter
     SetOnChange(openXmlElement, value?.OnChange);
     SetMaxLength(openXmlElement, value?.MaxLength);
     SetSizeString(openXmlElement, value?.SizeString);
-    }
   }
+}

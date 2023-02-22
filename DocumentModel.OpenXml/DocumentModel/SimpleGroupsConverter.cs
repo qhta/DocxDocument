@@ -97,5 +97,5 @@ public static class SimpleGroupsConverter
   {
     SetBackstageGroup(openXmlElement, value?.BackstageGroup);
     SetTaskGroup(openXmlElement, value?.TaskGroup);
-    }
   }
+}

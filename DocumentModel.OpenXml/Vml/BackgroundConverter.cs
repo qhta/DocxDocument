@@ -229,5 +229,5 @@ public static class BackgroundConverter
     SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
     SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
     SetFill(openXmlElement, value?.Fill);
-    }
   }
+}

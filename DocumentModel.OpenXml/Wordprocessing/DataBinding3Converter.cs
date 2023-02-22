@@ -103,5 +103,5 @@ public static class DataBinding3Converter
     SetPrefixMappings(openXmlElement, value?.PrefixMappings);
     SetXPath(openXmlElement, value?.XPath);
     SetStoreItemId(openXmlElement, value?.StoreItemId);
-    }
   }
+}

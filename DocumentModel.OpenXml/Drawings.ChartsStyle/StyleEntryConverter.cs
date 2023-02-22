@@ -355,5 +355,5 @@ public static class StyleEntryConverter
     SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
     SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

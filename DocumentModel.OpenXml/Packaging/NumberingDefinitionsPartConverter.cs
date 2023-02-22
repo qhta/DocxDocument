@@ -120,5 +120,5 @@ public static class NumberingDefinitionsPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     SetNumbering(openXmlElement, value?.Numbering);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

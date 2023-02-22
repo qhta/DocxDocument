@@ -333,5 +333,5 @@ public static class Area3DChartConverter
     SetGapDepth(openXmlElement, value?.GapDepth);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetArea3DChartExtensionList(openXmlElement, value?.Area3DChartExtensionList);
-    }
   }
+}

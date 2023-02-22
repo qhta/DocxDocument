@@ -66,5 +66,5 @@ public static class FormulaReferenceConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FormulaReference openXmlElement, DMDrawsCharts.FormulaReference value)
   {
     SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-    }
   }
+}

@@ -120,5 +120,5 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     SetCustomUI(openXmlElement, value?.CustomUI);
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

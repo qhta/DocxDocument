@@ -174,5 +174,5 @@ public static class FieldConverter
     SetRunProperties(openXmlElement, value?.RunProperties);
     SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
     SetText(openXmlElement, value?.Text);
-    }
   }
+}

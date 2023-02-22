@@ -209,5 +209,5 @@ public static class StringDimensionConverter
     SetNfFormula(openXmlElement, value?.NfFormula);
     SetStringLevels(openXmlElement, value?.StringLevels);
     SetStringLevel(openXmlElement, value?.StringLevel);
-    }
   }
+}

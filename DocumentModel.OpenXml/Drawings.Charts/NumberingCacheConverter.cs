@@ -172,5 +172,5 @@ public static class NumberingCacheConverter
     SetPointCount(openXmlElement, value?.PointCount);
     SetNumericPoints(openXmlElement, value?.NumericPoints);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

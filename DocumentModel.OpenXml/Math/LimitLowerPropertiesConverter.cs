@@ -70,5 +70,5 @@ public static class LimitLowerPropertiesConverter
   public static void UpdateOpenXmlElement(DXMath.LimitLowerProperties openXmlElement, DMMath.LimitLowerProperties value)
   {
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

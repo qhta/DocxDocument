@@ -59,5 +59,5 @@ public static class ContentPartConverter
   public static void UpdateOpenXmlElement(DXW.ContentPart openXmlElement, DMW.ContentPart value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

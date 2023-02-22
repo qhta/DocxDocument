@@ -172,5 +172,5 @@ public static class SeriesElementVisibilitiesConverter
     SetMeanMarker(openXmlElement, value?.MeanMarker);
     SetNonoutliers(openXmlElement, value?.Nonoutliers);
     SetOutliers(openXmlElement, value?.Outliers);
-    }
   }
+}

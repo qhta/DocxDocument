@@ -172,5 +172,5 @@ public static class NumberLiteralConverter
     SetPointCount(openXmlElement, value?.PointCount);
     SetNumericPoints(openXmlElement, value?.NumericPoints);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

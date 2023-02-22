@@ -88,5 +88,5 @@ public static class RelativeWidthConverter
   {
     SetObjectId(openXmlElement, value?.ObjectId);
     SetPercentageWidth(openXmlElement, value?.PercentageWidth);
-    }
   }
+}

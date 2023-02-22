@@ -97,5 +97,5 @@ public static class McdsConverter
   public static void UpdateOpenXmlElement(DXOW.Mcds openXmlElement, DMW.Mcds value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

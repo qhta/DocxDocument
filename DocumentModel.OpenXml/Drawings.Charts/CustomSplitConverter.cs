@@ -97,5 +97,5 @@ public static class CustomSplitConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.CustomSplit openXmlElement, DMDrawsCharts.CustomSplit value)
   {
     SetSecondPiePoints(openXmlElement, value?.SecondPiePoints);
-    }
   }
+}

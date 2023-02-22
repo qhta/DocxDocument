@@ -70,5 +70,5 @@ public static class GraphicConverter
   public static void UpdateOpenXmlElement(DXDraw.Graphic openXmlElement, DMDraws.Graphic value)
   {
     SetGraphicData(openXmlElement, value?.GraphicData);
-    }
   }
+}

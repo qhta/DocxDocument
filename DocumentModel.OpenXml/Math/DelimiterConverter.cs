@@ -130,5 +130,5 @@ public static class DelimiterConverter
   {
     SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
     SetBases(openXmlElement, value?.Bases);
-    }
   }
+}

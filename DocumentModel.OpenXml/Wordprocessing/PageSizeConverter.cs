@@ -131,5 +131,5 @@ public static class PageSizeConverter
     SetHeight(openXmlElement, value?.Height);
     SetOrient(openXmlElement, value?.Orient);
     SetCode(openXmlElement, value?.Code);
-    }
   }
+}

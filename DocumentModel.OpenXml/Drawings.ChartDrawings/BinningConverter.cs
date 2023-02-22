@@ -161,5 +161,5 @@ public static class BinningConverter
     SetOverflow(openXmlElement, value?.Overflow);
     SetXsddouble(openXmlElement, value?.Xsddouble);
     SetBinCountXsdunsignedInt(openXmlElement, value?.BinCountXsdunsignedInt);
-    }
   }
+}

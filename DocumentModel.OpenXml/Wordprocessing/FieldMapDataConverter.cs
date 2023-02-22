@@ -199,5 +199,5 @@ public static class FieldMapDataConverter
     SetColumnIndex(openXmlElement, value?.ColumnIndex);
     SetLanguageId(openXmlElement, value?.LanguageId);
     SetDynamicAddress(openXmlElement, value?.DynamicAddress);
-    }
   }
+}

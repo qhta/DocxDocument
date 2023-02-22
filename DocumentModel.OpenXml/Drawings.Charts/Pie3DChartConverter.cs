@@ -192,5 +192,5 @@ public static class Pie3DChartConverter
     SetPieChartSeries(openXmlElement, value?.PieChartSeries);
     SetDataLabels(openXmlElement, value?.DataLabels);
     SetPie3DChartExtensionList(openXmlElement, value?.Pie3DChartExtensionList);
-    }
   }
+}

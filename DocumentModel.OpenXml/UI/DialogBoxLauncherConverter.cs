@@ -70,5 +70,5 @@ public static class DialogBoxLauncherConverter
   public static void UpdateOpenXmlElement(DXOCustUI.DialogBoxLauncher openXmlElement, DMUI.DialogBoxLauncher value)
   {
     SetUnsizedButton(openXmlElement, value?.UnsizedButton);
-    }
   }
+}

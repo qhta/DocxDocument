@@ -209,5 +209,5 @@ public static class GradientFillConverter
     SetLinearGradientFill(openXmlElement, value?.LinearGradientFill);
     SetPathGradientFill(openXmlElement, value?.PathGradientFill);
     SetTileRectangle(openXmlElement, value?.TileRectangle);
-    }
   }
+}

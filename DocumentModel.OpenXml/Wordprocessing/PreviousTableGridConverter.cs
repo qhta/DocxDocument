@@ -97,5 +97,5 @@ public static class PreviousTableGridConverter
   public static void UpdateOpenXmlElement(DXW.PreviousTableGrid openXmlElement, DMW.PreviousTableGrid value)
   {
     SetGridColumns(openXmlElement, value?.GridColumns);
-    }
   }
+}

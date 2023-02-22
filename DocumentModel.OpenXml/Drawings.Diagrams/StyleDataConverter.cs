@@ -67,5 +67,5 @@ public static class StyleDataConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.StyleData value)
   {
     SetDataModel(openXmlElement, value?.DataModel);
-    }
   }
+}

@@ -148,5 +148,5 @@ public static class CommentExtensibleConverter
     SetDateUtc(openXmlElement, value?.DateUtc);
     SetIntelligentPlaceholder(openXmlElement, value?.IntelligentPlaceholder);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

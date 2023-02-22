@@ -97,5 +97,5 @@ public static class RunConverter
   {
     SetRunProperties(openXmlElement, value?.RunProperties);
     SetText(openXmlElement, value?.Text);
-    }
   }
+}

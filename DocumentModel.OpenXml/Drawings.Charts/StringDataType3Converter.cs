@@ -59,5 +59,5 @@ public static class StringDataType3Converter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.StringDataType openXmlElement, DMDrawsCharts.StringDataType3 value)
   {
     SetPointCount(openXmlElement, value?.PointCount);
-    }
   }
+}

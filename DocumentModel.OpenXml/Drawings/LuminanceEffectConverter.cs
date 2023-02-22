@@ -85,5 +85,5 @@ public static class LuminanceEffectConverter
   {
     SetBrightness(openXmlElement, value?.Brightness);
     SetContrast(openXmlElement, value?.Contrast);
-    }
   }
+}
