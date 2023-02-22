@@ -490,30 +490,31 @@ public static class ShapePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeProperties value)
     where OpenXmlElementType: DXODraw.ShapeProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
-      SetTransform2D(openXmlElement, value?.Transform2D);
-      SetCustomGeometry(openXmlElement, value?.CustomGeometry);
-      SetPresetGeometry(openXmlElement, value?.PresetGeometry);
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetGroupFill(openXmlElement, value?.GroupFill);
-      SetOutline(openXmlElement, value?.Outline);
-      SetEffectList(openXmlElement, value?.EffectList);
-      SetEffectDag(openXmlElement, value?.EffectDag);
-      SetScene3DType(openXmlElement, value?.Scene3DType);
-      SetShape3DType(openXmlElement, value?.Shape3DType);
-      SetShapePropertiesExtensionList(openXmlElement, value?.ShapePropertiesExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.ShapeProperties openXmlElement, DMDrawsO.ShapeProperties value)
+  {
+    SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+    SetTransform2D(openXmlElement, value?.Transform2D);
+    SetCustomGeometry(openXmlElement, value?.CustomGeometry);
+    SetPresetGeometry(openXmlElement, value?.PresetGeometry);
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetGroupFill(openXmlElement, value?.GroupFill);
+    SetOutline(openXmlElement, value?.Outline);
+    SetEffectList(openXmlElement, value?.EffectList);
+    SetEffectDag(openXmlElement, value?.EffectDag);
+    SetScene3DType(openXmlElement, value?.Scene3DType);
+    SetShape3DType(openXmlElement, value?.Shape3DType);
+    SetShapePropertiesExtensionList(openXmlElement, value?.ShapePropertiesExtensionList);
+    }
+  }

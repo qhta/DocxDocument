@@ -7,120 +7,62 @@ public static class CheckBoxConverter
 {
   private static String? GetFormFieldSize(DXW.CheckBox openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.FormFieldSize>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FormFieldSize>()?.Val);
   }
   
   private static bool CmpFormFieldSize(DXW.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.FormFieldSize>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FormFieldSize>()?.Val, value, diffs, objName, "FormFieldSize");
   }
   
   private static void SetFormFieldSize(DXW.CheckBox openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FormFieldSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.FormFieldSize { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.FormFieldSize>(openXmlElement, value);
   }
   
   private static Boolean? GetAutomaticallySizeFormField(DXW.CheckBox openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>());
   }
   
   private static bool CmpAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetAutomaticallySizeFormField(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.AutomaticallySizeFormField", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>(), value, diffs, objName);
   }
   
   private static void SetAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.AutomaticallySizeFormField>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.AutomaticallySizeFormField();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.AutomaticallySizeFormField>(openXmlElement, value);
   }
   
   private static Boolean? GetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>());
   }
   
   private static bool CmpDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetDefaultCheckBoxFormFieldState(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.DefaultCheckBoxFormFieldState", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>(), value, diffs, objName);
   }
   
   private static void SetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.DefaultCheckBoxFormFieldState>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.DefaultCheckBoxFormFieldState();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.DefaultCheckBoxFormFieldState>(openXmlElement, value);
   }
   
   private static Boolean? GetChecked(DXW.CheckBox openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Checked>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Checked>());
   }
   
   private static bool CmpChecked(DXW.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetChecked(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Checked", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Checked>(), value, diffs, objName);
   }
   
   private static void SetChecked(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Checked>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Checked();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Checked>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
@@ -157,18 +99,19 @@ public static class CheckBoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBox? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBox value)
     where OpenXmlElementType: DXW.CheckBox, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormFieldSize(openXmlElement, value?.FormFieldSize);
-      SetAutomaticallySizeFormField(openXmlElement, value?.AutomaticallySizeFormField);
-      SetDefaultCheckBoxFormFieldState(openXmlElement, value?.DefaultCheckBoxFormFieldState);
-      SetChecked(openXmlElement, value?.Checked);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.CheckBox openXmlElement, DMW.CheckBox value)
+  {
+    SetFormFieldSize(openXmlElement, value?.FormFieldSize);
+    SetAutomaticallySizeFormField(openXmlElement, value?.AutomaticallySizeFormField);
+    SetDefaultCheckBoxFormFieldState(openXmlElement, value?.DefaultCheckBoxFormFieldState);
+    SetChecked(openXmlElement, value?.Checked);
+    }
+  }

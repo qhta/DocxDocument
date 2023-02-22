@@ -56,15 +56,16 @@ public static class FootnotesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes value)
     where OpenXmlElementType: DXW.Footnotes, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFootnote(openXmlElement, value?.Footnote);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Footnotes openXmlElement, DMW.Footnotes value)
+  {
+    SetFootnote(openXmlElement, value?.Footnote);
+    }
+  }

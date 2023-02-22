@@ -123,17 +123,18 @@ public static class LimitLowerConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitLower? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitLower value)
     where OpenXmlElementType: DXMath.LimitLower, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
-      SetBase(openXmlElement, value?.Base);
-      SetLimit(openXmlElement, value?.Limit);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.LimitLower openXmlElement, DMMath.LimitLower value)
+  {
+    SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
+    SetBase(openXmlElement, value?.Base);
+    SetLimit(openXmlElement, value?.Limit);
+    }
+  }

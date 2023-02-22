@@ -10,24 +10,17 @@ public static class FramesetSplitbarConverter
   /// </summary>
   private static String? GetWidth(DXW.FramesetSplitbar openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val);
   }
   
   private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val, value, diffs, objName, "Width");
   }
   
   private static void SetWidth(DXW.FramesetSplitbar openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Width>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.Width { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.Width>(openXmlElement, value);
   }
   
   /// <summary>
@@ -62,63 +55,37 @@ public static class FramesetSplitbarConverter
   /// <summary>
   /// Do Not Display Frameset Splitters.
   /// </summary>
-  private static Boolean? GetNoBorder(DXW.FramesetSplitbar openXmlElement)
+  private static Boolean GetNoBorder(DXW.FramesetSplitbar openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.NoBorder>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoBorder>());
   }
   
   private static bool CmpNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoBorder>(), value, diffs, objName);
   }
   
   private static void SetNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.NoBorder>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.NoBorder();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffOnlyType<DXW.NoBorder>(openXmlElement, value);
   }
   
   /// <summary>
   /// Frameset Splitter Border Style.
   /// </summary>
-  private static Boolean? GetFlatBorders(DXW.FramesetSplitbar openXmlElement)
+  private static Boolean GetFlatBorders(DXW.FramesetSplitbar openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FlatBorders>();
-    if (itemElement?.Val?.Value != null)
-      return itemElement.Val.Value == DXW.OnOffOnlyValues.On;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FlatBorders>());
   }
   
   private static bool CmpFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FlatBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FlatBorders>(), value, diffs, objName);
   }
   
   private static void SetFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.FlatBorders>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.FlatBorders();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffOnlyType<DXW.FlatBorders>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.FramesetSplitbar? CreateModelElement(DXW.FramesetSplitbar? openXmlElement)
@@ -155,18 +122,19 @@ public static class FramesetSplitbarConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FramesetSplitbar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FramesetSplitbar value)
     where OpenXmlElementType: DXW.FramesetSplitbar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetColor(openXmlElement, value?.Color);
-      SetNoBorder(openXmlElement, value?.NoBorder);
-      SetFlatBorders(openXmlElement, value?.FlatBorders);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FramesetSplitbar openXmlElement, DMW.FramesetSplitbar value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetColor(openXmlElement, value?.Color);
+    SetNoBorder(openXmlElement, value?.NoBorder);
+    SetFlatBorders(openXmlElement, value?.FlatBorders);
+    }
+  }

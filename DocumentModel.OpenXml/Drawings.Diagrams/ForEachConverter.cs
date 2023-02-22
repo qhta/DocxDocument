@@ -10,22 +10,17 @@ public static class ForEachConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.ForEach openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.ForEach openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.ForEach openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ForEachConverter
   /// </summary>
   private static String? GetReference(DXDrawDgms.ForEach openXmlElement)
   {
-    return openXmlElement?.Reference?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Reference);
   }
   
   private static bool CmpReference(DXDrawDgms.ForEach openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Reference?.Value == value) return true;
-    diffs?.Add(objName, "Reference", openXmlElement?.Reference?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Reference, value, diffs, objName, "Reference");
   }
   
   private static void SetReference(DXDrawDgms.ForEach openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Reference = new StringValue { Value = value };
-    else
-      openXmlElement.Reference = null;
+    openXmlElement.Reference = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -484,31 +474,32 @@ public static class ForEachConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ForEach? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ForEach value)
     where OpenXmlElementType: DXDrawDgms.ForEach, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetReference(openXmlElement, value?.Reference);
-      SetAxis(openXmlElement, value?.Axis);
-      SetPointType(openXmlElement, value?.PointType);
-      SetHideLastTrans(openXmlElement, value?.HideLastTrans);
-      SetStart(openXmlElement, value?.Start);
-      SetCount(openXmlElement, value?.Count);
-      SetStep(openXmlElement, value?.Step);
-      SetAlgorithm(openXmlElement, value?.Algorithm);
-      SetShape(openXmlElement, value?.Shape);
-      SetPresentationOf(openXmlElement, value?.PresentationOf);
-      SetConstraints(openXmlElement, value?.Constraints);
-      SetRuleList(openXmlElement, value?.RuleList);
-      SetChildForEach(openXmlElement, value?.ChildForEach);
-      SetLayoutNode(openXmlElement, value?.LayoutNode);
-      SetChoose(openXmlElement, value?.Choose);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.ForEach value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetReference(openXmlElement, value?.Reference);
+    SetAxis(openXmlElement, value?.Axis);
+    SetPointType(openXmlElement, value?.PointType);
+    SetHideLastTrans(openXmlElement, value?.HideLastTrans);
+    SetStart(openXmlElement, value?.Start);
+    SetCount(openXmlElement, value?.Count);
+    SetStep(openXmlElement, value?.Step);
+    SetAlgorithm(openXmlElement, value?.Algorithm);
+    SetShape(openXmlElement, value?.Shape);
+    SetPresentationOf(openXmlElement, value?.PresentationOf);
+    SetConstraints(openXmlElement, value?.Constraints);
+    SetRuleList(openXmlElement, value?.RuleList);
+    SetChildForEach(openXmlElement, value?.ChildForEach);
+    SetLayoutNode(openXmlElement, value?.LayoutNode);
+    SetChoose(openXmlElement, value?.Choose);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -73,16 +73,17 @@ public static class ArtisticWatercolorSpongeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticWatercolorSponge? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticWatercolorSponge value)
     where OpenXmlElementType: DXO2010Draw.ArtisticWatercolorSponge, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetBrushSize(openXmlElement, value?.BrushSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticWatercolorSponge openXmlElement, DMDraws.ArtisticWatercolorSponge value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetBrushSize(openXmlElement, value?.BrushSize);
+    }
+  }

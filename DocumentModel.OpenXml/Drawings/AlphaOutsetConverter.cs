@@ -50,15 +50,16 @@ public static class AlphaOutsetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaOutset? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaOutset value)
     where OpenXmlElementType: DXDraw.AlphaOutset, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRadius(openXmlElement, value?.Radius);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AlphaOutset openXmlElement, DMDraws.AlphaOutset value)
+  {
+    SetRadius(openXmlElement, value?.Radius);
+    }
+  }

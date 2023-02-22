@@ -71,16 +71,17 @@ public static class MarkerLayoutPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.MarkerLayoutProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.MarkerLayoutProperties value)
     where OpenXmlElementType: DXO2013DrawChartStyle.MarkerLayoutProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSymbol(openXmlElement, value?.Symbol);
-      SetSize(openXmlElement, value?.Size);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties value)
+  {
+    SetSymbol(openXmlElement, value?.Symbol);
+    SetSize(openXmlElement, value?.Size);
+    }
+  }

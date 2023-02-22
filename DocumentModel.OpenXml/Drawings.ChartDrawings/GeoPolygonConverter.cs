@@ -10,22 +10,17 @@ public static class GeoPolygonConverter
   /// </summary>
   private static String? GetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
-    return openXmlElement?.PolygonId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PolygonId);
   }
   
   private static bool CmpPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PolygonId?.Value == value) return true;
-    diffs?.Add(objName, "PolygonId", openXmlElement?.PolygonId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PolygonId, value, diffs, objName, "PolygonId");
   }
   
   private static void SetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PolygonId = new StringValue { Value = value };
-    else
-      openXmlElement.PolygonId = null;
+    openXmlElement.PolygonId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class GeoPolygonConverter
   /// </summary>
   private static String? GetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
-    return openXmlElement?.PcaRings?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PcaRings);
   }
   
   private static bool CmpPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PcaRings?.Value == value) return true;
-    diffs?.Add(objName, "PcaRings", openXmlElement?.PcaRings?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PcaRings, value, diffs, objName, "PcaRings");
   }
   
   private static void SetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PcaRings = new StringValue { Value = value };
-    else
-      openXmlElement.PcaRings = null;
+    openXmlElement.PcaRings = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement)
@@ -102,17 +92,18 @@ public static class GeoPolygonConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoPolygon? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoPolygon value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoPolygon, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPolygonId(openXmlElement, value?.PolygonId);
-      SetNumPoints(openXmlElement, value?.NumPoints);
-      SetPcaRings(openXmlElement, value?.PcaRings);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoPolygon openXmlElement, DMDrawsChartDraws.GeoPolygon value)
+  {
+    SetPolygonId(openXmlElement, value?.PolygonId);
+    SetNumPoints(openXmlElement, value?.NumPoints);
+    SetPcaRings(openXmlElement, value?.PcaRings);
+    }
+  }

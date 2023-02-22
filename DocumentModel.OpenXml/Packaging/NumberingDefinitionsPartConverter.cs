@@ -106,18 +106,19 @@ public static class NumberingDefinitionsPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.NumberingDefinitionsPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.NumberingDefinitionsPart value)
     where OpenXmlElementType: DXPack.NumberingDefinitionsPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      SetNumbering(openXmlElement, value?.Numbering);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.NumberingDefinitionsPart openXmlElement, DMPack.NumberingDefinitionsPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    SetNumbering(openXmlElement, value?.Numbering);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

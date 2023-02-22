@@ -73,16 +73,17 @@ public static class Point2DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Point2DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Point2DType value)
     where OpenXmlElementType: DXDrawW.Point2DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetX(openXmlElement, value?.X);
-      SetY(openXmlElement, value?.Y);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.Point2DType openXmlElement, DMDrawsW.Point2DType value)
+  {
+    SetX(openXmlElement, value?.X);
+    SetY(openXmlElement, value?.Y);
+    }
+  }

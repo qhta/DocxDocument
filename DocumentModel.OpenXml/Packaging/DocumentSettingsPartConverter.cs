@@ -106,18 +106,19 @@ public static class DocumentSettingsPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentSettingsPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentSettingsPart value)
     where OpenXmlElementType: DXPack.DocumentSettingsPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      SetSettings(openXmlElement, value?.Settings);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DocumentSettingsPart openXmlElement, DMPack.DocumentSettingsPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    SetSettings(openXmlElement, value?.Settings);
+    }
+  }

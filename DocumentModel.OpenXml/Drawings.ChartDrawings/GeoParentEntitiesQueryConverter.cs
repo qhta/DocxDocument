@@ -10,22 +10,17 @@ public static class GeoParentEntitiesQueryConverter
   /// </summary>
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement)
   {
-    return openXmlElement?.EntityId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityId?.Value == value) return true;
-    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityId = new StringValue { Value = value };
-    else
-      openXmlElement.EntityId = null;
+    openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntitiesQuery? openXmlElement)
@@ -53,15 +48,16 @@ public static class GeoParentEntitiesQueryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQuery? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQuery value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoParentEntitiesQuery, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityId(openXmlElement, value?.EntityId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQuery value)
+  {
+    SetEntityId(openXmlElement, value?.EntityId);
+    }
+  }

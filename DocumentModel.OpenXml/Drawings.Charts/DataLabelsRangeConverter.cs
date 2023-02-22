@@ -87,16 +87,17 @@ public static class DataLabelsRangeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelsRange? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelsRange value)
     where OpenXmlElementType: DXO2013DrawChart.DataLabelsRange, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormula(openXmlElement, value?.Formula);
-      SetDataLabelsRangeChache(openXmlElement, value?.DataLabelsRangeChache);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRange value)
+  {
+    SetFormula(openXmlElement, value?.Formula);
+    SetDataLabelsRangeChache(openXmlElement, value?.DataLabelsRangeChache);
+    }
+  }

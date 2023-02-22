@@ -10,22 +10,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static String? GetTargetFrame(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.TargetFrame?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
   }
   
   private static bool CmpTargetFrame(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TargetFrame?.Value == value) return true;
-    diffs?.Add(objName, "TargetFrame", openXmlElement?.TargetFrame?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TargetFrame, value, diffs, objName, "TargetFrame");
   }
   
   private static void SetTargetFrame(DXW.HyperlinkRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TargetFrame = new StringValue { Value = value };
-    else
-      openXmlElement.TargetFrame = null;
+    openXmlElement.TargetFrame = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static String? GetTooltip(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.Tooltip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tooltip);
   }
   
   private static bool CmpTooltip(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tooltip?.Value == value) return true;
-    diffs?.Add(objName, "Tooltip", openXmlElement?.Tooltip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tooltip, value, diffs, objName, "Tooltip");
   }
   
   private static void SetTooltip(DXW.HyperlinkRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tooltip = new StringValue { Value = value };
-    else
-      openXmlElement.Tooltip = null;
+    openXmlElement.Tooltip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static String? GetDocLocation(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.DocLocation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DocLocation);
   }
   
   private static bool CmpDocLocation(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DocLocation?.Value == value) return true;
-    diffs?.Add(objName, "DocLocation", openXmlElement?.DocLocation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DocLocation, value, diffs, objName, "DocLocation");
   }
   
   private static void SetDocLocation(DXW.HyperlinkRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DocLocation = new StringValue { Value = value };
-    else
-      openXmlElement.DocLocation = null;
+    openXmlElement.DocLocation = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static Boolean? GetHistory(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.History?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.History);
   }
   
   private static bool CmpHistory(DXW.HyperlinkRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.History?.Value == value) return true;
-    diffs?.Add(objName, "History", openXmlElement?.History?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.History, value, diffs, objName, "History");
   }
   
   private static void SetHistory(DXW.HyperlinkRuby openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.History = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.History = null;
+    openXmlElement.History = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static String? GetAnchor(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.Anchor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Anchor);
   }
   
   private static bool CmpAnchor(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Anchor?.Value == value) return true;
-    diffs?.Add(objName, "Anchor", openXmlElement?.Anchor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Anchor, value, diffs, objName, "Anchor");
   }
   
   private static void SetAnchor(DXW.HyperlinkRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Anchor = new StringValue { Value = value };
-    else
-      openXmlElement.Anchor = null;
+    openXmlElement.Anchor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class HyperlinkRubyConverter
   /// </summary>
   private static String? GetId(DXW.HyperlinkRuby openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.HyperlinkRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.HyperlinkRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.HyperlinkRuby openXmlElement)
@@ -1778,75 +1748,76 @@ public static class HyperlinkRubyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.HyperlinkRuby? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.HyperlinkRuby value)
     where OpenXmlElementType: DXW.HyperlinkRuby, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTargetFrame(openXmlElement, value?.TargetFrame);
-      SetTooltip(openXmlElement, value?.Tooltip);
-      SetDocLocation(openXmlElement, value?.DocLocation);
-      SetHistory(openXmlElement, value?.History);
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetId(openXmlElement, value?.Id);
-      SetCustomXmlRuby(openXmlElement, value?.CustomXmlRuby);
-      SetSimpleFieldRuby(openXmlElement, value?.SimpleFieldRuby);
-      SetChildHyperlinkRuby(openXmlElement, value?.ChildHyperlinkRuby);
-      SetRun(openXmlElement, value?.Run);
-      SetSdtRunRuby(openXmlElement, value?.SdtRunRuby);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      SetInsertedRun(openXmlElement, value?.InsertedRun);
-      SetDeletedRun(openXmlElement, value?.DeletedRun);
-      SetMoveFromRun(openXmlElement, value?.MoveFromRun);
-      SetMoveToRun(openXmlElement, value?.MoveToRun);
-      SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
-      SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      SetOfficeMath(openXmlElement, value?.OfficeMath);
-      SetAccent(openXmlElement, value?.Accent);
-      SetBar(openXmlElement, value?.Bar);
-      SetBox(openXmlElement, value?.Box);
-      SetBorderBox(openXmlElement, value?.BorderBox);
-      SetDelimiter(openXmlElement, value?.Delimiter);
-      SetEquationArray(openXmlElement, value?.EquationArray);
-      SetFraction(openXmlElement, value?.Fraction);
-      SetMathFunction(openXmlElement, value?.MathFunction);
-      SetGroupChar(openXmlElement, value?.GroupChar);
-      SetLimitLower(openXmlElement, value?.LimitLower);
-      SetLimitUpper(openXmlElement, value?.LimitUpper);
-      SetMatrix(openXmlElement, value?.Matrix);
-      SetNary(openXmlElement, value?.Nary);
-      SetPhantom(openXmlElement, value?.Phantom);
-      SetRadical(openXmlElement, value?.Radical);
-      SetPreSubSuper(openXmlElement, value?.PreSubSuper);
-      SetSubscript(openXmlElement, value?.Subscript);
-      SetSubSuperscript(openXmlElement, value?.SubSuperscript);
-      SetSuperscript(openXmlElement, value?.Superscript);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.HyperlinkRuby openXmlElement, DMW.HyperlinkRuby value)
+  {
+    SetTargetFrame(openXmlElement, value?.TargetFrame);
+    SetTooltip(openXmlElement, value?.Tooltip);
+    SetDocLocation(openXmlElement, value?.DocLocation);
+    SetHistory(openXmlElement, value?.History);
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetId(openXmlElement, value?.Id);
+    SetCustomXmlRuby(openXmlElement, value?.CustomXmlRuby);
+    SetSimpleFieldRuby(openXmlElement, value?.SimpleFieldRuby);
+    SetChildHyperlinkRuby(openXmlElement, value?.ChildHyperlinkRuby);
+    SetRun(openXmlElement, value?.Run);
+    SetSdtRunRuby(openXmlElement, value?.SdtRunRuby);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    SetInsertedRun(openXmlElement, value?.InsertedRun);
+    SetDeletedRun(openXmlElement, value?.DeletedRun);
+    SetMoveFromRun(openXmlElement, value?.MoveFromRun);
+    SetMoveToRun(openXmlElement, value?.MoveToRun);
+    SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
+    SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    SetOfficeMath(openXmlElement, value?.OfficeMath);
+    SetAccent(openXmlElement, value?.Accent);
+    SetBar(openXmlElement, value?.Bar);
+    SetBox(openXmlElement, value?.Box);
+    SetBorderBox(openXmlElement, value?.BorderBox);
+    SetDelimiter(openXmlElement, value?.Delimiter);
+    SetEquationArray(openXmlElement, value?.EquationArray);
+    SetFraction(openXmlElement, value?.Fraction);
+    SetMathFunction(openXmlElement, value?.MathFunction);
+    SetGroupChar(openXmlElement, value?.GroupChar);
+    SetLimitLower(openXmlElement, value?.LimitLower);
+    SetLimitUpper(openXmlElement, value?.LimitUpper);
+    SetMatrix(openXmlElement, value?.Matrix);
+    SetNary(openXmlElement, value?.Nary);
+    SetPhantom(openXmlElement, value?.Phantom);
+    SetRadical(openXmlElement, value?.Radical);
+    SetPreSubSuper(openXmlElement, value?.PreSubSuper);
+    SetSubscript(openXmlElement, value?.Subscript);
+    SetSubSuperscript(openXmlElement, value?.SubSuperscript);
+    SetSuperscript(openXmlElement, value?.Superscript);
+    }
+  }

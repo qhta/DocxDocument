@@ -10,22 +10,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetIdMso(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.IdMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
   private static bool CmpIdMso(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdMso?.Value == value) return true;
-    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
   private static void SetIdMso(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdMso = new StringValue { Value = value };
-    else
-      openXmlElement.IdMso = null;
+    openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetLabel(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.Label?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
   private static bool CmpLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Label?.Value == value) return true;
-    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
   private static void SetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Label = new StringValue { Value = value };
-    else
-      openXmlElement.Label = null;
+    openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.GetLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
   private static bool CmpGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
   private static void SetGetLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetLabel = null;
+    openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +141,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +159,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.HelperText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.HelperText);
   }
   
   private static bool CmpHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.HelperText?.Value == value) return true;
-    diffs?.Add(objName, "HelperText", openXmlElement?.HelperText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.HelperText, value, diffs, objName, "HelperText");
   }
   
   private static void SetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.HelperText = new StringValue { Value = value };
-    else
-      openXmlElement.HelperText = null;
+    openXmlElement.HelperText = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +177,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.GetHelperText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetHelperText);
   }
   
   private static bool CmpGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetHelperText?.Value == value) return true;
-    diffs?.Add(objName, "GetHelperText", openXmlElement?.GetHelperText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetHelperText, value, diffs, objName, "GetHelperText");
   }
   
   private static void SetGetHelperText(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetHelperText = new StringValue { Value = value };
-    else
-      openXmlElement.GetHelperText = null;
+    openXmlElement.GetHelperText = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -263,22 +218,17 @@ public static class TaskFormGroupConverter
   /// </summary>
   private static String? GetGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement)
   {
-    return openXmlElement?.GetShowLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
   private static bool CmpGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetShowLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetShowLabel", openXmlElement?.GetShowLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
   
   private static void SetGetShowLabel(DXO2010CustUI.TaskFormGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetShowLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetShowLabel = null;
+    openXmlElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -315,11 +265,11 @@ public static class TaskFormGroupConverter
   
   private static bool CmpTaskFormGroupCategories(DXO2010CustUI.TaskFormGroup openXmlElement, Collection<DM.TaskFormGroupCategory>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2010CustUI.TaskFormGroupCategory>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2010CustUI.TaskFormGroupCategory>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -336,7 +286,7 @@ public static class TaskFormGroupConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -419,28 +369,29 @@ public static class TaskFormGroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskFormGroup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskFormGroup value)
     where OpenXmlElementType: DXO2010CustUI.TaskFormGroup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetIdMso(openXmlElement, value?.IdMso);
-      SetLabel(openXmlElement, value?.Label);
-      SetGetLabel(openXmlElement, value?.GetLabel);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetHelperText(openXmlElement, value?.HelperText);
-      SetGetHelperText(openXmlElement, value?.GetHelperText);
-      SetShowLabel(openXmlElement, value?.ShowLabel);
-      SetGetShowLabel(openXmlElement, value?.GetShowLabel);
-      SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
-      SetTaskFormGroupCategories(openXmlElement, value?.TaskFormGroupCategories);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.TaskFormGroup openXmlElement, DM.TaskFormGroup value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetIdMso(openXmlElement, value?.IdMso);
+    SetLabel(openXmlElement, value?.Label);
+    SetGetLabel(openXmlElement, value?.GetLabel);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetHelperText(openXmlElement, value?.HelperText);
+    SetGetHelperText(openXmlElement, value?.GetHelperText);
+    SetShowLabel(openXmlElement, value?.ShowLabel);
+    SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+    SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
+    SetTaskFormGroupCategories(openXmlElement, value?.TaskFormGroupCategories);
+    }
+  }

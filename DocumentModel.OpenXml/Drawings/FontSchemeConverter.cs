@@ -10,22 +10,17 @@ public static class FontSchemeConverter
   /// </summary>
   private static String? GetName(DXDraw.FontScheme openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDraw.FontScheme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDraw.FontScheme openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -149,18 +144,19 @@ public static class FontSchemeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontScheme? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontScheme value)
     where OpenXmlElementType: DXDraw.FontScheme, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetMajorFont(openXmlElement, value?.MajorFont);
-      SetMinorFont(openXmlElement, value?.MinorFont);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.FontScheme openXmlElement, DMDraws.FontScheme value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetMajorFont(openXmlElement, value?.MajorFont);
+    SetMinorFont(openXmlElement, value?.MinorFont);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

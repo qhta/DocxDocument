@@ -112,17 +112,18 @@ public static class AxisUnitsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.AxisUnits? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.AxisUnits value)
     where OpenXmlElementType: DXO2016DrawChartDraw.AxisUnits, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUnit(openXmlElement, value?.Unit);
-      SetAxisUnitsLabel(openXmlElement, value?.AxisUnitsLabel);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.AxisUnits openXmlElement, DMDrawsChartDraws.AxisUnits value)
+  {
+    SetUnit(openXmlElement, value?.Unit);
+    SetAxisUnitsLabel(openXmlElement, value?.AxisUnitsLabel);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

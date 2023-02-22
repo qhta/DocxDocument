@@ -94,17 +94,18 @@ public static class DocGridConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocGrid? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocGrid value)
     where OpenXmlElementType: DXW.DocGrid, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetLinePitch(openXmlElement, value?.LinePitch);
-      SetCharacterSpace(openXmlElement, value?.CharacterSpace);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocGrid openXmlElement, DMW.DocGrid value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetLinePitch(openXmlElement, value?.LinePitch);
+    SetCharacterSpace(openXmlElement, value?.CharacterSpace);
+    }
+  }

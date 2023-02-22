@@ -59,15 +59,16 @@ public static class FilteredRadarSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredRadarSeries? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredRadarSeries value)
     where OpenXmlElementType: DXO2013DrawChart.FilteredRadarSeries, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRadarChartSeries(openXmlElement, value?.RadarChartSeries);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredRadarSeries openXmlElement, DMDrawsCharts.FilteredRadarSeries value)
+  {
+    SetRadarChartSeries(openXmlElement, value?.RadarChartSeries);
+    }
+  }

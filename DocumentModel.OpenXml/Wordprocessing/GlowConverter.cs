@@ -114,17 +114,18 @@ public static class GlowConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Glow? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Glow value)
     where OpenXmlElementType: DXO2010W.Glow, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGlowRadius(openXmlElement, value?.GlowRadius);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Glow openXmlElement, DMW.Glow value)
+  {
+    SetGlowRadius(openXmlElement, value?.GlowRadius);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

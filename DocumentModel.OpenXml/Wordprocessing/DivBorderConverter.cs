@@ -155,18 +155,19 @@ public static class DivBorderConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DivBorder? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DivBorder value)
     where OpenXmlElementType: DXW.DivBorder, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DivBorder openXmlElement, DMW.DivBorder value)
+  {
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    }
+  }

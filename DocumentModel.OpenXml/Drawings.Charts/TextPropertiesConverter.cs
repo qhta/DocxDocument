@@ -114,17 +114,18 @@ public static class TextPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TextProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TextProperties value)
     where OpenXmlElementType: DXDrawCharts.TextProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBodyProperties(openXmlElement, value?.BodyProperties);
-      SetListStyle(openXmlElement, value?.ListStyle);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.TextProperties openXmlElement, DMDrawsCharts.TextProperties value)
+  {
+    SetBodyProperties(openXmlElement, value?.BodyProperties);
+    SetListStyle(openXmlElement, value?.ListStyle);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    }
+  }

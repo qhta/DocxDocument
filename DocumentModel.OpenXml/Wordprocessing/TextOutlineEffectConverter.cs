@@ -173,13 +173,15 @@ public static class TextOutlineEffectConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2010W.PresetLineDashProperties, DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(itemElement, (DMW.PresetLineDashKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2010W.PresetLineDashProperties, DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>((DMW.PresetLineDashKind)value));
   }
   
   private static Boolean? GetRoundEmpty(DXO2010W.TextOutlineEffect openXmlElement)
@@ -319,25 +321,26 @@ public static class TextOutlineEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextOutlineEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextOutlineEffect value)
     where OpenXmlElementType: DXO2010W.TextOutlineEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineWidth(openXmlElement, value?.LineWidth);
-      SetCapType(openXmlElement, value?.CapType);
-      SetCompound(openXmlElement, value?.Compound);
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
-      SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
-      SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
-      SetPresetLineDashProperties(openXmlElement, value?.PresetLineDashProperties);
-      SetRoundEmpty(openXmlElement, value?.RoundEmpty);
-      SetBevelEmpty(openXmlElement, value?.BevelEmpty);
-      SetLineJoinMiterProperties(openXmlElement, value?.LineJoinMiterProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.TextOutlineEffect openXmlElement, DMW.TextOutlineEffect value)
+  {
+    SetLineWidth(openXmlElement, value?.LineWidth);
+    SetCapType(openXmlElement, value?.CapType);
+    SetCompound(openXmlElement, value?.Compound);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
+    SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
+    SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
+    SetPresetLineDashProperties(openXmlElement, value?.PresetLineDashProperties);
+    SetRoundEmpty(openXmlElement, value?.RoundEmpty);
+    SetBevelEmpty(openXmlElement, value?.BevelEmpty);
+    SetLineJoinMiterProperties(openXmlElement, value?.LineJoinMiterProperties);
+    }
+  }

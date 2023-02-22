@@ -50,15 +50,16 @@ public static class MiterConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Miter? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Miter value)
     where OpenXmlElementType: DXDraw.Miter, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLimit(openXmlElement, value?.Limit);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Miter openXmlElement, DMDraws.Miter value)
+  {
+    SetLimit(openXmlElement, value?.Limit);
+    }
+  }

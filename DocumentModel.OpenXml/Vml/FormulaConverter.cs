@@ -10,22 +10,17 @@ public static class FormulaConverter
   /// </summary>
   private static String? GetEquation(DXVml.Formula openXmlElement)
   {
-    return openXmlElement?.Equation?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Equation);
   }
   
   private static bool CmpEquation(DXVml.Formula openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Equation?.Value == value) return true;
-    diffs?.Add(objName, "Equation", openXmlElement?.Equation?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Equation, value, diffs, objName, "Equation");
   }
   
   private static void SetEquation(DXVml.Formula openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Equation = new StringValue { Value = value };
-    else
-      openXmlElement.Equation = null;
+    openXmlElement.Equation = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.Formula? CreateModelElement(DXVml.Formula? openXmlElement)
@@ -53,15 +48,16 @@ public static class FormulaConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formula? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formula value)
     where OpenXmlElementType: DXVml.Formula, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEquation(openXmlElement, value?.Equation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.Formula openXmlElement, DMVml.Formula value)
+  {
+    SetEquation(openXmlElement, value?.Equation);
+    }
+  }

@@ -219,20 +219,21 @@ public static class TableCellMarginConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellMargin? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellMargin value)
     where OpenXmlElementType: DXW.TableCellMargin, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTopMargin(openXmlElement, value?.TopMargin);
-      SetLeftMargin(openXmlElement, value?.LeftMargin);
-      SetStartMargin(openXmlElement, value?.StartMargin);
-      SetBottomMargin(openXmlElement, value?.BottomMargin);
-      SetRightMargin(openXmlElement, value?.RightMargin);
-      SetEndMargin(openXmlElement, value?.EndMargin);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableCellMargin openXmlElement, DMW.TableCellMargin value)
+  {
+    SetTopMargin(openXmlElement, value?.TopMargin);
+    SetLeftMargin(openXmlElement, value?.LeftMargin);
+    SetStartMargin(openXmlElement, value?.StartMargin);
+    SetBottomMargin(openXmlElement, value?.BottomMargin);
+    SetRightMargin(openXmlElement, value?.RightMargin);
+    SetEndMargin(openXmlElement, value?.EndMargin);
+    }
+  }

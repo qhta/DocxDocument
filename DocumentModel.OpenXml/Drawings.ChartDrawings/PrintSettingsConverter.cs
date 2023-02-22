@@ -123,17 +123,18 @@ public static class PrintSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PrintSettings? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PrintSettings value)
     where OpenXmlElementType: DXO2016DrawChartDraw.PrintSettings, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHeaderFooter(openXmlElement, value?.HeaderFooter);
-      SetPageMargins(openXmlElement, value?.PageMargins);
-      SetPageSetup(openXmlElement, value?.PageSetup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PrintSettings value)
+  {
+    SetHeaderFooter(openXmlElement, value?.HeaderFooter);
+    SetPageMargins(openXmlElement, value?.PageMargins);
+    SetPageSetup(openXmlElement, value?.PageSetup);
+    }
+  }

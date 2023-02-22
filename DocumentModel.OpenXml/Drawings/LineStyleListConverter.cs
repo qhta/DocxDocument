@@ -56,15 +56,16 @@ public static class LineStyleListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineStyleList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineStyleList value)
     where OpenXmlElementType: DXDraw.LineStyleList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOutline(openXmlElement, value?.Outline);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LineStyleList openXmlElement, DMDraws.LineStyleList value)
+  {
+    SetOutline(openXmlElement, value?.Outline);
+    }
+  }

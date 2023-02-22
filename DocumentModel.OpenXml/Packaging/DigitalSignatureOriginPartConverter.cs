@@ -80,17 +80,18 @@ public static class DigitalSignatureOriginPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DigitalSignatureOriginPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DigitalSignatureOriginPart value)
     where OpenXmlElementType: DXPack.DigitalSignatureOriginPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      //SetXmlSignatureParts(openXmlElement, value?.XmlSignatureParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DigitalSignatureOriginPart openXmlElement, DMPack.DigitalSignatureOriginPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    //SetXmlSignatureParts(openXmlElement, value?.XmlSignatureParts);
+    }
+  }

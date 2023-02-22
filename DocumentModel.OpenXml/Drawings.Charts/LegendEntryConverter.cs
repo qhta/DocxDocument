@@ -10,27 +10,17 @@ public static class LegendEntryConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.LegendEntry openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
   }
   
   private static bool CmpIndex(DXDrawCharts.LegendEntry openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
   }
   
   private static void SetIndex(DXDrawCharts.LegendEntry openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Index{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
   }
   
   private static Boolean? GetDelete(DXDrawCharts.LegendEntry openXmlElement)
@@ -147,18 +137,19 @@ public static class LegendEntryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LegendEntry? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LegendEntry value)
     where OpenXmlElementType: DXDrawCharts.LegendEntry, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetDelete(openXmlElement, value?.Delete);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.LegendEntry value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetDelete(openXmlElement, value?.Delete);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

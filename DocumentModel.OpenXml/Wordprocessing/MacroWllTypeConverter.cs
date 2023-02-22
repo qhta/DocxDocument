@@ -10,22 +10,17 @@ public static class MacroWllTypeConverter
   /// </summary>
   private static String? GetMacroName(DXOW.MacroWllType openXmlElement)
   {
-    return openXmlElement?.MacroName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MacroName);
   }
   
   private static bool CmpMacroName(DXOW.MacroWllType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MacroName?.Value == value) return true;
-    diffs?.Add(objName, "MacroName", openXmlElement?.MacroName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MacroName, value, diffs, objName, "MacroName");
   }
   
   private static void SetMacroName(DXOW.MacroWllType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MacroName = new StringValue { Value = value };
-    else
-      openXmlElement.MacroName = null;
+    openXmlElement.MacroName = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.MacroWllType? CreateModelElement(DXOW.MacroWllType? openXmlElement)
@@ -53,15 +48,16 @@ public static class MacroWllTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MacroWllType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MacroWllType value)
     where OpenXmlElementType: DXOW.MacroWllType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMacroName(openXmlElement, value?.MacroName);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.MacroWllType openXmlElement, DMW.MacroWllType value)
+  {
+    SetMacroName(openXmlElement, value?.MacroName);
+    }
+  }

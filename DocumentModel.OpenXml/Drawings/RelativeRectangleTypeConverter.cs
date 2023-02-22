@@ -119,18 +119,19 @@ public static class RelativeRectangleTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeRectangleType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeRectangleType value)
     where OpenXmlElementType: DXDraw.RelativeRectangleType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeft(openXmlElement, value?.Left);
-      SetTop(openXmlElement, value?.Top);
-      SetRight(openXmlElement, value?.Right);
-      SetBottom(openXmlElement, value?.Bottom);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.RelativeRectangleType openXmlElement, DMDraws.RelativeRectangleType value)
+  {
+    SetLeft(openXmlElement, value?.Left);
+    SetTop(openXmlElement, value?.Top);
+    SetRight(openXmlElement, value?.Right);
+    SetBottom(openXmlElement, value?.Bottom);
+    }
+  }

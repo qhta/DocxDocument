@@ -177,22 +177,17 @@ public static class DiagramConverter
   /// </summary>
   private static String? GetConstrainBounds(DXVmlO.Diagram openXmlElement)
   {
-    return openXmlElement?.ConstrainBounds?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ConstrainBounds);
   }
   
   private static bool CmpConstrainBounds(DXVmlO.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ConstrainBounds?.Value == value) return true;
-    diffs?.Add(objName, "ConstrainBounds", openXmlElement?.ConstrainBounds?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ConstrainBounds, value, diffs, objName, "ConstrainBounds");
   }
   
   private static void SetConstrainBounds(DXVmlO.Diagram openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ConstrainBounds = new StringValue { Value = value };
-    else
-      openXmlElement.ConstrainBounds = null;
+    openXmlElement.ConstrainBounds = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -299,25 +294,26 @@ public static class DiagramConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Diagram? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Diagram value)
     where OpenXmlElementType: DXVmlO.Diagram, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetStyle(openXmlElement, value?.Style);
-      SetAutoFormat(openXmlElement, value?.AutoFormat);
-      SetReverse(openXmlElement, value?.Reverse);
-      SetAutoLayout(openXmlElement, value?.AutoLayout);
-      SetScaleX(openXmlElement, value?.ScaleX);
-      SetScaleY(openXmlElement, value?.ScaleY);
-      SetFontSize(openXmlElement, value?.FontSize);
-      SetConstrainBounds(openXmlElement, value?.ConstrainBounds);
-      SetBaseTextScale(openXmlElement, value?.BaseTextScale);
-      SetRelationTable(openXmlElement, value?.RelationTable);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Diagram openXmlElement, DMVml.Diagram value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetStyle(openXmlElement, value?.Style);
+    SetAutoFormat(openXmlElement, value?.AutoFormat);
+    SetReverse(openXmlElement, value?.Reverse);
+    SetAutoLayout(openXmlElement, value?.AutoLayout);
+    SetScaleX(openXmlElement, value?.ScaleX);
+    SetScaleY(openXmlElement, value?.ScaleY);
+    SetFontSize(openXmlElement, value?.FontSize);
+    SetConstrainBounds(openXmlElement, value?.ConstrainBounds);
+    SetBaseTextScale(openXmlElement, value?.BaseTextScale);
+    SetRelationTable(openXmlElement, value?.RelationTable);
+    }
+  }

@@ -10,22 +10,17 @@ public static class CategoryAxisScalingConverter
   /// </summary>
   private static String? GetGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement)
   {
-    return openXmlElement?.GapWidth?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GapWidth);
   }
   
   private static bool CmpGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GapWidth?.Value == value) return true;
-    diffs?.Add(objName, "GapWidth", openXmlElement?.GapWidth?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GapWidth, value, diffs, objName, "GapWidth");
   }
   
   private static void SetGapWidth(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GapWidth = new StringValue { Value = value };
-    else
-      openXmlElement.GapWidth = null;
+    openXmlElement.GapWidth = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(DXO2016DrawChartDraw.CategoryAxisScaling? openXmlElement)
@@ -53,15 +48,16 @@ public static class CategoryAxisScalingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.CategoryAxisScaling? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.CategoryAxisScaling value)
     where OpenXmlElementType: DXO2016DrawChartDraw.CategoryAxisScaling, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGapWidth(openXmlElement, value?.GapWidth);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, DMDrawsChartDraws.CategoryAxisScaling value)
+  {
+    SetGapWidth(openXmlElement, value?.GapWidth);
+    }
+  }

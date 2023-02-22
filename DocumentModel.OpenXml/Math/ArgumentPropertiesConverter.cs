@@ -10,27 +10,17 @@ public static class ArgumentPropertiesConverter
   /// </summary>
   private static Int64? GetArgumentSize(DXMath.ArgumentProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val);
   }
   
   private static bool CmpArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.ArgumentSize>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.ArgumentSize", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val, value, diffs, objName, "ArgumentSize");
   }
   
   private static void SetArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ArgumentSize>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.ArgumentSize{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.ArgumentSize,System.Int64>(openXmlElement, value);
   }
   
   public static DocumentModel.Math.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
@@ -58,15 +48,16 @@ public static class ArgumentPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ArgumentProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.ArgumentProperties value)
     where OpenXmlElementType: DXMath.ArgumentProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetArgumentSize(openXmlElement, value?.ArgumentSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.ArgumentProperties openXmlElement, DMMath.ArgumentProperties value)
+  {
+    SetArgumentSize(openXmlElement, value?.ArgumentSize);
+    }
+  }

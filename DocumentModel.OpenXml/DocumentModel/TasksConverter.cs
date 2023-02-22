@@ -21,11 +21,11 @@ public static class TasksConverter
   
   private static bool CmpItems(DXO2021DocTasks.Tasks openXmlElement, Collection<DM.Task>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2021DocTasks.Task>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2021DocTasks.Task>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class TasksConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -115,16 +115,17 @@ public static class TasksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Tasks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Tasks value)
     where OpenXmlElementType: DXO2021DocTasks.Tasks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetItems(openXmlElement, value?.Items);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.Tasks openXmlElement, DM.Tasks value)
+  {
+    SetItems(openXmlElement, value?.Items);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

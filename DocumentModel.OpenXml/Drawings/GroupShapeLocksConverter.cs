@@ -241,22 +241,23 @@ public static class GroupShapeLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GroupShapeLocks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GroupShapeLocks value)
     where OpenXmlElementType: DXDraw.GroupShapeLocks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoGrouping(openXmlElement, value?.NoGrouping);
-      SetNoUngrouping(openXmlElement, value?.NoUngrouping);
-      SetNoSelection(openXmlElement, value?.NoSelection);
-      SetNoRotation(openXmlElement, value?.NoRotation);
-      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
-      SetNoMove(openXmlElement, value?.NoMove);
-      SetNoResize(openXmlElement, value?.NoResize);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.GroupShapeLocks openXmlElement, DMDraws.GroupShapeLocks value)
+  {
+    SetNoGrouping(openXmlElement, value?.NoGrouping);
+    SetNoUngrouping(openXmlElement, value?.NoUngrouping);
+    SetNoSelection(openXmlElement, value?.NoSelection);
+    SetNoRotation(openXmlElement, value?.NoRotation);
+    SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+    SetNoMove(openXmlElement, value?.NoMove);
+    SetNoResize(openXmlElement, value?.NoResize);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

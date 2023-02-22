@@ -167,52 +167,32 @@ public static class Level6ParagraphPropertiesConverter
   
   private static Int32? GetBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val);
   }
   
   private static bool CmpBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.BulletSizePercentage", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val, value, diffs, objName, "BulletSizePercentage");
   }
   
   private static void SetBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizePercentage>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDraw.BulletSizePercentage{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDraw.BulletSizePercentage,System.Int32>(openXmlElement, value);
   }
   
   private static Int32? GetBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val);
   }
   
   private static bool CmpBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.BulletSizePoints", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val, value, diffs, objName, "BulletSizePoints");
   }
   
   private static void SetBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizePoints>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDraw.BulletSizePoints{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDraw.BulletSizePoints,System.Int32>(openXmlElement, value);
   }
   
   private static Boolean? GetBulletFontText(DXDraw.Level6ParagraphProperties openXmlElement)
@@ -526,31 +506,32 @@ public static class Level6ParagraphPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Level6ParagraphProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Level6ParagraphProperties value)
     where OpenXmlElementType: DXDraw.Level6ParagraphProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineSpacing(openXmlElement, value?.LineSpacing);
-      SetSpaceBefore(openXmlElement, value?.SpaceBefore);
-      SetSpaceAfter(openXmlElement, value?.SpaceAfter);
-      SetBulletColorText(openXmlElement, value?.BulletColorText);
-      SetBulletColor(openXmlElement, value?.BulletColor);
-      SetBulletSizeText(openXmlElement, value?.BulletSizeText);
-      SetBulletSizePercentage(openXmlElement, value?.BulletSizePercentage);
-      SetBulletSizePoints(openXmlElement, value?.BulletSizePoints);
-      SetBulletFontText(openXmlElement, value?.BulletFontText);
-      SetBulletFont(openXmlElement, value?.BulletFont);
-      SetNoBullet(openXmlElement, value?.NoBullet);
-      SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
-      SetCharacterBullet(openXmlElement, value?.CharacterBullet);
-      SetPictureBullet(openXmlElement, value?.PictureBullet);
-      SetTabStopList(openXmlElement, value?.TabStopList);
-      SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.Level6ParagraphProperties value)
+  {
+    SetLineSpacing(openXmlElement, value?.LineSpacing);
+    SetSpaceBefore(openXmlElement, value?.SpaceBefore);
+    SetSpaceAfter(openXmlElement, value?.SpaceAfter);
+    SetBulletColorText(openXmlElement, value?.BulletColorText);
+    SetBulletColor(openXmlElement, value?.BulletColor);
+    SetBulletSizeText(openXmlElement, value?.BulletSizeText);
+    SetBulletSizePercentage(openXmlElement, value?.BulletSizePercentage);
+    SetBulletSizePoints(openXmlElement, value?.BulletSizePoints);
+    SetBulletFontText(openXmlElement, value?.BulletFontText);
+    SetBulletFont(openXmlElement, value?.BulletFont);
+    SetNoBullet(openXmlElement, value?.NoBullet);
+    SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
+    SetCharacterBullet(openXmlElement, value?.CharacterBullet);
+    SetPictureBullet(openXmlElement, value?.PictureBullet);
+    SetTabStopList(openXmlElement, value?.TabStopList);
+    SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

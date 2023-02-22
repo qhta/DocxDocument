@@ -10,22 +10,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +87,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetGetEnabled(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.GetEnabled?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
   private static bool CmpGetEnabled(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetEnabled?.Value == value) return true;
-    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
   private static void SetGetEnabled(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetEnabled = new StringValue { Value = value };
-    else
-      openXmlElement.GetEnabled = null;
+    openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +128,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +146,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetImage(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.Image?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
   private static bool CmpImage(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Image?.Value == value) return true;
-    diffs?.Add(objName, "Image", openXmlElement?.Image?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
   private static void SetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Image = new StringValue { Value = value };
-    else
-      openXmlElement.Image = null;
+    openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +164,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetImageMso(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.ImageMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
   private static bool CmpImageMso(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ImageMso?.Value == value) return true;
-    diffs?.Add(objName, "ImageMso", openXmlElement?.ImageMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
   private static void SetImageMso(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ImageMso = new StringValue { Value = value };
-    else
-      openXmlElement.ImageMso = null;
+    openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +182,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetGetImage(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.GetImage?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
   private static bool CmpGetImage(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetImage?.Value == value) return true;
-    diffs?.Add(objName, "GetImage", openXmlElement?.GetImage?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
   private static void SetGetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetImage = new StringValue { Value = value };
-    else
-      openXmlElement.GetImage = null;
+    openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -240,22 +200,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetAltText(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.AltText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AltText);
   }
   
   private static bool CmpAltText(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AltText?.Value == value) return true;
-    diffs?.Add(objName, "AltText", openXmlElement?.AltText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AltText, value, diffs, objName, "AltText");
   }
   
   private static void SetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AltText = new StringValue { Value = value };
-    else
-      openXmlElement.AltText = null;
+    openXmlElement.AltText = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -263,22 +218,17 @@ public static class ImageControlConverter
   /// </summary>
   private static String? GetGetAltText(DXO2010CustUI.ImageControl openXmlElement)
   {
-    return openXmlElement?.GetAltText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetAltText);
   }
   
   private static bool CmpGetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetAltText?.Value == value) return true;
-    diffs?.Add(objName, "GetAltText", openXmlElement?.GetAltText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetAltText, value, diffs, objName, "GetAltText");
   }
   
   private static void SetGetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetAltText = new StringValue { Value = value };
-    else
-      openXmlElement.GetAltText = null;
+    openXmlElement.GetAltText = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.ImageControl? CreateModelElement(DXO2010CustUI.ImageControl? openXmlElement)
@@ -339,26 +289,27 @@ public static class ImageControlConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ImageControl? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ImageControl value)
     where OpenXmlElementType: DXO2010CustUI.ImageControl, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetGetEnabled(openXmlElement, value?.GetEnabled);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetImage(openXmlElement, value?.Image);
-      SetImageMso(openXmlElement, value?.ImageMso);
-      SetGetImage(openXmlElement, value?.GetImage);
-      SetAltText(openXmlElement, value?.AltText);
-      SetGetAltText(openXmlElement, value?.GetAltText);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.ImageControl openXmlElement, DM.ImageControl value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetGetEnabled(openXmlElement, value?.GetEnabled);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetImage(openXmlElement, value?.Image);
+    SetImageMso(openXmlElement, value?.ImageMso);
+    SetGetImage(openXmlElement, value?.GetImage);
+    SetAltText(openXmlElement, value?.AltText);
+    SetGetAltText(openXmlElement, value?.GetAltText);
+    }
+  }

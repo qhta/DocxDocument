@@ -181,19 +181,20 @@ public static class RibbonConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Ribbon? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Ribbon value)
     where OpenXmlElementType: DXOCustUI.Ribbon, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStartFromScratch(openXmlElement, value?.StartFromScratch);
-      SetOfficeMenu(openXmlElement, value?.OfficeMenu);
-      SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
-      SetTabs(openXmlElement, value?.Tabs);
-      SetContextualTabSets(openXmlElement, value?.ContextualTabSets);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.Ribbon openXmlElement, DMUI.Ribbon value)
+  {
+    SetStartFromScratch(openXmlElement, value?.StartFromScratch);
+    SetOfficeMenu(openXmlElement, value?.OfficeMenu);
+    SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
+    SetTabs(openXmlElement, value?.Tabs);
+    SetContextualTabSets(openXmlElement, value?.ContextualTabSets);
+    }
+  }

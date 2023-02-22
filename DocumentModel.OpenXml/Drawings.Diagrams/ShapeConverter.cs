@@ -30,22 +30,17 @@ public static class ShapeConverter
   /// </summary>
   private static String? GetType(DXDrawDgms.Shape openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXDrawDgms.Shape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class ShapeConverter
   /// </summary>
   private static String? GetBlip(DXDrawDgms.Shape openXmlElement)
   {
-    return openXmlElement?.Blip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Blip);
   }
   
   private static bool CmpBlip(DXDrawDgms.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Blip?.Value == value) return true;
-    diffs?.Add(objName, "Blip", openXmlElement?.Blip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Blip, value, diffs, objName, "Blip");
   }
   
   private static void SetBlip(DXDrawDgms.Shape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Blip = new StringValue { Value = value };
-    else
-      openXmlElement.Blip = null;
+    openXmlElement.Blip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -267,23 +257,24 @@ public static class ShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Shape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Shape value)
     where OpenXmlElementType: DXDrawDgms.Shape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetType(openXmlElement, value?.Type);
-      SetBlip(openXmlElement, value?.Blip);
-      SetZOrderOffset(openXmlElement, value?.ZOrderOffset);
-      SetHideGeometry(openXmlElement, value?.HideGeometry);
-      SetLockedText(openXmlElement, value?.LockedText);
-      SetBlipPlaceholder(openXmlElement, value?.BlipPlaceholder);
-      SetAdjustList(openXmlElement, value?.AdjustList);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.Shape value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetType(openXmlElement, value?.Type);
+    SetBlip(openXmlElement, value?.Blip);
+    SetZOrderOffset(openXmlElement, value?.ZOrderOffset);
+    SetHideGeometry(openXmlElement, value?.HideGeometry);
+    SetLockedText(openXmlElement, value?.LockedText);
+    SetBlipPlaceholder(openXmlElement, value?.BlipPlaceholder);
+    SetAdjustList(openXmlElement, value?.AdjustList);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

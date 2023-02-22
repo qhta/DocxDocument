@@ -555,7 +555,21 @@ public static class ModelData
   public static Dictionary<string, string> PropertyTranslateTable = new()
   {
     { "DXW.LatentStyles.Count", "TotalCount" },
-  };
+    { "DXW.LatentStyles.LatentStyleExceptionInfos", "Items" },
+    //{ "DXW.LatentStyle.Default", "IsDefault" },
+    { "DXW.Style.Default", "IsDefault" },
+    { "DXW.Style.CustomStyle", "IsCustom" },
+    { "DXW.Style.AutoRedefine", "IsAutoRedefined" },
+    { "DXW.Style.StyleHidden", "IsHidden" },
+    { "DXW.Style.SemiHidden", "IsSemiHidden" },
+    { "DXW.Style.UnhideWhenUsed", "IsUnhiddenWhenUsed" },
+    { "DXW.Style.PrimaryStyle", "IsPrimary" },
+    { "DXW.Style.Locked", "IsLocked" },
+    { "DXW.Style.Personal", "IsPersonal" },
+    { "DXW.Style.PersonalCompose", "IsPersonalCompose" },
+    { "DXW.Style.PersonalReply", "IsPersonalReply" },
+    { "DXW.Font.Panose1Number", "Panose"},
+    };
 
   public static Dictionary<string, Type> PropertyTypes { get; } = new()
   {
@@ -564,7 +578,24 @@ public static class ModelData
     { "DocumentModel.Wordprocessing.CheckBoxSymbolType.Val", typeof(HexChar) },
     { "DocumentModel.Wordprocessing.Mcd.BEncrypt", typeof(HexChar) },
     { "DocumentModel.Wordprocessing.Mcd.Cmg", typeof(HexChar) },
+    { "*.Rsid", typeof(HexInt) },
   };
+
+  public static bool TryGetPropertyType(string propertyName, [MaybeNullWhen(false)][NotNullWhen(true)] out Type propertyType)
+  {
+    if (PropertyTypes.TryGetValue(propertyName, out propertyType))
+      return true;
+    var k = propertyName.IndexOf('.');
+    while (k>0)
+    {
+      var wildcardName = '*'+propertyName.Substring(k);
+      if (PropertyTypes.TryGetValue(wildcardName, out propertyType))
+        return true;
+      k = propertyName.IndexOf(".",k+1);
+    }
+    propertyType = null;
+    return false;
+  }
 
   #endregion
 
@@ -612,6 +643,7 @@ public static class ModelData
   {
     { "DocumentFormat.OpenXml.Wordprocessing.Settings", "DocumentModel.DocumentSettings"},
     { "DocumentFormat.OpenXml.Wordprocessing.WebSettings", "DocumentModel.WebSettings"},
+    { "DocumentFormat.OpenXml.Wordprocessing.Fonts", "DocumentModel.Wordprocessing.Fonts"},
   //  //{ "DocumentFormat.OpenXml.ExtendedProperties.Properties", "DocumentModel.ExtendedProperties"},
   //  //{ "DocumentFormat.OpenXml.CustomProperties.Properties", "DocumentModel.CustomProperties"},
   //  //{ "DocumentFormat.OpenXml.Drawing.ChartDrawingNonVisualDrawingProperties", "DocumentModel.Drawings.DrawingNonVisualDrawingProperties" },
@@ -622,6 +654,15 @@ public static class ModelData
   //  //{ "DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType", "DocumentModel.Drawings.TextBodyType2"},
   //  //{ "DocumentFormat.OpenXml.Office2013.Drawing.Chart.StringDataType", "DocumentModel.Drawings.StringDataType2"},
   };
+
+  public static Dictionary<string, Type> ModelTypes { get; } = new();
+
+
+  public static void LoadModelTypes(Assembly assembly)
+  {
+    foreach (var type in assembly.GetTypes())
+      ModelTypes.Add(type.FullName ?? "", type);
+  }
 
   public record TypeConversionTarget
   {

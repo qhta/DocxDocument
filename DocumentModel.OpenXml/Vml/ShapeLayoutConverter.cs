@@ -144,18 +144,19 @@ public static class ShapeLayoutConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeLayout? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeLayout value)
     where OpenXmlElementType: DXVmlO.ShapeLayout, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetShapeIdMap(openXmlElement, value?.ShapeIdMap);
-      SetRegroupTable(openXmlElement, value?.RegroupTable);
-      SetRules(openXmlElement, value?.Rules);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.ShapeLayout openXmlElement, DMVml.ShapeLayout value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetShapeIdMap(openXmlElement, value?.ShapeIdMap);
+    SetRegroupTable(openXmlElement, value?.RegroupTable);
+    SetRules(openXmlElement, value?.Rules);
+    }
+  }

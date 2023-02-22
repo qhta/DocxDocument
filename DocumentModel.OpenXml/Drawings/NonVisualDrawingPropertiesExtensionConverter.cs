@@ -10,22 +10,17 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDraws.CompatExtension? GetCompatExtension(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
@@ -258,22 +253,23 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualDrawingPropertiesExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualDrawingPropertiesExtension value)
     where OpenXmlElementType: DXDraw.NonVisualDrawingPropertiesExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetCompatExtension(openXmlElement, value?.CompatExtension);
-      SetBackgroundProperties(openXmlElement, value?.BackgroundProperties);
-      SetCreationId(openXmlElement, value?.CreationId);
-      SetPredecessorDrawingElementReference(openXmlElement, value?.PredecessorDrawingElementReference);
-      SetDecorative(openXmlElement, value?.Decorative);
-      SetClassificationOutcome(openXmlElement, value?.ClassificationOutcome);
-      SetScriptLink(openXmlElement, value?.ScriptLink);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.NonVisualDrawingPropertiesExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetCompatExtension(openXmlElement, value?.CompatExtension);
+    SetBackgroundProperties(openXmlElement, value?.BackgroundProperties);
+    SetCreationId(openXmlElement, value?.CreationId);
+    SetPredecessorDrawingElementReference(openXmlElement, value?.PredecessorDrawingElementReference);
+    SetDecorative(openXmlElement, value?.Decorative);
+    SetClassificationOutcome(openXmlElement, value?.ClassificationOutcome);
+    SetScriptLink(openXmlElement, value?.ScriptLink);
+    }
+  }

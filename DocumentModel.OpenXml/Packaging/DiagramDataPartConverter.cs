@@ -152,20 +152,21 @@ public static class DiagramDataPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramDataPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramDataPart value)
     where OpenXmlElementType: DXPack.DiagramDataPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      SetDataModelRoot(openXmlElement, value?.DataModelRoot);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      //SetSlideParts(openXmlElement, value?.SlideParts);
-      //SetWorksheetParts(openXmlElement, value?.WorksheetParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DiagramDataPart openXmlElement, DMPack.DiagramDataPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    SetDataModelRoot(openXmlElement, value?.DataModelRoot);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    //SetSlideParts(openXmlElement, value?.SlideParts);
+    //SetWorksheetParts(openXmlElement, value?.WorksheetParts);
+    }
+  }

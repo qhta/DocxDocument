@@ -114,17 +114,18 @@ public static class GradientStopConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientStop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientStop value)
     where OpenXmlElementType: DXO2010W.GradientStop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStopPosition(openXmlElement, value?.StopPosition);
-      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
-      SetSchemeColor(openXmlElement, value?.SchemeColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.GradientStop openXmlElement, DMW.GradientStop value)
+  {
+    SetStopPosition(openXmlElement, value?.StopPosition);
+    SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+    SetSchemeColor(openXmlElement, value?.SchemeColor);
+    }
+  }

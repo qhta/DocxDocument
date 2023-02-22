@@ -10,22 +10,17 @@ public static class CommentConverter
   /// </summary>
   private static String? GetInitials(DXW.Comment openXmlElement)
   {
-    return openXmlElement?.Initials?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Initials);
   }
   
   private static bool CmpInitials(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Initials?.Value == value) return true;
-    diffs?.Add(objName, "Initials", openXmlElement?.Initials?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Initials, value, diffs, objName, "Initials");
   }
   
   private static void SetInitials(DXW.Comment openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Initials = new StringValue { Value = value };
-    else
-      openXmlElement.Initials = null;
+    openXmlElement.Initials = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class CommentConverter
   /// </summary>
   private static String? GetAuthor(DXW.Comment openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXW.Comment openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -76,22 +66,17 @@ public static class CommentConverter
   /// </summary>
   private static String? GetId(DXW.Comment openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.Comment openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.Comment openXmlElement)
@@ -110,11 +95,11 @@ public static class CommentConverter
   
   private static bool CmpAltChunks(DXW.Comment openXmlElement, Collection<DMW.AltChunk>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.AltChunk>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.AltChunk>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -131,7 +116,7 @@ public static class CommentConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -218,11 +203,11 @@ public static class CommentConverter
   
   private static bool CmpParagraphs(DXW.Comment openXmlElement, Collection<DMW.Paragraph>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.Paragraph>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.Paragraph>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -239,7 +224,7 @@ public static class CommentConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -274,11 +259,11 @@ public static class CommentConverter
   
   private static bool CmpTables(DXW.Comment openXmlElement, Collection<DMW.Table>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.Table>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.Table>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -295,7 +280,7 @@ public static class CommentConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -566,30 +551,31 @@ public static class CommentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Comment? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Comment value)
     where OpenXmlElementType: DXW.Comment, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetInitials(openXmlElement, value?.Initials);
-      SetAuthor(openXmlElement, value?.Author);
-      SetDate(openXmlElement, value?.Date);
-      SetId(openXmlElement, value?.Id);
-      SetAltChunks(openXmlElement, value?.AltChunks);
-      SetCustomXmlBlock(openXmlElement, value?.CustomXmlBlock);
-      SetSdtBlock(openXmlElement, value?.SdtBlock);
-      SetParagraphs(openXmlElement, value?.Paragraphs);
-      SetTables(openXmlElement, value?.Tables);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Comment openXmlElement, DMW.Comment value)
+  {
+    SetInitials(openXmlElement, value?.Initials);
+    SetAuthor(openXmlElement, value?.Author);
+    SetDate(openXmlElement, value?.Date);
+    SetId(openXmlElement, value?.Id);
+    SetAltChunks(openXmlElement, value?.AltChunks);
+    SetCustomXmlBlock(openXmlElement, value?.CustomXmlBlock);
+    SetSdtBlock(openXmlElement, value?.SdtBlock);
+    SetParagraphs(openXmlElement, value?.Paragraphs);
+    SetTables(openXmlElement, value?.Tables);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    }
+  }

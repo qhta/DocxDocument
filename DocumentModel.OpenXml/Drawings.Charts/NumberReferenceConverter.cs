@@ -119,17 +119,18 @@ public static class NumberReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberReference? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberReference value)
     where OpenXmlElementType: DXDrawCharts.NumberReference, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormula(openXmlElement, value?.Formula);
-      SetNumberingCache(openXmlElement, value?.NumberingCache);
-      SetNumRefExtensionList(openXmlElement, value?.NumRefExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumberReference value)
+  {
+    SetFormula(openXmlElement, value?.Formula);
+    SetNumberingCache(openXmlElement, value?.NumberingCache);
+    SetNumRefExtensionList(openXmlElement, value?.NumRefExtensionList);
+    }
+  }

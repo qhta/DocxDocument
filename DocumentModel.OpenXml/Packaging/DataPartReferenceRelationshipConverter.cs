@@ -27,14 +27,15 @@ public static class DataPartReferenceRelationshipConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPartReferenceRelationship? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPartReferenceRelationship value)
     where OpenXmlElementType: DXPack.DataPartReferenceRelationship, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DataPartReferenceRelationship openXmlElement, DMPack.DataPartReferenceRelationship value)
+  {
+    }
+  }

@@ -30,27 +30,17 @@ public static class LevelOverrideConverter
   /// </summary>
   private static Int32? GetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val);
   }
   
   private static bool CmpStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.StartOverrideNumberingValue", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val, value, diffs, objName, "StartOverrideNumberingValue");
   }
   
   private static void SetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.StartOverrideNumberingValue>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.StartOverrideNumberingValue{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.StartOverrideNumberingValue,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -113,17 +103,18 @@ public static class LevelOverrideConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelOverride? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelOverride value)
     where OpenXmlElementType: DXW.LevelOverride, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLevelIndex(openXmlElement, value?.LevelIndex);
-      SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
-      SetLevel(openXmlElement, value?.Level);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.LevelOverride openXmlElement, DMW.LevelOverride value)
+  {
+    SetLevelIndex(openXmlElement, value?.LevelIndex);
+    SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
+    SetLevel(openXmlElement, value?.Level);
+    }
+  }

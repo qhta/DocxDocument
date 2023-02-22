@@ -73,16 +73,17 @@ public static class DashStopConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DashStop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DashStop value)
     where OpenXmlElementType: DXDraw.DashStop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDashLength(openXmlElement, value?.DashLength);
-      SetSpaceLength(openXmlElement, value?.SpaceLength);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.DashStop openXmlElement, DMDraws.DashStop value)
+  {
+    SetDashLength(openXmlElement, value?.DashLength);
+    SetSpaceLength(openXmlElement, value?.SpaceLength);
+    }
+  }

@@ -10,22 +10,17 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   private static Boolean? GetUseActualPages(DXW.ReadModeInkLockDown openXmlElement)
   {
-    return openXmlElement?.UseActualPages?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.UseActualPages);
   }
   
   private static bool CmpUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.UseActualPages?.Value == value) return true;
-    diffs?.Add(objName, "UseActualPages", openXmlElement?.UseActualPages?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.UseActualPages, value, diffs, objName, "UseActualPages");
   }
   
   private static void SetUseActualPages(DXW.ReadModeInkLockDown openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.UseActualPages = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.UseActualPages = null;
+    openXmlElement.UseActualPages = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -73,22 +68,17 @@ public static class ReadModeInkLockDownConverter
   /// </summary>
   private static String? GetFontSize(DXW.ReadModeInkLockDown openXmlElement)
   {
-    return openXmlElement?.FontSize?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FontSize);
   }
   
   private static bool CmpFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FontSize?.Value == value) return true;
-    diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FontSize, value, diffs, objName, "FontSize");
   }
   
   private static void SetFontSize(DXW.ReadModeInkLockDown openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FontSize = new StringValue { Value = value };
-    else
-      openXmlElement.FontSize = null;
+    openXmlElement.FontSize = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(DXW.ReadModeInkLockDown? openXmlElement)
@@ -125,18 +115,19 @@ public static class ReadModeInkLockDownConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ReadModeInkLockDown? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ReadModeInkLockDown value)
     where OpenXmlElementType: DXW.ReadModeInkLockDown, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUseActualPages(openXmlElement, value?.UseActualPages);
-      SetWidth(openXmlElement, value?.Width);
-      SetHeight(openXmlElement, value?.Height);
-      SetFontSize(openXmlElement, value?.FontSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ReadModeInkLockDown openXmlElement, DMW.ReadModeInkLockDown value)
+  {
+    SetUseActualPages(openXmlElement, value?.UseActualPages);
+    SetWidth(openXmlElement, value?.Width);
+    SetHeight(openXmlElement, value?.Height);
+    SetFontSize(openXmlElement, value?.FontSize);
+    }
+  }

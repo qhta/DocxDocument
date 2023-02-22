@@ -1074,47 +1074,48 @@ public static class ChartStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.ChartStyle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.ChartStyle value)
     where OpenXmlElementType: DXO2013DrawChartStyle.ChartStyle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetAxisTitle(openXmlElement, value?.AxisTitle);
-      SetCategoryAxis(openXmlElement, value?.CategoryAxis);
-      SetChartArea(openXmlElement, value?.ChartArea);
-      SetDataLabel(openXmlElement, value?.DataLabel);
-      SetDataLabelCallout(openXmlElement, value?.DataLabelCallout);
-      SetDataPoint(openXmlElement, value?.DataPoint);
-      SetDataPoint3D(openXmlElement, value?.DataPoint3D);
-      SetDataPointLine(openXmlElement, value?.DataPointLine);
-      SetDataPointMarker(openXmlElement, value?.DataPointMarker);
-      SetMarkerLayoutProperties(openXmlElement, value?.MarkerLayoutProperties);
-      SetDataPointWireframe(openXmlElement, value?.DataPointWireframe);
-      SetDataTableStyle(openXmlElement, value?.DataTableStyle);
-      SetDownBar(openXmlElement, value?.DownBar);
-      SetDropLine(openXmlElement, value?.DropLine);
-      SetErrorBar(openXmlElement, value?.ErrorBar);
-      SetFloor(openXmlElement, value?.Floor);
-      SetGridlineMajor(openXmlElement, value?.GridlineMajor);
-      SetGridlineMinor(openXmlElement, value?.GridlineMinor);
-      SetHiLoLine(openXmlElement, value?.HiLoLine);
-      SetLeaderLine(openXmlElement, value?.LeaderLine);
-      SetLegendStyle(openXmlElement, value?.LegendStyle);
-      SetPlotArea(openXmlElement, value?.PlotArea);
-      SetPlotArea3D(openXmlElement, value?.PlotArea3D);
-      SetSeriesAxis(openXmlElement, value?.SeriesAxis);
-      SetSeriesLine(openXmlElement, value?.SeriesLine);
-      SetTitleStyle(openXmlElement, value?.TitleStyle);
-      SetTrendlineStyle(openXmlElement, value?.TrendlineStyle);
-      SetTrendlineLabel(openXmlElement, value?.TrendlineLabel);
-      SetUpBar(openXmlElement, value?.UpBar);
-      SetValueAxis(openXmlElement, value?.ValueAxis);
-      SetWall(openXmlElement, value?.Wall);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.ChartStyle openXmlElement, DMDrawsChartsStyle.ChartStyle value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetAxisTitle(openXmlElement, value?.AxisTitle);
+    SetCategoryAxis(openXmlElement, value?.CategoryAxis);
+    SetChartArea(openXmlElement, value?.ChartArea);
+    SetDataLabel(openXmlElement, value?.DataLabel);
+    SetDataLabelCallout(openXmlElement, value?.DataLabelCallout);
+    SetDataPoint(openXmlElement, value?.DataPoint);
+    SetDataPoint3D(openXmlElement, value?.DataPoint3D);
+    SetDataPointLine(openXmlElement, value?.DataPointLine);
+    SetDataPointMarker(openXmlElement, value?.DataPointMarker);
+    SetMarkerLayoutProperties(openXmlElement, value?.MarkerLayoutProperties);
+    SetDataPointWireframe(openXmlElement, value?.DataPointWireframe);
+    SetDataTableStyle(openXmlElement, value?.DataTableStyle);
+    SetDownBar(openXmlElement, value?.DownBar);
+    SetDropLine(openXmlElement, value?.DropLine);
+    SetErrorBar(openXmlElement, value?.ErrorBar);
+    SetFloor(openXmlElement, value?.Floor);
+    SetGridlineMajor(openXmlElement, value?.GridlineMajor);
+    SetGridlineMinor(openXmlElement, value?.GridlineMinor);
+    SetHiLoLine(openXmlElement, value?.HiLoLine);
+    SetLeaderLine(openXmlElement, value?.LeaderLine);
+    SetLegendStyle(openXmlElement, value?.LegendStyle);
+    SetPlotArea(openXmlElement, value?.PlotArea);
+    SetPlotArea3D(openXmlElement, value?.PlotArea3D);
+    SetSeriesAxis(openXmlElement, value?.SeriesAxis);
+    SetSeriesLine(openXmlElement, value?.SeriesLine);
+    SetTitleStyle(openXmlElement, value?.TitleStyle);
+    SetTrendlineStyle(openXmlElement, value?.TrendlineStyle);
+    SetTrendlineLabel(openXmlElement, value?.TrendlineLabel);
+    SetUpBar(openXmlElement, value?.UpBar);
+    SetValueAxis(openXmlElement, value?.ValueAxis);
+    SetWall(openXmlElement, value?.Wall);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class WebVideoPropertyConverter
   /// </summary>
   private static String? GetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
-    return openXmlElement?.EmbeddedHtml?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EmbeddedHtml);
   }
   
   private static bool CmpEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EmbeddedHtml?.Value == value) return true;
-    diffs?.Add(objName, "EmbeddedHtml", openXmlElement?.EmbeddedHtml?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EmbeddedHtml, value, diffs, objName, "EmbeddedHtml");
   }
   
   private static void SetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EmbeddedHtml = new StringValue { Value = value };
-    else
-      openXmlElement.EmbeddedHtml = null;
+    openXmlElement.EmbeddedHtml = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -99,17 +94,18 @@ public static class WebVideoPropertyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WebVideoProperty? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WebVideoProperty value)
     where OpenXmlElementType: DXO2013WDraw.WebVideoProperty, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEmbeddedHtml(openXmlElement, value?.EmbeddedHtml);
-      SetHeight(openXmlElement, value?.Height);
-      SetWidth(openXmlElement, value?.Width);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WDraw.WebVideoProperty openXmlElement, DMDrawsW.WebVideoProperty value)
+  {
+    SetEmbeddedHtml(openXmlElement, value?.EmbeddedHtml);
+    SetHeight(openXmlElement, value?.Height);
+    SetWidth(openXmlElement, value?.Width);
+    }
+  }

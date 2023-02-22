@@ -123,17 +123,18 @@ public static class RubyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Ruby? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Ruby value)
     where OpenXmlElementType: DXW.Ruby, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRubyProperties(openXmlElement, value?.RubyProperties);
-      SetRubyContent(openXmlElement, value?.RubyContent);
-      SetRubyBase(openXmlElement, value?.RubyBase);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Ruby openXmlElement, DMW.Ruby value)
+  {
+    SetRubyProperties(openXmlElement, value?.RubyProperties);
+    SetRubyContent(openXmlElement, value?.RubyContent);
+    SetRubyBase(openXmlElement, value?.RubyBase);
+    }
+  }

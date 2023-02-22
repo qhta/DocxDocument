@@ -402,31 +402,32 @@ public static class NotesMasterPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.NotesMasterPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.NotesMasterPart value)
     where OpenXmlElementType: DXPack.NotesMasterPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetChartParts(openXmlElement, value?.ChartParts);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
-      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
-      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
-      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
-      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
-      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
-      //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
-      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
-      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
-      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      //SetUserDefinedTagsParts(openXmlElement, value?.UserDefinedTagsParts);
-      //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.NotesMasterPart openXmlElement, DMPack.NotesMasterPart value)
+  {
+    //SetChartParts(openXmlElement, value?.ChartParts);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
+    //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+    //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+    //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+    //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+    //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+    //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
+    //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+    //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+    //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    //SetUserDefinedTagsParts(openXmlElement, value?.UserDefinedTagsParts);
+    //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
+    }
+  }

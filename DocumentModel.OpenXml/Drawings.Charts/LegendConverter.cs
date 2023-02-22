@@ -22,13 +22,15 @@ public static class LegendConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LegendPosition>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LegendPosition, DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDrawsCharts.LegendPositionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDrawsCharts.LegendPositionKind>(itemElement, (DMDrawsCharts.LegendPositionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LegendPosition, DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDrawsCharts.LegendPositionKind>((DMDrawsCharts.LegendPositionKind)value));
   }
   
   private static Collection<DMDrawsCharts.LegendEntry>? GetLegendEntries(DXDrawCharts.Legend openXmlElement)
@@ -47,11 +49,11 @@ public static class LegendConverter
   
   private static bool CmpLegendEntries(DXDrawCharts.Legend openXmlElement, Collection<DMDrawsCharts.LegendEntry>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.LegendEntry>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.LegendEntry>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -68,7 +70,7 @@ public static class LegendConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -262,21 +264,22 @@ public static class LegendConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Legend? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Legend value)
     where OpenXmlElementType: DXDrawCharts.Legend, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLegendPosition(openXmlElement, value?.LegendPosition);
-      SetLegendEntries(openXmlElement, value?.LegendEntries);
-      SetLayout(openXmlElement, value?.Layout);
-      SetOverlay(openXmlElement, value?.Overlay);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Legend openXmlElement, DMDrawsCharts.Legend value)
+  {
+    SetLegendPosition(openXmlElement, value?.LegendPosition);
+    SetLegendEntries(openXmlElement, value?.LegendEntries);
+    SetLayout(openXmlElement, value?.Layout);
+    SetOverlay(openXmlElement, value?.Overlay);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

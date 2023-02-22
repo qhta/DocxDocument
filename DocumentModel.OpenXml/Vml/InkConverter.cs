@@ -84,16 +84,17 @@ public static class InkConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Ink? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Ink value)
     where OpenXmlElementType: DXVmlO.Ink, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetInkData(openXmlElement, value?.InkData);
-      SetAnnotationFlag(openXmlElement, value?.AnnotationFlag);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Ink openXmlElement, DMVml.Ink value)
+  {
+    SetInkData(openXmlElement, value?.InkData);
+    SetAnnotationFlag(openXmlElement, value?.AnnotationFlag);
+    }
+  }

@@ -30,22 +30,17 @@ public static class TaskHistoryEventConverter
   /// </summary>
   private static String? GetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -496,30 +491,31 @@ public static class TaskHistoryEventConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskHistoryEvent? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskHistoryEvent value)
     where OpenXmlElementType: DXO2021DocTasks.TaskHistoryEvent, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTime(openXmlElement, value?.Time);
-      SetId(openXmlElement, value?.Id);
-      SetAttributionTaskUser(openXmlElement, value?.AttributionTaskUser);
-      SetTaskAnchor(openXmlElement, value?.TaskAnchor);
-      SetAssignTaskUser(openXmlElement, value?.AssignTaskUser);
-      SetUnassignTaskUser(openXmlElement, value?.UnassignTaskUser);
-      SetTaskCreateEventInfo(openXmlElement, value?.TaskCreateEventInfo);
-      SetTaskTitleEventInfo(openXmlElement, value?.TaskTitleEventInfo);
-      SetTaskScheduleEventInfo(openXmlElement, value?.TaskScheduleEventInfo);
-      SetTaskProgressEventInfo(openXmlElement, value?.TaskProgressEventInfo);
-      SetTaskPriorityEventInfo(openXmlElement, value?.TaskPriorityEventInfo);
-      SetTaskDeleteEventInfo(openXmlElement, value?.TaskDeleteEventInfo);
-      SetTaskUndeleteEventInfo(openXmlElement, value?.TaskUndeleteEventInfo);
-      SetTaskUnassignAll(openXmlElement, value?.TaskUnassignAll);
-      SetTaskUndo(openXmlElement, value?.TaskUndo);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskHistoryEvent value)
+  {
+    SetTime(openXmlElement, value?.Time);
+    SetId(openXmlElement, value?.Id);
+    SetAttributionTaskUser(openXmlElement, value?.AttributionTaskUser);
+    SetTaskAnchor(openXmlElement, value?.TaskAnchor);
+    SetAssignTaskUser(openXmlElement, value?.AssignTaskUser);
+    SetUnassignTaskUser(openXmlElement, value?.UnassignTaskUser);
+    SetTaskCreateEventInfo(openXmlElement, value?.TaskCreateEventInfo);
+    SetTaskTitleEventInfo(openXmlElement, value?.TaskTitleEventInfo);
+    SetTaskScheduleEventInfo(openXmlElement, value?.TaskScheduleEventInfo);
+    SetTaskProgressEventInfo(openXmlElement, value?.TaskProgressEventInfo);
+    SetTaskPriorityEventInfo(openXmlElement, value?.TaskPriorityEventInfo);
+    SetTaskDeleteEventInfo(openXmlElement, value?.TaskDeleteEventInfo);
+    SetTaskUndeleteEventInfo(openXmlElement, value?.TaskUndeleteEventInfo);
+    SetTaskUnassignAll(openXmlElement, value?.TaskUnassignAll);
+    SetTaskUndo(openXmlElement, value?.TaskUndo);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

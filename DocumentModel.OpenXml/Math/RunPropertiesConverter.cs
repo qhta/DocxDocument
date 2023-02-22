@@ -22,13 +22,15 @@ public static class RunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Literal>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Literal, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Literal, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   private static DMMath.BooleanKind? GetNormalText(DXMath.RunProperties openXmlElement)
@@ -45,13 +47,15 @@ public static class RunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.NormalText>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.NormalText, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.NormalText, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   private static DMMath.ScriptKind? GetScript(DXMath.RunProperties openXmlElement)
@@ -68,13 +72,15 @@ public static class RunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Script>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(itemElement, (DMMath.ScriptKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>((DMMath.ScriptKind)value));
   }
   
   private static DMMath.StyleKind? GetStyle(DXMath.RunProperties openXmlElement)
@@ -91,13 +97,15 @@ public static class RunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Style>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Style, DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(itemElement, (DMMath.StyleKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Style, DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>((DMMath.StyleKind)value));
   }
   
   private static DMMath.Break? GetBreak(DXMath.RunProperties openXmlElement)
@@ -140,13 +148,15 @@ public static class RunPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Alignment>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   public static DocumentModel.Math.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
@@ -189,20 +199,21 @@ public static class RunPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.RunProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.RunProperties value)
     where OpenXmlElementType: DXMath.RunProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLiteral(openXmlElement, value?.Literal);
-      SetNormalText(openXmlElement, value?.NormalText);
-      SetScript(openXmlElement, value?.Script);
-      SetStyle(openXmlElement, value?.Style);
-      SetBreak(openXmlElement, value?.Break);
-      SetAlignment(openXmlElement, value?.Alignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.RunProperties openXmlElement, DMMath.RunProperties value)
+  {
+    SetLiteral(openXmlElement, value?.Literal);
+    SetNormalText(openXmlElement, value?.NormalText);
+    SetScript(openXmlElement, value?.Script);
+    SetStyle(openXmlElement, value?.Style);
+    SetBreak(openXmlElement, value?.Break);
+    SetAlignment(openXmlElement, value?.Alignment);
+    }
+  }

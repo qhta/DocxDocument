@@ -10,27 +10,17 @@ public static class MultiLevelStringCacheConverter
   /// </summary>
   private static UInt32? GetPointCount(DXDrawCharts.MultiLevelStringCache openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
   }
   
   private static bool CmpPointCount(DXDrawCharts.MultiLevelStringCache openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PointCount", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
   private static void SetPointCount(DXDrawCharts.MultiLevelStringCache openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.PointCount{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
   }
   
   private static Collection<DMDrawsCharts.Level>? GetLevels(DXDrawCharts.MultiLevelStringCache openXmlElement)
@@ -49,11 +39,11 @@ public static class MultiLevelStringCacheConverter
   
   private static bool CmpLevels(DXDrawCharts.MultiLevelStringCache openXmlElement, Collection<DMDrawsCharts.Level>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.Level>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.Level>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -70,7 +60,7 @@ public static class MultiLevelStringCacheConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -146,17 +136,18 @@ public static class MultiLevelStringCacheConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MultiLevelStringCache? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MultiLevelStringCache value)
     where OpenXmlElementType: DXDrawCharts.MultiLevelStringCache, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPointCount(openXmlElement, value?.PointCount);
-      SetLevels(openXmlElement, value?.Levels);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.MultiLevelStringCache openXmlElement, DMDrawsCharts.MultiLevelStringCache value)
+  {
+    SetPointCount(openXmlElement, value?.PointCount);
+    SetLevels(openXmlElement, value?.Levels);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

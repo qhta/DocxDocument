@@ -28,22 +28,17 @@ public static class PermStartConverter
   /// </summary>
   private static String? GetEd(DXW.PermStart openXmlElement)
   {
-    return openXmlElement?.Ed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Ed);
   }
   
   private static bool CmpEd(DXW.PermStart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Ed?.Value == value) return true;
-    diffs?.Add(objName, "Ed", openXmlElement?.Ed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Ed, value, diffs, objName, "Ed");
   }
   
   private static void SetEd(DXW.PermStart openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Ed = new StringValue { Value = value };
-    else
-      openXmlElement.Ed = null;
+    openXmlElement.Ed = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -164,20 +159,21 @@ public static class PermStartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PermStart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PermStart value)
     where OpenXmlElementType: DXW.PermStart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEditorGroup(openXmlElement, value?.EditorGroup);
-      SetEd(openXmlElement, value?.Ed);
-      SetColumnFirst(openXmlElement, value?.ColumnFirst);
-      SetColumnLast(openXmlElement, value?.ColumnLast);
-      SetId(openXmlElement, value?.Id);
-      SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PermStart openXmlElement, DMW.PermStart value)
+  {
+    SetEditorGroup(openXmlElement, value?.EditorGroup);
+    SetEd(openXmlElement, value?.Ed);
+    SetColumnFirst(openXmlElement, value?.ColumnFirst);
+    SetColumnLast(openXmlElement, value?.ColumnLast);
+    SetId(openXmlElement, value?.Id);
+    SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+    }
+  }

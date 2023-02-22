@@ -50,15 +50,16 @@ public static class SharpenSoftenConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SharpenSoften? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SharpenSoften value)
     where OpenXmlElementType: DXO2010Draw.SharpenSoften, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAmount(openXmlElement, value?.Amount);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.SharpenSoften openXmlElement, DMDraws.SharpenSoften value)
+  {
+    SetAmount(openXmlElement, value?.Amount);
+    }
+  }

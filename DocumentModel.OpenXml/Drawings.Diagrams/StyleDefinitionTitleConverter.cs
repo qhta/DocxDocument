@@ -10,22 +10,17 @@ public static class StyleDefinitionTitleConverter
   /// </summary>
   private static String? GetLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement)
   {
-    return openXmlElement?.Language?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
   private static bool CmpLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Language?.Value == value) return true;
-    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
   }
   
   private static void SetLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Language = new StringValue { Value = value };
-    else
-      openXmlElement.Language = null;
+    openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class StyleDefinitionTitleConverter
   /// </summary>
   private static String? GetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
   private static bool CmpVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
   }
   
   private static void SetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Val = new StringValue { Value = value };
-    else
-      openXmlElement.Val = null;
+    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.Diagrams.StyleDefinitionTitle? CreateModelElement(DXDrawDgms.StyleDefinitionTitle? openXmlElement)
@@ -79,16 +69,17 @@ public static class StyleDefinitionTitleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDefinitionTitle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDefinitionTitle value)
     where OpenXmlElementType: DXDrawDgms.StyleDefinitionTitle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLanguage(openXmlElement, value?.Language);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.StyleDefinitionTitle openXmlElement, DMDrawsDgms.StyleDefinitionTitle value)
+  {
+    SetLanguage(openXmlElement, value?.Language);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

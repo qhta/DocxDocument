@@ -50,11 +50,11 @@ public static class DelimiterConverter
   
   private static bool CmpBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXMath.Base>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXMath.Base>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -71,7 +71,7 @@ public static class DelimiterConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -118,16 +118,17 @@ public static class DelimiterConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Delimiter? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Delimiter value)
     where OpenXmlElementType: DXMath.Delimiter, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
-      SetBases(openXmlElement, value?.Bases);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Delimiter openXmlElement, DMMath.Delimiter value)
+  {
+    SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
+    SetBases(openXmlElement, value?.Bases);
+    }
+  }

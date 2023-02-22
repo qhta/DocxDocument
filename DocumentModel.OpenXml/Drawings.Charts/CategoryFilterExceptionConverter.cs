@@ -64,27 +64,17 @@ public static class CategoryFilterExceptionConverter
   /// </summary>
   private static UInt32? GetExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>()?.Val);
   }
   
   private static bool CmpExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXO2013DrawChart.Explosion", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>()?.Val, value, diffs, objName, "Explosion3");
   }
   
   private static void SetExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.Explosion>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXO2013DrawChart.Explosion{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXO2013DrawChart.Explosion,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -250,21 +240,22 @@ public static class CategoryFilterExceptionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterException? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterException value)
     where OpenXmlElementType: DXO2013DrawChart.CategoryFilterException, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetExplosion(openXmlElement, value?.Explosion);
-      SetInvertIfNegativeBoolean(openXmlElement, value?.InvertIfNegativeBoolean);
-      SetBubble3D(openXmlElement, value?.Bubble3D);
-      SetMarker(openXmlElement, value?.Marker);
-      SetDataLabel(openXmlElement, value?.DataLabel);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.CategoryFilterException value)
+  {
+    SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetExplosion(openXmlElement, value?.Explosion);
+    SetInvertIfNegativeBoolean(openXmlElement, value?.InvertIfNegativeBoolean);
+    SetBubble3D(openXmlElement, value?.Bubble3D);
+    SetMarker(openXmlElement, value?.Marker);
+    SetDataLabel(openXmlElement, value?.DataLabel);
+    }
+  }

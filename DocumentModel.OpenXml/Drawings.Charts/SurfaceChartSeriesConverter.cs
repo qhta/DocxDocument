@@ -10,27 +10,17 @@ public static class SurfaceChartSeriesConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.SurfaceChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
   }
   
   private static bool CmpIndex(DXDrawCharts.SurfaceChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
   }
   
   private static void SetIndex(DXDrawCharts.SurfaceChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Index{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -38,27 +28,17 @@ public static class SurfaceChartSeriesConverter
   /// </summary>
   private static UInt32? GetOrder(DXDrawCharts.SurfaceChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val);
   }
   
   private static bool CmpOrder(DXDrawCharts.SurfaceChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val, value, diffs, objName, "Order");
   }
   
   private static void SetOrder(DXDrawCharts.SurfaceChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Order{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Order,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -315,23 +295,24 @@ public static class SurfaceChartSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceChartSeries? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceChartSeries value)
     where OpenXmlElementType: DXDrawCharts.SurfaceChartSeries, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetOrder(openXmlElement, value?.Order);
-      SetSeriesText(openXmlElement, value?.SeriesText);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetPictureOptions(openXmlElement, value?.PictureOptions);
-      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
-      SetValues(openXmlElement, value?.Values);
-      SetBubble3D(openXmlElement, value?.Bubble3D);
-      SetSurfaceSerExtensionList(openXmlElement, value?.SurfaceSerExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.SurfaceChartSeries openXmlElement, DMDrawsCharts.SurfaceChartSeries value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetOrder(openXmlElement, value?.Order);
+    SetSeriesText(openXmlElement, value?.SeriesText);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetPictureOptions(openXmlElement, value?.PictureOptions);
+    SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+    SetValues(openXmlElement, value?.Values);
+    SetBubble3D(openXmlElement, value?.Bubble3D);
+    SetSurfaceSerExtensionList(openXmlElement, value?.SurfaceSerExtensionList);
+    }
+  }

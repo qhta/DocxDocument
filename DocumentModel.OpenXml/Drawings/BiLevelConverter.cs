@@ -50,15 +50,16 @@ public static class BiLevelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BiLevel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BiLevel value)
     where OpenXmlElementType: DXDraw.BiLevel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetThreshold(openXmlElement, value?.Threshold);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BiLevel openXmlElement, DMDraws.BiLevel value)
+  {
+    SetThreshold(openXmlElement, value?.Threshold);
+    }
+  }

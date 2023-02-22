@@ -221,20 +221,21 @@ public static class TitleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Title? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Title value)
     where OpenXmlElementType: DXDrawCharts.Title, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartText(openXmlElement, value?.ChartText);
-      SetLayout(openXmlElement, value?.Layout);
-      SetOverlay(openXmlElement, value?.Overlay);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Title openXmlElement, DMDrawsCharts.Title value)
+  {
+    SetChartText(openXmlElement, value?.ChartText);
+    SetLayout(openXmlElement, value?.Layout);
+    SetOverlay(openXmlElement, value?.Overlay);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

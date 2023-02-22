@@ -10,22 +10,17 @@ public static class TableRowPropertiesChangeConverter
   /// </summary>
   private static String? GetAuthor(DXW.TableRowPropertiesChange openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXW.TableRowPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXW.TableRowPropertiesChange openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -53,22 +48,17 @@ public static class TableRowPropertiesChangeConverter
   /// </summary>
   private static String? GetId(DXW.TableRowPropertiesChange openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.TableRowPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.TableRowPropertiesChange openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -134,18 +124,19 @@ public static class TableRowPropertiesChangeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowPropertiesChange? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowPropertiesChange value)
     where OpenXmlElementType: DXW.TableRowPropertiesChange, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAuthor(openXmlElement, value?.Author);
-      SetDate(openXmlElement, value?.Date);
-      SetId(openXmlElement, value?.Id);
-      SetPreviousTableRowProperties(openXmlElement, value?.PreviousTableRowProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TableRowPropertiesChange openXmlElement, DMW.TableRowPropertiesChange value)
+  {
+    SetAuthor(openXmlElement, value?.Author);
+    SetDate(openXmlElement, value?.Date);
+    SetId(openXmlElement, value?.Id);
+    SetPreviousTableRowProperties(openXmlElement, value?.PreviousTableRowProperties);
+    }
+  }

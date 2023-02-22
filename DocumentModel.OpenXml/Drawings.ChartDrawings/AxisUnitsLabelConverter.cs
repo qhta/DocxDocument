@@ -155,18 +155,19 @@ public static class AxisUnitsLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.AxisUnitsLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.AxisUnitsLabel value)
     where OpenXmlElementType: DXO2016DrawChartDraw.AxisUnitsLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetText(openXmlElement, value?.Text);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.AxisUnitsLabel openXmlElement, DMDrawsChartDraws.AxisUnitsLabel value)
+  {
+    SetText(openXmlElement, value?.Text);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

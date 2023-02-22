@@ -59,15 +59,16 @@ public static class BreakConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Break? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Break value)
     where OpenXmlElementType: DXDraw.Break, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Break openXmlElement, DMDraws.Break value)
+  {
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    }
+  }

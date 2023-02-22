@@ -94,17 +94,18 @@ public static class ChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Chart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Chart value)
     where OpenXmlElementType: DXDraw.Chart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSeriesIndex(openXmlElement, value?.SeriesIndex);
-      SetCategoryIndex(openXmlElement, value?.CategoryIndex);
-      SetBuildStep(openXmlElement, value?.BuildStep);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Chart openXmlElement, DMDraws.Chart value)
+  {
+    SetSeriesIndex(openXmlElement, value?.SeriesIndex);
+    SetCategoryIndex(openXmlElement, value?.CategoryIndex);
+    SetBuildStep(openXmlElement, value?.BuildStep);
+    }
+  }

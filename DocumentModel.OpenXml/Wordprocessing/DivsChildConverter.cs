@@ -56,15 +56,16 @@ public static class DivsChildConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DivsChild? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DivsChild value)
     where OpenXmlElementType: DXW.DivsChild, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDiv(openXmlElement, value?.Div);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DivsChild openXmlElement, DMW.DivsChild value)
+  {
+    SetDiv(openXmlElement, value?.Div);
+    }
+  }

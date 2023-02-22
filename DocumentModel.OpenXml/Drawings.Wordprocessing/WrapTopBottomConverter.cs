@@ -105,17 +105,18 @@ public static class WrapTopBottomConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTopBottom? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTopBottom value)
     where OpenXmlElementType: DXDrawW.WrapTopBottom, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
-      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
-      SetEffectExtent(openXmlElement, value?.EffectExtent);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.WrapTopBottom value)
+  {
+    SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+    SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+    SetEffectExtent(openXmlElement, value?.EffectExtent);
+    }
+  }

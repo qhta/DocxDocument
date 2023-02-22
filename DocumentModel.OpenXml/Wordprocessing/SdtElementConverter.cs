@@ -91,16 +91,17 @@ public static class SdtElementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtElement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtElement value)
     where OpenXmlElementType: DXW.SdtElement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSdtProperties(openXmlElement, value?.SdtProperties);
-      SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtElement openXmlElement, DMW.SdtElement value)
+  {
+    SetSdtProperties(openXmlElement, value?.SdtProperties);
+    SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
+    }
+  }

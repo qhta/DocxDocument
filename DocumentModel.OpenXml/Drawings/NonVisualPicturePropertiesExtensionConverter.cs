@@ -10,22 +10,17 @@ public static class NonVisualPicturePropertiesExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDraws.CameraTool? GetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
@@ -169,19 +164,20 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualPicturePropertiesExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualPicturePropertiesExtension value)
     where OpenXmlElementType: DXDraw.NonVisualPicturePropertiesExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetCameraTool(openXmlElement, value?.CameraTool);
-      SetSignatureLine(openXmlElement, value?.SignatureLine);
-      SetObjectProperties(openXmlElement, value?.ObjectProperties);
-      SetLiveFeedProperties(openXmlElement, value?.LiveFeedProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.NonVisualPicturePropertiesExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetCameraTool(openXmlElement, value?.CameraTool);
+    SetSignatureLine(openXmlElement, value?.SignatureLine);
+    SetObjectProperties(openXmlElement, value?.ObjectProperties);
+    SetLiveFeedProperties(openXmlElement, value?.LiveFeedProperties);
+    }
+  }

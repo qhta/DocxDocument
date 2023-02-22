@@ -73,16 +73,17 @@ public static class TintEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TintEffect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TintEffect value)
     where OpenXmlElementType: DXDraw.TintEffect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHue(openXmlElement, value?.Hue);
-      SetAmount(openXmlElement, value?.Amount);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.TintEffect openXmlElement, DMDraws.TintEffect value)
+  {
+    SetHue(openXmlElement, value?.Hue);
+    SetAmount(openXmlElement, value?.Amount);
+    }
+  }

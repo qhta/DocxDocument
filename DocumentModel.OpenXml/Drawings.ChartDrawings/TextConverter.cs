@@ -91,16 +91,17 @@ public static class TextConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Text? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Text value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Text, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTextData(openXmlElement, value?.TextData);
-      SetRichTextBody(openXmlElement, value?.RichTextBody);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.Text value)
+  {
+    SetTextData(openXmlElement, value?.TextData);
+    SetRichTextBody(openXmlElement, value?.RichTextBody);
+    }
+  }

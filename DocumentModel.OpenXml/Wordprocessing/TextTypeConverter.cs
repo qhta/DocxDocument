@@ -48,15 +48,16 @@ public static class TextTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextType value)
     where OpenXmlElementType: DXW.TextType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSpace(openXmlElement, value?.Space);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
+  {
+    SetSpace(openXmlElement, value?.Space);
+    }
+  }

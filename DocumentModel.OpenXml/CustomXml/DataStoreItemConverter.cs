@@ -10,22 +10,17 @@ public static class DataStoreItemConverter
   /// </summary>
   private static String? GetItemId(DXCustXmlDataProps.DataStoreItem openXmlElement)
   {
-    return openXmlElement?.ItemId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ItemId);
   }
   
   private static bool CmpItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ItemId?.Value == value) return true;
-    diffs?.Add(objName, "ItemId", openXmlElement?.ItemId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ItemId, value, diffs, objName, "ItemId");
   }
   
   private static void SetItemId(DXCustXmlDataProps.DataStoreItem openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ItemId = new StringValue { Value = value };
-    else
-      openXmlElement.ItemId = null;
+    openXmlElement.ItemId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -85,16 +80,17 @@ public static class DataStoreItemConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.DataStoreItem? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.DataStoreItem value)
     where OpenXmlElementType: DXCustXmlDataProps.DataStoreItem, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetItemId(openXmlElement, value?.ItemId);
-      SetSchemaReferences(openXmlElement, value?.SchemaReferences);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXCustXmlDataProps.DataStoreItem openXmlElement, DMCustXml.DataStoreItem value)
+  {
+    SetItemId(openXmlElement, value?.ItemId);
+    SetSchemaReferences(openXmlElement, value?.SchemaReferences);
+    }
+  }

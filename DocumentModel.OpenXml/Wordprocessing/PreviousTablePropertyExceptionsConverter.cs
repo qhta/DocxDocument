@@ -51,13 +51,15 @@ public static class PreviousTablePropertyExceptionsConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement, (DMW.TableRowAlignmentKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
   
   /// <summary>
@@ -312,23 +314,24 @@ public static class PreviousTablePropertyExceptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTablePropertyExceptions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTablePropertyExceptions value)
     where OpenXmlElementType: DXW.PreviousTablePropertyExceptions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTableWidth(openXmlElement, value?.TableWidth);
-      SetTableJustification(openXmlElement, value?.TableJustification);
-      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
-      SetTableIndentation(openXmlElement, value?.TableIndentation);
-      SetTableBorders(openXmlElement, value?.TableBorders);
-      SetShading(openXmlElement, value?.Shading);
-      SetTableLayout(openXmlElement, value?.TableLayout);
-      SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
-      SetTableLook(openXmlElement, value?.TableLook);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.PreviousTablePropertyExceptions value)
+  {
+    SetTableWidth(openXmlElement, value?.TableWidth);
+    SetTableJustification(openXmlElement, value?.TableJustification);
+    SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+    SetTableIndentation(openXmlElement, value?.TableIndentation);
+    SetTableBorders(openXmlElement, value?.TableBorders);
+    SetShading(openXmlElement, value?.Shading);
+    SetTableLayout(openXmlElement, value?.TableLayout);
+    SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
+    SetTableLook(openXmlElement, value?.TableLook);
+    }
+  }

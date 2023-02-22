@@ -10,22 +10,17 @@ public static class TextBoxConverter
   /// </summary>
   private static String? GetId(DXVml.TextBox openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.TextBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class TextBoxConverter
   /// </summary>
   private static String? GetStyle(DXVml.TextBox openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
   private static bool CmpStyle(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Style?.Value == value) return true;
-    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
   private static void SetStyle(DXVml.TextBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Style = new StringValue { Value = value };
-    else
-      openXmlElement.Style = null;
+    openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class TextBoxConverter
   /// </summary>
   private static String? GetInset(DXVml.TextBox openXmlElement)
   {
-    return openXmlElement?.Inset?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Inset);
   }
   
   private static bool CmpInset(DXVml.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Inset?.Value == value) return true;
-    diffs?.Add(objName, "Inset", openXmlElement?.Inset?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Inset, value, diffs, objName, "Inset");
   }
   
   private static void SetInset(DXVml.TextBox openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Inset = new StringValue { Value = value };
-    else
-      openXmlElement.Inset = null;
+    openXmlElement.Inset = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -160,19 +145,20 @@ public static class TextBoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextBox? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextBox value)
     where OpenXmlElementType: DXVml.TextBox, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetStyle(openXmlElement, value?.Style);
-      SetInset(openXmlElement, value?.Inset);
-      SetSingleClick(openXmlElement, value?.SingleClick);
-      SetTextBoxContent(openXmlElement, value?.TextBoxContent);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.TextBox openXmlElement, DMVml.TextBox value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetStyle(openXmlElement, value?.Style);
+    SetInset(openXmlElement, value?.Inset);
+    SetSingleClick(openXmlElement, value?.SingleClick);
+    SetTextBoxContent(openXmlElement, value?.TextBoxContent);
+    }
+  }

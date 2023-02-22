@@ -50,22 +50,17 @@ public static class LineNumberTypeConverter
   /// </summary>
   private static String? GetDistance(DXW.LineNumberType openXmlElement)
   {
-    return openXmlElement?.Distance?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Distance);
   }
   
   private static bool CmpDistance(DXW.LineNumberType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Distance?.Value == value) return true;
-    diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Distance, value, diffs, objName, "Distance");
   }
   
   private static void SetDistance(DXW.LineNumberType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Distance = new StringValue { Value = value };
-    else
-      openXmlElement.Distance = null;
+    openXmlElement.Distance = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -120,18 +115,19 @@ public static class LineNumberTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LineNumberType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LineNumberType value)
     where OpenXmlElementType: DXW.LineNumberType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCountBy(openXmlElement, value?.CountBy);
-      SetStart(openXmlElement, value?.Start);
-      SetDistance(openXmlElement, value?.Distance);
-      SetRestart(openXmlElement, value?.Restart);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.LineNumberType openXmlElement, DMW.LineNumberType value)
+  {
+    SetCountBy(openXmlElement, value?.CountBy);
+    SetStart(openXmlElement, value?.Start);
+    SetDistance(openXmlElement, value?.Distance);
+    SetRestart(openXmlElement, value?.Restart);
+    }
+  }

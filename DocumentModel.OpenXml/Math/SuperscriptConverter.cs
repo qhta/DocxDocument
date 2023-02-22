@@ -123,17 +123,18 @@ public static class SuperscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Superscript? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Superscript value)
     where OpenXmlElementType: DXMath.Superscript, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSuperscriptProperties(openXmlElement, value?.SuperscriptProperties);
-      SetBase(openXmlElement, value?.Base);
-      SetSuperArgument(openXmlElement, value?.SuperArgument);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Superscript openXmlElement, DMMath.Superscript value)
+  {
+    SetSuperscriptProperties(openXmlElement, value?.SuperscriptProperties);
+    SetBase(openXmlElement, value?.Base);
+    SetSuperArgument(openXmlElement, value?.SuperArgument);
+    }
+  }

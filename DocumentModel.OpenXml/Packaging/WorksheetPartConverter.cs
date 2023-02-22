@@ -448,33 +448,34 @@ public static class WorksheetPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WorksheetPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WorksheetPart value)
     where OpenXmlElementType: DXPack.WorksheetPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetControlPropertiesParts(openXmlElement, value?.ControlPropertiesParts);
-      //SetCustomPropertyParts(openXmlElement, value?.CustomPropertyParts);
-      //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
-      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
-      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
-      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
-      //SetNamedSheetViewsParts(openXmlElement, value?.NamedSheetViewsParts);
-      //SetPivotTableParts(openXmlElement, value?.PivotTableParts);
-      //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      //SetSlicersParts(openXmlElement, value?.SlicersParts);
-      //SetSpreadsheetPrinterSettingsParts(openXmlElement, value?.SpreadsheetPrinterSettingsParts);
-      //SetTableDefinitionParts(openXmlElement, value?.TableDefinitionParts);
-      //SetTimeLineParts(openXmlElement, value?.TimeLineParts);
-      //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
-      //SetWorksheetThreadedCommentsParts(openXmlElement, value?.WorksheetThreadedCommentsParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WorksheetPart openXmlElement, DMPack.WorksheetPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetControlPropertiesParts(openXmlElement, value?.ControlPropertiesParts);
+    //SetCustomPropertyParts(openXmlElement, value?.CustomPropertyParts);
+    //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
+    //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+    //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+    //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+    //SetNamedSheetViewsParts(openXmlElement, value?.NamedSheetViewsParts);
+    //SetPivotTableParts(openXmlElement, value?.PivotTableParts);
+    //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    //SetSlicersParts(openXmlElement, value?.SlicersParts);
+    //SetSpreadsheetPrinterSettingsParts(openXmlElement, value?.SpreadsheetPrinterSettingsParts);
+    //SetTableDefinitionParts(openXmlElement, value?.TableDefinitionParts);
+    //SetTimeLineParts(openXmlElement, value?.TimeLineParts);
+    //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
+    //SetWorksheetThreadedCommentsParts(openXmlElement, value?.WorksheetThreadedCommentsParts);
+    }
+  }

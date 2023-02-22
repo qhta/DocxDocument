@@ -90,17 +90,18 @@ public static class PositionalTabConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PositionalTab? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PositionalTab value)
     where OpenXmlElementType: DXW.PositionalTab, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetRelativeTo(openXmlElement, value?.RelativeTo);
-      SetLeader(openXmlElement, value?.Leader);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PositionalTab openXmlElement, DMW.PositionalTab value)
+  {
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetRelativeTo(openXmlElement, value?.RelativeTo);
+    SetLeader(openXmlElement, value?.Leader);
+    }
+  }

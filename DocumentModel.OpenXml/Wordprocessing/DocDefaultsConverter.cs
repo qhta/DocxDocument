@@ -91,16 +91,17 @@ public static class DocDefaultsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocDefaults? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocDefaults value)
     where OpenXmlElementType: DXW.DocDefaults, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunPropertiesDefault(openXmlElement, value?.RunPropertiesDefault);
-      SetParagraphPropertiesDefault(openXmlElement, value?.ParagraphPropertiesDefault);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocDefaults openXmlElement, DMW.DocDefaults value)
+  {
+    SetRunPropertiesDefault(openXmlElement, value?.RunPropertiesDefault);
+    SetParagraphPropertiesDefault(openXmlElement, value?.ParagraphPropertiesDefault);
+    }
+  }

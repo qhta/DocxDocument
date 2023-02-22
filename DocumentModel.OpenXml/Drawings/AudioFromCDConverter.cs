@@ -123,17 +123,18 @@ public static class AudioFromCDConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromCD? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioFromCD value)
     where OpenXmlElementType: DXDraw.AudioFromCD, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStartTime(openXmlElement, value?.StartTime);
-      SetEndTime(openXmlElement, value?.EndTime);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AudioFromCD openXmlElement, DMDraws.AudioFromCD value)
+  {
+    SetStartTime(openXmlElement, value?.StartTime);
+    SetEndTime(openXmlElement, value?.EndTime);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class ChooseConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.Choose openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.Choose openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.Choose openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsDgms.DiagramChooseIf? GetDiagramChooseIf(DXDrawDgms.Choose openXmlElement)
@@ -111,17 +106,18 @@ public static class ChooseConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Choose? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Choose value)
     where OpenXmlElementType: DXDrawDgms.Choose, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetDiagramChooseIf(openXmlElement, value?.DiagramChooseIf);
-      SetDiagramChooseElse(openXmlElement, value?.DiagramChooseElse);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Choose openXmlElement, DMDrawsDgms.Choose value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetDiagramChooseIf(openXmlElement, value?.DiagramChooseIf);
+    SetDiagramChooseElse(openXmlElement, value?.DiagramChooseElse);
+    }
+  }

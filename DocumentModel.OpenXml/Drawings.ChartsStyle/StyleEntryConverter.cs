@@ -335,24 +335,25 @@ public static class StyleEntryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleEntry? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleEntry value)
     where OpenXmlElementType: DXO2013DrawChartStyle.StyleEntry, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetModifiers(openXmlElement, value?.Modifiers);
-      SetLineReference(openXmlElement, value?.LineReference);
-      SetLineWidthScale(openXmlElement, value?.LineWidthScale);
-      SetFillReference(openXmlElement, value?.FillReference);
-      SetEffectReference(openXmlElement, value?.EffectReference);
-      SetFontReference(openXmlElement, value?.FontReference);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
-      SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.StyleEntry openXmlElement, DMDrawsChartsStyle.StyleEntry value)
+  {
+    SetModifiers(openXmlElement, value?.Modifiers);
+    SetLineReference(openXmlElement, value?.LineReference);
+    SetLineWidthScale(openXmlElement, value?.LineWidthScale);
+    SetFillReference(openXmlElement, value?.FillReference);
+    SetEffectReference(openXmlElement, value?.EffectReference);
+    SetFontReference(openXmlElement, value?.FontReference);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
+    SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -22,13 +22,15 @@ public static class TextInputConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxFormFieldType, DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(itemElement, (DMW.TextBoxFormFieldKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxFormFieldType, DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>((DMW.TextBoxFormFieldKind)value));
   }
   
   /// <summary>
@@ -36,24 +38,17 @@ public static class TextInputConverter
   /// </summary>
   private static String? GetDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val);
   }
   
   private static bool CmpDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val, value, diffs, objName, "DefaultTextBoxFormFieldString");
   }
   
   private static void SetDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.DefaultTextBoxFormFieldString>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.DefaultTextBoxFormFieldString { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.DefaultTextBoxFormFieldString>(openXmlElement, value);
   }
   
   /// <summary>
@@ -61,27 +56,17 @@ public static class TextInputConverter
   /// </summary>
   private static Int16? GetMaxLength(DXW.TextInput openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val);
   }
   
   private static bool CmpMaxLength(DXW.TextInput openXmlElement, Int16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.MaxLength>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.MaxLength", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val, value, diffs, objName, "MaxLength");
   }
   
   private static void SetMaxLength(DXW.TextInput openXmlElement, Int16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.MaxLength>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.MaxLength{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.MaxLength,System.Int16>(openXmlElement, value);
   }
   
   /// <summary>
@@ -89,24 +74,17 @@ public static class TextInputConverter
   /// </summary>
   private static String? GetFormat(DXW.TextInput openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.Format>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val);
   }
   
   private static bool CmpFormat(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.Format>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val, value, diffs, objName, "Format");
   }
   
   private static void SetFormat(DXW.TextInput openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Format>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.Format { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.Format>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(DXW.TextInput? openXmlElement)
@@ -143,18 +121,19 @@ public static class TextInputConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextInput? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextInput value)
     where OpenXmlElementType: DXW.TextInput, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTextBoxFormFieldType(openXmlElement, value?.TextBoxFormFieldType);
-      SetDefaultTextBoxFormFieldString(openXmlElement, value?.DefaultTextBoxFormFieldString);
-      SetMaxLength(openXmlElement, value?.MaxLength);
-      SetFormat(openXmlElement, value?.Format);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TextInput openXmlElement, DMW.TextInput value)
+  {
+    SetTextBoxFormFieldType(openXmlElement, value?.TextBoxFormFieldType);
+    SetDefaultTextBoxFormFieldString(openXmlElement, value?.DefaultTextBoxFormFieldString);
+    SetMaxLength(openXmlElement, value?.MaxLength);
+    SetFormat(openXmlElement, value?.Format);
+    }
+  }

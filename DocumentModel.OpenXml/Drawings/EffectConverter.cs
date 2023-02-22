@@ -10,22 +10,17 @@ public static class EffectConverter
   /// </summary>
   private static String? GetReference(DXDraw.Effect openXmlElement)
   {
-    return openXmlElement?.Reference?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Reference);
   }
   
   private static bool CmpReference(DXDraw.Effect openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Reference?.Value == value) return true;
-    diffs?.Add(objName, "Reference", openXmlElement?.Reference?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Reference, value, diffs, objName, "Reference");
   }
   
   private static void SetReference(DXDraw.Effect openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Reference = new StringValue { Value = value };
-    else
-      openXmlElement.Reference = null;
+    openXmlElement.Reference = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.Effect? CreateModelElement(DXDraw.Effect? openXmlElement)
@@ -53,15 +48,16 @@ public static class EffectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Effect? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Effect value)
     where OpenXmlElementType: DXDraw.Effect, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetReference(openXmlElement, value?.Reference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Effect openXmlElement, DMDraws.Effect value)
+  {
+    SetReference(openXmlElement, value?.Reference);
+    }
+  }

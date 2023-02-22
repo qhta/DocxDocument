@@ -28,22 +28,17 @@ public static class BinningConverter
   /// </summary>
   private static String? GetUnderflow(DXO2016DrawChartDraw.Binning openXmlElement)
   {
-    return openXmlElement?.Underflow?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Underflow);
   }
   
   private static bool CmpUnderflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Underflow?.Value == value) return true;
-    diffs?.Add(objName, "Underflow", openXmlElement?.Underflow?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Underflow, value, diffs, objName, "Underflow");
   }
   
   private static void SetUnderflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Underflow = new StringValue { Value = value };
-    else
-      openXmlElement.Underflow = null;
+    openXmlElement.Underflow = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class BinningConverter
   /// </summary>
   private static String? GetOverflow(DXO2016DrawChartDraw.Binning openXmlElement)
   {
-    return openXmlElement?.Overflow?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Overflow);
   }
   
   private static bool CmpOverflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Overflow?.Value == value) return true;
-    diffs?.Add(objName, "Overflow", openXmlElement?.Overflow?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Overflow, value, diffs, objName, "Overflow");
   }
   
   private static void SetOverflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Overflow = new StringValue { Value = value };
-    else
-      openXmlElement.Overflow = null;
+    openXmlElement.Overflow = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -156,19 +146,20 @@ public static class BinningConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Binning? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Binning value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Binning, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIntervalClosed(openXmlElement, value?.IntervalClosed);
-      SetUnderflow(openXmlElement, value?.Underflow);
-      SetOverflow(openXmlElement, value?.Overflow);
-      SetXsddouble(openXmlElement, value?.Xsddouble);
-      SetBinCountXsdunsignedInt(openXmlElement, value?.BinCountXsdunsignedInt);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Binning openXmlElement, DMDrawsChartDraws.Binning value)
+  {
+    SetIntervalClosed(openXmlElement, value?.IntervalClosed);
+    SetUnderflow(openXmlElement, value?.Underflow);
+    SetOverflow(openXmlElement, value?.Overflow);
+    SetXsddouble(openXmlElement, value?.Xsddouble);
+    SetBinCountXsdunsignedInt(openXmlElement, value?.BinCountXsdunsignedInt);
+    }
+  }

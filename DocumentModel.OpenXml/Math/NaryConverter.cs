@@ -155,18 +155,19 @@ public static class NaryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Nary? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Nary value)
     where OpenXmlElementType: DXMath.Nary, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNaryProperties(openXmlElement, value?.NaryProperties);
-      SetSubArgument(openXmlElement, value?.SubArgument);
-      SetSuperArgument(openXmlElement, value?.SuperArgument);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Nary openXmlElement, DMMath.Nary value)
+  {
+    SetNaryProperties(openXmlElement, value?.NaryProperties);
+    SetSubArgument(openXmlElement, value?.SubArgument);
+    SetSuperArgument(openXmlElement, value?.SuperArgument);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

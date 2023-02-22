@@ -91,16 +91,17 @@ public static class BoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Box? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Box value)
     where OpenXmlElementType: DXMath.Box, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBoxProperties(openXmlElement, value?.BoxProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Box openXmlElement, DMMath.Box value)
+  {
+    SetBoxProperties(openXmlElement, value?.BoxProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

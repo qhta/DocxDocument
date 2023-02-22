@@ -56,15 +56,16 @@ public static class SdtEndCharPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtEndCharProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtEndCharProperties value)
     where OpenXmlElementType: DXW.SdtEndCharProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtEndCharProperties openXmlElement, DMW.SdtEndCharProperties value)
+  {
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    }
+  }

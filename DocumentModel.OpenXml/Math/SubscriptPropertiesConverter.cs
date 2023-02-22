@@ -59,15 +59,16 @@ public static class SubscriptPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubscriptProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubscriptProperties value)
     where OpenXmlElementType: DXMath.SubscriptProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.SubscriptProperties openXmlElement, DMMath.SubscriptProperties value)
+  {
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

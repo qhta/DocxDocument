@@ -59,15 +59,16 @@ public static class SuperscriptPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.SuperscriptProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SuperscriptProperties value)
     where OpenXmlElementType: DXMath.SuperscriptProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.SuperscriptProperties openXmlElement, DMMath.SuperscriptProperties value)
+  {
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

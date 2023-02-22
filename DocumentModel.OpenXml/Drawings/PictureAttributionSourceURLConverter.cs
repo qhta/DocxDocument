@@ -10,22 +10,17 @@ public static class PictureAttributionSourceURLConverter
   /// </summary>
   private static String? GetId(DXO2019Draw.PictureAttributionSourceURL openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2019Draw.PictureAttributionSourceURL openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2019Draw.PictureAttributionSourceURL openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.PictureAttributionSourceURL? CreateModelElement(DXO2019Draw.PictureAttributionSourceURL? openXmlElement)
@@ -53,15 +48,16 @@ public static class PictureAttributionSourceURLConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureAttributionSourceURL? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureAttributionSourceURL value)
     where OpenXmlElementType: DXO2019Draw.PictureAttributionSourceURL, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2019Draw.PictureAttributionSourceURL openXmlElement, DMDraws.PictureAttributionSourceURL value)
+  {
+    SetId(openXmlElement, value?.Id);
+    }
+  }

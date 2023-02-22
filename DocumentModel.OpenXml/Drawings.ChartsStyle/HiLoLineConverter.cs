@@ -284,23 +284,24 @@ public static class HiLoLineConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.HiLoLine? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.HiLoLine value)
     where OpenXmlElementType: DXO2013DrawChartStyle.HiLoLine, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLineReference(openXmlElement, value?.LineReference);
-      SetLineWidthScale(openXmlElement, value?.LineWidthScale);
-      SetFillReference(openXmlElement, value?.FillReference);
-      SetEffectReference(openXmlElement, value?.EffectReference);
-      SetFontReference(openXmlElement, value?.FontReference);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
-      SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.HiLoLine openXmlElement, DMDrawsChartsStyle.HiLoLine value)
+  {
+    SetLineReference(openXmlElement, value?.LineReference);
+    SetLineWidthScale(openXmlElement, value?.LineWidthScale);
+    SetFillReference(openXmlElement, value?.FillReference);
+    SetEffectReference(openXmlElement, value?.EffectReference);
+    SetFontReference(openXmlElement, value?.FontReference);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
+    SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

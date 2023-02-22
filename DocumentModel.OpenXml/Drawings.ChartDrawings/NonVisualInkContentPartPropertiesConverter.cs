@@ -117,17 +117,18 @@ public static class NonVisualInkContentPartPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NonVisualInkContentPartProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NonVisualInkContentPartProperties value)
     where OpenXmlElementType: DXO2010DrawChartDraw.NonVisualInkContentPartProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIsComment(openXmlElement, value?.IsComment);
-      SetContentPartLocks(openXmlElement, value?.ContentPartLocks);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010DrawChartDraw.NonVisualInkContentPartProperties openXmlElement, DMDrawsChartDraws.NonVisualInkContentPartProperties value)
+  {
+    SetIsComment(openXmlElement, value?.IsComment);
+    SetContentPartLocks(openXmlElement, value?.ContentPartLocks);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

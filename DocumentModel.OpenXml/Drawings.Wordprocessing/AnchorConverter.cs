@@ -783,41 +783,42 @@ public static class AnchorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Anchor? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Anchor value)
     where OpenXmlElementType: DXDrawW.Anchor, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
-      SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
-      SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
-      SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
-      SetSimplePos(openXmlElement, value?.SimplePos);
-      SetRelativeHeight(openXmlElement, value?.RelativeHeight);
-      SetBehindDoc(openXmlElement, value?.BehindDoc);
-      SetLocked(openXmlElement, value?.Locked);
-      SetLayoutInCell(openXmlElement, value?.LayoutInCell);
-      SetHidden(openXmlElement, value?.Hidden);
-      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
-      SetEditId(openXmlElement, value?.EditId);
-      SetAnchorId(openXmlElement, value?.AnchorId);
-      SetSimplePosition(openXmlElement, value?.SimplePosition);
-      SetHorizontalPosition(openXmlElement, value?.HorizontalPosition);
-      SetVerticalPosition(openXmlElement, value?.VerticalPosition);
-      SetExtent(openXmlElement, value?.Extent);
-      SetEffectExtent(openXmlElement, value?.EffectExtent);
-      SetWrapNone(openXmlElement, value?.WrapNone);
-      SetWrapSquare(openXmlElement, value?.WrapSquare);
-      SetWrapTight(openXmlElement, value?.WrapTight);
-      SetWrapThrough(openXmlElement, value?.WrapThrough);
-      SetWrapTopBottom(openXmlElement, value?.WrapTopBottom);
-      SetDocProperties(openXmlElement, value?.DocProperties);
-      SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
-      SetGraphic(openXmlElement, value?.Graphic);
-      SetRelativeWidth(openXmlElement, value?.RelativeWidth);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.Anchor openXmlElement, DMDrawsW.Anchor value)
+  {
+    SetDistanceFromTop(openXmlElement, value?.DistanceFromTop);
+    SetDistanceFromBottom(openXmlElement, value?.DistanceFromBottom);
+    SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
+    SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
+    SetSimplePos(openXmlElement, value?.SimplePos);
+    SetRelativeHeight(openXmlElement, value?.RelativeHeight);
+    SetBehindDoc(openXmlElement, value?.BehindDoc);
+    SetLocked(openXmlElement, value?.Locked);
+    SetLayoutInCell(openXmlElement, value?.LayoutInCell);
+    SetHidden(openXmlElement, value?.Hidden);
+    SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+    SetEditId(openXmlElement, value?.EditId);
+    SetAnchorId(openXmlElement, value?.AnchorId);
+    SetSimplePosition(openXmlElement, value?.SimplePosition);
+    SetHorizontalPosition(openXmlElement, value?.HorizontalPosition);
+    SetVerticalPosition(openXmlElement, value?.VerticalPosition);
+    SetExtent(openXmlElement, value?.Extent);
+    SetEffectExtent(openXmlElement, value?.EffectExtent);
+    SetWrapNone(openXmlElement, value?.WrapNone);
+    SetWrapSquare(openXmlElement, value?.WrapSquare);
+    SetWrapTight(openXmlElement, value?.WrapTight);
+    SetWrapThrough(openXmlElement, value?.WrapThrough);
+    SetWrapTopBottom(openXmlElement, value?.WrapTopBottom);
+    SetDocProperties(openXmlElement, value?.DocProperties);
+    SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
+    SetGraphic(openXmlElement, value?.Graphic);
+    SetRelativeWidth(openXmlElement, value?.RelativeWidth);
+    }
+  }

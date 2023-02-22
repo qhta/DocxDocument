@@ -106,18 +106,19 @@ public static class ChartDrawingPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartDrawingPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartDrawingPart value)
     where OpenXmlElementType: DXPack.ChartDrawingPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      SetUserShapes(openXmlElement, value?.UserShapes);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ChartDrawingPart openXmlElement, DMPack.ChartDrawingPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    SetUserShapes(openXmlElement, value?.UserShapes);
+    }
+  }

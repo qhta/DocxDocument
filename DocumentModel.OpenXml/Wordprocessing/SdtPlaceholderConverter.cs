@@ -58,15 +58,16 @@ public static class SdtPlaceholderConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtPlaceholder? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtPlaceholder value)
     where OpenXmlElementType: DXW.SdtPlaceholder, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDocPartReference(openXmlElement, value?.DocPartReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SdtPlaceholder openXmlElement, DMW.SdtPlaceholder value)
+  {
+    SetDocPartReference(openXmlElement, value?.DocPartReference);
+    }
+  }

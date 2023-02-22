@@ -223,21 +223,22 @@ public static class ChartTitleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartTitle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartTitle value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ChartTitle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPos(openXmlElement, value?.Pos);
-      SetAlign(openXmlElement, value?.Align);
-      SetOverlay(openXmlElement, value?.Overlay);
-      SetText(openXmlElement, value?.Text);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.ChartTitle value)
+  {
+    SetPos(openXmlElement, value?.Pos);
+    SetAlign(openXmlElement, value?.Align);
+    SetOverlay(openXmlElement, value?.Overlay);
+    SetText(openXmlElement, value?.Text);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

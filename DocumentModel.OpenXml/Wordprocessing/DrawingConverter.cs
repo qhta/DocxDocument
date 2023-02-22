@@ -91,16 +91,17 @@ public static class DrawingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Drawing? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Drawing value)
     where OpenXmlElementType: DXW.Drawing, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetInline(openXmlElement, value?.Inline);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Drawing openXmlElement, DMW.Drawing value)
+  {
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetInline(openXmlElement, value?.Inline);
+    }
+  }

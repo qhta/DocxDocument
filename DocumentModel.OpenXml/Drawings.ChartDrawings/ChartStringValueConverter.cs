@@ -50,15 +50,16 @@ public static class ChartStringValueConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartStringValue? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartStringValue value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ChartStringValue, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ChartStringValue openXmlElement, DMDrawsChartDraws.ChartStringValue value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    }
+  }

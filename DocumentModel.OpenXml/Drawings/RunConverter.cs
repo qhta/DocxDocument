@@ -85,16 +85,17 @@ public static class RunConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Run? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Run value)
     where OpenXmlElementType: DXDraw.Run, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      SetText(openXmlElement, value?.Text);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Run openXmlElement, DMDraws.Run value)
+  {
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    SetText(openXmlElement, value?.Text);
+    }
+  }

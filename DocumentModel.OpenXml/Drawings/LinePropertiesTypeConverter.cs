@@ -113,18 +113,19 @@ public static class LinePropertiesTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesType value)
     where OpenXmlElementType: DXDraw.LinePropertiesType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetCapType(openXmlElement, value?.CapType);
-      SetCompoundLineType(openXmlElement, value?.CompoundLineType);
-      SetAlignment(openXmlElement, value?.Alignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LinePropertiesType openXmlElement, DMDraws.LinePropertiesType value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetCapType(openXmlElement, value?.CapType);
+    SetCompoundLineType(openXmlElement, value?.CompoundLineType);
+    SetAlignment(openXmlElement, value?.Alignment);
+    }
+  }

@@ -50,15 +50,16 @@ public static class Saturation2Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Saturation2? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Saturation2 value)
     where OpenXmlElementType: DXO2010Draw.Saturation, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSaturationAmount(openXmlElement, value?.SaturationAmount);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.Saturation openXmlElement, DMDraws.Saturation2 value)
+  {
+    SetSaturationAmount(openXmlElement, value?.SaturationAmount);
+    }
+  }

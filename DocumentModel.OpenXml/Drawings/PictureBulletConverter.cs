@@ -59,15 +59,16 @@ public static class PictureBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureBullet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureBullet value)
     where OpenXmlElementType: DXDraw.PictureBullet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlip(openXmlElement, value?.Blip);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PictureBullet openXmlElement, DMDraws.PictureBullet value)
+  {
+    SetBlip(openXmlElement, value?.Blip);
+    }
+  }

@@ -56,15 +56,16 @@ public static class OverrideColorMappingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OverrideColorMapping? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OverrideColorMapping value)
     where OpenXmlElementType: DXDraw.OverrideColorMapping, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.OverrideColorMapping openXmlElement, DMDraws.OverrideColorMapping value)
+  {
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

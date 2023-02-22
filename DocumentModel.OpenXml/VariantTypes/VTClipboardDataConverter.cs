@@ -73,16 +73,17 @@ public static class VTClipboardDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTClipboardData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTClipboardData value)
     where OpenXmlElementType: DXVT.VTClipboardData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormat(openXmlElement, value?.Format);
-      SetSize(openXmlElement, value?.Size);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVT.VTClipboardData openXmlElement, DMVT.VTClipboardData value)
+  {
+    SetFormat(openXmlElement, value?.Format);
+    SetSize(openXmlElement, value?.Size);
+    }
+  }

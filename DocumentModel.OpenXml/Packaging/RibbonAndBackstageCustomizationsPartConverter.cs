@@ -106,18 +106,19 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.RibbonAndBackstageCustomizationsPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.RibbonAndBackstageCustomizationsPart value)
     where OpenXmlElementType: DXPack.RibbonAndBackstageCustomizationsPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      SetCustomUI(openXmlElement, value?.CustomUI);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DMPack.RibbonAndBackstageCustomizationsPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    SetCustomUI(openXmlElement, value?.CustomUI);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

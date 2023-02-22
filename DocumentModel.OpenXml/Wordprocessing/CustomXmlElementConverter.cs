@@ -10,22 +10,17 @@ public static class CustomXmlElementConverter
   /// </summary>
   private static String? GetUri(DXW.CustomXmlElement openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXW.CustomXmlElement openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class CustomXmlElementConverter
   /// </summary>
   private static String? GetElement(DXW.CustomXmlElement openXmlElement)
   {
-    return openXmlElement?.Element?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Element);
   }
   
   private static bool CmpElement(DXW.CustomXmlElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Element?.Value == value) return true;
-    diffs?.Add(objName, "Element", openXmlElement?.Element?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Element, value, diffs, objName, "Element");
   }
   
   private static void SetElement(DXW.CustomXmlElement openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Element = new StringValue { Value = value };
-    else
-      openXmlElement.Element = null;
+    openXmlElement.Element = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -111,17 +101,18 @@ public static class CustomXmlElementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement value)
     where OpenXmlElementType: DXW.CustomXmlElement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetElement(openXmlElement, value?.Element);
-      SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlElement value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetElement(openXmlElement, value?.Element);
+    SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
+    }
+  }

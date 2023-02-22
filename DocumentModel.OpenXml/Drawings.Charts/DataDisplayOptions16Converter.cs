@@ -61,15 +61,16 @@ public static class DataDisplayOptions16Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataDisplayOptions16? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataDisplayOptions16 value)
     where OpenXmlElementType: DXDrawCharts.DataDisplayOptions16, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBooleanFalse(openXmlElement, value?.BooleanFalse);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DataDisplayOptions16 openXmlElement, DMDrawsCharts.DataDisplayOptions16 value)
+  {
+    SetBooleanFalse(openXmlElement, value?.BooleanFalse);
+    }
+  }

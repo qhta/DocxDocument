@@ -50,15 +50,16 @@ public static class SoftEdgeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SoftEdge? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SoftEdge value)
     where OpenXmlElementType: DXDraw.SoftEdge, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRadius(openXmlElement, value?.Radius);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.SoftEdge openXmlElement, DMDraws.SoftEdge value)
+  {
+    SetRadius(openXmlElement, value?.Radius);
+    }
+  }

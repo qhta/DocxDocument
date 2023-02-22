@@ -10,22 +10,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetId(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetIdQ(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.IdQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
   private static bool CmpIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdQ?.Value == value) return true;
-    diffs?.Add(objName, "IdQ", openXmlElement?.IdQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
   private static void SetIdQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdQ = new StringValue { Value = value };
-    else
-      openXmlElement.IdQ = null;
+    openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.InsertAfterMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
   private static bool CmpInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
   private static void SetInsertAfterMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterMso = null;
+    openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.InsertBeforeMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
   private static bool CmpInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
   private static void SetInsertBeforeMso(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeMso = null;
+    openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.InsertAfterQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
   private static bool CmpInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterQ?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterQ", openXmlElement?.InsertAfterQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
   private static void SetInsertAfterQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterQ = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterQ = null;
+    openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.InsertBeforeQ?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
   private static bool CmpInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeQ?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeQ", openXmlElement?.InsertBeforeQ?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
   private static void SetInsertBeforeQ(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeQ = null;
+    openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +118,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetTitle(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.Title?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
   private static bool CmpTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Title?.Value == value) return true;
-    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
   private static void SetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Title = new StringValue { Value = value };
-    else
-      openXmlElement.Title = null;
+    openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +136,17 @@ public static class MenuSeparatorConverter
   /// </summary>
   private static String? GetGetTitle(DXOCustUI.MenuSeparator openXmlElement)
   {
-    return openXmlElement?.GetTitle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetTitle);
   }
   
   private static bool CmpGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetTitle?.Value == value) return true;
-    diffs?.Add(objName, "GetTitle", openXmlElement?.GetTitle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetTitle, value, diffs, objName, "GetTitle");
   }
   
   private static void SetGetTitle(DXOCustUI.MenuSeparator openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetTitle = new StringValue { Value = value };
-    else
-      openXmlElement.GetTitle = null;
+    openXmlElement.GetTitle = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.UI.MenuSeparator? CreateModelElement(DXOCustUI.MenuSeparator? openXmlElement)
@@ -235,22 +195,23 @@ public static class MenuSeparatorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.MenuSeparator? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.MenuSeparator value)
     where OpenXmlElementType: DXOCustUI.MenuSeparator, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetIdQ(openXmlElement, value?.IdQ);
-      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
-      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
-      SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
-      SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
-      SetTitle(openXmlElement, value?.Title);
-      SetGetTitle(openXmlElement, value?.GetTitle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.MenuSeparator openXmlElement, DMUI.MenuSeparator value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetIdQ(openXmlElement, value?.IdQ);
+    SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+    SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+    SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
+    SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
+    SetTitle(openXmlElement, value?.Title);
+    SetGetTitle(openXmlElement, value?.GetTitle);
+    }
+  }

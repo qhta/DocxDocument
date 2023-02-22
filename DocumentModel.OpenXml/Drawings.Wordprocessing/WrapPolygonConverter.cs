@@ -114,17 +114,18 @@ public static class WrapPolygonConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapPolygon? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapPolygon value)
     where OpenXmlElementType: DXDrawW.WrapPolygon, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEdited(openXmlElement, value?.Edited);
-      SetStartPoint(openXmlElement, value?.StartPoint);
-      SetLineTo(openXmlElement, value?.LineTo);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.WrapPolygon value)
+  {
+    SetEdited(openXmlElement, value?.Edited);
+    SetStartPoint(openXmlElement, value?.StartPoint);
+    SetLineTo(openXmlElement, value?.LineTo);
+    }
+  }

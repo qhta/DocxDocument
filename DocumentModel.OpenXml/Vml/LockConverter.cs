@@ -334,26 +334,27 @@ public static class LockConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Lock? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Lock value)
     where OpenXmlElementType: DXVmlO.Lock, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetPosition(openXmlElement, value?.Position);
-      SetSelection(openXmlElement, value?.Selection);
-      SetGrouping(openXmlElement, value?.Grouping);
-      SetUngrouping(openXmlElement, value?.Ungrouping);
-      SetRotation(openXmlElement, value?.Rotation);
-      SetCropping(openXmlElement, value?.Cropping);
-      SetVerticies(openXmlElement, value?.Verticies);
-      SetAdjustHandles(openXmlElement, value?.AdjustHandles);
-      SetTextLock(openXmlElement, value?.TextLock);
-      SetAspectRatio(openXmlElement, value?.AspectRatio);
-      SetShapeType(openXmlElement, value?.ShapeType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Lock openXmlElement, DMVml.Lock value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetPosition(openXmlElement, value?.Position);
+    SetSelection(openXmlElement, value?.Selection);
+    SetGrouping(openXmlElement, value?.Grouping);
+    SetUngrouping(openXmlElement, value?.Ungrouping);
+    SetRotation(openXmlElement, value?.Rotation);
+    SetCropping(openXmlElement, value?.Cropping);
+    SetVerticies(openXmlElement, value?.Verticies);
+    SetAdjustHandles(openXmlElement, value?.AdjustHandles);
+    SetTextLock(openXmlElement, value?.TextLock);
+    SetAspectRatio(openXmlElement, value?.AspectRatio);
+    SetShapeType(openXmlElement, value?.ShapeType);
+    }
+  }

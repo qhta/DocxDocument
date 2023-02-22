@@ -59,15 +59,16 @@ public static class FilteredAreaSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredAreaSeries? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredAreaSeries value)
     where OpenXmlElementType: DXO2013DrawChart.FilteredAreaSeries, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredAreaSeries openXmlElement, DMDrawsCharts.FilteredAreaSeries value)
+  {
+    SetAreaChartSeries(openXmlElement, value?.AreaChartSeries);
+    }
+  }

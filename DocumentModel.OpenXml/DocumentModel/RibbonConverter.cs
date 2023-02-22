@@ -149,18 +149,19 @@ public static class RibbonConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Ribbon? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Ribbon value)
     where OpenXmlElementType: DXO2010CustUI.Ribbon, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStartFromScratch(openXmlElement, value?.StartFromScratch);
-      SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
-      SetTabs(openXmlElement, value?.Tabs);
-      SetContextualTabs(openXmlElement, value?.ContextualTabs);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.Ribbon openXmlElement, DM.Ribbon value)
+  {
+    SetStartFromScratch(openXmlElement, value?.StartFromScratch);
+    SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);
+    SetTabs(openXmlElement, value?.Tabs);
+    SetContextualTabs(openXmlElement, value?.ContextualTabs);
+    }
+  }

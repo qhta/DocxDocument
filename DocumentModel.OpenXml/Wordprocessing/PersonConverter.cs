@@ -10,22 +10,17 @@ public static class PersonConverter
   /// </summary>
   private static String? GetContact(DXO2013W.Person openXmlElement)
   {
-    return openXmlElement?.Contact?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Contact);
   }
   
   private static bool CmpContact(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Contact?.Value == value) return true;
-    diffs?.Add(objName, "Contact", openXmlElement?.Contact?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Contact, value, diffs, objName, "Contact");
   }
   
   private static void SetContact(DXO2013W.Person openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Contact = new StringValue { Value = value };
-    else
-      openXmlElement.Contact = null;
+    openXmlElement.Contact = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class PersonConverter
   /// </summary>
   private static String? GetAuthor(DXO2013W.Person openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXO2013W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXO2013W.Person openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -111,17 +101,18 @@ public static class PersonConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Person? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Person value)
     where OpenXmlElementType: DXO2013W.Person, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetContact(openXmlElement, value?.Contact);
-      SetAuthor(openXmlElement, value?.Author);
-      SetPresenceInfo(openXmlElement, value?.PresenceInfo);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013W.Person openXmlElement, DMW.Person value)
+  {
+    SetContact(openXmlElement, value?.Contact);
+    SetAuthor(openXmlElement, value?.Author);
+    SetPresenceInfo(openXmlElement, value?.PresenceInfo);
+    }
+  }

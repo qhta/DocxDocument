@@ -59,15 +59,16 @@ public static class OfficeMathArgumentTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.OfficeMathArgumentType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.OfficeMathArgumentType value)
     where OpenXmlElementType: DXMath.OfficeMathArgumentType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetArgumentProperties(openXmlElement, value?.ArgumentProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.OfficeMathArgumentType openXmlElement, DMMath.OfficeMathArgumentType value)
+  {
+    SetArgumentProperties(openXmlElement, value?.ArgumentProperties);
+    }
+  }

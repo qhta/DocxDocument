@@ -50,15 +50,16 @@ public static class AlphaReplaceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaReplace? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaReplace value)
     where OpenXmlElementType: DXDraw.AlphaReplace, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAlpha(openXmlElement, value?.Alpha);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AlphaReplace openXmlElement, DMDraws.AlphaReplace value)
+  {
+    SetAlpha(openXmlElement, value?.Alpha);
+    }
+  }

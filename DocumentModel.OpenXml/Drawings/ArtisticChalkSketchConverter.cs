@@ -73,16 +73,17 @@ public static class ArtisticChalkSketchConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticChalkSketch? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticChalkSketch value)
     where OpenXmlElementType: DXO2010Draw.ArtisticChalkSketch, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetPressure(openXmlElement, value?.Pressure);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticChalkSketch openXmlElement, DMDraws.ArtisticChalkSketch value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetPressure(openXmlElement, value?.Pressure);
+    }
+  }

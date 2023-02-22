@@ -324,27 +324,28 @@ public static class ReflectionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Reflection? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Reflection value)
     where OpenXmlElementType: DXO2010W.Reflection, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlurRadius(openXmlElement, value?.BlurRadius);
-      SetStartingOpacity(openXmlElement, value?.StartingOpacity);
-      SetStartPosition(openXmlElement, value?.StartPosition);
-      SetEndingOpacity(openXmlElement, value?.EndingOpacity);
-      SetEndPosition(openXmlElement, value?.EndPosition);
-      SetDistanceFromText(openXmlElement, value?.DistanceFromText);
-      SetDirectionAngle(openXmlElement, value?.DirectionAngle);
-      SetFadeDirection(openXmlElement, value?.FadeDirection);
-      SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
-      SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
-      SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
-      SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
-      SetAlignment(openXmlElement, value?.Alignment);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Reflection openXmlElement, DMW.Reflection value)
+  {
+    SetBlurRadius(openXmlElement, value?.BlurRadius);
+    SetStartingOpacity(openXmlElement, value?.StartingOpacity);
+    SetStartPosition(openXmlElement, value?.StartPosition);
+    SetEndingOpacity(openXmlElement, value?.EndingOpacity);
+    SetEndPosition(openXmlElement, value?.EndPosition);
+    SetDistanceFromText(openXmlElement, value?.DistanceFromText);
+    SetDirectionAngle(openXmlElement, value?.DirectionAngle);
+    SetFadeDirection(openXmlElement, value?.FadeDirection);
+    SetHorizontalScalingFactor(openXmlElement, value?.HorizontalScalingFactor);
+    SetVerticalScalingFactor(openXmlElement, value?.VerticalScalingFactor);
+    SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
+    SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
+    SetAlignment(openXmlElement, value?.Alignment);
+    }
+  }

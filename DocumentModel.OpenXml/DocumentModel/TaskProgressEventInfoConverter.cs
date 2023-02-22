@@ -50,15 +50,16 @@ public static class TaskProgressEventInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskProgressEventInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskProgressEventInfo value)
     where OpenXmlElementType: DXO2021DocTasks.TaskProgressEventInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPercentComplete(openXmlElement, value?.PercentComplete);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, DM.TaskProgressEventInfo value)
+  {
+    SetPercentComplete(openXmlElement, value?.PercentComplete);
+    }
+  }

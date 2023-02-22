@@ -95,27 +95,17 @@ public static class DataSourceObjectConverter
   /// </summary>
   private static UInt32? GetColumnDelimiter(DXW.DataSourceObject openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val);
   }
   
   private static bool CmpColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.ColumnDelimiter", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val, value, diffs, objName, "ColumnDelimiter");
   }
   
   private static void SetColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ColumnDelimiter>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.ColumnDelimiter{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.ColumnDelimiter,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -135,13 +125,15 @@ public static class DataSourceObjectConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MailMergeSource>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeSource, DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(itemElement, (DMW.MailMergeSourceKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeSource, DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>((DMW.MailMergeSourceKind)value));
   }
   
   /// <summary>
@@ -149,34 +141,17 @@ public static class DataSourceObjectConverter
   /// </summary>
   private static Boolean? GetFirstRowHeader(DXW.DataSourceObject openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.FirstRowHeader>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FirstRowHeader>());
   }
   
   private static bool CmpFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetFirstRowHeader(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.FirstRowHeader", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FirstRowHeader>(), value, diffs, objName);
   }
   
   private static void SetFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.FirstRowHeader>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.FirstRowHeader();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.FirstRowHeader>(openXmlElement, value);
   }
   
   private static Collection<DMW.FieldMapData>? GetFieldMapDatas(DXW.DataSourceObject openXmlElement)
@@ -195,11 +170,11 @@ public static class DataSourceObjectConverter
   
   private static bool CmpFieldMapDatas(DXW.DataSourceObject openXmlElement, Collection<DMW.FieldMapData>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.FieldMapData>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.FieldMapData>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -216,7 +191,7 @@ public static class DataSourceObjectConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -307,22 +282,23 @@ public static class DataSourceObjectConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DataSourceObject? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DataSourceObject value)
     where OpenXmlElementType: DXW.DataSourceObject, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUdlConnectionString(openXmlElement, value?.UdlConnectionString);
-      SetDataSourceTableName(openXmlElement, value?.DataSourceTableName);
-      SetSourceReference(openXmlElement, value?.SourceReference);
-      SetColumnDelimiter(openXmlElement, value?.ColumnDelimiter);
-      SetMailMergeSource(openXmlElement, value?.MailMergeSource);
-      SetFirstRowHeader(openXmlElement, value?.FirstRowHeader);
-      SetFieldMapDatas(openXmlElement, value?.FieldMapDatas);
-      SetRecipientDataReference(openXmlElement, value?.RecipientDataReference);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DataSourceObject openXmlElement, DMW.DataSourceObject value)
+  {
+    SetUdlConnectionString(openXmlElement, value?.UdlConnectionString);
+    SetDataSourceTableName(openXmlElement, value?.DataSourceTableName);
+    SetSourceReference(openXmlElement, value?.SourceReference);
+    SetColumnDelimiter(openXmlElement, value?.ColumnDelimiter);
+    SetMailMergeSource(openXmlElement, value?.MailMergeSource);
+    SetFirstRowHeader(openXmlElement, value?.FirstRowHeader);
+    SetFieldMapDatas(openXmlElement, value?.FieldMapDatas);
+    SetRecipientDataReference(openXmlElement, value?.RecipientDataReference);
+    }
+  }

@@ -10,22 +10,17 @@ public static class DLblsExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.DLblsExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.DLblsExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.ChartText3? GetChartText(DXDrawCharts.DLblsExtension openXmlElement)
@@ -260,22 +255,23 @@ public static class DLblsExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblsExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblsExtension value)
     where OpenXmlElementType: DXDrawCharts.DLblsExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetChartText(openXmlElement, value?.ChartText);
-      SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
-      SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetLayout(openXmlElement, value?.Layout);
-      SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
-      SetLeaderLines(openXmlElement, value?.LeaderLines);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.DLblsExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetChartText(openXmlElement, value?.ChartText);
+    SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
+    SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetLayout(openXmlElement, value?.Layout);
+    SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
+    SetLeaderLines(openXmlElement, value?.LeaderLines);
+    }
+  }

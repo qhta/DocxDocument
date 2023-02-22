@@ -10,24 +10,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static String? GetMathFont(DXMath.MathProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val);
   }
   
   private static bool CmpMathFont(DXMath.MathProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val, value, diffs, objName, "MathFont");
   }
   
   private static void SetMathFont(DXMath.MathProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.MathFont>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.MathFont { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXMath.MathFont>(openXmlElement, value);
   }
   
   /// <summary>
@@ -47,13 +40,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.BreakBinary>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(itemElement, (DMMath.BreakBinaryOperatorKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>((DMMath.BreakBinaryOperatorKind)value));
   }
   
   /// <summary>
@@ -73,13 +68,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(itemElement, (DMMath.BreakBinarySubtractionKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>((DMMath.BreakBinarySubtractionKind)value));
   }
   
   /// <summary>
@@ -99,13 +96,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.SmallFraction>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.SmallFraction, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.SmallFraction, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -125,13 +124,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.DisplayDefaults>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.DisplayDefaults, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.DisplayDefaults, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -139,27 +140,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetLeftMargin(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val);
   }
   
   private static bool CmpLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.LeftMargin>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.LeftMargin", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val, value, diffs, objName, "LeftMargin");
   }
   
   private static void SetLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.LeftMargin>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.LeftMargin{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.LeftMargin,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -167,27 +158,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetRightMargin(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val);
   }
   
   private static bool CmpRightMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.RightMargin>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.RightMargin", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val, value, diffs, objName, "RightMargin");
   }
   
   private static void SetRightMargin(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.RightMargin>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.RightMargin{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.RightMargin,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -207,13 +188,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.DefaultJustification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(itemElement, (DMMath.JustificationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>((DMMath.JustificationKind)value));
   }
   
   /// <summary>
@@ -221,27 +204,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetPreSpacing(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val);
   }
   
   private static bool CmpPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.PreSpacing>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.PreSpacing", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val, value, diffs, objName, "PreSpacing");
   }
   
   private static void SetPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.PreSpacing>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.PreSpacing{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.PreSpacing,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -249,27 +222,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetPostSpacing(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val);
   }
   
   private static bool CmpPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.PostSpacing>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.PostSpacing", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val, value, diffs, objName, "PostSpacing");
   }
   
   private static void SetPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.PostSpacing>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.PostSpacing{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.PostSpacing,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -277,27 +240,17 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetInterSpacing(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val);
   }
   
   private static bool CmpInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.InterSpacing>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.InterSpacing", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val, value, diffs, objName, "InterSpacing");
   }
   
   private static void SetInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.InterSpacing>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.InterSpacing{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.InterSpacing,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -305,52 +258,32 @@ public static class MathPropertiesConverter
   /// </summary>
   private static UInt32? GetIntraSpacing(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val);
   }
   
   private static bool CmpIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.IntraSpacing>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.IntraSpacing", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val, value, diffs, objName, "IntraSpacing");
   }
   
   private static void SetIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.IntraSpacing>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.IntraSpacing{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.IntraSpacing,System.UInt32>(openXmlElement, value);
   }
   
   private static UInt32? GetWrapIndent(DXMath.MathProperties openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val);
   }
   
   private static bool CmpWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXMath.WrapIndent>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXMath.WrapIndent", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val, value, diffs, objName, "WrapIndent");
   }
   
   private static void SetWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.WrapIndent>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.WrapIndent{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXMath.WrapIndent,System.UInt32>(openXmlElement, value);
   }
   
   private static DMMath.BooleanKind? GetWrapRight(DXMath.MathProperties openXmlElement)
@@ -367,13 +300,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.WrapRight>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.WrapRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.WrapRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   private static DMMath.LimitLocationKind? GetIntegralLimitLocation(DXMath.MathProperties openXmlElement)
@@ -390,13 +325,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
   }
   
   private static DMMath.LimitLocationKind? GetNaryLimitLocation(DXMath.MathProperties openXmlElement)
@@ -413,13 +350,15 @@ public static class MathPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
   }
   
   public static DocumentModel.Math.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
@@ -492,30 +431,31 @@ public static class MathPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathProperties value)
     where OpenXmlElementType: DXMath.MathProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMathFont(openXmlElement, value?.MathFont);
-      SetBreakBinary(openXmlElement, value?.BreakBinary);
-      SetBreakBinarySubtraction(openXmlElement, value?.BreakBinarySubtraction);
-      SetSmallFraction(openXmlElement, value?.SmallFraction);
-      SetDisplayDefaults(openXmlElement, value?.DisplayDefaults);
-      SetLeftMargin(openXmlElement, value?.LeftMargin);
-      SetRightMargin(openXmlElement, value?.RightMargin);
-      SetDefaultJustification(openXmlElement, value?.DefaultJustification);
-      SetPreSpacing(openXmlElement, value?.PreSpacing);
-      SetPostSpacing(openXmlElement, value?.PostSpacing);
-      SetInterSpacing(openXmlElement, value?.InterSpacing);
-      SetIntraSpacing(openXmlElement, value?.IntraSpacing);
-      SetWrapIndent(openXmlElement, value?.WrapIndent);
-      SetWrapRight(openXmlElement, value?.WrapRight);
-      SetIntegralLimitLocation(openXmlElement, value?.IntegralLimitLocation);
-      SetNaryLimitLocation(openXmlElement, value?.NaryLimitLocation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.MathProperties openXmlElement, DMMath.MathProperties value)
+  {
+    SetMathFont(openXmlElement, value?.MathFont);
+    SetBreakBinary(openXmlElement, value?.BreakBinary);
+    SetBreakBinarySubtraction(openXmlElement, value?.BreakBinarySubtraction);
+    SetSmallFraction(openXmlElement, value?.SmallFraction);
+    SetDisplayDefaults(openXmlElement, value?.DisplayDefaults);
+    SetLeftMargin(openXmlElement, value?.LeftMargin);
+    SetRightMargin(openXmlElement, value?.RightMargin);
+    SetDefaultJustification(openXmlElement, value?.DefaultJustification);
+    SetPreSpacing(openXmlElement, value?.PreSpacing);
+    SetPostSpacing(openXmlElement, value?.PostSpacing);
+    SetInterSpacing(openXmlElement, value?.InterSpacing);
+    SetIntraSpacing(openXmlElement, value?.IntraSpacing);
+    SetWrapIndent(openXmlElement, value?.WrapIndent);
+    SetWrapRight(openXmlElement, value?.WrapRight);
+    SetIntegralLimitLocation(openXmlElement, value?.IntegralLimitLocation);
+    SetNaryLimitLocation(openXmlElement, value?.NaryLimitLocation);
+    }
+  }

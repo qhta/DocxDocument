@@ -91,16 +91,17 @@ public static class Layout3Converter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Layout3? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Layout3 value)
     where OpenXmlElementType: DXO2013DrawChart.Layout, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetManualLayout(openXmlElement, value?.ManualLayout);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013DrawChart.Layout openXmlElement, DMDrawsCharts.Layout3 value)
+  {
+    SetManualLayout(openXmlElement, value?.ManualLayout);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

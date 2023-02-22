@@ -10,22 +10,17 @@ public static class AcceleratorKeymapTypeConverter
   /// </summary>
   private static String? GetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement)
   {
-    return openXmlElement?.AcceleratorName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AcceleratorName);
   }
   
   private static bool CmpAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AcceleratorName?.Value == value) return true;
-    diffs?.Add(objName, "AcceleratorName", openXmlElement?.AcceleratorName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AcceleratorName, value, diffs, objName, "AcceleratorName");
   }
   
   private static void SetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AcceleratorName = new StringValue { Value = value };
-    else
-      openXmlElement.AcceleratorName = null;
+    openXmlElement.AcceleratorName = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.AcceleratorKeymapType? CreateModelElement(DXOW.AcceleratorKeymapType? openXmlElement)
@@ -53,15 +48,16 @@ public static class AcceleratorKeymapTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AcceleratorKeymapType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AcceleratorKeymapType value)
     where OpenXmlElementType: DXOW.AcceleratorKeymapType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAcceleratorName(openXmlElement, value?.AcceleratorName);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.AcceleratorKeymapType openXmlElement, DMW.AcceleratorKeymapType value)
+  {
+    SetAcceleratorName(openXmlElement, value?.AcceleratorName);
+    }
+  }

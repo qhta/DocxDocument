@@ -91,16 +91,17 @@ public static class QuickAccessToolbarConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.QuickAccessToolbar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.QuickAccessToolbar value)
     where OpenXmlElementType: DXO2010CustUI.QuickAccessToolbar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSharedControlsQatItems(openXmlElement, value?.SharedControlsQatItems);
-      SetDocumentControlsQatItems(openXmlElement, value?.DocumentControlsQatItems);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.QuickAccessToolbar value)
+  {
+    SetSharedControlsQatItems(openXmlElement, value?.SharedControlsQatItems);
+    SetDocumentControlsQatItems(openXmlElement, value?.DocumentControlsQatItems);
+    }
+  }

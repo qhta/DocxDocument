@@ -90,17 +90,18 @@ public static class LineEndPropertiesTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineEndPropertiesType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineEndPropertiesType value)
     where OpenXmlElementType: DXDraw.LineEndPropertiesType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetWidth(openXmlElement, value?.Width);
-      SetLength(openXmlElement, value?.Length);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndPropertiesType value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetWidth(openXmlElement, value?.Width);
+    SetLength(openXmlElement, value?.Length);
+    }
+  }

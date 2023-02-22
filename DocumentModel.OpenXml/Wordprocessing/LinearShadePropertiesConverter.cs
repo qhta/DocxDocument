@@ -71,16 +71,17 @@ public static class LinearShadePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LinearShadeProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LinearShadeProperties value)
     where OpenXmlElementType: DXO2010W.LinearShadeProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAngle(openXmlElement, value?.Angle);
-      SetScaled(openXmlElement, value?.Scaled);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.LinearShadeProperties openXmlElement, DMW.LinearShadeProperties value)
+  {
+    SetAngle(openXmlElement, value?.Angle);
+    SetScaled(openXmlElement, value?.Scaled);
+    }
+  }

@@ -66,22 +66,17 @@ public static class CommentExConverter
   /// </summary>
   private static Boolean? GetDone(DXO2013W.CommentEx openXmlElement)
   {
-    return openXmlElement?.Done?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Done);
   }
   
   private static bool CmpDone(DXO2013W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Done?.Value == value) return true;
-    diffs?.Add(objName, "Done", openXmlElement?.Done?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Done, value, diffs, objName, "Done");
   }
   
   private static void SetDone(DXO2013W.CommentEx openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Done = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Done = null;
+    openXmlElement.Done = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
@@ -115,17 +110,18 @@ public static class CommentExConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentEx? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentEx value)
     where OpenXmlElementType: DXO2013W.CommentEx, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetParaId(openXmlElement, value?.ParaId);
-      SetParaIdParent(openXmlElement, value?.ParaIdParent);
-      SetDone(openXmlElement, value?.Done);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013W.CommentEx openXmlElement, DMW.CommentEx value)
+  {
+    SetParaId(openXmlElement, value?.ParaId);
+    SetParaIdParent(openXmlElement, value?.ParaIdParent);
+    SetDone(openXmlElement, value?.Done);
+    }
+  }

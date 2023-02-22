@@ -52,11 +52,11 @@ public static class PieChartConverter
   
   private static bool CmpPieChartSeries(DXDrawCharts.PieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -73,7 +73,7 @@ public static class PieChartConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -120,27 +120,17 @@ public static class PieChartConverter
   
   private static UInt16? GetFirstSliceAngle(DXDrawCharts.PieChart openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val);
   }
   
   private static bool CmpFirstSliceAngle(DXDrawCharts.PieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.FirstSliceAngle", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.FirstSliceAngle>()?.Val, value, diffs, objName, "FirstSliceAngle");
   }
   
   private static void SetFirstSliceAngle(DXDrawCharts.PieChart openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FirstSliceAngle>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.FirstSliceAngle{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.FirstSliceAngle,System.UInt16>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.PieChartExtensionList? GetPieChartExtensionList(DXDrawCharts.PieChart openXmlElement)
@@ -206,19 +196,20 @@ public static class PieChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieChart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieChart value)
     where OpenXmlElementType: DXDrawCharts.PieChart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVaryColors(openXmlElement, value?.VaryColors);
-      SetPieChartSeries(openXmlElement, value?.PieChartSeries);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
-      SetPieChartExtensionList(openXmlElement, value?.PieChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChart value)
+  {
+    SetVaryColors(openXmlElement, value?.VaryColors);
+    SetPieChartSeries(openXmlElement, value?.PieChartSeries);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
+    SetPieChartExtensionList(openXmlElement, value?.PieChartExtensionList);
+    }
+  }

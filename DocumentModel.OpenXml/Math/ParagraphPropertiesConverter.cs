@@ -22,13 +22,15 @@ public static class ParagraphPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.Justification>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(itemElement, (DMMath.JustificationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>((DMMath.JustificationKind)value));
   }
   
   public static DocumentModel.Math.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
@@ -56,15 +58,16 @@ public static class ParagraphPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ParagraphProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.ParagraphProperties value)
     where OpenXmlElementType: DXMath.ParagraphProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetJustification(openXmlElement, value?.Justification);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.ParagraphProperties openXmlElement, DMMath.ParagraphProperties value)
+  {
+    SetJustification(openXmlElement, value?.Justification);
+    }
+  }

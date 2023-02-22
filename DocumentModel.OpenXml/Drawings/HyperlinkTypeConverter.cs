@@ -10,22 +10,17 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static String? GetId(DXDraw.HyperlinkType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXDraw.HyperlinkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static String? GetInvalidUrl(DXDraw.HyperlinkType openXmlElement)
   {
-    return openXmlElement?.InvalidUrl?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InvalidUrl);
   }
   
   private static bool CmpInvalidUrl(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InvalidUrl?.Value == value) return true;
-    diffs?.Add(objName, "InvalidUrl", openXmlElement?.InvalidUrl?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InvalidUrl, value, diffs, objName, "InvalidUrl");
   }
   
   private static void SetInvalidUrl(DXDraw.HyperlinkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InvalidUrl = new StringValue { Value = value };
-    else
-      openXmlElement.InvalidUrl = null;
+    openXmlElement.InvalidUrl = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static String? GetAction(DXDraw.HyperlinkType openXmlElement)
   {
-    return openXmlElement?.Action?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Action);
   }
   
   private static bool CmpAction(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Action?.Value == value) return true;
-    diffs?.Add(objName, "Action", openXmlElement?.Action?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Action, value, diffs, objName, "Action");
   }
   
   private static void SetAction(DXDraw.HyperlinkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Action = new StringValue { Value = value };
-    else
-      openXmlElement.Action = null;
+    openXmlElement.Action = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static String? GetTargetFrame(DXDraw.HyperlinkType openXmlElement)
   {
-    return openXmlElement?.TargetFrame?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
   }
   
   private static bool CmpTargetFrame(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TargetFrame?.Value == value) return true;
-    diffs?.Add(objName, "TargetFrame", openXmlElement?.TargetFrame?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.TargetFrame, value, diffs, objName, "TargetFrame");
   }
   
   private static void SetTargetFrame(DXDraw.HyperlinkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.TargetFrame = new StringValue { Value = value };
-    else
-      openXmlElement.TargetFrame = null;
+    openXmlElement.TargetFrame = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class HyperlinkTypeConverter
   /// </summary>
   private static String? GetTooltip(DXDraw.HyperlinkType openXmlElement)
   {
-    return openXmlElement?.Tooltip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tooltip);
   }
   
   private static bool CmpTooltip(DXDraw.HyperlinkType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tooltip?.Value == value) return true;
-    diffs?.Add(objName, "Tooltip", openXmlElement?.Tooltip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tooltip, value, diffs, objName, "Tooltip");
   }
   
   private static void SetTooltip(DXDraw.HyperlinkType openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tooltip = new StringValue { Value = value };
-    else
-      openXmlElement.Tooltip = null;
+    openXmlElement.Tooltip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -299,24 +274,25 @@ public static class HyperlinkTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkType value)
     where OpenXmlElementType: DXDraw.HyperlinkType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetInvalidUrl(openXmlElement, value?.InvalidUrl);
-      SetAction(openXmlElement, value?.Action);
-      SetTargetFrame(openXmlElement, value?.TargetFrame);
-      SetTooltip(openXmlElement, value?.Tooltip);
-      SetHistory(openXmlElement, value?.History);
-      SetHighlightClick(openXmlElement, value?.HighlightClick);
-      SetEndSound(openXmlElement, value?.EndSound);
-      SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
-      SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.HyperlinkType openXmlElement, DMDraws.HyperlinkType value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetInvalidUrl(openXmlElement, value?.InvalidUrl);
+    SetAction(openXmlElement, value?.Action);
+    SetTargetFrame(openXmlElement, value?.TargetFrame);
+    SetTooltip(openXmlElement, value?.Tooltip);
+    SetHistory(openXmlElement, value?.History);
+    SetHighlightClick(openXmlElement, value?.HighlightClick);
+    SetEndSound(openXmlElement, value?.EndSound);
+    SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
+    SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
+    }
+  }

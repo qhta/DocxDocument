@@ -7,132 +7,77 @@ public static class FormFieldDataConverter
 {
   private static String? GetFormFieldName(DXW.FormFieldData openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.FormFieldName>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FormFieldName>()?.Val);
   }
   
   private static bool CmpFormFieldName(DXW.FormFieldData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.FormFieldName>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FormFieldName>()?.Val, value, diffs, objName, "FormFieldName");
   }
   
   private static void SetFormFieldName(DXW.FormFieldData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.FormFieldName>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.FormFieldName { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.FormFieldName>(openXmlElement, value);
   }
   
   private static Boolean? GetEnabled(DXW.FormFieldData openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.Enabled>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Enabled>());
   }
   
   private static bool CmpEnabled(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetEnabled(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.Enabled", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Enabled>(), value, diffs, objName);
   }
   
   private static void SetEnabled(DXW.FormFieldData openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.Enabled>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.Enabled();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.Enabled>(openXmlElement, value);
   }
   
   private static Boolean? GetCalculateOnExit(DXW.FormFieldData openXmlElement)
   {
-    var element = openXmlElement.GetFirstChild<DXW.CalculateOnExit>();
-    if (element?.Val?.Value != null)
-      return element.Val.Value;
-    if (element != null) return false;
-    return null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.CalculateOnExit>());
   }
   
   private static bool CmpCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = GetCalculateOnExit(openXmlElement);
-    if (val == value) return true;
-    diffs?.Add(objName, "DXW.CalculateOnExit", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.CalculateOnExit>(), value, diffs, objName);
   }
   
   private static void SetCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value)
   {
-    if (value == false)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DXW.CalculateOnExit>();
-      if (itemElement != null)
-        itemElement.Remove();
-    }
-    if (value == true)
-    {
-      var itemElement = new DXW.CalculateOnExit();
-      openXmlElement.AddChild(itemElement);
-    }
+    BooleanValueConverter.SetOnOffType<DXW.CalculateOnExit>(openXmlElement, value);
   }
   
   private static String? GetEntryMacro(DXW.FormFieldData openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.EntryMacro>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.EntryMacro>()?.Val);
   }
   
   private static bool CmpEntryMacro(DXW.FormFieldData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.EntryMacro>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.EntryMacro>()?.Val, value, diffs, objName, "EntryMacro");
   }
   
   private static void SetEntryMacro(DXW.FormFieldData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.EntryMacro>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.EntryMacro { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.EntryMacro>(openXmlElement, value);
   }
   
   private static String? GetExitMacro(DXW.FormFieldData openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXW.ExitMacro>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ExitMacro>()?.Val);
   }
   
   private static bool CmpExitMacro(DXW.FormFieldData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXW.ExitMacro>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.ExitMacro>()?.Val, value, diffs, objName, "ExitMacro");
   }
   
   private static void SetExitMacro(DXW.FormFieldData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.ExitMacro>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.ExitMacro { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXW.ExitMacro>(openXmlElement, value);
   }
   
   private static DMW.HelpText? GetHelpText(DXW.FormFieldData openXmlElement)
@@ -317,24 +262,25 @@ public static class FormFieldDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FormFieldData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FormFieldData value)
     where OpenXmlElementType: DXW.FormFieldData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormFieldName(openXmlElement, value?.FormFieldName);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetCalculateOnExit(openXmlElement, value?.CalculateOnExit);
-      SetEntryMacro(openXmlElement, value?.EntryMacro);
-      SetExitMacro(openXmlElement, value?.ExitMacro);
-      SetHelpText(openXmlElement, value?.HelpText);
-      SetStatusText(openXmlElement, value?.StatusText);
-      SetCheckBox(openXmlElement, value?.CheckBox);
-      SetDropDownListFormField(openXmlElement, value?.DropDownListFormField);
-      SetTextInput(openXmlElement, value?.TextInput);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FormFieldData openXmlElement, DMW.FormFieldData value)
+  {
+    SetFormFieldName(openXmlElement, value?.FormFieldName);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetCalculateOnExit(openXmlElement, value?.CalculateOnExit);
+    SetEntryMacro(openXmlElement, value?.EntryMacro);
+    SetExitMacro(openXmlElement, value?.ExitMacro);
+    SetHelpText(openXmlElement, value?.HelpText);
+    SetStatusText(openXmlElement, value?.StatusText);
+    SetCheckBox(openXmlElement, value?.CheckBox);
+    SetDropDownListFormField(openXmlElement, value?.DropDownListFormField);
+    SetTextInput(openXmlElement, value?.TextInput);
+    }
+  }

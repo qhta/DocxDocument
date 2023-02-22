@@ -91,16 +91,17 @@ public static class BorderBoxConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBox? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBox value)
     where OpenXmlElementType: DXMath.BorderBox, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBorderBoxProperties(openXmlElement, value?.BorderBoxProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.BorderBox openXmlElement, DMMath.BorderBox value)
+  {
+    SetBorderBoxProperties(openXmlElement, value?.BorderBoxProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

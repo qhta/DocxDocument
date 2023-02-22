@@ -123,17 +123,18 @@ public static class MathFunctionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathFunction? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathFunction value)
     where OpenXmlElementType: DXMath.MathFunction, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFunctionProperties(openXmlElement, value?.FunctionProperties);
-      SetFunctionName(openXmlElement, value?.FunctionName);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.MathFunction openXmlElement, DMMath.MathFunction value)
+  {
+    SetFunctionProperties(openXmlElement, value?.FunctionProperties);
+    SetFunctionName(openXmlElement, value?.FunctionName);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

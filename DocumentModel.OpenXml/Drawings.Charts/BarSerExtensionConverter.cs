@@ -10,22 +10,17 @@ public static class BarSerExtensionConverter
   /// </summary>
   private static String? GetUri(DXDrawCharts.BarSerExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDrawCharts.BarSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDrawCharts.BarSerExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsCharts.InvertSolidFillFormat? GetInvertSolidFillFormat(DXDrawCharts.BarSerExtension openXmlElement)
@@ -198,20 +193,21 @@ public static class BarSerExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarSerExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarSerExtension value)
     where OpenXmlElementType: DXDrawCharts.BarSerExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetInvertSolidFillFormat(openXmlElement, value?.InvertSolidFillFormat);
-      SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
-      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
-      SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
-      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.BarSerExtension openXmlElement, DMDrawsCharts.BarSerExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetInvertSolidFillFormat(openXmlElement, value?.InvertSolidFillFormat);
+    SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
+    SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+    SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
+    SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
+    }
+  }

@@ -10,22 +10,17 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static String? GetName(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.LatentStyleExceptionInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.LatentStyleExceptionInfo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static Boolean? GetLocked(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.Locked?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Locked);
   }
   
   private static bool CmpLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Locked?.Value == value) return true;
-    diffs?.Add(objName, "Locked", openXmlElement?.Locked?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Locked, value, diffs, objName, "Locked");
   }
   
   private static void SetLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Locked = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Locked = null;
+    openXmlElement.Locked = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -76,22 +66,17 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static Boolean? GetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.SemiHidden?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.SemiHidden);
   }
   
   private static bool CmpSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SemiHidden?.Value == value) return true;
-    diffs?.Add(objName, "SemiHidden", openXmlElement?.SemiHidden?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.SemiHidden, value, diffs, objName, "SemiHidden");
   }
   
   private static void SetSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.SemiHidden = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.SemiHidden = null;
+    openXmlElement.SemiHidden = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -99,22 +84,17 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static Boolean? GetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.UnhideWhenUsed?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.UnhideWhenUsed);
   }
   
   private static bool CmpUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.UnhideWhenUsed?.Value == value) return true;
-    diffs?.Add(objName, "UnhideWhenUsed", openXmlElement?.UnhideWhenUsed?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.UnhideWhenUsed, value, diffs, objName, "UnhideWhenUsed");
   }
   
   private static void SetUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.UnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.UnhideWhenUsed = null;
+    openXmlElement.UnhideWhenUsed = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -122,22 +102,17 @@ public static class LatentStyleExceptionInfoConverter
   /// </summary>
   private static Boolean? GetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.PrimaryStyle?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.PrimaryStyle);
   }
   
   private static bool CmpPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PrimaryStyle?.Value == value) return true;
-    diffs?.Add(objName, "PrimaryStyle", openXmlElement?.PrimaryStyle?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.PrimaryStyle, value, diffs, objName, "PrimaryStyle");
   }
   
   private static void SetPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.PrimaryStyle = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.PrimaryStyle = null;
+    openXmlElement.PrimaryStyle = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DXW.LatentStyleExceptionInfo? openXmlElement)
@@ -180,20 +155,21 @@ public static class LatentStyleExceptionInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LatentStyleExceptionInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LatentStyleExceptionInfo value)
     where OpenXmlElementType: DXW.LatentStyleExceptionInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetLocked(openXmlElement, value?.Locked);
-      SetUiPriority(openXmlElement, value?.UiPriority);
-      SetSemiHidden(openXmlElement, value?.SemiHidden);
-      SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
-      SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.LatentStyleExceptionInfo openXmlElement, DMW.LatentStyleExceptionInfo value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetLocked(openXmlElement, value?.Locked);
+    SetUiPriority(openXmlElement, value?.UiPriority);
+    SetSemiHidden(openXmlElement, value?.SemiHidden);
+    SetUnhideWhenUsed(openXmlElement, value?.UnhideWhenUsed);
+    SetPrimaryStyle(openXmlElement, value?.PrimaryStyle);
+    }
+  }

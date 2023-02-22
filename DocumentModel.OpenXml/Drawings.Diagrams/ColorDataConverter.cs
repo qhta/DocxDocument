@@ -56,15 +56,16 @@ public static class ColorDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorData value)
     where OpenXmlElementType: DXDrawDgms.ColorData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDataModel(openXmlElement, value?.DataModel);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.ColorData openXmlElement, DMDrawsDgms.ColorData value)
+  {
+    SetDataModel(openXmlElement, value?.DataModel);
+    }
+  }

@@ -123,17 +123,18 @@ public static class ThemeOverrideConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeOverride? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeOverride value)
     where OpenXmlElementType: DXDraw.ThemeOverride, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetColorScheme(openXmlElement, value?.ColorScheme);
-      SetFontScheme(openXmlElement, value?.FontScheme);
-      SetFormatScheme(openXmlElement, value?.FormatScheme);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ThemeOverride openXmlElement, DMDraws.ThemeOverride value)
+  {
+    SetColorScheme(openXmlElement, value?.ColorScheme);
+    SetFontScheme(openXmlElement, value?.FontScheme);
+    SetFormatScheme(openXmlElement, value?.FormatScheme);
+    }
+  }

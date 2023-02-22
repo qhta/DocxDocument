@@ -197,19 +197,20 @@ public static class ProtectionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Protection? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Protection value)
     where OpenXmlElementType: DXDrawCharts.Protection, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartObject(openXmlElement, value?.ChartObject);
-      SetData(openXmlElement, value?.Data);
-      SetFormatting(openXmlElement, value?.Formatting);
-      SetSelection(openXmlElement, value?.Selection);
-      SetUserInterface(openXmlElement, value?.UserInterface);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Protection openXmlElement, DMDrawsCharts.Protection value)
+  {
+    SetChartObject(openXmlElement, value?.ChartObject);
+    SetData(openXmlElement, value?.Data);
+    SetFormatting(openXmlElement, value?.Formatting);
+    SetSelection(openXmlElement, value?.Selection);
+    SetUserInterface(openXmlElement, value?.UserInterface);
+    }
+  }

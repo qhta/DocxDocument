@@ -73,16 +73,17 @@ public static class ArtisticPaintStrokesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintStrokes? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintStrokes value)
     where OpenXmlElementType: DXO2010Draw.ArtisticPaintStrokes, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetIntensity(openXmlElement, value?.Intensity);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPaintStrokes openXmlElement, DMDraws.ArtisticPaintStrokes value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetIntensity(openXmlElement, value?.Intensity);
+    }
+  }

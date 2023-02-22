@@ -59,15 +59,16 @@ public static class DrawingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Drawing? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Drawing value)
     where OpenXmlElementType: DXODraw.Drawing, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeTree(openXmlElement, value?.ShapeTree);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.Drawing openXmlElement, DMDrawsO.Drawing value)
+  {
+    SetShapeTree(openXmlElement, value?.ShapeTree);
+    }
+  }
