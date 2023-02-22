@@ -56,15 +56,16 @@ public static class TabsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Tabs? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Tabs value)
     where OpenXmlElementType: DXW.Tabs, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTabStop(openXmlElement, value?.TabStop);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Tabs openXmlElement, DMW.Tabs value)
+  {
+    SetTabStop(openXmlElement, value?.TabStop);
+    }
+  }

@@ -287,26 +287,27 @@ public static class DrawingsPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DrawingsPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DrawingsPart value)
     where OpenXmlElementType: DXPack.DrawingsPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetChartParts(openXmlElement, value?.ChartParts);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
-      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
-      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
-      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
-      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
-      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
-      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DrawingsPart openXmlElement, DMPack.DrawingsPart value)
+  {
+    //SetChartParts(openXmlElement, value?.ChartParts);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
+    //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+    //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+    //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+    //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+    //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+    //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
+    }
+  }

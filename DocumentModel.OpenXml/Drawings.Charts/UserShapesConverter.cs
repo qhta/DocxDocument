@@ -85,16 +85,17 @@ public static class UserShapesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UserShapes? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UserShapes value)
     where OpenXmlElementType: DXDrawCharts.UserShapes, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRelativeAnchorSize(openXmlElement, value?.RelativeAnchorSize);
-      SetAbsoluteAnchorSize(openXmlElement, value?.AbsoluteAnchorSize);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.UserShapes openXmlElement, DMDrawsCharts.UserShapes value)
+  {
+    SetRelativeAnchorSize(openXmlElement, value?.RelativeAnchorSize);
+    SetAbsoluteAnchorSize(openXmlElement, value?.AbsoluteAnchorSize);
+    }
+  }

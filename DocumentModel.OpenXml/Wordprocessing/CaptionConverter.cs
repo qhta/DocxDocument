@@ -10,22 +10,17 @@ public static class CaptionConverter
   /// </summary>
   private static String? GetName(DXW.Caption openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.Caption openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.Caption openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class CaptionConverter
   /// </summary>
   private static Boolean? GetChapterNumber(DXW.Caption openXmlElement)
   {
-    return openXmlElement?.ChapterNumber?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.ChapterNumber);
   }
   
   private static bool CmpChapterNumber(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ChapterNumber?.Value == value) return true;
-    diffs?.Add(objName, "ChapterNumber", openXmlElement?.ChapterNumber?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.ChapterNumber, value, diffs, objName, "ChapterNumber");
   }
   
   private static void SetChapterNumber(DXW.Caption openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.ChapterNumber = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.ChapterNumber = null;
+    openXmlElement.ChapterNumber = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -94,22 +84,17 @@ public static class CaptionConverter
   /// </summary>
   private static Boolean? GetNoLabel(DXW.Caption openXmlElement)
   {
-    return openXmlElement?.NoLabel?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.NoLabel);
   }
   
   private static bool CmpNoLabel(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.NoLabel?.Value == value) return true;
-    diffs?.Add(objName, "NoLabel", openXmlElement?.NoLabel?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.NoLabel, value, diffs, objName, "NoLabel");
   }
   
   private static void SetNoLabel(DXW.Caption openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.NoLabel = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.NoLabel = null;
+    openXmlElement.NoLabel = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -191,21 +176,22 @@ public static class CaptionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Caption? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Caption value)
     where OpenXmlElementType: DXW.Caption, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetPosition(openXmlElement, value?.Position);
-      SetChapterNumber(openXmlElement, value?.ChapterNumber);
-      SetHeading(openXmlElement, value?.Heading);
-      SetNoLabel(openXmlElement, value?.NoLabel);
-      SetNumberFormat(openXmlElement, value?.NumberFormat);
-      SetSeparator(openXmlElement, value?.Separator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Caption openXmlElement, DMW.Caption value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetPosition(openXmlElement, value?.Position);
+    SetChapterNumber(openXmlElement, value?.ChapterNumber);
+    SetHeading(openXmlElement, value?.Heading);
+    SetNoLabel(openXmlElement, value?.NoLabel);
+    SetNumberFormat(openXmlElement, value?.NumberFormat);
+    SetSeparator(openXmlElement, value?.Separator);
+    }
+  }

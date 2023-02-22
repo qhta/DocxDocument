@@ -714,41 +714,42 @@ public static class BodyPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BodyProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BodyProperties value)
     where OpenXmlElementType: DXDraw.BodyProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetUseParagraphSpacing(openXmlElement, value?.UseParagraphSpacing);
-      SetVerticalOverflow(openXmlElement, value?.VerticalOverflow);
-      SetHorizontalOverflow(openXmlElement, value?.HorizontalOverflow);
-      SetVertical(openXmlElement, value?.Vertical);
-      SetWrap(openXmlElement, value?.Wrap);
-      SetLeftInset(openXmlElement, value?.LeftInset);
-      SetTopInset(openXmlElement, value?.TopInset);
-      SetRightInset(openXmlElement, value?.RightInset);
-      SetBottomInset(openXmlElement, value?.BottomInset);
-      SetColumnCount(openXmlElement, value?.ColumnCount);
-      SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
-      SetRightToLeftColumns(openXmlElement, value?.RightToLeftColumns);
-      SetFromWordArt(openXmlElement, value?.FromWordArt);
-      SetAnchor(openXmlElement, value?.Anchor);
-      SetAnchorCenter(openXmlElement, value?.AnchorCenter);
-      SetForceAntiAlias(openXmlElement, value?.ForceAntiAlias);
-      SetUpRight(openXmlElement, value?.UpRight);
-      SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
-      SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
-      SetNoAutoFit(openXmlElement, value?.NoAutoFit);
-      SetNormalAutoFit(openXmlElement, value?.NormalAutoFit);
-      SetShapeAutoFit(openXmlElement, value?.ShapeAutoFit);
-      SetScene3DType(openXmlElement, value?.Scene3DType);
-      SetShape3DType(openXmlElement, value?.Shape3DType);
-      SetFlatText(openXmlElement, value?.FlatText);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BodyProperties openXmlElement, DMDraws.BodyProperties value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetUseParagraphSpacing(openXmlElement, value?.UseParagraphSpacing);
+    SetVerticalOverflow(openXmlElement, value?.VerticalOverflow);
+    SetHorizontalOverflow(openXmlElement, value?.HorizontalOverflow);
+    SetVertical(openXmlElement, value?.Vertical);
+    SetWrap(openXmlElement, value?.Wrap);
+    SetLeftInset(openXmlElement, value?.LeftInset);
+    SetTopInset(openXmlElement, value?.TopInset);
+    SetRightInset(openXmlElement, value?.RightInset);
+    SetBottomInset(openXmlElement, value?.BottomInset);
+    SetColumnCount(openXmlElement, value?.ColumnCount);
+    SetColumnSpacing(openXmlElement, value?.ColumnSpacing);
+    SetRightToLeftColumns(openXmlElement, value?.RightToLeftColumns);
+    SetFromWordArt(openXmlElement, value?.FromWordArt);
+    SetAnchor(openXmlElement, value?.Anchor);
+    SetAnchorCenter(openXmlElement, value?.AnchorCenter);
+    SetForceAntiAlias(openXmlElement, value?.ForceAntiAlias);
+    SetUpRight(openXmlElement, value?.UpRight);
+    SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
+    SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
+    SetNoAutoFit(openXmlElement, value?.NoAutoFit);
+    SetNormalAutoFit(openXmlElement, value?.NormalAutoFit);
+    SetShapeAutoFit(openXmlElement, value?.ShapeAutoFit);
+    SetScene3DType(openXmlElement, value?.Scene3DType);
+    SetShape3DType(openXmlElement, value?.Shape3DType);
+    SetFlatText(openXmlElement, value?.FlatText);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

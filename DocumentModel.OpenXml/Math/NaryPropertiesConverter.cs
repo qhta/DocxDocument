@@ -10,24 +10,17 @@ public static class NaryPropertiesConverter
   /// </summary>
   private static String? GetAccentChar(DXMath.NaryProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val);
   }
   
   private static bool CmpAccentChar(DXMath.NaryProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val, value, diffs, objName, "AccentChar");
   }
   
   private static void SetAccentChar(DXMath.NaryProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.AccentChar>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXMath.AccentChar { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXMath.AccentChar>(openXmlElement, value);
   }
   
   /// <summary>
@@ -47,13 +40,15 @@ public static class NaryPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.LimitLocation>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
   }
   
   /// <summary>
@@ -73,13 +68,15 @@ public static class NaryPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.GrowOperators>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -99,13 +96,15 @@ public static class NaryPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.HideSubArgument>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideSubArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideSubArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -125,13 +124,15 @@ public static class NaryPropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXMath.HideSuperArgument>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideSuperArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideSuperArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
   /// <summary>
@@ -203,20 +204,21 @@ public static class NaryPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.NaryProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.NaryProperties value)
     where OpenXmlElementType: DXMath.NaryProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAccentChar(openXmlElement, value?.AccentChar);
-      SetLimitLocation(openXmlElement, value?.LimitLocation);
-      SetGrowOperators(openXmlElement, value?.GrowOperators);
-      SetHideSubArgument(openXmlElement, value?.HideSubArgument);
-      SetHideSuperArgument(openXmlElement, value?.HideSuperArgument);
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.NaryProperties openXmlElement, DMMath.NaryProperties value)
+  {
+    SetAccentChar(openXmlElement, value?.AccentChar);
+    SetLimitLocation(openXmlElement, value?.LimitLocation);
+    SetGrowOperators(openXmlElement, value?.GrowOperators);
+    SetHideSubArgument(openXmlElement, value?.HideSubArgument);
+    SetHideSuperArgument(openXmlElement, value?.HideSuperArgument);
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

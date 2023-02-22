@@ -114,17 +114,18 @@ public static class BackstageGroupsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageGroups? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageGroups value)
     where OpenXmlElementType: DXO2010CustUI.BackstageGroups, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTaskFormGroup(openXmlElement, value?.TaskFormGroup);
-      SetBackstageGroup(openXmlElement, value?.BackstageGroup);
-      SetTaskGroup(openXmlElement, value?.TaskGroup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroups value)
+  {
+    SetTaskFormGroup(openXmlElement, value?.TaskFormGroup);
+    SetBackstageGroup(openXmlElement, value?.BackstageGroup);
+    SetTaskGroup(openXmlElement, value?.TaskGroup);
+    }
+  }

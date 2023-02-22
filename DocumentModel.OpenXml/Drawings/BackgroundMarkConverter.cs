@@ -119,18 +119,19 @@ public static class BackgroundMarkConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundMark? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundMark value)
     where OpenXmlElementType: DXO2010Draw.BackgroundMark, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFirstXCoordinate(openXmlElement, value?.FirstXCoordinate);
-      SetFirstYCoordinate(openXmlElement, value?.FirstYCoordinate);
-      SetSecondXCoordinate(openXmlElement, value?.SecondXCoordinate);
-      SetSecondYCoordinate(openXmlElement, value?.SecondYCoordinate);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.BackgroundMark openXmlElement, DMDraws.BackgroundMark value)
+  {
+    SetFirstXCoordinate(openXmlElement, value?.FirstXCoordinate);
+    SetFirstYCoordinate(openXmlElement, value?.FirstYCoordinate);
+    SetSecondXCoordinate(openXmlElement, value?.SecondXCoordinate);
+    SetSecondYCoordinate(openXmlElement, value?.SecondYCoordinate);
+    }
+  }

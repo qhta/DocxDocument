@@ -28,22 +28,17 @@ public static class FieldCharConverter
   /// </summary>
   private static Boolean? GetFieldLock(DXW.FieldChar openXmlElement)
   {
-    return openXmlElement?.FieldLock?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.FieldLock);
   }
   
   private static bool CmpFieldLock(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FieldLock?.Value == value) return true;
-    diffs?.Add(objName, "FieldLock", openXmlElement?.FieldLock?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.FieldLock, value, diffs, objName, "FieldLock");
   }
   
   private static void SetFieldLock(DXW.FieldChar openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.FieldLock = null;
+    openXmlElement.FieldLock = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class FieldCharConverter
   /// </summary>
   private static Boolean? GetDirty(DXW.FieldChar openXmlElement)
   {
-    return openXmlElement?.Dirty?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Dirty);
   }
   
   private static bool CmpDirty(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Dirty?.Value == value) return true;
-    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Dirty, value, diffs, objName, "Dirty");
   }
   
   private static void SetDirty(DXW.FieldChar openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Dirty = null;
+    openXmlElement.Dirty = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -192,20 +182,21 @@ public static class FieldCharConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldChar? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldChar value)
     where OpenXmlElementType: DXW.FieldChar, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFieldCharType(openXmlElement, value?.FieldCharType);
-      SetFieldLock(openXmlElement, value?.FieldLock);
-      SetDirty(openXmlElement, value?.Dirty);
-      SetFieldData(openXmlElement, value?.FieldData);
-      SetFormFieldData(openXmlElement, value?.FormFieldData);
-      SetNumberingChange(openXmlElement, value?.NumberingChange);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FieldChar openXmlElement, DMW.FieldChar value)
+  {
+    SetFieldCharType(openXmlElement, value?.FieldCharType);
+    SetFieldLock(openXmlElement, value?.FieldLock);
+    SetDirty(openXmlElement, value?.Dirty);
+    SetFieldData(openXmlElement, value?.FieldData);
+    SetFormFieldData(openXmlElement, value?.FormFieldData);
+    SetNumberingChange(openXmlElement, value?.NumberingChange);
+    }
+  }

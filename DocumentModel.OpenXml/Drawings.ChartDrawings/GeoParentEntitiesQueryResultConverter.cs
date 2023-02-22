@@ -123,17 +123,18 @@ public static class GeoParentEntitiesQueryResultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQueryResult? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQueryResult value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoParentEntitiesQueryResult, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGeoParentEntitiesQuery(openXmlElement, value?.GeoParentEntitiesQuery);
-      SetGeoEntity(openXmlElement, value?.GeoEntity);
-      SetGeoParentEntity(openXmlElement, value?.GeoParentEntity);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQueryResult value)
+  {
+    SetGeoParentEntitiesQuery(openXmlElement, value?.GeoParentEntitiesQuery);
+    SetGeoEntity(openXmlElement, value?.GeoEntity);
+    SetGeoParentEntity(openXmlElement, value?.GeoParentEntity);
+    }
+  }

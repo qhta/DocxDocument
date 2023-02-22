@@ -73,16 +73,17 @@ public static class ArtisticMosaicBubblesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMosaicBubbles? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMosaicBubbles value)
     where OpenXmlElementType: DXO2010Draw.ArtisticMosaicBubbles, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTransparancy(openXmlElement, value?.Transparancy);
-      SetPressure(openXmlElement, value?.Pressure);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, DMDraws.ArtisticMosaicBubbles value)
+  {
+    SetTransparancy(openXmlElement, value?.Transparancy);
+    SetPressure(openXmlElement, value?.Pressure);
+    }
+  }

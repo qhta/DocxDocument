@@ -73,16 +73,17 @@ public static class TaskScheduleEventInfoConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskScheduleEventInfo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskScheduleEventInfo value)
     where OpenXmlElementType: DXO2021DocTasks.TaskScheduleEventInfo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetStartDate(openXmlElement, value?.StartDate);
-      SetDueDate(openXmlElement, value?.DueDate);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DM.TaskScheduleEventInfo value)
+  {
+    SetStartDate(openXmlElement, value?.StartDate);
+    SetDueDate(openXmlElement, value?.DueDate);
+    }
+  }

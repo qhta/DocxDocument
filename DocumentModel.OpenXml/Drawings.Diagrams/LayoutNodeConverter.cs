@@ -10,22 +10,17 @@ public static class LayoutNodeConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.LayoutNode openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class LayoutNodeConverter
   /// </summary>
   private static String? GetStyleLabel(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return openXmlElement?.StyleLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StyleLabel);
   }
   
   private static bool CmpStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StyleLabel?.Value == value) return true;
-    diffs?.Add(objName, "StyleLabel", openXmlElement?.StyleLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StyleLabel, value, diffs, objName, "StyleLabel");
   }
   
   private static void SetStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StyleLabel = new StringValue { Value = value };
-    else
-      openXmlElement.StyleLabel = null;
+    openXmlElement.StyleLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +64,17 @@ public static class LayoutNodeConverter
   /// </summary>
   private static String? GetMoveWith(DXDrawDgms.LayoutNode openXmlElement)
   {
-    return openXmlElement?.MoveWith?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MoveWith);
   }
   
   private static bool CmpMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MoveWith?.Value == value) return true;
-    diffs?.Add(objName, "MoveWith", openXmlElement?.MoveWith?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MoveWith, value, diffs, objName, "MoveWith");
   }
   
   private static void SetMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MoveWith = new StringValue { Value = value };
-    else
-      openXmlElement.MoveWith = null;
+    openXmlElement.MoveWith = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.LayoutNode openXmlElement)
@@ -416,28 +401,29 @@ public static class LayoutNodeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutNode? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutNode value)
     where OpenXmlElementType: DXDrawDgms.LayoutNode, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetStyleLabel(openXmlElement, value?.StyleLabel);
-      SetChildOrder(openXmlElement, value?.ChildOrder);
-      SetMoveWith(openXmlElement, value?.MoveWith);
-      SetAlgorithm(openXmlElement, value?.Algorithm);
-      SetShape(openXmlElement, value?.Shape);
-      SetPresentationOf(openXmlElement, value?.PresentationOf);
-      SetConstraints(openXmlElement, value?.Constraints);
-      SetRuleList(openXmlElement, value?.RuleList);
-      SetVariableList(openXmlElement, value?.VariableList);
-      SetForEach(openXmlElement, value?.ForEach);
-      SetChildLayoutNode(openXmlElement, value?.ChildLayoutNode);
-      SetChoose(openXmlElement, value?.Choose);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.LayoutNode value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetStyleLabel(openXmlElement, value?.StyleLabel);
+    SetChildOrder(openXmlElement, value?.ChildOrder);
+    SetMoveWith(openXmlElement, value?.MoveWith);
+    SetAlgorithm(openXmlElement, value?.Algorithm);
+    SetShape(openXmlElement, value?.Shape);
+    SetPresentationOf(openXmlElement, value?.PresentationOf);
+    SetConstraints(openXmlElement, value?.Constraints);
+    SetRuleList(openXmlElement, value?.RuleList);
+    SetVariableList(openXmlElement, value?.VariableList);
+    SetForEach(openXmlElement, value?.ForEach);
+    SetChildLayoutNode(openXmlElement, value?.ChildLayoutNode);
+    SetChoose(openXmlElement, value?.Choose);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

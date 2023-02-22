@@ -10,22 +10,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetModelId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.ModelId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
   private static bool CmpModelId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ModelId?.Value == value) return true;
-    diffs?.Add(objName, "ModelId", openXmlElement?.ModelId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
   
   private static void SetModelId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ModelId = new StringValue { Value = value };
-    else
-      openXmlElement.ModelId = null;
+    openXmlElement.ModelId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetSourceId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.SourceId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SourceId);
   }
   
   private static bool CmpSourceId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SourceId?.Value == value) return true;
-    diffs?.Add(objName, "SourceId", openXmlElement?.SourceId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SourceId, value, diffs, objName, "SourceId");
   }
   
   private static void SetSourceId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SourceId = new StringValue { Value = value };
-    else
-      openXmlElement.SourceId = null;
+    openXmlElement.SourceId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +64,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetDestinationId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.DestinationId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DestinationId);
   }
   
   private static bool CmpDestinationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DestinationId?.Value == value) return true;
-    diffs?.Add(objName, "DestinationId", openXmlElement?.DestinationId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DestinationId, value, diffs, objName, "DestinationId");
   }
   
   private static void SetDestinationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DestinationId = new StringValue { Value = value };
-    else
-      openXmlElement.DestinationId = null;
+    openXmlElement.DestinationId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -137,22 +122,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetParentTransitionId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.ParentTransitionId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ParentTransitionId);
   }
   
   private static bool CmpParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParentTransitionId?.Value == value) return true;
-    diffs?.Add(objName, "ParentTransitionId", openXmlElement?.ParentTransitionId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ParentTransitionId, value, diffs, objName, "ParentTransitionId");
   }
   
   private static void SetParentTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ParentTransitionId = new StringValue { Value = value };
-    else
-      openXmlElement.ParentTransitionId = null;
+    openXmlElement.ParentTransitionId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -160,22 +140,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetSiblingTransitionId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.SiblingTransitionId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SiblingTransitionId);
   }
   
   private static bool CmpSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SiblingTransitionId?.Value == value) return true;
-    diffs?.Add(objName, "SiblingTransitionId", openXmlElement?.SiblingTransitionId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SiblingTransitionId, value, diffs, objName, "SiblingTransitionId");
   }
   
   private static void SetSiblingTransitionId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SiblingTransitionId = new StringValue { Value = value };
-    else
-      openXmlElement.SiblingTransitionId = null;
+    openXmlElement.SiblingTransitionId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -183,22 +158,17 @@ public static class ConnectionConverter
   /// </summary>
   private static String? GetPresentationId(DXDrawDgms.Connection openXmlElement)
   {
-    return openXmlElement?.PresentationId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.PresentationId);
   }
   
   private static bool CmpPresentationId(DXDrawDgms.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.PresentationId?.Value == value) return true;
-    diffs?.Add(objName, "PresentationId", openXmlElement?.PresentationId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.PresentationId, value, diffs, objName, "PresentationId");
   }
   
   private static void SetPresentationId(DXDrawDgms.Connection openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.PresentationId = new StringValue { Value = value };
-    else
-      openXmlElement.PresentationId = null;
+    openXmlElement.PresentationId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -282,24 +252,25 @@ public static class ConnectionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Connection? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Connection value)
     where OpenXmlElementType: DXDrawDgms.Connection, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetModelId(openXmlElement, value?.ModelId);
-      SetType(openXmlElement, value?.Type);
-      SetSourceId(openXmlElement, value?.SourceId);
-      SetDestinationId(openXmlElement, value?.DestinationId);
-      SetSourcePosition(openXmlElement, value?.SourcePosition);
-      SetDestinationPosition(openXmlElement, value?.DestinationPosition);
-      SetParentTransitionId(openXmlElement, value?.ParentTransitionId);
-      SetSiblingTransitionId(openXmlElement, value?.SiblingTransitionId);
-      SetPresentationId(openXmlElement, value?.PresentationId);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.Connection value)
+  {
+    SetModelId(openXmlElement, value?.ModelId);
+    SetType(openXmlElement, value?.Type);
+    SetSourceId(openXmlElement, value?.SourceId);
+    SetDestinationId(openXmlElement, value?.DestinationId);
+    SetSourcePosition(openXmlElement, value?.SourcePosition);
+    SetDestinationPosition(openXmlElement, value?.DestinationPosition);
+    SetParentTransitionId(openXmlElement, value?.ParentTransitionId);
+    SetSiblingTransitionId(openXmlElement, value?.SiblingTransitionId);
+    SetPresentationId(openXmlElement, value?.PresentationId);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

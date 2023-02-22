@@ -46,22 +46,17 @@ public static class GeographyConverter
   /// </summary>
   private static String? GetCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement)
   {
-    return openXmlElement?.CultureLanguage?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CultureLanguage);
   }
   
   private static bool CmpCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CultureLanguage?.Value == value) return true;
-    diffs?.Add(objName, "CultureLanguage", openXmlElement?.CultureLanguage?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CultureLanguage, value, diffs, objName, "CultureLanguage");
   }
   
   private static void SetCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CultureLanguage = new StringValue { Value = value };
-    else
-      openXmlElement.CultureLanguage = null;
+    openXmlElement.CultureLanguage = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -69,22 +64,17 @@ public static class GeographyConverter
   /// </summary>
   private static String? GetCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement)
   {
-    return openXmlElement?.CultureRegion?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CultureRegion);
   }
   
   private static bool CmpCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CultureRegion?.Value == value) return true;
-    diffs?.Add(objName, "CultureRegion", openXmlElement?.CultureRegion?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CultureRegion, value, diffs, objName, "CultureRegion");
   }
   
   private static void SetCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CultureRegion = new StringValue { Value = value };
-    else
-      openXmlElement.CultureRegion = null;
+    openXmlElement.CultureRegion = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -92,22 +82,17 @@ public static class GeographyConverter
   /// </summary>
   private static String? GetAttribution(DXO2016DrawChartDraw.Geography openXmlElement)
   {
-    return openXmlElement?.Attribution?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Attribution);
   }
   
   private static bool CmpAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Attribution?.Value == value) return true;
-    diffs?.Add(objName, "Attribution", openXmlElement?.Attribution?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Attribution, value, diffs, objName, "Attribution");
   }
   
   private static void SetAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Attribution = new StringValue { Value = value };
-    else
-      openXmlElement.Attribution = null;
+    openXmlElement.Attribution = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -179,20 +164,21 @@ public static class GeographyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Geography? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Geography value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Geography, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetProjectionType(openXmlElement, value?.ProjectionType);
-      SetViewedRegionType(openXmlElement, value?.ViewedRegionType);
-      SetCultureLanguage(openXmlElement, value?.CultureLanguage);
-      SetCultureRegion(openXmlElement, value?.CultureRegion);
-      SetAttribution(openXmlElement, value?.Attribution);
-      SetGeoCache(openXmlElement, value?.GeoCache);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.Geography value)
+  {
+    SetProjectionType(openXmlElement, value?.ProjectionType);
+    SetViewedRegionType(openXmlElement, value?.ViewedRegionType);
+    SetCultureLanguage(openXmlElement, value?.CultureLanguage);
+    SetCultureRegion(openXmlElement, value?.CultureRegion);
+    SetAttribution(openXmlElement, value?.Attribution);
+    SetGeoCache(openXmlElement, value?.GeoCache);
+    }
+  }

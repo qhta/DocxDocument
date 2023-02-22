@@ -2,7 +2,7 @@
 
 namespace ModelGen;
 
-public class OwnedCollection<T> : ICollection<T> where T : class, IOwnedElement
+public class OwnedCollection<T> : ICollection, ICollection<T> where T : class, IOwnedElement
 {
   private List<T> Items = new List<T>();
 
@@ -50,4 +50,13 @@ public class OwnedCollection<T> : ICollection<T> where T : class, IOwnedElement
   public int Count => Items.Count;
 
   public bool IsReadOnly => false;
+
+  public void CopyTo(Array array, int index)
+  {
+    ((ICollection)Items).CopyTo(array, index);
+  }
+
+  public bool IsSynchronized => ((ICollection)Items).IsSynchronized;
+
+  public object SyncRoot => ((ICollection)Items).SyncRoot;
 }

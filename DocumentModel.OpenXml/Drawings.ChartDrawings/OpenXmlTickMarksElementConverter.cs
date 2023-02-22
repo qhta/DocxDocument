@@ -80,16 +80,17 @@ public static class OpenXmlTickMarksElementConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlTickMarksElement? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlTickMarksElement value)
     where OpenXmlElementType: DXO2016DrawChartDraw.OpenXmlTickMarksElement, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.OpenXmlTickMarksElement value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

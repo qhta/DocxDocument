@@ -73,16 +73,17 @@ public static class BrightnessContrastConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BrightnessContrast? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BrightnessContrast value)
     where OpenXmlElementType: DXO2010Draw.BrightnessContrast, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBright(openXmlElement, value?.Bright);
-      SetContrast(openXmlElement, value?.Contrast);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.BrightnessContrast openXmlElement, DMDraws.BrightnessContrast value)
+  {
+    SetBright(openXmlElement, value?.Bright);
+    SetContrast(openXmlElement, value?.Contrast);
+    }
+  }

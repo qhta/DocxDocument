@@ -91,16 +91,17 @@ public static class NonVisualGroupShapeDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties value)
     where OpenXmlElementType: DXDrawChartDraw.NonVisualGroupShapeDrawingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroupShapeLocks(openXmlElement, value?.GroupShapeLocks);
-      SetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement, value?.NonVisualGroupDrawingShapePropsExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualGroupShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeDrawingProperties value)
+  {
+    SetGroupShapeLocks(openXmlElement, value?.GroupShapeLocks);
+    SetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement, value?.NonVisualGroupDrawingShapePropsExtensionList);
+    }
+  }

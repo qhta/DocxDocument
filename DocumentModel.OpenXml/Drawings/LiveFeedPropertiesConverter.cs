@@ -91,16 +91,17 @@ public static class LiveFeedPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LiveFeedProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LiveFeedProperties value)
     where OpenXmlElementType: DXO2021DrawLivefeed.LiveFeedProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLiveFeedBackgroundProperties(openXmlElement, value?.LiveFeedBackgroundProperties);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.LiveFeedProperties value)
+  {
+    SetLiveFeedBackgroundProperties(openXmlElement, value?.LiveFeedBackgroundProperties);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -259,21 +259,22 @@ public static class DataTableConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataTable? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataTable value)
     where OpenXmlElementType: DXDrawCharts.DataTable, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShowHorizontalBorder(openXmlElement, value?.ShowHorizontalBorder);
-      SetShowVerticalBorder(openXmlElement, value?.ShowVerticalBorder);
-      SetShowOutlineBorder(openXmlElement, value?.ShowOutlineBorder);
-      SetShowKeys(openXmlElement, value?.ShowKeys);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.DataTable value)
+  {
+    SetShowHorizontalBorder(openXmlElement, value?.ShowHorizontalBorder);
+    SetShowVerticalBorder(openXmlElement, value?.ShowVerticalBorder);
+    SetShowOutlineBorder(openXmlElement, value?.ShowOutlineBorder);
+    SetShowKeys(openXmlElement, value?.ShowKeys);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

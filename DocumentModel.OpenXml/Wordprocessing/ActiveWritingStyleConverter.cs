@@ -10,22 +10,17 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static String? GetLanguage(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement?.Language?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
   private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Language?.Value == value) return true;
-    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
   }
   
   private static void SetLanguage(DXW.ActiveWritingStyle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Language = new StringValue { Value = value };
-    else
-      openXmlElement.Language = null;
+    openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -73,22 +68,17 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static Boolean? GetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement?.NaturalLanguageGrammarCheck?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.NaturalLanguageGrammarCheck);
   }
   
   private static bool CmpNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.NaturalLanguageGrammarCheck?.Value == value) return true;
-    diffs?.Add(objName, "NaturalLanguageGrammarCheck", openXmlElement?.NaturalLanguageGrammarCheck?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.NaturalLanguageGrammarCheck, value, diffs, objName, "NaturalLanguageGrammarCheck");
   }
   
   private static void SetNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.NaturalLanguageGrammarCheck = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.NaturalLanguageGrammarCheck = null;
+    openXmlElement.NaturalLanguageGrammarCheck = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -96,22 +86,17 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static Boolean? GetCheckStyle(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement?.CheckStyle?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.CheckStyle);
   }
   
   private static bool CmpCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CheckStyle?.Value == value) return true;
-    diffs?.Add(objName, "CheckStyle", openXmlElement?.CheckStyle?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.CheckStyle, value, diffs, objName, "CheckStyle");
   }
   
   private static void SetCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.CheckStyle = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.CheckStyle = null;
+    openXmlElement.CheckStyle = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -119,22 +104,17 @@ public static class ActiveWritingStyleConverter
   /// </summary>
   private static String? GetApplicationName(DXW.ActiveWritingStyle openXmlElement)
   {
-    return openXmlElement?.ApplicationName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ApplicationName);
   }
   
   private static bool CmpApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ApplicationName?.Value == value) return true;
-    diffs?.Add(objName, "ApplicationName", openXmlElement?.ApplicationName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ApplicationName, value, diffs, objName, "ApplicationName");
   }
   
   private static void SetApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ApplicationName = new StringValue { Value = value };
-    else
-      openXmlElement.ApplicationName = null;
+    openXmlElement.ApplicationName = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.ActiveWritingStyle? CreateModelElement(DXW.ActiveWritingStyle? openXmlElement)
@@ -177,20 +157,21 @@ public static class ActiveWritingStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ActiveWritingStyle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ActiveWritingStyle value)
     where OpenXmlElementType: DXW.ActiveWritingStyle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLanguage(openXmlElement, value?.Language);
-      SetVendorID(openXmlElement, value?.VendorID);
-      SetDllVersion(openXmlElement, value?.DllVersion);
-      SetNaturalLanguageGrammarCheck(openXmlElement, value?.NaturalLanguageGrammarCheck);
-      SetCheckStyle(openXmlElement, value?.CheckStyle);
-      SetApplicationName(openXmlElement, value?.ApplicationName);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ActiveWritingStyle openXmlElement, DMW.ActiveWritingStyle value)
+  {
+    SetLanguage(openXmlElement, value?.Language);
+    SetVendorID(openXmlElement, value?.VendorID);
+    SetDllVersion(openXmlElement, value?.DllVersion);
+    SetNaturalLanguageGrammarCheck(openXmlElement, value?.NaturalLanguageGrammarCheck);
+    SetCheckStyle(openXmlElement, value?.CheckStyle);
+    SetApplicationName(openXmlElement, value?.ApplicationName);
+    }
+  }

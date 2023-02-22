@@ -59,15 +59,16 @@ public static class RunPropertiesDefaultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesDefault? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesDefault value)
     where OpenXmlElementType: DXW.RunPropertiesDefault, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesDefault value)
+  {
+    SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
+    }
+  }

@@ -1148,50 +1148,51 @@ public static class RunConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Run? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Run value)
     where OpenXmlElementType: DXW.Run, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRsidRunProperties(openXmlElement, value?.RsidRunProperties);
-      SetRsidRunDeletion(openXmlElement, value?.RsidRunDeletion);
-      SetRsidRunAddition(openXmlElement, value?.RsidRunAddition);
-      SetRunProperties(openXmlElement, value?.RunProperties);
-      SetBreak(openXmlElement, value?.Break);
-      SetText(openXmlElement, value?.Text);
-      SetDeletedText(openXmlElement, value?.DeletedText);
-      SetFieldCode(openXmlElement, value?.FieldCode);
-      SetDeletedFieldCode(openXmlElement, value?.DeletedFieldCode);
-      SetNoBreakHyphen(openXmlElement, value?.NoBreakHyphen);
-      SetSoftHyphen(openXmlElement, value?.SoftHyphen);
-      SetDayShort(openXmlElement, value?.DayShort);
-      SetMonthShort(openXmlElement, value?.MonthShort);
-      SetYearShort(openXmlElement, value?.YearShort);
-      SetDayLong(openXmlElement, value?.DayLong);
-      SetMonthLong(openXmlElement, value?.MonthLong);
-      SetYearLong(openXmlElement, value?.YearLong);
-      SetAnnotationReferenceMark(openXmlElement, value?.AnnotationReferenceMark);
-      SetFootnoteReferenceMark(openXmlElement, value?.FootnoteReferenceMark);
-      SetEndnoteReferenceMark(openXmlElement, value?.EndnoteReferenceMark);
-      SetSeparatorMark(openXmlElement, value?.SeparatorMark);
-      SetContinuationSeparatorMark(openXmlElement, value?.ContinuationSeparatorMark);
-      SetSymbolChar(openXmlElement, value?.SymbolChar);
-      SetPageNumber(openXmlElement, value?.PageNumber);
-      SetCarriageReturn(openXmlElement, value?.CarriageReturn);
-      SetTabChar(openXmlElement, value?.TabChar);
-      SetEmbeddedObject(openXmlElement, value?.EmbeddedObject);
-      SetPicture(openXmlElement, value?.Picture);
-      SetFieldChar(openXmlElement, value?.FieldChar);
-      SetRuby(openXmlElement, value?.Ruby);
-      SetFootnoteReference(openXmlElement, value?.FootnoteReference);
-      SetEndnoteReference(openXmlElement, value?.EndnoteReference);
-      SetCommentReference(openXmlElement, value?.CommentReference);
-      SetDrawing(openXmlElement, value?.Drawing);
-      SetPositionalTab(openXmlElement, value?.PositionalTab);
-      SetLastRenderedPageBreak(openXmlElement, value?.LastRenderedPageBreak);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Run openXmlElement, DMW.Run value)
+  {
+    SetRsidRunProperties(openXmlElement, value?.RsidRunProperties);
+    SetRsidRunDeletion(openXmlElement, value?.RsidRunDeletion);
+    SetRsidRunAddition(openXmlElement, value?.RsidRunAddition);
+    SetRunProperties(openXmlElement, value?.RunProperties);
+    SetBreak(openXmlElement, value?.Break);
+    SetText(openXmlElement, value?.Text);
+    SetDeletedText(openXmlElement, value?.DeletedText);
+    SetFieldCode(openXmlElement, value?.FieldCode);
+    SetDeletedFieldCode(openXmlElement, value?.DeletedFieldCode);
+    SetNoBreakHyphen(openXmlElement, value?.NoBreakHyphen);
+    SetSoftHyphen(openXmlElement, value?.SoftHyphen);
+    SetDayShort(openXmlElement, value?.DayShort);
+    SetMonthShort(openXmlElement, value?.MonthShort);
+    SetYearShort(openXmlElement, value?.YearShort);
+    SetDayLong(openXmlElement, value?.DayLong);
+    SetMonthLong(openXmlElement, value?.MonthLong);
+    SetYearLong(openXmlElement, value?.YearLong);
+    SetAnnotationReferenceMark(openXmlElement, value?.AnnotationReferenceMark);
+    SetFootnoteReferenceMark(openXmlElement, value?.FootnoteReferenceMark);
+    SetEndnoteReferenceMark(openXmlElement, value?.EndnoteReferenceMark);
+    SetSeparatorMark(openXmlElement, value?.SeparatorMark);
+    SetContinuationSeparatorMark(openXmlElement, value?.ContinuationSeparatorMark);
+    SetSymbolChar(openXmlElement, value?.SymbolChar);
+    SetPageNumber(openXmlElement, value?.PageNumber);
+    SetCarriageReturn(openXmlElement, value?.CarriageReturn);
+    SetTabChar(openXmlElement, value?.TabChar);
+    SetEmbeddedObject(openXmlElement, value?.EmbeddedObject);
+    SetPicture(openXmlElement, value?.Picture);
+    SetFieldChar(openXmlElement, value?.FieldChar);
+    SetRuby(openXmlElement, value?.Ruby);
+    SetFootnoteReference(openXmlElement, value?.FootnoteReference);
+    SetEndnoteReference(openXmlElement, value?.EndnoteReference);
+    SetCommentReference(openXmlElement, value?.CommentReference);
+    SetDrawing(openXmlElement, value?.Drawing);
+    SetPositionalTab(openXmlElement, value?.PositionalTab);
+    SetLastRenderedPageBreak(openXmlElement, value?.LastRenderedPageBreak);
+    }
+  }

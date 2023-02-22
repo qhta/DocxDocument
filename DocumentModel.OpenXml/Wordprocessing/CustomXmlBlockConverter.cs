@@ -99,11 +99,11 @@ public static class CustomXmlBlockConverter
   
   private static bool CmpParagraphs(DXW.CustomXmlBlock openXmlElement, Collection<DMW.Paragraph>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.Paragraph>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.Paragraph>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -120,7 +120,7 @@ public static class CustomXmlBlockConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -155,11 +155,11 @@ public static class CustomXmlBlockConverter
   
   private static bool CmpTables(DXW.CustomXmlBlock openXmlElement, Collection<DMW.Table>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.Table>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.Table>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -176,7 +176,7 @@ public static class CustomXmlBlockConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -1073,48 +1073,49 @@ public static class CustomXmlBlockConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlBlock? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlBlock value)
     where OpenXmlElementType: DXW.CustomXmlBlock, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
-      SetChildCustomXmlBlock(openXmlElement, value?.ChildCustomXmlBlock);
-      SetSdtBlock(openXmlElement, value?.SdtBlock);
-      SetParagraphs(openXmlElement, value?.Paragraphs);
-      SetTables(openXmlElement, value?.Tables);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      SetInsertedRun(openXmlElement, value?.InsertedRun);
-      SetDeletedRun(openXmlElement, value?.DeletedRun);
-      SetMoveFromRun(openXmlElement, value?.MoveFromRun);
-      SetMoveToRun(openXmlElement, value?.MoveToRun);
-      SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
-      SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.CustomXmlBlock openXmlElement, DMW.CustomXmlBlock value)
+  {
+    SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
+    SetChildCustomXmlBlock(openXmlElement, value?.ChildCustomXmlBlock);
+    SetSdtBlock(openXmlElement, value?.SdtBlock);
+    SetParagraphs(openXmlElement, value?.Paragraphs);
+    SetTables(openXmlElement, value?.Tables);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    SetInsertedRun(openXmlElement, value?.InsertedRun);
+    SetDeletedRun(openXmlElement, value?.DeletedRun);
+    SetMoveFromRun(openXmlElement, value?.MoveFromRun);
+    SetMoveToRun(openXmlElement, value?.MoveToRun);
+    SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
+    SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    }
+  }

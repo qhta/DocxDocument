@@ -106,18 +106,19 @@ public static class WebExTaskpanesPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExTaskpanesPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExTaskpanesPart value)
     where OpenXmlElementType: DXPack.WebExTaskpanesPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      SetTaskpanes(openXmlElement, value?.Taskpanes);
-      //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.WebExTaskpanesPart openXmlElement, DMPack.WebExTaskpanesPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    SetTaskpanes(openXmlElement, value?.Taskpanes);
+    //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
+    }
+  }

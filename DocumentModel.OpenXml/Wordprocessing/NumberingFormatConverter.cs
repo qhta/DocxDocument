@@ -28,22 +28,17 @@ public static class NumberingFormatConverter
   /// </summary>
   private static String? GetFormat(DXW.NumberingFormat openXmlElement)
   {
-    return openXmlElement?.Format?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Format);
   }
   
   private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Format?.Value == value) return true;
-    diffs?.Add(objName, "Format", openXmlElement?.Format?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Format, value, diffs, objName, "Format");
   }
   
   private static void SetFormat(DXW.NumberingFormat openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Format = new StringValue { Value = value };
-    else
-      openXmlElement.Format = null;
+    openXmlElement.Format = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
@@ -74,16 +69,17 @@ public static class NumberingFormatConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingFormat? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingFormat value)
     where OpenXmlElementType: DXW.NumberingFormat, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetFormat(openXmlElement, value?.Format);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingFormat openXmlElement, DMW.NumberingFormat value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetFormat(openXmlElement, value?.Format);
+    }
+  }

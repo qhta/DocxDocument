@@ -10,22 +10,17 @@ public static class RuleConverter
   /// </summary>
   private static String? GetId(DXVmlO.Rule openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVmlO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVmlO.Rule openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -69,22 +64,17 @@ public static class RuleConverter
   /// </summary>
   private static String? GetShapeReference(DXVmlO.Rule openXmlElement)
   {
-    return openXmlElement?.ShapeReference?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeReference);
   }
   
   private static bool CmpShapeReference(DXVmlO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeReference?.Value == value) return true;
-    diffs?.Add(objName, "ShapeReference", openXmlElement?.ShapeReference?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeReference, value, diffs, objName, "ShapeReference");
   }
   
   private static void SetShapeReference(DXVmlO.Rule openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeReference = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeReference = null;
+    openXmlElement.ShapeReference = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMVml.Proxy>? GetProxies(DXVmlO.Rule openXmlElement)
@@ -103,11 +93,11 @@ public static class RuleConverter
   
   private static bool CmpProxies(DXVmlO.Rule openXmlElement, Collection<DMVml.Proxy>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXVmlO.Proxy>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXVmlO.Proxy>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -124,7 +114,7 @@ public static class RuleConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -180,19 +170,20 @@ public static class RuleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Rule? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Rule value)
     where OpenXmlElementType: DXVmlO.Rule, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetType(openXmlElement, value?.Type);
-      SetHow(openXmlElement, value?.How);
-      SetShapeReference(openXmlElement, value?.ShapeReference);
-      SetProxies(openXmlElement, value?.Proxies);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Rule openXmlElement, DMVml.Rule value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetType(openXmlElement, value?.Type);
+    SetHow(openXmlElement, value?.How);
+    SetShapeReference(openXmlElement, value?.ShapeReference);
+    SetProxies(openXmlElement, value?.Proxies);
+    }
+  }

@@ -18,7 +18,7 @@ public class TypeInfo : ModelElement
 
   public new bool? IsAccepted
   {
-    get; 
+    get;
     set;
   }
 
@@ -47,14 +47,14 @@ public class TypeInfo : ModelElement
 
   public Type Type { get; set; }
 
-  public Type? TargetType { get; set; }
+  public TypeInfo? TargetType { get; set; }
 
   public bool IsSimple()
   {
     return Type.IsSimple() || Type == typeof(Uri) || Type == typeof(HexInt) /*|| Type == typeof(Byte[])*/;
   }
 
-  public bool IsEnumValue([NotNullWhen(true)] out TypeInfo? enumType)
+  public bool IsEnumValue([NotNullWhen(true)][MaybeNullWhen(false)] out TypeInfo? enumType)
   {
     if (Type.Name.StartsWith("EnumValue`"))
     {
@@ -65,7 +65,7 @@ public class TypeInfo : ModelElement
     return false;
   }
 
-  internal IElementMetadata? Metadata { get; set;}
+  internal IElementMetadata? Metadata { get; set; }
 
   public ItemsConstraint? ItemsConstraint { get; set; }
 
@@ -79,8 +79,6 @@ public class TypeInfo : ModelElement
     if (IsAccepted == null)
     {
       var isAccepted = true;
-      //if (Name.StartsWith("Collection"))
-      //  Debug.Assert(true);
       if (ModelData.ExcludedNamespaces.Contains(type.Namespace ?? ""))
         isAccepted = false;
       if (ModelData.ExcludedTypes.Contains(type.Name))
@@ -93,7 +91,7 @@ public class TypeInfo : ModelElement
     }
   }
 
-  public string GetNamespace(bool original = false)
+  public string GetNamespace(bool original = false, bool shortcut = true)
   {
     string aNamespace;
     if (original)
@@ -103,21 +101,14 @@ public class TypeInfo : ModelElement
     else
     {
       aNamespace = this.Namespace;
-      var nSpace = aNamespace;
-      foreach (var item in ModelData.NamespaceTranslationTable)
-      {
-        if (aNamespace.StartsWith(item.Item1))
-          nSpace = item.Item2;
-      }
-      aNamespace = nSpace;
+      aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
-    //if (aNamespace == "System")
-    //  aNamespace = "";
-    aNamespace = NamespaceShortcut(aNamespace);
+    if (shortcut)
+      aNamespace = NamespaceShortcut(aNamespace);
     return aNamespace;
   }
 
-  public FullTypeName GetFullName(bool original = false)
+  public FullTypeName GetFullName(bool original = false, bool shortcut = true)
   {
     string aName;
     string aNamespace;
@@ -132,9 +123,8 @@ public class TypeInfo : ModelElement
       aNamespace = this.Namespace;
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
-    //if (aNamespace == "System")
-    //  aNamespace = "";
-    aNamespace = NamespaceShortcut(aNamespace);
+    if (shortcut)
+      aNamespace = NamespaceShortcut(aNamespace);
     if (IsGenericTypeParameter)
       return new FullTypeName(Name, null);
     var result = new FullTypeName(aName, aNamespace);

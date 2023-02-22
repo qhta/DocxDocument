@@ -165,20 +165,21 @@ public static class PageMarginsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PageMargins? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PageMargins value)
     where OpenXmlElementType: DXO2016DrawChartDraw.PageMargins, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetL(openXmlElement, value?.L);
-      SetR(openXmlElement, value?.R);
-      SetT(openXmlElement, value?.T);
-      SetB(openXmlElement, value?.B);
-      SetHeader(openXmlElement, value?.Header);
-      SetFooter(openXmlElement, value?.Footer);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PageMargins openXmlElement, DMDrawsChartDraws.PageMargins value)
+  {
+    SetL(openXmlElement, value?.L);
+    SetR(openXmlElement, value?.R);
+    SetT(openXmlElement, value?.T);
+    SetB(openXmlElement, value?.B);
+    SetHeader(openXmlElement, value?.Header);
+    SetFooter(openXmlElement, value?.Footer);
+    }
+  }

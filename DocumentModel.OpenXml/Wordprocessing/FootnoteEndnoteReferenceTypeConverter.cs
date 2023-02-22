@@ -10,22 +10,17 @@ public static class FootnoteEndnoteReferenceTypeConverter
   /// </summary>
   private static Boolean? GetCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement)
   {
-    return openXmlElement?.CustomMarkFollows?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.CustomMarkFollows);
   }
   
   private static bool CmpCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CustomMarkFollows?.Value == value) return true;
-    diffs?.Add(objName, "CustomMarkFollows", openXmlElement?.CustomMarkFollows?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.CustomMarkFollows, value, diffs, objName, "CustomMarkFollows");
   }
   
   private static void SetCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.CustomMarkFollows = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.CustomMarkFollows = null;
+    openXmlElement.CustomMarkFollows = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -76,16 +71,17 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteReferenceType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteReferenceType value)
     where OpenXmlElementType: DXW.FootnoteEndnoteReferenceType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCustomMarkFollows(openXmlElement, value?.CustomMarkFollows);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteReferenceType openXmlElement, DMW.FootnoteEndnoteReferenceType value)
+  {
+    SetCustomMarkFollows(openXmlElement, value?.CustomMarkFollows);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

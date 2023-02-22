@@ -21,11 +21,11 @@ public static class WebExtensionReferenceListConverter
   
   private static bool CmpWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement, Collection<DMWebExt.WebExtensionStoreReference>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2013WebExt.WebExtensionStoreReference>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2013WebExt.WebExtensionStoreReference>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -42,7 +42,7 @@ public static class WebExtensionReferenceListConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -86,15 +86,16 @@ public static class WebExtensionReferenceListConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionReferenceList? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionReferenceList value)
     where OpenXmlElementType: DXO2013WebExt.WebExtensionReferenceList, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWebExtensionStoreReferences(openXmlElement, value?.WebExtensionStoreReferences);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionReferenceList openXmlElement, DMWebExt.WebExtensionReferenceList value)
+  {
+    SetWebExtensionStoreReferences(openXmlElement, value?.WebExtensionStoreReferences);
+    }
+  }

@@ -88,7 +88,7 @@ public static class StylesConverter
       {
         var modelStyle = modelStyles[i];
         var origStyle = origStyles[i];
-        if (!DMXW.StyleConverter.CompareModelElement(origStyle, modelStyle, diffs, objName))
+        if (!DMXW.StyleConverter.CompareModelElement(origStyle, modelStyle, diffs, $"Style[{i}]"))
           ok = false;
       }
       return ok;

@@ -22,13 +22,15 @@ public static class MarkerConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Symbol>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Symbol, DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(itemElement, (DMDrawsCharts.MarkerStyleKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Symbol, DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>((DMDrawsCharts.MarkerStyleKind)value));
   }
   
   /// <summary>
@@ -36,27 +38,17 @@ public static class MarkerConverter
   /// </summary>
   private static Byte? GetSize(DXDrawCharts.Marker openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val);
   }
   
   private static bool CmpSize(DXDrawCharts.Marker openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Size>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Size", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val, value, diffs, objName, "Size");
   }
   
   private static void SetSize(DXDrawCharts.Marker openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Size>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Size{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Size,System.Byte>(openXmlElement, value);
   }
   
   /// <summary>
@@ -151,18 +143,19 @@ public static class MarkerConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Marker? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Marker value)
     where OpenXmlElementType: DXDrawCharts.Marker, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSymbol(openXmlElement, value?.Symbol);
-      SetSize(openXmlElement, value?.Size);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Marker openXmlElement, DMDrawsCharts.Marker value)
+  {
+    SetSymbol(openXmlElement, value?.Symbol);
+    SetSize(openXmlElement, value?.Size);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

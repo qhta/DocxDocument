@@ -10,22 +10,17 @@ public static class SVGBlipConverter
   /// </summary>
   private static String? GetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement)
   {
-    return openXmlElement?.Embed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
   private static bool CmpEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Embed?.Value == value) return true;
-    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
   
   private static void SetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Embed = new StringValue { Value = value };
-    else
-      openXmlElement.Embed = null;
+    openXmlElement.Embed = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class SVGBlipConverter
   /// </summary>
   private static String? GetLink(DXO2019DrawSVG.SVGBlip openXmlElement)
   {
-    return openXmlElement?.Link?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
   private static bool CmpLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Link?.Value == value) return true;
-    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
   
   private static void SetLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Link = new StringValue { Value = value };
-    else
-      openXmlElement.Link = null;
+    openXmlElement.Link = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.SVG.SVGBlip? CreateModelElement(DXO2019DrawSVG.SVGBlip? openXmlElement)
@@ -79,16 +69,17 @@ public static class SVGBlipConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsSVG.SVGBlip? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsSVG.SVGBlip value)
     where OpenXmlElementType: DXO2019DrawSVG.SVGBlip, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEmbed(openXmlElement, value?.Embed);
-      SetLink(openXmlElement, value?.Link);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2019DrawSVG.SVGBlip openXmlElement, DMDrawsSVG.SVGBlip value)
+  {
+    SetEmbed(openXmlElement, value?.Embed);
+    SetLink(openXmlElement, value?.Link);
+    }
+  }

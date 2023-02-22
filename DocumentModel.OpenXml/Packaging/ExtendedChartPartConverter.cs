@@ -152,20 +152,21 @@ public static class ExtendedChartPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedChartPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedChartPart value)
     where OpenXmlElementType: DXPack.ExtendedChartPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetChartColorStyleParts(openXmlElement, value?.ChartColorStyleParts);
-      SetChartSpace(openXmlElement, value?.ChartSpace);
-      //SetChartStyleParts(openXmlElement, value?.ChartStyleParts);
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.ExtendedChartPart openXmlElement, DMPack.ExtendedChartPart value)
+  {
+    //SetChartColorStyleParts(openXmlElement, value?.ChartColorStyleParts);
+    SetChartSpace(openXmlElement, value?.ChartSpace);
+    //SetChartStyleParts(openXmlElement, value?.ChartStyleParts);
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

@@ -10,22 +10,17 @@ public static class ColorTransformDescriptionConverter
   /// </summary>
   private static String? GetLanguage(DXDrawDgms.ColorTransformDescription openXmlElement)
   {
-    return openXmlElement?.Language?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
   private static bool CmpLanguage(DXDrawDgms.ColorTransformDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Language?.Value == value) return true;
-    diffs?.Add(objName, "Language", openXmlElement?.Language?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
   }
   
   private static void SetLanguage(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Language = new StringValue { Value = value };
-    else
-      openXmlElement.Language = null;
+    openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ColorTransformDescriptionConverter
   /// </summary>
   private static String? GetVal(DXDrawDgms.ColorTransformDescription openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
   private static bool CmpVal(DXDrawDgms.ColorTransformDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
   }
   
   private static void SetVal(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Val = new StringValue { Value = value };
-    else
-      openXmlElement.Val = null;
+    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.Diagrams.ColorTransformDescription? CreateModelElement(DXDrawDgms.ColorTransformDescription? openXmlElement)
@@ -79,16 +69,17 @@ public static class ColorTransformDescriptionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformDescription? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformDescription value)
     where OpenXmlElementType: DXDrawDgms.ColorTransformDescription, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLanguage(openXmlElement, value?.Language);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.ColorTransformDescription openXmlElement, DMDrawsDgms.ColorTransformDescription value)
+  {
+    SetLanguage(openXmlElement, value?.Language);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

@@ -10,27 +10,17 @@ public static class BarChartSeriesConverter
   /// </summary>
   private static UInt32? GetIndex(DXDrawCharts.BarChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
   }
   
   private static bool CmpIndex(DXDrawCharts.BarChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Index", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
   }
   
   private static void SetIndex(DXDrawCharts.BarChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Index>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Index{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -38,27 +28,17 @@ public static class BarChartSeriesConverter
   /// </summary>
   private static UInt32? GetOrder(DXDrawCharts.BarChartSeries openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val);
   }
   
   private static bool CmpOrder(DXDrawCharts.BarChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Order", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val, value, diffs, objName, "Order");
   }
   
   private static void SetOrder(DXDrawCharts.BarChartSeries openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Order>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Order{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Order,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -195,11 +175,11 @@ public static class BarChartSeriesConverter
   
   private static bool CmpDataPoints(DXDrawCharts.BarChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.DataPoint>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.DataPoint>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -216,7 +196,7 @@ public static class BarChartSeriesConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -277,11 +257,11 @@ public static class BarChartSeriesConverter
   
   private static bool CmpTrendlines(DXDrawCharts.BarChartSeries openXmlElement, Collection<DMDrawsCharts.Trendline>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawCharts.Trendline>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawCharts.Trendline>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -298,7 +278,7 @@ public static class BarChartSeriesConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -409,13 +389,15 @@ public static class BarChartSeriesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Shape>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(itemElement, (DMDrawsCharts.ShapeKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>((DMDrawsCharts.ShapeKind)value));
   }
   
   private static DMDrawsCharts.BarSerExtensionList? GetBarSerExtensionList(DXDrawCharts.BarChartSeries openXmlElement)
@@ -508,28 +490,29 @@ public static class BarChartSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarChartSeries? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarChartSeries value)
     where OpenXmlElementType: DXDrawCharts.BarChartSeries, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetOrder(openXmlElement, value?.Order);
-      SetSeriesText(openXmlElement, value?.SeriesText);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
-      SetPictureOptions(openXmlElement, value?.PictureOptions);
-      SetDataPoints(openXmlElement, value?.DataPoints);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetTrendlines(openXmlElement, value?.Trendlines);
-      SetErrorBars(openXmlElement, value?.ErrorBars);
-      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
-      SetValues(openXmlElement, value?.Values);
-      SetShape(openXmlElement, value?.Shape);
-      SetBarSerExtensionList(openXmlElement, value?.BarSerExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.BarChartSeries openXmlElement, DMDrawsCharts.BarChartSeries value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetOrder(openXmlElement, value?.Order);
+    SetSeriesText(openXmlElement, value?.SeriesText);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
+    SetPictureOptions(openXmlElement, value?.PictureOptions);
+    SetDataPoints(openXmlElement, value?.DataPoints);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetTrendlines(openXmlElement, value?.Trendlines);
+    SetErrorBars(openXmlElement, value?.ErrorBars);
+    SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+    SetValues(openXmlElement, value?.Values);
+    SetShape(openXmlElement, value?.Shape);
+    SetBarSerExtensionList(openXmlElement, value?.BarSerExtensionList);
+    }
+  }

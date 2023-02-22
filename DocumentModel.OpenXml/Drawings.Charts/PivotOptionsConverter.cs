@@ -197,19 +197,20 @@ public static class PivotOptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotOptions? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotOptions value)
     where OpenXmlElementType: DXO2010DrawCharts.PivotOptions, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDropZoneFilter(openXmlElement, value?.DropZoneFilter);
-      SetDropZoneCategories(openXmlElement, value?.DropZoneCategories);
-      SetDropZoneData(openXmlElement, value?.DropZoneData);
-      SetDropZoneSeries(openXmlElement, value?.DropZoneSeries);
-      SetDropZonesVisible(openXmlElement, value?.DropZonesVisible);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010DrawCharts.PivotOptions openXmlElement, DMDrawsCharts.PivotOptions value)
+  {
+    SetDropZoneFilter(openXmlElement, value?.DropZoneFilter);
+    SetDropZoneCategories(openXmlElement, value?.DropZoneCategories);
+    SetDropZoneData(openXmlElement, value?.DropZoneData);
+    SetDropZoneSeries(openXmlElement, value?.DropZoneSeries);
+    SetDropZonesVisible(openXmlElement, value?.DropZonesVisible);
+    }
+  }

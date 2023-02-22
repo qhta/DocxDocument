@@ -241,23 +241,24 @@ public static class PageSetupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PageSetup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PageSetup value)
     where OpenXmlElementType: DXDrawCharts.PageSetup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPaperSize(openXmlElement, value?.PaperSize);
-      SetFirstPageNumber(openXmlElement, value?.FirstPageNumber);
-      SetOrientation(openXmlElement, value?.Orientation);
-      SetBlackAndWhite(openXmlElement, value?.BlackAndWhite);
-      SetDraft(openXmlElement, value?.Draft);
-      SetUseFirstPageNumber(openXmlElement, value?.UseFirstPageNumber);
-      SetHorizontalDpi(openXmlElement, value?.HorizontalDpi);
-      SetVerticalDpi(openXmlElement, value?.VerticalDpi);
-      SetCopies(openXmlElement, value?.Copies);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.PageSetup openXmlElement, DMDrawsCharts.PageSetup value)
+  {
+    SetPaperSize(openXmlElement, value?.PaperSize);
+    SetFirstPageNumber(openXmlElement, value?.FirstPageNumber);
+    SetOrientation(openXmlElement, value?.Orientation);
+    SetBlackAndWhite(openXmlElement, value?.BlackAndWhite);
+    SetDraft(openXmlElement, value?.Draft);
+    SetUseFirstPageNumber(openXmlElement, value?.UseFirstPageNumber);
+    SetHorizontalDpi(openXmlElement, value?.HorizontalDpi);
+    SetVerticalDpi(openXmlElement, value?.VerticalDpi);
+    SetCopies(openXmlElement, value?.Copies);
+    }
+  }

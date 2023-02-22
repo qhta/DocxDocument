@@ -675,36 +675,37 @@ public static class RunPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RunProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RunProperties value)
     where OpenXmlElementType: DXDraw.RunProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOutline(openXmlElement, value?.Outline);
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetBlipFill(openXmlElement, value?.BlipFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetGroupFill(openXmlElement, value?.GroupFill);
-      SetEffectList(openXmlElement, value?.EffectList);
-      SetEffectDag(openXmlElement, value?.EffectDag);
-      SetHighlight(openXmlElement, value?.Highlight);
-      SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
-      SetUnderline(openXmlElement, value?.Underline);
-      SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
-      SetUnderlineFill(openXmlElement, value?.UnderlineFill);
-      SetLatinFont(openXmlElement, value?.LatinFont);
-      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
-      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-      SetSymbolFont(openXmlElement, value?.SymbolFont);
-      SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
-      SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
-      SetRightToLeft(openXmlElement, value?.RightToLeft);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.RunProperties openXmlElement, DMDraws.RunProperties value)
+  {
+    SetOutline(openXmlElement, value?.Outline);
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetBlipFill(openXmlElement, value?.BlipFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetGroupFill(openXmlElement, value?.GroupFill);
+    SetEffectList(openXmlElement, value?.EffectList);
+    SetEffectDag(openXmlElement, value?.EffectDag);
+    SetHighlight(openXmlElement, value?.Highlight);
+    SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
+    SetUnderline(openXmlElement, value?.Underline);
+    SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
+    SetUnderlineFill(openXmlElement, value?.UnderlineFill);
+    SetLatinFont(openXmlElement, value?.LatinFont);
+    SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+    SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+    SetSymbolFont(openXmlElement, value?.SymbolFont);
+    SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
+    SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
+    SetRightToLeft(openXmlElement, value?.RightToLeft);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

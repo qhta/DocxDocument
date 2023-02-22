@@ -10,22 +10,17 @@ public static class BuildDiagramConverter
   /// </summary>
   private static String? GetBuild(DXDraw.BuildDiagram openXmlElement)
   {
-    return openXmlElement?.Build?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Build);
   }
   
   private static bool CmpBuild(DXDraw.BuildDiagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Build?.Value == value) return true;
-    diffs?.Add(objName, "Build", openXmlElement?.Build?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Build, value, diffs, objName, "Build");
   }
   
   private static void SetBuild(DXDraw.BuildDiagram openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Build = new StringValue { Value = value };
-    else
-      openXmlElement.Build = null;
+    openXmlElement.Build = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,16 +74,17 @@ public static class BuildDiagramConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BuildDiagram? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BuildDiagram value)
     where OpenXmlElementType: DXDraw.BuildDiagram, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBuild(openXmlElement, value?.Build);
-      SetReverseAnimation(openXmlElement, value?.ReverseAnimation);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BuildDiagram openXmlElement, DMDraws.BuildDiagram value)
+  {
+    SetBuild(openXmlElement, value?.Build);
+    SetReverseAnimation(openXmlElement, value?.ReverseAnimation);
+    }
+  }

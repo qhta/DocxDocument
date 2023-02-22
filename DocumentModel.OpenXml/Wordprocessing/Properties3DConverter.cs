@@ -222,21 +222,22 @@ public static class Properties3DConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Properties3D? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Properties3D value)
     where OpenXmlElementType: DXO2010W.Properties3D, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
-      SetContourWidth(openXmlElement, value?.ContourWidth);
-      SetPresetMaterialType(openXmlElement, value?.PresetMaterialType);
-      SetBevelTop(openXmlElement, value?.BevelTop);
-      SetBevelBottom(openXmlElement, value?.BevelBottom);
-      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
-      SetContourColor(openXmlElement, value?.ContourColor);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.Properties3D openXmlElement, DMW.Properties3D value)
+  {
+    SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
+    SetContourWidth(openXmlElement, value?.ContourWidth);
+    SetPresetMaterialType(openXmlElement, value?.PresetMaterialType);
+    SetBevelTop(openXmlElement, value?.BevelTop);
+    SetBevelBottom(openXmlElement, value?.BevelBottom);
+    SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+    SetContourColor(openXmlElement, value?.ContourColor);
+    }
+  }

@@ -10,22 +10,17 @@ public static class ControlConverter
   /// </summary>
   private static String? GetName(DXW.Control openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXW.Control openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ControlConverter
   /// </summary>
   private static String? GetShapeId(DXW.Control openXmlElement)
   {
-    return openXmlElement?.ShapeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
   private static bool CmpShapeId(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeId?.Value == value) return true;
-    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
   
   private static void SetShapeId(DXW.Control openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeId = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeId = null;
+    openXmlElement.ShapeId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class ControlConverter
   /// </summary>
   private static String? GetId(DXW.Control openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.Control openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.Control openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.Control? CreateModelElement(DXW.Control? openXmlElement)
@@ -105,17 +90,18 @@ public static class ControlConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Control? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Control value)
     where OpenXmlElementType: DXW.Control, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetShapeId(openXmlElement, value?.ShapeId);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Control openXmlElement, DMW.Control value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetShapeId(openXmlElement, value?.ShapeId);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

@@ -10,22 +10,17 @@ public static class McdConverter
   /// </summary>
   private static String? GetMacroName(DXOW.Mcd openXmlElement)
   {
-    return openXmlElement?.MacroName?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MacroName);
   }
   
   private static bool CmpMacroName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MacroName?.Value == value) return true;
-    diffs?.Add(objName, "MacroName", openXmlElement?.MacroName?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MacroName, value, diffs, objName, "MacroName");
   }
   
   private static void SetMacroName(DXOW.Mcd openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MacroName = new StringValue { Value = value };
-    else
-      openXmlElement.MacroName = null;
+    openXmlElement.MacroName = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class McdConverter
   /// </summary>
   private static String? GetName(DXOW.Mcd openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXOW.Mcd openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class McdConverter
   /// </summary>
   private static String? GetMenuHelp(DXOW.Mcd openXmlElement)
   {
-    return openXmlElement?.MenuHelp?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MenuHelp);
   }
   
   private static bool CmpMenuHelp(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MenuHelp?.Value == value) return true;
-    diffs?.Add(objName, "MenuHelp", openXmlElement?.MenuHelp?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MenuHelp, value, diffs, objName, "MenuHelp");
   }
   
   private static void SetMenuHelp(DXOW.Mcd openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MenuHelp = new StringValue { Value = value };
-    else
-      openXmlElement.MenuHelp = null;
+    openXmlElement.MenuHelp = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -167,19 +152,20 @@ public static class McdConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcd? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcd value)
     where OpenXmlElementType: DXOW.Mcd, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMacroName(openXmlElement, value?.MacroName);
-      SetName(openXmlElement, value?.Name);
-      SetMenuHelp(openXmlElement, value?.MenuHelp);
-      SetBEncrypt(openXmlElement, value?.BEncrypt);
-      SetCmg(openXmlElement, value?.Cmg);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.Mcd openXmlElement, DMW.Mcd value)
+  {
+    SetMacroName(openXmlElement, value?.MacroName);
+    SetName(openXmlElement, value?.Name);
+    SetMenuHelp(openXmlElement, value?.MenuHelp);
+    SetBEncrypt(openXmlElement, value?.BEncrypt);
+    SetCmg(openXmlElement, value?.Cmg);
+    }
+  }

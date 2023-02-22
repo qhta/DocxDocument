@@ -91,16 +91,17 @@ public static class GlossaryDocumentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GlossaryDocument? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.GlossaryDocument value)
     where OpenXmlElementType: DXW.GlossaryDocument, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDocumentBackground(openXmlElement, value?.DocumentBackground);
-      SetDocParts(openXmlElement, value?.DocParts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.GlossaryDocument openXmlElement, DMW.GlossaryDocument value)
+  {
+    SetDocumentBackground(openXmlElement, value?.DocumentBackground);
+    SetDocParts(openXmlElement, value?.DocParts);
+    }
+  }

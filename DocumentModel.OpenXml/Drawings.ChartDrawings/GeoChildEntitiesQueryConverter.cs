@@ -10,22 +10,17 @@ public static class GeoChildEntitiesQueryConverter
   /// </summary>
   private static String? GetEntityId(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement)
   {
-    return openXmlElement?.EntityId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
   private static bool CmpEntityId(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EntityId?.Value == value) return true;
-    diffs?.Add(objName, "EntityId", openXmlElement?.EntityId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
   private static void SetEntityId(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.EntityId = new StringValue { Value = value };
-    else
-      openXmlElement.EntityId = null;
+    openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -85,16 +80,17 @@ public static class GeoChildEntitiesQueryConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildEntitiesQuery? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildEntitiesQuery value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoChildEntitiesQuery, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEntityId(openXmlElement, value?.EntityId);
-      SetGeoChildTypes(openXmlElement, value?.GeoChildTypes);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQuery value)
+  {
+    SetEntityId(openXmlElement, value?.EntityId);
+    SetGeoChildTypes(openXmlElement, value?.GeoChildTypes);
+    }
+  }

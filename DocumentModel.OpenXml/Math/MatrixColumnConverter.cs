@@ -59,15 +59,16 @@ public static class MatrixColumnConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumn? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumn value)
     where OpenXmlElementType: DXMath.MatrixColumn, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMatrixColumnProperties(openXmlElement, value?.MatrixColumnProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumn value)
+  {
+    SetMatrixColumnProperties(openXmlElement, value?.MatrixColumnProperties);
+    }
+  }

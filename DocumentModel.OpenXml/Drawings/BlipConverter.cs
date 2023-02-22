@@ -10,22 +10,17 @@ public static class BlipConverter
   /// </summary>
   private static String? GetEmbed(DXDraw.Blip openXmlElement)
   {
-    return openXmlElement?.Embed?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
   private static bool CmpEmbed(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Embed?.Value == value) return true;
-    diffs?.Add(objName, "Embed", openXmlElement?.Embed?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
   
   private static void SetEmbed(DXDraw.Blip openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Embed = new StringValue { Value = value };
-    else
-      openXmlElement.Embed = null;
+    openXmlElement.Embed = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class BlipConverter
   /// </summary>
   private static String? GetLink(DXDraw.Blip openXmlElement)
   {
-    return openXmlElement?.Link?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
   private static bool CmpLink(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Link?.Value == value) return true;
-    diffs?.Add(objName, "Link", openXmlElement?.Link?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
   
   private static void SetLink(DXDraw.Blip openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Link = new StringValue { Value = value };
-    else
-      openXmlElement.Link = null;
+    openXmlElement.Link = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -628,35 +618,36 @@ public static class BlipConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blip? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blip value)
     where OpenXmlElementType: DXDraw.Blip, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEmbed(openXmlElement, value?.Embed);
-      SetLink(openXmlElement, value?.Link);
-      SetCompressionState(openXmlElement, value?.CompressionState);
-      SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
-      SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
-      SetAlphaFloor(openXmlElement, value?.AlphaFloor);
-      SetAlphaInverse(openXmlElement, value?.AlphaInverse);
-      SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
-      SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
-      SetAlphaReplace(openXmlElement, value?.AlphaReplace);
-      SetBiLevel(openXmlElement, value?.BiLevel);
-      SetBlur(openXmlElement, value?.Blur);
-      SetColorChange(openXmlElement, value?.ColorChange);
-      SetColorReplacement(openXmlElement, value?.ColorReplacement);
-      SetDuotone(openXmlElement, value?.Duotone);
-      SetFillOverlay(openXmlElement, value?.FillOverlay);
-      SetGrayscale(openXmlElement, value?.Grayscale);
-      SetHsl(openXmlElement, value?.Hsl);
-      SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
-      SetTintEffect(openXmlElement, value?.TintEffect);
-      SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Blip openXmlElement, DMDraws.Blip value)
+  {
+    SetEmbed(openXmlElement, value?.Embed);
+    SetLink(openXmlElement, value?.Link);
+    SetCompressionState(openXmlElement, value?.CompressionState);
+    SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
+    SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
+    SetAlphaFloor(openXmlElement, value?.AlphaFloor);
+    SetAlphaInverse(openXmlElement, value?.AlphaInverse);
+    SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
+    SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
+    SetAlphaReplace(openXmlElement, value?.AlphaReplace);
+    SetBiLevel(openXmlElement, value?.BiLevel);
+    SetBlur(openXmlElement, value?.Blur);
+    SetColorChange(openXmlElement, value?.ColorChange);
+    SetColorReplacement(openXmlElement, value?.ColorReplacement);
+    SetDuotone(openXmlElement, value?.Duotone);
+    SetFillOverlay(openXmlElement, value?.FillOverlay);
+    SetGrayscale(openXmlElement, value?.Grayscale);
+    SetHsl(openXmlElement, value?.Hsl);
+    SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
+    SetTintEffect(openXmlElement, value?.TintEffect);
+    SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
+    }
+  }

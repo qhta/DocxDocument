@@ -10,22 +10,17 @@ public static class LayoutDefinitionConverter
   /// </summary>
   private static String? GetUniqueId(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    return openXmlElement?.UniqueId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.UniqueId);
   }
   
   private static bool CmpUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.UniqueId?.Value == value) return true;
-    diffs?.Add(objName, "UniqueId", openXmlElement?.UniqueId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.UniqueId, value, diffs, objName, "UniqueId");
   }
   
   private static void SetUniqueId(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.UniqueId = new StringValue { Value = value };
-    else
-      openXmlElement.UniqueId = null;
+    openXmlElement.UniqueId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class LayoutDefinitionConverter
   /// </summary>
   private static String? GetMinVersion(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    return openXmlElement?.MinVersion?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.MinVersion);
   }
   
   private static bool CmpMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.MinVersion?.Value == value) return true;
-    diffs?.Add(objName, "MinVersion", openXmlElement?.MinVersion?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.MinVersion, value, diffs, objName, "MinVersion");
   }
   
   private static void SetMinVersion(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.MinVersion = new StringValue { Value = value };
-    else
-      openXmlElement.MinVersion = null;
+    openXmlElement.MinVersion = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class LayoutDefinitionConverter
   /// </summary>
   private static String? GetDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement)
   {
-    return openXmlElement?.DefaultStyle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DefaultStyle);
   }
   
   private static bool CmpDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DefaultStyle?.Value == value) return true;
-    diffs?.Add(objName, "DefaultStyle", openXmlElement?.DefaultStyle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DefaultStyle, value, diffs, objName, "DefaultStyle");
   }
   
   private static void SetDefaultStyle(DXDrawDgms.LayoutDefinition openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DefaultStyle = new StringValue { Value = value };
-    else
-      openXmlElement.DefaultStyle = null;
+    openXmlElement.DefaultStyle = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DMDrawsDgms.Title>? GetTitles(DXDrawDgms.LayoutDefinition openXmlElement)
@@ -90,11 +75,11 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpTitles(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Title>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawDgms.Title>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawDgms.Title>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -111,7 +96,7 @@ public static class LayoutDefinitionConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -146,11 +131,11 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpDescriptions(DXDrawDgms.LayoutDefinition openXmlElement, Collection<DMDrawsDgms.Description>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXDrawDgms.Description>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXDrawDgms.Description>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -167,7 +152,7 @@ public static class LayoutDefinitionConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -397,25 +382,26 @@ public static class LayoutDefinitionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutDefinition? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutDefinition value)
     where OpenXmlElementType: DXDrawDgms.LayoutDefinition, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUniqueId(openXmlElement, value?.UniqueId);
-      SetMinVersion(openXmlElement, value?.MinVersion);
-      SetDefaultStyle(openXmlElement, value?.DefaultStyle);
-      SetTitles(openXmlElement, value?.Titles);
-      SetDescriptions(openXmlElement, value?.Descriptions);
-      SetCategoryList(openXmlElement, value?.CategoryList);
-      SetSampleData(openXmlElement, value?.SampleData);
-      SetStyleData(openXmlElement, value?.StyleData);
-      SetColorData(openXmlElement, value?.ColorData);
-      SetLayoutNode(openXmlElement, value?.LayoutNode);
-      SetDiagramDefinitionExtensionList(openXmlElement, value?.DiagramDefinitionExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.LayoutDefinition value)
+  {
+    SetUniqueId(openXmlElement, value?.UniqueId);
+    SetMinVersion(openXmlElement, value?.MinVersion);
+    SetDefaultStyle(openXmlElement, value?.DefaultStyle);
+    SetTitles(openXmlElement, value?.Titles);
+    SetDescriptions(openXmlElement, value?.Descriptions);
+    SetCategoryList(openXmlElement, value?.CategoryList);
+    SetSampleData(openXmlElement, value?.SampleData);
+    SetStyleData(openXmlElement, value?.StyleData);
+    SetColorData(openXmlElement, value?.ColorData);
+    SetLayoutNode(openXmlElement, value?.LayoutNode);
+    SetDiagramDefinitionExtensionList(openXmlElement, value?.DiagramDefinitionExtensionList);
+    }
+  }

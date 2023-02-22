@@ -91,16 +91,17 @@ public static class ShapeNonVisualPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeNonVisualProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeNonVisualProperties value)
     where OpenXmlElementType: DXODraw.ShapeNonVisualProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
-      SetNonVisualDrawingShapeProperties(openXmlElement, value?.NonVisualDrawingShapeProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.ShapeNonVisualProperties value)
+  {
+    SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
+    SetNonVisualDrawingShapeProperties(openXmlElement, value?.NonVisualDrawingShapeProperties);
+    }
+  }

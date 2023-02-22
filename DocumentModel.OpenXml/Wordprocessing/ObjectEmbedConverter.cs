@@ -28,22 +28,17 @@ public static class ObjectEmbedConverter
   /// </summary>
   private static String? GetId(DXW.ObjectEmbed openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.ObjectEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -51,22 +46,17 @@ public static class ObjectEmbedConverter
   /// </summary>
   private static String? GetProgId(DXW.ObjectEmbed openXmlElement)
   {
-    return openXmlElement?.ProgId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ProgId);
   }
   
   private static bool CmpProgId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ProgId?.Value == value) return true;
-    diffs?.Add(objName, "ProgId", openXmlElement?.ProgId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ProgId, value, diffs, objName, "ProgId");
   }
   
   private static void SetProgId(DXW.ObjectEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ProgId = new StringValue { Value = value };
-    else
-      openXmlElement.ProgId = null;
+    openXmlElement.ProgId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +64,17 @@ public static class ObjectEmbedConverter
   /// </summary>
   private static String? GetShapeId(DXW.ObjectEmbed openXmlElement)
   {
-    return openXmlElement?.ShapeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
   private static bool CmpShapeId(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeId?.Value == value) return true;
-    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
   
   private static void SetShapeId(DXW.ObjectEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeId = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeId = null;
+    openXmlElement.ShapeId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -97,22 +82,17 @@ public static class ObjectEmbedConverter
   /// </summary>
   private static String? GetFieldCodes(DXW.ObjectEmbed openXmlElement)
   {
-    return openXmlElement?.FieldCodes?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FieldCodes);
   }
   
   private static bool CmpFieldCodes(DXW.ObjectEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FieldCodes?.Value == value) return true;
-    diffs?.Add(objName, "FieldCodes", openXmlElement?.FieldCodes?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FieldCodes, value, diffs, objName, "FieldCodes");
   }
   
   private static void SetFieldCodes(DXW.ObjectEmbed openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FieldCodes = new StringValue { Value = value };
-    else
-      openXmlElement.FieldCodes = null;
+    openXmlElement.FieldCodes = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DXW.ObjectEmbed? openXmlElement)
@@ -152,19 +132,20 @@ public static class ObjectEmbedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ObjectEmbed? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ObjectEmbed value)
     where OpenXmlElementType: DXW.ObjectEmbed, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetdrawAspect(openXmlElement, value?.drawAspect);
-      SetId(openXmlElement, value?.Id);
-      SetProgId(openXmlElement, value?.ProgId);
-      SetShapeId(openXmlElement, value?.ShapeId);
-      SetFieldCodes(openXmlElement, value?.FieldCodes);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ObjectEmbed openXmlElement, DMW.ObjectEmbed value)
+  {
+    SetdrawAspect(openXmlElement, value?.drawAspect);
+    SetId(openXmlElement, value?.Id);
+    SetProgId(openXmlElement, value?.ProgId);
+    SetShapeId(openXmlElement, value?.ShapeId);
+    SetFieldCodes(openXmlElement, value?.FieldCodes);
+    }
+  }

@@ -50,27 +50,17 @@ public static class NumberingInstanceConverter
   /// </summary>
   private static Int32? GetAbstractNumId(DXW.NumberingInstance openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val);
   }
   
   private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXW.AbstractNumId>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXW.AbstractNumId", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val, value, diffs, objName, "AbstractNumId");
   }
   
   private static void SetAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.AbstractNumId>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXW.AbstractNumId{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXW.AbstractNumId,System.Int32>(openXmlElement, value);
   }
   
   private static Collection<DMW.LevelOverride>? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
@@ -89,11 +79,11 @@ public static class NumberingInstanceConverter
   
   private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXW.LevelOverride>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXW.LevelOverride>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -110,7 +100,7 @@ public static class NumberingInstanceConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -163,18 +153,19 @@ public static class NumberingInstanceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingInstance? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingInstance value)
     where OpenXmlElementType: DXW.NumberingInstance, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNumberID(openXmlElement, value?.NumberID);
-      SetDurableId(openXmlElement, value?.DurableId);
-      SetAbstractNumId(openXmlElement, value?.AbstractNumId);
-      SetLevelOverrides(openXmlElement, value?.LevelOverrides);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingInstance openXmlElement, DMW.NumberingInstance value)
+  {
+    SetNumberID(openXmlElement, value?.NumberID);
+    SetDurableId(openXmlElement, value?.DurableId);
+    SetAbstractNumId(openXmlElement, value?.AbstractNumId);
+    SetLevelOverrides(openXmlElement, value?.LevelOverrides);
+    }
+  }

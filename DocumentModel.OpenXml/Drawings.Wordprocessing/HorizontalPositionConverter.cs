@@ -132,18 +132,19 @@ public static class HorizontalPositionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.HorizontalPosition? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.HorizontalPosition value)
     where OpenXmlElementType: DXDrawW.HorizontalPosition, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRelativeFrom(openXmlElement, value?.RelativeFrom);
-      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
-      SetPositionOffset(openXmlElement, value?.PositionOffset);
-      SetPercentagePositionHeightOffset(openXmlElement, value?.PercentagePositionHeightOffset);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawW.HorizontalPosition openXmlElement, DMDrawsW.HorizontalPosition value)
+  {
+    SetRelativeFrom(openXmlElement, value?.RelativeFrom);
+    SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+    SetPositionOffset(openXmlElement, value?.PositionOffset);
+    SetPercentagePositionHeightOffset(openXmlElement, value?.PercentagePositionHeightOffset);
+    }
+  }

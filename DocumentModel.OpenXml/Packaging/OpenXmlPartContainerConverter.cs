@@ -119,18 +119,19 @@ public static class OpenXmlPartContainerConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.OpenXmlPartContainer? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.OpenXmlPartContainer value)
     where OpenXmlElementType: DXPack.OpenXmlPartContainer, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetExternalRelationships(openXmlElement, value?.ExternalRelationships);
-      //SetHyperlinkRelationships(openXmlElement, value?.HyperlinkRelationships);
-      //SetDataPartReferenceRelationships(openXmlElement, value?.DataPartReferenceRelationships);
-      //SetParts(openXmlElement, value?.Parts);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.OpenXmlPartContainer openXmlElement, DMPack.OpenXmlPartContainer value)
+  {
+    //SetExternalRelationships(openXmlElement, value?.ExternalRelationships);
+    //SetHyperlinkRelationships(openXmlElement, value?.HyperlinkRelationships);
+    //SetDataPartReferenceRelationships(openXmlElement, value?.DataPartReferenceRelationships);
+    //SetParts(openXmlElement, value?.Parts);
+    }
+  }

@@ -10,22 +10,17 @@ public static class DiagramAutoBulletConverter
   /// </summary>
   private static String? GetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    return openXmlElement?.AutoBulletPrefix?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AutoBulletPrefix);
   }
   
   private static bool CmpAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AutoBulletPrefix?.Value == value) return true;
-    diffs?.Add(objName, "AutoBulletPrefix", openXmlElement?.AutoBulletPrefix?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AutoBulletPrefix, value, diffs, objName, "AutoBulletPrefix");
   }
   
   private static void SetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AutoBulletPrefix = new StringValue { Value = value };
-    else
-      openXmlElement.AutoBulletPrefix = null;
+    openXmlElement.AutoBulletPrefix = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -209,20 +204,21 @@ public static class DiagramAutoBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.DiagramAutoBullet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.DiagramAutoBullet value)
     where OpenXmlElementType: DXO2019DrawDgm11.DiagramAutoBullet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAutoBulletPrefix(openXmlElement, value?.AutoBulletPrefix);
-      SetLeadZeros(openXmlElement, value?.LeadZeros);
-      SetNoBullet(openXmlElement, value?.NoBullet);
-      SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
-      SetCharacterBullet(openXmlElement, value?.CharacterBullet);
-      SetPictureBullet(openXmlElement, value?.PictureBullet);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDrawsDgm1.DiagramAutoBullet value)
+  {
+    SetAutoBulletPrefix(openXmlElement, value?.AutoBulletPrefix);
+    SetLeadZeros(openXmlElement, value?.LeadZeros);
+    SetNoBullet(openXmlElement, value?.NoBullet);
+    SetAutoNumberedBullet(openXmlElement, value?.AutoNumberedBullet);
+    SetCharacterBullet(openXmlElement, value?.CharacterBullet);
+    SetPictureBullet(openXmlElement, value?.PictureBullet);
+    }
+  }

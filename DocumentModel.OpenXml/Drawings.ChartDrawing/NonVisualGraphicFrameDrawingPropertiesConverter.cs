@@ -91,16 +91,17 @@ public static class NonVisualGraphicFrameDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualGraphicFrameDrawingProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualGraphicFrameDrawingProperties value)
     where OpenXmlElementType: DXDrawChartDraw.NonVisualGraphicFrameDrawingProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGraphicFrameLocks(openXmlElement, value?.GraphicFrameLocks);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualGraphicFrameDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameDrawingProperties value)
+  {
+    SetGraphicFrameLocks(openXmlElement, value?.GraphicFrameLocks);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

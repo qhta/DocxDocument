@@ -41,27 +41,17 @@ public static class SingleDataSourceRecordConverter
   /// </summary>
   private static Int64? GetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val);
   }
   
   private static bool CmpRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXOW.RecordHashCode>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXOW.RecordHashCode", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val, value, diffs, objName, "RecordHashCode");
   }
   
   private static void SetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOW.RecordHashCode>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXOW.RecordHashCode{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXOW.RecordHashCode,System.Int64>(openXmlElement, value);
   }
   
   public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DXOW.SingleDataSourceRecord? openXmlElement)
@@ -92,16 +82,17 @@ public static class SingleDataSourceRecordConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SingleDataSourceRecord? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SingleDataSourceRecord value)
     where OpenXmlElementType: DXOW.SingleDataSourceRecord, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRecordIncluded(openXmlElement, value?.RecordIncluded);
-      SetRecordHashCode(openXmlElement, value?.RecordHashCode);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.SingleDataSourceRecord openXmlElement, DMW.SingleDataSourceRecord value)
+  {
+    SetRecordIncluded(openXmlElement, value?.RecordIncluded);
+    SetRecordHashCode(openXmlElement, value?.RecordHashCode);
+    }
+  }

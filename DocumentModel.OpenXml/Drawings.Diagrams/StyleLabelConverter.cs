@@ -10,22 +10,17 @@ public static class StyleLabelConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.StyleLabel openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.StyleLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.StyleLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -213,20 +208,21 @@ public static class StyleLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleLabel value)
     where OpenXmlElementType: DXDrawDgms.StyleLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetScene3D(openXmlElement, value?.Scene3D);
-      SetShape3D(openXmlElement, value?.Shape3D);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetStyle(openXmlElement, value?.Style);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.StyleLabel value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetScene3D(openXmlElement, value?.Scene3D);
+    SetShape3D(openXmlElement, value?.Shape3D);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetStyle(openXmlElement, value?.Style);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

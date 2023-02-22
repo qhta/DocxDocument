@@ -92,17 +92,18 @@ public static class TabStopConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TabStop? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TabStop value)
     where OpenXmlElementType: DXW.TabStop, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetLeader(openXmlElement, value?.Leader);
-      SetPosition(openXmlElement, value?.Position);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.TabStop openXmlElement, DMW.TabStop value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetLeader(openXmlElement, value?.Leader);
+    SetPosition(openXmlElement, value?.Position);
+    }
+  }

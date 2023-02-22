@@ -166,19 +166,20 @@ public static class TransformConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Transform? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Transform value)
     where OpenXmlElementType: DXDrawChartDraw.Transform, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
-      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
-      SetOffset(openXmlElement, value?.Offset);
-      SetExtents(openXmlElement, value?.Extents);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.Transform openXmlElement, DMDrawsChartDraw.Transform value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+    SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+    SetOffset(openXmlElement, value?.Offset);
+    SetExtents(openXmlElement, value?.Extents);
+    }
+  }

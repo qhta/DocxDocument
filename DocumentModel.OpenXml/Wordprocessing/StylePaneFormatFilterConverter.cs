@@ -38,22 +38,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetAllStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.AllStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.AllStyles);
   }
   
   private static bool CmpAllStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AllStyles?.Value == value) return true;
-    diffs?.Add(objName, "AllStyles", openXmlElement?.AllStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.AllStyles, value, diffs, objName, "AllStyles");
   }
   
   private static void SetAllStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.AllStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.AllStyles = null;
+    openXmlElement.AllStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -61,22 +56,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetCustomStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.CustomStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.CustomStyles);
   }
   
   private static bool CmpCustomStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CustomStyles?.Value == value) return true;
-    diffs?.Add(objName, "CustomStyles", openXmlElement?.CustomStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.CustomStyles, value, diffs, objName, "CustomStyles");
   }
   
   private static void SetCustomStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.CustomStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.CustomStyles = null;
+    openXmlElement.CustomStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -84,22 +74,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetLatentStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.LatentStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.LatentStyles);
   }
   
   private static bool CmpLatentStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LatentStyles?.Value == value) return true;
-    diffs?.Add(objName, "LatentStyles", openXmlElement?.LatentStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.LatentStyles, value, diffs, objName, "LatentStyles");
   }
   
   private static void SetLatentStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.LatentStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.LatentStyles = null;
+    openXmlElement.LatentStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -107,22 +92,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetStylesInUse(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.StylesInUse?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.StylesInUse);
   }
   
   private static bool CmpStylesInUse(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StylesInUse?.Value == value) return true;
-    diffs?.Add(objName, "StylesInUse", openXmlElement?.StylesInUse?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.StylesInUse, value, diffs, objName, "StylesInUse");
   }
   
   private static void SetStylesInUse(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.StylesInUse = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.StylesInUse = null;
+    openXmlElement.StylesInUse = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -130,22 +110,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetHeadingStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.HeadingStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.HeadingStyles);
   }
   
   private static bool CmpHeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.HeadingStyles?.Value == value) return true;
-    diffs?.Add(objName, "HeadingStyles", openXmlElement?.HeadingStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.HeadingStyles, value, diffs, objName, "HeadingStyles");
   }
   
   private static void SetHeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.HeadingStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.HeadingStyles = null;
+    openXmlElement.HeadingStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -153,22 +128,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetNumberingStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.NumberingStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.NumberingStyles);
   }
   
   private static bool CmpNumberingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.NumberingStyles?.Value == value) return true;
-    diffs?.Add(objName, "NumberingStyles", openXmlElement?.NumberingStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.NumberingStyles, value, diffs, objName, "NumberingStyles");
   }
   
   private static void SetNumberingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.NumberingStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.NumberingStyles = null;
+    openXmlElement.NumberingStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -176,22 +146,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetTableStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.TableStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.TableStyles);
   }
   
   private static bool CmpTableStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TableStyles?.Value == value) return true;
-    diffs?.Add(objName, "TableStyles", openXmlElement?.TableStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.TableStyles, value, diffs, objName, "TableStyles");
   }
   
   private static void SetTableStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.TableStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.TableStyles = null;
+    openXmlElement.TableStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -199,22 +164,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetDirectFormattingOnRuns(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.DirectFormattingOnRuns?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnRuns);
   }
   
   private static bool CmpDirectFormattingOnRuns(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DirectFormattingOnRuns?.Value == value) return true;
-    diffs?.Add(objName, "DirectFormattingOnRuns", openXmlElement?.DirectFormattingOnRuns?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnRuns, value, diffs, objName, "DirectFormattingOnRuns");
   }
   
   private static void SetDirectFormattingOnRuns(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.DirectFormattingOnRuns = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.DirectFormattingOnRuns = null;
+    openXmlElement.DirectFormattingOnRuns = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -222,22 +182,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetDirectFormattingOnParagraphs(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.DirectFormattingOnParagraphs?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnParagraphs);
   }
   
   private static bool CmpDirectFormattingOnParagraphs(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DirectFormattingOnParagraphs?.Value == value) return true;
-    diffs?.Add(objName, "DirectFormattingOnParagraphs", openXmlElement?.DirectFormattingOnParagraphs?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnParagraphs, value, diffs, objName, "DirectFormattingOnParagraphs");
   }
   
   private static void SetDirectFormattingOnParagraphs(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.DirectFormattingOnParagraphs = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.DirectFormattingOnParagraphs = null;
+    openXmlElement.DirectFormattingOnParagraphs = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -245,22 +200,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetDirectFormattingOnNumbering(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.DirectFormattingOnNumbering?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnNumbering);
   }
   
   private static bool CmpDirectFormattingOnNumbering(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DirectFormattingOnNumbering?.Value == value) return true;
-    diffs?.Add(objName, "DirectFormattingOnNumbering", openXmlElement?.DirectFormattingOnNumbering?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnNumbering, value, diffs, objName, "DirectFormattingOnNumbering");
   }
   
   private static void SetDirectFormattingOnNumbering(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.DirectFormattingOnNumbering = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.DirectFormattingOnNumbering = null;
+    openXmlElement.DirectFormattingOnNumbering = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -268,22 +218,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetDirectFormattingOnTables(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.DirectFormattingOnTables?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnTables);
   }
   
   private static bool CmpDirectFormattingOnTables(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DirectFormattingOnTables?.Value == value) return true;
-    diffs?.Add(objName, "DirectFormattingOnTables", openXmlElement?.DirectFormattingOnTables?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnTables, value, diffs, objName, "DirectFormattingOnTables");
   }
   
   private static void SetDirectFormattingOnTables(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.DirectFormattingOnTables = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.DirectFormattingOnTables = null;
+    openXmlElement.DirectFormattingOnTables = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -291,22 +236,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetClearFormatting(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.ClearFormatting?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.ClearFormatting);
   }
   
   private static bool CmpClearFormatting(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ClearFormatting?.Value == value) return true;
-    diffs?.Add(objName, "ClearFormatting", openXmlElement?.ClearFormatting?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.ClearFormatting, value, diffs, objName, "ClearFormatting");
   }
   
   private static void SetClearFormatting(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.ClearFormatting = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.ClearFormatting = null;
+    openXmlElement.ClearFormatting = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -314,22 +254,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetTop3HeadingStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.Top3HeadingStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Top3HeadingStyles);
   }
   
   private static bool CmpTop3HeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Top3HeadingStyles?.Value == value) return true;
-    diffs?.Add(objName, "Top3HeadingStyles", openXmlElement?.Top3HeadingStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Top3HeadingStyles, value, diffs, objName, "Top3HeadingStyles");
   }
   
   private static void SetTop3HeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Top3HeadingStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Top3HeadingStyles = null;
+    openXmlElement.Top3HeadingStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -337,22 +272,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetVisibleStyles(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.VisibleStyles?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.VisibleStyles);
   }
   
   private static bool CmpVisibleStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.VisibleStyles?.Value == value) return true;
-    diffs?.Add(objName, "VisibleStyles", openXmlElement?.VisibleStyles?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.VisibleStyles, value, diffs, objName, "VisibleStyles");
   }
   
   private static void SetVisibleStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.VisibleStyles = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.VisibleStyles = null;
+    openXmlElement.VisibleStyles = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -360,22 +290,17 @@ public static class StylePaneFormatFilterConverter
   /// </summary>
   private static Boolean? GetAlternateStyleNames(DXW.StylePaneFormatFilter openXmlElement)
   {
-    return openXmlElement?.AlternateStyleNames?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.AlternateStyleNames);
   }
   
   private static bool CmpAlternateStyleNames(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AlternateStyleNames?.Value == value) return true;
-    diffs?.Add(objName, "AlternateStyleNames", openXmlElement?.AlternateStyleNames?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.AlternateStyleNames, value, diffs, objName, "AlternateStyleNames");
   }
   
   private static void SetAlternateStyleNames(DXW.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.AlternateStyleNames = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.AlternateStyleNames = null;
+    openXmlElement.AlternateStyleNames = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.StylePaneFormatFilter? CreateModelElement(DXW.StylePaneFormatFilter? openXmlElement)
@@ -448,30 +373,31 @@ public static class StylePaneFormatFilterConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StylePaneFormatFilter? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StylePaneFormatFilter value)
     where OpenXmlElementType: DXW.StylePaneFormatFilter, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetAllStyles(openXmlElement, value?.AllStyles);
-      SetCustomStyles(openXmlElement, value?.CustomStyles);
-      SetLatentStyles(openXmlElement, value?.LatentStyles);
-      SetStylesInUse(openXmlElement, value?.StylesInUse);
-      SetHeadingStyles(openXmlElement, value?.HeadingStyles);
-      SetNumberingStyles(openXmlElement, value?.NumberingStyles);
-      SetTableStyles(openXmlElement, value?.TableStyles);
-      SetDirectFormattingOnRuns(openXmlElement, value?.DirectFormattingOnRuns);
-      SetDirectFormattingOnParagraphs(openXmlElement, value?.DirectFormattingOnParagraphs);
-      SetDirectFormattingOnNumbering(openXmlElement, value?.DirectFormattingOnNumbering);
-      SetDirectFormattingOnTables(openXmlElement, value?.DirectFormattingOnTables);
-      SetClearFormatting(openXmlElement, value?.ClearFormatting);
-      SetTop3HeadingStyles(openXmlElement, value?.Top3HeadingStyles);
-      SetVisibleStyles(openXmlElement, value?.VisibleStyles);
-      SetAlternateStyleNames(openXmlElement, value?.AlternateStyleNames);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.StylePaneFormatFilter openXmlElement, DMW.StylePaneFormatFilter value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetAllStyles(openXmlElement, value?.AllStyles);
+    SetCustomStyles(openXmlElement, value?.CustomStyles);
+    SetLatentStyles(openXmlElement, value?.LatentStyles);
+    SetStylesInUse(openXmlElement, value?.StylesInUse);
+    SetHeadingStyles(openXmlElement, value?.HeadingStyles);
+    SetNumberingStyles(openXmlElement, value?.NumberingStyles);
+    SetTableStyles(openXmlElement, value?.TableStyles);
+    SetDirectFormattingOnRuns(openXmlElement, value?.DirectFormattingOnRuns);
+    SetDirectFormattingOnParagraphs(openXmlElement, value?.DirectFormattingOnParagraphs);
+    SetDirectFormattingOnNumbering(openXmlElement, value?.DirectFormattingOnNumbering);
+    SetDirectFormattingOnTables(openXmlElement, value?.DirectFormattingOnTables);
+    SetClearFormatting(openXmlElement, value?.ClearFormatting);
+    SetTop3HeadingStyles(openXmlElement, value?.Top3HeadingStyles);
+    SetVisibleStyles(openXmlElement, value?.VisibleStyles);
+    SetAlternateStyleNames(openXmlElement, value?.AlternateStyleNames);
+    }
+  }

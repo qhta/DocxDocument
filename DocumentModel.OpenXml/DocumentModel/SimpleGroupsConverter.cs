@@ -85,16 +85,17 @@ public static class SimpleGroupsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.SimpleGroups? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.SimpleGroups value)
     where OpenXmlElementType: DXO2010CustUI.SimpleGroups, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBackstageGroup(openXmlElement, value?.BackstageGroup);
-      SetTaskGroup(openXmlElement, value?.TaskGroup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.SimpleGroups openXmlElement, DM.SimpleGroups value)
+  {
+    SetBackstageGroup(openXmlElement, value?.BackstageGroup);
+    SetTaskGroup(openXmlElement, value?.TaskGroup);
+    }
+  }

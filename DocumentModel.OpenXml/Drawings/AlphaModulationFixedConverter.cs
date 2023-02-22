@@ -50,15 +50,16 @@ public static class AlphaModulationFixedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationFixed? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationFixed value)
     where OpenXmlElementType: DXDraw.AlphaModulationFixed, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAmount(openXmlElement, value?.Amount);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AlphaModulationFixed openXmlElement, DMDraws.AlphaModulationFixed value)
+  {
+    SetAmount(openXmlElement, value?.Amount);
+    }
+  }

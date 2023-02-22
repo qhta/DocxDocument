@@ -215,21 +215,22 @@ public static class GraphicFrameLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GraphicFrameLocks? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GraphicFrameLocks value)
     where OpenXmlElementType: DXDraw.GraphicFrameLocks, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNoGrouping(openXmlElement, value?.NoGrouping);
-      SetNoDrilldown(openXmlElement, value?.NoDrilldown);
-      SetNoSelection(openXmlElement, value?.NoSelection);
-      SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
-      SetNoMove(openXmlElement, value?.NoMove);
-      SetNoResize(openXmlElement, value?.NoResize);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.GraphicFrameLocks openXmlElement, DMDraws.GraphicFrameLocks value)
+  {
+    SetNoGrouping(openXmlElement, value?.NoGrouping);
+    SetNoDrilldown(openXmlElement, value?.NoDrilldown);
+    SetNoSelection(openXmlElement, value?.NoSelection);
+    SetNoChangeAspect(openXmlElement, value?.NoChangeAspect);
+    SetNoMove(openXmlElement, value?.NoMove);
+    SetNoResize(openXmlElement, value?.NoResize);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

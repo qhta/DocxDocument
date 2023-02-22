@@ -350,28 +350,29 @@ public static class ReflectionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Reflection? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Reflection value)
     where OpenXmlElementType: DXDraw.Reflection, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlurRadius(openXmlElement, value?.BlurRadius);
-      SetStartOpacity(openXmlElement, value?.StartOpacity);
-      SetStartPosition(openXmlElement, value?.StartPosition);
-      SetEndAlpha(openXmlElement, value?.EndAlpha);
-      SetEndPosition(openXmlElement, value?.EndPosition);
-      SetDistance(openXmlElement, value?.Distance);
-      SetDirection(openXmlElement, value?.Direction);
-      SetFadeDirection(openXmlElement, value?.FadeDirection);
-      SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
-      SetVerticalRatio(openXmlElement, value?.VerticalRatio);
-      SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
-      SetVerticalSkew(openXmlElement, value?.VerticalSkew);
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Reflection openXmlElement, DMDraws.Reflection value)
+  {
+    SetBlurRadius(openXmlElement, value?.BlurRadius);
+    SetStartOpacity(openXmlElement, value?.StartOpacity);
+    SetStartPosition(openXmlElement, value?.StartPosition);
+    SetEndAlpha(openXmlElement, value?.EndAlpha);
+    SetEndPosition(openXmlElement, value?.EndPosition);
+    SetDistance(openXmlElement, value?.Distance);
+    SetDirection(openXmlElement, value?.Direction);
+    SetFadeDirection(openXmlElement, value?.FadeDirection);
+    SetHorizontalRatio(openXmlElement, value?.HorizontalRatio);
+    SetVerticalRatio(openXmlElement, value?.VerticalRatio);
+    SetHorizontalSkew(openXmlElement, value?.HorizontalSkew);
+    SetVerticalSkew(openXmlElement, value?.VerticalSkew);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+    }
+  }

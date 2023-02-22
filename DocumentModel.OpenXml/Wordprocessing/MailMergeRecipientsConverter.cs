@@ -56,15 +56,16 @@ public static class MailMergeRecipientsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MailMergeRecipients? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MailMergeRecipients value)
     where OpenXmlElementType: DXOW.MailMergeRecipients, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSingleDataSourceRecord(openXmlElement, value?.SingleDataSourceRecord);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOW.MailMergeRecipients openXmlElement, DMW.MailMergeRecipients value)
+  {
+    SetSingleDataSourceRecord(openXmlElement, value?.SingleDataSourceRecord);
+    }
+  }

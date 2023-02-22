@@ -71,16 +71,17 @@ public static class StyleSetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleSet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleSet value)
     where OpenXmlElementType: DXO2010W.StyleSet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.StyleSet openXmlElement, DMW.StyleSet value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

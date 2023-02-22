@@ -10,22 +10,17 @@ public static class ShapeGuideConverter
   /// </summary>
   private static String? GetName(DXDraw.ShapeGuide openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDraw.ShapeGuide openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ShapeGuideConverter
   /// </summary>
   private static String? GetFormula(DXDraw.ShapeGuide openXmlElement)
   {
-    return openXmlElement?.Formula?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Formula);
   }
   
   private static bool CmpFormula(DXDraw.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Formula?.Value == value) return true;
-    diffs?.Add(objName, "Formula", openXmlElement?.Formula?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Formula, value, diffs, objName, "Formula");
   }
   
   private static void SetFormula(DXDraw.ShapeGuide openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Formula = new StringValue { Value = value };
-    else
-      openXmlElement.Formula = null;
+    openXmlElement.Formula = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ShapeGuide? CreateModelElement(DXDraw.ShapeGuide? openXmlElement)
@@ -79,16 +69,17 @@ public static class ShapeGuideConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuide? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuide value)
     where OpenXmlElementType: DXDraw.ShapeGuide, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetFormula(openXmlElement, value?.Formula);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ShapeGuide openXmlElement, DMDraws.ShapeGuide value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetFormula(openXmlElement, value?.Formula);
+    }
+  }

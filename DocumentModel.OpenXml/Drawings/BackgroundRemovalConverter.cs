@@ -101,11 +101,11 @@ public static class BackgroundRemovalConverter
   
   private static bool CmpForegroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement, Collection<DMDraws.ForegroundMark>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2010Draw.ForegroundMark>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2010Draw.ForegroundMark>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -122,7 +122,7 @@ public static class BackgroundRemovalConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -157,11 +157,11 @@ public static class BackgroundRemovalConverter
   
   private static bool CmpBackgroundMarks(DXO2010Draw.BackgroundRemoval openXmlElement, Collection<DMDraws.BackgroundMark>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2010Draw.BackgroundMark>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2010Draw.BackgroundMark>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -178,7 +178,7 @@ public static class BackgroundRemovalConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -237,20 +237,21 @@ public static class BackgroundRemovalConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundRemoval? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundRemoval value)
     where OpenXmlElementType: DXO2010Draw.BackgroundRemoval, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMarqueeTop(openXmlElement, value?.MarqueeTop);
-      SetMarqueeBottom(openXmlElement, value?.MarqueeBottom);
-      SetMarqueeLeft(openXmlElement, value?.MarqueeLeft);
-      SetMarqueeRight(openXmlElement, value?.MarqueeRight);
-      SetForegroundMarks(openXmlElement, value?.ForegroundMarks);
-      SetBackgroundMarks(openXmlElement, value?.BackgroundMarks);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.BackgroundRemoval openXmlElement, DMDraws.BackgroundRemoval value)
+  {
+    SetMarqueeTop(openXmlElement, value?.MarqueeTop);
+    SetMarqueeBottom(openXmlElement, value?.MarqueeBottom);
+    SetMarqueeLeft(openXmlElement, value?.MarqueeLeft);
+    SetMarqueeRight(openXmlElement, value?.MarqueeRight);
+    SetForegroundMarks(openXmlElement, value?.ForegroundMarks);
+    SetBackgroundMarks(openXmlElement, value?.BackgroundMarks);
+    }
+  }

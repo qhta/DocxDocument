@@ -53,15 +53,16 @@ public static class CustomUIPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomUIPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomUIPart value)
     where OpenXmlElementType: DXPack.CustomUIPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCustomUI(openXmlElement, value?.CustomUI);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.CustomUIPart openXmlElement, DMPack.CustomUIPart value)
+  {
+    SetCustomUI(openXmlElement, value?.CustomUI);
+    }
+  }

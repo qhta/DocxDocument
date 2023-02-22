@@ -10,22 +10,17 @@ public static class NumberingChangeConverter
   /// </summary>
   private static String? GetOriginal(DXW.NumberingChange openXmlElement)
   {
-    return openXmlElement?.Original?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Original);
   }
   
   private static bool CmpOriginal(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Original?.Value == value) return true;
-    diffs?.Add(objName, "Original", openXmlElement?.Original?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Original, value, diffs, objName, "Original");
   }
   
   private static void SetOriginal(DXW.NumberingChange openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Original = new StringValue { Value = value };
-    else
-      openXmlElement.Original = null;
+    openXmlElement.Original = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class NumberingChangeConverter
   /// </summary>
   private static String? GetAuthor(DXW.NumberingChange openXmlElement)
   {
-    return openXmlElement?.Author?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
   private static bool CmpAuthor(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Author?.Value == value) return true;
-    diffs?.Add(objName, "Author", openXmlElement?.Author?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
   
   private static void SetAuthor(DXW.NumberingChange openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Author = new StringValue { Value = value };
-    else
-      openXmlElement.Author = null;
+    openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -76,22 +66,17 @@ public static class NumberingChangeConverter
   /// </summary>
   private static String? GetId(DXW.NumberingChange openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.NumberingChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.NumberingChange openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.NumberingChange? CreateModelElement(DXW.NumberingChange? openXmlElement)
@@ -128,18 +113,19 @@ public static class NumberingChangeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange value)
     where OpenXmlElementType: DXW.NumberingChange, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOriginal(openXmlElement, value?.Original);
-      SetAuthor(openXmlElement, value?.Author);
-      SetDate(openXmlElement, value?.Date);
-      SetId(openXmlElement, value?.Id);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.NumberingChange openXmlElement, DMW.NumberingChange value)
+  {
+    SetOriginal(openXmlElement, value?.Original);
+    SetAuthor(openXmlElement, value?.Author);
+    SetDate(openXmlElement, value?.Date);
+    SetId(openXmlElement, value?.Id);
+    }
+  }

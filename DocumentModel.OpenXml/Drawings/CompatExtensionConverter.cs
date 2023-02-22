@@ -10,22 +10,17 @@ public static class CompatExtensionConverter
   /// </summary>
   private static String? GetShapeId(DXO2010Draw.CompatExtension openXmlElement)
   {
-    return openXmlElement?.ShapeId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
   private static bool CmpShapeId(DXO2010Draw.CompatExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ShapeId?.Value == value) return true;
-    diffs?.Add(objName, "ShapeId", openXmlElement?.ShapeId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
   
   private static void SetShapeId(DXO2010Draw.CompatExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ShapeId = new StringValue { Value = value };
-    else
-      openXmlElement.ShapeId = null;
+    openXmlElement.ShapeId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.CompatExtension? CreateModelElement(DXO2010Draw.CompatExtension? openXmlElement)
@@ -53,15 +48,16 @@ public static class CompatExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CompatExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CompatExtension value)
     where OpenXmlElementType: DXO2010Draw.CompatExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShapeId(openXmlElement, value?.ShapeId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.CompatExtension openXmlElement, DMDraws.CompatExtension value)
+  {
+    SetShapeId(openXmlElement, value?.ShapeId);
+    }
+  }

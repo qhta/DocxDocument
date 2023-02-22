@@ -81,16 +81,17 @@ public static class TextDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextData value)
     where OpenXmlElementType: DXO2016DrawChartDraw.TextData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFormula(openXmlElement, value?.Formula);
-      SetVXsdstring(openXmlElement, value?.VXsdstring);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.TextData value)
+  {
+    SetFormula(openXmlElement, value?.Formula);
+    SetVXsdstring(openXmlElement, value?.VXsdstring);
+    }
+  }

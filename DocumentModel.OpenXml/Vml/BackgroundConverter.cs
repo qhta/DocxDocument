@@ -10,22 +10,17 @@ public static class BackgroundConverter
   /// </summary>
   private static String? GetId(DXVml.Background openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.Background openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class BackgroundConverter
   /// </summary>
   private static String? GetFillcolor(DXVml.Background openXmlElement)
   {
-    return openXmlElement?.Fillcolor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Fillcolor);
   }
   
   private static bool CmpFillcolor(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Fillcolor?.Value == value) return true;
-    diffs?.Add(objName, "Fillcolor", openXmlElement?.Fillcolor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Fillcolor, value, diffs, objName, "Fillcolor");
   }
   
   private static void SetFillcolor(DXVml.Background openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Fillcolor = new StringValue { Value = value };
-    else
-      openXmlElement.Fillcolor = null;
+    openXmlElement.Fillcolor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -221,22 +211,23 @@ public static class BackgroundConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Background? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Background value)
     where OpenXmlElementType: DXVml.Background, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetFilled(openXmlElement, value?.Filled);
-      SetFillcolor(openXmlElement, value?.Fillcolor);
-      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
-      SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
-      SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
-      SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
-      SetFill(openXmlElement, value?.Fill);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.Background openXmlElement, DMVml.Background value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetFilled(openXmlElement, value?.Filled);
+    SetFillcolor(openXmlElement, value?.Fillcolor);
+    SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+    SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
+    SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
+    SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
+    SetFill(openXmlElement, value?.Fill);
+    }
+  }

@@ -91,16 +91,17 @@ public static class DocPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPart value)
     where OpenXmlElementType: DXW.DocPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDocPartProperties(openXmlElement, value?.DocPartProperties);
-      SetDocPartBody(openXmlElement, value?.DocPartBody);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocPart openXmlElement, DMW.DocPart value)
+  {
+    SetDocPartProperties(openXmlElement, value?.DocPartProperties);
+    SetDocPartBody(openXmlElement, value?.DocPartBody);
+    }
+  }

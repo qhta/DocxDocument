@@ -10,22 +10,17 @@ public static class ContentPartConverter
   /// </summary>
   private static String? GetRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement)
   {
-    return openXmlElement?.RelationshipId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.RelationshipId);
   }
   
   private static bool CmpRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RelationshipId?.Value == value) return true;
-    diffs?.Add(objName, "RelationshipId", openXmlElement?.RelationshipId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.RelationshipId, value, diffs, objName, "RelationshipId");
   }
   
   private static void SetRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.RelationshipId = new StringValue { Value = value };
-    else
-      openXmlElement.RelationshipId = null;
+    openXmlElement.RelationshipId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -202,20 +197,21 @@ public static class ContentPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ContentPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ContentPart value)
     where OpenXmlElementType: DXO2010DrawChartDraw.ContentPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRelationshipId(openXmlElement, value?.RelationshipId);
-      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
-      SetNonVisualContentPartProperties(openXmlElement, value?.NonVisualContentPartProperties);
-      SetApplicationNonVisualDrawingProperties(openXmlElement, value?.ApplicationNonVisualDrawingProperties);
-      SetTransform2D(openXmlElement, value?.Transform2D);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ContentPart value)
+  {
+    SetRelationshipId(openXmlElement, value?.RelationshipId);
+    SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+    SetNonVisualContentPartProperties(openXmlElement, value?.NonVisualContentPartProperties);
+    SetApplicationNonVisualDrawingProperties(openXmlElement, value?.ApplicationNonVisualDrawingProperties);
+    SetTransform2D(openXmlElement, value?.Transform2D);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class TextPathConverter
   /// </summary>
   private static String? GetId(DXVml.TextPath openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.TextPath openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class TextPathConverter
   /// </summary>
   private static String? GetStyle(DXVml.TextPath openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
   private static bool CmpStyle(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Style?.Value == value) return true;
-    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
   private static void SetStyle(DXVml.TextPath openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Style = new StringValue { Value = value };
-    else
-      openXmlElement.Style = null;
+    openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +161,17 @@ public static class TextPathConverter
   /// </summary>
   private static String? GetString(DXVml.TextPath openXmlElement)
   {
-    return openXmlElement?.String?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.String);
   }
   
   private static bool CmpString(DXVml.TextPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.String?.Value == value) return true;
-    diffs?.Add(objName, "String", openXmlElement?.String?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.String, value, diffs, objName, "String");
   }
   
   private static void SetString(DXVml.TextPath openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.String = new StringValue { Value = value };
-    else
-      openXmlElement.String = null;
+    openXmlElement.String = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Vml.TextPath? CreateModelElement(DXVml.TextPath? openXmlElement)
@@ -235,22 +220,23 @@ public static class TextPathConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextPath? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.TextPath value)
     where OpenXmlElementType: DXVml.TextPath, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetStyle(openXmlElement, value?.Style);
-      SetOn(openXmlElement, value?.On);
-      SetFitShape(openXmlElement, value?.FitShape);
-      SetFitPath(openXmlElement, value?.FitPath);
-      SetTrim(openXmlElement, value?.Trim);
-      SetXScale(openXmlElement, value?.XScale);
-      SetString(openXmlElement, value?.String);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.TextPath openXmlElement, DMVml.TextPath value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetStyle(openXmlElement, value?.Style);
+    SetOn(openXmlElement, value?.On);
+    SetFitShape(openXmlElement, value?.FitShape);
+    SetFitPath(openXmlElement, value?.FitPath);
+    SetTrim(openXmlElement, value?.Trim);
+    SetXScale(openXmlElement, value?.XScale);
+    SetString(openXmlElement, value?.String);
+    }
+  }

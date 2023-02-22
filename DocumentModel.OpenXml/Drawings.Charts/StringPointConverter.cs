@@ -78,16 +78,17 @@ public static class StringPointConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringPoint? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringPoint value)
     where OpenXmlElementType: DXDrawCharts.StringPoint, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetNumericValue(openXmlElement, value?.NumericValue);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.StringPoint openXmlElement, DMDrawsCharts.StringPoint value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetNumericValue(openXmlElement, value?.NumericValue);
+    }
+  }

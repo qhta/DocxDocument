@@ -80,17 +80,18 @@ public static class TableDefinitionPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.TableDefinitionPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.TableDefinitionPart value)
     where OpenXmlElementType: DXPack.TableDefinitionPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.TableDefinitionPart openXmlElement, DMPack.TableDefinitionPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

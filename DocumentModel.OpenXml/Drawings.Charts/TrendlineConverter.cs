@@ -76,13 +76,15 @@ public static class TrendlineConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TrendlineType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDrawsCharts.TrendlineKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDrawsCharts.TrendlineKind>(itemElement, (DMDrawsCharts.TrendlineKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDrawsCharts.TrendlineKind>((DMDrawsCharts.TrendlineKind)value));
   }
   
   /// <summary>
@@ -90,27 +92,17 @@ public static class TrendlineConverter
   /// </summary>
   private static Byte? GetPolynomialOrder(DXDrawCharts.Trendline openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>()?.Val);
   }
   
   private static bool CmpPolynomialOrder(DXDrawCharts.Trendline openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PolynomialOrder", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PolynomialOrder>()?.Val, value, diffs, objName, "PolynomialOrder");
   }
   
   private static void SetPolynomialOrder(DXDrawCharts.Trendline openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PolynomialOrder>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.PolynomialOrder{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.PolynomialOrder,System.Byte>(openXmlElement, value);
   }
   
   /// <summary>
@@ -118,27 +110,17 @@ public static class TrendlineConverter
   /// </summary>
   private static UInt32? GetPeriod(DXDrawCharts.Trendline openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Period>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Period>()?.Val);
   }
   
   private static bool CmpPeriod(DXDrawCharts.Trendline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Period>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Period", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Period>()?.Val, value, diffs, objName, "Period");
   }
   
   private static void SetPeriod(DXDrawCharts.Trendline openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Period>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Period{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Period,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
@@ -146,27 +128,17 @@ public static class TrendlineConverter
   /// </summary>
   private static Double? GetForward(DXDrawCharts.Trendline openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Forward>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Forward>()?.Val);
   }
   
   private static bool CmpForward(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Forward>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Forward", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Forward>()?.Val, value, diffs, objName, "Forward");
   }
   
   private static void SetForward(DXDrawCharts.Trendline openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Forward>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Forward{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Forward,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -174,27 +146,17 @@ public static class TrendlineConverter
   /// </summary>
   private static Double? GetBackward(DXDrawCharts.Trendline openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Backward>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Backward>()?.Val);
   }
   
   private static bool CmpBackward(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Backward>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Backward", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Backward>()?.Val, value, diffs, objName, "Backward");
   }
   
   private static void SetBackward(DXDrawCharts.Trendline openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Backward>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Backward{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Backward,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -202,27 +164,17 @@ public static class TrendlineConverter
   /// </summary>
   private static Double? GetIntercept(DXDrawCharts.Trendline openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>()?.Val);
   }
   
   private static bool CmpIntercept(DXDrawCharts.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Intercept", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Intercept>()?.Val, value, diffs, objName, "Intercept");
   }
   
   private static void SetIntercept(DXDrawCharts.Trendline openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Intercept>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.Intercept{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.Intercept,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -403,26 +355,27 @@ public static class TrendlineConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Trendline? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Trendline value)
     where OpenXmlElementType: DXDrawCharts.Trendline, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTrendlineName(openXmlElement, value?.TrendlineName);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTrendlineType(openXmlElement, value?.TrendlineType);
-      SetPolynomialOrder(openXmlElement, value?.PolynomialOrder);
-      SetPeriod(openXmlElement, value?.Period);
-      SetForward(openXmlElement, value?.Forward);
-      SetBackward(openXmlElement, value?.Backward);
-      SetIntercept(openXmlElement, value?.Intercept);
-      SetDisplayRSquaredValue(openXmlElement, value?.DisplayRSquaredValue);
-      SetDisplayEquation(openXmlElement, value?.DisplayEquation);
-      SetTrendlineLabel(openXmlElement, value?.TrendlineLabel);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.Trendline value)
+  {
+    SetTrendlineName(openXmlElement, value?.TrendlineName);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTrendlineType(openXmlElement, value?.TrendlineType);
+    SetPolynomialOrder(openXmlElement, value?.PolynomialOrder);
+    SetPeriod(openXmlElement, value?.Period);
+    SetForward(openXmlElement, value?.Forward);
+    SetBackward(openXmlElement, value?.Backward);
+    SetIntercept(openXmlElement, value?.Intercept);
+    SetDisplayRSquaredValue(openXmlElement, value?.DisplayRSquaredValue);
+    SetDisplayEquation(openXmlElement, value?.DisplayEquation);
+    SetTrendlineLabel(openXmlElement, value?.TrendlineLabel);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

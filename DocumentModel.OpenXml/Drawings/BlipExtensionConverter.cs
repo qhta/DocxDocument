@@ -10,22 +10,17 @@ public static class BlipExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.BlipExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.BlipExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.BlipExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDraws.ImageProperties? GetImageProperties(DXDraw.BlipExtension openXmlElement)
@@ -258,22 +253,23 @@ public static class BlipExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtension value)
     where OpenXmlElementType: DXDraw.BlipExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetImageProperties(openXmlElement, value?.ImageProperties);
-      SetUseLocalDpi(openXmlElement, value?.UseLocalDpi);
-      SetWebVideoProperty(openXmlElement, value?.WebVideoProperty);
-      SetSVGBlip(openXmlElement, value?.SVGBlip);
-      SetPictureAttributionSourceURL(openXmlElement, value?.PictureAttributionSourceURL);
-      SetOEmbed(openXmlElement, value?.OEmbed);
-      SetOEmbedShared(openXmlElement, value?.OEmbedShared);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BlipExtension openXmlElement, DMDraws.BlipExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetImageProperties(openXmlElement, value?.ImageProperties);
+    SetUseLocalDpi(openXmlElement, value?.UseLocalDpi);
+    SetWebVideoProperty(openXmlElement, value?.WebVideoProperty);
+    SetSVGBlip(openXmlElement, value?.SVGBlip);
+    SetPictureAttributionSourceURL(openXmlElement, value?.PictureAttributionSourceURL);
+    SetOEmbed(openXmlElement, value?.OEmbed);
+    SetOEmbedShared(openXmlElement, value?.OEmbedShared);
+    }
+  }

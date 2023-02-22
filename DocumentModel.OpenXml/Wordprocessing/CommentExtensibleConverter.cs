@@ -58,22 +58,17 @@ public static class CommentExtensibleConverter
   /// </summary>
   private static Boolean? GetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
-    return openXmlElement?.IntelligentPlaceholder?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.IntelligentPlaceholder);
   }
   
   private static bool CmpIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IntelligentPlaceholder?.Value == value) return true;
-    diffs?.Add(objName, "IntelligentPlaceholder", openXmlElement?.IntelligentPlaceholder?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.IntelligentPlaceholder, value, diffs, objName, "IntelligentPlaceholder");
   }
   
   private static void SetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.IntelligentPlaceholder = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.IntelligentPlaceholder = null;
+    openXmlElement.IntelligentPlaceholder = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -139,18 +134,19 @@ public static class CommentExtensibleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentExtensible? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentExtensible value)
     where OpenXmlElementType: DXO2021WComtExt.CommentExtensible, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDurableId(openXmlElement, value?.DurableId);
-      SetDateUtc(openXmlElement, value?.DateUtc);
-      SetIntelligentPlaceholder(openXmlElement, value?.IntelligentPlaceholder);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.CommentExtensible value)
+  {
+    SetDurableId(openXmlElement, value?.DurableId);
+    SetDateUtc(openXmlElement, value?.DateUtc);
+    SetIntelligentPlaceholder(openXmlElement, value?.IntelligentPlaceholder);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

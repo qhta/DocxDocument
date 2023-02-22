@@ -219,20 +219,21 @@ public static class TrendlineLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TrendlineLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TrendlineLabel value)
     where OpenXmlElementType: DXDrawCharts.TrendlineLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLayout(openXmlElement, value?.Layout);
-      SetChartText(openXmlElement, value?.ChartText);
-      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.TrendlineLabel openXmlElement, DMDrawsCharts.TrendlineLabel value)
+  {
+    SetLayout(openXmlElement, value?.Layout);
+    SetChartText(openXmlElement, value?.ChartText);
+    SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+    SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class OEmbedSharedConverter
   /// </summary>
   private static String? GetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
-    return openXmlElement?.SrcUrl?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SrcUrl);
   }
   
   private static bool CmpSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SrcUrl?.Value == value) return true;
-    diffs?.Add(objName, "SrcUrl", openXmlElement?.SrcUrl?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SrcUrl, value, diffs, objName, "SrcUrl");
   }
   
   private static void SetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SrcUrl = new StringValue { Value = value };
-    else
-      openXmlElement.SrcUrl = null;
+    openXmlElement.SrcUrl = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class OEmbedSharedConverter
   /// </summary>
   private static String? GetType(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -111,17 +101,18 @@ public static class OEmbedSharedConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOOEmb.OEmbedShared? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOOEmb.OEmbedShared value)
     where OpenXmlElementType: DXODrawY2021OEmb.OEmbedShared, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSrcUrl(openXmlElement, value?.SrcUrl);
-      SetType(openXmlElement, value?.Type);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OEmbedShared value)
+  {
+    SetSrcUrl(openXmlElement, value?.SrcUrl);
+    SetType(openXmlElement, value?.Type);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

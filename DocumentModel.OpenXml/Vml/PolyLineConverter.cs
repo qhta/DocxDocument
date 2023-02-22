@@ -10,22 +10,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetId(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetStyle(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
   private static bool CmpStyle(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Style?.Value == value) return true;
-    diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
   private static void SetStyle(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Style = new StringValue { Value = value };
-    else
-      openXmlElement.Style = null;
+    openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetHref(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Href?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Href);
   }
   
   private static bool CmpHref(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Href?.Value == value) return true;
-    diffs?.Add(objName, "Href", openXmlElement?.Href?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Href, value, diffs, objName, "Href");
   }
   
   private static void SetHref(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Href = new StringValue { Value = value };
-    else
-      openXmlElement.Href = null;
+    openXmlElement.Href = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetTarget(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Target?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Target);
   }
   
   private static bool CmpTarget(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Target?.Value == value) return true;
-    diffs?.Add(objName, "Target", openXmlElement?.Target?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Target, value, diffs, objName, "Target");
   }
   
   private static void SetTarget(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Target = new StringValue { Value = value };
-    else
-      openXmlElement.Target = null;
+    openXmlElement.Target = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +82,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetClass(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Class?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Class);
   }
   
   private static bool CmpClass(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Class?.Value == value) return true;
-    diffs?.Add(objName, "Class", openXmlElement?.Class?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Class, value, diffs, objName, "Class");
   }
   
   private static void SetClass(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Class = new StringValue { Value = value };
-    else
-      openXmlElement.Class = null;
+    openXmlElement.Class = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +100,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetTitle(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Title?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
   private static bool CmpTitle(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Title?.Value == value) return true;
-    diffs?.Add(objName, "Title", openXmlElement?.Title?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
   private static void SetTitle(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Title = new StringValue { Value = value };
-    else
-      openXmlElement.Title = null;
+    openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +118,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetAlternate(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Alternate?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Alternate);
   }
   
   private static bool CmpAlternate(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Alternate?.Value == value) return true;
-    diffs?.Add(objName, "Alternate", openXmlElement?.Alternate?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Alternate, value, diffs, objName, "Alternate");
   }
   
   private static void SetAlternate(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Alternate = new StringValue { Value = value };
-    else
-      openXmlElement.Alternate = null;
+    openXmlElement.Alternate = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +136,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetCoordinateSize(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.CoordinateSize?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CoordinateSize);
   }
   
   private static bool CmpCoordinateSize(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CoordinateSize?.Value == value) return true;
-    diffs?.Add(objName, "CoordinateSize", openXmlElement?.CoordinateSize?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CoordinateSize, value, diffs, objName, "CoordinateSize");
   }
   
   private static void SetCoordinateSize(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CoordinateSize = new StringValue { Value = value };
-    else
-      openXmlElement.CoordinateSize = null;
+    openXmlElement.CoordinateSize = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +154,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetCoordinateOrigin(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.CoordinateOrigin?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.CoordinateOrigin);
   }
   
   private static bool CmpCoordinateOrigin(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CoordinateOrigin?.Value == value) return true;
-    diffs?.Add(objName, "CoordinateOrigin", openXmlElement?.CoordinateOrigin?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.CoordinateOrigin, value, diffs, objName, "CoordinateOrigin");
   }
   
   private static void SetCoordinateOrigin(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.CoordinateOrigin = new StringValue { Value = value };
-    else
-      openXmlElement.CoordinateOrigin = null;
+    openXmlElement.CoordinateOrigin = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +172,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetWrapCoordinates(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.WrapCoordinates?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.WrapCoordinates);
   }
   
   private static bool CmpWrapCoordinates(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.WrapCoordinates?.Value == value) return true;
-    diffs?.Add(objName, "WrapCoordinates", openXmlElement?.WrapCoordinates?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.WrapCoordinates, value, diffs, objName, "WrapCoordinates");
   }
   
   private static void SetWrapCoordinates(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.WrapCoordinates = new StringValue { Value = value };
-    else
-      openXmlElement.WrapCoordinates = null;
+    openXmlElement.WrapCoordinates = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -263,22 +213,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetOptionalString(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.OptionalString?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OptionalString);
   }
   
   private static bool CmpOptionalString(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OptionalString?.Value == value) return true;
-    diffs?.Add(objName, "OptionalString", openXmlElement?.OptionalString?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OptionalString, value, diffs, objName, "OptionalString");
   }
   
   private static void SetOptionalString(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OptionalString = new StringValue { Value = value };
-    else
-      openXmlElement.OptionalString = null;
+    openXmlElement.OptionalString = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -597,22 +542,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetBorderTopColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.BorderTopColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.BorderTopColor);
   }
   
   private static bool CmpBorderTopColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.BorderTopColor?.Value == value) return true;
-    diffs?.Add(objName, "BorderTopColor", openXmlElement?.BorderTopColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.BorderTopColor, value, diffs, objName, "BorderTopColor");
   }
   
   private static void SetBorderTopColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.BorderTopColor = new StringValue { Value = value };
-    else
-      openXmlElement.BorderTopColor = null;
+    openXmlElement.BorderTopColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -620,22 +560,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetBorderLeftColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.BorderLeftColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.BorderLeftColor);
   }
   
   private static bool CmpBorderLeftColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.BorderLeftColor?.Value == value) return true;
-    diffs?.Add(objName, "BorderLeftColor", openXmlElement?.BorderLeftColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.BorderLeftColor, value, diffs, objName, "BorderLeftColor");
   }
   
   private static void SetBorderLeftColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.BorderLeftColor = new StringValue { Value = value };
-    else
-      openXmlElement.BorderLeftColor = null;
+    openXmlElement.BorderLeftColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -643,22 +578,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetBorderBottomColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.BorderBottomColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.BorderBottomColor);
   }
   
   private static bool CmpBorderBottomColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.BorderBottomColor?.Value == value) return true;
-    diffs?.Add(objName, "BorderBottomColor", openXmlElement?.BorderBottomColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.BorderBottomColor, value, diffs, objName, "BorderBottomColor");
   }
   
   private static void SetBorderBottomColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.BorderBottomColor = new StringValue { Value = value };
-    else
-      openXmlElement.BorderBottomColor = null;
+    openXmlElement.BorderBottomColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -666,22 +596,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetBorderRightColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.BorderRightColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.BorderRightColor);
   }
   
   private static bool CmpBorderRightColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.BorderRightColor?.Value == value) return true;
-    diffs?.Add(objName, "BorderRightColor", openXmlElement?.BorderRightColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.BorderRightColor, value, diffs, objName, "BorderRightColor");
   }
   
   private static void SetBorderRightColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.BorderRightColor = new StringValue { Value = value };
-    else
-      openXmlElement.BorderRightColor = null;
+    openXmlElement.BorderRightColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -790,22 +715,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetFillColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.FillColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.FillColor);
   }
   
   private static bool CmpFillColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FillColor?.Value == value) return true;
-    diffs?.Add(objName, "FillColor", openXmlElement?.FillColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.FillColor, value, diffs, objName, "FillColor");
   }
   
   private static void SetFillColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.FillColor = new StringValue { Value = value };
-    else
-      openXmlElement.FillColor = null;
+    openXmlElement.FillColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -836,22 +756,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetStrokeColor(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.StrokeColor?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StrokeColor);
   }
   
   private static bool CmpStrokeColor(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StrokeColor?.Value == value) return true;
-    diffs?.Add(objName, "StrokeColor", openXmlElement?.StrokeColor?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StrokeColor, value, diffs, objName, "StrokeColor");
   }
   
   private static void SetStrokeColor(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StrokeColor = new StringValue { Value = value };
-    else
-      openXmlElement.StrokeColor = null;
+    openXmlElement.StrokeColor = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -859,22 +774,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetStrokeWeight(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.StrokeWeight?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StrokeWeight);
   }
   
   private static bool CmpStrokeWeight(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StrokeWeight?.Value == value) return true;
-    diffs?.Add(objName, "StrokeWeight", openXmlElement?.StrokeWeight?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StrokeWeight, value, diffs, objName, "StrokeWeight");
   }
   
   private static void SetStrokeWeight(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StrokeWeight = new StringValue { Value = value };
-    else
-      openXmlElement.StrokeWeight = null;
+    openXmlElement.StrokeWeight = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -1163,22 +1073,17 @@ public static class PolyLineConverter
   /// </summary>
   private static String? GetPoints(DXVml.PolyLine openXmlElement)
   {
-    return openXmlElement?.Points?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Points);
   }
   
   private static bool CmpPoints(DXVml.PolyLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Points?.Value == value) return true;
-    diffs?.Add(objName, "Points", openXmlElement?.Points?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Points, value, diffs, objName, "Points");
   }
   
   private static void SetPoints(DXVml.PolyLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Points = new StringValue { Value = value };
-    else
-      openXmlElement.Points = null;
+    openXmlElement.Points = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMVml.Path? GetPath(DXVml.PolyLine openXmlElement)
@@ -2002,89 +1907,90 @@ public static class PolyLineConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.PolyLine? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.PolyLine value)
     where OpenXmlElementType: DXVml.PolyLine, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetStyle(openXmlElement, value?.Style);
-      SetHref(openXmlElement, value?.Href);
-      SetTarget(openXmlElement, value?.Target);
-      SetClass(openXmlElement, value?.Class);
-      SetTitle(openXmlElement, value?.Title);
-      SetAlternate(openXmlElement, value?.Alternate);
-      SetCoordinateSize(openXmlElement, value?.CoordinateSize);
-      SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
-      SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
-      SetPrint(openXmlElement, value?.Print);
-      SetOptionalString(openXmlElement, value?.OptionalString);
-      SetOned(openXmlElement, value?.Oned);
-      SetRegroupId(openXmlElement, value?.RegroupId);
-      SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
-      SetButton(openXmlElement, value?.Button);
-      SetUserHidden(openXmlElement, value?.UserHidden);
-      SetBullet(openXmlElement, value?.Bullet);
-      SetHorizontal(openXmlElement, value?.Horizontal);
-      SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
-      SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
-      SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
-      SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
-      SetAllowInCell(openXmlElement, value?.AllowInCell);
-      SetAllowOverlap(openXmlElement, value?.AllowOverlap);
-      SetUserDrawn(openXmlElement, value?.UserDrawn);
-      SetBorderTopColor(openXmlElement, value?.BorderTopColor);
-      SetBorderLeftColor(openXmlElement, value?.BorderLeftColor);
-      SetBorderBottomColor(openXmlElement, value?.BorderBottomColor);
-      SetBorderRightColor(openXmlElement, value?.BorderRightColor);
-      SetDiagramLayout(openXmlElement, value?.DiagramLayout);
-      SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
-      SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
-      SetInsetMode(openXmlElement, value?.InsetMode);
-      SetFilled(openXmlElement, value?.Filled);
-      SetFillColor(openXmlElement, value?.FillColor);
-      SetStroked(openXmlElement, value?.Stroked);
-      SetStrokeColor(openXmlElement, value?.StrokeColor);
-      SetStrokeWeight(openXmlElement, value?.StrokeWeight);
-      SetInsetPen(openXmlElement, value?.InsetPen);
-      SetOptionalNumber(openXmlElement, value?.OptionalNumber);
-      SetConnectorType(openXmlElement, value?.ConnectorType);
-      SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
-      SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
-      SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
-      SetForceDash(openXmlElement, value?.ForceDash);
-      SetOleIcon(openXmlElement, value?.OleIcon);
-      SetOle(openXmlElement, value?.Ole);
-      SetPreferRelative(openXmlElement, value?.PreferRelative);
-      SetClipToWrap(openXmlElement, value?.ClipToWrap);
-      SetClip(openXmlElement, value?.Clip);
-      SetGfxdata(openXmlElement, value?.Gfxdata);
-      SetPoints(openXmlElement, value?.Points);
-      SetPath(openXmlElement, value?.Path);
-      SetFormulas(openXmlElement, value?.Formulas);
-      SetShapeHandles(openXmlElement, value?.ShapeHandles);
-      SetFill(openXmlElement, value?.Fill);
-      SetStroke(openXmlElement, value?.Stroke);
-      SetShadow(openXmlElement, value?.Shadow);
-      SetTextBox(openXmlElement, value?.TextBox);
-      SetTextPath(openXmlElement, value?.TextPath);
-      SetImageData(openXmlElement, value?.ImageData);
-      SetSkew(openXmlElement, value?.Skew);
-      SetExtrusion(openXmlElement, value?.Extrusion);
-      SetCallout(openXmlElement, value?.Callout);
-      SetLock(openXmlElement, value?.Lock);
-      SetClipPath(openXmlElement, value?.ClipPath);
-      SetSignatureLine(openXmlElement, value?.SignatureLine);
-      SetTextWrap(openXmlElement, value?.TextWrap);
-      SetAnchorLock(openXmlElement, value?.AnchorLock);
-      SetTopBorder(openXmlElement, value?.TopBorder);
-      SetBottomBorder(openXmlElement, value?.BottomBorder);
-      SetLeftBorder(openXmlElement, value?.LeftBorder);
-      SetRightBorder(openXmlElement, value?.RightBorder);
-      SetInk(openXmlElement, value?.Ink);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVml.PolyLine openXmlElement, DMVml.PolyLine value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetStyle(openXmlElement, value?.Style);
+    SetHref(openXmlElement, value?.Href);
+    SetTarget(openXmlElement, value?.Target);
+    SetClass(openXmlElement, value?.Class);
+    SetTitle(openXmlElement, value?.Title);
+    SetAlternate(openXmlElement, value?.Alternate);
+    SetCoordinateSize(openXmlElement, value?.CoordinateSize);
+    SetCoordinateOrigin(openXmlElement, value?.CoordinateOrigin);
+    SetWrapCoordinates(openXmlElement, value?.WrapCoordinates);
+    SetPrint(openXmlElement, value?.Print);
+    SetOptionalString(openXmlElement, value?.OptionalString);
+    SetOned(openXmlElement, value?.Oned);
+    SetRegroupId(openXmlElement, value?.RegroupId);
+    SetDoubleClickNotify(openXmlElement, value?.DoubleClickNotify);
+    SetButton(openXmlElement, value?.Button);
+    SetUserHidden(openXmlElement, value?.UserHidden);
+    SetBullet(openXmlElement, value?.Bullet);
+    SetHorizontal(openXmlElement, value?.Horizontal);
+    SetHorizontalStandard(openXmlElement, value?.HorizontalStandard);
+    SetHorizontalNoShade(openXmlElement, value?.HorizontalNoShade);
+    SetHorizontalPercentage(openXmlElement, value?.HorizontalPercentage);
+    SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
+    SetAllowInCell(openXmlElement, value?.AllowInCell);
+    SetAllowOverlap(openXmlElement, value?.AllowOverlap);
+    SetUserDrawn(openXmlElement, value?.UserDrawn);
+    SetBorderTopColor(openXmlElement, value?.BorderTopColor);
+    SetBorderLeftColor(openXmlElement, value?.BorderLeftColor);
+    SetBorderBottomColor(openXmlElement, value?.BorderBottomColor);
+    SetBorderRightColor(openXmlElement, value?.BorderRightColor);
+    SetDiagramLayout(openXmlElement, value?.DiagramLayout);
+    SetDiagramNodeKind(openXmlElement, value?.DiagramNodeKind);
+    SetDiagramLayoutMostRecentUsed(openXmlElement, value?.DiagramLayoutMostRecentUsed);
+    SetInsetMode(openXmlElement, value?.InsetMode);
+    SetFilled(openXmlElement, value?.Filled);
+    SetFillColor(openXmlElement, value?.FillColor);
+    SetStroked(openXmlElement, value?.Stroked);
+    SetStrokeColor(openXmlElement, value?.StrokeColor);
+    SetStrokeWeight(openXmlElement, value?.StrokeWeight);
+    SetInsetPen(openXmlElement, value?.InsetPen);
+    SetOptionalNumber(openXmlElement, value?.OptionalNumber);
+    SetConnectorType(openXmlElement, value?.ConnectorType);
+    SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
+    SetPureBlackWhiteMode(openXmlElement, value?.PureBlackWhiteMode);
+    SetNormalBlackWhiteMode(openXmlElement, value?.NormalBlackWhiteMode);
+    SetForceDash(openXmlElement, value?.ForceDash);
+    SetOleIcon(openXmlElement, value?.OleIcon);
+    SetOle(openXmlElement, value?.Ole);
+    SetPreferRelative(openXmlElement, value?.PreferRelative);
+    SetClipToWrap(openXmlElement, value?.ClipToWrap);
+    SetClip(openXmlElement, value?.Clip);
+    SetGfxdata(openXmlElement, value?.Gfxdata);
+    SetPoints(openXmlElement, value?.Points);
+    SetPath(openXmlElement, value?.Path);
+    SetFormulas(openXmlElement, value?.Formulas);
+    SetShapeHandles(openXmlElement, value?.ShapeHandles);
+    SetFill(openXmlElement, value?.Fill);
+    SetStroke(openXmlElement, value?.Stroke);
+    SetShadow(openXmlElement, value?.Shadow);
+    SetTextBox(openXmlElement, value?.TextBox);
+    SetTextPath(openXmlElement, value?.TextPath);
+    SetImageData(openXmlElement, value?.ImageData);
+    SetSkew(openXmlElement, value?.Skew);
+    SetExtrusion(openXmlElement, value?.Extrusion);
+    SetCallout(openXmlElement, value?.Callout);
+    SetLock(openXmlElement, value?.Lock);
+    SetClipPath(openXmlElement, value?.ClipPath);
+    SetSignatureLine(openXmlElement, value?.SignatureLine);
+    SetTextWrap(openXmlElement, value?.TextWrap);
+    SetAnchorLock(openXmlElement, value?.AnchorLock);
+    SetTopBorder(openXmlElement, value?.TopBorder);
+    SetBottomBorder(openXmlElement, value?.BottomBorder);
+    SetLeftBorder(openXmlElement, value?.LeftBorder);
+    SetRightBorder(openXmlElement, value?.RightBorder);
+    SetInk(openXmlElement, value?.Ink);
+    }
+  }

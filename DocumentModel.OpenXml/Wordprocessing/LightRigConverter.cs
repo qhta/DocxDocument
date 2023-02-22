@@ -101,17 +101,18 @@ public static class LightRigConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LightRig? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LightRig value)
     where OpenXmlElementType: DXO2010W.LightRig, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLightRigType(openXmlElement, value?.LightRigType);
-      SetLightDirectionType(openXmlElement, value?.LightDirectionType);
-      SetSphereCoordinates(openXmlElement, value?.SphereCoordinates);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.LightRig openXmlElement, DMW.LightRig value)
+  {
+    SetLightRigType(openXmlElement, value?.LightRigType);
+    SetLightDirectionType(openXmlElement, value?.LightDirectionType);
+    SetSphereCoordinates(openXmlElement, value?.SphereCoordinates);
+    }
+  }

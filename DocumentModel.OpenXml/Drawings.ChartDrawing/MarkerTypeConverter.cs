@@ -83,16 +83,17 @@ public static class MarkerTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.MarkerType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.MarkerType value)
     where OpenXmlElementType: DXDrawChartDraw.MarkerType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetXPosition(openXmlElement, value?.XPosition);
-      SetYPosition(openXmlElement, value?.YPosition);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.MarkerType openXmlElement, DMDrawsChartDraw.MarkerType value)
+  {
+    SetXPosition(openXmlElement, value?.XPosition);
+    SetYPosition(openXmlElement, value?.YPosition);
+    }
+  }

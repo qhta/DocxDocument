@@ -91,16 +91,17 @@ public static class GeoDataPointToEntityQueryResultConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQueryResult? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointToEntityQueryResult value)
     where OpenXmlElementType: DXO2016DrawChartDraw.GeoDataPointToEntityQueryResult, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGeoDataPointQuery(openXmlElement, value?.GeoDataPointQuery);
-      SetGeoDataPointToEntityQuery(openXmlElement, value?.GeoDataPointToEntityQuery);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoDataPointToEntityQueryResult openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQueryResult value)
+  {
+    SetGeoDataPointQuery(openXmlElement, value?.GeoDataPointQuery);
+    SetGeoDataPointToEntityQuery(openXmlElement, value?.GeoDataPointToEntityQuery);
+    }
+  }

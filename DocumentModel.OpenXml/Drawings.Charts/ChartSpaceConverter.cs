@@ -41,24 +41,17 @@ public static class ChartSpaceConverter
   /// </summary>
   private static String? GetEditingLanguage(DXDrawCharts.ChartSpace openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.EditingLanguage>()?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.EditingLanguage>()?.Val);
   }
   
   private static bool CmpEditingLanguage(DXDrawCharts.ChartSpace openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.EditingLanguage>()?.Val?.Value == value;
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.EditingLanguage>()?.Val, value, diffs, objName, "EditingLanguage");
   }
   
   private static void SetEditingLanguage(DXDrawCharts.ChartSpace openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.EditingLanguage>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.EditingLanguage { Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    StringValueConverter.SetValue<DXDrawCharts.EditingLanguage>(openXmlElement, value);
   }
   
   /// <summary>
@@ -94,27 +87,17 @@ public static class ChartSpaceConverter
   
   private static Byte? GetStyle(DXDrawCharts.ChartSpace openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>()?.Val);
   }
   
   private static bool CmpStyle(DXDrawCharts.ChartSpace openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXO2010DrawCharts.Style", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010DrawCharts.Style>()?.Val, value, diffs, objName, "Style2");
   }
   
   private static void SetStyle(DXDrawCharts.ChartSpace openXmlElement, Byte? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.Style>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXO2010DrawCharts.Style{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXO2010DrawCharts.Style,System.Byte>(openXmlElement, value);
   }
   
   private static DMDrawsCharts.ColorMapOverride? GetColorMapOverride(DXDrawCharts.ChartSpace openXmlElement)
@@ -441,28 +424,29 @@ public static class ChartSpaceConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpace? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpace value)
     where OpenXmlElementType: DXDrawCharts.ChartSpace, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDate1904(openXmlElement, value?.Date1904);
-      SetEditingLanguage(openXmlElement, value?.EditingLanguage);
-      SetRoundedCorners(openXmlElement, value?.RoundedCorners);
-      SetStyle(openXmlElement, value?.Style);
-      SetColorMapOverride(openXmlElement, value?.ColorMapOverride);
-      SetPivotSource(openXmlElement, value?.PivotSource);
-      SetProtection(openXmlElement, value?.Protection);
-      SetChart(openXmlElement, value?.Chart);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTextProperties(openXmlElement, value?.TextProperties);
-      SetExternalData(openXmlElement, value?.ExternalData);
-      SetPrintSettings(openXmlElement, value?.PrintSettings);
-      SetUserShapesReference(openXmlElement, value?.UserShapesReference);
-      SetChartSpaceExtensionList(openXmlElement, value?.ChartSpaceExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.ChartSpace openXmlElement, DMDrawsCharts.ChartSpace value)
+  {
+    SetDate1904(openXmlElement, value?.Date1904);
+    SetEditingLanguage(openXmlElement, value?.EditingLanguage);
+    SetRoundedCorners(openXmlElement, value?.RoundedCorners);
+    SetStyle(openXmlElement, value?.Style);
+    SetColorMapOverride(openXmlElement, value?.ColorMapOverride);
+    SetPivotSource(openXmlElement, value?.PivotSource);
+    SetProtection(openXmlElement, value?.Protection);
+    SetChart(openXmlElement, value?.Chart);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTextProperties(openXmlElement, value?.TextProperties);
+    SetExternalData(openXmlElement, value?.ExternalData);
+    SetPrintSettings(openXmlElement, value?.PrintSettings);
+    SetUserShapesReference(openXmlElement, value?.UserShapesReference);
+    SetChartSpaceExtensionList(openXmlElement, value?.ChartSpaceExtensionList);
+    }
+  }

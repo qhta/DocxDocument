@@ -155,18 +155,19 @@ public static class NonVisualConnectionShapePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualConnectionShapeProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualConnectionShapeProperties value)
     where OpenXmlElementType: DXDrawChartDraw.NonVisualConnectionShapeProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetConnectionShapeLocks(openXmlElement, value?.ConnectionShapeLocks);
-      SetStartConnection(openXmlElement, value?.StartConnection);
-      SetEndConnection(openXmlElement, value?.EndConnection);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDrawsChartDraw.NonVisualConnectionShapeProperties value)
+  {
+    SetConnectionShapeLocks(openXmlElement, value?.ConnectionShapeLocks);
+    SetStartConnection(openXmlElement, value?.StartConnection);
+    SetEndConnection(openXmlElement, value?.EndConnection);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

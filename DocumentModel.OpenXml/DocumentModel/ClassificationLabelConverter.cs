@@ -10,22 +10,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.SetDate?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SetDate);
   }
   
   private static bool CmpSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SetDate?.Value == value) return true;
-    diffs?.Add(objName, "SetDate", openXmlElement?.SetDate?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SetDate, value, diffs, objName, "SetDate");
   }
   
   private static void SetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SetDate = new StringValue { Value = value };
-    else
-      openXmlElement.SetDate = null;
+    openXmlElement.SetDate = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +69,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.Method?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
   private static bool CmpMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Method?.Value == value) return true;
-    diffs?.Add(objName, "Method", openXmlElement?.Method?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
   
   private static void SetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Method = new StringValue { Value = value };
-    else
-      openXmlElement.Method = null;
+    openXmlElement.Method = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +87,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +105,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.SiteId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SiteId);
   }
   
   private static bool CmpSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SiteId?.Value == value) return true;
-    diffs?.Add(objName, "SiteId", openXmlElement?.SiteId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SiteId, value, diffs, objName, "SiteId");
   }
   
   private static void SetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SiteId = new StringValue { Value = value };
-    else
-      openXmlElement.SiteId = null;
+    openXmlElement.SiteId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +123,17 @@ public static class ClassificationLabelConverter
   /// </summary>
   private static String? GetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.ActionId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ActionId);
   }
   
   private static bool CmpActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ActionId?.Value == value) return true;
-    diffs?.Add(objName, "ActionId", openXmlElement?.ActionId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ActionId, value, diffs, objName, "ActionId");
   }
   
   private static void SetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ActionId = new StringValue { Value = value };
-    else
-      openXmlElement.ActionId = null;
+    openXmlElement.ActionId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -258,23 +228,24 @@ public static class ClassificationLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabel value)
     where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetSetDate(openXmlElement, value?.SetDate);
-      SetMethod(openXmlElement, value?.Method);
-      SetName(openXmlElement, value?.Name);
-      SetSiteId(openXmlElement, value?.SiteId);
-      SetActionId(openXmlElement, value?.ActionId);
-      SetContentBits(openXmlElement, value?.ContentBits);
-      SetRemoved(openXmlElement, value?.Removed);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, DM.ClassificationLabel value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetSetDate(openXmlElement, value?.SetDate);
+    SetMethod(openXmlElement, value?.Method);
+    SetName(openXmlElement, value?.Name);
+    SetSiteId(openXmlElement, value?.SiteId);
+    SetActionId(openXmlElement, value?.ActionId);
+    SetContentBits(openXmlElement, value?.ContentBits);
+    SetRemoved(openXmlElement, value?.Removed);
+    }
+  }

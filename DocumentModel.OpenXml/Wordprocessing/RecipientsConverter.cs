@@ -56,15 +56,16 @@ public static class RecipientsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Recipients? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Recipients value)
     where OpenXmlElementType: DXW.Recipients, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRecipientData(openXmlElement, value?.RecipientData);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Recipients openXmlElement, DMW.Recipients value)
+  {
+    SetRecipientData(openXmlElement, value?.RecipientData);
+    }
+  }

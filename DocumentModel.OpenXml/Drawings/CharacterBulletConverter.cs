@@ -10,22 +10,17 @@ public static class CharacterBulletConverter
   /// </summary>
   private static String? GetChar(DXDraw.CharacterBullet openXmlElement)
   {
-    return openXmlElement?.Char?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Char);
   }
   
   private static bool CmpChar(DXDraw.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Char?.Value == value) return true;
-    diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Char, value, diffs, objName, "Char");
   }
   
   private static void SetChar(DXDraw.CharacterBullet openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Char = new StringValue { Value = value };
-    else
-      openXmlElement.Char = null;
+    openXmlElement.Char = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(DXDraw.CharacterBullet? openXmlElement)
@@ -53,15 +48,16 @@ public static class CharacterBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CharacterBullet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CharacterBullet value)
     where OpenXmlElementType: DXDraw.CharacterBullet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChar(openXmlElement, value?.Char);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.CharacterBullet openXmlElement, DMDraws.CharacterBullet value)
+  {
+    SetChar(openXmlElement, value?.Char);
+    }
+  }

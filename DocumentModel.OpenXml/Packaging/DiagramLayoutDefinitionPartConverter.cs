@@ -106,18 +106,19 @@ public static class DiagramLayoutDefinitionPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramLayoutDefinitionPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramLayoutDefinitionPart value)
     where OpenXmlElementType: DXPack.DiagramLayoutDefinitionPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      //SetImageParts(openXmlElement, value?.ImageParts);
-      SetLayoutDefinition(openXmlElement, value?.LayoutDefinition);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMPack.DiagramLayoutDefinitionPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    //SetImageParts(openXmlElement, value?.ImageParts);
+    SetLayoutDefinition(openXmlElement, value?.LayoutDefinition);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

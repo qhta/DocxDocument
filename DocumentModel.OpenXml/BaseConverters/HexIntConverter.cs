@@ -1,13 +1,53 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml;
+
+namespace DocumentModel.OpenXml;
 
 public static class HexIntConverter
 {
+  #region HexBinaryValue
   public static HexInt? GetValue(DX.HexBinaryValue? element)
   {
     if (element?.Value != null)
       return element.Value;
     return null;
   }
+
+  public static bool CmpValue(DX.HexBinaryValue? element, HexInt? value, DiffList? diffs, string? objName)
+  {
+    if (element?.Value != null)
+    {
+      var val = HexIntConverter.GetValue(element.Value);
+      if (val == value) return true;
+    }
+    if (element == null && element?.Value == null && value == null) return true;
+    diffs?.Add(objName, "Rsid", element?.Value, value);
+    return false;
+  }
+
+  public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, HexInt? value)
+    where ElementType : OpenXmlElement, new()
+  {
+    var valProperty = typeof(ElementType).GetProperty("Val");
+    Debug.Assert(valProperty!=null);
+    var itemElement = openXmlElement.GetFirstChild<ElementType>();
+    if (itemElement != null)
+    {
+      if (value!=null)
+        valProperty.SetValue(itemElement, HexIntConverter.CreateHexBinaryValue(value));
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new ElementType();
+      valProperty.SetValue(itemElement, value);
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  #endregion
 
   public static HexInt? GetValue(DXW.LongHexNumberType? element)
   {

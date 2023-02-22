@@ -191,20 +191,21 @@ public static class LegendConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Legend? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Legend value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Legend, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPos(openXmlElement, value?.Pos);
-      SetAlign(openXmlElement, value?.Align);
-      SetOverlay(openXmlElement, value?.Overlay);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.Legend value)
+  {
+    SetPos(openXmlElement, value?.Pos);
+    SetAlign(openXmlElement, value?.Align);
+    SetOverlay(openXmlElement, value?.Overlay);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

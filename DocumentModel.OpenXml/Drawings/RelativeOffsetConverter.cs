@@ -73,16 +73,17 @@ public static class RelativeOffsetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeOffset? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeOffset value)
     where OpenXmlElementType: DXDraw.RelativeOffset, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOffsetX(openXmlElement, value?.OffsetX);
-      SetOffsetY(openXmlElement, value?.OffsetY);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.RelativeOffset openXmlElement, DMDraws.RelativeOffset value)
+  {
+    SetOffsetX(openXmlElement, value?.OffsetX);
+    SetOffsetY(openXmlElement, value?.OffsetY);
+    }
+  }

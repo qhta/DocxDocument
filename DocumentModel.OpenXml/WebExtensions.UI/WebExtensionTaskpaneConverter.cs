@@ -10,22 +10,17 @@ public static class WebExtensionTaskpaneConverter
   /// </summary>
   private static String? GetDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
   {
-    return openXmlElement?.DockState?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DockState);
   }
   
   private static bool CmpDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DockState?.Value == value) return true;
-    diffs?.Add(objName, "DockState", openXmlElement?.DockState?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DockState, value, diffs, objName, "DockState");
   }
   
   private static void SetDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DockState = new StringValue { Value = value };
-    else
-      openXmlElement.DockState = null;
+    openXmlElement.DockState = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -215,21 +210,22 @@ public static class WebExtensionTaskpaneConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionTaskpane? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionTaskpane value)
     where OpenXmlElementType: DXO2013WebExtPane.WebExtensionTaskpane, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDockState(openXmlElement, value?.DockState);
-      SetVisibility(openXmlElement, value?.Visibility);
-      SetWidth(openXmlElement, value?.Width);
-      SetRow(openXmlElement, value?.Row);
-      SetLocked(openXmlElement, value?.Locked);
-      SetWebExtensionPartReference(openXmlElement, value?.WebExtensionPartReference);
-      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionTaskpane value)
+  {
+    SetDockState(openXmlElement, value?.DockState);
+    SetVisibility(openXmlElement, value?.Visibility);
+    SetWidth(openXmlElement, value?.Width);
+    SetRow(openXmlElement, value?.Row);
+    SetLocked(openXmlElement, value?.Locked);
+    SetWebExtensionPartReference(openXmlElement, value?.WebExtensionPartReference);
+    SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
+    }
+  }

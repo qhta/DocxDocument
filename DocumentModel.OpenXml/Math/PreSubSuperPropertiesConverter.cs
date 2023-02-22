@@ -59,15 +59,16 @@ public static class PreSubSuperPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.PreSubSuperProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.PreSubSuperProperties value)
     where OpenXmlElementType: DXMath.PreSubSuperProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetControlProperties(openXmlElement, value?.ControlProperties);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.PreSubSuperProperties openXmlElement, DMMath.PreSubSuperProperties value)
+  {
+    SetControlProperties(openXmlElement, value?.ControlProperties);
+    }
+  }

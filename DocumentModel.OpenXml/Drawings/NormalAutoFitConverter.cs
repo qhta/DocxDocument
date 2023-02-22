@@ -73,16 +73,17 @@ public static class NormalAutoFitConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NormalAutoFit? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NormalAutoFit value)
     where OpenXmlElementType: DXDraw.NormalAutoFit, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFontScale(openXmlElement, value?.FontScale);
-      SetLineSpaceReduction(openXmlElement, value?.LineSpaceReduction);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.NormalAutoFit openXmlElement, DMDraws.NormalAutoFit value)
+  {
+    SetFontScale(openXmlElement, value?.FontScale);
+    SetLineSpaceReduction(openXmlElement, value?.LineSpaceReduction);
+    }
+  }

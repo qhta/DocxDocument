@@ -10,22 +10,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -102,22 +87,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -125,22 +105,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetInsertAfterMso(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.InsertAfterMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
   private static bool CmpInsertAfterMso(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterMso", openXmlElement?.InsertAfterMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
   private static void SetInsertAfterMso(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterMso = null;
+    openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +123,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetInsertBeforeMso(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.InsertBeforeMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
   private static bool CmpInsertBeforeMso(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeMso?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeMso", openXmlElement?.InsertBeforeMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
   private static void SetInsertBeforeMso(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeMso = null;
+    openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +141,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetInsertAfterQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.InsertAfterQulifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
   private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertAfterQulifiedId?.Value == value) return true;
-    diffs?.Add(objName, "InsertAfterQulifiedId", openXmlElement?.InsertAfterQulifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
   
   private static void SetInsertAfterQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.InsertAfterQulifiedId = null;
+    openXmlElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +159,17 @@ public static class ButtonGroupConverter
   /// </summary>
   private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement)
   {
-    return openXmlElement?.InsertBeforeQulifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
   private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.InsertBeforeQulifiedId?.Value == value) return true;
-    diffs?.Add(objName, "InsertBeforeQulifiedId", openXmlElement?.InsertBeforeQulifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
   
   private static void SetInsertBeforeQulifiedId(DXO2010CustUI.ButtonGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.InsertBeforeQulifiedId = null;
+    openXmlElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   private static DM.ControlCloneRegular? GetControlCloneRegular(DXO2010CustUI.ButtonGroup openXmlElement)
@@ -493,31 +453,32 @@ public static class ButtonGroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ButtonGroup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ButtonGroup value)
     where OpenXmlElementType: DXO2010CustUI.ButtonGroup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
-      SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
-      SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
-      SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
-      SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
-      SetButtonRegular(openXmlElement, value?.ButtonRegular);
-      SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
-      SetGalleryRegular(openXmlElement, value?.GalleryRegular);
-      SetMenuRegular(openXmlElement, value?.MenuRegular);
-      SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
-      SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
-      SetSeparator(openXmlElement, value?.Separator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.ButtonGroup openXmlElement, DM.ButtonGroup value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetInsertAfterMso(openXmlElement, value?.InsertAfterMso);
+    SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
+    SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
+    SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+    SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
+    SetButtonRegular(openXmlElement, value?.ButtonRegular);
+    SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
+    SetGalleryRegular(openXmlElement, value?.GalleryRegular);
+    SetMenuRegular(openXmlElement, value?.MenuRegular);
+    SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
+    SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
+    SetSeparator(openXmlElement, value?.Separator);
+    }
+  }

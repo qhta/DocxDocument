@@ -198,20 +198,21 @@ public static class BlipFillConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipFill? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipFill value)
     where OpenXmlElementType: DXDraw.BlipFill, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDpi(openXmlElement, value?.Dpi);
-      SetRotateWithShape(openXmlElement, value?.RotateWithShape);
-      SetBlip(openXmlElement, value?.Blip);
-      SetSourceRectangle(openXmlElement, value?.SourceRectangle);
-      SetTile(openXmlElement, value?.Tile);
-      SetStretch(openXmlElement, value?.Stretch);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.BlipFill openXmlElement, DMDraws.BlipFill value)
+  {
+    SetDpi(openXmlElement, value?.Dpi);
+    SetRotateWithShape(openXmlElement, value?.RotateWithShape);
+    SetBlip(openXmlElement, value?.Blip);
+    SetSourceRectangle(openXmlElement, value?.SourceRectangle);
+    SetTile(openXmlElement, value?.Tile);
+    SetStretch(openXmlElement, value?.Stretch);
+    }
+  }

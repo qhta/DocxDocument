@@ -5,6 +5,7 @@ global using NUnit.Framework;
 global using System.Diagnostics;
 global using System.Globalization;
 global using System.Linq;
+global using Qhta.TypeUtils;
 
 global using DX = DocumentFormat.OpenXml;
 //global using DXAddCht = DocumentFormat.OpenXml.AdditionalCharacteristics;

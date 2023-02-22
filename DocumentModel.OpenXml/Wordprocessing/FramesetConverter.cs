@@ -79,13 +79,15 @@ public static class FramesetConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FrameLayout>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(itemElement, (DMW.FrameLayoutKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
   }
   
   private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)
@@ -177,19 +179,20 @@ public static class FramesetConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Frameset? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Frameset value)
     where OpenXmlElementType: DXW.Frameset, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetFrameSize(openXmlElement, value?.FrameSize);
-      SetFramesetSplitbar(openXmlElement, value?.FramesetSplitbar);
-      SetFrameLayout(openXmlElement, value?.FrameLayout);
-      SetChildFrameset(openXmlElement, value?.ChildFrameset);
-      SetFrame(openXmlElement, value?.Frame);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Frameset openXmlElement, DMW.Frameset value)
+  {
+    SetFrameSize(openXmlElement, value?.FrameSize);
+    SetFramesetSplitbar(openXmlElement, value?.FramesetSplitbar);
+    SetFrameLayout(openXmlElement, value?.FrameLayout);
+    SetChildFrameset(openXmlElement, value?.ChildFrameset);
+    SetFrame(openXmlElement, value?.Frame);
+    }
+  }

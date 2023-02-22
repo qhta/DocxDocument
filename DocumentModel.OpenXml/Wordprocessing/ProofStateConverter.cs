@@ -69,16 +69,17 @@ public static class ProofStateConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ProofState? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ProofState value)
     where OpenXmlElementType: DXW.ProofState, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSpelling(openXmlElement, value?.Spelling);
-      SetGrammar(openXmlElement, value?.Grammar);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ProofState openXmlElement, DMW.ProofState value)
+  {
+    SetSpelling(openXmlElement, value?.Spelling);
+    SetGrammar(openXmlElement, value?.Grammar);
+    }
+  }

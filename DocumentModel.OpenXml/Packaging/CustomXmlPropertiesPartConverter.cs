@@ -83,17 +83,18 @@ public static class CustomXmlPropertiesPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomXmlPropertiesPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomXmlPropertiesPart value)
     where OpenXmlElementType: DXPack.CustomXmlPropertiesPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      //SetContentType(openXmlElement, value?.ContentType);
-      SetDataStoreItem(openXmlElement, value?.DataStoreItem);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.CustomXmlPropertiesPart openXmlElement, DMPack.CustomXmlPropertiesPart value)
+  {
+    //SetContentType(openXmlElement, value?.ContentType);
+    SetDataStoreItem(openXmlElement, value?.DataStoreItem);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

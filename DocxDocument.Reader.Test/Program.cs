@@ -1,4 +1,5 @@
 ﻿using DocumentModel;
+using DocumentModel.Wordprocessing;
 
 namespace DocxDocument.Reader.Test;
 
@@ -6,7 +7,9 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestStyles();
+    //var ok = typeof(Fonts).IsCollection(out var itemType);
+    //Console.WriteLine($"{ok} {itemType}");
+    RunTestFonts();
   }
 
   private static void RunTestFonts()

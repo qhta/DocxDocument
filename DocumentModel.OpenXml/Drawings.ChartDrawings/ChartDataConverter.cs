@@ -117,17 +117,18 @@ public static class ChartDataConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartData? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartData value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ChartData, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExternalData(openXmlElement, value?.ExternalData);
-      SetData(openXmlElement, value?.Data);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ChartData value)
+  {
+    SetExternalData(openXmlElement, value?.ExternalData);
+    SetData(openXmlElement, value?.Data);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

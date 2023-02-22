@@ -119,18 +119,19 @@ public static class FillToRectangleConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillToRectangle? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FillToRectangle value)
     where OpenXmlElementType: DXO2010W.FillToRectangle, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLeft(openXmlElement, value?.Left);
-      SetTop(openXmlElement, value?.Top);
-      SetRight(openXmlElement, value?.Right);
-      SetBottom(openXmlElement, value?.Bottom);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010W.FillToRectangle openXmlElement, DMW.FillToRectangle value)
+  {
+    SetLeft(openXmlElement, value?.Left);
+    SetTop(openXmlElement, value?.Top);
+    SetRight(openXmlElement, value?.Right);
+    SetBottom(openXmlElement, value?.Bottom);
+    }
+  }

@@ -230,21 +230,22 @@ public static class TransformGroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TransformGroup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TransformGroup value)
     where OpenXmlElementType: DXDraw.TransformGroup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
-      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
-      SetOffset(openXmlElement, value?.Offset);
-      SetExtents(openXmlElement, value?.Extents);
-      SetChildOffset(openXmlElement, value?.ChildOffset);
-      SetChildExtents(openXmlElement, value?.ChildExtents);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.TransformGroup openXmlElement, DMDraws.TransformGroup value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+    SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+    SetOffset(openXmlElement, value?.Offset);
+    SetExtents(openXmlElement, value?.Extents);
+    SetChildOffset(openXmlElement, value?.ChildOffset);
+    SetChildExtents(openXmlElement, value?.ChildExtents);
+    }
+  }

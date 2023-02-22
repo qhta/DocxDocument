@@ -80,16 +80,17 @@ public static class PathGradientFillConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PathGradientFill? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PathGradientFill value)
     where OpenXmlElementType: DXDraw.PathGradientFill, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPath(openXmlElement, value?.Path);
-      SetFillToRectangle(openXmlElement, value?.FillToRectangle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.PathGradientFill openXmlElement, DMDraws.PathGradientFill value)
+  {
+    SetPath(openXmlElement, value?.Path);
+    SetFillToRectangle(openXmlElement, value?.FillToRectangle);
+    }
+  }

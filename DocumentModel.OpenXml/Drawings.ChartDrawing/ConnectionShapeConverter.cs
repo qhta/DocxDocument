@@ -10,22 +10,17 @@ public static class ConnectionShapeConverter
   /// </summary>
   private static String? GetMacro(DXDrawChartDraw.ConnectionShape openXmlElement)
   {
-    return openXmlElement?.Macro?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
   private static bool CmpMacro(DXDrawChartDraw.ConnectionShape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Macro?.Value == value) return true;
-    diffs?.Add(objName, "Macro", openXmlElement?.Macro?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
   
   private static void SetMacro(DXDrawChartDraw.ConnectionShape openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Macro = new StringValue { Value = value };
-    else
-      openXmlElement.Macro = null;
+    openXmlElement.Macro = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -175,19 +170,20 @@ public static class ConnectionShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.ConnectionShape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.ConnectionShape value)
     where OpenXmlElementType: DXDrawChartDraw.ConnectionShape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetMacro(openXmlElement, value?.Macro);
-      SetPublished(openXmlElement, value?.Published);
-      SetNonVisualConnectorShapeDrawingProperties(openXmlElement, value?.NonVisualConnectorShapeDrawingProperties);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetStyle(openXmlElement, value?.Style);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.ConnectionShape openXmlElement, DMDrawsChartDraw.ConnectionShape value)
+  {
+    SetMacro(openXmlElement, value?.Macro);
+    SetPublished(openXmlElement, value?.Published);
+    SetNonVisualConnectorShapeDrawingProperties(openXmlElement, value?.NonVisualConnectorShapeDrawingProperties);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetStyle(openXmlElement, value?.Style);
+    }
+  }

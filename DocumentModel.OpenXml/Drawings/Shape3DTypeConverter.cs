@@ -277,23 +277,24 @@ public static class Shape3DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Shape3DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Shape3DType value)
     where OpenXmlElementType: DXDraw.Shape3DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetZ(openXmlElement, value?.Z);
-      SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
-      SetContourWidth(openXmlElement, value?.ContourWidth);
-      SetPresetMaterial(openXmlElement, value?.PresetMaterial);
-      SetBevelTop(openXmlElement, value?.BevelTop);
-      SetBevelBottom(openXmlElement, value?.BevelBottom);
-      SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
-      SetContourColor(openXmlElement, value?.ContourColor);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Shape3DType openXmlElement, DMDraws.Shape3DType value)
+  {
+    SetZ(openXmlElement, value?.Z);
+    SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);
+    SetContourWidth(openXmlElement, value?.ContourWidth);
+    SetPresetMaterial(openXmlElement, value?.PresetMaterial);
+    SetBevelTop(openXmlElement, value?.BevelTop);
+    SetBevelBottom(openXmlElement, value?.BevelBottom);
+    SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
+    SetContourColor(openXmlElement, value?.ContourColor);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

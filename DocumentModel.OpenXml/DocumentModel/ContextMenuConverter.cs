@@ -10,22 +10,17 @@ public static class ContextMenuConverter
   /// </summary>
   private static String? GetIdMso(DXO2010CustUI.ContextMenu openXmlElement)
   {
-    return openXmlElement?.IdMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
   private static bool CmpIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdMso?.Value == value) return true;
-    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
   private static void SetIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdMso = new StringValue { Value = value };
-    else
-      openXmlElement.IdMso = null;
+    openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
   private static DM.ControlCloneRegular? GetControlCloneRegular(DXO2010CustUI.ContextMenu openXmlElement)
@@ -314,24 +309,25 @@ public static class ContextMenuConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ContextMenu? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ContextMenu value)
     where OpenXmlElementType: DXO2010CustUI.ContextMenu, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIdMso(openXmlElement, value?.IdMso);
-      SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
-      SetButtonRegular(openXmlElement, value?.ButtonRegular);
-      SetCheckBox(openXmlElement, value?.CheckBox);
-      SetGalleryRegular(openXmlElement, value?.GalleryRegular);
-      SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
-      SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
-      SetMenuRegular(openXmlElement, value?.MenuRegular);
-      SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
-      SetMenuSeparatorNoTitle(openXmlElement, value?.MenuSeparatorNoTitle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.ContextMenu openXmlElement, DM.ContextMenu value)
+  {
+    SetIdMso(openXmlElement, value?.IdMso);
+    SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
+    SetButtonRegular(openXmlElement, value?.ButtonRegular);
+    SetCheckBox(openXmlElement, value?.CheckBox);
+    SetGalleryRegular(openXmlElement, value?.GalleryRegular);
+    SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
+    SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
+    SetMenuRegular(openXmlElement, value?.MenuRegular);
+    SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
+    SetMenuSeparatorNoTitle(openXmlElement, value?.MenuSeparatorNoTitle);
+    }
+  }

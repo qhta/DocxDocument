@@ -73,16 +73,17 @@ public static class AdjustConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Adjust? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Adjust value)
     where OpenXmlElementType: DXDrawDgms.Adjust, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIndex(openXmlElement, value?.Index);
-      SetVal(openXmlElement, value?.Val);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.Adjust openXmlElement, DMDrawsDgms.Adjust value)
+  {
+    SetIndex(openXmlElement, value?.Index);
+    SetVal(openXmlElement, value?.Val);
+    }
+  }

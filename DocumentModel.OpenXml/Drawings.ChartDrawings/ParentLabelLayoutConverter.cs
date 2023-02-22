@@ -48,15 +48,16 @@ public static class ParentLabelLayoutConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ParentLabelLayout? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ParentLabelLayout value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ParentLabelLayout, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetParentLabelLayoutVal(openXmlElement, value?.ParentLabelLayoutVal);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayout value)
+  {
+    SetParentLabelLayoutVal(openXmlElement, value?.ParentLabelLayoutVal);
+    }
+  }

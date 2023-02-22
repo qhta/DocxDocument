@@ -166,19 +166,20 @@ public static class Transform2DConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Transform2D? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Transform2D value)
     where OpenXmlElementType: DXDraw.Transform2D, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRotation(openXmlElement, value?.Rotation);
-      SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
-      SetVerticalFlip(openXmlElement, value?.VerticalFlip);
-      SetOffset(openXmlElement, value?.Offset);
-      SetExtents(openXmlElement, value?.Extents);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Transform2D openXmlElement, DMDraws.Transform2D value)
+  {
+    SetRotation(openXmlElement, value?.Rotation);
+    SetHorizontalFlip(openXmlElement, value?.HorizontalFlip);
+    SetVerticalFlip(openXmlElement, value?.VerticalFlip);
+    SetOffset(openXmlElement, value?.Offset);
+    SetExtents(openXmlElement, value?.Extents);
+    }
+  }

@@ -316,13 +316,15 @@ public static class ChartConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(itemElement, (DMDrawsCharts.DisplayBlanksAsKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>((DMDrawsCharts.DisplayBlanksAsKind)value));
   }
   
   /// <summary>
@@ -446,27 +448,28 @@ public static class ChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Chart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Chart value)
     where OpenXmlElementType: DXDrawCharts.Chart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTitle(openXmlElement, value?.Title);
-      SetAutoTitleDeleted(openXmlElement, value?.AutoTitleDeleted);
-      SetPivotFormats(openXmlElement, value?.PivotFormats);
-      SetView3D(openXmlElement, value?.View3D);
-      SetFloor(openXmlElement, value?.Floor);
-      SetSideWall(openXmlElement, value?.SideWall);
-      SetBackWall(openXmlElement, value?.BackWall);
-      SetPlotArea(openXmlElement, value?.PlotArea);
-      SetLegend(openXmlElement, value?.Legend);
-      SetPlotVisibleOnly(openXmlElement, value?.PlotVisibleOnly);
-      SetDisplayBlanksAs(openXmlElement, value?.DisplayBlanksAs);
-      SetShowDataLabelsOverMaximum(openXmlElement, value?.ShowDataLabelsOverMaximum);
-      SetChartExtensionList(openXmlElement, value?.ChartExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Chart value)
+  {
+    SetTitle(openXmlElement, value?.Title);
+    SetAutoTitleDeleted(openXmlElement, value?.AutoTitleDeleted);
+    SetPivotFormats(openXmlElement, value?.PivotFormats);
+    SetView3D(openXmlElement, value?.View3D);
+    SetFloor(openXmlElement, value?.Floor);
+    SetSideWall(openXmlElement, value?.SideWall);
+    SetBackWall(openXmlElement, value?.BackWall);
+    SetPlotArea(openXmlElement, value?.PlotArea);
+    SetLegend(openXmlElement, value?.Legend);
+    SetPlotVisibleOnly(openXmlElement, value?.PlotVisibleOnly);
+    SetDisplayBlanksAs(openXmlElement, value?.DisplayBlanksAs);
+    SetShowDataLabelsOverMaximum(openXmlElement, value?.ShowDataLabelsOverMaximum);
+    SetChartExtensionList(openXmlElement, value?.ChartExtensionList);
+    }
+  }

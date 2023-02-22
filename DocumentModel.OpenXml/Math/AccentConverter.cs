@@ -91,16 +91,17 @@ public static class AccentConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Accent? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Accent value)
     where OpenXmlElementType: DXMath.Accent, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAccentProperties(openXmlElement, value?.AccentProperties);
-      SetBase(openXmlElement, value?.Base);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXMath.Accent openXmlElement, DMMath.Accent value)
+  {
+    SetAccentProperties(openXmlElement, value?.AccentProperties);
+    SetBase(openXmlElement, value?.Base);
+    }
+  }

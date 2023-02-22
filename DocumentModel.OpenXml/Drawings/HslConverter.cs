@@ -96,17 +96,18 @@ public static class HslConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Hsl? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Hsl value)
     where OpenXmlElementType: DXDraw.Hsl, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetHue(openXmlElement, value?.Hue);
-      SetSaturation(openXmlElement, value?.Saturation);
-      SetLuminance(openXmlElement, value?.Luminance);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Hsl openXmlElement, DMDraws.Hsl value)
+  {
+    SetHue(openXmlElement, value?.Hue);
+    SetSaturation(openXmlElement, value?.Saturation);
+    SetLuminance(openXmlElement, value?.Luminance);
+    }
+  }

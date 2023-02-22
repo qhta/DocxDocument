@@ -10,22 +10,17 @@ public static class DiagramChooseElseConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.DiagramChooseElse openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.DiagramChooseElse openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.DiagramChooseElse openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.DiagramChooseElse openXmlElement)
@@ -314,24 +309,25 @@ public static class DiagramChooseElseConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramChooseElse? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramChooseElse value)
     where OpenXmlElementType: DXDrawDgms.DiagramChooseElse, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetAlgorithm(openXmlElement, value?.Algorithm);
-      SetShape(openXmlElement, value?.Shape);
-      SetPresentationOf(openXmlElement, value?.PresentationOf);
-      SetConstraints(openXmlElement, value?.Constraints);
-      SetRuleList(openXmlElement, value?.RuleList);
-      SetForEach(openXmlElement, value?.ForEach);
-      SetLayoutNode(openXmlElement, value?.LayoutNode);
-      SetChoose(openXmlElement, value?.Choose);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.DiagramChooseElse value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetAlgorithm(openXmlElement, value?.Algorithm);
+    SetShape(openXmlElement, value?.Shape);
+    SetPresentationOf(openXmlElement, value?.PresentationOf);
+    SetConstraints(openXmlElement, value?.Constraints);
+    SetRuleList(openXmlElement, value?.RuleList);
+    SetForEach(openXmlElement, value?.ForEach);
+    SetLayoutNode(openXmlElement, value?.LayoutNode);
+    SetChoose(openXmlElement, value?.Choose);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

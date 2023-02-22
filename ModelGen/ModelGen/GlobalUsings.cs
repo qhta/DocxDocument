@@ -2,6 +2,8 @@
 
 global using System.CodeDom.Compiler;
 global using System.Reflection;
+global using System.Collections;
+global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
 global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
@@ -140,7 +142,7 @@ global using DX = DocumentFormat.OpenXml;
 //global using DXVmlP = DocumentFormat.OpenXml.Vml.Presentation;
 //global using DXVmlS = DocumentFormat.OpenXml.Vml.Spreadsheet;
 //global using DXVmlW = DocumentFormat.OpenXml.Vml.Wordprocessing;
-//global using DXW = DocumentFormat.OpenXml.Wordprocessing;
+global using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 //global using DM = DocumentModel;
 //global using DMBib = DocumentModel.Bibliography;

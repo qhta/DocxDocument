@@ -10,22 +10,17 @@ public static class SaveThroughXsltConverter
   /// </summary>
   private static String? GetId(DXW.SaveThroughXslt openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXW.SaveThroughXslt openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class SaveThroughXsltConverter
   /// </summary>
   private static String? GetSolutionId(DXW.SaveThroughXslt openXmlElement)
   {
-    return openXmlElement?.SolutionId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SolutionId);
   }
   
   private static bool CmpSolutionId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SolutionId?.Value == value) return true;
-    diffs?.Add(objName, "SolutionId", openXmlElement?.SolutionId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SolutionId, value, diffs, objName, "SolutionId");
   }
   
   private static void SetSolutionId(DXW.SaveThroughXslt openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SolutionId = new StringValue { Value = value };
-    else
-      openXmlElement.SolutionId = null;
+    openXmlElement.SolutionId = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.SaveThroughXslt? CreateModelElement(DXW.SaveThroughXslt? openXmlElement)
@@ -79,16 +69,17 @@ public static class SaveThroughXsltConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SaveThroughXslt? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SaveThroughXslt value)
     where OpenXmlElementType: DXW.SaveThroughXslt, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetSolutionId(openXmlElement, value?.SolutionId);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SaveThroughXslt openXmlElement, DMW.SaveThroughXslt value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetSolutionId(openXmlElement, value?.SolutionId);
+    }
+  }

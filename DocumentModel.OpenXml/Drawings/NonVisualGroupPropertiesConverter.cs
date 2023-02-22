@@ -53,15 +53,16 @@ public static class NonVisualGroupPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupProperties value)
     where OpenXmlElementType: DXO2013Draw.NonVisualGroupProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIsLegacyGroup(openXmlElement, value?.IsLegacyGroup);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013Draw.NonVisualGroupProperties openXmlElement, DMDraws.NonVisualGroupProperties value)
+  {
+    SetIsLegacyGroup(openXmlElement, value?.IsLegacyGroup);
+    }
+  }

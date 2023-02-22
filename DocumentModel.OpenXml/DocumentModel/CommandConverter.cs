@@ -10,22 +10,17 @@ public static class CommandConverter
   /// </summary>
   private static String? GetOnAction(DXO2010CustUI.Command openXmlElement)
   {
-    return openXmlElement?.OnAction?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
   private static bool CmpOnAction(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnAction?.Value == value) return true;
-    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
   private static void SetOnAction(DXO2010CustUI.Command openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnAction = new StringValue { Value = value };
-    else
-      openXmlElement.OnAction = null;
+    openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class CommandConverter
   /// </summary>
   private static String? GetGetEnabled(DXO2010CustUI.Command openXmlElement)
   {
-    return openXmlElement?.GetEnabled?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
   private static bool CmpGetEnabled(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetEnabled?.Value == value) return true;
-    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
   private static void SetGetEnabled(DXO2010CustUI.Command openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetEnabled = new StringValue { Value = value };
-    else
-      openXmlElement.GetEnabled = null;
+    openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +69,17 @@ public static class CommandConverter
   /// </summary>
   private static String? GetIdMso(DXO2010CustUI.Command openXmlElement)
   {
-    return openXmlElement?.IdMso?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
   private static bool CmpIdMso(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.IdMso?.Value == value) return true;
-    diffs?.Add(objName, "IdMso", openXmlElement?.IdMso?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
   private static void SetIdMso(DXO2010CustUI.Command openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.IdMso = new StringValue { Value = value };
-    else
-      openXmlElement.IdMso = null;
+    openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Command? CreateModelElement(DXO2010CustUI.Command? openXmlElement)
@@ -131,18 +116,19 @@ public static class CommandConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Command? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Command value)
     where OpenXmlElementType: DXO2010CustUI.Command, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetOnAction(openXmlElement, value?.OnAction);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetGetEnabled(openXmlElement, value?.GetEnabled);
-      SetIdMso(openXmlElement, value?.IdMso);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.Command openXmlElement, DM.Command value)
+  {
+    SetOnAction(openXmlElement, value?.OnAction);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetGetEnabled(openXmlElement, value?.GetEnabled);
+    SetIdMso(openXmlElement, value?.IdMso);
+    }
+  }

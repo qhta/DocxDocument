@@ -1,24 +1,37 @@
-﻿using DocumentFormat.OpenXml;
+﻿using System.Diagnostics;
+
+using DocumentFormat.OpenXml;
 
 namespace DocumentModel.OpenXml;
 
 public static class StringValueConverter
 {
-  public static string GetValue(DX.StringValue element)
+  #region StringValue
+  public static string? GetValue(StringValue? element)
   {
-    return element.Value ?? string.Empty;
+    return element?.Value;
   }
 
-  public static bool CmpValue(DX.StringValue element, string? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(StringValue? element, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (element.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Value, value);
+    if (element?.Value == value) return true;
+    diffs?.Add(objName, propName ?? element?.GetType().ToString(), element?.Value, value);
     return false;
   }
 
-  public static string GetValue(DXW.StringType element)
+  public static StringValue? CreateStringValue(String? value)
   {
-    return element.Val?.Value ?? string.Empty;
+    if (value == null) return null;
+    return new StringValue { Value = value };
+  }
+  #endregion
+
+  #region StringType
+  public static string? GetValue(DXW.StringType? element)
+  {
+    if (element == null)
+      return null;
+    return element?.Val?.Value ?? string.Empty;
   }
 
   public static bool CmpValue(DXW.StringType element, string? value, DiffList? diffs, string? objName)
@@ -27,7 +40,9 @@ public static class StringValueConverter
     diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
+  #endregion
 
+  #region String255Type
   public static string GetValue(DXW.String255Type element)
   {
     return element.Val?.Value ?? string.Empty;
@@ -39,7 +54,9 @@ public static class StringValueConverter
     diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
+  #endregion
 
+  #region TextElement
   public static string GetValue(DX.TypedOpenXmlLeafTextElement element)
   {
     return element.Text;
@@ -61,4 +78,50 @@ public static class StringValueConverter
       valProperty.SetValue(element, value);
     return element;
   }
+  #endregion
+
+  #region TypeOpenXmlLeafElement with Val property
+  //public static string? GetValue(TypedOpenXmlLeafElement? openXmlElement)
+  //{
+  //  if (openXmlElement == null) return null;
+  //  var valProperty = openXmlElement.GetType().GetProperty("Val");
+  //  if (valProperty != null)
+  //    return openXmlElement?.Val?.Value;
+  //}
+
+  //public static bool CmpValue(OpenXmlLeafElement? element, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  //{
+  //  if (element?.Value == value) return true;
+  //  diffs?.Add(objName, propName ?? element?.GetType().ToString(), element?.Value, value);
+  //  return false;
+  //}
+
+  //public static StringValue? CreateStringValue(String? value)
+  //{
+  //  if (value == null) return null;
+  //  return new StringValue { Value = value };
+  //}
+
+  public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, String? value)
+    where ElementType: TypedOpenXmlLeafElement, new()
+  {
+    var valProperty = typeof(ElementType).GetProperty("Val");
+    Debug.Assert(valProperty!=null);
+    var itemElement = openXmlElement.GetFirstChild<ElementType>();
+    if (itemElement != null)
+    {
+      if (value != null)
+        valProperty.SetValue(itemElement, value);
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new ElementType();
+      valProperty.SetValue(itemElement, value);
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  #endregion
 }

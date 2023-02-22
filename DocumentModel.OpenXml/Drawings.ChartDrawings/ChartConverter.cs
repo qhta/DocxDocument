@@ -155,18 +155,19 @@ public static class ChartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Chart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Chart value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Chart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetChartTitle(openXmlElement, value?.ChartTitle);
-      SetPlotArea(openXmlElement, value?.PlotArea);
-      SetLegend(openXmlElement, value?.Legend);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.Chart value)
+  {
+    SetChartTitle(openXmlElement, value?.ChartTitle);
+    SetPlotArea(openXmlElement, value?.PlotArea);
+    SetLegend(openXmlElement, value?.Legend);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

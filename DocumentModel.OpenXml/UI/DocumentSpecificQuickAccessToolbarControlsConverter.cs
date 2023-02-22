@@ -114,17 +114,18 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.DocumentSpecificQuickAccessToolbarControls? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.DocumentSpecificQuickAccessToolbarControls value)
     where OpenXmlElementType: DXOCustUI.DocumentSpecificQuickAccessToolbarControls, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
-      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
-      SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls value)
+  {
+    SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
+    SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+    SetVerticalSeparator(openXmlElement, value?.VerticalSeparator);
+    }
+  }

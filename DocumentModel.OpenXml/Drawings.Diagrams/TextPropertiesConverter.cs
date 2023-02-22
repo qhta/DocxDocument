@@ -91,16 +91,17 @@ public static class TextPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextProperties value)
     where OpenXmlElementType: DXDrawDgms.TextProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetShape3DType(openXmlElement, value?.Shape3DType);
-      SetFlatText(openXmlElement, value?.FlatText);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.TextProperties openXmlElement, DMDrawsDgms.TextProperties value)
+  {
+    SetShape3DType(openXmlElement, value?.Shape3DType);
+    SetFlatText(openXmlElement, value?.FlatText);
+    }
+  }

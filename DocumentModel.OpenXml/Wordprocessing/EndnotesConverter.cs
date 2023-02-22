@@ -56,15 +56,16 @@ public static class EndnotesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnotes? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnotes value)
     where OpenXmlElementType: DXW.Endnotes, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetEndnote(openXmlElement, value?.Endnote);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.Endnotes openXmlElement, DMW.Endnotes value)
+  {
+    SetEndnote(openXmlElement, value?.Endnote);
+    }
+  }

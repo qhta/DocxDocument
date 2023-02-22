@@ -199,13 +199,15 @@ public static class HiddenLinePropertiesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetDash>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDraw.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMDraws.PresetLineDashKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMDraws.PresetLineDashKind>(itemElement, (DMDraws.PresetLineDashKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDraw.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMDraws.PresetLineDashKind>((DMDraws.PresetLineDashKind)value));
   }
   
   private static DMDraws.CustomDash? GetCustomDash(DXO2010Draw.HiddenLineProperties openXmlElement)
@@ -464,30 +466,31 @@ public static class HiddenLinePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenLineProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenLineProperties value)
     where OpenXmlElementType: DXO2010Draw.HiddenLineProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidth(openXmlElement, value?.Width);
-      SetCapType(openXmlElement, value?.CapType);
-      SetCompoundLineType(openXmlElement, value?.CompoundLineType);
-      SetAlignment(openXmlElement, value?.Alignment);
-      SetNoFill(openXmlElement, value?.NoFill);
-      SetSolidFill(openXmlElement, value?.SolidFill);
-      SetGradientFill(openXmlElement, value?.GradientFill);
-      SetPatternFill(openXmlElement, value?.PatternFill);
-      SetPresetDash(openXmlElement, value?.PresetDash);
-      SetCustomDash(openXmlElement, value?.CustomDash);
-      SetRound(openXmlElement, value?.Round);
-      SetLineJoinBevel(openXmlElement, value?.LineJoinBevel);
-      SetMiter(openXmlElement, value?.Miter);
-      SetHeadEnd(openXmlElement, value?.HeadEnd);
-      SetTailEnd(openXmlElement, value?.TailEnd);
-      SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenLineProperties openXmlElement, DMDraws.HiddenLineProperties value)
+  {
+    SetWidth(openXmlElement, value?.Width);
+    SetCapType(openXmlElement, value?.CapType);
+    SetCompoundLineType(openXmlElement, value?.CompoundLineType);
+    SetAlignment(openXmlElement, value?.Alignment);
+    SetNoFill(openXmlElement, value?.NoFill);
+    SetSolidFill(openXmlElement, value?.SolidFill);
+    SetGradientFill(openXmlElement, value?.GradientFill);
+    SetPatternFill(openXmlElement, value?.PatternFill);
+    SetPresetDash(openXmlElement, value?.PresetDash);
+    SetCustomDash(openXmlElement, value?.CustomDash);
+    SetRound(openXmlElement, value?.Round);
+    SetLineJoinBevel(openXmlElement, value?.LineJoinBevel);
+    SetMiter(openXmlElement, value?.Miter);
+    SetHeadEnd(openXmlElement, value?.HeadEnd);
+    SetTailEnd(openXmlElement, value?.TailEnd);
+    SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
+    }
+  }

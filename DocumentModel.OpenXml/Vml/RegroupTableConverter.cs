@@ -39,11 +39,11 @@ public static class RegroupTableConverter
   
   private static bool CmpEntries(DXVmlO.RegroupTable openXmlElement, Collection<DMVml.Entry>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXVmlO.Entry>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXVmlO.Entry>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -60,7 +60,7 @@ public static class RegroupTableConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -107,16 +107,17 @@ public static class RegroupTableConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.RegroupTable? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.RegroupTable value)
     where OpenXmlElementType: DXVmlO.RegroupTable, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetEntries(openXmlElement, value?.Entries);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.RegroupTable openXmlElement, DMVml.RegroupTable value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetEntries(openXmlElement, value?.Entries);
+    }
+  }

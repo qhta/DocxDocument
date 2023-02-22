@@ -10,22 +10,17 @@ public static class ShapePropertiesExtensionConverter
   /// </summary>
   private static String? GetUri(DXDraw.ShapePropertiesExtension openXmlElement)
   {
-    return openXmlElement?.Uri?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
   private static bool CmpUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Uri?.Value == value) return true;
-    diffs?.Add(objName, "Uri", openXmlElement?.Uri?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
   private static void SetUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Uri = new StringValue { Value = value };
-    else
-      openXmlElement.Uri = null;
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
   private static DMDraws.HiddenFillProperties? GetHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement)
@@ -229,21 +224,22 @@ public static class ShapePropertiesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapePropertiesExtension? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapePropertiesExtension value)
     where OpenXmlElementType: DXDraw.ShapePropertiesExtension, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUri(openXmlElement, value?.Uri);
-      SetHiddenFillProperties(openXmlElement, value?.HiddenFillProperties);
-      SetHiddenLineProperties(openXmlElement, value?.HiddenLineProperties);
-      SetHiddenEffectsProperties(openXmlElement, value?.HiddenEffectsProperties);
-      SetHiddenScene3D(openXmlElement, value?.HiddenScene3D);
-      SetHiddenShape3D(openXmlElement, value?.HiddenShape3D);
-      SetShadowObscured(openXmlElement, value?.ShadowObscured);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.ShapePropertiesExtension value)
+  {
+    SetUri(openXmlElement, value?.Uri);
+    SetHiddenFillProperties(openXmlElement, value?.HiddenFillProperties);
+    SetHiddenLineProperties(openXmlElement, value?.HiddenLineProperties);
+    SetHiddenEffectsProperties(openXmlElement, value?.HiddenEffectsProperties);
+    SetHiddenScene3D(openXmlElement, value?.HiddenScene3D);
+    SetHiddenShape3D(openXmlElement, value?.HiddenShape3D);
+    SetShadowObscured(openXmlElement, value?.ShadowObscured);
+    }
+  }

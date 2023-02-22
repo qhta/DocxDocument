@@ -71,16 +71,17 @@ public static class AutoNumberedBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AutoNumberedBullet? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AutoNumberedBullet value)
     where OpenXmlElementType: DXDraw.AutoNumberedBullet, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetType(openXmlElement, value?.Type);
-      SetStartAt(openXmlElement, value?.StartAt);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.AutoNumberedBullet value)
+  {
+    SetType(openXmlElement, value?.Type);
+    SetStartAt(openXmlElement, value?.StartAt);
+    }
+  }

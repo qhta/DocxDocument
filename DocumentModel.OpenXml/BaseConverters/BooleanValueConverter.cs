@@ -1,58 +1,156 @@
 ﻿using System.Runtime.CompilerServices;
+
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml;
 
 public static class BooleanValueConverter
 {
-  //public static Boolean? GetValue(OnOffOnlyValues? element)
-  //{
-  //  if (element != null)
-  //    return element == OnOffOnlyValues.On;
-  //  return null;
-  //}
-
-  //public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value, DiffList? diffs, [CallerMemberName] string? callerName = null)
-  //{
-  //  if (element != null)
-  //  {
-  //    if (element == OnOffOnlyValues.On && value == true)
-  //      return true;
-  //    if (element == OnOffOnlyValues.Off && value == false)
-  //      return true;
-  //    diffs?.Add(callerName, "Value
-  //    return false;
-  //  }
-  //  return value == null;
-  //}
-
-  public static Boolean? GetValue(OnOffOnlyType? element)
+  #region OnOffValue
+  public static Boolean? GetValue(OnOffValue? element)
   {
-    if (element?.Val?.Value != null)
-      return element?.Val?.Value == OnOffOnlyValues.On;
+    return element?.Value;
+  }
+
+  public static Boolean CmpValue(OnOffValue? element, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (element?.Value == value) return true;
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element?.Value, value);
+    return false;
+  }
+
+  public static OnOffValue? CreateOnOffValue(Boolean? value)
+  {
+    if (value == null) return null;
+    return new OnOffValue { Value = (Boolean)value };
+  }
+  #endregion
+
+  #region OnOffOnlyValue
+  public static Boolean? GetValue(OnOffOnlyValues? element)
+  {
+    if (element == null) return null;
+    return element == OnOffOnlyValues.On;
+  }
+
+  public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (element!=null && value != null)
+    {
+      if ((element == OnOffOnlyValues.On) && value==true) return true;
+      if ((element == OnOffOnlyValues.Off) && value==false) return true;
+    }
+    if (element == null && value == null) return true;
+    diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
+    return false;
+  }
+
+  public static OnOffOnlyValues? CreateOnOffOnlyValue(Boolean? value)
+  {
+    if (value == true) return OnOffOnlyValues.On;
+    if (value == false) return OnOffOnlyValues.Off;
+    return null;
+  }
+  #endregion
+
+  #region Convert OnOffType
+  public static Boolean? GetValue(OnOffType? openXmlElement)
+  {
+    if (openXmlElement?.Val?.Value != null)
+      return openXmlElement.Val.Value;
+    if (openXmlElement != null) return true;
     return null;
   }
 
-  public static Boolean CmpValue(OnOffOnlyType? element, Boolean? value, DiffList? diffs, string? objName = null)
+  public static Boolean CmpValue(OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null)
   {
-    if (element?.Val?.Value != null && value != null)
+    if (openXmlElement?.Val?.Value != null && value != null)
     {
-      if (element.Val.Value == OnOffOnlyValues.On && value == true)
+      if (openXmlElement.Val.Value == true && value == true)
         return true;
-      if (element.Val.Value == OnOffOnlyValues.Off && value == false)
+      if (openXmlElement.Val.Value == false && value == false)
         return true;
-      diffs?.Add(objName, element.GetType().Name, element.Val.Value == OnOffOnlyValues.On, value);
+      diffs?.Add(objName, openXmlElement.GetType().Name, openXmlElement.Val.Value, value);
       return false;
     }
-    if (element?.Val?.Value == null && value == null)
+    if (openXmlElement?.Val?.Value == null && value == null)
       return true;
-    if (element!=null && value == true)
+    if (openXmlElement != null && value == true)
       return true;
-    if (element==null && value == false)
-      return true;
-    diffs?.Add(objName, element?.GetType().Name, element?.Val?.Value == OnOffOnlyValues.On, value);
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement?.Val?.Value, value);
     return false;
   }
+
+  public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
+    where ElementType : OnOffType, new()
+  {
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<ElementType>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new ElementType { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  #endregion
+
+  #region Convert OnOffOnlyType
+  public static Boolean GetValue(OnOffOnlyType? openXmlElement)
+  {
+    if (openXmlElement?.Val?.Value != null)
+      return openXmlElement.Val.Value == DXW.OnOffOnlyValues.On;
+    return openXmlElement != null;
+  }
+
+  public static Boolean CmpValue(OnOffOnlyType? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null)
+  {
+    if (openXmlElement?.Val?.Value != null && value != null)
+    {
+      if (openXmlElement.Val.Value == OnOffOnlyValues.On && value == true)
+        return true;
+      if (openXmlElement.Val.Value == OnOffOnlyValues.Off && value == false)
+        return true;
+      diffs?.Add(objName, openXmlElement.GetType().Name, openXmlElement.Val.Value == OnOffOnlyValues.On, value);
+      return false;
+    }
+    if (openXmlElement?.Val?.Value == null && value == null)
+      return true;
+    if (openXmlElement != null && value == true)
+      return true;
+    if (openXmlElement == null && value == false)
+      return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement?.Val?.Value == OnOffOnlyValues.On, value);
+    return false;
+  }
+
+  public static void SetOnOffOnlyType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
+    where ElementType : OnOffOnlyType, new()
+  {
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<ElementType>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new ElementType();
+        openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  #endregion
+
 
   public static bool? GetValue(DX.TypedOpenXmlLeafTextElement? element)
   {

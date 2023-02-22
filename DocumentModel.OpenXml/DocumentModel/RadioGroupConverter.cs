@@ -10,22 +10,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetId(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetQualifiedId(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.QualifiedId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
   private static bool CmpQualifiedId(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.QualifiedId?.Value == value) return true;
-    diffs?.Add(objName, "QualifiedId", openXmlElement?.QualifiedId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
   private static void SetQualifiedId(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.QualifiedId = new StringValue { Value = value };
-    else
-      openXmlElement.QualifiedId = null;
+    openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetTag(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.Tag?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
   private static bool CmpTag(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Tag?.Value == value) return true;
-    diffs?.Add(objName, "Tag", openXmlElement?.Tag?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
   private static void SetTag(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Tag = new StringValue { Value = value };
-    else
-      openXmlElement.Tag = null;
+    openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -138,22 +123,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetEnabled(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetEnabled?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
   private static bool CmpGetEnabled(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetEnabled?.Value == value) return true;
-    diffs?.Add(objName, "GetEnabled", openXmlElement?.GetEnabled?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
   private static void SetGetEnabled(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetEnabled = new StringValue { Value = value };
-    else
-      openXmlElement.GetEnabled = null;
+    openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -161,22 +141,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetLabel(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.Label?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
   private static bool CmpLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Label?.Value == value) return true;
-    diffs?.Add(objName, "Label", openXmlElement?.Label?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
   private static void SetLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Label = new StringValue { Value = value };
-    else
-      openXmlElement.Label = null;
+    openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -184,22 +159,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetLabel(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
   private static bool CmpGetLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetLabel", openXmlElement?.GetLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
   private static void SetGetLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetLabel = null;
+    openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -230,22 +200,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetVisible(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetVisible?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
   private static bool CmpGetVisible(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetVisible?.Value == value) return true;
-    diffs?.Add(objName, "GetVisible", openXmlElement?.GetVisible?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
   private static void SetGetVisible(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetVisible = new StringValue { Value = value };
-    else
-      openXmlElement.GetVisible = null;
+    openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -253,22 +218,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetOnAction(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.OnAction?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
   private static bool CmpOnAction(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.OnAction?.Value == value) return true;
-    diffs?.Add(objName, "OnAction", openXmlElement?.OnAction?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
   private static void SetOnAction(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.OnAction = new StringValue { Value = value };
-    else
-      openXmlElement.OnAction = null;
+    openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -276,22 +236,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetKeytip(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.Keytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
   private static bool CmpKeytip(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Keytip?.Value == value) return true;
-    diffs?.Add(objName, "Keytip", openXmlElement?.Keytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
   private static void SetKeytip(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Keytip = new StringValue { Value = value };
-    else
-      openXmlElement.Keytip = null;
+    openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -299,22 +254,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetKeytip(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetKeytip?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
   private static bool CmpGetKeytip(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetKeytip?.Value == value) return true;
-    diffs?.Add(objName, "GetKeytip", openXmlElement?.GetKeytip?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
   private static void SetGetKeytip(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetKeytip = new StringValue { Value = value };
-    else
-      openXmlElement.GetKeytip = null;
+    openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -322,22 +272,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetSelectedItemIndex(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetSelectedItemIndex?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetSelectedItemIndex);
   }
   
   private static bool CmpGetSelectedItemIndex(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetSelectedItemIndex?.Value == value) return true;
-    diffs?.Add(objName, "GetSelectedItemIndex", openXmlElement?.GetSelectedItemIndex?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetSelectedItemIndex, value, diffs, objName, "GetSelectedItemIndex");
   }
   
   private static void SetGetSelectedItemIndex(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetSelectedItemIndex = new StringValue { Value = value };
-    else
-      openXmlElement.GetSelectedItemIndex = null;
+    openXmlElement.GetSelectedItemIndex = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -345,22 +290,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetItemCount(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetItemCount?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetItemCount);
   }
   
   private static bool CmpGetItemCount(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetItemCount?.Value == value) return true;
-    diffs?.Add(objName, "GetItemCount", openXmlElement?.GetItemCount?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetItemCount, value, diffs, objName, "GetItemCount");
   }
   
   private static void SetGetItemCount(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetItemCount = new StringValue { Value = value };
-    else
-      openXmlElement.GetItemCount = null;
+    openXmlElement.GetItemCount = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -368,22 +308,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetItemLabel(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetItemLabel?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetItemLabel);
   }
   
   private static bool CmpGetItemLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetItemLabel?.Value == value) return true;
-    diffs?.Add(objName, "GetItemLabel", openXmlElement?.GetItemLabel?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetItemLabel, value, diffs, objName, "GetItemLabel");
   }
   
   private static void SetGetItemLabel(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetItemLabel = new StringValue { Value = value };
-    else
-      openXmlElement.GetItemLabel = null;
+    openXmlElement.GetItemLabel = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -391,22 +326,17 @@ public static class RadioGroupConverter
   /// </summary>
   private static String? GetGetItemID(DXO2010CustUI.RadioGroup openXmlElement)
   {
-    return openXmlElement?.GetItemID?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.GetItemID);
   }
   
   private static bool CmpGetItemID(DXO2010CustUI.RadioGroup openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.GetItemID?.Value == value) return true;
-    diffs?.Add(objName, "GetItemID", openXmlElement?.GetItemID?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.GetItemID, value, diffs, objName, "GetItemID");
   }
   
   private static void SetGetItemID(DXO2010CustUI.RadioGroup openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.GetItemID = new StringValue { Value = value };
-    else
-      openXmlElement.GetItemID = null;
+    openXmlElement.GetItemID = StringValueConverter.CreateStringValue(value);
   }
   
   private static Collection<DM.BackstageItemType>? GetRadioButtonBackstageItems(DXO2010CustUI.RadioGroup openXmlElement)
@@ -425,11 +355,11 @@ public static class RadioGroupConverter
   
   private static bool CmpRadioButtonBackstageItems(DXO2010CustUI.RadioGroup openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2010CustUI.RadioButtonBackstageItem>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2010CustUI.RadioButtonBackstageItem>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -446,7 +376,7 @@ public static class RadioGroupConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -544,33 +474,34 @@ public static class RadioGroupConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.RadioGroup? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.RadioGroup value)
     where OpenXmlElementType: DXO2010CustUI.RadioGroup, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetQualifiedId(openXmlElement, value?.QualifiedId);
-      SetTag(openXmlElement, value?.Tag);
-      SetAlignLabel(openXmlElement, value?.AlignLabel);
-      SetExpand(openXmlElement, value?.Expand);
-      SetEnabled(openXmlElement, value?.Enabled);
-      SetGetEnabled(openXmlElement, value?.GetEnabled);
-      SetLabel(openXmlElement, value?.Label);
-      SetGetLabel(openXmlElement, value?.GetLabel);
-      SetVisible(openXmlElement, value?.Visible);
-      SetGetVisible(openXmlElement, value?.GetVisible);
-      SetOnAction(openXmlElement, value?.OnAction);
-      SetKeytip(openXmlElement, value?.Keytip);
-      SetGetKeytip(openXmlElement, value?.GetKeytip);
-      SetGetSelectedItemIndex(openXmlElement, value?.GetSelectedItemIndex);
-      SetGetItemCount(openXmlElement, value?.GetItemCount);
-      SetGetItemLabel(openXmlElement, value?.GetItemLabel);
-      SetGetItemID(openXmlElement, value?.GetItemID);
-      SetRadioButtonBackstageItems(openXmlElement, value?.RadioButtonBackstageItems);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.RadioGroup openXmlElement, DM.RadioGroup value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetQualifiedId(openXmlElement, value?.QualifiedId);
+    SetTag(openXmlElement, value?.Tag);
+    SetAlignLabel(openXmlElement, value?.AlignLabel);
+    SetExpand(openXmlElement, value?.Expand);
+    SetEnabled(openXmlElement, value?.Enabled);
+    SetGetEnabled(openXmlElement, value?.GetEnabled);
+    SetLabel(openXmlElement, value?.Label);
+    SetGetLabel(openXmlElement, value?.GetLabel);
+    SetVisible(openXmlElement, value?.Visible);
+    SetGetVisible(openXmlElement, value?.GetVisible);
+    SetOnAction(openXmlElement, value?.OnAction);
+    SetKeytip(openXmlElement, value?.Keytip);
+    SetGetKeytip(openXmlElement, value?.GetKeytip);
+    SetGetSelectedItemIndex(openXmlElement, value?.GetSelectedItemIndex);
+    SetGetItemCount(openXmlElement, value?.GetItemCount);
+    SetGetItemLabel(openXmlElement, value?.GetItemLabel);
+    SetGetItemID(openXmlElement, value?.GetItemID);
+    SetRadioButtonBackstageItems(openXmlElement, value?.RadioButtonBackstageItems);
+    }
+  }

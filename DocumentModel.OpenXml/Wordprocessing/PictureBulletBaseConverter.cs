@@ -288,23 +288,24 @@ public static class PictureBulletBaseConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PictureBulletBase? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PictureBulletBase value)
     where OpenXmlElementType: DXW.PictureBulletBase, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetGroup(openXmlElement, value?.Group);
-      SetImageFile(openXmlElement, value?.ImageFile);
-      SetLine(openXmlElement, value?.Line);
-      SetOval(openXmlElement, value?.Oval);
-      SetPolyLine(openXmlElement, value?.PolyLine);
-      SetRectangle(openXmlElement, value?.Rectangle);
-      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
-      SetShape(openXmlElement, value?.Shape);
-      SetShapetype(openXmlElement, value?.Shapetype);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.PictureBulletBase openXmlElement, DMW.PictureBulletBase value)
+  {
+    SetGroup(openXmlElement, value?.Group);
+    SetImageFile(openXmlElement, value?.ImageFile);
+    SetLine(openXmlElement, value?.Line);
+    SetOval(openXmlElement, value?.Oval);
+    SetPolyLine(openXmlElement, value?.PolyLine);
+    SetRectangle(openXmlElement, value?.Rectangle);
+    SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+    SetShape(openXmlElement, value?.Shape);
+    SetShapetype(openXmlElement, value?.Shapetype);
+    }
+  }

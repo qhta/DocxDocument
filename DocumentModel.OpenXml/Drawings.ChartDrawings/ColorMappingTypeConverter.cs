@@ -311,27 +311,28 @@ public static class ColorMappingTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ColorMappingType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ColorMappingType value)
     where OpenXmlElementType: DXO2016DrawChartDraw.ColorMappingType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBackground1(openXmlElement, value?.Background1);
-      SetText1(openXmlElement, value?.Text1);
-      SetBackground2(openXmlElement, value?.Background2);
-      SetText2(openXmlElement, value?.Text2);
-      SetAccent1(openXmlElement, value?.Accent1);
-      SetAccent2(openXmlElement, value?.Accent2);
-      SetAccent3(openXmlElement, value?.Accent3);
-      SetAccent4(openXmlElement, value?.Accent4);
-      SetAccent5(openXmlElement, value?.Accent5);
-      SetAccent6(openXmlElement, value?.Accent6);
-      SetHyperlink(openXmlElement, value?.Hyperlink);
-      SetFollowedHyperlink(openXmlElement, value?.FollowedHyperlink);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ColorMappingType openXmlElement, DMDrawsChartDraws.ColorMappingType value)
+  {
+    SetBackground1(openXmlElement, value?.Background1);
+    SetText1(openXmlElement, value?.Text1);
+    SetBackground2(openXmlElement, value?.Background2);
+    SetText2(openXmlElement, value?.Text2);
+    SetAccent1(openXmlElement, value?.Accent1);
+    SetAccent2(openXmlElement, value?.Accent2);
+    SetAccent3(openXmlElement, value?.Accent3);
+    SetAccent4(openXmlElement, value?.Accent4);
+    SetAccent5(openXmlElement, value?.Accent5);
+    SetAccent6(openXmlElement, value?.Accent6);
+    SetHyperlink(openXmlElement, value?.Hyperlink);
+    SetFollowedHyperlink(openXmlElement, value?.FollowedHyperlink);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -236,21 +236,22 @@ public static class GroupShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.GroupShape? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.GroupShape value)
     where OpenXmlElementType: DXDrawChartDraw.GroupShape, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetNonVisualGroupShapeProperties(openXmlElement, value?.NonVisualGroupShapeProperties);
-      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
-      SetShape(openXmlElement, value?.Shape);
-      SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
-      SetGraphicFrame(openXmlElement, value?.GraphicFrame);
-      SetConnectionShape(openXmlElement, value?.ConnectionShape);
-      SetPicture(openXmlElement, value?.Picture);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShape value)
+  {
+    SetNonVisualGroupShapeProperties(openXmlElement, value?.NonVisualGroupShapeProperties);
+    SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+    SetShape(openXmlElement, value?.Shape);
+    SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
+    SetGraphicFrame(openXmlElement, value?.GraphicFrame);
+    SetConnectionShape(openXmlElement, value?.ConnectionShape);
+    SetPicture(openXmlElement, value?.Picture);
+    }
+  }

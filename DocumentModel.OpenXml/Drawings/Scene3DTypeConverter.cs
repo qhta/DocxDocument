@@ -155,18 +155,19 @@ public static class Scene3DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Scene3DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Scene3DType value)
     where OpenXmlElementType: DXDraw.Scene3DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetCamera(openXmlElement, value?.Camera);
-      SetLightRig(openXmlElement, value?.LightRig);
-      SetBackdrop(openXmlElement, value?.Backdrop);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Scene3DType openXmlElement, DMDraws.Scene3DType value)
+  {
+    SetCamera(openXmlElement, value?.Camera);
+    SetLightRig(openXmlElement, value?.LightRig);
+    SetBackdrop(openXmlElement, value?.Backdrop);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

@@ -10,22 +10,17 @@ public static class SimpleFieldRubyConverter
   /// </summary>
   private static String? GetInstruction(DXW.SimpleFieldRuby openXmlElement)
   {
-    return openXmlElement?.Instruction?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Instruction);
   }
   
   private static bool CmpInstruction(DXW.SimpleFieldRuby openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Instruction?.Value == value) return true;
-    diffs?.Add(objName, "Instruction", openXmlElement?.Instruction?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Instruction, value, diffs, objName, "Instruction");
   }
   
   private static void SetInstruction(DXW.SimpleFieldRuby openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Instruction = new StringValue { Value = value };
-    else
-      openXmlElement.Instruction = null;
+    openXmlElement.Instruction = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class SimpleFieldRubyConverter
   /// </summary>
   private static Boolean? GetFieldLock(DXW.SimpleFieldRuby openXmlElement)
   {
-    return openXmlElement?.FieldLock?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.FieldLock);
   }
   
   private static bool CmpFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.FieldLock?.Value == value) return true;
-    diffs?.Add(objName, "FieldLock", openXmlElement?.FieldLock?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.FieldLock, value, diffs, objName, "FieldLock");
   }
   
   private static void SetFieldLock(DXW.SimpleFieldRuby openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.FieldLock = null;
+    openXmlElement.FieldLock = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class SimpleFieldRubyConverter
   /// </summary>
   private static Boolean? GetDirty(DXW.SimpleFieldRuby openXmlElement)
   {
-    return openXmlElement?.Dirty?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Dirty);
   }
   
   private static bool CmpDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Dirty?.Value == value) return true;
-    diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Dirty, value, diffs, objName, "Dirty");
   }
   
   private static void SetDirty(DXW.SimpleFieldRuby openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Dirty = null;
+    openXmlElement.Dirty = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -1728,73 +1713,74 @@ public static class SimpleFieldRubyConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SimpleFieldRuby? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SimpleFieldRuby value)
     where OpenXmlElementType: DXW.SimpleFieldRuby, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetInstruction(openXmlElement, value?.Instruction);
-      SetFieldLock(openXmlElement, value?.FieldLock);
-      SetDirty(openXmlElement, value?.Dirty);
-      SetFieldData(openXmlElement, value?.FieldData);
-      SetCustomXmlRuby(openXmlElement, value?.CustomXmlRuby);
-      SetChildSimpleFieldRuby(openXmlElement, value?.ChildSimpleFieldRuby);
-      SetHyperlinkRuby(openXmlElement, value?.HyperlinkRuby);
-      SetRun(openXmlElement, value?.Run);
-      SetSdtRunRuby(openXmlElement, value?.SdtRunRuby);
-      SetProofError(openXmlElement, value?.ProofError);
-      SetPermStart(openXmlElement, value?.PermStart);
-      SetPermEnd(openXmlElement, value?.PermEnd);
-      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
-      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
-      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
-      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
-      SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
-      SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
-      SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
-      SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
-      SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
-      SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
-      SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
-      SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
-      SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
-      SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
-      SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
-      SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
-      SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
-      SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
-      SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
-      SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
-      SetInsertedRun(openXmlElement, value?.InsertedRun);
-      SetDeletedRun(openXmlElement, value?.DeletedRun);
-      SetMoveFromRun(openXmlElement, value?.MoveFromRun);
-      SetMoveToRun(openXmlElement, value?.MoveToRun);
-      SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
-      SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
-      SetParagraph(openXmlElement, value?.Paragraph);
-      SetOfficeMath(openXmlElement, value?.OfficeMath);
-      SetAccent(openXmlElement, value?.Accent);
-      SetBar(openXmlElement, value?.Bar);
-      SetBox(openXmlElement, value?.Box);
-      SetBorderBox(openXmlElement, value?.BorderBox);
-      SetDelimiter(openXmlElement, value?.Delimiter);
-      SetEquationArray(openXmlElement, value?.EquationArray);
-      SetFraction(openXmlElement, value?.Fraction);
-      SetMathFunction(openXmlElement, value?.MathFunction);
-      SetGroupChar(openXmlElement, value?.GroupChar);
-      SetLimitLower(openXmlElement, value?.LimitLower);
-      SetLimitUpper(openXmlElement, value?.LimitUpper);
-      SetMatrix(openXmlElement, value?.Matrix);
-      SetNary(openXmlElement, value?.Nary);
-      SetPhantom(openXmlElement, value?.Phantom);
-      SetRadical(openXmlElement, value?.Radical);
-      SetPreSubSuper(openXmlElement, value?.PreSubSuper);
-      SetSubscript(openXmlElement, value?.Subscript);
-      SetSubSuperscript(openXmlElement, value?.SubSuperscript);
-      SetSuperscript(openXmlElement, value?.Superscript);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.SimpleFieldRuby openXmlElement, DMW.SimpleFieldRuby value)
+  {
+    SetInstruction(openXmlElement, value?.Instruction);
+    SetFieldLock(openXmlElement, value?.FieldLock);
+    SetDirty(openXmlElement, value?.Dirty);
+    SetFieldData(openXmlElement, value?.FieldData);
+    SetCustomXmlRuby(openXmlElement, value?.CustomXmlRuby);
+    SetChildSimpleFieldRuby(openXmlElement, value?.ChildSimpleFieldRuby);
+    SetHyperlinkRuby(openXmlElement, value?.HyperlinkRuby);
+    SetRun(openXmlElement, value?.Run);
+    SetSdtRunRuby(openXmlElement, value?.SdtRunRuby);
+    SetProofError(openXmlElement, value?.ProofError);
+    SetPermStart(openXmlElement, value?.PermStart);
+    SetPermEnd(openXmlElement, value?.PermEnd);
+    SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+    SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+    SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+    SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
+    SetMoveFromRangeStart(openXmlElement, value?.MoveFromRangeStart);
+    SetMoveFromRangeEnd(openXmlElement, value?.MoveFromRangeEnd);
+    SetMoveToRangeStart(openXmlElement, value?.MoveToRangeStart);
+    SetMoveToRangeEnd(openXmlElement, value?.MoveToRangeEnd);
+    SetCustomXmlInsRangeStart(openXmlElement, value?.CustomXmlInsRangeStart);
+    SetCustomXmlInsRangeEnd(openXmlElement, value?.CustomXmlInsRangeEnd);
+    SetCustomXmlDelRangeStart(openXmlElement, value?.CustomXmlDelRangeStart);
+    SetCustomXmlDelRangeEnd(openXmlElement, value?.CustomXmlDelRangeEnd);
+    SetCustomXmlMoveFromRangeStart(openXmlElement, value?.CustomXmlMoveFromRangeStart);
+    SetCustomXmlMoveFromRangeEnd(openXmlElement, value?.CustomXmlMoveFromRangeEnd);
+    SetCustomXmlMoveToRangeStart(openXmlElement, value?.CustomXmlMoveToRangeStart);
+    SetCustomXmlMoveToRangeEnd(openXmlElement, value?.CustomXmlMoveToRangeEnd);
+    SetCustomXmlConflictInsertionRangeStart(openXmlElement, value?.CustomXmlConflictInsertionRangeStart);
+    SetCustomXmlConflictInsertionRangeEnd(openXmlElement, value?.CustomXmlConflictInsertionRangeEnd);
+    SetCustomXmlConflictDeletionRangeStart(openXmlElement, value?.CustomXmlConflictDeletionRangeStart);
+    SetCustomXmlConflictDeletionRangeEnd(openXmlElement, value?.CustomXmlConflictDeletionRangeEnd);
+    SetInsertedRun(openXmlElement, value?.InsertedRun);
+    SetDeletedRun(openXmlElement, value?.DeletedRun);
+    SetMoveFromRun(openXmlElement, value?.MoveFromRun);
+    SetMoveToRun(openXmlElement, value?.MoveToRun);
+    SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
+    SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    SetParagraph(openXmlElement, value?.Paragraph);
+    SetOfficeMath(openXmlElement, value?.OfficeMath);
+    SetAccent(openXmlElement, value?.Accent);
+    SetBar(openXmlElement, value?.Bar);
+    SetBox(openXmlElement, value?.Box);
+    SetBorderBox(openXmlElement, value?.BorderBox);
+    SetDelimiter(openXmlElement, value?.Delimiter);
+    SetEquationArray(openXmlElement, value?.EquationArray);
+    SetFraction(openXmlElement, value?.Fraction);
+    SetMathFunction(openXmlElement, value?.MathFunction);
+    SetGroupChar(openXmlElement, value?.GroupChar);
+    SetLimitLower(openXmlElement, value?.LimitLower);
+    SetLimitUpper(openXmlElement, value?.LimitUpper);
+    SetMatrix(openXmlElement, value?.Matrix);
+    SetNary(openXmlElement, value?.Nary);
+    SetPhantom(openXmlElement, value?.Phantom);
+    SetRadical(openXmlElement, value?.Radical);
+    SetPreSubSuper(openXmlElement, value?.PreSubSuper);
+    SetSubscript(openXmlElement, value?.Subscript);
+    SetSubSuperscript(openXmlElement, value?.SubSuperscript);
+    SetSuperscript(openXmlElement, value?.Superscript);
+    }
+  }

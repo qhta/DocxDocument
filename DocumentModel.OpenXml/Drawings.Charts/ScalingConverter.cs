@@ -10,27 +10,17 @@ public static class ScalingConverter
   /// </summary>
   private static Double? GetLogBase(DXDrawCharts.Scaling openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>()?.Val);
   }
   
   private static bool CmpLogBase(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.LogBase", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.LogBase>()?.Val, value, diffs, objName, "LogBase");
   }
   
   private static void SetLogBase(DXDrawCharts.Scaling openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LogBase>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.LogBase{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.LogBase,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -50,13 +40,15 @@ public static class ScalingConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Orientation>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Orientation, DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDrawsCharts.OrientationKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDrawsCharts.OrientationKind>(itemElement, (DMDrawsCharts.OrientationKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Orientation, DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDrawsCharts.OrientationKind>((DMDrawsCharts.OrientationKind)value));
   }
   
   /// <summary>
@@ -64,27 +56,17 @@ public static class ScalingConverter
   /// </summary>
   private static Double? GetMaxAxisValue(DXDrawCharts.Scaling openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>()?.Val);
   }
   
   private static bool CmpMaxAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.MaxAxisValue", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.MaxAxisValue>()?.Val, value, diffs, objName, "MaxAxisValue");
   }
   
   private static void SetMaxAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MaxAxisValue>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.MaxAxisValue{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.MaxAxisValue,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -92,27 +74,17 @@ public static class ScalingConverter
   /// </summary>
   private static Double? GetMinAxisValue(DXDrawCharts.Scaling openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>()?.Val);
   }
   
   private static bool CmpMinAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.MinAxisValue", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.MinAxisValue>()?.Val, value, diffs, objName, "MinAxisValue");
   }
   
   private static void SetMinAxisValue(DXDrawCharts.Scaling openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinAxisValue>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXDrawCharts.MinAxisValue{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXDrawCharts.MinAxisValue,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
@@ -181,19 +153,20 @@ public static class ScalingConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Scaling? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Scaling value)
     where OpenXmlElementType: DXDrawCharts.Scaling, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLogBase(openXmlElement, value?.LogBase);
-      SetOrientation(openXmlElement, value?.Orientation);
-      SetMaxAxisValue(openXmlElement, value?.MaxAxisValue);
-      SetMinAxisValue(openXmlElement, value?.MinAxisValue);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.Scaling value)
+  {
+    SetLogBase(openXmlElement, value?.LogBase);
+    SetOrientation(openXmlElement, value?.Orientation);
+    SetMaxAxisValue(openXmlElement, value?.MaxAxisValue);
+    SetMinAxisValue(openXmlElement, value?.MinAxisValue);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

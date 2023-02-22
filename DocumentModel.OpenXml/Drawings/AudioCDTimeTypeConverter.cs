@@ -73,16 +73,17 @@ public static class AudioCDTimeTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioCDTimeType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioCDTimeType value)
     where OpenXmlElementType: DXDraw.AudioCDTimeType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetTrack(openXmlElement, value?.Track);
-      SetTime(openXmlElement, value?.Time);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.AudioCDTimeType openXmlElement, DMDraws.AudioCDTimeType value)
+  {
+    SetTrack(openXmlElement, value?.Track);
+    SetTime(openXmlElement, value?.Time);
+    }
+  }

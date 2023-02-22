@@ -273,23 +273,24 @@ public static class HeaderFooterConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.HeaderFooter? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.HeaderFooter value)
     where OpenXmlElementType: DXO2016DrawChartDraw.HeaderFooter, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
-      SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);
-      SetDifferentFirst(openXmlElement, value?.DifferentFirst);
-      SetOddHeaderXsdstring(openXmlElement, value?.OddHeaderXsdstring);
-      SetOddFooterXsdstring(openXmlElement, value?.OddFooterXsdstring);
-      SetEvenHeaderXsdstring(openXmlElement, value?.EvenHeaderXsdstring);
-      SetEvenFooterXsdstring(openXmlElement, value?.EvenFooterXsdstring);
-      SetFirstHeaderXsdstring(openXmlElement, value?.FirstHeaderXsdstring);
-      SetFirstFooterXsdstring(openXmlElement, value?.FirstFooterXsdstring);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.HeaderFooter openXmlElement, DMDrawsChartDraws.HeaderFooter value)
+  {
+    SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
+    SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);
+    SetDifferentFirst(openXmlElement, value?.DifferentFirst);
+    SetOddHeaderXsdstring(openXmlElement, value?.OddHeaderXsdstring);
+    SetOddFooterXsdstring(openXmlElement, value?.OddFooterXsdstring);
+    SetEvenHeaderXsdstring(openXmlElement, value?.EvenHeaderXsdstring);
+    SetEvenFooterXsdstring(openXmlElement, value?.EvenFooterXsdstring);
+    SetFirstHeaderXsdstring(openXmlElement, value?.FirstHeaderXsdstring);
+    SetFirstFooterXsdstring(openXmlElement, value?.FirstFooterXsdstring);
+    }
+  }

@@ -96,17 +96,18 @@ public static class Vector3DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Vector3DType? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Vector3DType value)
     where OpenXmlElementType: DXDraw.Vector3DType, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDx(openXmlElement, value?.Dx);
-      SetDy(openXmlElement, value?.Dy);
-      SetDz(openXmlElement, value?.Dz);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Vector3DType openXmlElement, DMDraws.Vector3DType value)
+  {
+    SetDx(openXmlElement, value?.Dx);
+    SetDy(openXmlElement, value?.Dy);
+    SetDz(openXmlElement, value?.Dz);
+    }
+  }

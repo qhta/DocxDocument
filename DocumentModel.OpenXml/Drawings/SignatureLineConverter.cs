@@ -33,22 +33,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetId(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetProviderId(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.ProviderId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.ProviderId);
   }
   
   private static bool CmpProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ProviderId?.Value == value) return true;
-    diffs?.Add(objName, "ProviderId", openXmlElement?.ProviderId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.ProviderId, value, diffs, objName, "ProviderId");
   }
   
   private static void SetProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.ProviderId = new StringValue { Value = value };
-    else
-      openXmlElement.ProviderId = null;
+    openXmlElement.ProviderId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -148,22 +138,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.SuggestedSigner?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SuggestedSigner);
   }
   
   private static bool CmpSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SuggestedSigner?.Value == value) return true;
-    diffs?.Add(objName, "SuggestedSigner", openXmlElement?.SuggestedSigner?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SuggestedSigner, value, diffs, objName, "SuggestedSigner");
   }
   
   private static void SetSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SuggestedSigner = new StringValue { Value = value };
-    else
-      openXmlElement.SuggestedSigner = null;
+    openXmlElement.SuggestedSigner = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -171,22 +156,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.SuggestedSigner2?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SuggestedSigner2);
   }
   
   private static bool CmpSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SuggestedSigner2?.Value == value) return true;
-    diffs?.Add(objName, "SuggestedSigner2", openXmlElement?.SuggestedSigner2?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SuggestedSigner2, value, diffs, objName, "SuggestedSigner2");
   }
   
   private static void SetSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SuggestedSigner2 = new StringValue { Value = value };
-    else
-      openXmlElement.SuggestedSigner2 = null;
+    openXmlElement.SuggestedSigner2 = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -194,22 +174,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.SuggestedSignerEmail?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SuggestedSignerEmail);
   }
   
   private static bool CmpSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SuggestedSignerEmail?.Value == value) return true;
-    diffs?.Add(objName, "SuggestedSignerEmail", openXmlElement?.SuggestedSignerEmail?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SuggestedSignerEmail, value, diffs, objName, "SuggestedSignerEmail");
   }
   
   private static void SetSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SuggestedSignerEmail = new StringValue { Value = value };
-    else
-      openXmlElement.SuggestedSignerEmail = null;
+    openXmlElement.SuggestedSignerEmail = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -217,22 +192,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetSigningInstructions(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.SigningInstructions?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SigningInstructions);
   }
   
   private static bool CmpSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SigningInstructions?.Value == value) return true;
-    diffs?.Add(objName, "SigningInstructions", openXmlElement?.SigningInstructions?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SigningInstructions, value, diffs, objName, "SigningInstructions");
   }
   
   private static void SetSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SigningInstructions = new StringValue { Value = value };
-    else
-      openXmlElement.SigningInstructions = null;
+    openXmlElement.SigningInstructions = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -240,22 +210,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetAdditionalXml(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.AdditionalXml?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.AdditionalXml);
   }
   
   private static bool CmpAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AdditionalXml?.Value == value) return true;
-    diffs?.Add(objName, "AdditionalXml", openXmlElement?.AdditionalXml?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.AdditionalXml, value, diffs, objName, "AdditionalXml");
   }
   
   private static void SetAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.AdditionalXml = new StringValue { Value = value };
-    else
-      openXmlElement.AdditionalXml = null;
+    openXmlElement.AdditionalXml = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -263,22 +228,17 @@ public static class SignatureLineConverter
   /// </summary>
   private static String? GetSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement)
   {
-    return openXmlElement?.SignatureProviderUrl?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SignatureProviderUrl);
   }
   
   private static bool CmpSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SignatureProviderUrl?.Value == value) return true;
-    diffs?.Add(objName, "SignatureProviderUrl", openXmlElement?.SignatureProviderUrl?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SignatureProviderUrl, value, diffs, objName, "SignatureProviderUrl");
   }
   
   private static void SetSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SignatureProviderUrl = new StringValue { Value = value };
-    else
-      openXmlElement.SignatureProviderUrl = null;
+    openXmlElement.SignatureProviderUrl = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.SignatureLine? CreateModelElement(DXO2013Draw.SignatureLine? openXmlElement)
@@ -339,26 +299,27 @@ public static class SignatureLineConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SignatureLine? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SignatureLine value)
     where OpenXmlElementType: DXO2013Draw.SignatureLine, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetIsSignatureLine(openXmlElement, value?.IsSignatureLine);
-      SetId(openXmlElement, value?.Id);
-      SetProviderId(openXmlElement, value?.ProviderId);
-      SetSigningInstructionsSet(openXmlElement, value?.SigningInstructionsSet);
-      SetAllowComments(openXmlElement, value?.AllowComments);
-      SetShowSignDate(openXmlElement, value?.ShowSignDate);
-      SetSuggestedSigner(openXmlElement, value?.SuggestedSigner);
-      SetSuggestedSigner2(openXmlElement, value?.SuggestedSigner2);
-      SetSuggestedSignerEmail(openXmlElement, value?.SuggestedSignerEmail);
-      SetSigningInstructions(openXmlElement, value?.SigningInstructions);
-      SetAdditionalXml(openXmlElement, value?.AdditionalXml);
-      SetSignatureProviderUrl(openXmlElement, value?.SignatureProviderUrl);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013Draw.SignatureLine openXmlElement, DMDraws.SignatureLine value)
+  {
+    SetIsSignatureLine(openXmlElement, value?.IsSignatureLine);
+    SetId(openXmlElement, value?.Id);
+    SetProviderId(openXmlElement, value?.ProviderId);
+    SetSigningInstructionsSet(openXmlElement, value?.SigningInstructionsSet);
+    SetAllowComments(openXmlElement, value?.AllowComments);
+    SetShowSignDate(openXmlElement, value?.ShowSignDate);
+    SetSuggestedSigner(openXmlElement, value?.SuggestedSigner);
+    SetSuggestedSigner2(openXmlElement, value?.SuggestedSigner2);
+    SetSuggestedSignerEmail(openXmlElement, value?.SuggestedSignerEmail);
+    SetSigningInstructions(openXmlElement, value?.SigningInstructions);
+    SetAdditionalXml(openXmlElement, value?.AdditionalXml);
+    SetSignatureProviderUrl(openXmlElement, value?.SignatureProviderUrl);
+    }
+  }

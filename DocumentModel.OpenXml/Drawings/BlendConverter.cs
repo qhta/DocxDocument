@@ -80,16 +80,17 @@ public static class BlendConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blend? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blend value)
     where OpenXmlElementType: DXDraw.Blend, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBlendMode(openXmlElement, value?.BlendMode);
-      SetEffectContainer(openXmlElement, value?.EffectContainer);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.Blend openXmlElement, DMDraws.Blend value)
+  {
+    SetBlendMode(openXmlElement, value?.BlendMode);
+    SetEffectContainer(openXmlElement, value?.EffectContainer);
+    }
+  }

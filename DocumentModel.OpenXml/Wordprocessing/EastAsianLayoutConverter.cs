@@ -30,22 +30,17 @@ public static class EastAsianLayoutConverter
   /// </summary>
   private static Boolean? GetCombine(DXW.EastAsianLayout openXmlElement)
   {
-    return openXmlElement?.Combine?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Combine);
   }
   
   private static bool CmpCombine(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Combine?.Value == value) return true;
-    diffs?.Add(objName, "Combine", openXmlElement?.Combine?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Combine, value, diffs, objName, "Combine");
   }
   
   private static void SetCombine(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Combine = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Combine = null;
+    openXmlElement.Combine = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -71,22 +66,17 @@ public static class EastAsianLayoutConverter
   /// </summary>
   private static Boolean? GetVertical(DXW.EastAsianLayout openXmlElement)
   {
-    return openXmlElement?.Vertical?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Vertical);
   }
   
   private static bool CmpVertical(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Vertical?.Value == value) return true;
-    diffs?.Add(objName, "Vertical", openXmlElement?.Vertical?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Vertical, value, diffs, objName, "Vertical");
   }
   
   private static void SetVertical(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Vertical = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Vertical = null;
+    openXmlElement.Vertical = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   /// <summary>
@@ -94,22 +84,17 @@ public static class EastAsianLayoutConverter
   /// </summary>
   private static Boolean? GetVerticalCompress(DXW.EastAsianLayout openXmlElement)
   {
-    return openXmlElement?.VerticalCompress?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.VerticalCompress);
   }
   
   private static bool CmpVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.VerticalCompress?.Value == value) return true;
-    diffs?.Add(objName, "VerticalCompress", openXmlElement?.VerticalCompress?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.VerticalCompress, value, diffs, objName, "VerticalCompress");
   }
   
   private static void SetVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.VerticalCompress = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.VerticalCompress = null;
+    openXmlElement.VerticalCompress = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
@@ -149,19 +134,20 @@ public static class EastAsianLayoutConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EastAsianLayout? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EastAsianLayout value)
     where OpenXmlElementType: DXW.EastAsianLayout, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetCombine(openXmlElement, value?.Combine);
-      SetCombineBrackets(openXmlElement, value?.CombineBrackets);
-      SetVertical(openXmlElement, value?.Vertical);
-      SetVerticalCompress(openXmlElement, value?.VerticalCompress);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.EastAsianLayout openXmlElement, DMW.EastAsianLayout value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetCombine(openXmlElement, value?.Combine);
+    SetCombineBrackets(openXmlElement, value?.CombineBrackets);
+    SetVertical(openXmlElement, value?.Vertical);
+    SetVerticalCompress(openXmlElement, value?.VerticalCompress);
+    }
+  }

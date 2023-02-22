@@ -94,17 +94,18 @@ public static class MailMergeRecipientDataPartConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MailMergeRecipientDataPart? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMPack.MailMergeRecipientDataPart value)
     where OpenXmlElementType: DXPack.MailMergeRecipientDataPart, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetRecipients(openXmlElement, value?.Recipients);
-      SetMailMergeRecipients(openXmlElement, value?.MailMergeRecipients);
-      //SetRelationshipType(openXmlElement, value?.RelationshipType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXPack.MailMergeRecipientDataPart openXmlElement, DMPack.MailMergeRecipientDataPart value)
+  {
+    SetRecipients(openXmlElement, value?.Recipients);
+    SetMailMergeRecipients(openXmlElement, value?.MailMergeRecipients);
+    //SetRelationshipType(openXmlElement, value?.RelationshipType);
+    }
+  }

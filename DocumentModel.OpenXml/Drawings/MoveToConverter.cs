@@ -59,15 +59,16 @@ public static class MoveToConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.MoveTo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.MoveTo value)
     where OpenXmlElementType: DXDraw.MoveTo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetPoint(openXmlElement, value?.Point);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.MoveTo openXmlElement, DMDraws.MoveTo value)
+  {
+    SetPoint(openXmlElement, value?.Point);
+    }
+  }

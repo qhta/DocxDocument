@@ -288,23 +288,24 @@ public static class OfficeMenuConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.OfficeMenu? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.OfficeMenu value)
     where OpenXmlElementType: DXOCustUI.OfficeMenu, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetUnsizedControlClone(openXmlElement, value?.UnsizedControlClone);
-      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
-      SetCheckBox(openXmlElement, value?.CheckBox);
-      SetUnsizedGallery(openXmlElement, value?.UnsizedGallery);
-      SetUnsizedToggleButton(openXmlElement, value?.UnsizedToggleButton);
-      SetMenuSeparator(openXmlElement, value?.MenuSeparator);
-      SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
-      SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
-      SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXOCustUI.OfficeMenu openXmlElement, DMUI.OfficeMenu value)
+  {
+    SetUnsizedControlClone(openXmlElement, value?.UnsizedControlClone);
+    SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+    SetCheckBox(openXmlElement, value?.CheckBox);
+    SetUnsizedGallery(openXmlElement, value?.UnsizedGallery);
+    SetUnsizedToggleButton(openXmlElement, value?.UnsizedToggleButton);
+    SetMenuSeparator(openXmlElement, value?.MenuSeparator);
+    SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
+    SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
+    SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
+    }
+  }

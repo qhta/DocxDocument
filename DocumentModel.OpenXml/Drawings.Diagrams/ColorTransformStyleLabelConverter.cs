@@ -10,22 +10,17 @@ public static class ColorTransformStyleLabelConverter
   /// </summary>
   private static String? GetName(DXDrawDgms.ColorTransformStyleLabel openXmlElement)
   {
-    return openXmlElement?.Name?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
   private static bool CmpName(DXDrawDgms.ColorTransformStyleLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Name?.Value == value) return true;
-    diffs?.Add(objName, "Name", openXmlElement?.Name?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
   private static void SetName(DXDrawDgms.ColorTransformStyleLabel openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Name = new StringValue { Value = value };
-    else
-      openXmlElement.Name = null;
+    openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -277,22 +272,23 @@ public static class ColorTransformStyleLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformStyleLabel? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformStyleLabel value)
     where OpenXmlElementType: DXDrawDgms.ColorTransformStyleLabel, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetName(openXmlElement, value?.Name);
-      SetFillColorList(openXmlElement, value?.FillColorList);
-      SetLineColorList(openXmlElement, value?.LineColorList);
-      SetEffectColorList(openXmlElement, value?.EffectColorList);
-      SetTextLineColorList(openXmlElement, value?.TextLineColorList);
-      SetTextFillColorList(openXmlElement, value?.TextFillColorList);
-      SetTextEffectColorList(openXmlElement, value?.TextEffectColorList);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDrawDgms.ColorTransformStyleLabel openXmlElement, DMDrawsDgms.ColorTransformStyleLabel value)
+  {
+    SetName(openXmlElement, value?.Name);
+    SetFillColorList(openXmlElement, value?.FillColorList);
+    SetLineColorList(openXmlElement, value?.LineColorList);
+    SetEffectColorList(openXmlElement, value?.EffectColorList);
+    SetTextLineColorList(openXmlElement, value?.TextLineColorList);
+    SetTextFillColorList(openXmlElement, value?.TextFillColorList);
+    SetTextEffectColorList(openXmlElement, value?.TextEffectColorList);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

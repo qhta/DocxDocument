@@ -91,16 +91,17 @@ public static class PrimaryItemConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.PrimaryItem? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.PrimaryItem value)
     where OpenXmlElementType: DXO2010CustUI.PrimaryItem, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetBackstageRegularButton(openXmlElement, value?.BackstageRegularButton);
-      SetBackstagePrimaryMenu(openXmlElement, value?.BackstagePrimaryMenu);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2010CustUI.PrimaryItem openXmlElement, DM.PrimaryItem value)
+  {
+    SetBackstageRegularButton(openXmlElement, value?.BackstageRegularButton);
+    SetBackstagePrimaryMenu(openXmlElement, value?.BackstagePrimaryMenu);
+    }
+  }

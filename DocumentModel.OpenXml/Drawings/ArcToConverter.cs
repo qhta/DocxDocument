@@ -10,22 +10,17 @@ public static class ArcToConverter
   /// </summary>
   private static String? GetWidthRadius(DXDraw.ArcTo openXmlElement)
   {
-    return openXmlElement?.WidthRadius?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.WidthRadius);
   }
   
   private static bool CmpWidthRadius(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.WidthRadius?.Value == value) return true;
-    diffs?.Add(objName, "WidthRadius", openXmlElement?.WidthRadius?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.WidthRadius, value, diffs, objName, "WidthRadius");
   }
   
   private static void SetWidthRadius(DXDraw.ArcTo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.WidthRadius = new StringValue { Value = value };
-    else
-      openXmlElement.WidthRadius = null;
+    openXmlElement.WidthRadius = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ArcToConverter
   /// </summary>
   private static String? GetHeightRadius(DXDraw.ArcTo openXmlElement)
   {
-    return openXmlElement?.HeightRadius?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.HeightRadius);
   }
   
   private static bool CmpHeightRadius(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.HeightRadius?.Value == value) return true;
-    diffs?.Add(objName, "HeightRadius", openXmlElement?.HeightRadius?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.HeightRadius, value, diffs, objName, "HeightRadius");
   }
   
   private static void SetHeightRadius(DXDraw.ArcTo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.HeightRadius = new StringValue { Value = value };
-    else
-      openXmlElement.HeightRadius = null;
+    openXmlElement.HeightRadius = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +46,17 @@ public static class ArcToConverter
   /// </summary>
   private static String? GetStartAngle(DXDraw.ArcTo openXmlElement)
   {
-    return openXmlElement?.StartAngle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.StartAngle);
   }
   
   private static bool CmpStartAngle(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.StartAngle?.Value == value) return true;
-    diffs?.Add(objName, "StartAngle", openXmlElement?.StartAngle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.StartAngle, value, diffs, objName, "StartAngle");
   }
   
   private static void SetStartAngle(DXDraw.ArcTo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.StartAngle = new StringValue { Value = value };
-    else
-      openXmlElement.StartAngle = null;
+    openXmlElement.StartAngle = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -79,22 +64,17 @@ public static class ArcToConverter
   /// </summary>
   private static String? GetSwingAngle(DXDraw.ArcTo openXmlElement)
   {
-    return openXmlElement?.SwingAngle?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.SwingAngle);
   }
   
   private static bool CmpSwingAngle(DXDraw.ArcTo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.SwingAngle?.Value == value) return true;
-    diffs?.Add(objName, "SwingAngle", openXmlElement?.SwingAngle?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.SwingAngle, value, diffs, objName, "SwingAngle");
   }
   
   private static void SetSwingAngle(DXDraw.ArcTo openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.SwingAngle = new StringValue { Value = value };
-    else
-      openXmlElement.SwingAngle = null;
+    openXmlElement.SwingAngle = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ArcTo? CreateModelElement(DXDraw.ArcTo? openXmlElement)
@@ -131,18 +111,19 @@ public static class ArcToConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArcTo? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArcTo value)
     where OpenXmlElementType: DXDraw.ArcTo, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetWidthRadius(openXmlElement, value?.WidthRadius);
-      SetHeightRadius(openXmlElement, value?.HeightRadius);
-      SetStartAngle(openXmlElement, value?.StartAngle);
-      SetSwingAngle(openXmlElement, value?.SwingAngle);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXDraw.ArcTo openXmlElement, DMDraws.ArcTo value)
+  {
+    SetWidthRadius(openXmlElement, value?.WidthRadius);
+    SetHeightRadius(openXmlElement, value?.HeightRadius);
+    SetStartAngle(openXmlElement, value?.StartAngle);
+    SetSwingAngle(openXmlElement, value?.SwingAngle);
+    }
+  }

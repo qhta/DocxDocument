@@ -71,22 +71,17 @@ public static class SeriesConverter
   /// </summary>
   private static String? GetUniqueId(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return openXmlElement?.UniqueId?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.UniqueId);
   }
   
   private static bool CmpUniqueId(DXO2016DrawChartDraw.Series openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.UniqueId?.Value == value) return true;
-    diffs?.Add(objName, "UniqueId", openXmlElement?.UniqueId?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.UniqueId, value, diffs, objName, "UniqueId");
   }
   
   private static void SetUniqueId(DXO2016DrawChartDraw.Series openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.UniqueId = new StringValue { Value = value };
-    else
-      openXmlElement.UniqueId = null;
+    openXmlElement.UniqueId = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -241,11 +236,11 @@ public static class SeriesConverter
   
   private static bool CmpDataPoints(DXO2016DrawChartDraw.Series openXmlElement, Collection<DMDrawsChartDraws.DataPoint>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataPoint>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.DataPoint>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -262,7 +257,7 @@ public static class SeriesConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -309,27 +304,17 @@ public static class SeriesConverter
   
   private static UInt32? GetDataId(DXO2016DrawChartDraw.Series openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataId>()?.Val?.Value;
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataId>()?.Val);
   }
   
   private static bool CmpDataId(DXO2016DrawChartDraw.Series openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataId>();
-    if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXO2016DrawChartDraw.DataId", itemElement?.Val?.Value, value);
-    return false;
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataId>()?.Val, value, diffs, objName, "DataId");
   }
   
   private static void SetDataId(DXO2016DrawChartDraw.Series openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.DataId>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = new DXO2016DrawChartDraw.DataId{ Val = value };
-      openXmlElement.AddChild(itemElement);
-    }
+    SimpleValueConverter.SetValue<DXO2016DrawChartDraw.DataId,System.UInt32>(openXmlElement, value);
   }
   
   private static DMDrawsChartDraws.SeriesLayoutProperties? GetSeriesLayoutProperties(DXO2016DrawChartDraw.Series openXmlElement)
@@ -374,11 +359,11 @@ public static class SeriesConverter
   
   private static bool CmpAxisIds(DXO2016DrawChartDraw.Series openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
   {
+    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.AxisId>();
+    var origElementsCount = origElements.Count();
+    var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
     {
-      var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.AxisId>();
-      var origElementsCount = origElements.Count();
-      var modelElementsCount = value.Count();
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
@@ -395,7 +380,7 @@ public static class SeriesConverter
       }
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
+    if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
@@ -507,29 +492,30 @@ public static class SeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Series? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Series value)
     where OpenXmlElementType: DXO2016DrawChartDraw.Series, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetLayoutId(openXmlElement, value?.LayoutId);
-      SetHidden(openXmlElement, value?.Hidden);
-      SetOwnerIdx(openXmlElement, value?.OwnerIdx);
-      SetUniqueId(openXmlElement, value?.UniqueId);
-      SetFormatIdx(openXmlElement, value?.FormatIdx);
-      SetText(openXmlElement, value?.Text);
-      SetShapeProperties(openXmlElement, value?.ShapeProperties);
-      SetValueColors(openXmlElement, value?.ValueColors);
-      SetValueColorPositions(openXmlElement, value?.ValueColorPositions);
-      SetDataPoints(openXmlElement, value?.DataPoints);
-      SetDataLabels(openXmlElement, value?.DataLabels);
-      SetDataId(openXmlElement, value?.DataId);
-      SetSeriesLayoutProperties(openXmlElement, value?.SeriesLayoutProperties);
-      SetAxisIds(openXmlElement, value?.AxisIds);
-      SetExtensionList(openXmlElement, value?.ExtensionList);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Series openXmlElement, DMDrawsChartDraws.Series value)
+  {
+    SetLayoutId(openXmlElement, value?.LayoutId);
+    SetHidden(openXmlElement, value?.Hidden);
+    SetOwnerIdx(openXmlElement, value?.OwnerIdx);
+    SetUniqueId(openXmlElement, value?.UniqueId);
+    SetFormatIdx(openXmlElement, value?.FormatIdx);
+    SetText(openXmlElement, value?.Text);
+    SetShapeProperties(openXmlElement, value?.ShapeProperties);
+    SetValueColors(openXmlElement, value?.ValueColors);
+    SetValueColorPositions(openXmlElement, value?.ValueColorPositions);
+    SetDataPoints(openXmlElement, value?.DataPoints);
+    SetDataLabels(openXmlElement, value?.DataLabels);
+    SetDataId(openXmlElement, value?.DataId);
+    SetSeriesLayoutProperties(openXmlElement, value?.SeriesLayoutProperties);
+    SetAxisIds(openXmlElement, value?.AxisIds);
+    SetExtensionList(openXmlElement, value?.ExtensionList);
+    }
+  }

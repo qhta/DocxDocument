@@ -10,22 +10,17 @@ public static class DocPartTypesConverter
   /// </summary>
   private static Boolean? GetAll(DXW.DocPartTypes openXmlElement)
   {
-    return openXmlElement?.All?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.All);
   }
   
   private static bool CmpAll(DXW.DocPartTypes openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.All?.Value == value) return true;
-    diffs?.Add(objName, "All", openXmlElement?.All?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.All, value, diffs, objName, "All");
   }
   
   private static void SetAll(DXW.DocPartTypes openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.All = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.All = null;
+    openXmlElement.All = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   private static DMW.DocPartKind? GetDocPartType(DXW.DocPartTypes openXmlElement)
@@ -42,13 +37,15 @@ public static class DocPartTypesConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DocPartType>();
     if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+      if (value != null)
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(itemElement, (DMW.DocPartKind)value);
+      else
+        itemElement.Remove();
     }
+    else
+    if (value != null)
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
   }
   
   public static DocumentModel.Wordprocessing.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
@@ -79,16 +76,17 @@ public static class DocPartTypesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartTypes? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartTypes value)
     where OpenXmlElementType: DXW.DocPartTypes, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetAll(openXmlElement, value?.All);
-      SetDocPartType(openXmlElement, value?.DocPartType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocPartTypes openXmlElement, DMW.DocPartTypes value)
+  {
+    SetAll(openXmlElement, value?.All);
+    SetDocPartType(openXmlElement, value?.DocPartType);
+    }
+  }

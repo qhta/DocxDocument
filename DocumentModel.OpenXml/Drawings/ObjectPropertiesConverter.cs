@@ -10,22 +10,17 @@ public static class ObjectPropertiesConverter
   /// </summary>
   private static String? GetId(DXO2013Draw.ObjectProperties openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
   private static bool CmpId(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
   private static void SetId(DXO2013Draw.ObjectProperties openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Id = new StringValue { Value = value };
-    else
-      openXmlElement.Id = null;
+    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -56,22 +51,17 @@ public static class ObjectPropertiesConverter
   /// </summary>
   private static String? GetLinkType(DXO2013Draw.ObjectProperties openXmlElement)
   {
-    return openXmlElement?.LinkType?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.LinkType);
   }
   
   private static bool CmpLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.LinkType?.Value == value) return true;
-    diffs?.Add(objName, "LinkType", openXmlElement?.LinkType?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.LinkType, value, diffs, objName, "LinkType");
   }
   
   private static void SetLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.LinkType = new StringValue { Value = value };
-    else
-      openXmlElement.LinkType = null;
+    openXmlElement.LinkType = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DXO2013Draw.ObjectProperties? openXmlElement)
@@ -105,17 +95,18 @@ public static class ObjectPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ObjectProperties? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ObjectProperties value)
     where OpenXmlElementType: DXO2013Draw.ObjectProperties, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetId(openXmlElement, value?.Id);
-      SetIsActiveX(openXmlElement, value?.IsActiveX);
-      SetLinkType(openXmlElement, value?.LinkType);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2013Draw.ObjectProperties openXmlElement, DMDraws.ObjectProperties value)
+  {
+    SetId(openXmlElement, value?.Id);
+    SetIsActiveX(openXmlElement, value?.IsActiveX);
+    SetLinkType(openXmlElement, value?.LinkType);
+    }
+  }

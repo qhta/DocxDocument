@@ -10,22 +10,17 @@ public static class DocPartNameConverter
   /// </summary>
   private static String? GetVal(DXW.DocPartName openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
   private static bool CmpVal(DXW.DocPartName openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
   }
   
   private static void SetVal(DXW.DocPartName openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Val = new StringValue { Value = value };
-    else
-      openXmlElement.Val = null;
+    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class DocPartNameConverter
   /// </summary>
   private static Boolean? GetDecorated(DXW.DocPartName openXmlElement)
   {
-    return openXmlElement?.Decorated?.Value;
+    return BooleanValueConverter.GetValue(openXmlElement?.Decorated);
   }
   
   private static bool CmpDecorated(DXW.DocPartName openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Decorated?.Value == value) return true;
-    diffs?.Add(objName, "Decorated", openXmlElement?.Decorated?.Value, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement?.Decorated, value, diffs, objName, "Decorated");
   }
   
   private static void SetDecorated(DXW.DocPartName openXmlElement, Boolean? value)
   {
-    if (value != null)
-      openXmlElement.Decorated = new OnOffValue { Value = (Boolean)value };
-    else
-      openXmlElement.Decorated = null;
+    openXmlElement.Decorated = BooleanValueConverter.CreateOnOffValue(value);
   }
   
   public static DocumentModel.Wordprocessing.DocPartName? CreateModelElement(DXW.DocPartName? openXmlElement)
@@ -79,16 +69,17 @@ public static class DocPartNameConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartName? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartName value)
     where OpenXmlElementType: DXW.DocPartName, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetVal(openXmlElement, value?.Val);
-      SetDecorated(openXmlElement, value?.Decorated);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.DocPartName openXmlElement, DMW.DocPartName value)
+  {
+    SetVal(openXmlElement, value?.Val);
+    SetDecorated(openXmlElement, value?.Decorated);
+    }
+  }

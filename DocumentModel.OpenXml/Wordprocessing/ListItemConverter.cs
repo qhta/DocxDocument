@@ -10,22 +10,17 @@ public static class ListItemConverter
   /// </summary>
   private static String? GetDisplayText(DXW.ListItem openXmlElement)
   {
-    return openXmlElement?.DisplayText?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.DisplayText);
   }
   
   private static bool CmpDisplayText(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DisplayText?.Value == value) return true;
-    diffs?.Add(objName, "DisplayText", openXmlElement?.DisplayText?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.DisplayText, value, diffs, objName, "DisplayText");
   }
   
   private static void SetDisplayText(DXW.ListItem openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.DisplayText = new StringValue { Value = value };
-    else
-      openXmlElement.DisplayText = null;
+    openXmlElement.DisplayText = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -33,22 +28,17 @@ public static class ListItemConverter
   /// </summary>
   private static String? GetValue(DXW.ListItem openXmlElement)
   {
-    return openXmlElement?.Value?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Value);
   }
   
   private static bool CmpValue(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Value?.Value == value) return true;
-    diffs?.Add(objName, "Value", openXmlElement?.Value?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Value");
   }
   
   private static void SetValue(DXW.ListItem openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Value = new StringValue { Value = value };
-    else
-      openXmlElement.Value = null;
+    openXmlElement.Value = StringValueConverter.CreateStringValue(value);
   }
   
   public static DocumentModel.Wordprocessing.ListItem? CreateModelElement(DXW.ListItem? openXmlElement)
@@ -79,16 +69,17 @@ public static class ListItemConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ListItem? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ListItem value)
     where OpenXmlElementType: DXW.ListItem, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetDisplayText(openXmlElement, value?.DisplayText);
-      SetValue(openXmlElement, value?.Value);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXW.ListItem openXmlElement, DMW.ListItem value)
+  {
+    SetDisplayText(openXmlElement, value?.DisplayText);
+    SetValue(openXmlElement, value?.Value);
+    }
+  }

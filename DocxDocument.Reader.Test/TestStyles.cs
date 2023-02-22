@@ -55,7 +55,7 @@ public class TestStyles : TestBase
     int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
     WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var diffs = new DiffList();
-    if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, null))
+    if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     Assert.That(modelDefinedStylesCount, Is.EqualTo(origDefinedStylesCount), "Invalid defined styles count");
 
@@ -76,7 +76,7 @@ public class TestStyles : TestBase
     var modelParaStyles = document.Styles.ParagraphStyles;
     var modelParaStylesCount = modelParaStyles.Count();
     var definedParaStylesCount = modelParaStyles.Count(item => item.IsDefined);
-    var customParaStylesCount = modelParaStyles.Count(item => item.IsCustom);
+    var customParaStylesCount = modelParaStyles.Count(item => item.IsCustom == true);
     var validParaStylesCount = modelParaStyles.Count(item => item.IsValid);
     WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}, valid {validParaStylesCount}");
 
@@ -93,7 +93,7 @@ public class TestStyles : TestBase
     var modelCharStyles = document.Styles.CharacterStyles;
     var modelCharStylesCount = modelCharStyles.Count();
     var definedCharStylesCount = modelCharStyles.Count(item => item.IsDefined);
-    var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom);
+    var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom == true);
     var validCharStylesCount = modelCharStyles.Count(item => item.IsValid);
     WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}, valid {validCharStylesCount}");
     if (validCharStylesCount < definedCharStylesCount)
@@ -109,7 +109,7 @@ public class TestStyles : TestBase
     var modelTableStyles = document.Styles.TableStyles;
     var modelTableStylesCount = modelTableStyles.Count();
     var definedTableStylesCount = modelTableStyles.Count(item => item.IsDefined);
-    var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom);
+    var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom == true);
     var validTableStylesCount = modelTableStyles.Count(item => item.IsValid);
     WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}, valid {validTableStylesCount}");
     //if (validTableStylesCount < definedTableStylesCount)
@@ -125,7 +125,7 @@ public class TestStyles : TestBase
     var modelNumStyles = document.Styles.NumberingStyles;
     var modelNumStylesCount = modelNumStyles.Count();
     var definedNumStylesCount = modelNumStyles.Count(item => item.IsDefined);
-    var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom);
+    var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom == true);
     var validNumStylesCount = modelNumStyles.Count(item => item.IsValid);
     WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}, valid {validNumStylesCount}");
     //if (validNumStylesCount < definedNumStylesCount)

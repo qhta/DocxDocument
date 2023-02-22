@@ -105,17 +105,18 @@ public static class DataLabelVisibilitiesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelVisibilities? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelVisibilities value)
     where OpenXmlElementType: DXO2016DrawChartDraw.DataLabelVisibilities, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetSeriesName(openXmlElement, value?.SeriesName);
-      SetCategoryName(openXmlElement, value?.CategoryName);
-      SetValue(openXmlElement, value?.Value);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, DMDrawsChartDraws.DataLabelVisibilities value)
+  {
+    SetSeriesName(openXmlElement, value?.SeriesName);
+    SetCategoryName(openXmlElement, value?.CategoryName);
+    SetValue(openXmlElement, value?.Value);
+    }
+  }

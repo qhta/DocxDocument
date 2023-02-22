@@ -51,22 +51,17 @@ public static class CalloutConverter
   /// </summary>
   private static String? GetType(DXVmlO.Callout openXmlElement)
   {
-    return openXmlElement?.Type?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
   private static bool CmpType(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Type?.Value == value) return true;
-    diffs?.Add(objName, "Type", openXmlElement?.Type?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
   private static void SetType(DXVmlO.Callout openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Type = new StringValue { Value = value };
-    else
-      openXmlElement.Type = null;
+    openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -74,22 +69,17 @@ public static class CalloutConverter
   /// </summary>
   private static String? GetGap(DXVmlO.Callout openXmlElement)
   {
-    return openXmlElement?.Gap?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Gap);
   }
   
   private static bool CmpGap(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Gap?.Value == value) return true;
-    diffs?.Add(objName, "Gap", openXmlElement?.Gap?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Gap, value, diffs, objName, "Gap");
   }
   
   private static void SetGap(DXVmlO.Callout openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Gap = new StringValue { Value = value };
-    else
-      openXmlElement.Gap = null;
+    openXmlElement.Gap = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -138,22 +128,17 @@ public static class CalloutConverter
   /// </summary>
   private static String? GetDrop(DXVmlO.Callout openXmlElement)
   {
-    return openXmlElement?.Drop?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Drop);
   }
   
   private static bool CmpDrop(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Drop?.Value == value) return true;
-    diffs?.Add(objName, "Drop", openXmlElement?.Drop?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Drop, value, diffs, objName, "Drop");
   }
   
   private static void SetDrop(DXVmlO.Callout openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Drop = new StringValue { Value = value };
-    else
-      openXmlElement.Drop = null;
+    openXmlElement.Drop = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -161,22 +146,17 @@ public static class CalloutConverter
   /// </summary>
   private static String? GetDistance(DXVmlO.Callout openXmlElement)
   {
-    return openXmlElement?.Distance?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Distance);
   }
   
   private static bool CmpDistance(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Distance?.Value == value) return true;
-    diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Distance, value, diffs, objName, "Distance");
   }
   
   private static void SetDistance(DXVmlO.Callout openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Distance = new StringValue { Value = value };
-    else
-      openXmlElement.Distance = null;
+    openXmlElement.Distance = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -207,22 +187,17 @@ public static class CalloutConverter
   /// </summary>
   private static String? GetLength(DXVmlO.Callout openXmlElement)
   {
-    return openXmlElement?.Length?.Value;
+    return StringValueConverter.GetValue(openXmlElement?.Length);
   }
   
   private static bool CmpLength(DXVmlO.Callout openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Length?.Value == value) return true;
-    diffs?.Add(objName, "Length", openXmlElement?.Length?.Value, value);
-    return false;
+    return StringValueConverter.CmpValue(openXmlElement?.Length, value, diffs, objName, "Length");
   }
   
   private static void SetLength(DXVmlO.Callout openXmlElement, String? value)
   {
-    if (value != null)
-      openXmlElement.Length = new StringValue { Value = value };
-    else
-      openXmlElement.Length = null;
+    openXmlElement.Length = StringValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -381,28 +356,29 @@ public static class CalloutConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Callout? value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Callout value)
     where OpenXmlElementType: DXVmlO.Callout, new()
   {
-    if (value != null)
-    {
-      var openXmlElement = new OpenXmlElementType();
-      SetExtension(openXmlElement, value?.Extension);
-      SetOn(openXmlElement, value?.On);
-      SetType(openXmlElement, value?.Type);
-      SetGap(openXmlElement, value?.Gap);
-      SetAngle(openXmlElement, value?.Angle);
-      SetDropAuto(openXmlElement, value?.DropAuto);
-      SetDrop(openXmlElement, value?.Drop);
-      SetDistance(openXmlElement, value?.Distance);
-      SetLengthSpecified(openXmlElement, value?.LengthSpecified);
-      SetLength(openXmlElement, value?.Length);
-      SetAccentBar(openXmlElement, value?.AccentBar);
-      SetTextBorder(openXmlElement, value?.TextBorder);
-      SetMinusX(openXmlElement, value?.MinusX);
-      SetMinusY(openXmlElement, value?.MinusY);
-      return openXmlElement;
-    }
-    return default;
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
   }
-}
+  
+  public static void UpdateOpenXmlElement(DXVmlO.Callout openXmlElement, DMVml.Callout value)
+  {
+    SetExtension(openXmlElement, value?.Extension);
+    SetOn(openXmlElement, value?.On);
+    SetType(openXmlElement, value?.Type);
+    SetGap(openXmlElement, value?.Gap);
+    SetAngle(openXmlElement, value?.Angle);
+    SetDropAuto(openXmlElement, value?.DropAuto);
+    SetDrop(openXmlElement, value?.Drop);
+    SetDistance(openXmlElement, value?.Distance);
+    SetLengthSpecified(openXmlElement, value?.LengthSpecified);
+    SetLength(openXmlElement, value?.Length);
+    SetAccentBar(openXmlElement, value?.AccentBar);
+    SetTextBorder(openXmlElement, value?.TextBorder);
+    SetMinusX(openXmlElement, value?.MinusX);
+    SetMinusY(openXmlElement, value?.MinusY);
+    }
+  }
