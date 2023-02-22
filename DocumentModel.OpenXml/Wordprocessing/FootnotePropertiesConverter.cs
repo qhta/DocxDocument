@@ -156,5 +156,5 @@ public static class FootnotePropertiesConverter
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);
     SetNumberingStart(openXmlElement, value?.NumberingStart);
     SetNumberingRestart(openXmlElement, value?.NumberingRestart);
-    }
   }
+}

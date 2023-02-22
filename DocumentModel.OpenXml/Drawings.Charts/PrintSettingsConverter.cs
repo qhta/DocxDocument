@@ -169,5 +169,5 @@ public static class PrintSettingsConverter
     SetPageMargins(openXmlElement, value?.PageMargins);
     SetPageSetup(openXmlElement, value?.PageSetup);
     SetLegacyDrawingHeaderFooter(openXmlElement, value?.LegacyDrawingHeaderFooter);
-    }
   }
+}

@@ -135,5 +135,5 @@ public static class SdtContentCheckBoxConverter
     SetChecked(openXmlElement, value?.Checked);
     SetCheckedState(openXmlElement, value?.CheckedState);
     SetUncheckedState(openXmlElement, value?.UncheckedState);
-    }
   }
+}

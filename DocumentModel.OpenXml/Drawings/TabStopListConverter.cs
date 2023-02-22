@@ -97,5 +97,5 @@ public static class TabStopListConverter
   public static void UpdateOpenXmlElement(DXDraw.TabStopList openXmlElement, DMDraws.TabStopList value)
   {
     SetTabStops(openXmlElement, value?.TabStops);
-    }
   }
+}

@@ -156,5 +156,5 @@ public static class GroupCharPropertiesConverter
     SetPosition(openXmlElement, value?.Position);
     SetVerticalJustification(openXmlElement, value?.VerticalJustification);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

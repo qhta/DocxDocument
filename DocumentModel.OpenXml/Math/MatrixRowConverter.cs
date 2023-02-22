@@ -97,5 +97,5 @@ public static class MatrixRowConverter
   public static void UpdateOpenXmlElement(DXMath.MatrixRow openXmlElement, DMMath.MatrixRow value)
   {
     SetBases(openXmlElement, value?.Bases);
-    }
   }
+}

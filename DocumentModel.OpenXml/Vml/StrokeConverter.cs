@@ -838,5 +838,5 @@ public static class StrokeConverter
     SetRightStroke(openXmlElement, value?.RightStroke);
     SetBottomStroke(openXmlElement, value?.BottomStroke);
     SetColumnStroke(openXmlElement, value?.ColumnStroke);
-    }
   }
+}

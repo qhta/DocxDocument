@@ -429,5 +429,5 @@ public static class NotesSlidePartConverter
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     //SetUserDefinedTagsParts(openXmlElement, value?.UserDefinedTagsParts);
     //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
-    }
   }
+}

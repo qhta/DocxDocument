@@ -276,5 +276,5 @@ public static class ShapeConverter
     SetBlipPlaceholder(openXmlElement, value?.BlipPlaceholder);
     SetAdjustList(openXmlElement, value?.AdjustList);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

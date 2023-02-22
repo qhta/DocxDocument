@@ -169,5 +169,5 @@ public static class NaryConverter
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

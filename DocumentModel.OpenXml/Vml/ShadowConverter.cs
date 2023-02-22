@@ -289,5 +289,5 @@ public static class ShadowConverter
     SetOffset2(openXmlElement, value?.Offset2);
     SetOrigin(openXmlElement, value?.Origin);
     SetMatrix(openXmlElement, value?.Matrix);
-    }
   }
+}

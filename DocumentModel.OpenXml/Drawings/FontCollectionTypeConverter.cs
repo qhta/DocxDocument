@@ -136,5 +136,5 @@ public static class FontCollectionTypeConverter
     SetLatinFont(openXmlElement, value?.LatinFont);
     SetEastAsianFont(openXmlElement, value?.EastAsianFont);
     SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
-    }
   }
+}

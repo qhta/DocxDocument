@@ -59,5 +59,5 @@ public static class Extension2Converter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Extension2 openXmlElement, DMDrawsChartDraws.Extension2 value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

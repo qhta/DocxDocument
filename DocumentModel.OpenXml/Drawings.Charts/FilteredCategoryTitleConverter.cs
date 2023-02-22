@@ -70,5 +70,5 @@ public static class FilteredCategoryTitleConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.FilteredCategoryTitle value)
   {
     SetAxisDataSourceType(openXmlElement, value?.AxisDataSourceType);
-    }
   }
+}

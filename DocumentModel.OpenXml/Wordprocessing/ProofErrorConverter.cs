@@ -59,5 +59,5 @@ public static class ProofErrorConverter
   public static void UpdateOpenXmlElement(DXW.ProofError openXmlElement, DMW.ProofError value)
   {
     SetType(openXmlElement, value?.Type);
-    }
   }
+}

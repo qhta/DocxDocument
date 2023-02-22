@@ -91,5 +91,5 @@ public static class MatrixColumnPropertiesConverter
   {
     SetMatrixColumnCount(openXmlElement, value?.MatrixColumnCount);
     SetMatrixColumnJustification(openXmlElement, value?.MatrixColumnJustification);
-    }
   }
+}

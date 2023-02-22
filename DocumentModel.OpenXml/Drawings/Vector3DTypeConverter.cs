@@ -109,5 +109,5 @@ public static class Vector3DTypeConverter
     SetDx(openXmlElement, value?.Dx);
     SetDy(openXmlElement, value?.Dy);
     SetDz(openXmlElement, value?.Dz);
-    }
   }
+}

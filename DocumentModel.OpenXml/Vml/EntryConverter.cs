@@ -85,5 +85,5 @@ public static class EntryConverter
   {
     SetNew(openXmlElement, value?.New);
     SetOld(openXmlElement, value?.Old);
-    }
   }
+}

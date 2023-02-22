@@ -61,5 +61,5 @@ public static class BiLevelConverter
   public static void UpdateOpenXmlElement(DXDraw.BiLevel openXmlElement, DMDraws.BiLevel value)
   {
     SetThreshold(openXmlElement, value?.Threshold);
-    }
   }
+}

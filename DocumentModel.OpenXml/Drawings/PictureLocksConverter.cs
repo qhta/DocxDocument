@@ -367,5 +367,5 @@ public static class PictureLocksConverter
     SetNoChangeShapeType(openXmlElement, value?.NoChangeShapeType);
     SetNoCrop(openXmlElement, value?.NoCrop);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

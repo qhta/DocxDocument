@@ -589,5 +589,5 @@ public static class TextCharacterPropertiesTypeConverter
     SetSmartTagId(openXmlElement, value?.SmartTagId);
     SetBookmark(openXmlElement, value?.Bookmark);
     SetOutline(openXmlElement, value?.Outline);
-    }
   }
+}

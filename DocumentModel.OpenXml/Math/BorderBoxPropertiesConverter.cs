@@ -326,5 +326,5 @@ public static class BorderBoxPropertiesConverter
     SetStrikeBottomLeftToTopRight(openXmlElement, value?.StrikeBottomLeftToTopRight);
     SetStrikeTopLeftToBottomRight(openXmlElement, value?.StrikeTopLeftToBottomRight);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

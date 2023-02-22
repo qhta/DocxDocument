@@ -267,5 +267,5 @@ public static class ShapeConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetStyle(openXmlElement, value?.Style);
     SetTextBody(openXmlElement, value?.TextBody);
-    }
   }
+}

@@ -116,5 +116,5 @@ public static class NumberDiagramInfoConverter
     SetLvl(openXmlElement, value?.Lvl);
     SetPtType(openXmlElement, value?.PtType);
     SetDiagramAutoBullet(openXmlElement, value?.DiagramAutoBullet);
-    }
   }
+}

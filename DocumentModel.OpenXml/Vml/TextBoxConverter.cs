@@ -160,5 +160,5 @@ public static class TextBoxConverter
     SetInset(openXmlElement, value?.Inset);
     SetSingleClick(openXmlElement, value?.SingleClick);
     SetTextBoxContent(openXmlElement, value?.TextBoxContent);
-    }
   }
+}

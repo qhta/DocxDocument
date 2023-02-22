@@ -81,5 +81,5 @@ public static class DocumentVariableConverter
   {
     SetName(openXmlElement, value?.Name);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

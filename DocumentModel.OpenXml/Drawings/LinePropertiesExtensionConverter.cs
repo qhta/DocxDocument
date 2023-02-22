@@ -89,5 +89,5 @@ public static class LinePropertiesExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetLineSketchStyleProperties(openXmlElement, value?.LineSketchStyleProperties);
-    }
   }
+}

@@ -61,5 +61,5 @@ public static class FlatTextConverter
   public static void UpdateOpenXmlElement(DXDraw.FlatText openXmlElement, DMDraws.FlatText value)
   {
     SetZ(openXmlElement, value?.Z);
-    }
   }
+}

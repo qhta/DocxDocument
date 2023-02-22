@@ -83,5 +83,5 @@ public static class FootnoteEndnoteTypeConverter
   {
     SetType(openXmlElement, value?.Type);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

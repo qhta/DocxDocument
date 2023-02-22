@@ -1000,5 +1000,5 @@ public static class ParagraphPropertiesConverter
     SetParagraphMarkRunProperties(openXmlElement, value?.ParagraphMarkRunProperties);
     SetSectionProperties(openXmlElement, value?.SectionProperties);
     SetParagraphPropertiesChange(openXmlElement, value?.ParagraphPropertiesChange);
-    }
   }
+}

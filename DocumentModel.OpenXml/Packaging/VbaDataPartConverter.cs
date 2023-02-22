@@ -96,5 +96,5 @@ public static class VbaDataPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetVbaSuppData(openXmlElement, value?.VbaSuppData);
-    }
   }
+}

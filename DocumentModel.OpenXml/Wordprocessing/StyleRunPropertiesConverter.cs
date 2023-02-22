@@ -936,5 +936,5 @@ public static class StyleRunPropertiesConverter
     SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
     SetSpecVanish(openXmlElement, value?.SpecVanish);
     SetRunPropertiesChange(openXmlElement, value?.RunPropertiesChange);
-    }
   }
+}

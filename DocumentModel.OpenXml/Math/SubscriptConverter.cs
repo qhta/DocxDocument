@@ -136,5 +136,5 @@ public static class SubscriptConverter
     SetSubscriptProperties(openXmlElement, value?.SubscriptProperties);
     SetBase(openXmlElement, value?.Base);
     SetSubArgument(openXmlElement, value?.SubArgument);
-    }
   }
+}

@@ -125,5 +125,5 @@ public static class TextWrapConverter
     SetSide(openXmlElement, value?.Side);
     SetAnchorX(openXmlElement, value?.AnchorX);
     SetAnchorY(openXmlElement, value?.AnchorY);
-    }
   }
+}

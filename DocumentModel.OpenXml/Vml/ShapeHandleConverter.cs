@@ -250,5 +250,5 @@ public static class ShapeHandleConverter
     SetXRange(openXmlElement, value?.XRange);
     SetYRange(openXmlElement, value?.YRange);
     SetRadiusRange(openXmlElement, value?.RadiusRange);
-    }
   }
+}

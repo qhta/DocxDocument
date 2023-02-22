@@ -342,5 +342,5 @@ public static class TextOutlineEffectConverter
     SetRoundEmpty(openXmlElement, value?.RoundEmpty);
     SetBevelEmpty(openXmlElement, value?.BevelEmpty);
     SetLineJoinMiterProperties(openXmlElement, value?.LineJoinMiterProperties);
-    }
   }
+}

@@ -89,5 +89,5 @@ public static class SerAxExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-    }
   }
+}

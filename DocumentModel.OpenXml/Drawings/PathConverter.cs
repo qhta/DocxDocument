@@ -343,5 +343,5 @@ public static class PathConverter
     SetArcTo(openXmlElement, value?.ArcTo);
     SetQuadraticBezierCurveTo(openXmlElement, value?.QuadraticBezierCurveTo);
     SetCubicBezierCurveTo(openXmlElement, value?.CubicBezierCurveTo);
-    }
   }
+}

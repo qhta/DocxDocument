@@ -83,5 +83,5 @@ public static class StyleSetConverter
   {
     SetId(openXmlElement, value?.Id);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

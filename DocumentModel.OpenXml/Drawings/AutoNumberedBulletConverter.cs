@@ -83,5 +83,5 @@ public static class AutoNumberedBulletConverter
   {
     SetType(openXmlElement, value?.Type);
     SetStartAt(openXmlElement, value?.StartAt);
-    }
   }
+}

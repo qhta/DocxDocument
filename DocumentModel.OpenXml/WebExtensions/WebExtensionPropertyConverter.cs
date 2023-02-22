@@ -81,5 +81,5 @@ public static class WebExtensionPropertyConverter
   {
     SetName(openXmlElement, value?.Name);
     SetValue(openXmlElement, value?.Value);
-    }
   }
+}

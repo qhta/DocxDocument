@@ -301,5 +301,5 @@ public static class ChartSpaceConverter
     SetFormatOverrides(openXmlElement, value?.FormatOverrides);
     SetPrintSettings(openXmlElement, value?.PrintSettings);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

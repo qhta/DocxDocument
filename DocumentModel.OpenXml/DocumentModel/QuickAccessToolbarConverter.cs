@@ -103,5 +103,5 @@ public static class QuickAccessToolbarConverter
   {
     SetSharedControlsQatItems(openXmlElement, value?.SharedControlsQatItems);
     SetDocumentControlsQatItems(openXmlElement, value?.DocumentControlsQatItems);
-    }
   }
+}

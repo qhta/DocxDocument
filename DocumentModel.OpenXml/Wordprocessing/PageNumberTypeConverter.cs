@@ -129,5 +129,5 @@ public static class PageNumberTypeConverter
     SetStart(openXmlElement, value?.Start);
     SetChapterStyle(openXmlElement, value?.ChapterStyle);
     SetChapterSeparator(openXmlElement, value?.ChapterSeparator);
-    }
   }
+}

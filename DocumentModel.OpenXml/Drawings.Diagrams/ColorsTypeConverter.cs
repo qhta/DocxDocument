@@ -81,5 +81,5 @@ public static class ColorsTypeConverter
   {
     SetMethod(openXmlElement, value?.Method);
     SetHueDirection(openXmlElement, value?.HueDirection);
-    }
   }
+}

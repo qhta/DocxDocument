@@ -902,5 +902,5 @@ public static class SdtPropertiesConverter
     SetSdtContentCheckBox(openXmlElement, value?.SdtContentCheckBox);
     SetSdtRepeatedSection(openXmlElement, value?.SdtRepeatedSection);
     SetSdtRepeatedSectionItem(openXmlElement, value?.SdtRepeatedSectionItem);
-    }
   }
+}

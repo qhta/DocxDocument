@@ -567,5 +567,5 @@ public static class DiagramChooseIfConverter
     SetLayoutNode(openXmlElement, value?.LayoutNode);
     SetChoose(openXmlElement, value?.Choose);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -96,5 +96,5 @@ public static class DocumentTasksPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetTasks(openXmlElement, value?.Tasks);
-    }
   }
+}

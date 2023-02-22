@@ -70,5 +70,5 @@ public static class BackgroundCustomPropertiesConverter
   public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement, DMDraws.BackgroundCustomProperties value)
   {
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

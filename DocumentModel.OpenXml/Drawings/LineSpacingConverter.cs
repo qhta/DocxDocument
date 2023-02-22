@@ -75,5 +75,5 @@ public static class LineSpacingConverter
   {
     SetSpacingPercent(openXmlElement, value?.SpacingPercent);
     SetSpacingPoints(openXmlElement, value?.SpacingPoints);
-    }
   }
+}

@@ -146,5 +146,5 @@ public static class DataLabelsRangeChacheConverter
     SetPointCount(openXmlElement, value?.PointCount);
     SetStringPoints(openXmlElement, value?.StringPoints);
     SetStrDataExtensionList(openXmlElement, value?.StrDataExtensionList);
-    }
   }
+}

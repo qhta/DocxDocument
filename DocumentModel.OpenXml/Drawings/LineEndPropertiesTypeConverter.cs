@@ -103,5 +103,5 @@ public static class LineEndPropertiesTypeConverter
     SetType(openXmlElement, value?.Type);
     SetWidth(openXmlElement, value?.Width);
     SetLength(openXmlElement, value?.Length);
-    }
   }
+}

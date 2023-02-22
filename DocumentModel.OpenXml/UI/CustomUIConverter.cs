@@ -147,5 +147,5 @@ public static class CustomUIConverter
     SetLoadImage(openXmlElement, value?.LoadImage);
     SetRepurposedCommands(openXmlElement, value?.RepurposedCommands);
     SetRibbon(openXmlElement, value?.Ribbon);
-    }
   }
+}

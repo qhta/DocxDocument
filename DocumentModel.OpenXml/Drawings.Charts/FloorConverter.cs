@@ -146,5 +146,5 @@ public static class FloorConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetPictureOptions(openXmlElement, value?.PictureOptions);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

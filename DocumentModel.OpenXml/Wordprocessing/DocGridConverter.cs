@@ -107,5 +107,5 @@ public static class DocGridConverter
     SetType(openXmlElement, value?.Type);
     SetLinePitch(openXmlElement, value?.LinePitch);
     SetCharacterSpace(openXmlElement, value?.CharacterSpace);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class DataLabelFieldTableConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.DataLabelFieldTable openXmlElement, DMDrawsCharts.DataLabelFieldTable value)
   {
     SetDataLabelFieldTableEntries(openXmlElement, value?.DataLabelFieldTableEntries);
-    }
   }
+}

@@ -448,5 +448,5 @@ public static class ChartSpaceConverter
     SetPrintSettings(openXmlElement, value?.PrintSettings);
     SetUserShapesReference(openXmlElement, value?.UserShapesReference);
     SetChartSpaceExtensionList(openXmlElement, value?.ChartSpaceExtensionList);
-    }
   }
+}

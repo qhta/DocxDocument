@@ -53,5 +53,5 @@ public static class ThumbnailPartConverter
   public static void UpdateOpenXmlElement(DXPack.ThumbnailPart openXmlElement, DMPack.ThumbnailPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

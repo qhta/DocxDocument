@@ -66,5 +66,5 @@ public static class BehaviorsConverter
   public static void UpdateOpenXmlElement(DXW.Behaviors openXmlElement, DMW.Behaviors value)
   {
     SetBehavior(openXmlElement, value?.Behavior);
-    }
   }
+}

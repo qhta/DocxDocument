@@ -253,5 +253,5 @@ public static class NonVisualDrawingPropertiesConverter
     SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
     SetHyperlinkOnHover(openXmlElement, value?.HyperlinkOnHover);
     SetNonVisualDrawingPropertiesExtensionList(openXmlElement, value?.NonVisualDrawingPropertiesExtensionList);
-    }
   }
+}

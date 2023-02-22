@@ -533,5 +533,5 @@ public static class Level4ParagraphPropertiesConverter
     SetTabStopList(openXmlElement, value?.TabStopList);
     SetDefaultRunProperties(openXmlElement, value?.DefaultRunProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

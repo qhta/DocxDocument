@@ -135,5 +135,5 @@ public static class AllocatedCommandConverter
     SetCommandBasedOn(openXmlElement, value?.CommandBasedOn);
     SetCommandIndexBasedOn(openXmlElement, value?.CommandIndexBasedOn);
     SetAcceleratorName(openXmlElement, value?.AcceleratorName);
-    }
   }
+}

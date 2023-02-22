@@ -97,5 +97,5 @@ public static class PivotFormatsConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.PivotFormats openXmlElement, DMDrawsCharts.PivotFormats value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

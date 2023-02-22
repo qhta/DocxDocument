@@ -366,5 +366,5 @@ public static class TablePropertyExceptionsConverter
     SetTableCellMarginDefault(openXmlElement, value?.TableCellMarginDefault);
     SetTableLook(openXmlElement, value?.TableLook);
     SetTablePropertyExceptionsChange(openXmlElement, value?.TablePropertyExceptionsChange);
-    }
   }
+}

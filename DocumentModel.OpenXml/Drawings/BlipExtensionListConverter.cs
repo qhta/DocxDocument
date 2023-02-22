@@ -97,5 +97,5 @@ public static class BlipExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.BlipExtensionList openXmlElement, DMDraws.BlipExtensionList value)
   {
     SetBlipExtensions(openXmlElement, value?.BlipExtensions);
-    }
   }
+}

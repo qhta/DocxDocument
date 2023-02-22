@@ -489,5 +489,5 @@ public static class PictureConverter
     SetOleObject(openXmlElement, value?.OleObject);
     SetMovieReference(openXmlElement, value?.MovieReference);
     SetControl(openXmlElement, value?.Control);
-    }
   }
+}

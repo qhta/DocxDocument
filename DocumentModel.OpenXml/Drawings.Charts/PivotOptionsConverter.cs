@@ -212,5 +212,5 @@ public static class PivotOptionsConverter
     SetDropZoneData(openXmlElement, value?.DropZoneData);
     SetDropZoneSeries(openXmlElement, value?.DropZoneSeries);
     SetDropZonesVisible(openXmlElement, value?.DropZonesVisible);
-    }
   }
+}

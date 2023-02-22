@@ -97,5 +97,5 @@ public static class ContextualTabsConverter
   public static void UpdateOpenXmlElement(DXO2010CustUI.ContextualTabs openXmlElement, DM.ContextualTabs value)
   {
     SetTabSets(openXmlElement, value?.TabSets);
-    }
   }
+}

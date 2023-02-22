@@ -847,5 +847,5 @@ public static class StyleParagraphPropertiesConverter
     SetTextBoxTightWrap(openXmlElement, value?.TextBoxTightWrap);
     SetOutlineLevel(openXmlElement, value?.OutlineLevel);
     SetParagraphPropertiesChange(openXmlElement, value?.ParagraphPropertiesChange);
-    }
   }
+}

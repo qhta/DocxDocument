@@ -158,5 +158,5 @@ public static class FontSchemeConverter
     SetMajorFont(openXmlElement, value?.MajorFont);
     SetMinorFont(openXmlElement, value?.MinorFont);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

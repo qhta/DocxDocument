@@ -89,5 +89,5 @@ public static class Bar3DChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredBarSeries(openXmlElement, value?.FilteredBarSeries);
-    }
   }
+}

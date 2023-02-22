@@ -81,5 +81,5 @@ public static class EffectContainerTypeConverter
   {
     SetType(openXmlElement, value?.Type);
     SetName(openXmlElement, value?.Name);
-    }
   }
+}

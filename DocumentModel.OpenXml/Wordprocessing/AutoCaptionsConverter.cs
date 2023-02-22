@@ -67,5 +67,5 @@ public static class AutoCaptionsConverter
   public static void UpdateOpenXmlElement(DXW.AutoCaptions openXmlElement, DMW.AutoCaptions value)
   {
     SetAutoCaption(openXmlElement, value?.AutoCaption);
-    }
   }
+}

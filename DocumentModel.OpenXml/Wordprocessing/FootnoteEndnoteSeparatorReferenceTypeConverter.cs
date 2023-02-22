@@ -61,5 +61,5 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
   public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

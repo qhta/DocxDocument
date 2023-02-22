@@ -130,5 +130,5 @@ public static class NonVisualPictureDrawingPropertiesConverter
     SetPreferRelativeResize(openXmlElement, value?.PreferRelativeResize);
     SetPictureLocks(openXmlElement, value?.PictureLocks);
     SetNonVisualPicturePropertiesExtensionList(openXmlElement, value?.NonVisualPicturePropertiesExtensionList);
-    }
   }
+}

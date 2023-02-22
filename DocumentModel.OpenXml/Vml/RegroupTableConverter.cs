@@ -119,5 +119,5 @@ public static class RegroupTableConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetEntries(openXmlElement, value?.Entries);
-    }
   }
+}

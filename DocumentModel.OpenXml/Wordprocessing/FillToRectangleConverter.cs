@@ -133,5 +133,5 @@ public static class FillToRectangleConverter
     SetTop(openXmlElement, value?.Top);
     SetRight(openXmlElement, value?.Right);
     SetBottom(openXmlElement, value?.Bottom);
-    }
   }
+}

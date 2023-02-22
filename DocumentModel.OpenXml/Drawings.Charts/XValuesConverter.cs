@@ -187,5 +187,5 @@ public static class XValuesConverter
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);
     SetStringReference(openXmlElement, value?.StringReference);
     SetStringLiteral(openXmlElement, value?.StringLiteral);
-    }
   }
+}

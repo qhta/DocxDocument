@@ -103,5 +103,5 @@ public static class GeoDataEntityQueryResultConverter
   {
     SetGeoDataEntityQuery(openXmlElement, value?.GeoDataEntityQuery);
     SetGeoData(openXmlElement, value?.GeoData);
-    }
   }
+}

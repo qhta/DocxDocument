@@ -70,5 +70,5 @@ public static class ChartLinesTypeConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ChartLinesType openXmlElement, DMDrawsCharts.ChartLinesType value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

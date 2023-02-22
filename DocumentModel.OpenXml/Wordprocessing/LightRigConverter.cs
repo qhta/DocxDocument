@@ -114,5 +114,5 @@ public static class LightRigConverter
     SetLightRigType(openXmlElement, value?.LightRigType);
     SetLightDirectionType(openXmlElement, value?.LightDirectionType);
     SetSphereCoordinates(openXmlElement, value?.SphereCoordinates);
-    }
   }
+}

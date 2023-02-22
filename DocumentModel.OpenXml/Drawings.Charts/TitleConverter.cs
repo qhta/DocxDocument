@@ -237,5 +237,5 @@ public static class TitleConverter
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
     SetTextProperties(openXmlElement, value?.TextProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

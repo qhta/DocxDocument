@@ -97,5 +97,5 @@ public static class CommentsExConverter
   public static void UpdateOpenXmlElement(DXO2013W.CommentsEx openXmlElement, DMW.CommentsEx value)
   {
     SetCommentExs(openXmlElement, value?.CommentExs);
-    }
   }
+}

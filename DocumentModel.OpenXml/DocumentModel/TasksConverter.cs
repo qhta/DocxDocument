@@ -127,5 +127,5 @@ public static class TasksConverter
   {
     SetItems(openXmlElement, value?.Items);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

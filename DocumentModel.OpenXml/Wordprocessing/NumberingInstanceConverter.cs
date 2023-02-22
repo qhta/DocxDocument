@@ -167,5 +167,5 @@ public static class NumberingInstanceConverter
     SetDurableId(openXmlElement, value?.DurableId);
     SetAbstractNumId(openXmlElement, value?.AbstractNumId);
     SetLevelOverrides(openXmlElement, value?.LevelOverrides);
-    }
   }
+}

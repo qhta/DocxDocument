@@ -120,5 +120,5 @@ public static class WebExTaskpanesPartConverter
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetTaskpanes(openXmlElement, value?.Taskpanes);
     //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
-    }
   }
+}

@@ -480,5 +480,5 @@ public static class TableRowPropertiesConverter
     SetTableRowPropertiesChange(openXmlElement, value?.TableRowPropertiesChange);
     SetConflictInsertion(openXmlElement, value?.ConflictInsertion);
     SetConflictDeletion(openXmlElement, value?.ConflictDeletion);
-    }
   }
+}

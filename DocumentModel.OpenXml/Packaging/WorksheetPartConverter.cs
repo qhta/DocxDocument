@@ -477,5 +477,5 @@ public static class WorksheetPartConverter
     //SetTimeLineParts(openXmlElement, value?.TimeLineParts);
     //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
     //SetWorksheetThreadedCommentsParts(openXmlElement, value?.WorksheetThreadedCommentsParts);
-    }
   }
+}

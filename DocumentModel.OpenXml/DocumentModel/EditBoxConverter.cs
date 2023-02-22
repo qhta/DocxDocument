@@ -741,5 +741,5 @@ public static class EditBoxConverter
     SetGetShowLabel(openXmlElement, value?.GetShowLabel);
     SetShowImage(openXmlElement, value?.ShowImage);
     SetGetShowImage(openXmlElement, value?.GetShowImage);
-    }
   }
+}

@@ -89,5 +89,5 @@ public static class Pie3DChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
-    }
   }
+}

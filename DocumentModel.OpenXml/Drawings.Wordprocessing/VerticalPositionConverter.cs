@@ -146,5 +146,5 @@ public static class VerticalPositionConverter
     SetVerticalAlignment(openXmlElement, value?.VerticalAlignment);
     SetPositionOffset(openXmlElement, value?.PositionOffset);
     SetPercentagePositionVerticalOffset(openXmlElement, value?.PercentagePositionVerticalOffset);
-    }
   }
+}

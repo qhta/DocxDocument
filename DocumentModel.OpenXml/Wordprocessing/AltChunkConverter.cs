@@ -92,5 +92,5 @@ public static class AltChunkConverter
   {
     SetId(openXmlElement, value?.Id);
     SetAltChunkProperties(openXmlElement, value?.AltChunkProperties);
-    }
   }
+}

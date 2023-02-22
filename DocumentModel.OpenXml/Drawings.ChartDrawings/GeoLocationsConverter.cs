@@ -70,5 +70,5 @@ public static class GeoLocationsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocations value)
   {
     SetGeoLocation(openXmlElement, value?.GeoLocation);
-    }
   }
+}

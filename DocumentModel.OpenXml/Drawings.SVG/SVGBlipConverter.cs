@@ -81,5 +81,5 @@ public static class SVGBlipConverter
   {
     SetEmbed(openXmlElement, value?.Embed);
     SetLink(openXmlElement, value?.Link);
-    }
   }
+}

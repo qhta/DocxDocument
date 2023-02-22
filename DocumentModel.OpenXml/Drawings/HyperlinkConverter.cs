@@ -187,5 +187,5 @@ public static class HyperlinkConverter
     SetHslColor(openXmlElement, value?.HslColor);
     SetSystemColor(openXmlElement, value?.SystemColor);
     SetPresetColor(openXmlElement, value?.PresetColor);
-    }
   }
+}

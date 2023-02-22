@@ -165,5 +165,5 @@ public static class NumericLevelConverter
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetName(openXmlElement, value?.Name);
     SetNumericValues(openXmlElement, value?.NumericValues);
-    }
   }
+}

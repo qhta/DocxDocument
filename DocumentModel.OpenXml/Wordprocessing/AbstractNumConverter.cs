@@ -283,5 +283,5 @@ public static class AbstractNumConverter
     SetStyleLink(openXmlElement, value?.StyleLink);
     SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
     SetLevels(openXmlElement, value?.Levels);
-    }
   }
+}

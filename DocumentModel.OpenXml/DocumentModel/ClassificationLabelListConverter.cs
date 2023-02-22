@@ -127,5 +127,5 @@ public static class ClassificationLabelListConverter
   {
     SetClassificationLabels(openXmlElement, value?.ClassificationLabels);
     SetClassificationExtensionList(openXmlElement, value?.ClassificationExtensionList);
-    }
   }
+}

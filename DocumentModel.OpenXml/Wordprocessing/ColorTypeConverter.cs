@@ -103,5 +103,5 @@ public static class ColorTypeConverter
   {
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

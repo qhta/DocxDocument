@@ -147,5 +147,5 @@ public static class ObjectEmbedConverter
     SetProgId(openXmlElement, value?.ProgId);
     SetShapeId(openXmlElement, value?.ShapeId);
     SetFieldCodes(openXmlElement, value?.FieldCodes);
-    }
   }
+}

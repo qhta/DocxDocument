@@ -89,5 +89,5 @@ public static class OfficeStyleSheetExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetThemeFamily(openXmlElement, value?.ThemeFamily);
-    }
   }
+}

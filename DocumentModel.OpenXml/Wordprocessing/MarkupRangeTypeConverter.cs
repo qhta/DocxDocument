@@ -81,5 +81,5 @@ public static class MarkupRangeTypeConverter
   {
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

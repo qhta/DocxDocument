@@ -149,5 +149,5 @@ public static class StrRefExtensionConverter
     SetFullReference(openXmlElement, value?.FullReference);
     SetLevelReference(openXmlElement, value?.LevelReference);
     SetFormulaReference(openXmlElement, value?.FormulaReference);
-    }
   }
+}

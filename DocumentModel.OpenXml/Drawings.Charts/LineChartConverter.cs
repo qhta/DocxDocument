@@ -438,5 +438,5 @@ public static class LineChartConverter
     SetSmooth(openXmlElement, value?.Smooth);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetLineChartExtensionList(openXmlElement, value?.LineChartExtensionList);
-    }
   }
+}

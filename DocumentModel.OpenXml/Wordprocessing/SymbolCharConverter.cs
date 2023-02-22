@@ -91,5 +91,5 @@ public static class SymbolCharConverter
   {
     SetFont(openXmlElement, value?.Font);
     SetChar(openXmlElement, value?.Char);
-    }
   }
+}

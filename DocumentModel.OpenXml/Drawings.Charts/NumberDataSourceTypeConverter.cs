@@ -103,5 +103,5 @@ public static class NumberDataSourceTypeConverter
   {
     SetNumberReference(openXmlElement, value?.NumberReference);
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class ArtisticCementConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetCrackSpacing(openXmlElement, value?.CrackSpacing);
-    }
   }
+}

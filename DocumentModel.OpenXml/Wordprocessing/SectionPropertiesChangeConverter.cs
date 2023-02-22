@@ -138,5 +138,5 @@ public static class SectionPropertiesChangeConverter
     SetDate(openXmlElement, value?.Date);
     SetId(openXmlElement, value?.Id);
     SetPreviousSectionProperties(openXmlElement, value?.PreviousSectionProperties);
-    }
   }
+}

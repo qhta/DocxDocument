@@ -88,5 +88,5 @@ public static class HyperlinkExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetHyperlinkColor(openXmlElement, value?.HyperlinkColor);
-    }
   }
+}

@@ -110,5 +110,5 @@ public static class BorderTypeConverter
     SetType(openXmlElement, value?.Type);
     SetWidth(openXmlElement, value?.Width);
     SetShadow(openXmlElement, value?.Shadow);
-    }
   }
+}

@@ -558,5 +558,5 @@ public static class DataLabelsConverter
     SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
     SetLeaderLines(openXmlElement, value?.LeaderLines);
     SetDLblsExtensionList(openXmlElement, value?.DLblsExtensionList);
-    }
   }
+}

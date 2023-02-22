@@ -97,5 +97,5 @@ public static class LineChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.LineChartExtensionList openXmlElement, DMDrawsCharts.LineChartExtensionList value)
   {
     SetLineChartExtensions(openXmlElement, value?.LineChartExtensions);
-    }
   }
+}

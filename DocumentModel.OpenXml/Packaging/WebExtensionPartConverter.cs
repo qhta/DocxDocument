@@ -120,5 +120,5 @@ public static class WebExtensionPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetWebExtension(openXmlElement, value?.WebExtension);
-    }
   }
+}

@@ -92,5 +92,5 @@ public static class BlendConverter
   {
     SetBlendMode(openXmlElement, value?.BlendMode);
     SetEffectContainer(openXmlElement, value?.EffectContainer);
-    }
   }
+}

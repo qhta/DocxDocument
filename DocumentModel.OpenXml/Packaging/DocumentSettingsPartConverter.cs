@@ -120,5 +120,5 @@ public static class DocumentSettingsPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetSettings(openXmlElement, value?.Settings);
-    }
   }
+}

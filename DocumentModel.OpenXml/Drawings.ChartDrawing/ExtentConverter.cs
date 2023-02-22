@@ -85,5 +85,5 @@ public static class ExtentConverter
   {
     SetCx(openXmlElement, value?.Cx);
     SetCy(openXmlElement, value?.Cy);
-    }
   }
+}

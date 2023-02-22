@@ -61,5 +61,5 @@ public static class ArtisticBlurConverter
   public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticBlur openXmlElement, DMDraws.ArtisticBlur value)
   {
     SetRadius(openXmlElement, value?.Radius);
-    }
   }
+}

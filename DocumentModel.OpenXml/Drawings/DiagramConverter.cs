@@ -81,5 +81,5 @@ public static class DiagramConverter
   {
     SetId(openXmlElement, value?.Id);
     SetBuildStep(openXmlElement, value?.BuildStep);
-    }
   }
+}

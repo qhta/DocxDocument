@@ -362,5 +362,5 @@ public static class InlineConverter
     SetDocProperties(openXmlElement, value?.DocProperties);
     SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
     SetGraphic(openXmlElement, value?.Graphic);
-    }
   }
+}

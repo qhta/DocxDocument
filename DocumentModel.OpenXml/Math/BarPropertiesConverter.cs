@@ -102,5 +102,5 @@ public static class BarPropertiesConverter
   {
     SetPosition(openXmlElement, value?.Position);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

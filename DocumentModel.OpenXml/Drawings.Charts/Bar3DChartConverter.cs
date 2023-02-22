@@ -383,5 +383,5 @@ public static class Bar3DChartConverter
     SetShape(openXmlElement, value?.Shape);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetBar3DChartExtensionList(openXmlElement, value?.Bar3DChartExtensionList);
-    }
   }
+}

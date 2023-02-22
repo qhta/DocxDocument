@@ -212,5 +212,5 @@ public static class ProtectionConverter
     SetFormatting(openXmlElement, value?.Formatting);
     SetSelection(openXmlElement, value?.Selection);
     SetUserInterface(openXmlElement, value?.UserInterface);
-    }
   }
+}

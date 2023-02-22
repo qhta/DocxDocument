@@ -67,5 +67,5 @@ public static class HighLowLinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.HighLowLines openXmlElement, DMDrawsCharts.HighLowLines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

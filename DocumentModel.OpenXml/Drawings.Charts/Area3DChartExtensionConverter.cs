@@ -89,5 +89,5 @@ public static class Area3DChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredAreaSeries(openXmlElement, value?.FilteredAreaSeries);
-    }
   }
+}

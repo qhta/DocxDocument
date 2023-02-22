@@ -89,5 +89,5 @@ public static class ToAnchorConverter
   {
     SetXPosition(openXmlElement, value?.XPosition);
     SetYPosition(openXmlElement, value?.YPosition);
-    }
   }
+}

@@ -284,5 +284,5 @@ public static class ScatterChartConverter
     SetDataLabels(openXmlElement, value?.DataLabels);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetScatterChartExtensionList(openXmlElement, value?.ScatterChartExtensionList);
-    }
   }
+}

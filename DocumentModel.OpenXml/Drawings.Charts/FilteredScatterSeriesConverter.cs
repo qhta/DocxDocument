@@ -70,5 +70,5 @@ public static class FilteredScatterSeriesConverter
   public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.FilteredScatterSeries value)
   {
     SetScatterChartSeries(openXmlElement, value?.ScatterChartSeries);
-    }
   }
+}

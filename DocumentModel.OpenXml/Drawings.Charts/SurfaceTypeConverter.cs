@@ -158,5 +158,5 @@ public static class SurfaceTypeConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetPictureOptions(openXmlElement, value?.PictureOptions);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

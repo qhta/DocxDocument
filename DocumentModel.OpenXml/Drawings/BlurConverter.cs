@@ -88,5 +88,5 @@ public static class BlurConverter
   {
     SetRadius(openXmlElement, value?.Radius);
     SetGrow(openXmlElement, value?.Grow);
-    }
   }
+}

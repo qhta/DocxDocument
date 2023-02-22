@@ -1117,5 +1117,5 @@ public static class ChartStyleConverter
     SetValueAxis(openXmlElement, value?.ValueAxis);
     SetWall(openXmlElement, value?.Wall);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

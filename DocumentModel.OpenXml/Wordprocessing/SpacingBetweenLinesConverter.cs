@@ -217,5 +217,5 @@ public static class SpacingBetweenLinesConverter
     SetAfterAutoSpacing(openXmlElement, value?.AfterAutoSpacing);
     SetLine(openXmlElement, value?.Line);
     SetLineRule(openXmlElement, value?.LineRule);
-    }
   }
+}

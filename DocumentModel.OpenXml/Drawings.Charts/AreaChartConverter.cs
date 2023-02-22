@@ -314,5 +314,5 @@ public static class AreaChartConverter
     SetDropLines(openXmlElement, value?.DropLines);
     SetAxisIds(openXmlElement, value?.AxisIds);
     SetAreaChartExtensionList(openXmlElement, value?.AreaChartExtensionList);
-    }
   }
+}

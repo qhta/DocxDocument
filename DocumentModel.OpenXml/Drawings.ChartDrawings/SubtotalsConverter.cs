@@ -97,5 +97,5 @@ public static class SubtotalsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Subtotals openXmlElement, DMDrawsChartDraws.Subtotals value)
   {
     SetUnsignedIntegerTypes(openXmlElement, value?.UnsignedIntegerTypes);
-    }
   }
+}

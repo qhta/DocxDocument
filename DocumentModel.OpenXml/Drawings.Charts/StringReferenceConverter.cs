@@ -132,5 +132,5 @@ public static class StringReferenceConverter
     SetFormula(openXmlElement, value?.Formula);
     SetStringCache(openXmlElement, value?.StringCache);
     SetStrRefExtensionList(openXmlElement, value?.StrRefExtensionList);
-    }
   }
+}

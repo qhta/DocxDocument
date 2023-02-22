@@ -103,5 +103,5 @@ public static class BoxConverter
   {
     SetBoxProperties(openXmlElement, value?.BoxProperties);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

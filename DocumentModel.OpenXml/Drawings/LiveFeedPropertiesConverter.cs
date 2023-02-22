@@ -103,5 +103,5 @@ public static class LiveFeedPropertiesConverter
   {
     SetLiveFeedBackgroundProperties(openXmlElement, value?.LiveFeedBackgroundProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

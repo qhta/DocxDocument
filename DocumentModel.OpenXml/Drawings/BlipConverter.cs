@@ -649,5 +649,5 @@ public static class BlipConverter
     SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
     SetTintEffect(openXmlElement, value?.TintEffect);
     SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
-    }
   }
+}

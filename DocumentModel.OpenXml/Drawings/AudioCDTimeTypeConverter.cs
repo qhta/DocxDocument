@@ -85,5 +85,5 @@ public static class AudioCDTimeTypeConverter
   {
     SetTrack(openXmlElement, value?.Track);
     SetTime(openXmlElement, value?.Time);
-    }
   }
+}

@@ -67,5 +67,5 @@ public static class DropLinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.DropLines openXmlElement, DMDrawsCharts.DropLines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

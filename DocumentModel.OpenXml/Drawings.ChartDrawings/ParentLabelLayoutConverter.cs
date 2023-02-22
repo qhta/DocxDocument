@@ -59,5 +59,5 @@ public static class ParentLabelLayoutConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayout value)
   {
     SetParentLabelLayoutVal(openXmlElement, value?.ParentLabelLayoutVal);
-    }
   }
+}

@@ -393,5 +393,5 @@ public static class RadarChartSeries3Converter
     SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
     SetValues(openXmlElement, value?.Values);
     SetRadarSerExtensionList(openXmlElement, value?.RadarSerExtensionList);
-    }
   }
+}

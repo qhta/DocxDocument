@@ -59,5 +59,5 @@ public static class CategoryAxisScalingConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.CategoryAxisScaling openXmlElement, DMDrawsChartDraws.CategoryAxisScaling value)
   {
     SetGapWidth(openXmlElement, value?.GapWidth);
-    }
   }
+}

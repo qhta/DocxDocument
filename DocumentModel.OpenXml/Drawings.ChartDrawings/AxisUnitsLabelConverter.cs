@@ -169,5 +169,5 @@ public static class AxisUnitsLabelConverter
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

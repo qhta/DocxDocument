@@ -247,5 +247,5 @@ public static class TemplateCommandGroupConverter
     SetMismatchedKeyMapCustomizations(openXmlElement, value?.MismatchedKeyMapCustomizations);
     SetToolbars(openXmlElement, value?.Toolbars);
     SetAllocatedCommands(openXmlElement, value?.AllocatedCommands);
-    }
   }
+}

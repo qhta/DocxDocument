@@ -1213,5 +1213,5 @@ public static class PreviousRunPropertiesConverter
     SetNumberSpacing(openXmlElement, value?.NumberSpacing);
     SetStylisticSets(openXmlElement, value?.StylisticSets);
     SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
-    }
   }
+}

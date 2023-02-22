@@ -70,5 +70,5 @@ public static class TickLabelsConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.TickLabels openXmlElement, DMDrawsChartDraws.TickLabels value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

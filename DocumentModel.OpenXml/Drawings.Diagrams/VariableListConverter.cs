@@ -284,5 +284,5 @@ public static class VariableListConverter
     SetAnimateOneByOne(openXmlElement, value?.AnimateOneByOne);
     SetAnimationLevel(openXmlElement, value?.AnimationLevel);
     SetResizeHandles(openXmlElement, value?.ResizeHandles);
-    }
   }
+}

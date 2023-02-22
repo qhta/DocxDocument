@@ -103,5 +103,5 @@ public static class TextConverter
   {
     SetTextData(openXmlElement, value?.TextData);
     SetRichTextBody(openXmlElement, value?.RichTextBody);
-    }
   }
+}

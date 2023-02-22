@@ -97,5 +97,5 @@ public static class GeoChildTypesConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, DMDrawsChartDraws.GeoChildTypes value)
   {
     SetEntityTypes(openXmlElement, value?.EntityTypes);
-    }
   }
+}

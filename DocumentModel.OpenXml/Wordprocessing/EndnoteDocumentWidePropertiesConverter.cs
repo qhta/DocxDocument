@@ -216,5 +216,5 @@ public static class EndnoteDocumentWidePropertiesConverter
     SetNumberingStart(openXmlElement, value?.NumberingStart);
     SetNumberingRestart(openXmlElement, value?.NumberingRestart);
     SetEndnoteSpecialReferences(openXmlElement, value?.EndnoteSpecialReferences);
-    }
   }
+}

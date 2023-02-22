@@ -92,5 +92,5 @@ public static class DataStoreItemConverter
   {
     SetItemId(openXmlElement, value?.ItemId);
     SetSchemaReferences(openXmlElement, value?.SchemaReferences);
-    }
   }
+}

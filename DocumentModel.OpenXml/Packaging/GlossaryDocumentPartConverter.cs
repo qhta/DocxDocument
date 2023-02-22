@@ -480,5 +480,5 @@ public static class GlossaryDocumentPartConverter
     //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     //SetWordprocessingPrinterSettingsParts(openXmlElement, value?.WordprocessingPrinterSettingsParts);
-    }
   }
+}

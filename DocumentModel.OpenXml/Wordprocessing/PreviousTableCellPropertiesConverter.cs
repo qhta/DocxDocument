@@ -508,5 +508,5 @@ public static class PreviousTableCellPropertiesConverter
     SetCellInsertion(openXmlElement, value?.CellInsertion);
     SetCellDeletion(openXmlElement, value?.CellDeletion);
     SetCellMerge(openXmlElement, value?.CellMerge);
-    }
   }
+}

@@ -191,5 +191,5 @@ public static class FormatSchemeConverter
     SetLineStyleList(openXmlElement, value?.LineStyleList);
     SetEffectStyleList(openXmlElement, value?.EffectStyleList);
     SetBackgroundFillStyleList(openXmlElement, value?.BackgroundFillStyleList);
-    }
   }
+}

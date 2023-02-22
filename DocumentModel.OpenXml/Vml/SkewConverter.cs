@@ -174,5 +174,5 @@ public static class SkewConverter
     SetOffset(openXmlElement, value?.Offset);
     SetOrigin(openXmlElement, value?.Origin);
     SetMatrix(openXmlElement, value?.Matrix);
-    }
   }
+}

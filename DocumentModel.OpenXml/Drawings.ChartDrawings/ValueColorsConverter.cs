@@ -136,5 +136,5 @@ public static class ValueColorsConverter
     SetMinColorSolidColorFillProperties(openXmlElement, value?.MinColorSolidColorFillProperties);
     SetMidColorSolidColorFillProperties(openXmlElement, value?.MidColorSolidColorFillProperties);
     SetMaxColorSolidColorFillProperties(openXmlElement, value?.MaxColorSolidColorFillProperties);
-    }
   }
+}

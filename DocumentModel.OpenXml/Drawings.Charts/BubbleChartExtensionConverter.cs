@@ -89,5 +89,5 @@ public static class BubbleChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredBubbleSeries(openXmlElement, value?.FilteredBubbleSeries);
-    }
   }
+}

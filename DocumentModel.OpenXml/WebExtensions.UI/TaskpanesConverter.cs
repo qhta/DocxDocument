@@ -97,5 +97,5 @@ public static class TaskpanesConverter
   public static void UpdateOpenXmlElement(DXO2013WebExtPane.Taskpanes openXmlElement, DMWebExtUI.Taskpanes value)
   {
     SetWebExtensionTaskpanes(openXmlElement, value?.WebExtensionTaskpanes);
-    }
   }
+}

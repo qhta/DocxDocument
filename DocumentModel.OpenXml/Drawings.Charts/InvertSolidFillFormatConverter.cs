@@ -70,5 +70,5 @@ public static class InvertSolidFillFormatConverter
   public static void UpdateOpenXmlElement(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.InvertSolidFillFormat value)
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
-    }
   }
+}

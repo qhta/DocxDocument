@@ -147,5 +147,5 @@ public static class GeoLocationQueryConverter
     SetAdminDistrict2(openXmlElement, value?.AdminDistrict2);
     SetPostalCode(openXmlElement, value?.PostalCode);
     SetEntityType(openXmlElement, value?.EntityType);
-    }
   }
+}

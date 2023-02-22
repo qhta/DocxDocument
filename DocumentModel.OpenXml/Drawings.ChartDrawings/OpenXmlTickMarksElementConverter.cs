@@ -92,5 +92,5 @@ public static class OpenXmlTickMarksElementConverter
   {
     SetType(openXmlElement, value?.Type);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

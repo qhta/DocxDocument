@@ -136,5 +136,5 @@ public static class AudioFromCDConverter
     SetStartTime(openXmlElement, value?.StartTime);
     SetEndTime(openXmlElement, value?.EndTime);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

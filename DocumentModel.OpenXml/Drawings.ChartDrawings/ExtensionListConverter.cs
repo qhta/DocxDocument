@@ -97,5 +97,5 @@ public static class ExtensionListConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ExtensionList openXmlElement, DMDrawsChartDraws.ExtensionList value)
   {
     SetExtension2s(openXmlElement, value?.Extension2s);
-    }
   }
+}

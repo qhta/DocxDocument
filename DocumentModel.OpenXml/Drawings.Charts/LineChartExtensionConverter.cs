@@ -89,5 +89,5 @@ public static class LineChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredLineSeriesExtension(openXmlElement, value?.FilteredLineSeriesExtension);
-    }
   }
+}

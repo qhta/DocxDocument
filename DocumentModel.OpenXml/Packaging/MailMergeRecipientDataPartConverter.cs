@@ -107,5 +107,5 @@ public static class MailMergeRecipientDataPartConverter
     SetRecipients(openXmlElement, value?.Recipients);
     SetMailMergeRecipients(openXmlElement, value?.MailMergeRecipients);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

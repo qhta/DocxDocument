@@ -147,5 +147,5 @@ public static class ColorMenuConverter
     SetFillColor(openXmlElement, value?.FillColor);
     SetShadowColor(openXmlElement, value?.ShadowColor);
     SetExtrusionColor(openXmlElement, value?.ExtrusionColor);
-    }
   }
+}

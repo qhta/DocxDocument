@@ -224,5 +224,5 @@ public static class StyleLabelConverter
     SetTextProperties(openXmlElement, value?.TextProperties);
     SetStyle(openXmlElement, value?.Style);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

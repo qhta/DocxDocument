@@ -59,5 +59,5 @@ public static class PictureAttributionSourceURLConverter
   public static void UpdateOpenXmlElement(DXO2019Draw.PictureAttributionSourceURL openXmlElement, DMDraws.PictureAttributionSourceURL value)
   {
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

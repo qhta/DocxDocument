@@ -175,5 +175,5 @@ public static class PermStartConverter
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetId(openXmlElement, value?.Id);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
-    }
   }
+}

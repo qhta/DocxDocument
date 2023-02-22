@@ -59,5 +59,5 @@ public static class GeoParentEntitiesQueryConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoParentEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQuery value)
   {
     SetEntityId(openXmlElement, value?.EntityId);
-    }
   }
+}

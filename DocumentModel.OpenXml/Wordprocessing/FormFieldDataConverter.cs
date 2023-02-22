@@ -282,5 +282,5 @@ public static class FormFieldDataConverter
     SetCheckBox(openXmlElement, value?.CheckBox);
     SetDropDownListFormField(openXmlElement, value?.DropDownListFormField);
     SetTextInput(openXmlElement, value?.TextInput);
-    }
   }
+}

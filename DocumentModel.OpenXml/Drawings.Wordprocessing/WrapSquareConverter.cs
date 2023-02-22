@@ -188,5 +188,5 @@ public static class WrapSquareConverter
     SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);
     SetDistanceFromRight(openXmlElement, value?.DistanceFromRight);
     SetEffectExtent(openXmlElement, value?.EffectExtent);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class CustomXmlAttributeConverter
     SetUri(openXmlElement, value?.Uri);
     SetName(openXmlElement, value?.Name);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

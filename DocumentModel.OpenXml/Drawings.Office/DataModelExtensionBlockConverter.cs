@@ -81,5 +81,5 @@ public static class DataModelExtensionBlockConverter
   {
     SetRelId(openXmlElement, value?.RelId);
     SetMinVer(openXmlElement, value?.MinVer);
-    }
   }
+}

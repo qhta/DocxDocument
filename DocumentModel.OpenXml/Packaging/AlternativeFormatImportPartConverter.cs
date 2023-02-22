@@ -53,5 +53,5 @@ public static class AlternativeFormatImportPartConverter
   public static void UpdateOpenXmlElement(DXPack.AlternativeFormatImportPart openXmlElement, DMPack.AlternativeFormatImportPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class CubicBezierCurveToConverter
   public static void UpdateOpenXmlElement(DXDraw.CubicBezierCurveTo openXmlElement, DMDraws.CubicBezierCurveTo value)
   {
     SetPoints(openXmlElement, value?.Points);
-    }
   }
+}

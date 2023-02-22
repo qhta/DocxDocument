@@ -61,5 +61,5 @@ public static class DataLabelHiddenConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabelHidden openXmlElement, DMDrawsChartDraws.DataLabelHidden value)
   {
     SetIdx(openXmlElement, value?.Idx);
-    }
   }
+}

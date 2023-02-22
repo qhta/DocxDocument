@@ -61,5 +61,5 @@ public static class NumericValueConverter
   public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.NumericValue openXmlElement, DMDrawsChartDraws.NumericValue value)
   {
     SetIdx(openXmlElement, value?.Idx);
-    }
   }
+}

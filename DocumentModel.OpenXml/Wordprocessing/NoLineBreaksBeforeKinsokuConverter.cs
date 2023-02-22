@@ -81,5 +81,5 @@ public static class NoLineBreaksBeforeKinsokuConverter
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

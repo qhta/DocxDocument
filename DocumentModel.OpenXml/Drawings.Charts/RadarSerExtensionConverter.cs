@@ -179,5 +179,5 @@ public static class RadarSerExtensionConverter
     SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
     SetDataLabelsRange(openXmlElement, value?.DataLabelsRange);
     SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
-    }
   }
+}

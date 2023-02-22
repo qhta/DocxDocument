@@ -120,5 +120,5 @@ public static class ChartDrawingPartConverter
     //SetImageParts(openXmlElement, value?.ImageParts);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetUserShapes(openXmlElement, value?.UserShapes);
-    }
   }
+}

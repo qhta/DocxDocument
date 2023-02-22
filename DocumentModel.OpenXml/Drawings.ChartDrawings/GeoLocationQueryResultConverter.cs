@@ -103,5 +103,5 @@ public static class GeoLocationQueryResultConverter
   {
     SetGeoLocationQuery(openXmlElement, value?.GeoLocationQuery);
     SetGeoLocations(openXmlElement, value?.GeoLocations);
-    }
   }
+}

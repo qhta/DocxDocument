@@ -83,5 +83,5 @@ public static class LinearShadePropertiesConverter
   {
     SetAngle(openXmlElement, value?.Angle);
     SetScaled(openXmlElement, value?.Scaled);
-    }
   }
+}

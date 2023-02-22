@@ -239,5 +239,5 @@ public static class FillConverter
     SetBlipFill(openXmlElement, value?.BlipFill);
     SetPatternFill(openXmlElement, value?.PatternFill);
     SetGroupFill(openXmlElement, value?.GroupFill);
-    }
   }
+}

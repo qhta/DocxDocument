@@ -2090,5 +2090,5 @@ public static class ShapeConverter
     SetRightBorder(openXmlElement, value?.RightBorder);
     SetInk(openXmlElement, value?.Ink);
     SetInkAnnotationFlag(openXmlElement, value?.InkAnnotationFlag);
-    }
   }
+}

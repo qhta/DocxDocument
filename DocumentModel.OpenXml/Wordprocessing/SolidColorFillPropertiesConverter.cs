@@ -103,5 +103,5 @@ public static class SolidColorFillPropertiesConverter
   {
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);
-    }
   }
+}

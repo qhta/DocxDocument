@@ -107,5 +107,5 @@ public static class BevelTypeConverter
     SetWidth(openXmlElement, value?.Width);
     SetHeight(openXmlElement, value?.Height);
     SetPreset(openXmlElement, value?.Preset);
-    }
   }
+}

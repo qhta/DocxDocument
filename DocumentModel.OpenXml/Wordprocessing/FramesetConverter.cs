@@ -194,5 +194,5 @@ public static class FramesetConverter
     SetFrameLayout(openXmlElement, value?.FrameLayout);
     SetChildFrameset(openXmlElement, value?.ChildFrameset);
     SetFrame(openXmlElement, value?.Frame);
-    }
   }
+}

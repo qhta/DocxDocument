@@ -141,5 +141,5 @@ public static class BackstageConverter
     SetOnHide(openXmlElement, value?.OnHide);
     SetBackstageTab(openXmlElement, value?.BackstageTab);
     SetBackstageFastCommandButton(openXmlElement, value?.BackstageFastCommandButton);
-    }
   }
+}

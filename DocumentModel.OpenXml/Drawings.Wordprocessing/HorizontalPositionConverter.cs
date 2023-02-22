@@ -146,5 +146,5 @@ public static class HorizontalPositionConverter
     SetHorizontalAlignment(openXmlElement, value?.HorizontalAlignment);
     SetPositionOffset(openXmlElement, value?.PositionOffset);
     SetPercentagePositionHeightOffset(openXmlElement, value?.PercentagePositionHeightOffset);
-    }
   }
+}

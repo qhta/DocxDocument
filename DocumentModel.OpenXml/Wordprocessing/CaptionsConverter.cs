@@ -97,5 +97,5 @@ public static class CaptionsConverter
   {
     SetCaption(openXmlElement, value?.Caption);
     SetAutoCaptions(openXmlElement, value?.AutoCaptions);
-    }
   }
+}

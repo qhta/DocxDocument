@@ -59,5 +59,5 @@ public static class SchemaReferenceConverter
   public static void UpdateOpenXmlElement(DXCustXmlDataProps.SchemaReference openXmlElement, DMCustXml.SchemaReference value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

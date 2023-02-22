@@ -187,5 +187,5 @@ public static class ShapeTreeConverter
     SetShape(openXmlElement, value?.Shape);
     SetGroupShape(openXmlElement, value?.GroupShape);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

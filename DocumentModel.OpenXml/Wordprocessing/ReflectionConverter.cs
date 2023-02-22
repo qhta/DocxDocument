@@ -347,5 +347,5 @@ public static class ReflectionConverter
     SetHorizontalSkewAngle(openXmlElement, value?.HorizontalSkewAngle);
     SetVerticalSkewAngle(openXmlElement, value?.VerticalSkewAngle);
     SetAlignment(openXmlElement, value?.Alignment);
-    }
   }
+}

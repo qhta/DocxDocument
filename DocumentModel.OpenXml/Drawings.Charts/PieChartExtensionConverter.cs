@@ -89,5 +89,5 @@ public static class PieChartExtensionConverter
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
-    }
   }
+}

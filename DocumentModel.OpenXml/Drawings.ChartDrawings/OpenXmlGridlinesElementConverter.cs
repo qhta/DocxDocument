@@ -103,5 +103,5 @@ public static class OpenXmlGridlinesElementConverter
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

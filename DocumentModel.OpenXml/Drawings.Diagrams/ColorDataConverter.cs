@@ -67,5 +67,5 @@ public static class ColorDataConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.ColorData openXmlElement, DMDrawsDgms.ColorData value)
   {
     SetDataModel(openXmlElement, value?.DataModel);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class FontRelationshipTypeConverter
     SetFontKey(openXmlElement, value?.FontKey);
     SetSubsetted(openXmlElement, value?.Subsetted);
     SetId(openXmlElement, value?.Id);
-    }
   }
+}

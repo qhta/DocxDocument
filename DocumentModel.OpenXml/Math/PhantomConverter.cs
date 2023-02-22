@@ -103,5 +103,5 @@ public static class PhantomConverter
   {
     SetPhantomProperties(openXmlElement, value?.PhantomProperties);
     SetBase(openXmlElement, value?.Base);
-    }
   }
+}

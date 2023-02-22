@@ -123,5 +123,5 @@ public static class FixedCommandKeyboardCustomizationConverter
     SetCommandName(openXmlElement, value?.CommandName);
     SetCommandIndex(openXmlElement, value?.CommandIndex);
     SetArgument(openXmlElement, value?.Argument);
-    }
   }
+}

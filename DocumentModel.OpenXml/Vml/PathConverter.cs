@@ -407,5 +407,5 @@ public static class PathConverter
     SetConnectionPoints(openXmlElement, value?.ConnectionPoints);
     SetConnectAngles(openXmlElement, value?.ConnectAngles);
     SetAllowExtrusion(openXmlElement, value?.AllowExtrusion);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class ScatterChartExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ScatterChartExtensionList openXmlElement, DMDrawsCharts.ScatterChartExtensionList value)
   {
     SetScatterChartExtensions(openXmlElement, value?.ScatterChartExtensions);
-    }
   }
+}

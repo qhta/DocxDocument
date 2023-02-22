@@ -97,5 +97,5 @@ public static class ColorTransformCategoriesConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.ColorTransformCategories openXmlElement, DMDrawsDgms.ColorTransformCategories value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

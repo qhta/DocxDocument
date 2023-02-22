@@ -96,5 +96,5 @@ public static class CustomizationPartConverter
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
     SetTemplateCommandGroup(openXmlElement, value?.TemplateCommandGroup);
-    }
   }
+}

@@ -81,5 +81,5 @@ public static class ColorDefinitionTitleConverter
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

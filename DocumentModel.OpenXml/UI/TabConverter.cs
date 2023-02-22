@@ -380,5 +380,5 @@ public static class TabConverter
     SetKeytip(openXmlElement, value?.Keytip);
     SetGetKeytip(openXmlElement, value?.GetKeytip);
     SetGroup(openXmlElement, value?.Group);
-    }
   }
+}

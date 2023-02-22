@@ -132,5 +132,5 @@ public static class NumberReferenceConverter
     SetFormula(openXmlElement, value?.Formula);
     SetNumberingCache(openXmlElement, value?.NumberingCache);
     SetNumRefExtensionList(openXmlElement, value?.NumRefExtensionList);
-    }
   }
+}

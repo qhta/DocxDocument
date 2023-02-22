@@ -70,5 +70,5 @@ public static class DialogBoxLauncherConverter
   public static void UpdateOpenXmlElement(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.DialogBoxLauncher value)
   {
     SetButtonRegular(openXmlElement, value?.ButtonRegular);
-    }
   }
+}

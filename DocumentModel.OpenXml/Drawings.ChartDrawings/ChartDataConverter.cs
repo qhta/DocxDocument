@@ -130,5 +130,5 @@ public static class ChartDataConverter
     SetExternalData(openXmlElement, value?.ExternalData);
     SetData(openXmlElement, value?.Data);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

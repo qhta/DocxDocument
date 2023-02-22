@@ -218,5 +218,5 @@ public static class VerticalSeparatorConverter
     SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
     SetInsertAfterQ(openXmlElement, value?.InsertAfterQ);
     SetInsertBeforeQ(openXmlElement, value?.InsertBeforeQ);
-    }
   }
+}

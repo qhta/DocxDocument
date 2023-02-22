@@ -169,5 +169,5 @@ public static class ChartConverter
     SetPlotArea(openXmlElement, value?.PlotArea);
     SetLegend(openXmlElement, value?.Legend);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -103,5 +103,5 @@ public static class PositionalTabConverter
     SetAlignment(openXmlElement, value?.Alignment);
     SetRelativeTo(openXmlElement, value?.RelativeTo);
     SetLeader(openXmlElement, value?.Leader);
-    }
   }
+}

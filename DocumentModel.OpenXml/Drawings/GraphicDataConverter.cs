@@ -59,5 +59,5 @@ public static class GraphicDataConverter
   public static void UpdateOpenXmlElement(DXDraw.GraphicData openXmlElement, DMDraws.GraphicData value)
   {
     SetUri(openXmlElement, value?.Uri);
-    }
   }
+}

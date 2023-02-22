@@ -109,5 +109,5 @@ public static class AnchorConverter
     SetX(openXmlElement, value?.X);
     SetY(openXmlElement, value?.Y);
     SetZ(openXmlElement, value?.Z);
-    }
   }
+}

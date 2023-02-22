@@ -173,5 +173,5 @@ public static class AlgorithmConverter
     SetRevision(openXmlElement, value?.Revision);
     SetParameters(openXmlElement, value?.Parameters);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

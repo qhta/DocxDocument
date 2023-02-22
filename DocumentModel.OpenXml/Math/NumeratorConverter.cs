@@ -1777,5 +1777,5 @@ public static class NumeratorConverter
     SetParagraph(openXmlElement, value?.Paragraph);
     SetOfficeMath(openXmlElement, value?.OfficeMath);
     SetControlProperties(openXmlElement, value?.ControlProperties);
-    }
   }
+}

@@ -125,5 +125,5 @@ public static class DocumentConverter
     SetConformance(openXmlElement, value?.Conformance);
     SetDocumentBackground(openXmlElement, value?.DocumentBackground);
     SetBody(openXmlElement, value?.Body);
-    }
   }
+}

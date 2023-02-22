@@ -88,5 +88,5 @@ public static class DocPartTypesConverter
   {
     SetAll(openXmlElement, value?.All);
     SetDocPartType(openXmlElement, value?.DocPartType);
-    }
   }
+}

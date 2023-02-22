@@ -1527,5 +1527,5 @@ public static class CompatibilityConverter
     SetUseAnsiKerningPairs(openXmlElement, value?.UseAnsiKerningPairs);
     SetCachedColumnBalance(openXmlElement, value?.CachedColumnBalance);
     SetCompatibilitySettings(openXmlElement, value?.CompatibilitySettings);
-    }
   }
+}

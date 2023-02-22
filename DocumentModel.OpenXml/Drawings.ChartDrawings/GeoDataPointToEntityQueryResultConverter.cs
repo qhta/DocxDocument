@@ -103,5 +103,5 @@ public static class GeoDataPointToEntityQueryResultConverter
   {
     SetGeoDataPointQuery(openXmlElement, value?.GeoDataPointQuery);
     SetGeoDataPointToEntityQuery(openXmlElement, value?.GeoDataPointToEntityQuery);
-    }
   }
+}

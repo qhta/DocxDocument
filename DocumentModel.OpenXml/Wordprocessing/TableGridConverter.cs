@@ -127,5 +127,5 @@ public static class TableGridConverter
   {
     SetGridColumns(openXmlElement, value?.GridColumns);
     SetTableGridChange(openXmlElement, value?.TableGridChange);
-    }
   }
+}

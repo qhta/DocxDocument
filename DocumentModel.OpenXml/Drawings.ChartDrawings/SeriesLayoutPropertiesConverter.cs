@@ -317,5 +317,5 @@ public static class SeriesLayoutPropertiesConverter
     SetStatistics(openXmlElement, value?.Statistics);
     SetSubtotals(openXmlElement, value?.Subtotals);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

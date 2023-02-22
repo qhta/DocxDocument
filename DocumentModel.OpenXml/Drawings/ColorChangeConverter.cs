@@ -130,5 +130,5 @@ public static class ColorChangeConverter
     SetUseAlpha(openXmlElement, value?.UseAlpha);
     SetColorFrom(openXmlElement, value?.ColorFrom);
     SetColorTo(openXmlElement, value?.ColorTo);
-    }
   }
+}

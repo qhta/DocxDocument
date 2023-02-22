@@ -59,5 +59,5 @@ public static class VTVStreamDataConverter
   public static void UpdateOpenXmlElement(DXVT.VTVStreamData openXmlElement, DMVT.VTVStreamData value)
   {
     SetVersion(openXmlElement, value?.Version);
-    }
   }
+}

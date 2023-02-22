@@ -85,5 +85,5 @@ public static class BrightnessContrastConverter
   {
     SetBright(openXmlElement, value?.Bright);
     SetContrast(openXmlElement, value?.Contrast);
-    }
   }
+}

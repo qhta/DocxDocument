@@ -67,5 +67,5 @@ public static class MajorGridlinesConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.MajorGridlines openXmlElement, DMDrawsCharts.MajorGridlines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
-    }
   }
+}

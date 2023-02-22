@@ -247,5 +247,5 @@ public static class TransformGroupConverter
     SetExtents(openXmlElement, value?.Extents);
     SetChildOffset(openXmlElement, value?.ChildOffset);
     SetChildExtents(openXmlElement, value?.ChildExtents);
-    }
   }
+}

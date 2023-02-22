@@ -103,5 +103,5 @@ public static class LanguageTypeConverter
     SetVal(openXmlElement, value?.Val);
     SetEastAsia(openXmlElement, value?.EastAsia);
     SetBidi(openXmlElement, value?.Bidi);
-    }
   }
+}

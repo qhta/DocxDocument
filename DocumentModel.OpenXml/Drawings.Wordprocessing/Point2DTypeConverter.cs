@@ -85,5 +85,5 @@ public static class Point2DTypeConverter
   {
     SetX(openXmlElement, value?.X);
     SetY(openXmlElement, value?.Y);
-    }
   }
+}

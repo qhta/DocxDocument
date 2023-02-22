@@ -97,5 +97,5 @@ public static class TabsConverter
   public static void UpdateOpenXmlElement(DXO2010CustUI.Tabs openXmlElement, DM.Tabs value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

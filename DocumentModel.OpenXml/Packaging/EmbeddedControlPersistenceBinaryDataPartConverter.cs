@@ -53,5 +53,5 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
   public static void UpdateOpenXmlElement(DXPack.EmbeddedControlPersistenceBinaryDataPart openXmlElement, DMPack.EmbeddedControlPersistenceBinaryDataPart value)
   {
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class RelativeOffsetConverter
   {
     SetOffsetX(openXmlElement, value?.OffsetX);
     SetOffsetY(openXmlElement, value?.OffsetY);
-    }
   }
+}

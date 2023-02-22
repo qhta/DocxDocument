@@ -136,5 +136,5 @@ public static class FramesetSplitbarConverter
     SetColor(openXmlElement, value?.Color);
     SetNoBorder(openXmlElement, value?.NoBorder);
     SetFlatBorders(openXmlElement, value?.FlatBorders);
-    }
   }
+}

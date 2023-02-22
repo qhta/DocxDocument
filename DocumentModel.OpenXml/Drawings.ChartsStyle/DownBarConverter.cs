@@ -303,5 +303,5 @@ public static class DownBarConverter
     SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
     SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
-    }
   }
+}

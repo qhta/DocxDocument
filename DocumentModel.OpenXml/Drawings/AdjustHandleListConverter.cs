@@ -97,5 +97,5 @@ public static class AdjustHandleListConverter
   {
     SetAdjustHandleXY(openXmlElement, value?.AdjustHandleXY);
     SetAdjustHandlePolar(openXmlElement, value?.AdjustHandlePolar);
-    }
   }
+}

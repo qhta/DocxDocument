@@ -92,5 +92,5 @@ public static class ConnectionSiteConverter
   {
     SetAngle(openXmlElement, value?.Angle);
     SetPosition(openXmlElement, value?.Position);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class ArtisticGlowDiffusedConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetIntensity(openXmlElement, value?.Intensity);
-    }
   }
+}

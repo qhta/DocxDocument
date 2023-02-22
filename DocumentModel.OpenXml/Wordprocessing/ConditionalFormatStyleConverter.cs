@@ -323,5 +323,5 @@ public static class ConditionalFormatStyleConverter
     SetFirstRowLastColumn(openXmlElement, value?.FirstRowLastColumn);
     SetLastRowFirstColumn(openXmlElement, value?.LastRowFirstColumn);
     SetLastRowLastColumn(openXmlElement, value?.LastRowLastColumn);
-    }
   }
+}

@@ -145,5 +145,5 @@ public static class DisplayUnitsConverter
     SetBuiltInUnit(openXmlElement, value?.BuiltInUnit);
     SetDisplayUnitsLabel(openXmlElement, value?.DisplayUnitsLabel);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

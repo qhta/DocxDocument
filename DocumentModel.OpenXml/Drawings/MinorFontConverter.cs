@@ -217,5 +217,5 @@ public static class MinorFontConverter
     SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
     SetSupplementalFonts(openXmlElement, value?.SupplementalFonts);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

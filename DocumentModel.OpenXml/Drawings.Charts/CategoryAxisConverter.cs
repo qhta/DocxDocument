@@ -703,5 +703,5 @@ public static class CategoryAxisConverter
     SetTickMarkSkip(openXmlElement, value?.TickMarkSkip);
     SetNoMultiLevelLabels(openXmlElement, value?.NoMultiLevelLabels);
     SetCatAxExtensionList(openXmlElement, value?.CatAxExtensionList);
-    }
   }
+}

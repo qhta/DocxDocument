@@ -400,5 +400,5 @@ public static class TextListStyleTypeConverter
     SetLevel8ParagraphProperties(openXmlElement, value?.Level8ParagraphProperties);
     SetLevel9ParagraphProperties(openXmlElement, value?.Level9ParagraphProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

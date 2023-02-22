@@ -97,5 +97,5 @@ public static class LinePropertiesExtensionListConverter
   public static void UpdateOpenXmlElement(DXDraw.LinePropertiesExtensionList openXmlElement, DMDraws.LinePropertiesExtensionList value)
   {
     SetLinePropertiesExtensions(openXmlElement, value?.LinePropertiesExtensions);
-    }
   }
+}

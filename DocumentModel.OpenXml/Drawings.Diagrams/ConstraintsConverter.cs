@@ -97,5 +97,5 @@ public static class ConstraintsConverter
   public static void UpdateOpenXmlElement(DXDrawDgms.Constraints openXmlElement, DMDrawsDgms.Constraints value)
   {
     SetItems(openXmlElement, value?.Items);
-    }
   }
+}

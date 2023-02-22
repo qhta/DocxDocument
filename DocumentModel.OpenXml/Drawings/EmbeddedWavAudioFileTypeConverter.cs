@@ -108,5 +108,5 @@ public static class EmbeddedWavAudioFileTypeConverter
     SetEmbed(openXmlElement, value?.Embed);
     SetName(openXmlElement, value?.Name);
     SetBuiltIn(openXmlElement, value?.BuiltIn);
-    }
   }
+}

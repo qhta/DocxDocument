@@ -70,5 +70,5 @@ public static class VectorVariantTypeConverter
   public static void UpdateOpenXmlElement(DXExtProps.VectorVariantType openXmlElement, DMProps.VectorVariantType value)
   {
     SetVTVector(openXmlElement, value?.VTVector);
-    }
   }
+}

@@ -85,5 +85,5 @@ public static class ArtisticPencilGrayscaleConverter
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetBrushSize(openXmlElement, value?.BrushSize);
-    }
   }
+}

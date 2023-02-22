@@ -1131,5 +1131,5 @@ public static class RunConverter
     SetDrawing(openXmlElement, value?.Drawing);
     SetPositionalTab(openXmlElement, value?.PositionalTab);
     SetLastRenderedPageBreak(openXmlElement, value?.LastRenderedPageBreak);
-    }
   }
+}

@@ -96,5 +96,5 @@ public static class ChartStylePartConverter
     SetChartStyle(openXmlElement, value?.ChartStyle);
     //SetContentType(openXmlElement, value?.ContentType);
     //SetRelationshipType(openXmlElement, value?.RelationshipType);
-    }
   }
+}

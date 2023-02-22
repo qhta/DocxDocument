@@ -403,5 +403,5 @@ public static class LayoutDefinitionConverter
     SetColorData(openXmlElement, value?.ColorData);
     SetLayoutNode(openXmlElement, value?.LayoutNode);
     SetDiagramDefinitionExtensionList(openXmlElement, value?.DiagramDefinitionExtensionList);
-    }
   }
+}

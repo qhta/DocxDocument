@@ -81,5 +81,5 @@ public static class ShapeIdMapConverter
   {
     SetExtension(openXmlElement, value?.Extension);
     SetData(openXmlElement, value?.Data);
-    }
   }
+}

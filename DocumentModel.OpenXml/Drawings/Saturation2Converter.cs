@@ -61,5 +61,5 @@ public static class Saturation2Converter
   public static void UpdateOpenXmlElement(DXO2010Draw.Saturation openXmlElement, DMDraws.Saturation2 value)
   {
     SetSaturationAmount(openXmlElement, value?.SaturationAmount);
-    }
   }
+}

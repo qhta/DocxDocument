@@ -343,5 +343,5 @@ public static class WebSettingsConverter
     SetDoNotUseLongFileNames(openXmlElement, value?.DoNotUseLongFileNames);
     SetPixelsPerInch(openXmlElement, value?.PixelsPerInch);
     SetTargetScreenSize(openXmlElement, value?.TargetScreenSize);
-    }
   }
+}

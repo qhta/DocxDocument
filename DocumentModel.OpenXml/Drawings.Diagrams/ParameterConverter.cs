@@ -81,5 +81,5 @@ public static class ParameterConverter
   {
     SetType(openXmlElement, value?.Type);
     SetVal(openXmlElement, value?.Val);
-    }
   }
+}

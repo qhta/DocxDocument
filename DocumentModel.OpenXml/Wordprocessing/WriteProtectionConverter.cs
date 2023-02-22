@@ -477,5 +477,5 @@ public static class WriteProtectionConverter
     SetHashValue(openXmlElement, value?.HashValue);
     SetSaltValue(openXmlElement, value?.SaltValue);
     SetSpinCount(openXmlElement, value?.SpinCount);
-    }
   }
+}

@@ -97,5 +97,5 @@ public static class ScatterSerExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ScatterSerExtensionList openXmlElement, DMDrawsCharts.ScatterSerExtensionList value)
   {
     SetScatterSerExtensions(openXmlElement, value?.ScatterSerExtensions);
-    }
   }
+}

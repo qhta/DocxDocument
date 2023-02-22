@@ -160,5 +160,5 @@ public static class ValueColorPositionsConverter
     SetMinValueColorEndPosition(openXmlElement, value?.MinValueColorEndPosition);
     SetValueColorMiddlePosition(openXmlElement, value?.ValueColorMiddlePosition);
     SetMaxValueColorEndPosition(openXmlElement, value?.MaxValueColorEndPosition);
-    }
   }
+}

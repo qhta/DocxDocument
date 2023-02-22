@@ -97,5 +97,5 @@ public static class ValAxExtensionListConverter
   public static void UpdateOpenXmlElement(DXDrawCharts.ValAxExtensionList openXmlElement, DMDrawsCharts.ValAxExtensionList value)
   {
     SetValAxExtensions(openXmlElement, value?.ValAxExtensions);
-    }
   }
+}

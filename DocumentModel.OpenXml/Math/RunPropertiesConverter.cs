@@ -215,5 +215,5 @@ public static class RunPropertiesConverter
     SetStyle(openXmlElement, value?.Style);
     SetBreak(openXmlElement, value?.Break);
     SetAlignment(openXmlElement, value?.Alignment);
-    }
   }
+}

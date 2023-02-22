@@ -81,5 +81,5 @@ public static class LevelTextConverter
   {
     SetVal(openXmlElement, value?.Val);
     SetNull(openXmlElement, value?.Null);
-    }
   }
+}

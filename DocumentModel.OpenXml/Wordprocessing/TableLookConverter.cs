@@ -201,5 +201,5 @@ public static class TableLookConverter
     SetLastColumn(openXmlElement, value?.LastColumn);
     SetNoHorizontalBand(openXmlElement, value?.NoHorizontalBand);
     SetNoVerticalBand(openXmlElement, value?.NoVerticalBand);
-    }
   }
+}

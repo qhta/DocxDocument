@@ -158,5 +158,5 @@ public static class UpDownBarsConverter
     SetUpBars(openXmlElement, value?.UpBars);
     SetDownBars(openXmlElement, value?.DownBars);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

@@ -400,5 +400,5 @@ public static class OfPieChartConverter
     SetSecondPieSize(openXmlElement, value?.SecondPieSize);
     SetSeriesLines(openXmlElement, value?.SeriesLines);
     SetExtensionList(openXmlElement, value?.ExtensionList);
-    }
   }
+}

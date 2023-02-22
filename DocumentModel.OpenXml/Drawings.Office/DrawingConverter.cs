@@ -70,5 +70,5 @@ public static class DrawingConverter
   public static void UpdateOpenXmlElement(DXODraw.Drawing openXmlElement, DMDrawsO.Drawing value)
   {
     SetShapeTree(openXmlElement, value?.ShapeTree);
-    }
   }
+}

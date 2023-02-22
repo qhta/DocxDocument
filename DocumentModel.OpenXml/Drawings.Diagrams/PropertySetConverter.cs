@@ -770,5 +770,5 @@ public static class PropertySetConverter
     SetIncludeAngleScale(openXmlElement, value?.IncludeAngleScale);
     SetPresentationLayoutVariables(openXmlElement, value?.PresentationLayoutVariables);
     SetStyle(openXmlElement, value?.Style);
-    }
   }
+}
