@@ -255,12 +255,7 @@ public static class AnchorConverter
   
   private static bool CmpEditId(DXDrawW.Anchor openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.EditId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.EditId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.EditId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "EditId", openXmlElement?.EditId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.EditId?.Value, value, diffs, objName, "EditId");
   }
   
   private static void SetEditId(DXDrawW.Anchor openXmlElement, DM.HexInt? value)
@@ -283,12 +278,7 @@ public static class AnchorConverter
   
   private static bool CmpAnchorId(DXDrawW.Anchor openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AnchorId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.AnchorId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.AnchorId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "AnchorId", openXmlElement?.AnchorId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.AnchorId?.Value, value, diffs, objName, "AnchorId");
   }
   
   private static void SetAnchorId(DXDrawW.Anchor openXmlElement, DM.HexInt? value)

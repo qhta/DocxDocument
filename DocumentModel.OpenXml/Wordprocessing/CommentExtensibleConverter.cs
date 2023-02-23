@@ -17,12 +17,7 @@ public static class CommentExtensibleConverter
   
   private static bool CmpDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DurableId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.DurableId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.DurableId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.DurableId?.Value, value, diffs, objName, "DurableId");
   }
   
   private static void SetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement, DM.HexInt? value)

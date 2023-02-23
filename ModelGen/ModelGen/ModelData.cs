@@ -579,6 +579,8 @@ public static class ModelData
     { "DocumentModel.Wordprocessing.Mcd.BEncrypt", typeof(HexChar) },
     { "DocumentModel.Wordprocessing.Mcd.Cmg", typeof(HexChar) },
     { "*.Rsid", typeof(HexInt) },
+    { "DocumentModel.Wordprocessing.Rsids.RsidRoot", typeof(HexInt) },
+    { "DocumentModel.Wordprocessing.Rsids.Items", typeof(Collection<HexInt>) },
   };
 
   public static bool TryGetPropertyType(string propertyName, [MaybeNullWhen(false)][NotNullWhen(true)] out Type propertyType)
@@ -716,8 +718,7 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.VariantTypes.VTVector), typeof(DocumentModel.VectorVariant)},
     { typeof(DocumentFormat.OpenXml.Base64BinaryValue), typeof(DocumentModel.Base64Binary)},
     { typeof(DocumentFormat.OpenXml.HexBinaryValue), typeof(DocumentModel.HexBinary)},
-    //{ typeof(DocumentFormat.OpenXml.Wordprocessing.Settings), new TypeConversionTarget(typeof(DocumentModel.DocumentSettings), true)},
-    //{ typeof(DocumentFormat.OpenXml.Wordprocessing.WebSettings), new TypeConversionTarget(typeof(DocumentModel.WebSettings), true)},
+//    { typeof(Collection<UInt32>), typeof(Collection<HexInt>)},
   };
 
   public static Dictionary<Type, string> BuiltInTypeNames { get; } = new Dictionary<Type, string>

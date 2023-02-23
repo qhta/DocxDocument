@@ -17,12 +17,7 @@ public static class TableRowConverter
   
   private static bool CmpRsidTableRowMarkRevision(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidTableRowMarkRevision?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidTableRowMarkRevision.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidTableRowMarkRevision?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidTableRowMarkRevision", openXmlElement?.RsidTableRowMarkRevision?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowMarkRevision?.Value, value, diffs, objName, "RsidTableRowMarkRevision");
   }
   
   private static void SetRsidTableRowMarkRevision(DXW.TableRow openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class TableRowConverter
   
   private static bool CmpRsidTableRowAddition(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidTableRowAddition?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidTableRowAddition.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidTableRowAddition?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidTableRowAddition", openXmlElement?.RsidTableRowAddition?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowAddition?.Value, value, diffs, objName, "RsidTableRowAddition");
   }
   
   private static void SetRsidTableRowAddition(DXW.TableRow openXmlElement, DM.HexInt? value)
@@ -73,12 +63,7 @@ public static class TableRowConverter
   
   private static bool CmpRsidTableRowDeletion(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidTableRowDeletion?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidTableRowDeletion.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidTableRowDeletion?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidTableRowDeletion", openXmlElement?.RsidTableRowDeletion?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowDeletion?.Value, value, diffs, objName, "RsidTableRowDeletion");
   }
   
   private static void SetRsidTableRowDeletion(DXW.TableRow openXmlElement, DM.HexInt? value)
@@ -101,12 +86,7 @@ public static class TableRowConverter
   
   private static bool CmpRsidTableRowProperties(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidTableRowProperties?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidTableRowProperties.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidTableRowProperties?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidTableRowProperties", openXmlElement?.RsidTableRowProperties?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidTableRowProperties?.Value, value, diffs, objName, "RsidTableRowProperties");
   }
   
   private static void SetRsidTableRowProperties(DXW.TableRow openXmlElement, DM.HexInt? value)
@@ -129,12 +109,7 @@ public static class TableRowConverter
   
   private static bool CmpParagraphId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParagraphId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.ParagraphId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.ParagraphId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParagraphId", openXmlElement?.ParagraphId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.ParagraphId?.Value, value, diffs, objName, "ParagraphId");
   }
   
   private static void SetParagraphId(DXW.TableRow openXmlElement, DM.HexInt? value)
@@ -157,12 +132,7 @@ public static class TableRowConverter
   
   private static bool CmpTextId(DXW.TableRow openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TextId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.TextId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.TextId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "TextId", openXmlElement?.TextId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.TextId?.Value, value, diffs, objName, "TextId");
   }
   
   private static void SetTextId(DXW.TableRow openXmlElement, DM.HexInt? value)

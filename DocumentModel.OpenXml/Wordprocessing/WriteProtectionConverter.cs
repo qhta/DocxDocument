@@ -147,12 +147,7 @@ public static class WriteProtectionConverter
   
   private static bool CmpAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AlgorithmIdExtensibility?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.AlgorithmIdExtensibility.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.AlgorithmIdExtensibility?.Value == null && value == null) return true;
-    diffs?.Add(objName, "AlgorithmIdExtensibility", openXmlElement?.AlgorithmIdExtensibility?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.AlgorithmIdExtensibility?.Value, value, diffs, objName, "AlgorithmIdExtensibility");
   }
   
   private static void SetAlgorithmIdExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value)
@@ -193,12 +188,7 @@ public static class WriteProtectionConverter
   
   private static bool CmpCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.CryptographicProviderTypeExtensibility?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.CryptographicProviderTypeExtensibility.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.CryptographicProviderTypeExtensibility?.Value == null && value == null) return true;
-    diffs?.Add(objName, "CryptographicProviderTypeExtensibility", openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.CryptographicProviderTypeExtensibility?.Value, value, diffs, objName, "CryptographicProviderTypeExtensibility");
   }
   
   private static void SetCryptographicProviderTypeExtensibility(DXW.WriteProtection openXmlElement, DM.HexInt? value)

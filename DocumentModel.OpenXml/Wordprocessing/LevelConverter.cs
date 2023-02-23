@@ -37,12 +37,7 @@ public static class LevelConverter
   
   private static bool CmpTemplateCode(DXW.Level openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TemplateCode?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.TemplateCode.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.TemplateCode?.Value == null && value == null) return true;
-    diffs?.Add(objName, "TemplateCode", openXmlElement?.TemplateCode?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.TemplateCode?.Value, value, diffs, objName, "TemplateCode");
   }
   
   private static void SetTemplateCode(DXW.Level openXmlElement, DM.HexInt? value)

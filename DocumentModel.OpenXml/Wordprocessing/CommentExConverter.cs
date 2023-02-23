@@ -17,12 +17,7 @@ public static class CommentExConverter
   
   private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParaId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.ParaId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.ParaId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
   
   private static void SetParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class CommentExConverter
   
   private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParaIdParent?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.ParaIdParent.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.ParaIdParent?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaIdParent", openXmlElement?.ParaIdParent?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.ParaIdParent?.Value, value, diffs, objName, "ParaIdParent");
   }
   
   private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
