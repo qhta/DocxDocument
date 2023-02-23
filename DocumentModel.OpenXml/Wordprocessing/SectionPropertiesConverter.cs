@@ -17,12 +17,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpRsidRPr(DXW.SectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRPr?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidRPr.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidRPr?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRPr", openXmlElement?.RsidRPr?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRPr?.Value, value, diffs, objName, "RsidRPr");
   }
   
   private static void SetRsidRPr(DXW.SectionProperties openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpRsidDel(DXW.SectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidDel?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidDel.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidDel?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidDel", openXmlElement?.RsidDel?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidDel?.Value, value, diffs, objName, "RsidDel");
   }
   
   private static void SetRsidDel(DXW.SectionProperties openXmlElement, DM.HexInt? value)
@@ -73,12 +63,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpRsidR(DXW.SectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidR?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidR.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidR?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidR", openXmlElement?.RsidR?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidR?.Value, value, diffs, objName, "RsidR");
   }
   
   private static void SetRsidR(DXW.SectionProperties openXmlElement, DM.HexInt? value)
@@ -101,12 +86,7 @@ public static class SectionPropertiesConverter
   
   private static bool CmpRsidSect(DXW.SectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidSect?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidSect.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidSect?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidSect", openXmlElement?.RsidSect?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidSect?.Value, value, diffs, objName, "RsidSect");
   }
   
   private static void SetRsidSect(DXW.SectionProperties openXmlElement, DM.HexInt? value)

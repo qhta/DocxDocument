@@ -17,12 +17,7 @@ public static class RunConverter
   
   private static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRunProperties?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidRunProperties.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidRunProperties?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunProperties", openXmlElement?.RsidRunProperties?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRunProperties?.Value, value, diffs, objName, "RsidRunProperties");
   }
   
   private static void SetRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class RunConverter
   
   private static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRunDeletion?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidRunDeletion.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidRunDeletion?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunDeletion", openXmlElement?.RsidRunDeletion?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRunDeletion?.Value, value, diffs, objName, "RsidRunDeletion");
   }
   
   private static void SetRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? value)
@@ -73,12 +63,7 @@ public static class RunConverter
   
   private static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRunAddition?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidRunAddition.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidRunAddition?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunAddition", openXmlElement?.RsidRunAddition?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRunAddition?.Value, value, diffs, objName, "RsidRunAddition");
   }
   
   private static void SetRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? value)

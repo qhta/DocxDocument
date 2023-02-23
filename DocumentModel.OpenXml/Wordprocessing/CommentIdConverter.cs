@@ -17,12 +17,7 @@ public static class CommentIdConverter
   
   private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParaId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.ParaId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.ParaId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParaId", openXmlElement?.ParaId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
   
   private static void SetParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class CommentIdConverter
   
   private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DurableId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.DurableId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.DurableId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.DurableId?.Value, value, diffs, objName, "DurableId");
   }
   
   private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)

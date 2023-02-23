@@ -17,12 +17,7 @@ public static class PictureConverter
   
   private static bool CmpAnchorId(DXW.Picture openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.AnchorId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.AnchorId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.AnchorId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "AnchorId", openXmlElement?.AnchorId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.AnchorId?.Value, value, diffs, objName, "AnchorId");
   }
   
   private static void SetAnchorId(DXW.Picture openXmlElement, DM.HexInt? value)
