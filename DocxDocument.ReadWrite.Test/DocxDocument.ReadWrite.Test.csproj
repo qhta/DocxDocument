@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>false</IsPackable>
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
@@ -36,7 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.Conversion\Qhta.Conversion.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
-    <ProjectReference Include="..\DocxDocument.Reader\DocxDocument.Reader.csproj" />
+    <ProjectReference Include="..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj" />
   </ItemGroup>
 
   <ItemGroup>

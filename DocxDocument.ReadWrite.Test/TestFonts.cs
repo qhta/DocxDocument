@@ -1,3 +1,4 @@
+using DocumentModel.OpenXml.BaseConverters;
 using DocumentModel.Wordprocessing;
 
 using Qhta.Xml.Serialization;
@@ -5,38 +6,60 @@ using System.Reflection;
 
 namespace DocxDocument.Reader.Test;
 
+/// <summary>
+/// Test class for document font table.
+/// </summary>
+/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
 public class TestFonts : TestBase
 {
 
+  /// <summary>
+  /// Tests the normal template fonts.
+  /// </summary>
   [Test]
   public void TestNormalTemplateFonts()
   {
     var filename = Path.Combine(TestPath, "Normal.dotm");
-    ReadFonts(filename, true);
+    TestReadFonts(filename, true);
   }
 
+  /// <summary>
+  /// Tests the fonts read from "DocumentProperties.docx" file.
+  /// </summary>
   [Test]
-  public void TestDocumentFonts()
+  public void TestReadDocumentFonts()
   {
     var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    ReadFonts(filename, true);
+    TestReadFonts(filename, true);
   }
 
+  /// <summary>
+  /// Tests the fonts read from "CustomProperties.docx" file.
+  /// </summary>
   [Test]
-  public void TestCustomFonts()
+  public void TestReadCustomFonts()
   {
     var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    ReadFonts(filename, true);
+    TestReadFonts(filename, true);
   }
 
+  /// <summary>
+  /// Tests the fonts read from all docx files in folder specified by test path.
+  /// </summary>
   [Test]
-  public void TestSampleDocsFonts()
+  public void TestReadSampleDocsFonts()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      ReadFonts(filename);
+      TestReadFonts(filename);
   }
 
-  public virtual DMW.Fonts ReadFonts(string filename, bool showDetails = false)
+  /// <summary>
+  /// Tests the fonts read from the specified docx file.
+  /// </summary>
+  /// <param name="filename">The filename of the document to read.</param>
+  /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+  /// <returns>Fonts read</returns>
+  public virtual DMW.Fonts TestReadFonts(string filename, bool showDetails = false)
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
@@ -49,14 +72,24 @@ public class TestFonts : TestBase
     int origFontsCount = origFonts?.Elements<DXW.Font>().Count() ?? 0;
     var diffs = new DMX.DiffList();
     var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
+    if (!ok && showDetails)
+    {
+      WriteLine("Read fonts differences found:");
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    }
     if (!ok)
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
 
     return document.Fonts;
   }
 
+  /// <summary>
+  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
+  /// serialize and deserialize fonts using string writer.
+  /// </summary>
   [Test]
-  public void TestFontsXmlSerialization()
+  public void TestReadFontsXmlSerialization()
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();

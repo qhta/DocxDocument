@@ -4,38 +4,60 @@ using Qhta.Xml.Serialization;
 
 namespace DocxDocument.Reader.Test;
 
+/// <summary>
+/// Test class for document theme part.
+/// </summary>
+/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
 public class TestTheme : TestBase
 {
 
+  /// <summary>
+  /// Tests the normal template theme.
+  /// </summary>
   [Test]
-  public void TestNormalTemplateTheme()
+  public void TestReadNormalTemplateTheme()
   {
     var filename = Path.Combine(TestPath, "Normal.dotm");
-    ReadTheme(filename, true);
+    ReadReadTheme(filename, true);
   }
 
+  /// <summary>
+  /// Tests the theme read from "DocumentProperties.docx".
+  /// </summary>
   [Test]
-  public void TestDocumentTheme()
+  public void TestReadDocumentTheme()
   {
     var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    ReadTheme(filename, true);
+    ReadReadTheme(filename, true);
   }
 
+  /// <summary>
+  /// Tests the theme read from "CustomProperties.docx".
+  /// </summary>
   [Test]
   public void TestCustomTheme()
   {
     var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    ReadTheme(filename, true);
+    ReadReadTheme(filename, true);
   }
 
+  /// <summary>
+  /// Tests the theme read from all docx files in folder specified by test path.
+  /// </summary>
   [Test]
   public void TestSampleDocsTheme()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      ReadTheme(filename);
+      ReadReadTheme(filename);
   }
 
-  public virtual DMDraws.Theme ReadTheme(string filename, bool showDetails = false)
+  /// <summary>
+  /// Tests the theme read from the specified docx file.
+  /// </summary>
+  /// <param name="filename">The filename of the document to read.</param>
+  /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+  /// <returns>TRead theme</returns>
+  public virtual DMDraws.Theme ReadReadTheme(string filename, bool showDetails = false)
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
@@ -154,40 +176,10 @@ public class TestTheme : TestBase
     return document.Theme;
   }
 
-  private void TestDocDefaults(DMW.DocDefaults? modelDocDefaults, DXW.DocDefaults? origDocDefaults)
-  {
-    if (origDocDefaults != null)
-    {
-      Assert.IsNotNull(modelDocDefaults, "DocDefaults is null");
-      TestParagraphPropertiesDefault(modelDocDefaults.ParagraphPropertiesDefault, origDocDefaults.ParagraphPropertiesDefault);
-      TestRunPropertiesDefault(modelDocDefaults.RunPropertiesDefault, origDocDefaults.RunPropertiesDefault);
-    }
-  }
-
-  private void TestParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults,
-    DXW.ParagraphPropertiesDefault? origParPropsDefaults)
-  {
-    if (origParPropsDefaults != null)
-    {
-      Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
-      var diffs = new DMX.DiffList();
-      if (!DMXW.ParagraphPropertiesDefaultConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
-        Assert.Fail(diffs.FirstOrDefault()?.ToString());
-    }
-  }
-
-  private void TestRunPropertiesDefault(DMW.RunPropertiesDefault? modelRunPropsDefaults,
-    DXW.RunPropertiesDefault? origRunPropsDefaults)
-  {
-    if (origRunPropsDefaults != null)
-    {
-      Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
-      var diffs = new DMX.DiffList();
-      if (!DMXW.RunPropertiesDefaultConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
-        Assert.Fail(diffs.FirstOrDefault()?.ToString());
-    }
-  }
-
+  /// <summary>
+  /// Tests theme Xml serialization by reading "CustomProperties.docx" file,
+  /// serialize and deserialize theme using string writer.
+  /// </summary>
   [Test]
   public void TestThemeXmlSerialization()
   {

@@ -1,29 +1,35 @@
 using System.ComponentModel;
-using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
+using System.Xml.Serialization;
+
 using DocumentModel;
 
-using Qhta.TypeUtils;
+using Qhta.SystemUtils;
 using Qhta.Xml.Serialization;
 
 using Variant = DocumentModel.Variant;
 using VariantType = DocumentModel.VariantType;
 
-using Newtonsoft.Json;
-using Qhta.Conversion;
-using System.Xml.Serialization;
-using Qhta.SystemUtils;
-
 namespace DocxDocument.Reader.Test;
+/// <summary>
+/// TestNumbers for variants
+/// </summary>
 public enum Numbers: UInt64
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   One = 1,
   MaxUInt32 = UInt32.MaxValue,
   MaxUInt64 =UInt64.MaxValue,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
 
+/// <summary>
+/// Test struct for variants
+/// </summary>
+/// <seealso cref="System.IConvertible" />
 [TypeConverter(typeof(RGBTypeConverter))]
 public struct RGB: IConvertible
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   [XmlIgnore] public Byte R { get; set; }
   [XmlIgnore] public Byte G { get; set; }
   [XmlIgnore] public Byte B { get; set; }
@@ -120,10 +126,16 @@ public struct RGB: IConvertible
   {
     throw new NotImplementedException();
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
 
+/// <summary>
+/// Type converter for RGB test struct needed for serialization
+/// </summary>
+/// <seealso cref="System.ComponentModel.TypeConverter" />
 public class RGBTypeConverter : TypeConverter
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
     if (sourceType == typeof(string))
@@ -154,11 +166,20 @@ public class RGBTypeConverter : TypeConverter
     }
     return base.ConvertFrom(context, culture, value);
   }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
 
+/// <summary>
+/// Test class for variants
+/// </summary>
+/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
 public class TestVariants : TestBase
 {
 
+  /// <summary>
+  /// Test of the boolean variant type. 
+  /// Tests conversion between boolean value and other number types.
+  /// </summary>
   [Test]
   public void TestBooleanVariantType()
   {
@@ -248,6 +269,10 @@ public class TestVariants : TestBase
     Assert.That((bool)variant, Is.EqualTo(false), "String set/ boolean get error");
   }
 
+  /// <summary>
+  /// Test of the byte variant type. 
+  /// Tests conversion between byte value and other number types.
+  /// </summary>
   [Test]
   public void TestByteVariantType()
   {
@@ -331,6 +356,10 @@ public class TestVariants : TestBase
     Assert.That((byte)variant, Is.EqualTo(0), "String set/ byte get error");
   }
 
+  /// <summary>
+  /// Test of the signed byte variant type. 
+  /// Tests conversion between signed byte value and other number types.
+  /// </summary>
   [Test]
   public void TestSByteVariantType()
   {
@@ -414,6 +443,10 @@ public class TestVariants : TestBase
     Assert.That((sbyte)variant, Is.EqualTo(-128), "String set/ sbyte get error");
   }
 
+  /// <summary>
+  /// Test of the int16 variant type. 
+  /// Tests conversion between signed 16-bit integer value and other number types.
+  /// </summary>
   [Test]
   public void TestInt16VariantType()
   {
@@ -497,6 +530,10 @@ public class TestVariants : TestBase
     Assert.That((Int16)variant, Is.EqualTo(-32768), "String set/ Int16 get error");
   }
 
+  /// <summary>
+  /// Test of the uint16 variant type. 
+  /// Tests conversion between unsigned 16-bit integer value and other number types.
+  /// </summary>
   [Test]
   public void TestUInt16VariantType()
   {
@@ -580,7 +617,10 @@ public class TestVariants : TestBase
     Assert.That((UInt16)variant, Is.EqualTo(0), "String set/ UInt16 get error");
   }
 
-
+  /// <summary>
+  /// Test of the int32 variant type. 
+  /// Tests conversion between signed 32-bit integer value and other number types.
+  /// </summary>
   [Test]
   public void TestInt32VariantType()
   {
@@ -664,6 +704,10 @@ public class TestVariants : TestBase
     Assert.That((Int32)variant, Is.EqualTo(-2147483648), "String set/ Int32 get error");
   }
 
+  /// <summary>
+  /// Test of the uint32 variant type. 
+  /// Tests conversion between unsigned 32-bit integer value and other number types.
+  /// </summary>
   [Test]
   public void TestUInt32VariantType()
   {
@@ -747,8 +791,10 @@ public class TestVariants : TestBase
     Assert.That((Decimal)variant, Is.EqualTo(0), "String set/ UInt32 get error");
   }
 
-
-
+  /// <summary>
+  /// Test of the int64 variant type. 
+  /// Tests conversion between signed 64-bit integer value and other number types.
+  /// </summary>
 
   [Test]
   public void TestInt64VariantType()
@@ -833,6 +879,10 @@ public class TestVariants : TestBase
     Assert.That((Int64)variant, Is.EqualTo(-9223372036854775808), "String set/ Int64 get error");
   }
 
+  /// <summary>
+  /// Test of the uint64 variant type. 
+  /// Tests conversion between unsigned 32-bit integer value and other number types.
+  /// </summary>
   [Test]
   public void TestUInt64VariantType()
   {
@@ -916,6 +966,10 @@ public class TestVariants : TestBase
     Assert.That((Decimal)variant, Is.EqualTo(0), "String set/ UInt64 get error");
   }
 
+  /// <summary>
+  /// Test of the decimal variant type. 
+  /// Tests conversion between decimal value and other number types.
+  /// </summary>
   [Test]
   public void TestDecimalVariantType()
   {
@@ -999,6 +1053,10 @@ public class TestVariants : TestBase
     Assert.That((Decimal)variant, Is.EqualTo(0), "String set/ Decimal get error");
   }
 
+  /// <summary>
+  /// Test of the single variant type. 
+  /// Tests conversion between single precision floating-point value and other number types.
+  /// </summary>
   [Test]
   public void TestSingleVariantType()
   {
@@ -1082,6 +1140,10 @@ public class TestVariants : TestBase
     Assert.That((Single)variant, Is.EqualTo(Single.MinValue), "String set/ Single get error");
   }
 
+  /// <summary>
+  /// Test of the double variant type. 
+  /// Tests conversion between double precision floating-point value and other number types.
+  /// </summary>
   [Test]
   public void TestDoubleVariantType()
   {
@@ -1165,6 +1227,10 @@ public class TestVariants : TestBase
     Assert.That((Double)variant, Is.EqualTo(Double.MinValue), "String set/ Double get error");
   }
 
+  /// <summary>
+  /// Test of the date-time variant type. 
+  /// Tests conversion between DateTime value and date only type.
+  /// </summary>
   [Test]
   public void TestDateTimeVariantType()
   {
@@ -1185,6 +1251,10 @@ public class TestVariants : TestBase
     Assert.That((DateTime)variant, Is.EqualTo(dt2), "String set/ DateTime get");
   }
 
+  /// <summary>
+  /// Test of the blob variant type. 
+  /// Tests conversion between binary large object block value and string type.
+  /// </summary>
   [Test]
   public void TestBlobVariantType()
   {
@@ -1197,6 +1267,10 @@ public class TestVariants : TestBase
     Assert.That((byte[])variant, Is.EqualTo(blob), "String set/ Blob get");
   }
 
+  /// <summary>
+  /// Test of the GUID variant type. 
+  /// Tests conversion between GUID value and other (string and BLOB) types.
+  /// </summary>
   [Test]
   public void TestGuidVariantType()
   {
@@ -1213,6 +1287,10 @@ public class TestVariants : TestBase
     Assert.That((Guid)variant, Is.EqualTo(guid), "String set/ Guid get");
   }
 
+  /// <summary>
+  /// Test of the char variant type. 
+  /// Tests conversion between char value and other (string and int) types.
+  /// </summary>
   [Test]
   public void TestCharVariantType()
   {
@@ -1230,6 +1308,10 @@ public class TestVariants : TestBase
     Assert.That((int)variant, Is.EqualTo(n), "Char set/ Int get");
   }
 
+  /// <summary>
+  /// Test of the error code variant type. 
+  /// Tests conversion between error code value and other (string and int) types.
+  /// </summary>
   [Test]
   public void TestErrorVariantType()
   {
@@ -1238,9 +1320,13 @@ public class TestVariants : TestBase
     variant = new Variant(VariantType.HexInt, 0xFFFF);
     Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
     variant = new Variant(VariantType.HexInt, "FFFF");
-    Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ Int get");
+    Assert.That((int)variant, Is.EqualTo(0xFFFF), "Error set/ string get");
   }
 
+  /// <summary>
+  /// Test of the enum variant type. 
+  /// Tests conversion between enum value and other (int, uint32/64 and string) types.
+  /// </summary>
   [Test]
   public void TestEnumVariantType()
   {
@@ -1266,6 +1352,10 @@ public class TestVariants : TestBase
     Assert.That(variant.ToString(), Is.EqualTo("One"), "Enum set/ String get");
   }
 
+  /// <summary>
+  /// Test of the object variant type. 
+  /// Tests conversion between RGB struct value and uint32 type.
+  /// </summary>
   [Test]
   public void TestObjectVariantType()
   {
@@ -1275,6 +1365,9 @@ public class TestVariants : TestBase
     Assert.That((UInt32)variant, Is.EqualTo(0x102030), "Object set/ UInt32 get");
   }
 
+  /// <summary>
+  /// Test of the internal variant type. 
+  /// </summary>
   [Test]
   public void TestInternalVariantType()
   {
@@ -1285,6 +1378,9 @@ public class TestVariants : TestBase
     Assert.That(variant.Value, Is.EqualTo(v), "Variant set/ Variant get");
   }
 
+  /// <summary>
+  /// Test of the vector variant type. 
+  /// </summary>
   [Test]
   public void TestVectorVariantType()
   {
@@ -1319,6 +1415,9 @@ public class TestVariants : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the array variant type. 
+  /// </summary>
   [Test]
   public void TestArrayVariantType()
   {
@@ -1396,7 +1495,9 @@ public class TestVariants : TestBase
       // VariantType.Variant can't be tested here as deserialization results in internal vector value
     };
 
-
+  /// <summary>
+  /// Test of the variant XML serialization. Tests all variant types.
+  /// </summary>
   [Test]
   public void TestVariantXmlSerialization()
   {
@@ -1406,6 +1507,9 @@ public class TestVariants : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the variant XML serialization. Tests the specified variant type.
+  /// </summary>
   public void TestVariantXmlSerialization(VariantType variantType)
   {
     if (TestVariantValues.TryGetValue(variantType, out var val))
@@ -1434,12 +1538,18 @@ public class TestVariants : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the vector variant XML serialization. Tests all variant types.
+  /// </summary>
   [Test]
   public void TestVectorXmlSerialization()
   {
     TestVectorXmlSerialization(null);
   }
 
+  /// <summary>
+  /// Test of the vector variant XML serialization. Tests the specified variant type.
+  /// </summary>
   public void TestVectorXmlSerialization(VariantType? itemType)
   {
     var oldVectorVariant = new VectorVariant();
@@ -1484,60 +1594,68 @@ public class TestVariants : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the array variant XML serialization. Tests the specified variant type.
+  /// </summary>
   [Test]
   public void TestArrayVariantXmlSerialization()
   {
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
+      TestArrayVariantXmlSerialization(variantType);
+  }
+
+  /// <summary>
+  /// Test of the array variant XML serialization. Tests all variant types.
+  /// </summary>
+  private void TestArrayVariantXmlSerialization(VariantType variantType)
+  {
+    if (variantType == VariantType.Variant && TestVariantValues.TryGetValue(variantType, out var val))
     {
-      if (variantType == VariantType.Variant && TestVariantValues.TryGetValue(variantType, out var val))
+      var arrayVariant = new ArrayVariant();
+      arrayVariant.Resize(10, variantType);
+      for (int i = 0; i < 10; i++)
       {
-        var arrayVariant = new ArrayVariant();
-        arrayVariant.Resize(10, variantType);
-        for (int i = 0; i < 10; i++)
-        {
-          Variant itemVariant;
-          var itemType = val?.GetType();
-          if (itemType?.IsNumeral() == true)
-            itemVariant = new Variant(variantType, i);
-          else if (itemType == typeof(DateOnly))
-            itemVariant = DateOnly.FromDayNumber(DateOnly.FromDateTime(DateTime.Now).DayNumber + i);
-          else if (itemType == typeof(DateTime))
-            itemVariant = DateTime.Now.AddDays(i);
-          else if (itemType == typeof(Guid))
-            itemVariant = Guid.NewGuid();
-          else
-            itemVariant = new Variant(variantType, val);
-          arrayVariant[i] = itemVariant.Value;
-        }
-        var textWriter = new StringWriter();
-        var serializer = new QXmlSerializer(typeof(Variant));
-        serializer.Serialize(textWriter, arrayVariant);
-        textWriter.Flush();
-        string str = textWriter.ToString();
-        WriteLine(str);
-        WriteLine();
+        Variant itemVariant;
+        var itemType = val?.GetType();
+        if (itemType?.IsNumeral() == true)
+          itemVariant = new Variant(variantType, i);
+        else if (itemType == typeof(DateOnly))
+          itemVariant = DateOnly.FromDayNumber(DateOnly.FromDateTime(DateTime.Now).DayNumber + i);
+        else if (itemType == typeof(DateTime))
+          itemVariant = DateTime.Now.AddDays(i);
+        else if (itemType == typeof(Guid))
+          itemVariant = Guid.NewGuid();
+        else
+          itemVariant = new Variant(variantType, val);
+        arrayVariant[i] = itemVariant.Value;
+      }
+      var textWriter = new StringWriter();
+      var serializer = new QXmlSerializer(typeof(Variant));
+      serializer.Serialize(textWriter, arrayVariant);
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      WriteLine(str);
+      WriteLine();
 
-        var textReader = new StringReader(str);
-        var newVariant = (Variant?)serializer.Deserialize(textReader);
-        Assert.IsNotNull(newVariant, $"Deserialized variant is null");
-        if (newVariant != null)
+      var textReader = new StringReader(str);
+      var newVariant = (Variant?)serializer.Deserialize(textReader);
+      Assert.IsNotNull(newVariant, $"Deserialized variant is null");
+      if (newVariant != null)
+      {
+        Assert.That(newVariant.GetType(), Is.EqualTo(typeof(ArrayVariant)), $"Deserialized variant type different");
+        if (newVariant is ArrayVariant newArrayVariant)
         {
-          Assert.That(newVariant.GetType(), Is.EqualTo(typeof(ArrayVariant)), $"Deserialized variant type different");
-          if (newVariant is ArrayVariant newArrayVariant)
-          {
-            Assert.That(newVariant.VariantType, Is.EqualTo(arrayVariant.VariantType), $"Deserialized variant VariantType different");
-            Assert.That(newArrayVariant.Size, Is.EqualTo(arrayVariant.Size), $"Deserialized variant count different");
-            for (int i = 0; i < newArrayVariant.Size; i++)
-              Assert.That(newArrayVariant[i], Is.EqualTo(arrayVariant[i]), $"Deserialized variant value different");
+          Assert.That(newVariant.VariantType, Is.EqualTo(arrayVariant.VariantType), $"Deserialized variant VariantType different");
+          Assert.That(newArrayVariant.Size, Is.EqualTo(arrayVariant.Size), $"Deserialized variant count different");
+          for (int i = 0; i < newArrayVariant.Size; i++)
+            Assert.That(newArrayVariant[i], Is.EqualTo(arrayVariant[i]), $"Deserialized variant value different");
 
-            Assert.That(newVariant.Value, Is.EqualTo(arrayVariant.Value), $"Deserialized variant value different");
-            Assert.That(newArrayVariant.BaseType, Is.EqualTo(arrayVariant.BaseType), $"Deserialized variant baseType different");
-          }
+          Assert.That(newVariant.Value, Is.EqualTo(arrayVariant.Value), $"Deserialized variant value different");
+          Assert.That(newArrayVariant.BaseType, Is.EqualTo(arrayVariant.BaseType), $"Deserialized variant baseType different");
         }
       }
     }
   }
-
 }
 
 
