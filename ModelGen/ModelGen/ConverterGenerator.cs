@@ -976,18 +976,19 @@ public class ConverterGenerator : BaseCodeGenerator
     if (prop.PropertyType.Type == typeof(DX.HexBinaryValue))
     {
       var origPropName = prop.Name;
-      Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
-      Writer.WriteLine($"  if (HexIntConverter.GetValue(openXmlElement.{origPropName}.Value) == value)");
-      Writer.WriteLine($"    return true;");
-      Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
-      Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
-      Writer.WriteLine($"return false;");
+      //Writer.WriteLine($"if (openXmlElement?.{origPropName}?.Value != null)");
+      //Writer.WriteLine($"  if (HexIntConverter.GetValue(openXmlElement.{origPropName}.Value) == value)");
+      //Writer.WriteLine($"    return true;");
+      //Writer.WriteLine($"if (openXmlElement == null && openXmlElement?.{origPropName}?.Value == null && value == null) return true;");
+      //Writer.WriteLine($"diffs?.Add(objName, \"{origPropName}\", openXmlElement?.{origPropName}?.Value, value);");
+      //Writer.WriteLine($"return false;");
+      Writer.WriteLine($"return HexIntConverter.CmpValue(openXmlElement?.{origPropName}?.Value, value, diffs, objName, \"{origPropName}\");");
     }
     else
     {
       var origPropName = prop.Name;
       var origPropTypeName = prop.PropertyType.GetFullName(true);
-      Writer.WriteLine($"return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val, value, diffs, objName);");
+      Writer.WriteLine($"return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<{origPropTypeName}>()?.Val, value, diffs, objName, \"{origPropName}\");");
     }
     return true;
   }
@@ -2132,6 +2133,8 @@ public class ConverterGenerator : BaseCodeGenerator
   #region GenerateCollectionOfElements code
   private bool GenerateCollectionOfElementsGetCode(PropInfo prop)
   {
+    if (prop.Name=="Items")
+      TestTools.Stop();
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var origPropType = prop.PropertyType;
     var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
@@ -2417,7 +2420,9 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private string ConverterGetMethodName(PropInfo prop)
   {
-    var targetPropType = prop.PropertyType.GetConversionTargetOrSelf();
+    if (prop.Name=="Items" && prop.DeclaringType?.Name=="Rsids")
+      TestTools.Stop();
+    var targetPropType = prop.PropertyType.GetTargetType();
     var origPropType = prop.PropertyType;
     return ConverterGetMethodName(targetPropType, origPropType);
   }
@@ -2457,6 +2462,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return "StringValueConverter.GetValue";
     if (targetPropTypeName.Name == "UInt32")
       return "UInt32ValueConverter.GetValue";
+    if (targetPropTypeName.Name == "HexInt")
+      return "HexIntConverter.GetValue";
     if (targetPropTypeName.Name == "NumId")
       return "NumIdConverter.GetValue";
     if (targetPropTypeName.Name == "HexBinary")
@@ -2535,6 +2542,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return $"StringValueConverter.CreateOpenXmlElement<{origPropTypeName}>";
     if (targetPropTypeName.Name == "UInt32")
       return $"UInt32ValueConverter.CreateOpenXmlElement<{origPropTypeName}>";
+    if (targetPropTypeName.Name == "HexInt")
+      return $"HexIntConverter.CreateOpenXmlElement<{origPropTypeName}>";
     if (targetPropTypeName.Name == "NumId")
       return $"NumIdConverter.CreateOpenXmlElement<{origPropTypeName}>";
     if (targetPropTypeName.Name == "Byte[]")
@@ -2552,6 +2561,11 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var targetPropType = prop.GetTargetType();
     var origPropType = prop.PropertyType;
+    return ConverterTypeCast(targetPropType, origPropType);
+  }
+
+  private string? ConverterTypeCast(TypeInfo targetPropType, TypeInfo origPropType)
+  {
     var targetPropTypeName = targetPropType.GetFullName();
     if (targetPropType.IsSimple())
       return SimpleTypeConverterTypeCast(targetPropTypeName);
@@ -2571,6 +2585,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return "(string)";
     if (targetPropTypeName.Name == "UInt32")
       return "(UInt32)";
+    if (targetPropTypeName.Name == "HexInt")
+      return "(HexInt)";
     if (targetPropTypeName.Name == "NumId")
       return "(NumId)";
     return null;

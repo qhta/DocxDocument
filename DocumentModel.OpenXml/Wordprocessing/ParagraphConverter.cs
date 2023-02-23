@@ -17,12 +17,7 @@ public static class ParagraphConverter
   
   private static bool CmpRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidParagraphMarkRevision?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphMarkRevision.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidParagraphMarkRevision?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphMarkRevision", openXmlElement?.RsidParagraphMarkRevision?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphMarkRevision?.Value, value, diffs, objName, "RsidParagraphMarkRevision");
   }
   
   private static void SetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -45,12 +40,7 @@ public static class ParagraphConverter
   
   private static bool CmpRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidParagraphAddition?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphAddition.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidParagraphAddition?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphAddition", openXmlElement?.RsidParagraphAddition?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphAddition?.Value, value, diffs, objName, "RsidParagraphAddition");
   }
   
   private static void SetRsidParagraphAddition(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -73,12 +63,7 @@ public static class ParagraphConverter
   
   private static bool CmpRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidParagraphDeletion?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphDeletion.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidParagraphDeletion?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphDeletion", openXmlElement?.RsidParagraphDeletion?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphDeletion?.Value, value, diffs, objName, "RsidParagraphDeletion");
   }
   
   private static void SetRsidParagraphDeletion(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -101,12 +86,7 @@ public static class ParagraphConverter
   
   private static bool CmpRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidParagraphProperties?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidParagraphProperties.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidParagraphProperties?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidParagraphProperties", openXmlElement?.RsidParagraphProperties?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidParagraphProperties?.Value, value, diffs, objName, "RsidParagraphProperties");
   }
   
   private static void SetRsidParagraphProperties(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -129,12 +109,7 @@ public static class ParagraphConverter
   
   private static bool CmpRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.RsidRunAdditionDefault?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.RsidRunAdditionDefault.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.RsidRunAdditionDefault?.Value == null && value == null) return true;
-    diffs?.Add(objName, "RsidRunAdditionDefault", openXmlElement?.RsidRunAdditionDefault?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.RsidRunAdditionDefault?.Value, value, diffs, objName, "RsidRunAdditionDefault");
   }
   
   private static void SetRsidRunAdditionDefault(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -157,12 +132,7 @@ public static class ParagraphConverter
   
   private static bool CmpParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.ParagraphId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.ParagraphId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.ParagraphId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "ParagraphId", openXmlElement?.ParagraphId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.ParagraphId?.Value, value, diffs, objName, "ParagraphId");
   }
   
   private static void SetParagraphId(DXW.Paragraph openXmlElement, DM.HexInt? value)
@@ -185,12 +155,7 @@ public static class ParagraphConverter
   
   private static bool CmpTextId(DXW.Paragraph openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.TextId?.Value != null)
-      if (HexIntConverter.GetValue(openXmlElement.TextId.Value) == value)
-        return true;
-    if (openXmlElement == null && openXmlElement?.TextId?.Value == null && value == null) return true;
-    diffs?.Add(objName, "TextId", openXmlElement?.TextId?.Value, value);
-    return false;
+    return HexIntConverter.CmpValue(openXmlElement?.TextId?.Value, value, diffs, objName, "TextId");
   }
   
   private static void SetTextId(DXW.Paragraph openXmlElement, DM.HexInt? value)
