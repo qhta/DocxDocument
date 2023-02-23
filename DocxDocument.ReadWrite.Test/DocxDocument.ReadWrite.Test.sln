@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader.Test", "DocxDocument.Reader.Test.csproj", "{14C1F897-10E1-4D02-9B6F-99F233A5131C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.ReadWrite.Test", "DocxDocument.ReadWrite.Test.csproj", "{14C1F897-10E1-4D02-9B6F-99F233A5131C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.Reader", "..\DocxDocument.Reader\DocxDocument.Reader.csproj", "{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocxDocument.ReadWrite", "..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj", "{8A712153-16C6-42FC-9AE5-30D3D47CFFDE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentModel", "..\DocumentModel\DocumentModel.csproj", "{7D59DC1D-E1C5-45AD-9D38-84C67A129D8B}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Conversion", "..\..\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml", "..\..\MyLib\Qhta.Xml\Qhta.Xml.csproj", "{8D2D8F96-1DF7-4869-8083-DA10FF0DF816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
