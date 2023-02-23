@@ -14,8 +14,15 @@ using Qhta.TypeUtils;
 
 namespace DocxDocument.Reader.Test;
 
+/// <summary>
+/// Test class for DocxDocument.OpenXml base converters.
+/// </summary>
+/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
 public class TestConverters : TestBase
 {
+  /// <summary>
+  /// Test of the enum value converter.
+  /// </summary>
   [Test]
   public void TestEnumValueConverter()
   {
@@ -108,24 +115,34 @@ public class TestConverters : TestBase
       WriteLine(foundType);
   }
 
+  /// <summary>
+  /// Test of the hex-int value converter.
+  /// Tests all docx files in the folder specified by test path.
+  /// </summary>
   [Test]
-  public void TestNumIdConverter()
+  public void TestHexiIntConverter()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestLongHexConverter(filename);
+      TestHexIntConverter(filename);
   }
-  public void TestLongHexConverter(string filename, bool showDetails = false)
+
+  /// <summary>
+  /// Test of the hex-int value converter based on the specified docx file.
+  /// </summary>
+  public void TestHexIntConverter(string filename, bool showDetails = false)
   {
-    //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.Nsid
-    //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.TemplateCode
-    //DocumentFormat.OpenXml.Wordprocessing.Style.Rsid
-    //DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot
     WriteLine(filename);
     var reader = new DocxReader(filename);
-    TestLongHexConverterInExtendendProperties(reader.WordprocessingDocument, showDetails);
-    TestLongHexConverterInNumberingDefinitions(reader.WordprocessingDocument, showDetails);
+    TestHexIntConverterOfExtendendProperties(reader.WordprocessingDocument, showDetails);
+    TestHexIntConverterOfNumberingDefinitions(reader.WordprocessingDocument, showDetails);
   }
-  public void TestLongHexConverterInExtendendProperties(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
+
+  /// <summary>
+  /// Tests the hex-int converter of extendend document properties (Rsids).
+  /// </summary>
+  /// <param name="wordprocessingDocument">The wordprocessing document.</param>
+  /// <param name="showDetails">if set to <c>true</c> [show details].</param>
+  public void TestHexIntConverterOfExtendendProperties(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
     //DocumentFormat.OpenXml.Wordprocessing.Style.Rsid
     //DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot
@@ -152,7 +169,12 @@ public class TestConverters : TestBase
     }
   }
 
-  public void TestLongHexConverterInNumberingDefinitions(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
+  /// <summary>
+  /// Tests the hex-int converter of document numbering definitions.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The wordprocessing document.</param>
+  /// <param name="showDetails">if set to <c>true</c> [show details].</param>
+  public void TestHexIntConverterOfNumberingDefinitions(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
     //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.Nsid
     //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.TemplateCode
@@ -177,18 +199,29 @@ public class TestConverters : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the hexadecimal binary converter.
+  /// </summary>
   [Test]
   public void TestHexBinaryConverter()
   {
     TestHexBinaryConverter(false);
   }
 
+  /// <summary>
+  /// Test of the hexadecimal binary converter.
+  /// Tests all docx files in the folder specified by test path.
+  /// </summary>
+  /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverter(bool showDetails)
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
       TestHexBinaryConverter(filename, showDetails);
   }
 
+  /// <summary>
+  /// Helper method to find all the types that have properties of HexBinaryValue type.
+  /// </summary>
   public void FindHexBinaryGetTypes()
   {
     var modelAssembly = Assembly.Load("DocumentModel");
@@ -206,6 +239,11 @@ public class TestConverters : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the hexadecimal binary converter using a specified docx file.
+  /// </summary>
+  /// <param name="filename">The filename of docx to test.</param>
+  /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverter(string filename, bool showDetails = false)
   {
     //DocumentFormat.OpenXml.Presentation.Font.Panose
@@ -334,6 +372,12 @@ public class TestConverters : TestBase
     TestHexBinaryConverterInParagraphs(reader.WordprocessingDocument, showDetails);
   }
 
+  /// <summary>
+  /// Test of the hexadecimal binary converter working in document font table.
+  /// Tests Panose1Number and FondSignature components.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The wordprocessing document to test.</param>
+  /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverterInFontTable(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
     //DocumentFormat.OpenXml.Wordprocessing.Panose1Number.Val
@@ -393,6 +437,12 @@ public class TestConverters : TestBase
     }
   }
 
+  /// <summary>
+  /// Test of the hexadecimal binary converter working in document paragraphs.
+  /// Tests paragpraph Rsid*, ParagraphId and TextId properties.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The wordprocessing document to test.</param>
+  /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverterInParagraphs(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
     //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphMarkRevision

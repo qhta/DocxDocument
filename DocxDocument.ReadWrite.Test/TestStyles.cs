@@ -10,38 +10,60 @@ using Qhta.Xml.Serialization;
 
 namespace DocxDocument.Reader.Test;
 
+/// <summary>
+/// Test class for document style definition part.
+/// </summary>
+/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
 public class TestStyles : TestBase
 {
 
+  /// <summary>
+  /// Tests the normal template styles.
+  /// </summary>
   [Test]
-  public void TestNormalTemplateStyles()
+  public void TestReadNormalTemplateStyles()
   {
     var filename = Path.Combine(TestPath, "Normal.dotm");
-    ReadStyles(filename, true);
+    TestReadStyles(filename, true);
   }
 
+  /// <summary>
+  /// Tests the style definitions read from "DocumentProperties.docx".
+  /// </summary>
   [Test]
-  public void TestDocumentStyles()
+  public void TestReadDocumentStyles()
   {
     var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    ReadStyles(filename, true);
+    TestReadStyles(filename, true);
   }
 
+  /// <summary>
+  /// Tests the style definitions read from "CustomProperties.docx".
+  /// </summary>
   [Test]
-  public void TestCustomStyles()
+  public void TestReadCustomStyles()
   {
     var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    ReadStyles(filename, true);
+    TestReadStyles(filename, true);
   }
 
+  /// <summary>
+  /// Tests the style definitions read from all docx files in folder specified by test path.
+  /// </summary>
   [Test]
-  public void TestSampleDocsStyles()
+  public void TestReadSampleDocsStyles()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      ReadStyles(filename);
+      TestReadStyles(filename);
   }
 
-  public virtual DMW.Styles ReadStyles(string filename, bool showDetails = false)
+  /// <summary>
+  /// Tests the style definitions read from the specified docx file.
+  /// </summary>
+  /// <param name="filename">The filename of the document to read.</param>
+  /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+  /// <returns>Styles read</returns>
+  public virtual DMW.Styles TestReadStyles(string filename, bool showDetails = false)
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
@@ -158,12 +180,17 @@ public class TestStyles : TestBase
     Assert.That(totalValidStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");
     Assert.That(totalStyleIds, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid style Ids count");
 
-    TestDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);
+    CheckReadDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);
     TestLatentStyleDefaults(document.Styles.LatentStyles, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles);
 
     return document.Styles;
   }
 
+  /// <summary>
+  /// Helper method to check whether read latent styles defaults are same as origin ones.
+  /// </summary>
+  /// <param name="modelLatentStyles">The model latent styles defaults.</param>
+  /// <param name="origLatentStyles">The original latent styles defaults.</param>
   private void TestLatentStyleDefaults(DMW.LatentStyles? modelLatentStyles, DXW.LatentStyles? origLatentStyles)
   {
     if (origLatentStyles != null)
@@ -178,17 +205,27 @@ public class TestStyles : TestBase
     }
   }
 
-  private void TestDocDefaults(DMW.DocDefaults? modelDocDefaults, DXW.DocDefaults? origDocDefaults)
+  /// <summary>
+  /// Helper method to check whether read document defaults are same as origin ones.
+  /// </summary>
+  /// <param name="modelDocDefaults">The model document defaults.</param>
+  /// <param name="origDocDefaults">The original document defaults.</param>
+  private void CheckReadDocDefaults(DMW.DocDefaults? modelDocDefaults, DXW.DocDefaults? origDocDefaults)
   {
     if (origDocDefaults != null)
     {
       Assert.IsNotNull(modelDocDefaults, "DocDefaults is null");
-      TestParagraphPropertiesDefault(modelDocDefaults.ParagraphPropertiesDefault, origDocDefaults.ParagraphPropertiesDefault);
-      TestRunPropertiesDefault(modelDocDefaults.RunPropertiesDefault, origDocDefaults.RunPropertiesDefault);
+      CheckParagraphPropertiesDefault(modelDocDefaults.ParagraphPropertiesDefault, origDocDefaults.ParagraphPropertiesDefault);
+      CheckRunPropertiesDefault(modelDocDefaults.RunPropertiesDefault, origDocDefaults.RunPropertiesDefault);
     }
   }
 
-  private void TestParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults,
+  /// <summary>
+  /// Helper method to check whether read document default paragraph properties are same as origin ones.
+  /// </summary>
+  /// <param name="modelParPropsDefaults">The model default paragraph properties.</param>
+  /// <param name="origParPropsDefaults">The original default paragraph properties.</param>
+  private void CheckParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults,
     DXW.ParagraphPropertiesDefault? origParPropsDefaults)
   {
     if (origParPropsDefaults != null)
@@ -200,7 +237,12 @@ public class TestStyles : TestBase
     }
   }
 
-  private void TestRunPropertiesDefault(DMW.RunPropertiesDefault? modelRunPropsDefaults,
+  /// <summary>
+  /// Helper method to check whether read document default run text properties are same as origin ones.
+  /// </summary>
+  /// <param name="modelRunPropsDefaults">The model default run properties.</param>
+  /// <param name="origRunPropsDefaults">The original default run properties.</param>
+  private void CheckRunPropertiesDefault(DMW.RunPropertiesDefault? modelRunPropsDefaults,
     DXW.RunPropertiesDefault? origRunPropsDefaults)
   {
     if (origRunPropsDefaults != null)
@@ -212,8 +254,12 @@ public class TestStyles : TestBase
     }
   }
 
+  /// <summary>
+  /// Tests styles Xml serialization by reading "CustomProperties.docx" file,
+  /// serialize and deserialize styles using string writer.
+  /// </summary>
   [Test]
-  public void TestStylesXmlSerialization()
+  public void TestReadStylesXmlSerialization()
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();

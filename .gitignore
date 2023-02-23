@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DocxDocument.Reader.Test/.vs
+/DocxDocument.Writer/.vs
+/ModelGen/DocxDocument.ReadWrite.Test/.vs
+/ModelGen/ModelGen/.vs
+/SDK/SDK.Test/.vs

@@ -16,8 +16,8 @@ internal class Program
   {
     var testInstance = new TestFonts();
     testInstance.Setup();
-    testInstance.TestDocumentFonts();
-    testInstance.TestFontsXmlSerialization();
+    testInstance.TestReadDocumentFonts();
+    testInstance.TestReadFontsXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 
@@ -25,7 +25,7 @@ internal class Program
   {
     var testInstance = new TestTheme();
     testInstance.Setup();
-    testInstance.TestDocumentTheme();
+    testInstance.TestReadDocumentTheme();
     testInstance.TestThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
@@ -34,8 +34,8 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestDocumentStyles();
-    testInstance.TestStylesXmlSerialization();
+    testInstance.TestReadDocumentStyles();
+    testInstance.TestReadStylesXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 
@@ -43,7 +43,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestDocumentProperties();
+    testInstance.TestReadDocumentProperties();
     testInstance.TestPropertiesXmlSerialization();
     Console.WriteLine("Test passed");
   }
