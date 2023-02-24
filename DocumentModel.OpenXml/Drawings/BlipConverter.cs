@@ -401,7 +401,7 @@ public static class BlipConverter
     }
   }
   
-  private static Boolean? GetGrayscale(DXDraw.Blip openXmlElement)
+  private static Boolean GetGrayscale(DXDraw.Blip openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
   }

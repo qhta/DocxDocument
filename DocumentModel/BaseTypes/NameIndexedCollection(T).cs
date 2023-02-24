@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 
+using Qhta.TestHelper;
+
 namespace DocumentModel;
 
 public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, /*IDictionary<string, T>,*/ INotifyCollectionChanged where T : class, INamedObject
@@ -31,9 +33,13 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   }
   private Func<string, string>? _keyFunc;
 
+  static int n=0;
   public void Add(T item)
   {
+    n++;
     var name = item.Name;
+    //if (name=="Dark1Color")
+    //  TestTools.Stop();
     if (name == null)
       throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
     if (!TryAdd(name, item))

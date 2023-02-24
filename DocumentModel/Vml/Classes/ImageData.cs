@@ -53,7 +53,7 @@ public class ImageData
   /// <summary>
   ///   Image Grayscale Toggle
   /// </summary>
-  public Boolean? Grayscale { get; set; }
+  public Boolean Grayscale { get; set; }
 
   /// <summary>
   ///   Image Bilevel Toggle

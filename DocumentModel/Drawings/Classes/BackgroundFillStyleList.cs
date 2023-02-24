@@ -6,10 +6,10 @@ namespace DocumentModel.Drawings;
 public class BackgroundFillStyleList
 {
   [DefaultValue(false)]
-  public Boolean? NoFill { get; set; }
+  public Boolean NoFill { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? GroupFill { get; set; }
+  public Boolean GroupFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 

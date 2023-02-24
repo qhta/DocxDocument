@@ -170,9 +170,9 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Grayscale Toggle
   /// </summary>
-  private static Boolean? GetGrayscale(DXVml.ImageData openXmlElement)
+  private static Boolean GetGrayscale(DXVml.ImageData openXmlElement)
   {
-    return openXmlElement?.Grayscale?.Value;
+    return openXmlElement?.Grayscale?.Value ?? false;
   }
   
   private static bool CmpGrayscale(DXVml.ImageData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
