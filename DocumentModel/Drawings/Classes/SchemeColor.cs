@@ -15,13 +15,13 @@ public class SchemeColor
   public Int32? Shade { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? Complement { get; set; }
+  public Boolean Complement { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? Inverse { get; set; }
+  public Boolean Inverse { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? Gray { get; set; }
+  public Boolean Gray { get; set; }
 
   public Int32? Alpha { get; set; }
 
@@ -66,8 +66,8 @@ public class SchemeColor
   public Int32? BlueModulation { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? Gamma { get; set; }
+  public Boolean Gamma { get; set; }
 
   [DefaultValue(false)]
-  public Boolean? InverseGamma { get; set; }
+  public Boolean InverseGamma { get; set; }
 }

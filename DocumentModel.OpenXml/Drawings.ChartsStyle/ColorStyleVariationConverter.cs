@@ -35,7 +35,7 @@ public static class ColorStyleVariationConverter
     SimpleValueConverter.SetValue<DXDraw.Shade,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean? GetComplement(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
+  private static Boolean GetComplement(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
   }
@@ -63,7 +63,7 @@ public static class ColorStyleVariationConverter
     }
   }
   
-  private static Boolean? GetInverse(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
+  private static Boolean GetInverse(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
   }
@@ -91,7 +91,7 @@ public static class ColorStyleVariationConverter
     }
   }
   
-  private static Boolean? GetGray(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
+  private static Boolean GetGray(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
   }
@@ -434,7 +434,7 @@ public static class ColorStyleVariationConverter
     SimpleValueConverter.SetValue<DXDraw.BlueModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean? GetGamma(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
+  private static Boolean GetGamma(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
   }
@@ -462,7 +462,7 @@ public static class ColorStyleVariationConverter
     }
   }
   
-  private static Boolean? GetInverseGamma(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
+  private static Boolean GetInverseGamma(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
   }

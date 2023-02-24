@@ -300,7 +300,7 @@ public class ImageFile
   /// <summary>
   ///   Image Grayscale Toggle
   /// </summary>
-  public Boolean? GrayScale { get; set; }
+  public Boolean GrayScale { get; set; }
 
   /// <summary>
   ///   Image Bilevel Toggle

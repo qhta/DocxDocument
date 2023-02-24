@@ -401,7 +401,7 @@ public static class SnapshotConverter
     }
   }
   
-  private static Boolean? GetGrayscale(DXO2013WebExt.Snapshot openXmlElement)
+  private static Boolean GetGrayscale(DXO2013WebExt.Snapshot openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
   }

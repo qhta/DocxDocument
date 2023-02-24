@@ -10,6 +10,7 @@ using Variant = DocumentModel.Variant;
 using VariantType = DocumentModel.VariantType;
 
 namespace DocxDocument.Reader.Test;
+
 /// <summary>
 /// TestNumbers for variants
 /// </summary>

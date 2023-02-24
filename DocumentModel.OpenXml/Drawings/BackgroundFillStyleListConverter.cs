@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class BackgroundFillStyleListConverter
 {
-  private static Boolean? GetNoFill(DXDraw.BackgroundFillStyleList openXmlElement)
+  private static Boolean GetNoFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
   }
@@ -137,7 +137,7 @@ public static class BackgroundFillStyleListConverter
     }
   }
   
-  private static Boolean? GetGroupFill(DXDraw.BackgroundFillStyleList openXmlElement)
+  private static Boolean GetGroupFill(DXDraw.BackgroundFillStyleList openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
   }

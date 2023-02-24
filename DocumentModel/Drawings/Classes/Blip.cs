@@ -46,7 +46,7 @@ public class Blip
 
   public FillOverlay? FillOverlay { get; set; }
 
-  public Boolean? Grayscale { get; set; }
+  public Boolean Grayscale { get; set; }
 
   public Hsl? Hsl { get; set; }
 
