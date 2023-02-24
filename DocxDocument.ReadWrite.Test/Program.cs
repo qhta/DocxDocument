@@ -9,7 +9,7 @@ internal class Program
   {
     //var ok = typeof(Fonts).IsCollection(out var itemType);
     //Console.WriteLine($"{ok} {itemType}");
-    RunTestProperties();
+    RunTestTheme();
   }
 
   private static void RunTestFonts()

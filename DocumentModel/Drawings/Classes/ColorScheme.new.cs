@@ -17,7 +17,7 @@ public partial class ColorScheme
   ///   Dark 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Dark1Color
+  public ThemeColor? Dark1Color
   {
     get => ThemeColors["Dark1Color"];
     set => ThemeColors["Dark1Color"] = value;
@@ -27,7 +27,7 @@ public partial class ColorScheme
   ///   Light 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Light1Color 
+  public ThemeColor? Light1Color 
   {
     get => ThemeColors["Light1Color"];
     set => ThemeColors["Light1Color"] = value;
@@ -37,7 +37,7 @@ public partial class ColorScheme
   ///   Dark 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Dark2Color 
+  public ThemeColor? Dark2Color 
   {
     get => ThemeColors["Dark2Color"];
     set => ThemeColors["Dark2Color"] = value;
@@ -47,7 +47,7 @@ public partial class ColorScheme
   ///   Light 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Light2Color 
+  public ThemeColor? Light2Color 
   {
     get => ThemeColors["Light2Color"];
     set => ThemeColors["Light2Color"] = value;
@@ -57,7 +57,7 @@ public partial class ColorScheme
   ///   Accent 1.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent1Color 
+  public ThemeColor? Accent1Color 
   {
     get => ThemeColors["Accent1Color"];
     set => ThemeColors["Accent1Color"] = value;
@@ -67,7 +67,7 @@ public partial class ColorScheme
   ///   Accent 2.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent2Color 
+  public ThemeColor? Accent2Color 
   {
     get => ThemeColors["Accent2Color"];
     set => ThemeColors["Accent2Color"] = value;
@@ -77,7 +77,7 @@ public partial class ColorScheme
   ///   Accent 3.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent3Color 
+  public ThemeColor? Accent3Color 
   {
     get => ThemeColors["Accent3Color"];
     set => ThemeColors["Accent3Color"] = value;
@@ -87,7 +87,7 @@ public partial class ColorScheme
   ///   Accent 4.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent4Color 
+  public ThemeColor? Accent4Color 
   {
     get => ThemeColors["Accent4Color"];
     set => ThemeColors["Accent4Color"] = value;
@@ -97,7 +97,7 @@ public partial class ColorScheme
   ///   Accent 5.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent5Color 
+  public ThemeColor? Accent5Color 
   {
     get => ThemeColors["Accent5Color"];
     set => ThemeColors["Accent5Color"] = value;
@@ -107,7 +107,7 @@ public partial class ColorScheme
   ///   Accent 6.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Accent6Color 
+  public ThemeColor? Accent6Color 
   {
     get => ThemeColors["Accent6Color"];
     set => ThemeColors["Accent6Color"] = value;
@@ -117,7 +117,7 @@ public partial class ColorScheme
   ///   Hyperlink.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? Hyperlink 
+  public ThemeColor? Hyperlink 
   {
     get => ThemeColors["Hyperlink"];
     set => ThemeColors["Hyperlink"] = value;
@@ -127,7 +127,7 @@ public partial class ColorScheme
   ///   Followed Hyperlink.
   /// </summary>
   [XmlIgnore]
-  public Color2Type? FollowedHyperlinkColor 
+  public ThemeColor? FollowedHyperlinkColor 
   {
     get => ThemeColors["FollowedHyperlinkColor"];
     set => ThemeColors["FollowedHyperlinkColor"] = value;

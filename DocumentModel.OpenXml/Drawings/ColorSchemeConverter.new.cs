@@ -31,24 +31,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Dark 1.
   /// </summary>
-  private static DMDraws.Color2Type? GetDark1Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetDark1Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Dark1Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Dark1Color>());
   }
   
-  private static bool CmpDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Dark1Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Dark1Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Dark1Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -57,24 +57,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Light 1.
   /// </summary>
-  private static DMDraws.Color2Type? GetLight1Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetLight1Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Light1Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Light1Color>());
   }
   
-  private static bool CmpLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Light1Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Light1Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Light1Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -83,24 +83,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Dark 2.
   /// </summary>
-  private static DMDraws.Color2Type? GetDark2Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetDark2Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Dark2Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Dark2Color>());
   }
   
-  private static bool CmpDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Dark2Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Dark2Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Dark2Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -109,24 +109,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Light 2.
   /// </summary>
-  private static DMDraws.Color2Type? GetLight2Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetLight2Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Light2Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Light2Color>());
   }
   
-  private static bool CmpLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Light2Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Light2Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Light2Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -135,24 +135,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 1.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent1Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent1Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent1Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent1Color>());
   }
   
-  private static bool CmpAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent1Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent1Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent1Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -161,24 +161,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 2.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent2Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent2Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent2Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent2Color>());
   }
   
-  private static bool CmpAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent2Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent2Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent2Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -187,24 +187,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 3.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent3Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent3Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent3Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent3Color>());
   }
   
-  private static bool CmpAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent3Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent3Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent3Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent3Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent3Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -213,24 +213,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 4.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent4Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent4Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent4Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent4Color>());
   }
   
-  private static bool CmpAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent4Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent4Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent4Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent4Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent4Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -239,24 +239,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 5.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent5Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent5Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent5Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent5Color>());
   }
   
-  private static bool CmpAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent5Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent5Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent5Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent5Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent5Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -265,24 +265,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Accent 6.
   /// </summary>
-  private static DMDraws.Color2Type? GetAccent6Color(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetAccent6Color(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent6Color>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Accent6Color>());
   }
   
-  private static bool CmpAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent6Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent6Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Accent6Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Accent6Color>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Accent6Color>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -291,24 +291,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Hyperlink.
   /// </summary>
-  private static DMDraws.Color2Type? GetHyperlink(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetHyperlink(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Hyperlink>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.Hyperlink>());
   }
   
-  private static bool CmpHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.Hyperlink>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.Hyperlink>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.Hyperlink>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -317,24 +317,24 @@ public static class ColorSchemeConverter
   /// <summary>
   /// Followed Hyperlink.
   /// </summary>
-  private static DMDraws.Color2Type? GetFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement)
+  private static DMDraws.ThemeColor? GetFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement)
   {
-    return DMXDraws.Color2TypeConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FollowedHyperlinkColor>());
+    return DMXDraws.ThemeColorConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXDraw.FollowedHyperlinkColor>());
   }
   
-  private static bool CmpFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value, DiffList? diffs, string? objName)
+  private static bool CmpFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Color2TypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FollowedHyperlinkColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FollowedHyperlinkColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
   }
   
-  private static void SetFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.Color2Type? value)
+  private static void SetFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDraw.FollowedHyperlinkColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Color2TypeConverter.CreateOpenXmlElement<DXDraw.FollowedHyperlinkColor>(value);
+      itemElement = DMXDraws.ThemeColorConverter.CreateOpenXmlElement<DXDraw.FollowedHyperlinkColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

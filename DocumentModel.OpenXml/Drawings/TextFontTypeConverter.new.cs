@@ -41,9 +41,9 @@ public static class TextFontTypeConverter
   private static bool CmpPanose(DXDraw.TextFontType openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Panose?.Value != null && value!=null)
-      if (Convert.FromHexString(openXmlElement.Panose.Value) == (byte[])value)
+      if (Convert.FromHexString(openXmlElement.Panose.Value).SequenceEqual((byte[])value))
         return true;
-    if (openXmlElement == null && openXmlElement?.Panose?.Value == null && value == null) return true;
+    if (openXmlElement?.Panose?.Value == null && value == null) return true;
     diffs?.Add(objName, "Panose", openXmlElement?.Panose?.Value, value);
     return false;
   }

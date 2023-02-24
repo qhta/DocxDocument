@@ -22,7 +22,7 @@ public static class RgbColorModelHexConverter
   private static bool CmpVal(DXDraw.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == value)
+      if (UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == (UInt32?)value)
         return true;
     if (openXmlElement?.Val?.Value == null && value == null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value?.ToString());
