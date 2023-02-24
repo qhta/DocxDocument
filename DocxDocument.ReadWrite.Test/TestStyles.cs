@@ -102,31 +102,12 @@ public class TestStyles : TestBase
     var validParaStylesCount = modelParaStyles.Count(item => item.IsValid);
     WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}, valid {validParaStylesCount}");
 
-    if (validParaStylesCount < definedParaStylesCount)
-    {
-      WriteLine($"    Invalid Paragraph Styles:");
-      int i = 0;
-      foreach (var style in modelParaStyles.Where(item => item.IsDefined && !item.IsValid))
-      {
-        WriteLine($"      {++i}. {style.Name}");
-      }
-    }
-
     var modelCharStyles = document.Styles.CharacterStyles;
     var modelCharStylesCount = modelCharStyles.Count();
     var definedCharStylesCount = modelCharStyles.Count(item => item.IsDefined);
     var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom == true);
     var validCharStylesCount = modelCharStyles.Count(item => item.IsValid);
     WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}, valid {validCharStylesCount}");
-    if (validCharStylesCount < definedCharStylesCount)
-    {
-      WriteLine($"    Invalid Character Styles:");
-      int i = 0;
-      foreach (var style in modelCharStyles.Where(item => item.IsDefined && !item.IsValid))
-      {
-        WriteLine($"      {++i}. {style.Name} {style.StyleRunProperties} IsCustom={style.IsCustom} BasedOn={style.BasedOn} ");
-      }
-    }
 
     var modelTableStyles = document.Styles.TableStyles;
     var modelTableStylesCount = modelTableStyles.Count();
@@ -134,15 +115,6 @@ public class TestStyles : TestBase
     var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom == true);
     var validTableStylesCount = modelTableStyles.Count(item => item.IsValid);
     WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}, valid {validTableStylesCount}");
-    //if (validTableStylesCount < definedTableStylesCount)
-    //{
-    //  WriteLine($"    Invalid Table Styles:");
-    //  int i = 0;
-    //  foreach (var style in modelTableStyles.Where(item => item.IsDefined && !item.IsValid))
-    //  {
-    //    WriteLine($"      {++i}. {style.Name}");
-    //  }
-    //}
 
     var modelNumStyles = document.Styles.NumberingStyles;
     var modelNumStylesCount = modelNumStyles.Count();
@@ -150,15 +122,6 @@ public class TestStyles : TestBase
     var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom == true);
     var validNumStylesCount = modelNumStyles.Count(item => item.IsValid);
     WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}, valid {validNumStylesCount}");
-    //if (validNumStylesCount < definedNumStylesCount)
-    //{
-    //  WriteLine($"    Invalid Number Styles:");
-    //  int i = 0;
-    //  foreach (var style in modelNumStyles.Where(item => item.IsDefined && !item.IsValid))
-    //  {
-    //    WriteLine($"      {++i}. {style.Name}");
-    //  }
-    //}
 
     var totalStylesCount = modelParaStylesCount + modelCharStylesCount + modelTableStylesCount + modelNumStylesCount;
     var totalValidStylesCount = validParaStylesCount + validCharStylesCount + validTableStylesCount + validNumStylesCount;
@@ -166,15 +129,6 @@ public class TestStyles : TestBase
 
     var totalStyleIds = document.Styles.StyleIndex.Count;
     WriteLine($"  Document Style Ids: found {totalStyleIds}, expected {totalDefinedStylesCount}");
-    if (totalStyleIds < totalDefinedStylesCount)
-    //{
-    //  WriteLine($"    Styles with no Id:");
-    //  int i = 0;
-    //  foreach (var style in modelAllStyles.Where(item => item.IsDefined && item.StyleId == null))
-    //  {
-    //    WriteLine($"      {++i}. {style.Name}");
-    //  }
-    //}
 
     Assert.That(totalStylesCount, Is.GreaterThanOrEqualTo(modelAllStylesCount), "Invalid total styles count");
     Assert.That(totalValidStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");

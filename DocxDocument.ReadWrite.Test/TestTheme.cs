@@ -80,8 +80,11 @@ public class TestTheme : TestBase
     if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null))
     {
       if (showDetails)
+      {
+        WriteLine("Read theme differences found:");
         foreach (var diff in diffs)
           WriteLine(diff.ToString());
+      }
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
     return document.Theme;
@@ -116,12 +119,7 @@ public class TestTheme : TestBase
     var textReader = new StringReader(str);
     var newTheme = (DMDraws.Theme?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newTheme, $"Deserialized properties are null");
-    //newTheme.ShouldDeepEqual(oldTheme);
-    newTheme.WithDeepEqual(oldTheme)
-       //.SkipDefault<Boolean?>()
-       //.IgnoreSourceProperty(x => x.Id)
-       .Assert();
-    //Assert.IsTrue(ok, $"Deserialized theme different for original");
+    newTheme.ShouldDeepEqual(oldTheme);
   }
 
 }
