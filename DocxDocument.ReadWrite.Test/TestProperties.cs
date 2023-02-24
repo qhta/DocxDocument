@@ -100,6 +100,8 @@ namespace DocxDocument.Reader.Test
 
       CheckReadDocumentSettings(document, reader.WordprocessingDocument, showDetails);
 
+      CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails);
+
       return document.Properties;
     }
 
@@ -233,7 +235,7 @@ namespace DocxDocument.Reader.Test
     /// <param name="showDetails">Specifies if test details should be shown.</param>
     private void CheckReadDocumentSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
     {
-      DocumentSettings? documentSettings = modelDocument.Properties?.DocumentSettings;
+      var documentSettings = modelDocument.Properties?.DocumentSettings;
       int origDocumentSettingsCount = 0;
       int documentSettingsCount = 0;
       if (documentSettings != null)
@@ -256,6 +258,39 @@ namespace DocxDocument.Reader.Test
         }
       }
       Assert.That(documentSettingsCount, Is.EqualTo(origDocumentSettingsCount), "Invalid document settings count");
+    }
+
+    /// <summary>
+    /// Checks whether the web settings read from the file are equal to origin ones.
+    /// </summary>
+    /// <param name="modelDocument">Model document read from docx fils.</param>
+    /// <param name="origDocument">The original document.</param>
+    /// <param name="showDetails">Specifies if test details should be shown.</param>
+    private void CheckReadWebSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+    {
+      var webSettings = modelDocument.Properties?.WebSettings;
+      int origWebSettingsCount = 0;
+      int webSettingsCount = 0;
+      if (webSettings != null)
+      {
+        origWebSettingsCount = origDocument.MainDocumentPart?.WebSettingsPart?.WebSettings?.Elements().Count() ?? 0;
+        var modelWebSettings = typeof(DM.WebSettings).GetProperties();
+        foreach (var prop in modelWebSettings.Where(item => item.CanWrite))
+          if (prop.GetValue(webSettings, null) != null)
+            webSettingsCount++;
+        WriteLine(
+          $"  WebSettings: defined {modelWebSettings.Count()} loaded {webSettingsCount} expected {origWebSettingsCount}");
+        if (showDetails)
+        {
+          foreach (var prop in modelWebSettings.Where(item => item.CanWrite))
+          {
+            var documentProperty = modelDocument.Properties?.GetProperty(prop.Name);
+            if (documentProperty?.Value != null)
+              WriteLine($"    {documentProperty}");
+          }
+        }
+      }
+      Assert.That(webSettingsCount, Is.EqualTo(origWebSettingsCount), "Invalid web settings count");
     }
 
     /// <summary>
