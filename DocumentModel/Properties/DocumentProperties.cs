@@ -86,10 +86,6 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       {
         if (CustomProperties == null)
           CustomProperties = new CustomProperties();
-        //if (item.Type == null && item.Value is Variant variant)
-        //{
-        //  item.Type = variant.VariantType;
-        //}
         CustomProperties.Add(item);
       }
     }
@@ -105,6 +101,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       StatisticProperties.Clear();
     if (DocumentSettings != null)
       DocumentSettings.Clear();
+    if (WebSettings != null)
+      WebSettings.Clear();
     if (CustomProperties != null)
       CustomProperties.Clear();
   }
@@ -118,6 +116,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (StatisticProperties != null && StatisticProperties.Contains(item))
       return true;
     if (DocumentSettings != null && DocumentSettings.Contains(item))
+      return true;
+    if (WebSettings != null && WebSettings.Contains(item))
       return true;
     if (CustomProperties != null && CustomProperties.Contains(item))
       return true;
@@ -146,6 +146,11 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       DocumentSettings.CopyTo(array, arrayIndex);
       arrayIndex += DocumentSettings.Count();
     }
+    if (WebSettings != null)
+    {
+      WebSettings.CopyTo(array, arrayIndex);
+      arrayIndex += WebSettings.Count();
+    }
     if (CustomProperties != null)
       CustomProperties.CopyTo(array, arrayIndex);
   }
@@ -163,6 +168,9 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
         return true;
     if (DocumentSettings != null)
       if (DocumentSettings.Remove(item))
+        return true;
+    if (WebSettings != null)
+      if (WebSettings.Remove(item))
         return true;
     if (CustomProperties != null)
       if (CustomProperties.Remove(item))
@@ -185,6 +193,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       count += StatisticProperties.Count();
     if (DocumentSettings != null)
       count += DocumentSettings.Count();
+    if (WebSettings != null)
+      count += WebSettings.Count();
     if (CustomProperties != null)
       count += CustomProperties.Count();
     return count;
@@ -205,6 +215,9 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     if (DocumentSettings != null && DocumentSettings.GetKnownProperties().ContainsKey(propName))
       result = DocumentSettings.GetProperty(propName);
     else
+    if (WebSettings != null && WebSettings.GetKnownProperties().ContainsKey(propName))
+      result = WebSettings.GetProperty(propName);
+    else
       result = CustomProperties?.GetProperty(propName);
     return result;
   }
@@ -223,6 +236,9 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     else
     if (DocumentSettings != null && DocumentSettings.GetKnownProperties().ContainsKey(propName))
       result = DocumentSettings.GetValue(propName);
+    else
+    if (WebSettings != null && WebSettings.GetKnownProperties().ContainsKey(propName))
+      result = WebSettings.GetValue(propName);
     else
       result = CustomProperties?.GetValue(propName);
     return result;
