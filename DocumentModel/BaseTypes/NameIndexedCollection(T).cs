@@ -4,27 +4,27 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace DocumentModel;
 
-public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<string, T>, INotifyCollectionChanged where T : class, INamedObject
+public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, /*IDictionary<string, T>,*/ INotifyCollectionChanged where T : class, INamedObject
 {
   private readonly SortedDictionary<string, T> _dictionary = null!;
 
-  public NamedCollection()
+  public NameIndexedCollection()
   {
     _dictionary = new SortedDictionary<string, T>();
   }
 
-  public NamedCollection(IComparer<string> comparer)
+  public NameIndexedCollection(IComparer<string> comparer)
   {
     _dictionary = new SortedDictionary<string, T>(comparer);
   }
 
-  public NamedCollection(Func<string,string> keyFunc)
+  public NameIndexedCollection(Func<string, string> keyFunc)
   {
     _dictionary = new SortedDictionary<string, T>();
     _keyFunc = keyFunc;
   }
 
-  public NamedCollection(IComparer<string> comparer, Func<string, string> keyFunc)
+  public NameIndexedCollection(IComparer<string> comparer, Func<string, string> keyFunc)
   {
     _dictionary = new SortedDictionary<string, T>(comparer);
     _keyFunc = keyFunc;
@@ -34,7 +34,7 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public void Add(T item)
   {
     var name = item.Name;
-    if (name==null)
+    if (name == null)
       throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
     if (!TryAdd(name, item))
       throw new InvalidOperationException($"{item.GetType()} \"{name}\" already exists");
@@ -52,7 +52,7 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public bool AddOrReplace(T item)
   {
     var name = item.Name;
-    if (name==null)
+    if (name == null)
       throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
     bool ok = AddOrReplace(name, item);
     var aliasedObject = item as IAliasedObject;
@@ -96,7 +96,7 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public bool Contains(T item)
   {
     var name = item.Name;
-    if (name!=null)
+    if (name != null)
       return _dictionary.ContainsKey(name);
     return _dictionary.Values.Contains(item);
   }
@@ -109,7 +109,7 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   public bool Remove(T item)
   {
     var name = item.Name;
-    if (name==null)
+    if (name == null)
       throw new InvalidOperationException($"{item.GetType()} must have a name to be removed from named collection");
     var ok = _dictionary.Remove(name);
     if (ok)
@@ -117,7 +117,7 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
       foreach (var alias in aliasedObject.Aliases)
-      { 
+      {
         _dictionary.Remove(alias);
       }
     return ok;
@@ -154,10 +154,16 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
     return _dictionary.Remove(name);
   }
 
-  public T this[string key]
+  public T? this[string key]
   {
     get => _dictionary[key];
-    set => _dictionary[key] = value;
+    set
+    {
+      if (value != null)
+        _dictionary[key] = value;
+      else
+        _dictionary.Remove(key);
+    }
   }
 
   public event NotifyCollectionChangedEventHandler? CollectionChanged;
@@ -193,8 +199,16 @@ public class NamedCollection<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
     return ((ICollection<KeyValuePair<string, T>>)_dictionary).Remove(item);
   }
 
-  IEnumerator<KeyValuePair<string, T>> IEnumerable<KeyValuePair<string, T>>.GetEnumerator()
+  public void CopyTo(Array array, int index)
   {
-    return ((IEnumerable<KeyValuePair<string, T>>)_dictionary).GetEnumerator();
+    throw new NotImplementedException();
   }
+
+  public bool IsSynchronized { get; set; }
+  public object SyncRoot { get; } = new object();
+
+  //IEnumerator<KeyValuePair<string, T>> IEnumerable<KeyValuePair<string, T>>.GetEnumerator()
+  //{
+  //  return ((IEnumerable<KeyValuePair<string, T>>)_dictionary).GetEnumerator();
+  //}
 }

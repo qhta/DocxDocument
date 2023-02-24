@@ -5,7 +5,11 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class BackgroundFillStyleList
 {
+  [DefaultValue(false)]
   public Boolean? NoFill { get; set; }
+
+  [DefaultValue(false)]
+  public Boolean? GroupFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -14,6 +18,4 @@ public class BackgroundFillStyleList
   public BlipFill? BlipFill { get; set; }
 
   public PatternFill? PatternFill { get; set; }
-
-  public Boolean? GroupFill { get; set; }
 }

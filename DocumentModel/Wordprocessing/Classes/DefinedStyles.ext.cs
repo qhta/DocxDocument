@@ -21,7 +21,6 @@ public partial class DefinedStyles : ObservableCollection<Style>//, IDictionary<
   [XmlIgnore]
   public IDictionary<string, Style> StyleIndex => _StyleIds;
 
-  //public IEnumerable<Style> DefinedStyles => this.Where(item => item.IsDefined);
   public IEnumerable<Style> ParagraphStyles => this.Where(item => item.Type==StyleKind.Paragraph);
   public IEnumerable<Style> CharacterStyles => this.Where(item => item.Type==StyleKind.Character);
   public IEnumerable<Style> TableStyles => this.Where(item => item.Type==StyleKind.Table);
