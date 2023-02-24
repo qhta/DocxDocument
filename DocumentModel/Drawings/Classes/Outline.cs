@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Outline
 {
+  [DefaultValue(false)]
   public Boolean? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
@@ -17,8 +18,10 @@ public class Outline
 
   public CustomDash? CustomDash { get; set; }
 
+  [DefaultValue(false)]
   public Boolean? Round { get; set; }
 
+  [DefaultValue(false)]
   public Boolean? LineJoinBevel { get; set; }
 
   public Miter? Miter { get; set; }
