@@ -43,7 +43,7 @@ public class EffectDag
 
   public Glow? Glow { get; set; }
 
-  public Boolean? Grayscale { get; set; }
+  public Boolean Grayscale { get; set; }
 
   public Hsl? Hsl { get; set; }
 

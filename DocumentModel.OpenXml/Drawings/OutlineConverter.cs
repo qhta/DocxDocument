@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class OutlineConverter
 {
-  private static Boolean? GetNoFill(DXDraw.Outline openXmlElement)
+  private static Boolean GetNoFill(DXDraw.Outline openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
   }
@@ -162,7 +162,7 @@ public static class OutlineConverter
     }
   }
   
-  private static Boolean? GetRound(DXDraw.Outline openXmlElement)
+  private static Boolean GetRound(DXDraw.Outline openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Round>() != null;
   }
@@ -190,7 +190,7 @@ public static class OutlineConverter
     }
   }
   
-  private static Boolean? GetLineJoinBevel(DXDraw.Outline openXmlElement)
+  private static Boolean GetLineJoinBevel(DXDraw.Outline openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.LineJoinBevel>() != null;
   }

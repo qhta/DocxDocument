@@ -53,7 +53,7 @@ public static class SchemeColorConverter
     SimpleValueConverter.SetValue<DXDraw.Shade,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean? GetComplement(DXDraw.SchemeColor openXmlElement)
+  private static Boolean GetComplement(DXDraw.SchemeColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
   }
@@ -81,7 +81,7 @@ public static class SchemeColorConverter
     }
   }
   
-  private static Boolean? GetInverse(DXDraw.SchemeColor openXmlElement)
+  private static Boolean GetInverse(DXDraw.SchemeColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
   }
@@ -109,7 +109,7 @@ public static class SchemeColorConverter
     }
   }
   
-  private static Boolean? GetGray(DXDraw.SchemeColor openXmlElement)
+  private static Boolean GetGray(DXDraw.SchemeColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
   }
@@ -452,7 +452,7 @@ public static class SchemeColorConverter
     SimpleValueConverter.SetValue<DXDraw.BlueModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean? GetGamma(DXDraw.SchemeColor openXmlElement)
+  private static Boolean GetGamma(DXDraw.SchemeColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
   }
@@ -480,7 +480,7 @@ public static class SchemeColorConverter
     }
   }
   
-  private static Boolean? GetInverseGamma(DXDraw.SchemeColor openXmlElement)
+  private static Boolean GetInverseGamma(DXDraw.SchemeColor openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
   }

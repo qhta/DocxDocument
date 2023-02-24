@@ -14,5 +14,5 @@ public class LinearGradientFill
   ///   Scaled
   /// </summary>
   [DefaultValue(false)] 
-  public Boolean? Scaled { get; set; }
+  public Boolean Scaled { get; set; }
 }

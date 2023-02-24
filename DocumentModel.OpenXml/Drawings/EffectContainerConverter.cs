@@ -503,7 +503,7 @@ public static class EffectContainerConverter
     }
   }
   
-  private static Boolean? GetGrayscale(DXDraw.EffectContainer openXmlElement)
+  private static Boolean GetGrayscale(DXDraw.EffectContainer openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
   }

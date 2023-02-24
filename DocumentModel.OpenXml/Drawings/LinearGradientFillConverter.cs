@@ -28,9 +28,9 @@ public static class LinearGradientFillConverter
   /// <summary>
   /// Scaled
   /// </summary>
-  private static Boolean? GetScaled(DXDraw.LinearGradientFill openXmlElement)
+  private static Boolean GetScaled(DXDraw.LinearGradientFill openXmlElement)
   {
-    return openXmlElement?.Scaled?.Value;
+    return openXmlElement?.Scaled?.Value ?? false;
   }
   
   private static bool CmpScaled(DXDraw.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)

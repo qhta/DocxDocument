@@ -8,6 +8,8 @@ using DocumentModel.OpenXml.Wordprocessing;
 using DocumentModel.OpenXml.Drawings;
 
 using Qhta.Xml.Serialization;
+using DeepEqual.Syntax;
+using System.Xml;
 
 namespace DocxDocument.Reader.Test;
 
@@ -114,17 +116,12 @@ public class TestTheme : TestBase
     var textReader = new StringReader(str);
     var newTheme = (DMDraws.Theme?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newTheme, $"Deserialized properties are null");
-    //var oldThemeCount = oldTheme.Count();
-    //var newThemeCount = newTheme.Count();
-    //var newPropArray = newTheme.ToArray();
-    //var oldPropArray = oldTheme.ToArray();
-    //for (int i = 0; i < Math.Min(oldThemeCount, newThemeCount); i++)
-    //{
-    //  if (newPropArray[i].Name == "HeadingPairs")
-    //    Debug.Assert(true);
-    //  Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-    //}
-    //Assert.That(newThemeCount, Is.EqualTo(oldThemeCount), $"Deserialized properties count different for original");
+    //newTheme.ShouldDeepEqual(oldTheme);
+    newTheme.WithDeepEqual(oldTheme)
+       //.SkipDefault<Boolean?>()
+       //.IgnoreSourceProperty(x => x.Id)
+       .Assert();
+    //Assert.IsTrue(ok, $"Deserialized theme different for original");
   }
 
 }

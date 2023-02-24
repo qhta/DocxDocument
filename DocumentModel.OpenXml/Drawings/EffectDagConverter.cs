@@ -503,7 +503,7 @@ public static class EffectDagConverter
     }
   }
   
-  private static Boolean? GetGrayscale(DXDraw.EffectDag openXmlElement)
+  private static Boolean GetGrayscale(DXDraw.EffectDag openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
   }
