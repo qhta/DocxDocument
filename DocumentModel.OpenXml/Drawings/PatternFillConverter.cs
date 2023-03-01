@@ -15,7 +15,7 @@ public static class PatternFillConverter
   
   private static bool CmpPreset(DXDraw.PatternFill openXmlElement, DMDraws.PresetPatternKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DMDraws.PresetPatternKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DMDraws.PresetPatternKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
   private static void SetPreset(DXDraw.PatternFill openXmlElement, DMDraws.PresetPatternKind? value)
@@ -36,7 +36,7 @@ public static class PatternFillConverter
   
   private static bool CmpForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ForegroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ForegroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ForegroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ForegroundColor>(), value, diffs, objName);
   }
   
   private static void SetForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value)
@@ -65,7 +65,7 @@ public static class PatternFillConverter
   
   private static bool CmpBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundColor>(), value, diffs, objName);
   }
   
   private static void SetBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value)

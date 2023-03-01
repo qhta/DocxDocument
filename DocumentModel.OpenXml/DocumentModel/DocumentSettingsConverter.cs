@@ -18,7 +18,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpWriteProtection(DXW.Settings openXmlElement, DMW.WriteProtection? value, DiffList? diffs, string? objName)
   {
-    return DMXW.WriteProtectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WriteProtection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.WriteProtectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WriteProtection>(), value, diffs, objName);
   }
   
   private static void SetWriteProtection(DXW.Settings openXmlElement, DMW.WriteProtection? value)
@@ -44,7 +44,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpView(DXW.Settings openXmlElement, DMW.ViewKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ViewValues, DMW.ViewKind>(openXmlElement.GetFirstChild<DXW.View>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ViewValues, DMW.ViewKind>(openXmlElement.GetFirstChild<DXW.View>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetView(DXW.Settings openXmlElement, DMW.ViewKind? value)
@@ -75,7 +75,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpZoom(DXW.Settings openXmlElement, DMW.Zoom? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ZoomConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Zoom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ZoomConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Zoom>(), value, diffs, objName);
   }
   
   private static void SetZoom(DXW.Settings openXmlElement, DMW.Zoom? value)
@@ -481,7 +481,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpProofState(DXW.Settings openXmlElement, DMW.ProofState? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ProofStateConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofState>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ProofStateConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofState>(), value, diffs, objName);
   }
   
   private static void SetProofState(DXW.Settings openXmlElement, DMW.ProofState? value)
@@ -522,7 +522,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpAttachedTemplate(DXW.Settings openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AttachedTemplate>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AttachedTemplate>(), value, diffs, objName);
   }
   
   private static void SetAttachedTemplate(DXW.Settings openXmlElement, DMW.RelationshipType? value)
@@ -563,7 +563,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpStylePaneFormatFilter(DXW.Settings openXmlElement, DMW.StylePaneFormatFilter? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StylePaneFormatFilterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StylePaneFormatFilter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StylePaneFormatFilterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StylePaneFormatFilter>(), value, diffs, objName);
   }
   
   private static void SetStylePaneFormatFilter(DXW.Settings openXmlElement, DMW.StylePaneFormatFilter? value)
@@ -601,7 +601,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpDocumentType(DXW.Settings openXmlElement, DMW.DocumentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues, DMW.DocumentKind>(openXmlElement.GetFirstChild<DXW.DocumentType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues, DMW.DocumentKind>(openXmlElement.GetFirstChild<DXW.DocumentType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDocumentType(DXW.Settings openXmlElement, DMW.DocumentKind? value)
@@ -629,7 +629,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpMailMerge(DXW.Settings openXmlElement, DMW.MailMerge? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MailMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MailMerge>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MailMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MailMerge>(), value, diffs, objName);
   }
   
   private static void SetMailMerge(DXW.Settings openXmlElement, DMW.MailMerge? value)
@@ -655,7 +655,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpRevisionView(DXW.Settings openXmlElement, DMW.RevisionView? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RevisionViewConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RevisionView>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RevisionViewConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RevisionView>(), value, diffs, objName);
   }
   
   private static void SetRevisionView(DXW.Settings openXmlElement, DMW.RevisionView? value)
@@ -726,7 +726,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpDocumentProtection(DXW.Settings openXmlElement, DMW.DocumentProtection? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocumentProtectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentProtection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocumentProtectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentProtection>(), value, diffs, objName);
   }
   
   private static void SetDocumentProtection(DXW.Settings openXmlElement, DMW.DocumentProtection? value)
@@ -1094,7 +1094,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpCharacterSpacingControl(DXW.Settings openXmlElement, DMW.CharacterSpacingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingValues, DMW.CharacterSpacingKind>(openXmlElement.GetFirstChild<DXW.CharacterSpacingControl>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingValues, DMW.CharacterSpacingKind>(openXmlElement.GetFirstChild<DXW.CharacterSpacingControl>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetCharacterSpacingControl(DXW.Settings openXmlElement, DMW.CharacterSpacingKind? value)
@@ -1152,7 +1152,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpNoLineBreaksAfterKinsoku(DXW.Settings openXmlElement, DMW.NoLineBreaksAfterKinsoku? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NoLineBreaksAfterKinsokuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NoLineBreaksAfterKinsoku>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NoLineBreaksAfterKinsokuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NoLineBreaksAfterKinsoku>(), value, diffs, objName);
   }
   
   private static void SetNoLineBreaksAfterKinsoku(DXW.Settings openXmlElement, DMW.NoLineBreaksAfterKinsoku? value)
@@ -1178,7 +1178,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpNoLineBreaksBeforeKinsoku(DXW.Settings openXmlElement, DMW.NoLineBreaksBeforeKinsoku? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NoLineBreaksBeforeKinsokuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NoLineBreaksBeforeKinsoku>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NoLineBreaksBeforeKinsokuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NoLineBreaksBeforeKinsoku>(), value, diffs, objName);
   }
   
   private static void SetNoLineBreaksBeforeKinsoku(DXW.Settings openXmlElement, DMW.NoLineBreaksBeforeKinsoku? value)
@@ -1324,7 +1324,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpSaveThroughXslt(DXW.Settings openXmlElement, DMW.SaveThroughXslt? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SaveThroughXsltConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SaveThroughXslt>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SaveThroughXsltConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SaveThroughXslt>(), value, diffs, objName);
   }
   
   private static void SetSaveThroughXslt(DXW.Settings openXmlElement, DMW.SaveThroughXslt? value)
@@ -1395,7 +1395,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpHeaderShapeDefaults(DXW.Settings openXmlElement, DMW.HeaderShapeDefaults? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HeaderShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderShapeDefaults>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HeaderShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderShapeDefaults>(), value, diffs, objName);
   }
   
   private static void SetHeaderShapeDefaults(DXW.Settings openXmlElement, DMW.HeaderShapeDefaults? value)
@@ -1421,7 +1421,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpFootnoteDocumentWideProperties(DXW.Settings openXmlElement, DMW.FootnoteDocumentWideProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FootnoteDocumentWidePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FootnoteDocumentWideProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FootnoteDocumentWidePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FootnoteDocumentWideProperties>(), value, diffs, objName);
   }
   
   private static void SetFootnoteDocumentWideProperties(DXW.Settings openXmlElement, DMW.FootnoteDocumentWideProperties? value)
@@ -1447,7 +1447,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpEndnoteDocumentWideProperties(DXW.Settings openXmlElement, DMW.EndnoteDocumentWideProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EndnoteDocumentWidePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndnoteDocumentWideProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EndnoteDocumentWidePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndnoteDocumentWideProperties>(), value, diffs, objName);
   }
   
   private static void SetEndnoteDocumentWideProperties(DXW.Settings openXmlElement, DMW.EndnoteDocumentWideProperties? value)
@@ -1473,7 +1473,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpCompatibility(DXW.Settings openXmlElement, DMW.Compatibility? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CompatibilityConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Compatibility>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CompatibilityConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Compatibility>(), value, diffs, objName);
   }
   
   private static void SetCompatibility(DXW.Settings openXmlElement, DMW.Compatibility? value)
@@ -1499,7 +1499,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpDocumentVariables(DXW.Settings openXmlElement, DMW.DocumentVariables? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocumentVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentVariables>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocumentVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentVariables>(), value, diffs, objName);
   }
   
   private static void SetDocumentVariables(DXW.Settings openXmlElement, DMW.DocumentVariables? value)
@@ -1525,7 +1525,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpRsids(DXW.Settings openXmlElement, DMW.Rsids? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RsidsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Rsids>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RsidsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Rsids>(), value, diffs, objName);
   }
   
   private static void SetRsids(DXW.Settings openXmlElement, DMW.Rsids? value)
@@ -1551,7 +1551,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpMathProperties(DXW.Settings openXmlElement, DMMath.MathProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MathPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MathPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathProperties>(), value, diffs, objName);
   }
   
   private static void SetMathProperties(DXW.Settings openXmlElement, DMMath.MathProperties? value)
@@ -1648,7 +1648,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpThemeFontLanguages(DXW.Settings openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ThemeFontLanguages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ThemeFontLanguages>(), value, diffs, objName);
   }
   
   private static void SetThemeFontLanguages(DXW.Settings openXmlElement, DMW.LanguageType? value)
@@ -1674,7 +1674,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpColorSchemeMapping(DXW.Settings openXmlElement, DMW.ColorSchemeMapping? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorSchemeMappingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ColorSchemeMapping>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorSchemeMappingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ColorSchemeMapping>(), value, diffs, objName);
   }
   
   private static void SetColorSchemeMapping(DXW.Settings openXmlElement, DMW.ColorSchemeMapping? value)
@@ -1760,7 +1760,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpCaptions(DXW.Settings openXmlElement, DMW.Captions? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CaptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Captions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CaptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Captions>(), value, diffs, objName);
   }
   
   private static void SetCaptions(DXW.Settings openXmlElement, DMW.Captions? value)
@@ -1786,7 +1786,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpReadModeInkLockDown(DXW.Settings openXmlElement, DMW.ReadModeInkLockDown? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ReadModeInkLockDownConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ReadModeInkLockDown>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ReadModeInkLockDownConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ReadModeInkLockDown>(), value, diffs, objName);
   }
   
   private static void SetReadModeInkLockDown(DXW.Settings openXmlElement, DMW.ReadModeInkLockDown? value)
@@ -1812,7 +1812,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value, DiffList? diffs, string? objName)
   {
-    return DMXCustXml.SchemaLibraryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXCustXml.SchemaLibraryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>(), value, diffs, objName);
   }
   
   private static void SetSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value)
@@ -1838,7 +1838,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpShapeDefaults(DXW.Settings openXmlElement, DMW.ShapeDefaults? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ShapeDefaults>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ShapeDefaults>(), value, diffs, objName);
   }
   
   private static void SetShapeDefaults(DXW.Settings openXmlElement, DMW.ShapeDefaults? value)
@@ -1926,7 +1926,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value)
@@ -1966,7 +1966,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value)

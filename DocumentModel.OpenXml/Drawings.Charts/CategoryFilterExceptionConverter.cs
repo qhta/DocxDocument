@@ -43,7 +43,7 @@ public static class CategoryFilterExceptionConverter
   
   private static bool CmpShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.ShapeProperties3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.ShapeProperties3? value)
@@ -152,7 +152,7 @@ public static class CategoryFilterExceptionConverter
   
   private static bool CmpMarker(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.Marker3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.Marker>(), value, diffs, objName);
   }
   
   private static void SetMarker(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.Marker3? value)
@@ -181,7 +181,7 @@ public static class CategoryFilterExceptionConverter
   
   private static bool CmpDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.DataLabel3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabel>(), value, diffs, objName);
   }
   
   private static void SetDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.DataLabel3? value)

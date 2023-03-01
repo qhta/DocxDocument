@@ -15,7 +15,7 @@ public static class ContourColorConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.ContourColor openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXO2010W.ContourColor openXmlElement, DMW.RgbColorModelHex? value)
@@ -41,7 +41,7 @@ public static class ContourColorConverter
   
   private static bool CmpSchemeColor(DXO2010W.ContourColor openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXO2010W.ContourColor openXmlElement, DMW.SchemeColor? value)
@@ -57,11 +57,11 @@ public static class ContourColorConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.ContourColor? CreateModelElement(DXO2010W.ContourColor? openXmlElement)
+  public static DMW.ContourColor? CreateModelElement(DXO2010W.ContourColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ContourColor();
+      var value = new DMW.ContourColor();
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
       return value;

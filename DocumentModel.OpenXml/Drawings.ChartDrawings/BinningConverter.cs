@@ -15,7 +15,7 @@ public static class BinningConverter
   
   private static bool CmpIntervalClosed(DXO2016DrawChartDraw.Binning openXmlElement, DMDrawsChartDraws.IntervalClosedSide? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDrawsChartDraws.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDrawsChartDraws.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value, value, diffs, objName);
   }
   
   private static void SetIntervalClosed(DXO2016DrawChartDraw.Binning openXmlElement, DMDrawsChartDraws.IntervalClosedSide? value)

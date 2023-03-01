@@ -36,7 +36,7 @@ public static class GeoChildEntitiesQueryConverter
   
   private static bool CmpGeoChildTypes(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoChildTypes? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoChildTypesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildTypes>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoChildTypesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildTypes>(), value, diffs, objName);
   }
   
   private static void SetGeoChildTypes(DXO2016DrawChartDraw.GeoChildEntitiesQuery openXmlElement, DMDrawsChartDraws.GeoChildTypes? value)

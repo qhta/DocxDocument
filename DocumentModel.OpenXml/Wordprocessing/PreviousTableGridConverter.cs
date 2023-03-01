@@ -61,11 +61,11 @@ public static class PreviousTableGridConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.PreviousTableGrid? CreateModelElement(DXW.PreviousTableGrid? openXmlElement)
+  public static DMW.PreviousTableGrid? CreateModelElement(DXW.PreviousTableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousTableGrid();
+      var value = new DMW.PreviousTableGrid();
       value.GridColumns = GetGridColumns(openXmlElement);
       return value;
     }

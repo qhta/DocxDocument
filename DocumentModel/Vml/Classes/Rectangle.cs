@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Rectangle.
 /// </summary>
-public class Rectangle
+public class Rectangle: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

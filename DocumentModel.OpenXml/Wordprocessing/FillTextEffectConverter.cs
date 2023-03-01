@@ -49,7 +49,7 @@ public static class FillTextEffectConverter
   
   private static bool CmpSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName);
   }
   
   private static void SetSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.SolidColorFillProperties? value)
@@ -78,7 +78,7 @@ public static class FillTextEffectConverter
   
   private static bool CmpGradientFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName);
   }
   
   private static void SetGradientFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.GradientFillProperties? value)
@@ -94,11 +94,11 @@ public static class FillTextEffectConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.FillTextEffect? CreateModelElement(DXO2010W.FillTextEffect? openXmlElement)
+  public static DMW.FillTextEffect? CreateModelElement(DXO2010W.FillTextEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FillTextEffect();
+      var value = new DMW.FillTextEffect();
       value.NoFillEmpty = GetNoFillEmpty(openXmlElement);
       value.SolidColorFillProperties = GetSolidColorFillProperties(openXmlElement);
       value.GradientFillProperties = GetGradientFillProperties(openXmlElement);

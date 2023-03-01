@@ -15,7 +15,7 @@ public static class GeoDataPointQueryConverter
   
   private static bool CmpEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName);
   }
   
   private static void SetEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)

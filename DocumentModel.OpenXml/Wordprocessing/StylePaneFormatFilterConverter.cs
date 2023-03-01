@@ -303,11 +303,11 @@ public static class StylePaneFormatFilterConverter
     openXmlElement.AlternateStyleNames = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.StylePaneFormatFilter? CreateModelElement(DXW.StylePaneFormatFilter? openXmlElement)
+  public static DMW.StylePaneFormatFilter? CreateModelElement(DXW.StylePaneFormatFilter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StylePaneFormatFilter();
+      var value = new DMW.StylePaneFormatFilter();
       value.Val = GetVal(openXmlElement);
       value.AllStyles = GetAllStyles(openXmlElement);
       value.CustomStyles = GetCustomStyles(openXmlElement);

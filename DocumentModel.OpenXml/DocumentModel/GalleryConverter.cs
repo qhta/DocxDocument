@@ -15,7 +15,7 @@ public static class GalleryConverter
   
   private static bool CmpSize(DXO2010CustUI.Gallery openXmlElement, DM.SizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
   private static void SetSize(DXO2010CustUI.Gallery openXmlElement, DM.SizeKind? value)
@@ -249,7 +249,7 @@ public static class GalleryConverter
   
   private static bool CmpShowInRibbon(DXO2010CustUI.Gallery openXmlElement, DM.GalleryShowInRibbonKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DM.GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DM.GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value, value, diffs, objName);
   }
   
   private static void SetShowInRibbon(DXO2010CustUI.Gallery openXmlElement, DM.GalleryShowInRibbonKind? value)

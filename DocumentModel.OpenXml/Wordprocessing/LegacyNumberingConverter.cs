@@ -59,11 +59,11 @@ public static class LegacyNumberingConverter
     openXmlElement.LegacyIndent = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
+  public static DMW.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LegacyNumbering();
+      var value = new DMW.LegacyNumbering();
       value.Legacy = GetLegacy(openXmlElement);
       value.LegacySpace = GetLegacySpace(openXmlElement);
       value.LegacyIndent = GetLegacyIndent(openXmlElement);

@@ -35,7 +35,7 @@ public static class LinePropertiesTypeConverter
   
   private static bool CmpCapType(DXDraw.LinePropertiesType openXmlElement, DMDraws.LineCapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMDraws.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMDraws.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName);
   }
   
   private static void SetCapType(DXDraw.LinePropertiesType openXmlElement, DMDraws.LineCapKind? value)
@@ -53,7 +53,7 @@ public static class LinePropertiesTypeConverter
   
   private static bool CmpCompoundLineType(DXDraw.LinePropertiesType openXmlElement, DMDraws.CompoundLineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMDraws.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMDraws.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value, value, diffs, objName);
   }
   
   private static void SetCompoundLineType(DXDraw.LinePropertiesType openXmlElement, DMDraws.CompoundLineKind? value)
@@ -71,7 +71,7 @@ public static class LinePropertiesTypeConverter
   
   private static bool CmpAlignment(DXDraw.LinePropertiesType openXmlElement, DMDraws.PenAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXDraw.LinePropertiesType openXmlElement, DMDraws.PenAlignmentKind? value)

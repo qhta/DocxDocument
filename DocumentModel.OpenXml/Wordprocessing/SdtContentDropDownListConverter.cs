@@ -79,11 +79,11 @@ public static class SdtContentDropDownListConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentDropDownList? CreateModelElement(DXW.SdtContentDropDownList? openXmlElement)
+  public static DMW.SdtContentDropDownList? CreateModelElement(DXW.SdtContentDropDownList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentDropDownList();
+      var value = new DMW.SdtContentDropDownList();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;

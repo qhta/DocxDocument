@@ -33,7 +33,7 @@ public static class DiagramDefinitionExtensionConverter
   
   private static bool CmpNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm1.NumberDiagramInfoListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgm1.NumberDiagramInfoListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>(), value, diffs, objName);
   }
   
   private static void SetNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value)
@@ -59,7 +59,7 @@ public static class DiagramDefinitionExtensionConverter
   
   private static bool CmpTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm2.TextListStyleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm2.TextListStyleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgm2.TextListStyleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>(), value, diffs, objName);
   }
   
   private static void SetTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm2.TextListStyleType? value)

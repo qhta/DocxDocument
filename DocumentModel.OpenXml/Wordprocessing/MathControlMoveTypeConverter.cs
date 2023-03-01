@@ -61,11 +61,11 @@ public static class MathControlMoveTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(DXW.MathControlMoveType? openXmlElement)
+  public static DMW.MathControlMoveType? CreateModelElement(DXW.MathControlMoveType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MathControlMoveType();
+      var value = new DMW.MathControlMoveType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

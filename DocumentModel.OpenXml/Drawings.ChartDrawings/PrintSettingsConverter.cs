@@ -18,7 +18,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.HeaderFooter? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.HeaderFooter>(), value, diffs, objName);
   }
   
   private static void SetHeaderFooter(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.HeaderFooter? value)
@@ -47,7 +47,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageMargins? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PageMargins>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PageMargins>(), value, diffs, objName);
   }
   
   private static void SetPageMargins(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageMargins? value)
@@ -76,7 +76,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageSetup? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PageSetup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PageSetup>(), value, diffs, objName);
   }
   
   private static void SetPageSetup(DXO2016DrawChartDraw.PrintSettings openXmlElement, DMDrawsChartDraws.PageSetup? value)

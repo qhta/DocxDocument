@@ -33,7 +33,7 @@ public static class BarChartExtensionConverter
   
   private static bool CmpFilteredBarSeries(DXDrawCharts.BarChartExtension openXmlElement, DMDrawsCharts.FilteredBarSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredBarSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredBarSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>(), value, diffs, objName);
   }
   
   private static void SetFilteredBarSeries(DXDrawCharts.BarChartExtension openXmlElement, DMDrawsCharts.FilteredBarSeries? value)

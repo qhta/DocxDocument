@@ -15,7 +15,7 @@ public static class BorderTypeConverter
   
   private static bool CmpType(DXVmlW.BorderType openXmlElement, DMWVml.BorderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVmlW.BorderType openXmlElement, DMWVml.BorderKind? value)
@@ -66,11 +66,11 @@ public static class BorderTypeConverter
       openXmlElement.Shadow = null;
   }
   
-  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DXVmlW.BorderType? openXmlElement)
+  public static DMW.Vml.BorderType? CreateModelElement(DXVmlW.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Vml.BorderType();
+      var value = new DMW.Vml.BorderType();
       value.Type = GetType(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Shadow = GetShadow(openXmlElement);

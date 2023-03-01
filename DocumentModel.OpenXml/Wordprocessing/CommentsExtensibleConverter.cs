@@ -71,7 +71,7 @@ public static class CommentsExtensibleConverter
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentsExtensible openXmlElement, DMW.ExtensionList? value)
@@ -87,11 +87,11 @@ public static class CommentsExtensibleConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CommentsExtensible? CreateModelElement(DXO2021WComtExt.CommentsExtensible? openXmlElement)
+  public static DMW.CommentsExtensible? CreateModelElement(DXO2021WComtExt.CommentsExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentsExtensible();
+      var value = new DMW.CommentsExtensible();
       value.CommentExtensibles = GetCommentExtensibles(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;

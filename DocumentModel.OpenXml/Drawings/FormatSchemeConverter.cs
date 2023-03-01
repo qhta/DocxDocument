@@ -36,7 +36,7 @@ public static class FormatSchemeConverter
   
   private static bool CmpFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillStyleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillStyleList>(), value, diffs, objName);
   }
   
   private static void SetFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value)
@@ -65,7 +65,7 @@ public static class FormatSchemeConverter
   
   private static bool CmpLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineStyleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineStyleList>(), value, diffs, objName);
   }
   
   private static void SetLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value)
@@ -94,7 +94,7 @@ public static class FormatSchemeConverter
   
   private static bool CmpEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectStyleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectStyleList>(), value, diffs, objName);
   }
   
   private static void SetEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value)
@@ -123,7 +123,7 @@ public static class FormatSchemeConverter
   
   private static bool CmpBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundFillStyleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundFillStyleList>(), value, diffs, objName);
   }
   
   private static void SetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value)

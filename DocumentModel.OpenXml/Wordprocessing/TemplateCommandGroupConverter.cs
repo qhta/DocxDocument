@@ -127,7 +127,7 @@ public static class TemplateCommandGroupConverter
   
   private static bool CmpToolbars(DXOW.TemplateCommandGroup openXmlElement, DMW.Toolbars? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ToolbarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.Toolbars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ToolbarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.Toolbars>(), value, diffs, objName);
   }
   
   private static void SetToolbars(DXOW.TemplateCommandGroup openXmlElement, DMW.Toolbars? value)
@@ -199,11 +199,11 @@ public static class TemplateCommandGroupConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TemplateCommandGroup? CreateModelElement(DXOW.TemplateCommandGroup? openXmlElement)
+  public static DMW.TemplateCommandGroup? CreateModelElement(DXOW.TemplateCommandGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TemplateCommandGroup();
+      var value = new DMW.TemplateCommandGroup();
       value.KeyMapCustomizations = GetKeyMapCustomizations(openXmlElement);
       value.MismatchedKeyMapCustomizations = GetMismatchedKeyMapCustomizations(openXmlElement);
       value.Toolbars = GetToolbars(openXmlElement);

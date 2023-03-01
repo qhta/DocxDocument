@@ -15,7 +15,7 @@ public static class DocumentConverter
   
   private static bool CmpConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName);
   }
   
   private static void SetConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value)
@@ -36,7 +36,7 @@ public static class DocumentConverter
   
   private static bool CmpDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName);
   }
   
   private static void SetDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value)
@@ -65,7 +65,7 @@ public static class DocumentConverter
   
   private static bool CmpBody(DXW.Document openXmlElement, DMW.Body? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Body>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Body>(), value, diffs, objName);
   }
   
   private static void SetBody(DXW.Document openXmlElement, DMW.Body? value)
@@ -75,17 +75,17 @@ public static class DocumentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BodyConverter.CreateOpenXmlElement<DXW.Body>(value);
+      itemElement = DMXW.BodyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Document? CreateModelElement(DXW.Document? openXmlElement)
+  public static DMW.Document? CreateModelElement(DXW.Document? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Document();
+      var value = new DMW.Document();
       value.Conformance = GetConformance(openXmlElement);
       value.DocumentBackground = GetDocumentBackground(openXmlElement);
       value.Body = GetBody(openXmlElement);

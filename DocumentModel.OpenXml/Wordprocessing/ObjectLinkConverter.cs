@@ -15,7 +15,7 @@ public static class ObjectLinkConverter
   
   private static bool CmpUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName);
   }
   
   private static void SetUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value)
@@ -51,7 +51,7 @@ public static class ObjectLinkConverter
   
   private static bool CmpdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName);
   }
   
   private static void SetdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value)
@@ -131,11 +131,11 @@ public static class ObjectLinkConverter
     openXmlElement.FieldCodes = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.ObjectLink? CreateModelElement(DXW.ObjectLink? openXmlElement)
+  public static DMW.ObjectLink? CreateModelElement(DXW.ObjectLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ObjectLink();
+      var value = new DMW.ObjectLink();
       value.UpdateMode = GetUpdateMode(openXmlElement);
       value.LockedField = GetLockedField(openXmlElement);
       value.drawAspect = GetdrawAspect(openXmlElement);

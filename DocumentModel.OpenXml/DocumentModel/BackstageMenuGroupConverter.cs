@@ -105,7 +105,7 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpItemSize(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.ItemSizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName);
   }
   
   private static void SetItemSize(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.ItemSizeKind? value)
@@ -123,7 +123,7 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageMenuButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageMenuButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuButton>(), value, diffs, objName);
   }
   
   private static void SetBackstageMenuButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuButton? value)
@@ -149,7 +149,7 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuCheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageMenuCheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageMenuCheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuCheckBox>(), value, diffs, objName);
   }
   
   private static void SetBackstageMenuCheckBox(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuCheckBox? value)
@@ -175,7 +175,7 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageSubMenu? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageSubMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageSubMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageSubMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageSubMenu>(), value, diffs, objName);
   }
   
   private static void SetBackstageSubMenu(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageSubMenu? value)
@@ -201,7 +201,7 @@ public static class BackstageMenuGroupConverter
   
   private static bool CmpBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageMenuToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageMenuToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuToggleButton>(), value, diffs, objName);
   }
   
   private static void SetBackstageMenuToggleButton(DXO2010CustUI.BackstageMenuGroup openXmlElement, DM.BackstageMenuToggleButton? value)

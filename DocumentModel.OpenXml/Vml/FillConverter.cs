@@ -33,7 +33,7 @@ public static class FillConverter
   
   private static bool CmpType(DXVml.Fill openXmlElement, DMVml.FillKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVml.Fill openXmlElement, DMVml.FillKind? value)
@@ -236,7 +236,7 @@ public static class FillConverter
   
   private static bool CmpAspect(DXVml.Fill openXmlElement, DMVml.ImageAspectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(openXmlElement?.Aspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(openXmlElement?.Aspect?.Value, value, diffs, objName);
   }
   
   private static void SetAspect(DXVml.Fill openXmlElement, DMVml.ImageAspectKind? value)
@@ -369,7 +369,7 @@ public static class FillConverter
   
   private static bool CmpMethod(DXVml.Fill openXmlElement, DMVml.FillMethodKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMVml.FillMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMVml.FillMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName);
   }
   
   private static void SetMethod(DXVml.Fill openXmlElement, DMVml.FillMethodKind? value)
@@ -513,7 +513,7 @@ public static class FillConverter
   
   private static bool CmpFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.FillExtendedProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.FillExtendedProperties>(), value, diffs, objName);
   }
   
   private static void SetFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value)

@@ -143,11 +143,11 @@ public static class FontSignatureConverter
       openXmlElement.CodePageSignature1 = null;
   }
   
-  public static DocumentModel.Wordprocessing.FontSignature? CreateModelElement(DXW.FontSignature? openXmlElement)
+  public static DMW.FontSignature? CreateModelElement(DXW.FontSignature? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FontSignature();
+      var value = new DMW.FontSignature();
       value.UnicodeSignature0 = GetUnicodeSignature0(openXmlElement);
       value.UnicodeSignature1 = GetUnicodeSignature1(openXmlElement);
       value.UnicodeSignature2 = GetUnicodeSignature2(openXmlElement);

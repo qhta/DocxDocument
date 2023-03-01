@@ -18,7 +18,7 @@ public static class PreSubSuperConverter
   
   private static bool CmpPreSubSuperProperties(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuperProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PreSubSuperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PreSubSuperProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PreSubSuperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PreSubSuperProperties>(), value, diffs, objName);
   }
   
   private static void SetPreSubSuperProperties(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuperProperties? value)
@@ -47,7 +47,7 @@ public static class PreSubSuperConverter
   
   private static bool CmpSubArgument(DXMath.PreSubSuper openXmlElement, DMMath.SubArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubArgument>(), value, diffs, objName);
   }
   
   private static void SetSubArgument(DXMath.PreSubSuper openXmlElement, DMMath.SubArgument? value)
@@ -76,7 +76,7 @@ public static class PreSubSuperConverter
   
   private static bool CmpSuperArgument(DXMath.PreSubSuper openXmlElement, DMMath.SuperArgument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SuperArgument>(), value, diffs, objName);
   }
   
   private static void SetSuperArgument(DXMath.PreSubSuper openXmlElement, DMMath.SuperArgument? value)
@@ -105,7 +105,7 @@ public static class PreSubSuperConverter
   
   private static bool CmpBase(DXMath.PreSubSuper openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
   }
   
   private static void SetBase(DXMath.PreSubSuper openXmlElement, DMMath.Base? value)

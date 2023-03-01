@@ -15,7 +15,7 @@ public static class CategoryFilterExceptionsConverter
   
   private static bool CmpCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterException>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterException>(), value, diffs, objName);
   }
   
   private static void SetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value)

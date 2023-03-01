@@ -55,7 +55,7 @@ public static class PageSetupConverter
   
   private static bool CmpOrientation(DXO2016DrawChartDraw.PageSetup openXmlElement, DMDrawsChartDraws.PageOrientation? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDrawsChartDraws.PageOrientation>(openXmlElement?.Orientation?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDrawsChartDraws.PageOrientation>(openXmlElement?.Orientation?.Value, value, diffs, objName);
   }
   
   private static void SetOrientation(DXO2016DrawChartDraw.PageSetup openXmlElement, DMDrawsChartDraws.PageOrientation? value)

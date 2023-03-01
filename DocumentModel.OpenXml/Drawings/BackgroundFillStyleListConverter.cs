@@ -43,7 +43,7 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpSolidFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
   }
   
   private static void SetSolidFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.SolidFill? value)
@@ -69,7 +69,7 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpGradientFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
   }
   
   private static void SetGradientFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.GradientFill? value)
@@ -95,7 +95,7 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpBlipFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
   }
   
   private static void SetBlipFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.BlipFill? value)
@@ -121,7 +121,7 @@ public static class BackgroundFillStyleListConverter
   
   private static bool CmpPatternFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
   }
   
   private static void SetPatternFill(DXDraw.BackgroundFillStyleList openXmlElement, DMDraws.PatternFill? value)

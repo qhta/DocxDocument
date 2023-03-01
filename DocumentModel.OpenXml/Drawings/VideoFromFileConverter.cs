@@ -36,7 +36,7 @@ public static class VideoFromFileConverter
   
   private static bool CmpExtensionList(DXDraw.VideoFromFile openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.VideoFromFile openXmlElement, DMDraws.ExtensionList? value)

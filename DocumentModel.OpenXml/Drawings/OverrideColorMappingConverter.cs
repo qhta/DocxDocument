@@ -15,7 +15,7 @@ public static class OverrideColorMappingConverter
   
   private static bool CmpExtensionList(DXDraw.OverrideColorMapping openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.OverrideColorMapping openXmlElement, DMDraws.ExtensionList? value)

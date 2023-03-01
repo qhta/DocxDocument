@@ -15,7 +15,7 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpExpand(DXO2010CustUI.BackstageGroupButton openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName);
   }
   
   private static void SetExpand(DXO2010CustUI.BackstageGroupButton openXmlElement, DM.ExpandKind? value)
@@ -33,7 +33,7 @@ public static class BackstageGroupButtonConverter
   
   private static bool CmpStyle(DXO2010CustUI.BackstageGroupButton openXmlElement, DM.Style2Kind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.Style2Values, DM.Style2Kind>(openXmlElement?.Style?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.Style2Values, DM.Style2Kind>(openXmlElement?.Style?.Value, value, diffs, objName);
   }
   
   private static void SetStyle(DXO2010CustUI.BackstageGroupButton openXmlElement, DM.Style2Kind? value)

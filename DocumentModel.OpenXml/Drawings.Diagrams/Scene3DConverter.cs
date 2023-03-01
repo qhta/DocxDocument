@@ -18,7 +18,7 @@ public static class Scene3DConverter
   
   private static bool CmpCamera(DXDrawDgms.Scene3D openXmlElement, DMDraws.Camera? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Camera>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Camera>(), value, diffs, objName);
   }
   
   private static void SetCamera(DXDrawDgms.Scene3D openXmlElement, DMDraws.Camera? value)
@@ -47,7 +47,7 @@ public static class Scene3DConverter
   
   private static bool CmpLightRig(DXDrawDgms.Scene3D openXmlElement, DMDraws.LightRig? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LightRig>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LightRig>(), value, diffs, objName);
   }
   
   private static void SetLightRig(DXDrawDgms.Scene3D openXmlElement, DMDraws.LightRig? value)
@@ -76,7 +76,7 @@ public static class Scene3DConverter
   
   private static bool CmpBackdrop(DXDrawDgms.Scene3D openXmlElement, DMDraws.Backdrop? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackdropConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Backdrop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BackdropConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Backdrop>(), value, diffs, objName);
   }
   
   private static void SetBackdrop(DXDrawDgms.Scene3D openXmlElement, DMDraws.Backdrop? value)
@@ -105,7 +105,7 @@ public static class Scene3DConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Scene3D openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.Scene3D openXmlElement, DMDraws.ExtensionList? value)

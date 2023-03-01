@@ -33,7 +33,7 @@ public static class StrRefExtensionConverter
   
   private static bool CmpFullReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FullReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FullReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FullReference>(), value, diffs, objName);
   }
   
   private static void SetFullReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FullReference? value)
@@ -59,7 +59,7 @@ public static class StrRefExtensionConverter
   
   private static bool CmpLevelReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.LevelReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.LevelReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.LevelReference>(), value, diffs, objName);
   }
   
   private static void SetLevelReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.LevelReference? value)
@@ -85,7 +85,7 @@ public static class StrRefExtensionConverter
   
   private static bool CmpFormulaReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FormulaReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FormulaReference>(), value, diffs, objName);
   }
   
   private static void SetFormulaReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value)

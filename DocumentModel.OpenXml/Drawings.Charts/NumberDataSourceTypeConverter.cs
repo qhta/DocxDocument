@@ -18,7 +18,7 @@ public static class NumberDataSourceTypeConverter
   
   private static bool CmpNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName);
   }
   
   private static void SetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value)
@@ -47,7 +47,7 @@ public static class NumberDataSourceTypeConverter
   
   private static bool CmpNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName);
   }
   
   private static void SetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value)

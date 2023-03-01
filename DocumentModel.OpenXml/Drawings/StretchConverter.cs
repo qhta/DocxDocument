@@ -18,7 +18,7 @@ public static class StretchConverter
   
   private static bool CmpFillRectangle(DXDraw.Stretch openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillRectangle>(), value, diffs, objName);
   }
   
   private static void SetFillRectangle(DXDraw.Stretch openXmlElement, DMDraws.RelativeRectangleType? value)

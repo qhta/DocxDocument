@@ -15,7 +15,7 @@ public static class PathShadePropertiesConverter
   
   private static bool CmpPath(DXO2010W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName);
   }
   
   private static void SetPath(DXO2010W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value)
@@ -36,7 +36,7 @@ public static class PathShadePropertiesConverter
   
   private static bool CmpFillToRectangle(DXO2010W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillToRectangle>(), value, diffs, objName);
   }
   
   private static void SetFillToRectangle(DXO2010W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value)
@@ -52,11 +52,11 @@ public static class PathShadePropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.PathShadeProperties? CreateModelElement(DXO2010W.PathShadeProperties? openXmlElement)
+  public static DMW.PathShadeProperties? CreateModelElement(DXO2010W.PathShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PathShadeProperties();
+      var value = new DMW.PathShadeProperties();
       value.Path = GetPath(openXmlElement);
       value.FillToRectangle = GetFillToRectangle(openXmlElement);
       return value;

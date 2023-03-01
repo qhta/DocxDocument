@@ -30,7 +30,7 @@ public static class SideWallConverter
   
   private static bool CmpShapeProperties(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ShapeProperties? value)
@@ -56,7 +56,7 @@ public static class SideWallConverter
   
   private static bool CmpPictureOptions(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
   }
   
   private static void SetPictureOptions(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -82,7 +82,7 @@ public static class SideWallConverter
   
   private static bool CmpExtensionList(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.SideWall openXmlElement, DMDrawsCharts.ExtensionList? value)

@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Multiple Path Line.
 /// </summary>
-public class PolyLine
+public class PolyLine: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

@@ -18,7 +18,7 @@ public static class LimitUpperPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value)

@@ -33,7 +33,7 @@ public static class CaptionConverter
   
   private static bool CmpPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName);
   }
   
   private static void SetPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value)
@@ -107,7 +107,7 @@ public static class CaptionConverter
   
   private static bool CmpNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName);
   }
   
   private static void SetNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value)
@@ -125,7 +125,7 @@ public static class CaptionConverter
   
   private static bool CmpSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName);
   }
   
   private static void SetSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -133,11 +133,11 @@ public static class CaptionConverter
     openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Caption? CreateModelElement(DXW.Caption? openXmlElement)
+  public static DMW.Caption? CreateModelElement(DXW.Caption? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Caption();
+      var value = new DMW.Caption();
       value.Name = GetName(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.ChapterNumber = GetChapterNumber(openXmlElement);

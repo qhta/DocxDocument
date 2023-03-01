@@ -33,7 +33,7 @@ public static class LineChartExtensionConverter
   
   private static bool CmpFilteredLineSeriesExtension(DXDrawCharts.LineChartExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredLineSeriesExtensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredLineSeriesExtension>(), value, diffs, objName);
   }
   
   private static void SetFilteredLineSeriesExtension(DXDrawCharts.LineChartExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value)

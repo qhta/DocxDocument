@@ -36,7 +36,7 @@ public static class FramesetSplitbarConverter
   
   private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
   }
   
   private static void SetColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value)
@@ -88,11 +88,11 @@ public static class FramesetSplitbarConverter
     BooleanValueConverter.SetOnOffOnlyType<DXW.FlatBorders>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.FramesetSplitbar? CreateModelElement(DXW.FramesetSplitbar? openXmlElement)
+  public static DMW.FramesetSplitbar? CreateModelElement(DXW.FramesetSplitbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FramesetSplitbar();
+      var value = new DMW.FramesetSplitbar();
       value.Width = GetWidth(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.NoBorder = GetNoBorder(openXmlElement);

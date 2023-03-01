@@ -15,7 +15,7 @@ public static class PermStartConverter
   
   private static bool CmpEditorGroup(DXW.PermStart openXmlElement, DMW.RangePermissionEditingGroupKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value, value, diffs, objName);
   }
   
   private static void SetEditorGroup(DXW.PermStart openXmlElement, DMW.RangePermissionEditingGroupKind? value)
@@ -111,7 +111,7 @@ public static class PermStartConverter
   
   private static bool CmpDisplacedByCustomXml(DXW.PermStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.PermStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -119,11 +119,11 @@ public static class PermStartConverter
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DXW.PermStart? openXmlElement)
+  public static DMW.PermStart? CreateModelElement(DXW.PermStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PermStart();
+      var value = new DMW.PermStart();
       value.EditorGroup = GetEditorGroup(openXmlElement);
       value.Ed = GetEd(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);
@@ -159,10 +159,9 @@ public static class PermStartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PermStart value)
-    where OpenXmlElementType: DXW.PermStart, new()
+  public static DXW.PermStart CreateOpenXmlElement(DMW.PermStart value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.PermStart();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

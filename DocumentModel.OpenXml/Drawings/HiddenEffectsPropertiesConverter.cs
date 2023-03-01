@@ -18,7 +18,7 @@ public static class HiddenEffectsPropertiesConverter
   
   private static bool CmpEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
   }
   
   private static void SetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value)
@@ -47,7 +47,7 @@ public static class HiddenEffectsPropertiesConverter
   
   private static bool CmpEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
   }
   
   private static void SetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value)

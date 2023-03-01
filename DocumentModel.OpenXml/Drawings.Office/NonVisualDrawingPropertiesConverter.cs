@@ -115,7 +115,7 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpHyperlinkOnClick(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName);
   }
   
   private static void SetHyperlinkOnClick(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
@@ -144,7 +144,7 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpHyperlinkOnHover(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnHover? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnHoverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnHover>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HyperlinkOnHoverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnHover>(), value, diffs, objName);
   }
   
   private static void SetHyperlinkOnHover(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnHover? value)
@@ -173,7 +173,7 @@ public static class NonVisualDrawingPropertiesConverter
   
   private static bool CmpNonVisualDrawingPropertiesExtensionList(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>(), value, diffs, objName);
   }
   
   private static void SetNonVisualDrawingPropertiesExtensionList(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value)

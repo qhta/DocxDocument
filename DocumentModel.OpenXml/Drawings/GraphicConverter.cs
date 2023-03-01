@@ -18,7 +18,7 @@ public static class GraphicConverter
   
   private static bool CmpGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GraphicData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GraphicDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GraphicData>(), value, diffs, objName);
   }
   
   private static void SetGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value)

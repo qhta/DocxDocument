@@ -119,11 +119,11 @@ public static class NumberingInstanceConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
+  public static DMW.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingInstance();
+      var value = new DMW.NumberingInstance();
       value.NumberID = GetNumberID(openXmlElement);
       value.DurableId = GetDurableId(openXmlElement);
       value.AbstractNumId = GetAbstractNumId(openXmlElement);

@@ -15,7 +15,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpBackground1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value, value, diffs, objName);
   }
   
   private static void SetBackground1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -33,7 +33,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpText1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value, value, diffs, objName);
   }
   
   private static void SetText1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -51,7 +51,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpBackground2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value, value, diffs, objName);
   }
   
   private static void SetBackground2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -69,7 +69,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpText2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value, value, diffs, objName);
   }
   
   private static void SetText2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -87,7 +87,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value, value, diffs, objName);
   }
   
   private static void SetAccent1(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -105,7 +105,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value, value, diffs, objName);
   }
   
   private static void SetAccent2(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -123,7 +123,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent3(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value, value, diffs, objName);
   }
   
   private static void SetAccent3(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -141,7 +141,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent4(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value, value, diffs, objName);
   }
   
   private static void SetAccent4(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -159,7 +159,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent5(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value, value, diffs, objName);
   }
   
   private static void SetAccent5(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -177,7 +177,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpAccent6(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value, value, diffs, objName);
   }
   
   private static void SetAccent6(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -195,7 +195,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value, value, diffs, objName);
   }
   
   private static void SetHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -213,7 +213,7 @@ public static class ColorSchemeMappingConverter
   
   private static bool CmpFollowedHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value, value, diffs, objName);
   }
   
   private static void SetFollowedHyperlink(DXW.ColorSchemeMapping openXmlElement, DMW.ColorSchemeIndexKind? value)
@@ -221,11 +221,11 @@ public static class ColorSchemeMappingConverter
     openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DMW.ColorSchemeIndexKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.ColorSchemeMapping? CreateModelElement(DXW.ColorSchemeMapping? openXmlElement)
+  public static DMW.ColorSchemeMapping? CreateModelElement(DXW.ColorSchemeMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ColorSchemeMapping();
+      var value = new DMW.ColorSchemeMapping();
       value.Background1 = GetBackground1(openXmlElement);
       value.Text1 = GetText1(openXmlElement);
       value.Background2 = GetBackground2(openXmlElement);

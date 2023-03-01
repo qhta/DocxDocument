@@ -36,7 +36,7 @@ public static class PivotFormatConverter
   
   private static bool CmpShapeProperties(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ShapeProperties? value)
@@ -65,7 +65,7 @@ public static class PivotFormatConverter
   
   private static bool CmpMarker(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName);
   }
   
   private static void SetMarker(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.Marker? value)
@@ -94,7 +94,7 @@ public static class PivotFormatConverter
   
   private static bool CmpDataLabel(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.DataLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabel>(), value, diffs, objName);
   }
   
   private static void SetDataLabel(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.DataLabel? value)
@@ -123,7 +123,7 @@ public static class PivotFormatConverter
   
   private static bool CmpExtensionList(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.PivotFormat openXmlElement, DMDrawsCharts.ExtensionList? value)

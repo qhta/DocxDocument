@@ -18,7 +18,7 @@ public static class FilteredSeriesTitleConverter
   
   private static bool CmpChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartText3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ChartText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartText3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ChartText>(), value, diffs, objName);
   }
   
   private static void SetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value)

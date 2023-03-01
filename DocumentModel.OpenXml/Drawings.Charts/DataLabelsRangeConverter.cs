@@ -43,7 +43,7 @@ public static class DataLabelsRangeConverter
   
   private static bool CmpDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>(), value, diffs, objName);
   }
   
   private static void SetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value)

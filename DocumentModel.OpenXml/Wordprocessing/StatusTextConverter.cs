@@ -15,7 +15,7 @@ public static class StatusTextConverter
   
   private static bool CmpType(DXW.StatusText openXmlElement, DMW.InfoTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.StatusText openXmlElement, DMW.InfoTextKind? value)
@@ -41,11 +41,11 @@ public static class StatusTextConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.StatusText? CreateModelElement(DXW.StatusText? openXmlElement)
+  public static DMW.StatusText? CreateModelElement(DXW.StatusText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StatusText();
+      var value = new DMW.StatusText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

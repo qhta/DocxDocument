@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ObjectEmbed Class.
 /// </summary>
-public class ObjectEmbed
+public class ObjectEmbed: EmbeddedObjectElement
 {
   /// <summary>
   ///   drawAspect

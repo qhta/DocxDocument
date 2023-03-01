@@ -5,11 +5,11 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DocPartsConverter
 {
-  public static DocumentModel.Wordprocessing.DocParts? CreateModelElement(DXW.DocParts? openXmlElement)
+  public static DMW.DocParts? CreateModelElement(DXW.DocParts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocParts();
+      var value = new DMW.DocParts();
       return value;
     }
     return null;

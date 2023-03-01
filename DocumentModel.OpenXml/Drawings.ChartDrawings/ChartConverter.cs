@@ -18,7 +18,7 @@ public static class ChartConverter
   
   private static bool CmpChartTitle(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.ChartTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ChartTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ChartTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ChartTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ChartTitle>(), value, diffs, objName);
   }
   
   private static void SetChartTitle(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.ChartTitle? value)
@@ -47,7 +47,7 @@ public static class ChartConverter
   
   private static bool CmpPlotArea(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.PlotArea? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotArea>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotArea>(), value, diffs, objName);
   }
   
   private static void SetPlotArea(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.PlotArea? value)
@@ -76,7 +76,7 @@ public static class ChartConverter
   
   private static bool CmpLegend(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.Legend? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Legend>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Legend>(), value, diffs, objName);
   }
   
   private static void SetLegend(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.Legend? value)
@@ -105,7 +105,7 @@ public static class ChartConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.Chart openXmlElement, DMDrawsChartDraws.ExtensionList? value)

@@ -15,7 +15,7 @@ public static class AreaChartConverter
   
   private static bool CmpGrouping(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.GroupingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDrawsCharts.GroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.Grouping>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetGrouping(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.GroupingKind? value)
@@ -130,7 +130,7 @@ public static class AreaChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -156,7 +156,7 @@ public static class AreaChartConverter
   
   private static bool CmpDropLines(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName);
   }
   
   private static void SetDropLines(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.DropLines? value)
@@ -238,7 +238,7 @@ public static class AreaChartConverter
   
   private static bool CmpAreaChartExtensionList(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.AreaChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.AreaChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.AreaChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.AreaChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.AreaChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetAreaChartExtensionList(DXDrawCharts.AreaChart openXmlElement, DMDrawsCharts.AreaChartExtensionList? value)

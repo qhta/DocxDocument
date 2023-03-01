@@ -73,7 +73,7 @@ public static class BookmarkStartConverter
   
   private static bool CmpDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -99,11 +99,11 @@ public static class BookmarkStartConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
+  public static DMW.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.BookmarkStart();
+      var value = new DMW.BookmarkStart();
       value.Name = GetName(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);
       value.ColumnLast = GetColumnLast(openXmlElement);
@@ -136,10 +136,9 @@ public static class BookmarkStartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BookmarkStart value)
-    where OpenXmlElementType: DXW.BookmarkStart, new()
+  public static DXW.BookmarkStart CreateOpenXmlElement(DMW.BookmarkStart value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.BookmarkStart();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

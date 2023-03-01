@@ -18,7 +18,7 @@ public static class DrawingConverter
   
   private static bool CmpAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Anchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Anchor>(), value, diffs, objName);
   }
   
   private static void SetAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value)
@@ -47,7 +47,7 @@ public static class DrawingConverter
   
   private static bool CmpInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.InlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Inline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.InlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Inline>(), value, diffs, objName);
   }
   
   private static void SetInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value)
@@ -63,11 +63,11 @@ public static class DrawingConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Drawing? CreateModelElement(DXW.Drawing? openXmlElement)
+  public static DMW.Drawing? CreateModelElement(DXW.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Drawing();
+      var value = new DMW.Drawing();
       value.Anchor = GetAnchor(openXmlElement);
       value.Inline = GetInline(openXmlElement);
       return value;
@@ -91,10 +91,9 @@ public static class DrawingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Drawing value)
-    where OpenXmlElementType: DXW.Drawing, new()
+  public static DXW.Drawing CreateOpenXmlElement(DMW.Drawing value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Drawing();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

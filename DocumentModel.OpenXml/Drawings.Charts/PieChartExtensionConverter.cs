@@ -33,7 +33,7 @@ public static class PieChartExtensionConverter
   
   private static bool CmpFilteredPieSeries(DXDrawCharts.PieChartExtension openXmlElement, DMDrawsCharts.FilteredPieSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredPieSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredPieSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>(), value, diffs, objName);
   }
   
   private static void SetFilteredPieSeries(DXDrawCharts.PieChartExtension openXmlElement, DMDrawsCharts.FilteredPieSeries? value)

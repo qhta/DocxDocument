@@ -64,7 +64,7 @@ public static class FrameConverter
   
   private static bool CmpSourceFileReference(DXW.Frame openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceFileReference>(), value, diffs, objName);
   }
   
   private static void SetSourceFileReference(DXW.Frame openXmlElement, DMW.RelationshipType? value)
@@ -126,7 +126,7 @@ public static class FrameConverter
   
   private static bool CmpScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value)
@@ -180,11 +180,11 @@ public static class FrameConverter
     BooleanValueConverter.SetOnOffOnlyType<DXW.LinkedToFile>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.Frame? CreateModelElement(DXW.Frame? openXmlElement)
+  public static DMW.Frame? CreateModelElement(DXW.Frame? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Frame();
+      var value = new DMW.Frame();
       value.FrameSize = GetFrameSize(openXmlElement);
       value.FrameName = GetFrameName(openXmlElement);
       value.SourceFileReference = GetSourceFileReference(openXmlElement);

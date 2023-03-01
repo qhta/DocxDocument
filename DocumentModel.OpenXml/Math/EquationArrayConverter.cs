@@ -18,7 +18,7 @@ public static class EquationArrayConverter
   
   private static bool CmpEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArrayProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArrayProperties>(), value, diffs, objName);
   }
   
   private static void SetEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value)

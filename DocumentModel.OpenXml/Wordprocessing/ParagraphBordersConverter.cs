@@ -18,7 +18,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
   }
   
   private static void SetTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -47,7 +47,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
   }
   
   private static void SetLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -76,7 +76,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
   }
   
   private static void SetBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -105,7 +105,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
   }
   
   private static void SetRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -134,7 +134,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BetweenBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BetweenBorder>(), value, diffs, objName);
   }
   
   private static void SetBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -163,7 +163,7 @@ public static class ParagraphBordersConverter
   
   private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BarBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BarBorder>(), value, diffs, objName);
   }
   
   private static void SetBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
@@ -179,11 +179,11 @@ public static class ParagraphBordersConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.ParagraphBorders? CreateModelElement(DXW.ParagraphBorders? openXmlElement)
+  public static DMW.ParagraphBorders? CreateModelElement(DXW.ParagraphBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ParagraphBorders();
+      var value = new DMW.ParagraphBorders();
       value.TopBorder = GetTopBorder(openXmlElement);
       value.LeftBorder = GetLeftBorder(openXmlElement);
       value.BottomBorder = GetBottomBorder(openXmlElement);

@@ -61,11 +61,11 @@ public static class AllocatedCommandManifestConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.AllocatedCommandManifest? CreateModelElement(DXOW.AllocatedCommandManifest? openXmlElement)
+  public static DMW.AllocatedCommandManifest? CreateModelElement(DXOW.AllocatedCommandManifest? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AllocatedCommandManifest();
+      var value = new DMW.AllocatedCommandManifest();
       value.AllocatedCommandManifestEntries = GetAllocatedCommandManifestEntries(openXmlElement);
       return value;
     }

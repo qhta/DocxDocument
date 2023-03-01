@@ -61,7 +61,7 @@ public static class LegendEntryConverter
   
   private static bool CmpTextProperties(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
   }
   
   private static void SetTextProperties(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -87,7 +87,7 @@ public static class LegendEntryConverter
   
   private static bool CmpExtensionList(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.LegendEntry openXmlElement, DMDrawsCharts.ExtensionList? value)

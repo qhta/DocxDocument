@@ -72,7 +72,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpFrameProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.FrameProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FrameProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FrameProperties>(), value, diffs, objName);
   }
   
   private static void SetFrameProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.FrameProperties? value)
@@ -119,7 +119,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpNumberingProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.NumberingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingProperties>(), value, diffs, objName);
   }
   
   private static void SetNumberingProperties(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.NumberingProperties? value)
@@ -166,7 +166,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpParagraphBorders(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.ParagraphBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ParagraphBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ParagraphBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphBorders>(), value, diffs, objName);
   }
   
   private static void SetParagraphBorders(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.ParagraphBorders? value)
@@ -195,7 +195,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpShading(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Shading? value)
@@ -224,7 +224,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpTabs(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Tabs? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Tabs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Tabs>(), value, diffs, objName);
   }
   
   private static void SetTabs(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Tabs? value)
@@ -433,7 +433,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpSpacingBetweenLines(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.SpacingBetweenLines? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SpacingBetweenLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SpacingBetweenLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SpacingBetweenLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SpacingBetweenLines>(), value, diffs, objName);
   }
   
   private static void SetSpacingBetweenLines(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.SpacingBetweenLines? value)
@@ -462,7 +462,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpIndentation(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Indentation? value, DiffList? diffs, string? objName)
   {
-    return DMXW.IndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Indentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.IndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Indentation>(), value, diffs, objName);
   }
   
   private static void SetIndentation(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.Indentation? value)
@@ -542,7 +542,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpJustification(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.JustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DMW.JustificationKind>(openXmlElement.GetFirstChild<DXW.Justification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DMW.JustificationKind>(openXmlElement.GetFirstChild<DXW.Justification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetJustification(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.JustificationKind? value)
@@ -570,7 +570,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpTextDirection(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextDirection(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.TextDirectionKind? value)
@@ -598,7 +598,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpTextAlignment(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.VerticalTextAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>(openXmlElement.GetFirstChild<DXW.TextAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>(openXmlElement.GetFirstChild<DXW.TextAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextAlignment(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.VerticalTextAlignmentKind? value)
@@ -626,7 +626,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   
   private static bool CmpTextBoxTightWrap(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.TextBoxTightWrapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>(openXmlElement.GetFirstChild<DXW.TextBoxTightWrap>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>(openXmlElement.GetFirstChild<DXW.TextBoxTightWrap>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextBoxTightWrap(DXW.ParagraphPropertiesBaseStyle openXmlElement, DMW.TextBoxTightWrapKind? value)
@@ -662,11 +662,11 @@ public static class ParagraphPropertiesBaseStyleConverter
     SimpleValueConverter.SetValue<DXW.OutlineLevel,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? CreateModelElement(DXW.ParagraphPropertiesBaseStyle? openXmlElement)
+  public static DMW.ParagraphPropertiesBaseStyle? CreateModelElement(DXW.ParagraphPropertiesBaseStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle();
+      var value = new DMW.ParagraphPropertiesBaseStyle();
       value.KeepNext = GetKeepNext(openXmlElement);
       value.KeepLines = GetKeepLines(openXmlElement);
       value.PageBreakBefore = GetPageBreakBefore(openXmlElement);

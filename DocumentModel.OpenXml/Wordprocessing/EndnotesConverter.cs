@@ -15,7 +15,7 @@ public static class EndnotesConverter
   
   private static bool CmpEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Endnote>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Endnote>(), value, diffs, objName);
   }
   
   private static void SetEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value)
@@ -31,11 +31,11 @@ public static class EndnotesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Endnotes? CreateModelElement(DXW.Endnotes? openXmlElement)
+  public static DMW.Endnotes? CreateModelElement(DXW.Endnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Endnotes();
+      var value = new DMW.Endnotes();
       value.Endnote = GetEndnote(openXmlElement);
       return value;
     }

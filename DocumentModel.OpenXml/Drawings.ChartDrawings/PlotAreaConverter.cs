@@ -18,7 +18,7 @@ public static class PlotAreaConverter
   
   private static bool CmpPlotAreaRegion(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.PlotAreaRegion? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PlotAreaRegionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotAreaRegion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.PlotAreaRegionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotAreaRegion>(), value, diffs, objName);
   }
   
   private static void SetPlotAreaRegion(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.PlotAreaRegion? value)
@@ -100,7 +100,7 @@ public static class PlotAreaConverter
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
@@ -126,7 +126,7 @@ public static class PlotAreaConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.PlotArea openXmlElement, DMDrawsChartDraws.ExtensionList? value)

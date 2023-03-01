@@ -18,7 +18,7 @@ public static class DelimiterConverter
   
   private static bool CmpDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName);
   }
   
   private static void SetDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value)

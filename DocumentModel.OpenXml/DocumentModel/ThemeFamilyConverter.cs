@@ -72,7 +72,7 @@ public static class ThemeFamilyConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value)

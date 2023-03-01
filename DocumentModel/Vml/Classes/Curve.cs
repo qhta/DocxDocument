@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Bezier Curve.
 /// </summary>
-public class Curve
+public class Curve: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

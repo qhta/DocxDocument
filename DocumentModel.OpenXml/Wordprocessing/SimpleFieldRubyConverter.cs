@@ -94,7 +94,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlRuby(DXW.SimpleFieldRuby openXmlElement, DMW.CustomXmlRuby? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CustomXmlRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CustomXmlRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlRuby>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlRuby(DXW.SimpleFieldRuby openXmlElement, DMW.CustomXmlRuby? value)
@@ -120,7 +120,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpChildSimpleFieldRuby(DXW.SimpleFieldRuby openXmlElement, DMW.SimpleFieldRuby? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SimpleFieldRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SimpleFieldRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SimpleFieldRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SimpleFieldRuby>(), value, diffs, objName);
   }
   
   private static void SetChildSimpleFieldRuby(DXW.SimpleFieldRuby openXmlElement, DMW.SimpleFieldRuby? value)
@@ -146,7 +146,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpHyperlinkRuby(DXW.SimpleFieldRuby openXmlElement, DMW.HyperlinkRuby? value, DiffList? diffs, string? objName)
   {
-    return DMXW.HyperlinkRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HyperlinkRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.HyperlinkRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HyperlinkRuby>(), value, diffs, objName);
   }
   
   private static void SetHyperlinkRuby(DXW.SimpleFieldRuby openXmlElement, DMW.HyperlinkRuby? value)
@@ -172,7 +172,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpRun(DXW.SimpleFieldRuby openXmlElement, DMW.Run? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Run>(), value, diffs, objName);
   }
   
   private static void SetRun(DXW.SimpleFieldRuby openXmlElement, DMW.Run? value)
@@ -198,7 +198,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpSdtRunRuby(DXW.SimpleFieldRuby openXmlElement, DMW.SdtRunRuby? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtRunRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtRunRuby>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SdtRunRubyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtRunRuby>(), value, diffs, objName);
   }
   
   private static void SetSdtRunRuby(DXW.SimpleFieldRuby openXmlElement, DMW.SdtRunRuby? value)
@@ -224,7 +224,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpProofError(DXW.SimpleFieldRuby openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofError>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofError>(), value, diffs, objName);
   }
   
   private static void SetProofError(DXW.SimpleFieldRuby openXmlElement, DMW.ProofError? value)
@@ -234,7 +234,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement<DXW.ProofError>(value);
+      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -250,7 +250,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpPermStart(DXW.SimpleFieldRuby openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermStart>(), value, diffs, objName);
   }
   
   private static void SetPermStart(DXW.SimpleFieldRuby openXmlElement, DMW.PermStart? value)
@@ -260,7 +260,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement<DXW.PermStart>(value);
+      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -276,7 +276,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpPermEnd(DXW.SimpleFieldRuby openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermEndConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermEndConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermEnd>(), value, diffs, objName);
   }
   
   private static void SetPermEnd(DXW.SimpleFieldRuby openXmlElement, DMW.PermEnd? value)
@@ -286,7 +286,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement<DXW.PermEnd>(value);
+      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -302,7 +302,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpBookmarkStart(DXW.SimpleFieldRuby openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName);
   }
   
   private static void SetBookmarkStart(DXW.SimpleFieldRuby openXmlElement, DMW.BookmarkStart? value)
@@ -312,13 +312,13 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement<DXW.BookmarkStart>(value);
+      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.BookmarkEnd? GetBookmarkEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
     if (element != null)
@@ -328,7 +328,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpBookmarkEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName);
   }
   
   private static void SetBookmarkEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -344,7 +344,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CommentRangeStart? GetCommentRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
     if (element != null)
@@ -354,7 +354,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCommentRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCommentRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -370,7 +370,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CommentRangeEnd? GetCommentRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
     if (element != null)
@@ -380,7 +380,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCommentRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCommentRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -396,7 +396,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MoveBookmarkType? GetMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.MoveFromRangeStart? GetMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeStart>();
     if (element != null)
@@ -406,7 +406,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeStart>(), value, diffs, objName);
   }
   
   private static void SetMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MoveBookmarkType? value)
@@ -422,7 +422,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.MoveFromRangeEnd? GetMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
     if (element != null)
@@ -432,7 +432,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -448,7 +448,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MoveBookmarkType? GetMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.MoveToRangeStart? GetMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeStart>();
     if (element != null)
@@ -458,7 +458,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveBookmarkTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeStart>(), value, diffs, objName);
   }
   
   private static void SetMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.MoveBookmarkType? value)
@@ -474,7 +474,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.MoveToRangeEnd? GetMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
     if (element != null)
@@ -484,7 +484,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupRangeType? value)
@@ -500,7 +500,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType? GetCustomXmlInsRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlInsRangeStart? GetCustomXmlInsRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeStart>();
     if (element != null)
@@ -510,7 +510,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlInsRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlInsRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value)
@@ -526,7 +526,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType? GetCustomXmlInsRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlInsRangeEnd? GetCustomXmlInsRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlInsRangeEnd>();
     if (element != null)
@@ -536,7 +536,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlInsRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlInsRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlInsRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value)
@@ -552,7 +552,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType? GetCustomXmlDelRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlDelRangeStart? GetCustomXmlDelRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeStart>();
     if (element != null)
@@ -562,7 +562,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlDelRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlDelRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value)
@@ -578,7 +578,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType? GetCustomXmlDelRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlDelRangeEnd? GetCustomXmlDelRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlDelRangeEnd>();
     if (element != null)
@@ -588,7 +588,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlDelRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlDelRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlDelRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value)
@@ -604,7 +604,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType? GetCustomXmlMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlMoveFromRangeStart? GetCustomXmlMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>();
     if (element != null)
@@ -614,7 +614,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlMoveFromRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value)
@@ -630,7 +630,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType? GetCustomXmlMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlMoveFromRangeEnd? GetCustomXmlMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>();
     if (element != null)
@@ -640,7 +640,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveFromRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlMoveFromRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value)
@@ -656,7 +656,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType? GetCustomXmlMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlMoveToRangeStart? GetCustomXmlMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeStart>();
     if (element != null)
@@ -666,7 +666,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlMoveToRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType? value)
@@ -682,7 +682,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType? GetCustomXmlMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlMoveToRangeEnd? GetCustomXmlMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>();
     if (element != null)
@@ -692,7 +692,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlMoveToRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlMoveToRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType? value)
@@ -708,7 +708,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlConflictInsertionRangeStart? GetCustomXmlConflictInsertionRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
     if (element != null)
@@ -718,7 +718,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictInsertionRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType2? value)
@@ -734,7 +734,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlConflictInsertionRangeEnd? GetCustomXmlConflictInsertionRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
     if (element != null)
@@ -744,7 +744,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictInsertionRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType2? value)
@@ -760,7 +760,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlConflictDeletionRangeStart? GetCustomXmlConflictDeletionRangeStart(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
     if (element != null)
@@ -770,7 +770,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictDeletionRangeStart(DXW.SimpleFieldRuby openXmlElement, DMW.TrackChangeType2? value)
@@ -786,7 +786,7 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  private static DMW.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DXW.SimpleFieldRuby openXmlElement)
+  private static DMW.CustomXmlConflictDeletionRangeEnd? GetCustomXmlConflictDeletionRangeEnd(DXW.SimpleFieldRuby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
     if (element != null)
@@ -796,7 +796,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictDeletionRangeEnd(DXW.SimpleFieldRuby openXmlElement, DMW.MarkupType2? value)
@@ -822,7 +822,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpInsertedRun(DXW.SimpleFieldRuby openXmlElement, DMW.InsertedRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.InsertedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsertedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.InsertedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsertedRun>(), value, diffs, objName);
   }
   
   private static void SetInsertedRun(DXW.SimpleFieldRuby openXmlElement, DMW.InsertedRun? value)
@@ -848,7 +848,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpDeletedRun(DXW.SimpleFieldRuby openXmlElement, DMW.DeletedRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DeletedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DeletedRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedRun>(), value, diffs, objName);
   }
   
   private static void SetDeletedRun(DXW.SimpleFieldRuby openXmlElement, DMW.DeletedRun? value)
@@ -874,7 +874,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveFromRun(DXW.SimpleFieldRuby openXmlElement, DMW.MoveFromRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveFromRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveFromRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRun>(), value, diffs, objName);
   }
   
   private static void SetMoveFromRun(DXW.SimpleFieldRuby openXmlElement, DMW.MoveFromRun? value)
@@ -900,7 +900,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMoveToRun(DXW.SimpleFieldRuby openXmlElement, DMW.MoveToRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MoveToRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRun>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MoveToRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRun>(), value, diffs, objName);
   }
   
   private static void SetMoveToRun(DXW.SimpleFieldRuby openXmlElement, DMW.MoveToRun? value)
@@ -926,7 +926,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpRunConflictInsertion(DXW.SimpleFieldRuby openXmlElement, DMW.RunConflictInsertion? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunConflictInsertionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunConflictInsertionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictInsertion>(), value, diffs, objName);
   }
   
   private static void SetRunConflictInsertion(DXW.SimpleFieldRuby openXmlElement, DMW.RunConflictInsertion? value)
@@ -952,7 +952,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpRunConflictDeletion(DXW.SimpleFieldRuby openXmlElement, DMW.RunConflictDeletion? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunConflictDeletionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunConflictDeletionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RunConflictDeletion>(), value, diffs, objName);
   }
   
   private static void SetRunConflictDeletion(DXW.SimpleFieldRuby openXmlElement, DMW.RunConflictDeletion? value)
@@ -978,7 +978,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpParagraph(DXW.SimpleFieldRuby openXmlElement, DMMath.Paragraph? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Paragraph>(), value, diffs, objName);
   }
   
   private static void SetParagraph(DXW.SimpleFieldRuby openXmlElement, DMMath.Paragraph? value)
@@ -1004,7 +1004,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpOfficeMath(DXW.SimpleFieldRuby openXmlElement, DMMath.OfficeMath? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.OfficeMathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.OfficeMath>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.OfficeMathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.OfficeMath>(), value, diffs, objName);
   }
   
   private static void SetOfficeMath(DXW.SimpleFieldRuby openXmlElement, DMMath.OfficeMath? value)
@@ -1030,7 +1030,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpAccent(DXW.SimpleFieldRuby openXmlElement, DMMath.Accent? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.AccentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Accent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.AccentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Accent>(), value, diffs, objName);
   }
   
   private static void SetAccent(DXW.SimpleFieldRuby openXmlElement, DMMath.Accent? value)
@@ -1056,7 +1056,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpBar(DXW.SimpleFieldRuby openXmlElement, DMMath.Bar? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Bar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Bar>(), value, diffs, objName);
   }
   
   private static void SetBar(DXW.SimpleFieldRuby openXmlElement, DMMath.Bar? value)
@@ -1082,7 +1082,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpBox(DXW.SimpleFieldRuby openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Box>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Box>(), value, diffs, objName);
   }
   
   private static void SetBox(DXW.SimpleFieldRuby openXmlElement, DMMath.Box? value)
@@ -1108,7 +1108,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpBorderBox(DXW.SimpleFieldRuby openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BorderBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BorderBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BorderBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BorderBox>(), value, diffs, objName);
   }
   
   private static void SetBorderBox(DXW.SimpleFieldRuby openXmlElement, DMMath.BorderBox? value)
@@ -1134,7 +1134,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpDelimiter(DXW.SimpleFieldRuby openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DelimiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Delimiter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.DelimiterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Delimiter>(), value, diffs, objName);
   }
   
   private static void SetDelimiter(DXW.SimpleFieldRuby openXmlElement, DMMath.Delimiter? value)
@@ -1160,7 +1160,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpEquationArray(DXW.SimpleFieldRuby openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.EquationArrayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArray>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.EquationArrayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArray>(), value, diffs, objName);
   }
   
   private static void SetEquationArray(DXW.SimpleFieldRuby openXmlElement, DMMath.EquationArray? value)
@@ -1186,7 +1186,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpFraction(DXW.SimpleFieldRuby openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FractionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Fraction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.FractionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Fraction>(), value, diffs, objName);
   }
   
   private static void SetFraction(DXW.SimpleFieldRuby openXmlElement, DMMath.Fraction? value)
@@ -1212,7 +1212,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMathFunction(DXW.SimpleFieldRuby openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MathFunctionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathFunction>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MathFunctionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathFunction>(), value, diffs, objName);
   }
   
   private static void SetMathFunction(DXW.SimpleFieldRuby openXmlElement, DMMath.MathFunction? value)
@@ -1238,7 +1238,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpGroupChar(DXW.SimpleFieldRuby openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.GroupCharConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupChar>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.GroupCharConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupChar>(), value, diffs, objName);
   }
   
   private static void SetGroupChar(DXW.SimpleFieldRuby openXmlElement, DMMath.GroupChar? value)
@@ -1264,7 +1264,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpLimitLower(DXW.SimpleFieldRuby openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitLowerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitLower>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitLowerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitLower>(), value, diffs, objName);
   }
   
   private static void SetLimitLower(DXW.SimpleFieldRuby openXmlElement, DMMath.LimitLower? value)
@@ -1290,7 +1290,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpLimitUpper(DXW.SimpleFieldRuby openXmlElement, DMMath.LimitUpper? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitUpperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitUpper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitUpperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitUpper>(), value, diffs, objName);
   }
   
   private static void SetLimitUpper(DXW.SimpleFieldRuby openXmlElement, DMMath.LimitUpper? value)
@@ -1316,7 +1316,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpMatrix(DXW.SimpleFieldRuby openXmlElement, DMMath.Matrix? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MatrixConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Matrix>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MatrixConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Matrix>(), value, diffs, objName);
   }
   
   private static void SetMatrix(DXW.SimpleFieldRuby openXmlElement, DMMath.Matrix? value)
@@ -1342,7 +1342,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpNary(DXW.SimpleFieldRuby openXmlElement, DMMath.Nary? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.NaryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Nary>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.NaryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Nary>(), value, diffs, objName);
   }
   
   private static void SetNary(DXW.SimpleFieldRuby openXmlElement, DMMath.Nary? value)
@@ -1368,7 +1368,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpPhantom(DXW.SimpleFieldRuby openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PhantomConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Phantom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PhantomConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Phantom>(), value, diffs, objName);
   }
   
   private static void SetPhantom(DXW.SimpleFieldRuby openXmlElement, DMMath.Phantom? value)
@@ -1394,7 +1394,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpRadical(DXW.SimpleFieldRuby openXmlElement, DMMath.Radical? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.RadicalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Radical>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.RadicalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Radical>(), value, diffs, objName);
   }
   
   private static void SetRadical(DXW.SimpleFieldRuby openXmlElement, DMMath.Radical? value)
@@ -1420,7 +1420,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpPreSubSuper(DXW.SimpleFieldRuby openXmlElement, DMMath.PreSubSuper? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PreSubSuperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PreSubSuper>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PreSubSuperConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PreSubSuper>(), value, diffs, objName);
   }
   
   private static void SetPreSubSuper(DXW.SimpleFieldRuby openXmlElement, DMMath.PreSubSuper? value)
@@ -1446,7 +1446,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpSubscript(DXW.SimpleFieldRuby openXmlElement, DMMath.Subscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Subscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Subscript>(), value, diffs, objName);
   }
   
   private static void SetSubscript(DXW.SimpleFieldRuby openXmlElement, DMMath.Subscript? value)
@@ -1472,7 +1472,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpSubSuperscript(DXW.SimpleFieldRuby openXmlElement, DMMath.SubSuperscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SubSuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubSuperscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SubSuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.SubSuperscript>(), value, diffs, objName);
   }
   
   private static void SetSubSuperscript(DXW.SimpleFieldRuby openXmlElement, DMMath.SubSuperscript? value)
@@ -1498,7 +1498,7 @@ public static class SimpleFieldRubyConverter
   
   private static bool CmpSuperscript(DXW.SimpleFieldRuby openXmlElement, DMMath.Superscript? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.SuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Superscript>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.SuperscriptConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Superscript>(), value, diffs, objName);
   }
   
   private static void SetSuperscript(DXW.SimpleFieldRuby openXmlElement, DMMath.Superscript? value)
@@ -1514,11 +1514,11 @@ public static class SimpleFieldRubyConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SimpleFieldRuby? CreateModelElement(DXW.SimpleFieldRuby? openXmlElement)
+  public static DMW.SimpleFieldRuby? CreateModelElement(DXW.SimpleFieldRuby? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SimpleFieldRuby();
+      var value = new DMW.SimpleFieldRuby();
       value.Instruction = GetInstruction(openXmlElement);
       value.FieldLock = GetFieldLock(openXmlElement);
       value.Dirty = GetDirty(openXmlElement);

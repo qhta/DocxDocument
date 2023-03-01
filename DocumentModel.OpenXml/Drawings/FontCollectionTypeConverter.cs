@@ -18,7 +18,7 @@ public static class FontCollectionTypeConverter
   
   private static bool CmpLatinFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName);
   }
   
   private static void SetLatinFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)
@@ -47,7 +47,7 @@ public static class FontCollectionTypeConverter
   
   private static bool CmpEastAsianFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName);
   }
   
   private static void SetEastAsianFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)
@@ -76,7 +76,7 @@ public static class FontCollectionTypeConverter
   
   private static bool CmpComplexScriptFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName);
   }
   
   private static void SetComplexScriptFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)

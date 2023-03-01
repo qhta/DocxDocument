@@ -18,7 +18,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpRunFonts(DXW.StyleRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName);
   }
   
   private static void SetRunFonts(DXW.StyleRunProperties openXmlElement, DMW.RunFonts? value)
@@ -335,7 +335,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpColor(DXW.StyleRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
   }
   
   private static void SetColor(DXW.StyleRunProperties openXmlElement, DMW.Color? value)
@@ -472,7 +472,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpUnderline(DXW.StyleRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName);
   }
   
   private static void SetUnderline(DXW.StyleRunProperties openXmlElement, DMW.Underline? value)
@@ -498,7 +498,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpTextEffect(DXW.StyleRunProperties openXmlElement, DMW.TextEffectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextEffect(DXW.StyleRunProperties openXmlElement, DMW.TextEffectKind? value)
@@ -529,7 +529,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpBorder(DXW.StyleRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName);
   }
   
   private static void SetBorder(DXW.StyleRunProperties openXmlElement, DMW.BorderType? value)
@@ -558,7 +558,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpShading(DXW.StyleRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.StyleRunProperties openXmlElement, DMW.Shading? value)
@@ -587,7 +587,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpFitText(DXW.StyleRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName);
   }
   
   private static void SetFitText(DXW.StyleRunProperties openXmlElement, DMW.FitText? value)
@@ -613,7 +613,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpVerticalTextAlignment(DXW.StyleRunProperties openXmlElement, DMW.VerticalPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalTextAlignment(DXW.StyleRunProperties openXmlElement, DMW.VerticalPositionKind? value)
@@ -641,7 +641,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpEmphasis(DXW.StyleRunProperties openXmlElement, DMW.EmphasisMarkKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetEmphasis(DXW.StyleRunProperties openXmlElement, DMW.EmphasisMarkKind? value)
@@ -672,7 +672,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpLanguages(DXW.StyleRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
   private static void SetLanguages(DXW.StyleRunProperties openXmlElement, DMW.LanguageType? value)
@@ -701,7 +701,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpEastAsianLayout(DXW.StyleRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName);
   }
   
   private static void SetEastAsianLayout(DXW.StyleRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -748,7 +748,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpRunPropertiesChange(DXW.StyleRunProperties openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesChange>(), value, diffs, objName);
   }
   
   private static void SetRunPropertiesChange(DXW.StyleRunProperties openXmlElement, DMW.RunPropertiesChange? value)
@@ -764,11 +764,11 @@ public static class StyleRunPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.StyleRunProperties? CreateModelElement(DXW.StyleRunProperties? openXmlElement)
+  public static DMW.StyleRunProperties? CreateModelElement(DXW.StyleRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleRunProperties();
+      var value = new DMW.StyleRunProperties();
       value.RunFonts = GetRunFonts(openXmlElement);
       value.Bold = GetBold(openXmlElement);
       value.BoldComplexScript = GetBoldComplexScript(openXmlElement);

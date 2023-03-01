@@ -61,11 +61,11 @@ public static class CommentsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(DXW.Comments? openXmlElement)
+  public static DMW.Comments? CreateModelElement(DXW.Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Comments();
+      var value = new DMW.Comments();
       value.Items = GetItems(openXmlElement);
       return value;
     }

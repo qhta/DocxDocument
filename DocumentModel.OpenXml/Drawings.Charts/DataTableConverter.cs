@@ -142,7 +142,7 @@ public static class DataTableConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -171,7 +171,7 @@ public static class DataTableConverter
   
   private static bool CmpTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
   }
   
   private static void SetTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -200,7 +200,7 @@ public static class DataTableConverter
   
   private static bool CmpExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value)

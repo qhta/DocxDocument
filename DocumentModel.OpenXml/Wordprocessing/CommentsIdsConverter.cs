@@ -61,11 +61,11 @@ public static class CommentsIdsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
+  public static DMW.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentsIds();
+      var value = new DMW.CommentsIds();
       value.CommentIds = GetCommentIds(openXmlElement);
       return value;
     }

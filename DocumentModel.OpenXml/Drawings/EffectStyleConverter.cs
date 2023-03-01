@@ -15,7 +15,7 @@ public static class EffectStyleConverter
   
   private static bool CmpEffectList(DXDraw.EffectStyle openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
   }
   
   private static void SetEffectList(DXDraw.EffectStyle openXmlElement, DMDraws.EffectList? value)
@@ -41,7 +41,7 @@ public static class EffectStyleConverter
   
   private static bool CmpEffectDag(DXDraw.EffectStyle openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
   }
   
   private static void SetEffectDag(DXDraw.EffectStyle openXmlElement, DMDraws.EffectDag? value)
@@ -67,7 +67,7 @@ public static class EffectStyleConverter
   
   private static bool CmpScene3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName);
   }
   
   private static void SetScene3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Scene3DType? value)
@@ -93,7 +93,7 @@ public static class EffectStyleConverter
   
   private static bool CmpShape3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
   }
   
   private static void SetShape3DType(DXDraw.EffectStyle openXmlElement, DMDraws.Shape3DType? value)

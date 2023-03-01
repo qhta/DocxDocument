@@ -15,7 +15,7 @@ public static class ProofStateConverter
   
   private static bool CmpSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName);
   }
   
   private static void SetSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
@@ -33,7 +33,7 @@ public static class ProofStateConverter
   
   private static bool CmpGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName);
   }
   
   private static void SetGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
@@ -41,11 +41,11 @@ public static class ProofStateConverter
     openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.ProofState? CreateModelElement(DXW.ProofState? openXmlElement)
+  public static DMW.ProofState? CreateModelElement(DXW.ProofState? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ProofState();
+      var value = new DMW.ProofState();
       value.Spelling = GetSpelling(openXmlElement);
       value.Grammar = GetGrammar(openXmlElement);
       return value;

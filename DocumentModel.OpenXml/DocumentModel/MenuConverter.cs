@@ -15,7 +15,7 @@ public static class MenuConverter
   
   private static bool CmpSize(DXO2010CustUI.Menu openXmlElement, DM.SizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
   private static void SetSize(DXO2010CustUI.Menu openXmlElement, DM.SizeKind? value)
@@ -51,7 +51,7 @@ public static class MenuConverter
   
   private static bool CmpItemSize(DXO2010CustUI.Menu openXmlElement, DM.ItemSizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DM.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName);
   }
   
   private static void SetItemSize(DXO2010CustUI.Menu openXmlElement, DM.ItemSizeKind? value)
@@ -611,7 +611,7 @@ public static class MenuConverter
   
   private static bool CmpControlCloneRegular(DXO2010CustUI.Menu openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ControlCloneRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ControlCloneRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneRegular>(), value, diffs, objName);
   }
   
   private static void SetControlCloneRegular(DXO2010CustUI.Menu openXmlElement, DM.ControlCloneRegular? value)
@@ -637,7 +637,7 @@ public static class MenuConverter
   
   private static bool CmpButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName);
   }
   
   private static void SetButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.ButtonRegular? value)
@@ -663,7 +663,7 @@ public static class MenuConverter
   
   private static bool CmpCheckBox(DXO2010CustUI.Menu openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.CheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.CheckBox>(), value, diffs, objName);
   }
   
   private static void SetCheckBox(DXO2010CustUI.Menu openXmlElement, DM.CheckBox? value)
@@ -689,7 +689,7 @@ public static class MenuConverter
   
   private static bool CmpGalleryRegular(DXO2010CustUI.Menu openXmlElement, DM.GalleryRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.GalleryRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.GalleryRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.GalleryRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.GalleryRegular>(), value, diffs, objName);
   }
   
   private static void SetGalleryRegular(DXO2010CustUI.Menu openXmlElement, DM.GalleryRegular? value)
@@ -715,7 +715,7 @@ public static class MenuConverter
   
   private static bool CmpToggleButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.ToggleButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ToggleButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ToggleButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>(), value, diffs, objName);
   }
   
   private static void SetToggleButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.ToggleButtonRegular? value)
@@ -741,7 +741,7 @@ public static class MenuConverter
   
   private static bool CmpMenuSeparator(DXO2010CustUI.Menu openXmlElement, DM.MenuSeparator? value, DiffList? diffs, string? objName)
   {
-    return DMX.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuSeparator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuSeparator>(), value, diffs, objName);
   }
   
   private static void SetMenuSeparator(DXO2010CustUI.Menu openXmlElement, DM.MenuSeparator? value)
@@ -767,7 +767,7 @@ public static class MenuConverter
   
   private static bool CmpSplitButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.SplitButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.SplitButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SplitButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.SplitButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SplitButtonRegular>(), value, diffs, objName);
   }
   
   private static void SetSplitButtonRegular(DXO2010CustUI.Menu openXmlElement, DM.SplitButtonRegular? value)
@@ -793,7 +793,7 @@ public static class MenuConverter
   
   private static bool CmpMenuRegular(DXO2010CustUI.Menu openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuRegular>(), value, diffs, objName);
   }
   
   private static void SetMenuRegular(DXO2010CustUI.Menu openXmlElement, DM.MenuRegular? value)
@@ -819,7 +819,7 @@ public static class MenuConverter
   
   private static bool CmpDynamicMenuRegular(DXO2010CustUI.Menu openXmlElement, DM.DynamicMenuRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.DynamicMenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.DynamicMenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>(), value, diffs, objName);
   }
   
   private static void SetDynamicMenuRegular(DXO2010CustUI.Menu openXmlElement, DM.DynamicMenuRegular? value)

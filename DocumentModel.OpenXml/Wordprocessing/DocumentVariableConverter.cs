@@ -41,11 +41,11 @@ public static class DocumentVariableConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.DocumentVariable? CreateModelElement(DXW.DocumentVariable? openXmlElement)
+  public static DMW.DocumentVariable? CreateModelElement(DXW.DocumentVariable? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocumentVariable();
+      var value = new DMW.DocumentVariable();
       value.Name = GetName(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

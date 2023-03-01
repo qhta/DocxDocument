@@ -15,7 +15,7 @@ public static class ChartTitleConverter
   
   private static bool CmpPos(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.SidePos? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDrawsChartDraws.SidePos>(openXmlElement?.Pos?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDrawsChartDraws.SidePos>(openXmlElement?.Pos?.Value, value, diffs, objName);
   }
   
   private static void SetPos(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.SidePos? value)
@@ -33,7 +33,7 @@ public static class ChartTitleConverter
   
   private static bool CmpAlign(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.PosAlign? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDrawsChartDraws.PosAlign>(openXmlElement?.Align?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDrawsChartDraws.PosAlign>(openXmlElement?.Align?.Value, value, diffs, objName);
   }
   
   private static void SetAlign(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.PosAlign? value)
@@ -77,7 +77,7 @@ public static class ChartTitleConverter
   
   private static bool CmpText(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.Text? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.TextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Text>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.TextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Text>(), value, diffs, objName);
   }
   
   private static void SetText(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.Text? value)
@@ -106,7 +106,7 @@ public static class ChartTitleConverter
   
   private static bool CmpShapeProperties(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
@@ -135,7 +135,7 @@ public static class ChartTitleConverter
   
   private static bool CmpTxPrTextBody(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.TxPrTextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>(), value, diffs, objName);
   }
   
   private static void SetTxPrTextBody(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.TxPrTextBody? value)
@@ -164,7 +164,7 @@ public static class ChartTitleConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.ChartTitle openXmlElement, DMDrawsChartDraws.ExtensionList? value)

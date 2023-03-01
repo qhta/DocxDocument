@@ -1,9 +1,11 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Embedded OLE Object.
 /// </summary>
-public class OleObject
+public class OleObject: EmbeddedObjectElement
 {
   /// <summary>
   ///   OLE Object Type

@@ -213,7 +213,7 @@ public static class GalleryRegularConverter
   
   private static bool CmpShowInRibbon(DXO2010CustUI.GalleryRegular openXmlElement, DM.GalleryShowInRibbonKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DM.GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DM.GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value, value, diffs, objName);
   }
   
   private static void SetShowInRibbon(DXO2010CustUI.GalleryRegular openXmlElement, DM.GalleryShowInRibbonKind? value)

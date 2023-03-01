@@ -15,7 +15,7 @@ public static class SubSuperscriptPropertiesConverter
   
   private static bool CmpAlignScripts(DXMath.SubSuperscriptProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.AlignScripts>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.AlignScripts>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetAlignScripts(DXMath.SubSuperscriptProperties openXmlElement, DMMath.BooleanKind? value)
@@ -46,7 +46,7 @@ public static class SubSuperscriptPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.SubSuperscriptProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.SubSuperscriptProperties openXmlElement, DMMath.ControlProperties? value)

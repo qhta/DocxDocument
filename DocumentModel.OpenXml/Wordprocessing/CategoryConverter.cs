@@ -43,7 +43,7 @@ public static class CategoryConverter
   
   private static bool CmpGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value)
@@ -61,11 +61,11 @@ public static class CategoryConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.Category? CreateModelElement(DXW.Category? openXmlElement)
+  public static DMW.Category? CreateModelElement(DXW.Category? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Category();
+      var value = new DMW.Category();
       value.Name = GetName(openXmlElement);
       value.Gallery = GetGallery(openXmlElement);
       return value;

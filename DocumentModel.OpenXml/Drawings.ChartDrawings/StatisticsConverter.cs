@@ -15,7 +15,7 @@ public static class StatisticsConverter
   
   private static bool CmpQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName);
   }
   
   private static void SetQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value)

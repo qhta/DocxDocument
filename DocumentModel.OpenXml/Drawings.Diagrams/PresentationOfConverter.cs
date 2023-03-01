@@ -144,7 +144,7 @@ public static class PresentationOfConverter
   
   private static bool CmpExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value)

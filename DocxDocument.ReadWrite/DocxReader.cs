@@ -5,29 +5,32 @@ namespace DocxDocument.Reader;
 [Flags]
 public enum Parts : Int64
 {
-  CoreFileProperties = 0x01,
-  ExtendedFileProperties = 0x02,
-  CustomFileProperties = 0x04,
-  DocumentSettings = 0x08,
-  AllDocumentProperties = 0x0F,
+  CoreFileProperties            = 0x0001,
+  ExtendedFileProperties        = 0x0002,
+  CustomFileProperties          = 0x0004,
+  DocumentSettings              = 0x0008,
+  AllDocumentProperties         = 0x000F,
 
-  //MainDocument               = 0x08,
+  //MainDocument                = 0x08,
 
-  //WebSettings                = 0x20,
-  //PrinterSettings            = 0x40,
-  //AllDocumentSettings        = 0x70,
-  //Glossary                   = 0x80,
+  //WebSettings                 = 0x20,
+  //PrinterSettings             = 0x40,
+  //AllDocumentSettings         = 0x70,
+  //Glossary                    = 0x80,
 
-  NumberingDefinitions = 0x100,
-  StyleDefinitions = 0x200,
-  Theme = 0x400,
-  FontTable = 0x800,
-  Stylistics = 0xF00,
+  NumberingDefinitions          = 0x0100,
+  StyleDefinitions              = 0x0200,
+  Theme                         = 0x0400,
+  FontTable                     = 0x0800,
+  Stylistics                    = 0x0F00,
 
-  //HeadersAndFooters          = 0x1000,
-  //FootnotesAndEndNotes       = 0x2000,
-  //Hyperlinks                 = 0x4000,
-  //Bibliography               = 0x8000,
+  Paragraphs                    = 0x1000,
+  Body                          = 0xF000,
+
+  //HeadersAndFooters           = 0x1000,
+  //FootnotesAndEndNotes        = 0x2000,
+  //Hyperlinks                  = 0x4000,
+  //Bibliography                = 0x8000,
 
   //Images                    = 0x10000,
   //Diagrams                  = 0x20000,
@@ -90,6 +93,8 @@ public partial class DocxReader
       document.Theme = ReadTheme();
     if (parts.HasFlag(Parts.FontTable))
       document.Fonts = ReadFonts();
+    if (parts.HasFlag(Parts.Body))
+      document.Body = ReadBody(parts);
     return document;
   }
 
@@ -153,4 +158,14 @@ public partial class DocxReader
     return fonts;
   }
 
+    private DMW.Body ReadBody(Parts parts)
+  {
+    DMW.Body body;
+    var bodyOpenXmlElement = WordprocessingDocument.MainDocumentPart?.Document.Body;
+    if (bodyOpenXmlElement != null)
+      body = DMXW.BodyConverter.CreateModelElement(bodyOpenXmlElement) ?? new();
+    else
+      body = new();
+    return body;
+  }
 }

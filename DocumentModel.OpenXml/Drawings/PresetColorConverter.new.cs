@@ -15,7 +15,7 @@ public static class PresetColorConverter
   
   private static bool CmpVal(DXDraw.PresetColor openXmlElement, DMDraws.PresetColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetColorValues, DMDraws.PresetColorKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetColorValues, DMDraws.PresetColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXDraw.PresetColor openXmlElement, DMDraws.PresetColorKind? value)

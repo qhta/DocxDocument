@@ -85,11 +85,11 @@ public static class FillToRectangleConverter
     openXmlElement.Bottom = value;
   }
   
-  public static DocumentModel.Wordprocessing.FillToRectangle? CreateModelElement(DXO2010W.FillToRectangle? openXmlElement)
+  public static DMW.FillToRectangle? CreateModelElement(DXO2010W.FillToRectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FillToRectangle();
+      var value = new DMW.FillToRectangle();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);

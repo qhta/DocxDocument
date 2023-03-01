@@ -15,7 +15,7 @@ public static class AlgorithmConverter
   
   private static bool CmpType(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.AlgorithmKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.AlgorithmKind? value)
@@ -109,7 +109,7 @@ public static class AlgorithmConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value)

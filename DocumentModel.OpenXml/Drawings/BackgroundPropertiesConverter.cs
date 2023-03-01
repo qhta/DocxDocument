@@ -15,7 +15,7 @@ public static class BackgroundPropertiesConverter
   
   private static bool CmpMode(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Mode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Mode?.Value, value, diffs, objName);
   }
   
   private static void SetMode(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value)
@@ -33,7 +33,7 @@ public static class BackgroundPropertiesConverter
   
   private static bool CmpPure(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Pure?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Pure?.Value, value, diffs, objName);
   }
   
   private static void SetPure(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value)
@@ -51,7 +51,7 @@ public static class BackgroundPropertiesConverter
   
   private static bool CmpNormal(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Normal?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.Normal?.Value, value, diffs, objName);
   }
   
   private static void SetNormal(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.BlackWhiteMode? value)
@@ -69,7 +69,7 @@ public static class BackgroundPropertiesConverter
   
   private static bool CmpTargetScreenSize(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.TargetScreenSize? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DMDraws.TargetScreenSize>(openXmlElement?.TargetScreenSize?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DMDraws.TargetScreenSize>(openXmlElement?.TargetScreenSize?.Value, value, diffs, objName);
   }
   
   private static void SetTargetScreenSize(DXO2013Draw.BackgroundProperties openXmlElement, DMDraws.TargetScreenSize? value)

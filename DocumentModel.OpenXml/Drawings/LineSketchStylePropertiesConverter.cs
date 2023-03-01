@@ -35,7 +35,7 @@ public static class LineSketchStylePropertiesConverter
   
   private static bool CmpCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.CustomGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName);
   }
   
   private static void SetCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.CustomGeometry? value)
@@ -61,7 +61,7 @@ public static class LineSketchStylePropertiesConverter
   
   private static bool CmpPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.PresetGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName);
   }
   
   private static void SetPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.PresetGeometry? value)
@@ -87,7 +87,7 @@ public static class LineSketchStylePropertiesConverter
   
   private static bool CmpLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchTypeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSketchTypePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineSketchTypePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>(), value, diffs, objName);
   }
   
   private static void SetLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchTypeProperties? value)
@@ -135,7 +135,7 @@ public static class LineSketchStylePropertiesConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.OfficeArtExtensionList6? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionList6Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OfficeArtExtensionList6Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.OfficeArtExtensionList6? value)

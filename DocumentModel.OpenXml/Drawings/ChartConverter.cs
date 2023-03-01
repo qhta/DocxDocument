@@ -55,7 +55,7 @@ public static class ChartConverter
   
   private static bool CmpBuildStep(DXDraw.Chart openXmlElement, DMDraws.ChartBuildStepKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName);
   }
   
   private static void SetBuildStep(DXDraw.Chart openXmlElement, DMDraws.ChartBuildStepKind? value)

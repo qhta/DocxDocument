@@ -15,7 +15,7 @@ public static class HelpTextConverter
   
   private static bool CmpType(DXW.HelpText openXmlElement, DMW.InfoTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.HelpText openXmlElement, DMW.InfoTextKind? value)
@@ -41,11 +41,11 @@ public static class HelpTextConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.HelpText? CreateModelElement(DXW.HelpText? openXmlElement)
+  public static DMW.HelpText? CreateModelElement(DXW.HelpText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.HelpText();
+      var value = new DMW.HelpText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

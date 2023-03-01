@@ -15,7 +15,7 @@ public static class SchemeColorConverter
   
   private static bool CmpVal(DXDraw.SchemeColor openXmlElement, DMDraws.SchemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SchemeColorValues, DMDraws.SchemeColorKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SchemeColorValues, DMDraws.SchemeColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXDraw.SchemeColor openXmlElement, DMDraws.SchemeColorKind? value)

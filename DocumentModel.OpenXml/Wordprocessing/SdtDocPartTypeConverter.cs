@@ -79,11 +79,11 @@ public static class SdtDocPartTypeConverter
     BooleanValueConverter.SetOnOffType<DXW.DocPartUnique>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.SdtDocPartType? CreateModelElement(DXW.SdtDocPartType? openXmlElement)
+  public static DMW.SdtDocPartType? CreateModelElement(DXW.SdtDocPartType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtDocPartType();
+      var value = new DMW.SdtDocPartType();
       value.DocPartGallery = GetDocPartGallery(openXmlElement);
       value.DocPartCategory = GetDocPartCategory(openXmlElement);
       value.DocPartUnique = GetDocPartUnique(openXmlElement);

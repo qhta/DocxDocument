@@ -15,7 +15,7 @@ public static class RunFontsConverter
   
   private static bool CmpHint(DXW.RunFonts openXmlElement, DMW.FontTypeHintKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value, value, diffs, objName);
   }
   
   private static void SetHint(DXW.RunFonts openXmlElement, DMW.FontTypeHintKind? value)
@@ -105,7 +105,7 @@ public static class RunFontsConverter
   
   private static bool CmpAsciiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value, value, diffs, objName);
   }
   
   private static void SetAsciiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -123,7 +123,7 @@ public static class RunFontsConverter
   
   private static bool CmpHighAnsiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value, value, diffs, objName);
   }
   
   private static void SetHighAnsiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -141,7 +141,7 @@ public static class RunFontsConverter
   
   private static bool CmpEastAsiaTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value, value, diffs, objName);
   }
   
   private static void SetEastAsiaTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -159,7 +159,7 @@ public static class RunFontsConverter
   
   private static bool CmpComplexScriptTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value, value, diffs, objName);
   }
   
   private static void SetComplexScriptTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -167,11 +167,11 @@ public static class RunFontsConverter
     openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.RunFonts? CreateModelElement(DXW.RunFonts? openXmlElement)
+  public static DMW.RunFonts? CreateModelElement(DXW.RunFonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RunFonts();
+      var value = new DMW.RunFonts();
       value.Hint = GetHint(openXmlElement);
       value.Ascii = GetAscii(openXmlElement);
       value.HighAnsi = GetHighAnsi(openXmlElement);

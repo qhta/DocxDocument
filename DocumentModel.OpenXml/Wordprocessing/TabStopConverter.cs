@@ -15,7 +15,7 @@ public static class TabStopConverter
   
   private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value)
@@ -33,7 +33,7 @@ public static class TabStopConverter
   
   private static bool CmpLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName);
   }
   
   private static void SetLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value)
@@ -61,11 +61,11 @@ public static class TabStopConverter
     openXmlElement.Position = value;
   }
   
-  public static DocumentModel.Wordprocessing.TabStop? CreateModelElement(DXW.TabStop? openXmlElement)
+  public static DMW.TabStop? CreateModelElement(DXW.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TabStop();
+      var value = new DMW.TabStop();
       value.Val = GetVal(openXmlElement);
       value.Leader = GetLeader(openXmlElement);
       value.Position = GetPosition(openXmlElement);

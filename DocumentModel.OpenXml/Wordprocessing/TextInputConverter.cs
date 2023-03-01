@@ -15,7 +15,7 @@ public static class TextInputConverter
   
   private static bool CmpTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value)
@@ -87,11 +87,11 @@ public static class TextInputConverter
     StringValueConverter.SetValue<DXW.Format>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(DXW.TextInput? openXmlElement)
+  public static DMW.TextInput? CreateModelElement(DXW.TextInput? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TextInput();
+      var value = new DMW.TextInput();
       value.TextBoxFormFieldType = GetTextBoxFormFieldType(openXmlElement);
       value.DefaultTextBoxFormFieldString = GetDefaultTextBoxFormFieldString(openXmlElement);
       value.MaxLength = GetMaxLength(openXmlElement);

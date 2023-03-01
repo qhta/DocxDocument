@@ -36,7 +36,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTablePositionProperties(DXW.TableProperties openXmlElement, DMW.TablePositionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TablePositionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePositionProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TablePositionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePositionProperties>(), value, diffs, objName);
   }
   
   private static void SetTablePositionProperties(DXW.TableProperties openXmlElement, DMW.TablePositionProperties? value)
@@ -62,7 +62,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableOverlap(DXW.TableProperties openXmlElement, DMW.TableOverlapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableOverlap(DXW.TableProperties openXmlElement, DMW.TableOverlapKind? value)
@@ -111,7 +111,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName);
   }
   
   private static void SetTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidthType? value)
@@ -137,7 +137,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableJustification(DXW.TableProperties openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableJustification(DXW.TableProperties openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -168,7 +168,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
   private static void SetTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidthType? value)
@@ -197,7 +197,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableIndentation(DXW.TableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName);
   }
   
   private static void SetTableIndentation(DXW.TableProperties openXmlElement, DMW.TableIndentation? value)
@@ -226,7 +226,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableBorders(DXW.TableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableBorders>(), value, diffs, objName);
   }
   
   private static void SetTableBorders(DXW.TableProperties openXmlElement, DMW.TableBorders? value)
@@ -255,7 +255,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpShading(DXW.TableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.TableProperties openXmlElement, DMW.Shading? value)
@@ -284,7 +284,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableLayout(DXW.TableProperties openXmlElement, DMW.TableLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLayout>(), value, diffs, objName);
   }
   
   private static void SetTableLayout(DXW.TableProperties openXmlElement, DMW.TableLayout? value)
@@ -313,7 +313,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableCellMarginDefault(DXW.TableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
   
   private static void SetTableCellMarginDefault(DXW.TableProperties openXmlElement, DMW.TableCellMarginDefault? value)
@@ -342,7 +342,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTableLook(DXW.TableProperties openXmlElement, DMW.TableLook? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableLookConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLook>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableLookConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLook>(), value, diffs, objName);
   }
   
   private static void SetTableLook(DXW.TableProperties openXmlElement, DMW.TableLook? value)
@@ -427,7 +427,7 @@ public static class TablePropertiesConverter
   
   private static bool CmpTablePropertiesChange(DXW.TableProperties openXmlElement, DMW.TablePropertiesChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TablePropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePropertiesChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TablePropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TablePropertiesChange>(), value, diffs, objName);
   }
   
   private static void SetTablePropertiesChange(DXW.TableProperties openXmlElement, DMW.TablePropertiesChange? value)
@@ -443,11 +443,11 @@ public static class TablePropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableProperties? CreateModelElement(DXW.TableProperties? openXmlElement)
+  public static DMW.TableProperties? CreateModelElement(DXW.TableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableProperties();
+      var value = new DMW.TableProperties();
       value.TableStyle = GetTableStyle(openXmlElement);
       value.TablePositionProperties = GetTablePositionProperties(openXmlElement);
       value.TableOverlap = GetTableOverlap(openXmlElement);

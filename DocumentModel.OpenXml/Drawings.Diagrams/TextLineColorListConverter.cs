@@ -15,7 +15,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpRgbColorModelPercentage(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelPercentage(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -41,7 +41,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpRgbColorModelHex(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -67,7 +67,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpHslColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
   }
   
   private static void SetHslColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.HslColor? value)
@@ -93,7 +93,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpSystemColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
   }
   
   private static void SetSystemColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.SystemColor? value)
@@ -119,7 +119,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpSchemeColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.SchemeColor? value)
@@ -145,7 +145,7 @@ public static class TextLineColorListConverter
   
   private static bool CmpPresetColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
   }
   
   private static void SetPresetColor(DXDrawDgms.TextLineColorList openXmlElement, DMDraws.PresetColor? value)

@@ -15,7 +15,7 @@ public static class EffectContainerTypeConverter
   
   private static bool CmpType(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMDraws.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMDraws.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerKind? value)

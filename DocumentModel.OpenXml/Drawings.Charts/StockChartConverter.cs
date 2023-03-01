@@ -71,7 +71,7 @@ public static class StockChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -97,7 +97,7 @@ public static class StockChartConverter
   
   private static bool CmpDropLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName);
   }
   
   private static void SetDropLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DropLines? value)
@@ -123,7 +123,7 @@ public static class StockChartConverter
   
   private static bool CmpHighLowLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.HighLowLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HighLowLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HighLowLines>(), value, diffs, objName);
   }
   
   private static void SetHighLowLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.HighLowLines? value)
@@ -149,7 +149,7 @@ public static class StockChartConverter
   
   private static bool CmpUpDownBars(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.UpDownBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpDownBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpDownBars>(), value, diffs, objName);
   }
   
   private static void SetUpDownBars(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.UpDownBars? value)
@@ -231,7 +231,7 @@ public static class StockChartConverter
   
   private static bool CmpStockChartExtensionList(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StockChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StockChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.StockChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StockChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetStockChartExtensionList(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChartExtensionList? value)

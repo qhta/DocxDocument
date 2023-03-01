@@ -84,7 +84,7 @@ public static class Transform2DConverter
   
   private static bool CmpOffset(DXODraw.Transform2D openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Offset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Offset>(), value, diffs, objName);
   }
   
   private static void SetOffset(DXODraw.Transform2D openXmlElement, DMDraws.Point2DType? value)
@@ -113,7 +113,7 @@ public static class Transform2DConverter
   
   private static bool CmpExtents(DXODraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Extents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Extents>(), value, diffs, objName);
   }
   
   private static void SetExtents(DXODraw.Transform2D openXmlElement, DMDraws.PositiveSize2DType? value)

@@ -18,7 +18,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.HeaderFooter? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HeaderFooter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HeaderFooter>(), value, diffs, objName);
   }
   
   private static void SetHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.HeaderFooter? value)
@@ -47,7 +47,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpPageMargins(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageMargins? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageMargins>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageMargins>(), value, diffs, objName);
   }
   
   private static void SetPageMargins(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageMargins? value)
@@ -76,7 +76,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpPageSetup(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageSetup? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageSetup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageSetup>(), value, diffs, objName);
   }
   
   private static void SetPageSetup(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageSetup? value)
@@ -105,7 +105,7 @@ public static class PrintSettingsConverter
   
   private static bool CmpLegacyDrawingHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.RelationshipIdType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.LegacyDrawingHeaderFooter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.LegacyDrawingHeaderFooter>(), value, diffs, objName);
   }
   
   private static void SetLegacyDrawingHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.RelationshipIdType? value)

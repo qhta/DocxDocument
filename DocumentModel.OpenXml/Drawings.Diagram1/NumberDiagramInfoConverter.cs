@@ -35,7 +35,7 @@ public static class NumberDiagramInfoConverter
   
   private static bool CmpPtType(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.STorageType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DMDrawsDgm1.STorageType>(openXmlElement?.PtType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DMDrawsDgm1.STorageType>(openXmlElement?.PtType?.Value, value, diffs, objName);
   }
   
   private static void SetPtType(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.STorageType? value)
@@ -56,7 +56,7 @@ public static class NumberDiagramInfoConverter
   
   private static bool CmpDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgm1.DiagramAutoBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.DiagramAutoBullet>(), value, diffs, objName);
   }
   
   private static void SetDiagramAutoBullet(DXO2019DrawDgm11.NumberDiagramInfo openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value)

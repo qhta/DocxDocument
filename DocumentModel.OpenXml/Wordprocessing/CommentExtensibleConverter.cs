@@ -79,7 +79,7 @@ public static class CommentExtensibleConverter
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value)
@@ -95,11 +95,11 @@ public static class CommentExtensibleConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(DXO2021WComtExt.CommentExtensible? openXmlElement)
+  public static DMW.CommentExtensible? CreateModelElement(DXO2021WComtExt.CommentExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentExtensible();
+      var value = new DMW.CommentExtensible();
       value.DurableId = GetDurableId(openXmlElement);
       value.DateUtc = GetDateUtc(openXmlElement);
       value.IntelligentPlaceholder = GetIntelligentPlaceholder(openXmlElement);

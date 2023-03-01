@@ -15,7 +15,7 @@ public static class TextConverter
   
   private static bool CmpSpace(DXMath.Text openXmlElement, DM.SpaceProcessingMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value, value, diffs, objName);
   }
   
   private static void SetSpace(DXMath.Text openXmlElement, DM.SpaceProcessingMode? value)

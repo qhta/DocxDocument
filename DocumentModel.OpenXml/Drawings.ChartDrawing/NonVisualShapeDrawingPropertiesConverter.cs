@@ -41,7 +41,7 @@ public static class NonVisualShapeDrawingPropertiesConverter
   
   private static bool CmpShapeLocks(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ShapeLocks? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeLocks>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeLocks>(), value, diffs, objName);
   }
   
   private static void SetShapeLocks(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ShapeLocks? value)
@@ -70,7 +70,7 @@ public static class NonVisualShapeDrawingPropertiesConverter
   
   private static bool CmpExtensionList(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawChartDraw.NonVisualShapeDrawingProperties openXmlElement, DMDraws.ExtensionList? value)

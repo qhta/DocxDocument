@@ -15,7 +15,7 @@ public static class MatrixPropertiesConverter
   
   private static bool CmpBaseJustification(DXMath.MatrixProperties openXmlElement, DMMath.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBaseJustification(DXMath.MatrixProperties openXmlElement, DMMath.VerticalAlignmentKind? value)
@@ -43,7 +43,7 @@ public static class MatrixPropertiesConverter
   
   private static bool CmpHidePlaceholder(DXMath.MatrixProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HidePlaceholder>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HidePlaceholder>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHidePlaceholder(DXMath.MatrixProperties openXmlElement, DMMath.BooleanKind? value)
@@ -164,7 +164,7 @@ public static class MatrixPropertiesConverter
   
   private static bool CmpMatrixColumns(DXMath.MatrixProperties openXmlElement, DMMath.MatrixColumns? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MatrixColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MatrixColumns>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MatrixColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MatrixColumns>(), value, diffs, objName);
   }
   
   private static void SetMatrixColumns(DXMath.MatrixProperties openXmlElement, DMMath.MatrixColumns? value)
@@ -193,7 +193,7 @@ public static class MatrixPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.MatrixProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.MatrixProperties openXmlElement, DMMath.ControlProperties? value)

@@ -18,7 +18,7 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   
   private static bool CmpTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName);
   }
   
   private static void SetTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellBorders? value)
@@ -47,7 +47,7 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   
   private static bool CmpShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.Shading? value)
@@ -94,7 +94,7 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   
   private static bool CmpTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName);
   }
   
   private static void SetTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableCellMargin? value)
@@ -120,7 +120,7 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   
   private static bool CmpTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
@@ -138,11 +138,11 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
+  public static DMW.TableStyleConditionalFormattingTableCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties();
+      var value = new DMW.TableStyleConditionalFormattingTableCellProperties();
       value.TableCellBorders = GetTableCellBorders(openXmlElement);
       value.Shading = GetShading(openXmlElement);
       value.NoWrap = GetNoWrap(openXmlElement);

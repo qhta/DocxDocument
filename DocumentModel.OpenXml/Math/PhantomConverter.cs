@@ -18,7 +18,7 @@ public static class PhantomConverter
   
   private static bool CmpPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PhantomProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PhantomProperties>(), value, diffs, objName);
   }
   
   private static void SetPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value)
@@ -47,7 +47,7 @@ public static class PhantomConverter
   
   private static bool CmpBase(DXMath.Phantom openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
   }
   
   private static void SetBase(DXMath.Phantom openXmlElement, DMMath.Base? value)

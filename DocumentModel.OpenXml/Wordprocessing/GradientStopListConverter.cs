@@ -61,11 +61,11 @@ public static class GradientStopListConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
+  public static DMW.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GradientStopList();
+      var value = new DMW.GradientStopList();
       value.GradientStops = GetGradientStops(openXmlElement);
       return value;
     }

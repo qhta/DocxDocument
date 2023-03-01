@@ -115,11 +115,11 @@ public static class LatentStyleExceptionInfoConverter
     openXmlElement.PrimaryStyle = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DXW.LatentStyleExceptionInfo? openXmlElement)
+  public static DMW.LatentStyleExceptionInfo? CreateModelElement(DXW.LatentStyleExceptionInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LatentStyleExceptionInfo();
+      var value = new DMW.LatentStyleExceptionInfo();
       value.Name = GetName(openXmlElement);
       value.Locked = GetLocked(openXmlElement);
       value.UiPriority = GetUiPriority(openXmlElement);

@@ -79,11 +79,11 @@ public static class RsidsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Rsids? CreateModelElement(DXW.Rsids? openXmlElement)
+  public static DMW.Rsids? CreateModelElement(DXW.Rsids? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Rsids();
+      var value = new DMW.Rsids();
       value.RsidRoot = GetRsidRoot(openXmlElement);
       value.Items = GetItems(openXmlElement);
       return value;

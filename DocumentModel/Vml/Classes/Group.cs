@@ -1,3 +1,4 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
@@ -5,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public class Group
+public class Group: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

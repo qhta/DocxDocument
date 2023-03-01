@@ -15,7 +15,7 @@ public static class ParameterConverter
   
   private static bool CmpType(DXDrawDgms.Parameter openXmlElement, DMDrawsDgms.ParameterIdKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDrawsDgms.ParameterIdKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDrawsDgms.ParameterIdKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXDrawDgms.Parameter openXmlElement, DMDrawsDgms.ParameterIdKind? value)

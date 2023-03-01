@@ -163,7 +163,7 @@ public static class ShapeConverter
   
   private static bool CmpAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.AdjustListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.AdjustList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.AdjustListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.AdjustList>(), value, diffs, objName);
   }
   
   private static void SetAdjustList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.AdjustList? value)
@@ -192,7 +192,7 @@ public static class ShapeConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.Shape openXmlElement, DMDrawsDgms.ExtensionList? value)

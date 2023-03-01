@@ -133,7 +133,7 @@ public static class Surface3DChartConverter
   
   private static bool CmpBandFormats(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.BandFormats? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BandFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BandFormats>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BandFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BandFormats>(), value, diffs, objName);
   }
   
   private static void SetBandFormats(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.BandFormats? value)
@@ -215,7 +215,7 @@ public static class Surface3DChartConverter
   
   private static bool CmpSurface3DChartExtensionList(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.Surface3DChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.Surface3DChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Surface3DChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.Surface3DChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Surface3DChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetSurface3DChartExtensionList(DXDrawCharts.Surface3DChart openXmlElement, DMDrawsCharts.Surface3DChartExtensionList? value)

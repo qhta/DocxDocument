@@ -15,7 +15,7 @@ public static class PresetTextWrapConverter
   
   private static bool CmpPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
   private static void SetPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value)
@@ -36,7 +36,7 @@ public static class PresetTextWrapConverter
   
   private static bool CmpAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName);
   }
   
   private static void SetAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value)

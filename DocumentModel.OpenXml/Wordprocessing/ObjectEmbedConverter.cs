@@ -15,7 +15,7 @@ public static class ObjectEmbedConverter
   
   private static bool CmpdrawAspect(DXW.ObjectEmbed openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName);
   }
   
   private static void SetdrawAspect(DXW.ObjectEmbed openXmlElement, DMW.ObjectDrawAspect? value)
@@ -95,11 +95,11 @@ public static class ObjectEmbedConverter
     openXmlElement.FieldCodes = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DXW.ObjectEmbed? openXmlElement)
+  public static DMW.ObjectEmbed? CreateModelElement(DXW.ObjectEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ObjectEmbed();
+      var value = new DMW.ObjectEmbed();
       value.drawAspect = GetdrawAspect(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.ProgId = GetProgId(openXmlElement);

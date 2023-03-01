@@ -81,7 +81,7 @@ public static class SdtContentDateConverter
   
   private static bool CmpSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(openXmlElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DateFormatValues, DMW.DateFormatKind>(openXmlElement.GetFirstChild<DXW.SdtDateMappingType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetSdtDateMappingType(DXW.SdtContentDate openXmlElement, DMW.DateFormatKind? value)
@@ -109,7 +109,7 @@ public static class SdtContentDateConverter
   
   private static bool CmpCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(openXmlElement.GetFirstChild<DXW.Calendar>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>(openXmlElement.GetFirstChild<DXW.Calendar>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetCalendar(DXW.SdtContentDate openXmlElement, DMW.CalendarKind? value)
@@ -127,11 +127,11 @@ public static class SdtContentDateConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Calendar, DocumentFormat.OpenXml.Wordprocessing.CalendarValues, DMW.CalendarKind>((DMW.CalendarKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)
+  public static DMW.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentDate();
+      var value = new DMW.SdtContentDate();
       value.FullDate = GetFullDate(openXmlElement);
       value.DateFormat = GetDateFormat(openXmlElement);
       value.LanguageId = GetLanguageId(openXmlElement);

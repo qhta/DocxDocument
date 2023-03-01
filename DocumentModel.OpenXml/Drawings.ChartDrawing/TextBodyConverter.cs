@@ -18,7 +18,7 @@ public static class TextBodyConverter
   
   private static bool CmpBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName);
   }
   
   private static void SetBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value)
@@ -47,7 +47,7 @@ public static class TextBodyConverter
   
   private static bool CmpListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName);
   }
   
   private static void SetListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value)
@@ -73,7 +73,7 @@ public static class TextBodyConverter
   
   private static bool CmpParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName);
   }
   
   private static void SetParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value)

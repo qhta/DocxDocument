@@ -15,7 +15,7 @@ public static class ParagraphPropertiesConverter
   
   private static bool CmpJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value)

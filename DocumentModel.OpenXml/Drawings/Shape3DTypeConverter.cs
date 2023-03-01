@@ -75,7 +75,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpPresetMaterial(DXDraw.Shape3DType openXmlElement, DMDraws.PresetMaterialKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMDraws.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMDraws.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName);
   }
   
   private static void SetPresetMaterial(DXDraw.Shape3DType openXmlElement, DMDraws.PresetMaterialKind? value)
@@ -96,7 +96,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpBevelTop(DXDraw.Shape3DType openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelTop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelTop>(), value, diffs, objName);
   }
   
   private static void SetBevelTop(DXDraw.Shape3DType openXmlElement, DMDraws.BevelType? value)
@@ -125,7 +125,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpBevelBottom(DXDraw.Shape3DType openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelBottom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelBottom>(), value, diffs, objName);
   }
   
   private static void SetBevelBottom(DXDraw.Shape3DType openXmlElement, DMDraws.BevelType? value)
@@ -154,7 +154,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpExtrusionColor(DXDraw.Shape3DType openXmlElement, DMDraws.ExtrusionColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtrusionColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtrusionColor>(), value, diffs, objName);
   }
   
   private static void SetExtrusionColor(DXDraw.Shape3DType openXmlElement, DMDraws.ExtrusionColor? value)
@@ -183,7 +183,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpContourColor(DXDraw.Shape3DType openXmlElement, DMDraws.ContourColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ContourColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ContourColor>(), value, diffs, objName);
   }
   
   private static void SetContourColor(DXDraw.Shape3DType openXmlElement, DMDraws.ContourColor? value)
@@ -212,7 +212,7 @@ public static class Shape3DTypeConverter
   
   private static bool CmpExtensionList(DXDraw.Shape3DType openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.Shape3DType openXmlElement, DMDraws.ExtensionList? value)

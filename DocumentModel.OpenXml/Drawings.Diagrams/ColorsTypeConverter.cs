@@ -15,7 +15,7 @@ public static class ColorsTypeConverter
   
   private static bool CmpMethod(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorApplicationMethodKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName);
   }
   
   private static void SetMethod(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorApplicationMethodKind? value)
@@ -33,7 +33,7 @@ public static class ColorsTypeConverter
   
   private static bool CmpHueDirection(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.HueDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(openXmlElement?.HueDirection?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(openXmlElement?.HueDirection?.Value, value, diffs, objName);
   }
   
   private static void SetHueDirection(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.HueDirectionKind? value)

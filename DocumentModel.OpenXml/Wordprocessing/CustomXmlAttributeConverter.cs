@@ -59,11 +59,11 @@ public static class CustomXmlAttributeConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.CustomXmlAttribute? CreateModelElement(DXW.CustomXmlAttribute? openXmlElement)
+  public static DMW.CustomXmlAttribute? CreateModelElement(DXW.CustomXmlAttribute? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CustomXmlAttribute();
+      var value = new DMW.CustomXmlAttribute();
       value.Uri = GetUri(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.Val = GetVal(openXmlElement);

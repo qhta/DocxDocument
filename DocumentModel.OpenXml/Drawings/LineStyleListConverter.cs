@@ -15,7 +15,7 @@ public static class LineStyleListConverter
   
   private static bool CmpOutline(DXDraw.LineStyleList openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
   }
   
   private static void SetOutline(DXDraw.LineStyleList openXmlElement, DMDraws.Outline? value)

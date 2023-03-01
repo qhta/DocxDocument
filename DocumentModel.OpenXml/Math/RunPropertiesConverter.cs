@@ -15,7 +15,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpLiteral(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Literal>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Literal>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetLiteral(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
@@ -40,7 +40,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpNormalText(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NormalText>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NormalText>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNormalText(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)
@@ -65,7 +65,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpScript(DXMath.RunProperties openXmlElement, DMMath.ScriptKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(openXmlElement.GetFirstChild<DXMath.Script>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ScriptValues, DMMath.ScriptKind>(openXmlElement.GetFirstChild<DXMath.Script>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetScript(DXMath.RunProperties openXmlElement, DMMath.ScriptKind? value)
@@ -90,7 +90,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpStyle(DXMath.RunProperties openXmlElement, DMMath.StyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(openXmlElement.GetFirstChild<DXMath.Style>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.StyleValues, DMMath.StyleKind>(openXmlElement.GetFirstChild<DXMath.Style>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetStyle(DXMath.RunProperties openXmlElement, DMMath.StyleKind? value)
@@ -118,7 +118,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName);
   }
   
   private static void SetBreak(DXMath.RunProperties openXmlElement, DMMath.Break? value)
@@ -141,7 +141,7 @@ public static class RunPropertiesConverter
   
   private static bool CmpAlignment(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXMath.RunProperties openXmlElement, DMMath.BooleanKind? value)

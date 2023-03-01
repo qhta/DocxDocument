@@ -43,7 +43,7 @@ public static class TrendlineConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -69,7 +69,7 @@ public static class TrendlineConverter
   
   private static bool CmpTrendlineType(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDrawsCharts.TrendlineKind>(openXmlElement.GetFirstChild<DXDrawCharts.TrendlineType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDrawsCharts.TrendlineKind>(openXmlElement.GetFirstChild<DXDrawCharts.TrendlineType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTrendlineType(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineKind? value)
@@ -252,7 +252,7 @@ public static class TrendlineConverter
   
   private static bool CmpTrendlineLabel(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TrendlineLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TrendlineLabel>(), value, diffs, objName);
   }
   
   private static void SetTrendlineLabel(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.TrendlineLabel? value)
@@ -281,7 +281,7 @@ public static class TrendlineConverter
   
   private static bool CmpExtensionList(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.Trendline openXmlElement, DMDrawsCharts.ExtensionList? value)

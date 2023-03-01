@@ -74,7 +74,7 @@ public static class DataSourceObjectConverter
   
   private static bool CmpSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceReference>(), value, diffs, objName);
   }
   
   private static void SetSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -118,7 +118,7 @@ public static class DataSourceObjectConverter
   
   private static bool CmpMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value)
@@ -220,7 +220,7 @@ public static class DataSourceObjectConverter
   
   private static bool CmpRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName);
   }
   
   private static void SetRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -236,11 +236,11 @@ public static class DataSourceObjectConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.DataSourceObject? CreateModelElement(DXW.DataSourceObject? openXmlElement)
+  public static DMW.DataSourceObject? CreateModelElement(DXW.DataSourceObject? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DataSourceObject();
+      var value = new DMW.DataSourceObject();
       value.UdlConnectionString = GetUdlConnectionString(openXmlElement);
       value.DataSourceTableName = GetDataSourceTableName(openXmlElement);
       value.SourceReference = GetSourceReference(openXmlElement);

@@ -15,7 +15,7 @@ public static class OleObjectConverter
   
   private static bool CmpType(DXVmlO.OleObject openXmlElement, DMVml.OleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DMVml.OleKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DMVml.OleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVmlO.OleObject openXmlElement, DMVml.OleKind? value)
@@ -69,7 +69,7 @@ public static class OleObjectConverter
   
   private static bool CmpDrawAspect(DXVmlO.OleObject openXmlElement, DMVml.OleDrawAspectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DMVml.OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DMVml.OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value, value, diffs, objName);
   }
   
   private static void SetDrawAspect(DXVmlO.OleObject openXmlElement, DMVml.OleDrawAspectKind? value)
@@ -123,7 +123,7 @@ public static class OleObjectConverter
   
   private static bool CmpUpdateMode(DXVmlO.OleObject openXmlElement, DMVml.OleUpdateMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DMVml.OleUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DMVml.OleUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName);
   }
   
   private static void SetUpdateMode(DXVmlO.OleObject openXmlElement, DMVml.OleUpdateMode? value)

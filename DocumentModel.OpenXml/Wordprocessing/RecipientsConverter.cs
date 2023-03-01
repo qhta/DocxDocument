@@ -15,7 +15,7 @@ public static class RecipientsConverter
   
   private static bool CmpRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientData>(), value, diffs, objName);
   }
   
   private static void SetRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value)
@@ -31,11 +31,11 @@ public static class RecipientsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(DXW.Recipients? openXmlElement)
+  public static DMW.Recipients? CreateModelElement(DXW.Recipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Recipients();
+      var value = new DMW.Recipients();
       value.RecipientData = GetRecipientData(openXmlElement);
       return value;
     }

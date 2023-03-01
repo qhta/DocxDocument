@@ -59,11 +59,11 @@ public static class ControlConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.Control? CreateModelElement(DXW.Control? openXmlElement)
+  public static DMW.Control? CreateModelElement(DXW.Control? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Control();
+      var value = new DMW.Control();
       value.Name = GetName(openXmlElement);
       value.ShapeId = GetShapeId(openXmlElement);
       value.Id = GetId(openXmlElement);

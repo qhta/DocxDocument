@@ -349,7 +349,7 @@ public static class BackstagePrimaryMenuConverter
   
   private static bool CmpBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, DM.BackstageMenuGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageMenuGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageMenuGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>(), value, diffs, objName);
   }
   
   private static void SetBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, DM.BackstageMenuGroup? value)

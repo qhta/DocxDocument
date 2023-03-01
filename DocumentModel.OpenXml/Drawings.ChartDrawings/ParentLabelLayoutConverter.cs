@@ -15,7 +15,7 @@ public static class ParentLabelLayoutConverter
   
   private static bool CmpParentLabelLayoutVal(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayoutVal? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DMDrawsChartDraws.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value, value, diffs, objName);
   }
   
   private static void SetParentLabelLayoutVal(DXO2016DrawChartDraw.ParentLabelLayout openXmlElement, DMDrawsChartDraws.ParentLabelLayoutVal? value)

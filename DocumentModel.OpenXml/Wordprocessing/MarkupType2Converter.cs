@@ -23,17 +23,24 @@ public static class MarkupType2Converter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.MarkupType2? CreateModelElement(DXO2010W.MarkupType? openXmlElement)
+  public static ElementType? CreateModelElement<ElementType>(DXO2010W.MarkupType? openXmlElement)
+    where ElementType: DMW.MarkupType2, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MarkupType2();
+      var value = new ElementType();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
+  public static DMW.CustomXmlConflictInsertionRangeEnd? CreateModelElement(DXO2010W.CustomXmlConflictInsertionRangeEnd? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlConflictInsertionRangeEnd>(openXmlElement);
+
+  public static DMW.CustomXmlConflictDeletionRangeEnd? CreateModelElement(DXO2010W.CustomXmlConflictDeletionRangeEnd? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlConflictDeletionRangeEnd>(openXmlElement);
+
   public static bool CompareModelElement(DXO2010W.MarkupType? openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)

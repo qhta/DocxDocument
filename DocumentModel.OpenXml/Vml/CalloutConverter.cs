@@ -15,7 +15,7 @@ public static class CalloutConverter
   
   private static bool CmpExtension(DXVmlO.Callout openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
   private static void SetExtension(DXVmlO.Callout openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
@@ -92,7 +92,7 @@ public static class CalloutConverter
   
   private static bool CmpAngle(DXVmlO.Callout openXmlElement, DMVml.AngleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AngleValues, DMVml.AngleKind>(openXmlElement?.Angle?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AngleValues, DMVml.AngleKind>(openXmlElement?.Angle?.Value, value, diffs, objName);
   }
   
   private static void SetAngle(DXVmlO.Callout openXmlElement, DMVml.AngleKind? value)

@@ -135,11 +135,11 @@ public static class ColumnsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(DXW.Columns? openXmlElement)
+  public static DMW.Columns? CreateModelElement(DXW.Columns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Columns();
+      var value = new DMW.Columns();
       value.EqualWidth = GetEqualWidth(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       value.ColumnCount = GetColumnCount(openXmlElement);

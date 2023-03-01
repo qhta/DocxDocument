@@ -3,9 +3,11 @@ using DocumentModel.Vml;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Inline Embedded Object.
+///   Represents an inline embedded object in text run. 
+///   The layout properties of this embedded object, as well as an optional static representation, 
+///   are specified using the drawing element.
 /// </summary>
-public class EmbeddedObject
+public class EmbeddedObject: Collection<EmbeddedObjectElement>, RunElement
 {
   /// <summary>
   ///   dxaOrig
@@ -22,7 +24,7 @@ public class EmbeddedObject
   /// </summary>
   public HexInt? AnchorId { get; set; }
 
-  public DocumentModel.Vml.Group? Group { get; set; }
+  public DMVml.Group? Group { get; set; }
 
   public ImageFile? ImageFile { get; set; }
 

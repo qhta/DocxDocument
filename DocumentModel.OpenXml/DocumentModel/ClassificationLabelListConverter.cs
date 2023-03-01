@@ -71,7 +71,7 @@ public static class ClassificationLabelListConverter
   
   private static bool CmpClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>(), value, diffs, objName);
   }
   
   private static void SetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)

@@ -89,11 +89,11 @@ public static class CustomXmlPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
+  public static DMW.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CustomXmlProperties();
+      var value = new DMW.CustomXmlProperties();
       value.CustomXmlPlaceholder = GetCustomXmlPlaceholder(openXmlElement);
       value.CustomXmlAttributes = GetCustomXmlAttributes(openXmlElement);
       return value;

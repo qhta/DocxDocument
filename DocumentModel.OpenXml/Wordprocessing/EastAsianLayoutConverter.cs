@@ -53,7 +53,7 @@ public static class EastAsianLayoutConverter
   
   private static bool CmpCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName);
   }
   
   private static void SetCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value)
@@ -97,11 +97,11 @@ public static class EastAsianLayoutConverter
     openXmlElement.VerticalCompress = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
+  public static DMW.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.EastAsianLayout();
+      var value = new DMW.EastAsianLayout();
       value.Id = GetId(openXmlElement);
       value.Combine = GetCombine(openXmlElement);
       value.CombineBrackets = GetCombineBrackets(openXmlElement);

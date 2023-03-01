@@ -18,7 +18,7 @@ public static class TextPropertiesConverter
   
   private static bool CmpShape3DType(DXDrawDgms.TextProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
   }
   
   private static void SetShape3DType(DXDrawDgms.TextProperties openXmlElement, DMDraws.Shape3DType? value)
@@ -47,7 +47,7 @@ public static class TextPropertiesConverter
   
   private static bool CmpFlatText(DXDrawDgms.TextProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName);
   }
   
   private static void SetFlatText(DXDrawDgms.TextProperties openXmlElement, DMDraws.FlatText? value)

@@ -54,11 +54,11 @@ public static class SdtRepeatedSectionConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtRepeatedSection? CreateModelElement(DXO2013W.SdtRepeatedSection? openXmlElement)
+  public static DMW.SdtRepeatedSection? CreateModelElement(DXO2013W.SdtRepeatedSection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtRepeatedSection();
+      var value = new DMW.SdtRepeatedSection();
       value.SectionTitle = GetSectionTitle(openXmlElement);
       value.DoNotAllowInsertDeleteSection = GetDoNotAllowInsertDeleteSection(openXmlElement);
       return value;

@@ -86,7 +86,7 @@ public static class DataLabelsRangeChacheConverter
   
   private static bool CmpStrDataExtensionList(DXO2013DrawChart.DataLabelsRangeChache openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StrDataExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StrDataExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.StrDataExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StrDataExtensionList>(), value, diffs, objName);
   }
   
   private static void SetStrDataExtensionList(DXO2013DrawChart.DataLabelsRangeChache openXmlElement, DMDrawsCharts.StrDataExtensionList? value)

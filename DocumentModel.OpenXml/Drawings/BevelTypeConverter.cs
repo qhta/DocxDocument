@@ -55,7 +55,7 @@ public static class BevelTypeConverter
   
   private static bool CmpPreset(DXDraw.BevelType openXmlElement, DMDraws.BevelPresetKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMDraws.BevelPresetKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BevelPresetValues, DMDraws.BevelPresetKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
   private static void SetPreset(DXDraw.BevelType openXmlElement, DMDraws.BevelPresetKind? value)

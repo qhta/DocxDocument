@@ -51,11 +51,11 @@ public static class CommentIdConverter
       openXmlElement.DurableId = null;
   }
   
-  public static DocumentModel.Wordprocessing.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
+  public static DMW.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentId();
+      var value = new DMW.CommentId();
       value.ParaId = GetParaId(openXmlElement);
       value.DurableId = GetDurableId(openXmlElement);
       return value;

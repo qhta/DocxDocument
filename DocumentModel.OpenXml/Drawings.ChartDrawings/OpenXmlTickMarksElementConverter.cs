@@ -15,7 +15,7 @@ public static class OpenXmlTickMarksElementConverter
   
   private static bool CmpType(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.TickMarksType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDrawsChartDraws.TickMarksType>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDrawsChartDraws.TickMarksType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.TickMarksType? value)
@@ -36,7 +36,7 @@ public static class OpenXmlTickMarksElementConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.OpenXmlTickMarksElement openXmlElement, DMDrawsChartDraws.ExtensionList? value)

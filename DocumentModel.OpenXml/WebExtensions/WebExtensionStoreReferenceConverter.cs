@@ -90,7 +90,7 @@ public static class WebExtensionStoreReferenceConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExt.WebExtensionStoreReference openXmlElement, DMWebExt.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExt.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXWebExt.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXO2013WebExt.WebExtensionStoreReference openXmlElement, DMWebExt.OfficeArtExtensionList? value)

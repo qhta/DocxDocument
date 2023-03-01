@@ -35,7 +35,7 @@ public static class TabStopConverter
   
   private static bool CmpAlignment(DXDraw.TabStop openXmlElement, DMDraws.TextTabAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXDraw.TabStop openXmlElement, DMDraws.TextTabAlignmentKind? value)

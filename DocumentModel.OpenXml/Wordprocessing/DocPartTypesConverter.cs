@@ -30,7 +30,7 @@ public static class DocPartTypesConverter
   
   private static bool CmpDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value)
@@ -48,11 +48,11 @@ public static class DocPartTypesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
+  public static DMW.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocPartTypes();
+      var value = new DMW.DocPartTypes();
       value.All = GetAll(openXmlElement);
       value.DocPartType = GetDocPartType(openXmlElement);
       return value;

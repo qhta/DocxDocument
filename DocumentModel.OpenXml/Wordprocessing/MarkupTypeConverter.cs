@@ -23,17 +23,33 @@ public static class MarkupTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.MarkupType? CreateModelElement(DXW.MarkupType? openXmlElement)
+  public static ElementType? CreateModelElement<ElementType>(DXW.MarkupType? openXmlElement)
+    where ElementType: DMW.MarkupType, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MarkupType();
+      var value = new ElementType();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
+  public static DMW.CustomXmlMoveFromRangeEnd? CreateModelElement(DXW.CustomXmlMoveFromRangeEnd? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlMoveFromRangeEnd>(openXmlElement);
+
+  public static DMW.CustomXmlMoveToRangeEnd? CreateModelElement(DXW.CustomXmlMoveToRangeEnd? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlMoveToRangeEnd>(openXmlElement);
+
+  public static DMW.CustomXmlInsRangeEnd? CreateModelElement(DXW.CustomXmlInsRangeEnd? openXmlElement)
+  => CreateModelElement<DMW.CustomXmlInsRangeEnd>(openXmlElement);
+
+  public static DMW.CustomXmlDelRangeEnd? CreateModelElement(DXW.CustomXmlDelRangeEnd? openXmlElement)
+  => CreateModelElement<DMW.CustomXmlDelRangeEnd>(openXmlElement);
+
+  public static DMW.CommentReference? CreateModelElement(DXW.CommentReference? openXmlElement)
+  => CreateModelElement<DMW.CommentReference>(openXmlElement);
+
   public static bool CompareModelElement(DXW.MarkupType? openXmlElement, DMW.MarkupType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -56,6 +72,21 @@ public static class MarkupTypeConverter
     return openXmlElement;
   }
   
+  public static DXW.CustomXmlMoveFromRangeEnd CreateOpenXmlElement(DMW.CustomXmlMoveFromRangeEnd value)
+    => CreateOpenXmlElement<DXW.CustomXmlMoveFromRangeEnd>(value);
+  
+  public static DXW.CustomXmlMoveToRangeEnd CreateOpenXmlElement(DMW.CustomXmlMoveToRangeEnd value)
+    => CreateOpenXmlElement<DXW.CustomXmlMoveToRangeEnd>(value);
+  
+  public static DXW.CustomXmlInsRangeEnd CreateOpenXmlElement(DMW.CustomXmlInsRangeEnd value)
+    => CreateOpenXmlElement<DXW.CustomXmlInsRangeEnd>(value);
+  
+  public static DXW.CustomXmlDelRangeEnd CreateOpenXmlElement(DMW.CustomXmlDelRangeEnd value)
+    => CreateOpenXmlElement<DXW.CustomXmlDelRangeEnd>(value);
+
+  public static DXW.CommentReference CreateOpenXmlElement(DMW.CommentReference value)
+    => CreateOpenXmlElement<DXW.CommentReference>(value);
+
   public static void UpdateOpenXmlElement(DXW.MarkupType openXmlElement, DMW.MarkupType value)
   {
     SetId(openXmlElement, value?.Id);

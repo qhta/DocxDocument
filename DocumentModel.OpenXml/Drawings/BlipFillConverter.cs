@@ -61,7 +61,7 @@ public static class BlipFillConverter
   
   private static bool CmpBlip(DXDraw.BlipFill openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blip>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blip>(), value, diffs, objName);
   }
   
   private static void SetBlip(DXDraw.BlipFill openXmlElement, DMDraws.Blip? value)
@@ -90,7 +90,7 @@ public static class BlipFillConverter
   
   private static bool CmpSourceRectangle(DXDraw.BlipFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SourceRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SourceRectangle>(), value, diffs, objName);
   }
   
   private static void SetSourceRectangle(DXDraw.BlipFill openXmlElement, DMDraws.RelativeRectangleType? value)
@@ -116,7 +116,7 @@ public static class BlipFillConverter
   
   private static bool CmpTile(DXDraw.BlipFill openXmlElement, DMDraws.Tile? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Tile>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Tile>(), value, diffs, objName);
   }
   
   private static void SetTile(DXDraw.BlipFill openXmlElement, DMDraws.Tile? value)
@@ -142,7 +142,7 @@ public static class BlipFillConverter
   
   private static bool CmpStretch(DXDraw.BlipFill openXmlElement, DMDraws.Stretch? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.StretchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Stretch>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.StretchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Stretch>(), value, diffs, objName);
   }
   
   private static void SetStretch(DXDraw.BlipFill openXmlElement, DMDraws.Stretch? value)

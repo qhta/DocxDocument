@@ -69,7 +69,7 @@ public static class DelimiterPropertiesConverter
   
   private static bool CmpGrowOperators(DXMath.DelimiterProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetGrowOperators(DXMath.DelimiterProperties openXmlElement, DMMath.BooleanKind? value)
@@ -97,7 +97,7 @@ public static class DelimiterPropertiesConverter
   
   private static bool CmpShape(DXMath.DelimiterProperties openXmlElement, DMMath.ShapeDelimiterKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXMath.Shape>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXMath.Shape>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetShape(DXMath.DelimiterProperties openXmlElement, DMMath.ShapeDelimiterKind? value)
@@ -128,7 +128,7 @@ public static class DelimiterPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value)

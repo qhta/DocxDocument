@@ -128,7 +128,7 @@ public static class CommentConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.AltChunkConverter.CreateOpenXmlElement<DXW.AltChunk>(item);
+        var newItem = DMXW.AltChunkConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -145,7 +145,7 @@ public static class CommentConverter
   
   private static bool CmpCustomXmlBlock(DXW.Comment openXmlElement, DMW.CustomXmlBlock? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CustomXmlBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlBlock>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CustomXmlBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlBlock>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlBlock(DXW.Comment openXmlElement, DMW.CustomXmlBlock? value)
@@ -155,7 +155,7 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlBlockConverter.CreateOpenXmlElement<DXW.CustomXmlBlock>(value);
+      itemElement = DMXW.CustomXmlBlockConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -171,7 +171,7 @@ public static class CommentConverter
   
   private static bool CmpSdtBlock(DXW.Comment openXmlElement, DMW.SdtBlock? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtBlock>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SdtBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtBlock>(), value, diffs, objName);
   }
   
   private static void SetSdtBlock(DXW.Comment openXmlElement, DMW.SdtBlock? value)
@@ -181,7 +181,7 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtBlockConverter.CreateOpenXmlElement<DXW.SdtBlock>(value);
+      itemElement = DMXW.SdtBlockConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -219,7 +219,7 @@ public static class CommentConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.ParagraphConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.ParagraphConverter.CompareParagraphElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -236,7 +236,7 @@ public static class CommentConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.ParagraphConverter.CreateOpenXmlElement<DXW.Paragraph>(item);
+        var newItem = DMXW.ParagraphConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -292,7 +292,7 @@ public static class CommentConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.TableConverter.CreateOpenXmlElement<DXW.Table>(item);
+        var newItem = DMXW.TableConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -309,7 +309,7 @@ public static class CommentConverter
   
   private static bool CmpProofError(DXW.Comment openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofError>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ProofErrorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ProofError>(), value, diffs, objName);
   }
   
   private static void SetProofError(DXW.Comment openXmlElement, DMW.ProofError? value)
@@ -319,7 +319,7 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement<DXW.ProofError>(value);
+      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -335,7 +335,7 @@ public static class CommentConverter
   
   private static bool CmpPermStart(DXW.Comment openXmlElement, DMW.PermStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermStart>(), value, diffs, objName);
   }
   
   private static void SetPermStart(DXW.Comment openXmlElement, DMW.PermStart? value)
@@ -345,7 +345,7 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement<DXW.PermStart>(value);
+      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -361,7 +361,7 @@ public static class CommentConverter
   
   private static bool CmpPermEnd(DXW.Comment openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PermEndConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PermEndConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PermEnd>(), value, diffs, objName);
   }
   
   private static void SetPermEnd(DXW.Comment openXmlElement, DMW.PermEnd? value)
@@ -371,7 +371,7 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement<DXW.PermEnd>(value);
+      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -387,7 +387,7 @@ public static class CommentConverter
   
   private static bool CmpBookmarkStart(DXW.Comment openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BookmarkStartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkStart>(), value, diffs, objName);
   }
   
   private static void SetBookmarkStart(DXW.Comment openXmlElement, DMW.BookmarkStart? value)
@@ -397,13 +397,13 @@ public static class CommentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement<DXW.BookmarkStart>(value);
+      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.Comment openXmlElement)
+  private static DMW.BookmarkEnd? GetBookmarkEnd(DXW.Comment openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
     if (element != null)
@@ -413,7 +413,7 @@ public static class CommentConverter
   
   private static bool CmpBookmarkEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName);
   }
   
   private static void SetBookmarkEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
@@ -429,7 +429,7 @@ public static class CommentConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.Comment openXmlElement)
+  private static DMW.CommentRangeStart? GetCommentRangeStart(DXW.Comment openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
     if (element != null)
@@ -439,7 +439,7 @@ public static class CommentConverter
   
   private static bool CmpCommentRangeStart(DXW.Comment openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCommentRangeStart(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
@@ -455,7 +455,7 @@ public static class CommentConverter
     }
   }
   
-  private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.Comment openXmlElement)
+  private static DMW.CommentRangeEnd? GetCommentRangeEnd(DXW.Comment openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
     if (element != null)
@@ -465,7 +465,7 @@ public static class CommentConverter
   
   private static bool CmpCommentRangeEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCommentRangeEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
@@ -481,11 +481,11 @@ public static class CommentConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Comment? CreateModelElement(DXW.Comment? openXmlElement)
+  public static DMW.Comment? CreateModelElement(DXW.Comment? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Comment();
+      var value = new DMW.Comment();
       value.Initials = GetInitials(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);

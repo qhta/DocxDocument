@@ -15,7 +15,7 @@ public static class PathGradientFillConverter
   
   private static bool CmpPath(DXDraw.PathGradientFill openXmlElement, DMDraws.PathShadeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PathShadeValues, DMDraws.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PathShadeValues, DMDraws.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName);
   }
   
   private static void SetPath(DXDraw.PathGradientFill openXmlElement, DMDraws.PathShadeKind? value)
@@ -36,7 +36,7 @@ public static class PathGradientFillConverter
   
   private static bool CmpFillToRectangle(DXDraw.PathGradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillToRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillToRectangle>(), value, diffs, objName);
   }
   
   private static void SetFillToRectangle(DXDraw.PathGradientFill openXmlElement, DMDraws.RelativeRectangleType? value)

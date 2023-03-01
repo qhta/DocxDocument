@@ -33,7 +33,7 @@ public static class GroupCharPropertiesConverter
   
   private static bool CmpPosition(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetPosition(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
@@ -61,7 +61,7 @@ public static class GroupCharPropertiesConverter
   
   private static bool CmpVerticalJustification(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.VerticalJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.VerticalJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalJustification(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
@@ -92,7 +92,7 @@ public static class GroupCharPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value)

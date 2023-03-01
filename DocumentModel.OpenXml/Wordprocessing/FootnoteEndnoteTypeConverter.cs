@@ -15,7 +15,7 @@ public static class FootnoteEndnoteTypeConverter
   
   private static bool CmpType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value)
@@ -43,11 +43,11 @@ public static class FootnoteEndnoteTypeConverter
     openXmlElement.Id = value;
   }
   
-  public static DocumentModel.Wordprocessing.FootnoteEndnoteType? CreateModelElement(DXW.FootnoteEndnoteType? openXmlElement)
+  public static DMW.FootnoteEndnoteType? CreateModelElement(DXW.FootnoteEndnoteType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteType();
+      var value = new DMW.FootnoteEndnoteType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

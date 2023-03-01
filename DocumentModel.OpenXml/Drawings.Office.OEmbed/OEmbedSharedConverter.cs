@@ -54,7 +54,7 @@ public static class OEmbedSharedConverter
   
   private static bool CmpOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value)

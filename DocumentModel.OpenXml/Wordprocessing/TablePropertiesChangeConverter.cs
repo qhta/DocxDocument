@@ -74,7 +74,7 @@ public static class TablePropertiesChangeConverter
   
   private static bool CmpPreviousTableProperties(DXW.TablePropertiesChange openXmlElement, DMW.PreviousTableProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTableProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTableProperties>(), value, diffs, objName);
   }
   
   private static void SetPreviousTableProperties(DXW.TablePropertiesChange openXmlElement, DMW.PreviousTableProperties? value)
@@ -90,11 +90,11 @@ public static class TablePropertiesChangeConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TablePropertiesChange? CreateModelElement(DXW.TablePropertiesChange? openXmlElement)
+  public static DMW.TablePropertiesChange? CreateModelElement(DXW.TablePropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TablePropertiesChange();
+      var value = new DMW.TablePropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

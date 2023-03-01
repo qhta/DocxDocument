@@ -23,11 +23,11 @@ public static class ExtensionConverter
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.Extension? CreateModelElement(DXO2021WExtList.Extension? openXmlElement)
+  public static DMW.Extension? CreateModelElement(DXO2021WExtList.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Extension();
+      var value = new DMW.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }

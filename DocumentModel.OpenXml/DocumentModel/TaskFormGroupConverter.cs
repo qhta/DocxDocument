@@ -241,7 +241,7 @@ public static class TaskFormGroupConverter
   
   private static bool CmpAllowedTaskSizes(DXO2010CustUI.TaskFormGroup openXmlElement, DM.TaskSizesKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues, DM.TaskSizesKind>(openXmlElement?.AllowedTaskSizes?.Value, value, diffs, objName);
   }
   
   private static void SetAllowedTaskSizes(DXO2010CustUI.TaskFormGroup openXmlElement, DM.TaskSizesKind? value)

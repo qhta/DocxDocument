@@ -56,7 +56,7 @@ public static class ShadowConverter
   
   private static bool CmpType(DXVml.Shadow openXmlElement, DMVml.ShadowKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ShadowValues, DMVml.ShadowKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ShadowValues, DMVml.ShadowKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVml.Shadow openXmlElement, DMVml.ShadowKind? value)

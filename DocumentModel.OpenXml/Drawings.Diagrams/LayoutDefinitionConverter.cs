@@ -181,7 +181,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpCategoryList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.CategoryList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.CategoryListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.CategoryList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.CategoryListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.CategoryList>(), value, diffs, objName);
   }
   
   private static void SetCategoryList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.CategoryList? value)
@@ -207,7 +207,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpSampleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.SampleData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.SampleDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.SampleData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.SampleDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.SampleData>(), value, diffs, objName);
   }
   
   private static void SetSampleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.SampleData? value)
@@ -233,7 +233,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpStyleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.StyleData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.StyleDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.StyleData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.StyleDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.StyleData>(), value, diffs, objName);
   }
   
   private static void SetStyleData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.StyleData? value)
@@ -259,7 +259,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpColorData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.ColorData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ColorDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ColorData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ColorDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ColorData>(), value, diffs, objName);
   }
   
   private static void SetColorData(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.ColorData? value)
@@ -285,7 +285,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpLayoutNode(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName);
   }
   
   private static void SetLayoutNode(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.LayoutNode? value)
@@ -311,7 +311,7 @@ public static class LayoutDefinitionConverter
   
   private static bool CmpDiagramDefinitionExtensionList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DiagramDefinitionExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DiagramDefinitionExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.DiagramDefinitionExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DiagramDefinitionExtensionList>(), value, diffs, objName);
   }
   
   private static void SetDiagramDefinitionExtensionList(DXDrawDgms.LayoutDefinition openXmlElement, DMDrawsDgms.DiagramDefinitionExtensionList? value)

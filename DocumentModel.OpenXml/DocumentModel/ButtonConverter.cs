@@ -15,7 +15,7 @@ public static class ButtonConverter
   
   private static bool CmpSize(DXO2010CustUI.Button openXmlElement, DM.SizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
   private static void SetSize(DXO2010CustUI.Button openXmlElement, DM.SizeKind? value)

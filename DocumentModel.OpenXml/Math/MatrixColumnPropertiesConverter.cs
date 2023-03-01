@@ -33,7 +33,7 @@ public static class MatrixColumnPropertiesConverter
   
   private static bool CmpMatrixColumnJustification(DXMath.MatrixColumnProperties openXmlElement, DMMath.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMatrixColumnJustification(DXMath.MatrixColumnProperties openXmlElement, DMMath.HorizontalAlignmentKind? value)

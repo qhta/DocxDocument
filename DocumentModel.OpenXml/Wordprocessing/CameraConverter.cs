@@ -15,7 +15,7 @@ public static class CameraConverter
   
   private static bool CmpPresetCameraType(DXO2010W.Camera openXmlElement, DMW.PresetCameraKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value, value, diffs, objName);
   }
   
   private static void SetPresetCameraType(DXO2010W.Camera openXmlElement, DMW.PresetCameraKind? value)
@@ -23,11 +23,11 @@ public static class CameraConverter
     openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
+  public static DMW.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Camera();
+      var value = new DMW.Camera();
       value.PresetCameraType = GetPresetCameraType(openXmlElement);
       return value;
     }

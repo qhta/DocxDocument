@@ -15,7 +15,7 @@ public static class TextDataConverter
   
   private static bool CmpFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName);
   }
   
   private static void SetFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)

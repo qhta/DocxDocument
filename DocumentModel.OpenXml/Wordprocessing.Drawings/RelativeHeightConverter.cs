@@ -15,7 +15,7 @@ public static class RelativeHeightConverter
   
   private static bool CmpRelativeFrom(DXO2010WDraw.RelativeHeight openXmlElement, DMWDraws.SizeRelativeVerticallyKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWDraws.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWDraws.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName);
   }
   
   private static void SetRelativeFrom(DXO2010WDraw.RelativeHeight openXmlElement, DMWDraws.SizeRelativeVerticallyKind? value)
@@ -48,11 +48,11 @@ public static class RelativeHeightConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(DXO2010WDraw.RelativeHeight? openXmlElement)
+  public static DMW.Drawings.RelativeHeight? CreateModelElement(DXO2010WDraw.RelativeHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Drawings.RelativeHeight();
+      var value = new DMW.Drawings.RelativeHeight();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.PercentageHeight = GetPercentageHeight(openXmlElement);
       return value;

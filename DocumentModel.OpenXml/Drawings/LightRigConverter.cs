@@ -15,7 +15,7 @@ public static class LightRigConverter
   
   private static bool CmpRig(DXDraw.LightRig openXmlElement, DMDraws.LightRigKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LightRigValues, DMDraws.LightRigKind>(openXmlElement?.Rig?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LightRigValues, DMDraws.LightRigKind>(openXmlElement?.Rig?.Value, value, diffs, objName);
   }
   
   private static void SetRig(DXDraw.LightRig openXmlElement, DMDraws.LightRigKind? value)
@@ -33,7 +33,7 @@ public static class LightRigConverter
   
   private static bool CmpDirection(DXDraw.LightRig openXmlElement, DMDraws.LightRigDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LightRigDirectionValues, DMDraws.LightRigDirectionKind>(openXmlElement?.Direction?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LightRigDirectionValues, DMDraws.LightRigDirectionKind>(openXmlElement?.Direction?.Value, value, diffs, objName);
   }
   
   private static void SetDirection(DXDraw.LightRig openXmlElement, DMDraws.LightRigDirectionKind? value)
@@ -54,7 +54,7 @@ public static class LightRigConverter
   
   private static bool CmpRotation(DXDraw.LightRig openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName);
   }
   
   private static void SetRotation(DXDraw.LightRig openXmlElement, DMDraws.Rotation? value)

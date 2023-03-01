@@ -15,7 +15,7 @@ public static class NumericDimensionConverter
   
   private static bool CmpType(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.NumericDimensionType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimensionType, DMDrawsChartDraws.NumericDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimensionType, DMDrawsChartDraws.NumericDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.NumericDimensionType? value)
@@ -33,7 +33,7 @@ public static class NumericDimensionConverter
   
   private static bool CmpFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName);
   }
   
   private static void SetFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
@@ -59,7 +59,7 @@ public static class NumericDimensionConverter
   
   private static bool CmpNfFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NfFormula>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NfFormula>(), value, diffs, objName);
   }
   
   private static void SetNfFormula(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
@@ -141,7 +141,7 @@ public static class NumericDimensionConverter
   
   private static bool CmpNumericLevel(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.NumericLevel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NumericLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericLevel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.NumericLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericLevel>(), value, diffs, objName);
   }
   
   private static void SetNumericLevel(DXO2016DrawChartDraw.NumericDimension openXmlElement, DMDrawsChartDraws.NumericLevel? value)

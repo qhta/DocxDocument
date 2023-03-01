@@ -18,7 +18,7 @@ public static class DrawingConverter
   
   private static bool CmpShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeTree>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeTree>(), value, diffs, objName);
   }
   
   private static void SetShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value)

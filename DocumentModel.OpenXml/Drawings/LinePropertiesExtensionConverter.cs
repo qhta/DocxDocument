@@ -33,7 +33,7 @@ public static class LinePropertiesExtensionConverter
   
   private static bool CmpLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement, DMDraws.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSketchStylePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineSketchStylePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchStyleProperties>(), value, diffs, objName);
   }
   
   private static void SetLineSketchStyleProperties(DXDraw.LinePropertiesExtension openXmlElement, DMDraws.LineSketchStyleProperties? value)

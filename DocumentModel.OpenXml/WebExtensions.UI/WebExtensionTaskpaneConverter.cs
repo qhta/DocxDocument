@@ -122,7 +122,7 @@ public static class WebExtensionTaskpaneConverter
   
   private static bool CmpWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionPartReference? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExtUI.WebExtensionPartReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXWebExtUI.WebExtensionPartReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>(), value, diffs, objName);
   }
   
   private static void SetWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionPartReference? value)
@@ -151,7 +151,7 @@ public static class WebExtensionTaskpaneConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExtUI.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXWebExtUI.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.OfficeArtExtensionList? value)

@@ -15,7 +15,7 @@ public static class MajorFontConverter
   
   private static bool CmpLatinFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName);
   }
   
   private static void SetLatinFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value)
@@ -41,7 +41,7 @@ public static class MajorFontConverter
   
   private static bool CmpEastAsianFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName);
   }
   
   private static void SetEastAsianFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value)
@@ -67,7 +67,7 @@ public static class MajorFontConverter
   
   private static bool CmpComplexScriptFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName);
   }
   
   private static void SetComplexScriptFont(DXDraw.MajorFont openXmlElement, DMDraws.TextFontType? value)
@@ -149,7 +149,7 @@ public static class MajorFontConverter
   
   private static bool CmpExtensionList(DXDraw.MajorFont openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.MajorFont openXmlElement, DMDraws.ExtensionList? value)

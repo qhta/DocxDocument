@@ -87,11 +87,11 @@ public static class AllocatedCommandConverter
     openXmlElement.AcceleratorName = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
+  public static DMW.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AllocatedCommand();
+      var value = new DMW.AllocatedCommand();
       value.ArgumentValue = GetArgumentValue(openXmlElement);
       value.CommandBasedOn = GetCommandBasedOn(openXmlElement);
       value.CommandIndexBasedOn = GetCommandIndexBasedOn(openXmlElement);

@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Image File.
 /// </summary>
-public class ImageFile
+public class ImageFile: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

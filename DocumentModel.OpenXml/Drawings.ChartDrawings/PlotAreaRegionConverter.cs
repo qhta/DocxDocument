@@ -18,7 +18,7 @@ public static class PlotAreaRegionConverter
   
   private static bool CmpPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>(), value, diffs, objName);
   }
   
   private static void SetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value)
@@ -100,7 +100,7 @@ public static class PlotAreaRegionConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value)

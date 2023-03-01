@@ -111,7 +111,7 @@ public static class MoveBookmarkTypeConverter
   
   private static bool CmpDisplacedByCustomXml(DXW.MoveBookmarkType openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.MoveBookmarkType openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -137,11 +137,12 @@ public static class MoveBookmarkTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? CreateModelElement(DXW.MoveBookmarkType? openXmlElement)
+  public static ElementType? CreateModelElement<ElementType>(DXW.MoveBookmarkType? openXmlElement)
+    where ElementType : DMW.MoveBookmarkType, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MoveBookmarkType();
+      var value = new ElementType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Name = GetName(openXmlElement);
@@ -154,6 +155,16 @@ public static class MoveBookmarkTypeConverter
     return null;
   }
   
+  public static DMW.MoveFromRangeStart? CreateModelElement(DXW.MoveFromRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.MoveFromRangeStart>(openXmlElement);
+  }
+
+  public static DMW.MoveToRangeStart? CreateModelElement(DXW.MoveToRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.MoveToRangeStart>(openXmlElement);
+  }
+
   public static bool CompareModelElement(DXW.MoveBookmarkType? openXmlElement, DMW.MoveBookmarkType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -188,6 +199,13 @@ public static class MoveBookmarkTypeConverter
     return openXmlElement;
   }
   
+  public static DXW.MoveFromRangeStart CreateOpenXmlElement(DMW.MoveFromRangeStart value)
+    => CreateOpenXmlElement<DXW.MoveFromRangeStart>(value);
+
+  public static DXW.MoveToRangeStart CreateOpenXmlElement(DMW.MoveToRangeStart value)
+    => CreateOpenXmlElement<DXW.MoveToRangeStart>(value);
+
+
   public static void UpdateOpenXmlElement(DXW.MoveBookmarkType openXmlElement, DMW.MoveBookmarkType value)
   {
     SetAuthor(openXmlElement, value?.Author);

@@ -15,7 +15,7 @@ public static class RadarChartConverter
   
   private static bool CmpRadarStyle(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarStyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetRadarStyle(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarStyleKind? value)
@@ -130,7 +130,7 @@ public static class RadarChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -212,7 +212,7 @@ public static class RadarChartConverter
   
   private static bool CmpRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RadarChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.RadarChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RadarChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.RadarChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarChartExtensionList? value)

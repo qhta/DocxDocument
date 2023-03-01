@@ -69,7 +69,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpAlign(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Align?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Align?.Value, value, diffs, objName);
   }
   
   private static void SetAlign(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value)
@@ -87,7 +87,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpExpand(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName);
   }
   
   private static void SetExpand(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value)
@@ -105,7 +105,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpLayoutChildren(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutChildrenKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DM.LayoutChildrenKind>(openXmlElement?.LayoutChildren?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DM.LayoutChildrenKind>(openXmlElement?.LayoutChildren?.Value, value, diffs, objName);
   }
   
   private static void SetLayoutChildren(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutChildrenKind? value)
@@ -123,7 +123,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageGroupButton(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageGroupButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageGroupButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroupButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageGroupButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroupButton>(), value, diffs, objName);
   }
   
   private static void SetBackstageGroupButton(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageGroupButton? value)
@@ -149,7 +149,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageCheckBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageCheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageCheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageCheckBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageCheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageCheckBox>(), value, diffs, objName);
   }
   
   private static void SetBackstageCheckBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageCheckBox? value)
@@ -175,7 +175,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageEditBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageEditBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageEditBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageEditBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageEditBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageEditBox>(), value, diffs, objName);
   }
   
   private static void SetBackstageEditBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageEditBox? value)
@@ -201,7 +201,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageDropDown(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageDropDown? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageDropDownConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageDropDown>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageDropDownConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageDropDown>(), value, diffs, objName);
   }
   
   private static void SetBackstageDropDown(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageDropDown? value)
@@ -227,7 +227,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpRadioGroup(DXO2010CustUI.LayoutContainer openXmlElement, DM.RadioGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.RadioGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.RadioGroup>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.RadioGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.RadioGroup>(), value, diffs, objName);
   }
   
   private static void SetRadioGroup(DXO2010CustUI.LayoutContainer openXmlElement, DM.RadioGroup? value)
@@ -253,7 +253,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageComboBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageComboBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageComboBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageComboBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageComboBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageComboBox>(), value, diffs, objName);
   }
   
   private static void SetBackstageComboBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageComboBox? value)
@@ -279,7 +279,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpHyperlink(DXO2010CustUI.LayoutContainer openXmlElement, DM.Hyperlink? value, DiffList? diffs, string? objName)
   {
-    return DMX.HyperlinkConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HyperlinkConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Hyperlink>(), value, diffs, objName);
   }
   
   private static void SetHyperlink(DXO2010CustUI.LayoutContainer openXmlElement, DM.Hyperlink? value)
@@ -305,7 +305,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpBackstageLabelControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageLabelControl? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageLabelControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageLabelControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageLabelControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageLabelControl>(), value, diffs, objName);
   }
   
   private static void SetBackstageLabelControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageLabelControl? value)
@@ -331,7 +331,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpGroupBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.GroupBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.GroupBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.GroupBox>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.GroupBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.GroupBox>(), value, diffs, objName);
   }
   
   private static void SetGroupBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.GroupBox? value)
@@ -357,7 +357,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpChildLayoutContainer(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutContainer? value, DiffList? diffs, string? objName)
   {
-    return DMX.LayoutContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.LayoutContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.LayoutContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.LayoutContainer>(), value, diffs, objName);
   }
   
   private static void SetChildLayoutContainer(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutContainer? value)
@@ -383,7 +383,7 @@ public static class LayoutContainerConverter
   
   private static bool CmpImageControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.ImageControl? value, DiffList? diffs, string? objName)
   {
-    return DMX.ImageControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ImageControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ImageControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ImageControl>(), value, diffs, objName);
   }
   
   private static void SetImageControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.ImageControl? value)

@@ -27,7 +27,7 @@ public static class DisplayUnitsConverter
   
   private static bool CmpBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.BuiltInUnitKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.BuiltInUnitKind? value)
@@ -55,7 +55,7 @@ public static class DisplayUnitsConverter
   
   private static bool CmpDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>(), value, diffs, objName);
   }
   
   private static void SetDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value)
@@ -81,7 +81,7 @@ public static class DisplayUnitsConverter
   
   private static bool CmpExtensionList(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.ExtensionList? value)

@@ -61,11 +61,12 @@ public static class TrackChangeType2Converter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.TrackChangeType2? CreateModelElement(DXO2010W.TrackChangeType? openXmlElement)
+  public static ElementType? CreateModelElement<ElementType>(DXO2010W.TrackChangeType? openXmlElement)
+    where ElementType : DMW.TrackChangeType2, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TrackChangeType2();
+      var value = new ElementType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -74,6 +75,18 @@ public static class TrackChangeType2Converter
     return null;
   }
   
+  public static DMW.CustomXmlConflictInsertionRangeStart? CreateModelElement(DXO2010W.CustomXmlConflictInsertionRangeStart? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlConflictInsertionRangeStart>(openXmlElement);
+
+  public static DMW.CustomXmlConflictDeletionRangeStart? CreateModelElement(DXO2010W.CustomXmlConflictDeletionRangeStart? openXmlElement)
+    => CreateModelElement<DMW.CustomXmlConflictDeletionRangeStart>(openXmlElement);
+
+  public static DMW.ConflictInsertion? CreateModelElement(DXO2010W.ConflictInsertion? openXmlElement)
+    => CreateModelElement<DMW.ConflictInsertion>(openXmlElement);
+
+  public static DMW.ConflictDeletion? CreateModelElement(DXO2010W.ConflictDeletion? openXmlElement)
+    => CreateModelElement<DMW.ConflictDeletion>(openXmlElement);
+
   public static bool CompareModelElement(DXO2010W.TrackChangeType? openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)

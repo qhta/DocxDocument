@@ -15,7 +15,7 @@ public static class AutoCaptionsConverter
   
   private static bool CmpAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value, DiffList? diffs, string? objName)
   {
-    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName);
   }
   
   private static void SetAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value)
@@ -31,11 +31,11 @@ public static class AutoCaptionsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.AutoCaptions? CreateModelElement(DXW.AutoCaptions? openXmlElement)
+  public static DMW.AutoCaptions? CreateModelElement(DXW.AutoCaptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AutoCaptions();
+      var value = new DMW.AutoCaptions();
       value.AutoCaption = GetAutoCaption(openXmlElement);
       return value;
     }

@@ -15,7 +15,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpRgbColorModelPercentage(DXDraw.BackgroundColor openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelPercentage(DXDraw.BackgroundColor openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -41,7 +41,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpRgbColorModelHex(DXDraw.BackgroundColor openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXDraw.BackgroundColor openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -67,7 +67,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpHslColor(DXDraw.BackgroundColor openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
   }
   
   private static void SetHslColor(DXDraw.BackgroundColor openXmlElement, DMDraws.HslColor? value)
@@ -93,7 +93,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpSystemColor(DXDraw.BackgroundColor openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
   }
   
   private static void SetSystemColor(DXDraw.BackgroundColor openXmlElement, DMDraws.SystemColor? value)
@@ -119,7 +119,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpSchemeColor(DXDraw.BackgroundColor openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXDraw.BackgroundColor openXmlElement, DMDraws.SchemeColor? value)
@@ -145,7 +145,7 @@ public static class BackgroundColorConverter
   
   private static bool CmpPresetColor(DXDraw.BackgroundColor openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
   }
   
   private static void SetPresetColor(DXDraw.BackgroundColor openXmlElement, DMDraws.PresetColor? value)

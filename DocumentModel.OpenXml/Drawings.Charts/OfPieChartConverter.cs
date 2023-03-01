@@ -15,7 +15,7 @@ public static class OfPieChartConverter
   
   private static bool CmpOfPieType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetOfPieType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieKind? value)
@@ -130,7 +130,7 @@ public static class OfPieChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -168,7 +168,7 @@ public static class OfPieChartConverter
   
   private static bool CmpSplitType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.SplitKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(openXmlElement.GetFirstChild<DXDrawCharts.SplitType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(openXmlElement.GetFirstChild<DXDrawCharts.SplitType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetSplitType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.SplitKind? value)
@@ -211,7 +211,7 @@ public static class OfPieChartConverter
   
   private static bool CmpCustomSplit(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.CustomSplit? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CustomSplitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CustomSplit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CustomSplitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CustomSplit>(), value, diffs, objName);
   }
   
   private static void SetCustomSplit(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.CustomSplit? value)
@@ -308,7 +308,7 @@ public static class OfPieChartConverter
   
   private static bool CmpExtensionList(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.ExtensionList? value)

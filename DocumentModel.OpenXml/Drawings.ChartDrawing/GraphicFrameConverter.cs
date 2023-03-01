@@ -59,7 +59,7 @@ public static class GraphicFrameConverter
   
   private static bool CmpNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>(), value, diffs, objName);
   }
   
   private static void SetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value)
@@ -88,7 +88,7 @@ public static class GraphicFrameConverter
   
   private static bool CmpTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Transform>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Transform>(), value, diffs, objName);
   }
   
   private static void SetTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value)
@@ -117,7 +117,7 @@ public static class GraphicFrameConverter
   
   private static bool CmpGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName);
   }
   
   private static void SetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value)

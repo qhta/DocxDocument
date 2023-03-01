@@ -95,7 +95,7 @@ public static class TileConverter
   
   private static bool CmpFlip(DXDraw.Tile openXmlElement, DMDraws.TileFlipKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName);
   }
   
   private static void SetFlip(DXDraw.Tile openXmlElement, DMDraws.TileFlipKind? value)
@@ -113,7 +113,7 @@ public static class TileConverter
   
   private static bool CmpAlignment(DXDraw.Tile openXmlElement, DMDraws.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXDraw.Tile openXmlElement, DMDraws.RectangleAlignmentKind? value)

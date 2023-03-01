@@ -61,11 +61,11 @@ public static class KeyMapCustomizationsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.KeyMapCustomizations? CreateModelElement(DXOW.KeyMapCustomizations? openXmlElement)
+  public static DMW.KeyMapCustomizations? CreateModelElement(DXOW.KeyMapCustomizations? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.KeyMapCustomizations();
+      var value = new DMW.KeyMapCustomizations();
       value.KeyMapEntries = GetKeyMapEntries(openXmlElement);
       return value;
     }

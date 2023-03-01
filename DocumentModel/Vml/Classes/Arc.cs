@@ -1,11 +1,14 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public class Arc
+public class Arc: EmbeddedObjectElement
 {
   /// <summary>
   ///   Optional String

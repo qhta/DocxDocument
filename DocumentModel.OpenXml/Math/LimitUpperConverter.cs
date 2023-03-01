@@ -18,7 +18,7 @@ public static class LimitUpperConverter
   
   private static bool CmpLimitUpperProperties(DXMath.LimitUpper openXmlElement, DMMath.LimitUpperProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitUpperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitUpperProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitUpperPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitUpperProperties>(), value, diffs, objName);
   }
   
   private static void SetLimitUpperProperties(DXMath.LimitUpper openXmlElement, DMMath.LimitUpperProperties? value)
@@ -47,7 +47,7 @@ public static class LimitUpperConverter
   
   private static bool CmpBase(DXMath.LimitUpper openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
   }
   
   private static void SetBase(DXMath.LimitUpper openXmlElement, DMMath.Base? value)
@@ -76,7 +76,7 @@ public static class LimitUpperConverter
   
   private static bool CmpLimit(DXMath.LimitUpper openXmlElement, DMMath.Limit? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Limit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Limit>(), value, diffs, objName);
   }
   
   private static void SetLimit(DXMath.LimitUpper openXmlElement, DMMath.Limit? value)

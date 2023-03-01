@@ -15,7 +15,7 @@ public static class SchemeColorConverter
   
   private static bool CmpVal(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColorKind? value)
@@ -173,11 +173,11 @@ public static class SchemeColorConverter
     SimpleValueConverter.SetValue<DXO2010W.LuminanceModulation,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
+  public static DMW.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SchemeColor();
+      var value = new DMW.SchemeColor();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);

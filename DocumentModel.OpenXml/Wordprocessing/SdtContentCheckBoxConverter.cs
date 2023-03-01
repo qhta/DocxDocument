@@ -15,7 +15,7 @@ public static class SdtContentCheckBoxConverter
   
   private static bool CmpChecked(DXO2010W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.Checked>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.Checked>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetChecked(DXO2010W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value)
@@ -46,7 +46,7 @@ public static class SdtContentCheckBoxConverter
   
   private static bool CmpCheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CheckedState>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CheckedState>(), value, diffs, objName);
   }
   
   private static void SetCheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
@@ -75,7 +75,7 @@ public static class SdtContentCheckBoxConverter
   
   private static bool CmpUncheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.UncheckedState>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.UncheckedState>(), value, diffs, objName);
   }
   
   private static void SetUncheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
@@ -91,11 +91,11 @@ public static class SdtContentCheckBoxConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentCheckBox? CreateModelElement(DXO2010W.SdtContentCheckBox? openXmlElement)
+  public static DMW.SdtContentCheckBox? CreateModelElement(DXO2010W.SdtContentCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentCheckBox();
+      var value = new DMW.SdtContentCheckBox();
       value.Checked = GetChecked(openXmlElement);
       value.CheckedState = GetCheckedState(openXmlElement);
       value.UncheckedState = GetUncheckedState(openXmlElement);

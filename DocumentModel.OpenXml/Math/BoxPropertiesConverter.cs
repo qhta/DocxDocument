@@ -15,7 +15,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpOperatorEmulator(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.OperatorEmulator>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.OperatorEmulator>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetOperatorEmulator(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
@@ -43,7 +43,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpNoBreak(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NoBreak>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NoBreak>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNoBreak(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
@@ -71,7 +71,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpDifferential(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Differential>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Differential>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDifferential(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
@@ -102,7 +102,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName);
   }
   
   private static void SetBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value)
@@ -128,7 +128,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpAlignment(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
@@ -159,7 +159,7 @@ public static class BoxPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value)

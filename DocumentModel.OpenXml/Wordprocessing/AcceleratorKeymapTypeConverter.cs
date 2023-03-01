@@ -23,11 +23,11 @@ public static class AcceleratorKeymapTypeConverter
     openXmlElement.AcceleratorName = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.AcceleratorKeymapType? CreateModelElement(DXOW.AcceleratorKeymapType? openXmlElement)
+  public static DMW.AcceleratorKeymapType? CreateModelElement(DXOW.AcceleratorKeymapType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AcceleratorKeymapType();
+      var value = new DMW.AcceleratorKeymapType();
       value.AcceleratorName = GetAcceleratorName(openXmlElement);
       return value;
     }

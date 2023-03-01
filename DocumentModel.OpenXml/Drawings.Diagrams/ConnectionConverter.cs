@@ -33,7 +33,7 @@ public static class ConnectionConverter
   
   private static bool CmpType(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ConnectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDrawsDgms.ConnectionKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ConnectionKind? value)
@@ -184,7 +184,7 @@ public static class ConnectionConverter
   
   private static bool CmpExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.Connection openXmlElement, DMDrawsDgms.ExtensionList? value)

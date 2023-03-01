@@ -23,11 +23,11 @@ public static class ContentPartConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.ContentPart? CreateModelElement(DXW.ContentPart? openXmlElement)
+  public static DMW.ContentPart? CreateModelElement(DXW.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ContentPart();
+      var value = new DMW.ContentPart();
       value.Id = GetId(openXmlElement);
       return value;
     }
