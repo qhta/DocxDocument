@@ -348,10 +348,9 @@ public static class RunConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Run value)
-    where OpenXmlElementType : DXW.Run, new()
+  public static DXW.Run CreateOpenXmlElement(DMW.Run value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new  DXW.Run();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

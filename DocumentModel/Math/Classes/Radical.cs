@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Radical Function.
 /// </summary>
-public class Radical
+public class Radical: DMW.ParagraphElement
 {
   /// <summary>
   ///   Radical Properties.

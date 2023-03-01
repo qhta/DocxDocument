@@ -34,6 +34,17 @@ public static class RelationshipTypeConverter
     return null;
   }
   
+  public static DMW.SubDocumentReference? CreateModelElement(DXW.SubDocumentReference? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DMW.SubDocumentReference();
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+
   public static bool CompareModelElement(DXW.RelationshipType? openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -48,6 +59,20 @@ public static class RelationshipTypeConverter
     return false;
   }
   
+    public static bool CompareModelElement(DXW.SubDocumentReference? openXmlElement, DMW.SubDocumentReference? value, DiffList? diffs, string? objName)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      var ok = true;
+      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    if (openXmlElement == null && value == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    return false;
+  }
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RelationshipType value)
     where OpenXmlElementType: DXW.RelationshipType, new()
   {
@@ -56,6 +81,13 @@ public static class RelationshipTypeConverter
     return openXmlElement;
   }
   
+  public static DXW.SubDocumentReference CreateOpenXmlElement(DMW.SubDocumentReference value)
+  {
+    var openXmlElement = new DXW.SubDocumentReference();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
+  }
+
   public static void UpdateOpenXmlElement(DXW.RelationshipType openXmlElement, DMW.RelationshipType value)
   {
     SetId(openXmlElement, value?.Id);

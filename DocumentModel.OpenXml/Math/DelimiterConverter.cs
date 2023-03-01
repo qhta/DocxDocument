@@ -118,10 +118,9 @@ public static class DelimiterConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Delimiter value)
-    where OpenXmlElementType: DXMath.Delimiter, new()
+  public static DXMath.Delimiter CreateOpenXmlElement(DMMath.Delimiter value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Delimiter();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

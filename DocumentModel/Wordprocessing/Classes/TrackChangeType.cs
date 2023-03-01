@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TrackChangeType Class.
 /// </summary>
-public class TrackChangeType: BodyElement, ParagraphElement
+public class TrackChangeType: CommonElement
 {
   /// <summary>
   ///   author

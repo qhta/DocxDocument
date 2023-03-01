@@ -697,10 +697,9 @@ public static class SdtRunConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtRun value)
-    where OpenXmlElementType: DXW.SdtRun, new()
+  public static DXW.SdtRun CreateOpenXmlElement(DMW.SdtRun value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.SdtRun();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

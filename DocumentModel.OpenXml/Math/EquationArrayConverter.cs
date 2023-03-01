@@ -118,10 +118,9 @@ public static class EquationArrayConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.EquationArray value)
-    where OpenXmlElementType: DXMath.EquationArray, new()
+  public static DXMath.EquationArray CreateOpenXmlElement(DMMath.EquationArray value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.EquationArray();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

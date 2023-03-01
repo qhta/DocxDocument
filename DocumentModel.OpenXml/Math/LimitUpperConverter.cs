@@ -123,10 +123,9 @@ public static class LimitUpperConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpper value)
-    where OpenXmlElementType: DXMath.LimitUpper, new()
+  public static DXMath.LimitUpper CreateOpenXmlElement(DMMath.LimitUpper value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.LimitUpper();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
