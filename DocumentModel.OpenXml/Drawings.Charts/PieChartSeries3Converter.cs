@@ -54,7 +54,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpSeriesText(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName);
   }
   
   private static void SetSeriesText(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
@@ -83,7 +83,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -112,7 +112,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpPictureOptions(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
   }
   
   private static void SetPictureOptions(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -212,7 +212,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpDataLabels(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -238,7 +238,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpCategoryAxisData(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName);
   }
   
   private static void SetCategoryAxisData(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value)
@@ -264,7 +264,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpValues(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.Values? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName);
   }
   
   private static void SetValues(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.Values? value)
@@ -290,7 +290,7 @@ public static class PieChartSeries3Converter
   
   private static bool CmpPieSerExtensionList(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.PieSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PieSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PieSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PieSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PieSerExtensionList>(), value, diffs, objName);
   }
   
   private static void SetPieSerExtensionList(DXO2013DrawChart.PieChartSeries openXmlElement, DMDrawsCharts.PieSerExtensionList? value)

@@ -102,7 +102,7 @@ public static class BubbleChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -196,7 +196,7 @@ public static class BubbleChartConverter
   
   private static bool CmpSizeRepresents(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.SizeRepresentsKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDrawsCharts.SizeRepresentsKind>(openXmlElement.GetFirstChild<DXDrawCharts.SizeRepresents>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDrawsCharts.SizeRepresentsKind>(openXmlElement.GetFirstChild<DXDrawCharts.SizeRepresents>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetSizeRepresents(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.SizeRepresentsKind? value)
@@ -280,7 +280,7 @@ public static class BubbleChartConverter
   
   private static bool CmpBubbleChartExtensionList(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BubbleChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetBubbleChartExtensionList(DXDrawCharts.BubbleChart openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value)

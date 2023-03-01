@@ -33,7 +33,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpBreakBinary(DXMath.MathProperties openXmlElement, DMMath.BreakBinaryOperatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXMath.BreakBinary>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXMath.BreakBinary>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBreakBinary(DXMath.MathProperties openXmlElement, DMMath.BreakBinaryOperatorKind? value)
@@ -61,7 +61,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpBreakBinarySubtraction(DXMath.MathProperties openXmlElement, DMMath.BreakBinarySubtractionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBreakBinarySubtraction(DXMath.MathProperties openXmlElement, DMMath.BreakBinarySubtractionKind? value)
@@ -89,7 +89,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpSmallFraction(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.SmallFraction>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.SmallFraction>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetSmallFraction(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
@@ -117,7 +117,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpDisplayDefaults(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.DisplayDefaults>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.DisplayDefaults>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDisplayDefaults(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
@@ -181,7 +181,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpDefaultJustification(DXMath.MathProperties openXmlElement, DMMath.JustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.DefaultJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.DefaultJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDefaultJustification(DXMath.MathProperties openXmlElement, DMMath.JustificationKind? value)
@@ -293,7 +293,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpWrapRight(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.WrapRight>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.WrapRight>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetWrapRight(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
@@ -318,7 +318,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpIntegralLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetIntegralLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value)
@@ -343,7 +343,7 @@ public static class MathPropertiesConverter
   
   private static bool CmpNaryLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNaryLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value)

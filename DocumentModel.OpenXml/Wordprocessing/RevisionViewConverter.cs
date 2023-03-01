@@ -95,11 +95,11 @@ public static class RevisionViewConverter
     openXmlElement.InkAnnotations = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.RevisionView? CreateModelElement(DXW.RevisionView? openXmlElement)
+  public static DMW.RevisionView? CreateModelElement(DXW.RevisionView? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RevisionView();
+      var value = new DMW.RevisionView();
       value.Markup = GetMarkup(openXmlElement);
       value.Comments = GetComments(openXmlElement);
       value.DisplayRevision = GetDisplayRevision(openXmlElement);

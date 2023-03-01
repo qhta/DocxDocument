@@ -35,7 +35,7 @@ public static class StyleSetConverter
   
   private static bool CmpVal(DXO2010W.StyleSet openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXO2010W.StyleSet openXmlElement, DMW.OnOffKind? value)
@@ -43,11 +43,11 @@ public static class StyleSetConverter
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
+  public static DMW.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleSet();
+      var value = new DMW.StyleSet();
       value.Id = GetId(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

@@ -38,7 +38,7 @@ public static class GradientStopConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.GradientStop openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXO2010W.GradientStop openXmlElement, DMW.RgbColorModelHex? value)
@@ -67,7 +67,7 @@ public static class GradientStopConverter
   
   private static bool CmpSchemeColor(DXO2010W.GradientStop openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXO2010W.GradientStop openXmlElement, DMW.SchemeColor? value)
@@ -83,11 +83,11 @@ public static class GradientStopConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.GradientStop? CreateModelElement(DXO2010W.GradientStop? openXmlElement)
+  public static DMW.GradientStop? CreateModelElement(DXO2010W.GradientStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GradientStop();
+      var value = new DMW.GradientStop();
       value.StopPosition = GetStopPosition(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);

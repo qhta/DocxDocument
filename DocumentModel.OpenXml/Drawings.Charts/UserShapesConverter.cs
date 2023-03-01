@@ -15,7 +15,7 @@ public static class UserShapesConverter
   
   private static bool CmpRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.RelativeAnchorSize? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.RelativeAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.RelativeAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>(), value, diffs, objName);
   }
   
   private static void SetRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.RelativeAnchorSize? value)
@@ -41,7 +41,7 @@ public static class UserShapesConverter
   
   private static bool CmpAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.AbsoluteAnchorSize? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>(), value, diffs, objName);
   }
   
   private static void SetAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.AbsoluteAnchorSize? value)

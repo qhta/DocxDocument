@@ -35,7 +35,7 @@ public static class LinearShadePropertiesConverter
   
   private static bool CmpScaled(DXO2010W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value, value, diffs, objName);
   }
   
   private static void SetScaled(DXO2010W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value)
@@ -43,11 +43,11 @@ public static class LinearShadePropertiesConverter
     openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
+  public static DMW.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LinearShadeProperties();
+      var value = new DMW.LinearShadeProperties();
       value.Angle = GetAngle(openXmlElement);
       value.Scaled = GetScaled(openXmlElement);
       return value;

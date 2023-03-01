@@ -35,7 +35,7 @@ public static class TableRowHeightConverter
   
   private static bool CmpHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName);
   }
   
   private static void SetHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value)
@@ -43,11 +43,11 @@ public static class TableRowHeightConverter
     openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableRowHeight? CreateModelElement(DXW.TableRowHeight? openXmlElement)
+  public static DMW.TableRowHeight? CreateModelElement(DXW.TableRowHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableRowHeight();
+      var value = new DMW.TableRowHeight();
       value.Val = GetVal(openXmlElement);
       value.HeightType = GetHeightType(openXmlElement);
       return value;

@@ -15,7 +15,7 @@ public static class StyleDataConverter
   
   private static bool CmpDataModel(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName);
   }
   
   private static void SetDataModel(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.DataModel? value)

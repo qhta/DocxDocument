@@ -43,9 +43,9 @@ public class Comment
 
   public BookmarkStart? BookmarkStart { get; set; }
 
-  public MarkupRangeType? BookmarkEnd { get; set; }
+  public BookmarkEnd? BookmarkEnd { get; set; }
 
-  public MarkupRangeType? CommentRangeStart { get; set; }
+  public CommentRangeStart? CommentRangeStart { get; set; }
 
-  public MarkupRangeType? CommentRangeEnd { get; set; }
+  public CommentRangeEnd? CommentRangeEnd { get; set; }
 }

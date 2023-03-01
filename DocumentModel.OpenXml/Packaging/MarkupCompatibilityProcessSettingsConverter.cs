@@ -18,7 +18,7 @@ public static class MarkupCompatibilityProcessSettingsConverter
   private static bool CmpProcessMode(DXPack.MarkupCompatibilityProcessSettings openXmlElement, DMPack.MarkupCompatibilityProcessMode? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ProcessMode != null)
-      return EnumValueConverter.CmpValue<DXPack.MarkupCompatibilityProcessMode, DMPack.MarkupCompatibilityProcessMode>(openXmlElement?.ProcessMode, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+      return EnumValueConverter.CmpValue<DXPack.MarkupCompatibilityProcessMode, DMPack.MarkupCompatibilityProcessMode>(openXmlElement?.ProcessMode, value, diffs, objName);
     if (openXmlElement?.ProcessMode == null && value == null) return true;
     diffs?.Add(objName, "ProcessMode", openXmlElement?.ProcessMode, value);
     return false;
@@ -37,7 +37,7 @@ public static class MarkupCompatibilityProcessSettingsConverter
   private static bool CmpTargetFileFormatVersions(DXPack.MarkupCompatibilityProcessSettings openXmlElement, DM.FileFormatVersions? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.TargetFileFormatVersions != null)
-      return EnumValueConverter.CmpValue<DX.FileFormatVersions, DM.FileFormatVersions>(openXmlElement?.TargetFileFormatVersions, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+      return EnumValueConverter.CmpValue<DX.FileFormatVersions, DM.FileFormatVersions>(openXmlElement?.TargetFileFormatVersions, value, diffs, objName);
     if (openXmlElement?.TargetFileFormatVersions == null && value == null) return true;
     diffs?.Add(objName, "TargetFileFormatVersions", openXmlElement?.TargetFileFormatVersions, value);
     return false;

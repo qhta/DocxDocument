@@ -79,11 +79,11 @@ public static class SdtContentComboBoxConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentComboBox? CreateModelElement(DXW.SdtContentComboBox? openXmlElement)
+  public static DMW.SdtContentComboBox? CreateModelElement(DXW.SdtContentComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentComboBox();
+      var value = new DMW.SdtContentComboBox();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;

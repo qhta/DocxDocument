@@ -18,7 +18,7 @@ public static class EffectListConverter
   
   private static bool CmpBlur(DXDraw.EffectList openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blur>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blur>(), value, diffs, objName);
   }
   
   private static void SetBlur(DXDraw.EffectList openXmlElement, DMDraws.Blur? value)
@@ -47,7 +47,7 @@ public static class EffectListConverter
   
   private static bool CmpFillOverlay(DXDraw.EffectList openXmlElement, DMDraws.FillOverlay? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillOverlay>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillOverlay>(), value, diffs, objName);
   }
   
   private static void SetFillOverlay(DXDraw.EffectList openXmlElement, DMDraws.FillOverlay? value)
@@ -76,7 +76,7 @@ public static class EffectListConverter
   
   private static bool CmpGlow(DXDraw.EffectList openXmlElement, DMDraws.Glow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Glow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Glow>(), value, diffs, objName);
   }
   
   private static void SetGlow(DXDraw.EffectList openXmlElement, DMDraws.Glow? value)
@@ -105,7 +105,7 @@ public static class EffectListConverter
   
   private static bool CmpInnerShadow(DXDraw.EffectList openXmlElement, DMDraws.InnerShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.InnerShadow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.InnerShadow>(), value, diffs, objName);
   }
   
   private static void SetInnerShadow(DXDraw.EffectList openXmlElement, DMDraws.InnerShadow? value)
@@ -134,7 +134,7 @@ public static class EffectListConverter
   
   private static bool CmpOuterShadow(DXDraw.EffectList openXmlElement, DMDraws.OuterShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.OuterShadow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.OuterShadow>(), value, diffs, objName);
   }
   
   private static void SetOuterShadow(DXDraw.EffectList openXmlElement, DMDraws.OuterShadow? value)
@@ -163,7 +163,7 @@ public static class EffectListConverter
   
   private static bool CmpPresetShadow(DXDraw.EffectList openXmlElement, DMDraws.PresetShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetShadow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetShadow>(), value, diffs, objName);
   }
   
   private static void SetPresetShadow(DXDraw.EffectList openXmlElement, DMDraws.PresetShadow? value)
@@ -192,7 +192,7 @@ public static class EffectListConverter
   
   private static bool CmpReflection(DXDraw.EffectList openXmlElement, DMDraws.Reflection? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Reflection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Reflection>(), value, diffs, objName);
   }
   
   private static void SetReflection(DXDraw.EffectList openXmlElement, DMDraws.Reflection? value)
@@ -221,7 +221,7 @@ public static class EffectListConverter
   
   private static bool CmpSoftEdge(DXDraw.EffectList openXmlElement, DMDraws.SoftEdge? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SoftEdge>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SoftEdge>(), value, diffs, objName);
   }
   
   private static void SetSoftEdge(DXDraw.EffectList openXmlElement, DMDraws.SoftEdge? value)

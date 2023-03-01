@@ -102,7 +102,7 @@ public static class PieChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -143,7 +143,7 @@ public static class PieChartConverter
   
   private static bool CmpPieChartExtensionList(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PieChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PieChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PieChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PieChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetPieChartExtensionList(DXDrawCharts.PieChart openXmlElement, DMDrawsCharts.PieChartExtensionList? value)

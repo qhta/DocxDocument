@@ -71,7 +71,7 @@ public static class TasksConverter
   
   private static bool CmpExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value)

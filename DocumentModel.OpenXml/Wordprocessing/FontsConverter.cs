@@ -61,11 +61,11 @@ public static class FontsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Fonts? CreateModelElement(DXW.Fonts? openXmlElement)
+  public static DMW.Fonts? CreateModelElement(DXW.Fonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Fonts();
+      var value = new DMW.Fonts();
       value.Items = GetItems(openXmlElement);
       return value;
     }

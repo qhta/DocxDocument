@@ -15,7 +15,7 @@ public static class NumberingFormatConverter
   
   private static bool CmpVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value)
@@ -41,11 +41,11 @@ public static class NumberingFormatConverter
     openXmlElement.Format = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
+  public static DMW.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingFormat();
+      var value = new DMW.NumberingFormat();
       value.Val = GetVal(openXmlElement);
       value.Format = GetFormat(openXmlElement);
       return value;

@@ -23,11 +23,11 @@ public static class GridColumnConverter
     openXmlElement.Width = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.GridColumn? CreateModelElement(DXW.GridColumn? openXmlElement)
+  public static DMW.GridColumn? CreateModelElement(DXW.GridColumn? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GridColumn();
+      var value = new DMW.GridColumn();
       value.Width = GetWidth(openXmlElement);
       return value;
     }

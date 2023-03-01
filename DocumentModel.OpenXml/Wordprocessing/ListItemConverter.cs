@@ -41,11 +41,11 @@ public static class ListItemConverter
     openXmlElement.Value = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.ListItem? CreateModelElement(DXW.ListItem? openXmlElement)
+  public static DMW.ListItem? CreateModelElement(DXW.ListItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ListItem();
+      var value = new DMW.ListItem();
       value.DisplayText = GetDisplayText(openXmlElement);
       value.Value = GetValue(openXmlElement);
       return value;

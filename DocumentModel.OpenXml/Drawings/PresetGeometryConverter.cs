@@ -15,7 +15,7 @@ public static class PresetGeometryConverter
   
   private static bool CmpPreset(DXDraw.PresetGeometry openXmlElement, DMDraws.ShapeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMDraws.ShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMDraws.ShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
   private static void SetPreset(DXDraw.PresetGeometry openXmlElement, DMDraws.ShapeKind? value)
@@ -36,7 +36,7 @@ public static class PresetGeometryConverter
   
   private static bool CmpAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName);
   }
   
   private static void SetAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value)

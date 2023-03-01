@@ -239,11 +239,11 @@ public static class ConditionalFormatStyleConverter
     openXmlElement.LastRowLastColumn = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? CreateModelElement(DXW.ConditionalFormatStyle? openXmlElement)
+  public static DMW.ConditionalFormatStyle? CreateModelElement(DXW.ConditionalFormatStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ConditionalFormatStyle();
+      var value = new DMW.ConditionalFormatStyle();
       value.Val = GetVal(openXmlElement);
       value.FirstRow = GetFirstRow(openXmlElement);
       value.LastRow = GetLastRow(openXmlElement);

@@ -23,11 +23,11 @@ public static class AltChunkPropertiesConverter
     BooleanValueConverter.SetOnOffType<DXW.MatchSource>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)
+  public static DMW.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AltChunkProperties();
+      var value = new DMW.AltChunkProperties();
       value.MatchSource = GetMatchSource(openXmlElement);
       return value;
     }

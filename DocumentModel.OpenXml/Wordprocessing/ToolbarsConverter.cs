@@ -117,11 +117,11 @@ public static class ToolbarsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(DXOW.Toolbars? openXmlElement)
+  public static DMW.Toolbars? CreateModelElement(DXOW.Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Toolbars();
+      var value = new DMW.Toolbars();
       value.AllocatedCommandManifests = GetAllocatedCommandManifests(openXmlElement);
       value.ToolbarDatas = GetToolbarDatas(openXmlElement);
       return value;

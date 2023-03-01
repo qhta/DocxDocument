@@ -188,11 +188,11 @@ public static class NumberingConverter
     SimpleValueConverter.SetValue<DXW.NumberingIdMacAtCleanup,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.Numbering? CreateModelElement(DXW.Numbering? openXmlElement)
+  public static DMW.Numbering? CreateModelElement(DXW.Numbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Numbering();
+      var value = new DMW.Numbering();
       value.NumberingPictureBullets = GetNumberingPictureBullets(openXmlElement);
       value.AbstractNums = GetAbstractNums(openXmlElement);
       value.NumberingInstances = GetNumberingInstances(openXmlElement);

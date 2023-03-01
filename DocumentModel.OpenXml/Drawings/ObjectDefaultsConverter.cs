@@ -18,7 +18,7 @@ public static class ObjectDefaultsConverter
   
   private static bool CmpShapeDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.ShapeDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeDefault>(), value, diffs, objName);
   }
   
   private static void SetShapeDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.ShapeDefault? value)
@@ -47,7 +47,7 @@ public static class ObjectDefaultsConverter
   
   private static bool CmpLineDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.LineDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineDefault>(), value, diffs, objName);
   }
   
   private static void SetLineDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.LineDefault? value)
@@ -76,7 +76,7 @@ public static class ObjectDefaultsConverter
   
   private static bool CmpTextDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.TextDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TextDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TextDefault>(), value, diffs, objName);
   }
   
   private static void SetTextDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.TextDefault? value)
@@ -105,7 +105,7 @@ public static class ObjectDefaultsConverter
   
   private static bool CmpExtensionList(DXDraw.ObjectDefaults openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.ObjectDefaults openXmlElement, DMDraws.ExtensionList? value)

@@ -38,7 +38,7 @@ public static class NumberingPictureBulletConverter
   
   private static bool CmpPictureBulletBase(DXW.NumberingPictureBullet openXmlElement, DMW.PictureBulletBase? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PictureBulletBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PictureBulletBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PictureBulletBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PictureBulletBase>(), value, diffs, objName);
   }
   
   private static void SetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement, DMW.PictureBulletBase? value)
@@ -67,7 +67,7 @@ public static class NumberingPictureBulletConverter
   
   private static bool CmpDrawing(DXW.NumberingPictureBullet openXmlElement, DMW.Drawing? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Drawing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Drawing>(), value, diffs, objName);
   }
   
   private static void SetDrawing(DXW.NumberingPictureBullet openXmlElement, DMW.Drawing? value)
@@ -77,17 +77,17 @@ public static class NumberingPictureBulletConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.DrawingConverter.CreateOpenXmlElement<DXW.Drawing>(value);
+      itemElement = DMXW.DrawingConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingPictureBullet? CreateModelElement(DXW.NumberingPictureBullet? openXmlElement)
+  public static DMW.NumberingPictureBullet? CreateModelElement(DXW.NumberingPictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingPictureBullet();
+      var value = new DMW.NumberingPictureBullet();
       value.NumberingPictureBulletId = GetNumberingPictureBulletId(openXmlElement);
       value.PictureBulletBase = GetPictureBulletBase(openXmlElement);
       value.Drawing = GetDrawing(openXmlElement);

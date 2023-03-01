@@ -15,7 +15,7 @@ public static class StylesConverter
   
   private static bool CmpDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DocDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocDefaults>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DocDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocDefaults>(), value, diffs, objName);
   }
   
   private static void SetDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value)
@@ -41,7 +41,7 @@ public static class StylesConverter
   
   private static bool CmpLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LatentStylesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LatentStyles>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LatentStylesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LatentStyles>(), value, diffs, objName);
   }
   
   private static void SetLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value)

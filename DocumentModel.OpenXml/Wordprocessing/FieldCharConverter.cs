@@ -15,7 +15,7 @@ public static class FieldCharConverter
   
   private static bool CmpFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName);
   }
   
   private static void SetFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value)
@@ -97,7 +97,7 @@ public static class FieldCharConverter
   
   private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName);
   }
   
   private static void SetFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value)
@@ -126,7 +126,7 @@ public static class FieldCharConverter
   
   private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName);
   }
   
   private static void SetNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value)
@@ -142,11 +142,11 @@ public static class FieldCharConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(DXW.FieldChar? openXmlElement)
+  public static DMW.FieldChar? CreateModelElement(DXW.FieldChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FieldChar();
+      var value = new DMW.FieldChar();
       value.FieldCharType = GetFieldCharType(openXmlElement);
       value.FieldLock = GetFieldLock(openXmlElement);
       value.Dirty = GetDirty(openXmlElement);
@@ -190,6 +190,9 @@ public static class FieldCharConverter
     return openXmlElement;
   }
   
+  public static DXW.FieldChar CreateOpenXmlElement(DMW.FieldChar value)
+    => CreateOpenXmlElement<DXW.FieldChar>(value);
+
   public static void UpdateOpenXmlElement(DXW.FieldChar openXmlElement, DMW.FieldChar value)
   {
     SetFieldCharType(openXmlElement, value?.FieldCharType);

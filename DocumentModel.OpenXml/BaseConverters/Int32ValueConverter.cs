@@ -18,8 +18,15 @@ public static class Int32ValueConverter
 
   public static bool CmpValue(OpenXmlLeafTextElement element, Int32? value, DiffList? diffs = null, string? objName = null)
   {
-    if (GetValue(element) == value)
-      diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    if (GetValue(element) == value) return true;
+    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    return false;
+  }
+
+  public static bool CmpValue(Int32? origValue, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (origValue == value) return true;
+    diffs?.Add(objName, propName, origValue, value);
     return false;
   }
 

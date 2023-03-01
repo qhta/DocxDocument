@@ -18,7 +18,7 @@ public static class Color2TypeConverter
   
   private static bool CmpRgbColorModelPercentage(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelPercentage(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelPercentage? value)
@@ -47,7 +47,7 @@ public static class Color2TypeConverter
   
   private static bool CmpRgbColorModelHex(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXDraw.Color2Type openXmlElement, DMDraws.RgbColorModelHex? value)
@@ -76,7 +76,7 @@ public static class Color2TypeConverter
   
   private static bool CmpHslColor(DXDraw.Color2Type openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
   }
   
   private static void SetHslColor(DXDraw.Color2Type openXmlElement, DMDraws.HslColor? value)
@@ -105,7 +105,7 @@ public static class Color2TypeConverter
   
   private static bool CmpSystemColor(DXDraw.Color2Type openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
   }
   
   private static void SetSystemColor(DXDraw.Color2Type openXmlElement, DMDraws.SystemColor? value)
@@ -134,7 +134,7 @@ public static class Color2TypeConverter
   
   private static bool CmpPresetColor(DXDraw.Color2Type openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
   }
   
   private static void SetPresetColor(DXDraw.Color2Type openXmlElement, DMDraws.PresetColor? value)

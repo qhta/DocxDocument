@@ -38,7 +38,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark1Color>(), value, diffs, objName);
   }
   
   private static void SetDark1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -64,7 +64,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light1Color>(), value, diffs, objName);
   }
   
   private static void SetLight1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -90,7 +90,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Dark2Color>(), value, diffs, objName);
   }
   
   private static void SetDark2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -116,7 +116,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Light2Color>(), value, diffs, objName);
   }
   
   private static void SetLight2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -142,7 +142,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent1Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent1Color>(), value, diffs, objName);
   }
   
   private static void SetAccent1Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -168,7 +168,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent2Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent2Color>(), value, diffs, objName);
   }
   
   private static void SetAccent2Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -194,7 +194,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent3Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent3Color>(), value, diffs, objName);
   }
   
   private static void SetAccent3Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -220,7 +220,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent4Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent4Color>(), value, diffs, objName);
   }
   
   private static void SetAccent4Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -246,7 +246,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent5Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent5Color>(), value, diffs, objName);
   }
   
   private static void SetAccent5Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -272,7 +272,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent6Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Accent6Color>(), value, diffs, objName);
   }
   
   private static void SetAccent6Color(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -298,7 +298,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Hyperlink>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Hyperlink>(), value, diffs, objName);
   }
   
   private static void SetHyperlink(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -324,7 +324,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FollowedHyperlinkColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ThemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FollowedHyperlinkColor>(), value, diffs, objName);
   }
   
   private static void SetFollowedHyperlinkColor(DXDraw.ColorScheme openXmlElement, DMDraws.ThemeColor? value)
@@ -350,7 +350,7 @@ public static class ColorSchemeConverter
   
   private static bool CmpExtensionList(DXDraw.ColorScheme openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.ColorScheme openXmlElement, DMDraws.ExtensionList? value)

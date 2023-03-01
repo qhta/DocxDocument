@@ -61,11 +61,12 @@ public static class TrackChangeTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.TrackChangeType? CreateModelElement(DXW.TrackChangeType? openXmlElement)
+  private static ElementType? CreateModelElement<ElementType>(DXW.TrackChangeType? openXmlElement)
+    where ElementType: DMW.TrackChangeType, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TrackChangeType();
+      var value = new ElementType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -74,6 +75,56 @@ public static class TrackChangeTypeConverter
     return null;
   }
   
+  public static DMW.CustomXmlInsRangeStart? CreateModelElement(DXW.CustomXmlInsRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.CustomXmlInsRangeStart>(openXmlElement);
+  }
+
+  public static DMW.CustomXmlDelRangeStart? CreateModelElement(DXW.CustomXmlDelRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.CustomXmlDelRangeStart>(openXmlElement);
+  }
+
+  public static DMW.CustomXmlMoveFromRangeStart? CreateModelElement(DXW.CustomXmlMoveFromRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.CustomXmlMoveFromRangeStart>(openXmlElement);
+  }
+
+  public static DMW.CustomXmlMoveToRangeStart? CreateModelElement(DXW.CustomXmlMoveToRangeStart? openXmlElement)
+  {
+    return CreateModelElement<DMW.CustomXmlMoveToRangeStart>(openXmlElement);
+  }
+
+  public static DMW.Inserted? CreateModelElement(DXW.Inserted? openXmlElement)
+  {
+    return CreateModelElement<DMW.Inserted>(openXmlElement);
+  }
+
+  public static DMW.Deleted? CreateModelElement(DXW.Deleted? openXmlElement)
+  {
+    return CreateModelElement<DMW.Deleted>(openXmlElement);
+  }
+
+  public static DMW.MoveFrom? CreateModelElement(DXW.MoveFrom? openXmlElement)
+  {
+    return CreateModelElement<DMW.MoveFrom>(openXmlElement);
+  }
+
+  public static DMW.MoveTo? CreateModelElement(DXW.MoveTo? openXmlElement)
+  {
+    return CreateModelElement<DMW.MoveTo>(openXmlElement);
+  }
+
+  public static DMW.CellInsertion? CreateModelElement(DXW.CellInsertion? openXmlElement)
+  {
+    return CreateModelElement<DMW.CellInsertion>(openXmlElement);
+  }
+
+  public static DMW.CellDeletion? CreateModelElement(DXW.CellDeletion? openXmlElement)
+  {
+    return CreateModelElement<DMW.CellDeletion>(openXmlElement);
+  }
+
   public static bool CompareModelElement(DXW.TrackChangeType? openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)

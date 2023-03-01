@@ -65,43 +65,43 @@ public class Numerator
 
   public BookmarkStart? BookmarkStart { get; set; }
 
-  public MarkupRangeType? BookmarkEnd { get; set; }
+  public BookmarkEnd? BookmarkEnd { get; set; }
 
-  public MarkupRangeType? CommentRangeStart { get; set; }
+  public CommentRangeStart? CommentRangeStart { get; set; }
 
-  public MarkupRangeType? CommentRangeEnd { get; set; }
+  public CommentRangeEnd? CommentRangeEnd { get; set; }
 
-  public MoveBookmarkType? MoveFromRangeStart { get; set; }
+  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
 
-  public MarkupRangeType? MoveFromRangeEnd { get; set; }
+  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
 
-  public MoveBookmarkType? MoveToRangeStart { get; set; }
+  public MoveToRangeStart? MoveToRangeStart { get; set; }
 
-  public MarkupRangeType? MoveToRangeEnd { get; set; }
+  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
 
-  public TrackChangeType? CustomXmlInsRangeStart { get; set; }
+  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
 
-  public MarkupType? CustomXmlInsRangeEnd { get; set; }
+  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
 
-  public TrackChangeType? CustomXmlDelRangeStart { get; set; }
+  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
 
-  public MarkupType? CustomXmlDelRangeEnd { get; set; }
+  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
 
-  public TrackChangeType? CustomXmlMoveFromRangeStart { get; set; }
+  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
 
-  public MarkupType? CustomXmlMoveFromRangeEnd { get; set; }
+  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
 
-  public TrackChangeType? CustomXmlMoveToRangeStart { get; set; }
+  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
 
-  public MarkupType? CustomXmlMoveToRangeEnd { get; set; }
+  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
 
-  public TrackChangeType2? CustomXmlConflictInsertionRangeStart { get; set; }
+  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
 
-  public MarkupType2? CustomXmlConflictInsertionRangeEnd { get; set; }
+  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
 
-  public TrackChangeType2? CustomXmlConflictDeletionRangeStart { get; set; }
+  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
 
-  public MarkupType2? CustomXmlConflictDeletionRangeEnd { get; set; }
+  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
 
   public InsertedRun? InsertedRun { get; set; }
 

@@ -15,7 +15,7 @@ public static class DivsConverter
   
   private static bool CmpDiv(DXW.Divs openXmlElement, DMW.Div? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DivConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Div>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DivConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Div>(), value, diffs, objName);
   }
   
   private static void SetDiv(DXW.Divs openXmlElement, DMW.Div? value)
@@ -31,11 +31,11 @@ public static class DivsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Divs? CreateModelElement(DXW.Divs? openXmlElement)
+  public static DMW.Divs? CreateModelElement(DXW.Divs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Divs();
+      var value = new DMW.Divs();
       value.Div = GetDiv(openXmlElement);
       return value;
     }

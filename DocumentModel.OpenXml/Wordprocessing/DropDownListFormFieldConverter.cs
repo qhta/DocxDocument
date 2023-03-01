@@ -97,11 +97,11 @@ public static class DropDownListFormFieldConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.DropDownListFormField? CreateModelElement(DXW.DropDownListFormField? openXmlElement)
+  public static DMW.DropDownListFormField? CreateModelElement(DXW.DropDownListFormField? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DropDownListFormField();
+      var value = new DMW.DropDownListFormField();
       value.DropDownListSelection = GetDropDownListSelection(openXmlElement);
       value.DefaultDropDownListItemIndex = GetDefaultDropDownListItemIndex(openXmlElement);
       value.ListEntryFormFields = GetListEntryFormFields(openXmlElement);

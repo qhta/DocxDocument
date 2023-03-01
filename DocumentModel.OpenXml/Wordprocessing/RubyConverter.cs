@@ -18,7 +18,7 @@ public static class RubyConverter
   
   private static bool CmpRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyProperties>(), value, diffs, objName);
   }
   
   private static void SetRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value)
@@ -47,7 +47,7 @@ public static class RubyConverter
   
   private static bool CmpRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyContent>(), value, diffs, objName);
   }
   
   private static void SetRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value)
@@ -76,7 +76,7 @@ public static class RubyConverter
   
   private static bool CmpRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RubyBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyBase>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RubyBaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RubyBase>(), value, diffs, objName);
   }
   
   private static void SetRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value)
@@ -92,11 +92,11 @@ public static class RubyConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Ruby? CreateModelElement(DXW.Ruby? openXmlElement)
+  public static DMW.Ruby? CreateModelElement(DXW.Ruby? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Ruby();
+      var value = new DMW.Ruby();
       value.RubyProperties = GetRubyProperties(openXmlElement);
       value.RubyContent = GetRubyContent(openXmlElement);
       value.RubyBase = GetRubyBase(openXmlElement);
@@ -123,10 +123,9 @@ public static class RubyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Ruby value)
-    where OpenXmlElementType: DXW.Ruby, new()
+  public static DXW.Ruby CreateOpenXmlElement(DMW.Ruby value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Ruby();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

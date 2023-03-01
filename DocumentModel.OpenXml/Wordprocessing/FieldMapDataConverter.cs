@@ -15,7 +15,7 @@ public static class FieldMapDataConverter
   
   private static bool CmpMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value)
@@ -143,11 +143,11 @@ public static class FieldMapDataConverter
     BooleanValueConverter.SetOnOffType<DXW.DynamicAddress>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)
+  public static DMW.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FieldMapData();
+      var value = new DMW.FieldMapData();
       value.MailMergeFieldType = GetMailMergeFieldType(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.MappedName = GetMappedName(openXmlElement);

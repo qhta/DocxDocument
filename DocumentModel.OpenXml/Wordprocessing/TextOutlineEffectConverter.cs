@@ -35,7 +35,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpCapType(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineCapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LineCapValues, DMW.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LineCapValues, DMW.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName);
   }
   
   private static void SetCapType(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineCapKind? value)
@@ -53,7 +53,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpCompound(DXO2010W.TextOutlineEffect openXmlElement, DMW.CompoundLineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues, DMW.CompoundLineKind>(openXmlElement?.Compound?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues, DMW.CompoundLineKind>(openXmlElement?.Compound?.Value, value, diffs, objName);
   }
   
   private static void SetCompound(DXO2010W.TextOutlineEffect openXmlElement, DMW.CompoundLineKind? value)
@@ -71,7 +71,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpAlignment(DXO2010W.TextOutlineEffect openXmlElement, DMW.PenAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues, DMW.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues, DMW.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXO2010W.TextOutlineEffect openXmlElement, DMW.PenAlignmentKind? value)
@@ -117,7 +117,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>(), value, diffs, objName);
   }
   
   private static void SetSolidColorFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.SolidColorFillProperties? value)
@@ -143,7 +143,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GradientFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>(), value, diffs, objName);
   }
   
   private static void SetGradientFillProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.GradientFillProperties? value)
@@ -166,7 +166,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpPresetLineDashProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.PresetLineDashKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>(openXmlElement.GetFirstChild<DXO2010W.PresetLineDashProperties>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetPresetLineDashProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.PresetLineDashKind? value)
@@ -250,7 +250,7 @@ public static class TextOutlineEffectConverter
   
   private static bool CmpLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LineJoinMiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LineJoinMiterProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LineJoinMiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LineJoinMiterProperties>(), value, diffs, objName);
   }
   
   private static void SetLineJoinMiterProperties(DXO2010W.TextOutlineEffect openXmlElement, DMW.LineJoinMiterProperties? value)
@@ -266,11 +266,11 @@ public static class TextOutlineEffectConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TextOutlineEffect? CreateModelElement(DXO2010W.TextOutlineEffect? openXmlElement)
+  public static DMW.TextOutlineEffect? CreateModelElement(DXO2010W.TextOutlineEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TextOutlineEffect();
+      var value = new DMW.TextOutlineEffect();
       value.LineWidth = GetLineWidth(openXmlElement);
       value.CapType = GetCapType(openXmlElement);
       value.Compound = GetCompound(openXmlElement);

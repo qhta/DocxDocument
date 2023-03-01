@@ -18,7 +18,7 @@ public static class GroupCharConverter
   
   private static bool CmpGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupCharProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupCharProperties>(), value, diffs, objName);
   }
   
   private static void SetGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value)
@@ -47,7 +47,7 @@ public static class GroupCharConverter
   
   private static bool CmpBase(DXMath.GroupChar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
   }
   
   private static void SetBase(DXMath.GroupChar openXmlElement, DMMath.Base? value)

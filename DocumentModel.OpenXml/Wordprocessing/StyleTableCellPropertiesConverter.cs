@@ -18,7 +18,7 @@ public static class StyleTableCellPropertiesConverter
   
   private static bool CmpShading(DXW.StyleTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.StyleTableCellProperties openXmlElement, DMW.Shading? value)
@@ -65,7 +65,7 @@ public static class StyleTableCellPropertiesConverter
   
   private static bool CmpTableCellMargin(DXW.StyleTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName);
   }
   
   private static void SetTableCellMargin(DXW.StyleTableCellProperties openXmlElement, DMW.TableCellMargin? value)
@@ -91,7 +91,7 @@ public static class StyleTableCellPropertiesConverter
   
   private static bool CmpTableCellVerticalAlignment(DXW.StyleTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableCellVerticalAlignment(DXW.StyleTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
@@ -109,11 +109,11 @@ public static class StyleTableCellPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.StyleTableCellProperties? CreateModelElement(DXW.StyleTableCellProperties? openXmlElement)
+  public static DMW.StyleTableCellProperties? CreateModelElement(DXW.StyleTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleTableCellProperties();
+      var value = new DMW.StyleTableCellProperties();
       value.Shading = GetShading(openXmlElement);
       value.NoWrap = GetNoWrap(openXmlElement);
       value.TableCellMargin = GetTableCellMargin(openXmlElement);

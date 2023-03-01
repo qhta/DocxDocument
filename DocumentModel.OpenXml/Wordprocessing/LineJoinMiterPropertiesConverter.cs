@@ -25,11 +25,11 @@ public static class LineJoinMiterPropertiesConverter
     openXmlElement.Limit = value;
   }
   
-  public static DocumentModel.Wordprocessing.LineJoinMiterProperties? CreateModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement)
+  public static DMW.LineJoinMiterProperties? CreateModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LineJoinMiterProperties();
+      var value = new DMW.LineJoinMiterProperties();
       value.Limit = GetLimit(openXmlElement);
       return value;
     }

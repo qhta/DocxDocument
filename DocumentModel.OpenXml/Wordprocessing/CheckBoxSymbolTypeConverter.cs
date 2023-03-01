@@ -51,11 +51,11 @@ public static class CheckBoxSymbolTypeConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Wordprocessing.CheckBoxSymbolType? CreateModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement)
+  public static DMW.CheckBoxSymbolType? CreateModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CheckBoxSymbolType();
+      var value = new DMW.CheckBoxSymbolType();
       value.Font = GetFont(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;

@@ -115,11 +115,11 @@ public static class McdConverter
       openXmlElement.Cmg = null;
   }
   
-  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(DXOW.Mcd? openXmlElement)
+  public static DMW.Mcd? CreateModelElement(DXOW.Mcd? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Mcd();
+      var value = new DMW.Mcd();
       value.MacroName = GetMacroName(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.MenuHelp = GetMenuHelp(openXmlElement);

@@ -73,7 +73,7 @@ public static class LineNumberTypeConverter
   
   private static bool CmpRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName);
   }
   
   private static void SetRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value)
@@ -81,11 +81,11 @@ public static class LineNumberTypeConverter
     openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)
+  public static DMW.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LineNumberType();
+      var value = new DMW.LineNumberType();
       value.CountBy = GetCountBy(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.Distance = GetDistance(openXmlElement);

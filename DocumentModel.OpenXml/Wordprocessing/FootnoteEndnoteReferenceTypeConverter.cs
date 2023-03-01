@@ -43,11 +43,11 @@ public static class FootnoteEndnoteReferenceTypeConverter
     openXmlElement.Id = value;
   }
   
-  public static DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? CreateModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement)
+  public static DMW.NoteReference? CreateModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType();
+      var value = new DMW.NoteReference();
       value.CustomMarkFollows = GetCustomMarkFollows(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;
@@ -55,7 +55,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement, DMW.FootnoteEndnoteReferenceType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement, DMW.NoteReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -71,7 +71,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteReferenceType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NoteReference value)
     where OpenXmlElementType: DXW.FootnoteEndnoteReferenceType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -79,7 +79,25 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteReferenceType openXmlElement, DMW.FootnoteEndnoteReferenceType value)
+  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.NoteReference value)
+  {
+    DXW.FootnoteEndnoteReferenceType openXmlElement; 
+    switch (value.Kind)
+    {
+      case DMW.NoteReferenceKind.Footnote:
+        openXmlElement = CreateOpenXmlElement<DXW.FootnoteReference>(value);
+        break;
+      case DMW.NoteReferenceKind.Endnote:
+        openXmlElement = CreateOpenXmlElement<DXW.EndnoteReference>(value);
+        break;
+      default:
+        throw new InvalidOperationException($"Not supported kind {value.Kind} in FootnoteEndNoteReferenceTypeConverter.CreateOpenXmlElement");
+    }
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
+  }
+
+  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteReferenceType openXmlElement, DMW.NoteReference value)
   {
     SetCustomMarkFollows(openXmlElement, value?.CustomMarkFollows);
     SetId(openXmlElement, value?.Id);

@@ -18,7 +18,7 @@ public static class ChartDataConverter
   
   private static bool CmpExternalData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExternalData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExternalDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExternalData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExternalDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExternalData>(), value, diffs, objName);
   }
   
   private static void SetExternalData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExternalData? value)
@@ -44,7 +44,7 @@ public static class ChartDataConverter
   
   private static bool CmpData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.Data? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.DataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Data>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.DataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Data>(), value, diffs, objName);
   }
   
   private static void SetData(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.Data? value)
@@ -70,7 +70,7 @@ public static class ChartDataConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.ChartData openXmlElement, DMDrawsChartDraws.ExtensionList? value)

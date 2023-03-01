@@ -177,7 +177,7 @@ public static class ForEachConverter
   
   private static bool CmpAlgorithm(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>(), value, diffs, objName);
   }
   
   private static void SetAlgorithm(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Algorithm? value)
@@ -203,7 +203,7 @@ public static class ForEachConverter
   
   private static bool CmpShape(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape>(), value, diffs, objName);
   }
   
   private static void SetShape(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Shape? value)
@@ -229,7 +229,7 @@ public static class ForEachConverter
   
   private static bool CmpPresentationOf(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>(), value, diffs, objName);
   }
   
   private static void SetPresentationOf(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.PresentationOf? value)
@@ -255,7 +255,7 @@ public static class ForEachConverter
   
   private static bool CmpConstraints(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Constraints>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Constraints>(), value, diffs, objName);
   }
   
   private static void SetConstraints(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Constraints? value)
@@ -281,7 +281,7 @@ public static class ForEachConverter
   
   private static bool CmpRuleList(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.RuleList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.RuleList>(), value, diffs, objName);
   }
   
   private static void SetRuleList(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.RuleList? value)
@@ -307,7 +307,7 @@ public static class ForEachConverter
   
   private static bool CmpChildForEach(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.ForEach? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ForEach>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ForEach>(), value, diffs, objName);
   }
   
   private static void SetChildForEach(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.ForEach? value)
@@ -333,7 +333,7 @@ public static class ForEachConverter
   
   private static bool CmpLayoutNode(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName);
   }
   
   private static void SetLayoutNode(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.LayoutNode? value)
@@ -359,7 +359,7 @@ public static class ForEachConverter
   
   private static bool CmpChoose(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Choose>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Choose>(), value, diffs, objName);
   }
   
   private static void SetChoose(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.Choose? value)
@@ -385,7 +385,7 @@ public static class ForEachConverter
   
   private static bool CmpExtensionList(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawDgms.ForEach openXmlElement, DMDrawsDgms.ExtensionList? value)

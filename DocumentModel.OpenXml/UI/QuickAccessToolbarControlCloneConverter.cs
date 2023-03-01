@@ -105,7 +105,7 @@ public static class QuickAccessToolbarControlCloneConverter
   
   private static bool CmpSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
   private static void SetSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, DMUI.SizeKind? value)

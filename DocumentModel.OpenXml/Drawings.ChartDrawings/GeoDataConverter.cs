@@ -134,7 +134,7 @@ public static class GeoDataConverter
   
   private static bool CmpGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>(), value, diffs, objName);
   }
   
   private static void SetGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value)
@@ -163,7 +163,7 @@ public static class GeoDataConverter
   
   private static bool CmpCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Copyrights>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Copyrights>(), value, diffs, objName);
   }
   
   private static void SetCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value)

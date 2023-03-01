@@ -248,7 +248,7 @@ public static class PathConverter
   
   private static bool CmpConnectionPointType(DXVml.Path openXmlElement, DMVml.ConnectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DMVml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DMVml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value, value, diffs, objName);
   }
   
   private static void SetConnectionPointType(DXVml.Path openXmlElement, DMVml.ConnectKind? value)

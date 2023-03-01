@@ -15,7 +15,7 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpBaseJustification(DXMath.EquationArrayProperties openXmlElement, DMMath.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMMath.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.BaseJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBaseJustification(DXMath.EquationArrayProperties openXmlElement, DMMath.VerticalAlignmentKind? value)
@@ -43,7 +43,7 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpMaxDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.MaxDistribution>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.MaxDistribution>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMaxDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value)
@@ -71,7 +71,7 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpObjectDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ObjectDistribution>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ObjectDistribution>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetObjectDistribution(DXMath.EquationArrayProperties openXmlElement, DMMath.BooleanKind? value)
@@ -138,7 +138,7 @@ public static class EquationArrayPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.EquationArrayProperties openXmlElement, DMMath.ControlProperties? value)

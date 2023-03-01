@@ -18,7 +18,7 @@ public static class BackdropConverter
   
   private static bool CmpAnchor(DXDraw.Backdrop openXmlElement, DMDraws.Anchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Anchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Anchor>(), value, diffs, objName);
   }
   
   private static void SetAnchor(DXDraw.Backdrop openXmlElement, DMDraws.Anchor? value)
@@ -47,7 +47,7 @@ public static class BackdropConverter
   
   private static bool CmpNormal(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Normal>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Normal>(), value, diffs, objName);
   }
   
   private static void SetNormal(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value)
@@ -76,7 +76,7 @@ public static class BackdropConverter
   
   private static bool CmpUpVector(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.UpVector>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Vector3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.UpVector>(), value, diffs, objName);
   }
   
   private static void SetUpVector(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value)
@@ -105,7 +105,7 @@ public static class BackdropConverter
   
   private static bool CmpExtensionList(DXDraw.Backdrop openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.Backdrop openXmlElement, DMDraws.ExtensionList? value)

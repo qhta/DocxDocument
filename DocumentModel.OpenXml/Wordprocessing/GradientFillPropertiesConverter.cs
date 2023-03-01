@@ -18,7 +18,7 @@ public static class GradientFillPropertiesConverter
   
   private static bool CmpGradientStopList(DXO2010W.GradientFillProperties openXmlElement, DMW.GradientStopList? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientStopList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.GradientStopList>(), value, diffs, objName);
   }
   
   private static void SetGradientStopList(DXO2010W.GradientFillProperties openXmlElement, DMW.GradientStopList? value)
@@ -44,7 +44,7 @@ public static class GradientFillPropertiesConverter
   
   private static bool CmpLinearShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LinearShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LinearShadeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LinearShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.LinearShadeProperties>(), value, diffs, objName);
   }
   
   private static void SetLinearShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value)
@@ -70,7 +70,7 @@ public static class GradientFillPropertiesConverter
   
   private static bool CmpPathShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PathShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.PathShadeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PathShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.PathShadeProperties>(), value, diffs, objName);
   }
   
   private static void SetPathShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value)
@@ -86,11 +86,11 @@ public static class GradientFillPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.GradientFillProperties? CreateModelElement(DXO2010W.GradientFillProperties? openXmlElement)
+  public static DMW.GradientFillProperties? CreateModelElement(DXO2010W.GradientFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GradientFillProperties();
+      var value = new DMW.GradientFillProperties();
       value.GradientStopList = GetGradientStopList(openXmlElement);
       value.LinearShadeProperties = GetLinearShadeProperties(openXmlElement);
       value.PathShadeProperties = GetPathShadeProperties(openXmlElement);

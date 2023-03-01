@@ -183,11 +183,11 @@ public static class RgbColorModelHexConverter
     SimpleValueConverter.SetValue<DXO2010W.LuminanceModulation,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.RgbColorModelHex? CreateModelElement(DXO2010W.RgbColorModelHex? openXmlElement)
+  public static DMW.RgbColorModelHex? CreateModelElement(DXO2010W.RgbColorModelHex? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RgbColorModelHex();
+      var value = new DMW.RgbColorModelHex();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);

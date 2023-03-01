@@ -18,7 +18,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpConditionalFormatStyle(DXW.PreviousTableCellProperties openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName);
   }
   
   private static void SetConditionalFormatStyle(DXW.PreviousTableCellProperties openXmlElement, DMW.ConditionalFormatStyle? value)
@@ -47,7 +47,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellWidth>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellWidth>(), value, diffs, objName);
   }
   
   private static void SetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidthType? value)
@@ -91,7 +91,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpHorizontalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHorizontalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value)
@@ -119,7 +119,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpVerticalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value)
@@ -150,7 +150,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpTableCellBorders(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName);
   }
   
   private static void SetTableCellBorders(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellBorders? value)
@@ -179,7 +179,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpShading(DXW.PreviousTableCellProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.PreviousTableCellProperties openXmlElement, DMW.Shading? value)
@@ -226,7 +226,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpTableCellMargin(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMargin>(), value, diffs, objName);
   }
   
   private static void SetTableCellMargin(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellMargin? value)
@@ -252,7 +252,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpTextDirection(DXW.PreviousTableCellProperties openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextDirection(DXW.PreviousTableCellProperties openXmlElement, DMW.TextDirectionKind? value)
@@ -298,7 +298,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpTableCellVerticalAlignment(DXW.PreviousTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableCellVerticalAlignment(DXW.PreviousTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
@@ -344,7 +344,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpCellInsertion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellInsertion>(), value, diffs, objName);
   }
   
   private static void SetCellInsertion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value)
@@ -370,7 +370,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpCellDeletion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellDeletion>(), value, diffs, objName);
   }
   
   private static void SetCellDeletion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value)
@@ -396,7 +396,7 @@ public static class PreviousTableCellPropertiesConverter
   
   private static bool CmpCellMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.CellMerge? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CellMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellMerge>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CellMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellMerge>(), value, diffs, objName);
   }
   
   private static void SetCellMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.CellMerge? value)
@@ -412,11 +412,11 @@ public static class PreviousTableCellPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? CreateModelElement(DXW.PreviousTableCellProperties? openXmlElement)
+  public static DMW.PreviousTableCellProperties? CreateModelElement(DXW.PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousTableCellProperties();
+      var value = new DMW.PreviousTableCellProperties();
       value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
       value.TableCellWidth = GetTableCellWidth(openXmlElement);
       value.GridSpan = GetGridSpan(openXmlElement);

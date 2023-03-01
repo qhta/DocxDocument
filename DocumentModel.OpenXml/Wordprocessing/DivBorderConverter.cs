@@ -18,7 +18,7 @@ public static class DivBorderConverter
   
   private static bool CmpTopBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
   }
   
   private static void SetTopBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value)
@@ -47,7 +47,7 @@ public static class DivBorderConverter
   
   private static bool CmpLeftBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
   }
   
   private static void SetLeftBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value)
@@ -76,7 +76,7 @@ public static class DivBorderConverter
   
   private static bool CmpBottomBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
   }
   
   private static void SetBottomBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value)
@@ -105,7 +105,7 @@ public static class DivBorderConverter
   
   private static bool CmpRightBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
   }
   
   private static void SetRightBorder(DXW.DivBorder openXmlElement, DMW.BorderType? value)
@@ -121,11 +121,11 @@ public static class DivBorderConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.DivBorder? CreateModelElement(DXW.DivBorder? openXmlElement)
+  public static DMW.DivBorder? CreateModelElement(DXW.DivBorder? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DivBorder();
+      var value = new DMW.DivBorder();
       value.TopBorder = GetTopBorder(openXmlElement);
       value.LeftBorder = GetLeftBorder(openXmlElement);
       value.BottomBorder = GetBottomBorder(openXmlElement);

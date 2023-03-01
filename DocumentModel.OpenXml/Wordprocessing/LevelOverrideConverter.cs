@@ -56,7 +56,7 @@ public static class LevelOverrideConverter
   
   private static bool CmpLevel(DXW.LevelOverride openXmlElement, DMW.Level? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Level>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Level>(), value, diffs, objName);
   }
   
   private static void SetLevel(DXW.LevelOverride openXmlElement, DMW.Level? value)
@@ -72,11 +72,11 @@ public static class LevelOverrideConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.LevelOverride? CreateModelElement(DXW.LevelOverride? openXmlElement)
+  public static DMW.LevelOverride? CreateModelElement(DXW.LevelOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LevelOverride();
+      var value = new DMW.LevelOverride();
       value.LevelIndex = GetLevelIndex(openXmlElement);
       value.StartOverrideNumberingValue = GetStartOverrideNumberingValue(openXmlElement);
       value.Level = GetLevel(openXmlElement);

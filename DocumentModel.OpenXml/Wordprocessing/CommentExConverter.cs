@@ -69,11 +69,11 @@ public static class CommentExConverter
     openXmlElement.Done = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
+  public static DMW.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentEx();
+      var value = new DMW.CommentEx();
       value.ParaId = GetParaId(openXmlElement);
       value.ParaIdParent = GetParaIdParent(openXmlElement);
       value.Done = GetDone(openXmlElement);

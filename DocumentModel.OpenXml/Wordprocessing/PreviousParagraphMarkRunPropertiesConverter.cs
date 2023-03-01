@@ -18,7 +18,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpInserted(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName);
   }
   
   private static void SetInserted(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -47,7 +47,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpDeleted(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName);
   }
   
   private static void SetDeleted(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -76,7 +76,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpMoveFrom(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFrom>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFrom>(), value, diffs, objName);
   }
   
   private static void SetMoveFrom(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -105,7 +105,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpMoveTo(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveTo>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveTo>(), value, diffs, objName);
   }
   
   private static void SetMoveTo(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType? value)
@@ -131,7 +131,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpConflictInsertion(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictInsertion>(), value, diffs, objName);
   }
   
   private static void SetConflictInsertion(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -157,7 +157,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpConflictDeletion(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictDeletion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictDeletion>(), value, diffs, objName);
   }
   
   private static void SetConflictDeletion(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -198,7 +198,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpRunFonts(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName);
   }
   
   private static void SetRunFonts(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.RunFonts? value)
@@ -464,7 +464,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpColor(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
   }
   
   private static void SetColor(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Color? value)
@@ -577,7 +577,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpHighlight(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.HighlightColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHighlight(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.HighlightColorKind? value)
@@ -605,7 +605,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpUnderline(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Underline>(), value, diffs, objName);
   }
   
   private static void SetUnderline(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Underline? value)
@@ -628,7 +628,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpTextEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TextEffectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTextEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TextEffectKind? value)
@@ -656,7 +656,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpBorder(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName);
   }
   
   private static void SetBorder(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.BorderType? value)
@@ -682,7 +682,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpShading(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Shading? value)
@@ -708,7 +708,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpFitText(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.FitText? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FitTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FitText>(), value, diffs, objName);
   }
   
   private static void SetFitText(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.FitText? value)
@@ -731,7 +731,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpVerticalTextAlignment(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.VerticalPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalTextAlignment(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.VerticalPositionKind? value)
@@ -786,7 +786,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpEmphasis(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.EmphasisMarkKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetEmphasis(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.EmphasisMarkKind? value)
@@ -814,7 +814,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpLanguages(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
   private static void SetLanguages(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value)
@@ -840,7 +840,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpEastAsianLayout(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.EastAsianLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EastAsianLayout>(), value, diffs, objName);
   }
   
   private static void SetEastAsianLayout(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.EastAsianLayout? value)
@@ -881,7 +881,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpGlow(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Glow? value, DiffList? diffs, string? objName)
   {
-    return DMXW.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Glow>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Glow>(), value, diffs, objName);
   }
   
   private static void SetGlow(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Glow? value)
@@ -907,7 +907,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpReflection(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Reflection? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Reflection>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Reflection>(), value, diffs, objName);
   }
   
   private static void SetReflection(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Reflection? value)
@@ -933,7 +933,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpTextOutlineEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TextOutlineEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TextOutlineEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.TextOutlineEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TextOutlineEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.TextOutlineEffect>(), value, diffs, objName);
   }
   
   private static void SetTextOutlineEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.TextOutlineEffect? value)
@@ -959,7 +959,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpFillTextEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.FillTextEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FillTextEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillTextEffect>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FillTextEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.FillTextEffect>(), value, diffs, objName);
   }
   
   private static void SetFillTextEffect(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.FillTextEffect? value)
@@ -985,7 +985,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpScene3D(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Scene3D? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Scene3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Scene3D>(), value, diffs, objName);
   }
   
   private static void SetScene3D(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Scene3D? value)
@@ -1011,7 +1011,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpProperties3D(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Properties3D? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Properties3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Properties3D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.Properties3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.Properties3D>(), value, diffs, objName);
   }
   
   private static void SetProperties3D(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.Properties3D? value)
@@ -1034,7 +1034,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpLigatures(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.LigaturesKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>(openXmlElement.GetFirstChild<DXO2010W.Ligatures>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>(openXmlElement.GetFirstChild<DXO2010W.Ligatures>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetLigatures(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.LigaturesKind? value)
@@ -1059,7 +1059,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpNumberingFormat(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.NumberFormKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>(openXmlElement.GetFirstChild<DXO2010W.NumberingFormat>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>(openXmlElement.GetFirstChild<DXO2010W.NumberingFormat>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNumberingFormat(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.NumberFormKind? value)
@@ -1084,7 +1084,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpNumberSpacing(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.NumberSpacingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>(openXmlElement.GetFirstChild<DXO2010W.NumberSpacing>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>(openXmlElement.GetFirstChild<DXO2010W.NumberSpacing>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNumberSpacing(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.NumberSpacingKind? value)
@@ -1112,7 +1112,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpStylisticSets(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StylisticSetsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.StylisticSets>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StylisticSetsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.StylisticSets>(), value, diffs, objName);
   }
   
   private static void SetStylisticSets(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.StylisticSets? value)
@@ -1135,7 +1135,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   private static bool CmpContextualAlternatives(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ContextualAlternatives>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ContextualAlternatives>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetContextualAlternatives(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.OnOffKind? value)
@@ -1168,11 +1168,11 @@ public static class PreviousParagraphMarkRunPropertiesConverter
     BooleanValueConverter.SetOnOffType<DXW.OfficeMath>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? CreateModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement)
+  public static DMW.PreviousParagraphMarkRunProperties? CreateModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties();
+      var value = new DMW.PreviousParagraphMarkRunProperties();
       value.Inserted = GetInserted(openXmlElement);
       value.Deleted = GetDeleted(openXmlElement);
       value.MoveFrom = GetMoveFrom(openXmlElement);

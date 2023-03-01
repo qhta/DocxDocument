@@ -41,11 +41,11 @@ public static class LevelTextConverter
     openXmlElement.Null = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
+  public static DMW.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LevelText();
+      var value = new DMW.LevelText();
       value.Val = GetVal(openXmlElement);
       value.Null = GetNull(openXmlElement);
       return value;

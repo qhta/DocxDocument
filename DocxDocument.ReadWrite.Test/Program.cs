@@ -9,7 +9,16 @@ internal class Program
   {
     //var ok = typeof(Fonts).IsCollection(out var itemType);
     //Console.WriteLine($"{ok} {itemType}");
-    RunTestProperties();
+    RunTestBody();
+  }
+
+  private static void RunTestBody()
+  {
+    var testInstance = new TestBody();
+    testInstance.Setup();
+    testInstance.TestReadDocumentBody("Simple text paragraph.docx");
+    testInstance.TestReadBodyXmlSerialization("Simple text paragraph.docx");
+    Console.WriteLine("\nTest passed");
   }
 
   private static void RunTestFonts()

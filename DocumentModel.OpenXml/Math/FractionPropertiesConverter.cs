@@ -15,7 +15,7 @@ public static class FractionPropertiesConverter
   
   private static bool CmpFractionType(DXMath.FractionProperties openXmlElement, DMMath.FractionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMMath.FractionKind>(openXmlElement.GetFirstChild<DXMath.FractionType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMMath.FractionKind>(openXmlElement.GetFirstChild<DXMath.FractionType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetFractionType(DXMath.FractionProperties openXmlElement, DMMath.FractionKind? value)
@@ -46,7 +46,7 @@ public static class FractionPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.FractionProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.FractionProperties openXmlElement, DMMath.ControlProperties? value)

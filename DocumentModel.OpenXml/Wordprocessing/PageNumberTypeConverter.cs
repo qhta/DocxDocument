@@ -15,7 +15,7 @@ public static class PageNumberTypeConverter
   
   private static bool CmpFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName);
   }
   
   private static void SetFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value)
@@ -73,7 +73,7 @@ public static class PageNumberTypeConverter
   
   private static bool CmpChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName);
   }
   
   private static void SetChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -81,11 +81,11 @@ public static class PageNumberTypeConverter
     openXmlElement.ChapterSeparator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.PageNumberType? CreateModelElement(DXW.PageNumberType? openXmlElement)
+  public static DMW.PageNumberType? CreateModelElement(DXW.PageNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PageNumberType();
+      var value = new DMW.PageNumberType();
       value.Format = GetFormat(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.ChapterStyle = GetChapterStyle(openXmlElement);

@@ -59,11 +59,11 @@ public static class FontRelationshipTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.FontRelationshipType? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
+  public static DMW.FontRelationshipType? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FontRelationshipType();
+      var value = new DMW.FontRelationshipType();
       value.FontKey = GetFontKey(openXmlElement);
       value.Subsetted = GetSubsetted(openXmlElement);
       value.Id = GetId(openXmlElement);

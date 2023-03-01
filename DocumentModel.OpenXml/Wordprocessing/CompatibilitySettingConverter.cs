@@ -15,7 +15,7 @@ public static class CompatibilitySettingConverter
   
   private static bool CmpName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value, value, diffs, objName);
   }
   
   private static void SetName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value)
@@ -59,11 +59,11 @@ public static class CompatibilitySettingConverter
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.CompatibilitySetting? CreateModelElement(DXW.CompatibilitySetting? openXmlElement)
+  public static DMW.CompatibilitySetting? CreateModelElement(DXW.CompatibilitySetting? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CompatibilitySetting();
+      var value = new DMW.CompatibilitySetting();
       value.Name = GetName(openXmlElement);
       value.Uri = GetUri(openXmlElement);
       value.Val = GetVal(openXmlElement);
