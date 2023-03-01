@@ -91,10 +91,9 @@ public static class PhantomConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Phantom value)
-    where OpenXmlElementType: DXMath.Phantom, new()
+  public static DXMath.Phantom CreateOpenXmlElement(DMMath.Phantom value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Phantom();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

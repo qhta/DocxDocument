@@ -54,7 +54,7 @@ public static class ParagraphConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.OfficeMathConverter.CreateOpenXmlElement<DXMath.OfficeMath>(value);
+      itemElement = DMXMath.OfficeMathConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -958,10 +958,9 @@ public static class ParagraphConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Paragraph value)
-    where OpenXmlElementType: DXMath.Paragraph, new()
+  public static DXMath.Paragraph CreateOpenXmlElement(DMMath.Paragraph value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Paragraph();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

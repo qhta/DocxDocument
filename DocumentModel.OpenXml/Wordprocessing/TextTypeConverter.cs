@@ -5,22 +5,6 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TextTypeConverter
 {
-  #region space attribute conversion
-  private static DM.SpaceProcessingMode? GetSpace(DXW.TextType openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value);
-  }
-
-  private static bool CmpSpace(DXW.TextType openXmlElement, DM.SpaceProcessingMode? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
-  }
-
-  private static void SetSpace(DXW.TextType openXmlElement, DM.SpaceProcessingMode? value)
-  {
-    openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(value);
-  }
-  #endregion
 
   #region text value conversion
   private static string GetText(DXW.TextType openXmlElement)
@@ -45,7 +29,6 @@ public static class TextTypeConverter
     where ElementType : DMW.TextType, new()
   {
     var value = new ElementType();
-    value.Space = GetSpace(openXmlElement);
     value.Text = GetText(openXmlElement);
     return value;
   }
@@ -75,8 +58,6 @@ public static class TextTypeConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
-        ok = false;
       if (!CmpText(openXmlElement, value.Text, diffs, objName))
         ok = false;
       bool isDeleted;
@@ -118,7 +99,6 @@ public static class TextTypeConverter
 
   public static void UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
   {
-    SetSpace(openXmlElement, value.Space);
     SetText(openXmlElement, value.Text);
   }
 }

@@ -43,7 +43,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlRunConverter.CreateOpenXmlElement<DXW.CustomXmlRun>(value);
+      itemElement = DMXW.CustomXmlRunConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -98,7 +98,7 @@ public static class BidirectionalEmbeddingConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.SimpleFieldConverter.CreateOpenXmlElement<DXW.SimpleField>(item);
+        var newItem = DMXW.SimpleFieldConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -125,7 +125,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.HyperlinkConverter.CreateOpenXmlElement<DXW.Hyperlink>(value);
+      itemElement = DMXW.HyperlinkConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -151,7 +151,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtRunConverter.CreateOpenXmlElement<DXW.SdtRun>(value);
+      itemElement = DMXW.SdtRunConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -931,7 +931,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ParagraphConverter.CreateOpenXmlElement<DXMath.Paragraph>(value);
+      itemElement = DMXMath.ParagraphConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -957,7 +957,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.OfficeMathConverter.CreateOpenXmlElement<DXMath.OfficeMath>(value);
+      itemElement = DMXMath.OfficeMathConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -983,7 +983,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.AccentConverter.CreateOpenXmlElement<DXMath.Accent>(value);
+      itemElement = DMXMath.AccentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1009,7 +1009,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BarConverter.CreateOpenXmlElement<DXMath.Bar>(value);
+      itemElement = DMXMath.BarConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1035,7 +1035,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BoxConverter.CreateOpenXmlElement<DXMath.Box>(value);
+      itemElement = DMXMath.BoxConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1061,7 +1061,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BorderBoxConverter.CreateOpenXmlElement<DXMath.BorderBox>(value);
+      itemElement = DMXMath.BorderBoxConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1087,7 +1087,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.DelimiterConverter.CreateOpenXmlElement<DXMath.Delimiter>(value);
+      itemElement = DMXMath.DelimiterConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1113,7 +1113,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.EquationArrayConverter.CreateOpenXmlElement<DXMath.EquationArray>(value);
+      itemElement = DMXMath.EquationArrayConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1139,7 +1139,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.FractionConverter.CreateOpenXmlElement<DXMath.Fraction>(value);
+      itemElement = DMXMath.FractionConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1165,7 +1165,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.MathFunctionConverter.CreateOpenXmlElement<DXMath.MathFunction>(value);
+      itemElement = DMXMath.MathFunctionConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1191,7 +1191,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.GroupCharConverter.CreateOpenXmlElement<DXMath.GroupChar>(value);
+      itemElement = DMXMath.GroupCharConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1217,7 +1217,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.LimitLowerConverter.CreateOpenXmlElement<DXMath.LimitLower>(value);
+      itemElement = DMXMath.LimitLowerConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1243,7 +1243,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.LimitUpperConverter.CreateOpenXmlElement<DXMath.LimitUpper>(value);
+      itemElement = DMXMath.LimitUpperConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1269,7 +1269,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.MatrixConverter.CreateOpenXmlElement<DXMath.Matrix>(value);
+      itemElement = DMXMath.MatrixConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1295,7 +1295,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.NaryConverter.CreateOpenXmlElement<DXMath.Nary>(value);
+      itemElement = DMXMath.NaryConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1321,7 +1321,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.PhantomConverter.CreateOpenXmlElement<DXMath.Phantom>(value);
+      itemElement = DMXMath.PhantomConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1347,7 +1347,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.RadicalConverter.CreateOpenXmlElement<DXMath.Radical>(value);
+      itemElement = DMXMath.RadicalConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1373,7 +1373,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.PreSubSuperConverter.CreateOpenXmlElement<DXMath.PreSubSuper>(value);
+      itemElement = DMXMath.PreSubSuperConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1399,7 +1399,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.SubscriptConverter.CreateOpenXmlElement<DXMath.Subscript>(value);
+      itemElement = DMXMath.SubscriptConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1425,7 +1425,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.SubSuperscriptConverter.CreateOpenXmlElement<DXMath.SubSuperscript>(value);
+      itemElement = DMXMath.SubSuperscriptConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1451,7 +1451,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.SuperscriptConverter.CreateOpenXmlElement<DXMath.Superscript>(value);
+      itemElement = DMXMath.SuperscriptConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1503,7 +1503,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BidirectionalOverrideConverter.CreateOpenXmlElement<DXW.BidirectionalOverride>(value);
+      itemElement = DMXW.BidirectionalOverrideConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1529,7 +1529,7 @@ public static class BidirectionalEmbeddingConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BidirectionalEmbeddingConverter.CreateOpenXmlElement<DXW.BidirectionalEmbedding>(value);
+      itemElement = DMXW.BidirectionalEmbeddingConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1760,10 +1760,9 @@ public static class BidirectionalEmbeddingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BidirectionalEmbedding value)
-    where OpenXmlElementType: DXW.BidirectionalEmbedding, new()
+  public static DXW.BidirectionalEmbedding CreateOpenXmlElement(DMW.BidirectionalEmbedding value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.BidirectionalEmbedding();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

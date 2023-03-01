@@ -91,10 +91,9 @@ public static class BarConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Bar value)
-    where OpenXmlElementType: DXMath.Bar, new()
+  public static DXMath.Bar CreateOpenXmlElement(DMMath.Bar value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Bar();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

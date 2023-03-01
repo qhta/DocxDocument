@@ -12,11 +12,6 @@ public abstract class TextType: RunElement
   [XmlAttribute] public bool IsDeleted {get; set; }
 
   /// <summary>
-  /// Substitutes xmi:space attribute.
-  /// </summary>
-  [XmlAttribute] public SpaceProcessingMode? Space { get; set; }
-
-  /// <summary>
   /// Represents the text itself.
   /// </summary>
   [XmlText] public string Text { get; set; } = string.Empty;

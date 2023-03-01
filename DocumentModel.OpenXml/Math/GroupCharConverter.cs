@@ -91,10 +91,9 @@ public static class GroupCharConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupChar value)
-    where OpenXmlElementType: DXMath.GroupChar, new()
+  public static DXMath.GroupChar CreateOpenXmlElement(DMMath.GroupChar value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.GroupChar();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

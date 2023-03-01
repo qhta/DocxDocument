@@ -123,10 +123,9 @@ public static class SubscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Subscript value)
-    where OpenXmlElementType: DXMath.Subscript, new()
+  public static DXMath.Subscript CreateOpenXmlElement(DMMath.Subscript value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Subscript();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

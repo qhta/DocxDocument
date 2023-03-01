@@ -155,10 +155,9 @@ public static class NaryConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Nary value)
-    where OpenXmlElementType: DXMath.Nary, new()
+  public static DXMath.Nary CreateOpenXmlElement(DMMath.Nary value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Nary();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

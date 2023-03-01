@@ -47,10 +47,10 @@ public partial class Paragraph: Collection<ParagraphElement>, BodyElement
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 
-  ///// <summary>
-  /////   noSpellErr, this property is only available in Office 2010 and later.
-  ///// </summary>
-  //public Boolean? NoSpellError { get; set; }
+  /// <summary>
+  ///   noSpellErr, this property is only available in Office 2010 and later.
+  /// </summary>
+  public Boolean? NoSpellError { get; set; }
 
   //public CustomXmlRun? CustomXmlRun { get; set; }
 

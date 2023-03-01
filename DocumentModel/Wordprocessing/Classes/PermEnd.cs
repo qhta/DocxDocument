@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PermEnd Class.
 /// </summary>
-public class PermEnd: BodyElement, ParagraphElement
+public class PermEnd: CommonElement
 {
   /// <summary>
   ///   Annotation ID

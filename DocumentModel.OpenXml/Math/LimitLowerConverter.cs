@@ -123,10 +123,9 @@ public static class LimitLowerConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitLower value)
-    where OpenXmlElementType: DXMath.LimitLower, new()
+  public static DXMath.LimitLower CreateOpenXmlElement(DMMath.LimitLower value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.LimitLower();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

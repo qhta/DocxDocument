@@ -91,10 +91,9 @@ public static class BoxConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Box value)
-    where OpenXmlElementType: DXMath.Box, new()
+  public static DXMath.Box CreateOpenXmlElement(DMMath.Box value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Box();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

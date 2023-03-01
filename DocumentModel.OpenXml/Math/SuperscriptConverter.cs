@@ -123,10 +123,9 @@ public static class SuperscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Superscript value)
-    where OpenXmlElementType: DXMath.Superscript, new()
+  public static DXMath.Superscript CreateOpenXmlElement(DMMath.Superscript value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Superscript();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

@@ -123,10 +123,9 @@ public static class RadicalConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Radical value)
-    where OpenXmlElementType: DXMath.Radical, new()
+  public static DXMath.Radical CreateOpenXmlElement(DMMath.Radical value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Radical();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

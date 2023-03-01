@@ -123,10 +123,9 @@ public static class MathFunctionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathFunction value)
-    where OpenXmlElementType: DXMath.MathFunction, new()
+  public static DXMath.MathFunction CreateOpenXmlElement(DMMath.MathFunction value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.MathFunction();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

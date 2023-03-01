@@ -118,10 +118,9 @@ public static class MatrixConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Matrix value)
-    where OpenXmlElementType: DXMath.Matrix, new()
+  public static DXMath.Matrix CreateOpenXmlElement(DMMath.Matrix value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Matrix();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
