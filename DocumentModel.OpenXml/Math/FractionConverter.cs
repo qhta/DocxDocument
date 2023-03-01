@@ -123,10 +123,9 @@ public static class FractionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Fraction value)
-    where OpenXmlElementType: DXMath.Fraction, new()
+  public static DXMath.Fraction CreateOpenXmlElement(DMMath.Fraction value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Fraction();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

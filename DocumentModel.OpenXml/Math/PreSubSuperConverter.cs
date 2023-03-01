@@ -155,10 +155,9 @@ public static class PreSubSuperConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.PreSubSuper value)
-    where OpenXmlElementType: DXMath.PreSubSuper, new()
+  public static DXMath.PreSubSuper CreateOpenXmlElement(DMMath.PreSubSuper value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.PreSubSuper();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

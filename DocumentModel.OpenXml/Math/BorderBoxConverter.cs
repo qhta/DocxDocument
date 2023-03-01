@@ -91,10 +91,9 @@ public static class BorderBoxConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBox value)
-    where OpenXmlElementType: DXMath.BorderBox, new()
+  public static DXMath.BorderBox CreateOpenXmlElement(DMMath.BorderBox value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.BorderBox();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the OfficeMath Class.
 /// </summary>
-public class OfficeMath
+public class OfficeMath: DMW.ParagraphElement
 {
   public Accent? Accent { get; set; }
 

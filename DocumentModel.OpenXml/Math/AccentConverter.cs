@@ -91,10 +91,9 @@ public static class AccentConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Accent value)
-    where OpenXmlElementType: DXMath.Accent, new()
+  public static DXMath.Accent CreateOpenXmlElement(DMMath.Accent value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.Accent();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

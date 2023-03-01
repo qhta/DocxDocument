@@ -155,10 +155,9 @@ public static class SubSuperscriptConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscript value)
-    where OpenXmlElementType: DXMath.SubSuperscript, new()
+  public static DXMath.SubSuperscript CreateOpenXmlElement(DMMath.SubSuperscript value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXMath.SubSuperscript();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

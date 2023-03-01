@@ -1,8 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Body class converter betweeen 
-/// DocumentFormat.OpenXml.Wordprocessing and DMW namespaces.
+/// Defines the Body class conversion methods
 /// </summary>
 public static class BodyConverter
 {
@@ -20,6 +19,7 @@ public static class BodyConverter
       return DMXW.CustomXmlBlockConverter.CreateModelElement(customXmlBlock);
     if (openXmlElement is DXW.SdtBlock stdBlock)
       return DMXW.SdtBlockConverter.CreateModelElement(stdBlock);
+
     if (openXmlElement is DXW.ProofError proofError)
       return DMXW.ProofErrorConverter.CreateModelElement(proofError);
     if (openXmlElement is DXW.PermStart permStart)
